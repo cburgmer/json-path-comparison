@@ -51,6 +51,32 @@
 </td>
 </tr>
 <tr>
+<td>List result</td>
+<td><code>$.book</code></td>
+<td>
+
+</td>
+<td>
+
+</td>
+<td>
+✓
+</td>
+</tr>
+<tr>
+<td>All children</td>
+<td><code>$.book.*</code></td>
+<td>
+
+</td>
+<td>
+
+</td>
+<td>
+✓
+</td>
+</tr>
+<tr>
 <td>Last array index</td>
 <td><code>$.book[-1:]</code></td>
 <td>
@@ -142,7 +168,7 @@
 </td>
 </tr>
 <tr>
-<td>All children</td>
+<td>All children with nested</td>
 <td><code>$.store.*</code></td>
 <td>
 
