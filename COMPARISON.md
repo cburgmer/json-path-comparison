@@ -11,10 +11,20 @@
 </thead>
 <tbody>
 <tr>
-<td>Array index step end</td>
-<td><code>$.book[:2]</code></td>
+<td>Root</td>
+<td><code>$</code></td>
 <td>
 ✓
+</td>
+<td>
+✓
+</td>
+</tr>
+<tr>
+<td>All elements</td>
+<td><code>$..*</code></td>
+<td>
+<a href="#Clojure_json-path___all_elements">✗</a>
 </td>
 <td>
 ✓
@@ -41,18 +51,8 @@
 </td>
 </tr>
 <tr>
-<td>All elements</td>
-<td><code>$..*</code></td>
-<td>
-<a href="#Clojure_json-path___all_elements">✗</a>
-</td>
-<td>
-✓
-</td>
-</tr>
-<tr>
-<td>Array index step start end</td>
-<td><code>$.book[1:3]</code></td>
+<td>Array index union</td>
+<td><code>$.book[0,1]</code></td>
 <td>
 ✓
 </td>
@@ -71,10 +71,60 @@
 </td>
 </tr>
 <tr>
+<td>Array index step start end</td>
+<td><code>$.book[1:3]</code></td>
+<td>
+✓
+</td>
+<td>
+✓
+</td>
+</tr>
+<tr>
+<td>Array index step start</td>
+<td><code>$.book[1:]</code></td>
+<td>
+✓
+</td>
+<td>
+✓
+</td>
+</tr>
+<tr>
 <td>Array index</td>
 <td><code>$.book[2]</code></td>
 <td>
 ✓
+</td>
+<td>
+✓
+</td>
+</tr>
+<tr>
+<td>Array index step end</td>
+<td><code>$.book[:2]</code></td>
+<td>
+✓
+</td>
+<td>
+✓
+</td>
+</tr>
+<tr>
+<td>All children</td>
+<td><code>$.store.*</code></td>
+<td>
+✓
+</td>
+<td>
+✓
+</td>
+</tr>
+<tr>
+<td>Nested recursive</td>
+<td><code>$.store..price</code></td>
+<td>
+<a href="#Clojure_json-path___nested_recursive">✗</a>
 </td>
 <td>
 ✓
@@ -95,56 +145,6 @@
 <td><code>$["key"]</code></td>
 <td>
 <a href="#Clojure_json-path___bracket_for_object_with_double_quotes">✗</a>
-</td>
-<td>
-✓
-</td>
-</tr>
-<tr>
-<td>Root</td>
-<td><code>$</code></td>
-<td>
-✓
-</td>
-<td>
-✓
-</td>
-</tr>
-<tr>
-<td>All children</td>
-<td><code>$.store.*</code></td>
-<td>
-✓
-</td>
-<td>
-✓
-</td>
-</tr>
-<tr>
-<td>Array index step start</td>
-<td><code>$.book[1:]</code></td>
-<td>
-✓
-</td>
-<td>
-✓
-</td>
-</tr>
-<tr>
-<td>Array index union</td>
-<td><code>$.book[0,1]</code></td>
-<td>
-✓
-</td>
-<td>
-✓
-</td>
-</tr>
-<tr>
-<td>Nested recursive</td>
-<td><code>$.store..price</code></td>
-<td>
-<a href="#Clojure_json-path___nested_recursive">✗</a>
 </td>
 <td>
 ✓

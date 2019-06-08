@@ -112,10 +112,15 @@ header_row() {
 }
 
 all_queries() {
-    find "$script_dir"/queries -type d -depth 1 | xargs -n1 basename
+    find "$script_dir"/queries -type d -depth 1 -print0 \
+        | xargs -0 -n1 -I% sh -c 'echo "$(cat %/selector)\t%"' \
+        | sort \
+        | cut -f2 \
+        | xargs -n1 basename
 }
 
 main() {
+
     mkdir -p "$tmp_dir"
 
     echo "# Comparison of different implementations of JSONPath"
