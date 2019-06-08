@@ -30,9 +30,9 @@ compile_row() {
     while IFS= read -r tool; do
         echo "<td>"
         if run_query "$tool" "$query"; then
-            echo "success"
+            echo "✓"
         else
-            echo "fail"
+            echo "✗"
         fi
         echo "</td>"
     done <<< "$(list_of_tools)"
@@ -75,7 +75,7 @@ main() {
 
     while IFS= read -r query; do
         compile_row "$query"
-    done <<< $(find "$script_dir"/queries -type d -depth 1)
+    done <<< "$(find "$script_dir"/queries -type d -depth 1)"
 
     echo "</tbody>"
     echo "</table>"
