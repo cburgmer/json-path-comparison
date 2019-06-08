@@ -6,6 +6,7 @@
 <th></th>
 <th></th>
 <th>Clojure (json-path)</th>
+<th>JavaScript (jsonpath-plus)</th>
 <th>Rust (jsonpath_lib)</th>
 <th>Results align?</th>
 </tr>
@@ -14,6 +15,9 @@
 <tr>
 <td>Root</td>
 <td><code>$</code></td>
+<td>
+
+</td>
 <td>
 
 </td>
@@ -34,12 +38,18 @@
 
 </td>
 <td>
-?
+
+</td>
+<td>
+✓
 </td>
 </tr>
 <tr>
 <td>Recursive attribute</td>
 <td><code>$..author</code></td>
+<td>
+
+</td>
 <td>
 
 </td>
@@ -60,12 +70,18 @@
 
 </td>
 <td>
-✓
+
+</td>
+<td>
+✗
 </td>
 </tr>
 <tr>
 <td>All children</td>
 <td><code>$.book.*</code></td>
+<td>
+
+</td>
 <td>
 
 </td>
@@ -86,12 +102,18 @@
 
 </td>
 <td>
-?
+
+</td>
+<td>
+✗
 </td>
 </tr>
 <tr>
 <td>Array index union</td>
 <td><code>$.book[0,1]</code></td>
+<td>
+
+</td>
 <td>
 
 </td>
@@ -109,15 +131,21 @@
 
 </td>
 <td>
+
+</td>
+<td>
 <a href="#Rust_jsonpath_lib___array_index_step_start_end_step">error</a>
 </td>
 <td>
-?
+✗
 </td>
 </tr>
 <tr>
 <td>Array index step start end</td>
 <td><code>$.book[1:3]</code></td>
+<td>
+
+</td>
 <td>
 
 </td>
@@ -138,12 +166,18 @@
 
 </td>
 <td>
+
+</td>
+<td>
 ✗
 </td>
 </tr>
 <tr>
 <td>Array index</td>
 <td><code>$.book[2]</code></td>
+<td>
+
+</td>
 <td>
 
 </td>
@@ -164,12 +198,18 @@
 
 </td>
 <td>
+
+</td>
+<td>
 ✗
 </td>
 </tr>
 <tr>
 <td>All children with nested</td>
 <td><code>$.store.*</code></td>
+<td>
+
+</td>
 <td>
 
 </td>
@@ -190,12 +230,18 @@
 
 </td>
 <td>
-?
+
+</td>
+<td>
+✓
 </td>
 </tr>
 <tr>
 <td>Deep attribute</td>
 <td><code>$.store.book[*].author</code></td>
+<td>
+
+</td>
 <td>
 
 </td>
@@ -211,6 +257,9 @@
 <td><code>$["key"]</code></td>
 <td>
 <a href="#Clojure_json-path___bracket_for_object_with_double_quotes">error</a>
+</td>
+<td>
+<a href="#JavaScript_jsonpath-plus___bracket_for_object_with_double_quotes">error</a>
 </td>
 <td>
 
@@ -229,7 +278,10 @@
 
 </td>
 <td>
-?
+
+</td>
+<td>
+✓
 </td>
 </tr>
 </tbody>
@@ -406,6 +458,26 @@ Clojure (json-path), Nested recursive
     	at json_path_comparison.core$_main.doInvoke(core.clj:6)
     	at clojure.lang.RestFn.applyTo(RestFn.java:137)
     	at json_path_comparison.core.main(Unknown Source)
+
+<h3 id="JavaScript_jsonpath-plus___bracket_for_object_with_double_quotes">
+JavaScript (jsonpath-plus), Bracket for object with double quotes
+</h3>
+
+    events.js:177
+          throw er; // Unhandled 'error' event
+          ^
+    
+    TypeError [ERR_INVALID_ARG_TYPE]: The "chunk" argument must be one of type string or Buffer. Received type undefined
+        at validChunk (_stream_writable.js:265:10)
+        at SyncWriteStream.Writable.write (_stream_writable.js:299:21)
+        at ReadStream.<anonymous> (/Users/cburgmer/projekte/json-path-comparison/tools/JavaScript_jsonpath-plus/index.js:24:12)
+        at ReadStream.emit (events.js:205:15)
+        at endReadableNT (_stream_readable.js:1137:12)
+        at processTicksAndRejections (internal/process/task_queues.js:84:9)
+    Emitted 'error' event at:
+        at emitErrorNT (internal/streams/destroy.js:91:8)
+        at emitErrorAndCloseNT (internal/streams/destroy.js:59:3)
+        at processTicksAndRejections (internal/process/task_queues.js:84:9)
 
 <h3 id="Rust_jsonpath_lib___array_index_step_start_end_step">
 Rust (jsonpath_lib), Array index step start end step

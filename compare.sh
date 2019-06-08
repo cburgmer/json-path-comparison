@@ -37,10 +37,25 @@ list_of_tools() {
     find "$script_dir"/tools -type d -depth 1 -print0 | xargs -0 -n1 basename | sort
 }
 
+diff_multiple_files() {
+    local results_dir="$1"
+    local first_file
+    local other_file
+    {
+        read -r first_file
+        while IFS= read -r other_file; do
+            if ! diff "$first_file" "$other_file" > /dev/null; then
+                return 1
+            fi
+        done
+    } <<< "$(find "$results_dir" -type f)"
+    return 0
+}
+
 compare_results() {
     local results_dir="$1"
     if [[ $(find "$results_dir" -type f | wc -l) -gt 1 ]]; then
-        if diff "$results_dir"/* > /dev/null; then
+        if diff_multiple_files "$results_dir"; then
             echo "✓"
         else
             echo "✗"
