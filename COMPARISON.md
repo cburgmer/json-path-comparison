@@ -7,6 +7,7 @@
 <th></th>
 <th>Clojure (json-path)</th>
 <th>Rust (jsonpath_lib)</th>
+<th>Results align?</th>
 </tr>
 </thead>
 <tbody>
@@ -14,7 +15,10 @@
 <td>Root</td>
 <td><code>$</code></td>
 <td>
-✓
+
+</td>
+<td>
+
 </td>
 <td>
 ✓
@@ -24,17 +28,23 @@
 <td>All elements</td>
 <td><code>$..*</code></td>
 <td>
-<a href="#Clojure_json-path___all_elements">✗</a>
+<a href="#Clojure_json-path___all_elements">error</a>
 </td>
 <td>
-✓
+
+</td>
+<td>
+?
 </td>
 </tr>
 <tr>
 <td>Recursive attribute</td>
 <td><code>$..author</code></td>
 <td>
-✓
+
+</td>
+<td>
+
 </td>
 <td>
 ✓
@@ -44,57 +54,75 @@
 <td>Last array index</td>
 <td><code>$.book[-1:]</code></td>
 <td>
-<a href="#Clojure_json-path___last_array_index">✗</a>
+<a href="#Clojure_json-path___last_array_index">error</a>
 </td>
 <td>
-✓
+
+</td>
+<td>
+?
 </td>
 </tr>
 <tr>
 <td>Array index union</td>
 <td><code>$.book[0,1]</code></td>
 <td>
-✓
+
 </td>
 <td>
-✓
+
+</td>
+<td>
+✗
 </td>
 </tr>
 <tr>
 <td>Array index step start end step</td>
 <td><code>$.book[0:3:2]</code></td>
 <td>
-✓
+
 </td>
 <td>
-<a href="#Rust_jsonpath_lib___array_index_step_start_end_step">✗</a>
+<a href="#Rust_jsonpath_lib___array_index_step_start_end_step">error</a>
+</td>
+<td>
+?
 </td>
 </tr>
 <tr>
 <td>Array index step start end</td>
 <td><code>$.book[1:3]</code></td>
 <td>
-✓
+
 </td>
 <td>
-✓
+
+</td>
+<td>
+✗
 </td>
 </tr>
 <tr>
 <td>Array index step start</td>
 <td><code>$.book[1:]</code></td>
 <td>
-✓
+
 </td>
 <td>
-✓
+
+</td>
+<td>
+✗
 </td>
 </tr>
 <tr>
 <td>Array index</td>
 <td><code>$.book[2]</code></td>
 <td>
-✓
+
+</td>
+<td>
+
 </td>
 <td>
 ✓
@@ -104,37 +132,49 @@
 <td>Array index step end</td>
 <td><code>$.book[:2]</code></td>
 <td>
-✓
+
 </td>
 <td>
-✓
+
+</td>
+<td>
+✗
 </td>
 </tr>
 <tr>
 <td>All children</td>
 <td><code>$.store.*</code></td>
 <td>
-✓
+
 </td>
 <td>
-✓
+
+</td>
+<td>
+✗
 </td>
 </tr>
 <tr>
 <td>Nested recursive</td>
 <td><code>$.store..price</code></td>
 <td>
-<a href="#Clojure_json-path___nested_recursive">✗</a>
+<a href="#Clojure_json-path___nested_recursive">error</a>
 </td>
 <td>
-✓
+
+</td>
+<td>
+?
 </td>
 </tr>
 <tr>
 <td>Deep attribute</td>
 <td><code>$.store.book[*].author</code></td>
 <td>
-✓
+
+</td>
+<td>
+
 </td>
 <td>
 ✓
@@ -144,20 +184,26 @@
 <td>Bracket for object with double quotes</td>
 <td><code>$["key"]</code></td>
 <td>
-<a href="#Clojure_json-path___bracket_for_object_with_double_quotes">✗</a>
+<a href="#Clojure_json-path___bracket_for_object_with_double_quotes">error</a>
 </td>
 <td>
-✓
+
+</td>
+<td>
+?
 </td>
 </tr>
 <tr>
 <td>Bracket for object</td>
 <td><code>$['key']</code></td>
 <td>
-<a href="#Clojure_json-path___bracket_for_object">✗</a>
+<a href="#Clojure_json-path___bracket_for_object">error</a>
 </td>
 <td>
-✓
+
+</td>
+<td>
+?
 </td>
 </tr>
 </tbody>
@@ -165,8 +211,10 @@
 
 ## Explanation
 
-- ✓ means the tool successfully returns a query
-- ✗ says the tool failed producing output
+- ✓ means the tools agree on the results
+- ✗ indicates that the results are different, and one of the tools is probably wrong
+- ? means there are not enough candidates available to check for correctness
+- `error` says the tool failed executing the query
 
 ## Error output
 
