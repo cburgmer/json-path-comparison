@@ -93,6 +93,11 @@ main() {
 
     echo "</tbody>"
     echo "</table>"
+    echo "
+## Explanation
+
+- ✓ means the tool successfully returns a query
+- ✗ says the tool failed producing output"
 }
 
 main

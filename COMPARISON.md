@@ -42,3 +42,8 @@
 </tr>
 </tbody>
 </table>
+
+## Explanation
+
+- ✓ means the tool successfully returns a query
+- ✗ says the tool failed producing output
