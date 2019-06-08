@@ -2,7 +2,7 @@
 set -euo pipefail
 
 readonly script_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-readonly tmp_dir="/tmp/compare_jsonpath.$$"
+readonly tmp_error_report_dir="/tmp/compare_jsonpath.$$"
 
 pretty_tool_name() {
     local tool="$1"
@@ -55,9 +55,9 @@ compile_row() {
     while IFS= read -r tool; do
         error_key="${tool}___${query}"
         echo "<td>"
-        if run_query "$tool" "$selector" "$document" 2> "${tmp_dir}/${error_key}"; then
+        if run_query "$tool" "$selector" "$document" 2> "${tmp_error_report_dir}/${error_key}"; then
             echo "✓"
-            rm "${tmp_dir}/${error_key}"
+            rm "${tmp_error_report_dir}/${error_key}"
         else
             echo "<a href=\"#${error_key}\">✗</a>"
         fi
@@ -67,7 +67,7 @@ compile_row() {
 }
 
 all_errors() {
-    find "${tmp_dir}" -type f -depth 1 -print0| xargs -0 -n1 basename | sort
+    find "${tmp_error_report_dir}" -type f -depth 1 -print0| xargs -0 -n1 basename | sort
 }
 
 pre_block() {
@@ -92,7 +92,7 @@ compile_error_report() {
         echo "$(nice_error_headline "$error_key")"
         echo "</h3>"
         echo
-        pre_block < "${tmp_dir}/${error_key}"
+        pre_block < "${tmp_error_report_dir}/${error_key}"
         echo
     done <<< "$(all_errors)"
 }
@@ -120,8 +120,7 @@ all_queries() {
 }
 
 main() {
-
-    mkdir -p "$tmp_dir"
+    mkdir -p "$tmp_error_report_dir"
 
     echo "# Comparison of different implementations of JSONPath"
     echo
@@ -147,7 +146,7 @@ main() {
 
     echo
     compile_error_report
-    rm -r "$tmp_dir"
+    rm -r "$tmp_error_report_dir"
 }
 
 main
