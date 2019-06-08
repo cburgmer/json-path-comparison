@@ -91,6 +91,7 @@ compile_error_report() {
         echo "<h3 id=\"${error_key}\">"
         echo "$(nice_error_headline "$error_key")"
         echo "</h3>"
+        echo
         pre_block < "${tmp_dir}/${error_key}"
         echo
     done <<< "$(all_errors)"

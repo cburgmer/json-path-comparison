@@ -173,6 +173,7 @@
 <h3 id="Clojure_json-path___all_elements">
 Clojure (json-path), All elements
 </h3>
+
     Exception in thread "main" java.lang.IllegalArgumentException: Don't know how to create ISeq from: java.lang.Double
     	at clojure.lang.RT.seqFrom(RT.java:553)
     	at clojure.lang.RT.seq(RT.java:533)
@@ -223,6 +224,7 @@ Clojure (json-path), All elements
 <h3 id="Clojure_json-path___bracket_for_object">
 Clojure (json-path), Bracket for object
 </h3>
+
     Exception in thread "main" java.lang.Exception: object must be an array.
     	at json_path.walker$walk_selector.invokeStatic(walker.clj:69)
     	at json_path.walker$walk_selector.invoke(walker.clj:61)
@@ -245,6 +247,7 @@ Clojure (json-path), Bracket for object
 <h3 id="Clojure_json-path___bracket_for_object_with_double_quotes">
 Clojure (json-path), Bracket for object with double quotes
 </h3>
+
     Exception in thread "main" java.lang.Exception: object must be an array.
     	at json_path.walker$walk_selector.invokeStatic(walker.clj:69)
     	at json_path.walker$walk_selector.invoke(walker.clj:61)
@@ -267,6 +270,7 @@ Clojure (json-path), Bracket for object with double quotes
 <h3 id="Clojure_json-path___last_array_index">
 Clojure (json-path), Last array index
 </h3>
+
     Exception in thread "main" java.lang.IndexOutOfBoundsException
     	at clojure.lang.PersistentVector.arrayFor(PersistentVector.java:158)
     	at clojure.lang.PersistentVector.nth(PersistentVector.java:162)
@@ -292,6 +296,7 @@ Clojure (json-path), Last array index
 <h3 id="Clojure_json-path___nested_recursive">
 Clojure (json-path), Nested recursive
 </h3>
+
     Exception in thread "main" java.lang.IllegalArgumentException: Don't know how to create ISeq from: java.lang.Double
     	at clojure.lang.RT.seqFrom(RT.java:553)
     	at clojure.lang.RT.seq(RT.java:533)
@@ -331,6 +336,7 @@ Clojure (json-path), Nested recursive
 <h3 id="Rust_jsonpath_lib___array_index_step_start_end_step">
 Rust (jsonpath_lib), Array index step start end step
 </h3>
+
     thread 'main' panicked at 'called `Result::unwrap()` on an `Err` value: "$.book[0:3:2]\n^^^^^^^^^^^\n"', src/libcore/result.rs:997:5
     note: Run with `RUST_BACKTRACE=1` environment variable to display a backtrace.
 
