@@ -11,6 +11,16 @@
 </thead>
 <tbody>
 <tr>
+<td>Bracket for object with double quotes</td>
+<td><code>$["key"]</code></td>
+<td>
+✗
+</td>
+<td>
+✓
+</td>
+</tr>
+<tr>
 <td>Root</td>
 <td><code>$</code></td>
 <td>
