@@ -5,11 +5,8 @@ readonly script_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 run_query() {
     local tool="$1"
-    local query="$2"
-    local document="$query"/document.json
-    local selector_file="$query"/selector
-    local selector
-    selector="$(cat "${selector_file}")"
+    local selector="$2"
+    local document="$3"
 
     "${script_dir}/tools/${tool}"/run.sh "$selector" < "$document" > /dev/null
 }
@@ -18,18 +15,34 @@ list_of_tools() {
     find "$script_dir"/tools -type d -depth 1 -print0 | xargs -0 -n1 basename | sort
 }
 
+capitalize() {
+    local s="$1"
+    echo "$(tr a-z A-Z <<< ${s:0:1})${s:1}"
+}
+
+pretty_query_name() {
+    local query="$1"
+
+    capitalize "$(basename "$query")" | tr '_' ' '
+}
+
 compile_row() {
     local query="$1"
+    local selector_file="$query"/selector
+    local document="$query"/document.json
+    local selector
     local query_name
     local tool
-    query_name="$(basename "$query")"
+    selector="$(cat "${selector_file}")"
+    query_name="$(pretty_query_name "$query")"
 
     echo "<tr>"
     echo "<td>${query_name}</td>"
+    echo "<td><code>${selector}</code></td>"
 
     while IFS= read -r tool; do
         echo "<td>"
-        if run_query "$tool" "$query"; then
+        if run_query "$tool" "$selector" "$document"; then
             echo "✓"
         else
             echo "✗"
@@ -53,6 +66,7 @@ header_row() {
     local tool_name
 
     echo "<tr>"
+    echo "<th></th>"
     echo "<th></th>"
     while IFS= read -r tool; do
         tool_name="$(pretty_print_tool_name "$tool")"
