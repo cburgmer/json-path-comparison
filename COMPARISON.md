@@ -112,7 +112,7 @@
 </tr>
 <tr>
 <td>All children</td>
-<td><code>$..author</code></td>
+<td><code>$.store.*</code></td>
 <td>
 ✓
 </td>
