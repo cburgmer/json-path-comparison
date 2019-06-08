@@ -44,6 +44,7 @@ compile_row() {
     local selector
     local query_name
     local tool
+    local error_key
     selector="$(cat "${selector_file}")"
     query_name="$(pretty_query_name "$query")"
 
@@ -52,12 +53,13 @@ compile_row() {
     echo "<td><code>${selector}</code></td>"
 
     while IFS= read -r tool; do
+        error_key="${tool}___${query}"
         echo "<td>"
-        if run_query "$tool" "$selector" "$document" 2> "${tmp_dir}/${query}___${tool}"; then
+        if run_query "$tool" "$selector" "$document" 2> "${tmp_dir}/${error_key}"; then
             echo "✓"
-            rm "${tmp_dir}/${query}___${tool}"
+            rm "${tmp_dir}/${error_key}"
         else
-            echo "<a href=\"#${query}___${tool}\">✗</a>"
+            echo "<a href=\"#${error_key}\">✗</a>"
         fi
         echo "</td>"
     done <<< "$(list_of_tools)"
@@ -76,8 +78,8 @@ nice_error_headline() {
     local error_key="$1"
     local query
     local tool
-    query="$(sed "s/\(.*\)___.*/\1/" <<< "$error_key")"
-    tool="$(sed "s/.*___\(.*\)/\1/" <<< "$error_key")"
+    query="$(sed "s/.*___\(.*\)/\1/" <<< "$error_key")"
+    tool="$(sed "s/\(.*\)___.*/\1/" <<< "$error_key")"
 
     echo "$(pretty_tool_name "$tool"), $(pretty_query_name "$query")"
 }

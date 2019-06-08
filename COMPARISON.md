@@ -34,7 +34,7 @@
 <td>Last array index</td>
 <td><code>$.book[-1:]</code></td>
 <td>
-<a href="#last_array_index___Clojure_json-path">✗</a>
+<a href="#Clojure_json-path___last_array_index">✗</a>
 </td>
 <td>
 ✓
@@ -44,7 +44,7 @@
 <td>All elements</td>
 <td><code>$..*</code></td>
 <td>
-<a href="#all_elements___Clojure_json-path">✗</a>
+<a href="#Clojure_json-path___all_elements">✗</a>
 </td>
 <td>
 ✓
@@ -67,7 +67,7 @@
 ✓
 </td>
 <td>
-<a href="#array_index_step_start_end_step___Rust_jsonpath_lib">✗</a>
+<a href="#Rust_jsonpath_lib___array_index_step_start_end_step">✗</a>
 </td>
 </tr>
 <tr>
@@ -94,7 +94,7 @@
 <td>Bracket for object with double quotes</td>
 <td><code>$["key"]</code></td>
 <td>
-<a href="#bracket_for_object_with_double_quotes___Clojure_json-path">✗</a>
+<a href="#Clojure_json-path___bracket_for_object_with_double_quotes">✗</a>
 </td>
 <td>
 ✓
@@ -144,7 +144,7 @@
 <td>Nested recursive</td>
 <td><code>$.store..price</code></td>
 <td>
-<a href="#nested_recursive___Clojure_json-path">✗</a>
+<a href="#Clojure_json-path___nested_recursive">✗</a>
 </td>
 <td>
 ✓
@@ -154,7 +154,7 @@
 <td>Bracket for object</td>
 <td><code>$['key']</code></td>
 <td>
-<a href="#bracket_for_object___Clojure_json-path">✗</a>
+<a href="#Clojure_json-path___bracket_for_object">✗</a>
 </td>
 <td>
 ✓
@@ -170,7 +170,7 @@
 
 ## Error output
 
-<h3 id="all_elements___Clojure_json-path">
+<h3 id="Clojure_json-path___all_elements">
 Clojure (json-path), All elements
 </h3>
     Exception in thread "main" java.lang.IllegalArgumentException: Don't know how to create ISeq from: java.lang.Double
@@ -220,13 +220,7 @@ Clojure (json-path), All elements
     	at clojure.lang.RestFn.applyTo(RestFn.java:137)
     	at json_path_comparison.core.main(Unknown Source)
 
-<h3 id="array_index_step_start_end_step___Rust_jsonpath_lib">
-Rust (jsonpath_lib), Array index step start end step
-</h3>
-    thread 'main' panicked at 'called `Result::unwrap()` on an `Err` value: "$.book[0:3:2]\n^^^^^^^^^^^\n"', src/libcore/result.rs:997:5
-    note: Run with `RUST_BACKTRACE=1` environment variable to display a backtrace.
-
-<h3 id="bracket_for_object___Clojure_json-path">
+<h3 id="Clojure_json-path___bracket_for_object">
 Clojure (json-path), Bracket for object
 </h3>
     Exception in thread "main" java.lang.Exception: object must be an array.
@@ -248,7 +242,7 @@ Clojure (json-path), Bracket for object
     	at clojure.lang.RestFn.applyTo(RestFn.java:137)
     	at json_path_comparison.core.main(Unknown Source)
 
-<h3 id="bracket_for_object_with_double_quotes___Clojure_json-path">
+<h3 id="Clojure_json-path___bracket_for_object_with_double_quotes">
 Clojure (json-path), Bracket for object with double quotes
 </h3>
     Exception in thread "main" java.lang.Exception: object must be an array.
@@ -270,7 +264,7 @@ Clojure (json-path), Bracket for object with double quotes
     	at clojure.lang.RestFn.applyTo(RestFn.java:137)
     	at json_path_comparison.core.main(Unknown Source)
 
-<h3 id="last_array_index___Clojure_json-path">
+<h3 id="Clojure_json-path___last_array_index">
 Clojure (json-path), Last array index
 </h3>
     Exception in thread "main" java.lang.IndexOutOfBoundsException
@@ -295,7 +289,7 @@ Clojure (json-path), Last array index
     	at clojure.lang.RestFn.applyTo(RestFn.java:137)
     	at json_path_comparison.core.main(Unknown Source)
 
-<h3 id="nested_recursive___Clojure_json-path">
+<h3 id="Clojure_json-path___nested_recursive">
 Clojure (json-path), Nested recursive
 </h3>
     Exception in thread "main" java.lang.IllegalArgumentException: Don't know how to create ISeq from: java.lang.Double
@@ -333,4 +327,10 @@ Clojure (json-path), Nested recursive
     	at json_path_comparison.core$_main.doInvoke(core.clj:6)
     	at clojure.lang.RestFn.applyTo(RestFn.java:137)
     	at json_path_comparison.core.main(Unknown Source)
+
+<h3 id="Rust_jsonpath_lib___array_index_step_start_end_step">
+Rust (jsonpath_lib), Array index step start end step
+</h3>
+    thread 'main' panicked at 'called `Result::unwrap()` on an `Err` value: "$.book[0:3:2]\n^^^^^^^^^^^\n"', src/libcore/result.rs:997:5
+    note: Run with `RUST_BACKTRACE=1` environment variable to display a backtrace.
 
