@@ -1,0 +1,9 @@
+{
+  "key": "value",
+  "another key": {
+    "complex": [
+      "a",
+      1
+    ]
+  }
+}
