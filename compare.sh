@@ -11,11 +11,11 @@ run_query() {
     local selector
     selector="$(cat "${selector_file}")"
 
-    cat "$document" | "${script_dir}/tools/${tool}"/run.sh "$selector" > /dev/null
+    "${script_dir}/tools/${tool}"/run.sh "$selector" < "$document" > /dev/null
 }
 
 list_of_tools() {
-    find "$script_dir"/tools -type d -depth 1 | xargs -n1 basename
+    find "$script_dir"/tools -type d -depth 1 -print0 | xargs -0 -n1 basename
 }
 
 compile_row() {
