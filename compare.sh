@@ -92,16 +92,21 @@ query_tools() {
 
     mkdir -p "$results_dir"
 
+    echo -n "${query}, ${selector}   "
     while IFS= read -r tool; do
+        echo -n "${tool} "
         error_key="${tool}___${query}"
         if run_query "$tool" "$selector" "$document" > "${results_dir}/${tool}" 2> "${tmp_error_report_dir}/${error_key}"; then
             rm "${tmp_error_report_dir}/${error_key}"
 
             canonical_json "${results_dir}/${tool}"
+            echo -n "(ok) "
         else
             rm "${results_dir}/${tool}"
+            echo -n "(err) "
         fi
     done <<< "$(list_of_tools)"
+    echo
 }
 
 compile_row() {
