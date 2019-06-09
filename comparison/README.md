@@ -8,7 +8,7 @@ This sheet makes no statement on the correctness of any of the tools, it merely 
 <th></th>
 <th></th>
 <th>Clojure (json-path)</th>
-<th>JavaScript (Goessner-jsonpath)</th>
+<th>JavaScript (Goessner)</th>
 <th>JavaScript (jsonpath)</th>
 <th>JavaScript (jsonpath-plus)</th>
 <th>Rust (jsonpath_lib)</th>
@@ -22,7 +22,7 @@ This sheet makes no statement on the correctness of any of the tools, it merely 
 ✓
 </td>
 <td>
-<a href="errors.md#JavaScript_Goessner-jsonpath___root">e</a>
+<a href="errors.md#JavaScript_Goessner___root">e</a>
 </td>
 <td>
 ✗
@@ -307,7 +307,7 @@ This sheet makes no statement on the correctness of any of the tools, it merely 
 <a href="errors.md#Clojure_json-path___bracket_for_object_with_double_quotes">e</a>
 </td>
 <td>
-<a href="errors.md#JavaScript_Goessner-jsonpath___bracket_for_object_with_double_quotes">e</a>
+<a href="errors.md#JavaScript_Goessner___bracket_for_object_with_double_quotes">e</a>
 </td>
 <td>
 ?

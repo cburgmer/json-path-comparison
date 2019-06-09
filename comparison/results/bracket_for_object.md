@@ -1,6 +1,6 @@
 ## Bracket for object
 
-### JavaScript (Goessner-jsonpath)
+### JavaScript (Goessner)
 
     [
       "value"

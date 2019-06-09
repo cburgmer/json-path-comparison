@@ -163,14 +163,14 @@ Clojure (json-path), Nested recursive
     	at clojure.lang.RestFn.applyTo(RestFn.java:137)
     	at json_path_comparison.core.main(Unknown Source)
 
-<h3 id="JavaScript_Goessner-jsonpath___bracket_for_object_with_double_quotes">
-JavaScript (Goessner-jsonpath), Bracket for object with double quotes
+<h3 id="JavaScript_Goessner___bracket_for_object_with_double_quotes">
+JavaScript (Goessner), Bracket for object with double quotes
 </h3>
 
     jsonpath returned false, this might indicate an error
 
-<h3 id="JavaScript_Goessner-jsonpath___root">
-JavaScript (Goessner-jsonpath), Root
+<h3 id="JavaScript_Goessner___root">
+JavaScript (Goessner), Root
 </h3>
 
     jsonpath returned false, this might indicate an error

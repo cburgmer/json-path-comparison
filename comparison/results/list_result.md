@@ -31,7 +31,7 @@
       }
     ]
 
-### JavaScript (Goessner-jsonpath)
+### JavaScript (Goessner)
 
     [
       [

@@ -10,7 +10,7 @@
       "price": 8.99
     }
 
-### JavaScript (Goessner-jsonpath)
+### JavaScript (Goessner)
 
     [
       {
