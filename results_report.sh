@@ -17,6 +17,20 @@ tool_results_for_query() {
     find "${tmp_results_report_dir}/${query}" -type f -depth 1 -print0 | xargs -0 -n1 basename | sort
 }
 
+output_setup() {
+    local query="$1"
+    local query_dir="./queries/${query}"
+    local selector_file="$query_dir"/selector
+    local document="$query_dir"/document.json
+    local selector
+    selector="$(cat "${selector_file}")"
+
+    echo "Selector: \`${selector}\`"
+    echo
+
+    pre_block < "$document"
+}
+
 compile_result_report() {
     local query
     local tool
@@ -26,8 +40,14 @@ compile_result_report() {
             echo "## $(pretty_query_name "$query")"
             echo
 
+            echo "### Setup"
+            output_setup "$query"
+            echo
+
+            echo "### Results"
+
             while IFS= read -r tool; do
-                echo "### $(pretty_tool_name "$tool")"
+                echo "#### $(pretty_tool_name "$tool")"
                 echo
                 pre_block < "${tmp_results_report_dir}/${query}/${tool}"
                 echo

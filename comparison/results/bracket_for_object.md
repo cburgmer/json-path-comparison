@@ -1,22 +1,30 @@
 ## Bracket for object
 
-### JavaScript (Goessner)
+### Setup
+Selector: `$['key']`
+
+    {
+      "key": "value"
+    }
+
+### Results
+#### JavaScript (Goessner)
 
     [
       "value"
     ]
 
-### JavaScript (jsonpath)
+#### JavaScript (jsonpath)
 
     [
       "value"
     ]
 
-### JavaScript (jsonpath-plus)
+#### JavaScript (jsonpath-plus)
 
     "value"
 
-### Rust (jsonpath_lib)
+#### Rust (jsonpath_lib)
 
     "value"
 

@@ -1,6 +1,7 @@
 ## Root
 
-###  Gold Standard (consensus)
+### Setup
+Selector: `$`
 
     {
       "key": "value",
@@ -12,7 +13,20 @@
       }
     }
 
-### JavaScript (jsonpath)
+### Results
+####  Gold Standard (consensus)
+
+    {
+      "key": "value",
+      "another key": {
+        "complex": [
+          "a",
+          1
+        ]
+      }
+    }
+
+#### JavaScript (jsonpath)
 
     [
       {

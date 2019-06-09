@@ -1,12 +1,20 @@
 ## Bracket for object with double quotes
 
-### JavaScript (jsonpath)
+### Setup
+Selector: `$["key"]`
+
+    {
+      "key": "value"
+    }
+
+### Results
+#### JavaScript (jsonpath)
 
     [
       "value"
     ]
 
-### Rust (jsonpath_lib)
+#### Rust (jsonpath_lib)
 
     "value"
 
