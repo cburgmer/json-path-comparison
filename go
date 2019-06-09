@@ -1,4 +1,10 @@
 #!/bin/bash
+
+# Will compile the whole report.
+#
+# Hint: setting e.g. `ONLY_QUERIES="root all_children"` will speed up
+#       debugging in development by running only the given queries.
+
 set -euo pipefail
 
 readonly script_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"

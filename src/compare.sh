@@ -17,6 +17,11 @@ run_query() {
 }
 
 all_queries() {
+    if [[ -n "${ONLY_QUERIES:-}" ]]; then
+        echo "$ONLY_QUERIES" | tr ' ' '\n'
+        return
+    fi
+
     find ./queries -type d -depth 1 -print0 \
         | xargs -0 -n1 -I% sh -c 'echo "$(cat %/selector)\t%"' \
         | sort \
