@@ -3,6 +3,7 @@
 set -euo pipefail
 
 readonly tmp_error_report_dir="$1"
+readonly target_dir="$2"
 
 . shared.sh
 
@@ -35,7 +36,7 @@ compile_error_report() {
             pre_block < "${tmp_error_report_dir}/${error_key}"
             echo
         done <<< "$(all_errors)"
-    } > "errors.md"
+    } > "${target_dir}/errors.md"
 }
 
 main() {

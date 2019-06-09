@@ -4,6 +4,7 @@ set -euo pipefail
 readonly tmp_error_report_dir="/tmp/compare_jsonpath.error_report.$$"
 readonly tmp_results_report_dir="/tmp/compare_jsonpath.results_report.$$"
 readonly tmp_result_dir="/tmp/compare_jsonpath.result.$$"
+readonly target_dir="./comparison"
 
 . shared.sh
 
@@ -109,17 +110,15 @@ compile_row() {
     local selector_file="$query_dir"/selector
     local results_dir="${tmp_result_dir}/${query}"
     local results_report_dir="${tmp_results_report_dir}/${query}"
-    local report_path
     local selector
     local query_name
     local tool
     local error_key
     selector="$(cat "${selector_file}")"
     query_name="$(pretty_query_name "$query")"
-    report_path="$(report_path_for "$query")"
 
     echo "<tr>"
-    echo "<td><a href=\"${report_path}\">${query_name}</a></td>"
+    echo "<td><a href=\"results/${query}.md\">${query_name}</a></td>"
     echo "<td><code>${selector}</code></td>"
 
     mkdir -p "$results_report_dir"
@@ -184,7 +183,7 @@ compile_comparison() {
 - ?, the results disagree, but there are not enough samples to be conclusive on which one is probably correct
 - (✓), there are not enough candidates available to check for correctness
 - e, the tool failed executing the query and probably does not support this type of query"
-    } > "COMPARISON.md"
+    } > "${target_dir}/README.md"
 }
 
 main() {
@@ -197,8 +196,8 @@ main() {
     done <<< "$(all_queries)"
 
     compile_comparison
-    ./results_report.sh "$tmp_results_report_dir"
-    ./error_report.sh "$tmp_error_report_dir"
+    ./results_report.sh "$tmp_results_report_dir" "$target_dir"
+    ./error_report.sh "$tmp_error_report_dir" "$target_dir"
 
     rm -r "$tmp_error_report_dir"
     rm -r "$tmp_results_report_dir"

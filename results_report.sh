@@ -3,6 +3,8 @@
 set -euo pipefail
 
 readonly tmp_results_report_dir="$1"
+readonly target_dir="$2"
+readonly report_output_dir="${target_dir}/results"
 
 . shared.sh
 
@@ -30,7 +32,7 @@ compile_result_report() {
                 pre_block < "${tmp_results_report_dir}/${query}/${tool}"
                 echo
             done <<< "$(tool_results_for_query "$query")"
-        } > "$(report_path_for "$query")"
+        } > "${report_output_dir}/${query}.md"
     done <<< "$(all_results)"
 }
 

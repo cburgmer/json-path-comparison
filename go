@@ -25,5 +25,5 @@ fi
 
 cd "$script_dir"
 ./compare.sh
-markdown < COMPARISON.md > COMPARISON.md.html
-echo "Run \`open COMPARISON.md.html\`"
+markdown < comparison/README.md > comparison/index.html
+echo "Run \`open comparison/index.html\`"

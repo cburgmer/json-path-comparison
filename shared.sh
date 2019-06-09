@@ -1,5 +1,3 @@
-readonly report_output_dir="results"
-
 pretty_tool_name() {
     local tool="$1"
     local language
@@ -22,9 +20,4 @@ pretty_query_name() {
 
 pre_block() {
     sed 's/^/    /'
-}
-
-report_path_for() {
-    local query="$1"
-    echo "${report_output_dir}/${query}.md"
 }
