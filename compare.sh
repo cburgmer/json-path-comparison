@@ -140,7 +140,7 @@ compile_row() {
 }
 
 all_errors() {
-    find "${tmp_error_report_dir}" -type f -depth 1 -print0| xargs -0 -n1 basename | sort
+    find "${tmp_error_report_dir}" -type f -depth 1 -print0 | xargs -0 -n1 basename | sort
 }
 
 pre_block() {
@@ -158,7 +158,9 @@ nice_error_headline() {
 }
 
 compile_error_report() {
-    echo "## Error output"
+    local error_key
+
+    echo "## Errors"
     echo
     while IFS= read -r error_key; do
         echo "<h3 id=\"${error_key}\">"
@@ -168,6 +170,37 @@ compile_error_report() {
         pre_block < "${tmp_error_report_dir}/${error_key}"
         echo
     done <<< "$(all_errors)"
+}
+
+all_query_results() {
+    find "${tmp_result_dir}" -type d -depth 1 -print0 | xargs -0 -n1 basename | sort
+}
+
+tool_results_for_query() {
+    local query="$1"
+    find "${tmp_result_dir}/${query}" -type f -depth 1 -print0 | xargs -0 -n1 basename | sort
+}
+
+compile_result_report() {
+    local query
+    local tool
+
+    echo "## Results"
+    echo
+    while IFS= read -r query; do
+        echo "<h3 id=\"${query}\">"
+        echo "$(pretty_query_name "$query")"
+        echo "</h3>"
+        echo
+
+        while IFS= read -r tool; do
+            echo "<h4>"
+            echo "$tool"
+            echo "</h4>"
+            pre_block < "${tmp_result_dir}/${query}/${tool}"
+            echo
+        done <<< "$(tool_results_for_query "$query")"
+    done <<< "$(all_query_results)"
 }
 
 header_row() {
@@ -222,6 +255,9 @@ main() {
 - ?, the results disagree, but there are not enough samples to be conclusive on which one is probably correct
 - (✓), there are not enough candidates available to check for correctness
 - \`e\`, the tool failed executing the query and probably does not support this type of query"
+
+    echo
+    compile_result_report
 
     echo
     compile_error_report
