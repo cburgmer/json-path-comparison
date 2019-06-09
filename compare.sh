@@ -37,21 +37,6 @@ list_of_tools() {
     find "$script_dir"/tools -type d -depth 1 -print0 | xargs -0 -n1 basename | sort
 }
 
-diff_multiple_files() {
-    local results_dir="$1"
-    local first_file
-    local other_file
-    {
-        read -r first_file
-        while IFS= read -r other_file; do
-            if ! diff "$first_file" "$other_file" > /dev/null; then
-                return 1
-            fi
-        done
-    } <<< "$(find "$results_dir" -type f)"
-    return 0
-}
-
 tools_diverging_from() {
     local results_dir="$1"
     local tool="$2"
@@ -61,7 +46,7 @@ tools_diverging_from() {
         if ! diff "${results_dir}/${tool}" "${results_dir}/${other_tool}" > /dev/null; then
             echo "$other_tool"
         fi
-    done <<< "$(find "$results_dir" -type f -print0 | xargs -0 -n1 basename | grep -v "$tool")"
+    done <<< "$(find "$results_dir" -type f -print0 | xargs -0 -n1 basename | grep -v "^$tool\$")"
 }
 
 compare_results() {
