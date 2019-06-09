@@ -1,7 +1,6 @@
 #!/bin/bash
 set -euo pipefail
 
-readonly script_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 readonly tmp_error_report_dir="/tmp/compare_jsonpath.error_report.$$"
 readonly tmp_results_report_dir="/tmp/compare_jsonpath.results_report.$$"
 readonly tmp_result_dir="/tmp/compare_jsonpath.result.$$"
@@ -13,11 +12,11 @@ run_query() {
     local selector="$2"
     local document="$3"
 
-    "${script_dir}/tools/${tool}"/run.sh "$selector" < "$document"
+    "./tools/${tool}"/run.sh "$selector" < "$document"
 }
 
 all_queries() {
-    find "$script_dir"/queries -type d -depth 1 -print0 \
+    find ./queries -type d -depth 1 -print0 \
         | xargs -0 -n1 -I% sh -c 'echo "$(cat %/selector)\t%"' \
         | sort \
         | cut -f2 \
@@ -25,7 +24,7 @@ all_queries() {
 }
 
 list_of_tools() {
-    find "$script_dir"/tools -type d -depth 1 -print0 | xargs -0 -n1 basename | sort
+    find ./tools -type d -depth 1 -print0 | xargs -0 -n1 basename | sort
 }
 
 tools_diverging_from() {
@@ -81,7 +80,7 @@ canonical_json() {
 
 compile_row() {
     local query="$1"
-    local query_dir="${script_dir}/queries/${query}"
+    local query_dir="./queries/${query}"
     local selector_file="$query_dir"/selector
     local document="$query_dir"/document.json
     local results_dir="${tmp_result_dir}/${query}"
@@ -179,8 +178,8 @@ main() {
 - e, the tool failed executing the query and probably does not support this type of query"
     } > "COMPARISON.md"
 
-    "${script_dir}"/results_report.sh "$tmp_results_report_dir"
-    "${script_dir}"/error_report.sh "$tmp_error_report_dir"
+    ./results_report.sh "$tmp_results_report_dir"
+    ./error_report.sh "$tmp_error_report_dir"
 
     rm -r "$tmp_error_report_dir"
     rm -r "$tmp_results_report_dir"

@@ -1,6 +1,7 @@
 #!/bin/bash
-
 set -euo pipefail
+
+readonly script_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 if ! which java > /dev/null; then
     echo >&2 "Please install Java"
@@ -22,6 +23,7 @@ if ! which markdown > /dev/null; then
     exit 1
 fi
 
+cd "$script_dir"
 ./compare.sh
 markdown < COMPARISON.md > COMPARISON.md.html
 echo "Run \`open COMPARISON.md.html\`"
