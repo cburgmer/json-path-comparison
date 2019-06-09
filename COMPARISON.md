@@ -8,6 +8,7 @@ This sheet makes no statement on the correctness of any of the tools, it merely 
 <th></th>
 <th></th>
 <th>Clojure (json-path)</th>
+<th>JavaScript (Goessner-jsonpath)</th>
 <th>JavaScript (jsonpath)</th>
 <th>JavaScript (jsonpath-plus)</th>
 <th>Rust (jsonpath_lib)</th>
@@ -19,6 +20,9 @@ This sheet makes no statement on the correctness of any of the tools, it merely 
 <td><code>$</code></td>
 <td>
 ✓
+</td>
+<td>
+<a href="#JavaScript_Goessner-jsonpath___root">e</a>
 </td>
 <td>
 ✗
@@ -45,10 +49,16 @@ This sheet makes no statement on the correctness of any of the tools, it merely 
 <td>
 ✓
 </td>
+<td>
+✓
+</td>
 </tr>
 <tr>
 <td>Recursive attribute</td>
 <td><code>$..author</code></td>
+<td>
+✓
+</td>
 <td>
 ✓
 </td>
@@ -77,10 +87,16 @@ This sheet makes no statement on the correctness of any of the tools, it merely 
 <td>
 ✗
 </td>
+<td>
+✗
+</td>
 </tr>
 <tr>
 <td>All children</td>
 <td><code>$.book.*</code></td>
+<td>
+✓
+</td>
 <td>
 ✓
 </td>
@@ -99,6 +115,9 @@ This sheet makes no statement on the correctness of any of the tools, it merely 
 <td><code>$.book[-1:]</code></td>
 <td>
 <a href="#Clojure_json-path___last_array_index">e</a>
+</td>
+<td>
+✓
 </td>
 <td>
 ✓
@@ -125,12 +144,18 @@ This sheet makes no statement on the correctness of any of the tools, it merely 
 <td>
 ✓
 </td>
+<td>
+✓
+</td>
 </tr>
 <tr>
 <td>Array index step start end step</td>
 <td><code>$.book[0:3:2]</code></td>
 <td>
 ✗
+</td>
+<td>
+✓
 </td>
 <td>
 ✓
@@ -157,6 +182,9 @@ This sheet makes no statement on the correctness of any of the tools, it merely 
 <td>
 ✓
 </td>
+<td>
+✓
+</td>
 </tr>
 <tr>
 <td>Array index step start</td>
@@ -173,21 +201,27 @@ This sheet makes no statement on the correctness of any of the tools, it merely 
 <td>
 ✓
 </td>
+<td>
+✓
+</td>
 </tr>
 <tr>
 <td>Array index</td>
 <td><code>$.book[2]</code></td>
 <td>
-✓
+✗
 </td>
 <td>
 ✗
 </td>
 <td>
-✓
+✗
 </td>
 <td>
-✓
+✗
+</td>
+<td>
+✗
 </td>
 </tr>
 <tr>
@@ -195,6 +229,9 @@ This sheet makes no statement on the correctness of any of the tools, it merely 
 <td><code>$.book[:2]</code></td>
 <td>
 ✗
+</td>
+<td>
+✓
 </td>
 <td>
 ✓
@@ -221,12 +258,18 @@ This sheet makes no statement on the correctness of any of the tools, it merely 
 <td>
 ✓
 </td>
+<td>
+✓
+</td>
 </tr>
 <tr>
 <td>Nested recursive</td>
 <td><code>$.store..price</code></td>
 <td>
 <a href="#Clojure_json-path___nested_recursive">e</a>
+</td>
+<td>
+✓
 </td>
 <td>
 ✓
@@ -253,12 +296,18 @@ This sheet makes no statement on the correctness of any of the tools, it merely 
 <td>
 ✓
 </td>
+<td>
+✓
+</td>
 </tr>
 <tr>
 <td>Bracket for object with double quotes</td>
 <td><code>$["key"]</code></td>
 <td>
 <a href="#Clojure_json-path___bracket_for_object_with_double_quotes">e</a>
+</td>
+<td>
+<a href="#JavaScript_Goessner-jsonpath___bracket_for_object_with_double_quotes">e</a>
 </td>
 <td>
 ?
@@ -277,13 +326,16 @@ This sheet makes no statement on the correctness of any of the tools, it merely 
 <a href="#Clojure_json-path___bracket_for_object">e</a>
 </td>
 <td>
-✓
+✗
 </td>
 <td>
 ✓
 </td>
 <td>
-✓
+✗
+</td>
+<td>
+✗
 </td>
 </tr>
 </tbody>
@@ -461,6 +513,18 @@ Clojure (json-path), Nested recursive
     	at json_path_comparison.core$_main.doInvoke(core.clj:6)
     	at clojure.lang.RestFn.applyTo(RestFn.java:137)
     	at json_path_comparison.core.main(Unknown Source)
+
+<h3 id="JavaScript_Goessner-jsonpath___bracket_for_object_with_double_quotes">
+JavaScript (Goessner-jsonpath), Bracket for object with double quotes
+</h3>
+
+    jsonpath returned false, this might indicate an error
+
+<h3 id="JavaScript_Goessner-jsonpath___root">
+JavaScript (Goessner-jsonpath), Root
+</h3>
+
+    jsonpath returned false, this might indicate an error
 
 <h3 id="JavaScript_jsonpath-plus___bracket_for_object_with_double_quotes">
 JavaScript (jsonpath-plus), Bracket for object with double quotes
