@@ -2,8 +2,9 @@
 set -euo pipefail
 
 readonly script_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-readonly tmp_error_report_dir="/tmp/compare_jsonpath.errors.$$"
-readonly tmp_result_dir="/tmp/compare_jsonpath.results.$$"
+readonly tmp_error_report_dir="/tmp/compare_jsonpath.error_report.$$"
+readonly tmp_results_report_dir="/tmp/compare_jsonpath.results_report.$$"
+readonly tmp_result_dir="/tmp/compare_jsonpath.result.$$"
 
 pretty_tool_name() {
     local tool="$1"
@@ -58,24 +59,27 @@ compare_results() {
     if [[ $results_count -eq 1 ]]; then
         # nothing to compare to, maybe, maybe not correct
         echo "(✓)"
-        return
+        return 0
     fi
 
     if [[ $results_count -eq 2 ]]; then
         # 2 items should match to get a check mark
         if [[ $(tools_diverging_from "$results_dir" "$tool" | wc -l) -eq 0 ]]; then
             echo "✓"
+            return 0
         else
             echo "?"
+            return 1
         fi
-        return
     fi
 
     # If everybody agrees with me except one we are in a safe majority
     if [[ $(tools_diverging_from "$results_dir" "$tool" | wc -l) -lt 2 ]]; then
         echo "✓"
+        return 0
     else
         echo "✗"
+        return 1
     fi
 }
 
@@ -85,6 +89,7 @@ compile_row() {
     local selector_file="$query_dir"/selector
     local document="$query_dir"/document.json
     local results_dir="${tmp_result_dir}/${query}"
+    local results_report_dir="${tmp_results_report_dir}/${query}"
     local selector
     local query_name
     local tool
@@ -97,6 +102,7 @@ compile_row() {
     echo "<td><code>${selector}</code></td>"
 
     mkdir -p "$results_dir"
+    mkdir -p "$results_report_dir"
 
     while IFS= read -r tool; do
         error_key="${tool}___${query}"
@@ -114,7 +120,11 @@ compile_row() {
         error_key="${tool}___${query}"
         echo "<td>"
         if [[ -f "${results_dir}/${tool}" ]]; then
-            compare_results "$results_dir" "$tool"
+            if compare_results "$results_dir" "$tool"; then
+                cp "${results_dir}/${tool}" "${results_report_dir}/ Gold Standard"
+            else
+                cp "${results_dir}/${tool}" "${results_report_dir}/${tool}"
+            fi
         else
             echo "<a href=\"#${error_key}\">e</a>"
         fi
@@ -157,13 +167,13 @@ compile_error_report() {
     done <<< "$(all_errors)"
 }
 
-all_query_results() {
-    find "${tmp_result_dir}" -type d -depth 1 -print0 | xargs -0 -n1 basename | sort
+all_results() {
+    find "${tmp_results_report_dir}" -type d -depth 1 -print0 | xargs -0 -n1 basename | sort
 }
 
 tool_results_for_query() {
     local query="$1"
-    find "${tmp_result_dir}/${query}" -type f -depth 1 -print0 | xargs -0 -n1 basename | sort
+    find "${tmp_results_report_dir}/${query}" -type f -depth 1 -print0 | xargs -0 -n1 basename | sort
 }
 
 compile_result_report() {
@@ -182,10 +192,10 @@ compile_result_report() {
             echo "<h4>"
             echo "$tool"
             echo "</h4>"
-            pre_block < "${tmp_result_dir}/${query}/${tool}"
+            pre_block < "${tmp_results_report_dir}/${query}/${tool}"
             echo
         done <<< "$(tool_results_for_query "$query")"
-    done <<< "$(all_query_results)"
+    done <<< "$(all_results)"
 }
 
 header_row() {
@@ -212,6 +222,7 @@ all_queries() {
 
 main() {
     mkdir -p "$tmp_error_report_dir"
+    mkdir -p "$tmp_results_report_dir"
     mkdir -p "$tmp_result_dir"
 
     echo "# Comparison of different implementations of JSONPath"
@@ -248,6 +259,7 @@ main() {
     compile_error_report
 
     rm -r "$tmp_error_report_dir"
+    rm -r "$tmp_results_report_dir"
     rm -r "$tmp_result_dir"
 }
 

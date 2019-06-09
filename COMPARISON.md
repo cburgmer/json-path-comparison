@@ -356,135 +356,7 @@ All children
 </h3>
 
 <h4>
-Clojure_json-path
-</h4>
-    [
-      {
-        "category": "reference",
-        "author": "Nigel Rees",
-        "title": "Sayings of the Century",
-        "price": 8.95
-      },
-      {
-        "category": "fiction",
-        "author": "Evelyn Waugh",
-        "title": "Sword of Honour",
-        "price": 12.99
-      },
-      {
-        "category": "fiction",
-        "author": "Herman Melville",
-        "title": "Moby Dick",
-        "isbn": "0-553-21311-3",
-        "price": 8.99
-      },
-      {
-        "category": "fiction",
-        "author": "J. R. R. Tolkien",
-        "title": "The Lord of the Rings",
-        "isbn": "0-395-19395-8",
-        "price": 22.99
-      }
-    ]
-
-<h4>
-JavaScript_Goessner-jsonpath
-</h4>
-    [
-      {
-        "category": "reference",
-        "author": "Nigel Rees",
-        "title": "Sayings of the Century",
-        "price": 8.95
-      },
-      {
-        "category": "fiction",
-        "author": "Evelyn Waugh",
-        "title": "Sword of Honour",
-        "price": 12.99
-      },
-      {
-        "category": "fiction",
-        "author": "Herman Melville",
-        "title": "Moby Dick",
-        "isbn": "0-553-21311-3",
-        "price": 8.99
-      },
-      {
-        "category": "fiction",
-        "author": "J. R. R. Tolkien",
-        "title": "The Lord of the Rings",
-        "isbn": "0-395-19395-8",
-        "price": 22.99
-      }
-    ]
-
-<h4>
-JavaScript_jsonpath
-</h4>
-    [
-      {
-        "category": "reference",
-        "author": "Nigel Rees",
-        "title": "Sayings of the Century",
-        "price": 8.95
-      },
-      {
-        "category": "fiction",
-        "author": "Evelyn Waugh",
-        "title": "Sword of Honour",
-        "price": 12.99
-      },
-      {
-        "category": "fiction",
-        "author": "Herman Melville",
-        "title": "Moby Dick",
-        "isbn": "0-553-21311-3",
-        "price": 8.99
-      },
-      {
-        "category": "fiction",
-        "author": "J. R. R. Tolkien",
-        "title": "The Lord of the Rings",
-        "isbn": "0-395-19395-8",
-        "price": 22.99
-      }
-    ]
-
-<h4>
-JavaScript_jsonpath-plus
-</h4>
-    [
-      {
-        "category": "reference",
-        "author": "Nigel Rees",
-        "title": "Sayings of the Century",
-        "price": 8.95
-      },
-      {
-        "category": "fiction",
-        "author": "Evelyn Waugh",
-        "title": "Sword of Honour",
-        "price": 12.99
-      },
-      {
-        "category": "fiction",
-        "author": "Herman Melville",
-        "title": "Moby Dick",
-        "isbn": "0-553-21311-3",
-        "price": 8.99
-      },
-      {
-        "category": "fiction",
-        "author": "J. R. R. Tolkien",
-        "title": "The Lord of the Rings",
-        "isbn": "0-395-19395-8",
-        "price": 22.99
-      }
-    ]
-
-<h4>
-Rust_jsonpath_lib
+ Gold Standard
 </h4>
     [
       {
@@ -520,6 +392,44 @@ All children with nested
 </h3>
 
 <h4>
+ Gold Standard
+</h4>
+    [
+      [
+        {
+          "category": "reference",
+          "author": "Nigel Rees",
+          "title": "Sayings of the Century",
+          "price": 8.95
+        },
+        {
+          "category": "fiction",
+          "author": "Evelyn Waugh",
+          "title": "Sword of Honour",
+          "price": 12.99
+        },
+        {
+          "category": "fiction",
+          "author": "Herman Melville",
+          "title": "Moby Dick",
+          "isbn": "0-553-21311-3",
+          "price": 8.99
+        },
+        {
+          "category": "fiction",
+          "author": "J. R. R. Tolkien",
+          "title": "The Lord of the Rings",
+          "isbn": "0-395-19395-8",
+          "price": 22.99
+        }
+      ],
+      {
+        "color": "red",
+        "price": 19.95
+      }
+    ]
+
+<h4>
 Clojure_json-path
 </h4>
     [
@@ -555,518 +465,12 @@ Clojure_json-path
       }
     ]
 
-<h4>
-JavaScript_Goessner-jsonpath
-</h4>
-    [
-      [
-        {
-          "category": "reference",
-          "author": "Nigel Rees",
-          "title": "Sayings of the Century",
-          "price": 8.95
-        },
-        {
-          "category": "fiction",
-          "author": "Evelyn Waugh",
-          "title": "Sword of Honour",
-          "price": 12.99
-        },
-        {
-          "category": "fiction",
-          "author": "Herman Melville",
-          "title": "Moby Dick",
-          "isbn": "0-553-21311-3",
-          "price": 8.99
-        },
-        {
-          "category": "fiction",
-          "author": "J. R. R. Tolkien",
-          "title": "The Lord of the Rings",
-          "isbn": "0-395-19395-8",
-          "price": 22.99
-        }
-      ],
-      {
-        "color": "red",
-        "price": 19.95
-      }
-    ]
-
-<h4>
-JavaScript_jsonpath
-</h4>
-    [
-      [
-        {
-          "category": "reference",
-          "author": "Nigel Rees",
-          "title": "Sayings of the Century",
-          "price": 8.95
-        },
-        {
-          "category": "fiction",
-          "author": "Evelyn Waugh",
-          "title": "Sword of Honour",
-          "price": 12.99
-        },
-        {
-          "category": "fiction",
-          "author": "Herman Melville",
-          "title": "Moby Dick",
-          "isbn": "0-553-21311-3",
-          "price": 8.99
-        },
-        {
-          "category": "fiction",
-          "author": "J. R. R. Tolkien",
-          "title": "The Lord of the Rings",
-          "isbn": "0-395-19395-8",
-          "price": 22.99
-        }
-      ],
-      {
-        "color": "red",
-        "price": 19.95
-      }
-    ]
-
-<h4>
-JavaScript_jsonpath-plus
-</h4>
-    [
-      [
-        {
-          "category": "reference",
-          "author": "Nigel Rees",
-          "title": "Sayings of the Century",
-          "price": 8.95
-        },
-        {
-          "category": "fiction",
-          "author": "Evelyn Waugh",
-          "title": "Sword of Honour",
-          "price": 12.99
-        },
-        {
-          "category": "fiction",
-          "author": "Herman Melville",
-          "title": "Moby Dick",
-          "isbn": "0-553-21311-3",
-          "price": 8.99
-        },
-        {
-          "category": "fiction",
-          "author": "J. R. R. Tolkien",
-          "title": "The Lord of the Rings",
-          "isbn": "0-395-19395-8",
-          "price": 22.99
-        }
-      ],
-      {
-        "color": "red",
-        "price": 19.95
-      }
-    ]
-
-<h4>
-Rust_jsonpath_lib
-</h4>
-    [
-      [
-        {
-          "category": "reference",
-          "author": "Nigel Rees",
-          "title": "Sayings of the Century",
-          "price": 8.95
-        },
-        {
-          "category": "fiction",
-          "author": "Evelyn Waugh",
-          "title": "Sword of Honour",
-          "price": 12.99
-        },
-        {
-          "category": "fiction",
-          "author": "Herman Melville",
-          "title": "Moby Dick",
-          "isbn": "0-553-21311-3",
-          "price": 8.99
-        },
-        {
-          "category": "fiction",
-          "author": "J. R. R. Tolkien",
-          "title": "The Lord of the Rings",
-          "isbn": "0-395-19395-8",
-          "price": 22.99
-        }
-      ],
-      {
-        "color": "red",
-        "price": 19.95
-      }
-    ]
-
 <h3 id="all_elements">
 All elements
 </h3>
 
 <h4>
-JavaScript_Goessner-jsonpath
-</h4>
-    [
-      {
-        "book": [
-          {
-            "category": "reference",
-            "author": "Nigel Rees",
-            "title": "Sayings of the Century",
-            "price": 8.95
-          },
-          {
-            "category": "fiction",
-            "author": "Evelyn Waugh",
-            "title": "Sword of Honour",
-            "price": 12.99
-          },
-          {
-            "category": "fiction",
-            "author": "Herman Melville",
-            "title": "Moby Dick",
-            "isbn": "0-553-21311-3",
-            "price": 8.99
-          },
-          {
-            "category": "fiction",
-            "author": "J. R. R. Tolkien",
-            "title": "The Lord of the Rings",
-            "isbn": "0-395-19395-8",
-            "price": 22.99
-          }
-        ],
-        "bicycle": {
-          "color": "red",
-          "price": 19.95
-        }
-      },
-      [
-        {
-          "category": "reference",
-          "author": "Nigel Rees",
-          "title": "Sayings of the Century",
-          "price": 8.95
-        },
-        {
-          "category": "fiction",
-          "author": "Evelyn Waugh",
-          "title": "Sword of Honour",
-          "price": 12.99
-        },
-        {
-          "category": "fiction",
-          "author": "Herman Melville",
-          "title": "Moby Dick",
-          "isbn": "0-553-21311-3",
-          "price": 8.99
-        },
-        {
-          "category": "fiction",
-          "author": "J. R. R. Tolkien",
-          "title": "The Lord of the Rings",
-          "isbn": "0-395-19395-8",
-          "price": 22.99
-        }
-      ],
-      {
-        "color": "red",
-        "price": 19.95
-      },
-      {
-        "category": "reference",
-        "author": "Nigel Rees",
-        "title": "Sayings of the Century",
-        "price": 8.95
-      },
-      {
-        "category": "fiction",
-        "author": "Evelyn Waugh",
-        "title": "Sword of Honour",
-        "price": 12.99
-      },
-      {
-        "category": "fiction",
-        "author": "Herman Melville",
-        "title": "Moby Dick",
-        "isbn": "0-553-21311-3",
-        "price": 8.99
-      },
-      {
-        "category": "fiction",
-        "author": "J. R. R. Tolkien",
-        "title": "The Lord of the Rings",
-        "isbn": "0-395-19395-8",
-        "price": 22.99
-      },
-      "reference",
-      "Nigel Rees",
-      "Sayings of the Century",
-      8.95,
-      "fiction",
-      "Evelyn Waugh",
-      "Sword of Honour",
-      12.99,
-      "fiction",
-      "Herman Melville",
-      "Moby Dick",
-      "0-553-21311-3",
-      8.99,
-      "fiction",
-      "J. R. R. Tolkien",
-      "The Lord of the Rings",
-      "0-395-19395-8",
-      22.99,
-      "red",
-      19.95
-    ]
-
-<h4>
-JavaScript_jsonpath
-</h4>
-    [
-      {
-        "book": [
-          {
-            "category": "reference",
-            "author": "Nigel Rees",
-            "title": "Sayings of the Century",
-            "price": 8.95
-          },
-          {
-            "category": "fiction",
-            "author": "Evelyn Waugh",
-            "title": "Sword of Honour",
-            "price": 12.99
-          },
-          {
-            "category": "fiction",
-            "author": "Herman Melville",
-            "title": "Moby Dick",
-            "isbn": "0-553-21311-3",
-            "price": 8.99
-          },
-          {
-            "category": "fiction",
-            "author": "J. R. R. Tolkien",
-            "title": "The Lord of the Rings",
-            "isbn": "0-395-19395-8",
-            "price": 22.99
-          }
-        ],
-        "bicycle": {
-          "color": "red",
-          "price": 19.95
-        }
-      },
-      [
-        {
-          "category": "reference",
-          "author": "Nigel Rees",
-          "title": "Sayings of the Century",
-          "price": 8.95
-        },
-        {
-          "category": "fiction",
-          "author": "Evelyn Waugh",
-          "title": "Sword of Honour",
-          "price": 12.99
-        },
-        {
-          "category": "fiction",
-          "author": "Herman Melville",
-          "title": "Moby Dick",
-          "isbn": "0-553-21311-3",
-          "price": 8.99
-        },
-        {
-          "category": "fiction",
-          "author": "J. R. R. Tolkien",
-          "title": "The Lord of the Rings",
-          "isbn": "0-395-19395-8",
-          "price": 22.99
-        }
-      ],
-      {
-        "color": "red",
-        "price": 19.95
-      },
-      {
-        "category": "reference",
-        "author": "Nigel Rees",
-        "title": "Sayings of the Century",
-        "price": 8.95
-      },
-      {
-        "category": "fiction",
-        "author": "Evelyn Waugh",
-        "title": "Sword of Honour",
-        "price": 12.99
-      },
-      {
-        "category": "fiction",
-        "author": "Herman Melville",
-        "title": "Moby Dick",
-        "isbn": "0-553-21311-3",
-        "price": 8.99
-      },
-      {
-        "category": "fiction",
-        "author": "J. R. R. Tolkien",
-        "title": "The Lord of the Rings",
-        "isbn": "0-395-19395-8",
-        "price": 22.99
-      },
-      "reference",
-      "Nigel Rees",
-      "Sayings of the Century",
-      8.95,
-      "fiction",
-      "Evelyn Waugh",
-      "Sword of Honour",
-      12.99,
-      "fiction",
-      "Herman Melville",
-      "Moby Dick",
-      "0-553-21311-3",
-      8.99,
-      "fiction",
-      "J. R. R. Tolkien",
-      "The Lord of the Rings",
-      "0-395-19395-8",
-      22.99,
-      "red",
-      19.95
-    ]
-
-<h4>
-JavaScript_jsonpath-plus
-</h4>
-    [
-      {
-        "book": [
-          {
-            "category": "reference",
-            "author": "Nigel Rees",
-            "title": "Sayings of the Century",
-            "price": 8.95
-          },
-          {
-            "category": "fiction",
-            "author": "Evelyn Waugh",
-            "title": "Sword of Honour",
-            "price": 12.99
-          },
-          {
-            "category": "fiction",
-            "author": "Herman Melville",
-            "title": "Moby Dick",
-            "isbn": "0-553-21311-3",
-            "price": 8.99
-          },
-          {
-            "category": "fiction",
-            "author": "J. R. R. Tolkien",
-            "title": "The Lord of the Rings",
-            "isbn": "0-395-19395-8",
-            "price": 22.99
-          }
-        ],
-        "bicycle": {
-          "color": "red",
-          "price": 19.95
-        }
-      },
-      [
-        {
-          "category": "reference",
-          "author": "Nigel Rees",
-          "title": "Sayings of the Century",
-          "price": 8.95
-        },
-        {
-          "category": "fiction",
-          "author": "Evelyn Waugh",
-          "title": "Sword of Honour",
-          "price": 12.99
-        },
-        {
-          "category": "fiction",
-          "author": "Herman Melville",
-          "title": "Moby Dick",
-          "isbn": "0-553-21311-3",
-          "price": 8.99
-        },
-        {
-          "category": "fiction",
-          "author": "J. R. R. Tolkien",
-          "title": "The Lord of the Rings",
-          "isbn": "0-395-19395-8",
-          "price": 22.99
-        }
-      ],
-      {
-        "color": "red",
-        "price": 19.95
-      },
-      {
-        "category": "reference",
-        "author": "Nigel Rees",
-        "title": "Sayings of the Century",
-        "price": 8.95
-      },
-      {
-        "category": "fiction",
-        "author": "Evelyn Waugh",
-        "title": "Sword of Honour",
-        "price": 12.99
-      },
-      {
-        "category": "fiction",
-        "author": "Herman Melville",
-        "title": "Moby Dick",
-        "isbn": "0-553-21311-3",
-        "price": 8.99
-      },
-      {
-        "category": "fiction",
-        "author": "J. R. R. Tolkien",
-        "title": "The Lord of the Rings",
-        "isbn": "0-395-19395-8",
-        "price": 22.99
-      },
-      "reference",
-      "Nigel Rees",
-      "Sayings of the Century",
-      8.95,
-      "fiction",
-      "Evelyn Waugh",
-      "Sword of Honour",
-      12.99,
-      "fiction",
-      "Herman Melville",
-      "Moby Dick",
-      "0-553-21311-3",
-      8.99,
-      "fiction",
-      "J. R. R. Tolkien",
-      "The Lord of the Rings",
-      "0-395-19395-8",
-      22.99,
-      "red",
-      19.95
-    ]
-
-<h4>
-Rust_jsonpath_lib
+ Gold Standard
 </h4>
     [
       {
@@ -1251,6 +655,24 @@ Array index step end
 </h3>
 
 <h4>
+ Gold Standard
+</h4>
+    [
+      {
+        "category": "reference",
+        "author": "Nigel Rees",
+        "title": "Sayings of the Century",
+        "price": 8.95
+      },
+      {
+        "category": "fiction",
+        "author": "Evelyn Waugh",
+        "title": "Sword of Honour",
+        "price": 12.99
+      }
+    ]
+
+<h4>
 Clojure_json-path
 </h4>
     {
@@ -1261,81 +683,35 @@ Clojure_json-path
       "price": 8.99
     }
 
-<h4>
-JavaScript_Goessner-jsonpath
-</h4>
-    [
-      {
-        "category": "reference",
-        "author": "Nigel Rees",
-        "title": "Sayings of the Century",
-        "price": 8.95
-      },
-      {
-        "category": "fiction",
-        "author": "Evelyn Waugh",
-        "title": "Sword of Honour",
-        "price": 12.99
-      }
-    ]
-
-<h4>
-JavaScript_jsonpath
-</h4>
-    [
-      {
-        "category": "reference",
-        "author": "Nigel Rees",
-        "title": "Sayings of the Century",
-        "price": 8.95
-      },
-      {
-        "category": "fiction",
-        "author": "Evelyn Waugh",
-        "title": "Sword of Honour",
-        "price": 12.99
-      }
-    ]
-
-<h4>
-JavaScript_jsonpath-plus
-</h4>
-    [
-      {
-        "category": "reference",
-        "author": "Nigel Rees",
-        "title": "Sayings of the Century",
-        "price": 8.95
-      },
-      {
-        "category": "fiction",
-        "author": "Evelyn Waugh",
-        "title": "Sword of Honour",
-        "price": 12.99
-      }
-    ]
-
-<h4>
-Rust_jsonpath_lib
-</h4>
-    [
-      {
-        "category": "reference",
-        "author": "Nigel Rees",
-        "title": "Sayings of the Century",
-        "price": 8.95
-      },
-      {
-        "category": "fiction",
-        "author": "Evelyn Waugh",
-        "title": "Sword of Honour",
-        "price": 12.99
-      }
-    ]
-
 <h3 id="array_index_step_start">
 Array index step start
 </h3>
+
+<h4>
+ Gold Standard
+</h4>
+    [
+      {
+        "category": "fiction",
+        "author": "Evelyn Waugh",
+        "title": "Sword of Honour",
+        "price": 12.99
+      },
+      {
+        "category": "fiction",
+        "author": "Herman Melville",
+        "title": "Moby Dick",
+        "isbn": "0-553-21311-3",
+        "price": 8.99
+      },
+      {
+        "category": "fiction",
+        "author": "J. R. R. Tolkien",
+        "title": "The Lord of the Rings",
+        "isbn": "0-395-19395-8",
+        "price": 22.99
+      }
+    ]
 
 <h4>
 Clojure_json-path
@@ -1346,116 +722,31 @@ Clojure_json-path
       "title": "Sword of Honour",
       "price": 12.99
     }
-
-<h4>
-JavaScript_Goessner-jsonpath
-</h4>
-    [
-      {
-        "category": "fiction",
-        "author": "Evelyn Waugh",
-        "title": "Sword of Honour",
-        "price": 12.99
-      },
-      {
-        "category": "fiction",
-        "author": "Herman Melville",
-        "title": "Moby Dick",
-        "isbn": "0-553-21311-3",
-        "price": 8.99
-      },
-      {
-        "category": "fiction",
-        "author": "J. R. R. Tolkien",
-        "title": "The Lord of the Rings",
-        "isbn": "0-395-19395-8",
-        "price": 22.99
-      }
-    ]
-
-<h4>
-JavaScript_jsonpath
-</h4>
-    [
-      {
-        "category": "fiction",
-        "author": "Evelyn Waugh",
-        "title": "Sword of Honour",
-        "price": 12.99
-      },
-      {
-        "category": "fiction",
-        "author": "Herman Melville",
-        "title": "Moby Dick",
-        "isbn": "0-553-21311-3",
-        "price": 8.99
-      },
-      {
-        "category": "fiction",
-        "author": "J. R. R. Tolkien",
-        "title": "The Lord of the Rings",
-        "isbn": "0-395-19395-8",
-        "price": 22.99
-      }
-    ]
-
-<h4>
-JavaScript_jsonpath-plus
-</h4>
-    [
-      {
-        "category": "fiction",
-        "author": "Evelyn Waugh",
-        "title": "Sword of Honour",
-        "price": 12.99
-      },
-      {
-        "category": "fiction",
-        "author": "Herman Melville",
-        "title": "Moby Dick",
-        "isbn": "0-553-21311-3",
-        "price": 8.99
-      },
-      {
-        "category": "fiction",
-        "author": "J. R. R. Tolkien",
-        "title": "The Lord of the Rings",
-        "isbn": "0-395-19395-8",
-        "price": 22.99
-      }
-    ]
-
-<h4>
-Rust_jsonpath_lib
-</h4>
-    [
-      {
-        "category": "fiction",
-        "author": "Evelyn Waugh",
-        "title": "Sword of Honour",
-        "price": 12.99
-      },
-      {
-        "category": "fiction",
-        "author": "Herman Melville",
-        "title": "Moby Dick",
-        "isbn": "0-553-21311-3",
-        "price": 8.99
-      },
-      {
-        "category": "fiction",
-        "author": "J. R. R. Tolkien",
-        "title": "The Lord of the Rings",
-        "isbn": "0-395-19395-8",
-        "price": 22.99
-      }
-    ]
 
 <h3 id="array_index_step_start_end">
 Array index step start end
 </h3>
 
 <h4>
+ Gold Standard
+</h4>
+    [
+      {
+        "category": "fiction",
+        "author": "Evelyn Waugh",
+        "title": "Sword of Honour",
+        "price": 12.99
+      },
+      {
+        "category": "fiction",
+        "author": "Herman Melville",
+        "title": "Moby Dick",
+        "isbn": "0-553-21311-3",
+        "price": 8.99
+      }
+    ]
+
+<h4>
 Clojure_json-path
 </h4>
     {
@@ -1465,85 +756,28 @@ Clojure_json-path
       "price": 12.99
     }
 
-<h4>
-JavaScript_Goessner-jsonpath
-</h4>
-    [
-      {
-        "category": "fiction",
-        "author": "Evelyn Waugh",
-        "title": "Sword of Honour",
-        "price": 12.99
-      },
-      {
-        "category": "fiction",
-        "author": "Herman Melville",
-        "title": "Moby Dick",
-        "isbn": "0-553-21311-3",
-        "price": 8.99
-      }
-    ]
-
-<h4>
-JavaScript_jsonpath
-</h4>
-    [
-      {
-        "category": "fiction",
-        "author": "Evelyn Waugh",
-        "title": "Sword of Honour",
-        "price": 12.99
-      },
-      {
-        "category": "fiction",
-        "author": "Herman Melville",
-        "title": "Moby Dick",
-        "isbn": "0-553-21311-3",
-        "price": 8.99
-      }
-    ]
-
-<h4>
-JavaScript_jsonpath-plus
-</h4>
-    [
-      {
-        "category": "fiction",
-        "author": "Evelyn Waugh",
-        "title": "Sword of Honour",
-        "price": 12.99
-      },
-      {
-        "category": "fiction",
-        "author": "Herman Melville",
-        "title": "Moby Dick",
-        "isbn": "0-553-21311-3",
-        "price": 8.99
-      }
-    ]
-
-<h4>
-Rust_jsonpath_lib
-</h4>
-    [
-      {
-        "category": "fiction",
-        "author": "Evelyn Waugh",
-        "title": "Sword of Honour",
-        "price": 12.99
-      },
-      {
-        "category": "fiction",
-        "author": "Herman Melville",
-        "title": "Moby Dick",
-        "isbn": "0-553-21311-3",
-        "price": 8.99
-      }
-    ]
-
 <h3 id="array_index_step_start_end_step">
 Array index step start end step
 </h3>
+
+<h4>
+ Gold Standard
+</h4>
+    [
+      {
+        "category": "reference",
+        "author": "Nigel Rees",
+        "title": "Sayings of the Century",
+        "price": 8.95
+      },
+      {
+        "category": "fiction",
+        "author": "Herman Melville",
+        "title": "Moby Dick",
+        "isbn": "0-553-21311-3",
+        "price": 8.99
+      }
+    ]
 
 <h4>
 Clojure_json-path
@@ -1554,69 +788,30 @@ Clojure_json-path
       "title": "Sayings of the Century",
       "price": 8.95
     }
-
-<h4>
-JavaScript_Goessner-jsonpath
-</h4>
-    [
-      {
-        "category": "reference",
-        "author": "Nigel Rees",
-        "title": "Sayings of the Century",
-        "price": 8.95
-      },
-      {
-        "category": "fiction",
-        "author": "Herman Melville",
-        "title": "Moby Dick",
-        "isbn": "0-553-21311-3",
-        "price": 8.99
-      }
-    ]
-
-<h4>
-JavaScript_jsonpath
-</h4>
-    [
-      {
-        "category": "reference",
-        "author": "Nigel Rees",
-        "title": "Sayings of the Century",
-        "price": 8.95
-      },
-      {
-        "category": "fiction",
-        "author": "Herman Melville",
-        "title": "Moby Dick",
-        "isbn": "0-553-21311-3",
-        "price": 8.99
-      }
-    ]
-
-<h4>
-JavaScript_jsonpath-plus
-</h4>
-    [
-      {
-        "category": "reference",
-        "author": "Nigel Rees",
-        "title": "Sayings of the Century",
-        "price": 8.95
-      },
-      {
-        "category": "fiction",
-        "author": "Herman Melville",
-        "title": "Moby Dick",
-        "isbn": "0-553-21311-3",
-        "price": 8.99
-      }
-    ]
 
 <h3 id="array_index_union">
 Array index union
 </h3>
 
 <h4>
+ Gold Standard
+</h4>
+    [
+      {
+        "category": "reference",
+        "author": "Nigel Rees",
+        "title": "Sayings of the Century",
+        "price": 8.95
+      },
+      {
+        "category": "fiction",
+        "author": "Evelyn Waugh",
+        "title": "Sword of Honour",
+        "price": 12.99
+      }
+    ]
+
+<h4>
 Clojure_json-path
 </h4>
     {
@@ -1625,78 +820,6 @@ Clojure_json-path
       "title": "Sayings of the Century",
       "price": 8.95
     }
-
-<h4>
-JavaScript_Goessner-jsonpath
-</h4>
-    [
-      {
-        "category": "reference",
-        "author": "Nigel Rees",
-        "title": "Sayings of the Century",
-        "price": 8.95
-      },
-      {
-        "category": "fiction",
-        "author": "Evelyn Waugh",
-        "title": "Sword of Honour",
-        "price": 12.99
-      }
-    ]
-
-<h4>
-JavaScript_jsonpath
-</h4>
-    [
-      {
-        "category": "reference",
-        "author": "Nigel Rees",
-        "title": "Sayings of the Century",
-        "price": 8.95
-      },
-      {
-        "category": "fiction",
-        "author": "Evelyn Waugh",
-        "title": "Sword of Honour",
-        "price": 12.99
-      }
-    ]
-
-<h4>
-JavaScript_jsonpath-plus
-</h4>
-    [
-      {
-        "category": "reference",
-        "author": "Nigel Rees",
-        "title": "Sayings of the Century",
-        "price": 8.95
-      },
-      {
-        "category": "fiction",
-        "author": "Evelyn Waugh",
-        "title": "Sword of Honour",
-        "price": 12.99
-      }
-    ]
-
-<h4>
-Rust_jsonpath_lib
-</h4>
-    [
-      {
-        "category": "reference",
-        "author": "Nigel Rees",
-        "title": "Sayings of the Century",
-        "price": 8.95
-      },
-      {
-        "category": "fiction",
-        "author": "Evelyn Waugh",
-        "title": "Sword of Honour",
-        "price": 12.99
-      }
-    ]
 
 <h3 id="bracket_for_object">
 Bracket for object
@@ -1747,47 +870,7 @@ Deep attribute
 </h3>
 
 <h4>
-Clojure_json-path
-</h4>
-    [
-      "Nigel Rees",
-      "Evelyn Waugh",
-      "Herman Melville",
-      "J. R. R. Tolkien"
-    ]
-
-<h4>
-JavaScript_Goessner-jsonpath
-</h4>
-    [
-      "Nigel Rees",
-      "Evelyn Waugh",
-      "Herman Melville",
-      "J. R. R. Tolkien"
-    ]
-
-<h4>
-JavaScript_jsonpath
-</h4>
-    [
-      "Nigel Rees",
-      "Evelyn Waugh",
-      "Herman Melville",
-      "J. R. R. Tolkien"
-    ]
-
-<h4>
-JavaScript_jsonpath-plus
-</h4>
-    [
-      "Nigel Rees",
-      "Evelyn Waugh",
-      "Herman Melville",
-      "J. R. R. Tolkien"
-    ]
-
-<h4>
-Rust_jsonpath_lib
+ Gold Standard
 </h4>
     [
       "Nigel Rees",
@@ -1801,20 +884,7 @@ Last array index
 </h3>
 
 <h4>
-JavaScript_Goessner-jsonpath
-</h4>
-    [
-      {
-        "category": "fiction",
-        "author": "J. R. R. Tolkien",
-        "title": "The Lord of the Rings",
-        "isbn": "0-395-19395-8",
-        "price": 22.99
-      }
-    ]
-
-<h4>
-JavaScript_jsonpath
+ Gold Standard
 </h4>
     [
       {
@@ -1836,19 +906,6 @@ JavaScript_jsonpath-plus
       "isbn": "0-395-19395-8",
       "price": 22.99
     }
-
-<h4>
-Rust_jsonpath_lib
-</h4>
-    [
-      {
-        "category": "fiction",
-        "author": "J. R. R. Tolkien",
-        "title": "The Lord of the Rings",
-        "isbn": "0-395-19395-8",
-        "price": 22.99
-      }
-    ]
 
 <h3 id="list_result">
 List result
@@ -2025,40 +1082,7 @@ Nested recursive
 </h3>
 
 <h4>
-JavaScript_Goessner-jsonpath
-</h4>
-    [
-      8.95,
-      12.99,
-      8.99,
-      22.99,
-      19.95
-    ]
-
-<h4>
-JavaScript_jsonpath
-</h4>
-    [
-      8.95,
-      12.99,
-      8.99,
-      22.99,
-      19.95
-    ]
-
-<h4>
-JavaScript_jsonpath-plus
-</h4>
-    [
-      8.95,
-      12.99,
-      8.99,
-      22.99,
-      19.95
-    ]
-
-<h4>
-Rust_jsonpath_lib
+ Gold Standard
 </h4>
     [
       8.95,
@@ -2073,47 +1097,7 @@ Recursive attribute
 </h3>
 
 <h4>
-Clojure_json-path
-</h4>
-    [
-      "Nigel Rees",
-      "Evelyn Waugh",
-      "Herman Melville",
-      "J. R. R. Tolkien"
-    ]
-
-<h4>
-JavaScript_Goessner-jsonpath
-</h4>
-    [
-      "Nigel Rees",
-      "Evelyn Waugh",
-      "Herman Melville",
-      "J. R. R. Tolkien"
-    ]
-
-<h4>
-JavaScript_jsonpath
-</h4>
-    [
-      "Nigel Rees",
-      "Evelyn Waugh",
-      "Herman Melville",
-      "J. R. R. Tolkien"
-    ]
-
-<h4>
-JavaScript_jsonpath-plus
-</h4>
-    [
-      "Nigel Rees",
-      "Evelyn Waugh",
-      "Herman Melville",
-      "J. R. R. Tolkien"
-    ]
-
-<h4>
-Rust_jsonpath_lib
+ Gold Standard
 </h4>
     [
       "Nigel Rees",
@@ -2127,7 +1111,7 @@ Root
 </h3>
 
 <h4>
-Clojure_json-path
+ Gold Standard
 </h4>
     {
       "key": "value",
@@ -2153,32 +1137,6 @@ JavaScript_jsonpath
         }
       }
     ]
-
-<h4>
-JavaScript_jsonpath-plus
-</h4>
-    {
-      "key": "value",
-      "another key": {
-        "complex": [
-          "a",
-          1
-        ]
-      }
-    }
-
-<h4>
-Rust_jsonpath_lib
-</h4>
-    {
-      "key": "value",
-      "another key": {
-        "complex": [
-          "a",
-          1
-        ]
-      }
-    }
 
 
 ## Errors
