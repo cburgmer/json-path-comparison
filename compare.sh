@@ -150,25 +150,26 @@ main() {
     mkdir -p "$tmp_results_report_dir"
     mkdir -p "$tmp_result_dir"
 
-    echo "# Comparison of different implementations of JSONPath"
-    echo
-    echo "This sheet makes no statement on the correctness of any of the tools, it merely believes in what the majority says."
-    echo
-    echo "<table>"
+    {
+        echo "# Comparison of different implementations of JSONPath"
+        echo
+        echo "This sheet makes no statement on the correctness of any of the tools, it merely believes in what the majority says."
+        echo
+        echo "<table>"
 
-    echo "<thead>"
-    header_row
-    echo "</thead>"
+        echo "<thead>"
+        header_row
+        echo "</thead>"
 
-    echo "<tbody>"
+        echo "<tbody>"
 
-    while IFS= read -r query; do
-        compile_row "$query"
-    done <<< "$(all_queries)"
+        while IFS= read -r query; do
+            compile_row "$query"
+        done <<< "$(all_queries)"
 
-    echo "</tbody>"
-    echo "</table>"
-    echo "
+        echo "</tbody>"
+        echo "</table>"
+        echo "
 ## Explanation
 
 - ✓, the result of this tool matches what the majority says
@@ -176,6 +177,7 @@ main() {
 - ?, the results disagree, but there are not enough samples to be conclusive on which one is probably correct
 - (✓), there are not enough candidates available to check for correctness
 - e, the tool failed executing the query and probably does not support this type of query"
+    } > "COMPARISON.md"
 
     "${script_dir}"/results_report.sh "$tmp_results_report_dir"
     "${script_dir}"/error_report.sh "$tmp_error_report_dir"

@@ -22,6 +22,6 @@ if ! which markdown > /dev/null; then
     exit 1
 fi
 
-./compare.sh | tee COMPARISON.md
+./compare.sh
 markdown < COMPARISON.md > COMPARISON.md.html
 echo "Run \`open COMPARISON.md.html\`"
