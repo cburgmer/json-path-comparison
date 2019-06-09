@@ -118,7 +118,7 @@ compile_row() {
         echo "<td>"
         if [[ -f "${results_dir}/${tool}" ]]; then
             if compare_results "$results_dir" "$tool"; then
-                cp "${results_dir}/${tool}" "${results_report_dir}/ Gold Standard"
+                cp "${results_dir}/${tool}" "${results_report_dir}/ Gold Standard_consensus"
             else
                 cp "${results_dir}/${tool}" "${results_report_dir}/${tool}"
             fi

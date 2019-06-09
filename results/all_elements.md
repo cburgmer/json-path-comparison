@@ -1,6 +1,6 @@
 ## All elements
 
-###  Gold Standard
+###  Gold Standard (consensus)
 
     [
       {

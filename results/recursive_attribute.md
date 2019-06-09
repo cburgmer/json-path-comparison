@@ -1,6 +1,6 @@
 ## Recursive attribute
 
-###  Gold Standard
+###  Gold Standard (consensus)
 
     [
       "Nigel Rees",

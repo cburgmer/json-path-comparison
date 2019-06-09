@@ -25,7 +25,7 @@ compile_result_report() {
             echo
 
             while IFS= read -r tool; do
-                echo "### ${tool}"
+                echo "### $(pretty_tool_name "$tool")"
                 echo
                 pre_block < "${tmp_results_report_dir}/${query}/${tool}"
                 echo

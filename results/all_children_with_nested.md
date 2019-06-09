@@ -1,6 +1,6 @@
 ## All children with nested
 
-###  Gold Standard
+###  Gold Standard (consensus)
 
     [
       [
@@ -37,7 +37,7 @@
       }
     ]
 
-### Clojure_json-path
+### Clojure (json-path)
 
     [
       {

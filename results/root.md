@@ -1,6 +1,6 @@
 ## Root
 
-###  Gold Standard
+###  Gold Standard (consensus)
 
     {
       "key": "value",
@@ -12,7 +12,7 @@
       }
     }
 
-### JavaScript_jsonpath
+### JavaScript (jsonpath)
 
     [
       {

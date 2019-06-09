@@ -1,6 +1,6 @@
 ## List result
 
-### Clojure_json-path
+### Clojure (json-path)
 
     [
       {
@@ -31,7 +31,7 @@
       }
     ]
 
-### JavaScript_Goessner-jsonpath
+### JavaScript (Goessner-jsonpath)
 
     [
       [
@@ -64,7 +64,7 @@
       ]
     ]
 
-### JavaScript_jsonpath
+### JavaScript (jsonpath)
 
     [
       [
@@ -97,7 +97,7 @@
       ]
     ]
 
-### JavaScript_jsonpath-plus
+### JavaScript (jsonpath-plus)
 
     [
       [
@@ -130,7 +130,7 @@
       ]
     ]
 
-### Rust_jsonpath_lib
+### Rust (jsonpath_lib)
 
     [
       {

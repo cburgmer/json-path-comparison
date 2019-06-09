@@ -1,6 +1,6 @@
 ## Array index
 
-### Clojure_json-path
+### Clojure (json-path)
 
     {
       "category": "fiction",
@@ -10,7 +10,7 @@
       "price": 8.99
     }
 
-### JavaScript_Goessner-jsonpath
+### JavaScript (Goessner-jsonpath)
 
     [
       {
@@ -22,7 +22,7 @@
       }
     ]
 
-### JavaScript_jsonpath
+### JavaScript (jsonpath)
 
     [
       {
@@ -34,7 +34,7 @@
       }
     ]
 
-### JavaScript_jsonpath-plus
+### JavaScript (jsonpath-plus)
 
     {
       "category": "fiction",
@@ -44,7 +44,7 @@
       "price": 8.99
     }
 
-### Rust_jsonpath_lib
+### Rust (jsonpath_lib)
 
     {
       "category": "fiction",

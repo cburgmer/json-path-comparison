@@ -1,6 +1,6 @@
 ## Last array index
 
-###  Gold Standard
+###  Gold Standard (consensus)
 
     [
       {
@@ -12,7 +12,7 @@
       }
     ]
 
-### JavaScript_jsonpath-plus
+### JavaScript (jsonpath-plus)
 
     {
       "category": "fiction",

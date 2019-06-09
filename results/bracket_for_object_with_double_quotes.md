@@ -1,12 +1,12 @@
 ## Bracket for object with double quotes
 
-### JavaScript_jsonpath
+### JavaScript (jsonpath)
 
     [
       "value"
     ]
 
-### Rust_jsonpath_lib
+### Rust (jsonpath_lib)
 
     "value"
 

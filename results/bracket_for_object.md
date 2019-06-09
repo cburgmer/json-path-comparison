@@ -1,22 +1,22 @@
 ## Bracket for object
 
-### JavaScript_Goessner-jsonpath
+### JavaScript (Goessner-jsonpath)
 
     [
       "value"
     ]
 
-### JavaScript_jsonpath
+### JavaScript (jsonpath)
 
     [
       "value"
     ]
 
-### JavaScript_jsonpath-plus
+### JavaScript (jsonpath-plus)
 
     "value"
 
-### Rust_jsonpath_lib
+### Rust (jsonpath_lib)
 
     "value"
 

@@ -1,6 +1,6 @@
 ## Array index step start end
 
-###  Gold Standard
+###  Gold Standard (consensus)
 
     [
       {
@@ -18,7 +18,7 @@
       }
     ]
 
-### Clojure_json-path
+### Clojure (json-path)
 
     {
       "category": "fiction",

@@ -1,6 +1,6 @@
 ## Deep attribute
 
-###  Gold Standard
+###  Gold Standard (consensus)
 
     [
       "Nigel Rees",
