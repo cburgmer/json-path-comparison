@@ -8,6 +8,7 @@ This sheet makes no statement on the correctness of any of the tools, it merely 
 <th></th>
 <th></th>
 <th>Clojure (json-path)</th>
+<th>JavaScript (jsonpath)</th>
 <th>JavaScript (jsonpath-plus)</th>
 <th>Rust (jsonpath_lib)</th>
 </tr>
@@ -18,6 +19,9 @@ This sheet makes no statement on the correctness of any of the tools, it merely 
 <td><code>$</code></td>
 <td>
 ✓
+</td>
+<td>
+✗
 </td>
 <td>
 ✓
@@ -38,10 +42,16 @@ This sheet makes no statement on the correctness of any of the tools, it merely 
 <td>
 ✓
 </td>
+<td>
+✓
+</td>
 </tr>
 <tr>
 <td>Recursive attribute</td>
 <td><code>$..author</code></td>
+<td>
+✓
+</td>
 <td>
 ✓
 </td>
@@ -56,18 +66,24 @@ This sheet makes no statement on the correctness of any of the tools, it merely 
 <td>List result</td>
 <td><code>$.book</code></td>
 <td>
-✓
+✗
 </td>
 <td>
 ✗
 </td>
 <td>
-✓
+✗
+</td>
+<td>
+✗
 </td>
 </tr>
 <tr>
 <td>All children</td>
 <td><code>$.book.*</code></td>
+<td>
+✓
+</td>
 <td>
 ✓
 </td>
@@ -85,10 +101,13 @@ This sheet makes no statement on the correctness of any of the tools, it merely 
 <a href="#Clojure_json-path___last_array_index">e</a>
 </td>
 <td>
-?
+✓
 </td>
 <td>
-?
+✗
+</td>
+<td>
+✓
 </td>
 </tr>
 <tr>
@@ -103,15 +122,21 @@ This sheet makes no statement on the correctness of any of the tools, it merely 
 <td>
 ✓
 </td>
+<td>
+✓
+</td>
 </tr>
 <tr>
 <td>Array index step start end step</td>
 <td><code>$.book[0:3:2]</code></td>
 <td>
-?
+✗
 </td>
 <td>
-?
+✓
+</td>
+<td>
+✓
 </td>
 <td>
 <a href="#Rust_jsonpath_lib___array_index_step_start_end_step">e</a>
@@ -122,6 +147,9 @@ This sheet makes no statement on the correctness of any of the tools, it merely 
 <td><code>$.book[1:3]</code></td>
 <td>
 ✗
+</td>
+<td>
+✓
 </td>
 <td>
 ✓
@@ -142,12 +170,18 @@ This sheet makes no statement on the correctness of any of the tools, it merely 
 <td>
 ✓
 </td>
+<td>
+✓
+</td>
 </tr>
 <tr>
 <td>Array index</td>
 <td><code>$.book[2]</code></td>
 <td>
 ✓
+</td>
+<td>
+✗
 </td>
 <td>
 ✓
@@ -168,12 +202,18 @@ This sheet makes no statement on the correctness of any of the tools, it merely 
 <td>
 ✓
 </td>
+<td>
+✓
+</td>
 </tr>
 <tr>
 <td>All children with nested</td>
 <td><code>$.store.*</code></td>
 <td>
 ✗
+</td>
+<td>
+✓
 </td>
 <td>
 ✓
@@ -194,10 +234,16 @@ This sheet makes no statement on the correctness of any of the tools, it merely 
 <td>
 ✓
 </td>
+<td>
+✓
+</td>
 </tr>
 <tr>
 <td>Deep attribute</td>
 <td><code>$.store.book[*].author</code></td>
+<td>
+✓
+</td>
 <td>
 ✓
 </td>
@@ -215,10 +261,13 @@ This sheet makes no statement on the correctness of any of the tools, it merely 
 <a href="#Clojure_json-path___bracket_for_object_with_double_quotes">e</a>
 </td>
 <td>
+?
+</td>
+<td>
 <a href="#JavaScript_jsonpath-plus___bracket_for_object_with_double_quotes">e</a>
 </td>
 <td>
-(✓)
+?
 </td>
 </tr>
 <tr>
@@ -226,6 +275,9 @@ This sheet makes no statement on the correctness of any of the tools, it merely 
 <td><code>$['key']</code></td>
 <td>
 <a href="#Clojure_json-path___bracket_for_object">e</a>
+</td>
+<td>
+✓
 </td>
 <td>
 ✓
