@@ -1,5 +1,7 @@
 # Comparison of different implementations of JSONPath
 
+This sheet makes no statement on the correctness of any of the tools, it merely believes in what the majority says.
+
 <table>
 <thead>
 <tr>
@@ -8,7 +10,6 @@
 <th>Clojure (json-path)</th>
 <th>JavaScript (jsonpath-plus)</th>
 <th>Rust (jsonpath_lib)</th>
-<th>Results align?</th>
 </tr>
 </thead>
 <tbody>
@@ -16,13 +17,10 @@
 <td>Root</td>
 <td><code>$</code></td>
 <td>
-
+✓
 </td>
 <td>
-
-</td>
-<td>
-
+✓
 </td>
 <td>
 ✓
@@ -32,13 +30,10 @@
 <td>All elements</td>
 <td><code>$..*</code></td>
 <td>
-<a href="#Clojure_json-path___all_elements">error</a>
+<a href="#Clojure_json-path___all_elements">e</a>
 </td>
 <td>
-
-</td>
-<td>
-
+✓
 </td>
 <td>
 ✓
@@ -48,13 +43,10 @@
 <td>Recursive attribute</td>
 <td><code>$..author</code></td>
 <td>
-
+✓
 </td>
 <td>
-
-</td>
-<td>
-
+✓
 </td>
 <td>
 ✓
@@ -64,29 +56,23 @@
 <td>List result</td>
 <td><code>$.book</code></td>
 <td>
-
-</td>
-<td>
-
-</td>
-<td>
-
+✓
 </td>
 <td>
 ✗
+</td>
+<td>
+✓
 </td>
 </tr>
 <tr>
 <td>All children</td>
 <td><code>$.book.*</code></td>
 <td>
-
+✓
 </td>
 <td>
-
-</td>
-<td>
-
+✓
 </td>
 <td>
 ✓
@@ -96,93 +82,75 @@
 <td>Last array index</td>
 <td><code>$.book[-1:]</code></td>
 <td>
-<a href="#Clojure_json-path___last_array_index">error</a>
+<a href="#Clojure_json-path___last_array_index">e</a>
 </td>
 <td>
-
+?
 </td>
 <td>
-
-</td>
-<td>
-✗
+?
 </td>
 </tr>
 <tr>
 <td>Array index union</td>
 <td><code>$.book[0,1]</code></td>
 <td>
-
-</td>
-<td>
-
-</td>
-<td>
-
-</td>
-<td>
 ✗
+</td>
+<td>
+✓
+</td>
+<td>
+✓
 </td>
 </tr>
 <tr>
 <td>Array index step start end step</td>
 <td><code>$.book[0:3:2]</code></td>
 <td>
-
+?
 </td>
 <td>
-
+?
 </td>
 <td>
-<a href="#Rust_jsonpath_lib___array_index_step_start_end_step">error</a>
-</td>
-<td>
-✗
+<a href="#Rust_jsonpath_lib___array_index_step_start_end_step">e</a>
 </td>
 </tr>
 <tr>
 <td>Array index step start end</td>
 <td><code>$.book[1:3]</code></td>
 <td>
-
-</td>
-<td>
-
-</td>
-<td>
-
-</td>
-<td>
 ✗
+</td>
+<td>
+✓
+</td>
+<td>
+✓
 </td>
 </tr>
 <tr>
 <td>Array index step start</td>
 <td><code>$.book[1:]</code></td>
 <td>
-
-</td>
-<td>
-
-</td>
-<td>
-
-</td>
-<td>
 ✗
+</td>
+<td>
+✓
+</td>
+<td>
+✓
 </td>
 </tr>
 <tr>
 <td>Array index</td>
 <td><code>$.book[2]</code></td>
 <td>
-
+✓
 </td>
 <td>
-
-</td>
-<td>
-
+✓
 </td>
 <td>
 ✓
@@ -192,45 +160,36 @@
 <td>Array index step end</td>
 <td><code>$.book[:2]</code></td>
 <td>
-
-</td>
-<td>
-
-</td>
-<td>
-
-</td>
-<td>
 ✗
+</td>
+<td>
+✓
+</td>
+<td>
+✓
 </td>
 </tr>
 <tr>
 <td>All children with nested</td>
 <td><code>$.store.*</code></td>
 <td>
-
-</td>
-<td>
-
-</td>
-<td>
-
-</td>
-<td>
 ✗
+</td>
+<td>
+✓
+</td>
+<td>
+✓
 </td>
 </tr>
 <tr>
 <td>Nested recursive</td>
 <td><code>$.store..price</code></td>
 <td>
-<a href="#Clojure_json-path___nested_recursive">error</a>
+<a href="#Clojure_json-path___nested_recursive">e</a>
 </td>
 <td>
-
-</td>
-<td>
-
+✓
 </td>
 <td>
 ✓
@@ -240,13 +199,10 @@
 <td>Deep attribute</td>
 <td><code>$.store.book[*].author</code></td>
 <td>
-
+✓
 </td>
 <td>
-
-</td>
-<td>
-
+✓
 </td>
 <td>
 ✓
@@ -256,29 +212,23 @@
 <td>Bracket for object with double quotes</td>
 <td><code>$["key"]</code></td>
 <td>
-<a href="#Clojure_json-path___bracket_for_object_with_double_quotes">error</a>
+<a href="#Clojure_json-path___bracket_for_object_with_double_quotes">e</a>
 </td>
 <td>
-<a href="#JavaScript_jsonpath-plus___bracket_for_object_with_double_quotes">error</a>
+<a href="#JavaScript_jsonpath-plus___bracket_for_object_with_double_quotes">e</a>
 </td>
 <td>
-
-</td>
-<td>
-?
+(✓)
 </td>
 </tr>
 <tr>
 <td>Bracket for object</td>
 <td><code>$['key']</code></td>
 <td>
-<a href="#Clojure_json-path___bracket_for_object">error</a>
+<a href="#Clojure_json-path___bracket_for_object">e</a>
 </td>
 <td>
-
-</td>
-<td>
-
+✓
 </td>
 <td>
 ✓
@@ -289,10 +239,11 @@
 
 ## Explanation
 
-- ✓ means the tools agree on the results
-- ✗ indicates that the results are different, and one of the tools is probably wrong
-- ? means there are not enough candidates available to check for correctness
-- `error` says the tool failed executing the query
+- ✓, the result of this tool matches what the majority says
+- ✗, a result is different to multiple others
+- ?, the results disagree, but there are not enough samples to be conclusive on which one is probably correct
+- (✓), there are not enough candidates available to check for correctness
+- `e`, the tool failed executing the query and probably does not support this type of query
 
 ## Error output
 

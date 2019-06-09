@@ -52,16 +52,45 @@ diff_multiple_files() {
     return 0
 }
 
+tools_diverging_from() {
+    local results_dir="$1"
+    local tool="$2"
+    local other_tool
+
+    while IFS= read -r other_tool; do
+        if ! diff "${results_dir}/${tool}" "${results_dir}/${other_tool}" > /dev/null; then
+            echo "$other_tool"
+        fi
+    done <<< "$(find "$results_dir" -type f -print0 | xargs -0 -n1 basename | grep -v "$tool")"
+}
+
 compare_results() {
     local results_dir="$1"
-    if [[ $(find "$results_dir" -type f | wc -l) -gt 1 ]]; then
-        if diff_multiple_files "$results_dir"; then
+    local tool="$2"
+    local results_count
+    results_count="$(find "$results_dir" -type f | wc -l)"
+
+    if [[ $results_count -eq 1 ]]; then
+        # nothing to compare to, maybe, maybe not correct
+        echo "(✓)"
+        return
+    fi
+
+    if [[ $results_count -eq 2 ]]; then
+        # 2 items should match to get a check mark
+        if [[ $(tools_diverging_from "$results_dir" "$tool" | wc -l) -eq 0 ]]; then
             echo "✓"
         else
-            echo "✗"
+            echo "?"
         fi
+        return
+    fi
+
+    # If everybody agrees with me except one we are in a safe majority
+    if [[ $(tools_diverging_from "$results_dir" "$tool" | wc -l) -lt 2 ]]; then
+        echo "✓"
     else
-        echo "?"
+        echo "✗"
     fi
 }
 
@@ -86,21 +115,26 @@ compile_row() {
 
     while IFS= read -r tool; do
         error_key="${tool}___${query}"
-        echo "<td>"
         if run_query "$tool" "$selector" "$document" > "${results_dir}/${tool}" 2> "${tmp_error_report_dir}/${error_key}"; then
-            echo ""
             rm "${tmp_error_report_dir}/${error_key}"
+
             jp < "${results_dir}/${tool}" > "${results_dir}/${tool}.json"
+            mv "${results_dir}/${tool}.json" "${results_dir}/${tool}"
         else
-            echo "<a href=\"#${error_key}\">error</a>"
+            rm "${results_dir}/${tool}"
         fi
-        rm "${results_dir}/${tool}"
-        echo "</td>"
     done <<< "$(list_of_tools)"
 
-    echo "<td>"
-    compare_results "$results_dir"
-    echo "</td>"
+    while IFS= read -r tool; do
+        error_key="${tool}___${query}"
+        echo "<td>"
+        if [[ -f "${results_dir}/${tool}" ]]; then
+            compare_results "$results_dir" "$tool"
+        else
+            echo "<a href=\"#${error_key}\">e</a>"
+        fi
+        echo "</td>"
+    done <<< "$(list_of_tools)"
 
     echo "</tr>"
 }
@@ -147,7 +181,6 @@ header_row() {
         tool_name="$(pretty_tool_name "$tool")"
         echo "<th>${tool_name}</th>"
     done <<< "$(list_of_tools)"
-    echo "<th>Results align?</th>"
     echo "</tr>"
 }
 
@@ -164,6 +197,8 @@ main() {
     mkdir -p "$tmp_result_dir"
 
     echo "# Comparison of different implementations of JSONPath"
+    echo
+    echo "This sheet makes no statement on the correctness of any of the tools, it merely believes in what the majority says."
     echo
     echo "<table>"
 
@@ -182,10 +217,11 @@ main() {
     echo "
 ## Explanation
 
-- ✓ means the tools agree on the results
-- ✗ indicates that the results are different, and one of the tools is probably wrong
-- ? means there are not enough candidates available to check for correctness
-- \`error\` says the tool failed executing the query"
+- ✓, the result of this tool matches what the majority says
+- ✗, a result is different to multiple others
+- ?, the results disagree, but there are not enough samples to be conclusive on which one is probably correct
+- (✓), there are not enough candidates available to check for correctness
+- \`e\`, the tool failed executing the query and probably does not support this type of query"
 
     echo
     compile_error_report
