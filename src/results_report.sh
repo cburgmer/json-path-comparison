@@ -6,7 +6,7 @@ readonly tmp_results_report_dir="$1"
 readonly target_dir="$2"
 readonly report_output_dir="${target_dir}/results"
 
-. shared.sh
+. src/shared.sh
 
 all_results() {
     find "${tmp_results_report_dir}" -type d -depth 1 -print0 | xargs -0 -n1 basename | sort

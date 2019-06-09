@@ -6,7 +6,7 @@ readonly tmp_results_report_dir="/tmp/compare_jsonpath.results_report.$$"
 readonly tmp_result_dir="/tmp/compare_jsonpath.result.$$"
 readonly target_dir="./comparison"
 
-. shared.sh
+. src/shared.sh
 
 run_query() {
     local tool="$1"
@@ -200,8 +200,8 @@ main() {
     done <<< "$(all_queries)"
 
     compile_comparison
-    ./results_report.sh "$tmp_results_report_dir" "$target_dir"
-    ./error_report.sh "$tmp_error_report_dir" "$target_dir"
+    ./src/results_report.sh "$tmp_results_report_dir" "$target_dir"
+    ./src/error_report.sh "$tmp_error_report_dir" "$target_dir"
 
     rm -r "$tmp_error_report_dir"
     rm -r "$tmp_results_report_dir"

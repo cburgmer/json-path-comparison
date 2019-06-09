@@ -5,7 +5,7 @@ set -euo pipefail
 readonly tmp_error_report_dir="$1"
 readonly target_dir="$2"
 
-. shared.sh
+. src/shared.sh
 
 all_errors() {
     find "${tmp_error_report_dir}" -type f -depth 1 -print0 | xargs -0 -n1 basename | sort

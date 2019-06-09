@@ -24,6 +24,6 @@ if ! which markdown > /dev/null; then
 fi
 
 cd "$script_dir"
-./compare.sh
+./src/compare.sh
 markdown < comparison/README.md > comparison/index.html
 echo "Run \`open comparison/index.html\`"
