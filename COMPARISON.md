@@ -16,7 +16,7 @@ This sheet makes no statement on the correctness of any of the tools, it merely 
 </thead>
 <tbody>
 <tr>
-<td>Root</td>
+<td><a href="results/root.md">Root</a></td>
 <td><code>$</code></td>
 <td>
 ✓
@@ -35,7 +35,7 @@ This sheet makes no statement on the correctness of any of the tools, it merely 
 </td>
 </tr>
 <tr>
-<td>All elements</td>
+<td><a href="results/all_elements.md">All elements</a></td>
 <td><code>$..*</code></td>
 <td>
 <a href="#Clojure_json-path___all_elements">e</a>
@@ -54,7 +54,7 @@ This sheet makes no statement on the correctness of any of the tools, it merely 
 </td>
 </tr>
 <tr>
-<td>Recursive attribute</td>
+<td><a href="results/recursive_attribute.md">Recursive attribute</a></td>
 <td><code>$..author</code></td>
 <td>
 ✓
@@ -73,7 +73,7 @@ This sheet makes no statement on the correctness of any of the tools, it merely 
 </td>
 </tr>
 <tr>
-<td>List result</td>
+<td><a href="results/list_result.md">List result</a></td>
 <td><code>$.book</code></td>
 <td>
 ✗
@@ -92,7 +92,7 @@ This sheet makes no statement on the correctness of any of the tools, it merely 
 </td>
 </tr>
 <tr>
-<td>All children</td>
+<td><a href="results/all_children.md">All children</a></td>
 <td><code>$.book.*</code></td>
 <td>
 ✓
@@ -111,7 +111,7 @@ This sheet makes no statement on the correctness of any of the tools, it merely 
 </td>
 </tr>
 <tr>
-<td>Last array index</td>
+<td><a href="results/last_array_index.md">Last array index</a></td>
 <td><code>$.book[-1:]</code></td>
 <td>
 <a href="#Clojure_json-path___last_array_index">e</a>
@@ -130,7 +130,7 @@ This sheet makes no statement on the correctness of any of the tools, it merely 
 </td>
 </tr>
 <tr>
-<td>Array index union</td>
+<td><a href="results/array_index_union.md">Array index union</a></td>
 <td><code>$.book[0,1]</code></td>
 <td>
 ✗
@@ -149,7 +149,7 @@ This sheet makes no statement on the correctness of any of the tools, it merely 
 </td>
 </tr>
 <tr>
-<td>Array index step start end step</td>
+<td><a href="results/array_index_step_start_end_step.md">Array index step start end step</a></td>
 <td><code>$.book[0:3:2]</code></td>
 <td>
 ✗
@@ -168,7 +168,7 @@ This sheet makes no statement on the correctness of any of the tools, it merely 
 </td>
 </tr>
 <tr>
-<td>Array index step start end</td>
+<td><a href="results/array_index_step_start_end.md">Array index step start end</a></td>
 <td><code>$.book[1:3]</code></td>
 <td>
 ✗
@@ -187,7 +187,7 @@ This sheet makes no statement on the correctness of any of the tools, it merely 
 </td>
 </tr>
 <tr>
-<td>Array index step start</td>
+<td><a href="results/array_index_step_start.md">Array index step start</a></td>
 <td><code>$.book[1:]</code></td>
 <td>
 ✗
@@ -206,7 +206,7 @@ This sheet makes no statement on the correctness of any of the tools, it merely 
 </td>
 </tr>
 <tr>
-<td>Array index</td>
+<td><a href="results/array_index.md">Array index</a></td>
 <td><code>$.book[2]</code></td>
 <td>
 ✗
@@ -225,7 +225,7 @@ This sheet makes no statement on the correctness of any of the tools, it merely 
 </td>
 </tr>
 <tr>
-<td>Array index step end</td>
+<td><a href="results/array_index_step_end.md">Array index step end</a></td>
 <td><code>$.book[:2]</code></td>
 <td>
 ✗
@@ -244,7 +244,7 @@ This sheet makes no statement on the correctness of any of the tools, it merely 
 </td>
 </tr>
 <tr>
-<td>All children with nested</td>
+<td><a href="results/all_children_with_nested.md">All children with nested</a></td>
 <td><code>$.store.*</code></td>
 <td>
 ✗
@@ -263,7 +263,7 @@ This sheet makes no statement on the correctness of any of the tools, it merely 
 </td>
 </tr>
 <tr>
-<td>Nested recursive</td>
+<td><a href="results/nested_recursive.md">Nested recursive</a></td>
 <td><code>$.store..price</code></td>
 <td>
 <a href="#Clojure_json-path___nested_recursive">e</a>
@@ -282,7 +282,7 @@ This sheet makes no statement on the correctness of any of the tools, it merely 
 </td>
 </tr>
 <tr>
-<td>Deep attribute</td>
+<td><a href="results/deep_attribute.md">Deep attribute</a></td>
 <td><code>$.store.book[*].author</code></td>
 <td>
 ✓
@@ -301,7 +301,7 @@ This sheet makes no statement on the correctness of any of the tools, it merely 
 </td>
 </tr>
 <tr>
-<td>Bracket for object with double quotes</td>
+<td><a href="results/bracket_for_object_with_double_quotes.md">Bracket for object with double quotes</a></td>
 <td><code>$["key"]</code></td>
 <td>
 <a href="#Clojure_json-path___bracket_for_object_with_double_quotes">e</a>
@@ -320,7 +320,7 @@ This sheet makes no statement on the correctness of any of the tools, it merely 
 </td>
 </tr>
 <tr>
-<td>Bracket for object</td>
+<td><a href="results/bracket_for_object.md">Bracket for object</a></td>
 <td><code>$['key']</code></td>
 <td>
 <a href="#Clojure_json-path___bracket_for_object">e</a>
@@ -348,795 +348,6 @@ This sheet makes no statement on the correctness of any of the tools, it merely 
 - ?, the results disagree, but there are not enough samples to be conclusive on which one is probably correct
 - (✓), there are not enough candidates available to check for correctness
 - e, the tool failed executing the query and probably does not support this type of query
-
-## Results
-
-<h3 id="all_children">
-All children
-</h3>
-
-<h4>
- Gold Standard
-</h4>
-    [
-      {
-        "category": "reference",
-        "author": "Nigel Rees",
-        "title": "Sayings of the Century",
-        "price": 8.95
-      },
-      {
-        "category": "fiction",
-        "author": "Evelyn Waugh",
-        "title": "Sword of Honour",
-        "price": 12.99
-      },
-      {
-        "category": "fiction",
-        "author": "Herman Melville",
-        "title": "Moby Dick",
-        "isbn": "0-553-21311-3",
-        "price": 8.99
-      },
-      {
-        "category": "fiction",
-        "author": "J. R. R. Tolkien",
-        "title": "The Lord of the Rings",
-        "isbn": "0-395-19395-8",
-        "price": 22.99
-      }
-    ]
-
-<h3 id="all_children_with_nested">
-All children with nested
-</h3>
-
-<h4>
- Gold Standard
-</h4>
-    [
-      [
-        {
-          "category": "reference",
-          "author": "Nigel Rees",
-          "title": "Sayings of the Century",
-          "price": 8.95
-        },
-        {
-          "category": "fiction",
-          "author": "Evelyn Waugh",
-          "title": "Sword of Honour",
-          "price": 12.99
-        },
-        {
-          "category": "fiction",
-          "author": "Herman Melville",
-          "title": "Moby Dick",
-          "isbn": "0-553-21311-3",
-          "price": 8.99
-        },
-        {
-          "category": "fiction",
-          "author": "J. R. R. Tolkien",
-          "title": "The Lord of the Rings",
-          "isbn": "0-395-19395-8",
-          "price": 22.99
-        }
-      ],
-      {
-        "color": "red",
-        "price": 19.95
-      }
-    ]
-
-<h4>
-Clojure_json-path
-</h4>
-    [
-      {
-        "category": "reference",
-        "author": "Nigel Rees",
-        "title": "Sayings of the Century",
-        "price": 8.95
-      },
-      {
-        "category": "fiction",
-        "author": "Evelyn Waugh",
-        "title": "Sword of Honour",
-        "price": 12.99
-      },
-      {
-        "category": "fiction",
-        "author": "Herman Melville",
-        "title": "Moby Dick",
-        "isbn": "0-553-21311-3",
-        "price": 8.99
-      },
-      {
-        "category": "fiction",
-        "author": "J. R. R. Tolkien",
-        "title": "The Lord of the Rings",
-        "isbn": "0-395-19395-8",
-        "price": 22.99
-      },
-      {
-        "color": "red",
-        "price": 19.95
-      }
-    ]
-
-<h3 id="all_elements">
-All elements
-</h3>
-
-<h4>
- Gold Standard
-</h4>
-    [
-      {
-        "book": [
-          {
-            "category": "reference",
-            "author": "Nigel Rees",
-            "title": "Sayings of the Century",
-            "price": 8.95
-          },
-          {
-            "category": "fiction",
-            "author": "Evelyn Waugh",
-            "title": "Sword of Honour",
-            "price": 12.99
-          },
-          {
-            "category": "fiction",
-            "author": "Herman Melville",
-            "title": "Moby Dick",
-            "isbn": "0-553-21311-3",
-            "price": 8.99
-          },
-          {
-            "category": "fiction",
-            "author": "J. R. R. Tolkien",
-            "title": "The Lord of the Rings",
-            "isbn": "0-395-19395-8",
-            "price": 22.99
-          }
-        ],
-        "bicycle": {
-          "color": "red",
-          "price": 19.95
-        }
-      },
-      [
-        {
-          "category": "reference",
-          "author": "Nigel Rees",
-          "title": "Sayings of the Century",
-          "price": 8.95
-        },
-        {
-          "category": "fiction",
-          "author": "Evelyn Waugh",
-          "title": "Sword of Honour",
-          "price": 12.99
-        },
-        {
-          "category": "fiction",
-          "author": "Herman Melville",
-          "title": "Moby Dick",
-          "isbn": "0-553-21311-3",
-          "price": 8.99
-        },
-        {
-          "category": "fiction",
-          "author": "J. R. R. Tolkien",
-          "title": "The Lord of the Rings",
-          "isbn": "0-395-19395-8",
-          "price": 22.99
-        }
-      ],
-      {
-        "color": "red",
-        "price": 19.95
-      },
-      {
-        "category": "reference",
-        "author": "Nigel Rees",
-        "title": "Sayings of the Century",
-        "price": 8.95
-      },
-      {
-        "category": "fiction",
-        "author": "Evelyn Waugh",
-        "title": "Sword of Honour",
-        "price": 12.99
-      },
-      {
-        "category": "fiction",
-        "author": "Herman Melville",
-        "title": "Moby Dick",
-        "isbn": "0-553-21311-3",
-        "price": 8.99
-      },
-      {
-        "category": "fiction",
-        "author": "J. R. R. Tolkien",
-        "title": "The Lord of the Rings",
-        "isbn": "0-395-19395-8",
-        "price": 22.99
-      },
-      "reference",
-      "Nigel Rees",
-      "Sayings of the Century",
-      8.95,
-      "fiction",
-      "Evelyn Waugh",
-      "Sword of Honour",
-      12.99,
-      "fiction",
-      "Herman Melville",
-      "Moby Dick",
-      "0-553-21311-3",
-      8.99,
-      "fiction",
-      "J. R. R. Tolkien",
-      "The Lord of the Rings",
-      "0-395-19395-8",
-      22.99,
-      "red",
-      19.95
-    ]
-
-<h3 id="array_index">
-Array index
-</h3>
-
-<h4>
-Clojure_json-path
-</h4>
-    {
-      "category": "fiction",
-      "author": "Herman Melville",
-      "title": "Moby Dick",
-      "isbn": "0-553-21311-3",
-      "price": 8.99
-    }
-
-<h4>
-JavaScript_Goessner-jsonpath
-</h4>
-    [
-      {
-        "category": "fiction",
-        "author": "Herman Melville",
-        "title": "Moby Dick",
-        "isbn": "0-553-21311-3",
-        "price": 8.99
-      }
-    ]
-
-<h4>
-JavaScript_jsonpath
-</h4>
-    [
-      {
-        "category": "fiction",
-        "author": "Herman Melville",
-        "title": "Moby Dick",
-        "isbn": "0-553-21311-3",
-        "price": 8.99
-      }
-    ]
-
-<h4>
-JavaScript_jsonpath-plus
-</h4>
-    {
-      "category": "fiction",
-      "author": "Herman Melville",
-      "title": "Moby Dick",
-      "isbn": "0-553-21311-3",
-      "price": 8.99
-    }
-
-<h4>
-Rust_jsonpath_lib
-</h4>
-    {
-      "category": "fiction",
-      "author": "Herman Melville",
-      "title": "Moby Dick",
-      "isbn": "0-553-21311-3",
-      "price": 8.99
-    }
-
-<h3 id="array_index_step_end">
-Array index step end
-</h3>
-
-<h4>
- Gold Standard
-</h4>
-    [
-      {
-        "category": "reference",
-        "author": "Nigel Rees",
-        "title": "Sayings of the Century",
-        "price": 8.95
-      },
-      {
-        "category": "fiction",
-        "author": "Evelyn Waugh",
-        "title": "Sword of Honour",
-        "price": 12.99
-      }
-    ]
-
-<h4>
-Clojure_json-path
-</h4>
-    {
-      "category": "fiction",
-      "author": "Herman Melville",
-      "title": "Moby Dick",
-      "isbn": "0-553-21311-3",
-      "price": 8.99
-    }
-
-<h3 id="array_index_step_start">
-Array index step start
-</h3>
-
-<h4>
- Gold Standard
-</h4>
-    [
-      {
-        "category": "fiction",
-        "author": "Evelyn Waugh",
-        "title": "Sword of Honour",
-        "price": 12.99
-      },
-      {
-        "category": "fiction",
-        "author": "Herman Melville",
-        "title": "Moby Dick",
-        "isbn": "0-553-21311-3",
-        "price": 8.99
-      },
-      {
-        "category": "fiction",
-        "author": "J. R. R. Tolkien",
-        "title": "The Lord of the Rings",
-        "isbn": "0-395-19395-8",
-        "price": 22.99
-      }
-    ]
-
-<h4>
-Clojure_json-path
-</h4>
-    {
-      "category": "fiction",
-      "author": "Evelyn Waugh",
-      "title": "Sword of Honour",
-      "price": 12.99
-    }
-
-<h3 id="array_index_step_start_end">
-Array index step start end
-</h3>
-
-<h4>
- Gold Standard
-</h4>
-    [
-      {
-        "category": "fiction",
-        "author": "Evelyn Waugh",
-        "title": "Sword of Honour",
-        "price": 12.99
-      },
-      {
-        "category": "fiction",
-        "author": "Herman Melville",
-        "title": "Moby Dick",
-        "isbn": "0-553-21311-3",
-        "price": 8.99
-      }
-    ]
-
-<h4>
-Clojure_json-path
-</h4>
-    {
-      "category": "fiction",
-      "author": "Evelyn Waugh",
-      "title": "Sword of Honour",
-      "price": 12.99
-    }
-
-<h3 id="array_index_step_start_end_step">
-Array index step start end step
-</h3>
-
-<h4>
- Gold Standard
-</h4>
-    [
-      {
-        "category": "reference",
-        "author": "Nigel Rees",
-        "title": "Sayings of the Century",
-        "price": 8.95
-      },
-      {
-        "category": "fiction",
-        "author": "Herman Melville",
-        "title": "Moby Dick",
-        "isbn": "0-553-21311-3",
-        "price": 8.99
-      }
-    ]
-
-<h4>
-Clojure_json-path
-</h4>
-    {
-      "category": "reference",
-      "author": "Nigel Rees",
-      "title": "Sayings of the Century",
-      "price": 8.95
-    }
-
-<h3 id="array_index_union">
-Array index union
-</h3>
-
-<h4>
- Gold Standard
-</h4>
-    [
-      {
-        "category": "reference",
-        "author": "Nigel Rees",
-        "title": "Sayings of the Century",
-        "price": 8.95
-      },
-      {
-        "category": "fiction",
-        "author": "Evelyn Waugh",
-        "title": "Sword of Honour",
-        "price": 12.99
-      }
-    ]
-
-<h4>
-Clojure_json-path
-</h4>
-    {
-      "category": "reference",
-      "author": "Nigel Rees",
-      "title": "Sayings of the Century",
-      "price": 8.95
-    }
-
-<h3 id="bracket_for_object">
-Bracket for object
-</h3>
-
-<h4>
-JavaScript_Goessner-jsonpath
-</h4>
-    [
-      "value"
-    ]
-
-<h4>
-JavaScript_jsonpath
-</h4>
-    [
-      "value"
-    ]
-
-<h4>
-JavaScript_jsonpath-plus
-</h4>
-    "value"
-
-<h4>
-Rust_jsonpath_lib
-</h4>
-    "value"
-
-<h3 id="bracket_for_object_with_double_quotes">
-Bracket for object with double quotes
-</h3>
-
-<h4>
-JavaScript_jsonpath
-</h4>
-    [
-      "value"
-    ]
-
-<h4>
-Rust_jsonpath_lib
-</h4>
-    "value"
-
-<h3 id="deep_attribute">
-Deep attribute
-</h3>
-
-<h4>
- Gold Standard
-</h4>
-    [
-      "Nigel Rees",
-      "Evelyn Waugh",
-      "Herman Melville",
-      "J. R. R. Tolkien"
-    ]
-
-<h3 id="last_array_index">
-Last array index
-</h3>
-
-<h4>
- Gold Standard
-</h4>
-    [
-      {
-        "category": "fiction",
-        "author": "J. R. R. Tolkien",
-        "title": "The Lord of the Rings",
-        "isbn": "0-395-19395-8",
-        "price": 22.99
-      }
-    ]
-
-<h4>
-JavaScript_jsonpath-plus
-</h4>
-    {
-      "category": "fiction",
-      "author": "J. R. R. Tolkien",
-      "title": "The Lord of the Rings",
-      "isbn": "0-395-19395-8",
-      "price": 22.99
-    }
-
-<h3 id="list_result">
-List result
-</h3>
-
-<h4>
-Clojure_json-path
-</h4>
-    [
-      {
-        "category": "reference",
-        "author": "Nigel Rees",
-        "title": "Sayings of the Century",
-        "price": 8.95
-      },
-      {
-        "category": "fiction",
-        "author": "Evelyn Waugh",
-        "title": "Sword of Honour",
-        "price": 12.99
-      },
-      {
-        "category": "fiction",
-        "author": "Herman Melville",
-        "title": "Moby Dick",
-        "isbn": "0-553-21311-3",
-        "price": 8.99
-      },
-      {
-        "category": "fiction",
-        "author": "J. R. R. Tolkien",
-        "title": "The Lord of the Rings",
-        "isbn": "0-395-19395-8",
-        "price": 22.99
-      }
-    ]
-
-<h4>
-JavaScript_Goessner-jsonpath
-</h4>
-    [
-      [
-        {
-          "category": "reference",
-          "author": "Nigel Rees",
-          "title": "Sayings of the Century",
-          "price": 8.95
-        },
-        {
-          "category": "fiction",
-          "author": "Evelyn Waugh",
-          "title": "Sword of Honour",
-          "price": 12.99
-        },
-        {
-          "category": "fiction",
-          "author": "Herman Melville",
-          "title": "Moby Dick",
-          "isbn": "0-553-21311-3",
-          "price": 8.99
-        },
-        {
-          "category": "fiction",
-          "author": "J. R. R. Tolkien",
-          "title": "The Lord of the Rings",
-          "isbn": "0-395-19395-8",
-          "price": 22.99
-        }
-      ]
-    ]
-
-<h4>
-JavaScript_jsonpath
-</h4>
-    [
-      [
-        {
-          "category": "reference",
-          "author": "Nigel Rees",
-          "title": "Sayings of the Century",
-          "price": 8.95
-        },
-        {
-          "category": "fiction",
-          "author": "Evelyn Waugh",
-          "title": "Sword of Honour",
-          "price": 12.99
-        },
-        {
-          "category": "fiction",
-          "author": "Herman Melville",
-          "title": "Moby Dick",
-          "isbn": "0-553-21311-3",
-          "price": 8.99
-        },
-        {
-          "category": "fiction",
-          "author": "J. R. R. Tolkien",
-          "title": "The Lord of the Rings",
-          "isbn": "0-395-19395-8",
-          "price": 22.99
-        }
-      ]
-    ]
-
-<h4>
-JavaScript_jsonpath-plus
-</h4>
-    [
-      [
-        {
-          "category": "reference",
-          "author": "Nigel Rees",
-          "title": "Sayings of the Century",
-          "price": 8.95
-        },
-        {
-          "category": "fiction",
-          "author": "Evelyn Waugh",
-          "title": "Sword of Honour",
-          "price": 12.99
-        },
-        {
-          "category": "fiction",
-          "author": "Herman Melville",
-          "title": "Moby Dick",
-          "isbn": "0-553-21311-3",
-          "price": 8.99
-        },
-        {
-          "category": "fiction",
-          "author": "J. R. R. Tolkien",
-          "title": "The Lord of the Rings",
-          "isbn": "0-395-19395-8",
-          "price": 22.99
-        }
-      ]
-    ]
-
-<h4>
-Rust_jsonpath_lib
-</h4>
-    [
-      {
-        "category": "reference",
-        "author": "Nigel Rees",
-        "title": "Sayings of the Century",
-        "price": 8.95
-      },
-      {
-        "category": "fiction",
-        "author": "Evelyn Waugh",
-        "title": "Sword of Honour",
-        "price": 12.99
-      },
-      {
-        "category": "fiction",
-        "author": "Herman Melville",
-        "title": "Moby Dick",
-        "isbn": "0-553-21311-3",
-        "price": 8.99
-      },
-      {
-        "category": "fiction",
-        "author": "J. R. R. Tolkien",
-        "title": "The Lord of the Rings",
-        "isbn": "0-395-19395-8",
-        "price": 22.99
-      }
-    ]
-
-<h3 id="nested_recursive">
-Nested recursive
-</h3>
-
-<h4>
- Gold Standard
-</h4>
-    [
-      8.95,
-      12.99,
-      8.99,
-      22.99,
-      19.95
-    ]
-
-<h3 id="recursive_attribute">
-Recursive attribute
-</h3>
-
-<h4>
- Gold Standard
-</h4>
-    [
-      "Nigel Rees",
-      "Evelyn Waugh",
-      "Herman Melville",
-      "J. R. R. Tolkien"
-    ]
-
-<h3 id="root">
-Root
-</h3>
-
-<h4>
- Gold Standard
-</h4>
-    {
-      "key": "value",
-      "another key": {
-        "complex": [
-          "a",
-          1
-        ]
-      }
-    }
-
-<h4>
-JavaScript_jsonpath
-</h4>
-    [
-      {
-        "key": "value",
-        "another key": {
-          "complex": [
-            "a",
-            1
-          ]
-        }
-      }
-    ]
 
 ## Errors
 

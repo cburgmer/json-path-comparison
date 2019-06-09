@@ -19,25 +19,25 @@ compile_result_report() {
     local query
     local tool
 
-    echo "## Results"
-    echo
     while IFS= read -r query; do
-        echo "<h3 id=\"${query}\">"
-        echo "$(pretty_query_name "$query")"
-        echo "</h3>"
-        echo
-
-        while IFS= read -r tool; do
-            echo "<h4>"
-            echo "$tool"
-            echo "</h4>"
-            pre_block < "${tmp_results_report_dir}/${query}/${tool}"
+        {
+            echo "## $(pretty_query_name "$query")"
             echo
-        done <<< "$(tool_results_for_query "$query")"
+
+            while IFS= read -r tool; do
+                echo "### ${tool}"
+                echo
+                pre_block < "${tmp_results_report_dir}/${query}/${tool}"
+                echo
+            done <<< "$(tool_results_for_query "$query")"
+        } > "$(report_path_for "$query")"
     done <<< "$(all_results)"
 }
 
 main() {
+    rm -rf "$report_output_dir"
+    mkdir -p "$report_output_dir"
+
     compile_result_report
 }
 

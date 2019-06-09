@@ -86,15 +86,17 @@ compile_row() {
     local document="$query_dir"/document.json
     local results_dir="${tmp_result_dir}/${query}"
     local results_report_dir="${tmp_results_report_dir}/${query}"
+    local report_path
     local selector
     local query_name
     local tool
     local error_key
     selector="$(cat "${selector_file}")"
     query_name="$(pretty_query_name "$query")"
+    report_path="$(report_path_for "$query")"
 
     echo "<tr>"
-    echo "<td>${query_name}</td>"
+    echo "<td><a href=\"${report_path}\">${query_name}</a></td>"
     echo "<td><code>${selector}</code></td>"
 
     mkdir -p "$results_dir"
