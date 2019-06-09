@@ -78,11 +78,35 @@ canonical_json() {
     mv "${filepath}.json" "$filepath"
 }
 
-compile_row() {
+query_tools() {
     local query="$1"
     local query_dir="./queries/${query}"
     local selector_file="$query_dir"/selector
     local document="$query_dir"/document.json
+    local results_dir="${tmp_result_dir}/${query}"
+    local selector
+    local tool
+    local error_key
+    selector="$(cat "${selector_file}")"
+
+    mkdir -p "$results_dir"
+
+    while IFS= read -r tool; do
+        error_key="${tool}___${query}"
+        if run_query "$tool" "$selector" "$document" > "${results_dir}/${tool}" 2> "${tmp_error_report_dir}/${error_key}"; then
+            rm "${tmp_error_report_dir}/${error_key}"
+
+            canonical_json "${results_dir}/${tool}"
+        else
+            rm "${results_dir}/${tool}"
+        fi
+    done <<< "$(list_of_tools)"
+}
+
+compile_row() {
+    local query="$1"
+    local query_dir="./queries/${query}"
+    local selector_file="$query_dir"/selector
     local results_dir="${tmp_result_dir}/${query}"
     local results_report_dir="${tmp_results_report_dir}/${query}"
     local report_path
@@ -98,19 +122,7 @@ compile_row() {
     echo "<td><a href=\"${report_path}\">${query_name}</a></td>"
     echo "<td><code>${selector}</code></td>"
 
-    mkdir -p "$results_dir"
     mkdir -p "$results_report_dir"
-
-    while IFS= read -r tool; do
-        error_key="${tool}___${query}"
-        if run_query "$tool" "$selector" "$document" > "${results_dir}/${tool}" 2> "${tmp_error_report_dir}/${error_key}"; then
-            rm "${tmp_error_report_dir}/${error_key}"
-
-            canonical_json "${results_dir}/${tool}"
-        else
-            rm "${results_dir}/${tool}"
-        fi
-    done <<< "$(list_of_tools)"
 
     while IFS= read -r tool; do
         error_key="${tool}___${query}"
@@ -144,11 +156,7 @@ header_row() {
     echo "</tr>"
 }
 
-main() {
-    mkdir -p "$tmp_error_report_dir"
-    mkdir -p "$tmp_results_report_dir"
-    mkdir -p "$tmp_result_dir"
-
+compile_comparison() {
     {
         echo "# Comparison of different implementations of JSONPath"
         echo
@@ -177,7 +185,18 @@ main() {
 - (✓), there are not enough candidates available to check for correctness
 - e, the tool failed executing the query and probably does not support this type of query"
     } > "COMPARISON.md"
+}
 
+main() {
+    mkdir -p "$tmp_error_report_dir"
+    mkdir -p "$tmp_results_report_dir"
+    mkdir -p "$tmp_result_dir"
+
+    while IFS= read -r query; do
+        query_tools "$query"
+    done <<< "$(all_queries)"
+
+    compile_comparison
     ./results_report.sh "$tmp_results_report_dir"
     ./error_report.sh "$tmp_error_report_dir"
 
