@@ -347,7 +347,7 @@ This sheet makes no statement on the correctness of any of the tools, it merely 
 - ✗, a result is different to multiple others
 - ?, the results disagree, but there are not enough samples to be conclusive on which one is probably correct
 - (✓), there are not enough candidates available to check for correctness
-- `e`, the tool failed executing the query and probably does not support this type of query
+- e, the tool failed executing the query and probably does not support this type of query
 
 ## Results
 
@@ -1137,7 +1137,6 @@ JavaScript_jsonpath
         }
       }
     ]
-
 
 ## Errors
 

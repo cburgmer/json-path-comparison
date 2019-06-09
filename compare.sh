@@ -6,25 +6,7 @@ readonly tmp_error_report_dir="/tmp/compare_jsonpath.error_report.$$"
 readonly tmp_results_report_dir="/tmp/compare_jsonpath.results_report.$$"
 readonly tmp_result_dir="/tmp/compare_jsonpath.result.$$"
 
-pretty_tool_name() {
-    local tool="$1"
-    local language
-    local library
-    language="$(sed "s/\([^_]*\)_.*/\1/" <<< "$tool")"
-    library="$(sed "s/[^_]*_\(.*\)/\1/" <<< "$tool")"
-    echo "${language} (${library})"
-}
-
-capitalize() {
-    local s="$1"
-    echo "$(tr a-z A-Z <<< ${s:0:1})${s:1}"
-}
-
-pretty_query_name() {
-    local query="$1"
-
-    capitalize "$query" | tr '_' ' '
-}
+. shared.sh
 
 run_query() {
     local tool="$1"
@@ -32,6 +14,14 @@ run_query() {
     local document="$3"
 
     "${script_dir}/tools/${tool}"/run.sh "$selector" < "$document"
+}
+
+all_queries() {
+    find "$script_dir"/queries -type d -depth 1 -print0 \
+        | xargs -0 -n1 -I% sh -c 'echo "$(cat %/selector)\t%"' \
+        | sort \
+        | cut -f2 \
+        | xargs -n1 basename
 }
 
 list_of_tools() {
@@ -83,6 +73,12 @@ compare_results() {
     fi
 }
 
+canonical_json() {
+    local filepath="$1"
+    jp < "$filepath" > "${filepath}.json"
+    mv "${filepath}.json" "$filepath"
+}
+
 compile_row() {
     local query="$1"
     local query_dir="${script_dir}/queries/${query}"
@@ -109,8 +105,7 @@ compile_row() {
         if run_query "$tool" "$selector" "$document" > "${results_dir}/${tool}" 2> "${tmp_error_report_dir}/${error_key}"; then
             rm "${tmp_error_report_dir}/${error_key}"
 
-            jp < "${results_dir}/${tool}" > "${results_dir}/${tool}.json"
-            mv "${results_dir}/${tool}.json" "${results_dir}/${tool}"
+            canonical_json "${results_dir}/${tool}"
         else
             rm "${results_dir}/${tool}"
         fi
@@ -134,70 +129,6 @@ compile_row() {
     echo "</tr>"
 }
 
-all_errors() {
-    find "${tmp_error_report_dir}" -type f -depth 1 -print0 | xargs -0 -n1 basename | sort
-}
-
-pre_block() {
-    sed 's/^/    /'
-}
-
-nice_error_headline() {
-    local error_key="$1"
-    local query
-    local tool
-    query="$(sed "s/.*___\(.*\)/\1/" <<< "$error_key")"
-    tool="$(sed "s/\(.*\)___.*/\1/" <<< "$error_key")"
-
-    echo "$(pretty_tool_name "$tool"), $(pretty_query_name "$query")"
-}
-
-compile_error_report() {
-    local error_key
-
-    echo "## Errors"
-    echo
-    while IFS= read -r error_key; do
-        echo "<h3 id=\"${error_key}\">"
-        echo "$(nice_error_headline "$error_key")"
-        echo "</h3>"
-        echo
-        pre_block < "${tmp_error_report_dir}/${error_key}"
-        echo
-    done <<< "$(all_errors)"
-}
-
-all_results() {
-    find "${tmp_results_report_dir}" -type d -depth 1 -print0 | xargs -0 -n1 basename | sort
-}
-
-tool_results_for_query() {
-    local query="$1"
-    find "${tmp_results_report_dir}/${query}" -type f -depth 1 -print0 | xargs -0 -n1 basename | sort
-}
-
-compile_result_report() {
-    local query
-    local tool
-
-    echo "## Results"
-    echo
-    while IFS= read -r query; do
-        echo "<h3 id=\"${query}\">"
-        echo "$(pretty_query_name "$query")"
-        echo "</h3>"
-        echo
-
-        while IFS= read -r tool; do
-            echo "<h4>"
-            echo "$tool"
-            echo "</h4>"
-            pre_block < "${tmp_results_report_dir}/${query}/${tool}"
-            echo
-        done <<< "$(tool_results_for_query "$query")"
-    done <<< "$(all_results)"
-}
-
 header_row() {
     local tool
     local tool_name
@@ -210,14 +141,6 @@ header_row() {
         echo "<th>${tool_name}</th>"
     done <<< "$(list_of_tools)"
     echo "</tr>"
-}
-
-all_queries() {
-    find "$script_dir"/queries -type d -depth 1 -print0 \
-        | xargs -0 -n1 -I% sh -c 'echo "$(cat %/selector)\t%"' \
-        | sort \
-        | cut -f2 \
-        | xargs -n1 basename
 }
 
 main() {
@@ -250,13 +173,11 @@ main() {
 - ✗, a result is different to multiple others
 - ?, the results disagree, but there are not enough samples to be conclusive on which one is probably correct
 - (✓), there are not enough candidates available to check for correctness
-- \`e\`, the tool failed executing the query and probably does not support this type of query"
+- e, the tool failed executing the query and probably does not support this type of query"
 
     echo
-    compile_result_report
-
-    echo
-    compile_error_report
+    "${script_dir}"/results_report.sh "$tmp_results_report_dir"
+    "${script_dir}"/error_report.sh "$tmp_error_report_dir"
 
     rm -r "$tmp_error_report_dir"
     rm -r "$tmp_results_report_dir"
