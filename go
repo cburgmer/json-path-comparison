@@ -12,6 +12,11 @@ if ! which cargo > /dev/null; then
     exit 1
 fi
 
+if ! which node > /dev/null; then
+    echo >&2 "Please install Node.js"
+    exit 1
+fi
+
 if ! which markdown > /dev/null; then
     echo >&2 "Please install markdown"
     exit 1
