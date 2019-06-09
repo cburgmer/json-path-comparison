@@ -123,7 +123,7 @@ compile_row() {
                 cp "${results_dir}/${tool}" "${results_report_dir}/${tool}"
             fi
         else
-            echo "<a href=\"#${error_key}\">e</a>"
+            echo "<a href=\"errors.md#${error_key}\">e</a>"
         fi
         echo "</td>"
     done <<< "$(list_of_tools)"
@@ -177,7 +177,6 @@ main() {
 - (✓), there are not enough candidates available to check for correctness
 - e, the tool failed executing the query and probably does not support this type of query"
 
-    echo
     "${script_dir}"/results_report.sh "$tmp_results_report_dir"
     "${script_dir}"/error_report.sh "$tmp_error_report_dir"
 

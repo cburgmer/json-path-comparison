@@ -23,16 +23,19 @@ nice_error_headline() {
 compile_error_report() {
     local error_key
 
-    echo "## Errors"
-    echo
-    while IFS= read -r error_key; do
-        echo "<h3 id=\"${error_key}\">"
-        echo "$(nice_error_headline "$error_key")"
-        echo "</h3>"
+    {
+        echo "## Errors"
         echo
-        pre_block < "${tmp_error_report_dir}/${error_key}"
-        echo
-    done <<< "$(all_errors)"
+
+        while IFS= read -r error_key; do
+            echo "<h3 id=\"${error_key}\">"
+            echo "$(nice_error_headline "$error_key")"
+            echo "</h3>"
+            echo
+            pre_block < "${tmp_error_report_dir}/${error_key}"
+            echo
+        done <<< "$(all_errors)"
+    } > "errors.md"
 }
 
 main() {
