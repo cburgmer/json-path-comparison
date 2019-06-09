@@ -47,8 +47,8 @@ compare_results() {
     results_count="$(find "$results_dir" -type f | wc -l)"
 
     if [[ $results_count -eq 1 ]]; then
-        # nothing to compare to, maybe, maybe not correct
-        echo "(✓)"
+        # nothing to compare to, might or might not be correct
+        echo "?"
         return 0
     fi
 
@@ -186,7 +186,6 @@ compile_comparison() {
 - ✓, the result of this tool matches what the majority says
 - ✗, a result is different to multiple others
 - ?, the results disagree, but there are not enough samples to be conclusive on which one is probably correct
-- (✓), there are not enough candidates available to check for correctness
 - e, the tool failed executing the query and probably does not support this type of query"
     } > "${target_dir}/README.md"
 }
