@@ -29,7 +29,7 @@ compare_results() {
     if [[ $results_count -eq 1 ]]; then
         # nothing to compare to, might or might not be correct
         echo "?"
-        return 0
+        return 1
     fi
 
     if [[ $results_count -eq 2 ]]; then
