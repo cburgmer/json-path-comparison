@@ -208,7 +208,7 @@ compile_comparison() {
 - ✗, the result is different to multiple others
 - ?, the results disagree, but there are not enough samples to be conclusive on which one is probably correct
 - e, the tool failed executing the query and probably does not support this type of query
-- ¹, those tools actually return a scalar as a list of one element. This difference is not included for the sake of this comparison."
+- ¹, those tools actually return a scalar as an array of one element. This difference is not included for the sake of this comparison."
     } > "${target_dir}/README.md"
 }
 

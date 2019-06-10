@@ -98,7 +98,7 @@ Rust (jsonpath_lib)
 </td>
 </tr>
 <tr>
-<td><a href="results/list_result.md">List result</a></td>
+<td><a href="results/array_result.md">Array result</a></td>
 <td><code>$.book</code></td>
 <td>
 ✓

@@ -1,4 +1,4 @@
-## List result
+## Array result
 
 ### Setup
 Selector: `$.book`
