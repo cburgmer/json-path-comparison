@@ -35,51 +35,7 @@ Selector: `$.book[2]`
     }
 
 ### Results
-#### Clojure (json-path)
-
-    {
-      "author": "Herman Melville", 
-      "category": "fiction", 
-      "isbn": "0-553-21311-3", 
-      "price": 8.99, 
-      "title": "Moby Dick"
-    }
-
-#### JavaScript (Goessner)
-
-    [
-      {
-        "author": "Herman Melville", 
-        "category": "fiction", 
-        "isbn": "0-553-21311-3", 
-        "price": 8.99, 
-        "title": "Moby Dick"
-      }
-    ]
-
-#### JavaScript (jsonpath)
-
-    [
-      {
-        "author": "Herman Melville", 
-        "category": "fiction", 
-        "isbn": "0-553-21311-3", 
-        "price": 8.99, 
-        "title": "Moby Dick"
-      }
-    ]
-
-#### JavaScript (jsonpath-plus)
-
-    {
-      "author": "Herman Melville", 
-      "category": "fiction", 
-      "isbn": "0-553-21311-3", 
-      "price": 8.99, 
-      "title": "Moby Dick"
-    }
-
-#### Rust (jsonpath_lib)
+####  Gold Standard (consensus)
 
     {
       "author": "Herman Melville", 

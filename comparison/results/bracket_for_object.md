@@ -8,23 +8,7 @@ Selector: `$['key']`
     }
 
 ### Results
-#### JavaScript (Goessner)
-
-    [
-      "value"
-    ]
-
-#### JavaScript (jsonpath)
-
-    [
-      "value"
-    ]
-
-#### JavaScript (jsonpath-plus)
-
-    "value"
-
-#### Rust (jsonpath_lib)
+####  Gold Standard (consensus)
 
     "value"
 

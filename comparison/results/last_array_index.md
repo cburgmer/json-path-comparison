@@ -35,11 +35,7 @@ Selector: `$.book[-1]`
     }
 
 ### Results
-#### JavaScript (jsonpath)
-
-    []
-
-#### Rust (jsonpath_lib)
+####  Gold Standard (consensus)
 
     {
       "author": "J. R. R. Tolkien", 

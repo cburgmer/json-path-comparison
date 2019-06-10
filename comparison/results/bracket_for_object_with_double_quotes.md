@@ -8,13 +8,7 @@ Selector: `$["key"]`
     }
 
 ### Results
-#### JavaScript (jsonpath)
-
-    [
-      "value"
-    ]
-
-#### Rust (jsonpath_lib)
+####  Gold Standard (consensus)
 
     "value"
 

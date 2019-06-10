@@ -26,17 +26,3 @@ Selector: `$`
       "key": "value"
     }
 
-#### JavaScript (jsonpath)
-
-    [
-      {
-        "another key": {
-          "complex": [
-            "a", 
-            1
-          ]
-        }, 
-        "key": "value"
-      }
-    ]
-

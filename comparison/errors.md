@@ -194,18 +194,54 @@ JavaScript (Goessner), Bracket for object with double quotes
 </h3>
 
     jsonpath returned false, this might indicate an error
+    Traceback (most recent call last):
+      File "./src/unwrap_scalar.py", line 15, in <module>
+        sys.exit(main())
+      File "./src/unwrap_scalar.py", line 6, in main
+        j = json.loads(sys.stdin.read())
+      File "/usr/local/Cellar/python@2/2.7.16/Frameworks/Python.framework/Versions/2.7/lib/python2.7/json/__init__.py", line 339, in loads
+        return _default_decoder.decode(s)
+      File "/usr/local/Cellar/python@2/2.7.16/Frameworks/Python.framework/Versions/2.7/lib/python2.7/json/decoder.py", line 364, in decode
+        obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+      File "/usr/local/Cellar/python@2/2.7.16/Frameworks/Python.framework/Versions/2.7/lib/python2.7/json/decoder.py", line 382, in raw_decode
+        raise ValueError("No JSON object could be decoded")
+    ValueError: No JSON object could be decoded
 
 <h3 id="JavaScript_Goessner___last_array_index">
 JavaScript (Goessner), Last array index
 </h3>
 
     jsonpath returned false, this might indicate an error
+    Traceback (most recent call last):
+      File "./src/unwrap_scalar.py", line 15, in <module>
+        sys.exit(main())
+      File "./src/unwrap_scalar.py", line 6, in main
+        j = json.loads(sys.stdin.read())
+      File "/usr/local/Cellar/python@2/2.7.16/Frameworks/Python.framework/Versions/2.7/lib/python2.7/json/__init__.py", line 339, in loads
+        return _default_decoder.decode(s)
+      File "/usr/local/Cellar/python@2/2.7.16/Frameworks/Python.framework/Versions/2.7/lib/python2.7/json/decoder.py", line 364, in decode
+        obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+      File "/usr/local/Cellar/python@2/2.7.16/Frameworks/Python.framework/Versions/2.7/lib/python2.7/json/decoder.py", line 382, in raw_decode
+        raise ValueError("No JSON object could be decoded")
+    ValueError: No JSON object could be decoded
 
 <h3 id="JavaScript_Goessner___root">
 JavaScript (Goessner), Root
 </h3>
 
     jsonpath returned false, this might indicate an error
+    Traceback (most recent call last):
+      File "./src/unwrap_scalar.py", line 15, in <module>
+        sys.exit(main())
+      File "./src/unwrap_scalar.py", line 6, in main
+        j = json.loads(sys.stdin.read())
+      File "/usr/local/Cellar/python@2/2.7.16/Frameworks/Python.framework/Versions/2.7/lib/python2.7/json/__init__.py", line 339, in loads
+        return _default_decoder.decode(s)
+      File "/usr/local/Cellar/python@2/2.7.16/Frameworks/Python.framework/Versions/2.7/lib/python2.7/json/decoder.py", line 364, in decode
+        obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+      File "/usr/local/Cellar/python@2/2.7.16/Frameworks/Python.framework/Versions/2.7/lib/python2.7/json/decoder.py", line 382, in raw_decode
+        raise ValueError("No JSON object could be decoded")
+    ValueError: No JSON object could be decoded
 
 <h3 id="JavaScript_jsonpath-plus___bracket_for_object_with_double_quotes">
 JavaScript (jsonpath-plus), Bracket for object with double quotes
@@ -217,14 +253,16 @@ JavaScript (jsonpath-plus), Bracket for object with double quotes
     
     TypeError [ERR_INVALID_ARG_TYPE]: The "chunk" argument must be one of type string or Buffer. Received type undefined
         at validChunk (_stream_writable.js:265:10)
-        at SyncWriteStream.Writable.write (_stream_writable.js:299:21)
+        at Socket.Writable.write (_stream_writable.js:299:21)
         at ReadStream.<anonymous> (/Users/cburgmer/projekte/json-path-comparison/tools/JavaScript_jsonpath-plus/index.js:24:12)
         at ReadStream.emit (events.js:205:15)
         at endReadableNT (_stream_readable.js:1137:12)
         at processTicksAndRejections (internal/process/task_queues.js:84:9)
     Emitted 'error' event at:
-        at emitErrorNT (internal/streams/destroy.js:91:8)
-        at emitErrorAndCloseNT (internal/streams/destroy.js:59:3)
+        at errorOrDestroy (internal/streams/destroy.js:107:12)
+        at validChunk (_stream_writable.js:268:5)
+        at Socket.Writable.write (_stream_writable.js:299:21)
+        [... lines matching original stack trace ...]
         at processTicksAndRejections (internal/process/task_queues.js:84:9)
 
 <h3 id="JavaScript_jsonpath-plus___last_array_index">
@@ -237,15 +275,28 @@ JavaScript (jsonpath-plus), Last array index
     
     TypeError [ERR_INVALID_ARG_TYPE]: The "chunk" argument must be one of type string or Buffer. Received type undefined
         at validChunk (_stream_writable.js:265:10)
-        at SyncWriteStream.Writable.write (_stream_writable.js:299:21)
+        at Socket.Writable.write (_stream_writable.js:299:21)
         at ReadStream.<anonymous> (/Users/cburgmer/projekte/json-path-comparison/tools/JavaScript_jsonpath-plus/index.js:24:12)
         at ReadStream.emit (events.js:205:15)
         at endReadableNT (_stream_readable.js:1137:12)
         at processTicksAndRejections (internal/process/task_queues.js:84:9)
     Emitted 'error' event at:
-        at emitErrorNT (internal/streams/destroy.js:91:8)
-        at emitErrorAndCloseNT (internal/streams/destroy.js:59:3)
+        at errorOrDestroy (internal/streams/destroy.js:107:12)
+        at validChunk (_stream_writable.js:268:5)
+        at Socket.Writable.write (_stream_writable.js:299:21)
+        [... lines matching original stack trace ...]
         at processTicksAndRejections (internal/process/task_queues.js:84:9)
+
+<h3 id="JavaScript_jsonpath___last_array_index">
+JavaScript (jsonpath), Last array index
+</h3>
+
+    Traceback (most recent call last):
+      File "./src/unwrap_scalar.py", line 15, in <module>
+        sys.exit(main())
+      File "./src/unwrap_scalar.py", line 9, in main
+        assert len(j) == 1
+    AssertionError
 
 <h3 id="Rust_jsonpath_lib___array_index_step_start_end_step">
 Rust (jsonpath_lib), Array index step start end step

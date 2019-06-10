@@ -8,12 +8,28 @@ readonly target_dir="./comparison"
 
 . src/shared.sh
 
+
+unwrap_scalar_if_needed() {
+    local tool="$1"
+    local query="$2"
+
+    if [[ -f "./tools/${tool}/SCALARS_RETURNED_AS_ARRAY" && -f "./queries/${query}/SCALAR_RESULT" ]]; then
+        ./src/unwrap_scalar.py
+    else
+        cat
+    fi
+}
+
 run_query() {
     local tool="$1"
-    local selector="$2"
-    local document="$3"
+    local query="$2"
+    local query_dir="./queries/${query}"
+    local selector_file="$query_dir"/selector
+    local document="$query_dir"/document.json
+    local selector
+    selector="$(cat "${selector_file}")"
 
-    "./tools/${tool}"/run.sh "$selector" < "$document"
+    "./tools/${tool}"/run.sh "$selector" < "$document" | unwrap_scalar_if_needed "$tool" "$query"
 }
 
 all_queries() {
@@ -86,22 +102,17 @@ canonical_json() {
 
 query_tools() {
     local query="$1"
-    local query_dir="./queries/${query}"
-    local selector_file="$query_dir"/selector
-    local document="$query_dir"/document.json
     local results_dir="${tmp_result_dir}/${query}"
-    local selector
     local tool
     local error_key
-    selector="$(cat "${selector_file}")"
 
     mkdir -p "$results_dir"
 
-    echo -n "${query}, ${selector}   "
+    echo -en "${query}\t"
     while IFS= read -r tool; do
         echo -n "${tool} "
         error_key="${tool}___${query}"
-        if run_query "$tool" "$selector" "$document" > "${results_dir}/${tool}" 2> "${tmp_error_report_dir}/${error_key}"; then
+        if run_query "$tool" "$query" > "${results_dir}/${tool}" 2> "${tmp_error_report_dir}/${error_key}"; then
             rm "${tmp_error_report_dir}/${error_key}"
 
             canonical_json "${results_dir}/${tool}"

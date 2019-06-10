@@ -25,7 +25,7 @@ This sheet makes no statement on the correctness of any of the tools, it merely 
 <a href="errors.md#JavaScript_Goessner___root">e</a>
 </td>
 <td>
-✗
+✓
 </td>
 <td>
 ✓
@@ -76,19 +76,19 @@ This sheet makes no statement on the correctness of any of the tools, it merely 
 <td><a href="results/list_result.md">List result</a></td>
 <td><code>$.book</code></td>
 <td>
-✗
+✓
+</td>
+<td>
+✓
+</td>
+<td>
+✓
 </td>
 <td>
 ✗
 </td>
 <td>
-✗
-</td>
-<td>
-✗
-</td>
-<td>
-✗
+✓
 </td>
 </tr>
 <tr>
@@ -139,7 +139,7 @@ This sheet makes no statement on the correctness of any of the tools, it merely 
 <a href="errors.md#JavaScript_Goessner___last_array_index">e</a>
 </td>
 <td>
-?
+<a href="errors.md#JavaScript_jsonpath___last_array_index">e</a>
 </td>
 <td>
 <a href="errors.md#JavaScript_jsonpath-plus___last_array_index">e</a>
@@ -228,19 +228,19 @@ This sheet makes no statement on the correctness of any of the tools, it merely 
 <td><a href="results/array_index.md">Array index</a></td>
 <td><code>$.book[2]</code></td>
 <td>
-✗
+✓
 </td>
 <td>
-✗
+✓
 </td>
 <td>
-✗
+✓
 </td>
 <td>
-✗
+✓
 </td>
 <td>
-✗
+✓
 </td>
 </tr>
 <tr>
@@ -329,13 +329,13 @@ This sheet makes no statement on the correctness of any of the tools, it merely 
 <a href="errors.md#JavaScript_Goessner___bracket_for_object_with_double_quotes">e</a>
 </td>
 <td>
-?
+✓
 </td>
 <td>
 <a href="errors.md#JavaScript_jsonpath-plus___bracket_for_object_with_double_quotes">e</a>
 </td>
 <td>
-?
+✓
 </td>
 </tr>
 <tr>
@@ -345,16 +345,16 @@ This sheet makes no statement on the correctness of any of the tools, it merely 
 <a href="errors.md#Clojure_json-path___bracket_for_object">e</a>
 </td>
 <td>
-✗
+✓
 </td>
 <td>
-✗
+✓
 </td>
 <td>
-✗
+✓
 </td>
 <td>
-✗
+✓
 </td>
 </tr>
 </tbody>
