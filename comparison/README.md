@@ -7,11 +7,23 @@ This sheet makes no statement on the correctness of any of the tools, it merely 
 <tr>
 <th></th>
 <th></th>
-<th>Clojure (json-path)</th>
-<th>JavaScript (Goessner)</th>
-<th>JavaScript (jsonpath)</th>
-<th>JavaScript (jsonpath-plus)</th>
-<th>Rust (jsonpath_lib)</th>
+<th>
+Clojure (json-path)
+</th>
+<th>
+JavaScript (Goessner)
+¹
+</th>
+<th>
+JavaScript (jsonpath)
+¹
+</th>
+<th>
+JavaScript (jsonpath-plus)
+</th>
+<th>
+Rust (jsonpath_lib)
+</th>
 </tr>
 </thead>
 <tbody>
@@ -363,6 +375,7 @@ This sheet makes no statement on the correctness of any of the tools, it merely 
 ## Explanation
 
 - ✓, the result of this tool matches what the majority says
-- ✗, a result is different to multiple others
+- ✗, the result is different to multiple others
 - ?, the results disagree, but there are not enough samples to be conclusive on which one is probably correct
 - e, the tool failed executing the query and probably does not support this type of query
+- ¹, those tools actually return a scalar as a list of one element. This difference is not included for the sake of this comparison.

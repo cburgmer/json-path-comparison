@@ -171,7 +171,12 @@ header_row() {
     echo "<th></th>"
     while IFS= read -r tool; do
         tool_name="$(pretty_tool_name "$tool")"
-        echo "<th>${tool_name}</th>"
+        echo "<th>"
+        echo "${tool_name}"
+        if [[ -f "./tools/${tool}/SCALARS_RETURNED_AS_ARRAY" ]]; then
+            echo "¹"
+        fi
+        echo "</th>"
     done <<< "$(list_of_tools)"
     echo "</tr>"
 }
@@ -200,9 +205,10 @@ compile_comparison() {
 ## Explanation
 
 - ✓, the result of this tool matches what the majority says
-- ✗, a result is different to multiple others
+- ✗, the result is different to multiple others
 - ?, the results disagree, but there are not enough samples to be conclusive on which one is probably correct
-- e, the tool failed executing the query and probably does not support this type of query"
+- e, the tool failed executing the query and probably does not support this type of query
+- ¹, those tools actually return a scalar as a list of one element. This difference is not included for the sake of this comparison."
     } > "${target_dir}/README.md"
 }
 
