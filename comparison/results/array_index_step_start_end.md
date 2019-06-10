@@ -39,26 +39,26 @@ Selector: `$.book[1:3]`
 
     [
       {
-        "category": "fiction",
-        "author": "Evelyn Waugh",
-        "title": "Sword of Honour",
-        "price": 12.99
-      },
+        "author": "Evelyn Waugh", 
+        "category": "fiction", 
+        "price": 12.99, 
+        "title": "Sword of Honour"
+      }, 
       {
-        "category": "fiction",
-        "author": "Herman Melville",
-        "title": "Moby Dick",
-        "isbn": "0-553-21311-3",
-        "price": 8.99
+        "author": "Herman Melville", 
+        "category": "fiction", 
+        "isbn": "0-553-21311-3", 
+        "price": 8.99, 
+        "title": "Moby Dick"
       }
     ]
 
 #### Clojure (json-path)
 
     {
-      "category": "fiction",
-      "author": "Evelyn Waugh",
-      "title": "Sword of Honour",
-      "price": 12.99
+      "author": "Evelyn Waugh", 
+      "category": "fiction", 
+      "price": 12.99, 
+      "title": "Sword of Honour"
     }
 

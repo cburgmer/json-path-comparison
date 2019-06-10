@@ -80,7 +80,7 @@ compare_results() {
 
 canonical_json() {
     local filepath="$1"
-    jp < "$filepath" > "${filepath}.json"
+    ./src/canonical_json.py < "$filepath" > "${filepath}.json"
     mv "${filepath}.json" "$filepath"
 }
 

@@ -17,26 +17,26 @@ Selector: `$`
 ####  Gold Standard (consensus)
 
     {
-      "key": "value",
       "another key": {
         "complex": [
-          "a",
+          "a", 
           1
         ]
-      }
+      }, 
+      "key": "value"
     }
 
 #### JavaScript (jsonpath)
 
     [
       {
-        "key": "value",
         "another key": {
           "complex": [
-            "a",
+            "a", 
             1
           ]
-        }
+        }, 
+        "key": "value"
       }
     ]
 

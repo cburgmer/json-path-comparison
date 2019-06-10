@@ -38,22 +38,22 @@ Selector: `$.book[2]`
 #### Clojure (json-path)
 
     {
-      "category": "fiction",
-      "author": "Herman Melville",
-      "title": "Moby Dick",
-      "isbn": "0-553-21311-3",
-      "price": 8.99
+      "author": "Herman Melville", 
+      "category": "fiction", 
+      "isbn": "0-553-21311-3", 
+      "price": 8.99, 
+      "title": "Moby Dick"
     }
 
 #### JavaScript (Goessner)
 
     [
       {
-        "category": "fiction",
-        "author": "Herman Melville",
-        "title": "Moby Dick",
-        "isbn": "0-553-21311-3",
-        "price": 8.99
+        "author": "Herman Melville", 
+        "category": "fiction", 
+        "isbn": "0-553-21311-3", 
+        "price": 8.99, 
+        "title": "Moby Dick"
       }
     ]
 
@@ -61,31 +61,31 @@ Selector: `$.book[2]`
 
     [
       {
-        "category": "fiction",
-        "author": "Herman Melville",
-        "title": "Moby Dick",
-        "isbn": "0-553-21311-3",
-        "price": 8.99
+        "author": "Herman Melville", 
+        "category": "fiction", 
+        "isbn": "0-553-21311-3", 
+        "price": 8.99, 
+        "title": "Moby Dick"
       }
     ]
 
 #### JavaScript (jsonpath-plus)
 
     {
-      "category": "fiction",
-      "author": "Herman Melville",
-      "title": "Moby Dick",
-      "isbn": "0-553-21311-3",
-      "price": 8.99
+      "author": "Herman Melville", 
+      "category": "fiction", 
+      "isbn": "0-553-21311-3", 
+      "price": 8.99, 
+      "title": "Moby Dick"
     }
 
 #### Rust (jsonpath_lib)
 
     {
-      "category": "fiction",
-      "author": "Herman Melville",
-      "title": "Moby Dick",
-      "isbn": "0-553-21311-3",
-      "price": 8.99
+      "author": "Herman Melville", 
+      "category": "fiction", 
+      "isbn": "0-553-21311-3", 
+      "price": 8.99, 
+      "title": "Moby Dick"
     }
 

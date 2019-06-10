@@ -44,9 +44,9 @@ Selector: `$.store.book[*].author`
 ####  Gold Standard (consensus)
 
     [
-      "Nigel Rees",
-      "Evelyn Waugh",
-      "Herman Melville",
+      "Nigel Rees", 
+      "Evelyn Waugh", 
+      "Herman Melville", 
       "J. R. R. Tolkien"
     ]
 

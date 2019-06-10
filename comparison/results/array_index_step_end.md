@@ -39,26 +39,26 @@ Selector: `$.book[:2]`
 
     [
       {
-        "category": "reference",
-        "author": "Nigel Rees",
-        "title": "Sayings of the Century",
-        "price": 8.95
-      },
+        "author": "Nigel Rees", 
+        "category": "reference", 
+        "price": 8.95, 
+        "title": "Sayings of the Century"
+      }, 
       {
-        "category": "fiction",
-        "author": "Evelyn Waugh",
-        "title": "Sword of Honour",
-        "price": 12.99
+        "author": "Evelyn Waugh", 
+        "category": "fiction", 
+        "price": 12.99, 
+        "title": "Sword of Honour"
       }
     ]
 
 #### Clojure (json-path)
 
     {
-      "category": "fiction",
-      "author": "Herman Melville",
-      "title": "Moby Dick",
-      "isbn": "0-553-21311-3",
-      "price": 8.99
+      "author": "Herman Melville", 
+      "category": "fiction", 
+      "isbn": "0-553-21311-3", 
+      "price": 8.99, 
+      "title": "Moby Dick"
     }
 
