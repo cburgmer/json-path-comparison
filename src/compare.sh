@@ -59,7 +59,7 @@ query_tools() {
             rm "${results_dir}/${tool}"
             echo -n "(err) "
         fi
-    done <<< "$(list_of_tools)"
+    done <<< "$(all_tools)"
     echo
 }
 

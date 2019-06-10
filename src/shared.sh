@@ -13,7 +13,7 @@ all_queries() {
         | xargs -n1 basename
 }
 
-list_of_tools() {
+all_tools() {
     find ./tools -type d -depth 1 -print0 | xargs -0 -n1 basename | sort
 }
 

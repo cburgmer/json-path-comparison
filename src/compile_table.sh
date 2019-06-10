@@ -85,7 +85,7 @@ compile_row() {
             echo "<a href=\"errors.md#${error_key}\">e</a>"
         fi
         echo "</td>"
-    done <<< "$(list_of_tools)"
+    done <<< "$(all_tools)"
 
     echo "</tr>"
 }
@@ -105,7 +105,7 @@ header_row() {
             echo "¹"
         fi
         echo "</th>"
-    done <<< "$(list_of_tools)"
+    done <<< "$(all_tools)"
     echo "</tr>"
 }
 
