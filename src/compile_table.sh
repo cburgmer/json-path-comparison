@@ -6,6 +6,20 @@ readonly target_dir="$2"
 
 . src/shared.sh
 
+all_tools() {
+    find ./tools -type d -depth 1 -print0 | xargs -0 -n1 basename | sort
+}
+
+sort_by_selector() {
+    xargs -n1 -I% sh -c 'echo "$(cat ./queries/%/selector)\t%"' \
+        | sort \
+        | cut -f2
+
+}
+
+all_query_results() {
+    find "$tmp_consensus_dir" -type d -depth 1 -print0 | xargs -0 -n1 basename | sort_by_selector
+}
 
 give_mark() {
     local query="$1"
@@ -27,7 +41,7 @@ give_mark() {
         return
     fi
 
-    if [[ $(ls "${consensus_dir}/outliers/" | wc -l) -lt 3 ]]; then
+    if [[ $(find "${consensus_dir}/outliers/" -type f | wc -l) -lt 3 ]]; then
         # need at least 3 results to build consensus
         echo "?"
         return
@@ -93,7 +107,7 @@ compile_comparison() {
 
     while IFS= read -r query; do
         compile_row "$query"
-    done <<< "$(all_queries)"
+    done <<< "$(all_query_results)"
 
     echo "</tbody>"
     echo "</table>"

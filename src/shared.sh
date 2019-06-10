@@ -1,22 +1,5 @@
 #!/bin/bash
 
-all_queries() {
-    if [[ -n "${ONLY_QUERIES:-}" ]]; then
-        echo "$ONLY_QUERIES" | tr ' ' '\n'
-        return
-    fi
-
-    find ./queries -type d -depth 1 -print0 \
-        | xargs -0 -n1 -I% sh -c 'echo "$(cat %/selector)\t%"' \
-        | sort \
-        | cut -f2 \
-        | xargs -n1 basename
-}
-
-all_tools() {
-    find ./tools -type d -depth 1 -print0 | xargs -0 -n1 basename | sort
-}
-
 pretty_tool_name() {
     local tool="$1"
     local language

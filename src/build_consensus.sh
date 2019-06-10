@@ -6,6 +6,15 @@ readonly tmp_consensus_dir="$2"
 
 . src/shared.sh
 
+all_query_results() {
+    find "$tmp_result_dir" -type d -depth 1 -print0 | xargs -0 -n1 basename
+}
+
+all_tool_results() {
+    local query="$1"
+    find "${tmp_result_dir}/${query}" -type f -print0 | xargs -0 -n1 basename
+}
+
 tools_diverging_from() {
     local results_dir="$1"
     local tool="$2"
@@ -56,15 +65,13 @@ consensus_on_query() {
     touch "$query_consensus_result_dir"/matching_tools
 
     while IFS= read -r tool; do
-        if [[ -f "${results_dir}/${tool}" ]]; then
-            if check_gold_standard "$results_dir" "$tool"; then
-                cat "${results_dir}/${tool}" > "$query_consensus_result_dir"/gold_standard.json
-                echo "$tool" >> "$query_consensus_result_dir"/matching_tools
-            else
-                cp "${results_dir}/${tool}" "$query_consensus_result_dir"/outliers
-            fi
+        if check_gold_standard "$results_dir" "$tool"; then
+            cat "${results_dir}/${tool}" > "$query_consensus_result_dir"/gold_standard.json
+            echo "$tool" >> "$query_consensus_result_dir"/matching_tools
+        else
+            cp "${results_dir}/${tool}" "$query_consensus_result_dir"/outliers
         fi
-    done <<< "$(all_tools)"
+    done <<< "$(all_tool_results "$query")"
 }
 
 build_consensus() {
@@ -72,7 +79,7 @@ build_consensus() {
 
     while IFS= read -r query; do
         consensus_on_query "$query"
-    done <<< "$(all_queries)"
+    done <<< "$(all_query_results)"
 }
 
 main() {
