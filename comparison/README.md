@@ -406,6 +406,28 @@ Rust (jsonpath_lib)
 </td>
 </tr>
 <tr>
+<td><a href="results/bracket_for_object_multiple_keys.md">Bracket for object multiple keys</a></td>
+<td><code>$['key','another']</code></td>
+<td>
+<a href="errors.md#Clojure_json-path___bracket_for_object_multiple_keys">e</a>
+</td>
+<td>
+✓
+</td>
+<td>
+✓
+</td>
+<td>
+<a href="errors.md#JavaScript_jsonpath-plus___bracket_for_object_multiple_keys">e</a>
+</td>
+<td>
+✓
+</td>
+<td>
+<a href="errors.md#Rust_jsonpath_lib___bracket_for_object_multiple_keys">e</a>
+</td>
+</tr>
+<tr>
 <td><a href="results/bracket_for_object.md">Bracket for object</a></td>
 <td><code>$['key']</code></td>
 <td>
