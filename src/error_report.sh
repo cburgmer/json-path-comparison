@@ -30,7 +30,7 @@ compile_error_report() {
 
         while IFS= read -r error_key; do
             echo "<h3 id=\"${error_key}\">"
-            echo "$(nice_error_headline "$error_key")"
+            nice_error_headline "$error_key"
             echo "</h3>"
             echo
             pre_block < "${tmp_error_report_dir}/${error_key}"
