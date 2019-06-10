@@ -111,10 +111,10 @@ This sheet makes no statement on the correctness of any of the tools, it merely 
 </td>
 </tr>
 <tr>
-<td><a href="results/last_array_index.md">Last array index</a></td>
+<td><a href="results/last_array_index_open_end.md">Last array index open end</a></td>
 <td><code>$.book[-1:]</code></td>
 <td>
-<a href="errors.md#Clojure_json-path___last_array_index">e</a>
+<a href="errors.md#Clojure_json-path___last_array_index_open_end">e</a>
 </td>
 <td>
 ✓
@@ -127,6 +127,25 @@ This sheet makes no statement on the correctness of any of the tools, it merely 
 </td>
 <td>
 ✓
+</td>
+</tr>
+<tr>
+<td><a href="results/last_array_index.md">Last array index</a></td>
+<td><code>$.book[-1]</code></td>
+<td>
+<a href="errors.md#Clojure_json-path___last_array_index">e</a>
+</td>
+<td>
+<a href="errors.md#JavaScript_Goessner___last_array_index">e</a>
+</td>
+<td>
+?
+</td>
+<td>
+<a href="errors.md#JavaScript_jsonpath-plus___last_array_index">e</a>
+</td>
+<td>
+?
 </td>
 </tr>
 <tr>

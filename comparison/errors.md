@@ -123,6 +123,32 @@ Clojure (json-path), Last array index
     	at clojure.lang.RestFn.applyTo(RestFn.java:137)
     	at json_path_comparison.core.main(Unknown Source)
 
+<h3 id="Clojure_json-path___last_array_index_open_end">
+Clojure (json-path), Last array index open end
+</h3>
+
+    Exception in thread "main" java.lang.IndexOutOfBoundsException
+    	at clojure.lang.PersistentVector.arrayFor(PersistentVector.java:158)
+    	at clojure.lang.PersistentVector.nth(PersistentVector.java:162)
+    	at clojure.lang.RT.nth(RT.java:892)
+    	at json_path.walker$walk_selector.invokeStatic(walker.clj:69)
+    	at json_path.walker$walk_selector.invoke(walker.clj:61)
+    	at json_path.walker$walk.invokeStatic(walker.clj:82)
+    	at json_path.walker$walk.invoke(walker.clj:79)
+    	at json_path.walker$walk$fn__1026.invoke(walker.clj:84)
+    	at json_path.walker$map_SHARP_.invokeStatic(walker.clj:20)
+    	at json_path.walker$map_SHARP_.invoke(walker.clj:17)
+    	at json_path.walker$walk.invokeStatic(walker.clj:84)
+    	at json_path.walker$walk.invoke(walker.clj:79)
+    	at json_path$query.invokeStatic(json_path.clj:7)
+    	at json_path$query.invoke(json_path.clj:6)
+    	at json_path$at_path.invokeStatic(json_path.clj:10)
+    	at json_path$at_path.invoke(json_path.clj:9)
+    	at json_path_comparison.core$_main.invokeStatic(core.clj:10)
+    	at json_path_comparison.core$_main.doInvoke(core.clj:6)
+    	at clojure.lang.RestFn.applyTo(RestFn.java:137)
+    	at json_path_comparison.core.main(Unknown Source)
+
 <h3 id="Clojure_json-path___nested_recursive">
 Clojure (json-path), Nested recursive
 </h3>
@@ -169,6 +195,12 @@ JavaScript (Goessner), Bracket for object with double quotes
 
     jsonpath returned false, this might indicate an error
 
+<h3 id="JavaScript_Goessner___last_array_index">
+JavaScript (Goessner), Last array index
+</h3>
+
+    jsonpath returned false, this might indicate an error
+
 <h3 id="JavaScript_Goessner___root">
 JavaScript (Goessner), Root
 </h3>
@@ -177,6 +209,26 @@ JavaScript (Goessner), Root
 
 <h3 id="JavaScript_jsonpath-plus___bracket_for_object_with_double_quotes">
 JavaScript (jsonpath-plus), Bracket for object with double quotes
+</h3>
+
+    events.js:177
+          throw er; // Unhandled 'error' event
+          ^
+    
+    TypeError [ERR_INVALID_ARG_TYPE]: The "chunk" argument must be one of type string or Buffer. Received type undefined
+        at validChunk (_stream_writable.js:265:10)
+        at SyncWriteStream.Writable.write (_stream_writable.js:299:21)
+        at ReadStream.<anonymous> (/Users/cburgmer/projekte/json-path-comparison/tools/JavaScript_jsonpath-plus/index.js:24:12)
+        at ReadStream.emit (events.js:205:15)
+        at endReadableNT (_stream_readable.js:1137:12)
+        at processTicksAndRejections (internal/process/task_queues.js:84:9)
+    Emitted 'error' event at:
+        at emitErrorNT (internal/streams/destroy.js:91:8)
+        at emitErrorAndCloseNT (internal/streams/destroy.js:59:3)
+        at processTicksAndRejections (internal/process/task_queues.js:84:9)
+
+<h3 id="JavaScript_jsonpath-plus___last_array_index">
+JavaScript (jsonpath-plus), Last array index
 </h3>
 
     events.js:177

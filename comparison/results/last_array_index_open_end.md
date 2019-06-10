@@ -1,7 +1,7 @@
-## Last array index
+## Last array index open end
 
 ### Setup
-Selector: `$.book[-1]`
+Selector: `$.book[-1:]`
 
     {
       "book": [
@@ -35,11 +35,19 @@ Selector: `$.book[-1]`
     }
 
 ### Results
-#### JavaScript (jsonpath)
+####  Gold Standard (consensus)
 
-    []
+    [
+      {
+        "category": "fiction",
+        "author": "J. R. R. Tolkien",
+        "title": "The Lord of the Rings",
+        "isbn": "0-395-19395-8",
+        "price": 22.99
+      }
+    ]
 
-#### Rust (jsonpath_lib)
+#### JavaScript (jsonpath-plus)
 
     {
       "category": "fiction",
