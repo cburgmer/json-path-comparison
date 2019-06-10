@@ -7,26 +7,34 @@ This sheet makes no statement on the correctness of any of the tools, it merely 
 <tr>
 <th></th>
 <th></th>
+<th colspan="1">Clojure</th>
+<th colspan="3">JavaScript</th>
+<th colspan="1">Python</th>
+<th colspan="1">Rust</th>
+</tr>
+<tr>
+<th></th>
+<th></th>
 <th>
-Clojure (json-path)
+json-path
 </th>
 <th>
-JavaScript (Goessner)
+Goessner
 ¹
 </th>
 <th>
-JavaScript (jsonpath)
+jsonpath
 ¹
 </th>
 <th>
-JavaScript (jsonpath-plus)
+jsonpath-plus
 </th>
 <th>
-Python (jsonpath-ng)
+jsonpath-ng
 ¹
 </th>
 <th>
-Rust (jsonpath_lib)
+jsonpath_lib
 </th>
 </tr>
 </thead>

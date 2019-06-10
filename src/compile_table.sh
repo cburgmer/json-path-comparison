@@ -73,17 +73,35 @@ compile_row() {
     echo "</tr>"
 }
 
+tool_language_header() {
+    local category_entry
+    local category
+    local count
+    local i
+
+    while IFS= read -r category_entry; do
+        category="$(awk '{print $2}' <<< "$category_entry")"
+        count="$(awk '{print $1}' <<< "$category_entry")"
+
+        echo "<th colspan=\"${count}\">${category}</th>"
+    done <<< "$(all_tools | sed "s/\([^_]*\)_.*/\1/" | uniq -c)"
+}
+
 header_row() {
     local tool
-    local tool_name
+
+    echo "<tr>"
+    echo "<th></th>"
+    echo "<th></th>"
+    tool_language_header
+    echo "</tr>"
 
     echo "<tr>"
     echo "<th></th>"
     echo "<th></th>"
     while IFS= read -r tool; do
-        tool_name="$(pretty_tool_name "$tool")"
         echo "<th>"
-        echo "${tool_name}"
+        sed "s/[^_]*_\(.*\)/\1/" <<< "$tool"
         if [[ -f "./tools/${tool}/SCALARS_RETURNED_AS_ARRAY" ]]; then
             echo "¹"
         fi
