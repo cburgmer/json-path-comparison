@@ -22,6 +22,10 @@ JavaScript (jsonpath)
 JavaScript (jsonpath-plus)
 </th>
 <th>
+Python (jsonpath)
+¹
+</th>
+<th>
 Rust (jsonpath_lib)
 </th>
 </tr>
@@ -35,6 +39,9 @@ Rust (jsonpath_lib)
 </td>
 <td>
 <a href="errors.md#JavaScript_Goessner___root">e</a>
+</td>
+<td>
+✓
 </td>
 <td>
 ✓
@@ -62,12 +69,18 @@ Rust (jsonpath_lib)
 ✓
 </td>
 <td>
+✗
+</td>
+<td>
 ✓
 </td>
 </tr>
 <tr>
 <td><a href="results/recursive_attribute.md">Recursive attribute</a></td>
 <td><code>$..author</code></td>
+<td>
+✓
+</td>
 <td>
 ✓
 </td>
@@ -102,6 +115,9 @@ Rust (jsonpath_lib)
 <td>
 ✓
 </td>
+<td>
+✓
+</td>
 </tr>
 <tr>
 <td><a href="results/all_children.md">All children</a></td>
@@ -117,6 +133,9 @@ Rust (jsonpath_lib)
 </td>
 <td>
 ✓
+</td>
+<td>
+✗
 </td>
 <td>
 ✓
@@ -140,6 +159,9 @@ Rust (jsonpath_lib)
 <td>
 ✓
 </td>
+<td>
+✓
+</td>
 </tr>
 <tr>
 <td><a href="results/last_array_index.md">Last array index</a></td>
@@ -157,7 +179,10 @@ Rust (jsonpath_lib)
 <a href="errors.md#JavaScript_jsonpath-plus___last_array_index">e</a>
 </td>
 <td>
-?
+✓
+</td>
+<td>
+✓
 </td>
 </tr>
 <tr>
@@ -174,6 +199,9 @@ Rust (jsonpath_lib)
 </td>
 <td>
 ✓
+</td>
+<td>
+<a href="errors.md#Python_jsonpath___array_index_union">e</a>
 </td>
 <td>
 ✓
@@ -195,6 +223,9 @@ Rust (jsonpath_lib)
 ✓
 </td>
 <td>
+<a href="errors.md#Python_jsonpath___array_index_step_start_end_step">e</a>
+</td>
+<td>
 <a href="errors.md#Rust_jsonpath_lib___array_index_step_start_end_step">e</a>
 </td>
 </tr>
@@ -203,6 +234,9 @@ Rust (jsonpath_lib)
 <td><code>$.book[1:3]</code></td>
 <td>
 ✗
+</td>
+<td>
+✓
 </td>
 <td>
 ✓
@@ -235,10 +269,16 @@ Rust (jsonpath_lib)
 <td>
 ✓
 </td>
+<td>
+✓
+</td>
 </tr>
 <tr>
 <td><a href="results/array_index.md">Array index</a></td>
 <td><code>$.book[2]</code></td>
+<td>
+✓
+</td>
 <td>
 ✓
 </td>
@@ -273,12 +313,18 @@ Rust (jsonpath_lib)
 <td>
 ✓
 </td>
+<td>
+✓
+</td>
 </tr>
 <tr>
 <td><a href="results/all_children_with_nested.md">All children with nested</a></td>
 <td><code>$.store.*</code></td>
 <td>
 ✗
+</td>
+<td>
+✓
 </td>
 <td>
 ✓
@@ -311,10 +357,16 @@ Rust (jsonpath_lib)
 <td>
 ✓
 </td>
+<td>
+✓
+</td>
 </tr>
 <tr>
 <td><a href="results/deep_attribute.md">Deep attribute</a></td>
 <td><code>$.store.book[*].author</code></td>
+<td>
+✓
+</td>
 <td>
 ✓
 </td>
@@ -349,12 +401,18 @@ Rust (jsonpath_lib)
 <td>
 ✓
 </td>
+<td>
+✓
+</td>
 </tr>
 <tr>
 <td><a href="results/bracket_for_object.md">Bracket for object</a></td>
 <td><code>$['key']</code></td>
 <td>
 <a href="errors.md#Clojure_json-path___bracket_for_object">e</a>
+</td>
+<td>
+✓
 </td>
 <td>
 ✓

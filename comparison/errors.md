@@ -298,6 +298,56 @@ JavaScript (jsonpath), Last array index
         assert len(j) == 1
     AssertionError
 
+<h3 id="Python_jsonpath___array_index_step_start_end_step">
+Python (jsonpath), Array index step start end step
+</h3>
+
+    Traceback (most recent call last):
+      File "main.py", line 16, in <module>
+        sys.exit(main())
+      File "main.py", line 8, in main
+        query = parse(selector)
+      File "/usr/local/lib/python2.7/site-packages/jsonpath_ng/parser.py", line 14, in parse
+        return JsonPathParser().parse(string)
+      File "/usr/local/lib/python2.7/site-packages/jsonpath_ng/parser.py", line 32, in parse
+        return self.parse_token_stream(lexer.tokenize(string))
+      File "/usr/local/lib/python2.7/site-packages/jsonpath_ng/parser.py", line 55, in parse_token_stream
+        return new_parser.parse(lexer = IteratorToTokenStream(token_iterator))
+      File "/usr/local/lib/python2.7/site-packages/ply/yacc.py", line 333, in parse
+        return self.parseopt_notrack(input, lexer, debug, tracking, tokenfunc)
+      File "/usr/local/lib/python2.7/site-packages/ply/yacc.py", line 1201, in parseopt_notrack
+        tok = call_errorfunc(self.errorfunc, errtoken, self)
+      File "/usr/local/lib/python2.7/site-packages/ply/yacc.py", line 192, in call_errorfunc
+        r = errorfunc(token)
+      File "/usr/local/lib/python2.7/site-packages/jsonpath_ng/parser.py", line 69, in p_error
+        raise Exception('Parse error at %s:%s near token %s (%s)' % (t.lineno, t.col, t.value, t.type))
+    Exception: Parse error at 1:10 near token : (:)
+
+<h3 id="Python_jsonpath___array_index_union">
+Python (jsonpath), Array index union
+</h3>
+
+    Traceback (most recent call last):
+      File "main.py", line 16, in <module>
+        sys.exit(main())
+      File "main.py", line 8, in main
+        query = parse(selector)
+      File "/usr/local/lib/python2.7/site-packages/jsonpath_ng/parser.py", line 14, in parse
+        return JsonPathParser().parse(string)
+      File "/usr/local/lib/python2.7/site-packages/jsonpath_ng/parser.py", line 32, in parse
+        return self.parse_token_stream(lexer.tokenize(string))
+      File "/usr/local/lib/python2.7/site-packages/jsonpath_ng/parser.py", line 55, in parse_token_stream
+        return new_parser.parse(lexer = IteratorToTokenStream(token_iterator))
+      File "/usr/local/lib/python2.7/site-packages/ply/yacc.py", line 333, in parse
+        return self.parseopt_notrack(input, lexer, debug, tracking, tokenfunc)
+      File "/usr/local/lib/python2.7/site-packages/ply/yacc.py", line 1201, in parseopt_notrack
+        tok = call_errorfunc(self.errorfunc, errtoken, self)
+      File "/usr/local/lib/python2.7/site-packages/ply/yacc.py", line 192, in call_errorfunc
+        r = errorfunc(token)
+      File "/usr/local/lib/python2.7/site-packages/jsonpath_ng/parser.py", line 69, in p_error
+        raise Exception('Parse error at %s:%s near token %s (%s)' % (t.lineno, t.col, t.value, t.type))
+    Exception: Parse error at 1:8 near token , (,)
+
 <h3 id="Rust_jsonpath_lib___array_index_step_start_end_step">
 Rust (jsonpath_lib), Array index step start end step
 </h3>
