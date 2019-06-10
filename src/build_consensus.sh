@@ -1,18 +1,18 @@
 #!/bin/bash
 set -euo pipefail
 
-readonly tmp_result_dir="$1"
+readonly tmp_results_dir="$1"
 readonly tmp_consensus_dir="$2"
 
 . src/shared.sh
 
 all_query_results() {
-    find "$tmp_result_dir" -type d -depth 1 -print0 | xargs -0 -n1 basename
+    find "$tmp_results_dir" -type d -depth 1 -print0 | xargs -0 -n1 basename
 }
 
 all_tool_results() {
     local query="$1"
-    find "${tmp_result_dir}/${query}" -type f -print0 | xargs -0 -n1 basename
+    find "${tmp_results_dir}/${query}" -type f -print0 | xargs -0 -n1 basename
 }
 
 tools_diverging_from() {
@@ -57,7 +57,7 @@ check_gold_standard() {
 
 consensus_on_query() {
     local query="$1"
-    local results_dir="${tmp_result_dir}/${query}"
+    local results_dir="${tmp_results_dir}/${query}"
     local query_consensus_result_dir="${tmp_consensus_dir}/${query}"
 
     mkdir -p "$query_consensus_result_dir"

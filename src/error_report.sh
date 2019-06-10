@@ -2,13 +2,13 @@
 
 set -euo pipefail
 
-readonly tmp_error_report_dir="$1"
+readonly tmp_errors_dir="$1"
 readonly target_dir="$2"
 
 . src/shared.sh
 
 all_errors() {
-    find "${tmp_error_report_dir}" -type f -depth 1 -print0 | xargs -0 -n1 basename | sort
+    find "${tmp_errors_dir}" -type f -depth 1 -print0 | xargs -0 -n1 basename | sort
 }
 
 nice_error_headline() {
@@ -33,7 +33,7 @@ compile_error_report() {
             nice_error_headline "$error_key"
             echo "</h3>"
             echo
-            pre_block < "${tmp_error_report_dir}/${error_key}"
+            pre_block < "${tmp_errors_dir}/${error_key}"
             echo
         done <<< "$(all_errors)"
     } > "${target_dir}/errors.md"

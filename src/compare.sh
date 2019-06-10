@@ -1,8 +1,8 @@
 #!/bin/bash
 set -euo pipefail
 
-readonly tmp_result_dir="/tmp/compare_jsonpath.result.$$"
-readonly tmp_error_report_dir="/tmp/compare_jsonpath.error_report.$$"
+readonly tmp_results_dir="/tmp/compare_jsonpath.results.$$"
+readonly tmp_errors_dir="/tmp/compare_jsonpath.errors.$$"
 readonly tmp_consensus_dir="/tmp/compare_jsonpath.consensus.$$"
 readonly target_dir="./comparison"
 
@@ -53,7 +53,7 @@ canonical_json() {
 
 query_tools() {
     local query="$1"
-    local results_dir="${tmp_result_dir}/${query}"
+    local results_dir="${tmp_results_dir}/${query}"
     local tool
     local error_key
 
@@ -63,8 +63,8 @@ query_tools() {
     while IFS= read -r tool; do
         echo -n "${tool} "
         error_key="${tool}___${query}"
-        if run_query "$tool" "$query" > "${results_dir}/${tool}" 2> "${tmp_error_report_dir}/${error_key}"; then
-            rm "${tmp_error_report_dir}/${error_key}"
+        if run_query "$tool" "$query" > "${results_dir}/${tool}" 2> "${tmp_errors_dir}/${error_key}"; then
+            rm "${tmp_errors_dir}/${error_key}"
 
             canonical_json "${results_dir}/${tool}"
             echo -n "(ok) "
@@ -77,22 +77,22 @@ query_tools() {
 }
 
 main() {
-    mkdir -p "$tmp_result_dir"
-    mkdir -p "$tmp_error_report_dir"
+    mkdir -p "$tmp_results_dir"
+    mkdir -p "$tmp_errors_dir"
     mkdir -p "$tmp_consensus_dir"
 
     while IFS= read -r query; do
         query_tools "$query"
     done <<< "$(all_queries)"
 
-    ./src/error_report.sh "$tmp_error_report_dir" "$target_dir"
+    ./src/error_report.sh "$tmp_errors_dir" "$target_dir"
 
-    ./src/build_consensus.sh "$tmp_result_dir" "$tmp_consensus_dir"
+    ./src/build_consensus.sh "$tmp_results_dir" "$tmp_consensus_dir"
     ./src/compile_table.sh "$tmp_consensus_dir" "$target_dir"
     ./src/results_report.sh "$tmp_consensus_dir" "$target_dir"
 
-    rm -r "$tmp_result_dir"
-    rm -r "$tmp_error_report_dir"
+    rm -r "$tmp_results_dir"
+    rm -r "$tmp_errors_dir"
     rm -r "$tmp_consensus_dir"
 }
 
