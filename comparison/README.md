@@ -22,7 +22,7 @@ JavaScript (jsonpath)
 JavaScript (jsonpath-plus)
 </th>
 <th>
-Python (jsonpath)
+Python (jsonpath-ng)
 ¹
 </th>
 <th>
@@ -201,7 +201,7 @@ Rust (jsonpath_lib)
 ✓
 </td>
 <td>
-<a href="errors.md#Python_jsonpath___array_index_union">e</a>
+<a href="errors.md#Python_jsonpath-ng___array_index_union">e</a>
 </td>
 <td>
 ✓
@@ -223,7 +223,7 @@ Rust (jsonpath_lib)
 ✓
 </td>
 <td>
-<a href="errors.md#Python_jsonpath___array_index_step_start_end_step">e</a>
+<a href="errors.md#Python_jsonpath-ng___array_index_step_start_end_step">e</a>
 </td>
 <td>
 <a href="errors.md#Rust_jsonpath_lib___array_index_step_start_end_step">e</a>
@@ -458,4 +458,4 @@ Rust (jsonpath_lib)
 - ✗, the result is different to multiple others
 - ?, the results disagree, but there are not enough samples to be conclusive on which one is probably correct
 - e, the tool failed executing the query and probably does not support this type of query
-- ¹, those tools actually return a scalar as a list of one element. This difference is not included for the sake of this comparison.
+- ¹, those tools actually return a scalar as an array of one element. This difference is not included for the sake of this comparison.

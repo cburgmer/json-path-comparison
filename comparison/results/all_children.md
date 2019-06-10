@@ -66,7 +66,7 @@ Selector: `$.book.*`
       }
     ]
 
-#### Python (jsonpath)
+#### Python (jsonpath-ng)
 
     []
 

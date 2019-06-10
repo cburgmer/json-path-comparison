@@ -158,7 +158,7 @@ Selector: `$..*`
       19.95
     ]
 
-#### Python (jsonpath)
+#### Python (jsonpath-ng)
 
     [
       {

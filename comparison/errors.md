@@ -343,8 +343,8 @@ JavaScript (jsonpath), Last array index
         assert len(j) == 1
     AssertionError
 
-<h3 id="Python_jsonpath___array_index_step_start_end_step">
-Python (jsonpath), Array index step start end step
+<h3 id="Python_jsonpath-ng___array_index_step_start_end_step">
+Python (jsonpath-ng), Array index step start end step
 </h3>
 
     Traceback (most recent call last):
@@ -368,8 +368,8 @@ Python (jsonpath), Array index step start end step
         raise Exception('Parse error at %s:%s near token %s (%s)' % (t.lineno, t.col, t.value, t.type))
     Exception: Parse error at 1:10 near token : (:)
 
-<h3 id="Python_jsonpath___array_index_union">
-Python (jsonpath), Array index union
+<h3 id="Python_jsonpath-ng___array_index_union">
+Python (jsonpath-ng), Array index union
 </h3>
 
     Traceback (most recent call last):
