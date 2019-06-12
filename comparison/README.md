@@ -9,6 +9,7 @@ This sheet makes no statement on the correctness of any of the tools, it merely 
 <th></th>
 <th colspan="1">Clojure</th>
 <th colspan="3">JavaScript</th>
+<th colspan="1">Java</th>
 <th colspan="1">Python</th>
 <th colspan="1">Rust</th>
 </tr>
@@ -28,6 +29,9 @@ jsonpath
 </th>
 <th>
 jsonpath-plus
+</th>
+<th>
+com.jayway.jsonpath
 </th>
 <th>
 jsonpath-ng
@@ -60,12 +64,18 @@ jsonpath_lib
 <td>
 ✓
 </td>
+<td>
+✓
+</td>
 </tr>
 <tr>
 <td><a href="results/all_elements.md">All elements</a></td>
 <td><code>$..*</code></td>
 <td>
 <a href="errors.md#Clojure_json-path___all_elements">e</a>
+</td>
+<td>
+✓
 </td>
 <td>
 ✓
@@ -86,6 +96,9 @@ jsonpath_lib
 <tr>
 <td><a href="results/recursive_attribute.md">Recursive attribute</a></td>
 <td><code>$..author</code></td>
+<td>
+✓
+</td>
 <td>
 ✓
 </td>
@@ -126,10 +139,16 @@ jsonpath_lib
 <td>
 ✓
 </td>
+<td>
+✓
+</td>
 </tr>
 <tr>
 <td><a href="results/all_children.md">All children</a></td>
 <td><code>$.book.*</code></td>
+<td>
+✓
+</td>
 <td>
 ✓
 </td>
@@ -170,6 +189,9 @@ jsonpath_lib
 <td>
 ✓
 </td>
+<td>
+✓
+</td>
 </tr>
 <tr>
 <td><a href="results/last_array_index.md">Last array index</a></td>
@@ -185,6 +207,9 @@ jsonpath_lib
 </td>
 <td>
 <a href="errors.md#JavaScript_jsonpath-plus___last_array_index">e</a>
+</td>
+<td>
+✓
 </td>
 <td>
 ✓
@@ -209,6 +234,9 @@ jsonpath_lib
 ✓
 </td>
 <td>
+✓
+</td>
+<td>
 <a href="errors.md#Python_jsonpath-ng___array_index_union">e</a>
 </td>
 <td>
@@ -222,13 +250,16 @@ jsonpath_lib
 ✗
 </td>
 <td>
-✓
+✗
 </td>
 <td>
-✓
+✗
 </td>
 <td>
-✓
+✗
+</td>
+<td>
+✗
 </td>
 <td>
 <a href="errors.md#Python_jsonpath-ng___array_index_step_start_end_step">e</a>
@@ -242,6 +273,9 @@ jsonpath_lib
 <td><code>$.book[1:3]</code></td>
 <td>
 ✗
+</td>
+<td>
+✓
 </td>
 <td>
 ✓
@@ -280,10 +314,16 @@ jsonpath_lib
 <td>
 ✓
 </td>
+<td>
+✓
+</td>
 </tr>
 <tr>
 <td><a href="results/array_index.md">Array index</a></td>
 <td><code>$.book[2]</code></td>
+<td>
+✓
+</td>
 <td>
 ✓
 </td>
@@ -324,12 +364,18 @@ jsonpath_lib
 <td>
 ✓
 </td>
+<td>
+✓
+</td>
 </tr>
 <tr>
 <td><a href="results/all_children_with_nested.md">All children with nested</a></td>
 <td><code>$.store.*</code></td>
 <td>
 ✗
+</td>
+<td>
+✓
 </td>
 <td>
 ✓
@@ -368,10 +414,16 @@ jsonpath_lib
 <td>
 ✓
 </td>
+<td>
+✓
+</td>
 </tr>
 <tr>
 <td><a href="results/deep_attribute.md">Deep attribute</a></td>
 <td><code>$.store.book[*].author</code></td>
+<td>
+✓
+</td>
 <td>
 ✓
 </td>
@@ -407,6 +459,9 @@ jsonpath_lib
 <a href="errors.md#JavaScript_jsonpath-plus___bracket_for_object_with_double_quotes">e</a>
 </td>
 <td>
+<a href="errors.md#Java_com.jayway.jsonpath___bracket_for_object_with_double_quotes">e</a>
+</td>
+<td>
 ✓
 </td>
 <td>
@@ -429,6 +484,9 @@ jsonpath_lib
 <a href="errors.md#JavaScript_jsonpath-plus___bracket_for_object_multiple_keys">e</a>
 </td>
 <td>
+<a href="errors.md#Java_com.jayway.jsonpath___bracket_for_object_multiple_keys">e</a>
+</td>
+<td>
 ✓
 </td>
 <td>
@@ -449,6 +507,9 @@ jsonpath_lib
 </td>
 <td>
 ✓
+</td>
+<td>
+<a href="errors.md#Java_com.jayway.jsonpath___bracket_for_object">e</a>
 </td>
 <td>
 ✓
