@@ -69,7 +69,10 @@ query_tools() {
             canonical_json "${results_dir}/${tool}"
             echo -n "(ok) "
         else
+            # Some tools don't report errors on stderr
+            cat "${results_dir}/${tool}" >> "${tmp_errors_dir}/${error_key}"
             rm "${results_dir}/${tool}"
+
             echo -n "(err) "
         fi
     done <<< "$(all_tools)"
