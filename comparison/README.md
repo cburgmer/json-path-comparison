@@ -648,8 +648,8 @@ jsonpath_lib
 
 ## Explanation
 
-- ✓, the result of this tool matches what the majority says
-- ✗, the result is different to multiple others
-- ?, the results disagree, but there are not enough samples to be conclusive on which one is probably correct
+- ✓, the result of this tool matches the majority of results
+- ✗, the result does not match a majority
+- ?, the results disagree, but there is no clear consensus amongst the implementations
 - e, the tool failed executing the query and probably does not support this type of query
 - ¹, those tools actually return a scalar as an array of one element. This difference is not included for the sake of this comparison.
