@@ -26,28 +26,25 @@ give_mark() {
     local tool="$2"
     local consensus_dir="${tmp_consensus_dir}/${query}"
 
+    # Matching consensus?
     if grep "^${tool}\$" < "$consensus_dir"/matching_tools > /dev/null; then
         echo "✓"
         return
     fi
 
+    # Neither matching consensus, nor found in outliers?
     if [[ ! -f "${consensus_dir}/outliers/${tool}" ]]; then
         echo "<a href=\"errors.md#${tool}___${query}\">e</a>"
         return
     fi
 
+    # So we are an outlier, but is there actually any gold standard?
     if [[ $(wc -l < "$consensus_dir"/matching_tools) -gt 0 ]]; then
         echo "✗"
         return
     fi
 
-    if [[ $(find "${consensus_dir}/outliers/" -type f | wc -l) -lt 3 ]]; then
-        # need at least 3 results to build consensus
-        echo "?"
-        return
-    fi
-
-    echo "✗"
+    echo "?"
 }
 
 compile_row() {
@@ -132,9 +129,9 @@ compile_comparison() {
     echo "
 ## Explanation
 
-- ✓, the result of this tool matches what the majority says
-- ✗, the result is different to multiple others
-- ?, the results disagree, but there are not enough samples to be conclusive on which one is probably correct
+- ✓, the result of this tool matches the majority of results
+- ✗, the result does not match a majority
+- ?, the results disagree, but there is no clear consensus amongst the implementations
 - e, the tool failed executing the query and probably does not support this type of query
 - ¹, those tools actually return a scalar as an array of one element. This difference is not included for the sake of this comparison."
 }
