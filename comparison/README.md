@@ -369,6 +369,31 @@ jsonpath_lib
 </td>
 </tr>
 <tr>
+<td><a href="results/array_key_access.md">Array key access</a></td>
+<td><code>$.key</code></td>
+<td>
+✓
+</td>
+<td>
+<a href="errors.md#JavaScript_Goessner___array_key_access">e</a>
+</td>
+<td>
+<a href="errors.md#JavaScript_jsonpath___array_key_access">e</a>
+</td>
+<td>
+<a href="errors.md#JavaScript_jsonpath-plus___array_key_access">e</a>
+</td>
+<td>
+<a href="errors.md#Java_com.jayway.jsonpath___array_key_access">e</a>
+</td>
+<td>
+<a href="errors.md#Python_jsonpath-ng___array_key_access">e</a>
+</td>
+<td>
+✓
+</td>
+</tr>
+<tr>
 <td><a href="results/all_children_with_nested.md">All children with nested</a></td>
 <td><code>$.store.*</code></td>
 <td>
@@ -516,6 +541,106 @@ jsonpath_lib
 </td>
 <td>
 ✓
+</td>
+</tr>
+<tr>
+<td><a href="results/array_index_step_start_equals_end.md">Array index step start equals end</a></td>
+<td><code>$[0:0]</code></td>
+<td>
+✗
+</td>
+<td>
+<a href="errors.md#JavaScript_Goessner___array_index_step_start_equals_end">e</a>
+</td>
+<td>
+✗
+</td>
+<td>
+✗
+</td>
+<td>
+✗
+</td>
+<td>
+✗
+</td>
+<td>
+✗
+</td>
+</tr>
+<tr>
+<td><a href="results/array_index_step_start_plus_one.md">Array index step start plus one</a></td>
+<td><code>$[0:1]</code></td>
+<td>
+✗
+</td>
+<td>
+✗
+</td>
+<td>
+✗
+</td>
+<td>
+✗
+</td>
+<td>
+✗
+</td>
+<td>
+✗
+</td>
+<td>
+✗
+</td>
+</tr>
+<tr>
+<td><a href="results/array_index_out_of_bounds.md">Array index out of bounds</a></td>
+<td><code>$[1]</code></td>
+<td>
+<a href="errors.md#Clojure_json-path___array_index_out_of_bounds">e</a>
+</td>
+<td>
+<a href="errors.md#JavaScript_Goessner___array_index_out_of_bounds">e</a>
+</td>
+<td>
+<a href="errors.md#JavaScript_jsonpath___array_index_out_of_bounds">e</a>
+</td>
+<td>
+<a href="errors.md#JavaScript_jsonpath-plus___array_index_out_of_bounds">e</a>
+</td>
+<td>
+<a href="errors.md#Java_com.jayway.jsonpath___array_index_out_of_bounds">e</a>
+</td>
+<td>
+<a href="errors.md#Python_jsonpath-ng___array_index_out_of_bounds">e</a>
+</td>
+<td>
+?
+</td>
+</tr>
+<tr>
+<td><a href="results/array_index_step_no_start_no_end.md">Array index step no start no end</a></td>
+<td><code>$[:]</code></td>
+<td>
+<a href="errors.md#Clojure_json-path___array_index_step_no_start_no_end">e</a>
+</td>
+<td>
+✓
+</td>
+<td>
+✓
+</td>
+<td>
+✓
+</td>
+<td>
+<a href="errors.md#Java_com.jayway.jsonpath___array_index_step_no_start_no_end">e</a>
+</td>
+<td>
+✓
+</td>
+<td>
+<a href="errors.md#Rust_jsonpath_lib___array_index_step_no_start_no_end">e</a>
 </td>
 </tr>
 </tbody>
