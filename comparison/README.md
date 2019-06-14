@@ -184,13 +184,13 @@ jsonpath_lib
 <a href="errors.md#JavaScript_jsonpath-plus___last_array_index">e</a>
 </td>
 <td>
-✓
+?
 </td>
 <td>
-✓
+?
 </td>
 <td>
-✓
+?
 </td>
 </tr>
 <tr>
@@ -347,7 +347,7 @@ jsonpath_lib
 <td><a href="results/array_key_access.md">Array key access</a></td>
 <td><code>$.key</code></td>
 <td>
-✓
+?
 </td>
 <td>
 <a href="errors.md#JavaScript_Goessner___array_key_access">e</a>
@@ -365,57 +365,57 @@ jsonpath_lib
 <a href="errors.md#Python_jsonpath-ng___array_key_access">e</a>
 </td>
 <td>
-✓
+?
 </td>
 </tr>
 <tr>
 <td><a href="results/all_children.md">All children</a></td>
 <td><code>$.key.*</code></td>
 <td>
-?
+✗
 </td>
 <td>
-?
+✓
 </td>
 <td>
-?
+✓
 </td>
 <td>
-?
+✓
 </td>
 <td>
-?
+✓
 </td>
 <td>
-?
+✗
 </td>
 <td>
-?
+✓
 </td>
 </tr>
 <tr>
 <td><a href="results/all_children_on_object.md">All children on object</a></td>
 <td><code>$.key.*</code></td>
 <td>
-?
+✗
 </td>
 <td>
-?
+✓
 </td>
 <td>
-?
+✓
 </td>
 <td>
-?
+✓
 </td>
 <td>
-?
+✓
 </td>
 <td>
-?
+✗
 </td>
 <td>
-?
+✓
 </td>
 </tr>
 <tr>
@@ -503,7 +503,7 @@ jsonpath_lib
 <a href="errors.md#JavaScript_Goessner___bracket_for_object_with_double_quotes">e</a>
 </td>
 <td>
-✓
+?
 </td>
 <td>
 <a href="errors.md#JavaScript_jsonpath-plus___bracket_for_object_with_double_quotes">e</a>
@@ -512,10 +512,10 @@ jsonpath_lib
 <a href="errors.md#Java_com.jayway.jsonpath___bracket_for_object_with_double_quotes">e</a>
 </td>
 <td>
-✓
+?
 </td>
 <td>
-✓
+?
 </td>
 </tr>
 <tr>
@@ -525,10 +525,10 @@ jsonpath_lib
 <a href="errors.md#Clojure_json-path___bracket_for_object_multiple_keys">e</a>
 </td>
 <td>
-✓
+?
 </td>
 <td>
-✓
+?
 </td>
 <td>
 <a href="errors.md#JavaScript_jsonpath-plus___bracket_for_object_multiple_keys">e</a>
@@ -537,7 +537,7 @@ jsonpath_lib
 <a href="errors.md#Java_com.jayway.jsonpath___bracket_for_object_multiple_keys">e</a>
 </td>
 <td>
-✓
+?
 </td>
 <td>
 <a href="errors.md#Rust_jsonpath_lib___bracket_for_object_multiple_keys">e</a>
@@ -597,25 +597,25 @@ jsonpath_lib
 <td><a href="results/array_index_step_start_plus_one.md">Array index step start plus one</a></td>
 <td><code>$[0:1]</code></td>
 <td>
-?
+✗
 </td>
 <td>
-?
+✓
 </td>
 <td>
-?
+✓
 </td>
 <td>
-?
+✗
 </td>
 <td>
-?
+✓
 </td>
 <td>
-?
+✓
 </td>
 <td>
-?
+✓
 </td>
 </tr>
 <tr>
@@ -650,19 +650,19 @@ jsonpath_lib
 <a href="errors.md#Clojure_json-path___array_index_step_no_start_no_end">e</a>
 </td>
 <td>
-✓
+?
 </td>
 <td>
-✓
+?
 </td>
 <td>
-✓
+?
 </td>
 <td>
 <a href="errors.md#Java_com.jayway.jsonpath___array_index_step_no_start_no_end">e</a>
 </td>
 <td>
-✓
+?
 </td>
 <td>
 <a href="errors.md#Rust_jsonpath_lib___array_index_step_no_start_no_end">e</a>
@@ -673,7 +673,7 @@ jsonpath_lib
 
 ## Explanation
 
-- ✓, the result of this tool matches the majority of results
+- ✓, the result of this tool matches the majority of results (half of all tools + 1)
 - ✗, the result does not match a majority
 - ?, the results disagree, but there is no clear consensus amongst the implementations
 - e, the tool failed executing the query and probably does not support this type of query

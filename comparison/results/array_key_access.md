@@ -9,7 +9,11 @@ Selector: `$.key`
     ]
 
 ### Results
-####  Gold Standard (consensus)
+#### Clojure (json-path)
+
+    null
+
+#### Rust (jsonpath_lib)
 
     null
 

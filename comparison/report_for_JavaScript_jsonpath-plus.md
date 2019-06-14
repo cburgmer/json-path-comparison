@@ -31,3 +31,17 @@ The following queries provide results that do not match those of other implement
   { "author": "J. R. R. Tolkien", "category": "fiction", "isbn": "0-395-19395-8", "price": 22.99, "title": "The Lord of the Rings" }
   ```
 
+- [ ] `$[0:1]`
+  Input:
+  ```
+  [ "first", "second" ]
+  ```
+  Expected output
+  ```
+  [ "first" ]
+  ```
+  Actual output
+  ```
+  "first"
+  ```
+

@@ -15,6 +15,20 @@ Selector: `$.key.*`
     }
 
 ### Results
+####  Gold Standard (consensus)
+
+    [
+      "string", 
+      42, 
+      {
+        "key": "value"
+      }, 
+      [
+        0, 
+        1
+      ]
+    ]
+
 #### Clojure (json-path)
 
     [
@@ -27,77 +41,7 @@ Selector: `$.key.*`
       1
     ]
 
-#### JavaScript (Goessner)
-
-    [
-      "string", 
-      42, 
-      {
-        "key": "value"
-      }, 
-      [
-        0, 
-        1
-      ]
-    ]
-
-#### JavaScript (jsonpath)
-
-    [
-      "string", 
-      42, 
-      {
-        "key": "value"
-      }, 
-      [
-        0, 
-        1
-      ]
-    ]
-
-#### JavaScript (jsonpath-plus)
-
-    [
-      "string", 
-      42, 
-      {
-        "key": "value"
-      }, 
-      [
-        0, 
-        1
-      ]
-    ]
-
-#### Java (com.jayway.jsonpath)
-
-    [
-      "string", 
-      42, 
-      {
-        "key": "value"
-      }, 
-      [
-        0, 
-        1
-      ]
-    ]
-
 #### Python (jsonpath-ng)
 
     []
-
-#### Rust (jsonpath_lib)
-
-    [
-      "string", 
-      42, 
-      {
-        "key": "value"
-      }, 
-      [
-        0, 
-        1
-      ]
-    ]
 

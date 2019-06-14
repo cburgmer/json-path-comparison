@@ -35,7 +35,27 @@ Selector: `$.book[-1]`
     }
 
 ### Results
-####  Gold Standard (consensus)
+#### Java (com.jayway.jsonpath)
+
+    {
+      "author": "J. R. R. Tolkien", 
+      "category": "fiction", 
+      "isbn": "0-395-19395-8", 
+      "price": 22.99, 
+      "title": "The Lord of the Rings"
+    }
+
+#### Python (jsonpath-ng)
+
+    {
+      "author": "J. R. R. Tolkien", 
+      "category": "fiction", 
+      "isbn": "0-395-19395-8", 
+      "price": 22.99, 
+      "title": "The Lord of the Rings"
+    }
+
+#### Rust (jsonpath_lib)
 
     {
       "author": "J. R. R. Tolkien", 

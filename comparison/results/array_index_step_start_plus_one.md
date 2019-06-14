@@ -9,41 +9,17 @@ Selector: `$[0:1]`
     ]
 
 ### Results
+####  Gold Standard (consensus)
+
+    [
+      "first"
+    ]
+
 #### Clojure (json-path)
 
     "first"
 
-#### JavaScript (Goessner)
-
-    [
-      "first"
-    ]
-
-#### JavaScript (jsonpath)
-
-    [
-      "first"
-    ]
-
 #### JavaScript (jsonpath-plus)
 
     "first"
-
-#### Java (com.jayway.jsonpath)
-
-    [
-      "first"
-    ]
-
-#### Python (jsonpath-ng)
-
-    [
-      "first"
-    ]
-
-#### Rust (jsonpath_lib)
-
-    [
-      "first"
-    ]
 

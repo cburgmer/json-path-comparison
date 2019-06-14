@@ -59,6 +59,34 @@ The following queries provide results that do not match those of other implement
   { "author": "Herman Melville", "category": "fiction", "isbn": "0-553-21311-3", "price": 8.99, "title": "Moby Dick" }
   ```
 
+- [ ] `$.key.*`
+  Input:
+  ```
+  { "key": [ "string", 42, { "key": "value" }, [0, 1] ] }
+  ```
+  Expected output
+  ```
+  [ "string", 42, { "key": "value" }, [ 0, 1 ] ]
+  ```
+  Actual output
+  ```
+  [ "string", 42, { "key": "value" }, 0, 1 ]
+  ```
+
+- [ ] `$.key.*`
+  Input:
+  ```
+  { "key": { "some": "string", "int": 42, "object": { "key": "value" }, "array": [0, 1] } }
+  ```
+  Expected output
+  ```
+  [ "string", 42, { "key": "value" }, [ 0, 1 ] ]
+  ```
+  Actual output
+  ```
+  [ "string", 42, { "key": "value" }, 0, 1 ]
+  ```
+
 - [ ] `$.store.*`
   Input:
   ```
@@ -71,5 +99,19 @@ The following queries provide results that do not match those of other implement
   Actual output
   ```
   [ { "author": "Nigel Rees", "category": "reference", "price": 8.95, "title": "Sayings of the Century" }, { "author": "Evelyn Waugh", "category": "fiction", "price": 12.99, "title": "Sword of Honour" }, { "author": "Herman Melville", "category": "fiction", "isbn": "0-553-21311-3", "price": 8.99, "title": "Moby Dick" }, { "author": "J. R. R. Tolkien", "category": "fiction", "isbn": "0-395-19395-8", "price": 22.99, "title": "The Lord of the Rings" }, { "color": "red", "price": 19.95 } ]
+  ```
+
+- [ ] `$[0:1]`
+  Input:
+  ```
+  [ "first", "second" ]
+  ```
+  Expected output
+  ```
+  [ "first" ]
+  ```
+  Actual output
+  ```
+  "first"
   ```
 

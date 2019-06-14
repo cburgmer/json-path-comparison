@@ -129,7 +129,7 @@ compile_comparison() {
     echo "
 ## Explanation
 
-- ✓, the result of this tool matches the majority of results
+- ✓, the result of this tool matches the majority of results (half of all tools + 1)
 - ✗, the result does not match a majority
 - ?, the results disagree, but there is no clear consensus amongst the implementations
 - e, the tool failed executing the query and probably does not support this type of query

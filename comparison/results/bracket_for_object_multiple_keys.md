@@ -9,7 +9,21 @@ Selector: `$['key','another']`
     }
 
 ### Results
-####  Gold Standard (consensus)
+#### JavaScript (Goessner)
+
+    [
+      "value", 
+      "entry"
+    ]
+
+#### JavaScript (jsonpath)
+
+    [
+      "value", 
+      "entry"
+    ]
+
+#### Python (jsonpath-ng)
 
     [
       "value", 
