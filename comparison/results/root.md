@@ -4,13 +4,13 @@
 Selector: `$`
 
     {
-      "key": "value",
-      "another key": {
-        "complex": [
-          "a",
-          1
-        ]
-      }
+        "key": "value",
+        "another key": {
+            "complex": [
+                "a",
+                1
+            ]
+        }
     }
 
 ### Results

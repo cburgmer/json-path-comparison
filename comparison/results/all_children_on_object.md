@@ -1,17 +1,17 @@
-## All children
+## All children on object
 
 ### Setup
 Selector: `$.key.*`
 
     {
-        "key": [
-            "string",
-            42,
-            {
+        "key": {
+            "some": "string",
+            "int": 42,
+            "object": {
                 "key": "value"
             },
-            [0, 1]
-        ]
+            "array": [0, 1]
+        }
     }
 
 ### Results
@@ -85,7 +85,17 @@ Selector: `$.key.*`
 
 #### Python (jsonpath-ng)
 
-    []
+    [
+      42, 
+      [
+        0, 
+        1
+      ], 
+      {
+        "key": "value"
+      }, 
+      "string"
+    ]
 
 #### Rust (jsonpath_lib)
 

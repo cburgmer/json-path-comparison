@@ -4,7 +4,7 @@
 Clojure (json-path), All elements
 </h3>
 
-    Exception in thread "main" java.lang.IllegalArgumentException: Don't know how to create ISeq from: java.lang.Double
+    Exception in thread "main" java.lang.IllegalArgumentException: Don't know how to create ISeq from: java.lang.Integer
     	at clojure.lang.RT.seqFrom(RT.java:553)
     	at clojure.lang.RT.seq(RT.java:533)
     	at clojure.core$seq__5387.invokeStatic(core.clj:137)
