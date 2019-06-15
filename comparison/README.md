@@ -573,7 +573,7 @@ jsonpath_lib
 </tr>
 <tr>
 <td><a href="results/key_bracket_notation_with_special_characters.md">Key bracket notation with special characters</a></td>
-<td><code>$['fun:\"characters']</code></td>
+<td><code>$['special:\"chars']</code></td>
 <td>
 <a href="errors.md#Clojure_json-path___key_bracket_notation_with_special_characters">e</a>
 </td>
@@ -648,7 +648,7 @@ jsonpath_lib
 </tr>
 <tr>
 <td><a href="results/key_with_array_value.md">Key with array value</a></td>
-<td><code>$.array</code></td>
+<td><code>$.key</code></td>
 <td>
 ✓
 </td>
@@ -823,7 +823,7 @@ jsonpath_lib
 </tr>
 <tr>
 <td><a href="results/wildcard_bracket_notation_on_array.md">Wildcard bracket notation on array</a></td>
-<td><code>$.key[*]</code></td>
+<td><code>$[*]</code></td>
 <td>
 ✗
 </td>
@@ -848,7 +848,7 @@ jsonpath_lib
 </tr>
 <tr>
 <td><a href="results/wildcard_bracket_notation_on_object.md">Wildcard bracket notation on object</a></td>
-<td><code>$.key[*]</code></td>
+<td><code>$[*]</code></td>
 <td>
 ?
 </td>
@@ -873,7 +873,7 @@ jsonpath_lib
 </tr>
 <tr>
 <td><a href="results/wildcard_on_array.md">Wildcard on array</a></td>
-<td><code>$.key.*</code></td>
+<td><code>$.*</code></td>
 <td>
 ✗
 </td>
@@ -898,7 +898,7 @@ jsonpath_lib
 </tr>
 <tr>
 <td><a href="results/wildcard_on_object.md">Wildcard on object</a></td>
-<td><code>$.key.*</code></td>
+<td><code>$.*</code></td>
 <td>
 ✗
 </td>

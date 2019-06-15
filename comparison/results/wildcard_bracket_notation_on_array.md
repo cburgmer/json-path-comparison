@@ -1,18 +1,16 @@
 ## Wildcard bracket notation on array
 
 ### Setup
-Selector: `$.key[*]`
+Selector: `$[*]`
 
-    {
-        "key": [
-            "string",
-            42,
-            {
-                "key": "value"
-            },
-            [0, 1]
-        ]
-    }
+    [
+        "string",
+        42,
+        {
+            "key": "value"
+        },
+        [0, 1]
+    ]
 
 ### Results
 ####  Gold Standard (consensus)

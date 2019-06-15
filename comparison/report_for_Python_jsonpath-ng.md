@@ -17,10 +17,10 @@ The following queries provide results that do not match those of other implement
   [ { "complex": "string", "primitives": [ 0, 1 ] }, "value", [ 0, 1 ], "string" ]
   ```
 
-- [ ] `$.key.*`
+- [ ] `$.*`
   Input:
   ```
-  { "key": [ "string", 42, { "key": "value" }, [0, 1] ] }
+  [ "string", 42, { "key": "value" }, [0, 1] ]
   ```
   Expected output
   ```
@@ -31,10 +31,10 @@ The following queries provide results that do not match those of other implement
   []
   ```
 
-- [ ] `$.key.*`
+- [ ] `$.*`
   Input:
   ```
-  { "key": { "some": "string", "int": 42, "object": { "key": "value" }, "array": [0, 1] } }
+  { "some": "string", "int": 42, "object": { "key": "value" }, "array": [0, 1] }
   ```
   Expected output
   ```

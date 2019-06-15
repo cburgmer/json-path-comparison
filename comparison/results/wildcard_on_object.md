@@ -1,17 +1,15 @@
 ## Wildcard on object
 
 ### Setup
-Selector: `$.key.*`
+Selector: `$.*`
 
     {
-        "key": {
-            "some": "string",
-            "int": 42,
-            "object": {
-                "key": "value"
-            },
-            "array": [0, 1]
-        }
+        "some": "string",
+        "int": 42,
+        "object": {
+            "key": "value"
+        },
+        "array": [0, 1]
     }
 
 ### Results

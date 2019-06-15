@@ -1,9 +1,9 @@
 ## Key bracket notation with special characters
 
 ### Setup
-Selector: `$['fun:\"characters']`
+Selector: `$['special:\"chars']`
 
-    {"fun:\"characters":"value"}
+    {"special:\"chars":"value"}
 
 ### Results
 #### Python (jsonpath-ng)

@@ -686,7 +686,7 @@ JavaScript (jsonpath), Key bracket notation with special characters
 </h3>
 
     Lexical error on line 1. Unrecognized text.
-    $['fun:\"characters']
+    $['special:\"chars']
     --^
     Traceback (most recent call last):
       File "./src/unwrap_scalar.py", line 15, in <module>

@@ -31,10 +31,10 @@ The following queries provide results that do not match those of other implement
   "first"
   ```
 
-- [ ] `$.array`
+- [ ] `$.key`
   Input:
   ```
-  { "array": ["first", "second"] }
+  { "key": ["first", "second"] }
   ```
   Expected output
   ```

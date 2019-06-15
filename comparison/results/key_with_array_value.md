@@ -1,10 +1,10 @@
 ## Key with array value
 
 ### Setup
-Selector: `$.array`
+Selector: `$.key`
 
     {
-        "array": ["first", "second"]
+        "key": ["first", "second"]
     }
 
 ### Results
