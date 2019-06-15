@@ -19,7 +19,12 @@ stdin.on('end', function () {
     const input = inputChunks.join(),
           json = JSON.parse(input);
 
-    const result = jp.query(json, selector);
+    try {
+        const result = jp.query(json, selector);
 
-    stdout.write(JSON.stringify(result));
+        stdout.write(JSON.stringify(result));
+    } catch(e) {
+        console.error(e.message);
+        process.exit(1);
+    }
 });

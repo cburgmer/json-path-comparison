@@ -534,155 +534,43 @@ JavaScript (Goessner), Root
 JavaScript (jsonpath-plus), Array index last
 </h3>
 
-    events.js:177
-          throw er; // Unhandled 'error' event
-          ^
-    
-    TypeError [ERR_INVALID_ARG_TYPE]: The "chunk" argument must be one of type string or Buffer. Received type undefined
-        at validChunk (_stream_writable.js:265:10)
-        at Socket.Writable.write (_stream_writable.js:299:21)
-        at ReadStream.<anonymous> (/Users/cburgmer/projekte/json-path-comparison/implementations/JavaScript_jsonpath-plus/index.js:24:12)
-        at ReadStream.emit (events.js:205:15)
-        at endReadableNT (_stream_readable.js:1137:12)
-        at processTicksAndRejections (internal/process/task_queues.js:84:9)
-    Emitted 'error' event at:
-        at errorOrDestroy (internal/streams/destroy.js:107:12)
-        at validChunk (_stream_writable.js:268:5)
-        at Socket.Writable.write (_stream_writable.js:299:21)
-        [... lines matching original stack trace ...]
-        at processTicksAndRejections (internal/process/task_queues.js:84:9)
+    The "chunk" argument must be one of type string or Buffer. Received type undefined
 
 <h3 id="JavaScript_jsonpath-plus___array_index_out_of_bounds">
 JavaScript (jsonpath-plus), Array index out of bounds
 </h3>
 
-    events.js:177
-          throw er; // Unhandled 'error' event
-          ^
-    
-    TypeError [ERR_INVALID_ARG_TYPE]: The "chunk" argument must be one of type string or Buffer. Received type undefined
-        at validChunk (_stream_writable.js:265:10)
-        at Socket.Writable.write (_stream_writable.js:299:21)
-        at ReadStream.<anonymous> (/Users/cburgmer/projekte/json-path-comparison/implementations/JavaScript_jsonpath-plus/index.js:24:12)
-        at ReadStream.emit (events.js:205:15)
-        at endReadableNT (_stream_readable.js:1137:12)
-        at processTicksAndRejections (internal/process/task_queues.js:84:9)
-    Emitted 'error' event at:
-        at errorOrDestroy (internal/streams/destroy.js:107:12)
-        at validChunk (_stream_writable.js:268:5)
-        at Socket.Writable.write (_stream_writable.js:299:21)
-        [... lines matching original stack trace ...]
-        at processTicksAndRejections (internal/process/task_queues.js:84:9)
+    The "chunk" argument must be one of type string or Buffer. Received type undefined
 
 <h3 id="JavaScript_jsonpath-plus___key_bracket_notation_union">
 JavaScript (jsonpath-plus), Key bracket notation union
 </h3>
 
-    events.js:177
-          throw er; // Unhandled 'error' event
-          ^
-    
-    TypeError [ERR_INVALID_ARG_TYPE]: The "chunk" argument must be one of type string or Buffer. Received type undefined
-        at validChunk (_stream_writable.js:265:10)
-        at Socket.Writable.write (_stream_writable.js:299:21)
-        at ReadStream.<anonymous> (/Users/cburgmer/projekte/json-path-comparison/implementations/JavaScript_jsonpath-plus/index.js:24:12)
-        at ReadStream.emit (events.js:205:15)
-        at endReadableNT (_stream_readable.js:1137:12)
-        at processTicksAndRejections (internal/process/task_queues.js:84:9)
-    Emitted 'error' event at:
-        at errorOrDestroy (internal/streams/destroy.js:107:12)
-        at validChunk (_stream_writable.js:268:5)
-        at Socket.Writable.write (_stream_writable.js:299:21)
-        [... lines matching original stack trace ...]
-        at processTicksAndRejections (internal/process/task_queues.js:84:9)
+    The "chunk" argument must be one of type string or Buffer. Received type undefined
 
 <h3 id="JavaScript_jsonpath-plus___key_bracket_notation_with_double_quotes">
 JavaScript (jsonpath-plus), Key bracket notation with double quotes
 </h3>
 
-    events.js:177
-          throw er; // Unhandled 'error' event
-          ^
-    
-    TypeError [ERR_INVALID_ARG_TYPE]: The "chunk" argument must be one of type string or Buffer. Received type undefined
-        at validChunk (_stream_writable.js:265:10)
-        at Socket.Writable.write (_stream_writable.js:299:21)
-        at ReadStream.<anonymous> (/Users/cburgmer/projekte/json-path-comparison/implementations/JavaScript_jsonpath-plus/index.js:24:12)
-        at ReadStream.emit (events.js:205:15)
-        at endReadableNT (_stream_readable.js:1137:12)
-        at processTicksAndRejections (internal/process/task_queues.js:84:9)
-    Emitted 'error' event at:
-        at errorOrDestroy (internal/streams/destroy.js:107:12)
-        at validChunk (_stream_writable.js:268:5)
-        at Socket.Writable.write (_stream_writable.js:299:21)
-        [... lines matching original stack trace ...]
-        at processTicksAndRejections (internal/process/task_queues.js:84:9)
+    The "chunk" argument must be one of type string or Buffer. Received type undefined
 
 <h3 id="JavaScript_jsonpath-plus___key_bracket_notation_with_single_quote_escaped">
 JavaScript (jsonpath-plus), Key bracket notation with single quote escaped
 </h3>
 
-    events.js:177
-          throw er; // Unhandled 'error' event
-          ^
-    
-    TypeError [ERR_INVALID_ARG_TYPE]: The "chunk" argument must be one of type string or Buffer. Received type undefined
-        at validChunk (_stream_writable.js:265:10)
-        at Socket.Writable.write (_stream_writable.js:299:21)
-        at ReadStream.<anonymous> (/Users/cburgmer/projekte/json-path-comparison/implementations/JavaScript_jsonpath-plus/index.js:24:12)
-        at ReadStream.emit (events.js:205:15)
-        at endReadableNT (_stream_readable.js:1137:12)
-        at processTicksAndRejections (internal/process/task_queues.js:84:9)
-    Emitted 'error' event at:
-        at errorOrDestroy (internal/streams/destroy.js:107:12)
-        at validChunk (_stream_writable.js:268:5)
-        at Socket.Writable.write (_stream_writable.js:299:21)
-        [... lines matching original stack trace ...]
-        at processTicksAndRejections (internal/process/task_queues.js:84:9)
+    The "chunk" argument must be one of type string or Buffer. Received type undefined
 
 <h3 id="JavaScript_jsonpath-plus___key_bracket_notation_with_special_characters">
 JavaScript (jsonpath-plus), Key bracket notation with special characters
 </h3>
 
-    events.js:177
-          throw er; // Unhandled 'error' event
-          ^
-    
-    TypeError [ERR_INVALID_ARG_TYPE]: The "chunk" argument must be one of type string or Buffer. Received type undefined
-        at validChunk (_stream_writable.js:265:10)
-        at Socket.Writable.write (_stream_writable.js:299:21)
-        at ReadStream.<anonymous> (/Users/cburgmer/projekte/json-path-comparison/implementations/JavaScript_jsonpath-plus/index.js:24:12)
-        at ReadStream.emit (events.js:205:15)
-        at endReadableNT (_stream_readable.js:1137:12)
-        at processTicksAndRejections (internal/process/task_queues.js:84:9)
-    Emitted 'error' event at:
-        at errorOrDestroy (internal/streams/destroy.js:107:12)
-        at validChunk (_stream_writable.js:268:5)
-        at Socket.Writable.write (_stream_writable.js:299:21)
-        [... lines matching original stack trace ...]
-        at processTicksAndRejections (internal/process/task_queues.js:84:9)
+    The "chunk" argument must be one of type string or Buffer. Received type undefined
 
 <h3 id="JavaScript_jsonpath-plus___key_on_array">
 JavaScript (jsonpath-plus), Key on array
 </h3>
 
-    events.js:177
-          throw er; // Unhandled 'error' event
-          ^
-    
-    TypeError [ERR_INVALID_ARG_TYPE]: The "chunk" argument must be one of type string or Buffer. Received type undefined
-        at validChunk (_stream_writable.js:265:10)
-        at Socket.Writable.write (_stream_writable.js:299:21)
-        at ReadStream.<anonymous> (/Users/cburgmer/projekte/json-path-comparison/implementations/JavaScript_jsonpath-plus/index.js:24:12)
-        at ReadStream.emit (events.js:205:15)
-        at endReadableNT (_stream_readable.js:1137:12)
-        at processTicksAndRejections (internal/process/task_queues.js:84:9)
-    Emitted 'error' event at:
-        at errorOrDestroy (internal/streams/destroy.js:107:12)
-        at validChunk (_stream_writable.js:268:5)
-        at Socket.Writable.write (_stream_writable.js:299:21)
-        [... lines matching original stack trace ...]
-        at processTicksAndRejections (internal/process/task_queues.js:84:9)
+    The "chunk" argument must be one of type string or Buffer. Received type undefined
 
 <h3 id="JavaScript_jsonpath___array_index_last">
 JavaScript (jsonpath), Array index last
@@ -721,23 +609,10 @@ JavaScript (jsonpath), Key bracket notation with number without quotes
 JavaScript (jsonpath), Key bracket notation with single quote
 </h3>
 
-    /Users/cburgmer/projekte/json-path-comparison/implementations/JavaScript_jsonpath/node_modules/jsonpath/generated/parser.js:166
-            throw new Error(str);
-            ^
-    
-    Error: Parse error on line 1:
+    Parse error on line 1:
     $['single'quote']
     ----------^
     Expecting ']', ',', got 'IDENTIFIER'
-        at Parser.parseError (/Users/cburgmer/projekte/json-path-comparison/implementations/JavaScript_jsonpath/node_modules/jsonpath/generated/parser.js:166:15)
-        at Parser.parser.yy.parseError (/Users/cburgmer/projekte/json-path-comparison/implementations/JavaScript_jsonpath/node_modules/jsonpath/lib/parser.js:13:17)
-        at Parser.parse (/Users/cburgmer/projekte/json-path-comparison/implementations/JavaScript_jsonpath/node_modules/jsonpath/generated/parser.js:224:22)
-        at JSONPath.nodes (/Users/cburgmer/projekte/json-path-comparison/implementations/JavaScript_jsonpath/node_modules/jsonpath/lib/index.js:118:26)
-        at JSONPath.query (/Users/cburgmer/projekte/json-path-comparison/implementations/JavaScript_jsonpath/node_modules/jsonpath/lib/index.js:94:22)
-        at ReadStream.<anonymous> (/Users/cburgmer/projekte/json-path-comparison/implementations/JavaScript_jsonpath/index.js:22:23)
-        at ReadStream.emit (events.js:205:15)
-        at endReadableNT (_stream_readable.js:1137:12)
-        at processTicksAndRejections (internal/process/task_queues.js:84:9)
     Traceback (most recent call last):
       File "./src/unwrap_scalar.py", line 15, in <module>
         sys.exit(main())
@@ -766,23 +641,9 @@ JavaScript (jsonpath), Key bracket notation with single quote escaped
 JavaScript (jsonpath), Key bracket notation with special characters
 </h3>
 
-    /Users/cburgmer/projekte/json-path-comparison/implementations/JavaScript_jsonpath/node_modules/jsonpath/generated/parser.js:166
-            throw new Error(str);
-            ^
-    
-    Error: Lexical error on line 1. Unrecognized text.
+    Lexical error on line 1. Unrecognized text.
     $['fun:\"characters']
     --^
-        at Parser.parseError (/Users/cburgmer/projekte/json-path-comparison/implementations/JavaScript_jsonpath/node_modules/jsonpath/generated/parser.js:166:15)
-        at Parser.parser.yy.parseError (/Users/cburgmer/projekte/json-path-comparison/implementations/JavaScript_jsonpath/node_modules/jsonpath/lib/parser.js:13:17)
-        at Object.parseError (/Users/cburgmer/projekte/json-path-comparison/implementations/JavaScript_jsonpath/node_modules/jsonpath/generated/parser.js:341:28)
-        at Object.next (/Users/cburgmer/projekte/json-path-comparison/implementations/JavaScript_jsonpath/node_modules/jsonpath/generated/parser.js:595:25)
-        at Object.lex (/Users/cburgmer/projekte/json-path-comparison/implementations/JavaScript_jsonpath/node_modules/jsonpath/generated/parser.js:605:22)
-        at lex (/Users/cburgmer/projekte/json-path-comparison/implementations/JavaScript_jsonpath/node_modules/jsonpath/generated/parser.js:194:28)
-        at Parser.parse (/Users/cburgmer/projekte/json-path-comparison/implementations/JavaScript_jsonpath/node_modules/jsonpath/generated/parser.js:207:26)
-        at JSONPath.nodes (/Users/cburgmer/projekte/json-path-comparison/implementations/JavaScript_jsonpath/node_modules/jsonpath/lib/index.js:118:26)
-        at JSONPath.query (/Users/cburgmer/projekte/json-path-comparison/implementations/JavaScript_jsonpath/node_modules/jsonpath/lib/index.js:94:22)
-        at ReadStream.<anonymous> (/Users/cburgmer/projekte/json-path-comparison/implementations/JavaScript_jsonpath/index.js:22:23)
     Traceback (most recent call last):
       File "./src/unwrap_scalar.py", line 15, in <module>
         sys.exit(main())
@@ -800,23 +661,10 @@ JavaScript (jsonpath), Key bracket notation with special characters
 JavaScript (jsonpath), Key bracket notation without quotes
 </h3>
 
-    /Users/cburgmer/projekte/json-path-comparison/implementations/JavaScript_jsonpath/node_modules/jsonpath/generated/parser.js:166
-            throw new Error(str);
-            ^
-    
-    Error: Parse error on line 1:
+    Parse error on line 1:
     $[key]
     --^
     Expecting 'STAR', 'SCRIPT_EXPRESSION', 'INTEGER', 'ARRAY_SLICE', 'FILTER_EXPRESSION', 'QQ_STRING', 'Q_STRING', got 'IDENTIFIER'
-        at Parser.parseError (/Users/cburgmer/projekte/json-path-comparison/implementations/JavaScript_jsonpath/node_modules/jsonpath/generated/parser.js:166:15)
-        at Parser.parser.yy.parseError (/Users/cburgmer/projekte/json-path-comparison/implementations/JavaScript_jsonpath/node_modules/jsonpath/lib/parser.js:13:17)
-        at Parser.parse (/Users/cburgmer/projekte/json-path-comparison/implementations/JavaScript_jsonpath/node_modules/jsonpath/generated/parser.js:224:22)
-        at JSONPath.nodes (/Users/cburgmer/projekte/json-path-comparison/implementations/JavaScript_jsonpath/node_modules/jsonpath/lib/index.js:118:26)
-        at JSONPath.query (/Users/cburgmer/projekte/json-path-comparison/implementations/JavaScript_jsonpath/node_modules/jsonpath/lib/index.js:94:22)
-        at ReadStream.<anonymous> (/Users/cburgmer/projekte/json-path-comparison/implementations/JavaScript_jsonpath/index.js:22:23)
-        at ReadStream.emit (events.js:205:15)
-        at endReadableNT (_stream_readable.js:1137:12)
-        at processTicksAndRejections (internal/process/task_queues.js:84:9)
     Traceback (most recent call last):
       File "./src/unwrap_scalar.py", line 15, in <module>
         sys.exit(main())

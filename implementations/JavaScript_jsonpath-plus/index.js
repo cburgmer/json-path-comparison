@@ -19,7 +19,11 @@ stdin.on('end', function () {
     const input = inputChunks.join(),
           json = JSON.parse(input);
 
-    const result = JSONPath({path: selector, wrap: false, json});
-
-    stdout.write(JSON.stringify(result));
+    try {
+        const result = JSONPath({path: selector, wrap: false, json});
+        stdout.write(JSON.stringify(result));
+    } catch (e) {
+        console.error(e.message);
+        process.exit(1);
+    }
 });
