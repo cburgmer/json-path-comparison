@@ -8,11 +8,11 @@ The following queries provide results that do not match those of other implement
   ```
   ["first", "second", "third"]
   ```
-  Expected output
+  Expected output:
   ```
-  [ "first", "second" ]
+  ["first", "second"]
   ```
-  Error
+  Error:
   ```
   Traceback (most recent call last):
     File "main.py", line 16, in <module>
@@ -39,27 +39,27 @@ The following queries provide results that do not match those of other implement
 - [ ] `$..*`
   Input:
   ```
-  { "key": "value", "another key": { "complex": "string", "primitives": [0, 1] } }
+  {"another key": {"primitives": [0, 1], "complex": "string"}, "key": "value"}
   ```
-  Expected output
+  Expected output:
   ```
-  [ "value", { "complex": "string", "primitives": [ 0, 1 ] }, "string", [ 0, 1 ], 0, 1 ]
+  ["value", {"primitives": [0, 1], "complex": "string"}, "string", [0, 1], 0, 1]
   ```
-  Actual output
+  Actual output:
   ```
-  [ { "complex": "string", "primitives": [ 0, 1 ] }, "value", [ 0, 1 ], "string" ]
+  [{"primitives": [0, 1], "complex": "string"}, "value", [0, 1], "string"]
   ```
 
 - [ ] `$.*`
   Input:
   ```
-  [ "string", 42, { "key": "value" }, [0, 1] ]
+  ["string", 42, {"key": "value"}, [0, 1]]
   ```
-  Expected output
+  Expected output:
   ```
-  [ "string", 42, { "key": "value" }, [ 0, 1 ] ]
+  ["string", 42, {"key": "value"}, [0, 1]]
   ```
-  Actual output
+  Actual output:
   ```
   []
   ```
@@ -67,15 +67,15 @@ The following queries provide results that do not match those of other implement
 - [ ] `$.*`
   Input:
   ```
-  { "some": "string", "int": 42, "object": { "key": "value" }, "array": [0, 1] }
+  {"int": 42, "array": [0, 1], "object": {"key": "value"}, "some": "string"}
   ```
-  Expected output
+  Expected output:
   ```
-  [ "string", 42, { "key": "value" }, [ 0, 1 ] ]
+  ["string", 42, {"key": "value"}, [0, 1]]
   ```
-  Actual output
+  Actual output:
   ```
-  [ 42, [ 0, 1 ], { "key": "value" }, "string" ]
+  [42, [0, 1], {"key": "value"}, "string"]
   ```
 
 

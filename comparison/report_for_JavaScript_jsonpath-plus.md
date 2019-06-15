@@ -8,11 +8,11 @@ The following queries provide results that do not match those of other implement
   ```
   ["first", "second", "third"]
   ```
-  Expected output
+  Expected output:
   ```
-  [ "third" ]
+  ["third"]
   ```
-  Actual output
+  Actual output:
   ```
   "third"
   ```
@@ -20,13 +20,13 @@ The following queries provide results that do not match those of other implement
 - [ ] `$[0:1]`
   Input:
   ```
-  [ "first", "second" ]
+  ["first", "second"]
   ```
-  Expected output
+  Expected output:
   ```
-  [ "first" ]
+  ["first"]
   ```
-  Actual output
+  Actual output:
   ```
   "first"
   ```
@@ -34,15 +34,15 @@ The following queries provide results that do not match those of other implement
 - [ ] `$.key`
   Input:
   ```
-  { "key": ["first", "second"] }
+  {"key": ["first", "second"]}
   ```
-  Expected output
+  Expected output:
   ```
-  [ "first", "second" ]
+  ["first", "second"]
   ```
-  Actual output
+  Actual output:
   ```
-  [ [ "first", "second" ] ]
+  [["first", "second"]]
   ```
 
 

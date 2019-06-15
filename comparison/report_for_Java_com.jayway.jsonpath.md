@@ -6,13 +6,13 @@ The following queries provide results that do not match those of other implement
 - [ ] `$['key']`
   Input:
   ```
-  { "key": "value" }
+  {"key": "value"}
   ```
-  Expected output
+  Expected output:
   ```
   "value"
   ```
-  Error
+  Error:
   ```
   SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
   SLF4J: Defaulting to no-operation (NOP) logger implementation
@@ -90,13 +90,13 @@ The following queries provide results that do not match those of other implement
 - [ ] `$['0']`
   Input:
   ```
-  { "0": "value" }
+  {"0": "value"}
   ```
-  Expected output
+  Expected output:
   ```
   "value"
   ```
-  Error
+  Error:
   ```
   SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
   SLF4J: Defaulting to no-operation (NOP) logger implementation

@@ -48,36 +48,32 @@ failing_query() {
     local query="$1"
     local consensus_dir="${tmp_consensus_dir}/${query}"
     local selector
-    local document
-    local gold_standard
-    local result
 
     selector="$(cat "./queries/${query}/selector")"
-    document="$(cat "./queries/${query}/document.json")"
-    gold_standard="$(cat "${consensus_dir}/gold_standard.json")"
 
-    echo "- [ ] \`${selector}\`
-  Input:
-  \`\`\`
-$(indent_2 <<< ${document})
-  \`\`\`
-  Expected output
-  \`\`\`
-$(indent_2 <<< ${gold_standard})
-  \`\`\`"
+    echo "- [ ] \`${selector}\`"
+    {
+        echo "Input:"
+        echo "\`\`\`"
+        ./src/oneliner_json.py < "./queries/${query}/document.json"
+        echo "\`\`\`"
+        echo "Expected output:"
+        echo "\`\`\`"
+        ./src/oneliner_json.py < "${consensus_dir}/gold_standard.json"
+        echo "\`\`\`"
 
-    if [[ -f "${consensus_dir}/outliers/${implementation}" ]]; then
-        echo "  Actual output"
-        result="$(cat "${consensus_dir}/outliers/${implementation}")"
-        echo "  \`\`\`"
-        indent_2 <<< ${result}
-        echo "  \`\`\`"
-    else
-        echo "  Error"
-        echo "  \`\`\`"
-        indent_2 < "${tmp_errors_dir}/${implementation}___${query}"
-        echo "  \`\`\`"
-    fi
+        if [[ -f "${consensus_dir}/outliers/${implementation}" ]]; then
+            echo "Actual output:"
+            echo "\`\`\`"
+            ./src/oneliner_json.py < "${consensus_dir}/outliers/${implementation}"
+            echo "\`\`\`"
+        else
+            echo "Error:"
+            echo "\`\`\`"
+            cat "${tmp_errors_dir}/${implementation}___${query}"
+            echo "\`\`\`"
+        fi
+    } | indent_2
 
     echo
 }

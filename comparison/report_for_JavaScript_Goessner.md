@@ -6,13 +6,13 @@ The following queries provide results that do not match those of other implement
 - [ ] `$`
   Input:
   ```
-  { "key": "value", "another key": { "complex": [ "a", 1 ] } }
+  {"another key": {"complex": ["a", 1]}, "key": "value"}
   ```
-  Expected output
+  Expected output:
   ```
-  { "another key": { "complex": [ "a", 1 ] }, "key": "value" }
+  {"another key": {"complex": ["a", 1]}, "key": "value"}
   ```
-  Error
+  Error:
   ```
   jsonpath returned false, this might indicate an error
   Traceback (most recent call last):

@@ -8,11 +8,11 @@ The following queries provide results that do not match those of other implement
   ```
   ["first", "second", "third"]
   ```
-  Expected output
+  Expected output:
   ```
-  [ "second", "third" ]
+  ["second", "third"]
   ```
-  Actual output
+  Actual output:
   ```
   "second"
   ```
@@ -22,11 +22,11 @@ The following queries provide results that do not match those of other implement
   ```
   ["first", "second", "third"]
   ```
-  Expected output
+  Expected output:
   ```
-  [ "third" ]
+  ["third"]
   ```
-  Error
+  Error:
   ```
   Exception in thread "main" java.lang.IndexOutOfBoundsException
   	at clojure.lang.RT.nthFrom(RT.java:924)
@@ -55,11 +55,11 @@ The following queries provide results that do not match those of other implement
   ```
   ["first", "second", "third", "forth", "fifth"]
   ```
-  Expected output
+  Expected output:
   ```
-  [ "first", "second" ]
+  ["first", "second"]
   ```
-  Actual output
+  Actual output:
   ```
   "third"
   ```
@@ -69,11 +69,11 @@ The following queries provide results that do not match those of other implement
   ```
   ["first", "second", "third", "forth", "fifth"]
   ```
-  Expected output
+  Expected output:
   ```
-  [ "second", "third", "forth", "fifth" ]
+  ["second", "third", "forth", "fifth"]
   ```
-  Actual output
+  Actual output:
   ```
   "second"
   ```
@@ -83,11 +83,11 @@ The following queries provide results that do not match those of other implement
   ```
   ["first", "second", "third", "forth", "fifth"]
   ```
-  Expected output
+  Expected output:
   ```
-  [ "second", "third" ]
+  ["second", "third"]
   ```
-  Actual output
+  Actual output:
   ```
   "second"
   ```
@@ -95,13 +95,13 @@ The following queries provide results that do not match those of other implement
 - [ ] `$[0:1]`
   Input:
   ```
-  [ "first", "second" ]
+  ["first", "second"]
   ```
-  Expected output
+  Expected output:
   ```
-  [ "first" ]
+  ["first"]
   ```
-  Actual output
+  Actual output:
   ```
   "first"
   ```
@@ -111,11 +111,11 @@ The following queries provide results that do not match those of other implement
   ```
   ["first", "second", "third"]
   ```
-  Expected output
+  Expected output:
   ```
-  [ "first", "second" ]
+  ["first", "second"]
   ```
-  Actual output
+  Actual output:
   ```
   "first"
   ```
@@ -123,13 +123,13 @@ The following queries provide results that do not match those of other implement
 - [ ] `$['key']`
   Input:
   ```
-  { "key": "value" }
+  {"key": "value"}
   ```
-  Expected output
+  Expected output:
   ```
   "value"
   ```
-  Error
+  Error:
   ```
   Exception in thread "main" java.lang.Exception: object must be an array.
   	at json_path.walker$walk_selector.invokeStatic(walker.clj:69)
@@ -154,13 +154,13 @@ The following queries provide results that do not match those of other implement
 - [ ] `$['0']`
   Input:
   ```
-  { "0": "value" }
+  {"0": "value"}
   ```
-  Expected output
+  Expected output:
   ```
   "value"
   ```
-  Error
+  Error:
   ```
   Exception in thread "main" java.lang.Exception: object must be an array.
   	at json_path.walker$walk_selector.invokeStatic(walker.clj:69)
@@ -185,13 +185,13 @@ The following queries provide results that do not match those of other implement
 - [ ] `$..*`
   Input:
   ```
-  { "key": "value", "another key": { "complex": "string", "primitives": [0, 1] } }
+  {"another key": {"primitives": [0, 1], "complex": "string"}, "key": "value"}
   ```
-  Expected output
+  Expected output:
   ```
-  [ "value", { "complex": "string", "primitives": [ 0, 1 ] }, "string", [ 0, 1 ], 0, 1 ]
+  ["value", {"primitives": [0, 1], "complex": "string"}, "string", [0, 1], 0, 1]
   ```
-  Error
+  Error:
   ```
   Exception in thread "main" java.lang.IllegalArgumentException: Don't know how to create ISeq from: java.lang.Integer
   	at clojure.lang.RT.seqFrom(RT.java:553)
@@ -244,13 +244,13 @@ The following queries provide results that do not match those of other implement
 - [ ] `$.store..price`
   Input:
   ```
-  { "store": { "book": [ { "category": "reference", "author": "Nigel Rees", "title": "Sayings of the Century", "price": 8.95 }, { "category": "fiction", "author": "Evelyn Waugh", "title": "Sword of Honour", "price": 12.99 }, { "category": "fiction", "author": "Herman Melville", "title": "Moby Dick", "isbn": "0-553-21311-3", "price": 8.99 }, { "category": "fiction", "author": "J. R. R. Tolkien", "title": "The Lord of the Rings", "isbn": "0-395-19395-8", "price": 22.99 } ], "bicycle": { "color": "red", "price": 19.95 } } }
+  {"store": {"book": [{"category": "reference", "price": 8.95, "title": "Sayings of the Century", "author": "Nigel Rees"}, {"category": "fiction", "price": 12.99, "title": "Sword of Honour", "author": "Evelyn Waugh"}, {"category": "fiction", "price": 8.99, "title": "Moby Dick", "isbn": "0-553-21311-3", "author": "Herman Melville"}, {"category": "fiction", "price": 22.99, "title": "The Lord of the Rings", "isbn": "0-395-19395-8", "author": "J. R. R. Tolkien"}], "bicycle": {"color": "red", "price": 19.95}}}
   ```
-  Expected output
+  Expected output:
   ```
-  [ 8.95, 12.99, 8.99, 22.99, 19.95 ]
+  [8.95, 12.99, 8.99, 22.99, 19.95]
   ```
-  Error
+  Error:
   ```
   Exception in thread "main" java.lang.IllegalArgumentException: Don't know how to create ISeq from: java.lang.Double
   	at clojure.lang.RT.seqFrom(RT.java:553)
@@ -292,43 +292,43 @@ The following queries provide results that do not match those of other implement
 - [ ] `$[*]`
   Input:
   ```
-  [ "string", 42, { "key": "value" }, [0, 1] ]
+  ["string", 42, {"key": "value"}, [0, 1]]
   ```
-  Expected output
+  Expected output:
   ```
-  [ "string", 42, { "key": "value" }, [ 0, 1 ] ]
+  ["string", 42, {"key": "value"}, [0, 1]]
   ```
-  Actual output
+  Actual output:
   ```
-  [ "string", 42, { "key": "value" }, 0, 1 ]
-  ```
-
-- [ ] `$.*`
-  Input:
-  ```
-  [ "string", 42, { "key": "value" }, [0, 1] ]
-  ```
-  Expected output
-  ```
-  [ "string", 42, { "key": "value" }, [ 0, 1 ] ]
-  ```
-  Actual output
-  ```
-  [ "string", 42, { "key": "value" }, 0, 1 ]
+  ["string", 42, {"key": "value"}, 0, 1]
   ```
 
 - [ ] `$.*`
   Input:
   ```
-  { "some": "string", "int": 42, "object": { "key": "value" }, "array": [0, 1] }
+  ["string", 42, {"key": "value"}, [0, 1]]
   ```
-  Expected output
+  Expected output:
   ```
-  [ "string", 42, { "key": "value" }, [ 0, 1 ] ]
+  ["string", 42, {"key": "value"}, [0, 1]]
   ```
-  Actual output
+  Actual output:
   ```
-  [ "string", 42, { "key": "value" }, 0, 1 ]
+  ["string", 42, {"key": "value"}, 0, 1]
+  ```
+
+- [ ] `$.*`
+  Input:
+  ```
+  {"int": 42, "array": [0, 1], "object": {"key": "value"}, "some": "string"}
+  ```
+  Expected output:
+  ```
+  ["string", 42, {"key": "value"}, [0, 1]]
+  ```
+  Actual output:
+  ```
+  ["string", 42, {"key": "value"}, 0, 1]
   ```
 
 
