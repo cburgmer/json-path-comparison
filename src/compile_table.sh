@@ -67,7 +67,6 @@ implementation_language_header() {
     local category_entry
     local category
     local count
-    local i
 
     while IFS= read -r category_entry; do
         category="$(awk '{print $2}' <<< "$category_entry")"

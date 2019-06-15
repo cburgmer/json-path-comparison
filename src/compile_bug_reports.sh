@@ -19,14 +19,23 @@ indent_2() {
     sed 's/^/  /'
 }
 
+code_block() {
+    echo "\`\`\`"
+    cat
+    echo "\`\`\`"
+}
+
 is_failing_while_gold_standard_exists() {
     local query="$1"
     local implementation="$2"
 
     local consensus_dir="${tmp_consensus_dir}/${query}"
 
-    ( [[ -f "${tmp_errors_dir}/${implementation}___${query}" ]] || [[ -f "${consensus_dir}/outliers/${implementation}" ]] ) \
-        && [[ $(wc -l < "$consensus_dir"/matching_implementations) -gt 0 ]]
+    {
+        [[ -f "${tmp_errors_dir}/${implementation}___${query}" ]] \
+            || [[ -f "${consensus_dir}/outliers/${implementation}" ]]
+    } && [[ $(wc -l < "$consensus_dir"/matching_implementations) -gt 0 ]]
+
 }
 
 header() {
@@ -54,24 +63,16 @@ failing_query() {
     echo "- [ ] \`${selector}\`"
     {
         echo "Input:"
-        echo "\`\`\`"
-        ./src/oneliner_json.py < "./queries/${query}/document.json"
-        echo "\`\`\`"
+        ./src/oneliner_json.py < "./queries/${query}/document.json" | code_block
         echo "Expected output:"
-        echo "\`\`\`"
-        ./src/oneliner_json.py < "${consensus_dir}/gold_standard.json"
-        echo "\`\`\`"
+        ./src/oneliner_json.py < "${consensus_dir}/gold_standard.json" | code_block
 
         if [[ -f "${consensus_dir}/outliers/${implementation}" ]]; then
             echo "Actual output:"
-            echo "\`\`\`"
-            ./src/oneliner_json.py < "${consensus_dir}/outliers/${implementation}"
-            echo "\`\`\`"
+            ./src/oneliner_json.py < "${consensus_dir}/outliers/${implementation}" | code_block
         else
             echo "Error:"
-            echo "\`\`\`"
-            cat "${tmp_errors_dir}/${implementation}___${query}"
-            echo "\`\`\`"
+            code_block < "${tmp_errors_dir}/${implementation}___${query}"
         fi
     } | indent_2
 

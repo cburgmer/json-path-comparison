@@ -74,7 +74,7 @@ build_consensus() {
     min_consensus=$(minimal_consensus)
 
     while IFS= read -r query; do
-        consensus_on_query "$query" $min_consensus
+        consensus_on_query "$query" "$min_consensus"
     done <<< "$(all_query_results)"
 }
 
