@@ -12,7 +12,7 @@ all_query_results() {
     find "$tmp_consensus_dir" -type d -depth 1 -print0 | xargs -0 -n1 basename | sort
 }
 
-tool_outliers() {
+implementation_outliers() {
     local query="$1"
     find "${tmp_consensus_dir}/${query}/outliers" -type f -depth 1 -print0 | xargs -0 -n1 basename | sort
 }
@@ -35,7 +35,7 @@ compile_result_report_for_query() {
     local query="$1"
     local consensus_dir="${tmp_consensus_dir}/${query}"
     local gold_standard="${consensus_dir}/gold_standard.json"
-    local tool
+    local implementation
 
     echo "## $(pretty_query_name "$query")"
     echo
@@ -53,16 +53,16 @@ compile_result_report_for_query() {
         echo
     fi
 
-    while IFS= read -r tool; do
-        if [[ -z "$tool" ]]; then
+    while IFS= read -r implementation; do
+        if [[ -z "$implementation" ]]; then
             break
         fi
 
-        echo "#### $(pretty_tool_name "$tool")"
+        echo "#### $(pretty_implementation_name "$implementation")"
         echo
-        pre_block < "${tmp_consensus_dir}/${query}/outliers/${tool}"
+        pre_block < "${tmp_consensus_dir}/${query}/outliers/${implementation}"
         echo
-    done <<< "$(tool_outliers "$query")"
+    done <<< "$(implementation_outliers "$query")"
 }
 
 main() {

@@ -14,11 +14,11 @@ all_errors() {
 nice_error_headline() {
     local error_key="$1"
     local query
-    local tool
+    local implementation
     query="$(sed "s/.*___\(.*\)/\1/" <<< "$error_key")"
-    tool="$(sed "s/\(.*\)___.*/\1/" <<< "$error_key")"
+    implementation="$(sed "s/\(.*\)___.*/\1/" <<< "$error_key")"
 
-    echo "$(pretty_tool_name "$tool"), $(pretty_query_name "$query")"
+    echo "$(pretty_implementation_name "$implementation"), $(pretty_query_name "$query")"
 }
 
 compile_error_report() {

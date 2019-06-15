@@ -1,11 +1,11 @@
 #!/bin/bash
 
-pretty_tool_name() {
-    local tool="$1"
+pretty_implementation_name() {
+    local implementation="$1"
     local language
     local library
-    language="$(sed "s/\([^_]*\)_.*/\1/" <<< "$tool")"
-    library="$(sed "s/[^_]*_\(.*\)/\1/" <<< "$tool")"
+    language="$(sed "s/\([^_]*\)_.*/\1/" <<< "$implementation")"
+    library="$(sed "s/[^_]*_\(.*\)/\1/" <<< "$implementation")"
     echo "${language} (${library})"
 }
 

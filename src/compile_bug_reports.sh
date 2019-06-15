@@ -6,8 +6,8 @@ readonly target_dir="$2"
 
 . src/shared.sh
 
-all_tools() {
-    find ./tools -type d -depth 1 -print0 | xargs -0 -n1 basename | sort
+all_implementations() {
+    find ./implementations -type d -depth 1 -print0 | xargs -0 -n1 basename | sort
 }
 
 sort_by_selector() {
@@ -27,11 +27,11 @@ indent_2() {
 
 is_outlier_while_gold_standard_exists() {
     local query="$1"
-    local tool="$2"
+    local implementation="$2"
 
     local consensus_dir="${tmp_consensus_dir}/${query}"
 
-    [[ $(wc -l < "$consensus_dir"/matching_tools) -gt 0 && -f "${consensus_dir}/outliers/${tool}" ]]
+    [[ $(wc -l < "$consensus_dir"/matching_implementations) -gt 0 && -f "${consensus_dir}/outliers/${implementation}" ]]
 }
 
 header() {
@@ -53,7 +53,7 @@ failing_query() {
     selector="$(cat "./queries/${query}/selector")"
     document="$(cat "./queries/${query}/document.json")"
     gold_standard="$(cat "${consensus_dir}/gold_standard.json")"
-    result="$(cat "${consensus_dir}/outliers/${tool}")"
+    result="$(cat "${consensus_dir}/outliers/${implementation}")"
 
     echo "- [ ] \`${selector}\`
   Input:
@@ -71,25 +71,25 @@ $(indent_2 <<< ${result})
 "
 }
 
-process_tool() {
-    local tool="$1"
+process_implementation() {
+    local implementation="$1"
     local query
 
     header
 
     while IFS= read -r query; do
-        if is_outlier_while_gold_standard_exists "$query" "$tool"; then
+        if is_outlier_while_gold_standard_exists "$query" "$implementation"; then
             failing_query "$query"
         fi
     done <<< "$(all_query_results)"
 }
 
 main() {
-    local tool
+    local implementation
 
-    while IFS= read -r tool; do
-        process_tool "$tool" > "${target_dir}/report_for_${tool}.md"
-    done <<< "$(all_tools)"
+    while IFS= read -r implementation; do
+        process_implementation "$implementation" > "${target_dir}/report_for_${implementation}.md"
+    done <<< "$(all_implementations)"
 }
 
 main

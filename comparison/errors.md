@@ -541,7 +541,7 @@ JavaScript (jsonpath-plus), Array index last
     TypeError [ERR_INVALID_ARG_TYPE]: The "chunk" argument must be one of type string or Buffer. Received type undefined
         at validChunk (_stream_writable.js:265:10)
         at Socket.Writable.write (_stream_writable.js:299:21)
-        at ReadStream.<anonymous> (/Users/cburgmer/projekte/json-path-comparison/tools/JavaScript_jsonpath-plus/index.js:24:12)
+        at ReadStream.<anonymous> (/Users/cburgmer/projekte/json-path-comparison/implementations/JavaScript_jsonpath-plus/index.js:24:12)
         at ReadStream.emit (events.js:205:15)
         at endReadableNT (_stream_readable.js:1137:12)
         at processTicksAndRejections (internal/process/task_queues.js:84:9)
@@ -563,7 +563,7 @@ JavaScript (jsonpath-plus), Array index out of bounds
     TypeError [ERR_INVALID_ARG_TYPE]: The "chunk" argument must be one of type string or Buffer. Received type undefined
         at validChunk (_stream_writable.js:265:10)
         at Socket.Writable.write (_stream_writable.js:299:21)
-        at ReadStream.<anonymous> (/Users/cburgmer/projekte/json-path-comparison/tools/JavaScript_jsonpath-plus/index.js:24:12)
+        at ReadStream.<anonymous> (/Users/cburgmer/projekte/json-path-comparison/implementations/JavaScript_jsonpath-plus/index.js:24:12)
         at ReadStream.emit (events.js:205:15)
         at endReadableNT (_stream_readable.js:1137:12)
         at processTicksAndRejections (internal/process/task_queues.js:84:9)
@@ -585,7 +585,7 @@ JavaScript (jsonpath-plus), Key bracket notation union
     TypeError [ERR_INVALID_ARG_TYPE]: The "chunk" argument must be one of type string or Buffer. Received type undefined
         at validChunk (_stream_writable.js:265:10)
         at Socket.Writable.write (_stream_writable.js:299:21)
-        at ReadStream.<anonymous> (/Users/cburgmer/projekte/json-path-comparison/tools/JavaScript_jsonpath-plus/index.js:24:12)
+        at ReadStream.<anonymous> (/Users/cburgmer/projekte/json-path-comparison/implementations/JavaScript_jsonpath-plus/index.js:24:12)
         at ReadStream.emit (events.js:205:15)
         at endReadableNT (_stream_readable.js:1137:12)
         at processTicksAndRejections (internal/process/task_queues.js:84:9)
@@ -607,7 +607,7 @@ JavaScript (jsonpath-plus), Key bracket notation with double quotes
     TypeError [ERR_INVALID_ARG_TYPE]: The "chunk" argument must be one of type string or Buffer. Received type undefined
         at validChunk (_stream_writable.js:265:10)
         at Socket.Writable.write (_stream_writable.js:299:21)
-        at ReadStream.<anonymous> (/Users/cburgmer/projekte/json-path-comparison/tools/JavaScript_jsonpath-plus/index.js:24:12)
+        at ReadStream.<anonymous> (/Users/cburgmer/projekte/json-path-comparison/implementations/JavaScript_jsonpath-plus/index.js:24:12)
         at ReadStream.emit (events.js:205:15)
         at endReadableNT (_stream_readable.js:1137:12)
         at processTicksAndRejections (internal/process/task_queues.js:84:9)
@@ -629,7 +629,7 @@ JavaScript (jsonpath-plus), Key bracket notation with single quote escaped
     TypeError [ERR_INVALID_ARG_TYPE]: The "chunk" argument must be one of type string or Buffer. Received type undefined
         at validChunk (_stream_writable.js:265:10)
         at Socket.Writable.write (_stream_writable.js:299:21)
-        at ReadStream.<anonymous> (/Users/cburgmer/projekte/json-path-comparison/tools/JavaScript_jsonpath-plus/index.js:24:12)
+        at ReadStream.<anonymous> (/Users/cburgmer/projekte/json-path-comparison/implementations/JavaScript_jsonpath-plus/index.js:24:12)
         at ReadStream.emit (events.js:205:15)
         at endReadableNT (_stream_readable.js:1137:12)
         at processTicksAndRejections (internal/process/task_queues.js:84:9)
@@ -651,7 +651,7 @@ JavaScript (jsonpath-plus), Key bracket notation with special characters
     TypeError [ERR_INVALID_ARG_TYPE]: The "chunk" argument must be one of type string or Buffer. Received type undefined
         at validChunk (_stream_writable.js:265:10)
         at Socket.Writable.write (_stream_writable.js:299:21)
-        at ReadStream.<anonymous> (/Users/cburgmer/projekte/json-path-comparison/tools/JavaScript_jsonpath-plus/index.js:24:12)
+        at ReadStream.<anonymous> (/Users/cburgmer/projekte/json-path-comparison/implementations/JavaScript_jsonpath-plus/index.js:24:12)
         at ReadStream.emit (events.js:205:15)
         at endReadableNT (_stream_readable.js:1137:12)
         at processTicksAndRejections (internal/process/task_queues.js:84:9)
@@ -673,7 +673,7 @@ JavaScript (jsonpath-plus), Key on array
     TypeError [ERR_INVALID_ARG_TYPE]: The "chunk" argument must be one of type string or Buffer. Received type undefined
         at validChunk (_stream_writable.js:265:10)
         at Socket.Writable.write (_stream_writable.js:299:21)
-        at ReadStream.<anonymous> (/Users/cburgmer/projekte/json-path-comparison/tools/JavaScript_jsonpath-plus/index.js:24:12)
+        at ReadStream.<anonymous> (/Users/cburgmer/projekte/json-path-comparison/implementations/JavaScript_jsonpath-plus/index.js:24:12)
         at ReadStream.emit (events.js:205:15)
         at endReadableNT (_stream_readable.js:1137:12)
         at processTicksAndRejections (internal/process/task_queues.js:84:9)
@@ -721,7 +721,7 @@ JavaScript (jsonpath), Key bracket notation with number without quotes
 JavaScript (jsonpath), Key bracket notation with single quote
 </h3>
 
-    /Users/cburgmer/projekte/json-path-comparison/tools/JavaScript_jsonpath/node_modules/jsonpath/generated/parser.js:166
+    /Users/cburgmer/projekte/json-path-comparison/implementations/JavaScript_jsonpath/node_modules/jsonpath/generated/parser.js:166
             throw new Error(str);
             ^
     
@@ -729,12 +729,12 @@ JavaScript (jsonpath), Key bracket notation with single quote
     $['single'quote']
     ----------^
     Expecting ']', ',', got 'IDENTIFIER'
-        at Parser.parseError (/Users/cburgmer/projekte/json-path-comparison/tools/JavaScript_jsonpath/node_modules/jsonpath/generated/parser.js:166:15)
-        at Parser.parser.yy.parseError (/Users/cburgmer/projekte/json-path-comparison/tools/JavaScript_jsonpath/node_modules/jsonpath/lib/parser.js:13:17)
-        at Parser.parse (/Users/cburgmer/projekte/json-path-comparison/tools/JavaScript_jsonpath/node_modules/jsonpath/generated/parser.js:224:22)
-        at JSONPath.nodes (/Users/cburgmer/projekte/json-path-comparison/tools/JavaScript_jsonpath/node_modules/jsonpath/lib/index.js:118:26)
-        at JSONPath.query (/Users/cburgmer/projekte/json-path-comparison/tools/JavaScript_jsonpath/node_modules/jsonpath/lib/index.js:94:22)
-        at ReadStream.<anonymous> (/Users/cburgmer/projekte/json-path-comparison/tools/JavaScript_jsonpath/index.js:22:23)
+        at Parser.parseError (/Users/cburgmer/projekte/json-path-comparison/implementations/JavaScript_jsonpath/node_modules/jsonpath/generated/parser.js:166:15)
+        at Parser.parser.yy.parseError (/Users/cburgmer/projekte/json-path-comparison/implementations/JavaScript_jsonpath/node_modules/jsonpath/lib/parser.js:13:17)
+        at Parser.parse (/Users/cburgmer/projekte/json-path-comparison/implementations/JavaScript_jsonpath/node_modules/jsonpath/generated/parser.js:224:22)
+        at JSONPath.nodes (/Users/cburgmer/projekte/json-path-comparison/implementations/JavaScript_jsonpath/node_modules/jsonpath/lib/index.js:118:26)
+        at JSONPath.query (/Users/cburgmer/projekte/json-path-comparison/implementations/JavaScript_jsonpath/node_modules/jsonpath/lib/index.js:94:22)
+        at ReadStream.<anonymous> (/Users/cburgmer/projekte/json-path-comparison/implementations/JavaScript_jsonpath/index.js:22:23)
         at ReadStream.emit (events.js:205:15)
         at endReadableNT (_stream_readable.js:1137:12)
         at processTicksAndRejections (internal/process/task_queues.js:84:9)
@@ -766,23 +766,23 @@ JavaScript (jsonpath), Key bracket notation with single quote escaped
 JavaScript (jsonpath), Key bracket notation with special characters
 </h3>
 
-    /Users/cburgmer/projekte/json-path-comparison/tools/JavaScript_jsonpath/node_modules/jsonpath/generated/parser.js:166
+    /Users/cburgmer/projekte/json-path-comparison/implementations/JavaScript_jsonpath/node_modules/jsonpath/generated/parser.js:166
             throw new Error(str);
             ^
     
     Error: Lexical error on line 1. Unrecognized text.
     $['fun:\"characters']
     --^
-        at Parser.parseError (/Users/cburgmer/projekte/json-path-comparison/tools/JavaScript_jsonpath/node_modules/jsonpath/generated/parser.js:166:15)
-        at Parser.parser.yy.parseError (/Users/cburgmer/projekte/json-path-comparison/tools/JavaScript_jsonpath/node_modules/jsonpath/lib/parser.js:13:17)
-        at Object.parseError (/Users/cburgmer/projekte/json-path-comparison/tools/JavaScript_jsonpath/node_modules/jsonpath/generated/parser.js:341:28)
-        at Object.next (/Users/cburgmer/projekte/json-path-comparison/tools/JavaScript_jsonpath/node_modules/jsonpath/generated/parser.js:595:25)
-        at Object.lex (/Users/cburgmer/projekte/json-path-comparison/tools/JavaScript_jsonpath/node_modules/jsonpath/generated/parser.js:605:22)
-        at lex (/Users/cburgmer/projekte/json-path-comparison/tools/JavaScript_jsonpath/node_modules/jsonpath/generated/parser.js:194:28)
-        at Parser.parse (/Users/cburgmer/projekte/json-path-comparison/tools/JavaScript_jsonpath/node_modules/jsonpath/generated/parser.js:207:26)
-        at JSONPath.nodes (/Users/cburgmer/projekte/json-path-comparison/tools/JavaScript_jsonpath/node_modules/jsonpath/lib/index.js:118:26)
-        at JSONPath.query (/Users/cburgmer/projekte/json-path-comparison/tools/JavaScript_jsonpath/node_modules/jsonpath/lib/index.js:94:22)
-        at ReadStream.<anonymous> (/Users/cburgmer/projekte/json-path-comparison/tools/JavaScript_jsonpath/index.js:22:23)
+        at Parser.parseError (/Users/cburgmer/projekte/json-path-comparison/implementations/JavaScript_jsonpath/node_modules/jsonpath/generated/parser.js:166:15)
+        at Parser.parser.yy.parseError (/Users/cburgmer/projekte/json-path-comparison/implementations/JavaScript_jsonpath/node_modules/jsonpath/lib/parser.js:13:17)
+        at Object.parseError (/Users/cburgmer/projekte/json-path-comparison/implementations/JavaScript_jsonpath/node_modules/jsonpath/generated/parser.js:341:28)
+        at Object.next (/Users/cburgmer/projekte/json-path-comparison/implementations/JavaScript_jsonpath/node_modules/jsonpath/generated/parser.js:595:25)
+        at Object.lex (/Users/cburgmer/projekte/json-path-comparison/implementations/JavaScript_jsonpath/node_modules/jsonpath/generated/parser.js:605:22)
+        at lex (/Users/cburgmer/projekte/json-path-comparison/implementations/JavaScript_jsonpath/node_modules/jsonpath/generated/parser.js:194:28)
+        at Parser.parse (/Users/cburgmer/projekte/json-path-comparison/implementations/JavaScript_jsonpath/node_modules/jsonpath/generated/parser.js:207:26)
+        at JSONPath.nodes (/Users/cburgmer/projekte/json-path-comparison/implementations/JavaScript_jsonpath/node_modules/jsonpath/lib/index.js:118:26)
+        at JSONPath.query (/Users/cburgmer/projekte/json-path-comparison/implementations/JavaScript_jsonpath/node_modules/jsonpath/lib/index.js:94:22)
+        at ReadStream.<anonymous> (/Users/cburgmer/projekte/json-path-comparison/implementations/JavaScript_jsonpath/index.js:22:23)
     Traceback (most recent call last):
       File "./src/unwrap_scalar.py", line 15, in <module>
         sys.exit(main())
@@ -800,7 +800,7 @@ JavaScript (jsonpath), Key bracket notation with special characters
 JavaScript (jsonpath), Key bracket notation without quotes
 </h3>
 
-    /Users/cburgmer/projekte/json-path-comparison/tools/JavaScript_jsonpath/node_modules/jsonpath/generated/parser.js:166
+    /Users/cburgmer/projekte/json-path-comparison/implementations/JavaScript_jsonpath/node_modules/jsonpath/generated/parser.js:166
             throw new Error(str);
             ^
     
@@ -808,12 +808,12 @@ JavaScript (jsonpath), Key bracket notation without quotes
     $[key]
     --^
     Expecting 'STAR', 'SCRIPT_EXPRESSION', 'INTEGER', 'ARRAY_SLICE', 'FILTER_EXPRESSION', 'QQ_STRING', 'Q_STRING', got 'IDENTIFIER'
-        at Parser.parseError (/Users/cburgmer/projekte/json-path-comparison/tools/JavaScript_jsonpath/node_modules/jsonpath/generated/parser.js:166:15)
-        at Parser.parser.yy.parseError (/Users/cburgmer/projekte/json-path-comparison/tools/JavaScript_jsonpath/node_modules/jsonpath/lib/parser.js:13:17)
-        at Parser.parse (/Users/cburgmer/projekte/json-path-comparison/tools/JavaScript_jsonpath/node_modules/jsonpath/generated/parser.js:224:22)
-        at JSONPath.nodes (/Users/cburgmer/projekte/json-path-comparison/tools/JavaScript_jsonpath/node_modules/jsonpath/lib/index.js:118:26)
-        at JSONPath.query (/Users/cburgmer/projekte/json-path-comparison/tools/JavaScript_jsonpath/node_modules/jsonpath/lib/index.js:94:22)
-        at ReadStream.<anonymous> (/Users/cburgmer/projekte/json-path-comparison/tools/JavaScript_jsonpath/index.js:22:23)
+        at Parser.parseError (/Users/cburgmer/projekte/json-path-comparison/implementations/JavaScript_jsonpath/node_modules/jsonpath/generated/parser.js:166:15)
+        at Parser.parser.yy.parseError (/Users/cburgmer/projekte/json-path-comparison/implementations/JavaScript_jsonpath/node_modules/jsonpath/lib/parser.js:13:17)
+        at Parser.parse (/Users/cburgmer/projekte/json-path-comparison/implementations/JavaScript_jsonpath/node_modules/jsonpath/generated/parser.js:224:22)
+        at JSONPath.nodes (/Users/cburgmer/projekte/json-path-comparison/implementations/JavaScript_jsonpath/node_modules/jsonpath/lib/index.js:118:26)
+        at JSONPath.query (/Users/cburgmer/projekte/json-path-comparison/implementations/JavaScript_jsonpath/node_modules/jsonpath/lib/index.js:94:22)
+        at ReadStream.<anonymous> (/Users/cburgmer/projekte/json-path-comparison/implementations/JavaScript_jsonpath/index.js:22:23)
         at ReadStream.emit (events.js:205:15)
         at endReadableNT (_stream_readable.js:1137:12)
         at processTicksAndRejections (internal/process/task_queues.js:84:9)
@@ -900,7 +900,7 @@ Java (com.jayway.jsonpath), Array index out of bounds
         at com.jayway.jsonpath.JsonPath.read (JsonPath.java:187)
         at com.jayway.jsonpath.internal.JsonContext.read (JsonContext.java:102)
         at com.jayway.jsonpath.internal.JsonContext.read (JsonContext.java:89)
-        at query.App.main (App.java:27)
+        at query.App.main (App.java:23)
         at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0 (Native Method)
         at jdk.internal.reflect.NativeMethodAccessorImpl.invoke (NativeMethodAccessorImpl.java:62)
         at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke (DelegatingMethodAccessorImpl.java:43)
@@ -977,7 +977,7 @@ Java (com.jayway.jsonpath), Array index slice no start no end
         at com.jayway.jsonpath.JsonPath.<init> (JsonPath.java:101)
         at com.jayway.jsonpath.JsonPath.compile (JsonPath.java:467)
         at com.jayway.jsonpath.internal.JsonContext.read (JsonContext.java:87)
-        at query.App.main (App.java:27)
+        at query.App.main (App.java:23)
         at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0 (Native Method)
         at jdk.internal.reflect.NativeMethodAccessorImpl.invoke (NativeMethodAccessorImpl.java:62)
         at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke (DelegatingMethodAccessorImpl.java:43)
@@ -1053,7 +1053,7 @@ Java (com.jayway.jsonpath), Key bracket notation
         at com.jayway.jsonpath.JsonPath.<init> (JsonPath.java:101)
         at com.jayway.jsonpath.JsonPath.compile (JsonPath.java:467)
         at com.jayway.jsonpath.internal.JsonContext.read (JsonContext.java:87)
-        at query.App.main (App.java:27)
+        at query.App.main (App.java:23)
         at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0 (Native Method)
         at jdk.internal.reflect.NativeMethodAccessorImpl.invoke (NativeMethodAccessorImpl.java:62)
         at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke (DelegatingMethodAccessorImpl.java:43)
@@ -1129,7 +1129,7 @@ Java (com.jayway.jsonpath), Key bracket notation union
         at com.jayway.jsonpath.JsonPath.<init> (JsonPath.java:101)
         at com.jayway.jsonpath.JsonPath.compile (JsonPath.java:467)
         at com.jayway.jsonpath.internal.JsonContext.read (JsonContext.java:87)
-        at query.App.main (App.java:27)
+        at query.App.main (App.java:23)
         at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0 (Native Method)
         at jdk.internal.reflect.NativeMethodAccessorImpl.invoke (NativeMethodAccessorImpl.java:62)
         at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke (DelegatingMethodAccessorImpl.java:43)
@@ -1205,7 +1205,7 @@ Java (com.jayway.jsonpath), Key bracket notation with double quotes
         at com.jayway.jsonpath.JsonPath.<init> (JsonPath.java:101)
         at com.jayway.jsonpath.JsonPath.compile (JsonPath.java:467)
         at com.jayway.jsonpath.internal.JsonContext.read (JsonContext.java:87)
-        at query.App.main (App.java:27)
+        at query.App.main (App.java:23)
         at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0 (Native Method)
         at jdk.internal.reflect.NativeMethodAccessorImpl.invoke (NativeMethodAccessorImpl.java:62)
         at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke (DelegatingMethodAccessorImpl.java:43)
@@ -1281,7 +1281,7 @@ Java (com.jayway.jsonpath), Key bracket notation with number
         at com.jayway.jsonpath.JsonPath.read (JsonPath.java:187)
         at com.jayway.jsonpath.internal.JsonContext.read (JsonContext.java:102)
         at com.jayway.jsonpath.internal.JsonContext.read (JsonContext.java:89)
-        at query.App.main (App.java:27)
+        at query.App.main (App.java:23)
         at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0 (Native Method)
         at jdk.internal.reflect.NativeMethodAccessorImpl.invoke (NativeMethodAccessorImpl.java:62)
         at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke (DelegatingMethodAccessorImpl.java:43)
@@ -1357,7 +1357,7 @@ Java (com.jayway.jsonpath), Key bracket notation with number without quotes
         at com.jayway.jsonpath.JsonPath.read (JsonPath.java:187)
         at com.jayway.jsonpath.internal.JsonContext.read (JsonContext.java:102)
         at com.jayway.jsonpath.internal.JsonContext.read (JsonContext.java:89)
-        at query.App.main (App.java:27)
+        at query.App.main (App.java:23)
         at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0 (Native Method)
         at jdk.internal.reflect.NativeMethodAccessorImpl.invoke (NativeMethodAccessorImpl.java:62)
         at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke (DelegatingMethodAccessorImpl.java:43)
@@ -1553,7 +1553,7 @@ Java (com.jayway.jsonpath), Key bracket notation with special characters
         at com.jayway.jsonpath.JsonPath.<init> (JsonPath.java:101)
         at com.jayway.jsonpath.JsonPath.compile (JsonPath.java:467)
         at com.jayway.jsonpath.internal.JsonContext.read (JsonContext.java:87)
-        at query.App.main (App.java:27)
+        at query.App.main (App.java:23)
         at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0 (Native Method)
         at jdk.internal.reflect.NativeMethodAccessorImpl.invoke (NativeMethodAccessorImpl.java:62)
         at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke (DelegatingMethodAccessorImpl.java:43)
@@ -1629,7 +1629,7 @@ Java (com.jayway.jsonpath), Key bracket notation without quotes
         at com.jayway.jsonpath.JsonPath.<init> (JsonPath.java:101)
         at com.jayway.jsonpath.JsonPath.compile (JsonPath.java:467)
         at com.jayway.jsonpath.internal.JsonContext.read (JsonContext.java:87)
-        at query.App.main (App.java:27)
+        at query.App.main (App.java:23)
         at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0 (Native Method)
         at jdk.internal.reflect.NativeMethodAccessorImpl.invoke (NativeMethodAccessorImpl.java:62)
         at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke (DelegatingMethodAccessorImpl.java:43)
@@ -1704,7 +1704,7 @@ Java (com.jayway.jsonpath), Key on array
         at com.jayway.jsonpath.JsonPath.read (JsonPath.java:187)
         at com.jayway.jsonpath.internal.JsonContext.read (JsonContext.java:102)
         at com.jayway.jsonpath.internal.JsonContext.read (JsonContext.java:89)
-        at query.App.main (App.java:27)
+        at query.App.main (App.java:23)
         at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0 (Native Method)
         at jdk.internal.reflect.NativeMethodAccessorImpl.invoke (NativeMethodAccessorImpl.java:62)
         at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke (DelegatingMethodAccessorImpl.java:43)
