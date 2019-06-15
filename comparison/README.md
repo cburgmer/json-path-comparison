@@ -72,6 +72,31 @@ jsonpath_lib
 </td>
 </tr>
 <tr>
+<td><a href="results/array_index_dot_notation.md">Array index dot notation</a></td>
+<td><code>$.2</code></td>
+<td>
+?
+</td>
+<td>
+?
+</td>
+<td>
+?
+</td>
+<td>
+?
+</td>
+<td>
+<a href="errors.md#Java_com.jayway.jsonpath___array_index_dot_notation">e</a>
+</td>
+<td>
+<a href="errors.md#Python_jsonpath-ng___array_index_dot_notation">e</a>
+</td>
+<td>
+?
+</td>
+</tr>
+<tr>
 <td><a href="results/array_index_last.md">Array index last</a></td>
 <td><code>$[-1]</code></td>
 <td>
@@ -672,6 +697,31 @@ jsonpath_lib
 </td>
 </tr>
 <tr>
+<td><a href="results/recursive_array_index.md">Recursive array index</a></td>
+<td><code>$..[0]</code></td>
+<td>
+<a href="errors.md#Clojure_json-path___recursive_array_index">e</a>
+</td>
+<td>
+?
+</td>
+<td>
+?
+</td>
+<td>
+?
+</td>
+<td>
+?
+</td>
+<td>
+<a href="errors.md#Python_jsonpath-ng___recursive_array_index">e</a>
+</td>
+<td>
+?
+</td>
+</tr>
+<tr>
 <td><a href="results/recursive_key.md">Recursive key</a></td>
 <td><code>$..key</code></td>
 <td>
@@ -769,6 +819,56 @@ jsonpath_lib
 </td>
 <td>
 ✓
+</td>
+</tr>
+<tr>
+<td><a href="results/wildcard_bracket_notation_on_array.md">Wildcard bracket notation on array</a></td>
+<td><code>$.key[*]</code></td>
+<td>
+✗
+</td>
+<td>
+✓
+</td>
+<td>
+✓
+</td>
+<td>
+✓
+</td>
+<td>
+✓
+</td>
+<td>
+✓
+</td>
+<td>
+✓
+</td>
+</tr>
+<tr>
+<td><a href="results/wildcard_bracket_notation_on_object.md">Wildcard bracket notation on object</a></td>
+<td><code>$.key[*]</code></td>
+<td>
+?
+</td>
+<td>
+?
+</td>
+<td>
+?
+</td>
+<td>
+?
+</td>
+<td>
+?
+</td>
+<td>
+?
+</td>
+<td>
+?
 </td>
 </tr>
 <tr>

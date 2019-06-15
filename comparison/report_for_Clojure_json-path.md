@@ -31,6 +31,20 @@ The following queries provide results that do not match those of other implement
   [ "string", 42, { "key": "value" }, 0, 1 ]
   ```
 
+- [ ] `$.key[*]`
+  Input:
+  ```
+  { "key": [ "string", 42, { "key": "value" }, [0, 1] ] }
+  ```
+  Expected output
+  ```
+  [ "string", 42, { "key": "value" }, [ 0, 1 ] ]
+  ```
+  Actual output
+  ```
+  [ "string", 42, { "key": "value" }, 0, 1 ]
+  ```
+
 - [ ] `$.store.*`
   Input:
   ```

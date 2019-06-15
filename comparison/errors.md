@@ -307,6 +307,50 @@ Clojure (json-path), Key bracket notation without quotes
     	at clojure.lang.RestFn.applyTo(RestFn.java:137)
     	at json_path_comparison.core.main(Unknown Source)
 
+<h3 id="Clojure_json-path___recursive_array_index">
+Clojure (json-path), Recursive array index
+</h3>
+
+    Exception in thread "main" java.lang.Exception: object must be an array.
+    	at json_path.walker$walk_selector.invokeStatic(walker.clj:69)
+    	at json_path.walker$walk_selector.invoke(walker.clj:61)
+    	at json_path.walker$walk.invokeStatic(walker.clj:82)
+    	at json_path.walker$walk.invoke(walker.clj:79)
+    	at json_path.walker$walk$fn__1026.invoke(walker.clj:84)
+    	at clojure.core$map$fn__5851.invoke(core.clj:2755)
+    	at clojure.lang.LazySeq.sval(LazySeq.java:42)
+    	at clojure.lang.LazySeq.seq(LazySeq.java:51)
+    	at clojure.lang.RT.seq(RT.java:531)
+    	at clojure.core$seq__5387.invokeStatic(core.clj:137)
+    	at clojure.core$map$fn__5851.invoke(core.clj:2746)
+    	at clojure.lang.LazySeq.sval(LazySeq.java:42)
+    	at clojure.lang.LazySeq.seq(LazySeq.java:51)
+    	at clojure.lang.Cons.next(Cons.java:39)
+    	at clojure.lang.RT.boundedLength(RT.java:1788)
+    	at clojure.lang.RestFn.applyTo(RestFn.java:130)
+    	at clojure.core$apply.invokeStatic(core.clj:665)
+    	at clojure.core$mapcat.invokeStatic(core.clj:2783)
+    	at clojure.core$tree_seq$walk__6372$fn__6373.invoke(core.clj:4945)
+    	at clojure.lang.LazySeq.sval(LazySeq.java:42)
+    	at clojure.lang.LazySeq.seq(LazySeq.java:51)
+    	at clojure.lang.LazySeq.more(LazySeq.java:87)
+    	at clojure.lang.RT.more(RT.java:718)
+    	at clojure.core$rest__5373.invokeStatic(core.clj:73)
+    	at clojure.core$flatten.invokeStatic(core.clj:7136)
+    	at clojure.core$flatten.invoke(core.clj:7136)
+    	at json_path.walker$map_SHARP_.invokeStatic(walker.clj:19)
+    	at json_path.walker$map_SHARP_.invoke(walker.clj:17)
+    	at json_path.walker$walk.invokeStatic(walker.clj:84)
+    	at json_path.walker$walk.invoke(walker.clj:79)
+    	at json_path$query.invokeStatic(json_path.clj:7)
+    	at json_path$query.invoke(json_path.clj:6)
+    	at json_path$at_path.invokeStatic(json_path.clj:10)
+    	at json_path$at_path.invoke(json_path.clj:9)
+    	at json_path_comparison.core$_main.invokeStatic(core.clj:10)
+    	at json_path_comparison.core$_main.doInvoke(core.clj:6)
+    	at clojure.lang.RestFn.applyTo(RestFn.java:137)
+    	at json_path_comparison.core.main(Unknown Source)
+
 <h3 id="Clojure_json-path___recursive_wildcard">
 Clojure (json-path), Recursive wildcard
 </h3>
@@ -688,6 +732,81 @@ JavaScript (jsonpath), Key on array
       File "./src/unwrap_scalar.py", line 9, in main
         assert len(j) == 1
     AssertionError
+
+<h3 id="Java_com.jayway.jsonpath___array_index_dot_notation">
+Java (com.jayway.jsonpath), Array index dot notation
+</h3>
+
+    SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+    SLF4J: Defaulting to no-operation (NOP) logger implementation
+    SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+    [ERROR] Failed to execute goal org.codehaus.mojo:exec-maven-plugin:1.6.0:java (default-cli) on project query: An exception occured while executing the Java class. Expected to find an object with property ['2'] in path $ but found 'net.minidev.json.JSONArray'. This is not a json object according to the JsonProvider: 'com.jayway.jsonpath.spi.json.JsonSmartJsonProvider'. -> [Help 1]
+    org.apache.maven.lifecycle.LifecycleExecutionException: Failed to execute goal org.codehaus.mojo:exec-maven-plugin:1.6.0:java (default-cli) on project query: An exception occured while executing the Java class. Expected to find an object with property ['2'] in path $ but found 'net.minidev.json.JSONArray'. This is not a json object according to the JsonProvider: 'com.jayway.jsonpath.spi.json.JsonSmartJsonProvider'.
+        at org.apache.maven.lifecycle.internal.MojoExecutor.execute (MojoExecutor.java:215)
+        at org.apache.maven.lifecycle.internal.MojoExecutor.execute (MojoExecutor.java:156)
+        at org.apache.maven.lifecycle.internal.MojoExecutor.execute (MojoExecutor.java:148)
+        at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject (LifecycleModuleBuilder.java:117)
+        at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject (LifecycleModuleBuilder.java:81)
+        at org.apache.maven.lifecycle.internal.builder.singlethreaded.SingleThreadedBuilder.build (SingleThreadedBuilder.java:56)
+        at org.apache.maven.lifecycle.internal.LifecycleStarter.execute (LifecycleStarter.java:128)
+        at org.apache.maven.DefaultMaven.doExecute (DefaultMaven.java:305)
+        at org.apache.maven.DefaultMaven.doExecute (DefaultMaven.java:192)
+        at org.apache.maven.DefaultMaven.execute (DefaultMaven.java:105)
+        at org.apache.maven.cli.MavenCli.execute (MavenCli.java:956)
+        at org.apache.maven.cli.MavenCli.doMain (MavenCli.java:288)
+        at org.apache.maven.cli.MavenCli.main (MavenCli.java:192)
+        at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0 (Native Method)
+        at jdk.internal.reflect.NativeMethodAccessorImpl.invoke (NativeMethodAccessorImpl.java:62)
+        at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke (DelegatingMethodAccessorImpl.java:43)
+        at java.lang.reflect.Method.invoke (Method.java:566)
+        at org.codehaus.plexus.classworlds.launcher.Launcher.launchEnhanced (Launcher.java:282)
+        at org.codehaus.plexus.classworlds.launcher.Launcher.launch (Launcher.java:225)
+        at org.codehaus.plexus.classworlds.launcher.Launcher.mainWithExitCode (Launcher.java:406)
+        at org.codehaus.plexus.classworlds.launcher.Launcher.main (Launcher.java:347)
+    Caused by: org.apache.maven.plugin.MojoExecutionException: An exception occured while executing the Java class. Expected to find an object with property ['2'] in path $ but found 'net.minidev.json.JSONArray'. This is not a json object according to the JsonProvider: 'com.jayway.jsonpath.spi.json.JsonSmartJsonProvider'.
+        at org.codehaus.mojo.exec.ExecJavaMojo.execute (ExecJavaMojo.java:339)
+        at org.apache.maven.plugin.DefaultBuildPluginManager.executeMojo (DefaultBuildPluginManager.java:137)
+        at org.apache.maven.lifecycle.internal.MojoExecutor.execute (MojoExecutor.java:210)
+        at org.apache.maven.lifecycle.internal.MojoExecutor.execute (MojoExecutor.java:156)
+        at org.apache.maven.lifecycle.internal.MojoExecutor.execute (MojoExecutor.java:148)
+        at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject (LifecycleModuleBuilder.java:117)
+        at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject (LifecycleModuleBuilder.java:81)
+        at org.apache.maven.lifecycle.internal.builder.singlethreaded.SingleThreadedBuilder.build (SingleThreadedBuilder.java:56)
+        at org.apache.maven.lifecycle.internal.LifecycleStarter.execute (LifecycleStarter.java:128)
+        at org.apache.maven.DefaultMaven.doExecute (DefaultMaven.java:305)
+        at org.apache.maven.DefaultMaven.doExecute (DefaultMaven.java:192)
+        at org.apache.maven.DefaultMaven.execute (DefaultMaven.java:105)
+        at org.apache.maven.cli.MavenCli.execute (MavenCli.java:956)
+        at org.apache.maven.cli.MavenCli.doMain (MavenCli.java:288)
+        at org.apache.maven.cli.MavenCli.main (MavenCli.java:192)
+        at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0 (Native Method)
+        at jdk.internal.reflect.NativeMethodAccessorImpl.invoke (NativeMethodAccessorImpl.java:62)
+        at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke (DelegatingMethodAccessorImpl.java:43)
+        at java.lang.reflect.Method.invoke (Method.java:566)
+        at org.codehaus.plexus.classworlds.launcher.Launcher.launchEnhanced (Launcher.java:282)
+        at org.codehaus.plexus.classworlds.launcher.Launcher.launch (Launcher.java:225)
+        at org.codehaus.plexus.classworlds.launcher.Launcher.mainWithExitCode (Launcher.java:406)
+        at org.codehaus.plexus.classworlds.launcher.Launcher.main (Launcher.java:347)
+    Caused by: com.jayway.jsonpath.PathNotFoundException: Expected to find an object with property ['2'] in path $ but found 'net.minidev.json.JSONArray'. This is not a json object according to the JsonProvider: 'com.jayway.jsonpath.spi.json.JsonSmartJsonProvider'.
+        at com.jayway.jsonpath.internal.path.PropertyPathToken.evaluate (PropertyPathToken.java:71)
+        at com.jayway.jsonpath.internal.path.RootPathToken.evaluate (RootPathToken.java:62)
+        at com.jayway.jsonpath.internal.path.CompiledPath.evaluate (CompiledPath.java:53)
+        at com.jayway.jsonpath.internal.path.CompiledPath.evaluate (CompiledPath.java:61)
+        at com.jayway.jsonpath.JsonPath.read (JsonPath.java:187)
+        at com.jayway.jsonpath.internal.JsonContext.read (JsonContext.java:102)
+        at com.jayway.jsonpath.internal.JsonContext.read (JsonContext.java:89)
+        at query.App.main (App.java:23)
+        at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0 (Native Method)
+        at jdk.internal.reflect.NativeMethodAccessorImpl.invoke (NativeMethodAccessorImpl.java:62)
+        at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke (DelegatingMethodAccessorImpl.java:43)
+        at java.lang.reflect.Method.invoke (Method.java:566)
+        at org.codehaus.mojo.exec.ExecJavaMojo$1.run (ExecJavaMojo.java:282)
+        at java.lang.Thread.run (Thread.java:834)
+    [ERROR] 
+    [ERROR] Re-run Maven using the -X switch to enable full debug logging.
+    [ERROR] 
+    [ERROR] For more information about the errors and possible solutions, please read the following articles:
+    [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoExecutionException
 
 <h3 id="Java_com.jayway.jsonpath___array_index_out_of_bounds">
 Java (com.jayway.jsonpath), Array index out of bounds
@@ -1565,6 +1684,43 @@ Java (com.jayway.jsonpath), Key on array
     [ERROR] For more information about the errors and possible solutions, please read the following articles:
     [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoExecutionException
 
+<h3 id="Python_jsonpath-ng___array_index_dot_notation">
+Python (jsonpath-ng), Array index dot notation
+</h3>
+
+    Traceback (most recent call last):
+      File "main.py", line 16, in <module>
+        sys.exit(main())
+      File "main.py", line 8, in main
+        query = parse(selector)
+      File "/usr/local/lib/python2.7/site-packages/jsonpath_ng/parser.py", line 14, in parse
+        return JsonPathParser().parse(string)
+      File "/usr/local/lib/python2.7/site-packages/jsonpath_ng/parser.py", line 32, in parse
+        return self.parse_token_stream(lexer.tokenize(string))
+      File "/usr/local/lib/python2.7/site-packages/jsonpath_ng/parser.py", line 55, in parse_token_stream
+        return new_parser.parse(lexer = IteratorToTokenStream(token_iterator))
+      File "/usr/local/lib/python2.7/site-packages/ply/yacc.py", line 333, in parse
+        return self.parseopt_notrack(input, lexer, debug, tracking, tokenfunc)
+      File "/usr/local/lib/python2.7/site-packages/ply/yacc.py", line 1201, in parseopt_notrack
+        tok = call_errorfunc(self.errorfunc, errtoken, self)
+      File "/usr/local/lib/python2.7/site-packages/ply/yacc.py", line 192, in call_errorfunc
+        r = errorfunc(token)
+      File "/usr/local/lib/python2.7/site-packages/jsonpath_ng/parser.py", line 69, in p_error
+        raise Exception('Parse error at %s:%s near token %s (%s)' % (t.lineno, t.col, t.value, t.type))
+    Exception: Parse error at 1:2 near token 2 (NUMBER)
+    Traceback (most recent call last):
+      File "./src/unwrap_scalar.py", line 15, in <module>
+        sys.exit(main())
+      File "./src/unwrap_scalar.py", line 6, in main
+        j = json.loads(sys.stdin.read())
+      File "/usr/local/Cellar/python@2/2.7.16/Frameworks/Python.framework/Versions/2.7/lib/python2.7/json/__init__.py", line 339, in loads
+        return _default_decoder.decode(s)
+      File "/usr/local/Cellar/python@2/2.7.16/Frameworks/Python.framework/Versions/2.7/lib/python2.7/json/decoder.py", line 364, in decode
+        obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+      File "/usr/local/Cellar/python@2/2.7.16/Frameworks/Python.framework/Versions/2.7/lib/python2.7/json/decoder.py", line 382, in raw_decode
+        raise ValueError("No JSON object could be decoded")
+    ValueError: No JSON object could be decoded
+
 <h3 id="Python_jsonpath-ng___array_index_out_of_bounds">
 Python (jsonpath-ng), Array index out of bounds
 </h3>
@@ -1700,6 +1856,25 @@ Python (jsonpath-ng), Key on array
       File "./src/unwrap_scalar.py", line 9, in main
         assert len(j) == 1
     AssertionError
+
+<h3 id="Python_jsonpath-ng___recursive_array_index">
+Python (jsonpath-ng), Recursive array index
+</h3>
+
+    Traceback (most recent call last):
+      File "main.py", line 16, in <module>
+        sys.exit(main())
+      File "main.py", line 11, in main
+        results = [match.value for match in query.find(j)]
+      File "/usr/local/lib/python2.7/site-packages/jsonpath_ng/jsonpath.py", line 377, in find
+        for submatch in match_recursively(left_match)]
+      File "/usr/local/lib/python2.7/site-packages/jsonpath_ng/jsonpath.py", line 362, in match_recursively
+        for submatch in match_recursively(DatumInContext(datum.value[i], context=datum, path=Index(i)))]
+      File "/usr/local/lib/python2.7/site-packages/jsonpath_ng/jsonpath.py", line 356, in match_recursively
+        right_matches = self.right.find(datum)
+      File "/usr/local/lib/python2.7/site-packages/jsonpath_ng/jsonpath.py", line 565, in find
+        return [DatumInContext(datum.value[self.index], path=self, context=datum)]
+    KeyError: 0
 
 <h3 id="Rust_jsonpath_lib___array_index_slice_no_start_no_end">
 Rust (jsonpath_lib), Array index slice no start no end
