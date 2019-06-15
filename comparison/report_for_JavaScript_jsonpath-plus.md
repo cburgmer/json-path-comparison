@@ -3,20 +3,6 @@ Results do not match other implementations
 The following queries provide results that do not match those of other implementations of JSONPath
 (compare https://github.com/cburgmer/json-path-comparison/tree/master/comparison):
 
-- [ ] `$.array`
-  Input:
-  ```
-  { "array": ["first", "second"] }
-  ```
-  Expected output
-  ```
-  [ "first", "second" ]
-  ```
-  Actual output
-  ```
-  [ [ "first", "second" ] ]
-  ```
-
 - [ ] `$[-1:]`
   Input:
   ```
@@ -43,5 +29,19 @@ The following queries provide results that do not match those of other implement
   Actual output
   ```
   "first"
+  ```
+
+- [ ] `$.array`
+  Input:
+  ```
+  { "array": ["first", "second"] }
+  ```
+  Expected output
+  ```
+  [ "first", "second" ]
+  ```
+  Actual output
+  ```
+  [ [ "first", "second" ] ]
   ```
 

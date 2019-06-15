@@ -10,15 +10,8 @@ all_implementations() {
     find ./implementations -type d -depth 1 -print0 | xargs -0 -n1 basename | sort
 }
 
-sort_by_selector() {
-    xargs -n1 -I% sh -c 'echo "$(cat ./queries/%/selector)\t%"' \
-        | sort \
-        | cut -f2
-
-}
-
 all_query_results() {
-    find "$tmp_consensus_dir" -type d -depth 1 -print0 | xargs -0 -n1 basename | sort_by_selector
+    find "$tmp_consensus_dir" -type d -depth 1 -print0 | xargs -0 -n1 basename | sort
 }
 
 indent_2() {
