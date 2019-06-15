@@ -1,0 +1,22 @@
+## Bracket for object with number without quotes
+
+### Setup
+Selector: `$[0]`
+
+    {
+        "0": "value"
+    }
+
+### Results
+#### JavaScript (Goessner)
+
+    "value"
+
+#### JavaScript (jsonpath-plus)
+
+    "value"
+
+#### Rust (jsonpath_lib)
+
+    null
+

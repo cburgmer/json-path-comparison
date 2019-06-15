@@ -73,6 +73,20 @@ The following queries provide results that do not match those of other implement
   "first"
   ```
 
+- [ ] `$[1:10]`
+  Input:
+  ```
+  ["first", "second", "third"]
+  ```
+  Expected output
+  ```
+  [ "second", "third" ]
+  ```
+  Actual output
+  ```
+  "second"
+  ```
+
 - [ ] `$[1:3]`
   Input:
   ```
