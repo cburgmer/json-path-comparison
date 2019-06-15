@@ -1,6 +1,9 @@
 # Comparison of different implementations of JSONPath
 
-This sheet makes no statement on the correctness of any of the tools, it merely believes in what the majority says.
+This table makes no statement on the correctness of any of the tools.
+Outcomes are compared to the pool of other tools, and judged based on a simple consensus.
+A majority has to consist of half of all tools (rounded up) + 1.
+This guarantees that in case of a split on two sides, the majority wins by two votes.
 
 <table>
 <thead>
@@ -848,8 +851,8 @@ jsonpath_lib
 
 ## Explanation
 
-- ✓, the result of this tool matches the majority of results (half of all tools + 1)
+- ✓, the result of this tool matches the majority of results
 - ✗, the result does not match a majority
-- ?, the results disagree, but there is no clear consensus amongst the implementations
+- ?, no clear consensus amongst the tools (the results disagree and/or a lot of implementations error)
 - e, the tool failed executing the query and probably does not support this type of query
 - ¹, those tools actually return a scalar as an array of one element. This difference is not included for the sake of this comparison.
