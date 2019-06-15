@@ -175,9 +175,8 @@ Clojure (json-path), Last array index
 </h3>
 
     Exception in thread "main" java.lang.IndexOutOfBoundsException
-    	at clojure.lang.PersistentVector.arrayFor(PersistentVector.java:158)
-    	at clojure.lang.PersistentVector.nth(PersistentVector.java:162)
-    	at clojure.lang.RT.nth(RT.java:892)
+    	at clojure.lang.RT.nthFrom(RT.java:924)
+    	at clojure.lang.RT.nth(RT.java:893)
     	at json_path.walker$walk_selector.invokeStatic(walker.clj:69)
     	at json_path.walker$walk_selector.invoke(walker.clj:61)
     	at json_path.walker$walk.invokeStatic(walker.clj:82)
@@ -201,9 +200,8 @@ Clojure (json-path), Last array index open end
 </h3>
 
     Exception in thread "main" java.lang.IndexOutOfBoundsException
-    	at clojure.lang.PersistentVector.arrayFor(PersistentVector.java:158)
-    	at clojure.lang.PersistentVector.nth(PersistentVector.java:162)
-    	at clojure.lang.RT.nth(RT.java:892)
+    	at clojure.lang.RT.nthFrom(RT.java:924)
+    	at clojure.lang.RT.nth(RT.java:893)
     	at json_path.walker$walk_selector.invokeStatic(walker.clj:69)
     	at json_path.walker$walk_selector.invoke(walker.clj:61)
     	at json_path.walker$walk.invokeStatic(walker.clj:82)
@@ -987,7 +985,7 @@ Python (jsonpath-ng), Array index step start end step
         r = errorfunc(token)
       File "/usr/local/lib/python2.7/site-packages/jsonpath_ng/parser.py", line 69, in p_error
         raise Exception('Parse error at %s:%s near token %s (%s)' % (t.lineno, t.col, t.value, t.type))
-    Exception: Parse error at 1:10 near token : (:)
+    Exception: Parse error at 1:5 near token : (:)
 
 <h3 id="Python_jsonpath-ng___array_index_union">
 Python (jsonpath-ng), Array index union
@@ -1012,7 +1010,7 @@ Python (jsonpath-ng), Array index union
         r = errorfunc(token)
       File "/usr/local/lib/python2.7/site-packages/jsonpath_ng/parser.py", line 69, in p_error
         raise Exception('Parse error at %s:%s near token %s (%s)' % (t.lineno, t.col, t.value, t.type))
-    Exception: Parse error at 1:8 near token , (,)
+    Exception: Parse error at 1:3 near token , (,)
 
 <h3 id="Python_jsonpath-ng___array_key_access">
 Python (jsonpath-ng), Array key access
@@ -1036,7 +1034,7 @@ Rust (jsonpath_lib), Array index step no start no end
 Rust (jsonpath_lib), Array index step start end step
 </h3>
 
-    thread 'main' panicked at 'called `Result::unwrap()` on an `Err` value: "$.book[0:3:2]\n^^^^^^^^^^^\n"', src/libcore/result.rs:997:5
+    thread 'main' panicked at 'called `Result::unwrap()` on an `Err` value: "$[0:3:2]\n^^^^^^\n"', src/libcore/result.rs:997:5
     note: Run with `RUST_BACKTRACE=1` environment variable to display a backtrace.
 
 <h3 id="Rust_jsonpath_lib___bracket_for_object_multiple_keys">
