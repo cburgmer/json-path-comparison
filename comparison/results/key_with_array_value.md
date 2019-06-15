@@ -1,4 +1,4 @@
-## Array result
+## Key with array value
 
 ### Setup
 Selector: `$.array`

@@ -1,17 +1,17 @@
-## All children on object
+## Wildcard on array
 
 ### Setup
 Selector: `$.key.*`
 
     {
-        "key": {
-            "some": "string",
-            "int": 42,
-            "object": {
+        "key": [
+            "string",
+            42,
+            {
                 "key": "value"
             },
-            "array": [0, 1]
-        }
+            [0, 1]
+        ]
     }
 
 ### Results
@@ -43,15 +43,5 @@ Selector: `$.key.*`
 
 #### Python (jsonpath-ng)
 
-    [
-      42, 
-      [
-        0, 
-        1
-      ], 
-      {
-        "key": "value"
-      }, 
-      "string"
-    ]
+    []
 

@@ -1,4 +1,4 @@
-## Last array index
+## Array index last
 
 ### Setup
 Selector: `$[-1]`

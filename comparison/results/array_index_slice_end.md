@@ -1,7 +1,7 @@
-## Array index step start end
+## Array index slice end
 
 ### Setup
-Selector: `$[1:3]`
+Selector: `$[:2]`
 
     ["first", "second", "third", "forth", "fifth"]
 
@@ -9,11 +9,11 @@ Selector: `$[1:3]`
 ####  Gold Standard (consensus)
 
     [
-      "second", 
-      "third"
+      "first", 
+      "second"
     ]
 
 #### Clojure (json-path)
 
-    "second"
+    "third"
 

@@ -1,7 +1,7 @@
-## Array index step end out of bounds
+## Array index slice last no end
 
 ### Setup
-Selector: `$[1:10]`
+Selector: `$[-1:]`
 
     ["first", "second", "third"]
 
@@ -9,11 +9,10 @@ Selector: `$[1:10]`
 ####  Gold Standard (consensus)
 
     [
-      "second", 
       "third"
     ]
 
-#### Clojure (json-path)
+#### JavaScript (jsonpath-plus)
 
-    "second"
+    "third"
 

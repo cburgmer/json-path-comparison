@@ -1,4 +1,4 @@
-## Recursive attribute
+## Recursive key
 
 ### Setup
 Selector: `$..key`

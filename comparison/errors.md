@@ -1,51 +1,25 @@
 ## Errors
 
-<h3 id="Clojure_json-path___all_elements">
-Clojure (json-path), All elements
+<h3 id="Clojure_json-path___array_index_last">
+Clojure (json-path), Array index last
 </h3>
 
-    Exception in thread "main" java.lang.IllegalArgumentException: Don't know how to create ISeq from: java.lang.Integer
-    	at clojure.lang.RT.seqFrom(RT.java:553)
-    	at clojure.lang.RT.seq(RT.java:533)
-    	at clojure.core$seq__5387.invokeStatic(core.clj:137)
-    	at clojure.core$empty_QMARK_.invokeStatic(core.clj:6206)
-    	at clojure.core$empty_QMARK_.invoke(core.clj:6206)
-    	at json_path.walker$walk_path$fn__999.invoke(walker.clj:58)
-    	at clojure.core$complement$fn__5654.invoke(core.clj:1441)
-    	at clojure.core$filter$fn__5878.invoke(core.clj:2821)
-    	at clojure.lang.LazySeq.sval(LazySeq.java:42)
-    	at clojure.lang.LazySeq.seq(LazySeq.java:51)
-    	at clojure.lang.RT.seq(RT.java:531)
-    	at clojure.core$seq__5387.invokeStatic(core.clj:137)
-    	at clojure.core$map$fn__5851.invoke(core.clj:2746)
-    	at clojure.lang.LazySeq.sval(LazySeq.java:42)
-    	at clojure.lang.LazySeq.seq(LazySeq.java:51)
-    	at clojure.lang.RT.seq(RT.java:531)
-    	at clojure.core$seq__5387.invokeStatic(core.clj:137)
-    	at clojure.core$map$fn__5851.invoke(core.clj:2746)
-    	at clojure.lang.LazySeq.sval(LazySeq.java:42)
-    	at clojure.lang.LazySeq.seq(LazySeq.java:51)
-    	at clojure.lang.Cons.next(Cons.java:39)
-    	at clojure.lang.RT.next(RT.java:709)
-    	at clojure.core$next__5371.invokeStatic(core.clj:64)
-    	at clojure.core$concat$cat__5480$fn__5481.invoke(core.clj:742)
-    	at clojure.lang.LazySeq.sval(LazySeq.java:42)
-    	at clojure.lang.LazySeq.seq(LazySeq.java:51)
-    	at clojure.lang.RT.seq(RT.java:531)
-    	at clojure.core$seq__5387.invokeStatic(core.clj:137)
-    	at clojure.core$filter$fn__5878.invoke(core.clj:2809)
-    	at clojure.lang.LazySeq.sval(LazySeq.java:42)
-    	at clojure.lang.LazySeq.seq(LazySeq.java:51)
-    	at clojure.lang.Cons.next(Cons.java:39)
-    	at clojure.lang.RT.next(RT.java:709)
-    	at clojure.core$next__5371.invokeStatic(core.clj:64)
-    	at clojure.core$next__5371.invoke(core.clj:64)
-    	at cheshire.generate$generate.invokeStatic(generate.clj:130)
-    	at cheshire.generate$generate.invoke(generate.clj:116)
-    	at cheshire.core$generate_string.invokeStatic(core.clj:74)
-    	at cheshire.core$generate_string.invoke(core.clj:49)
-    	at cheshire.core$generate_string.invokeStatic(core.clj:55)
-    	at cheshire.core$generate_string.invoke(core.clj:49)
+    Exception in thread "main" java.lang.IndexOutOfBoundsException
+    	at clojure.lang.RT.nthFrom(RT.java:924)
+    	at clojure.lang.RT.nth(RT.java:893)
+    	at json_path.walker$walk_selector.invokeStatic(walker.clj:69)
+    	at json_path.walker$walk_selector.invoke(walker.clj:61)
+    	at json_path.walker$walk.invokeStatic(walker.clj:82)
+    	at json_path.walker$walk.invoke(walker.clj:79)
+    	at json_path.walker$walk$fn__1026.invoke(walker.clj:84)
+    	at json_path.walker$map_SHARP_.invokeStatic(walker.clj:20)
+    	at json_path.walker$map_SHARP_.invoke(walker.clj:17)
+    	at json_path.walker$walk.invokeStatic(walker.clj:84)
+    	at json_path.walker$walk.invoke(walker.clj:79)
+    	at json_path$query.invokeStatic(json_path.clj:7)
+    	at json_path$query.invoke(json_path.clj:6)
+    	at json_path$at_path.invokeStatic(json_path.clj:10)
+    	at json_path$at_path.invoke(json_path.clj:9)
     	at json_path_comparison.core$_main.invokeStatic(core.clj:10)
     	at json_path_comparison.core$_main.doInvoke(core.clj:6)
     	at clojure.lang.RestFn.applyTo(RestFn.java:137)
@@ -76,8 +50,33 @@ Clojure (json-path), Array index out of bounds
     	at clojure.lang.RestFn.applyTo(RestFn.java:137)
     	at json_path_comparison.core.main(Unknown Source)
 
-<h3 id="Clojure_json-path___array_index_step_no_start_no_end">
-Clojure (json-path), Array index step no start no end
+<h3 id="Clojure_json-path___array_index_slice_last_no_end">
+Clojure (json-path), Array index slice last no end
+</h3>
+
+    Exception in thread "main" java.lang.IndexOutOfBoundsException
+    	at clojure.lang.RT.nthFrom(RT.java:924)
+    	at clojure.lang.RT.nth(RT.java:893)
+    	at json_path.walker$walk_selector.invokeStatic(walker.clj:69)
+    	at json_path.walker$walk_selector.invoke(walker.clj:61)
+    	at json_path.walker$walk.invokeStatic(walker.clj:82)
+    	at json_path.walker$walk.invoke(walker.clj:79)
+    	at json_path.walker$walk$fn__1026.invoke(walker.clj:84)
+    	at json_path.walker$map_SHARP_.invokeStatic(walker.clj:20)
+    	at json_path.walker$map_SHARP_.invoke(walker.clj:17)
+    	at json_path.walker$walk.invokeStatic(walker.clj:84)
+    	at json_path.walker$walk.invoke(walker.clj:79)
+    	at json_path$query.invokeStatic(json_path.clj:7)
+    	at json_path$query.invoke(json_path.clj:6)
+    	at json_path$at_path.invokeStatic(json_path.clj:10)
+    	at json_path$at_path.invoke(json_path.clj:9)
+    	at json_path_comparison.core$_main.invokeStatic(core.clj:10)
+    	at json_path_comparison.core$_main.doInvoke(core.clj:6)
+    	at clojure.lang.RestFn.applyTo(RestFn.java:137)
+    	at json_path_comparison.core.main(Unknown Source)
+
+<h3 id="Clojure_json-path___array_index_slice_no_start_no_end">
+Clojure (json-path), Array index slice no start no end
 </h3>
 
     Exception in thread "main" java.lang.NumberFormatException: null
@@ -308,58 +307,59 @@ Clojure (json-path), Bracket for object without quotes
     	at clojure.lang.RestFn.applyTo(RestFn.java:137)
     	at json_path_comparison.core.main(Unknown Source)
 
-<h3 id="Clojure_json-path___last_array_index">
-Clojure (json-path), Last array index
+<h3 id="Clojure_json-path___recursive_wildcard">
+Clojure (json-path), Recursive wildcard
 </h3>
 
-    Exception in thread "main" java.lang.IndexOutOfBoundsException
-    	at clojure.lang.RT.nthFrom(RT.java:924)
-    	at clojure.lang.RT.nth(RT.java:893)
-    	at json_path.walker$walk_selector.invokeStatic(walker.clj:69)
-    	at json_path.walker$walk_selector.invoke(walker.clj:61)
-    	at json_path.walker$walk.invokeStatic(walker.clj:82)
-    	at json_path.walker$walk.invoke(walker.clj:79)
-    	at json_path.walker$walk$fn__1026.invoke(walker.clj:84)
-    	at json_path.walker$map_SHARP_.invokeStatic(walker.clj:20)
-    	at json_path.walker$map_SHARP_.invoke(walker.clj:17)
-    	at json_path.walker$walk.invokeStatic(walker.clj:84)
-    	at json_path.walker$walk.invoke(walker.clj:79)
-    	at json_path$query.invokeStatic(json_path.clj:7)
-    	at json_path$query.invoke(json_path.clj:6)
-    	at json_path$at_path.invokeStatic(json_path.clj:10)
-    	at json_path$at_path.invoke(json_path.clj:9)
+    Exception in thread "main" java.lang.IllegalArgumentException: Don't know how to create ISeq from: java.lang.Integer
+    	at clojure.lang.RT.seqFrom(RT.java:553)
+    	at clojure.lang.RT.seq(RT.java:533)
+    	at clojure.core$seq__5387.invokeStatic(core.clj:137)
+    	at clojure.core$empty_QMARK_.invokeStatic(core.clj:6206)
+    	at clojure.core$empty_QMARK_.invoke(core.clj:6206)
+    	at json_path.walker$walk_path$fn__999.invoke(walker.clj:58)
+    	at clojure.core$complement$fn__5654.invoke(core.clj:1441)
+    	at clojure.core$filter$fn__5878.invoke(core.clj:2821)
+    	at clojure.lang.LazySeq.sval(LazySeq.java:42)
+    	at clojure.lang.LazySeq.seq(LazySeq.java:51)
+    	at clojure.lang.RT.seq(RT.java:531)
+    	at clojure.core$seq__5387.invokeStatic(core.clj:137)
+    	at clojure.core$map$fn__5851.invoke(core.clj:2746)
+    	at clojure.lang.LazySeq.sval(LazySeq.java:42)
+    	at clojure.lang.LazySeq.seq(LazySeq.java:51)
+    	at clojure.lang.RT.seq(RT.java:531)
+    	at clojure.core$seq__5387.invokeStatic(core.clj:137)
+    	at clojure.core$map$fn__5851.invoke(core.clj:2746)
+    	at clojure.lang.LazySeq.sval(LazySeq.java:42)
+    	at clojure.lang.LazySeq.seq(LazySeq.java:51)
+    	at clojure.lang.Cons.next(Cons.java:39)
+    	at clojure.lang.RT.next(RT.java:709)
+    	at clojure.core$next__5371.invokeStatic(core.clj:64)
+    	at clojure.core$concat$cat__5480$fn__5481.invoke(core.clj:742)
+    	at clojure.lang.LazySeq.sval(LazySeq.java:42)
+    	at clojure.lang.LazySeq.seq(LazySeq.java:51)
+    	at clojure.lang.RT.seq(RT.java:531)
+    	at clojure.core$seq__5387.invokeStatic(core.clj:137)
+    	at clojure.core$filter$fn__5878.invoke(core.clj:2809)
+    	at clojure.lang.LazySeq.sval(LazySeq.java:42)
+    	at clojure.lang.LazySeq.seq(LazySeq.java:51)
+    	at clojure.lang.Cons.next(Cons.java:39)
+    	at clojure.lang.RT.next(RT.java:709)
+    	at clojure.core$next__5371.invokeStatic(core.clj:64)
+    	at clojure.core$next__5371.invoke(core.clj:64)
+    	at cheshire.generate$generate.invokeStatic(generate.clj:130)
+    	at cheshire.generate$generate.invoke(generate.clj:116)
+    	at cheshire.core$generate_string.invokeStatic(core.clj:74)
+    	at cheshire.core$generate_string.invoke(core.clj:49)
+    	at cheshire.core$generate_string.invokeStatic(core.clj:55)
+    	at cheshire.core$generate_string.invoke(core.clj:49)
     	at json_path_comparison.core$_main.invokeStatic(core.clj:10)
     	at json_path_comparison.core$_main.doInvoke(core.clj:6)
     	at clojure.lang.RestFn.applyTo(RestFn.java:137)
     	at json_path_comparison.core.main(Unknown Source)
 
-<h3 id="Clojure_json-path___last_array_index_open_end">
-Clojure (json-path), Last array index open end
-</h3>
-
-    Exception in thread "main" java.lang.IndexOutOfBoundsException
-    	at clojure.lang.RT.nthFrom(RT.java:924)
-    	at clojure.lang.RT.nth(RT.java:893)
-    	at json_path.walker$walk_selector.invokeStatic(walker.clj:69)
-    	at json_path.walker$walk_selector.invoke(walker.clj:61)
-    	at json_path.walker$walk.invokeStatic(walker.clj:82)
-    	at json_path.walker$walk.invoke(walker.clj:79)
-    	at json_path.walker$walk$fn__1026.invoke(walker.clj:84)
-    	at json_path.walker$map_SHARP_.invokeStatic(walker.clj:20)
-    	at json_path.walker$map_SHARP_.invoke(walker.clj:17)
-    	at json_path.walker$walk.invokeStatic(walker.clj:84)
-    	at json_path.walker$walk.invoke(walker.clj:79)
-    	at json_path$query.invokeStatic(json_path.clj:7)
-    	at json_path$query.invoke(json_path.clj:6)
-    	at json_path$at_path.invokeStatic(json_path.clj:10)
-    	at json_path$at_path.invoke(json_path.clj:9)
-    	at json_path_comparison.core$_main.invokeStatic(core.clj:10)
-    	at json_path_comparison.core$_main.doInvoke(core.clj:6)
-    	at clojure.lang.RestFn.applyTo(RestFn.java:137)
-    	at json_path_comparison.core.main(Unknown Source)
-
-<h3 id="Clojure_json-path___nested_recursive">
-Clojure (json-path), Nested recursive
+<h3 id="Clojure_json-path___recursive_with_nested_object">
+Clojure (json-path), Recursive with nested object
 </h3>
 
     Exception in thread "main" java.lang.IllegalArgumentException: Don't know how to create ISeq from: java.lang.Double
@@ -398,6 +398,24 @@ Clojure (json-path), Nested recursive
     	at clojure.lang.RestFn.applyTo(RestFn.java:137)
     	at json_path_comparison.core.main(Unknown Source)
 
+<h3 id="JavaScript_Goessner___array_index_last">
+JavaScript (Goessner), Array index last
+</h3>
+
+    jsonpath returned false, this might indicate an error
+    Traceback (most recent call last):
+      File "./src/unwrap_scalar.py", line 15, in <module>
+        sys.exit(main())
+      File "./src/unwrap_scalar.py", line 6, in main
+        j = json.loads(sys.stdin.read())
+      File "/usr/local/Cellar/python@2/2.7.16/Frameworks/Python.framework/Versions/2.7/lib/python2.7/json/__init__.py", line 339, in loads
+        return _default_decoder.decode(s)
+      File "/usr/local/Cellar/python@2/2.7.16/Frameworks/Python.framework/Versions/2.7/lib/python2.7/json/decoder.py", line 364, in decode
+        obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+      File "/usr/local/Cellar/python@2/2.7.16/Frameworks/Python.framework/Versions/2.7/lib/python2.7/json/decoder.py", line 382, in raw_decode
+        raise ValueError("No JSON object could be decoded")
+    ValueError: No JSON object could be decoded
+
 <h3 id="JavaScript_Goessner___array_index_out_of_bounds">
 JavaScript (Goessner), Array index out of bounds
 </h3>
@@ -416,8 +434,8 @@ JavaScript (Goessner), Array index out of bounds
         raise ValueError("No JSON object could be decoded")
     ValueError: No JSON object could be decoded
 
-<h3 id="JavaScript_Goessner___array_index_step_start_equals_end">
-JavaScript (Goessner), Array index step start equals end
+<h3 id="JavaScript_Goessner___array_index_slice_start_equals_end">
+JavaScript (Goessner), Array index slice start equals end
 </h3>
 
     jsonpath returned false, this might indicate an error
@@ -494,24 +512,6 @@ JavaScript (Goessner), Bracket for object with special characters
         raise ValueError("No JSON object could be decoded")
     ValueError: No JSON object could be decoded
 
-<h3 id="JavaScript_Goessner___last_array_index">
-JavaScript (Goessner), Last array index
-</h3>
-
-    jsonpath returned false, this might indicate an error
-    Traceback (most recent call last):
-      File "./src/unwrap_scalar.py", line 15, in <module>
-        sys.exit(main())
-      File "./src/unwrap_scalar.py", line 6, in main
-        j = json.loads(sys.stdin.read())
-      File "/usr/local/Cellar/python@2/2.7.16/Frameworks/Python.framework/Versions/2.7/lib/python2.7/json/__init__.py", line 339, in loads
-        return _default_decoder.decode(s)
-      File "/usr/local/Cellar/python@2/2.7.16/Frameworks/Python.framework/Versions/2.7/lib/python2.7/json/decoder.py", line 364, in decode
-        obj, end = self.raw_decode(s, idx=_w(s, 0).end())
-      File "/usr/local/Cellar/python@2/2.7.16/Frameworks/Python.framework/Versions/2.7/lib/python2.7/json/decoder.py", line 382, in raw_decode
-        raise ValueError("No JSON object could be decoded")
-    ValueError: No JSON object could be decoded
-
 <h3 id="JavaScript_Goessner___root">
 JavaScript (Goessner), Root
 </h3>
@@ -529,6 +529,28 @@ JavaScript (Goessner), Root
       File "/usr/local/Cellar/python@2/2.7.16/Frameworks/Python.framework/Versions/2.7/lib/python2.7/json/decoder.py", line 382, in raw_decode
         raise ValueError("No JSON object could be decoded")
     ValueError: No JSON object could be decoded
+
+<h3 id="JavaScript_jsonpath-plus___array_index_last">
+JavaScript (jsonpath-plus), Array index last
+</h3>
+
+    events.js:177
+          throw er; // Unhandled 'error' event
+          ^
+    
+    TypeError [ERR_INVALID_ARG_TYPE]: The "chunk" argument must be one of type string or Buffer. Received type undefined
+        at validChunk (_stream_writable.js:265:10)
+        at Socket.Writable.write (_stream_writable.js:299:21)
+        at ReadStream.<anonymous> (/Users/cburgmer/projekte/json-path-comparison/tools/JavaScript_jsonpath-plus/index.js:24:12)
+        at ReadStream.emit (events.js:205:15)
+        at endReadableNT (_stream_readable.js:1137:12)
+        at processTicksAndRejections (internal/process/task_queues.js:84:9)
+    Emitted 'error' event at:
+        at errorOrDestroy (internal/streams/destroy.js:107:12)
+        at validChunk (_stream_writable.js:268:5)
+        at Socket.Writable.write (_stream_writable.js:299:21)
+        [... lines matching original stack trace ...]
+        at processTicksAndRejections (internal/process/task_queues.js:84:9)
 
 <h3 id="JavaScript_jsonpath-plus___array_index_out_of_bounds">
 JavaScript (jsonpath-plus), Array index out of bounds
@@ -662,27 +684,16 @@ JavaScript (jsonpath-plus), Bracket for object with special characters
         [... lines matching original stack trace ...]
         at processTicksAndRejections (internal/process/task_queues.js:84:9)
 
-<h3 id="JavaScript_jsonpath-plus___last_array_index">
-JavaScript (jsonpath-plus), Last array index
+<h3 id="JavaScript_jsonpath___array_index_last">
+JavaScript (jsonpath), Array index last
 </h3>
 
-    events.js:177
-          throw er; // Unhandled 'error' event
-          ^
-    
-    TypeError [ERR_INVALID_ARG_TYPE]: The "chunk" argument must be one of type string or Buffer. Received type undefined
-        at validChunk (_stream_writable.js:265:10)
-        at Socket.Writable.write (_stream_writable.js:299:21)
-        at ReadStream.<anonymous> (/Users/cburgmer/projekte/json-path-comparison/tools/JavaScript_jsonpath-plus/index.js:24:12)
-        at ReadStream.emit (events.js:205:15)
-        at endReadableNT (_stream_readable.js:1137:12)
-        at processTicksAndRejections (internal/process/task_queues.js:84:9)
-    Emitted 'error' event at:
-        at errorOrDestroy (internal/streams/destroy.js:107:12)
-        at validChunk (_stream_writable.js:268:5)
-        at Socket.Writable.write (_stream_writable.js:299:21)
-        [... lines matching original stack trace ...]
-        at processTicksAndRejections (internal/process/task_queues.js:84:9)
+    Traceback (most recent call last):
+      File "./src/unwrap_scalar.py", line 15, in <module>
+        sys.exit(main())
+      File "./src/unwrap_scalar.py", line 9, in main
+        assert len(j) == 1
+    AssertionError
 
 <h3 id="JavaScript_jsonpath___array_index_out_of_bounds">
 JavaScript (jsonpath), Array index out of bounds
@@ -830,17 +841,6 @@ JavaScript (jsonpath), Bracket for object without quotes
         raise ValueError("No JSON object could be decoded")
     ValueError: No JSON object could be decoded
 
-<h3 id="JavaScript_jsonpath___last_array_index">
-JavaScript (jsonpath), Last array index
-</h3>
-
-    Traceback (most recent call last):
-      File "./src/unwrap_scalar.py", line 15, in <module>
-        sys.exit(main())
-      File "./src/unwrap_scalar.py", line 9, in main
-        assert len(j) == 1
-    AssertionError
-
 <h3 id="Java_com.jayway.jsonpath___array_index_out_of_bounds">
 Java (com.jayway.jsonpath), Array index out of bounds
 </h3>
@@ -913,8 +913,8 @@ Java (com.jayway.jsonpath), Array index out of bounds
     [ERROR] For more information about the errors and possible solutions, please read the following articles:
     [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoExecutionException
 
-<h3 id="Java_com.jayway.jsonpath___array_index_step_no_start_no_end">
-Java (com.jayway.jsonpath), Array index step no start no end
+<h3 id="Java_com.jayway.jsonpath___array_index_slice_no_start_no_end">
+Java (com.jayway.jsonpath), Array index slice no start no end
 </h3>
 
     SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
@@ -1728,8 +1728,8 @@ Python (jsonpath-ng), Array index out of bounds
         assert len(j) == 1
     AssertionError
 
-<h3 id="Python_jsonpath-ng___array_index_step_start_end_step">
-Python (jsonpath-ng), Array index step start end step
+<h3 id="Python_jsonpath-ng___array_index_slice_start_end_step">
+Python (jsonpath-ng), Array index slice start end step
 </h3>
 
     Traceback (most recent call last):
@@ -1853,15 +1853,15 @@ Python (jsonpath-ng), Bracket for object with single quote
         raise ValueError("No JSON object could be decoded")
     ValueError: No JSON object could be decoded
 
-<h3 id="Rust_jsonpath_lib___array_index_step_no_start_no_end">
-Rust (jsonpath_lib), Array index step no start no end
+<h3 id="Rust_jsonpath_lib___array_index_slice_no_start_no_end">
+Rust (jsonpath_lib), Array index slice no start no end
 </h3>
 
     thread 'main' panicked at 'called `Result::unwrap()` on an `Err` value: "$[:]\n^^^^\n"', src/libcore/result.rs:997:5
     note: Run with `RUST_BACKTRACE=1` environment variable to display a backtrace.
 
-<h3 id="Rust_jsonpath_lib___array_index_step_start_end_step">
-Rust (jsonpath_lib), Array index step start end step
+<h3 id="Rust_jsonpath_lib___array_index_slice_start_end_step">
+Rust (jsonpath_lib), Array index slice start end step
 </h3>
 
     thread 'main' panicked at 'called `Result::unwrap()` on an `Err` value: "$[0:3:2]\n^^^^^^\n"', src/libcore/result.rs:997:5

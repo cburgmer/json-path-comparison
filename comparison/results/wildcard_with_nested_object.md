@@ -1,4 +1,4 @@
-## All children with nested
+## Wildcard with nested object
 
 ### Setup
 Selector: `$.store.*`

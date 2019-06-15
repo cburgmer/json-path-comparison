@@ -1,4 +1,4 @@
-## Array index step start end step
+## Array index slice start end step
 
 ### Setup
 Selector: `$[0:3:2]`

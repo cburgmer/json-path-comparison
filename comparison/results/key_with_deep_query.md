@@ -1,7 +1,7 @@
-## Nested recursive
+## Key with deep query
 
 ### Setup
-Selector: `$.store..price`
+Selector: `$.store.book[*].author`
 
     {
       "store": {
@@ -44,10 +44,9 @@ Selector: `$.store..price`
 ####  Gold Standard (consensus)
 
     [
-      8.95, 
-      12.99, 
-      8.99, 
-      22.99, 
-      19.95
+      "Nigel Rees", 
+      "Evelyn Waugh", 
+      "Herman Melville", 
+      "J. R. R. Tolkien"
     ]
 

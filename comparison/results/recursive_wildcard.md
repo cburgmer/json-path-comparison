@@ -1,4 +1,4 @@
-## All elements
+## Recursive wildcard
 
 ### Setup
 Selector: `$..*`
