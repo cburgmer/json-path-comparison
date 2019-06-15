@@ -1,4 +1,4 @@
-## Bracket for object with number
+## Key bracket notation with number
 
 ### Setup
 Selector: `$['0']`

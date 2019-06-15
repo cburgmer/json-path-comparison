@@ -119,31 +119,6 @@ jsonpath_lib
 </td>
 </tr>
 <tr>
-<td><a href="results/array_index_slice_end.md">Array index slice end</a></td>
-<td><code>$[:2]</code></td>
-<td>
-✗
-</td>
-<td>
-✓
-</td>
-<td>
-✓
-</td>
-<td>
-✓
-</td>
-<td>
-✓
-</td>
-<td>
-✓
-</td>
-<td>
-✓
-</td>
-</tr>
-<tr>
 <td><a href="results/array_index_slice_end_out_of_bounds.md">Array index slice end out of bounds</a></td>
 <td><code>$[1:10]</code></td>
 <td>
@@ -219,7 +194,32 @@ jsonpath_lib
 </td>
 </tr>
 <tr>
-<td><a href="results/array_index_slice_start.md">Array index slice start</a></td>
+<td><a href="results/array_index_slice_only_end.md">Array index slice only end</a></td>
+<td><code>$[:2]</code></td>
+<td>
+✗
+</td>
+<td>
+✓
+</td>
+<td>
+✓
+</td>
+<td>
+✓
+</td>
+<td>
+✓
+</td>
+<td>
+✓
+</td>
+<td>
+✓
+</td>
+</tr>
+<tr>
+<td><a href="results/array_index_slice_only_start.md">Array index slice only start</a></td>
 <td><code>$[1:]</code></td>
 <td>
 ✗
@@ -369,253 +369,253 @@ jsonpath_lib
 </td>
 </tr>
 <tr>
-<td><a href="results/array_key_access.md">Array key access</a></td>
+<td><a href="results/key_bracket_notation.md">Key bracket notation</a></td>
+<td><code>$['key']</code></td>
+<td>
+<a href="errors.md#Clojure_json-path___key_bracket_notation">e</a>
+</td>
+<td>
+✓
+</td>
+<td>
+✓
+</td>
+<td>
+✓
+</td>
+<td>
+<a href="errors.md#Java_com.jayway.jsonpath___key_bracket_notation">e</a>
+</td>
+<td>
+✓
+</td>
+<td>
+✓
+</td>
+</tr>
+<tr>
+<td><a href="results/key_bracket_notation_union.md">Key bracket notation union</a></td>
+<td><code>$['key','another']</code></td>
+<td>
+<a href="errors.md#Clojure_json-path___key_bracket_notation_union">e</a>
+</td>
+<td>
+?
+</td>
+<td>
+?
+</td>
+<td>
+<a href="errors.md#JavaScript_jsonpath-plus___key_bracket_notation_union">e</a>
+</td>
+<td>
+<a href="errors.md#Java_com.jayway.jsonpath___key_bracket_notation_union">e</a>
+</td>
+<td>
+?
+</td>
+<td>
+<a href="errors.md#Rust_jsonpath_lib___key_bracket_notation_union">e</a>
+</td>
+</tr>
+<tr>
+<td><a href="results/key_bracket_notation_with_double_quotes.md">Key bracket notation with double quotes</a></td>
+<td><code>$["key"]</code></td>
+<td>
+<a href="errors.md#Clojure_json-path___key_bracket_notation_with_double_quotes">e</a>
+</td>
+<td>
+<a href="errors.md#JavaScript_Goessner___key_bracket_notation_with_double_quotes">e</a>
+</td>
+<td>
+?
+</td>
+<td>
+<a href="errors.md#JavaScript_jsonpath-plus___key_bracket_notation_with_double_quotes">e</a>
+</td>
+<td>
+<a href="errors.md#Java_com.jayway.jsonpath___key_bracket_notation_with_double_quotes">e</a>
+</td>
+<td>
+?
+</td>
+<td>
+?
+</td>
+</tr>
+<tr>
+<td><a href="results/key_bracket_notation_with_number.md">Key bracket notation with number</a></td>
+<td><code>$['0']</code></td>
+<td>
+<a href="errors.md#Clojure_json-path___key_bracket_notation_with_number">e</a>
+</td>
+<td>
+✓
+</td>
+<td>
+✓
+</td>
+<td>
+✓
+</td>
+<td>
+<a href="errors.md#Java_com.jayway.jsonpath___key_bracket_notation_with_number">e</a>
+</td>
+<td>
+✓
+</td>
+<td>
+✓
+</td>
+</tr>
+<tr>
+<td><a href="results/key_bracket_notation_with_number_without_quotes.md">Key bracket notation with number without quotes</a></td>
+<td><code>$[0]</code></td>
+<td>
+<a href="errors.md#Clojure_json-path___key_bracket_notation_with_number_without_quotes">e</a>
+</td>
+<td>
+?
+</td>
+<td>
+<a href="errors.md#JavaScript_jsonpath___key_bracket_notation_with_number_without_quotes">e</a>
+</td>
+<td>
+?
+</td>
+<td>
+<a href="errors.md#Java_com.jayway.jsonpath___key_bracket_notation_with_number_without_quotes">e</a>
+</td>
+<td>
+<a href="errors.md#Python_jsonpath-ng___key_bracket_notation_with_number_without_quotes">e</a>
+</td>
+<td>
+?
+</td>
+</tr>
+<tr>
+<td><a href="results/key_bracket_notation_with_single_quote.md">Key bracket notation with single quote</a></td>
+<td><code>$['single'quote']</code></td>
+<td>
+<a href="errors.md#Clojure_json-path___key_bracket_notation_with_single_quote">e</a>
+</td>
+<td>
+?
+</td>
+<td>
+<a href="errors.md#JavaScript_jsonpath___key_bracket_notation_with_single_quote">e</a>
+</td>
+<td>
+?
+</td>
+<td>
+<a href="errors.md#Java_com.jayway.jsonpath___key_bracket_notation_with_single_quote">e</a>
+</td>
+<td>
+<a href="errors.md#Python_jsonpath-ng___key_bracket_notation_with_single_quote">e</a>
+</td>
+<td>
+<a href="errors.md#Rust_jsonpath_lib___key_bracket_notation_with_single_quote">e</a>
+</td>
+</tr>
+<tr>
+<td><a href="results/key_bracket_notation_with_single_quote_escaped.md">Key bracket notation with single quote escaped</a></td>
+<td><code>$['single\'quote']</code></td>
+<td>
+<a href="errors.md#Clojure_json-path___key_bracket_notation_with_single_quote_escaped">e</a>
+</td>
+<td>
+<a href="errors.md#JavaScript_Goessner___key_bracket_notation_with_single_quote_escaped">e</a>
+</td>
+<td>
+<a href="errors.md#JavaScript_jsonpath___key_bracket_notation_with_single_quote_escaped">e</a>
+</td>
+<td>
+<a href="errors.md#JavaScript_jsonpath-plus___key_bracket_notation_with_single_quote_escaped">e</a>
+</td>
+<td>
+<a href="errors.md#Java_com.jayway.jsonpath___key_bracket_notation_with_single_quote_escaped">e</a>
+</td>
+<td>
+?
+</td>
+<td>
+<a href="errors.md#Rust_jsonpath_lib___key_bracket_notation_with_single_quote_escaped">e</a>
+</td>
+</tr>
+<tr>
+<td><a href="results/key_bracket_notation_with_special_characters.md">Key bracket notation with special characters</a></td>
+<td><code>$['fun:\"characters']</code></td>
+<td>
+<a href="errors.md#Clojure_json-path___key_bracket_notation_with_special_characters">e</a>
+</td>
+<td>
+<a href="errors.md#JavaScript_Goessner___key_bracket_notation_with_special_characters">e</a>
+</td>
+<td>
+<a href="errors.md#JavaScript_jsonpath___key_bracket_notation_with_special_characters">e</a>
+</td>
+<td>
+<a href="errors.md#JavaScript_jsonpath-plus___key_bracket_notation_with_special_characters">e</a>
+</td>
+<td>
+<a href="errors.md#Java_com.jayway.jsonpath___key_bracket_notation_with_special_characters">e</a>
+</td>
+<td>
+?
+</td>
+<td>
+?
+</td>
+</tr>
+<tr>
+<td><a href="results/key_bracket_notation_without_quotes.md">Key bracket notation without quotes</a></td>
+<td><code>$[key]</code></td>
+<td>
+<a href="errors.md#Clojure_json-path___key_bracket_notation_without_quotes">e</a>
+</td>
+<td>
+?
+</td>
+<td>
+<a href="errors.md#JavaScript_jsonpath___key_bracket_notation_without_quotes">e</a>
+</td>
+<td>
+?
+</td>
+<td>
+<a href="errors.md#Java_com.jayway.jsonpath___key_bracket_notation_without_quotes">e</a>
+</td>
+<td>
+?
+</td>
+<td>
+<a href="errors.md#Rust_jsonpath_lib___key_bracket_notation_without_quotes">e</a>
+</td>
+</tr>
+<tr>
+<td><a href="results/key_on_array.md">Key on array</a></td>
 <td><code>$.key</code></td>
 <td>
 ?
 </td>
 <td>
-<a href="errors.md#JavaScript_Goessner___array_key_access">e</a>
+<a href="errors.md#JavaScript_Goessner___key_on_array">e</a>
 </td>
 <td>
-<a href="errors.md#JavaScript_jsonpath___array_key_access">e</a>
+<a href="errors.md#JavaScript_jsonpath___key_on_array">e</a>
 </td>
 <td>
-<a href="errors.md#JavaScript_jsonpath-plus___array_key_access">e</a>
+<a href="errors.md#JavaScript_jsonpath-plus___key_on_array">e</a>
 </td>
 <td>
-<a href="errors.md#Java_com.jayway.jsonpath___array_key_access">e</a>
+<a href="errors.md#Java_com.jayway.jsonpath___key_on_array">e</a>
 </td>
 <td>
-<a href="errors.md#Python_jsonpath-ng___array_key_access">e</a>
-</td>
-<td>
-?
-</td>
-</tr>
-<tr>
-<td><a href="results/bracket_for_object.md">Bracket for object</a></td>
-<td><code>$['key']</code></td>
-<td>
-<a href="errors.md#Clojure_json-path___bracket_for_object">e</a>
-</td>
-<td>
-✓
-</td>
-<td>
-✓
-</td>
-<td>
-✓
-</td>
-<td>
-<a href="errors.md#Java_com.jayway.jsonpath___bracket_for_object">e</a>
-</td>
-<td>
-✓
-</td>
-<td>
-✓
-</td>
-</tr>
-<tr>
-<td><a href="results/bracket_for_object_multiple_keys.md">Bracket for object multiple keys</a></td>
-<td><code>$['key','another']</code></td>
-<td>
-<a href="errors.md#Clojure_json-path___bracket_for_object_multiple_keys">e</a>
+<a href="errors.md#Python_jsonpath-ng___key_on_array">e</a>
 </td>
 <td>
 ?
-</td>
-<td>
-?
-</td>
-<td>
-<a href="errors.md#JavaScript_jsonpath-plus___bracket_for_object_multiple_keys">e</a>
-</td>
-<td>
-<a href="errors.md#Java_com.jayway.jsonpath___bracket_for_object_multiple_keys">e</a>
-</td>
-<td>
-?
-</td>
-<td>
-<a href="errors.md#Rust_jsonpath_lib___bracket_for_object_multiple_keys">e</a>
-</td>
-</tr>
-<tr>
-<td><a href="results/bracket_for_object_with_double_quotes.md">Bracket for object with double quotes</a></td>
-<td><code>$["key"]</code></td>
-<td>
-<a href="errors.md#Clojure_json-path___bracket_for_object_with_double_quotes">e</a>
-</td>
-<td>
-<a href="errors.md#JavaScript_Goessner___bracket_for_object_with_double_quotes">e</a>
-</td>
-<td>
-?
-</td>
-<td>
-<a href="errors.md#JavaScript_jsonpath-plus___bracket_for_object_with_double_quotes">e</a>
-</td>
-<td>
-<a href="errors.md#Java_com.jayway.jsonpath___bracket_for_object_with_double_quotes">e</a>
-</td>
-<td>
-?
-</td>
-<td>
-?
-</td>
-</tr>
-<tr>
-<td><a href="results/bracket_for_object_with_number.md">Bracket for object with number</a></td>
-<td><code>$['0']</code></td>
-<td>
-<a href="errors.md#Clojure_json-path___bracket_for_object_with_number">e</a>
-</td>
-<td>
-✓
-</td>
-<td>
-✓
-</td>
-<td>
-✓
-</td>
-<td>
-<a href="errors.md#Java_com.jayway.jsonpath___bracket_for_object_with_number">e</a>
-</td>
-<td>
-✓
-</td>
-<td>
-✓
-</td>
-</tr>
-<tr>
-<td><a href="results/bracket_for_object_with_number_without_quotes.md">Bracket for object with number without quotes</a></td>
-<td><code>$[0]</code></td>
-<td>
-<a href="errors.md#Clojure_json-path___bracket_for_object_with_number_without_quotes">e</a>
-</td>
-<td>
-?
-</td>
-<td>
-<a href="errors.md#JavaScript_jsonpath___bracket_for_object_with_number_without_quotes">e</a>
-</td>
-<td>
-?
-</td>
-<td>
-<a href="errors.md#Java_com.jayway.jsonpath___bracket_for_object_with_number_without_quotes">e</a>
-</td>
-<td>
-<a href="errors.md#Python_jsonpath-ng___bracket_for_object_with_number_without_quotes">e</a>
-</td>
-<td>
-?
-</td>
-</tr>
-<tr>
-<td><a href="results/bracket_for_object_with_single_quote.md">Bracket for object with single quote</a></td>
-<td><code>$['single'quote']</code></td>
-<td>
-<a href="errors.md#Clojure_json-path___bracket_for_object_with_single_quote">e</a>
-</td>
-<td>
-?
-</td>
-<td>
-<a href="errors.md#JavaScript_jsonpath___bracket_for_object_with_single_quote">e</a>
-</td>
-<td>
-?
-</td>
-<td>
-<a href="errors.md#Java_com.jayway.jsonpath___bracket_for_object_with_single_quote">e</a>
-</td>
-<td>
-<a href="errors.md#Python_jsonpath-ng___bracket_for_object_with_single_quote">e</a>
-</td>
-<td>
-<a href="errors.md#Rust_jsonpath_lib___bracket_for_object_with_single_quote">e</a>
-</td>
-</tr>
-<tr>
-<td><a href="results/bracket_for_object_with_single_quote_escaped.md">Bracket for object with single quote escaped</a></td>
-<td><code>$['single\'quote']</code></td>
-<td>
-<a href="errors.md#Clojure_json-path___bracket_for_object_with_single_quote_escaped">e</a>
-</td>
-<td>
-<a href="errors.md#JavaScript_Goessner___bracket_for_object_with_single_quote_escaped">e</a>
-</td>
-<td>
-<a href="errors.md#JavaScript_jsonpath___bracket_for_object_with_single_quote_escaped">e</a>
-</td>
-<td>
-<a href="errors.md#JavaScript_jsonpath-plus___bracket_for_object_with_single_quote_escaped">e</a>
-</td>
-<td>
-<a href="errors.md#Java_com.jayway.jsonpath___bracket_for_object_with_single_quote_escaped">e</a>
-</td>
-<td>
-?
-</td>
-<td>
-<a href="errors.md#Rust_jsonpath_lib___bracket_for_object_with_single_quote_escaped">e</a>
-</td>
-</tr>
-<tr>
-<td><a href="results/bracket_for_object_with_special_characters.md">Bracket for object with special characters</a></td>
-<td><code>$['fun:\"characters']</code></td>
-<td>
-<a href="errors.md#Clojure_json-path___bracket_for_object_with_special_characters">e</a>
-</td>
-<td>
-<a href="errors.md#JavaScript_Goessner___bracket_for_object_with_special_characters">e</a>
-</td>
-<td>
-<a href="errors.md#JavaScript_jsonpath___bracket_for_object_with_special_characters">e</a>
-</td>
-<td>
-<a href="errors.md#JavaScript_jsonpath-plus___bracket_for_object_with_special_characters">e</a>
-</td>
-<td>
-<a href="errors.md#Java_com.jayway.jsonpath___bracket_for_object_with_special_characters">e</a>
-</td>
-<td>
-?
-</td>
-<td>
-?
-</td>
-</tr>
-<tr>
-<td><a href="results/bracket_for_object_without_quotes.md">Bracket for object without quotes</a></td>
-<td><code>$[key]</code></td>
-<td>
-<a href="errors.md#Clojure_json-path___bracket_for_object_without_quotes">e</a>
-</td>
-<td>
-?
-</td>
-<td>
-<a href="errors.md#JavaScript_jsonpath___bracket_for_object_without_quotes">e</a>
-</td>
-<td>
-?
-</td>
-<td>
-<a href="errors.md#Java_com.jayway.jsonpath___bracket_for_object_without_quotes">e</a>
-</td>
-<td>
-?
-</td>
-<td>
-<a href="errors.md#Rust_jsonpath_lib___bracket_for_object_without_quotes">e</a>
 </td>
 </tr>
 <tr>

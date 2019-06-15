@@ -1,4 +1,4 @@
-## Bracket for object multiple keys
+## Key bracket notation union
 
 ### Setup
 Selector: `$['key','another']`

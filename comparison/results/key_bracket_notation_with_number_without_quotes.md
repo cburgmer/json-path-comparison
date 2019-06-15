@@ -1,10 +1,10 @@
-## Bracket for object without quotes
+## Key bracket notation with number without quotes
 
 ### Setup
-Selector: `$[key]`
+Selector: `$[0]`
 
     {
-      "key": "value"
+        "0": "value"
     }
 
 ### Results
@@ -16,7 +16,7 @@ Selector: `$[key]`
 
     "value"
 
-#### Python (jsonpath-ng)
+#### Rust (jsonpath_lib)
 
-    "value"
+    null
 

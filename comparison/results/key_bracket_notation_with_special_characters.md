@@ -1,4 +1,4 @@
-## Bracket for object with special characters
+## Key bracket notation with special characters
 
 ### Setup
 Selector: `$['fun:\"characters']`

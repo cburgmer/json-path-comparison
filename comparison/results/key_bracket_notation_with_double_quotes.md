@@ -1,4 +1,4 @@
-## Bracket for object with double quotes
+## Key bracket notation with double quotes
 
 ### Setup
 Selector: `$["key"]`

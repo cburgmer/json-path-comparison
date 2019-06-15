@@ -1,4 +1,4 @@
-## Array key access
+## Key on array
 
 ### Setup
 Selector: `$.key`

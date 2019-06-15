@@ -1,4 +1,4 @@
-## Bracket for object with single quote escaped
+## Key bracket notation with single quote escaped
 
 ### Setup
 Selector: `$['single\'quote']`
