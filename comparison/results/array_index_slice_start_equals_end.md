@@ -28,7 +28,7 @@ Selector: `$[0:0]`
 
     []
 
-#### Python (jsonpath-ng)
+#### Python (jsonpath-rw)
 
     []
 

@@ -81,7 +81,7 @@ Selector: `$[*]`
       ]
     ]
 
-#### Python (jsonpath-ng)
+#### Python (jsonpath-rw)
 
     [
       {

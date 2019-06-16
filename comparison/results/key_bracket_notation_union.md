@@ -27,7 +27,7 @@ Selector: `$['key','another']`
 
     []
 
-#### Python (jsonpath-ng)
+#### Python (jsonpath-rw)
 
     [
       "value", 

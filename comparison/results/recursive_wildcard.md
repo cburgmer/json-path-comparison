@@ -32,7 +32,7 @@ Selector: `$..*`
       1
     ]
 
-#### Python (jsonpath-ng)
+#### Python (jsonpath-rw)
 
     [
       {

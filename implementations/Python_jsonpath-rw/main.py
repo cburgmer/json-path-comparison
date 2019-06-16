@@ -1,6 +1,6 @@
 import sys
 import json
-from jsonpath_ng import parse
+from jsonpath_rw import parse
 
 
 def main():

@@ -6,7 +6,7 @@ Selector: `$['special:\"chars']`
     {"special:\"chars":"value"}
 
 ### Results
-#### Python (jsonpath-ng)
+#### Python (jsonpath-rw)
 
     "value"
 

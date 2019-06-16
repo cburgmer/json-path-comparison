@@ -6,7 +6,7 @@ Selector: `$['single\'quote']`
     {"single'quote":"value"}
 
 ### Results
-#### Python (jsonpath-ng)
+#### Python (jsonpath-rw)
 
     "value"
 

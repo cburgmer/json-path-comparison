@@ -39,7 +39,7 @@ jsonpath-plus
 com.jayway.jsonpath
 </th>
 <th>
-jsonpath-ng
+jsonpath-rw
 ¹
 </th>
 <th>
@@ -99,7 +99,7 @@ jsonpath_lib
 <a href="errors.md#Java_com.jayway.jsonpath___array_index_dot_notation">e</a>
 </td>
 <td>
-<a href="errors.md#Python_jsonpath-ng___array_index_dot_notation">e</a>
+<a href="errors.md#Python_jsonpath-rw___array_index_dot_notation">e</a>
 </td>
 <td>
 <a href="errors.md#Ruby_jsonpath___array_index_dot_notation">e</a>
@@ -155,7 +155,7 @@ jsonpath_lib
 <a href="errors.md#Java_com.jayway.jsonpath___array_index_out_of_bounds">e</a>
 </td>
 <td>
-<a href="errors.md#Python_jsonpath-ng___array_index_out_of_bounds">e</a>
+<a href="errors.md#Python_jsonpath-rw___array_index_out_of_bounds">e</a>
 </td>
 <td>
 <a href="errors.md#Ruby_jsonpath___array_index_out_of_bounds">e</a>
@@ -351,7 +351,7 @@ jsonpath_lib
 ?
 </td>
 <td>
-<a href="errors.md#Python_jsonpath-ng___array_index_slice_start_end_step">e</a>
+<a href="errors.md#Python_jsonpath-rw___array_index_slice_start_end_step">e</a>
 </td>
 <td>
 ?
@@ -435,7 +435,7 @@ jsonpath_lib
 ✓
 </td>
 <td>
-<a href="errors.md#Python_jsonpath-ng___array_index_union">e</a>
+<a href="errors.md#Python_jsonpath-rw___array_index_union">e</a>
 </td>
 <td>
 ✓
@@ -575,7 +575,7 @@ jsonpath_lib
 <a href="errors.md#Java_com.jayway.jsonpath___key_bracket_notation_with_number_without_quotes">e</a>
 </td>
 <td>
-<a href="errors.md#Python_jsonpath-ng___key_bracket_notation_with_number_without_quotes">e</a>
+<a href="errors.md#Python_jsonpath-rw___key_bracket_notation_with_number_without_quotes">e</a>
 </td>
 <td>
 ?
@@ -603,7 +603,7 @@ jsonpath_lib
 <a href="errors.md#Java_com.jayway.jsonpath___key_bracket_notation_with_single_quote">e</a>
 </td>
 <td>
-<a href="errors.md#Python_jsonpath-ng___key_bracket_notation_with_single_quote">e</a>
+<a href="errors.md#Python_jsonpath-rw___key_bracket_notation_with_single_quote">e</a>
 </td>
 <td>
 ?
@@ -715,7 +715,7 @@ jsonpath_lib
 <a href="errors.md#Java_com.jayway.jsonpath___key_on_array">e</a>
 </td>
 <td>
-<a href="errors.md#Python_jsonpath-ng___key_on_array">e</a>
+<a href="errors.md#Python_jsonpath-rw___key_on_array">e</a>
 </td>
 <td>
 <a href="errors.md#Ruby_jsonpath___key_on_array">e</a>
@@ -771,7 +771,7 @@ jsonpath_lib
 ?
 </td>
 <td>
-<a href="errors.md#Python_jsonpath-ng___recursive_array_index">e</a>
+<a href="errors.md#Python_jsonpath-rw___recursive_array_index">e</a>
 </td>
 <td>
 <a href="errors.md#Ruby_jsonpath___recursive_array_index">e</a>

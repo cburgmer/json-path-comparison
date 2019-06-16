@@ -10,7 +10,7 @@ Selector: `$[-1]`
 
     "third"
 
-#### Python (jsonpath-ng)
+#### Python (jsonpath-rw)
 
     "third"
 

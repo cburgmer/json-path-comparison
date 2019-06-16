@@ -1708,8 +1708,8 @@ Java (com.jayway.jsonpath), Key on array
     [ERROR] For more information about the errors and possible solutions, please read the following articles:
     [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoExecutionException
 
-<h3 id="Python_jsonpath-ng___array_index_dot_notation">
-Python (jsonpath-ng), Array index dot notation
+<h3 id="Python_jsonpath-rw___array_index_dot_notation">
+Python (jsonpath-rw), Array index dot notation
 </h3>
 
     Traceback (most recent call last):
@@ -1717,11 +1717,11 @@ Python (jsonpath-ng), Array index dot notation
         sys.exit(main())
       File "main.py", line 8, in main
         query = parse(selector)
-      File "/usr/local/lib/python2.7/site-packages/jsonpath_ng/parser.py", line 14, in parse
+      File "/usr/local/lib/python2.7/site-packages/jsonpath_rw/parser.py", line 14, in parse
         return JsonPathParser().parse(string)
-      File "/usr/local/lib/python2.7/site-packages/jsonpath_ng/parser.py", line 32, in parse
+      File "/usr/local/lib/python2.7/site-packages/jsonpath_rw/parser.py", line 32, in parse
         return self.parse_token_stream(lexer.tokenize(string))
-      File "/usr/local/lib/python2.7/site-packages/jsonpath_ng/parser.py", line 55, in parse_token_stream
+      File "/usr/local/lib/python2.7/site-packages/jsonpath_rw/parser.py", line 55, in parse_token_stream
         return new_parser.parse(lexer = IteratorToTokenStream(token_iterator))
       File "/usr/local/lib/python2.7/site-packages/ply/yacc.py", line 333, in parse
         return self.parseopt_notrack(input, lexer, debug, tracking, tokenfunc)
@@ -1729,8 +1729,8 @@ Python (jsonpath-ng), Array index dot notation
         tok = call_errorfunc(self.errorfunc, errtoken, self)
       File "/usr/local/lib/python2.7/site-packages/ply/yacc.py", line 192, in call_errorfunc
         r = errorfunc(token)
-      File "/usr/local/lib/python2.7/site-packages/jsonpath_ng/parser.py", line 69, in p_error
-        raise Exception('Parse error at %s:%s near token %s (%s)' % (t.lineno, t.col, t.value, t.type))
+      File "/usr/local/lib/python2.7/site-packages/jsonpath_rw/parser.py", line 69, in p_error
+        raise Exception('Parse error at %s:%s near token %s (%s)' % (t.lineno, t.col, t.value, t.type)) 
     Exception: Parse error at 1:2 near token 2 (NUMBER)
     Traceback (most recent call last):
       File "./src/unwrap_scalar.py", line 15, in <module>
@@ -1745,8 +1745,8 @@ Python (jsonpath-ng), Array index dot notation
         raise ValueError("No JSON object could be decoded")
     ValueError: No JSON object could be decoded
 
-<h3 id="Python_jsonpath-ng___array_index_out_of_bounds">
-Python (jsonpath-ng), Array index out of bounds
+<h3 id="Python_jsonpath-rw___array_index_out_of_bounds">
+Python (jsonpath-rw), Array index out of bounds
 </h3>
 
     Traceback (most recent call last):
@@ -1756,8 +1756,8 @@ Python (jsonpath-ng), Array index out of bounds
         assert len(j) == 1
     AssertionError
 
-<h3 id="Python_jsonpath-ng___array_index_slice_start_end_step">
-Python (jsonpath-ng), Array index slice start end step
+<h3 id="Python_jsonpath-rw___array_index_slice_start_end_step">
+Python (jsonpath-rw), Array index slice start end step
 </h3>
 
     Traceback (most recent call last):
@@ -1765,11 +1765,11 @@ Python (jsonpath-ng), Array index slice start end step
         sys.exit(main())
       File "main.py", line 8, in main
         query = parse(selector)
-      File "/usr/local/lib/python2.7/site-packages/jsonpath_ng/parser.py", line 14, in parse
+      File "/usr/local/lib/python2.7/site-packages/jsonpath_rw/parser.py", line 14, in parse
         return JsonPathParser().parse(string)
-      File "/usr/local/lib/python2.7/site-packages/jsonpath_ng/parser.py", line 32, in parse
+      File "/usr/local/lib/python2.7/site-packages/jsonpath_rw/parser.py", line 32, in parse
         return self.parse_token_stream(lexer.tokenize(string))
-      File "/usr/local/lib/python2.7/site-packages/jsonpath_ng/parser.py", line 55, in parse_token_stream
+      File "/usr/local/lib/python2.7/site-packages/jsonpath_rw/parser.py", line 55, in parse_token_stream
         return new_parser.parse(lexer = IteratorToTokenStream(token_iterator))
       File "/usr/local/lib/python2.7/site-packages/ply/yacc.py", line 333, in parse
         return self.parseopt_notrack(input, lexer, debug, tracking, tokenfunc)
@@ -1777,12 +1777,12 @@ Python (jsonpath-ng), Array index slice start end step
         tok = call_errorfunc(self.errorfunc, errtoken, self)
       File "/usr/local/lib/python2.7/site-packages/ply/yacc.py", line 192, in call_errorfunc
         r = errorfunc(token)
-      File "/usr/local/lib/python2.7/site-packages/jsonpath_ng/parser.py", line 69, in p_error
-        raise Exception('Parse error at %s:%s near token %s (%s)' % (t.lineno, t.col, t.value, t.type))
+      File "/usr/local/lib/python2.7/site-packages/jsonpath_rw/parser.py", line 69, in p_error
+        raise Exception('Parse error at %s:%s near token %s (%s)' % (t.lineno, t.col, t.value, t.type)) 
     Exception: Parse error at 1:5 near token : (:)
 
-<h3 id="Python_jsonpath-ng___array_index_union">
-Python (jsonpath-ng), Array index union
+<h3 id="Python_jsonpath-rw___array_index_union">
+Python (jsonpath-rw), Array index union
 </h3>
 
     Traceback (most recent call last):
@@ -1790,11 +1790,11 @@ Python (jsonpath-ng), Array index union
         sys.exit(main())
       File "main.py", line 8, in main
         query = parse(selector)
-      File "/usr/local/lib/python2.7/site-packages/jsonpath_ng/parser.py", line 14, in parse
+      File "/usr/local/lib/python2.7/site-packages/jsonpath_rw/parser.py", line 14, in parse
         return JsonPathParser().parse(string)
-      File "/usr/local/lib/python2.7/site-packages/jsonpath_ng/parser.py", line 32, in parse
+      File "/usr/local/lib/python2.7/site-packages/jsonpath_rw/parser.py", line 32, in parse
         return self.parse_token_stream(lexer.tokenize(string))
-      File "/usr/local/lib/python2.7/site-packages/jsonpath_ng/parser.py", line 55, in parse_token_stream
+      File "/usr/local/lib/python2.7/site-packages/jsonpath_rw/parser.py", line 55, in parse_token_stream
         return new_parser.parse(lexer = IteratorToTokenStream(token_iterator))
       File "/usr/local/lib/python2.7/site-packages/ply/yacc.py", line 333, in parse
         return self.parseopt_notrack(input, lexer, debug, tracking, tokenfunc)
@@ -1802,12 +1802,12 @@ Python (jsonpath-ng), Array index union
         tok = call_errorfunc(self.errorfunc, errtoken, self)
       File "/usr/local/lib/python2.7/site-packages/ply/yacc.py", line 192, in call_errorfunc
         r = errorfunc(token)
-      File "/usr/local/lib/python2.7/site-packages/jsonpath_ng/parser.py", line 69, in p_error
-        raise Exception('Parse error at %s:%s near token %s (%s)' % (t.lineno, t.col, t.value, t.type))
+      File "/usr/local/lib/python2.7/site-packages/jsonpath_rw/parser.py", line 69, in p_error
+        raise Exception('Parse error at %s:%s near token %s (%s)' % (t.lineno, t.col, t.value, t.type)) 
     Exception: Parse error at 1:3 near token , (,)
 
-<h3 id="Python_jsonpath-ng___key_bracket_notation_with_number_without_quotes">
-Python (jsonpath-ng), Key bracket notation with number without quotes
+<h3 id="Python_jsonpath-rw___key_bracket_notation_with_number_without_quotes">
+Python (jsonpath-rw), Key bracket notation with number without quotes
 </h3>
 
     Traceback (most recent call last):
@@ -1815,9 +1815,9 @@ Python (jsonpath-ng), Key bracket notation with number without quotes
         sys.exit(main())
       File "main.py", line 11, in main
         results = [match.value for match in query.find(j)]
-      File "/usr/local/lib/python2.7/site-packages/jsonpath_ng/jsonpath.py", line 257, in find
+      File "/usr/local/lib/python2.7/site-packages/jsonpath_rw/jsonpath.py", line 228, in find
         for submatch in self.right.find(subdata)]
-      File "/usr/local/lib/python2.7/site-packages/jsonpath_ng/jsonpath.py", line 565, in find
+      File "/usr/local/lib/python2.7/site-packages/jsonpath_rw/jsonpath.py", line 444, in find
         return [DatumInContext(datum.value[self.index], path=self, context=datum)]
     KeyError: 0
     Traceback (most recent call last):
@@ -1833,8 +1833,8 @@ Python (jsonpath-ng), Key bracket notation with number without quotes
         raise ValueError("No JSON object could be decoded")
     ValueError: No JSON object could be decoded
 
-<h3 id="Python_jsonpath-ng___key_bracket_notation_with_single_quote">
-Python (jsonpath-ng), Key bracket notation with single quote
+<h3 id="Python_jsonpath-rw___key_bracket_notation_with_single_quote">
+Python (jsonpath-rw), Key bracket notation with single quote
 </h3>
 
     Traceback (most recent call last):
@@ -1842,11 +1842,11 @@ Python (jsonpath-ng), Key bracket notation with single quote
         sys.exit(main())
       File "main.py", line 8, in main
         query = parse(selector)
-      File "/usr/local/lib/python2.7/site-packages/jsonpath_ng/parser.py", line 14, in parse
+      File "/usr/local/lib/python2.7/site-packages/jsonpath_rw/parser.py", line 14, in parse
         return JsonPathParser().parse(string)
-      File "/usr/local/lib/python2.7/site-packages/jsonpath_ng/parser.py", line 32, in parse
+      File "/usr/local/lib/python2.7/site-packages/jsonpath_rw/parser.py", line 32, in parse
         return self.parse_token_stream(lexer.tokenize(string))
-      File "/usr/local/lib/python2.7/site-packages/jsonpath_ng/parser.py", line 55, in parse_token_stream
+      File "/usr/local/lib/python2.7/site-packages/jsonpath_rw/parser.py", line 55, in parse_token_stream
         return new_parser.parse(lexer = IteratorToTokenStream(token_iterator))
       File "/usr/local/lib/python2.7/site-packages/ply/yacc.py", line 333, in parse
         return self.parseopt_notrack(input, lexer, debug, tracking, tokenfunc)
@@ -1854,8 +1854,8 @@ Python (jsonpath-ng), Key bracket notation with single quote
         tok = call_errorfunc(self.errorfunc, errtoken, self)
       File "/usr/local/lib/python2.7/site-packages/ply/yacc.py", line 192, in call_errorfunc
         r = errorfunc(token)
-      File "/usr/local/lib/python2.7/site-packages/jsonpath_ng/parser.py", line 69, in p_error
-        raise Exception('Parse error at %s:%s near token %s (%s)' % (t.lineno, t.col, t.value, t.type))
+      File "/usr/local/lib/python2.7/site-packages/jsonpath_rw/parser.py", line 69, in p_error
+        raise Exception('Parse error at %s:%s near token %s (%s)' % (t.lineno, t.col, t.value, t.type)) 
     Exception: Parse error at 1:10 near token quote (ID)
     Traceback (most recent call last):
       File "./src/unwrap_scalar.py", line 15, in <module>
@@ -1870,8 +1870,8 @@ Python (jsonpath-ng), Key bracket notation with single quote
         raise ValueError("No JSON object could be decoded")
     ValueError: No JSON object could be decoded
 
-<h3 id="Python_jsonpath-ng___key_on_array">
-Python (jsonpath-ng), Key on array
+<h3 id="Python_jsonpath-rw___key_on_array">
+Python (jsonpath-rw), Key on array
 </h3>
 
     Traceback (most recent call last):
@@ -1881,8 +1881,8 @@ Python (jsonpath-ng), Key on array
         assert len(j) == 1
     AssertionError
 
-<h3 id="Python_jsonpath-ng___recursive_array_index">
-Python (jsonpath-ng), Recursive array index
+<h3 id="Python_jsonpath-rw___recursive_array_index">
+Python (jsonpath-rw), Recursive array index
 </h3>
 
     Traceback (most recent call last):
@@ -1890,13 +1890,13 @@ Python (jsonpath-ng), Recursive array index
         sys.exit(main())
       File "main.py", line 11, in main
         results = [match.value for match in query.find(j)]
-      File "/usr/local/lib/python2.7/site-packages/jsonpath_ng/jsonpath.py", line 377, in find
+      File "/usr/local/lib/python2.7/site-packages/jsonpath_rw/jsonpath.py", line 327, in find
         for submatch in match_recursively(left_match)]
-      File "/usr/local/lib/python2.7/site-packages/jsonpath_ng/jsonpath.py", line 362, in match_recursively
+      File "/usr/local/lib/python2.7/site-packages/jsonpath_rw/jsonpath.py", line 312, in match_recursively
         for submatch in match_recursively(DatumInContext(datum.value[i], context=datum, path=Index(i)))]
-      File "/usr/local/lib/python2.7/site-packages/jsonpath_ng/jsonpath.py", line 356, in match_recursively
+      File "/usr/local/lib/python2.7/site-packages/jsonpath_rw/jsonpath.py", line 306, in match_recursively
         right_matches = self.right.find(datum)
-      File "/usr/local/lib/python2.7/site-packages/jsonpath_ng/jsonpath.py", line 565, in find
+      File "/usr/local/lib/python2.7/site-packages/jsonpath_rw/jsonpath.py", line 444, in find
         return [DatumInContext(datum.value[self.index], path=self, context=datum)]
     KeyError: 0
 
