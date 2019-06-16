@@ -10,4 +10,4 @@ if [[ ! -e "$target" ]]; then
     mvn clean package -q
 fi
 
-mvn -e exec:java -q -D"exec.mainClass"="query.App" -Dexec.args="$@"
+mvn -e exec:java -q -D"exec.mainClass"="query.App" -Dexec.args="\"$@\""

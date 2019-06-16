@@ -460,7 +460,7 @@ jsonpath_lib
 ✓
 </td>
 <td>
-<a href="errors.md#Java_com.jayway.jsonpath___key_bracket_notation">e</a>
+✓
 </td>
 <td>
 ✓
@@ -488,7 +488,7 @@ jsonpath_lib
 ?
 </td>
 <td>
-<a href="errors.md#Java_com.jayway.jsonpath___key_bracket_notation_union">e</a>
+?
 </td>
 <td>
 ?
@@ -544,7 +544,7 @@ jsonpath_lib
 ✓
 </td>
 <td>
-<a href="errors.md#Java_com.jayway.jsonpath___key_bracket_notation_with_number">e</a>
+✓
 </td>
 <td>
 ✓
@@ -628,7 +628,7 @@ jsonpath_lib
 <a href="errors.md#JavaScript_jsonpath-plus___key_bracket_notation_with_single_quote_escaped">e</a>
 </td>
 <td>
-<a href="errors.md#Java_com.jayway.jsonpath___key_bracket_notation_with_single_quote_escaped">e</a>
+?
 </td>
 <td>
 ?

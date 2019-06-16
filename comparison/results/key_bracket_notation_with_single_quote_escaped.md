@@ -6,6 +6,10 @@ Selector: `$['single\'quote']`
     {"single'quote":"value"}
 
 ### Results
+#### Java (com.jayway.jsonpath)
+
+    "value"
+
 #### Python (jsonpath-rw)
 
     "value"

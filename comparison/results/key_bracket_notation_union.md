@@ -27,6 +27,13 @@ Selector: `$['key','another']`
 
     []
 
+#### Java (com.jayway.jsonpath)
+
+    {
+      "another": "entry", 
+      "key": "value"
+    }
+
 #### Python (jsonpath-rw)
 
     [
