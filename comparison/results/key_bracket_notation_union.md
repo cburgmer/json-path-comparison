@@ -27,6 +27,13 @@ Selector: `$['key','another']`
 
     []
 
+#### Python (jsonpath)
+
+    [
+      "value", 
+      "entry"
+    ]
+
 #### Python (jsonpath-rw)
 
     [

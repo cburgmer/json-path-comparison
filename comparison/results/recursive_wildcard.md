@@ -12,7 +12,7 @@ Selector: `$..*`
     }
 
 ### Results
-####  Gold Standard (consensus)
+#### JavaScript (Goessner)
 
     [
       "value", 
@@ -28,6 +28,86 @@ Selector: `$..*`
         0, 
         1
       ], 
+      0, 
+      1
+    ]
+
+#### JavaScript (jsonpath)
+
+    [
+      "value", 
+      {
+        "complex": "string", 
+        "primitives": [
+          0, 
+          1
+        ]
+      }, 
+      "string", 
+      [
+        0, 
+        1
+      ], 
+      0, 
+      1
+    ]
+
+#### JavaScript (jsonpath-plus)
+
+    [
+      "value", 
+      {
+        "complex": "string", 
+        "primitives": [
+          0, 
+          1
+        ]
+      }, 
+      "string", 
+      [
+        0, 
+        1
+      ], 
+      0, 
+      1
+    ]
+
+#### Java (com.jayway.jsonpath)
+
+    [
+      "value", 
+      {
+        "complex": "string", 
+        "primitives": [
+          0, 
+          1
+        ]
+      }, 
+      "string", 
+      [
+        0, 
+        1
+      ], 
+      0, 
+      1
+    ]
+
+#### Python (jsonpath)
+
+    [
+      {
+        "complex": "string", 
+        "primitives": [
+          0, 
+          1
+        ]
+      }, 
+      "value", 
+      [
+        0, 
+        1
+      ], 
+      "string", 
       0, 
       1
     ]
@@ -63,6 +143,26 @@ Selector: `$..*`
         }, 
         "key": "value"
       }, 
+      "value", 
+      {
+        "complex": "string", 
+        "primitives": [
+          0, 
+          1
+        ]
+      }, 
+      "string", 
+      [
+        0, 
+        1
+      ], 
+      0, 
+      1
+    ]
+
+#### Rust (jsonpath_lib)
+
+    [
       "value", 
       {
         "complex": "string", 

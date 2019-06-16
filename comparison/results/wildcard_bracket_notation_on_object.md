@@ -81,6 +81,20 @@ Selector: `$[*]`
       ]
     ]
 
+#### Python (jsonpath)
+
+    [
+      42, 
+      [
+        0, 
+        1
+      ], 
+      {
+        "key": "value"
+      }, 
+      "string"
+    ]
+
 #### Python (jsonpath-rw)
 
     [

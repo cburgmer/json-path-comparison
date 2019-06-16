@@ -215,65 +215,6 @@ The following queries provide results that do not match those of other implement
   	at json_path_comparison.core.main(Unknown Source)
   ```
 
-- [ ] `$..*`
-  Input:
-  ```
-  {"another key": {"primitives": [0, 1], "complex": "string"}, "key": "value"}
-  ```
-  Expected output:
-  ```
-  ["value", {"primitives": [0, 1], "complex": "string"}, "string", [0, 1], 0, 1]
-  ```
-  Error:
-  ```
-  Exception in thread "main" java.lang.IllegalArgumentException: Don't know how to create ISeq from: java.lang.Integer
-  	at clojure.lang.RT.seqFrom(RT.java:553)
-  	at clojure.lang.RT.seq(RT.java:533)
-  	at clojure.core$seq__5387.invokeStatic(core.clj:137)
-  	at clojure.core$empty_QMARK_.invokeStatic(core.clj:6206)
-  	at clojure.core$empty_QMARK_.invoke(core.clj:6206)
-  	at json_path.walker$walk_path$fn__999.invoke(walker.clj:58)
-  	at clojure.core$complement$fn__5654.invoke(core.clj:1441)
-  	at clojure.core$filter$fn__5878.invoke(core.clj:2821)
-  	at clojure.lang.LazySeq.sval(LazySeq.java:42)
-  	at clojure.lang.LazySeq.seq(LazySeq.java:51)
-  	at clojure.lang.RT.seq(RT.java:531)
-  	at clojure.core$seq__5387.invokeStatic(core.clj:137)
-  	at clojure.core$map$fn__5851.invoke(core.clj:2746)
-  	at clojure.lang.LazySeq.sval(LazySeq.java:42)
-  	at clojure.lang.LazySeq.seq(LazySeq.java:51)
-  	at clojure.lang.RT.seq(RT.java:531)
-  	at clojure.core$seq__5387.invokeStatic(core.clj:137)
-  	at clojure.core$map$fn__5851.invoke(core.clj:2746)
-  	at clojure.lang.LazySeq.sval(LazySeq.java:42)
-  	at clojure.lang.LazySeq.seq(LazySeq.java:51)
-  	at clojure.lang.Cons.next(Cons.java:39)
-  	at clojure.lang.RT.next(RT.java:709)
-  	at clojure.core$next__5371.invokeStatic(core.clj:64)
-  	at clojure.core$concat$cat__5480$fn__5481.invoke(core.clj:742)
-  	at clojure.lang.LazySeq.sval(LazySeq.java:42)
-  	at clojure.lang.LazySeq.seq(LazySeq.java:51)
-  	at clojure.lang.RT.seq(RT.java:531)
-  	at clojure.core$seq__5387.invokeStatic(core.clj:137)
-  	at clojure.core$filter$fn__5878.invoke(core.clj:2809)
-  	at clojure.lang.LazySeq.sval(LazySeq.java:42)
-  	at clojure.lang.LazySeq.seq(LazySeq.java:51)
-  	at clojure.lang.Cons.next(Cons.java:39)
-  	at clojure.lang.RT.next(RT.java:709)
-  	at clojure.core$next__5371.invokeStatic(core.clj:64)
-  	at clojure.core$next__5371.invoke(core.clj:64)
-  	at cheshire.generate$generate.invokeStatic(generate.clj:130)
-  	at cheshire.generate$generate.invoke(generate.clj:116)
-  	at cheshire.core$generate_string.invokeStatic(core.clj:74)
-  	at cheshire.core$generate_string.invoke(core.clj:49)
-  	at cheshire.core$generate_string.invokeStatic(core.clj:55)
-  	at cheshire.core$generate_string.invoke(core.clj:49)
-  	at json_path_comparison.core$_main.invokeStatic(core.clj:10)
-  	at json_path_comparison.core$_main.doInvoke(core.clj:6)
-  	at clojure.lang.RestFn.applyTo(RestFn.java:137)
-  	at json_path_comparison.core.main(Unknown Source)
-  ```
-
 - [ ] `$.store..price`
   Input:
   ```
@@ -340,20 +281,6 @@ The following queries provide results that do not match those of other implement
   Input:
   ```
   ["string", 42, {"key": "value"}, [0, 1]]
-  ```
-  Expected output:
-  ```
-  ["string", 42, {"key": "value"}, [0, 1]]
-  ```
-  Actual output:
-  ```
-  ["string", 42, {"key": "value"}, 0, 1]
-  ```
-
-- [ ] `$.*`
-  Input:
-  ```
-  {"int": 42, "array": [0, 1], "object": {"key": "value"}, "some": "string"}
   ```
   Expected output:
   ```

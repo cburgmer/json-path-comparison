@@ -16,6 +16,10 @@ Selector: `$[0]`
 
     "value"
 
+#### Python (jsonpath)
+
+    "value"
+
 #### Ruby (jsonpath)
 
     null

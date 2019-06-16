@@ -81,6 +81,21 @@ Selector: `$..[0]`
       "more"
     ]
 
+#### Python (jsonpath)
+
+    [
+      "first", 
+      "first nested", 
+      {
+        "nested": [
+          "deepest", 
+          "second"
+        ]
+      }, 
+      "deepest", 
+      "more"
+    ]
+
 #### Rust (jsonpath_lib)
 
     [

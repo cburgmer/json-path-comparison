@@ -22,6 +22,10 @@ Selector: `$.2`
 
     "third"
 
+#### Python (jsonpath)
+
+    "third"
+
 #### Rust (jsonpath_lib)
 
     null

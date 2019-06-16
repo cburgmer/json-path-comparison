@@ -1900,6 +1900,130 @@ Python (jsonpath-rw), Recursive array index
         return [DatumInContext(datum.value[self.index], path=self, context=datum)]
     KeyError: 0
 
+<h3 id="Python_jsonpath___array_index_last">
+Python (jsonpath), Array index last
+</h3>
+
+    Traceback (most recent call last):
+      File "./src/unwrap_scalar.py", line 15, in <module>
+        sys.exit(main())
+      File "./src/unwrap_scalar.py", line 6, in main
+        j = json.loads(sys.stdin.read())
+      File "/usr/local/Cellar/python@2/2.7.16/Frameworks/Python.framework/Versions/2.7/lib/python2.7/json/__init__.py", line 339, in loads
+        return _default_decoder.decode(s)
+      File "/usr/local/Cellar/python@2/2.7.16/Frameworks/Python.framework/Versions/2.7/lib/python2.7/json/decoder.py", line 364, in decode
+        obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+      File "/usr/local/Cellar/python@2/2.7.16/Frameworks/Python.framework/Versions/2.7/lib/python2.7/json/decoder.py", line 382, in raw_decode
+        raise ValueError("No JSON object could be decoded")
+    ValueError: No JSON object could be decoded
+
+<h3 id="Python_jsonpath___array_index_out_of_bounds">
+Python (jsonpath), Array index out of bounds
+</h3>
+
+    Traceback (most recent call last):
+      File "./src/unwrap_scalar.py", line 15, in <module>
+        sys.exit(main())
+      File "./src/unwrap_scalar.py", line 6, in main
+        j = json.loads(sys.stdin.read())
+      File "/usr/local/Cellar/python@2/2.7.16/Frameworks/Python.framework/Versions/2.7/lib/python2.7/json/__init__.py", line 339, in loads
+        return _default_decoder.decode(s)
+      File "/usr/local/Cellar/python@2/2.7.16/Frameworks/Python.framework/Versions/2.7/lib/python2.7/json/decoder.py", line 364, in decode
+        obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+      File "/usr/local/Cellar/python@2/2.7.16/Frameworks/Python.framework/Versions/2.7/lib/python2.7/json/decoder.py", line 382, in raw_decode
+        raise ValueError("No JSON object could be decoded")
+    ValueError: No JSON object could be decoded
+
+<h3 id="Python_jsonpath___array_index_slice_start_equals_end">
+Python (jsonpath), Array index slice start equals end
+</h3>
+
+
+<h3 id="Python_jsonpath___key_bracket_notation_with_double_quotes">
+Python (jsonpath), Key bracket notation with double quotes
+</h3>
+
+    Traceback (most recent call last):
+      File "./src/unwrap_scalar.py", line 15, in <module>
+        sys.exit(main())
+      File "./src/unwrap_scalar.py", line 6, in main
+        j = json.loads(sys.stdin.read())
+      File "/usr/local/Cellar/python@2/2.7.16/Frameworks/Python.framework/Versions/2.7/lib/python2.7/json/__init__.py", line 339, in loads
+        return _default_decoder.decode(s)
+      File "/usr/local/Cellar/python@2/2.7.16/Frameworks/Python.framework/Versions/2.7/lib/python2.7/json/decoder.py", line 364, in decode
+        obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+      File "/usr/local/Cellar/python@2/2.7.16/Frameworks/Python.framework/Versions/2.7/lib/python2.7/json/decoder.py", line 382, in raw_decode
+        raise ValueError("No JSON object could be decoded")
+    ValueError: No JSON object could be decoded
+
+<h3 id="Python_jsonpath___key_bracket_notation_with_single_quote_escaped">
+Python (jsonpath), Key bracket notation with single quote escaped
+</h3>
+
+    Traceback (most recent call last):
+      File "./src/unwrap_scalar.py", line 15, in <module>
+        sys.exit(main())
+      File "./src/unwrap_scalar.py", line 6, in main
+        j = json.loads(sys.stdin.read())
+      File "/usr/local/Cellar/python@2/2.7.16/Frameworks/Python.framework/Versions/2.7/lib/python2.7/json/__init__.py", line 339, in loads
+        return _default_decoder.decode(s)
+      File "/usr/local/Cellar/python@2/2.7.16/Frameworks/Python.framework/Versions/2.7/lib/python2.7/json/decoder.py", line 364, in decode
+        obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+      File "/usr/local/Cellar/python@2/2.7.16/Frameworks/Python.framework/Versions/2.7/lib/python2.7/json/decoder.py", line 382, in raw_decode
+        raise ValueError("No JSON object could be decoded")
+    ValueError: No JSON object could be decoded
+
+<h3 id="Python_jsonpath___key_bracket_notation_with_special_characters">
+Python (jsonpath), Key bracket notation with special characters
+</h3>
+
+    Traceback (most recent call last):
+      File "./src/unwrap_scalar.py", line 15, in <module>
+        sys.exit(main())
+      File "./src/unwrap_scalar.py", line 6, in main
+        j = json.loads(sys.stdin.read())
+      File "/usr/local/Cellar/python@2/2.7.16/Frameworks/Python.framework/Versions/2.7/lib/python2.7/json/__init__.py", line 339, in loads
+        return _default_decoder.decode(s)
+      File "/usr/local/Cellar/python@2/2.7.16/Frameworks/Python.framework/Versions/2.7/lib/python2.7/json/decoder.py", line 364, in decode
+        obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+      File "/usr/local/Cellar/python@2/2.7.16/Frameworks/Python.framework/Versions/2.7/lib/python2.7/json/decoder.py", line 382, in raw_decode
+        raise ValueError("No JSON object could be decoded")
+    ValueError: No JSON object could be decoded
+
+<h3 id="Python_jsonpath___key_on_array">
+Python (jsonpath), Key on array
+</h3>
+
+    Traceback (most recent call last):
+      File "./src/unwrap_scalar.py", line 15, in <module>
+        sys.exit(main())
+      File "./src/unwrap_scalar.py", line 6, in main
+        j = json.loads(sys.stdin.read())
+      File "/usr/local/Cellar/python@2/2.7.16/Frameworks/Python.framework/Versions/2.7/lib/python2.7/json/__init__.py", line 339, in loads
+        return _default_decoder.decode(s)
+      File "/usr/local/Cellar/python@2/2.7.16/Frameworks/Python.framework/Versions/2.7/lib/python2.7/json/decoder.py", line 364, in decode
+        obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+      File "/usr/local/Cellar/python@2/2.7.16/Frameworks/Python.framework/Versions/2.7/lib/python2.7/json/decoder.py", line 382, in raw_decode
+        raise ValueError("No JSON object could be decoded")
+    ValueError: No JSON object could be decoded
+
+<h3 id="Python_jsonpath___root">
+Python (jsonpath), Root
+</h3>
+
+    Traceback (most recent call last):
+      File "./src/unwrap_scalar.py", line 15, in <module>
+        sys.exit(main())
+      File "./src/unwrap_scalar.py", line 6, in main
+        j = json.loads(sys.stdin.read())
+      File "/usr/local/Cellar/python@2/2.7.16/Frameworks/Python.framework/Versions/2.7/lib/python2.7/json/__init__.py", line 339, in loads
+        return _default_decoder.decode(s)
+      File "/usr/local/Cellar/python@2/2.7.16/Frameworks/Python.framework/Versions/2.7/lib/python2.7/json/decoder.py", line 364, in decode
+        obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+      File "/usr/local/Cellar/python@2/2.7.16/Frameworks/Python.framework/Versions/2.7/lib/python2.7/json/decoder.py", line 382, in raw_decode
+        raise ValueError("No JSON object could be decoded")
+    ValueError: No JSON object could be decoded
+
 <h3 id="Ruby_jsonpath___array_index_dot_notation">
 Ruby (jsonpath), Array index dot notation
 </h3>

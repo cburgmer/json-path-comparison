@@ -16,6 +16,10 @@ Selector: `$[key]`
 
     "value"
 
+#### Python (jsonpath)
+
+    "value"
+
 #### Python (jsonpath-rw)
 
     "value"

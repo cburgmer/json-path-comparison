@@ -31,20 +31,6 @@ The following queries provide results that do not match those of other implement
   null
   ```
 
-- [ ] `$..*`
-  Input:
-  ```
-  {"another key": {"primitives": [0, 1], "complex": "string"}, "key": "value"}
-  ```
-  Expected output:
-  ```
-  ["value", {"primitives": [0, 1], "complex": "string"}, "string", [0, 1], 0, 1]
-  ```
-  Actual output:
-  ```
-  [{"another key": {"primitives": [0, 1], "complex": "string"}, "key": "value"}, "value", {"primitives": [0, 1], "complex": "string"}, "string", [0, 1], 0, 1]
-  ```
-
 - [ ] `$.*`
   Input:
   ```
@@ -57,20 +43,6 @@ The following queries provide results that do not match those of other implement
   Actual output:
   ```
   [["string", 42, {"key": "value"}, [0, 1]]]
-  ```
-
-- [ ] `$.*`
-  Input:
-  ```
-  {"int": 42, "array": [0, 1], "object": {"key": "value"}, "some": "string"}
-  ```
-  Expected output:
-  ```
-  ["string", 42, {"key": "value"}, [0, 1]]
-  ```
-  Actual output:
-  ```
-  [{"int": 42, "array": [0, 1], "object": {"key": "value"}, "some": "string"}]
   ```
 
 
