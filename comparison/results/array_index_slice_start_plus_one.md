@@ -19,7 +19,3 @@ Selector: `$[0:1]`
 
     "first"
 
-#### JavaScript (jsonpath-plus)
-
-    "first"
-

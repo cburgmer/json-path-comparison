@@ -33,6 +33,7 @@ jsonpath
 </th>
 <th>
 jsonpath-plus
+¹
 </th>
 <th>
 com.jayway.jsonpath
@@ -204,7 +205,7 @@ jsonpath_lib
 ✓
 </td>
 <td>
-✗
+✓
 </td>
 <td>
 ✓
@@ -400,7 +401,7 @@ jsonpath_lib
 ✓
 </td>
 <td>
-✗
+✓
 </td>
 <td>
 ✓
@@ -484,7 +485,7 @@ jsonpath_lib
 ?
 </td>
 <td>
-<a href="errors.md#JavaScript_jsonpath-plus___key_bracket_notation_union">e</a>
+?
 </td>
 <td>
 <a href="errors.md#Java_com.jayway.jsonpath___key_bracket_notation_union">e</a>
@@ -736,7 +737,7 @@ jsonpath_lib
 ✓
 </td>
 <td>
-✗
+✓
 </td>
 <td>
 ✓

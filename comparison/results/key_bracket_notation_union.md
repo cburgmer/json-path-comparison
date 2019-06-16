@@ -23,6 +23,10 @@ Selector: `$['key','another']`
       "entry"
     ]
 
+#### JavaScript (jsonpath-plus)
+
+    []
+
 #### Python (jsonpath-ng)
 
     [

@@ -15,12 +15,3 @@ Selector: `$.key`
       "second"
     ]
 
-#### JavaScript (jsonpath-plus)
-
-    [
-      [
-        "first", 
-        "second"
-      ]
-    ]
-

@@ -20,7 +20,7 @@ stdin.on('end', function () {
           json = JSON.parse(input);
 
     try {
-        const result = JSONPath({path: selector, wrap: false, json});
+        const result = JSONPath({path: selector, wrap: true, json});
         stdout.write(JSON.stringify(result));
     } catch (e) {
         console.error(e.message);

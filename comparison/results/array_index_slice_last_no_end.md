@@ -12,7 +12,3 @@ Selector: `$[-1:]`
       "third"
     ]
 
-#### JavaScript (jsonpath-plus)
-
-    "third"
-
