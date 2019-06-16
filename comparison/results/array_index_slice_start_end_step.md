@@ -39,3 +39,10 @@ Selector: `$[0:3:2]`
       "third"
     ]
 
+#### Ruby (jsonpath)
+
+    [
+      "first", 
+      "third"
+    ]
+

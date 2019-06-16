@@ -30,3 +30,10 @@ Selector: `$['key','another']`
       "entry"
     ]
 
+#### Ruby (jsonpath)
+
+    [
+      "value", 
+      "entry"
+    ]
+

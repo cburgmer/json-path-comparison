@@ -97,6 +97,15 @@ Selector: `$[*]`
       }
     ]
 
+#### Ruby (jsonpath)
+
+    [
+      null, 
+      null, 
+      null, 
+      null
+    ]
+
 #### Rust (jsonpath_lib)
 
     {

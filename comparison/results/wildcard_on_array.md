@@ -43,3 +43,19 @@ Selector: `$.*`
 
     []
 
+#### Ruby (jsonpath)
+
+    [
+      [
+        "string", 
+        42, 
+        {
+          "key": "value"
+        }, 
+        [
+          0, 
+          1
+        ]
+      ]
+    ]
+

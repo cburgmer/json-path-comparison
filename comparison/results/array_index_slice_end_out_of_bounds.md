@@ -17,3 +17,7 @@ Selector: `$[1:10]`
 
     "second"
 
+#### Ruby (jsonpath)
+
+    []
+

@@ -1876,6 +1876,113 @@ Python (jsonpath-ng), Recursive array index
         return [DatumInContext(datum.value[self.index], path=self, context=datum)]
     KeyError: 0
 
+<h3 id="Ruby_jsonpath___array_index_dot_notation">
+Ruby (jsonpath), Array index dot notation
+</h3>
+
+    Traceback (most recent call last):
+      File "./src/unwrap_scalar.py", line 15, in <module>
+        sys.exit(main())
+      File "./src/unwrap_scalar.py", line 9, in main
+        assert len(j) == 1
+    AssertionError
+
+<h3 id="Ruby_jsonpath___array_index_out_of_bounds">
+Ruby (jsonpath), Array index out of bounds
+</h3>
+
+    Traceback (most recent call last):
+      File "./src/unwrap_scalar.py", line 15, in <module>
+        sys.exit(main())
+      File "./src/unwrap_scalar.py", line 9, in main
+        assert len(j) == 1
+    AssertionError
+
+<h3 id="Ruby_jsonpath___key_bracket_notation_with_single_quote_escaped">
+Ruby (jsonpath), Key bracket notation with single quote escaped
+</h3>
+
+    Traceback (most recent call last):
+      File "./src/unwrap_scalar.py", line 15, in <module>
+        sys.exit(main())
+      File "./src/unwrap_scalar.py", line 9, in main
+        assert len(j) == 1
+    AssertionError
+
+<h3 id="Ruby_jsonpath___key_bracket_notation_with_special_characters">
+Ruby (jsonpath), Key bracket notation with special characters
+</h3>
+
+    Traceback (most recent call last):
+      File "./src/unwrap_scalar.py", line 15, in <module>
+        sys.exit(main())
+      File "./src/unwrap_scalar.py", line 9, in main
+        assert len(j) == 1
+    AssertionError
+
+<h3 id="Ruby_jsonpath___key_bracket_notation_without_quotes">
+Ruby (jsonpath), Key bracket notation without quotes
+</h3>
+
+    /Users/cburgmer/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/jsonpath-1.0.4/lib/jsonpath/enumerable.rb:156:in `Integer': invalid value for Integer(): "key" (ArgumentError)
+    	from /Users/cburgmer/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/jsonpath-1.0.4/lib/jsonpath/enumerable.rb:156:in `process_function_or_literal'
+    	from /Users/cburgmer/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/jsonpath-1.0.4/lib/jsonpath/enumerable.rb:80:in `block in handle_wildecard'
+    	from /Users/cburgmer/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/jsonpath-1.0.4/lib/jsonpath/enumerable.rb:60:in `each'
+    	from /Users/cburgmer/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/jsonpath-1.0.4/lib/jsonpath/enumerable.rb:60:in `handle_wildecard'
+    	from /Users/cburgmer/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/jsonpath-1.0.4/lib/jsonpath/enumerable.rb:30:in `each'
+    	from /Users/cburgmer/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/jsonpath-1.0.4/lib/jsonpath/enumerable.rb:28:in `each'
+    	from /Users/cburgmer/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/jsonpath-1.0.4/lib/jsonpath.rb:73:in `to_a'
+    	from /Users/cburgmer/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/jsonpath-1.0.4/lib/jsonpath.rb:73:in `on'
+    	from /Users/cburgmer/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/jsonpath-1.0.4/bin/jsonpath:20:in `<top (required)>'
+    	from /Users/cburgmer/.rbenv/versions/2.3.0/bin/jsonpath:23:in `load'
+    	from /Users/cburgmer/.rbenv/versions/2.3.0/bin/jsonpath:23:in `<main>'
+    Traceback (most recent call last):
+      File "./src/unwrap_scalar.py", line 15, in <module>
+        sys.exit(main())
+      File "./src/unwrap_scalar.py", line 6, in main
+        j = json.loads(sys.stdin.read())
+      File "/usr/local/Cellar/python@2/2.7.16/Frameworks/Python.framework/Versions/2.7/lib/python2.7/json/__init__.py", line 339, in loads
+        return _default_decoder.decode(s)
+      File "/usr/local/Cellar/python@2/2.7.16/Frameworks/Python.framework/Versions/2.7/lib/python2.7/json/decoder.py", line 364, in decode
+        obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+      File "/usr/local/Cellar/python@2/2.7.16/Frameworks/Python.framework/Versions/2.7/lib/python2.7/json/decoder.py", line 382, in raw_decode
+        raise ValueError("No JSON object could be decoded")
+    ValueError: No JSON object could be decoded
+
+<h3 id="Ruby_jsonpath___key_on_array">
+Ruby (jsonpath), Key on array
+</h3>
+
+    Traceback (most recent call last):
+      File "./src/unwrap_scalar.py", line 15, in <module>
+        sys.exit(main())
+      File "./src/unwrap_scalar.py", line 9, in main
+        assert len(j) == 1
+    AssertionError
+
+<h3 id="Ruby_jsonpath___recursive_array_index">
+Ruby (jsonpath), Recursive array index
+</h3>
+
+    /Users/cburgmer/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/jsonpath-1.0.4/lib/jsonpath/enumerable.rb:17:in `each': 0 is not a symbol nor a string (TypeError)
+    	from /Users/cburgmer/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/jsonpath-1.0.4/lib/jsonpath/enumerable.rb:100:in `block (2 levels) in handle_wildecard'
+    	from /Users/cburgmer/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/jsonpath-1.0.4/lib/jsonpath/enumerable.rb:100:in `step'
+    	from /Users/cburgmer/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/jsonpath-1.0.4/lib/jsonpath/enumerable.rb:100:in `block in handle_wildecard'
+    	from /Users/cburgmer/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/jsonpath-1.0.4/lib/jsonpath/enumerable.rb:60:in `each'
+    	from /Users/cburgmer/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/jsonpath-1.0.4/lib/jsonpath/enumerable.rb:60:in `handle_wildecard'
+    	from /Users/cburgmer/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/jsonpath-1.0.4/lib/jsonpath/enumerable.rb:30:in `each'
+    	from /Users/cburgmer/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/jsonpath-1.0.4/lib/jsonpath/enumerable.rb:40:in `block in each'
+    	from /Users/cburgmer/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/jsonpath-1.0.4/lib/jsonpath/enumerable.rb:40:in `each'
+    	from /Users/cburgmer/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/jsonpath-1.0.4/lib/jsonpath/enumerable.rb:40:in `each_with_index'
+    	from /Users/cburgmer/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/jsonpath-1.0.4/lib/jsonpath/enumerable.rb:40:in `each'
+    	from /Users/cburgmer/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/jsonpath-1.0.4/lib/jsonpath/enumerable.rb:26:in `each'
+    	from /Users/cburgmer/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/jsonpath-1.0.4/lib/jsonpath/enumerable.rb:28:in `each'
+    	from /Users/cburgmer/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/jsonpath-1.0.4/lib/jsonpath.rb:73:in `to_a'
+    	from /Users/cburgmer/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/jsonpath-1.0.4/lib/jsonpath.rb:73:in `on'
+    	from /Users/cburgmer/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/jsonpath-1.0.4/bin/jsonpath:20:in `<top (required)>'
+    	from /Users/cburgmer/.rbenv/versions/2.3.0/bin/jsonpath:23:in `load'
+    	from /Users/cburgmer/.rbenv/versions/2.3.0/bin/jsonpath:23:in `<main>'
+
 <h3 id="Rust_jsonpath_lib___array_index_slice_no_start_no_end">
 Rust (jsonpath_lib), Array index slice no start no end
 </h3>

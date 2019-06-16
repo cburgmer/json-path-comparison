@@ -50,6 +50,39 @@ The following queries provide results that do not match those of other implement
   	at json_path_comparison.core.main(Unknown Source)
   ```
 
+- [ ] `$[:]`
+  Input:
+  ```
+  ["first", "second"]
+  ```
+  Expected output:
+  ```
+  ["first", "second"]
+  ```
+  Error:
+  ```
+  Exception in thread "main" java.lang.NumberFormatException: null
+  	at java.base/java.lang.Integer.parseInt(Integer.java:614)
+  	at java.base/java.lang.Integer.parseInt(Integer.java:770)
+  	at json_path.walker$walk_selector.invokeStatic(walker.clj:68)
+  	at json_path.walker$walk_selector.invoke(walker.clj:61)
+  	at json_path.walker$walk.invokeStatic(walker.clj:82)
+  	at json_path.walker$walk.invoke(walker.clj:79)
+  	at json_path.walker$walk$fn__1026.invoke(walker.clj:84)
+  	at json_path.walker$map_SHARP_.invokeStatic(walker.clj:20)
+  	at json_path.walker$map_SHARP_.invoke(walker.clj:17)
+  	at json_path.walker$walk.invokeStatic(walker.clj:84)
+  	at json_path.walker$walk.invoke(walker.clj:79)
+  	at json_path$query.invokeStatic(json_path.clj:7)
+  	at json_path$query.invoke(json_path.clj:6)
+  	at json_path$at_path.invokeStatic(json_path.clj:10)
+  	at json_path$at_path.invoke(json_path.clj:9)
+  	at json_path_comparison.core$_main.invokeStatic(core.clj:10)
+  	at json_path_comparison.core$_main.doInvoke(core.clj:6)
+  	at clojure.lang.RestFn.applyTo(RestFn.java:137)
+  	at json_path_comparison.core.main(Unknown Source)
+  ```
+
 - [ ] `$[:2]`
   Input:
   ```

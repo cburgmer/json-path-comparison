@@ -14,3 +14,7 @@ Selector: `$['single'quote']`
 
     "value"
 
+#### Ruby (jsonpath)
+
+    "value"
+

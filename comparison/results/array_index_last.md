@@ -14,6 +14,10 @@ Selector: `$[-1]`
 
     "third"
 
+#### Ruby (jsonpath)
+
+    "third"
+
 #### Rust (jsonpath_lib)
 
     "third"

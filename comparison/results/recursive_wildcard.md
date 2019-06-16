@@ -50,3 +50,33 @@ Selector: `$..*`
       "string"
     ]
 
+#### Ruby (jsonpath)
+
+    [
+      {
+        "another key": {
+          "complex": "string", 
+          "primitives": [
+            0, 
+            1
+          ]
+        }, 
+        "key": "value"
+      }, 
+      "value", 
+      {
+        "complex": "string", 
+        "primitives": [
+          0, 
+          1
+        ]
+      }, 
+      "string", 
+      [
+        0, 
+        1
+      ], 
+      0, 
+      1
+    ]
+

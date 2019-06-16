@@ -14,6 +14,7 @@ This guarantees that in case of a split on two sides, the majority wins by two v
 <th colspan="3">JavaScript</th>
 <th colspan="1">Java</th>
 <th colspan="1">Python</th>
+<th colspan="1">Ruby</th>
 <th colspan="1">Rust</th>
 </tr>
 <tr>
@@ -41,6 +42,10 @@ jsonpath-ng
 ¹
 </th>
 <th>
+jsonpath
+¹
+</th>
+<th>
 jsonpath_lib
 </th>
 </tr>
@@ -49,6 +54,9 @@ jsonpath_lib
 <tr>
 <td><a href="results/array_index.md">Array index</a></td>
 <td><code>$[2]</code></td>
+<td>
+✓
+</td>
 <td>
 ✓
 </td>
@@ -93,6 +101,9 @@ jsonpath_lib
 <a href="errors.md#Python_jsonpath-ng___array_index_dot_notation">e</a>
 </td>
 <td>
+<a href="errors.md#Ruby_jsonpath___array_index_dot_notation">e</a>
+</td>
+<td>
 ?
 </td>
 </tr>
@@ -110,6 +121,9 @@ jsonpath_lib
 </td>
 <td>
 <a href="errors.md#JavaScript_jsonpath-plus___array_index_last">e</a>
+</td>
+<td>
+?
 </td>
 <td>
 ?
@@ -143,6 +157,9 @@ jsonpath_lib
 <a href="errors.md#Python_jsonpath-ng___array_index_out_of_bounds">e</a>
 </td>
 <td>
+<a href="errors.md#Ruby_jsonpath___array_index_out_of_bounds">e</a>
+</td>
+<td>
 ?
 </td>
 </tr>
@@ -166,6 +183,9 @@ jsonpath_lib
 </td>
 <td>
 ✓
+</td>
+<td>
+✗
 </td>
 <td>
 ✓
@@ -195,6 +215,9 @@ jsonpath_lib
 <td>
 ✓
 </td>
+<td>
+✓
+</td>
 </tr>
 <tr>
 <td><a href="results/array_index_slice_no_start_no_end.md">Array index slice no start no end</a></td>
@@ -203,19 +226,22 @@ jsonpath_lib
 <a href="errors.md#Clojure_json-path___array_index_slice_no_start_no_end">e</a>
 </td>
 <td>
-?
+✓
 </td>
 <td>
-?
+✓
 </td>
 <td>
-?
+✓
 </td>
 <td>
 <a href="errors.md#Java_com.jayway.jsonpath___array_index_slice_no_start_no_end">e</a>
 </td>
 <td>
-?
+✓
+</td>
+<td>
+✓
 </td>
 <td>
 <a href="errors.md#Rust_jsonpath_lib___array_index_slice_no_start_no_end">e</a>
@@ -226,6 +252,9 @@ jsonpath_lib
 <td><code>$[:2]</code></td>
 <td>
 ✗
+</td>
+<td>
+✓
 </td>
 <td>
 ✓
@@ -270,12 +299,18 @@ jsonpath_lib
 <td>
 ✓
 </td>
+<td>
+✓
+</td>
 </tr>
 <tr>
 <td><a href="results/array_index_slice_start_end.md">Array index slice start end</a></td>
 <td><code>$[1:3]</code></td>
 <td>
 ✗
+</td>
+<td>
+✓
 </td>
 <td>
 ✓
@@ -318,6 +353,9 @@ jsonpath_lib
 <a href="errors.md#Python_jsonpath-ng___array_index_slice_start_end_step">e</a>
 </td>
 <td>
+?
+</td>
+<td>
 <a href="errors.md#Rust_jsonpath_lib___array_index_slice_start_end_step">e</a>
 </td>
 </tr>
@@ -329,6 +367,9 @@ jsonpath_lib
 </td>
 <td>
 <a href="errors.md#JavaScript_Goessner___array_index_slice_start_equals_end">e</a>
+</td>
+<td>
+?
 </td>
 <td>
 ?
@@ -370,6 +411,9 @@ jsonpath_lib
 <td>
 ✓
 </td>
+<td>
+✓
+</td>
 </tr>
 <tr>
 <td><a href="results/array_index_union.md">Array index union</a></td>
@@ -391,6 +435,9 @@ jsonpath_lib
 </td>
 <td>
 <a href="errors.md#Python_jsonpath-ng___array_index_union">e</a>
+</td>
+<td>
+✓
 </td>
 <td>
 ✓
@@ -420,6 +467,9 @@ jsonpath_lib
 <td>
 ✓
 </td>
+<td>
+✓
+</td>
 </tr>
 <tr>
 <td><a href="results/key_bracket_notation_union.md">Key bracket notation union</a></td>
@@ -438,6 +488,9 @@ jsonpath_lib
 </td>
 <td>
 <a href="errors.md#Java_com.jayway.jsonpath___key_bracket_notation_union">e</a>
+</td>
+<td>
+?
 </td>
 <td>
 ?
@@ -470,6 +523,9 @@ jsonpath_lib
 <td>
 ?
 </td>
+<td>
+?
+</td>
 </tr>
 <tr>
 <td><a href="results/key_bracket_notation_with_number.md">Key bracket notation with number</a></td>
@@ -491,6 +547,9 @@ jsonpath_lib
 </td>
 <td>
 ✓
+</td>
+<td>
+✗
 </td>
 <td>
 ✓
@@ -520,6 +579,9 @@ jsonpath_lib
 <td>
 ?
 </td>
+<td>
+?
+</td>
 </tr>
 <tr>
 <td><a href="results/key_bracket_notation_with_single_quote.md">Key bracket notation with single quote</a></td>
@@ -541,6 +603,9 @@ jsonpath_lib
 </td>
 <td>
 <a href="errors.md#Python_jsonpath-ng___key_bracket_notation_with_single_quote">e</a>
+</td>
+<td>
+?
 </td>
 <td>
 <a href="errors.md#Rust_jsonpath_lib___key_bracket_notation_with_single_quote">e</a>
@@ -568,6 +633,9 @@ jsonpath_lib
 ?
 </td>
 <td>
+<a href="errors.md#Ruby_jsonpath___key_bracket_notation_with_single_quote_escaped">e</a>
+</td>
+<td>
 <a href="errors.md#Rust_jsonpath_lib___key_bracket_notation_with_single_quote_escaped">e</a>
 </td>
 </tr>
@@ -591,6 +659,9 @@ jsonpath_lib
 </td>
 <td>
 ?
+</td>
+<td>
+<a href="errors.md#Ruby_jsonpath___key_bracket_notation_with_special_characters">e</a>
 </td>
 <td>
 ?
@@ -618,6 +689,9 @@ jsonpath_lib
 ?
 </td>
 <td>
+<a href="errors.md#Ruby_jsonpath___key_bracket_notation_without_quotes">e</a>
+</td>
+<td>
 <a href="errors.md#Rust_jsonpath_lib___key_bracket_notation_without_quotes">e</a>
 </td>
 </tr>
@@ -643,6 +717,9 @@ jsonpath_lib
 <a href="errors.md#Python_jsonpath-ng___key_on_array">e</a>
 </td>
 <td>
+<a href="errors.md#Ruby_jsonpath___key_on_array">e</a>
+</td>
+<td>
 ?
 </td>
 </tr>
@@ -660,6 +737,9 @@ jsonpath_lib
 </td>
 <td>
 ✗
+</td>
+<td>
+✓
 </td>
 <td>
 ✓
@@ -693,12 +773,18 @@ jsonpath_lib
 <a href="errors.md#Python_jsonpath-ng___recursive_array_index">e</a>
 </td>
 <td>
+<a href="errors.md#Ruby_jsonpath___recursive_array_index">e</a>
+</td>
+<td>
 ?
 </td>
 </tr>
 <tr>
 <td><a href="results/recursive_key.md">Recursive key</a></td>
 <td><code>$..key</code></td>
+<td>
+✓
+</td>
 <td>
 ✓
 </td>
@@ -743,6 +829,9 @@ jsonpath_lib
 ✗
 </td>
 <td>
+✗
+</td>
+<td>
 ✓
 </td>
 </tr>
@@ -751,6 +840,9 @@ jsonpath_lib
 <td><code>$.store..price</code></td>
 <td>
 <a href="errors.md#Clojure_json-path___recursive_with_nested_object">e</a>
+</td>
+<td>
+✓
 </td>
 <td>
 ✓
@@ -795,12 +887,18 @@ jsonpath_lib
 <td>
 ✓
 </td>
+<td>
+✓
+</td>
 </tr>
 <tr>
 <td><a href="results/wildcard_bracket_notation_on_array.md">Wildcard bracket notation on array</a></td>
 <td><code>$[*]</code></td>
 <td>
 ✗
+</td>
+<td>
+✓
 </td>
 <td>
 ✓
@@ -845,6 +943,9 @@ jsonpath_lib
 <td>
 ?
 </td>
+<td>
+?
+</td>
 </tr>
 <tr>
 <td><a href="results/wildcard_on_array.md">Wildcard on array</a></td>
@@ -863,6 +964,9 @@ jsonpath_lib
 </td>
 <td>
 ✓
+</td>
+<td>
+✗
 </td>
 <td>
 ✗
@@ -888,6 +992,9 @@ jsonpath_lib
 </td>
 <td>
 ✓
+</td>
+<td>
+✗
 </td>
 <td>
 ✗

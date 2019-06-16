@@ -9,28 +9,7 @@ Selector: `$[:]`
     ]
 
 ### Results
-#### JavaScript (Goessner)
-
-    [
-      "first", 
-      "second"
-    ]
-
-#### JavaScript (jsonpath)
-
-    [
-      "first", 
-      "second"
-    ]
-
-#### JavaScript (jsonpath-plus)
-
-    [
-      "first", 
-      "second"
-    ]
-
-#### Python (jsonpath-ng)
+####  Gold Standard (consensus)
 
     [
       "first", 

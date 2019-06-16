@@ -32,6 +32,12 @@ Selector: `$[0:0]`
 
     []
 
+#### Ruby (jsonpath)
+
+    [
+      "first"
+    ]
+
 #### Rust (jsonpath_lib)
 
     null

@@ -16,6 +16,10 @@ Selector: `$["key"]`
 
     "value"
 
+#### Ruby (jsonpath)
+
+    "value"
+
 #### Rust (jsonpath_lib)
 
     "value"

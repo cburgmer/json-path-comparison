@@ -12,3 +12,7 @@ Selector: `$['0']`
 
     "value"
 
+#### Ruby (jsonpath)
+
+    null
+
