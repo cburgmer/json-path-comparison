@@ -17,20 +17,6 @@ The following queries provide results that do not match those of other implement
   []
   ```
 
-- [ ] `$[0:0]`
-  Input:
-  ```
-  ["first", "second"]
-  ```
-  Expected output:
-  ```
-  []
-  ```
-  Actual output:
-  ```
-  ["first"]
-  ```
-
 - [ ] `$['0']`
   Input:
   ```
@@ -45,20 +31,6 @@ The following queries provide results that do not match those of other implement
   null
   ```
 
-- [ ] `$[*]`
-  Input:
-  ```
-  {"int": 42, "array": [0, 1], "object": {"key": "value"}, "some": "string"}
-  ```
-  Expected output:
-  ```
-  ["string", 42, {"key": "value"}, [0, 1]]
-  ```
-  Actual output:
-  ```
-  [null, null, null, null]
-  ```
-
 - [ ] `$.*`
   Input:
   ```
@@ -71,20 +43,6 @@ The following queries provide results that do not match those of other implement
   Actual output:
   ```
   [["string", 42, {"key": "value"}, [0, 1]]]
-  ```
-
-- [ ] `$.*`
-  Input:
-  ```
-  {"int": 42, "array": [0, 1], "object": {"key": "value"}, "some": "string"}
-  ```
-  Expected output:
-  ```
-  ["string", 42, {"key": "value"}, [0, 1]]
-  ```
-  Actual output:
-  ```
-  [{"int": 42, "array": [0, 1], "object": {"key": "value"}, "some": "string"}]
   ```
 
 

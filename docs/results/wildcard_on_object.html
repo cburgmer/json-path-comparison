@@ -18,21 +18,6 @@
 
 <h3>Results</h3>
 
-<h4>Gold Standard (consensus)</h4>
-
-<pre><code>[
-  "string", 
-  42, 
-  {
-    "key": "value"
-  }, 
-  [
-    0, 
-    1
-  ]
-]
-</code></pre>
-
 <h4>Clojure (json-path)</h4>
 
 <pre><code>[
@@ -46,18 +31,108 @@
 ]
 </code></pre>
 
-<h4>Perl (JSON-Path)</h4>
+<h4>JavaScript (Goessner)</h4>
 
 <pre><code>[
   "string", 
+  42, 
   {
     "key": "value"
   }, 
-  42, 
   [
     0, 
     1
   ]
+]
+</code></pre>
+
+<h4>JavaScript (jsonpath)</h4>
+
+<pre><code>[
+  "string", 
+  42, 
+  {
+    "key": "value"
+  }, 
+  [
+    0, 
+    1
+  ]
+]
+</code></pre>
+
+<h4>JavaScript (jsonpath-plus)</h4>
+
+<pre><code>[
+  "string", 
+  42, 
+  {
+    "key": "value"
+  }, 
+  [
+    0, 
+    1
+  ]
+]
+</code></pre>
+
+<h4>Java (com.github.jsurfer)</h4>
+
+<pre><code>[
+  "string", 
+  42, 
+  {
+    "key": "value"
+  }, 
+  [
+    0, 
+    1
+  ]
+]
+</code></pre>
+
+<h4>Java (com.jayway.jsonpath)</h4>
+
+<pre><code>[
+  "string", 
+  42, 
+  {
+    "key": "value"
+  }, 
+  [
+    0, 
+    1
+  ]
+]
+</code></pre>
+
+<h4>Perl (JSON-Path)</h4>
+
+<pre><code>[
+  [
+    0, 
+    1
+  ], 
+  42, 
+  {
+    "key": "value"
+  }, 
+  "string"
+]
+</code></pre>
+
+<h4>Python (jsonpath)</h4>
+
+<pre><code>[
+  42, 
+  [
+    0, 
+    1
+  ], 
+  {
+    "key": "value"
+  }, 
+  "string"
 ]
 </code></pre>
 
@@ -90,6 +165,21 @@
     }, 
     "some": "string"
   }
+]
+</code></pre>
+
+<h4>Rust (jsonpath_lib)</h4>
+
+<pre><code>[
+  "string", 
+  42, 
+  {
+    "key": "value"
+  }, 
+  [
+    0, 
+    1
+  ]
 ]
 </code></pre>
 </article>
