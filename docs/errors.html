@@ -1712,6 +1712,81 @@ Caused by: com.jayway.jsonpath.PathNotFoundException: Expected to find an object
 [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoExecutionException
 </code></pre>
 
+<h3 id="Perl_JSON-Path___array_index_out_of_bounds">
+Perl (JSON-Path), Array index out of bounds
+</h3>
+
+<pre><code>Traceback (most recent call last):
+  File "./src/unwrap_scalar.py", line 15, in &lt;module&gt;
+    sys.exit(main())
+  File "./src/unwrap_scalar.py", line 9, in main
+    assert len(j) == 1
+AssertionError
+</code></pre>
+
+<h3 id="Perl_JSON-Path___array_index_slice_no_start_no_end">
+Perl (JSON-Path), Array index slice no start no end
+</h3>
+
+<pre><code>Assertion (":" is not an operator) failed!
+ at /usr/local/Cellar/perl/5.28.1/lib/perl5/site_perl/5.28.1/Carp/Assert.pm line 282, &lt;STDIN&gt; line 4.
+    Carp::Assert::assert("", "\":\" is not an operator") called at /usr/local/Cellar/perl/5.28.1/lib/perl5/site_perl/5.28.1/JSON/Path/Evaluator.pm line 217
+    JSON::Path::Evaluator::_evaluate(JSON::Path::Evaluator=HASH(0x7fd220006418), ARRAY(0x7fd220005fb0), ARRAY(0x7fd2200ceb08), 0) called at /usr/local/Cellar/perl/5.28.1/lib/perl5/site_perl/5.28.1/JSON/Path/Evaluator.pm line 122
+    JSON::Path::Evaluator::evaluate(JSON::Path::Evaluator=HASH(0x7fd220006418), "\$[:]", "want_ref", 0, "want_path", 0) called at /usr/local/Cellar/perl/5.28.1/lib/perl5/site_perl/5.28.1/JSON/Path/Evaluator.pm line 97
+    JSON::Path::Evaluator::evaluate_jsonpath(ARRAY(0x7fd220005fb0), "\$[:]", "script_engine", "perl") called at /usr/local/Cellar/perl/5.28.1/lib/perl5/site_perl/5.28.1/JSON/Path.pm line 107
+    JSON::Path::values(JSON::Path=SCALAR(0x7fd2200c34e8), ARRAY(0x7fd220005fb0)) called at main.pl line 7
+</code></pre>
+
+<h3 id="Perl_JSON-Path___key_bracket_notation_with_single_quote">
+Perl (JSON-Path), Key bracket notation with single quote
+</h3>
+
+<pre><code>Traceback (most recent call last):
+  File "./src/unwrap_scalar.py", line 15, in &lt;module&gt;
+    sys.exit(main())
+  File "./src/unwrap_scalar.py", line 9, in main
+    assert len(j) == 1
+AssertionError
+</code></pre>
+
+<h3 id="Perl_JSON-Path___key_bracket_notation_with_single_quote_escaped">
+Perl (JSON-Path), Key bracket notation with single quote escaped
+</h3>
+
+<pre><code>Traceback (most recent call last):
+  File "./src/unwrap_scalar.py", line 15, in &lt;module&gt;
+    sys.exit(main())
+  File "./src/unwrap_scalar.py", line 9, in main
+    assert len(j) == 1
+AssertionError
+</code></pre>
+
+<h3 id="Perl_JSON-Path___key_bracket_notation_with_special_characters">
+Perl (JSON-Path), Key bracket notation with special characters
+</h3>
+
+<pre><code>Argument "special" isn't numeric in numeric eq (==) at /usr/local/Cellar/perl/5.28.1/lib/perl5/site_perl/5.28.1/JSON/Path/Evaluator.pm line 403, &lt;STDIN&gt; line 1.
+Argument "\\chars]" isn't numeric in numeric eq (==) at /usr/local/Cellar/perl/5.28.1/lib/perl5/site_perl/5.28.1/JSON/Path/Evaluator.pm line 404, &lt;STDIN&gt; line 1.
+Traceback (most recent call last):
+  File "./src/unwrap_scalar.py", line 15, in &lt;module&gt;
+    sys.exit(main())
+  File "./src/unwrap_scalar.py", line 9, in main
+    assert len(j) == 1
+AssertionError
+</code></pre>
+
+<h3 id="Perl_JSON-Path___key_on_array">
+Perl (JSON-Path), Key on array
+</h3>
+
+<pre><code>Traceback (most recent call last):
+  File "./src/unwrap_scalar.py", line 15, in &lt;module&gt;
+    sys.exit(main())
+  File "./src/unwrap_scalar.py", line 9, in main
+    assert len(j) == 1
+AssertionError
+</code></pre>
+
 <h3 id="Python_jsonpath-rw___array_index_dot_notation">
 Python (jsonpath-rw), Array index dot notation
 </h3>

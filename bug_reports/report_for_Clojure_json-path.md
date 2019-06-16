@@ -125,6 +125,34 @@ The following queries provide results that do not match those of other implement
   "second"
   ```
 
+- [ ] `$[0:3:2]`
+  Input:
+  ```
+  ["first", "second", "third", "forth", "fifth"]
+  ```
+  Expected output:
+  ```
+  ["first", "third"]
+  ```
+  Actual output:
+  ```
+  "first"
+  ```
+
+- [ ] `$[0:0]`
+  Input:
+  ```
+  ["first", "second"]
+  ```
+  Expected output:
+  ```
+  []
+  ```
+  Actual output:
+  ```
+  "first"
+  ```
+
 - [ ] `$[0:1]`
   Input:
   ```
