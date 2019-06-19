@@ -108,15 +108,17 @@ Selector: `$[*]`
 
 #### Rust (jsonpath_lib)
 
-    {
-      "array": [
-        0, 
-        1
-      ], 
-      "int": 42, 
-      "object": {
-        "key": "value"
-      }, 
-      "some": "string"
-    }
+    [
+      {
+        "array": [
+          0, 
+          1
+        ], 
+        "int": 42, 
+        "object": {
+          "key": "value"
+        }, 
+        "some": "string"
+      }
+    ]
 

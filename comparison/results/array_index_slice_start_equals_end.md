@@ -40,5 +40,5 @@ Selector: `$[0:0]`
 
 #### Rust (jsonpath_lib)
 
-    null
+    []
 

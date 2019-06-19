@@ -3,19 +3,18 @@ Results do not match other implementations
 The following queries provide results that do not match those of other implementations of JSONPath
 (compare https://github.com/cburgmer/json-path-comparison/tree/master/comparison):
 
-- [ ] `$[:]`
+- [ ] `$[*]`
   Input:
   ```
-  ["first", "second"]
+  ["string", 42, {"key": "value"}, [0, 1]]
   ```
   Expected output:
   ```
-  ["first", "second"]
+  ["string", 42, {"key": "value"}, [0, 1]]
   ```
-  Error:
+  Actual output:
   ```
-  thread 'main' panicked at 'called `Result::unwrap()` on an `Err` value: "$[:]\n^^^^\n"', src/libcore/result.rs:997:5
-  note: Run with `RUST_BACKTRACE=1` environment variable to display a backtrace.
+  [["string", 42, {"key": "value"}, [0, 1]]]
   ```
 
 

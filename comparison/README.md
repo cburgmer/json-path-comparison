@@ -48,6 +48,7 @@ jsonpath
 </th>
 <th>
 jsonpath_lib
+¹
 </th>
 </tr>
 </thead>
@@ -105,7 +106,7 @@ jsonpath_lib
 <a href="errors.md#Ruby_jsonpath___array_index_dot_notation">e</a>
 </td>
 <td>
-?
+<a href="errors.md#Rust_jsonpath_lib___array_index_dot_notation">e</a>
 </td>
 </tr>
 <tr>
@@ -161,7 +162,7 @@ jsonpath_lib
 <a href="errors.md#Ruby_jsonpath___array_index_out_of_bounds">e</a>
 </td>
 <td>
-?
+<a href="errors.md#Rust_jsonpath_lib___array_index_out_of_bounds">e</a>
 </td>
 </tr>
 <tr>
@@ -245,7 +246,7 @@ jsonpath_lib
 ✓
 </td>
 <td>
-<a href="errors.md#Rust_jsonpath_lib___array_index_slice_no_start_no_end">e</a>
+✓
 </td>
 </tr>
 <tr>
@@ -336,28 +337,28 @@ jsonpath_lib
 <td><a href="results/array_index_slice_start_end_step.md">Array index slice start end step</a></td>
 <td><code>$[0:3:2]</code></td>
 <td>
-?
+✗
 </td>
 <td>
-?
+✓
 </td>
 <td>
-?
+✓
 </td>
 <td>
-?
+✓
 </td>
 <td>
-?
+✗
 </td>
 <td>
 <a href="errors.md#Python_jsonpath-rw___array_index_slice_start_end_step">e</a>
 </td>
 <td>
-?
+✓
 </td>
 <td>
-<a href="errors.md#Rust_jsonpath_lib___array_index_slice_start_end_step">e</a>
+✓
 </td>
 </tr>
 <tr>
@@ -479,25 +480,25 @@ jsonpath_lib
 <a href="errors.md#Clojure_json-path___key_bracket_notation_union">e</a>
 </td>
 <td>
-?
+✓
 </td>
 <td>
-?
+✓
 </td>
 <td>
-?
+✗
 </td>
 <td>
-?
+✗
 </td>
 <td>
-?
+✓
 </td>
 <td>
-?
+✓
 </td>
 <td>
-<a href="errors.md#Rust_jsonpath_lib___key_bracket_notation_union">e</a>
+✓
 </td>
 </tr>
 <tr>
@@ -581,7 +582,7 @@ jsonpath_lib
 ?
 </td>
 <td>
-?
+<a href="errors.md#Rust_jsonpath_lib___key_bracket_notation_with_number_without_quotes">e</a>
 </td>
 </tr>
 <tr>
@@ -637,7 +638,7 @@ jsonpath_lib
 <a href="errors.md#Ruby_jsonpath___key_bracket_notation_with_single_quote_escaped">e</a>
 </td>
 <td>
-<a href="errors.md#Rust_jsonpath_lib___key_bracket_notation_with_single_quote_escaped">e</a>
+?
 </td>
 </tr>
 <tr>
@@ -665,7 +666,7 @@ jsonpath_lib
 <a href="errors.md#Ruby_jsonpath___key_bracket_notation_with_special_characters">e</a>
 </td>
 <td>
-?
+<a href="errors.md#Rust_jsonpath_lib___key_bracket_notation_with_special_characters">e</a>
 </td>
 </tr>
 <tr>
@@ -721,7 +722,7 @@ jsonpath_lib
 <a href="errors.md#Ruby_jsonpath___key_on_array">e</a>
 </td>
 <td>
-?
+<a href="errors.md#Rust_jsonpath_lib___key_on_array">e</a>
 </td>
 </tr>
 <tr>
@@ -917,7 +918,7 @@ jsonpath_lib
 ✓
 </td>
 <td>
-✓
+✗
 </td>
 </tr>
 <tr>
@@ -952,28 +953,28 @@ jsonpath_lib
 <td><a href="results/wildcard_on_array.md">Wildcard on array</a></td>
 <td><code>$.*</code></td>
 <td>
-✗
+?
 </td>
 <td>
-✓
+?
 </td>
 <td>
-✓
+?
 </td>
 <td>
-✓
+?
 </td>
 <td>
-✓
+?
 </td>
 <td>
-✗
+?
 </td>
 <td>
-✗
+?
 </td>
 <td>
-✓
+?
 </td>
 </tr>
 <tr>

@@ -13,7 +13,3 @@ Selector: `$.key`
 
     null
 
-#### Rust (jsonpath_lib)
-
-    null
-

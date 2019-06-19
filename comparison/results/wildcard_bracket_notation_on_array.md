@@ -39,3 +39,19 @@ Selector: `$[*]`
       1
     ]
 
+#### Rust (jsonpath_lib)
+
+    [
+      [
+        "string", 
+        42, 
+        {
+          "key": "value"
+        }, 
+        [
+          0, 
+          1
+        ]
+      ]
+    ]
+

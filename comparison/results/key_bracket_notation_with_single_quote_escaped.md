@@ -14,3 +14,7 @@ Selector: `$['single\'quote']`
 
     "value"
 
+#### Rust (jsonpath_lib)
+
+    "value"
+

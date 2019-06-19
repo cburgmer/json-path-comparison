@@ -20,7 +20,3 @@ Selector: `$[0]`
 
     null
 
-#### Rust (jsonpath_lib)
-
-    null
-

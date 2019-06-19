@@ -51,6 +51,11 @@ consensus_on_query() {
     touch "$query_consensus_result_dir"/matching_implementations
 
     while IFS= read -r implementation; do
+        # special case all errored, no results
+        if [[ -z "$implementation" ]]; then
+            break
+        fi
+
         if check_gold_standard "$results_dir" "$implementation" "$min_consensus"; then
             cat "${results_dir}/${implementation}" > "$query_consensus_result_dir"/gold_standard.json
             echo "$implementation" >> "$query_consensus_result_dir"/matching_implementations

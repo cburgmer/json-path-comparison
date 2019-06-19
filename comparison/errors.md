@@ -1720,45 +1720,102 @@ Ruby (jsonpath), Recursive array index
     	from /Users/cburgmer/.rbenv/versions/2.3.0/bin/jsonpath:23:in `load'
     	from /Users/cburgmer/.rbenv/versions/2.3.0/bin/jsonpath:23:in `<main>'
 
-<h3 id="Rust_jsonpath_lib___array_index_slice_no_start_no_end">
-Rust (jsonpath_lib), Array index slice no start no end
+<h3 id="Rust_jsonpath_lib___array_index_dot_notation">
+Rust (jsonpath_lib), Array index dot notation
 </h3>
 
-    thread 'main' panicked at 'called `Result::unwrap()` on an `Err` value: "$[:]\n^^^^\n"', src/libcore/result.rs:997:5
-    note: Run with `RUST_BACKTRACE=1` environment variable to display a backtrace.
+    Traceback (most recent call last):
+      File "./src/unwrap_scalar.py", line 15, in <module>
+        sys.exit(main())
+      File "./src/unwrap_scalar.py", line 9, in main
+        assert len(j) == 1
+    AssertionError
 
-<h3 id="Rust_jsonpath_lib___array_index_slice_start_end_step">
-Rust (jsonpath_lib), Array index slice start end step
+<h3 id="Rust_jsonpath_lib___array_index_out_of_bounds">
+Rust (jsonpath_lib), Array index out of bounds
 </h3>
 
-    thread 'main' panicked at 'called `Result::unwrap()` on an `Err` value: "$[0:3:2]\n^^^^^^\n"', src/libcore/result.rs:997:5
-    note: Run with `RUST_BACKTRACE=1` environment variable to display a backtrace.
+    Traceback (most recent call last):
+      File "./src/unwrap_scalar.py", line 15, in <module>
+        sys.exit(main())
+      File "./src/unwrap_scalar.py", line 9, in main
+        assert len(j) == 1
+    AssertionError
 
-<h3 id="Rust_jsonpath_lib___key_bracket_notation_union">
-Rust (jsonpath_lib), Key bracket notation union
+<h3 id="Rust_jsonpath_lib___key_bracket_notation_with_number_without_quotes">
+Rust (jsonpath_lib), Key bracket notation with number without quotes
 </h3>
 
-    thread 'main' panicked at 'called `Result::unwrap()` on an `Err` value: "$[\'key\',\'another\']\n^^^^^^^^\n"', src/libcore/result.rs:997:5
-    note: Run with `RUST_BACKTRACE=1` environment variable to display a backtrace.
+    Traceback (most recent call last):
+      File "./src/unwrap_scalar.py", line 15, in <module>
+        sys.exit(main())
+      File "./src/unwrap_scalar.py", line 9, in main
+        assert len(j) == 1
+    AssertionError
 
 <h3 id="Rust_jsonpath_lib___key_bracket_notation_with_single_quote">
 Rust (jsonpath_lib), Key bracket notation with single quote
 </h3>
 
-    thread 'main' panicked at 'called `Result::unwrap()` on an `Err` value: "$[\'single\'quote\']\n^^^^^^^^^^^^^^^^\n"', src/libcore/result.rs:997:5
+    thread 'main' panicked at 'called `Result::unwrap()` on an `Err` value: path error: 
+    $['single'quote']
+    ^^^^^^^^^^^^^^^^
+    ', src/libcore/result.rs:997:5
     note: Run with `RUST_BACKTRACE=1` environment variable to display a backtrace.
+    Traceback (most recent call last):
+      File "./src/unwrap_scalar.py", line 15, in <module>
+        sys.exit(main())
+      File "./src/unwrap_scalar.py", line 6, in main
+        j = json.loads(sys.stdin.read())
+      File "/usr/local/Cellar/python@2/2.7.16/Frameworks/Python.framework/Versions/2.7/lib/python2.7/json/__init__.py", line 339, in loads
+        return _default_decoder.decode(s)
+      File "/usr/local/Cellar/python@2/2.7.16/Frameworks/Python.framework/Versions/2.7/lib/python2.7/json/decoder.py", line 364, in decode
+        obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+      File "/usr/local/Cellar/python@2/2.7.16/Frameworks/Python.framework/Versions/2.7/lib/python2.7/json/decoder.py", line 382, in raw_decode
+        raise ValueError("No JSON object could be decoded")
+    ValueError: No JSON object could be decoded
 
-<h3 id="Rust_jsonpath_lib___key_bracket_notation_with_single_quote_escaped">
-Rust (jsonpath_lib), Key bracket notation with single quote escaped
+<h3 id="Rust_jsonpath_lib___key_bracket_notation_with_special_characters">
+Rust (jsonpath_lib), Key bracket notation with special characters
 </h3>
 
-    thread 'main' panicked at 'called `Result::unwrap()` on an `Err` value: "$[\'single\\\'quote\']\n^^^^^^^^^^^^^^^^^\n"', src/libcore/result.rs:997:5
-    note: Run with `RUST_BACKTRACE=1` environment variable to display a backtrace.
+    Traceback (most recent call last):
+      File "./src/unwrap_scalar.py", line 15, in <module>
+        sys.exit(main())
+      File "./src/unwrap_scalar.py", line 9, in main
+        assert len(j) == 1
+    AssertionError
 
 <h3 id="Rust_jsonpath_lib___key_bracket_notation_without_quotes">
 Rust (jsonpath_lib), Key bracket notation without quotes
 </h3>
 
-    thread 'main' panicked at 'called `Result::unwrap()` on an `Err` value: "$[key]\n^^\n"', src/libcore/result.rs:997:5
+    thread 'main' panicked at 'called `Result::unwrap()` on an `Err` value: path error: 
+    $[key]
+    ^^
+    ', src/libcore/result.rs:997:5
     note: Run with `RUST_BACKTRACE=1` environment variable to display a backtrace.
+    Traceback (most recent call last):
+      File "./src/unwrap_scalar.py", line 15, in <module>
+        sys.exit(main())
+      File "./src/unwrap_scalar.py", line 6, in main
+        j = json.loads(sys.stdin.read())
+      File "/usr/local/Cellar/python@2/2.7.16/Frameworks/Python.framework/Versions/2.7/lib/python2.7/json/__init__.py", line 339, in loads
+        return _default_decoder.decode(s)
+      File "/usr/local/Cellar/python@2/2.7.16/Frameworks/Python.framework/Versions/2.7/lib/python2.7/json/decoder.py", line 364, in decode
+        obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+      File "/usr/local/Cellar/python@2/2.7.16/Frameworks/Python.framework/Versions/2.7/lib/python2.7/json/decoder.py", line 382, in raw_decode
+        raise ValueError("No JSON object could be decoded")
+    ValueError: No JSON object could be decoded
+
+<h3 id="Rust_jsonpath_lib___key_on_array">
+Rust (jsonpath_lib), Key on array
+</h3>
+
+    Traceback (most recent call last):
+      File "./src/unwrap_scalar.py", line 15, in <module>
+        sys.exit(main())
+      File "./src/unwrap_scalar.py", line 9, in main
+        assert len(j) == 1
+    AssertionError
 

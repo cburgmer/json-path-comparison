@@ -10,7 +10,3 @@ Selector: `$['special:\"chars']`
 
     "value"
 
-#### Rust (jsonpath_lib)
-
-    null
-

@@ -22,7 +22,3 @@ Selector: `$.2`
 
     "third"
 
-#### Rust (jsonpath_lib)
-
-    null
-

@@ -8,7 +8,3 @@ Selector: `$[1]`
     ]
 
 ### Results
-#### Rust (jsonpath_lib)
-
-    null
-

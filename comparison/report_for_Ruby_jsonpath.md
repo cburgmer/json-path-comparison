@@ -48,20 +48,6 @@ The following queries provide results that do not match those of other implement
 - [ ] `$.*`
   Input:
   ```
-  ["string", 42, {"key": "value"}, [0, 1]]
-  ```
-  Expected output:
-  ```
-  ["string", 42, {"key": "value"}, [0, 1]]
-  ```
-  Actual output:
-  ```
-  [["string", 42, {"key": "value"}, [0, 1]]]
-  ```
-
-- [ ] `$.*`
-  Input:
-  ```
   {"int": 42, "array": [0, 1], "object": {"key": "value"}, "some": "string"}
   ```
   Expected output:
