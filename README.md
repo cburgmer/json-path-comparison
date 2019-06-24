@@ -4,7 +4,7 @@ Comparison of the different implementations of JSONPath.
 Our goal is to show features of [JSONPath](https://goessner.net/articles/JsonPath/)
 in available libraries, and call out differences where libraries are not aligned.
 
-See [./docs](./docs) for a table generated against a set of example queries.
+See https://cburgmer.github.io/json-path-comparison/ for the table generated from the test set under [./queries](./queries).
 
 ## Features
 - Comparison of queries against supported implementations
