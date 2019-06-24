@@ -18,5 +18,4 @@ done
 
 cd "$script_dir"
 ./src/compare.sh
-markdown < comparison/README.md > comparison/index.html
-echo "Run \`open comparison/index.html\`"
+echo "Run \`open docs/index.html\`"

@@ -1,0 +1,1019 @@
+<h1>Comparison of different implementations of JSONPath</h1>
+
+<p>This table makes no statement on the correctness of any of the implementations.
+Outcomes are compared to the pool of other implementations, and judged based on a simple consensus.
+A majority has to consist of half of all implementations (rounded up) + 1.
+This guarantees that in case of a split on two sides, the majority wins by two votes.</p>
+
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th colspan="1">Clojure</th>
+<th colspan="3">JavaScript</th>
+<th colspan="1">Java</th>
+<th colspan="1">Python</th>
+<th colspan="1">Ruby</th>
+<th colspan="1">Rust</th>
+</tr>
+<tr>
+<th></th>
+<th></th>
+<th>
+json-path
+</th>
+<th>
+Goessner
+¹
+</th>
+<th>
+jsonpath
+¹
+</th>
+<th>
+jsonpath-plus
+¹
+</th>
+<th>
+com.jayway.jsonpath
+</th>
+<th>
+jsonpath-rw
+¹
+</th>
+<th>
+jsonpath
+¹
+</th>
+<th>
+jsonpath_lib
+¹
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="results/array_index.html">Array index</a></td>
+<td><code>$[2]</code></td>
+<td>
+✓
+</td>
+<td>
+✓
+</td>
+<td>
+✓
+</td>
+<td>
+✓
+</td>
+<td>
+✓
+</td>
+<td>
+✓
+</td>
+<td>
+✓
+</td>
+<td>
+✓
+</td>
+</tr>
+<tr>
+<td><a href="results/array_index_dot_notation.html">Array index dot notation</a></td>
+<td><code>$.2</code></td>
+<td>
+?
+</td>
+<td>
+?
+</td>
+<td>
+?
+</td>
+<td>
+?
+</td>
+<td>
+<a href="errors.html#Java_com.jayway.jsonpath___array_index_dot_notation">e</a>
+</td>
+<td>
+<a href="errors.html#Python_jsonpath-rw___array_index_dot_notation">e</a>
+</td>
+<td>
+<a href="errors.html#Ruby_jsonpath___array_index_dot_notation">e</a>
+</td>
+<td>
+<a href="errors.html#Rust_jsonpath_lib___array_index_dot_notation">e</a>
+</td>
+</tr>
+<tr>
+<td><a href="results/array_index_last.html">Array index last</a></td>
+<td><code>$[-1]</code></td>
+<td>
+<a href="errors.html#Clojure_json-path___array_index_last">e</a>
+</td>
+<td>
+<a href="errors.html#JavaScript_Goessner___array_index_last">e</a>
+</td>
+<td>
+<a href="errors.html#JavaScript_jsonpath___array_index_last">e</a>
+</td>
+<td>
+<a href="errors.html#JavaScript_jsonpath-plus___array_index_last">e</a>
+</td>
+<td>
+?
+</td>
+<td>
+?
+</td>
+<td>
+?
+</td>
+<td>
+?
+</td>
+</tr>
+<tr>
+<td><a href="results/array_index_out_of_bounds.html">Array index out of bounds</a></td>
+<td><code>$[1]</code></td>
+<td>
+<a href="errors.html#Clojure_json-path___array_index_out_of_bounds">e</a>
+</td>
+<td>
+<a href="errors.html#JavaScript_Goessner___array_index_out_of_bounds">e</a>
+</td>
+<td>
+<a href="errors.html#JavaScript_jsonpath___array_index_out_of_bounds">e</a>
+</td>
+<td>
+<a href="errors.html#JavaScript_jsonpath-plus___array_index_out_of_bounds">e</a>
+</td>
+<td>
+<a href="errors.html#Java_com.jayway.jsonpath___array_index_out_of_bounds">e</a>
+</td>
+<td>
+<a href="errors.html#Python_jsonpath-rw___array_index_out_of_bounds">e</a>
+</td>
+<td>
+<a href="errors.html#Ruby_jsonpath___array_index_out_of_bounds">e</a>
+</td>
+<td>
+<a href="errors.html#Rust_jsonpath_lib___array_index_out_of_bounds">e</a>
+</td>
+</tr>
+<tr>
+<td><a href="results/array_index_slice_end_out_of_bounds.html">Array index slice end out of bounds</a></td>
+<td><code>$[1:10]</code></td>
+<td>
+✗
+</td>
+<td>
+✓
+</td>
+<td>
+✓
+</td>
+<td>
+✓
+</td>
+<td>
+✓
+</td>
+<td>
+✓
+</td>
+<td>
+✗
+</td>
+<td>
+✓
+</td>
+</tr>
+<tr>
+<td><a href="results/array_index_slice_last_no_end.html">Array index slice last no end</a></td>
+<td><code>$[-1:]</code></td>
+<td>
+<a href="errors.html#Clojure_json-path___array_index_slice_last_no_end">e</a>
+</td>
+<td>
+✓
+</td>
+<td>
+✓
+</td>
+<td>
+✓
+</td>
+<td>
+✓
+</td>
+<td>
+✓
+</td>
+<td>
+✓
+</td>
+<td>
+✓
+</td>
+</tr>
+<tr>
+<td><a href="results/array_index_slice_no_start_no_end.html">Array index slice no start no end</a></td>
+<td><code>$[:]</code></td>
+<td>
+<a href="errors.html#Clojure_json-path___array_index_slice_no_start_no_end">e</a>
+</td>
+<td>
+✓
+</td>
+<td>
+✓
+</td>
+<td>
+✓
+</td>
+<td>
+<a href="errors.html#Java_com.jayway.jsonpath___array_index_slice_no_start_no_end">e</a>
+</td>
+<td>
+✓
+</td>
+<td>
+✓
+</td>
+<td>
+✓
+</td>
+</tr>
+<tr>
+<td><a href="results/array_index_slice_only_end.html">Array index slice only end</a></td>
+<td><code>$[:2]</code></td>
+<td>
+✗
+</td>
+<td>
+✓
+</td>
+<td>
+✓
+</td>
+<td>
+✓
+</td>
+<td>
+✓
+</td>
+<td>
+✓
+</td>
+<td>
+✓
+</td>
+<td>
+✓
+</td>
+</tr>
+<tr>
+<td><a href="results/array_index_slice_only_start.html">Array index slice only start</a></td>
+<td><code>$[1:]</code></td>
+<td>
+✗
+</td>
+<td>
+✓
+</td>
+<td>
+✓
+</td>
+<td>
+✓
+</td>
+<td>
+✓
+</td>
+<td>
+✓
+</td>
+<td>
+✓
+</td>
+<td>
+✓
+</td>
+</tr>
+<tr>
+<td><a href="results/array_index_slice_start_end.html">Array index slice start end</a></td>
+<td><code>$[1:3]</code></td>
+<td>
+✗
+</td>
+<td>
+✓
+</td>
+<td>
+✓
+</td>
+<td>
+✓
+</td>
+<td>
+✓
+</td>
+<td>
+✓
+</td>
+<td>
+✓
+</td>
+<td>
+✓
+</td>
+</tr>
+<tr>
+<td><a href="results/array_index_slice_start_end_step.html">Array index slice start end step</a></td>
+<td><code>$[0:3:2]</code></td>
+<td>
+✗
+</td>
+<td>
+✓
+</td>
+<td>
+✓
+</td>
+<td>
+✓
+</td>
+<td>
+✗
+</td>
+<td>
+<a href="errors.html#Python_jsonpath-rw___array_index_slice_start_end_step">e</a>
+</td>
+<td>
+✓
+</td>
+<td>
+✓
+</td>
+</tr>
+<tr>
+<td><a href="results/array_index_slice_start_equals_end.html">Array index slice start equals end</a></td>
+<td><code>$[0:0]</code></td>
+<td>
+?
+</td>
+<td>
+<a href="errors.html#JavaScript_Goessner___array_index_slice_start_equals_end">e</a>
+</td>
+<td>
+?
+</td>
+<td>
+?
+</td>
+<td>
+?
+</td>
+<td>
+?
+</td>
+<td>
+?
+</td>
+<td>
+?
+</td>
+</tr>
+<tr>
+<td><a href="results/array_index_slice_start_plus_one.html">Array index slice start plus one</a></td>
+<td><code>$[0:1]</code></td>
+<td>
+✗
+</td>
+<td>
+✓
+</td>
+<td>
+✓
+</td>
+<td>
+✓
+</td>
+<td>
+✓
+</td>
+<td>
+✓
+</td>
+<td>
+✓
+</td>
+<td>
+✓
+</td>
+</tr>
+<tr>
+<td><a href="results/array_index_union.html">Array index union</a></td>
+<td><code>$[0,1]</code></td>
+<td>
+✗
+</td>
+<td>
+✓
+</td>
+<td>
+✓
+</td>
+<td>
+✓
+</td>
+<td>
+✓
+</td>
+<td>
+<a href="errors.html#Python_jsonpath-rw___array_index_union">e</a>
+</td>
+<td>
+✓
+</td>
+<td>
+✓
+</td>
+</tr>
+<tr>
+<td><a href="results/key_bracket_notation.html">Key bracket notation</a></td>
+<td><code>$['key']</code></td>
+<td>
+<a href="errors.html#Clojure_json-path___key_bracket_notation">e</a>
+</td>
+<td>
+✓
+</td>
+<td>
+✓
+</td>
+<td>
+✓
+</td>
+<td>
+✓
+</td>
+<td>
+✓
+</td>
+<td>
+✓
+</td>
+<td>
+✓
+</td>
+</tr>
+<tr>
+<td><a href="results/key_bracket_notation_union.html">Key bracket notation union</a></td>
+<td><code>$['key','another']</code></td>
+<td>
+<a href="errors.html#Clojure_json-path___key_bracket_notation_union">e</a>
+</td>
+<td>
+✓
+</td>
+<td>
+✓
+</td>
+<td>
+✗
+</td>
+<td>
+✗
+</td>
+<td>
+✓
+</td>
+<td>
+✓
+</td>
+<td>
+✓
+</td>
+</tr>
+<tr>
+<td><a href="results/key_bracket_notation_with_double_quotes.html">Key bracket notation with double quotes</a></td>
+<td><code>$["key"]</code></td>
+<td>
+<a href="errors.html#Clojure_json-path___key_bracket_notation_with_double_quotes">e</a>
+</td>
+<td>
+<a href="errors.html#JavaScript_Goessner___key_bracket_notation_with_double_quotes">e</a>
+</td>
+<td>
+?
+</td>
+<td>
+<a href="errors.html#JavaScript_jsonpath-plus___key_bracket_notation_with_double_quotes">e</a>
+</td>
+<td>
+<a href="errors.html#Java_com.jayway.jsonpath___key_bracket_notation_with_double_quotes">e</a>
+</td>
+<td>
+?
+</td>
+<td>
+?
+</td>
+<td>
+?
+</td>
+</tr>
+<tr>
+<td><a href="results/key_bracket_notation_with_number.html">Key bracket notation with number</a></td>
+<td><code>$['0']</code></td>
+<td>
+<a href="errors.html#Clojure_json-path___key_bracket_notation_with_number">e</a>
+</td>
+<td>
+✓
+</td>
+<td>
+✓
+</td>
+<td>
+✓
+</td>
+<td>
+✓
+</td>
+<td>
+✓
+</td>
+<td>
+✗
+</td>
+<td>
+✓
+</td>
+</tr>
+<tr>
+<td><a href="results/key_bracket_notation_with_number_without_quotes.html">Key bracket notation with number without quotes</a></td>
+<td><code>$[0]</code></td>
+<td>
+<a href="errors.html#Clojure_json-path___key_bracket_notation_with_number_without_quotes">e</a>
+</td>
+<td>
+?
+</td>
+<td>
+<a href="errors.html#JavaScript_jsonpath___key_bracket_notation_with_number_without_quotes">e</a>
+</td>
+<td>
+?
+</td>
+<td>
+<a href="errors.html#Java_com.jayway.jsonpath___key_bracket_notation_with_number_without_quotes">e</a>
+</td>
+<td>
+<a href="errors.html#Python_jsonpath-rw___key_bracket_notation_with_number_without_quotes">e</a>
+</td>
+<td>
+?
+</td>
+<td>
+<a href="errors.html#Rust_jsonpath_lib___key_bracket_notation_with_number_without_quotes">e</a>
+</td>
+</tr>
+<tr>
+<td><a href="results/key_bracket_notation_with_single_quote.html">Key bracket notation with single quote</a></td>
+<td><code>$['single'quote']</code></td>
+<td>
+<a href="errors.html#Clojure_json-path___key_bracket_notation_with_single_quote">e</a>
+</td>
+<td>
+?
+</td>
+<td>
+<a href="errors.html#JavaScript_jsonpath___key_bracket_notation_with_single_quote">e</a>
+</td>
+<td>
+?
+</td>
+<td>
+<a href="errors.html#Java_com.jayway.jsonpath___key_bracket_notation_with_single_quote">e</a>
+</td>
+<td>
+<a href="errors.html#Python_jsonpath-rw___key_bracket_notation_with_single_quote">e</a>
+</td>
+<td>
+?
+</td>
+<td>
+<a href="errors.html#Rust_jsonpath_lib___key_bracket_notation_with_single_quote">e</a>
+</td>
+</tr>
+<tr>
+<td><a href="results/key_bracket_notation_with_single_quote_escaped.html">Key bracket notation with single quote escaped</a></td>
+<td><code>$['single\'quote']</code></td>
+<td>
+<a href="errors.html#Clojure_json-path___key_bracket_notation_with_single_quote_escaped">e</a>
+</td>
+<td>
+<a href="errors.html#JavaScript_Goessner___key_bracket_notation_with_single_quote_escaped">e</a>
+</td>
+<td>
+<a href="errors.html#JavaScript_jsonpath___key_bracket_notation_with_single_quote_escaped">e</a>
+</td>
+<td>
+<a href="errors.html#JavaScript_jsonpath-plus___key_bracket_notation_with_single_quote_escaped">e</a>
+</td>
+<td>
+?
+</td>
+<td>
+?
+</td>
+<td>
+<a href="errors.html#Ruby_jsonpath___key_bracket_notation_with_single_quote_escaped">e</a>
+</td>
+<td>
+?
+</td>
+</tr>
+<tr>
+<td><a href="results/key_bracket_notation_with_special_characters.html">Key bracket notation with special characters</a></td>
+<td><code>$['special:\"chars']</code></td>
+<td>
+<a href="errors.html#Clojure_json-path___key_bracket_notation_with_special_characters">e</a>
+</td>
+<td>
+<a href="errors.html#JavaScript_Goessner___key_bracket_notation_with_special_characters">e</a>
+</td>
+<td>
+<a href="errors.html#JavaScript_jsonpath___key_bracket_notation_with_special_characters">e</a>
+</td>
+<td>
+<a href="errors.html#JavaScript_jsonpath-plus___key_bracket_notation_with_special_characters">e</a>
+</td>
+<td>
+<a href="errors.html#Java_com.jayway.jsonpath___key_bracket_notation_with_special_characters">e</a>
+</td>
+<td>
+?
+</td>
+<td>
+<a href="errors.html#Ruby_jsonpath___key_bracket_notation_with_special_characters">e</a>
+</td>
+<td>
+<a href="errors.html#Rust_jsonpath_lib___key_bracket_notation_with_special_characters">e</a>
+</td>
+</tr>
+<tr>
+<td><a href="results/key_bracket_notation_without_quotes.html">Key bracket notation without quotes</a></td>
+<td><code>$[key]</code></td>
+<td>
+<a href="errors.html#Clojure_json-path___key_bracket_notation_without_quotes">e</a>
+</td>
+<td>
+?
+</td>
+<td>
+<a href="errors.html#JavaScript_jsonpath___key_bracket_notation_without_quotes">e</a>
+</td>
+<td>
+?
+</td>
+<td>
+<a href="errors.html#Java_com.jayway.jsonpath___key_bracket_notation_without_quotes">e</a>
+</td>
+<td>
+?
+</td>
+<td>
+<a href="errors.html#Ruby_jsonpath___key_bracket_notation_without_quotes">e</a>
+</td>
+<td>
+<a href="errors.html#Rust_jsonpath_lib___key_bracket_notation_without_quotes">e</a>
+</td>
+</tr>
+<tr>
+<td><a href="results/key_on_array.html">Key on array</a></td>
+<td><code>$.key</code></td>
+<td>
+?
+</td>
+<td>
+<a href="errors.html#JavaScript_Goessner___key_on_array">e</a>
+</td>
+<td>
+<a href="errors.html#JavaScript_jsonpath___key_on_array">e</a>
+</td>
+<td>
+<a href="errors.html#JavaScript_jsonpath-plus___key_on_array">e</a>
+</td>
+<td>
+<a href="errors.html#Java_com.jayway.jsonpath___key_on_array">e</a>
+</td>
+<td>
+<a href="errors.html#Python_jsonpath-rw___key_on_array">e</a>
+</td>
+<td>
+<a href="errors.html#Ruby_jsonpath___key_on_array">e</a>
+</td>
+<td>
+<a href="errors.html#Rust_jsonpath_lib___key_on_array">e</a>
+</td>
+</tr>
+<tr>
+<td><a href="results/key_with_array_value.html">Key with array value</a></td>
+<td><code>$.key</code></td>
+<td>
+✓
+</td>
+<td>
+✓
+</td>
+<td>
+✓
+</td>
+<td>
+✓
+</td>
+<td>
+✓
+</td>
+<td>
+✓
+</td>
+<td>
+✓
+</td>
+<td>
+✓
+</td>
+</tr>
+<tr>
+<td><a href="results/recursive_array_index.html">Recursive array index</a></td>
+<td><code>$..[0]</code></td>
+<td>
+<a href="errors.html#Clojure_json-path___recursive_array_index">e</a>
+</td>
+<td>
+?
+</td>
+<td>
+?
+</td>
+<td>
+?
+</td>
+<td>
+?
+</td>
+<td>
+<a href="errors.html#Python_jsonpath-rw___recursive_array_index">e</a>
+</td>
+<td>
+<a href="errors.html#Ruby_jsonpath___recursive_array_index">e</a>
+</td>
+<td>
+?
+</td>
+</tr>
+<tr>
+<td><a href="results/recursive_key.html">Recursive key</a></td>
+<td><code>$..key</code></td>
+<td>
+✓
+</td>
+<td>
+✓
+</td>
+<td>
+✓
+</td>
+<td>
+✓
+</td>
+<td>
+✓
+</td>
+<td>
+✓
+</td>
+<td>
+✓
+</td>
+<td>
+✓
+</td>
+</tr>
+<tr>
+<td><a href="results/recursive_wildcard.html">Recursive wildcard</a></td>
+<td><code>$..*</code></td>
+<td>
+<a href="errors.html#Clojure_json-path___recursive_wildcard">e</a>
+</td>
+<td>
+✓
+</td>
+<td>
+✓
+</td>
+<td>
+✓
+</td>
+<td>
+✓
+</td>
+<td>
+✗
+</td>
+<td>
+✗
+</td>
+<td>
+✓
+</td>
+</tr>
+<tr>
+<td><a href="results/recursive_with_nested_object.html">Recursive with nested object</a></td>
+<td><code>$.store..price</code></td>
+<td>
+<a href="errors.html#Clojure_json-path___recursive_with_nested_object">e</a>
+</td>
+<td>
+✓
+</td>
+<td>
+✓
+</td>
+<td>
+✓
+</td>
+<td>
+✓
+</td>
+<td>
+✓
+</td>
+<td>
+✓
+</td>
+<td>
+✓
+</td>
+</tr>
+<tr>
+<td><a href="results/root.html">Root</a></td>
+<td><code>$</code></td>
+<td>
+✓
+</td>
+<td>
+<a href="errors.html#JavaScript_Goessner___root">e</a>
+</td>
+<td>
+✓
+</td>
+<td>
+✓
+</td>
+<td>
+✓
+</td>
+<td>
+✓
+</td>
+<td>
+✓
+</td>
+<td>
+✓
+</td>
+</tr>
+<tr>
+<td><a href="results/wildcard_bracket_notation_on_array.html">Wildcard bracket notation on array</a></td>
+<td><code>$[*]</code></td>
+<td>
+✗
+</td>
+<td>
+✓
+</td>
+<td>
+✓
+</td>
+<td>
+✓
+</td>
+<td>
+✓
+</td>
+<td>
+✓
+</td>
+<td>
+✓
+</td>
+<td>
+✗
+</td>
+</tr>
+<tr>
+<td><a href="results/wildcard_bracket_notation_on_object.html">Wildcard bracket notation on object</a></td>
+<td><code>$[*]</code></td>
+<td>
+?
+</td>
+<td>
+?
+</td>
+<td>
+?
+</td>
+<td>
+?
+</td>
+<td>
+?
+</td>
+<td>
+?
+</td>
+<td>
+?
+</td>
+<td>
+?
+</td>
+</tr>
+<tr>
+<td><a href="results/wildcard_on_array.html">Wildcard on array</a></td>
+<td><code>$.*</code></td>
+<td>
+?
+</td>
+<td>
+?
+</td>
+<td>
+?
+</td>
+<td>
+?
+</td>
+<td>
+?
+</td>
+<td>
+?
+</td>
+<td>
+?
+</td>
+<td>
+?
+</td>
+</tr>
+<tr>
+<td><a href="results/wildcard_on_object.html">Wildcard on object</a></td>
+<td><code>$.*</code></td>
+<td>
+✗
+</td>
+<td>
+✓
+</td>
+<td>
+✓
+</td>
+<td>
+✓
+</td>
+<td>
+✓
+</td>
+<td>
+✗
+</td>
+<td>
+✗
+</td>
+<td>
+✓
+</td>
+</tr>
+</tbody>
+</table>
+
+<h2>Explanation</h2>
+
+<ul>
+<li>✓, the result of this implementation matches the majority of results</li>
+<li>✗, the result does not match a majority</li>
+<li>?, no clear consensus amongst the implementations (the results disagree and/or a lot of implementations error)</li>
+<li>e, the implementation failed executing the query and probably does not support this type of query</li>
+<li>¹, those implementations actually return a scalar as an array of one element. This difference is not included for the sake of this comparison.</li>
+</ul>

@@ -4,7 +4,8 @@ set -euo pipefail
 readonly tmp_results_dir="/tmp/compare_jsonpath.results.$$"
 readonly tmp_errors_dir="/tmp/compare_jsonpath.errors.$$"
 readonly tmp_consensus_dir="/tmp/compare_jsonpath.consensus.$$"
-readonly target_dir="./comparison"
+readonly tmp_markdown_dir="/tmp/compare_jsonpath.markdown.$$"
+readonly docs_dir="./docs"
 readonly bug_reports_dir="./bug_reports"
 
 . src/shared.sh
@@ -84,20 +85,21 @@ main() {
     mkdir -p "$tmp_results_dir"
     mkdir -p "$tmp_errors_dir"
     mkdir -p "$tmp_consensus_dir"
+    mkdir -p "$tmp_markdown_dir"
 
     while IFS= read -r query; do
         query_implementations "$query"
     done <<< "$(all_queries)"
 
-    rm -rf "$target_dir"
-    mkdir "$target_dir"
+    rm -rf "$docs_dir"
+    mkdir "$docs_dir"
 
-    ./src/error_report.sh "$tmp_errors_dir" "$target_dir"
+    ./src/error_report.sh "$tmp_errors_dir" "$tmp_markdown_dir"
 
     ./src/build_consensus.sh "$tmp_results_dir" "$tmp_consensus_dir"
-    ./src/compile_table.sh "$tmp_consensus_dir" "$target_dir"
-    ./src/results_report.sh "$tmp_consensus_dir" "$target_dir"
-
+    ./src/compile_table.sh "$tmp_consensus_dir" "$tmp_markdown_dir"
+    ./src/results_report.sh "$tmp_consensus_dir" "$tmp_markdown_dir"
+    ./src/compile_html.sh "$tmp_markdown_dir" "$docs_dir"
 
     rm -rf "$bug_reports_dir"
     mkdir "$bug_reports_dir"

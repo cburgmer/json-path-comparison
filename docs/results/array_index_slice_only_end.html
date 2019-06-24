@@ -1,0 +1,23 @@
+<h2>Array index slice only end</h2>
+
+<h3>Setup</h3>
+
+<p>Selector: <code>$[:2]</code></p>
+
+<pre><code>["first", "second", "third", "forth", "fifth"]
+</code></pre>
+
+<h3>Results</h3>
+
+<h4>Gold Standard (consensus)</h4>
+
+<pre><code>[
+  "first", 
+  "second"
+]
+</code></pre>
+
+<h4>Clojure (json-path)</h4>
+
+<pre><code>"third"
+</code></pre>

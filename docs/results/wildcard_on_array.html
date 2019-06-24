@@ -1,0 +1,119 @@
+<h2>Wildcard on array</h2>
+
+<h3>Setup</h3>
+
+<p>Selector: <code>$.*</code></p>
+
+<pre><code>[
+    "string",
+    42,
+    {
+        "key": "value"
+    },
+    [0, 1]
+]
+</code></pre>
+
+<h3>Results</h3>
+
+<h4>Clojure (json-path)</h4>
+
+<pre><code>[
+  "string", 
+  42, 
+  {
+    "key": "value"
+  }, 
+  0, 
+  1
+]
+</code></pre>
+
+<h4>JavaScript (Goessner)</h4>
+
+<pre><code>[
+  "string", 
+  42, 
+  {
+    "key": "value"
+  }, 
+  [
+    0, 
+    1
+  ]
+]
+</code></pre>
+
+<h4>JavaScript (jsonpath)</h4>
+
+<pre><code>[
+  "string", 
+  42, 
+  {
+    "key": "value"
+  }, 
+  [
+    0, 
+    1
+  ]
+]
+</code></pre>
+
+<h4>JavaScript (jsonpath-plus)</h4>
+
+<pre><code>[
+  "string", 
+  42, 
+  {
+    "key": "value"
+  }, 
+  [
+    0, 
+    1
+  ]
+]
+</code></pre>
+
+<h4>Java (com.jayway.jsonpath)</h4>
+
+<pre><code>[
+  "string", 
+  42, 
+  {
+    "key": "value"
+  }, 
+  [
+    0, 
+    1
+  ]
+]
+</code></pre>
+
+<h4>Python (jsonpath-rw)</h4>
+
+<pre><code>[]
+</code></pre>
+
+<h4>Ruby (jsonpath)</h4>
+
+<pre><code>[
+  [
+    "string", 
+    42, 
+    {
+      "key": "value"
+    }, 
+    [
+      0, 
+      1
+    ]
+  ]
+]
+</code></pre>
+
+<h4>Rust (jsonpath_lib)</h4>
+
+<pre><code>[
+  "value"
+]
+</code></pre>

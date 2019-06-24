@@ -132,7 +132,7 @@ This guarantees that in case of a split on two sides, the majority wins by two v
 }
 
 main() {
-    compile_comparison > "${target_dir}/README.md"
+    compile_comparison > "${target_dir}/index.md"
 }
 
 main

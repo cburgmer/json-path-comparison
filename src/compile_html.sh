@@ -1,7 +1,8 @@
 #!/bin/bash
 set -euo pipefail
 
-readonly target_dir="$1"
+readonly tmp_markdown_dir="$1"
+readonly docs_dir="$2"
 
 resolve_links() {
     sed 's/<a href="\([^"]*\).md\(#[^"]*\)*">/<a href="\1.html\2">/'
@@ -12,8 +13,9 @@ main() {
     local html_target
     while IFS= read -r file; do
         html_target="${file/.md/.html}"
-        markdown < "$file" | resolve_links > "$html_target"
-    done <<< "$(find "$target_dir" -name "*.md")"
+        mkdir -p "$(dirname "${docs_dir}/${html_target}")"
+        markdown < "${tmp_markdown_dir}/${file}" | resolve_links > "${docs_dir}/${html_target}"
+    done <<< "$(cd "$tmp_markdown_dir" && find . -name "*.md")"
 }
 
 main

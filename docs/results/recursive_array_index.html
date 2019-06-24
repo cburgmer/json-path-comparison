@@ -1,0 +1,104 @@
+<h2>Recursive array index</h2>
+
+<h3>Setup</h3>
+
+<p>Selector: <code>$..[0]</code></p>
+
+<pre><code>[
+    "first",
+    {
+        "key": [
+            "first nested",
+            {
+                "more": [
+                    {
+                        "nested": ["deepest", "second"]
+                    },
+                    ["more", "values"]
+                ]
+            }
+        ]
+    }
+]
+</code></pre>
+
+<h3>Results</h3>
+
+<h4>JavaScript (Goessner)</h4>
+
+<pre><code>[
+  "first", 
+  "first nested", 
+  {
+    "nested": [
+      "deepest", 
+      "second"
+    ]
+  }, 
+  "deepest", 
+  "more"
+]
+</code></pre>
+
+<h4>JavaScript (jsonpath)</h4>
+
+<pre><code>[
+  "first", 
+  "first nested", 
+  {
+    "nested": [
+      "deepest", 
+      "second"
+    ]
+  }, 
+  "deepest", 
+  "more"
+]
+</code></pre>
+
+<h4>JavaScript (jsonpath-plus)</h4>
+
+<pre><code>[
+  "first", 
+  "first nested", 
+  {
+    "nested": [
+      "deepest", 
+      "second"
+    ]
+  }, 
+  "deepest", 
+  "more"
+]
+</code></pre>
+
+<h4>Java (com.jayway.jsonpath)</h4>
+
+<pre><code>[
+  "first", 
+  "first nested", 
+  {
+    "nested": [
+      "deepest", 
+      "second"
+    ]
+  }, 
+  "deepest", 
+  "more"
+]
+</code></pre>
+
+<h4>Rust (jsonpath_lib)</h4>
+
+<pre><code>[
+  "first nested", 
+  {
+    "nested": [
+      "deepest", 
+      "second"
+    ]
+  }, 
+  "more", 
+  "deepest"
+]
+</code></pre>

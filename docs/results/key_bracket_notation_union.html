@@ -1,0 +1,34 @@
+<h2>Key bracket notation union</h2>
+
+<h3>Setup</h3>
+
+<p>Selector: <code>$['key','another']</code></p>
+
+<pre><code>{
+  "key": "value",
+  "another": "entry"
+}
+</code></pre>
+
+<h3>Results</h3>
+
+<h4>Gold Standard (consensus)</h4>
+
+<pre><code>[
+  "value", 
+  "entry"
+]
+</code></pre>
+
+<h4>JavaScript (jsonpath-plus)</h4>
+
+<pre><code>[]
+</code></pre>
+
+<h4>Java (com.jayway.jsonpath)</h4>
+
+<pre><code>{
+  "another": "entry", 
+  "key": "value"
+}
+</code></pre>

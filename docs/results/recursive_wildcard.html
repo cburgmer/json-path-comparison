@@ -1,0 +1,87 @@
+<h2>Recursive wildcard</h2>
+
+<h3>Setup</h3>
+
+<p>Selector: <code>$..*</code></p>
+
+<pre><code>{
+    "key": "value",
+    "another key": {
+        "complex": "string",
+        "primitives": [0, 1]
+    }
+}
+</code></pre>
+
+<h3>Results</h3>
+
+<h4>Gold Standard (consensus)</h4>
+
+<pre><code>[
+  "value", 
+  {
+    "complex": "string", 
+    "primitives": [
+      0, 
+      1
+    ]
+  }, 
+  "string", 
+  [
+    0, 
+    1
+  ], 
+  0, 
+  1
+]
+</code></pre>
+
+<h4>Python (jsonpath-rw)</h4>
+
+<pre><code>[
+  {
+    "complex": "string", 
+    "primitives": [
+      0, 
+      1
+    ]
+  }, 
+  "value", 
+  [
+    0, 
+    1
+  ], 
+  "string"
+]
+</code></pre>
+
+<h4>Ruby (jsonpath)</h4>
+
+<pre><code>[
+  {
+    "another key": {
+      "complex": "string", 
+      "primitives": [
+        0, 
+        1
+      ]
+    }, 
+    "key": "value"
+  }, 
+  "value", 
+  {
+    "complex": "string", 
+    "primitives": [
+      0, 
+      1
+    ]
+  }, 
+  "string", 
+  [
+    0, 
+    1
+  ], 
+  0, 
+  1
+]
+</code></pre>

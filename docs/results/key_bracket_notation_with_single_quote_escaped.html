@@ -1,0 +1,25 @@
+<h2>Key bracket notation with single quote escaped</h2>
+
+<h3>Setup</h3>
+
+<p>Selector: <code>$['single\'quote']</code></p>
+
+<pre><code>{"single'quote":"value"}
+</code></pre>
+
+<h3>Results</h3>
+
+<h4>Java (com.jayway.jsonpath)</h4>
+
+<pre><code>"value"
+</code></pre>
+
+<h4>Python (jsonpath-rw)</h4>
+
+<pre><code>"value"
+</code></pre>
+
+<h4>Rust (jsonpath_lib)</h4>
+
+<pre><code>"value"
+</code></pre>

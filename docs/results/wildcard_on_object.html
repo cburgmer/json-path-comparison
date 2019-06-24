@@ -1,0 +1,77 @@
+<h2>Wildcard on object</h2>
+
+<h3>Setup</h3>
+
+<p>Selector: <code>$.*</code></p>
+
+<pre><code>{
+    "some": "string",
+    "int": 42,
+    "object": {
+        "key": "value"
+    },
+    "array": [0, 1]
+}
+</code></pre>
+
+<h3>Results</h3>
+
+<h4>Gold Standard (consensus)</h4>
+
+<pre><code>[
+  "string", 
+  42, 
+  {
+    "key": "value"
+  }, 
+  [
+    0, 
+    1
+  ]
+]
+</code></pre>
+
+<h4>Clojure (json-path)</h4>
+
+<pre><code>[
+  "string", 
+  42, 
+  {
+    "key": "value"
+  }, 
+  0, 
+  1
+]
+</code></pre>
+
+<h4>Python (jsonpath-rw)</h4>
+
+<pre><code>[
+  42, 
+  [
+    0, 
+    1
+  ], 
+  {
+    "key": "value"
+  }, 
+  "string"
+]
+</code></pre>
+
+<h4>Ruby (jsonpath)</h4>
+
+<pre><code>[
+  {
+    "array": [
+      0, 
+      1
+    ], 
+    "int": 42, 
+    "object": {
+      "key": "value"
+    }, 
+    "some": "string"
+  }
+]
+</code></pre>

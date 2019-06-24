@@ -1,0 +1,31 @@
+<h2>Root</h2>
+
+<h3>Setup</h3>
+
+<p>Selector: <code>$</code></p>
+
+<pre><code>{
+    "key": "value",
+    "another key": {
+        "complex": [
+            "a",
+            1
+        ]
+    }
+}
+</code></pre>
+
+<h3>Results</h3>
+
+<h4>Gold Standard (consensus)</h4>
+
+<pre><code>{
+  "another key": {
+    "complex": [
+      "a", 
+      1
+    ]
+  }, 
+  "key": "value"
+}
+</code></pre>
