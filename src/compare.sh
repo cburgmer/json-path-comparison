@@ -5,6 +5,7 @@ readonly tmp_results_dir="/tmp/compare_jsonpath.results.$$"
 readonly tmp_errors_dir="/tmp/compare_jsonpath.errors.$$"
 readonly tmp_consensus_dir="/tmp/compare_jsonpath.consensus.$$"
 readonly target_dir="./comparison"
+readonly bug_reports_dir="./bug_reports"
 
 . src/shared.sh
 
@@ -88,12 +89,19 @@ main() {
         query_implementations "$query"
     done <<< "$(all_queries)"
 
+    rm -rf "$target_dir"
+    mkdir "$target_dir"
+
     ./src/error_report.sh "$tmp_errors_dir" "$target_dir"
 
     ./src/build_consensus.sh "$tmp_results_dir" "$tmp_consensus_dir"
     ./src/compile_table.sh "$tmp_consensus_dir" "$target_dir"
     ./src/results_report.sh "$tmp_consensus_dir" "$target_dir"
-    ./src/compile_bug_reports.sh "$tmp_consensus_dir" "$tmp_errors_dir" "$target_dir"
+
+
+    rm -rf "$bug_reports_dir"
+    mkdir "$bug_reports_dir"
+    ./src/compile_bug_reports.sh "$tmp_consensus_dir" "$tmp_errors_dir" "$bug_reports_dir"
 
     rm -r "$tmp_results_dir"
     rm -r "$tmp_errors_dir"
