@@ -76,6 +76,11 @@ implementation_language_header() {
     done <<< "$(all_implementations | sed "s/\([^_]*\)_.*/\1/" | uniq -c)"
 }
 
+break_library_names() {
+    # you can't see it, but we are appending a zero-width space to help the browser break words
+    sed "s/\([\._]\)/\1​/g"
+}
+
 header_row() {
     local implementation
 
@@ -90,7 +95,7 @@ header_row() {
     echo "<th></th>"
     while IFS= read -r implementation; do
         echo "<th>"
-        sed "s/[^_]*_\(.*\)/\1/" <<< "$implementation"
+        sed "s/[^_]*_\(.*\)/\1/" <<< "$implementation" | break_library_names
         if [[ -f "./implementations/${implementation}/SCALARS_RETURNED_AS_ARRAY" ]]; then
             echo "¹"
         fi
