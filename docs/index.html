@@ -14,7 +14,7 @@ This guarantees that in case of a split on two sides, the majority wins by two v
 <th></th>
 <th colspan="1">Clojure</th>
 <th colspan="3">JavaScript</th>
-<th colspan="1">Java</th>
+<th colspan="2">Java</th>
 <th colspan="1">Python</th>
 <th colspan="1">Ruby</th>
 <th colspan="1">Rust</th>
@@ -35,6 +35,10 @@ jsonpath
 </th>
 <th>
 jsonpath-plus
+¹
+</th>
+<th>
+com.github.jsurfer
 ¹
 </th>
 <th>
@@ -82,6 +86,9 @@ jsonpath_lib
 <td>
 ✓
 </td>
+<td>
+✓
+</td>
 </tr>
 <tr>
 <td><a href="results/array_index_dot_notation.html">Array index dot notation</a></td>
@@ -97,6 +104,9 @@ jsonpath_lib
 </td>
 <td>
 ?
+</td>
+<td>
+<a href="errors.html#Java_com.github.jsurfer___array_index_dot_notation">e</a>
 </td>
 <td>
 <a href="errors.html#Java_com.jayway.jsonpath___array_index_dot_notation">e</a>
@@ -127,6 +137,9 @@ jsonpath_lib
 <a href="errors.html#JavaScript_jsonpath-plus___array_index_last">e</a>
 </td>
 <td>
+<a href="errors.html#Java_com.github.jsurfer___array_index_last">e</a>
+</td>
+<td>
 ?
 </td>
 <td>
@@ -155,6 +168,9 @@ jsonpath_lib
 <a href="errors.html#JavaScript_jsonpath-plus___array_index_out_of_bounds">e</a>
 </td>
 <td>
+<a href="errors.html#Java_com.github.jsurfer___array_index_out_of_bounds">e</a>
+</td>
+<td>
 <a href="errors.html#Java_com.jayway.jsonpath___array_index_out_of_bounds">e</a>
 </td>
 <td>
@@ -172,6 +188,9 @@ jsonpath_lib
 <td><code>$[1:10]</code></td>
 <td>
 ✗
+</td>
+<td>
+✓
 </td>
 <td>
 ✓
@@ -211,6 +230,9 @@ jsonpath_lib
 ✓
 </td>
 <td>
+✗
+</td>
+<td>
 ✓
 </td>
 <td>
@@ -228,6 +250,9 @@ jsonpath_lib
 <td><code>$[:]</code></td>
 <td>
 <a href="errors.html#Clojure_json-path___array_index_slice_no_start_no_end">e</a>
+</td>
+<td>
+✓
 </td>
 <td>
 ✓
@@ -278,12 +303,18 @@ jsonpath_lib
 <td>
 ✓
 </td>
+<td>
+✓
+</td>
 </tr>
 <tr>
 <td><a href="results/array_index_slice_only_start.html">Array index slice only start</a></td>
 <td><code>$[1:]</code></td>
 <td>
 ✗
+</td>
+<td>
+✓
 </td>
 <td>
 ✓
@@ -334,33 +365,39 @@ jsonpath_lib
 <td>
 ✓
 </td>
+<td>
+✓
+</td>
 </tr>
 <tr>
 <td><a href="results/array_index_slice_start_end_step.html">Array index slice start end step</a></td>
 <td><code>$[0:3:2]</code></td>
 <td>
-✗
+?
 </td>
 <td>
-✓
+?
 </td>
 <td>
-✓
+?
 </td>
 <td>
-✓
+?
 </td>
 <td>
-✗
+<a href="errors.html#Java_com.github.jsurfer___array_index_slice_start_end_step">e</a>
+</td>
+<td>
+?
 </td>
 <td>
 <a href="errors.html#Python_jsonpath-rw___array_index_slice_start_end_step">e</a>
 </td>
 <td>
-✓
+?
 </td>
 <td>
-✓
+?
 </td>
 </tr>
 <tr>
@@ -371,6 +408,9 @@ jsonpath_lib
 </td>
 <td>
 <a href="errors.html#JavaScript_Goessner___array_index_slice_start_equals_end">e</a>
+</td>
+<td>
+?
 </td>
 <td>
 ?
@@ -418,12 +458,18 @@ jsonpath_lib
 <td>
 ✓
 </td>
+<td>
+✓
+</td>
 </tr>
 <tr>
 <td><a href="results/array_index_union.html">Array index union</a></td>
 <td><code>$[0,1]</code></td>
 <td>
 ✗
+</td>
+<td>
+✓
 </td>
 <td>
 ✓
@@ -474,6 +520,9 @@ jsonpath_lib
 <td>
 ✓
 </td>
+<td>
+✓
+</td>
 </tr>
 <tr>
 <td><a href="results/key_bracket_notation_union.html">Key bracket notation union</a></td>
@@ -489,6 +538,9 @@ jsonpath_lib
 </td>
 <td>
 ✗
+</td>
+<td>
+✓
 </td>
 <td>
 ✗
@@ -519,6 +571,9 @@ jsonpath_lib
 <a href="errors.html#JavaScript_jsonpath-plus___key_bracket_notation_with_double_quotes">e</a>
 </td>
 <td>
+<a href="errors.html#Java_com.github.jsurfer___key_bracket_notation_with_double_quotes">e</a>
+</td>
+<td>
 <a href="errors.html#Java_com.jayway.jsonpath___key_bracket_notation_with_double_quotes">e</a>
 </td>
 <td>
@@ -536,6 +591,9 @@ jsonpath_lib
 <td><code>$['0']</code></td>
 <td>
 <a href="errors.html#Clojure_json-path___key_bracket_notation_with_number">e</a>
+</td>
+<td>
+✓
 </td>
 <td>
 ✓
@@ -575,6 +633,9 @@ jsonpath_lib
 ?
 </td>
 <td>
+<a href="errors.html#Java_com.github.jsurfer___key_bracket_notation_with_number_without_quotes">e</a>
+</td>
+<td>
 <a href="errors.html#Java_com.jayway.jsonpath___key_bracket_notation_with_number_without_quotes">e</a>
 </td>
 <td>
@@ -601,6 +662,9 @@ jsonpath_lib
 </td>
 <td>
 ?
+</td>
+<td>
+<a href="errors.html#Java_com.github.jsurfer___key_bracket_notation_with_single_quote">e</a>
 </td>
 <td>
 <a href="errors.html#Java_com.jayway.jsonpath___key_bracket_notation_with_single_quote">e</a>
@@ -631,6 +695,9 @@ jsonpath_lib
 <a href="errors.html#JavaScript_jsonpath-plus___key_bracket_notation_with_single_quote_escaped">e</a>
 </td>
 <td>
+<a href="errors.html#Java_com.github.jsurfer___key_bracket_notation_with_single_quote_escaped">e</a>
+</td>
+<td>
 ?
 </td>
 <td>
@@ -657,6 +724,9 @@ jsonpath_lib
 </td>
 <td>
 <a href="errors.html#JavaScript_jsonpath-plus___key_bracket_notation_with_special_characters">e</a>
+</td>
+<td>
+<a href="errors.html#Java_com.github.jsurfer___key_bracket_notation_with_special_characters">e</a>
 </td>
 <td>
 <a href="errors.html#Java_com.jayway.jsonpath___key_bracket_notation_with_special_characters">e</a>
@@ -687,6 +757,9 @@ jsonpath_lib
 ?
 </td>
 <td>
+<a href="errors.html#Java_com.github.jsurfer___key_bracket_notation_without_quotes">e</a>
+</td>
+<td>
 <a href="errors.html#Java_com.jayway.jsonpath___key_bracket_notation_without_quotes">e</a>
 </td>
 <td>
@@ -715,6 +788,9 @@ jsonpath_lib
 <a href="errors.html#JavaScript_jsonpath-plus___key_on_array">e</a>
 </td>
 <td>
+<a href="errors.html#Java_com.github.jsurfer___key_on_array">e</a>
+</td>
+<td>
 <a href="errors.html#Java_com.jayway.jsonpath___key_on_array">e</a>
 </td>
 <td>
@@ -730,6 +806,9 @@ jsonpath_lib
 <tr>
 <td><a href="results/key_with_array_value.html">Key with array value</a></td>
 <td><code>$.key</code></td>
+<td>
+✓
+</td>
 <td>
 ✓
 </td>
@@ -774,6 +853,9 @@ jsonpath_lib
 ?
 </td>
 <td>
+?
+</td>
+<td>
 <a href="errors.html#Python_jsonpath-rw___recursive_array_index">e</a>
 </td>
 <td>
@@ -799,6 +881,9 @@ jsonpath_lib
 ✓
 </td>
 <td>
+✗
+</td>
+<td>
 ✓
 </td>
 <td>
@@ -818,25 +903,28 @@ jsonpath_lib
 <a href="errors.html#Clojure_json-path___recursive_wildcard">e</a>
 </td>
 <td>
-✓
+?
 </td>
 <td>
-✓
+?
 </td>
 <td>
-✓
+?
 </td>
 <td>
-✓
+?
 </td>
 <td>
-✗
+?
 </td>
 <td>
-✗
+?
 </td>
 <td>
-✓
+?
+</td>
+<td>
+?
 </td>
 </tr>
 <tr>
@@ -844,6 +932,9 @@ jsonpath_lib
 <td><code>$.store..price</code></td>
 <td>
 <a href="errors.html#Clojure_json-path___recursive_with_nested_object">e</a>
+</td>
+<td>
+✓
 </td>
 <td>
 ✓
@@ -894,6 +985,9 @@ jsonpath_lib
 <td>
 ✓
 </td>
+<td>
+✓
+</td>
 </tr>
 <tr>
 <td><a href="results/wildcard_bracket_notation_on_array.html">Wildcard bracket notation on array</a></td>
@@ -920,12 +1014,18 @@ jsonpath_lib
 ✓
 </td>
 <td>
+✓
+</td>
+<td>
 ✗
 </td>
 </tr>
 <tr>
 <td><a href="results/wildcard_bracket_notation_on_object.html">Wildcard bracket notation on object</a></td>
 <td><code>$[*]</code></td>
+<td>
+?
+</td>
 <td>
 ?
 </td>
@@ -978,12 +1078,18 @@ jsonpath_lib
 <td>
 ?
 </td>
+<td>
+?
+</td>
 </tr>
 <tr>
 <td><a href="results/wildcard_on_object.html">Wildcard on object</a></td>
 <td><code>$.*</code></td>
 <td>
 ✗
+</td>
+<td>
+✓
 </td>
 <td>
 ✓

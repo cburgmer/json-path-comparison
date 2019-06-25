@@ -88,20 +88,6 @@ The following queries provide results that do not match those of other implement
   [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoExecutionException
   ```
 
-- [ ] `$[0:3:2]`
-  Input:
-  ```
-  ["first", "second", "third", "forth", "fifth"]
-  ```
-  Expected output:
-  ```
-  ["first", "third"]
-  ```
-  Actual output:
-  ```
-  ["first", "second", "third"]
-  ```
-
 - [ ] `$['key','another']`
   Input:
   ```
