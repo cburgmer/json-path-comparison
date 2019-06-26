@@ -3,6 +3,19 @@ Results do not match other implementations
 The following queries provide results that do not match those of other implementations of JSONPath
 (compare https://github.com/cburgmer/json-path-comparison/tree/master/comparison):
 
+- [ ] `$..*`
+  Input:
+  ```
+  42
+  ```
+  Expected output:
+  ```
+  []
+  ```
+  Error:
+  ```
+  ```
+
 - [ ] `$`
   Input:
   ```
@@ -26,6 +39,34 @@ The following queries provide results that do not match those of other implement
     File "/usr/local/Cellar/python@2/2.7.16/Frameworks/Python.framework/Versions/2.7/lib/python2.7/json/decoder.py", line 382, in raw_decode
       raise ValueError("No JSON object could be decoded")
   ValueError: No JSON object could be decoded
+  ```
+
+- [ ] `$[*]`
+  Input:
+  ```
+  {"int": 42, "array": [0, 1], "object": {"key": "value"}, "some": "string"}
+  ```
+  Expected output:
+  ```
+  ["string", 42, {"key": "value"}, [0, 1]]
+  ```
+  Actual output:
+  ```
+  [42, [0, 1], {"key": "value"}, "string"]
+  ```
+
+- [ ] `$.*`
+  Input:
+  ```
+  {"int": 42, "array": [0, 1], "object": {"key": "value"}, "some": "string"}
+  ```
+  Expected output:
+  ```
+  ["string", 42, {"key": "value"}, [0, 1]]
+  ```
+  Actual output:
+  ```
+  [42, [0, 1], {"key": "value"}, "string"]
   ```
 
 

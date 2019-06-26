@@ -15,7 +15,6 @@ This guarantees that in case of a split on two sides, the majority wins by two v
 <th colspan="1">Clojure</th>
 <th colspan="3">JavaScript</th>
 <th colspan="2">Java</th>
-<th colspan="1">Perl</th>
 <th colspan="2">Python</th>
 <th colspan="1">Ruby</th>
 <th colspan="1">Rust</th>
@@ -46,10 +45,6 @@ com.​github.​jsurfer
 com.​jayway.​jsonpath
 </th>
 <th>
-JSON-Path
-¹
-</th>
-<th>
 jsonpath
 ¹
 </th>
@@ -71,9 +66,6 @@ jsonpath_​lib
 <tr>
 <td><a href="results/array_index.html">Array index</a></td>
 <td><code>$[2]</code></td>
-<td>
-✓
-</td>
 <td>
 ✓
 </td>
@@ -130,9 +122,6 @@ jsonpath_​lib
 ?
 </td>
 <td>
-?
-</td>
-<td>
 <a href="errors.html#Python_jsonpath-rw___array_index_dot_notation">e</a>
 </td>
 <td>
@@ -159,9 +148,6 @@ jsonpath_​lib
 </td>
 <td>
 <a href="errors.html#Java_com.github.jsurfer___array_index_last">e</a>
-</td>
-<td>
-?
 </td>
 <td>
 ?
@@ -201,9 +187,6 @@ jsonpath_​lib
 <a href="errors.html#Java_com.jayway.jsonpath___array_index_out_of_bounds">e</a>
 </td>
 <td>
-<a href="errors.html#Perl_JSON-Path___array_index_out_of_bounds">e</a>
-</td>
-<td>
 <a href="errors.html#Python_jsonpath___array_index_out_of_bounds">e</a>
 </td>
 <td>
@@ -221,9 +204,6 @@ jsonpath_​lib
 <td><code>$[1:10]</code></td>
 <td>
 ✗
-</td>
-<td>
-✓
 </td>
 <td>
 ✓
@@ -286,9 +266,6 @@ jsonpath_​lib
 <td>
 ✓
 </td>
-<td>
-✓
-</td>
 </tr>
 <tr>
 <td><a href="results/array_index_slice_no_start_no_end.html">Array index slice no start no end</a></td>
@@ -312,9 +289,6 @@ jsonpath_​lib
 <a href="errors.html#Java_com.jayway.jsonpath___array_index_slice_no_start_no_end">e</a>
 </td>
 <td>
-<a href="errors.html#Perl_JSON-Path___array_index_slice_no_start_no_end">e</a>
-</td>
-<td>
 ✓
 </td>
 <td>
@@ -332,9 +306,6 @@ jsonpath_​lib
 <td><code>$[:2]</code></td>
 <td>
 ✗
-</td>
-<td>
-✓
 </td>
 <td>
 ✓
@@ -397,18 +368,12 @@ jsonpath_​lib
 <td>
 ✓
 </td>
-<td>
-✓
-</td>
 </tr>
 <tr>
 <td><a href="results/array_index_slice_start_end.html">Array index slice start end</a></td>
 <td><code>$[1:3]</code></td>
 <td>
 ✗
-</td>
-<td>
-✓
 </td>
 <td>
 ✓
@@ -463,9 +428,6 @@ jsonpath_​lib
 ✓
 </td>
 <td>
-✓
-</td>
-<td>
 <a href="errors.html#Python_jsonpath-rw___array_index_slice_start_end_step">e</a>
 </td>
 <td>
@@ -483,9 +445,6 @@ jsonpath_​lib
 </td>
 <td>
 <a href="errors.html#JavaScript_Goessner___array_index_slice_start_equals_end">e</a>
-</td>
-<td>
-?
 </td>
 <td>
 ?
@@ -545,18 +504,12 @@ jsonpath_​lib
 <td>
 ✓
 </td>
-<td>
-✓
-</td>
 </tr>
 <tr>
 <td><a href="results/array_index_union.html">Array index union</a></td>
 <td><code>$[0,1]</code></td>
 <td>
 ✗
-</td>
-<td>
-✓
 </td>
 <td>
 ✓
@@ -619,9 +572,6 @@ jsonpath_​lib
 <td>
 ✓
 </td>
-<td>
-✓
-</td>
 </tr>
 <tr>
 <td><a href="results/key_bracket_notation_union.html">Key bracket notation union</a></td>
@@ -640,9 +590,6 @@ jsonpath_​lib
 </td>
 <td>
 ✓
-</td>
-<td>
-✗
 </td>
 <td>
 ✗
@@ -682,9 +629,6 @@ jsonpath_​lib
 <a href="errors.html#Java_com.jayway.jsonpath___key_bracket_notation_with_double_quotes">e</a>
 </td>
 <td>
-?
-</td>
-<td>
 <a href="errors.html#Python_jsonpath___key_bracket_notation_with_double_quotes">e</a>
 </td>
 <td>
@@ -702,9 +646,6 @@ jsonpath_​lib
 <td><code>$['0']</code></td>
 <td>
 <a href="errors.html#Clojure_json-path___key_bracket_notation_with_number">e</a>
-</td>
-<td>
-✓
 </td>
 <td>
 ✓
@@ -759,9 +700,6 @@ jsonpath_​lib
 ?
 </td>
 <td>
-?
-</td>
-<td>
 <a href="errors.html#Python_jsonpath-rw___key_bracket_notation_with_number_without_quotes">e</a>
 </td>
 <td>
@@ -791,9 +729,6 @@ jsonpath_​lib
 </td>
 <td>
 <a href="errors.html#Java_com.jayway.jsonpath___key_bracket_notation_with_single_quote">e</a>
-</td>
-<td>
-<a href="errors.html#Perl_JSON-Path___key_bracket_notation_with_single_quote">e</a>
 </td>
 <td>
 ?
@@ -830,9 +765,6 @@ jsonpath_​lib
 ?
 </td>
 <td>
-<a href="errors.html#Perl_JSON-Path___key_bracket_notation_with_single_quote_escaped">e</a>
-</td>
-<td>
 <a href="errors.html#Python_jsonpath___key_bracket_notation_with_single_quote_escaped">e</a>
 </td>
 <td>
@@ -865,9 +797,6 @@ jsonpath_​lib
 </td>
 <td>
 <a href="errors.html#Java_com.jayway.jsonpath___key_bracket_notation_with_special_characters">e</a>
-</td>
-<td>
-<a href="errors.html#Perl_JSON-Path___key_bracket_notation_with_special_characters">e</a>
 </td>
 <td>
 <a href="errors.html#Python_jsonpath___key_bracket_notation_with_special_characters">e</a>
@@ -910,9 +839,6 @@ jsonpath_​lib
 ?
 </td>
 <td>
-?
-</td>
-<td>
 <a href="errors.html#Ruby_jsonpath___key_bracket_notation_without_quotes">e</a>
 </td>
 <td>
@@ -922,9 +848,6 @@ jsonpath_​lib
 <tr>
 <td><a href="results/key_dot_notation.html">Key dot notation</a></td>
 <td><code>$.key</code></td>
-<td>
-✓
-</td>
 <td>
 ✓
 </td>
@@ -978,9 +901,6 @@ jsonpath_​lib
 <a href="errors.html#Java_com.jayway.jsonpath___key_dot_notation_not_found">e</a>
 </td>
 <td>
-<a href="errors.html#Perl_JSON-Path___key_dot_notation_not_found">e</a>
-</td>
-<td>
 <a href="errors.html#Python_jsonpath___key_dot_notation_not_found">e</a>
 </td>
 <td>
@@ -1013,9 +933,6 @@ jsonpath_​lib
 </td>
 <td>
 <a href="errors.html#Java_com.jayway.jsonpath___key_dot_notation_on_array">e</a>
-</td>
-<td>
-<a href="errors.html#Perl_JSON-Path___key_dot_notation_on_array">e</a>
 </td>
 <td>
 <a href="errors.html#Python_jsonpath___key_dot_notation_on_array">e</a>
@@ -1063,18 +980,12 @@ jsonpath_​lib
 <td>
 ✓
 </td>
-<td>
-✓
-</td>
 </tr>
 <tr>
 <td><a href="results/recursive_array_index.html">Recursive array index</a></td>
 <td><code>$..[0]</code></td>
 <td>
 <a href="errors.html#Clojure_json-path___recursive_array_index">e</a>
-</td>
-<td>
-?
 </td>
 <td>
 ?
@@ -1137,9 +1048,6 @@ jsonpath_​lib
 <td>
 ✓
 </td>
-<td>
-✓
-</td>
 </tr>
 <tr>
 <td><a href="results/recursive_wildcard.html">Recursive wildcard</a></td>
@@ -1174,15 +1082,12 @@ jsonpath_​lib
 <td>
 ?
 </td>
-<td>
-?
-</td>
 </tr>
 <tr>
 <td><a href="results/recursive_wildcard_on_scalar.html">Recursive wildcard on scalar</a></td>
 <td><code>$..*</code></td>
 <td>
-?
+✓
 </td>
 <td>
 <a href="errors.html#JavaScript_Goessner___recursive_wildcard_on_scalar">e</a>
@@ -1191,28 +1096,25 @@ jsonpath_​lib
 <a href="errors.html#JavaScript_jsonpath___recursive_wildcard_on_scalar">e</a>
 </td>
 <td>
-?
+✓
 </td>
 <td>
-?
+✓
 </td>
 <td>
-?
-</td>
-<td>
-<a href="errors.html#Perl_JSON-Path___recursive_wildcard_on_scalar">e</a>
+✓
 </td>
 <td>
 <a href="errors.html#Python_jsonpath___recursive_wildcard_on_scalar">e</a>
 </td>
 <td>
-?
+✓
 </td>
 <td>
-?
+✗
 </td>
 <td>
-?
+✓
 </td>
 </tr>
 <tr>
@@ -1235,9 +1137,6 @@ jsonpath_​lib
 </td>
 <td>
 ✓
-</td>
-<td>
-✗
 </td>
 <td>
 ✓
@@ -1272,9 +1171,6 @@ jsonpath_​lib
 </td>
 <td>
 ✓
-</td>
-<td>
-✗
 </td>
 <td>
 <a href="errors.html#Python_jsonpath___root">e</a>
@@ -1322,45 +1218,39 @@ jsonpath_​lib
 <td>
 ✓
 </td>
-<td>
-✓
-</td>
 </tr>
 <tr>
 <td><a href="results/wildcard_bracket_notation_on_object.html">Wildcard bracket notation on object</a></td>
 <td><code>$[*]</code></td>
 <td>
-?
+✗
 </td>
 <td>
-?
+✓
 </td>
 <td>
-?
+✓
 </td>
 <td>
-?
+✓
 </td>
 <td>
-?
+✓
 </td>
 <td>
-?
+✓
 </td>
 <td>
-?
+✗
 </td>
 <td>
-?
+✗
 </td>
 <td>
-?
+✗
 </td>
 <td>
-?
-</td>
-<td>
-?
+✓
 </td>
 </tr>
 <tr>
@@ -1368,9 +1258,6 @@ jsonpath_​lib
 <td><code>$.*</code></td>
 <td>
 ✗
-</td>
-<td>
-✓
 </td>
 <td>
 ✓
@@ -1404,37 +1291,34 @@ jsonpath_​lib
 <td><a href="results/wildcard_dot_notation_on_object.html">Wildcard dot notation on object</a></td>
 <td><code>$.*</code></td>
 <td>
-?
+✗
 </td>
 <td>
-?
+✓
 </td>
 <td>
-?
+✓
 </td>
 <td>
-?
+✓
 </td>
 <td>
-?
+✓
 </td>
 <td>
-?
+✓
 </td>
 <td>
-?
+✗
 </td>
 <td>
-?
+✗
 </td>
 <td>
-?
+✗
 </td>
 <td>
-?
-</td>
-<td>
-?
+✓
 </td>
 </tr>
 </tbody>
