@@ -920,44 +920,118 @@ jsonpath_​lib
 </td>
 </tr>
 <tr>
-<td><a href="results/key_on_array.html">Key on array</a></td>
+<td><a href="results/key_dot_notation.html">Key dot notation</a></td>
+<td><code>$.key</code></td>
+<td>
+✓
+</td>
+<td>
+✓
+</td>
+<td>
+✓
+</td>
+<td>
+✓
+</td>
+<td>
+✓
+</td>
+<td>
+✓
+</td>
+<td>
+✓
+</td>
+<td>
+✓
+</td>
+<td>
+✓
+</td>
+<td>
+✓
+</td>
+<td>
+✓
+</td>
+</tr>
+<tr>
+<td><a href="results/key_dot_notation_not_found.html">Key dot notation not found</a></td>
+<td><code>$.missing</code></td>
+<td>
+?
+</td>
+<td>
+<a href="errors.html#JavaScript_Goessner___key_dot_notation_not_found">e</a>
+</td>
+<td>
+<a href="errors.html#JavaScript_jsonpath___key_dot_notation_not_found">e</a>
+</td>
+<td>
+<a href="errors.html#JavaScript_jsonpath-plus___key_dot_notation_not_found">e</a>
+</td>
+<td>
+<a href="errors.html#Java_com.github.jsurfer___key_dot_notation_not_found">e</a>
+</td>
+<td>
+<a href="errors.html#Java_com.jayway.jsonpath___key_dot_notation_not_found">e</a>
+</td>
+<td>
+<a href="errors.html#Perl_JSON-Path___key_dot_notation_not_found">e</a>
+</td>
+<td>
+<a href="errors.html#Python_jsonpath___key_dot_notation_not_found">e</a>
+</td>
+<td>
+<a href="errors.html#Python_jsonpath-rw___key_dot_notation_not_found">e</a>
+</td>
+<td>
+<a href="errors.html#Ruby_jsonpath___key_dot_notation_not_found">e</a>
+</td>
+<td>
+<a href="errors.html#Rust_jsonpath_lib___key_dot_notation_not_found">e</a>
+</td>
+</tr>
+<tr>
+<td><a href="results/key_dot_notation_on_array.html">Key dot notation on array</a></td>
 <td><code>$.key</code></td>
 <td>
 ?
 </td>
 <td>
-<a href="errors.html#JavaScript_Goessner___key_on_array">e</a>
+<a href="errors.html#JavaScript_Goessner___key_dot_notation_on_array">e</a>
 </td>
 <td>
-<a href="errors.html#JavaScript_jsonpath___key_on_array">e</a>
+<a href="errors.html#JavaScript_jsonpath___key_dot_notation_on_array">e</a>
 </td>
 <td>
-<a href="errors.html#JavaScript_jsonpath-plus___key_on_array">e</a>
+<a href="errors.html#JavaScript_jsonpath-plus___key_dot_notation_on_array">e</a>
 </td>
 <td>
-<a href="errors.html#Java_com.github.jsurfer___key_on_array">e</a>
+<a href="errors.html#Java_com.github.jsurfer___key_dot_notation_on_array">e</a>
 </td>
 <td>
-<a href="errors.html#Java_com.jayway.jsonpath___key_on_array">e</a>
+<a href="errors.html#Java_com.jayway.jsonpath___key_dot_notation_on_array">e</a>
 </td>
 <td>
-<a href="errors.html#Perl_JSON-Path___key_on_array">e</a>
+<a href="errors.html#Perl_JSON-Path___key_dot_notation_on_array">e</a>
 </td>
 <td>
-<a href="errors.html#Python_jsonpath___key_on_array">e</a>
+<a href="errors.html#Python_jsonpath___key_dot_notation_on_array">e</a>
 </td>
 <td>
-<a href="errors.html#Python_jsonpath-rw___key_on_array">e</a>
+<a href="errors.html#Python_jsonpath-rw___key_dot_notation_on_array">e</a>
 </td>
 <td>
-<a href="errors.html#Ruby_jsonpath___key_on_array">e</a>
+<a href="errors.html#Ruby_jsonpath___key_dot_notation_on_array">e</a>
 </td>
 <td>
-<a href="errors.html#Rust_jsonpath_lib___key_on_array">e</a>
+<a href="errors.html#Rust_jsonpath_lib___key_dot_notation_on_array">e</a>
 </td>
 </tr>
 <tr>
-<td><a href="results/key_with_array_value.html">Key with array value</a></td>
+<td><a href="results/key_dot_notation_with_array_value.html">Key dot notation with array value</a></td>
 <td><code>$.key</code></td>
 <td>
 ✓
@@ -1093,6 +1167,43 @@ jsonpath_​lib
 </td>
 <td>
 ?
+</td>
+<td>
+?
+</td>
+<td>
+?
+</td>
+<td>
+?
+</td>
+</tr>
+<tr>
+<td><a href="results/recursive_wildcard_on_scalar.html">Recursive wildcard on scalar</a></td>
+<td><code>$..*</code></td>
+<td>
+?
+</td>
+<td>
+<a href="errors.html#JavaScript_Goessner___recursive_wildcard_on_scalar">e</a>
+</td>
+<td>
+<a href="errors.html#JavaScript_jsonpath___recursive_wildcard_on_scalar">e</a>
+</td>
+<td>
+?
+</td>
+<td>
+?
+</td>
+<td>
+?
+</td>
+<td>
+<a href="errors.html#Perl_JSON-Path___recursive_wildcard_on_scalar">e</a>
+</td>
+<td>
+<a href="errors.html#Python_jsonpath___recursive_wildcard_on_scalar">e</a>
 </td>
 <td>
 ?
@@ -1253,7 +1364,7 @@ jsonpath_​lib
 </td>
 </tr>
 <tr>
-<td><a href="results/wildcard_on_array.html">Wildcard on array</a></td>
+<td><a href="results/wildcard_dot_notation_on_array.html">Wildcard dot notation on array</a></td>
 <td><code>$.*</code></td>
 <td>
 ✗
@@ -1290,7 +1401,7 @@ jsonpath_​lib
 </td>
 </tr>
 <tr>
-<td><a href="results/wildcard_on_object.html">Wildcard on object</a></td>
+<td><a href="results/wildcard_dot_notation_on_object.html">Wildcard dot notation on object</a></td>
 <td><code>$.*</code></td>
 <td>
 ?

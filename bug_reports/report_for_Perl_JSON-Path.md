@@ -17,10 +17,10 @@ The following queries provide results that do not match those of other implement
   Assertion (":" is not an operator) failed!
    at /usr/local/Cellar/perl/5.28.1/lib/perl5/site_perl/5.28.1/Carp/Assert.pm line 282, <STDIN> line 4.
   	Carp::Assert::assert("", "\":\" is not an operator") called at /usr/local/Cellar/perl/5.28.1/lib/perl5/site_perl/5.28.1/JSON/Path/Evaluator.pm line 217
-  	JSON::Path::Evaluator::_evaluate(JSON::Path::Evaluator=HASH(0x7ff2cf837218), ARRAY(0x7ff2cf836db0), ARRAY(0x7ff2d0185508), 0) called at /usr/local/Cellar/perl/5.28.1/lib/perl5/site_perl/5.28.1/JSON/Path/Evaluator.pm line 122
-  	JSON::Path::Evaluator::evaluate(JSON::Path::Evaluator=HASH(0x7ff2cf837218), "\$[:]", "want_ref", 0, "want_path", 0) called at /usr/local/Cellar/perl/5.28.1/lib/perl5/site_perl/5.28.1/JSON/Path/Evaluator.pm line 97
-  	JSON::Path::Evaluator::evaluate_jsonpath(ARRAY(0x7ff2cf836db0), "\$[:]", "script_engine", "perl") called at /usr/local/Cellar/perl/5.28.1/lib/perl5/site_perl/5.28.1/JSON/Path.pm line 107
-  	JSON::Path::values(JSON::Path=SCALAR(0x7ff2d0161618), ARRAY(0x7ff2cf836db0)) called at main.pl line 7
+  	JSON::Path::Evaluator::_evaluate(JSON::Path::Evaluator=HASH(0x7fb57f037218), ARRAY(0x7fb57f036db0), ARRAY(0x7fb58083cf08), 0) called at /usr/local/Cellar/perl/5.28.1/lib/perl5/site_perl/5.28.1/JSON/Path/Evaluator.pm line 122
+  	JSON::Path::Evaluator::evaluate(JSON::Path::Evaluator=HASH(0x7fb57f037218), "\$[:]", "want_ref", 0, "want_path", 0) called at /usr/local/Cellar/perl/5.28.1/lib/perl5/site_perl/5.28.1/JSON/Path/Evaluator.pm line 97
+  	JSON::Path::Evaluator::evaluate_jsonpath(ARRAY(0x7fb57f036db0), "\$[:]", "script_engine", "perl") called at /usr/local/Cellar/perl/5.28.1/lib/perl5/site_perl/5.28.1/JSON/Path.pm line 107
+  	JSON::Path::values(JSON::Path=SCALAR(0x7fb5808318e8), ARRAY(0x7fb57f036db0)) called at main.pl line 7
   ```
 
 - [ ] `$['key','another']`

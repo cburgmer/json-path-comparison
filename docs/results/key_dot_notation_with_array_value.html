@@ -1,21 +1,23 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/3.0.1/github-markdown.css">
 <article class="markdown-body">
-<h2>Key on array</h2>
+<h2>Key dot notation with array value</h2>
 
 <h3>Setup</h3>
 
 <p>Selector: <code>$.key</code></p>
 
-<pre><code>[
-  0,
-  1
-]
+<pre><code>{
+    "key": ["first", "second"]
+}
 </code></pre>
 
 <h3>Results</h3>
 
-<h4>Clojure (json-path)</h4>
+<h4>Gold Standard (consensus)</h4>
 
-<pre><code>null
+<pre><code>[
+  "first", 
+  "second"
+]
 </code></pre>
 </article>
