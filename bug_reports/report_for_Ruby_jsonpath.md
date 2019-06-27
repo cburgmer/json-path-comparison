@@ -31,20 +31,6 @@ The following queries provide results that do not match those of other implement
   null
   ```
 
-- [ ] `$..*`
-  Input:
-  ```
-  42
-  ```
-  Expected output:
-  ```
-  []
-  ```
-  Actual output:
-  ```
-  [42]
-  ```
-
 - [ ] `$[*]`
   Input:
   ```
