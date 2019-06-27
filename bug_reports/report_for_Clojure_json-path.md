@@ -174,7 +174,7 @@ The following queries provide results that do not match those of other implement
   ```
   Expected output:
   ```
-  "value"
+  ["value"]
   ```
   Error:
   ```
@@ -196,6 +196,7 @@ The following queries provide results that do not match those of other implement
   	at json_path_comparison.core$_main.doInvoke(core.clj:6)
   	at clojure.lang.RestFn.applyTo(RestFn.java:137)
   	at json_path_comparison.core.main(Unknown Source)
+  No JSON object could be decoded
   ```
 
 - [ ] `$['key','another']`
@@ -236,7 +237,7 @@ The following queries provide results that do not match those of other implement
   ```
   Expected output:
   ```
-  "value"
+  ["value"]
   ```
   Error:
   ```
@@ -258,6 +259,7 @@ The following queries provide results that do not match those of other implement
   	at json_path_comparison.core$_main.doInvoke(core.clj:6)
   	at clojure.lang.RestFn.applyTo(RestFn.java:137)
   	at json_path_comparison.core.main(Unknown Source)
+  No JSON object could be decoded
   ```
 
 - [ ] `$.store..price`

@@ -24,12 +24,12 @@ all_queries() {
     find ./queries -type d -depth 1 -print0 | xargs -0 -n1 basename
 }
 
-unwrap_scalar_if_needed() {
+wrap_scalar_if_needed() {
     local implementation="$1"
     local query="$2"
 
-    if [[ -f "./implementations/${implementation}/SCALARS_RETURNED_AS_ARRAY" && -f "./queries/${query}/SCALAR_RESULT" ]]; then
-        ./src/unwrap_scalar.py
+    if [[ ! -f "./implementations/${implementation}/SCALARS_RETURNED_AS_ARRAY" && -f "./queries/${query}/SCALAR_RESULT" ]]; then
+        ./src/wrap_scalar.py
     else
         cat
     fi
@@ -44,7 +44,7 @@ run_query() {
     local selector
     selector="$(cat "${selector_file}")"
 
-    "./implementations/${implementation}"/run.sh "$selector" < "$document" | unwrap_scalar_if_needed "$implementation" "$query"
+    "./implementations/${implementation}"/run.sh "$selector" < "$document" | wrap_scalar_if_needed "$implementation" "$query"
 }
 
 canonical_json() {

@@ -10,12 +10,11 @@ The following queries provide results that do not match those of other implement
   ```
   Expected output:
   ```
-  {"another key": {"complex": ["a", 1]}, "key": "value"}
+  [{"another key": {"complex": ["a", 1]}, "key": "value"}]
   ```
   Error:
   ```
   jsonpath returned false, this might indicate an error
-  No JSON object could be decoded
   ```
 
 

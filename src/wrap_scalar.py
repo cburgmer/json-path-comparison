@@ -9,11 +9,7 @@ def main():
         print e
         sys.exit(1)
 
-    assert type(j) == list
-    assert len(j) == 1
-
-    scalar = j[0]
-    print(json.dumps(scalar))
+    print(json.dumps([j]))
 
 if __name__ == '__main__':
     sys.exit(main())
