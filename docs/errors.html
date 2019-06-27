@@ -1973,12 +1973,7 @@ ValueError: No JSON object could be decoded
 PHP (galbar-jsonpath), Recursive array index
 </h3>
 
-<pre><code>Fatal error: Uncaught JsonPath\InvalidJsonPathException: Error in JSONPath near '..[0]' in /Users/cburgmer/projekte/json-path-comparison/implementations/PHP_galbar-jsonpath/vendor/galbar/jsonpath/src/Skyscanner/JsonPath/JsonObject.php:719
-Stack trace:
-#0 /Users/cburgmer/projekte/json-path-comparison/implementations/PHP_galbar-jsonpath/vendor/galbar/jsonpath/src/Skyscanner/JsonPath/JsonObject.php(270): JsonPath\JsonObject-&gt;getReal(Array, '..[0]')
-#1 /Users/cburgmer/projekte/json-path-comparison/implementations/PHP_galbar-jsonpath/main.php(8): JsonPath\JsonObject-&gt;get('$..[0]')
-#2 {main}
-  thrown in /Users/cburgmer/projekte/json-path-comparison/implementations/PHP_galbar-jsonpath/vendor/galbar/jsonpath/src/Skyscanner/JsonPath/JsonObject.php on line 719
+<pre><code>Invalid JSONPath error: 'Error in JSONPath near '..[0]''
 </code></pre>
 
 <h3 id="Python_jsonpath-rw___array_index_dot_notation">
@@ -2397,18 +2392,7 @@ AssertionError
 Ruby (jsonpath), Key bracket notation without quotes
 </h3>
 
-<pre><code>/Users/cburgmer/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/jsonpath-1.0.4/lib/jsonpath/enumerable.rb:156:in `Integer': invalid value for Integer(): "key" (ArgumentError)
-    from /Users/cburgmer/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/jsonpath-1.0.4/lib/jsonpath/enumerable.rb:156:in `process_function_or_literal'
-    from /Users/cburgmer/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/jsonpath-1.0.4/lib/jsonpath/enumerable.rb:80:in `block in handle_wildecard'
-    from /Users/cburgmer/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/jsonpath-1.0.4/lib/jsonpath/enumerable.rb:60:in `each'
-    from /Users/cburgmer/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/jsonpath-1.0.4/lib/jsonpath/enumerable.rb:60:in `handle_wildecard'
-    from /Users/cburgmer/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/jsonpath-1.0.4/lib/jsonpath/enumerable.rb:30:in `each'
-    from /Users/cburgmer/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/jsonpath-1.0.4/lib/jsonpath/enumerable.rb:28:in `each'
-    from /Users/cburgmer/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/jsonpath-1.0.4/lib/jsonpath.rb:73:in `to_a'
-    from /Users/cburgmer/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/jsonpath-1.0.4/lib/jsonpath.rb:73:in `on'
-    from /Users/cburgmer/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/jsonpath-1.0.4/bin/jsonpath:20:in `&lt;top (required)&gt;'
-    from /Users/cburgmer/.rbenv/versions/2.3.0/bin/jsonpath:23:in `load'
-    from /Users/cburgmer/.rbenv/versions/2.3.0/bin/jsonpath:23:in `&lt;main&gt;'
+<pre><code>invalid value for Integer(): "key"
 Traceback (most recent call last):
   File "./src/unwrap_scalar.py", line 15, in &lt;module&gt;
     sys.exit(main())
@@ -2451,24 +2435,7 @@ AssertionError
 Ruby (jsonpath), Recursive array index
 </h3>
 
-<pre><code>/Users/cburgmer/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/jsonpath-1.0.4/lib/jsonpath/enumerable.rb:17:in `each': 0 is not a symbol nor a string (TypeError)
-    from /Users/cburgmer/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/jsonpath-1.0.4/lib/jsonpath/enumerable.rb:100:in `block (2 levels) in handle_wildecard'
-    from /Users/cburgmer/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/jsonpath-1.0.4/lib/jsonpath/enumerable.rb:100:in `step'
-    from /Users/cburgmer/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/jsonpath-1.0.4/lib/jsonpath/enumerable.rb:100:in `block in handle_wildecard'
-    from /Users/cburgmer/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/jsonpath-1.0.4/lib/jsonpath/enumerable.rb:60:in `each'
-    from /Users/cburgmer/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/jsonpath-1.0.4/lib/jsonpath/enumerable.rb:60:in `handle_wildecard'
-    from /Users/cburgmer/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/jsonpath-1.0.4/lib/jsonpath/enumerable.rb:30:in `each'
-    from /Users/cburgmer/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/jsonpath-1.0.4/lib/jsonpath/enumerable.rb:40:in `block in each'
-    from /Users/cburgmer/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/jsonpath-1.0.4/lib/jsonpath/enumerable.rb:40:in `each'
-    from /Users/cburgmer/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/jsonpath-1.0.4/lib/jsonpath/enumerable.rb:40:in `each_with_index'
-    from /Users/cburgmer/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/jsonpath-1.0.4/lib/jsonpath/enumerable.rb:40:in `each'
-    from /Users/cburgmer/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/jsonpath-1.0.4/lib/jsonpath/enumerable.rb:26:in `each'
-    from /Users/cburgmer/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/jsonpath-1.0.4/lib/jsonpath/enumerable.rb:28:in `each'
-    from /Users/cburgmer/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/jsonpath-1.0.4/lib/jsonpath.rb:73:in `to_a'
-    from /Users/cburgmer/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/jsonpath-1.0.4/lib/jsonpath.rb:73:in `on'
-    from /Users/cburgmer/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/jsonpath-1.0.4/bin/jsonpath:20:in `&lt;top (required)&gt;'
-    from /Users/cburgmer/.rbenv/versions/2.3.0/bin/jsonpath:23:in `load'
-    from /Users/cburgmer/.rbenv/versions/2.3.0/bin/jsonpath:23:in `&lt;main&gt;'
+<pre><code>0 is not a symbol nor a string
 </code></pre>
 
 <h3 id="Rust_jsonpath_lib___array_index_dot_notation">
