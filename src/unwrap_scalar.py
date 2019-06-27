@@ -3,7 +3,11 @@ import sys
 import json
 
 def main():
-    j = json.loads(sys.stdin.read())
+    try:
+        j = json.loads(sys.stdin.read())
+    except Exception as e:
+        print e
+        sys.exit(1)
 
     assert type(j) == list
     assert len(j) == 1

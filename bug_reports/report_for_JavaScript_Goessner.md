@@ -15,18 +15,7 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   jsonpath returned false, this might indicate an error
-  Traceback (most recent call last):
-    File "./src/unwrap_scalar.py", line 15, in <module>
-      sys.exit(main())
-    File "./src/unwrap_scalar.py", line 6, in main
-      j = json.loads(sys.stdin.read())
-    File "/usr/local/Cellar/python@2/2.7.16/Frameworks/Python.framework/Versions/2.7/lib/python2.7/json/__init__.py", line 339, in loads
-      return _default_decoder.decode(s)
-    File "/usr/local/Cellar/python@2/2.7.16/Frameworks/Python.framework/Versions/2.7/lib/python2.7/json/decoder.py", line 364, in decode
-      obj, end = self.raw_decode(s, idx=_w(s, 0).end())
-    File "/usr/local/Cellar/python@2/2.7.16/Frameworks/Python.framework/Versions/2.7/lib/python2.7/json/decoder.py", line 382, in raw_decode
-      raise ValueError("No JSON object could be decoded")
-  ValueError: No JSON object could be decoded
+  No JSON object could be decoded
   ```
 
 

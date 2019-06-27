@@ -3,7 +3,12 @@ import sys
 import json
 
 def main():
-    j = json.loads(sys.stdin.read())
+    try:
+        j = json.loads(sys.stdin.read())
+    except Exception as e:
+        print e
+        sys.exit(1)
+
     print(json.dumps(j, sort_keys=True, indent=2))
 
 if __name__ == '__main__':
