@@ -8,7 +8,8 @@ def main():
     j = json.loads(sys.stdin.read())
     results = jsonpath(j, selector, 'VALUE')
 
-    if not results:
+    if results is False:
+        print('jsonpath returned false, this might indicate an error');
         sys.exit(1)
 
     print(json.dumps(results))

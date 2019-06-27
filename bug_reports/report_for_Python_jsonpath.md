@@ -14,6 +14,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
+  jsonpath returned false, this might indicate an error
   ```
 
 - [ ] `$[*]`
