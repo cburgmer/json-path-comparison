@@ -28,7 +28,7 @@ wrap_scalar_if_needed() {
     local implementation="$1"
     local query="$2"
 
-    if [[ ! -f "./implementations/${implementation}/SCALARS_RETURNED_AS_ARRAY" && -f "./queries/${query}/SCALAR_RESULT" ]]; then
+    if [[ -f "./implementations/${implementation}/SINGLE_POSSIBLE_MATCH_RETURNED_AS_SCALAR" && -f "./queries/${query}/SCALAR_RESULT" ]]; then
         ./src/wrap_scalar.py
     else
         cat

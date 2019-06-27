@@ -96,7 +96,7 @@ header_row() {
     while IFS= read -r implementation; do
         echo "<th>"
         sed "s/[^_]*_\(.*\)/\1/" <<< "$implementation" | break_library_names
-        if [[ -f "./implementations/${implementation}/SCALARS_RETURNED_AS_ARRAY" ]]; then
+        if [[ -f "./implementations/${implementation}/SINGLE_POSSIBLE_MATCH_RETURNED_AS_SCALAR" ]]; then
             echo "¹"
         fi
         echo "</th>"
@@ -133,7 +133,7 @@ This guarantees that in case of a split on two sides, the majority wins by two v
 - ✗, the result does not match a majority
 - ?, no clear consensus amongst the implementations (the results disagree and/or a lot of implementations error)
 - e, the implementation failed executing the query and probably does not support this type of query
-- ¹, those implementations actually return a scalar as an array of one element. This difference is not included for the sake of this comparison."
+- ¹, this implementation returns queries with only a single possible match as a scalar element (e.g. '$[0]' => '42'). For the sake of comparing to other implementations these results are converted and wrapped in a list here."
 }
 
 main() {

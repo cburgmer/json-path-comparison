@@ -25,46 +25,37 @@ This guarantees that in case of a split on two sides, the majority wins by two v
 <th></th>
 <th>
 json-path
+¹
 </th>
 <th>
 Goessner
-¹
 </th>
 <th>
 jsonpath
-¹
 </th>
 <th>
 jsonpath-plus
-¹
 </th>
 <th>
 com.​github.​jsurfer
-¹
 </th>
 <th>
 com.​jayway.​jsonpath
-¹
 </th>
 <th>
 galbar-jsonpath
-¹
 </th>
 <th>
 jsonpath
-¹
 </th>
 <th>
 jsonpath-rw
-¹
 </th>
 <th>
 jsonpath
-¹
 </th>
 <th>
 jsonpath_​lib
-¹
 </th>
 </tr>
 </thead>
@@ -1448,6 +1439,6 @@ jsonpath_​lib
 <li>✗, the result does not match a majority</li>
 <li>?, no clear consensus amongst the implementations (the results disagree and/or a lot of implementations error)</li>
 <li>e, the implementation failed executing the query and probably does not support this type of query</li>
-<li>¹, those implementations actually return a scalar as an array of one element. This difference is not included for the sake of this comparison.</li>
+<li>¹, this implementation returns queries with only a single possible match as a scalar element (e.g. '0' => '42'). For the sake of comparing to other implementations these results are converted and wrapped in a list here.</li>
 </ul>
 </article>
