@@ -74,7 +74,7 @@ The following queries provide results that do not match those of other implement
       at com.jayway.jsonpath.JsonPath.<init> (JsonPath.java:101)
       at com.jayway.jsonpath.JsonPath.compile (JsonPath.java:467)
       at com.jayway.jsonpath.internal.JsonContext.read (JsonContext.java:87)
-      at query.App.main (App.java:23)
+      at query.App.main (App.java:28)
       at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0 (Native Method)
       at jdk.internal.reflect.NativeMethodAccessorImpl.invoke (NativeMethodAccessorImpl.java:62)
       at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke (DelegatingMethodAccessorImpl.java:43)
@@ -113,7 +113,7 @@ The following queries provide results that do not match those of other implement
   ```
   Actual output:
   ```
-  {"key": "value", "another": "entry"}
+  [{"key": "value", "another": "entry"}]
   ```
 
 

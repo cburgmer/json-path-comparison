@@ -9,6 +9,8 @@ import com.fasterxml.jackson.core.JsonGenerationException;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.jayway.jsonpath.JsonPath;
+import com.jayway.jsonpath.Configuration;
+import com.jayway.jsonpath.Option;
 
 public class App {
     public static void main(String[] args) throws IOException, UnsupportedEncodingException {
@@ -18,9 +20,12 @@ public class App {
         String inputStr;
         while ((inputStr = streamReader.readLine()) != null)
             responseStrBuilder.append(inputStr);
-
         String json = responseStrBuilder.toString();
-        Object results = JsonPath.parse(json).read(args[0]);
+
+        Configuration conf = Configuration.defaultConfiguration()
+            .addOptions(Option.ALWAYS_RETURN_LIST);
+
+        Object results = JsonPath.using(conf).parse(json).read(args[0]);
 
         ObjectMapper mapper = new ObjectMapper();
         mapper.writeValue(System.out, results);
