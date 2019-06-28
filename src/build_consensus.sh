@@ -73,12 +73,18 @@ minimal_consensus() {
     echo $(( (implementation_count + 1) / 2 + 1))
 }
 
+clean_previous_results() {
+    local query="$1"
+    rm -rf "${tmp_consensus_dir:?}/${query}"
+}
+
 build_consensus() {
     local query
     local min_consensus
     min_consensus=$(minimal_consensus)
 
     while IFS= read -r query; do
+        clean_previous_results "$query"
         consensus_on_query "$query" "$min_consensus"
     done <<< "$(all_query_results)"
 }
