@@ -25,21 +25,16 @@ main() {
 rule run
   command = ./src/query_implementation.sh '\$out' errs
 
-rule make_dir
-  command = mkdir -p '\$out'
-
 EOF
 
         while IFS= read -r query; do
             while IFS= read -r implementation; do
-                echo "build ${builddir}/${query}/${implementation}: run"
+                echo "build ${builddir}/${query}/${implementation}: run | src/query_implementation.sh"
             done <<< "$(all_implementations)"
             echo
 
-            echo "build ${builddir}/${query}/: make_dir"
-
             # aggregate query build
-            echo -n "build ${query}: phony ${builddir}/${query}/"
+            echo -n "build ${builddir}/${query}/: phony"
             while IFS= read -r implementation; do
                 echo -n " ${builddir}/${query}/${implementation}"
             done <<< "$(all_implementations)"
