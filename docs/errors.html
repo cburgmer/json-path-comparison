@@ -505,13 +505,6 @@ JavaScript (Goessner), Key bracket notation with single quote escaped
 <pre><code>jsonpath returned false, this might indicate an error
 </code></pre>
 
-<h3 id="JavaScript_Goessner___key_bracket_notation_with_special_characters">
-JavaScript (Goessner), Key bracket notation with special characters
-</h3>
-
-<pre><code>jsonpath returned false, this might indicate an error
-</code></pre>
-
 <h3 id="JavaScript_Goessner___key_dot_notation_not_found">
 JavaScript (Goessner), Key dot notation not found
 </h3>
@@ -548,15 +541,6 @@ JavaScript (jsonpath), Key bracket notation with single quote
 $['single'quote']
 ----------^
 Expecting ']', ',', got 'IDENTIFIER'
-</code></pre>
-
-<h3 id="JavaScript_jsonpath___key_bracket_notation_with_special_characters">
-JavaScript (jsonpath), Key bracket notation with special characters
-</h3>
-
-<pre><code>Lexical error on line 1. Unrecognized text.
-$['special:\"chars']
---^
 </code></pre>
 
 <h3 id="JavaScript_jsonpath___key_bracket_notation_without_quotes">
@@ -939,8 +923,8 @@ Caused by: org.antlr.v4.runtime.InputMismatchException
 Java (com.github.jsurfer), Key bracket notation with special characters
 </h3>
 
-<pre><code>[ERROR] Failed to execute goal org.codehaus.mojo:exec-maven-plugin:1.6.0:java (default-cli) on project query: unbalanced quotes in "$['special:\"chars']" -&gt; [Help 1]
-org.apache.maven.lifecycle.LifecycleExecutionException: Failed to execute goal org.codehaus.mojo:exec-maven-plugin:1.6.0:java (default-cli) on project query: unbalanced quotes in "$['special:\"chars']"
+<pre><code>[ERROR] Failed to execute goal org.codehaus.mojo:exec-maven-plugin:1.6.0:java (default-cli) on project query: unbalanced quotes in "$['special:"chars']" -&gt; [Help 1]
+org.apache.maven.lifecycle.LifecycleExecutionException: Failed to execute goal org.codehaus.mojo:exec-maven-plugin:1.6.0:java (default-cli) on project query: unbalanced quotes in "$['special:"chars']"
     at org.apache.maven.lifecycle.internal.MojoExecutor.execute (MojoExecutor.java:215)
     at org.apache.maven.lifecycle.internal.MojoExecutor.execute (MojoExecutor.java:156)
     at org.apache.maven.lifecycle.internal.MojoExecutor.execute (MojoExecutor.java:148)
@@ -962,7 +946,7 @@ org.apache.maven.lifecycle.LifecycleExecutionException: Failed to execute goal o
     at org.codehaus.plexus.classworlds.launcher.Launcher.launch (Launcher.java:225)
     at org.codehaus.plexus.classworlds.launcher.Launcher.mainWithExitCode (Launcher.java:406)
     at org.codehaus.plexus.classworlds.launcher.Launcher.main (Launcher.java:347)
-Caused by: org.apache.maven.plugin.MojoExecutionException: unbalanced quotes in "$['special:\"chars']"
+Caused by: org.apache.maven.plugin.MojoExecutionException: unbalanced quotes in "$['special:"chars']"
     at org.codehaus.mojo.exec.AbstractExecMojo.parseCommandlineArgs (AbstractExecMojo.java:225)
     at org.codehaus.mojo.exec.ExecJavaMojo.addRelevantPluginDependenciesToClasspath (ExecJavaMojo.java:563)
     at org.codehaus.mojo.exec.ExecJavaMojo.getClassLoader (ExecJavaMojo.java:520)
@@ -1548,8 +1532,8 @@ Caused by: com.jayway.jsonpath.InvalidPathException: Property must be separated 
 Java (com.jayway.jsonpath), Key bracket notation with special characters
 </h3>
 
-<pre><code>[ERROR] Failed to execute goal org.codehaus.mojo:exec-maven-plugin:1.6.0:java (default-cli) on project query: unbalanced quotes in "$['special:\"chars']" -&gt; [Help 1]
-org.apache.maven.lifecycle.LifecycleExecutionException: Failed to execute goal org.codehaus.mojo:exec-maven-plugin:1.6.0:java (default-cli) on project query: unbalanced quotes in "$['special:\"chars']"
+<pre><code>[ERROR] Failed to execute goal org.codehaus.mojo:exec-maven-plugin:1.6.0:java (default-cli) on project query: unbalanced quotes in "$['special:"chars']" -&gt; [Help 1]
+org.apache.maven.lifecycle.LifecycleExecutionException: Failed to execute goal org.codehaus.mojo:exec-maven-plugin:1.6.0:java (default-cli) on project query: unbalanced quotes in "$['special:"chars']"
     at org.apache.maven.lifecycle.internal.MojoExecutor.execute (MojoExecutor.java:215)
     at org.apache.maven.lifecycle.internal.MojoExecutor.execute (MojoExecutor.java:156)
     at org.apache.maven.lifecycle.internal.MojoExecutor.execute (MojoExecutor.java:148)
@@ -1571,7 +1555,7 @@ org.apache.maven.lifecycle.LifecycleExecutionException: Failed to execute goal o
     at org.codehaus.plexus.classworlds.launcher.Launcher.launch (Launcher.java:225)
     at org.codehaus.plexus.classworlds.launcher.Launcher.mainWithExitCode (Launcher.java:406)
     at org.codehaus.plexus.classworlds.launcher.Launcher.main (Launcher.java:347)
-Caused by: org.apache.maven.plugin.MojoExecutionException: unbalanced quotes in "$['special:\"chars']"
+Caused by: org.apache.maven.plugin.MojoExecutionException: unbalanced quotes in "$['special:"chars']"
     at org.codehaus.mojo.exec.AbstractExecMojo.parseCommandlineArgs (AbstractExecMojo.java:225)
     at org.codehaus.mojo.exec.ExecJavaMojo.addRelevantPluginDependenciesToClasspath (ExecJavaMojo.java:563)
     at org.codehaus.mojo.exec.ExecJavaMojo.getClassLoader (ExecJavaMojo.java:520)
@@ -2175,13 +2159,6 @@ PHP (galbar-jsonpath), Key bracket notation with single quote escaped
 <pre><code>jsonpath returned false, this might indicate an error
 </code></pre>
 
-<h3 id="PHP_galbar-jsonpath___key_bracket_notation_with_special_characters">
-PHP (galbar-jsonpath), Key bracket notation with special characters
-</h3>
-
-<pre><code>jsonpath returned false, this might indicate an error
-</code></pre>
-
 <h3 id="PHP_galbar-jsonpath___key_dot_notation_not_found">
 PHP (galbar-jsonpath), Key dot notation not found
 </h3>
@@ -2373,13 +2350,6 @@ Python (jsonpath), Key bracket notation with double quotes
 
 <h3 id="Python_jsonpath___key_bracket_notation_with_single_quote_escaped">
 Python (jsonpath), Key bracket notation with single quote escaped
-</h3>
-
-<pre><code>jsonpath returned false, this might indicate an error
-</code></pre>
-
-<h3 id="Python_jsonpath___key_bracket_notation_with_special_characters">
-Python (jsonpath), Key bracket notation with special characters
 </h3>
 
 <pre><code>jsonpath returned false, this might indicate an error
