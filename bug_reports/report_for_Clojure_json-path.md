@@ -262,6 +262,20 @@ The following queries provide results that do not match those of other implement
   No JSON object could be decoded
   ```
 
+- [ ] `$['*']`
+  Input:
+  ```
+  {"*": "value"}
+  ```
+  Expected output:
+  ```
+  ["value"]
+  ```
+  Actual output:
+  ```
+  [["value"]]
+  ```
+
 - [ ] `$.store..price`
   Input:
   ```
