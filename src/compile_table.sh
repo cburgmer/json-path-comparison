@@ -107,10 +107,23 @@ header_row() {
 compile_comparison() {
     echo "# Comparison of different implementations of JSONPath
 
+## How
+
+We execute all available implementations against the same queries.
+Outcomes are compared across implementations, and judged based on a simple consensus:
+a majority of half of all implementations (rounded up) plus one is required
+(guarantees difference of 2 votes even in critical cases).
 This table makes no statement on the correctness of any of the implementations.
-Outcomes are compared to the pool of other implementations, and judged based on a simple consensus.
-A majority has to consist of half of all implementations (rounded up) + 1.
-This guarantees that in case of a split on two sides, the majority wins by two votes."
+
+## Goal
+
+This comparison is meant to create visibility,
+help implementers find issues by sharing test cases,
+and finally give guidance on interpretation of the [initial posts by Goessner](https://goessner.net/articles/JsonPath/).
+The motivation of the consensus in particular is to drive the discussion towards a shared understanding of the JSONPath proposal.
+
+## Comparison
+"
     echo
     echo "<table>"
 
@@ -133,7 +146,7 @@ This guarantees that in case of a split on two sides, the majority wins by two v
 - ✗, the result does not match a majority
 - ?, no clear consensus amongst the implementations (the results disagree and/or a lot of implementations error)
 - e, the implementation failed executing the query and probably does not support this type of query
-- ¹, this implementation returns queries with only a single possible match as a scalar element (e.g. '$[0]' => '42'). For the sake of comparing to other implementations these results are converted and wrapped in a list here."
+- ¹, this implementation returns queries with only a single possible match as a scalar element (e.g. '\$[0]' => '42'). For the sake of comparing to other implementations these results are converted and wrapped in a list here."
 }
 
 main() {
