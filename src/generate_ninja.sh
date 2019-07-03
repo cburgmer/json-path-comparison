@@ -24,7 +24,7 @@ main() {
     {
         cat <<EOF
 rule run
-  command = ./src/query_implementation.sh '\$out'
+  command = ./src/query_implementation.sh \$in > '\$out'
 
 rule consensus
   command = ./src/build_consensus.sh '\$in' '\$out'
@@ -33,7 +33,7 @@ EOF
 
         while IFS= read -r query; do
             while IFS= read -r implementation; do
-                echo "build ${results_dir}/${query}/${implementation}: run | src/query_implementation.sh"
+                echo "build ${results_dir}/${query}/${implementation}: run queries/${query} implementations/${implementation} | src/query_implementation.sh"
             done <<< "$(all_implementations)"
             echo
 

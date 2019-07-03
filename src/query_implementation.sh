@@ -5,7 +5,7 @@ wrap_scalar_if_needed() {
     local implementation="$1"
     local query="$2"
 
-    if [[ -f "./implementations/${implementation}/SINGLE_POSSIBLE_MATCH_RETURNED_AS_SCALAR" && -f "./queries/${query}/SCALAR_RESULT" ]]; then
+    if [[ -f "${implementation}/SINGLE_POSSIBLE_MATCH_RETURNED_AS_SCALAR" && -f "${query}/SCALAR_RESULT" ]]; then
         ./src/wrap_scalar.py
     else
         cat
@@ -13,15 +13,14 @@ wrap_scalar_if_needed() {
 }
 
 run_query() {
-    local implementation="$1"
-    local query="$2"
-    local query_dir="./queries/${query}"
-    local selector_file="$query_dir"/selector
-    local document="$query_dir"/document.json
+    local query="$1"
+    local implementation="$2"
+    local selector_file="$query"/selector
+    local document="$query"/document.json
     local selector
     selector="$(cat "${selector_file}")"
 
-    "./implementations/${implementation}"/run.sh "$selector" < "$document" | wrap_scalar_if_needed "$implementation" "$query"
+    "$implementation"/run.sh "$selector" < "$document" | wrap_scalar_if_needed "$implementation" "$query"
 }
 
 canonical_json() {
@@ -31,35 +30,22 @@ canonical_json() {
 }
 
 main() {
-    local target="$1"
+    local query="$1"
+    local implementation="$2"
     local tmp_stdout="/tmp/query_implementation.stdout.$$"
     local tmp_stderr="/tmp/query_implementation.stderr.$$"
 
-    local tmp_results_dir
-    local query
-    local implementation
-
-    tmp_results_dir="$(cut -d/ -f1 <<< "$target")"
-    query="$(cut -d/ -f2 <<< "$target")"
-    implementation="$(cut -d/ -f3 <<< "$target")"
-
-    local results_dir="${tmp_results_dir}/${query}"
-
-    if run_query "$implementation" "$query" > "$tmp_stdout" 2> "$tmp_stderr"; then
-        echo "OK" > "${results_dir}/${implementation}"
+    if run_query "$query" "$implementation" > "$tmp_stdout" 2> "$tmp_stderr"; then
+        echo "OK"
 
         canonical_json "$tmp_stdout"
-        cat "$tmp_stdout" >> "${results_dir}/${implementation}"
-
-        echo >&2 -n "(ok) "
+        cat "$tmp_stdout"
     else
-        echo "ERROR" > "${results_dir}/${implementation}"
+        echo "ERROR"
 
         # Some implementations don't report errors on stderr
-        cat "$tmp_stderr" >> "${results_dir}/${implementation}"
-        cat "$tmp_stdout" >> "${results_dir}/${implementation}"
-
-        echo >&2 -n "(err) "
+        cat "$tmp_stderr"
+        cat "$tmp_stdout"
     fi
 
     rm "$tmp_stdout"
