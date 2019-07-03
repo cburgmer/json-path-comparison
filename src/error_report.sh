@@ -2,7 +2,7 @@
 
 set -euo pipefail
 
-readonly build_dir="build"
+readonly results_dir="results"
 readonly target_dir="$1"
 
 . src/shared.sh
@@ -13,7 +13,7 @@ all_errors() {
         if ! is_query_result_ok "$implementation_query_result"; then
             echo "$implementation_query_result"
         fi
-    done <<< "$(find "$build_dir" -type f)"
+    done <<< "$(find "$results_dir" -type f)"
 }
 
 nice_error_headline() {

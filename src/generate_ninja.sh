@@ -1,7 +1,7 @@
 #!/bin/bash
 set -euo pipefail
 
-readonly builddir="build"
+readonly results_dir="results"
 readonly consensus_dir="consensus"
 
 all_implementations() {
@@ -33,14 +33,14 @@ EOF
 
         while IFS= read -r query; do
             while IFS= read -r implementation; do
-                echo "build ${builddir}/${query}/${implementation}: run | src/query_implementation.sh"
+                echo "build ${results_dir}/${query}/${implementation}: run | src/query_implementation.sh"
             done <<< "$(all_implementations)"
             echo
 
             # aggregate query build
-            echo -n "build ${builddir}/${query}: phony"
+            echo -n "build ${results_dir}/${query}: phony"
             while IFS= read -r implementation; do
-                echo -n " ${builddir}/${query}/${implementation}"
+                echo -n " ${results_dir}/${query}/${implementation}"
             done <<< "$(all_implementations)"
             echo
         done <<< "$(all_queries)"
@@ -48,13 +48,13 @@ EOF
 
         # aggregate build
         echo
-        echo -n "build ${builddir}: phony"
+        echo -n "build ${results_dir}: phony"
         while IFS= read -r query; do
-            echo -n " ${builddir}/${query}"
+            echo -n " ${results_dir}/${query}"
         done <<< "$(all_queries)"
         echo
 
-        echo "build ${consensus_dir}: consensus ${builddir} | src/build_consensus.sh"
+        echo "build ${consensus_dir}: consensus ${results_dir} | src/build_consensus.sh"
     } > "./build.ninja"
 }
 
