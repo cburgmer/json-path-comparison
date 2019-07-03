@@ -114,6 +114,20 @@ The following queries provide results that do not match those of other implement
   {"key": "value", "another": "entry"}
   ```
 
+- [ ] `$['special:"chars']`
+  Input:
+  ```
+  {"special:\"chars": "value"}
+  ```
+  Expected output:
+  ```
+  ["value"]
+  ```
+  Error:
+  ```
+  No JSON object could be decoded
+  ```
+
 - [ ] `$.store..price`
   Input:
   ```
