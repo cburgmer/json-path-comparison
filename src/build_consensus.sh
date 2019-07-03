@@ -1,18 +1,18 @@
 #!/bin/bash
 set -euo pipefail
 
-readonly tmp_results_dir="$1"
+readonly results_dir="$1"
 readonly tmp_consensus_dir="$2"
 
 . src/shared.sh
 
 all_query_results() {
-    find "$tmp_results_dir" -type d -depth 1 -print0 | xargs -0 -n1 basename
+    find "$results_dir" -type d -depth 1 -print0 | xargs -0 -n1 basename
 }
 
 all_implementation_results() {
     local query="$1"
-    find "${tmp_results_dir}/${query}" -type f -print0 | xargs -0 -n1 basename
+    find "${results_dir}/${query}" -type f -print0 | xargs -0 -n1 basename
 }
 
 implementations_agreeing_to() {
@@ -21,7 +21,7 @@ implementations_agreeing_to() {
     local other_implementation
 
     while IFS= read -r other_implementation; do
-        if diff "${tmp_results_dir}/${query}/${implementation}" "${tmp_results_dir}/${query}/${other_implementation}" > /dev/null; then
+        if diff "${results_dir}/${query}/${implementation}" "${results_dir}/${query}/${other_implementation}" > /dev/null; then
             echo "$other_implementation"
         fi
     done <<< "$(all_implementation_results "$query" | grep -v "^$implementation\$")"
@@ -40,10 +40,27 @@ check_gold_standard() {
     fi
 }
 
+check_consensus_on_query_result() {
+    local query="$1"
+    local implementation="$2"
+    local min_consensus="$3"
+    local query_consensus_result_dir="$4"
+    local query_result="${results_dir}/${query}/${implementation}"
+    if is_query_result_ok "$query_result"; then
+        if check_gold_standard "$query" "$implementation" "$min_consensus"; then
+            cat "$query_result" > "$query_consensus_result_dir"/gold_standard
+            echo "$implementation" >> "$query_consensus_result_dir"/matching_implementations
+        else
+            cp "$query_result" "$query_consensus_result_dir"/outliers
+        fi
+    else
+        cp "$query_result" "$query_consensus_result_dir"/errors
+    fi
+}
+
 consensus_on_query() {
     local query="$1"
     local min_consensus="$2"
-    local results_dir="${tmp_results_dir}/${query}"
     local query_consensus_result_dir="${tmp_consensus_dir}/${query}"
 
     mkdir -p "$query_consensus_result_dir"
@@ -52,16 +69,7 @@ consensus_on_query() {
     touch "$query_consensus_result_dir"/matching_implementations
 
     while IFS= read -r implementation; do
-        if is_query_result_ok "${tmp_results_dir}/${query}/${implementation}"; then
-            if check_gold_standard "$query" "$implementation" "$min_consensus"; then
-                cat "${results_dir}/${implementation}" > "$query_consensus_result_dir"/gold_standard
-                echo "$implementation" >> "$query_consensus_result_dir"/matching_implementations
-            else
-                cp "${results_dir}/${implementation}" "$query_consensus_result_dir"/outliers
-            fi
-        else
-            cp "${results_dir}/${implementation}" "$query_consensus_result_dir"/errors
-        fi
+        check_consensus_on_query_result "$query" "$implementation" "$min_consensus" "$query_consensus_result_dir"
     done <<< "$(all_implementation_results "$query")"
 }
 
