@@ -25,8 +25,8 @@ give_mark() {
         return
     fi
 
-    # Neither matching consensus, nor found in outliers?
-    if [[ ! -f "${consensus_dir}/outliers/${implementation}" ]]; then
+    # Error?
+    if [[ -f "${consensus_dir}/errors/${implementation}" ]]; then
         echo "<a href=\"errors.md#${implementation}___${query}\">e</a>"
         return
     fi

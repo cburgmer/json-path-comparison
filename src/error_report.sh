@@ -2,40 +2,59 @@
 
 set -euo pipefail
 
-readonly tmp_errors_dir="$1"
-readonly target_dir="$2"
+readonly build_dir="build"
+readonly target_dir="$1"
 
 . src/shared.sh
 
 all_errors() {
-    find "${tmp_errors_dir}" -type f -depth 1 -print0 | xargs -0 -n1 basename | sort
+    local implementation_query_result
+    while IFS= read -r implementation_query_result; do
+        if ! is_query_result_ok "$implementation_query_result"; then
+            echo "$implementation_query_result"
+        fi
+    done <<< "$(find "$build_dir" -type f)"
 }
 
 nice_error_headline() {
-    local error_key="$1"
-    local query
-    local implementation
-    query="$(sed "s/.*___\(.*\)/\1/" <<< "$error_key")"
-    implementation="$(sed "s/\(.*\)___.*/\1/" <<< "$error_key")"
+    local query="$1"
+    local implementation="$2"
 
     echo "$(pretty_implementation_name "$implementation"), $(pretty_query_name "$query")"
 }
 
+error_headline_id() {
+    local query="$1"
+    local implementation="$2"
+
+    echo "${implementation}___${query}"
+}
+
+error_section() {
+    local implementation_query_result="$1"
+    local query
+    local implementation
+    query="$(basename $(dirname "$implementation_query_result"))"
+    implementation="$(basename "$implementation_query_result")"
+
+    echo "<h3 id=\"$(error_headline_id "$query" "$implementation")\">"
+    nice_error_headline "$query" "$implementation"
+    echo "</h3>"
+    echo
+    query_result_payload "$implementation_query_result" | pre_block
+    echo
+}
+
 compile_error_report() {
-    local error_key
+    local implementation_query_result
 
     {
         echo "## Errors"
         echo
 
-        while IFS= read -r error_key; do
-            echo "<h3 id=\"${error_key}\">"
-            nice_error_headline "$error_key"
-            echo "</h3>"
-            echo
-            pre_block < "${tmp_errors_dir}/${error_key}"
-            echo
-        done <<< "$(all_errors)"
+        while IFS= read -r implementation_query_result; do
+            error_section "$implementation_query_result"
+        done <<< "$(all_errors | sort)"
     } > "${target_dir}/errors.md"
 }
 

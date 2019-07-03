@@ -34,7 +34,7 @@ output_setup() {
 compile_result_report_for_query() {
     local query="$1"
     local consensus_dir="${tmp_consensus_dir}/${query}"
-    local gold_standard="${consensus_dir}/gold_standard.json"
+    local gold_standard="${consensus_dir}/gold_standard"
     local implementation
 
     echo "## $(pretty_query_name "$query")"
@@ -49,7 +49,7 @@ compile_result_report_for_query() {
     if [[ -f "$gold_standard" ]]; then
         echo "####  Gold Standard (consensus)"
         echo
-        pre_block < "$gold_standard"
+        query_result_payload "$gold_standard" | pre_block
         echo
     fi
 
@@ -60,7 +60,7 @@ compile_result_report_for_query() {
 
         echo "#### $(pretty_implementation_name "$implementation")"
         echo
-        pre_block < "${tmp_consensus_dir}/${query}/outliers/${implementation}"
+        query_result_payload "${tmp_consensus_dir}/${query}/outliers/${implementation}" | pre_block
         echo
     done <<< "$(implementation_outliers "$query")"
 }

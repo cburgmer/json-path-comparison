@@ -23,3 +23,18 @@ pretty_query_name() {
 pre_block() {
     sed 's/^/    /'
 }
+
+query_result_status() {
+    local result="$1"
+    head -1 < "$result"
+}
+
+is_query_result_ok() {
+    local result="$1"
+    test "$(query_result_status "$result")" = "OK"
+}
+
+query_result_payload() {
+    local result="$1"
+    tail -n +2 < "$result"
+}

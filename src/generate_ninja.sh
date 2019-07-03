@@ -24,7 +24,7 @@ main() {
     {
         cat <<EOF
 rule run
-  command = ./src/query_implementation.sh '\$out' errs
+  command = ./src/query_implementation.sh '\$out'
 
 rule consensus
   command = ./src/build_consensus.sh '\$in' '\$out'

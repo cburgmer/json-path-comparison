@@ -16,24 +16,24 @@ all_implementation_results() {
 }
 
 implementations_agreeing_to() {
-    local results_dir="$1"
+    local query="$1"
     local implementation="$2"
     local other_implementation
 
     while IFS= read -r other_implementation; do
-        if diff "${results_dir}/${implementation}" "${results_dir}/${other_implementation}" > /dev/null; then
+        if diff "${tmp_results_dir}/${query}/${implementation}" "${tmp_results_dir}/${query}/${other_implementation}" > /dev/null; then
             echo "$other_implementation"
         fi
-    done <<< "$(find "$results_dir" -type f -print0 | xargs -0 -n1 basename | grep -v "^$implementation\$")"
+    done <<< "$(all_implementation_results "$query" | grep -v "^$implementation\$")"
 }
 
 check_gold_standard() {
-    local results_dir="$1"
+    local query="$1"
     local implementation="$2"
     local min_consensus="$3"
     local min_no_of_others=$((min_consensus - 1))
 
-    if [[ $(implementations_agreeing_to "$results_dir" "$implementation" | wc -l) -ge $min_no_of_others ]]; then
+    if [[ $(implementations_agreeing_to "$query" "$implementation" | wc -l) -ge $min_no_of_others ]]; then
         return 0
     else
         return 1
@@ -48,19 +48,19 @@ consensus_on_query() {
 
     mkdir -p "$query_consensus_result_dir"
     mkdir -p "$query_consensus_result_dir"/outliers
+    mkdir -p "$query_consensus_result_dir"/errors
     touch "$query_consensus_result_dir"/matching_implementations
 
     while IFS= read -r implementation; do
-        # special case all errored, no results
-        if [[ -z "$implementation" ]]; then
-            break
-        fi
-
-        if check_gold_standard "$results_dir" "$implementation" "$min_consensus"; then
-            cat "${results_dir}/${implementation}" > "$query_consensus_result_dir"/gold_standard.json
-            echo "$implementation" >> "$query_consensus_result_dir"/matching_implementations
+        if is_query_result_ok "${tmp_results_dir}/${query}/${implementation}"; then
+            if check_gold_standard "$query" "$implementation" "$min_consensus"; then
+                cat "${results_dir}/${implementation}" > "$query_consensus_result_dir"/gold_standard
+                echo "$implementation" >> "$query_consensus_result_dir"/matching_implementations
+            else
+                cp "${results_dir}/${implementation}" "$query_consensus_result_dir"/outliers
+            fi
         else
-            cp "${results_dir}/${implementation}" "$query_consensus_result_dir"/outliers
+            cp "${results_dir}/${implementation}" "$query_consensus_result_dir"/errors
         fi
     done <<< "$(all_implementation_results "$query")"
 }

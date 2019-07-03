@@ -32,7 +32,8 @@ canonical_json() {
 
 main() {
     local target="$1"
-    local tmp_errors_dir="$2"
+    local tmp_stdout="/tmp/query_implementation.stdout.$$"
+    local tmp_stderr="/tmp/query_implementation.stderr.$$"
 
     local tmp_results_dir
     local query
@@ -43,23 +44,26 @@ main() {
     implementation="$(cut -d/ -f3 <<< "$target")"
 
     local results_dir="${tmp_results_dir}/${query}"
-    local error_key
 
-    mkdir -p "$tmp_errors_dir"
+    if run_query "$implementation" "$query" > "$tmp_stdout" 2> "$tmp_stderr"; then
+        echo "OK" > "${results_dir}/${implementation}"
 
-    error_key="${implementation}___${query}"
-    if run_query "$implementation" "$query" > "${results_dir}/${implementation}" 2> "${tmp_errors_dir}/${error_key}"; then
-        rm "${tmp_errors_dir}/${error_key}"
+        canonical_json "$tmp_stdout"
+        cat "$tmp_stdout" >> "${results_dir}/${implementation}"
 
-        canonical_json "${results_dir}/${implementation}"
-        echo -n "(ok) "
+        echo >&2 -n "(ok) "
     else
-        # Some implementations don't report errors on stderr
-        cat "${results_dir}/${implementation}" >> "${tmp_errors_dir}/${error_key}"
-        rm "${results_dir}/${implementation}"
+        echo "ERROR" > "${results_dir}/${implementation}"
 
-        echo -n "(err) "
+        # Some implementations don't report errors on stderr
+        cat "$tmp_stderr" >> "${results_dir}/${implementation}"
+        cat "$tmp_stdout" >> "${results_dir}/${implementation}"
+
+        echo >&2 -n "(err) "
     fi
+
+    rm "$tmp_stdout"
+    rm "$tmp_stderr"
 }
 
 main "$@"

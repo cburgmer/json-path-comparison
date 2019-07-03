@@ -2,8 +2,7 @@
 set -euo pipefail
 
 readonly tmp_consensus_dir="$1"
-readonly tmp_errors_dir="$2"
-readonly target_dir="$3"
+readonly target_dir="$2"
 
 . src/shared.sh
 
@@ -32,7 +31,7 @@ is_failing_while_gold_standard_exists() {
     local consensus_dir="${tmp_consensus_dir}/${query}"
 
     {
-        [[ -f "${tmp_errors_dir}/${implementation}___${query}" ]] \
+        [[ -f "${consensus_dir}/errors/${implementation}" ]] \
             || [[ -f "${consensus_dir}/outliers/${implementation}" ]]
     } && [[ $(wc -l < "$consensus_dir"/matching_implementations) -gt 0 ]]
 
@@ -65,14 +64,14 @@ failing_query() {
         echo "Input:"
         ./src/oneliner_json.py < "./queries/${query}/document.json" | code_block
         echo "Expected output:"
-        ./src/oneliner_json.py < "${consensus_dir}/gold_standard.json" | code_block
+        query_result_payload "${consensus_dir}/gold_standard" | ./src/oneliner_json.py | code_block
 
         if [[ -f "${consensus_dir}/outliers/${implementation}" ]]; then
             echo "Actual output:"
-            ./src/oneliner_json.py < "${consensus_dir}/outliers/${implementation}" | code_block
+            query_result_payload "${consensus_dir}/outliers/${implementation}" | ./src/oneliner_json.py | code_block
         else
             echo "Error:"
-            code_block < "${tmp_errors_dir}/${implementation}___${query}"
+            query_result_payload "${consensus_dir}/errors/${implementation}" | code_block
         fi
     } | indent_2
 
