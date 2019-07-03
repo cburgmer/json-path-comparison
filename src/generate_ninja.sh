@@ -33,7 +33,13 @@ EOF
 
         while IFS= read -r query; do
             while IFS= read -r implementation; do
-                echo "build ${results_dir}/${query}/${implementation}: run queries/${query} implementations/${implementation} | src/query_implementation.sh"
+                echo -n "build ${results_dir}/${query}/${implementation}: run queries/${query} implementations/${implementation}"
+                # implicit deps
+                echo -n " | src/query_implementation.sh queries/${query}/selector queries/${query}/document.json"
+                if [[ -f "queries/${query}/SCALAR_RESULT" ]]; then
+                    echo -n " queries/${query}/SCALAR_RESULT"
+                fi
+                echo
             done <<< "$(all_implementations)"
             echo
 
