@@ -27,7 +27,7 @@ rule run
   command = ./src/query_implementation.sh \$in > '\$out'
 
 rule consensus
-  command = ./src/build_consensus.sh '\$in' '\$out'
+  command = mkdir -p \$out && ./src/build_consensus.sh '\$in' > \$out/matching_implementations
 
 EOF
 
