@@ -5,44 +5,34 @@ readonly query_results="$1"
 
 . src/shared.sh
 
-all_implementation_results() {
-    find "${query_results}" -type f -print0 | xargs -0 -n1 basename
-}
-
-implementations_agreeing_to() {
-    local implementation="$1"
-    local other_implementation
-
-    while IFS= read -r other_implementation; do
-        if diff "${query_results}/${implementation}" "${query_results}/${other_implementation}" > /dev/null; then
-            echo "$other_implementation"
+all_ok_implementation_results() {
+    while IFS= read -r result; do
+        if is_query_result_ok "$result"; then
+            echo "$result"
         fi
-    done <<< "$(all_implementation_results | grep -v "^$implementation\$")"
+    done <<< "$(find "${query_results}" -type f)"
 }
 
-check_gold_standard() {
-    local implementation="$1"
-    local min_consensus="$2"
-    local min_no_of_others=$((min_consensus - 1))
+consensus() {
+    local min_consensus="$1"
 
-    if [[ $(implementations_agreeing_to "$implementation" | wc -l) -ge $min_no_of_others ]]; then
-        return 0
-    else
-        return 1
-    fi
-}
+    local tmp_consensus_results="/tmp/build_consensus.$$"
+    # with a canonical representation we can just rely on a simple checksum
+    all_ok_implementation_results | xargs -n1 md5sum > "$tmp_consensus_results"
 
-check_consensus_on_query_result() {
-    local implementation="$1"
-    local min_consensus="$2"
-    local query_result="${query_results}/${implementation}"
-    if ! is_query_result_ok "$query_result"; then
-        return
+    local most_frequent_match
+    most_frequent_match="$(awk '{ print $1 }' < "$tmp_consensus_results" | sort | uniq -c | sort -n | tail -1)"
+
+    local highest_agreement_count
+    local highest_agreement_checksum
+    highest_agreement_count="$(awk '{ print $1 }' <<< "$most_frequent_match")"
+
+    if [[ "$highest_agreement_count" -ge $min_consensus ]]; then
+        highest_agreement_checksum="$(awk '{ print $2 }' <<< "$most_frequent_match")"
+        grep "^${highest_agreement_checksum} " < "$tmp_consensus_results" | awk '{ print $2 }' | xargs -n1 basename
     fi
 
-    if check_gold_standard "$implementation" "$min_consensus"; then
-        echo "$implementation"
-    fi
+    rm "$tmp_consensus_results"
 }
 
 minimal_consensus() {
@@ -57,9 +47,7 @@ main() {
     local min_consensus
     min_consensus=$(minimal_consensus)
 
-    while IFS= read -r implementation; do
-        check_consensus_on_query_result "$implementation" "$min_consensus"
-    done <<< "$(all_implementation_results)"
+    consensus "$min_consensus"
 }
 
 main
