@@ -2,7 +2,7 @@
 set -euo pipefail
 
 readonly results_dir="$1"
-readonly tmp_consensus_dir="$2"
+readonly consensus_dir="$2"
 readonly target_dir="$3"
 
 . src/shared.sh
@@ -12,13 +12,13 @@ all_implementations() {
 }
 
 all_query_results() {
-    find "$tmp_consensus_dir" -type d -depth 1 -print0 | xargs -0 -n1 basename | sort
+    find "$results_dir" -type d -depth 1 -print0 | xargs -0 -n1 basename | sort
 }
 
 give_mark() {
     local query="$1"
     local implementation="$2"
-    local matching_implementations="${tmp_consensus_dir}/${query}/matching_implementations"
+    local matching_implementations="${consensus_dir}/${query}"
 
     # Matching consensus?
     if grep "^${implementation}\$" < "$matching_implementations" > /dev/null; then

@@ -12,7 +12,7 @@ all_implementations() {
 }
 
 all_query_results() {
-    find "$consensus_dir" -type d -depth 1 -print0 | xargs -0 -n1 basename | sort
+    find "$results_dir" -type d -depth 1 -print0 | xargs -0 -n1 basename | sort
 }
 
 indent_2() {
@@ -29,7 +29,7 @@ is_failing_while_gold_standard_exists() {
     local query="$1"
     local implementation="$2"
 
-    local matching_implementations="${consensus_dir}/${query}/matching_implementations"
+    local matching_implementations="${consensus_dir}/${query}"
 
     # matching implementations exist AND ours isn't in it
     [[ -s "$matching_implementations" ]] && ! grep "^${implementation}\$" < "$matching_implementations" > /dev/null
@@ -52,7 +52,7 @@ footer() {
 
 gold_standard() {
     local query="$1"
-    local matching_implementations="${consensus_dir}/${query}/matching_implementations"
+    local matching_implementations="${consensus_dir}/${query}"
     local first_matching_implementation
     first_matching_implementation="$(head -1 < "$matching_implementations")"
 
