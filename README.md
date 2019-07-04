@@ -26,4 +26,6 @@ You can easily add another library/implementation to the comparison. Copy a comp
 Adding more tests should be fairly easy. Add a new directory under [./queries](./queries) and give it a `selector` and `document.json`
 . Scalar queries have a specific handling, compare [./queries/array_index](./queries/array_index).
 
+Run `./go` to build the table.
+
 And last but not least, clarifying any differences and fixing bugs identified in upstream is the main goal of this comparison!
