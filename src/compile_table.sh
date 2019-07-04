@@ -1,8 +1,9 @@
 #!/bin/bash
 set -euo pipefail
 
-readonly tmp_consensus_dir="$1"
-readonly target_dir="$2"
+readonly results_dir="$1"
+readonly tmp_consensus_dir="$2"
+readonly target_dir="$3"
 
 . src/shared.sh
 
@@ -17,22 +18,23 @@ all_query_results() {
 give_mark() {
     local query="$1"
     local implementation="$2"
-    local consensus_dir="${tmp_consensus_dir}/${query}"
+    local matching_implementations="${tmp_consensus_dir}/${query}/matching_implementations"
 
     # Matching consensus?
-    if grep "^${implementation}\$" < "$consensus_dir"/matching_implementations > /dev/null; then
+    if grep "^${implementation}\$" < "$matching_implementations" > /dev/null; then
         echo "✓"
         return
     fi
 
     # Error?
-    if [[ -f "${consensus_dir}/errors/${implementation}" ]]; then
+
+    if ! is_query_result_ok "${results_dir}/${query}/${implementation}"; then
         echo "<a href=\"errors.md#${implementation}___${query}\">e</a>"
         return
     fi
 
     # So we are an outlier, but is there actually any gold standard?
-    if [[ $(wc -l < "$consensus_dir"/matching_implementations) -gt 0 ]]; then
+    if [[ -s "$matching_implementations" ]]; then
         echo "✗"
         return
     fi

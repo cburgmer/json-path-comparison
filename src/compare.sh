@@ -1,8 +1,8 @@
 #!/bin/bash
 set -euo pipefail
 
-readonly tmp_results_dir="./build"
-readonly tmp_consensus_dir="./consensus"
+readonly results_dir="./results"
+readonly consensus_dir="./consensus"
 readonly tmp_markdown_dir="/tmp/compare_jsonpath.markdown.$$"
 readonly docs_dir="./docs"
 readonly bug_reports_dir="./bug_reports"
@@ -15,13 +15,13 @@ main() {
 
     ./src/error_report.sh "$tmp_markdown_dir"
 
-    ./src/compile_table.sh "$tmp_consensus_dir" "$tmp_markdown_dir"
-    ./src/results_report.sh "$tmp_consensus_dir" "$tmp_markdown_dir"
+    ./src/compile_table.sh "$results_dir" "$consensus_dir" "$tmp_markdown_dir"
+    ./src/results_report.sh "$results_dir" "$consensus_dir" "$tmp_markdown_dir"
     ./src/compile_html.sh "$tmp_markdown_dir" "$docs_dir"
 
     rm -rf "$bug_reports_dir"
     mkdir "$bug_reports_dir"
-    ./src/compile_bug_reports.sh "$tmp_consensus_dir" "$bug_reports_dir"
+    ./src/compile_bug_reports.sh "$results_dir" "$consensus_dir" "$bug_reports_dir"
 
     rm -r "$tmp_markdown_dir"
 }

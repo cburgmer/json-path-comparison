@@ -2,19 +2,33 @@
 
 set -euo pipefail
 
-readonly tmp_consensus_dir="$1"
-readonly target_dir="$2"
+readonly results_dir="$1"
+readonly consensus_dir="$2"
+readonly target_dir="$3"
 readonly report_output_dir="${target_dir}/results"
 
 . src/shared.sh
 
 all_query_results() {
-    find "$tmp_consensus_dir" -type d -depth 1 -print0 | xargs -0 -n1 basename | sort
+    find "$consensus_dir" -type d -depth 1 -print0 | xargs -0 -n1 basename | sort
+}
+
+is_outlier() {
+    local query="$1"
+    local implementation="$2"
+    local matching_implementations="${consensus_dir}/${query}/matching_implementations"
+
+    is_query_result_ok "${results_dir}/${query}/${implementation}" && ! grep "^${implementation}\$" < "$matching_implementations" > /dev/null
 }
 
 implementation_outliers() {
     local query="$1"
-    find "${tmp_consensus_dir}/${query}/outliers" -type f -depth 1 -print0 | xargs -0 -n1 basename | sort
+    local implementation
+    while IFS= read -r implementation; do
+        if is_outlier "$query" "$implementation"; then
+            echo "$implementation"
+        fi
+    done <<< "$(find "${results_dir}/${query}" -type f -depth 1 -print0 | xargs -0 -n1 basename | sort)"
 }
 
 output_setup() {
@@ -31,10 +45,18 @@ output_setup() {
     pre_block < "$document"
 }
 
+gold_standard() {
+    local query="$1"
+    local matching_implementations="${consensus_dir}/${query}/matching_implementations"
+    local first_matching_implementation
+    first_matching_implementation="$(head -1 < "$matching_implementations")"
+
+    query_result_payload "${results_dir}/${query}/${first_matching_implementation}"
+}
+
 compile_result_report_for_query() {
     local query="$1"
-    local consensus_dir="${tmp_consensus_dir}/${query}"
-    local gold_standard="${consensus_dir}/gold_standard"
+    local matching_implementations="${consensus_dir}/${query}/matching_implementations"
     local implementation
 
     echo "## $(pretty_query_name "$query")"
@@ -46,10 +68,10 @@ compile_result_report_for_query() {
 
     echo "### Results"
 
-    if [[ -f "$gold_standard" ]]; then
+    if [[ -s "$matching_implementations" ]]; then
         echo "####  Gold Standard (consensus)"
         echo
-        query_result_payload "$gold_standard" | pre_block
+        gold_standard "$query" | pre_block
         echo
     fi
 
@@ -60,7 +82,7 @@ compile_result_report_for_query() {
 
         echo "#### $(pretty_implementation_name "$implementation")"
         echo
-        query_result_payload "${tmp_consensus_dir}/${query}/outliers/${implementation}" | pre_block
+        query_result_payload "${results_dir}/${query}/${implementation}" | pre_block
         echo
     done <<< "$(implementation_outliers "$query")"
 }
