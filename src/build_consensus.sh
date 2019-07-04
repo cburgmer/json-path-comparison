@@ -1,39 +1,32 @@
 #!/bin/bash
 set -euo pipefail
 
-readonly results_dir="$1"
-readonly tmp_consensus_dir="$2"
+readonly query_results="$1"
+readonly query_consensus="$2"
 
 . src/shared.sh
 
-all_query_results() {
-    find "$results_dir" -type d -depth 1 -print0 | xargs -0 -n1 basename
-}
-
 all_implementation_results() {
-    local query="$1"
-    find "${results_dir}/${query}" -type f -print0 | xargs -0 -n1 basename
+    find "${query_results}" -type f -print0 | xargs -0 -n1 basename
 }
 
 implementations_agreeing_to() {
-    local query="$1"
-    local implementation="$2"
+    local implementation="$1"
     local other_implementation
 
     while IFS= read -r other_implementation; do
-        if diff "${results_dir}/${query}/${implementation}" "${results_dir}/${query}/${other_implementation}" > /dev/null; then
+        if diff "${query_results}/${implementation}" "${query_results}/${other_implementation}" > /dev/null; then
             echo "$other_implementation"
         fi
-    done <<< "$(all_implementation_results "$query" | grep -v "^$implementation\$")"
+    done <<< "$(all_implementation_results | grep -v "^$implementation\$")"
 }
 
 check_gold_standard() {
-    local query="$1"
-    local implementation="$2"
-    local min_consensus="$3"
+    local implementation="$1"
+    local min_consensus="$2"
     local min_no_of_others=$((min_consensus - 1))
 
-    if [[ $(implementations_agreeing_to "$query" "$implementation" | wc -l) -ge $min_no_of_others ]]; then
+    if [[ $(implementations_agreeing_to "$implementation" | wc -l) -ge $min_no_of_others ]]; then
         return 0
     else
         return 1
@@ -41,36 +34,32 @@ check_gold_standard() {
 }
 
 check_consensus_on_query_result() {
-    local query="$1"
-    local implementation="$2"
-    local min_consensus="$3"
-    local query_consensus_result_dir="$4"
-    local query_result="${results_dir}/${query}/${implementation}"
+    local implementation="$1"
+    local min_consensus="$2"
+    local query_result="${query_results}/${implementation}"
     if is_query_result_ok "$query_result"; then
-        if check_gold_standard "$query" "$implementation" "$min_consensus"; then
-            cat "$query_result" > "$query_consensus_result_dir"/gold_standard
-            echo "$implementation" >> "$query_consensus_result_dir"/matching_implementations
+        if check_gold_standard "$implementation" "$min_consensus"; then
+            cat "$query_result" > "$query_consensus"/gold_standard
+            echo "$implementation" >> "$query_consensus"/matching_implementations
         else
-            cp "$query_result" "$query_consensus_result_dir"/outliers
+            cp "$query_result" "$query_consensus"/outliers
         fi
     else
-        cp "$query_result" "$query_consensus_result_dir"/errors
+        cp "$query_result" "$query_consensus"/errors
     fi
 }
 
 consensus_on_query() {
-    local query="$1"
-    local min_consensus="$2"
-    local query_consensus_result_dir="${tmp_consensus_dir}/${query}"
+    local min_consensus="$1"
 
-    mkdir -p "$query_consensus_result_dir"
-    mkdir -p "$query_consensus_result_dir"/outliers
-    mkdir -p "$query_consensus_result_dir"/errors
-    touch "$query_consensus_result_dir"/matching_implementations
+    mkdir -p "$query_consensus"
+    mkdir -p "$query_consensus"/outliers
+    mkdir -p "$query_consensus"/errors
+    touch "$query_consensus"/matching_implementations
 
     while IFS= read -r implementation; do
-        check_consensus_on_query_result "$query" "$implementation" "$min_consensus" "$query_consensus_result_dir"
-    done <<< "$(all_implementation_results "$query")"
+        check_consensus_on_query_result "$implementation" "$min_consensus"
+    done <<< "$(all_implementation_results)"
 }
 
 minimal_consensus() {
@@ -82,23 +71,16 @@ minimal_consensus() {
 }
 
 clean_previous_results() {
-    local query="$1"
-    rm -rf "${tmp_consensus_dir:?}/${query}"
-}
-
-build_consensus() {
-    local query
-    local min_consensus
-    min_consensus=$(minimal_consensus)
-
-    while IFS= read -r query; do
-        clean_previous_results "$query"
-        consensus_on_query "$query" "$min_consensus"
-    done <<< "$(all_query_results)"
+    rm -rf "${query_consensus:?}"
 }
 
 main() {
-    build_consensus
+    local min_consensus
+
+    min_consensus=$(minimal_consensus)
+
+    clean_previous_results
+    consensus_on_query "$min_consensus"
 }
 
 main

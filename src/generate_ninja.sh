@@ -49,18 +49,9 @@ EOF
                 echo -n " ${results_dir}/${query}/${implementation}"
             done <<< "$(all_implementations)"
             echo
-        done <<< "$(all_queries)"
-        echo
 
-        # aggregate build
-        echo
-        echo -n "build ${results_dir}: phony"
-        while IFS= read -r query; do
-            echo -n " ${results_dir}/${query}"
+            echo "build ${consensus_dir}/${query}: consensus ${results_dir}/${query} | src/build_consensus.sh"
         done <<< "$(all_queries)"
-        echo
-
-        echo "build ${consensus_dir}: consensus ${results_dir} | src/build_consensus.sh"
     } > "./build.ninja"
 }
 
