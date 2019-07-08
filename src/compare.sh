@@ -19,10 +19,6 @@ main() {
     ./src/results_report.sh "$results_dir" "$consensus_dir" "$tmp_markdown_dir"
     ./src/compile_html.sh "$tmp_markdown_dir" "$docs_dir"
 
-    rm -rf "$bug_reports_dir"
-    mkdir "$bug_reports_dir"
-    ./src/compile_bug_reports.sh "$results_dir" "$consensus_dir" "$bug_reports_dir"
-
     rm -r "$tmp_markdown_dir"
 }
 

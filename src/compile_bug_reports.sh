@@ -3,13 +3,9 @@ set -euo pipefail
 
 readonly results_dir="$1"
 readonly consensus_dir="$2"
-readonly target_dir="$3"
+readonly implementation_dir="$3"
 
 . src/shared.sh
-
-all_implementations() {
-    find ./implementations -type d -depth 1 -print0 | xargs -0 -n1 basename | sort
-}
 
 all_query_results() {
     find "$results_dir" -type d -depth 1 -print0 | xargs -0 -n1 basename | sort
@@ -100,11 +96,7 @@ process_implementation() {
 }
 
 main() {
-    local implementation
-
-    while IFS= read -r implementation; do
-        process_implementation "$implementation" > "${target_dir}/report_for_${implementation}.md"
-    done <<< "$(all_implementations)"
+    process_implementation "$(basename "$implementation_dir")"
 }
 
 main

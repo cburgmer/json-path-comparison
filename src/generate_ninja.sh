@@ -3,6 +3,7 @@ set -euo pipefail
 
 readonly results_dir="results"
 readonly consensus_dir="consensus"
+readonly bug_reports_dir="bug_reports"
 
 all_implementations() {
     find ./implementations -type d -depth 1 -print0 | xargs -0 -n1 basename | sort
@@ -29,6 +30,9 @@ rule run
 rule consensus
   command = ./src/build_consensus.sh '\$in' > \$out
 
+rule compile_bug_reports
+  command = ./src/compile_bug_reports.sh \$in > \$out
+
 EOF
 
         while IFS= read -r query; do
@@ -52,6 +56,19 @@ EOF
 
             echo "build ${consensus_dir}/${query}: consensus ${results_dir}/${query} | src/build_consensus.sh"
         done <<< "$(all_queries)"
+
+
+        # aggregate consensus build
+        echo -n "build ${consensus_dir}: phony"
+        while IFS= read -r query; do
+            echo -n " ${consensus_dir}/${query}"
+        done <<< "$(all_queries)"
+        echo
+
+        echo
+        while IFS= read -r implementation; do
+            echo "build ${bug_reports_dir}/${implementation}.md: compile_bug_reports ${results_dir} ${consensus_dir} implementations/${implementation} | src/compile_bug_reports.sh"
+        done <<< "$(all_implementations)"
     } > "./build.ninja"
 }
 
