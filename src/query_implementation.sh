@@ -23,12 +23,6 @@ run_query() {
     "$implementation"/run.sh "$selector" < "$document" | wrap_scalar_if_needed "$implementation" "$query"
 }
 
-canonical_json() {
-    local filepath="$1"
-    ./src/canonical_json.py < "$filepath" > "${filepath}.json"
-    mv "${filepath}.json" "$filepath"
-}
-
 main() {
     local query="$1"
     local implementation="$2"
@@ -38,8 +32,7 @@ main() {
     if run_query "$query" "$implementation" > "$tmp_stdout" 2> "$tmp_stderr"; then
         echo "OK"
 
-        canonical_json "$tmp_stdout"
-        cat "$tmp_stdout"
+        ./src/canonical_json.py < "$tmp_stdout"
     else
         echo "ERROR"
 
