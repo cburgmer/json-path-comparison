@@ -8,6 +8,7 @@
 set -euo pipefail
 
 readonly script_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+readonly docs_dir="./docs"
 
 for dep in ninja java cargo node python markdown gem cpan perl php composer; do
     if ! which "$dep" > /dev/null; then
@@ -17,7 +18,9 @@ for dep in ninja java cargo node python markdown gem cpan perl php composer; do
 done
 
 cd "$script_dir"
-./src/generate_ninja.sh
-ninja
-./src/compare.sh
+
+./src/generate_ninja.sh && ninja
+
+rm -rf "$docs_dir" && mkdir "$docs_dir" && ./src/compile_html.sh "./markdown" "$docs_dir"
+
 echo "Run \`open docs/index.html\`"
