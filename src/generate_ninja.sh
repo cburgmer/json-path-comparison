@@ -1,10 +1,10 @@
 #!/bin/bash
 set -euo pipefail
 
-readonly results_dir="results"
-readonly consensus_dir="consensus"
+readonly results_dir="build/results"
+readonly consensus_dir="build/consensus"
+readonly markdown_dir="build/markdown"
 readonly bug_reports_dir="bug_reports"
-readonly markdown_dir="markdown"
 readonly docs_dir="docs"
 
 all_implementations() {
