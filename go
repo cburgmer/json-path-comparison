@@ -21,6 +21,4 @@ cd "$script_dir"
 
 ./src/generate_ninja.sh && ninja
 
-rm -rf "$docs_dir" && mkdir "$docs_dir" && ./src/compile_html.sh "./markdown" "$docs_dir"
-
 echo "Run \`open docs/index.html\`"

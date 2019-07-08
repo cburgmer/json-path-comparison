@@ -5,6 +5,7 @@ readonly results_dir="results"
 readonly consensus_dir="consensus"
 readonly bug_reports_dir="bug_reports"
 readonly markdown_dir="markdown"
+readonly docs_dir="docs"
 
 all_implementations() {
     find ./implementations -type d -depth 1 -print0 | xargs -0 -n1 basename | sort
@@ -43,6 +44,9 @@ rule compile_table
 rule results_report
   command = ./src/results_report.sh \$in > \$out
 
+rule compile_html
+  command = ./src/compile_html.sh \$in > \$out
+
 EOF
 
         # Query results
@@ -66,6 +70,13 @@ EOF
             echo
             echo
         done <<< "$(all_queries)"
+        # all aggregate build
+        echo -n "build ${results_dir}: phony"
+        while IFS= read -r query; do
+            echo -n " ${results_dir}/${query}"
+        done <<< "$(all_queries)"
+        echo
+        echo
 
         ## Consensus
         echo
@@ -103,7 +114,14 @@ EOF
         while IFS= read -r query; do
             echo "build ${markdown_dir}/results/${query}.md: results_report ${results_dir} ${consensus_dir} queries/${query} | src/results_report.sh"
         done <<< "$(all_queries)"
+        echo
 
+        ## HTML
+        echo "build ${docs_dir}/errors.html: compile_html ${markdown_dir}/errors.md | src/compile_html.sh"
+        echo "build ${docs_dir}/index.html: compile_html ${markdown_dir}/index.md | src/compile_html.sh"
+        while IFS= read -r query; do
+            echo "build ${docs_dir}/results/${query}.html: compile_html ${markdown_dir}/results/${query}.md | src/compile_html.sh"
+        done <<< "$(all_queries)"
     } > "./build.ninja"
 }
 
