@@ -102,6 +102,20 @@ The following queries provide results that do not match those of other implement
   ["first", "second", "third"]
   ```
 
+- [ ] `$[0:4:2]`
+  Input:
+  ```
+  ["first", "second", "third", "forth", "fifth"]
+  ```
+  Expected output:
+  ```
+  ["first", "third"]
+  ```
+  Actual output:
+  ```
+  ["first", "second", "third", "forth"]
+  ```
+
 - [ ] `$['key','another']`
   Input:
   ```

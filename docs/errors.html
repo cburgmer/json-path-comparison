@@ -685,6 +685,238 @@ Python (jsonpath-rw), Array index slice start end step
 Exception: Parse error at 1:5 near token : (:)
 </code></pre>
 
+<h3 id="Java_com.github.jsurfer___array_index_slice_start_end_step_1">
+Java (com.github.jsurfer), Array index slice start end step 1
+</h3>
+
+<pre><code>[ERROR] Failed to execute goal org.codehaus.mojo:exec-maven-plugin:1.6.0:java (default-cli) on project query: An exception occured while executing the Java class. null: ParseCancellationException: InputMismatchException -&gt; [Help 1]
+org.apache.maven.lifecycle.LifecycleExecutionException: Failed to execute goal org.codehaus.mojo:exec-maven-plugin:1.6.0:java (default-cli) on project query: An exception occured while executing the Java class. null
+    at org.apache.maven.lifecycle.internal.MojoExecutor.execute (MojoExecutor.java:215)
+    at org.apache.maven.lifecycle.internal.MojoExecutor.execute (MojoExecutor.java:156)
+    at org.apache.maven.lifecycle.internal.MojoExecutor.execute (MojoExecutor.java:148)
+    at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject (LifecycleModuleBuilder.java:117)
+    at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject (LifecycleModuleBuilder.java:81)
+    at org.apache.maven.lifecycle.internal.builder.singlethreaded.SingleThreadedBuilder.build (SingleThreadedBuilder.java:56)
+    at org.apache.maven.lifecycle.internal.LifecycleStarter.execute (LifecycleStarter.java:128)
+    at org.apache.maven.DefaultMaven.doExecute (DefaultMaven.java:305)
+    at org.apache.maven.DefaultMaven.doExecute (DefaultMaven.java:192)
+    at org.apache.maven.DefaultMaven.execute (DefaultMaven.java:105)
+    at org.apache.maven.cli.MavenCli.execute (MavenCli.java:956)
+    at org.apache.maven.cli.MavenCli.doMain (MavenCli.java:288)
+    at org.apache.maven.cli.MavenCli.main (MavenCli.java:192)
+    at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0 (Native Method)
+    at jdk.internal.reflect.NativeMethodAccessorImpl.invoke (NativeMethodAccessorImpl.java:62)
+    at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke (DelegatingMethodAccessorImpl.java:43)
+    at java.lang.reflect.Method.invoke (Method.java:566)
+    at org.codehaus.plexus.classworlds.launcher.Launcher.launchEnhanced (Launcher.java:282)
+    at org.codehaus.plexus.classworlds.launcher.Launcher.launch (Launcher.java:225)
+    at org.codehaus.plexus.classworlds.launcher.Launcher.mainWithExitCode (Launcher.java:406)
+    at org.codehaus.plexus.classworlds.launcher.Launcher.main (Launcher.java:347)
+Caused by: org.apache.maven.plugin.MojoExecutionException: An exception occured while executing the Java class. null
+    at org.codehaus.mojo.exec.ExecJavaMojo.execute (ExecJavaMojo.java:339)
+    at org.apache.maven.plugin.DefaultBuildPluginManager.executeMojo (DefaultBuildPluginManager.java:137)
+    at org.apache.maven.lifecycle.internal.MojoExecutor.execute (MojoExecutor.java:210)
+    at org.apache.maven.lifecycle.internal.MojoExecutor.execute (MojoExecutor.java:156)
+    at org.apache.maven.lifecycle.internal.MojoExecutor.execute (MojoExecutor.java:148)
+    at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject (LifecycleModuleBuilder.java:117)
+    at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject (LifecycleModuleBuilder.java:81)
+    at org.apache.maven.lifecycle.internal.builder.singlethreaded.SingleThreadedBuilder.build (SingleThreadedBuilder.java:56)
+    at org.apache.maven.lifecycle.internal.LifecycleStarter.execute (LifecycleStarter.java:128)
+    at org.apache.maven.DefaultMaven.doExecute (DefaultMaven.java:305)
+    at org.apache.maven.DefaultMaven.doExecute (DefaultMaven.java:192)
+    at org.apache.maven.DefaultMaven.execute (DefaultMaven.java:105)
+    at org.apache.maven.cli.MavenCli.execute (MavenCli.java:956)
+    at org.apache.maven.cli.MavenCli.doMain (MavenCli.java:288)
+    at org.apache.maven.cli.MavenCli.main (MavenCli.java:192)
+    at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0 (Native Method)
+    at jdk.internal.reflect.NativeMethodAccessorImpl.invoke (NativeMethodAccessorImpl.java:62)
+    at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke (DelegatingMethodAccessorImpl.java:43)
+    at java.lang.reflect.Method.invoke (Method.java:566)
+    at org.codehaus.plexus.classworlds.launcher.Launcher.launchEnhanced (Launcher.java:282)
+    at org.codehaus.plexus.classworlds.launcher.Launcher.launch (Launcher.java:225)
+    at org.codehaus.plexus.classworlds.launcher.Launcher.mainWithExitCode (Launcher.java:406)
+    at org.codehaus.plexus.classworlds.launcher.Launcher.main (Launcher.java:347)
+Caused by: org.antlr.v4.runtime.misc.ParseCancellationException
+    at org.antlr.v4.runtime.BailErrorStrategy.recoverInline (BailErrorStrategy.java:66)
+    at org.antlr.v4.runtime.Parser.match (Parser.java:206)
+    at org.jsfr.json.compiler.JsonPathParser.slicing (JsonPathParser.java:636)
+    at org.jsfr.json.compiler.JsonPathParser.relativePath (JsonPathParser.java:265)
+    at org.jsfr.json.compiler.JsonPathParser.path (JsonPathParser.java:159)
+    at org.jsfr.json.compiler.JsonPathCompiler.compile (JsonPathCompiler.java:283)
+    at org.jsfr.json.compiler.JsonPathCompiler.compile (JsonPathCompiler.java:273)
+    at org.jsfr.json.JsonSurfer.collectAll (JsonSurfer.java:262)
+    at query.App.main (App.java:27)
+    at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0 (Native Method)
+    at jdk.internal.reflect.NativeMethodAccessorImpl.invoke (NativeMethodAccessorImpl.java:62)
+    at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke (DelegatingMethodAccessorImpl.java:43)
+    at java.lang.reflect.Method.invoke (Method.java:566)
+    at org.codehaus.mojo.exec.ExecJavaMojo$1.run (ExecJavaMojo.java:282)
+    at java.lang.Thread.run (Thread.java:834)
+Caused by: org.antlr.v4.runtime.InputMismatchException
+    at org.antlr.v4.runtime.BailErrorStrategy.recoverInline (BailErrorStrategy.java:61)
+    at org.antlr.v4.runtime.Parser.match (Parser.java:206)
+    at org.jsfr.json.compiler.JsonPathParser.slicing (JsonPathParser.java:636)
+    at org.jsfr.json.compiler.JsonPathParser.relativePath (JsonPathParser.java:265)
+    at org.jsfr.json.compiler.JsonPathParser.path (JsonPathParser.java:159)
+    at org.jsfr.json.compiler.JsonPathCompiler.compile (JsonPathCompiler.java:283)
+    at org.jsfr.json.compiler.JsonPathCompiler.compile (JsonPathCompiler.java:273)
+    at org.jsfr.json.JsonSurfer.collectAll (JsonSurfer.java:262)
+    at query.App.main (App.java:27)
+    at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0 (Native Method)
+    at jdk.internal.reflect.NativeMethodAccessorImpl.invoke (NativeMethodAccessorImpl.java:62)
+    at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke (DelegatingMethodAccessorImpl.java:43)
+    at java.lang.reflect.Method.invoke (Method.java:566)
+    at org.codehaus.mojo.exec.ExecJavaMojo$1.run (ExecJavaMojo.java:282)
+    at java.lang.Thread.run (Thread.java:834)
+[ERROR] 
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoExecutionException
+</code></pre>
+
+<h3 id="Python_jsonpath-rw___array_index_slice_start_end_step_1">
+Python (jsonpath-rw), Array index slice start end step 1
+</h3>
+
+<pre><code>Traceback (most recent call last):
+  File "main.py", line 16, in &lt;module&gt;
+    sys.exit(main())
+  File "main.py", line 8, in main
+    query = parse(selector)
+  File "/usr/local/lib/python2.7/site-packages/jsonpath_rw/parser.py", line 14, in parse
+    return JsonPathParser().parse(string)
+  File "/usr/local/lib/python2.7/site-packages/jsonpath_rw/parser.py", line 32, in parse
+    return self.parse_token_stream(lexer.tokenize(string))
+  File "/usr/local/lib/python2.7/site-packages/jsonpath_rw/parser.py", line 55, in parse_token_stream
+    return new_parser.parse(lexer = IteratorToTokenStream(token_iterator))
+  File "/usr/local/lib/python2.7/site-packages/ply/yacc.py", line 333, in parse
+    return self.parseopt_notrack(input, lexer, debug, tracking, tokenfunc)
+  File "/usr/local/lib/python2.7/site-packages/ply/yacc.py", line 1201, in parseopt_notrack
+    tok = call_errorfunc(self.errorfunc, errtoken, self)
+  File "/usr/local/lib/python2.7/site-packages/ply/yacc.py", line 192, in call_errorfunc
+    r = errorfunc(token)
+  File "/usr/local/lib/python2.7/site-packages/jsonpath_rw/parser.py", line 69, in p_error
+    raise Exception('Parse error at %s:%s near token %s (%s)' % (t.lineno, t.col, t.value, t.type)) 
+Exception: Parse error at 1:5 near token : (:)
+</code></pre>
+
+<h3 id="Java_com.github.jsurfer___array_index_slice_start_end_step_non_aligned">
+Java (com.github.jsurfer), Array index slice start end step non aligned
+</h3>
+
+<pre><code>[ERROR] Failed to execute goal org.codehaus.mojo:exec-maven-plugin:1.6.0:java (default-cli) on project query: An exception occured while executing the Java class. null: ParseCancellationException: InputMismatchException -&gt; [Help 1]
+org.apache.maven.lifecycle.LifecycleExecutionException: Failed to execute goal org.codehaus.mojo:exec-maven-plugin:1.6.0:java (default-cli) on project query: An exception occured while executing the Java class. null
+    at org.apache.maven.lifecycle.internal.MojoExecutor.execute (MojoExecutor.java:215)
+    at org.apache.maven.lifecycle.internal.MojoExecutor.execute (MojoExecutor.java:156)
+    at org.apache.maven.lifecycle.internal.MojoExecutor.execute (MojoExecutor.java:148)
+    at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject (LifecycleModuleBuilder.java:117)
+    at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject (LifecycleModuleBuilder.java:81)
+    at org.apache.maven.lifecycle.internal.builder.singlethreaded.SingleThreadedBuilder.build (SingleThreadedBuilder.java:56)
+    at org.apache.maven.lifecycle.internal.LifecycleStarter.execute (LifecycleStarter.java:128)
+    at org.apache.maven.DefaultMaven.doExecute (DefaultMaven.java:305)
+    at org.apache.maven.DefaultMaven.doExecute (DefaultMaven.java:192)
+    at org.apache.maven.DefaultMaven.execute (DefaultMaven.java:105)
+    at org.apache.maven.cli.MavenCli.execute (MavenCli.java:956)
+    at org.apache.maven.cli.MavenCli.doMain (MavenCli.java:288)
+    at org.apache.maven.cli.MavenCli.main (MavenCli.java:192)
+    at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0 (Native Method)
+    at jdk.internal.reflect.NativeMethodAccessorImpl.invoke (NativeMethodAccessorImpl.java:62)
+    at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke (DelegatingMethodAccessorImpl.java:43)
+    at java.lang.reflect.Method.invoke (Method.java:566)
+    at org.codehaus.plexus.classworlds.launcher.Launcher.launchEnhanced (Launcher.java:282)
+    at org.codehaus.plexus.classworlds.launcher.Launcher.launch (Launcher.java:225)
+    at org.codehaus.plexus.classworlds.launcher.Launcher.mainWithExitCode (Launcher.java:406)
+    at org.codehaus.plexus.classworlds.launcher.Launcher.main (Launcher.java:347)
+Caused by: org.apache.maven.plugin.MojoExecutionException: An exception occured while executing the Java class. null
+    at org.codehaus.mojo.exec.ExecJavaMojo.execute (ExecJavaMojo.java:339)
+    at org.apache.maven.plugin.DefaultBuildPluginManager.executeMojo (DefaultBuildPluginManager.java:137)
+    at org.apache.maven.lifecycle.internal.MojoExecutor.execute (MojoExecutor.java:210)
+    at org.apache.maven.lifecycle.internal.MojoExecutor.execute (MojoExecutor.java:156)
+    at org.apache.maven.lifecycle.internal.MojoExecutor.execute (MojoExecutor.java:148)
+    at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject (LifecycleModuleBuilder.java:117)
+    at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject (LifecycleModuleBuilder.java:81)
+    at org.apache.maven.lifecycle.internal.builder.singlethreaded.SingleThreadedBuilder.build (SingleThreadedBuilder.java:56)
+    at org.apache.maven.lifecycle.internal.LifecycleStarter.execute (LifecycleStarter.java:128)
+    at org.apache.maven.DefaultMaven.doExecute (DefaultMaven.java:305)
+    at org.apache.maven.DefaultMaven.doExecute (DefaultMaven.java:192)
+    at org.apache.maven.DefaultMaven.execute (DefaultMaven.java:105)
+    at org.apache.maven.cli.MavenCli.execute (MavenCli.java:956)
+    at org.apache.maven.cli.MavenCli.doMain (MavenCli.java:288)
+    at org.apache.maven.cli.MavenCli.main (MavenCli.java:192)
+    at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0 (Native Method)
+    at jdk.internal.reflect.NativeMethodAccessorImpl.invoke (NativeMethodAccessorImpl.java:62)
+    at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke (DelegatingMethodAccessorImpl.java:43)
+    at java.lang.reflect.Method.invoke (Method.java:566)
+    at org.codehaus.plexus.classworlds.launcher.Launcher.launchEnhanced (Launcher.java:282)
+    at org.codehaus.plexus.classworlds.launcher.Launcher.launch (Launcher.java:225)
+    at org.codehaus.plexus.classworlds.launcher.Launcher.mainWithExitCode (Launcher.java:406)
+    at org.codehaus.plexus.classworlds.launcher.Launcher.main (Launcher.java:347)
+Caused by: org.antlr.v4.runtime.misc.ParseCancellationException
+    at org.antlr.v4.runtime.BailErrorStrategy.recoverInline (BailErrorStrategy.java:66)
+    at org.antlr.v4.runtime.Parser.match (Parser.java:206)
+    at org.jsfr.json.compiler.JsonPathParser.slicing (JsonPathParser.java:636)
+    at org.jsfr.json.compiler.JsonPathParser.relativePath (JsonPathParser.java:265)
+    at org.jsfr.json.compiler.JsonPathParser.path (JsonPathParser.java:159)
+    at org.jsfr.json.compiler.JsonPathCompiler.compile (JsonPathCompiler.java:283)
+    at org.jsfr.json.compiler.JsonPathCompiler.compile (JsonPathCompiler.java:273)
+    at org.jsfr.json.JsonSurfer.collectAll (JsonSurfer.java:262)
+    at query.App.main (App.java:27)
+    at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0 (Native Method)
+    at jdk.internal.reflect.NativeMethodAccessorImpl.invoke (NativeMethodAccessorImpl.java:62)
+    at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke (DelegatingMethodAccessorImpl.java:43)
+    at java.lang.reflect.Method.invoke (Method.java:566)
+    at org.codehaus.mojo.exec.ExecJavaMojo$1.run (ExecJavaMojo.java:282)
+    at java.lang.Thread.run (Thread.java:834)
+Caused by: org.antlr.v4.runtime.InputMismatchException
+    at org.antlr.v4.runtime.BailErrorStrategy.recoverInline (BailErrorStrategy.java:61)
+    at org.antlr.v4.runtime.Parser.match (Parser.java:206)
+    at org.jsfr.json.compiler.JsonPathParser.slicing (JsonPathParser.java:636)
+    at org.jsfr.json.compiler.JsonPathParser.relativePath (JsonPathParser.java:265)
+    at org.jsfr.json.compiler.JsonPathParser.path (JsonPathParser.java:159)
+    at org.jsfr.json.compiler.JsonPathCompiler.compile (JsonPathCompiler.java:283)
+    at org.jsfr.json.compiler.JsonPathCompiler.compile (JsonPathCompiler.java:273)
+    at org.jsfr.json.JsonSurfer.collectAll (JsonSurfer.java:262)
+    at query.App.main (App.java:27)
+    at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0 (Native Method)
+    at jdk.internal.reflect.NativeMethodAccessorImpl.invoke (NativeMethodAccessorImpl.java:62)
+    at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke (DelegatingMethodAccessorImpl.java:43)
+    at java.lang.reflect.Method.invoke (Method.java:566)
+    at org.codehaus.mojo.exec.ExecJavaMojo$1.run (ExecJavaMojo.java:282)
+    at java.lang.Thread.run (Thread.java:834)
+[ERROR] 
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoExecutionException
+</code></pre>
+
+<h3 id="Python_jsonpath-rw___array_index_slice_start_end_step_non_aligned">
+Python (jsonpath-rw), Array index slice start end step non aligned
+</h3>
+
+<pre><code>Traceback (most recent call last):
+  File "main.py", line 16, in &lt;module&gt;
+    sys.exit(main())
+  File "main.py", line 8, in main
+    query = parse(selector)
+  File "/usr/local/lib/python2.7/site-packages/jsonpath_rw/parser.py", line 14, in parse
+    return JsonPathParser().parse(string)
+  File "/usr/local/lib/python2.7/site-packages/jsonpath_rw/parser.py", line 32, in parse
+    return self.parse_token_stream(lexer.tokenize(string))
+  File "/usr/local/lib/python2.7/site-packages/jsonpath_rw/parser.py", line 55, in parse_token_stream
+    return new_parser.parse(lexer = IteratorToTokenStream(token_iterator))
+  File "/usr/local/lib/python2.7/site-packages/ply/yacc.py", line 333, in parse
+    return self.parseopt_notrack(input, lexer, debug, tracking, tokenfunc)
+  File "/usr/local/lib/python2.7/site-packages/ply/yacc.py", line 1201, in parseopt_notrack
+    tok = call_errorfunc(self.errorfunc, errtoken, self)
+  File "/usr/local/lib/python2.7/site-packages/ply/yacc.py", line 192, in call_errorfunc
+    r = errorfunc(token)
+  File "/usr/local/lib/python2.7/site-packages/jsonpath_rw/parser.py", line 69, in p_error
+    raise Exception('Parse error at %s:%s near token %s (%s)' % (t.lineno, t.col, t.value, t.type)) 
+Exception: Parse error at 1:5 near token : (:)
+</code></pre>
+
 <h3 id="JavaScript_Goessner___array_index_slice_start_equals_end">
 JavaScript (Goessner), Array index slice start equals end
 </h3>
@@ -4003,6 +4235,103 @@ PHP (galbar-jsonpath), Key dot notation on array
 
 <h3 id="Python_jsonpath___key_dot_notation_on_array">
 Python (jsonpath), Key dot notation on array
+</h3>
+
+<pre><code>jsonpath returned false, this might indicate an error
+</code></pre>
+
+<h3 id="JavaScript_Goessner___key_dot_notation_on_array_of_matching_object">
+JavaScript (Goessner), Key dot notation on array of matching object
+</h3>
+
+<pre><code>jsonpath returned false, this might indicate an error
+</code></pre>
+
+<h3 id="Java_com.jayway.jsonpath___key_dot_notation_on_array_of_matching_object">
+Java (com.jayway.jsonpath), Key dot notation on array of matching object
+</h3>
+
+<pre><code>SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+[ERROR] Failed to execute goal org.codehaus.mojo:exec-maven-plugin:1.6.0:java (default-cli) on project query: An exception occured while executing the Java class. Expected to find an object with property ['key'] in path $ but found 'net.minidev.json.JSONArray'. This is not a json object according to the JsonProvider: 'com.jayway.jsonpath.spi.json.JsonSmartJsonProvider'. -&gt; [Help 1]
+org.apache.maven.lifecycle.LifecycleExecutionException: Failed to execute goal org.codehaus.mojo:exec-maven-plugin:1.6.0:java (default-cli) on project query: An exception occured while executing the Java class. Expected to find an object with property ['key'] in path $ but found 'net.minidev.json.JSONArray'. This is not a json object according to the JsonProvider: 'com.jayway.jsonpath.spi.json.JsonSmartJsonProvider'.
+    at org.apache.maven.lifecycle.internal.MojoExecutor.execute (MojoExecutor.java:215)
+    at org.apache.maven.lifecycle.internal.MojoExecutor.execute (MojoExecutor.java:156)
+    at org.apache.maven.lifecycle.internal.MojoExecutor.execute (MojoExecutor.java:148)
+    at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject (LifecycleModuleBuilder.java:117)
+    at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject (LifecycleModuleBuilder.java:81)
+    at org.apache.maven.lifecycle.internal.builder.singlethreaded.SingleThreadedBuilder.build (SingleThreadedBuilder.java:56)
+    at org.apache.maven.lifecycle.internal.LifecycleStarter.execute (LifecycleStarter.java:128)
+    at org.apache.maven.DefaultMaven.doExecute (DefaultMaven.java:305)
+    at org.apache.maven.DefaultMaven.doExecute (DefaultMaven.java:192)
+    at org.apache.maven.DefaultMaven.execute (DefaultMaven.java:105)
+    at org.apache.maven.cli.MavenCli.execute (MavenCli.java:956)
+    at org.apache.maven.cli.MavenCli.doMain (MavenCli.java:288)
+    at org.apache.maven.cli.MavenCli.main (MavenCli.java:192)
+    at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0 (Native Method)
+    at jdk.internal.reflect.NativeMethodAccessorImpl.invoke (NativeMethodAccessorImpl.java:62)
+    at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke (DelegatingMethodAccessorImpl.java:43)
+    at java.lang.reflect.Method.invoke (Method.java:566)
+    at org.codehaus.plexus.classworlds.launcher.Launcher.launchEnhanced (Launcher.java:282)
+    at org.codehaus.plexus.classworlds.launcher.Launcher.launch (Launcher.java:225)
+    at org.codehaus.plexus.classworlds.launcher.Launcher.mainWithExitCode (Launcher.java:406)
+    at org.codehaus.plexus.classworlds.launcher.Launcher.main (Launcher.java:347)
+Caused by: org.apache.maven.plugin.MojoExecutionException: An exception occured while executing the Java class. Expected to find an object with property ['key'] in path $ but found 'net.minidev.json.JSONArray'. This is not a json object according to the JsonProvider: 'com.jayway.jsonpath.spi.json.JsonSmartJsonProvider'.
+    at org.codehaus.mojo.exec.ExecJavaMojo.execute (ExecJavaMojo.java:339)
+    at org.apache.maven.plugin.DefaultBuildPluginManager.executeMojo (DefaultBuildPluginManager.java:137)
+    at org.apache.maven.lifecycle.internal.MojoExecutor.execute (MojoExecutor.java:210)
+    at org.apache.maven.lifecycle.internal.MojoExecutor.execute (MojoExecutor.java:156)
+    at org.apache.maven.lifecycle.internal.MojoExecutor.execute (MojoExecutor.java:148)
+    at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject (LifecycleModuleBuilder.java:117)
+    at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject (LifecycleModuleBuilder.java:81)
+    at org.apache.maven.lifecycle.internal.builder.singlethreaded.SingleThreadedBuilder.build (SingleThreadedBuilder.java:56)
+    at org.apache.maven.lifecycle.internal.LifecycleStarter.execute (LifecycleStarter.java:128)
+    at org.apache.maven.DefaultMaven.doExecute (DefaultMaven.java:305)
+    at org.apache.maven.DefaultMaven.doExecute (DefaultMaven.java:192)
+    at org.apache.maven.DefaultMaven.execute (DefaultMaven.java:105)
+    at org.apache.maven.cli.MavenCli.execute (MavenCli.java:956)
+    at org.apache.maven.cli.MavenCli.doMain (MavenCli.java:288)
+    at org.apache.maven.cli.MavenCli.main (MavenCli.java:192)
+    at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0 (Native Method)
+    at jdk.internal.reflect.NativeMethodAccessorImpl.invoke (NativeMethodAccessorImpl.java:62)
+    at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke (DelegatingMethodAccessorImpl.java:43)
+    at java.lang.reflect.Method.invoke (Method.java:566)
+    at org.codehaus.plexus.classworlds.launcher.Launcher.launchEnhanced (Launcher.java:282)
+    at org.codehaus.plexus.classworlds.launcher.Launcher.launch (Launcher.java:225)
+    at org.codehaus.plexus.classworlds.launcher.Launcher.mainWithExitCode (Launcher.java:406)
+    at org.codehaus.plexus.classworlds.launcher.Launcher.main (Launcher.java:347)
+Caused by: com.jayway.jsonpath.PathNotFoundException: Expected to find an object with property ['key'] in path $ but found 'net.minidev.json.JSONArray'. This is not a json object according to the JsonProvider: 'com.jayway.jsonpath.spi.json.JsonSmartJsonProvider'.
+    at com.jayway.jsonpath.internal.path.PropertyPathToken.evaluate (PropertyPathToken.java:71)
+    at com.jayway.jsonpath.internal.path.RootPathToken.evaluate (RootPathToken.java:62)
+    at com.jayway.jsonpath.internal.path.CompiledPath.evaluate (CompiledPath.java:53)
+    at com.jayway.jsonpath.internal.path.CompiledPath.evaluate (CompiledPath.java:61)
+    at com.jayway.jsonpath.JsonPath.read (JsonPath.java:187)
+    at com.jayway.jsonpath.internal.JsonContext.read (JsonContext.java:102)
+    at com.jayway.jsonpath.internal.JsonContext.read (JsonContext.java:89)
+    at query.App.main (App.java:28)
+    at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0 (Native Method)
+    at jdk.internal.reflect.NativeMethodAccessorImpl.invoke (NativeMethodAccessorImpl.java:62)
+    at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke (DelegatingMethodAccessorImpl.java:43)
+    at java.lang.reflect.Method.invoke (Method.java:566)
+    at org.codehaus.mojo.exec.ExecJavaMojo$1.run (ExecJavaMojo.java:282)
+    at java.lang.Thread.run (Thread.java:834)
+[ERROR] 
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoExecutionException
+</code></pre>
+
+<h3 id="PHP_galbar-jsonpath___key_dot_notation_on_array_of_matching_object">
+PHP (galbar-jsonpath), Key dot notation on array of matching object
+</h3>
+
+<pre><code>jsonpath returned false, this might indicate an error
+</code></pre>
+
+<h3 id="Python_jsonpath___key_dot_notation_on_array_of_matching_object">
+Python (jsonpath), Key dot notation on array of matching object
 </h3>
 
 <pre><code>jsonpath returned false, this might indicate an error
