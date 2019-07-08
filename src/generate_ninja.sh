@@ -40,6 +40,9 @@ rule error_report
 rule compile_table
   command = ./src/compile_table.sh \$in > \$out
 
+rule results_report
+  command = ./src/results_report.sh \$in > \$out
+
 EOF
 
         # Query results
@@ -93,6 +96,14 @@ EOF
         ## Table
         echo
         echo "build ${markdown_dir}/index.md: compile_table ${results_dir} ${consensus_dir} | src/compile_table.sh"
+        echo
+
+        ## Results report
+        echo
+        while IFS= read -r query; do
+            echo "build ${markdown_dir}/results/${query}.md: results_report ${results_dir} ${consensus_dir} queries/${query} | src/results_report.sh"
+        done <<< "$(all_queries)"
+
     } > "./build.ninja"
 }
 

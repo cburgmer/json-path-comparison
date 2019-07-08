@@ -15,9 +15,9 @@ capitalize() {
 }
 
 pretty_query_name() {
-    local query="$1"
+    local q="$1"
 
-    capitalize "$query" | tr '_' ' '
+    capitalize "$q" | tr '_' ' '
 }
 
 pre_block() {
