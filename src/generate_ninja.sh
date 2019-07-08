@@ -36,8 +36,10 @@ rule compile_bug_reports
 
 rule error_report
   command = ./src/error_report.sh \$in > \$out
+
 EOF
 
+        # Query results
         while IFS= read -r query; do
             while IFS= read -r implementation; do
                 echo -n "build ${results_dir}/${query}/${implementation}: run queries/${query} implementations/${implementation}"
@@ -56,22 +58,31 @@ EOF
                 echo -n " ${results_dir}/${query}/${implementation}"
             done <<< "$(all_implementations)"
             echo
-
-            echo "build ${consensus_dir}/${query}: consensus ${results_dir}/${query} | src/build_consensus.sh"
+            echo
         done <<< "$(all_queries)"
 
+        ## Consensus
         echo
-        # aggregate consensus build
+        while IFS= read -r query; do
+            echo "build ${consensus_dir}/${query}: consensus ${results_dir}/${query} | src/build_consensus.sh"
+        done <<< "$(all_queries)"
+        echo
+        # Aggregate consensus build
         echo -n "build ${consensus_dir}: phony"
         while IFS= read -r query; do
             echo -n " ${consensus_dir}/${query}"
         done <<< "$(all_queries)"
+        echo
+        echo
 
+        ## Bug reports
         echo
         while IFS= read -r implementation; do
             echo "build ${bug_reports_dir}/${implementation}.md: compile_bug_reports ${results_dir} ${consensus_dir} implementations/${implementation} | src/compile_bug_reports.sh"
         done <<< "$(all_implementations)"
+        echo
 
+        ## Error report
         echo
         echo "build ${markdown_dir}/errors.md: error_report ${results_dir} | src/error_report.sh"
 
