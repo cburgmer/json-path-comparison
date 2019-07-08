@@ -28,28 +28,8 @@ main() {
         cat <<EOF
 rule run
   command = ./src/query_implementation.sh \$in > '\$out'
-
-rule consensus
-  command = ./src/build_consensus.sh '\$in' > \$out
-
-rule compile_bug_reports
-  command = ./src/compile_bug_reports.sh \$in > \$out
-
-rule error_report
-  command = ./src/error_report.sh \$in > \$out
-
-rule compile_table
-  command = ./src/compile_table.sh \$in > \$out
-
-rule results_report
-  command = ./src/results_report.sh \$in > \$out
-
-rule compile_html
-  command = ./src/compile_html.sh \$in > \$out
-
 EOF
-
-        # Query results
+        echo
         while IFS= read -r query; do
             while IFS= read -r implementation; do
                 echo -n "build ${results_dir}/${query}/${implementation}: run queries/${query} implementations/${implementation}"
@@ -78,10 +58,13 @@ EOF
         echo
         echo
 
-        ## Consensus
+        cat <<EOF
+rule build_consensus
+  command = ./src/build_consensus.sh \$in > \$out
+EOF
         echo
         while IFS= read -r query; do
-            echo "build ${consensus_dir}/${query}: consensus ${results_dir}/${query} | src/build_consensus.sh"
+            echo "build ${consensus_dir}/${query}: build_consensus ${results_dir}/${query} | src/build_consensus.sh"
         done <<< "$(all_queries)"
         echo
         # Aggregate consensus build
@@ -92,31 +75,47 @@ EOF
         echo
         echo
 
-        ## Bug reports
+        cat <<EOF
+rule compile_bug_reports
+  command = ./src/compile_bug_reports.sh \$in > \$out
+EOF
         echo
         while IFS= read -r implementation; do
             echo "build ${bug_reports_dir}/${implementation}.md: compile_bug_reports ${results_dir} ${consensus_dir} implementations/${implementation} | src/compile_bug_reports.sh"
         done <<< "$(all_implementations)"
         echo
 
-        ## Error report
+        cat <<EOF
+rule error_report
+  command = ./src/error_report.sh \$in > \$out
+EOF
         echo
         echo "build ${markdown_dir}/errors.md: error_report ${results_dir} | src/error_report.sh"
         echo
 
-        ## Table
+        cat <<EOF
+rule compile_table
+  command = ./src/compile_table.sh \$in > \$out
+EOF
         echo
         echo "build ${markdown_dir}/index.md: compile_table ${results_dir} ${consensus_dir} | src/compile_table.sh"
         echo
 
-        ## Results report
+        cat <<EOF
+rule results_report
+  command = ./src/results_report.sh \$in > \$out
+EOF
         echo
         while IFS= read -r query; do
             echo "build ${markdown_dir}/results/${query}.md: results_report ${results_dir} ${consensus_dir} queries/${query} | src/results_report.sh"
         done <<< "$(all_queries)"
         echo
 
-        ## HTML
+        cat <<EOF
+rule compile_html
+  command = ./src/compile_html.sh \$in > \$out
+EOF
+        echo
         echo "build ${docs_dir}/errors.html: compile_html ${markdown_dir}/errors.md | src/compile_html.sh"
         echo "build ${docs_dir}/index.html: compile_html ${markdown_dir}/index.md | src/compile_html.sh"
         while IFS= read -r query; do
