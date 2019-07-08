@@ -2,7 +2,7 @@
 
 # Will compile the whole report.
 #
-# Hint: setting e.g. `ONLY_QUERIES="root all_children"` will speed up
+# Hint: setting e.g. `ONLY_QUERIES="root array_index"` will speed up
 #       debugging in development by running only the given queries.
 
 set -euo pipefail
