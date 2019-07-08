@@ -2,8 +2,7 @@
 
 set -euo pipefail
 
-readonly results_dir="results"
-readonly target_dir="$1"
+readonly results_dir="$1"
 
 . src/shared.sh
 
@@ -45,21 +44,15 @@ error_section() {
     echo
 }
 
-compile_error_report() {
+main() {
     local implementation_query_result
 
-    {
-        echo "## Errors"
-        echo
+    echo "## Errors"
+    echo
 
-        while IFS= read -r implementation_query_result; do
-            error_section "$implementation_query_result"
-        done <<< "$(all_errors | sort)"
-    } > "${target_dir}/errors.md"
-}
-
-main() {
-    compile_error_report
+    while IFS= read -r implementation_query_result; do
+        error_section "$implementation_query_result"
+    done <<< "$(all_errors | sort)"
 }
 
 main

@@ -1,5 +1,6 @@
 /results
 /consensus
+/markdown
 .ninja_deps
 .ninja_log
 /build.ninja
