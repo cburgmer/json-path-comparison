@@ -3,7 +3,6 @@ set -euo pipefail
 
 readonly results_dir="$1"
 readonly consensus_dir="$2"
-readonly target_dir="$3"
 
 . src/shared.sh
 
@@ -106,7 +105,7 @@ header_row() {
     echo "</tr>"
 }
 
-compile_comparison() {
+main() {
     echo "# Comparison of different implementations of JSONPath
 
 ## How
@@ -149,10 +148,6 @@ The motivation of the consensus in particular is to drive the discussion towards
 - ?, no clear consensus amongst the implementations (the results disagree and/or a lot of implementations error)
 - e, the implementation failed executing the query and probably does not support this type of query
 - ¹, this implementation returns queries with only a single possible match as a scalar element (e.g. '\$[0]' => '42'). For the sake of comparing to other implementations these results are converted and wrapped in a list here."
-}
-
-main() {
-    compile_comparison > "${target_dir}/index.md"
 }
 
 main

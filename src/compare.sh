@@ -13,7 +13,6 @@ main() {
     rm -rf "$docs_dir"
     mkdir "$docs_dir"
 
-    ./src/compile_table.sh "$results_dir" "$consensus_dir" "$markdown_dir"
     ./src/results_report.sh "$results_dir" "$consensus_dir" "$markdown_dir"
     ./src/compile_html.sh "$markdown_dir" "$docs_dir"
 }

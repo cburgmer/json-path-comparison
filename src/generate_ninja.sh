@@ -37,6 +37,9 @@ rule compile_bug_reports
 rule error_report
   command = ./src/error_report.sh \$in > \$out
 
+rule compile_table
+  command = ./src/compile_table.sh \$in > \$out
+
 EOF
 
         # Query results
@@ -85,7 +88,11 @@ EOF
         ## Error report
         echo
         echo "build ${markdown_dir}/errors.md: error_report ${results_dir} | src/error_report.sh"
+        echo
 
+        ## Table
+        echo
+        echo "build ${markdown_dir}/index.md: compile_table ${results_dir} ${consensus_dir} | src/compile_table.sh"
     } > "./build.ninja"
 }
 
