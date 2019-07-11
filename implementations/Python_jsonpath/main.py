@@ -6,7 +6,11 @@ def main():
     selector = sys.argv[1]
 
     j = json.loads(sys.stdin.read())
-    results = jsonpath(j, selector, 'VALUE')
+    try:
+        results = jsonpath(j, selector, 'VALUE')
+    except Exception as e:
+        print(repr(e))
+        sys.exit(1)
 
     if results is False:
         print('jsonpath returned false, this might indicate an error');

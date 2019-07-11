@@ -12,6 +12,9 @@ try {
 } catch (InvalidJsonPathException $e) {
     print "Invalid JSONPath error: '" . $e->getMessage() . "'\r\n";
     die(1);
+} catch (Exception $e) {
+    print "Error: '" . $e->getMessage() . "'\r\n";
+    die(1);
 }
 
 if ($r === false) {

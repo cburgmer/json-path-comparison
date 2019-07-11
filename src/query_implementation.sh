@@ -12,6 +12,20 @@ wrap_scalar_if_needed() {
     fi
 }
 
+fail_on_absolute_paths_leaked() {
+    # Absolute paths will make it hard to provide a reproducible outcome
+    # Best way to avoid them in most languages is to catch exceptions and
+    # print a simple error instead.
+    local file="$1"
+    if grep '/home\|/Users\|/usr' < "$file" > /dev/null; then
+        echo "This error message includes an absolute path which will make it hard to reproduce on other machines."
+        echo "Please change the script to error without it."
+        echo
+        cat "$file"
+        exit 1
+    fi
+}
+
 run_query() {
     local query="$1"
     local implementation="$2"
@@ -36,6 +50,8 @@ main() {
     else
         echo "ERROR"
 
+        fail_on_absolute_paths_leaked "$tmp_stderr"
+        fail_on_absolute_paths_leaked "$tmp_stdout"
         # Some implementations don't report errors on stderr
         cat "$tmp_stderr"
         cat "$tmp_stdout"
