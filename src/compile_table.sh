@@ -82,6 +82,17 @@ break_library_names() {
     sed "s/\([\._]\)/\1​/g"
 }
 
+wrap_with_link() {
+    local implementation="$1"
+    if [[ -f "./implementations/${implementation}/LINK" ]]; then
+        echo "<a href=\"$(cat "./implementations/${implementation}/LINK")\">"
+        cat
+        echo "</a>"
+    else
+        cat
+    fi
+}
+
 header_row() {
     local implementation
 
@@ -96,7 +107,7 @@ header_row() {
     echo "<th></th>"
     while IFS= read -r implementation; do
         echo "<th>"
-        sed "s/[^_]*_\(.*\)/\1/" <<< "$implementation" | break_library_names
+        sed "s/[^_]*_\(.*\)/\1/" <<< "$implementation" | break_library_names | wrap_with_link "$implementation"
         if [[ -f "./implementations/${implementation}/SINGLE_POSSIBLE_MATCH_RETURNED_AS_SCALAR" ]]; then
             echo "¹"
         fi
