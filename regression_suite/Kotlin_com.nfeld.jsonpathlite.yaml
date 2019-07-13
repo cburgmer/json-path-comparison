@@ -159,6 +159,12 @@ queries:
     document: [{"key": "value"}]
     result: [null]
     status: open
+  - id: key_dot_notation_on_null_value
+    selector: $.key
+    scalar: true
+    document: {"key": null}
+    result: [null]
+    status: pass
   - id: key_dot_notation_with_array_value
     selector: $.key
     scalar: true
@@ -183,6 +189,12 @@ queries:
     document: {"key": "value", "another key": {"complex": "string", "primitives": [0, 1]}}
     result: []
     status: open
+  - id: recursive_wildcard_on_null_value_array
+    selector: $..*
+    scalar: false
+    document: [40, null, 42]
+    result: []
+    status: fail
   - id: recursive_with_nested_object
     selector: $.store..price
     scalar: false

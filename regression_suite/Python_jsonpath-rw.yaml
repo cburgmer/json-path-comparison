@@ -141,6 +141,12 @@ queries:
     document: [{"key": "value"}]
     result: []
     status: open
+  - id: key_dot_notation_on_null_value
+    selector: $.key
+    scalar: true
+    document: {"key": null}
+    result: [null]
+    status: pass
   - id: key_dot_notation_with_array_value
     selector: $.key
     scalar: true
@@ -159,6 +165,12 @@ queries:
     document: {"key": "value", "another key": {"complex": "string", "primitives": [0, 1]}}
     result: [{"complex": "string", "primitives": [0, 1]}, "value", [0, 1], "string"]
     status: open
+  - id: recursive_wildcard_on_null_value_array
+    selector: $..*
+    scalar: false
+    document: [40, null, 42]
+    result: []
+    status: fail
   - id: recursive_wildcard_on_scalar
     selector: $..*
     scalar: false
@@ -182,6 +194,12 @@ queries:
     scalar: false
     document: ["string", 42, {"key": "value"}, [0, 1]]
     result: ["string", 42, {"key": "value"}, [0, 1]]
+    status: pass
+  - id: wildcard_bracket_notation_on_null_value_array
+    selector: $[*]
+    scalar: false
+    document: [40, null, 42]
+    result: [40, null, 42]
     status: pass
   - id: wildcard_bracket_notation_on_object
     selector: $[*]

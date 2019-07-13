@@ -31,6 +31,20 @@ The following queries provide results that do not match those of other implement
   [null]
   ```
 
+- [ ] `$..*`
+  Input:
+  ```
+  [40, null, 42]
+  ```
+  Expected output:
+  ```
+  [40, null, 42]
+  ```
+  Actual output:
+  ```
+  [[40, null, 42], 40, null, 42]
+  ```
+
 - [ ] `$[*]`
   Input:
   ```

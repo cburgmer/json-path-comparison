@@ -59,6 +59,20 @@ The following queries provide results that do not match those of other implement
   Exception('Parse error at 1:3 near token , (,)',)
   ```
 
+- [ ] `$..*`
+  Input:
+  ```
+  [40, null, 42]
+  ```
+  Expected output:
+  ```
+  [40, null, 42]
+  ```
+  Actual output:
+  ```
+  []
+  ```
+
 - [ ] `$[*]`
   Input:
   ```
