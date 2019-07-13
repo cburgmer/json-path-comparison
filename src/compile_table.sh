@@ -158,7 +158,12 @@ The motivation of the consensus in particular is to drive the discussion towards
 - ✗, the result does not match a majority
 - ?, no clear consensus amongst the implementations (the results disagree and/or a lot of implementations error)
 - e, the implementation failed executing the query and probably does not support this type of query
-- ¹, this implementation returns queries with only a single possible match as a scalar element (e.g. '\$[0]' => '42'). For the sake of comparing to other implementations these results are converted and wrapped in a list here."
+- ¹, this implementation returns queries with only a single possible match as a scalar element (e.g. '\$[0]' => '42'). For the sake of comparing to other implementations these results are converted and wrapped in a list here.
+
+## Contribute
+
+Please help to add more queries, extend the list of implementations or fix errors. See [https://github.com/cburgmer/json-path-comparison](https://github.com/cburgmer/json-path-comparison).
+"
 }
 
 main
