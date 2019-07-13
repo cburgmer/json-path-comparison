@@ -6,6 +6,7 @@ readonly consensus_dir="build/consensus"
 readonly markdown_dir="build/markdown"
 readonly bug_reports_dir="bug_reports"
 readonly docs_dir="docs"
+readonly regression_suite="regression_suite"
 
 all_implementations() {
     find ./implementations -type d -depth 1 -print0 | xargs -0 -n1 basename | sort
@@ -121,6 +122,17 @@ EOF
         while IFS= read -r query; do
             echo "build ${docs_dir}/results/${query}.html: compile_html ${markdown_dir}/results/${query}.md | src/compile_html.sh"
         done <<< "$(all_queries)"
+        echo
+
+        cat <<EOF
+rule compile_regression_suite
+  command = ./src/compile_regression_suite.sh \$in > \$out
+EOF
+
+        echo
+        while IFS= read -r implementation; do
+            echo "build ${regression_suite}/${implementation}.yaml: compile_regression_suite ${results_dir} ${consensus_dir} implementations/${implementation} | src/compile_regression_suite.sh"
+        done <<< "$(all_implementations)"
     } > "./build.ninja"
 }
 
