@@ -119,7 +119,7 @@ The following queries provide results that do not match those of other implement
 - [ ] `$['key','another']`
   Input:
   ```
-  {"another": "entry", "key": "value"}
+  {"key": "value", "another": "entry"}
   ```
   Expected output:
   ```
@@ -127,7 +127,7 @@ The following queries provide results that do not match those of other implement
   ```
   Actual output:
   ```
-  [{"key": "value", "another": "entry"}]
+  [{"another": "entry", "key": "value"}]
   ```
 
 - [ ] `$['special:"chars']`

@@ -20,7 +20,7 @@ The following queries provide results that do not match those of other implement
 - [ ] `$`
   Input:
   ```
-  {"another key": {"complex": ["a", 1]}, "key": "value"}
+  {"key": "value", "another key": {"complex": ["a", 1]}}
   ```
   Expected output:
   ```
@@ -34,7 +34,7 @@ The following queries provide results that do not match those of other implement
 - [ ] `$[*]`
   Input:
   ```
-  {"int": 42, "array": [0, 1], "object": {"key": "value"}, "some": "string"}
+  {"some": "string", "int": 42, "object": {"key": "value"}, "array": [0, 1]}
   ```
   Expected output:
   ```
@@ -48,7 +48,7 @@ The following queries provide results that do not match those of other implement
 - [ ] `$.*`
   Input:
   ```
-  {"int": 42, "array": [0, 1], "object": {"key": "value"}, "some": "string"}
+  {"some": "string", "int": 42, "object": {"key": "value"}, "array": [0, 1]}
   ```
   Expected output:
   ```

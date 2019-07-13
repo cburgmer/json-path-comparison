@@ -379,7 +379,7 @@ The following queries provide results that do not match those of other implement
 - [ ] `$..key`
   Input:
   ```
-  {"object": {"array": [{"key": "something"}, {"key": {"key": "russian dolls"}}], "key": "value"}, "key": "top"}
+  {"object": {"key": "value", "array": [{"key": "something"}, {"key": {"key": "russian dolls"}}]}, "key": "top"}
   ```
   Expected output:
   ```

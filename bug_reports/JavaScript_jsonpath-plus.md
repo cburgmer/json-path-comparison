@@ -6,7 +6,7 @@ The following queries provide results that do not match those of other implement
 - [ ] `$['key','another']`
   Input:
   ```
-  {"another": "entry", "key": "value"}
+  {"key": "value", "another": "entry"}
   ```
   Expected output:
   ```

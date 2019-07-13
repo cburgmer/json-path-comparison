@@ -108,7 +108,7 @@ queries:
   - id: key_bracket_notation_union
     selector: $['key','another']
     scalar: false
-    document: {"another": "entry", "key": "value"}
+    document: {"key": "value", "another": "entry"}
     result: ["value", "entry"]
     status: pass
   - id: key_bracket_notation_with_double_quotes
@@ -186,25 +186,25 @@ queries:
   - id: recursive_key
     selector: $..key
     scalar: false
-    document: {"object": {"array": [{"key": "something"}, {"key": {"key": "russian dolls"}}], "key": "value"}, "key": "top"}
+    document: {"object": {"key": "value", "array": [{"key": "something"}, {"key": {"key": "russian dolls"}}]}, "key": "top"}
     result: ["top", "value", "something", {"key": "russian dolls"}, "russian dolls"]
     status: pass
   - id: recursive_wildcard
     selector: $..*
     scalar: false
-    document: {"another key": {"primitives": [0, 1], "complex": "string"}, "key": "value"}
-    result: ["value", {"primitives": [0, 1], "complex": "string"}, "string", [0, 1], 0, 1]
+    document: {"key": "value", "another key": {"complex": "string", "primitives": [0, 1]}}
+    result: ["value", {"complex": "string", "primitives": [0, 1]}, "string", [0, 1], 0, 1]
     status: open
   - id: recursive_with_nested_object
     selector: $.store..price
     scalar: false
-    document: {"store": {"book": [{"category": "reference", "price": 8.95, "title": "Sayings of the Century", "author": "Nigel Rees"}, {"category": "fiction", "price": 12.99, "title": "Sword of Honour", "author": "Evelyn Waugh"}, {"category": "fiction", "price": 8.99, "title": "Moby Dick", "isbn": "0-553-21311-3", "author": "Herman Melville"}, {"category": "fiction", "price": 22.99, "title": "The Lord of the Rings", "isbn": "0-395-19395-8", "author": "J. R. R. Tolkien"}], "bicycle": {"color": "red", "price": 19.95}}}
+    document: {"store": {"book": [{"category": "reference", "author": "Nigel Rees", "title": "Sayings of the Century", "price": 8.95}, {"category": "fiction", "author": "Evelyn Waugh", "title": "Sword of Honour", "price": 12.99}, {"category": "fiction", "author": "Herman Melville", "title": "Moby Dick", "isbn": "0-553-21311-3", "price": 8.99}, {"category": "fiction", "author": "J. R. R. Tolkien", "title": "The Lord of the Rings", "isbn": "0-395-19395-8", "price": 22.99}], "bicycle": {"color": "red", "price": 19.95}}}
     result: [8.95, 12.99, 8.99, 22.99, 19.95]
     status: pass
   - id: root
     selector: $
     scalar: true
-    document: {"another key": {"complex": ["a", 1]}, "key": "value"}
+    document: {"key": "value", "another key": {"complex": ["a", 1]}}
     result: [{"another key": {"complex": ["a", 1]}, "key": "value"}]
     status: pass
   - id: wildcard_bracket_notation_on_array
@@ -216,7 +216,7 @@ queries:
   - id: wildcard_bracket_notation_on_object
     selector: $[*]
     scalar: false
-    document: {"int": 42, "array": [0, 1], "object": {"key": "value"}, "some": "string"}
+    document: {"some": "string", "int": 42, "object": {"key": "value"}, "array": [0, 1]}
     result: ["string", 42, {"key": "value"}, [0, 1]]
     status: pass
   - id: wildcard_dot_notation_on_array
@@ -228,6 +228,6 @@ queries:
   - id: wildcard_dot_notation_on_object
     selector: $.*
     scalar: false
-    document: {"int": 42, "array": [0, 1], "object": {"key": "value"}, "some": "string"}
+    document: {"some": "string", "int": 42, "object": {"key": "value"}, "array": [0, 1]}
     result: ["string", 42, {"key": "value"}, [0, 1]]
     status: pass

@@ -230,7 +230,7 @@ The following queries provide results that do not match those of other implement
 - [ ] `$['key','another']`
   Input:
   ```
-  {"another": "entry", "key": "value"}
+  {"key": "value", "another": "entry"}
   ```
   Expected output:
   ```
@@ -339,7 +339,7 @@ The following queries provide results that do not match those of other implement
 - [ ] `$.store..price`
   Input:
   ```
-  {"store": {"book": [{"category": "reference", "price": 8.95, "title": "Sayings of the Century", "author": "Nigel Rees"}, {"category": "fiction", "price": 12.99, "title": "Sword of Honour", "author": "Evelyn Waugh"}, {"category": "fiction", "price": 8.99, "title": "Moby Dick", "isbn": "0-553-21311-3", "author": "Herman Melville"}, {"category": "fiction", "price": 22.99, "title": "The Lord of the Rings", "isbn": "0-395-19395-8", "author": "J. R. R. Tolkien"}], "bicycle": {"color": "red", "price": 19.95}}}
+  {"store": {"book": [{"category": "reference", "author": "Nigel Rees", "title": "Sayings of the Century", "price": 8.95}, {"category": "fiction", "author": "Evelyn Waugh", "title": "Sword of Honour", "price": 12.99}, {"category": "fiction", "author": "Herman Melville", "title": "Moby Dick", "isbn": "0-553-21311-3", "price": 8.99}, {"category": "fiction", "author": "J. R. R. Tolkien", "title": "The Lord of the Rings", "isbn": "0-395-19395-8", "price": 22.99}], "bicycle": {"color": "red", "price": 19.95}}}
   ```
   Expected output:
   ```
@@ -401,7 +401,7 @@ The following queries provide results that do not match those of other implement
 - [ ] `$[*]`
   Input:
   ```
-  {"int": 42, "array": [0, 1], "object": {"key": "value"}, "some": "string"}
+  {"some": "string", "int": 42, "object": {"key": "value"}, "array": [0, 1]}
   ```
   Expected output:
   ```
@@ -429,7 +429,7 @@ The following queries provide results that do not match those of other implement
 - [ ] `$.*`
   Input:
   ```
-  {"int": 42, "array": [0, 1], "object": {"key": "value"}, "some": "string"}
+  {"some": "string", "int": 42, "object": {"key": "value"}, "array": [0, 1]}
   ```
   Expected output:
   ```

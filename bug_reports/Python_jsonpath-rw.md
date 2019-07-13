@@ -62,7 +62,7 @@ The following queries provide results that do not match those of other implement
 - [ ] `$[*]`
   Input:
   ```
-  {"int": 42, "array": [0, 1], "object": {"key": "value"}, "some": "string"}
+  {"some": "string", "int": 42, "object": {"key": "value"}, "array": [0, 1]}
   ```
   Expected output:
   ```
@@ -70,7 +70,7 @@ The following queries provide results that do not match those of other implement
   ```
   Actual output:
   ```
-  [{"int": 42, "array": [0, 1], "object": {"key": "value"}, "some": "string"}]
+  [{"array": [0, 1], "int": 42, "object": {"key": "value"}, "some": "string"}]
   ```
 
 - [ ] `$.*`
@@ -90,7 +90,7 @@ The following queries provide results that do not match those of other implement
 - [ ] `$.*`
   Input:
   ```
-  {"int": 42, "array": [0, 1], "object": {"key": "value"}, "some": "string"}
+  {"some": "string", "int": 42, "object": {"key": "value"}, "array": [0, 1]}
   ```
   Expected output:
   ```
