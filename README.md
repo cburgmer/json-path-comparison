@@ -29,7 +29,7 @@ For example, the Clojure json-path implementation has a [regression suite based 
 
 ## Contribute
 
-You can easily add another library/implementation to the comparison. Copy a comparable setup in [./implementations](./implementations) and adapt. Be aware that some implementations don't handle scalars specifically, compare [./implementations/JavaScript_Goessner](./implementations/JavaScript_Goessner).
+You can easily add another library/implementation to the comparison. Copy a comparable setup in [./implementations](./implementations) and adapt. Be aware that some implementations decide to return queries for single values as scalars, compare [./implementations/Clojure_json-path](./implementations/Clojure_json-path).
 
 Adding more tests should be fairly easy. Add a new directory under [./queries](./queries) and give it a `selector` and `document.json`
 . Scalar queries have a specific handling, compare [./queries/array_index](./queries/array_index).
