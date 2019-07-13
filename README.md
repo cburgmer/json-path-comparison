@@ -11,13 +11,21 @@ See https://cburgmer.github.io/json-path-comparison/ for the table generated fro
 - Consensus-based decision on correctness
 - Output and error report for failures
 - Automatically generated bug reports
+- Regression test suites for upstream implementations
 
 ## Roadmap
 
 - Test filters `?()`
-- Provide a regression test suite for implementations to test against
 - Provide a forum to clarify different interpretations
 - Compare custom features/syntax across implementations
+
+## How to
+
+### Regression test suite
+
+If you are an author of an upstream implementation, you can use the report generated here to test for regressions in your logic. The regression document is generated for every implementation individually so you can handle outcomes differently depending on whether they match the consensus or not. 
+
+For example, the Clojure json-path implementation has a [regression suite based on the above](https://github.com/gga/json-path/blob/master/test/json_path/test/regression_test.clj).
 
 ## Contribute
 
