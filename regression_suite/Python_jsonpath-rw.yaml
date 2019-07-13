@@ -141,23 +141,29 @@ queries:
     document: [{"key": "value"}]
     result: []
     status: open
+  - id: key_dot_notation_on_array_value
+    selector: $.key
+    scalar: true
+    document: {"key": ["first", "second"]}
+    result: [["first", "second"]]
+    status: pass
   - id: key_dot_notation_on_null_value
     selector: $.key
     scalar: true
     document: {"key": null}
     result: [null]
     status: pass
-  - id: key_dot_notation_with_array_value
-    selector: $.key
-    scalar: true
-    document: {"key": ["first", "second"]}
-    result: [["first", "second"]]
-    status: pass
   - id: recursive_key
     selector: $..key
     scalar: false
     document: {"object": {"key": "value", "array": [{"key": "something"}, {"key": {"key": "russian dolls"}}]}, "key": "top"}
     result: ["top", "value", "something", {"key": "russian dolls"}, "russian dolls"]
+    status: pass
+  - id: recursive_on_nested_object
+    selector: $.store..price
+    scalar: false
+    document: {"store": {"book": [{"category": "reference", "author": "Nigel Rees", "title": "Sayings of the Century", "price": 8.95}, {"category": "fiction", "author": "Evelyn Waugh", "title": "Sword of Honour", "price": 12.99}, {"category": "fiction", "author": "Herman Melville", "title": "Moby Dick", "isbn": "0-553-21311-3", "price": 8.99}, {"category": "fiction", "author": "J. R. R. Tolkien", "title": "The Lord of the Rings", "isbn": "0-395-19395-8", "price": 22.99}], "bicycle": {"color": "red", "price": 19.95}}}
+    result: [8.95, 12.99, 8.99, 22.99, 19.95]
     status: pass
   - id: recursive_wildcard
     selector: $..*
@@ -177,12 +183,6 @@ queries:
     document: 42
     result: []
     status: open
-  - id: recursive_with_nested_object
-    selector: $.store..price
-    scalar: false
-    document: {"store": {"book": [{"category": "reference", "author": "Nigel Rees", "title": "Sayings of the Century", "price": 8.95}, {"category": "fiction", "author": "Evelyn Waugh", "title": "Sword of Honour", "price": 12.99}, {"category": "fiction", "author": "Herman Melville", "title": "Moby Dick", "isbn": "0-553-21311-3", "price": 8.99}, {"category": "fiction", "author": "J. R. R. Tolkien", "title": "The Lord of the Rings", "isbn": "0-395-19395-8", "price": 22.99}], "bicycle": {"color": "red", "price": 19.95}}}
-    result: [8.95, 12.99, 8.99, 22.99, 19.95]
-    status: pass
   - id: root
     selector: $
     scalar: true

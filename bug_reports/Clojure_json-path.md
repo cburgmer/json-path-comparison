@@ -336,18 +336,18 @@ The following queries provide results that do not match those of other implement
   [["value"]]
   ```
 
-- [ ] `$..*`
+- [ ] `$.store..price`
   Input:
   ```
-  [40, null, 42]
+  {"store": {"book": [{"category": "reference", "author": "Nigel Rees", "title": "Sayings of the Century", "price": 8.95}, {"category": "fiction", "author": "Evelyn Waugh", "title": "Sword of Honour", "price": 12.99}, {"category": "fiction", "author": "Herman Melville", "title": "Moby Dick", "isbn": "0-553-21311-3", "price": 8.99}, {"category": "fiction", "author": "J. R. R. Tolkien", "title": "The Lord of the Rings", "isbn": "0-395-19395-8", "price": 22.99}], "bicycle": {"color": "red", "price": 19.95}}}
   ```
   Expected output:
   ```
-  [40, null, 42]
+  [8.95, 12.99, 8.99, 22.99, 19.95]
   ```
   Error:
   ```
-  Exception in thread "main" java.lang.IllegalArgumentException: Don't know how to create ISeq from: java.lang.Integer
+  Exception in thread "main" java.lang.IllegalArgumentException: Don't know how to create ISeq from: java.lang.Double
   	at clojure.lang.RT.seqFrom(RT.java:553)
   	at clojure.lang.RT.seq(RT.java:533)
   	at clojure.core$seq__5387.invokeStatic(core.clj:137)
@@ -357,7 +357,7 @@ The following queries provide results that do not match those of other implement
   	at clojure.core$complement$fn__5654.invoke(core.clj:1441)
   	at clojure.core$filter$fn__5878.invoke(core.clj:2821)
   	at clojure.lang.LazySeq.sval(LazySeq.java:42)
-  	at clojure.lang.LazySeq.seq(LazySeq.java:51)
+  	at clojure.lang.LazySeq.seq(LazySeq.java:58)
   	at clojure.lang.RT.seq(RT.java:531)
   	at clojure.core$seq__5387.invokeStatic(core.clj:137)
   	at clojure.core$map$fn__5851.invoke(core.clj:2746)
@@ -384,18 +384,18 @@ The following queries provide results that do not match those of other implement
   	at json_path_comparison.core.main(Unknown Source)
   ```
 
-- [ ] `$.store..price`
+- [ ] `$..*`
   Input:
   ```
-  {"store": {"book": [{"category": "reference", "author": "Nigel Rees", "title": "Sayings of the Century", "price": 8.95}, {"category": "fiction", "author": "Evelyn Waugh", "title": "Sword of Honour", "price": 12.99}, {"category": "fiction", "author": "Herman Melville", "title": "Moby Dick", "isbn": "0-553-21311-3", "price": 8.99}, {"category": "fiction", "author": "J. R. R. Tolkien", "title": "The Lord of the Rings", "isbn": "0-395-19395-8", "price": 22.99}], "bicycle": {"color": "red", "price": 19.95}}}
+  [40, null, 42]
   ```
   Expected output:
   ```
-  [8.95, 12.99, 8.99, 22.99, 19.95]
+  [40, null, 42]
   ```
   Error:
   ```
-  Exception in thread "main" java.lang.IllegalArgumentException: Don't know how to create ISeq from: java.lang.Double
+  Exception in thread "main" java.lang.IllegalArgumentException: Don't know how to create ISeq from: java.lang.Integer
   	at clojure.lang.RT.seqFrom(RT.java:553)
   	at clojure.lang.RT.seq(RT.java:533)
   	at clojure.core$seq__5387.invokeStatic(core.clj:137)
@@ -405,7 +405,7 @@ The following queries provide results that do not match those of other implement
   	at clojure.core$complement$fn__5654.invoke(core.clj:1441)
   	at clojure.core$filter$fn__5878.invoke(core.clj:2821)
   	at clojure.lang.LazySeq.sval(LazySeq.java:42)
-  	at clojure.lang.LazySeq.seq(LazySeq.java:58)
+  	at clojure.lang.LazySeq.seq(LazySeq.java:51)
   	at clojure.lang.RT.seq(RT.java:531)
   	at clojure.core$seq__5387.invokeStatic(core.clj:137)
   	at clojure.core$map$fn__5851.invoke(core.clj:2746)

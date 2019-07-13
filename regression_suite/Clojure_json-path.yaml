@@ -111,17 +111,17 @@ queries:
     document: [{"key": "value"}]
     result: [null]
     status: open
+  - id: key_dot_notation_on_array_value
+    selector: $.key
+    scalar: true
+    document: {"key": ["first", "second"]}
+    result: [["first", "second"]]
+    status: pass
   - id: key_dot_notation_on_null_value
     selector: $.key
     scalar: true
     document: {"key": null}
     result: [null]
-    status: pass
-  - id: key_dot_notation_with_array_value
-    selector: $.key
-    scalar: true
-    document: {"key": ["first", "second"]}
-    result: [["first", "second"]]
     status: pass
   - id: recursive_key
     selector: $..key

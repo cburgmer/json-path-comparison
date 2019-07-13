@@ -1,13 +1,46 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/3.0.1/github-markdown.css">
 <article class="markdown-body">
-<h2>Key dot notation with array value</h2>
+<h2>Recursive on nested object</h2>
 
 <h3>Setup</h3>
 
-<p>Selector: <code>$.key</code></p>
+<p>Selector: <code>$.store..price</code></p>
 
 <pre><code>{
-    "key": ["first", "second"]
+  "store": {
+    "book": [
+      {
+        "category": "reference",
+        "author": "Nigel Rees",
+        "title": "Sayings of the Century",
+        "price": 8.95
+      },
+      {
+        "category": "fiction",
+        "author": "Evelyn Waugh",
+        "title": "Sword of Honour",
+        "price": 12.99
+      },
+      {
+        "category": "fiction",
+        "author": "Herman Melville",
+        "title": "Moby Dick",
+        "isbn": "0-553-21311-3",
+        "price": 8.99
+      },
+      {
+        "category": "fiction",
+        "author": "J. R. R. Tolkien",
+        "title": "The Lord of the Rings",
+        "isbn": "0-395-19395-8",
+        "price": 22.99
+      }
+    ],
+    "bicycle": {
+      "color": "red",
+      "price": 19.95
+    }
+  }
 }
 </code></pre>
 
@@ -16,10 +49,22 @@
 <h4>Gold Standard (consensus)</h4>
 
 <pre><code>[
-  [
-    "first", 
-    "second"
-  ]
+  8.95, 
+  12.99, 
+  8.99, 
+  22.99, 
+  19.95
+]
+</code></pre>
+
+<h4>Kotlin (com.nfeld.jsonpathlite)</h4>
+
+<pre><code>[
+  19.95, 
+  8.95, 
+  12.99, 
+  8.99, 
+  22.99
 ]
 </code></pre>
 </article>

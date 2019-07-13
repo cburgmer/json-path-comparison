@@ -142,20 +142,6 @@ The following queries provide results that do not match those of other implement
   No JSON object could be decoded
   ```
 
-- [ ] `$..*`
-  Input:
-  ```
-  [40, null, 42]
-  ```
-  Expected output:
-  ```
-  [40, null, 42]
-  ```
-  Actual output:
-  ```
-  []
-  ```
-
 - [ ] `$.store..price`
   Input:
   ```
@@ -168,6 +154,20 @@ The following queries provide results that do not match those of other implement
   Actual output:
   ```
   [19.95, 8.95, 12.99, 8.99, 22.99]
+  ```
+
+- [ ] `$..*`
+  Input:
+  ```
+  [40, null, 42]
+  ```
+  Expected output:
+  ```
+  [40, null, 42]
+  ```
+  Actual output:
+  ```
+  []
   ```
 
 - [ ] `$[*]`
