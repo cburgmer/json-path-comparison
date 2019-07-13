@@ -105,6 +105,12 @@ queries:
     document: {"single'quote": "value"}
     result: []
     status: open
+  - id: key_bracket_notation_with_special_characters
+    selector: $['special:"chars']
+    scalar: true
+    document: {"special:\"chars": "value"}
+    result: ["value"]
+    status: pass
   - id: key_bracket_notation_with_star_literal
     selector: $['*']
     scalar: true

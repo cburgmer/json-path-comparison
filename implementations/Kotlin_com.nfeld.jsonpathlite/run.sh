@@ -8,6 +8,7 @@ cd "$script_dir"/query
 
 if [[ ! -e "$target" ]]; then
     mvn clean package -q
+    mvn -q dependency:build-classpath -Dmdep.outputFile=cp.txt
 fi
 
-mvn -e exec:java -q -D"exec.mainClass"="query.AppKt" -Dexec.args="\"$@\""
+java -cp "target/query-1.0-SNAPSHOT.jar:$(cat cp.txt)" query.AppKt "$@"

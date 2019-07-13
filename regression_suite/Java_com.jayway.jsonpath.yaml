@@ -99,6 +99,12 @@ queries:
     document: {"key": "value", "another": "entry"}
     result: [{"another": "entry", "key": "value"}]
     status: fail
+  - id: key_bracket_notation_with_double_quotes
+    selector: $["key"]
+    scalar: true
+    document: {"key": "value"}
+    result: ["value"]
+    status: open
   - id: key_bracket_notation_with_number
     selector: $['0']
     scalar: true
@@ -111,6 +117,12 @@ queries:
     document: {"single'quote": "value"}
     result: ["value"]
     status: open
+  - id: key_bracket_notation_with_special_characters
+    selector: $['special:"chars']
+    scalar: true
+    document: {"special:\"chars": "value"}
+    result: ["value"]
+    status: pass
   - id: key_bracket_notation_with_star_literal
     selector: $['*']
     scalar: true
