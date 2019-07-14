@@ -148,6 +148,7 @@ queries:
     document: [40, null, 42]
     result: []
     status: fail
+    consensus: [40, null, 42]
   - id: recursive_wildcard_on_scalar
     selector: $..*
     document: 42
@@ -173,13 +174,16 @@ queries:
     document: {"some": "string", "int": 42, "object": {"key": "value"}, "array": [0, 1]}
     result: [{"array": [0, 1], "int": 42, "object": {"key": "value"}, "some": "string"}]
     status: fail
+    consensus: ["string", 42, {"key": "value"}, [0, 1]]
   - id: wildcard_dot_notation_on_array
     selector: $.*
     document: ["string", 42, {"key": "value"}, [0, 1]]
     result: []
     status: fail
+    consensus: ["string", 42, {"key": "value"}, [0, 1]]
   - id: wildcard_dot_notation_on_object
     selector: $.*
     document: {"some": "string", "int": 42, "object": {"key": "value"}, "array": [0, 1]}
     result: [42, [0, 1], {"key": "value"}, "string"]
     status: fail
+    consensus: ["string", 42, {"key": "value"}, [0, 1]]

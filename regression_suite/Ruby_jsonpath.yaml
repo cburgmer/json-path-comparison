@@ -28,6 +28,7 @@ queries:
     document: ["first", "second", "third"]
     result: []
     status: fail
+    consensus: ["second", "third"]
   - id: array_index_slice_last_no_end
     selector: $[-1:]
     document: ["first", "second", "third"]
@@ -103,6 +104,7 @@ queries:
     document: {"0": "value"}
     result: [null]
     status: fail
+    consensus: ["value"]
   - id: key_bracket_notation_with_number_without_quotes
     selector: $[0]
     document: {"0": "value"}
@@ -178,6 +180,7 @@ queries:
     document: [40, null, 42]
     result: [[40, null, 42], 40, null, 42]
     status: fail
+    consensus: [40, null, 42]
   - id: recursive_wildcard_on_scalar
     selector: $..*
     document: 42
@@ -203,13 +206,16 @@ queries:
     document: {"some": "string", "int": 42, "object": {"key": "value"}, "array": [0, 1]}
     result: [null, null, null, null]
     status: fail
+    consensus: ["string", 42, {"key": "value"}, [0, 1]]
   - id: wildcard_dot_notation_on_array
     selector: $.*
     document: ["string", 42, {"key": "value"}, [0, 1]]
     result: [["string", 42, {"key": "value"}, [0, 1]]]
     status: fail
+    consensus: ["string", 42, {"key": "value"}, [0, 1]]
   - id: wildcard_dot_notation_on_object
     selector: $.*
     document: {"some": "string", "int": 42, "object": {"key": "value"}, "array": [0, 1]}
     result: [{"array": [0, 1], "int": 42, "object": {"key": "value"}, "some": "string"}]
     status: fail
+    consensus: ["string", 42, {"key": "value"}, [0, 1]]

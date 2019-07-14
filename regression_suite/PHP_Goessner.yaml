@@ -93,6 +93,7 @@ queries:
     document: {"0": "value"}
     result: [["value"]]
     status: fail
+    consensus: ["value"]
   - id: key_bracket_notation_with_number_without_quotes
     selector: $[0]
     document: {"0": "value"}

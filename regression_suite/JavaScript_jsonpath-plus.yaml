@@ -98,6 +98,7 @@ queries:
     document: {"key": "value", "another": "entry"}
     result: []
     status: fail
+    consensus: ["value", "entry"]
   - id: key_bracket_notation_with_double_quotes
     selector: $["key"]
     document: {"key": "value"}

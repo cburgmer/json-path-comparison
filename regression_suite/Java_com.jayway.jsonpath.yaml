@@ -43,6 +43,7 @@ queries:
     document: ["first", "second", "third", "forth", "fifth"]
     result: ["first", "second", "third"]
     status: fail
+    consensus: ["first", "third"]
   - id: array_index_slice_start_end_step_0
     selector: $[0:3:0]
     document: ["first", "second", "third", "forth", "fifth"]
@@ -58,6 +59,7 @@ queries:
     document: ["first", "second", "third", "forth", "fifth"]
     result: ["first", "second", "third", "forth"]
     status: fail
+    consensus: ["first", "third"]
   - id: array_index_slice_start_equals_end
     selector: $[0:0]
     document: ["first", "second"]
@@ -83,6 +85,7 @@ queries:
     document: {"key": "value", "another": "entry"}
     result: [{"another": "entry", "key": "value"}]
     status: fail
+    consensus: ["value", "entry"]
   - id: key_bracket_notation_with_double_quotes
     selector: $["key"]
     document: {"key": "value"}

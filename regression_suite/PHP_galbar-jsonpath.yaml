@@ -148,6 +148,7 @@ queries:
     document: [40, null, 42]
     result: [[40, null, 42], 40, null, 42]
     status: fail
+    consensus: [40, null, 42]
   - id: recursive_wildcard_on_scalar
     selector: $..*
     document: 42

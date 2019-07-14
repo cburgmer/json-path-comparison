@@ -22,23 +22,18 @@ unwrap_scalar_if_needed() {
     fi
 }
 
-status() {
+gold_standard() {
     local query="$1"
     local matching_implementations="${consensus_dir}/${query}"
+    local first_matching_implementation
+    first_matching_implementation="$(head -1 < "$matching_implementations")"
 
-    if [[ -s "$matching_implementations" ]]; then
-        if grep "^${implementation}\$" < "$matching_implementations" > /dev/null; then
-            echo "pass"
-        else
-            echo "fail"
-        fi
-    else
-        echo "open"
-    fi
+    query_result_payload "${results_dir}/${query}/${first_matching_implementation}"
 }
 
 query_entry() {
     local query="$1"
+    local matching_implementations="${consensus_dir}/${query}"
 
     if ! is_query_result_ok "${results_dir}/${query}/${implementation}"; then
         return
@@ -51,8 +46,18 @@ query_entry() {
     ./src/oneliner_json.py < "./queries/${query}/document.json"
     echo -n "    result: "
     query_result_payload "${results_dir}/${query}/${implementation}" | unwrap_scalar_if_needed "$query" | ./src/oneliner_json.py
-    echo -n "    status: "
-    status "$query"
+
+    if [[ -s "$matching_implementations" ]]; then
+        if grep "^${implementation}\$" < "$matching_implementations" > /dev/null; then
+            echo "    status: pass"
+        else
+            echo "    status: fail"
+            echo -n "    consensus: "
+            gold_standard "$query" | unwrap_scalar_if_needed "$query" | ./src/oneliner_json.py
+        fi
+    else
+        echo "    status: open"
+    fi
 }
 
 main() {

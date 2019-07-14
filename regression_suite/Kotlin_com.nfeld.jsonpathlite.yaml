@@ -53,6 +53,7 @@ queries:
     document: ["first", "second", "third", "forth", "fifth"]
     result: ["first", "second", "third"]
     status: fail
+    consensus: ["first", "third"]
   - id: array_index_slice_start_end_step_0
     selector: $[0:3:0]
     document: ["first", "second", "third", "forth", "fifth"]
@@ -68,6 +69,7 @@ queries:
     document: ["first", "second", "third", "forth", "fifth"]
     result: ["first", "second", "third", "forth"]
     status: fail
+    consensus: ["first", "third"]
   - id: array_index_slice_start_equals_end
     selector: $[0:0]
     document: ["first", "second"]
@@ -93,6 +95,7 @@ queries:
     document: {"key": "value", "another": "entry"}
     result: {"another": "entry", "key": "value"}
     status: fail
+    consensus: ["value", "entry"]
   - id: key_bracket_notation_with_number
     selector: $['0']
     document: {"0": "value"}
@@ -163,6 +166,7 @@ queries:
     document: {"store": {"book": [{"category": "reference", "author": "Nigel Rees", "title": "Sayings of the Century", "price": 8.95}, {"category": "fiction", "author": "Evelyn Waugh", "title": "Sword of Honour", "price": 12.99}, {"category": "fiction", "author": "Herman Melville", "title": "Moby Dick", "isbn": "0-553-21311-3", "price": 8.99}, {"category": "fiction", "author": "J. R. R. Tolkien", "title": "The Lord of the Rings", "isbn": "0-395-19395-8", "price": 22.99}], "bicycle": {"color": "red", "price": 19.95}}}
     result: [19.95, 8.95, 12.99, 8.99, 22.99]
     status: fail
+    consensus: [8.95, 12.99, 8.99, 22.99, 19.95]
   - id: recursive_wildcard
     selector: $..*
     document: {"key": "value", "another key": {"complex": "string", "primitives": [0, 1]}}
@@ -173,6 +177,7 @@ queries:
     document: [40, null, 42]
     result: []
     status: fail
+    consensus: [40, null, 42]
   - id: root
     selector: $
     document: {"key": "value", "another key": {"complex": ["a", 1]}}
@@ -183,8 +188,10 @@ queries:
     document: ["string", 42, {"key": "value"}, [0, 1]]
     result: null
     status: fail
+    consensus: ["string", 42, {"key": "value"}, [0, 1]]
   - id: wildcard_dot_notation_on_object
     selector: $.*
     document: {"some": "string", "int": 42, "object": {"key": "value"}, "array": [0, 1]}
     result: null
     status: fail
+    consensus: ["string", 42, {"key": "value"}, [0, 1]]
