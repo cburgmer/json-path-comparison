@@ -3,6 +3,20 @@ Results do not match other implementations
 The following queries provide results that do not match those of other implementations of JSONPath
 (compare https://cburgmer.github.io/json-path-comparison/):
 
+- [ ] `$[-1]`
+  Input:
+  ```
+  ["first", "second", "third"]
+  ```
+  Expected output:
+  ```
+  ["third"]
+  ```
+  Error:
+  ```
+  jsonpath returned false, this might indicate an error
+  ```
+
 - [ ] `$['*']`
   Input:
   ```
@@ -15,6 +29,20 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   RuntimeError('maximum recursion depth exceeded while calling a Python object',)
+  ```
+
+- [ ] `$..*`
+  Input:
+  ```
+  {"key": "value", "another key": {"complex": "string", "primitives": [0, 1]}}
+  ```
+  Expected output:
+  ```
+  ["value", {"complex": "string", "primitives": [0, 1]}, "string", [0, 1], 0, 1]
+  ```
+  Actual output:
+  ```
+  [{"complex": "string", "primitives": [0, 1]}, "value", [0, 1], "string", 0, 1]
   ```
 
 - [ ] `$`

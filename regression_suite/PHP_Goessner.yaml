@@ -17,6 +17,7 @@ queries:
     selector: $[-1]
     document: ["first", "second", "third"]
     status: error
+    consensus: ["third"]
   - id: array_index_out_of_bounds
     selector: $[1]
     document: ["one element"]
@@ -181,7 +182,7 @@ queries:
     selector: $..*
     document: {"key": "value", "another key": {"complex": "string", "primitives": [0, 1]}}
     result: ["value", {"complex": "string", "primitives": [0, 1]}, "string", [0, 1], 0, 1]
-    status: open
+    status: pass
   - id: recursive_wildcard_on_null_value_array
     selector: $..*
     document: [40, null, 42]

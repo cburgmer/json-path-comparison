@@ -16,7 +16,8 @@ queries:
   - id: array_index_last
     selector: $[-1]
     document: ["first", "second", "third"]
-    status: error
+    result: "third"
+    status: pass
   - id: array_index_out_of_bounds
     selector: $[1]
     document: ["one element"]
@@ -30,7 +31,8 @@ queries:
   - id: array_index_slice_last_no_end
     selector: $[-1:]
     document: ["first", "second", "third"]
-    status: error
+    result: "third"
+    status: fail
     consensus: ["third"]
   - id: array_index_slice_no_start_no_end
     selector: $[:]
@@ -183,16 +185,18 @@ queries:
   - id: recursive_on_nested_object
     selector: $.store..price
     document: {"store": {"book": [{"category": "reference", "author": "Nigel Rees", "title": "Sayings of the Century", "price": 8.95}, {"category": "fiction", "author": "Evelyn Waugh", "title": "Sword of Honour", "price": 12.99}, {"category": "fiction", "author": "Herman Melville", "title": "Moby Dick", "isbn": "0-553-21311-3", "price": 8.99}, {"category": "fiction", "author": "J. R. R. Tolkien", "title": "The Lord of the Rings", "isbn": "0-395-19395-8", "price": 22.99}], "bicycle": {"color": "red", "price": 19.95}}}
-    status: error
-    consensus: [8.95, 12.99, 8.99, 22.99, 19.95]
+    result: [8.95, 12.99, 8.99, 22.99, 19.95]
+    status: pass
   - id: recursive_wildcard
     selector: $..*
     document: {"key": "value", "another key": {"complex": "string", "primitives": [0, 1]}}
-    status: error
+    result: ["value", {"complex": "string", "primitives": [0, 1]}, "string", [0, 1], 0, 1]
+    status: pass
   - id: recursive_wildcard_on_null_value_array
     selector: $..*
     document: [40, null, 42]
-    status: error
+    result: [40, 42]
+    status: fail
     consensus: [40, null, 42]
   - id: recursive_wildcard_on_scalar
     selector: $..*
@@ -207,9 +211,8 @@ queries:
   - id: wildcard_bracket_notation_on_array
     selector: $[*]
     document: ["string", 42, {"key": "value"}, [0, 1]]
-    result: ["string", 42, {"key": "value"}, 0, 1]
-    status: fail
-    consensus: ["string", 42, {"key": "value"}, [0, 1]]
+    result: ["string", 42, {"key": "value"}, [0, 1]]
+    status: pass
   - id: wildcard_bracket_notation_on_null_value_array
     selector: $[*]
     document: [40, null, 42]
@@ -218,18 +221,15 @@ queries:
   - id: wildcard_bracket_notation_on_object
     selector: $[*]
     document: {"some": "string", "int": 42, "object": {"key": "value"}, "array": [0, 1]}
-    result: ["string", 42, {"key": "value"}, 0, 1]
-    status: fail
-    consensus: ["string", 42, {"key": "value"}, [0, 1]]
+    result: ["string", 42, {"key": "value"}, [0, 1]]
+    status: pass
   - id: wildcard_dot_notation_on_array
     selector: $.*
     document: ["string", 42, {"key": "value"}, [0, 1]]
-    result: ["string", 42, {"key": "value"}, 0, 1]
-    status: fail
-    consensus: ["string", 42, {"key": "value"}, [0, 1]]
+    result: ["string", 42, {"key": "value"}, [0, 1]]
+    status: pass
   - id: wildcard_dot_notation_on_object
     selector: $.*
     document: {"some": "string", "int": 42, "object": {"key": "value"}, "array": [0, 1]}
-    result: ["string", 42, {"key": "value"}, 0, 1]
-    status: fail
-    consensus: ["string", 42, {"key": "value"}, [0, 1]]
+    result: ["string", 42, {"key": "value"}, [0, 1]]
+    status: pass

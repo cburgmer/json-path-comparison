@@ -5,7 +5,7 @@
             :url "https://www.eclipse.org/legal/epl-2.0/"}
   :dependencies [[org.clojure/clojure "1.10.0"]
                  [cheshire "5.8.1"]
-                 [json-path "1.0.1"]]
+                 [json-path "2.0.0"]]
   :main ^:skip-aot json-path-comparison.core
   :target-path "target/%s"
   :profiles {:uberjar {:aot :all}})
