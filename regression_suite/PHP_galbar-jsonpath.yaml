@@ -8,11 +8,19 @@ queries:
     document: ["first", "second", "third", "forth", "fifth"]
     result: ["third"]
     status: pass
+  - id: array_index_dot_notation
+    selector: $.2
+    document: ["first", "second", "third", "forth", "fifth"]
+    status: error
   - id: array_index_last
     selector: $[-1]
     document: ["first", "second", "third"]
     result: ["third"]
     status: open
+  - id: array_index_out_of_bounds
+    selector: $[1]
+    document: ["one element"]
+    status: error
   - id: array_index_slice_end_out_of_bounds
     selector: $[1:10]
     document: ["first", "second", "third"]
@@ -48,6 +56,10 @@ queries:
     document: ["first", "second", "third", "forth", "fifth"]
     result: ["first", "third"]
     status: pass
+  - id: array_index_slice_start_end_step_0
+    selector: $[0:3:0]
+    document: ["first", "second", "third", "forth", "fifth"]
+    status: error
   - id: array_index_slice_start_end_step_1
     selector: $[0:3:1]
     document: ["first", "second", "third", "forth", "fifth"]
@@ -58,6 +70,10 @@ queries:
     document: ["first", "second", "third", "forth", "fifth"]
     result: ["first", "third"]
     status: pass
+  - id: array_index_slice_start_equals_end
+    selector: $[0:0]
+    document: ["first", "second"]
+    status: error
   - id: array_index_slice_start_plus_one
     selector: $[0:1]
     document: ["first", "second"]
@@ -98,6 +114,10 @@ queries:
     document: {"single'quote": "value"}
     result: ["value"]
     status: open
+  - id: key_bracket_notation_with_single_quote_escaped
+    selector: $['single\'quote']
+    document: {"single'quote": "value"}
+    status: error
   - id: key_bracket_notation_with_special_characters
     selector: $['special:"chars']
     document: {"special:\"chars": "value"}
@@ -118,6 +138,18 @@ queries:
     document: {"key": "value"}
     result: ["value"]
     status: pass
+  - id: key_dot_notation_not_found
+    selector: $.missing
+    document: {"key": "value"}
+    status: error
+  - id: key_dot_notation_on_array
+    selector: $.key
+    document: [0, 1]
+    status: error
+  - id: key_dot_notation_on_array_of_matching_object
+    selector: $.key
+    document: [{"key": "value"}]
+    status: error
   - id: key_dot_notation_on_array_value
     selector: $.key
     document: {"key": ["first", "second"]}
@@ -128,6 +160,10 @@ queries:
     document: {"key": null}
     result: [null]
     status: pass
+  - id: recursive_array_index
+    selector: $..[0]
+    document: ["first", {"key": ["first nested", {"more": [{"nested": ["deepest", "second"]}, ["more", "values"]]}]}]
+    status: error
   - id: recursive_key
     selector: $..key
     document: {"object": {"key": "value", "array": [{"key": "something"}, {"key": {"key": "russian dolls"}}]}, "key": "top"}

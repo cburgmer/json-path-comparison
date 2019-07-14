@@ -33,6 +33,11 @@ queries:
     document: ["first", "second", "third"]
     result: ["third"]
     status: pass
+  - id: array_index_slice_no_start_no_end
+    selector: $[:]
+    document: ["first", "second"]
+    status: error
+    consensus: ["first", "second"]
   - id: array_index_slice_only_end
     selector: $[:2]
     document: ["first", "second", "third", "forth", "fifth"]
@@ -96,6 +101,10 @@ queries:
     result: {"another": "entry", "key": "value"}
     status: fail
     consensus: ["value", "entry"]
+  - id: key_bracket_notation_with_double_quotes
+    selector: $["key"]
+    document: {"key": "value"}
+    status: error
   - id: key_bracket_notation_with_number
     selector: $['0']
     document: {"0": "value"}
@@ -106,6 +115,10 @@ queries:
     document: {"0": "value"}
     result: null
     status: open
+  - id: key_bracket_notation_with_single_quote
+    selector: $['single'quote']
+    document: {"single'quote": "value"}
+    status: error
   - id: key_bracket_notation_with_single_quote_escaped
     selector: $['single\'quote']
     document: {"single'quote": "value"}
@@ -121,6 +134,10 @@ queries:
     document: {"*": "value"}
     result: "value"
     status: pass
+  - id: key_bracket_notation_without_quotes
+    selector: $[key]
+    document: {"key": "value"}
+    status: error
   - id: key_dot_notation
     selector: $.key
     document: {"key": "value"}
@@ -178,11 +195,30 @@ queries:
     result: []
     status: fail
     consensus: [40, null, 42]
+  - id: recursive_wildcard_on_scalar
+    selector: $..*
+    document: 42
+    status: error
   - id: root
     selector: $
     document: {"key": "value", "another key": {"complex": ["a", 1]}}
     result: {"another key": {"complex": ["a", 1]}, "key": "value"}
     status: pass
+  - id: wildcard_bracket_notation_on_array
+    selector: $[*]
+    document: ["string", 42, {"key": "value"}, [0, 1]]
+    status: error
+    consensus: ["string", 42, {"key": "value"}, [0, 1]]
+  - id: wildcard_bracket_notation_on_null_value_array
+    selector: $[*]
+    document: [40, null, 42]
+    status: error
+    consensus: [40, null, 42]
+  - id: wildcard_bracket_notation_on_object
+    selector: $[*]
+    document: {"some": "string", "int": 42, "object": {"key": "value"}, "array": [0, 1]}
+    status: error
+    consensus: ["string", 42, {"key": "value"}, [0, 1]]
   - id: wildcard_dot_notation_on_array
     selector: $.*
     document: ["string", 42, {"key": "value"}, [0, 1]]

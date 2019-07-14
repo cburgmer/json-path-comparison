@@ -13,12 +13,30 @@ queries:
     document: ["first", "second", "third", "forth", "fifth"]
     result: null
     status: open
+  - id: array_index_last
+    selector: $[-1]
+    document: ["first", "second", "third"]
+    status: error
+  - id: array_index_out_of_bounds
+    selector: $[1]
+    document: ["one element"]
+    status: error
   - id: array_index_slice_end_out_of_bounds
     selector: $[1:10]
     document: ["first", "second", "third"]
     result: "second"
     status: fail
     consensus: ["second", "third"]
+  - id: array_index_slice_last_no_end
+    selector: $[-1:]
+    document: ["first", "second", "third"]
+    status: error
+    consensus: ["third"]
+  - id: array_index_slice_no_start_no_end
+    selector: $[:]
+    document: ["first", "second"]
+    status: error
+    consensus: ["first", "second"]
   - id: array_index_slice_only_end
     selector: $[:2]
     document: ["first", "second", "third", "forth", "fifth"]
@@ -77,12 +95,52 @@ queries:
     result: "first"
     status: fail
     consensus: ["first", "second"]
+  - id: key_bracket_notation
+    selector: $['key']
+    document: {"key": "value"}
+    status: error
+    consensus: "value"
+  - id: key_bracket_notation_union
+    selector: $['key','another']
+    document: {"key": "value", "another": "entry"}
+    status: error
+    consensus: ["value", "entry"]
+  - id: key_bracket_notation_with_double_quotes
+    selector: $["key"]
+    document: {"key": "value"}
+    status: error
+  - id: key_bracket_notation_with_number
+    selector: $['0']
+    document: {"0": "value"}
+    status: error
+    consensus: "value"
+  - id: key_bracket_notation_with_number_without_quotes
+    selector: $[0]
+    document: {"0": "value"}
+    status: error
+  - id: key_bracket_notation_with_single_quote
+    selector: $['single'quote']
+    document: {"single'quote": "value"}
+    status: error
+  - id: key_bracket_notation_with_single_quote_escaped
+    selector: $['single\'quote']
+    document: {"single'quote": "value"}
+    status: error
+  - id: key_bracket_notation_with_special_characters
+    selector: $['special:"chars']
+    document: {"special:\"chars": "value"}
+    status: error
+    consensus: "value"
   - id: key_bracket_notation_with_star_literal
     selector: $['*']
     document: {"*": "value"}
     result: ["value"]
     status: fail
     consensus: "value"
+  - id: key_bracket_notation_without_quotes
+    selector: $[key]
+    document: {"key": "value"}
+    status: error
   - id: key_dot_notation
     selector: $.key
     document: {"key": "value"}
@@ -113,11 +171,29 @@ queries:
     document: {"key": null}
     result: null
     status: pass
+  - id: recursive_array_index
+    selector: $..[0]
+    document: ["first", {"key": ["first nested", {"more": [{"nested": ["deepest", "second"]}, ["more", "values"]]}]}]
+    status: error
   - id: recursive_key
     selector: $..key
     document: {"object": {"key": "value", "array": [{"key": "something"}, {"key": {"key": "russian dolls"}}]}, "key": "top"}
     result: ["top", "value", "something", {"key": "russian dolls"}, "russian dolls"]
     status: pass
+  - id: recursive_on_nested_object
+    selector: $.store..price
+    document: {"store": {"book": [{"category": "reference", "author": "Nigel Rees", "title": "Sayings of the Century", "price": 8.95}, {"category": "fiction", "author": "Evelyn Waugh", "title": "Sword of Honour", "price": 12.99}, {"category": "fiction", "author": "Herman Melville", "title": "Moby Dick", "isbn": "0-553-21311-3", "price": 8.99}, {"category": "fiction", "author": "J. R. R. Tolkien", "title": "The Lord of the Rings", "isbn": "0-395-19395-8", "price": 22.99}], "bicycle": {"color": "red", "price": 19.95}}}
+    status: error
+    consensus: [8.95, 12.99, 8.99, 22.99, 19.95]
+  - id: recursive_wildcard
+    selector: $..*
+    document: {"key": "value", "another key": {"complex": "string", "primitives": [0, 1]}}
+    status: error
+  - id: recursive_wildcard_on_null_value_array
+    selector: $..*
+    document: [40, null, 42]
+    status: error
+    consensus: [40, null, 42]
   - id: recursive_wildcard_on_scalar
     selector: $..*
     document: 42

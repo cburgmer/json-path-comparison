@@ -8,6 +8,10 @@ queries:
     document: ["first", "second", "third", "forth", "fifth"]
     result: ["third"]
     status: pass
+  - id: array_index_dot_notation
+    selector: $.2
+    document: ["first", "second", "third", "forth", "fifth"]
+    status: error
   - id: array_index_last
     selector: $[-1]
     document: ["first", "second", "third"]
@@ -49,6 +53,25 @@ queries:
     document: ["first", "second", "third", "forth", "fifth"]
     result: ["second", "third"]
     status: pass
+  - id: array_index_slice_start_end_step
+    selector: $[0:3:2]
+    document: ["first", "second", "third", "forth", "fifth"]
+    status: error
+    consensus: ["first", "third"]
+  - id: array_index_slice_start_end_step_0
+    selector: $[0:3:0]
+    document: ["first", "second", "third", "forth", "fifth"]
+    status: error
+  - id: array_index_slice_start_end_step_1
+    selector: $[0:3:1]
+    document: ["first", "second", "third", "forth", "fifth"]
+    status: error
+    consensus: ["first", "second", "third"]
+  - id: array_index_slice_start_end_step_non_aligned
+    selector: $[0:4:2]
+    document: ["first", "second", "third", "forth", "fifth"]
+    status: error
+    consensus: ["first", "third"]
   - id: array_index_slice_start_equals_end
     selector: $[0:0]
     document: ["first", "second"]
@@ -74,6 +97,10 @@ queries:
     document: {"key": "value", "another": "entry"}
     result: ["value", "entry"]
     status: pass
+  - id: key_bracket_notation_with_double_quotes
+    selector: $["key"]
+    document: {"key": "value"}
+    status: error
   - id: key_bracket_notation_with_number
     selector: $['0']
     document: {"0": "value"}
@@ -84,6 +111,10 @@ queries:
     document: {"0": "value"}
     result: []
     status: open
+  - id: key_bracket_notation_with_single_quote
+    selector: $['single'quote']
+    document: {"single'quote": "value"}
+    status: error
   - id: key_bracket_notation_with_single_quote_escaped
     selector: $['single\'quote']
     document: {"single'quote": "value"}
@@ -99,6 +130,10 @@ queries:
     document: {"*": "value"}
     result: ["value"]
     status: pass
+  - id: key_bracket_notation_without_quotes
+    selector: $[key]
+    document: {"key": "value"}
+    status: error
   - id: key_dot_notation
     selector: $.key
     document: {"key": "value"}

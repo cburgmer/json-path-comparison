@@ -13,6 +13,14 @@ queries:
     document: ["first", "second", "third", "forth", "fifth"]
     result: ["third"]
     status: open
+  - id: array_index_last
+    selector: $[-1]
+    document: ["first", "second", "third"]
+    status: error
+  - id: array_index_out_of_bounds
+    selector: $[1]
+    document: ["one element"]
+    status: error
   - id: array_index_slice_end_out_of_bounds
     selector: $[1:10]
     document: ["first", "second", "third"]
@@ -48,6 +56,10 @@ queries:
     document: ["first", "second", "third", "forth", "fifth"]
     result: ["first", "third"]
     status: pass
+  - id: array_index_slice_start_end_step_0
+    selector: $[0:3:0]
+    document: ["first", "second", "third", "forth", "fifth"]
+    status: error
   - id: array_index_slice_start_end_step_1
     selector: $[0:3:1]
     document: ["first", "second", "third", "forth", "fifth"]
@@ -58,6 +70,10 @@ queries:
     document: ["first", "second", "third", "forth", "fifth"]
     result: ["first", "third"]
     status: pass
+  - id: array_index_slice_start_equals_end
+    selector: $[0:0]
+    document: ["first", "second"]
+    status: error
   - id: array_index_slice_start_plus_one
     selector: $[0:1]
     document: ["first", "second"]
@@ -78,6 +94,10 @@ queries:
     document: {"key": "value", "another": "entry"}
     result: ["value", "entry"]
     status: pass
+  - id: key_bracket_notation_with_double_quotes
+    selector: $["key"]
+    document: {"key": "value"}
+    status: error
   - id: key_bracket_notation_with_number
     selector: $['0']
     document: {"0": "value"}
@@ -93,6 +113,10 @@ queries:
     document: {"single'quote": "value"}
     result: ["value"]
     status: open
+  - id: key_bracket_notation_with_single_quote_escaped
+    selector: $['single\'quote']
+    document: {"single'quote": "value"}
+    status: error
   - id: key_bracket_notation_with_special_characters
     selector: $['special:"chars']
     document: {"special:\"chars": "value"}
@@ -113,6 +137,18 @@ queries:
     document: {"key": "value"}
     result: ["value"]
     status: pass
+  - id: key_dot_notation_not_found
+    selector: $.missing
+    document: {"key": "value"}
+    status: error
+  - id: key_dot_notation_on_array
+    selector: $.key
+    document: [0, 1]
+    status: error
+  - id: key_dot_notation_on_array_of_matching_object
+    selector: $.key
+    document: [{"key": "value"}]
+    status: error
   - id: key_dot_notation_on_array_value
     selector: $.key
     document: {"key": ["first", "second"]}
@@ -148,6 +184,15 @@ queries:
     document: [40, null, 42]
     result: [40, null, 42]
     status: pass
+  - id: recursive_wildcard_on_scalar
+    selector: $..*
+    document: 42
+    status: error
+  - id: root
+    selector: $
+    document: {"key": "value", "another key": {"complex": ["a", 1]}}
+    status: error
+    consensus: [{"another key": {"complex": ["a", 1]}, "key": "value"}]
   - id: wildcard_bracket_notation_on_array
     selector: $[*]
     document: ["string", 42, {"key": "value"}, [0, 1]]
