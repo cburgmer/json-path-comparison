@@ -12,6 +12,16 @@ all_query_results() {
     find "$results_dir" -type d -depth 1 -print0 | xargs -0 -n1 basename | sort
 }
 
+unwrap_scalar_if_needed() {
+    local query="$1"
+
+    if [[ -f "./implementations/${implementation}/SINGLE_POSSIBLE_MATCH_RETURNED_AS_SCALAR" && -f "./queries/${query}/SCALAR_RESULT" ]]; then
+        ./src/unwrap_scalar.py
+    else
+        cat
+    fi
+}
+
 status() {
     local query="$1"
     local matching_implementations="${consensus_dir}/${query}"
@@ -37,12 +47,10 @@ query_entry() {
     echo "  - id: ${query}"
     echo -n "    selector: "
     cat "./queries/${query}/selector"
-    echo -n "    scalar: "
-    test -f "./queries/${query}/SCALAR_RESULT" && echo "true" || echo "false"
     echo -n "    document: "
     ./src/oneliner_json.py < "./queries/${query}/document.json"
     echo -n "    result: "
-    query_result_payload "${results_dir}/${query}/${implementation}" | ./src/oneliner_json.py
+    query_result_payload "${results_dir}/${query}/${implementation}" | unwrap_scalar_if_needed "$query" | ./src/oneliner_json.py
     echo -n "    status: "
     status "$query"
 }

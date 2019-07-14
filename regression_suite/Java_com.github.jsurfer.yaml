@@ -5,223 +5,186 @@ implementation: Java_com.github.jsurfer
 queries:
   - id: array_index
     selector: $[2]
-    scalar: true
     document: ["first", "second", "third", "forth", "fifth"]
     result: ["third"]
     status: pass
   - id: array_index_last
     selector: $[-1]
-    scalar: true
     document: ["first", "second", "third"]
     result: []
     status: open
   - id: array_index_out_of_bounds
     selector: $[1]
-    scalar: true
     document: ["one element"]
     result: []
     status: open
   - id: array_index_slice_end_out_of_bounds
     selector: $[1:10]
-    scalar: false
     document: ["first", "second", "third"]
     result: ["second", "third"]
     status: pass
   - id: array_index_slice_last_no_end
     selector: $[-1:]
-    scalar: false
     document: ["first", "second", "third"]
     result: ["first", "second", "third"]
     status: fail
   - id: array_index_slice_no_start_no_end
     selector: $[:]
-    scalar: false
     document: ["first", "second"]
     result: ["first", "second"]
     status: pass
   - id: array_index_slice_only_end
     selector: $[:2]
-    scalar: false
     document: ["first", "second", "third", "forth", "fifth"]
     result: ["first", "second"]
     status: pass
   - id: array_index_slice_only_start
     selector: $[1:]
-    scalar: false
     document: ["first", "second", "third", "forth", "fifth"]
     result: ["second", "third", "forth", "fifth"]
     status: pass
   - id: array_index_slice_start_end
     selector: $[1:3]
-    scalar: false
     document: ["first", "second", "third", "forth", "fifth"]
     result: ["second", "third"]
     status: pass
   - id: array_index_slice_start_equals_end
     selector: $[0:0]
-    scalar: false
     document: ["first", "second"]
     result: []
     status: open
   - id: array_index_slice_start_plus_one
     selector: $[0:1]
-    scalar: false
     document: ["first", "second"]
     result: ["first"]
     status: pass
   - id: array_index_union
     selector: $[0,1]
-    scalar: false
     document: ["first", "second", "third"]
     result: ["first", "second"]
     status: pass
   - id: key_bracket_notation
     selector: $['key']
-    scalar: true
     document: {"key": "value"}
     result: ["value"]
     status: pass
   - id: key_bracket_notation_union
     selector: $['key','another']
-    scalar: false
     document: {"key": "value", "another": "entry"}
     result: ["value", "entry"]
     status: pass
   - id: key_bracket_notation_with_number
     selector: $['0']
-    scalar: true
     document: {"0": "value"}
     result: ["value"]
     status: pass
   - id: key_bracket_notation_with_number_without_quotes
     selector: $[0]
-    scalar: true
     document: {"0": "value"}
     result: []
     status: open
   - id: key_bracket_notation_with_single_quote_escaped
     selector: $['single\'quote']
-    scalar: true
     document: {"single'quote": "value"}
     result: []
     status: open
   - id: key_bracket_notation_with_special_characters
     selector: $['special:"chars']
-    scalar: true
     document: {"special:\"chars": "value"}
     result: ["value"]
     status: pass
   - id: key_bracket_notation_with_star_literal
     selector: $['*']
-    scalar: true
     document: {"*": "value"}
     result: ["value"]
     status: pass
   - id: key_dot_notation
     selector: $.key
-    scalar: true
     document: {"key": "value"}
     result: ["value"]
     status: pass
   - id: key_dot_notation_not_found
     selector: $.missing
-    scalar: true
     document: {"key": "value"}
     result: []
     status: open
   - id: key_dot_notation_on_array
     selector: $.key
-    scalar: true
     document: [0, 1]
     result: []
     status: open
   - id: key_dot_notation_on_array_of_matching_object
     selector: $.key
-    scalar: true
     document: [{"key": "value"}]
     result: []
     status: open
   - id: key_dot_notation_on_array_value
     selector: $.key
-    scalar: true
     document: {"key": ["first", "second"]}
     result: [["first", "second"]]
     status: pass
   - id: key_dot_notation_on_null_value
     selector: $.key
-    scalar: true
     document: {"key": null}
     result: [null]
     status: pass
   - id: recursive_array_index
     selector: $..[0]
-    scalar: false
     document: ["first", {"key": ["first nested", {"more": [{"nested": ["deepest", "second"]}, ["more", "values"]]}]}]
     result: ["first", "first nested", "deepest", {"nested": ["deepest", "second"]}, "more"]
     status: open
   - id: recursive_key
     selector: $..key
-    scalar: false
     document: {"object": {"key": "value", "array": [{"key": "something"}, {"key": {"key": "russian dolls"}}]}, "key": "top"}
     result: ["value", "something", "russian dolls", {"key": "russian dolls"}, "top"]
     status: fail
   - id: recursive_on_nested_object
     selector: $.store..price
-    scalar: false
     document: {"store": {"book": [{"category": "reference", "author": "Nigel Rees", "title": "Sayings of the Century", "price": 8.95}, {"category": "fiction", "author": "Evelyn Waugh", "title": "Sword of Honour", "price": 12.99}, {"category": "fiction", "author": "Herman Melville", "title": "Moby Dick", "isbn": "0-553-21311-3", "price": 8.99}, {"category": "fiction", "author": "J. R. R. Tolkien", "title": "The Lord of the Rings", "isbn": "0-395-19395-8", "price": 22.99}], "bicycle": {"color": "red", "price": 19.95}}}
     result: [8.95, 12.99, 8.99, 22.99, 19.95]
     status: pass
   - id: recursive_wildcard
     selector: $..*
-    scalar: false
     document: {"key": "value", "another key": {"complex": "string", "primitives": [0, 1]}}
     result: ["value", "string", 0, 1, [0, 1], {"complex": "string", "primitives": [0, 1]}]
     status: open
   - id: recursive_wildcard_on_null_value_array
     selector: $..*
-    scalar: false
     document: [40, null, 42]
     result: [40, null, 42]
     status: pass
   - id: recursive_wildcard_on_scalar
     selector: $..*
-    scalar: false
     document: 42
     result: []
     status: open
   - id: root
     selector: $
-    scalar: true
     document: {"key": "value", "another key": {"complex": ["a", 1]}}
     result: [{"another key": {"complex": ["a", 1]}, "key": "value"}]
     status: pass
   - id: wildcard_bracket_notation_on_array
     selector: $[*]
-    scalar: false
     document: ["string", 42, {"key": "value"}, [0, 1]]
     result: ["string", 42, {"key": "value"}, [0, 1]]
     status: pass
   - id: wildcard_bracket_notation_on_null_value_array
     selector: $[*]
-    scalar: false
     document: [40, null, 42]
     result: [40, null, 42]
     status: pass
   - id: wildcard_bracket_notation_on_object
     selector: $[*]
-    scalar: false
     document: {"some": "string", "int": 42, "object": {"key": "value"}, "array": [0, 1]}
     result: ["string", 42, {"key": "value"}, [0, 1]]
     status: pass
   - id: wildcard_dot_notation_on_array
     selector: $.*
-    scalar: false
     document: ["string", 42, {"key": "value"}, [0, 1]]
     result: ["string", 42, {"key": "value"}, [0, 1]]
     status: pass
   - id: wildcard_dot_notation_on_object
     selector: $.*
-    scalar: false
     document: {"some": "string", "int": 42, "object": {"key": "value"}, "array": [0, 1]}
     result: ["string", 42, {"key": "value"}, [0, 1]]
     status: pass
