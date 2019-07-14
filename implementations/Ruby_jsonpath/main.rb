@@ -8,5 +8,6 @@ begin
   jsonpath = JsonPath.new(ARGV[0])
   puts MultiJson.encode(jsonpath.on(MultiJson.decode(STDIN.read)))
 rescue Exception => e
-  Kernel.abort(e.message)
+  puts(e)
+  exit(false)
 end

@@ -10,7 +10,7 @@ set -euo pipefail
 readonly script_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 readonly docs_dir="./docs"
 
-for dep in ninja java cargo node python markdown gem cpan perl php composer; do
+for dep in ninja java cargo node python markdown cpan perl php composer; do
     if ! which "$dep" > /dev/null; then
         echo >&2 "Please install $dep"
         exit 1
