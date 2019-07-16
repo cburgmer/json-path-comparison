@@ -22,7 +22,7 @@ implementation_outliers() {
         if is_outlier "$implementation"; then
             echo "$implementation"
         fi
-    done <<< "$(find "${results_dir}/${query}" -type f -depth 1 -print0 | xargs -0 -n1 basename | sort)"
+    done <<< "$(find "${results_dir}/${query}" -type f -maxdepth 1 -mindepth 1 -print0 | xargs -0 -n1 basename | sort)"
 }
 
 output_setup() {

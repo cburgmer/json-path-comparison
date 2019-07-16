@@ -9,7 +9,7 @@ readonly implementation="$(basename "$implementation_dir")"
 . src/shared.sh
 
 all_query_results() {
-    find "$results_dir" -type d -depth 1 -print0 | xargs -0 -n1 basename | sort
+    find "$results_dir" -type d -maxdepth 1 -mindepth 1 -print0 | xargs -0 -n1 basename | sort
 }
 
 unwrap_scalar_if_needed() {

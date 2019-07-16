@@ -23,7 +23,7 @@ See https://cburgmer.github.io/json-path-comparison/ for the table generated fro
 
 ### Regression test suite
 
-If you are an author of an upstream implementation, you can use the report generated here to test for regressions in your logic. The regression document is generated for every implementation individually so you can handle outcomes differently depending on whether they match the consensus or not. 
+If you are an author of an upstream implementation, you can use the report generated here to test for regressions in your logic. The regression document is generated for every implementation individually so you can handle outcomes differently depending on whether they match the consensus or not.
 
 For example, the Clojure json-path implementation has a [regression suite based on the above](https://github.com/gga/json-path/blob/master/test/json_path/test/regression_test.clj).
 

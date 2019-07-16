@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 import sys
 import json
 from collections import OrderedDict
@@ -7,7 +7,7 @@ def main():
     try:
         j = json.loads(sys.stdin.read(), object_pairs_hook=OrderedDict)
     except Exception as e:
-        print e
+        print(e)
         sys.exit(1)
 
     assert type(j) == list

@@ -7,11 +7,11 @@ readonly consensus_dir="$2"
 . src/shared.sh
 
 all_implementations() {
-    find ./implementations -type d -depth 1 -print0 | xargs -0 -n1 basename | sort
+    find ./implementations -type d -maxdepth 1 -mindepth 1 -print0 | xargs -0 -n1 basename | sort
 }
 
 all_query_results() {
-    find "$results_dir" -type d -depth 1 -print0 | xargs -0 -n1 basename | sort
+    find "$results_dir" -type d -maxdepth 1 -mindepth 1 -print0 | xargs -0 -n1 basename | sort
 }
 
 give_mark() {

@@ -37,7 +37,7 @@ consensus() {
 
 minimal_consensus() {
     local implementation_count
-    implementation_count=$(find implementations -type d -depth 1 | wc -l)
+    implementation_count=$(find implementations -type d -maxdepth 1 -mindepth 1 | wc -l)
 
     # ceil(half) and +1 so consensus always has 2 more members than other side
     echo $(( (implementation_count + 1) / 2 + 1))
