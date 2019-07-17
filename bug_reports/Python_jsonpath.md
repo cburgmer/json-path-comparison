@@ -28,21 +28,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  RuntimeError('maximum recursion depth exceeded while calling a Python object',)
-  ```
-
-- [ ] `$..*`
-  Input:
-  ```
-  {"key": "value", "another key": {"complex": "string", "primitives": [0, 1]}}
-  ```
-  Expected output:
-  ```
-  ["value", {"complex": "string", "primitives": [0, 1]}, "string", [0, 1], 0, 1]
-  ```
-  Actual output:
-  ```
-  [{"complex": "string", "primitives": [0, 1]}, "value", [0, 1], "string", 0, 1]
+  RecursionError('maximum recursion depth exceeded while calling a Python object')
   ```
 
 - [ ] `$`
@@ -57,34 +43,6 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   jsonpath returned false, this might indicate an error
-  ```
-
-- [ ] `$[*]`
-  Input:
-  ```
-  {"some": "string", "int": 42, "object": {"key": "value"}, "array": [0, 1]}
-  ```
-  Expected output:
-  ```
-  ["string", 42, {"key": "value"}, [0, 1]]
-  ```
-  Actual output:
-  ```
-  [42, [0, 1], {"key": "value"}, "string"]
-  ```
-
-- [ ] `$.*`
-  Input:
-  ```
-  {"some": "string", "int": 42, "object": {"key": "value"}, "array": [0, 1]}
-  ```
-  Expected output:
-  ```
-  ["string", 42, {"key": "value"}, [0, 1]]
-  ```
-  Actual output:
-  ```
-  [42, [0, 1], {"key": "value"}, "string"]
   ```
 
 

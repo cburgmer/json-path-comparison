@@ -181,7 +181,7 @@ queries:
   - id: recursive_wildcard
     selector: $..*
     document: {"key": "value", "another key": {"complex": "string", "primitives": [0, 1]}}
-    result: [{"complex": "string", "primitives": [0, 1]}, "value", [0, 1], "string"]
+    result: ["value", {"complex": "string", "primitives": [0, 1]}, "string", [0, 1]]
     status: fail
     consensus: ["value", {"complex": "string", "primitives": [0, 1]}, "string", [0, 1], 0, 1]
   - id: recursive_wildcard_on_null_value_array
@@ -225,6 +225,5 @@ queries:
   - id: wildcard_dot_notation_on_object
     selector: $.*
     document: {"some": "string", "int": 42, "object": {"key": "value"}, "array": [0, 1]}
-    result: [42, [0, 1], {"key": "value"}, "string"]
-    status: fail
-    consensus: ["string", 42, {"key": "value"}, [0, 1]]
+    result: ["string", 42, {"key": "value"}, [0, 1]]
+    status: pass

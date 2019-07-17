@@ -14,7 +14,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  Exception('Parse error at 1:5 near token : (:)',)
+  Exception('Parse error at 1:5 near token : (:)')
   ```
 
 - [ ] `$[0:3:1]`
@@ -28,7 +28,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  Exception('Parse error at 1:5 near token : (:)',)
+  Exception('Parse error at 1:5 near token : (:)')
   ```
 
 - [ ] `$[0:4:2]`
@@ -42,7 +42,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  Exception('Parse error at 1:5 near token : (:)',)
+  Exception('Parse error at 1:5 near token : (:)')
   ```
 
 - [ ] `$[0,1]`
@@ -56,7 +56,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  Exception('Parse error at 1:3 near token , (,)',)
+  Exception('Parse error at 1:3 near token , (,)')
   ```
 
 - [ ] `$..*`
@@ -70,7 +70,7 @@ The following queries provide results that do not match those of other implement
   ```
   Actual output:
   ```
-  [{"complex": "string", "primitives": [0, 1]}, "value", [0, 1], "string"]
+  ["value", {"complex": "string", "primitives": [0, 1]}, "string", [0, 1]]
   ```
 
 - [ ] `$..*`
@@ -113,20 +113,6 @@ The following queries provide results that do not match those of other implement
   Actual output:
   ```
   []
-  ```
-
-- [ ] `$.*`
-  Input:
-  ```
-  {"some": "string", "int": 42, "object": {"key": "value"}, "array": [0, 1]}
-  ```
-  Expected output:
-  ```
-  ["string", 42, {"key": "value"}, [0, 1]]
-  ```
-  Actual output:
-  ```
-  [42, [0, 1], {"key": "value"}, "string"]
   ```
 
 
