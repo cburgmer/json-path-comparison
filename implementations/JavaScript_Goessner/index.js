@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-const jsonpath = require('./jsonpath_export');
+const jsonpath = require('./build/jsonpath_export');
 
 const selector = process.argv[2];
 

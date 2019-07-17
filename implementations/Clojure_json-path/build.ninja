@@ -1,0 +1,9 @@
+root = implementations/Clojure_json-path
+builddir = $root/build
+
+rule compile
+  command = (cd $root && ./lein uberjar) && mv $root/target/uberjar/json-path-comparison-0.1.0-SNAPSHOT-standalone.jar $out && rm -r $root/target
+
+build $builddir/json-path-comparison.jar: compile | $root/src/json_path_comparison/core.clj $root/project.clj $root/lein
+
+build $root: phony $builddir/json-path-comparison.jar

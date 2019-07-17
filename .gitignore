@@ -5,3 +5,4 @@
 /implementations/JavaScript_Goessner/report.*.json
 /implementations/Java_*/**/cp.txt
 /implementations/Kotlin_*/**/cp.txt
+/implementations/*/build/

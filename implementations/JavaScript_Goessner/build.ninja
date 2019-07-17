@@ -1,0 +1,9 @@
+root = implementations/JavaScript_Goessner
+builddir = $root/build
+
+rule install
+  command = $root/install.sh $out
+
+build $builddir/jsonpath_export.js: install | $root/install.sh
+
+build $root: phony $builddir/jsonpath_export.js

@@ -26,6 +26,14 @@ main() {
     local implementation
 
     {
+        while IFS= read -r implementation; do
+            if [[ -f "implementations/${implementation}/build.ninja" ]]; then # we are slowly migrating all implementation to build via ninja as well
+                echo "subninja implementations/${implementation}/build.ninja"
+            fi
+        done <<< "$(all_implementations)"
+        echo
+
+        echo
         cat <<EOF
 rule run
   command = ./src/query_implementation.sh \$in > '\$out'
