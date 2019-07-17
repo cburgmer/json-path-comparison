@@ -6,4 +6,4 @@ rule compile
 
 build $builddir/json-path-comparison.jar: compile | $root/src/json_path_comparison/core.clj $root/project.clj $root/lein
 
-build $root: phony $builddir/json-path-comparison.jar
+build $root/install: phony $builddir/json-path-comparison.jar

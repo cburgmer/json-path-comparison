@@ -6,4 +6,4 @@ rule install
 
 build $builddir/node_modules_installed: install | $root/package.json $root/package-lock.json
 
-build $root: phony $builddir/node_modules_installed
+build $root/install: phony $builddir/node_modules_installed

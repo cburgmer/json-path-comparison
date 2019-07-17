@@ -10,4 +10,4 @@ rule classpath
 build $builddir/json-path-comparison.jar: compile | $root/src/main/java/query/App.java $root/pom.xml
 build $builddir/cp.txt: classpath | $root/pom.xml
 
-build $root: phony $builddir/json-path-comparison.jar $builddir/cp.txt
+build $root/install: phony $builddir/json-path-comparison.jar $builddir/cp.txt

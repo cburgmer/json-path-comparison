@@ -6,4 +6,4 @@ rule install
 
 build $builddir/jsonpath_export.js: install | $root/install.sh
 
-build $root: phony $builddir/jsonpath_export.js
+build $root/install: phony $builddir/jsonpath_export.js

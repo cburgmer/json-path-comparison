@@ -1,6 +1,7 @@
 #!/bin/bash
 set -euo pipefail
 
+readonly test_compilation_dir="build/test_compilation"
 readonly results_dir="build/results"
 readonly consensus_dir="build/consensus"
 readonly markdown_dir="build/markdown"
@@ -26,9 +27,15 @@ main() {
     local implementation
 
     {
+        cat <<EOF
+rule test_compilation
+  command = bash -c "diff --ignore-space-change <(echo [42]) <(\$in/run.sh '\$\$..key' <<< '{\"key\": 42}')" > \$out
+EOF
         while IFS= read -r implementation; do
             if [[ -f "implementations/${implementation}/build.ninja" ]]; then # we are slowly migrating all implementation to build via ninja as well
                 echo "subninja implementations/${implementation}/build.ninja"
+                echo
+                echo "build ${test_compilation_dir}/${implementation}: test_compilation implementations/${implementation} | implementations/${implementation}/install"
             fi
         done <<< "$(all_implementations)"
         echo
@@ -46,6 +53,9 @@ EOF
                 echo -n " | src/query_implementation.sh queries/${query}/selector queries/${query}/document.json"
                 if [[ -f "queries/${query}/SCALAR_RESULT" ]]; then
                     echo -n " queries/${query}/SCALAR_RESULT"
+                fi
+                if [[ -f "implementations/${implementation}/build.ninja" ]]; then # we are slowly migrating all implementation to build via ninja as well
+                    echo -n " ${test_compilation_dir}/${implementation}"
                 fi
                 echo
             done <<< "$(all_implementations)"
