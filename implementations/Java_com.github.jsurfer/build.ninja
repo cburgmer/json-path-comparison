@@ -1,14 +1,13 @@
 root = implementations/Java_com.github.jsurfer
-src = $root/query
 builddir = $root/build
 
 rule compile
-  command = (cd $src && mvn clean package -q) && mv $src/target/query-1.0-SNAPSHOT.jar $out && rm -r $src/target
+  command = (cd $root && mvn clean package -q) && mv $root/target/query-1.0-SNAPSHOT.jar $out && rm -r $root/target
 
 rule classpath
-  command = (cd $src && mvn -q dependency:build-classpath -Dmdep.outputFile=cp.txt) && mv $src/cp.txt $out
+  command = (cd $root && mvn -q dependency:build-classpath -Dmdep.outputFile=cp.txt) && mv $root/cp.txt $out
 
-build $builddir/json-path-comparison.jar: compile | $src/src/main/java/query/App.java $src/pom.xml
-build $builddir/cp.txt: classpath | $src/pom.xml
+build $builddir/json-path-comparison.jar: compile | $root/src/main/java/query/App.java $root/pom.xml
+build $builddir/cp.txt: classpath | $root/pom.xml
 
 build $root: phony $builddir/json-path-comparison.jar $builddir/cp.txt
