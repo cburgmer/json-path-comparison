@@ -2,6 +2,5 @@
 .ninja_deps
 .ninja_log
 /build.ninja
-/implementations/JavaScript_Goessner/report.*.json
 /implementations/Kotlin_*/**/cp.txt
 /implementations/*/build/
