@@ -2,7 +2,7 @@
 // disable absolute paths showing up in output
 error_reporting(E_ERROR | E_PARSE);
 
-require_once('jsonpath.php');
+require_once('build/jsonpath.php');
 
 $json = file_get_contents("php://stdin");
 $o = json_decode($json, true);

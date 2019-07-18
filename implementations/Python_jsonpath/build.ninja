@@ -1,0 +1,9 @@
+root = implementations/Python_jsonpath
+builddir = $root/build
+
+rule install
+  command = (cd $root && pip3 install -r requirements.txt) && echo > $out
+
+build $builddir/pip_installed: install | $root/requirements.txt
+
+build $root/install: phony $builddir/pip_installed
