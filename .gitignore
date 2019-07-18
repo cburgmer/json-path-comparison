@@ -2,5 +2,4 @@
 .ninja_deps
 .ninja_log
 /build.ninja
-/implementations/Kotlin_*/**/cp.txt
 /implementations/*/build/
