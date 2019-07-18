@@ -1,0 +1,13 @@
+root = implementations/Java_com.jayway.jsonpath
+builddir = $root/build
+
+rule compile
+  command = (cd $root && mvn clean package -q) && mv $root/target/query-1.0-SNAPSHOT.jar $out && rm -r $root/target
+
+rule classpath
+  command = (cd $root && mvn -q dependency:build-classpath -Dmdep.outputFile=cp.txt) && mv $root/cp.txt $out
+
+build $builddir/json-path-comparison.jar: compile | $root/src/main/java/query/App.java $root/pom.xml
+build $builddir/cp.txt: classpath | $root/pom.xml
+
+build $root/install: phony $builddir/json-path-comparison.jar $builddir/cp.txt

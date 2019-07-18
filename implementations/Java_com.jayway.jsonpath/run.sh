@@ -2,13 +2,5 @@
 set -euo pipefail
 
 readonly script_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-readonly target="$script_dir"/target
 
-cd "$script_dir"
-
-if [[ ! -e "$target" ]]; then
-    mvn clean package -q
-    mvn -q dependency:build-classpath -Dmdep.outputFile=cp.txt
-fi
-
-java -cp "${target}/query-1.0-SNAPSHOT.jar:$(cat cp.txt)" query.App "$@"
+java -cp "${script_dir}/build/json-path-comparison.jar:$(cat "${script_dir}/build/cp.txt")" query.App "$@"
