@@ -3,7 +3,7 @@ set -euo pipefail
 
 readonly script_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 readonly jruby_jar_target="${script_dir}/build/jruby-complete.jar"
-readonly gems_target="${script_dir}/build/gems"
+readonly gems_target="${script_dir}/gems"
 
 # Work around https://github.com/jruby/jruby/issues/4834
 GEM_PATH="$gems_target" java \

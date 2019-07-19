@@ -5,9 +5,9 @@ rule install_jruby
   command = curl -o $out "https://repo1.maven.org/maven2/org/jruby/jruby-complete/9.2.7.0/jruby-complete-9.2.7.0.jar"
 
 rule install_gems
-  command = java -jar $in -S gem install -i $out jsonpath
+  command = java -jar $in -S gem install -i $root/gems jsonpath && echo > $out
 
 build $builddir/jruby-complete.jar: install_jruby
-build $builddir/gems: install_gems $builddir/jruby-complete.jar
+build $builddir/gems_installed: install_gems $builddir/jruby-complete.jar
 
-build $root/install: phony $builddir/gems
+build $root/install: phony $builddir/jruby-complete.jar $builddir/gems_installed
