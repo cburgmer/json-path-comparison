@@ -5,4 +5,4 @@ readonly script_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 cd "$script_dir"
 
-python3 main.py "$@"
+PYTHONPATH="$script_dir"/deps/usr/local/lib/python3.7/site-packages/ python3 main.py "$@"
