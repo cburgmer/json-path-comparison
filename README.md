@@ -34,6 +34,6 @@ You can easily add another library/implementation to the comparison. Copy a comp
 Adding more tests should be fairly easy. Add a new directory under [./queries](./queries) and give it a `selector` and `document.json`
 . Scalar queries have a specific handling, compare [./queries/array_index](./queries/array_index).
 
-Run `./go` to build the table.
+Run `./go` to build the table. Or, if you want to avoid installing all the dependencies and prefer docker, do `./src/wrap_in_docker.sh ./go` instead.
 
 And last but not least, clarifying any differences and fixing bugs identified in upstream is the main goal of this comparison!
