@@ -16,6 +16,48 @@ The following queries provide results that do not match those of other implement
   ```
   jsonpath returned false, this might indicate an error```
 
+- [ ] `$[?(@.key>42)]`
+  Input:
+  ```
+  [{"key": 0}, {"key": 42}, {"key": -1}, {"key": 41}, {"key": 43}, {"key": 42.0001}, {"key": 41.9999}, {"key": 100}]
+  ```
+  Expected output:
+  ```
+  [{"key": 43}, {"key": 42.0001}, {"key": 100}]
+  ```
+  Error:
+  ```
+  ArgumentCountError
+  ```
+
+- [ ] `$[?(@.key<42)]`
+  Input:
+  ```
+  [{"key": 0}, {"key": 42}, {"key": -1}, {"key": 41}, {"key": 43}, {"key": 42.0001}, {"key": 41.9999}, {"key": 100}, {"some": "value"}]
+  ```
+  Expected output:
+  ```
+  [{"key": 0}, {"key": -1}, {"key": 41}, {"key": 41.9999}]
+  ```
+  Error:
+  ```
+  ArgumentCountError
+  ```
+
+- [ ] `$[?(@.key)]`
+  Input:
+  ```
+  [{"some": "some value"}, {"key": "value"}]
+  ```
+  Expected output:
+  ```
+  [{"key": "value"}]
+  ```
+  Error:
+  ```
+  ArgumentCountError
+  ```
+
 - [ ] `$['0']`
   Input:
   ```

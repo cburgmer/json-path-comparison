@@ -56,6 +56,66 @@ The following queries provide results that do not match those of other implement
   ["first", "second", "third", "forth"]
   ```
 
+- [ ] `$[?(@.key>42)]`
+  Input:
+  ```
+  [{"key": 0}, {"key": 42}, {"key": -1}, {"key": 41}, {"key": 43}, {"key": 42.0001}, {"key": 41.9999}, {"key": 100}]
+  ```
+  Expected output:
+  ```
+  [{"key": 43}, {"key": 42.0001}, {"key": 100}]
+  ```
+  Error:
+  ```
+  Exception in thread "main" java.lang.IllegalArgumentException: Unexpected char, char=?, index=2
+  	at com.nfeld.jsonpathlite.PathCompiler.compileBracket$json_path_lite(PathCompiler.kt:198)
+  	at com.nfeld.jsonpathlite.PathCompiler.compile$json_path_lite(PathCompiler.kt:59)
+  	at com.nfeld.jsonpathlite.JsonPath.<init>(JsonPath.kt:17)
+  	at com.nfeld.jsonpathlite.extension.JSONArrayKt.read(JSONArray.kt:8)
+  	at com.nfeld.jsonpathlite.JsonArray.read(JsonResult.kt:12)
+  	at query.AppKt.main(App.kt:10)
+  ```
+
+- [ ] `$[?(@.key<42)]`
+  Input:
+  ```
+  [{"key": 0}, {"key": 42}, {"key": -1}, {"key": 41}, {"key": 43}, {"key": 42.0001}, {"key": 41.9999}, {"key": 100}, {"some": "value"}]
+  ```
+  Expected output:
+  ```
+  [{"key": 0}, {"key": -1}, {"key": 41}, {"key": 41.9999}]
+  ```
+  Error:
+  ```
+  Exception in thread "main" java.lang.IllegalArgumentException: Unexpected char, char=?, index=2
+  	at com.nfeld.jsonpathlite.PathCompiler.compileBracket$json_path_lite(PathCompiler.kt:198)
+  	at com.nfeld.jsonpathlite.PathCompiler.compile$json_path_lite(PathCompiler.kt:59)
+  	at com.nfeld.jsonpathlite.JsonPath.<init>(JsonPath.kt:17)
+  	at com.nfeld.jsonpathlite.extension.JSONArrayKt.read(JSONArray.kt:8)
+  	at com.nfeld.jsonpathlite.JsonArray.read(JsonResult.kt:12)
+  	at query.AppKt.main(App.kt:10)
+  ```
+
+- [ ] `$[?(@.key)]`
+  Input:
+  ```
+  [{"some": "some value"}, {"key": "value"}]
+  ```
+  Expected output:
+  ```
+  [{"key": "value"}]
+  ```
+  Error:
+  ```
+  Exception in thread "main" java.lang.IllegalArgumentException: Unexpected char, char=?, index=2
+  	at com.nfeld.jsonpathlite.PathCompiler.compileBracket$json_path_lite(PathCompiler.kt:198)
+  	at com.nfeld.jsonpathlite.PathCompiler.compile$json_path_lite(PathCompiler.kt:59)
+  	at com.nfeld.jsonpathlite.JsonPath.<init>(JsonPath.kt:17)
+  	at com.nfeld.jsonpathlite.extension.JSONArrayKt.read(JSONArray.kt:8)
+  	at com.nfeld.jsonpathlite.JsonArray.read(JsonResult.kt:12)
+  	at query.AppKt.main(App.kt:10)
+  ```
+
 - [ ] `$['key','another']`
   Input:
   ```

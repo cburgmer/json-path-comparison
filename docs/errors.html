@@ -382,6 +382,286 @@ Python (jsonpath-rw), Array index union
 <pre><code>Exception('Parse error at 1:3 near token , (,)')
 </code></pre>
 
+<h3 id="Clojure_json-path___filter_greater_than">
+Clojure (json-path), Filter greater than
+</h3>
+
+<pre><code>Exception in thread "main" java.lang.NullPointerException
+    at clojure.lang.Numbers.ops(Numbers.java:1068)
+    at clojure.lang.Numbers.gt(Numbers.java:259)
+    at clojure.core$_GT_.invokeStatic(core.clj:1077)
+    at clojure.core$_GT_.invoke(core.clj:1070)
+    at clojure.lang.AFn.applyToHelper(AFn.java:156)
+    at clojure.lang.RestFn.applyTo(RestFn.java:132)
+    at clojure.core$apply.invokeStatic(core.clj:665)
+    at clojure.core$apply.invoke(core.clj:660)
+    at json_path.walker$eval_eq_expr.invokeStatic(walker.clj:7)
+    at json_path.walker$eval_eq_expr.invoke(walker.clj:6)
+    at json_path.walker$eval_expr.invokeStatic(walker.clj:12)
+    at json_path.walker$eval_expr.invoke(walker.clj:9)
+    at json_path.walker$walk_selector$fn__1015.invoke(walker.clj:79)
+    at clojure.core$filter$fn__5878.invoke(core.clj:2817)
+    at clojure.lang.LazySeq.sval(LazySeq.java:42)
+    at clojure.lang.LazySeq.seq(LazySeq.java:51)
+    at clojure.lang.RT.seq(RT.java:531)
+    at clojure.core$seq__5387.invokeStatic(core.clj:137)
+    at clojure.core$map$fn__5851.invoke(core.clj:2746)
+    at clojure.lang.LazySeq.sval(LazySeq.java:42)
+    at clojure.lang.LazySeq.seq(LazySeq.java:51)
+    at clojure.lang.RT.seq(RT.java:531)
+    at clojure.core$seq__5387.invokeStatic(core.clj:137)
+    at clojure.core$map$fn__5851.invoke(core.clj:2746)
+    at clojure.lang.LazySeq.sval(LazySeq.java:42)
+    at clojure.lang.LazySeq.seq(LazySeq.java:51)
+    at clojure.lang.RT.seq(RT.java:531)
+    at clojure.core$seq__5387.invokeStatic(core.clj:137)
+    at clojure.core$seq__5387.invoke(core.clj:137)
+    at cheshire.generate$generate.invokeStatic(generate.clj:130)
+    at cheshire.generate$generate.invoke(generate.clj:116)
+    at cheshire.core$generate_string.invokeStatic(core.clj:74)
+    at cheshire.core$generate_string.invoke(core.clj:49)
+    at cheshire.core$generate_string.invokeStatic(core.clj:55)
+    at cheshire.core$generate_string.invoke(core.clj:49)
+    at json_path_comparison.core$_main.invokeStatic(core.clj:10)
+    at json_path_comparison.core$_main.doInvoke(core.clj:6)
+    at clojure.lang.RestFn.applyTo(RestFn.java:137)
+    at json_path_comparison.core.main(Unknown Source)
+</code></pre>
+
+<h3 id="Kotlin_com.nfeld.jsonpathlite___filter_greater_than">
+Kotlin (com.nfeld.jsonpathlite), Filter greater than
+</h3>
+
+<pre><code>Exception in thread "main" java.lang.IllegalArgumentException: Unexpected char, char=?, index=2
+    at com.nfeld.jsonpathlite.PathCompiler.compileBracket$json_path_lite(PathCompiler.kt:198)
+    at com.nfeld.jsonpathlite.PathCompiler.compile$json_path_lite(PathCompiler.kt:59)
+    at com.nfeld.jsonpathlite.JsonPath.&lt;init&gt;(JsonPath.kt:17)
+    at com.nfeld.jsonpathlite.extension.JSONArrayKt.read(JSONArray.kt:8)
+    at com.nfeld.jsonpathlite.JsonArray.read(JsonResult.kt:12)
+    at query.AppKt.main(App.kt:10)
+</code></pre>
+
+<h3 id="PHP_Goessner___filter_greater_than">
+PHP (Goessner), Filter greater than
+</h3>
+
+<pre><code>ArgumentCountError
+</code></pre>
+
+<h3 id="Python_jsonpath-rw___filter_greater_than">
+Python (jsonpath-rw), Filter greater than
+</h3>
+
+<pre><code>JsonPathLexerError('Error on line 1, col 2: Unexpected character: ? ')
+</code></pre>
+
+<h3 id="Clojure_json-path___filter_less_than">
+Clojure (json-path), Filter less than
+</h3>
+
+<pre><code>Exception in thread "main" java.lang.NullPointerException
+    at clojure.lang.Numbers.ops(Numbers.java:1068)
+    at clojure.lang.Numbers.lt(Numbers.java:251)
+    at clojure.core$_LT_.invokeStatic(core.clj:907)
+    at clojure.core$_LT_.invoke(core.clj:900)
+    at clojure.lang.AFn.applyToHelper(AFn.java:156)
+    at clojure.lang.RestFn.applyTo(RestFn.java:132)
+    at clojure.core$apply.invokeStatic(core.clj:665)
+    at clojure.core$apply.invoke(core.clj:660)
+    at json_path.walker$eval_eq_expr.invokeStatic(walker.clj:7)
+    at json_path.walker$eval_eq_expr.invoke(walker.clj:6)
+    at json_path.walker$eval_expr.invokeStatic(walker.clj:12)
+    at json_path.walker$eval_expr.invoke(walker.clj:9)
+    at json_path.walker$walk_selector$fn__1015.invoke(walker.clj:79)
+    at clojure.core$filter$fn__5878.invoke(core.clj:2817)
+    at clojure.lang.LazySeq.sval(LazySeq.java:42)
+    at clojure.lang.LazySeq.seq(LazySeq.java:51)
+    at clojure.lang.RT.seq(RT.java:531)
+    at clojure.core$seq__5387.invokeStatic(core.clj:137)
+    at clojure.core$map$fn__5851.invoke(core.clj:2746)
+    at clojure.lang.LazySeq.sval(LazySeq.java:42)
+    at clojure.lang.LazySeq.seq(LazySeq.java:51)
+    at clojure.lang.RT.seq(RT.java:531)
+    at clojure.core$seq__5387.invokeStatic(core.clj:137)
+    at clojure.core$map$fn__5851.invoke(core.clj:2746)
+    at clojure.lang.LazySeq.sval(LazySeq.java:42)
+    at clojure.lang.LazySeq.seq(LazySeq.java:51)
+    at clojure.lang.RT.seq(RT.java:531)
+    at clojure.core$seq__5387.invokeStatic(core.clj:137)
+    at clojure.core$seq__5387.invoke(core.clj:137)
+    at cheshire.generate$generate.invokeStatic(generate.clj:130)
+    at cheshire.generate$generate.invoke(generate.clj:116)
+    at cheshire.core$generate_string.invokeStatic(core.clj:74)
+    at cheshire.core$generate_string.invoke(core.clj:49)
+    at cheshire.core$generate_string.invokeStatic(core.clj:55)
+    at cheshire.core$generate_string.invoke(core.clj:49)
+    at json_path_comparison.core$_main.invokeStatic(core.clj:10)
+    at json_path_comparison.core$_main.doInvoke(core.clj:6)
+    at clojure.lang.RestFn.applyTo(RestFn.java:137)
+    at json_path_comparison.core.main(Unknown Source)
+</code></pre>
+
+<h3 id="Kotlin_com.nfeld.jsonpathlite___filter_less_than">
+Kotlin (com.nfeld.jsonpathlite), Filter less than
+</h3>
+
+<pre><code>Exception in thread "main" java.lang.IllegalArgumentException: Unexpected char, char=?, index=2
+    at com.nfeld.jsonpathlite.PathCompiler.compileBracket$json_path_lite(PathCompiler.kt:198)
+    at com.nfeld.jsonpathlite.PathCompiler.compile$json_path_lite(PathCompiler.kt:59)
+    at com.nfeld.jsonpathlite.JsonPath.&lt;init&gt;(JsonPath.kt:17)
+    at com.nfeld.jsonpathlite.extension.JSONArrayKt.read(JSONArray.kt:8)
+    at com.nfeld.jsonpathlite.JsonArray.read(JsonResult.kt:12)
+    at query.AppKt.main(App.kt:10)
+</code></pre>
+
+<h3 id="PHP_Goessner___filter_less_than">
+PHP (Goessner), Filter less than
+</h3>
+
+<pre><code>ArgumentCountError
+</code></pre>
+
+<h3 id="Python_jsonpath-rw___filter_less_than">
+Python (jsonpath-rw), Filter less than
+</h3>
+
+<pre><code>JsonPathLexerError('Error on line 1, col 2: Unexpected character: ? ')
+</code></pre>
+
+<h3 id="Clojure_json-path___filter_less_than_on_string">
+Clojure (json-path), Filter less than on string
+</h3>
+
+<pre><code>Exception in thread "main" java.lang.NullPointerException
+    at clojure.lang.Numbers.ops(Numbers.java:1068)
+    at clojure.lang.Numbers.lt(Numbers.java:251)
+    at clojure.core$_LT_.invokeStatic(core.clj:907)
+    at clojure.core$_LT_.invoke(core.clj:900)
+    at clojure.lang.AFn.applyToHelper(AFn.java:156)
+    at clojure.lang.RestFn.applyTo(RestFn.java:132)
+    at clojure.core$apply.invokeStatic(core.clj:665)
+    at clojure.core$apply.invoke(core.clj:660)
+    at json_path.walker$eval_eq_expr.invokeStatic(walker.clj:7)
+    at json_path.walker$eval_eq_expr.invoke(walker.clj:6)
+    at json_path.walker$eval_expr.invokeStatic(walker.clj:12)
+    at json_path.walker$eval_expr.invoke(walker.clj:9)
+    at json_path.walker$walk_selector$fn__1015.invoke(walker.clj:79)
+    at clojure.core$filter$fn__5878.invoke(core.clj:2817)
+    at clojure.lang.LazySeq.sval(LazySeq.java:42)
+    at clojure.lang.LazySeq.seq(LazySeq.java:51)
+    at clojure.lang.RT.seq(RT.java:531)
+    at clojure.core$seq__5387.invokeStatic(core.clj:137)
+    at clojure.core$map$fn__5851.invoke(core.clj:2746)
+    at clojure.lang.LazySeq.sval(LazySeq.java:42)
+    at clojure.lang.LazySeq.seq(LazySeq.java:51)
+    at clojure.lang.RT.seq(RT.java:531)
+    at clojure.core$seq__5387.invokeStatic(core.clj:137)
+    at clojure.core$map$fn__5851.invoke(core.clj:2746)
+    at clojure.lang.LazySeq.sval(LazySeq.java:42)
+    at clojure.lang.LazySeq.seq(LazySeq.java:51)
+    at clojure.lang.RT.seq(RT.java:531)
+    at clojure.core$seq__5387.invokeStatic(core.clj:137)
+    at clojure.core$seq__5387.invoke(core.clj:137)
+    at cheshire.generate$generate.invokeStatic(generate.clj:130)
+    at cheshire.generate$generate.invoke(generate.clj:116)
+    at cheshire.core$generate_string.invokeStatic(core.clj:74)
+    at cheshire.core$generate_string.invoke(core.clj:49)
+    at cheshire.core$generate_string.invokeStatic(core.clj:55)
+    at cheshire.core$generate_string.invoke(core.clj:49)
+    at json_path_comparison.core$_main.invokeStatic(core.clj:10)
+    at json_path_comparison.core$_main.doInvoke(core.clj:6)
+    at clojure.lang.RestFn.applyTo(RestFn.java:137)
+    at json_path_comparison.core.main(Unknown Source)
+</code></pre>
+
+<h3 id="Java_com.github.jsurfer___filter_less_than_on_string">
+Java (com.github.jsurfer), Filter less than on string
+</h3>
+
+<pre><code>Exception in thread "main" org.jsfr.json.exception.JsonSurfingException: Parser is stopped
+    at org.jsfr.json.DefaultErrorHandlingStrategy.handleParsingException(DefaultErrorHandlingStrategy.java:35)
+    at org.jsfr.json.JacksonParser$JacksonResumableParser.parse(JacksonParser.java:143)
+    at org.jsfr.json.JacksonParser.parse(JacksonParser.java:228)
+    at org.jsfr.json.JsonSurfer.surf(JsonSurfer.java:180)
+    at org.jsfr.json.JsonSurfer.collectAll(JsonSurfer.java:289)
+    at org.jsfr.json.JsonSurfer.collectAll(JsonSurfer.java:273)
+    at org.jsfr.json.JsonSurfer.collectAll(JsonSurfer.java:262)
+    at query.App.main(App.java:27)
+Caused by: java.lang.NumberFormatException: Character " is neither a decimal digit number, decimal point, nor "e" notation exponential mark.
+    at java.base/java.math.BigDecimal.&lt;init&gt;(BigDecimal.java:518)
+    at java.base/java.math.BigDecimal.&lt;init&gt;(BigDecimal.java:401)
+    at java.base/java.math.BigDecimal.&lt;init&gt;(BigDecimal.java:834)
+    at org.jsfr.json.filter.LessThanNumPredicate.apply(LessThanNumPredicate.java:49)
+    at org.jsfr.json.JsonFilterVerifier.primitive(JsonFilterVerifier.java:116)
+    at org.jsfr.json.ContentDispatcher.primitive(ContentDispatcher.java:147)
+    at org.jsfr.json.ContentDispatcher.primitive(ContentDispatcher.java:147)
+    at org.jsfr.json.SurfingContext.primitive(SurfingContext.java:299)
+    at org.jsfr.json.JacksonParser$JacksonResumableParser.doPare(JacksonParser.java:176)
+    at org.jsfr.json.JacksonParser$JacksonResumableParser.parse(JacksonParser.java:141)
+    ... 6 more
+</code></pre>
+
+<h3 id="Kotlin_com.nfeld.jsonpathlite___filter_less_than_on_string">
+Kotlin (com.nfeld.jsonpathlite), Filter less than on string
+</h3>
+
+<pre><code>Exception in thread "main" java.lang.IllegalArgumentException: Unexpected char, char=?, index=2
+    at com.nfeld.jsonpathlite.PathCompiler.compileBracket$json_path_lite(PathCompiler.kt:198)
+    at com.nfeld.jsonpathlite.PathCompiler.compile$json_path_lite(PathCompiler.kt:59)
+    at com.nfeld.jsonpathlite.JsonPath.&lt;init&gt;(JsonPath.kt:17)
+    at com.nfeld.jsonpathlite.extension.JSONArrayKt.read(JSONArray.kt:8)
+    at com.nfeld.jsonpathlite.JsonArray.read(JsonResult.kt:12)
+    at query.AppKt.main(App.kt:10)
+</code></pre>
+
+<h3 id="PHP_Goessner___filter_less_than_on_string">
+PHP (Goessner), Filter less than on string
+</h3>
+
+<pre><code>ArgumentCountError
+</code></pre>
+
+<h3 id="Python_jsonpath-rw___filter_less_than_on_string">
+Python (jsonpath-rw), Filter less than on string
+</h3>
+
+<pre><code>JsonPathLexerError('Error on line 1, col 2: Unexpected character: ? ')
+</code></pre>
+
+<h3 id="Ruby_jsonpath___filter_less_than_on_string">
+Ruby (jsonpath), Filter less than on string
+</h3>
+
+<pre><code>comparison of String with Float failed
+</code></pre>
+
+<h3 id="Kotlin_com.nfeld.jsonpathlite___filter_with_value">
+Kotlin (com.nfeld.jsonpathlite), Filter with value
+</h3>
+
+<pre><code>Exception in thread "main" java.lang.IllegalArgumentException: Unexpected char, char=?, index=2
+    at com.nfeld.jsonpathlite.PathCompiler.compileBracket$json_path_lite(PathCompiler.kt:198)
+    at com.nfeld.jsonpathlite.PathCompiler.compile$json_path_lite(PathCompiler.kt:59)
+    at com.nfeld.jsonpathlite.JsonPath.&lt;init&gt;(JsonPath.kt:17)
+    at com.nfeld.jsonpathlite.extension.JSONArrayKt.read(JSONArray.kt:8)
+    at com.nfeld.jsonpathlite.JsonArray.read(JsonResult.kt:12)
+    at query.AppKt.main(App.kt:10)
+</code></pre>
+
+<h3 id="PHP_Goessner___filter_with_value">
+PHP (Goessner), Filter with value
+</h3>
+
+<pre><code>ArgumentCountError
+</code></pre>
+
+<h3 id="Python_jsonpath-rw___filter_with_value">
+Python (jsonpath-rw), Filter with value
+</h3>
+
+<pre><code>JsonPathLexerError('Error on line 1, col 2: Unexpected character: ? ')
+</code></pre>
+
 <h3 id="Clojure_json-path___key_bracket_notation">
 Clojure (json-path), Key bracket notation
 </h3>

@@ -6,7 +6,12 @@ require_once('build/jsonpath.php');
 
 $json = file_get_contents("php://stdin");
 $o = json_decode($json, true);
-$result = jsonPath($o, $argv[1]);
+try {
+    $result = jsonPath($o, $argv[1]);
+} catch (ArgumentCountError $e) {
+    print "ArgumentCountError" . "\n";
+    die(1);
+}
 
 if ($result === false) {
     print 'jsonpath returned false, this might indicate an error';
