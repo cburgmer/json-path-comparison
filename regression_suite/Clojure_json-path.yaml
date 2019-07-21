@@ -236,6 +236,10 @@ queries:
     document: {"key": "value", "another key": {"complex": ["a", 1]}}
     result: {"another key": {"complex": ["a", 1]}, "key": "value"}
     status: pass
+  - id: script_expression
+    selector: $[(@.length-1)]
+    document: ["first", "second", "third", "forth", "fifth"]
+    status: error
   - id: wildcard_bracket_notation_on_array
     selector: $[*]
     document: ["string", 42, {"key": "value"}, [0, 1]]

@@ -1560,6 +1560,118 @@ Python (jsonpath), Root
 <pre><code>jsonpath returned false, this might indicate an error
 </code></pre>
 
+<h3 id="Clojure_json-path___script_expression">
+Clojure (json-path), Script expression
+</h3>
+
+<pre><code>Exception in thread "main" java.lang.NumberFormatException: For input string: "("
+    at java.base/java.lang.NumberFormatException.forInputString(NumberFormatException.java:65)
+    at java.base/java.lang.Integer.parseInt(Integer.java:638)
+    at java.base/java.lang.Integer.parseInt(Integer.java:770)
+    at json_path.walker$walk_selector.invokeStatic(walker.clj:68)
+    at json_path.walker$walk_selector.invoke(walker.clj:61)
+    at json_path.walker$walk.invokeStatic(walker.clj:85)
+    at json_path.walker$walk.invoke(walker.clj:82)
+    at json_path.walker$walk$fn__1026.invoke(walker.clj:87)
+    at json_path.walker$map_SHARP_.invokeStatic(walker.clj:20)
+    at json_path.walker$map_SHARP_.invoke(walker.clj:17)
+    at json_path.walker$walk.invokeStatic(walker.clj:87)
+    at json_path.walker$walk.invoke(walker.clj:82)
+    at json_path$query.invokeStatic(json_path.clj:7)
+    at json_path$query.invoke(json_path.clj:6)
+    at json_path$at_path.invokeStatic(json_path.clj:10)
+    at json_path$at_path.invoke(json_path.clj:9)
+    at json_path_comparison.core$_main.invokeStatic(core.clj:10)
+    at json_path_comparison.core$_main.doInvoke(core.clj:6)
+    at clojure.lang.RestFn.applyTo(RestFn.java:137)
+    at json_path_comparison.core.main(Unknown Source)
+Expecting value: line 1 column 1 (char 0)
+</code></pre>
+
+<h3 id="Java_com.github.jsurfer___script_expression">
+Java (com.github.jsurfer), Script expression
+</h3>
+
+<pre><code>line 1:2 no viable alternative at input '[('
+Exception in thread "main" org.antlr.v4.runtime.misc.ParseCancellationException
+    at org.antlr.v4.runtime.BailErrorStrategy.recover(BailErrorStrategy.java:51)
+    at org.jsfr.json.compiler.JsonPathParser.relativePath(JsonPathParser.java:315)
+    at org.jsfr.json.compiler.JsonPathParser.path(JsonPathParser.java:159)
+    at org.jsfr.json.compiler.JsonPathCompiler.compile(JsonPathCompiler.java:283)
+    at org.jsfr.json.compiler.JsonPathCompiler.compile(JsonPathCompiler.java:273)
+    at org.jsfr.json.JsonSurfer.collectAll(JsonSurfer.java:262)
+    at query.App.main(App.java:27)
+Caused by: org.antlr.v4.runtime.NoViableAltException
+    at org.antlr.v4.runtime.atn.ParserATNSimulator.noViableAlt(ParserATNSimulator.java:2026)
+    at org.antlr.v4.runtime.atn.ParserATNSimulator.execATN(ParserATNSimulator.java:467)
+    at org.antlr.v4.runtime.atn.ParserATNSimulator.adaptivePredict(ParserATNSimulator.java:393)
+    at org.jsfr.json.compiler.JsonPathParser.relativePath(JsonPathParser.java:232)
+    ... 5 more
+</code></pre>
+
+<h3 id="Java_com.jayway.jsonpath___script_expression">
+Java (com.jayway.jsonpath), Script expression
+</h3>
+
+<pre><code>SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+Exception in thread "main" com.jayway.jsonpath.InvalidPathException: Could not parse token starting at position 1. Expected ?, ', 0-9, * 
+    at com.jayway.jsonpath.internal.path.PathCompiler.fail(PathCompiler.java:616)
+    at com.jayway.jsonpath.internal.path.PathCompiler.readNextToken(PathCompiler.java:143)
+    at com.jayway.jsonpath.internal.path.PathCompiler.readContextToken(PathCompiler.java:124)
+    at com.jayway.jsonpath.internal.path.PathCompiler.compile(PathCompiler.java:58)
+    at com.jayway.jsonpath.internal.path.PathCompiler.compile(PathCompiler.java:75)
+    at com.jayway.jsonpath.JsonPath.&lt;init&gt;(JsonPath.java:101)
+    at com.jayway.jsonpath.JsonPath.compile(JsonPath.java:467)
+    at com.jayway.jsonpath.internal.JsonContext.read(JsonContext.java:87)
+    at query.App.main(App.java:28)
+</code></pre>
+
+<h3 id="Kotlin_com.nfeld.jsonpathlite___script_expression">
+Kotlin (com.nfeld.jsonpathlite), Script expression
+</h3>
+
+<pre><code>Exception in thread "main" java.lang.IllegalArgumentException: Unexpected char, char=(, index=2
+    at com.nfeld.jsonpathlite.PathCompiler.compileBracket$json_path_lite(PathCompiler.kt:198)
+    at com.nfeld.jsonpathlite.PathCompiler.compile$json_path_lite(PathCompiler.kt:59)
+    at com.nfeld.jsonpathlite.JsonPath.&lt;init&gt;(JsonPath.kt:17)
+    at com.nfeld.jsonpathlite.extension.JSONArrayKt.read(JSONArray.kt:8)
+    at com.nfeld.jsonpathlite.JsonArray.read(JsonResult.kt:12)
+    at query.AppKt.main(App.kt:10)
+Expecting value: line 1 column 1 (char 0)
+</code></pre>
+
+<h3 id="PHP_Goessner___script_expression">
+PHP (Goessner), Script expression
+</h3>
+
+<pre><code>jsonpath returned false, this might indicate an error
+</code></pre>
+
+<h3 id="PHP_galbar-jsonpath___script_expression">
+PHP (galbar-jsonpath), Script expression
+</h3>
+
+<pre><code>Invalid JSONPath error: 'Error in JSONPath near '(@.length-1)''
+</code></pre>
+
+<h3 id="Python_jsonpath-rw___script_expression">
+Python (jsonpath-rw), Script expression
+</h3>
+
+<pre><code>Exception('Parse error at 1:2 near token ( (()')
+</code></pre>
+
+<h3 id="Rust_jsonpath_lib___script_expression">
+Rust (jsonpath_lib), Script expression
+</h3>
+
+<pre><code>path error: 
+$[(@.length-1)]
+^^^
+</code></pre>
+
 <h3 id="Kotlin_com.nfeld.jsonpathlite___wildcard_bracket_notation_on_array">
 Kotlin (com.nfeld.jsonpathlite), Wildcard bracket notation on array
 </h3>
