@@ -299,8 +299,7 @@ Ruby (jsonpath), Array index slice start end step 0
 Rust (jsonpath_lib), Array index slice start end step 0
 </h3>
 
-<pre><code>thread 'main' panicked at 'assertion failed: step != 0', src/libcore/iter/adapters/mod.rs:412:9
-note: Run with `RUST_BACKTRACE=1` environment variable to display a backtrace.
+<pre><code>panic occurred
 </code></pre>
 
 <h3 id="Java_com.github.jsurfer___array_index_slice_start_end_step_1">
@@ -689,11 +688,9 @@ Python (jsonpath-rw), Key bracket notation with single quote
 Rust (jsonpath_lib), Key bracket notation with single quote
 </h3>
 
-<pre><code>thread 'main' panicked at 'called `Result::unwrap()` on an `Err` value: path error: 
+<pre><code>path error: 
 $['single'quote']
 ^^^^^^^^^^^^^^^^
-', src/libcore/result.rs:999:5
-note: Run with `RUST_BACKTRACE=1` environment variable to display a backtrace.
 </code></pre>
 
 <h3 id="Clojure_json-path___key_bracket_notation_with_single_quote_escaped">
@@ -881,11 +878,9 @@ Ruby (jsonpath), Key bracket notation without quotes
 Rust (jsonpath_lib), Key bracket notation without quotes
 </h3>
 
-<pre><code>thread 'main' panicked at 'called `Result::unwrap()` on an `Err` value: path error: 
+<pre><code>path error: 
 $[key]
 ^^
-', src/libcore/result.rs:999:5
-note: Run with `RUST_BACKTRACE=1` environment variable to display a backtrace.
 </code></pre>
 
 <h3 id="JavaScript_Goessner___key_dot_notation_not_found">
