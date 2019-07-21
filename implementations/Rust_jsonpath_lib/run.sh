@@ -2,6 +2,6 @@
 set -euo pipefail
 
 readonly script_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-readonly runner="${script_dir}/build/Rust_jsonpath_lib"
+readonly runner="${script_dir}/build/rust_jsonpath_lib"
 
 "$runner" "$@"

@@ -1,5 +1,5 @@
 [package]
-name = "Rust_jsonpath_lib"
+name = "rust_jsonpath_lib"
 version = "0.1.0"
 authors = ["Christoph Burgmer <christoph.burgmer@gmail.com>"]
 edition = "2018"
