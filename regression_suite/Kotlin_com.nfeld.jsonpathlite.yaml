@@ -17,7 +17,7 @@ queries:
     selector: $[-1]
     document: ["first", "second", "third"]
     result: "third"
-    status: pass
+    status: open
   - id: array_index_out_of_bounds
     selector: $[1]
     document: ["one element"]
@@ -73,8 +73,7 @@ queries:
     selector: $[0:4:2]
     document: ["first", "second", "third", "forth", "fifth"]
     result: ["first", "second", "third", "forth"]
-    status: fail
-    consensus: ["first", "third"]
+    status: open
   - id: array_index_slice_start_equals_end
     selector: $[0:0]
     document: ["first", "second"]
@@ -99,7 +98,6 @@ queries:
     selector: $[?(@.key>=42)]
     document: [{"key": 0}, {"key": 42}, {"key": -1}, {"key": 41}, {"key": 43}, {"key": 42.0001}, {"key": 41.9999}, {"key": 100}, {"some": "value"}]
     status: error
-    consensus: [{"key": 42}, {"key": 43}, {"key": 42.0001}, {"key": 100}]
   - id: filter_less_than
     selector: $[?(@.key<42)]
     document: [{"key": 0}, {"key": 42}, {"key": -1}, {"key": 41}, {"key": 43}, {"key": 42.0001}, {"key": 41.9999}, {"key": 100}, {"some": "value"}]

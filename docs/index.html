@@ -31,7 +31,7 @@ The motivation of the consensus in particular is to drive the discussion towards
 <th colspan="3">PHP</th>
 <th colspan="2">Python</th>
 <th colspan="1">Ruby</th>
-<th colspan="1">Rust</th>
+<th colspan="2">Rust</th>
 </tr>
 <tr>
 <th></th>
@@ -104,6 +104,11 @@ jsonpath
 </a>
 </th>
 <th>
+<a href="https://github.com/greyblake/jsonpath-rs">
+jsonpath
+</a>
+</th>
+<th>
 <a href="https://github.com/freestrings/jsonpath">
 jsonpath_​lib
 </a>
@@ -114,6 +119,9 @@ jsonpath_​lib
 <tr>
 <td><a href="results/array_index.html">Array index</a></td>
 <td><code>$[2]</code></td>
+<td>
+✓
+</td>
 <td>
 ✓
 </td>
@@ -202,51 +210,57 @@ jsonpath_​lib
 <td>
 ?
 </td>
+<td>
+?
+</td>
 </tr>
 <tr>
 <td><a href="results/array_index_last.html">Array index last</a></td>
 <td><code>$[-1]</code></td>
 <td>
-✓
+?
 </td>
 <td>
 <a href="errors.html#JavaScript_Goessner___array_index_last">e</a>
 </td>
 <td>
-✗
+?
 </td>
 <td>
-✗
+?
 </td>
 <td>
-✗
+?
 </td>
 <td>
-✓
+?
 </td>
 <td>
-✓
+?
 </td>
 <td>
 <a href="errors.html#PHP_Goessner___array_index_last">e</a>
 </td>
 <td>
-✓
+?
 </td>
 <td>
-✓
+?
 </td>
 <td>
 <a href="errors.html#Python_jsonpath___array_index_last">e</a>
 </td>
 <td>
-✓
+?
 </td>
 <td>
-✓
+?
 </td>
 <td>
-✓
+<a href="errors.html#Rust_jsonpath___array_index_last">e</a>
+</td>
+<td>
+?
 </td>
 </tr>
 <tr>
@@ -284,6 +298,9 @@ jsonpath_​lib
 </td>
 <td>
 <a href="errors.html#Python_jsonpath___array_index_out_of_bounds">e</a>
+</td>
+<td>
+?
 </td>
 <td>
 ?
@@ -340,6 +357,9 @@ jsonpath_​lib
 <td>
 ✓
 </td>
+<td>
+✓
+</td>
 </tr>
 <tr>
 <td><a href="results/array_index_slice_last_no_end.html">Array index slice last no end</a></td>
@@ -382,6 +402,9 @@ jsonpath_​lib
 </td>
 <td>
 ✓
+</td>
+<td>
+<a href="errors.html#Rust_jsonpath___array_index_slice_last_no_end">e</a>
 </td>
 <td>
 ✓
@@ -428,6 +451,9 @@ jsonpath_​lib
 </td>
 <td>
 ✓
+</td>
+<td>
+<a href="errors.html#Rust_jsonpath___array_index_slice_no_start_no_end">e</a>
 </td>
 <td>
 ✓
@@ -478,12 +504,18 @@ jsonpath_​lib
 <td>
 ✓
 </td>
+<td>
+✓
+</td>
 </tr>
 <tr>
 <td><a href="results/array_index_slice_only_start.html">Array index slice only start</a></td>
 <td><code>$[1:]</code></td>
 <td>
 ✗
+</td>
+<td>
+✓
 </td>
 <td>
 ✓
@@ -568,6 +600,9 @@ jsonpath_​lib
 ✓
 </td>
 <td>
+✗
+</td>
+<td>
 ✓
 </td>
 </tr>
@@ -612,6 +647,9 @@ jsonpath_​lib
 </td>
 <td>
 ✓
+</td>
+<td>
+<a href="errors.html#Rust_jsonpath___array_index_slice_start_end_step">e</a>
 </td>
 <td>
 ✓
@@ -660,6 +698,9 @@ jsonpath_​lib
 <a href="errors.html#Ruby_jsonpath___array_index_slice_start_end_step_0">e</a>
 </td>
 <td>
+<a href="errors.html#Rust_jsonpath___array_index_slice_start_end_step_0">e</a>
+</td>
+<td>
 <a href="errors.html#Rust_jsonpath_lib___array_index_slice_start_end_step_0">e</a>
 </td>
 </tr>
@@ -706,6 +747,9 @@ jsonpath_​lib
 ✓
 </td>
 <td>
+<a href="errors.html#Rust_jsonpath___array_index_slice_start_end_step_1">e</a>
+</td>
+<td>
 ✓
 </td>
 </tr>
@@ -713,46 +757,49 @@ jsonpath_​lib
 <td><a href="results/array_index_slice_start_end_step_non_aligned.html">Array index slice start end step non aligned</a></td>
 <td><code>$[0:4:2]</code></td>
 <td>
-✗
+?
 </td>
 <td>
-✓
+?
 </td>
 <td>
-✓
+?
 </td>
 <td>
-✓
+?
 </td>
 <td>
 <a href="errors.html#Java_com.github.jsurfer___array_index_slice_start_end_step_non_aligned">e</a>
 </td>
 <td>
-✗
+?
 </td>
 <td>
-✗
+?
 </td>
 <td>
-✓
+?
 </td>
 <td>
-✗
+?
 </td>
 <td>
-✓
+?
 </td>
 <td>
-✓
+?
 </td>
 <td>
 <a href="errors.html#Python_jsonpath-rw___array_index_slice_start_end_step_non_aligned">e</a>
 </td>
 <td>
-✓
+?
 </td>
 <td>
-✓
+<a href="errors.html#Rust_jsonpath___array_index_slice_start_end_step_non_aligned">e</a>
+</td>
+<td>
+?
 </td>
 </tr>
 <tr>
@@ -790,6 +837,9 @@ jsonpath_​lib
 </td>
 <td>
 <a href="errors.html#Python_jsonpath___array_index_slice_start_equals_end">e</a>
+</td>
+<td>
+?
 </td>
 <td>
 ?
@@ -844,6 +894,9 @@ jsonpath_​lib
 ✓
 </td>
 <td>
+✗
+</td>
+<td>
 ✓
 </td>
 </tr>
@@ -888,6 +941,9 @@ jsonpath_​lib
 </td>
 <td>
 ✓
+</td>
+<td>
+<a href="errors.html#Rust_jsonpath___array_index_union">e</a>
 </td>
 <td>
 ✓
@@ -938,6 +994,9 @@ jsonpath_​lib
 <td>
 ✓
 </td>
+<td>
+✓
+</td>
 </tr>
 <tr>
 <td><a href="results/filter_greater_than_or_equal.html">Filter greater than or equal</a></td>
@@ -946,19 +1005,19 @@ jsonpath_​lib
 <a href="errors.html#Clojure_json-path___filter_greater_than_or_equal">e</a>
 </td>
 <td>
-✓
+?
 </td>
 <td>
-✓
+?
 </td>
 <td>
-✓
+?
 </td>
 <td>
-✗
+?
 </td>
 <td>
-✓
+?
 </td>
 <td>
 <a href="errors.html#Kotlin_com.nfeld.jsonpathlite___filter_greater_than_or_equal">e</a>
@@ -967,22 +1026,25 @@ jsonpath_​lib
 <a href="errors.html#PHP_Goessner___filter_greater_than_or_equal">e</a>
 </td>
 <td>
-✗
+?
 </td>
 <td>
-✓
+?
 </td>
 <td>
-✓
+?
 </td>
 <td>
 <a href="errors.html#Python_jsonpath-rw___filter_greater_than_or_equal">e</a>
 </td>
 <td>
-✓
+?
 </td>
 <td>
-✓
+<a href="errors.html#Rust_jsonpath___filter_greater_than_or_equal">e</a>
+</td>
+<td>
+?
 </td>
 </tr>
 <tr>
@@ -1023,6 +1085,9 @@ jsonpath_​lib
 </td>
 <td>
 <a href="errors.html#Python_jsonpath-rw___filter_less_than">e</a>
+</td>
+<td>
+✓
 </td>
 <td>
 ✓
@@ -1076,6 +1141,9 @@ jsonpath_​lib
 <td>
 ?
 </td>
+<td>
+?
+</td>
 </tr>
 <tr>
 <td><a href="results/filter_less_than_or_equal.html">Filter less than or equal</a></td>
@@ -1118,6 +1186,9 @@ jsonpath_​lib
 </td>
 <td>
 ?
+</td>
+<td>
+<a href="errors.html#Rust_jsonpath___filter_less_than_or_equal">e</a>
 </td>
 <td>
 ?
@@ -1166,6 +1237,9 @@ jsonpath_​lib
 ✓
 </td>
 <td>
+<a href="errors.html#Rust_jsonpath___filter_with_value">e</a>
+</td>
+<td>
 ✓
 </td>
 </tr>
@@ -1210,6 +1284,9 @@ jsonpath_​lib
 </td>
 <td>
 ✓
+</td>
+<td>
+<a href="errors.html#Rust_jsonpath___key_bracket_notation">e</a>
 </td>
 <td>
 ✓
@@ -1258,6 +1335,9 @@ jsonpath_​lib
 ✓
 </td>
 <td>
+<a href="errors.html#Rust_jsonpath___key_bracket_notation_union">e</a>
+</td>
+<td>
 ✓
 </td>
 </tr>
@@ -1302,6 +1382,9 @@ jsonpath_​lib
 </td>
 <td>
 ?
+</td>
+<td>
+<a href="errors.html#Rust_jsonpath___key_bracket_notation_with_double_quotes">e</a>
 </td>
 <td>
 ?
@@ -1350,6 +1433,9 @@ jsonpath_​lib
 ✗
 </td>
 <td>
+<a href="errors.html#Rust_jsonpath___key_bracket_notation_with_number">e</a>
+</td>
+<td>
 ✓
 </td>
 </tr>
@@ -1391,6 +1477,9 @@ jsonpath_​lib
 </td>
 <td>
 <a href="errors.html#Python_jsonpath-rw___key_bracket_notation_with_number_without_quotes">e</a>
+</td>
+<td>
+?
 </td>
 <td>
 ?
@@ -1442,6 +1531,9 @@ jsonpath_​lib
 ?
 </td>
 <td>
+<a href="errors.html#Rust_jsonpath___key_bracket_notation_with_single_quote">e</a>
+</td>
+<td>
 <a href="errors.html#Rust_jsonpath_lib___key_bracket_notation_with_single_quote">e</a>
 </td>
 </tr>
@@ -1486,6 +1578,9 @@ jsonpath_​lib
 </td>
 <td>
 ?
+</td>
+<td>
+<a href="errors.html#Rust_jsonpath___key_bracket_notation_with_single_quote_escaped">e</a>
 </td>
 <td>
 ?
@@ -1534,6 +1629,9 @@ jsonpath_​lib
 ✓
 </td>
 <td>
+<a href="errors.html#Rust_jsonpath___key_bracket_notation_with_special_characters">e</a>
+</td>
+<td>
 ✓
 </td>
 </tr>
@@ -1578,6 +1676,9 @@ jsonpath_​lib
 </td>
 <td>
 ✓
+</td>
+<td>
+<a href="errors.html#Rust_jsonpath___key_bracket_notation_with_star_literal">e</a>
 </td>
 <td>
 ✓
@@ -1626,12 +1727,18 @@ jsonpath_​lib
 <a href="errors.html#Ruby_jsonpath___key_bracket_notation_without_quotes">e</a>
 </td>
 <td>
+<a href="errors.html#Rust_jsonpath___key_bracket_notation_without_quotes">e</a>
+</td>
+<td>
 <a href="errors.html#Rust_jsonpath_lib___key_bracket_notation_without_quotes">e</a>
 </td>
 </tr>
 <tr>
 <td><a href="results/key_dot_notation.html">Key dot notation</a></td>
 <td><code>$.key</code></td>
+<td>
+✓
+</td>
 <td>
 ✓
 </td>
@@ -1720,6 +1827,9 @@ jsonpath_​lib
 <td>
 ?
 </td>
+<td>
+?
+</td>
 </tr>
 <tr>
 <td><a href="results/key_dot_notation_on_array.html">Key dot notation on array</a></td>
@@ -1756,6 +1866,9 @@ jsonpath_​lib
 </td>
 <td>
 <a href="errors.html#Python_jsonpath___key_dot_notation_on_array">e</a>
+</td>
+<td>
+?
 </td>
 <td>
 ?
@@ -1812,10 +1925,16 @@ jsonpath_​lib
 <td>
 ?
 </td>
+<td>
+?
+</td>
 </tr>
 <tr>
 <td><a href="results/key_dot_notation_on_array_value.html">Key dot notation on array value</a></td>
 <td><code>$.key</code></td>
+<td>
+✓
+</td>
 <td>
 ✓
 </td>
@@ -1904,6 +2023,9 @@ jsonpath_​lib
 <td>
 ✓
 </td>
+<td>
+✓
+</td>
 </tr>
 <tr>
 <td><a href="results/recursive_array_index.html">Recursive array index</a></td>
@@ -1946,6 +2068,9 @@ jsonpath_​lib
 </td>
 <td>
 <a href="errors.html#Ruby_jsonpath___recursive_array_index">e</a>
+</td>
+<td>
+<a href="errors.html#Rust_jsonpath___recursive_array_index">e</a>
 </td>
 <td>
 ?
@@ -1994,6 +2119,9 @@ jsonpath_​lib
 ✓
 </td>
 <td>
+<a href="errors.html#Rust_jsonpath___recursive_key">e</a>
+</td>
+<td>
 ✓
 </td>
 </tr>
@@ -2038,6 +2166,9 @@ jsonpath_​lib
 </td>
 <td>
 ✓
+</td>
+<td>
+<a href="errors.html#Rust_jsonpath___recursive_on_nested_object">e</a>
 </td>
 <td>
 ✓
@@ -2086,6 +2217,9 @@ jsonpath_​lib
 ✗
 </td>
 <td>
+<a href="errors.html#Rust_jsonpath___recursive_wildcard">e</a>
+</td>
+<td>
 ✓
 </td>
 </tr>
@@ -2130,6 +2264,9 @@ jsonpath_​lib
 </td>
 <td>
 ✗
+</td>
+<td>
+<a href="errors.html#Rust_jsonpath___recursive_wildcard_on_null_value_array">e</a>
 </td>
 <td>
 ✓
@@ -2178,6 +2315,9 @@ jsonpath_​lib
 ?
 </td>
 <td>
+<a href="errors.html#Rust_jsonpath___recursive_wildcard_on_scalar">e</a>
+</td>
+<td>
 ?
 </td>
 </tr>
@@ -2216,6 +2356,9 @@ jsonpath_​lib
 </td>
 <td>
 <a href="errors.html#Python_jsonpath___root">e</a>
+</td>
+<td>
+✓
 </td>
 <td>
 ✓
@@ -2270,6 +2413,9 @@ jsonpath_​lib
 ?
 </td>
 <td>
+<a href="errors.html#Rust_jsonpath___script_expression">e</a>
+</td>
+<td>
 <a href="errors.html#Rust_jsonpath_lib___script_expression">e</a>
 </td>
 </tr>
@@ -2314,6 +2460,9 @@ jsonpath_​lib
 </td>
 <td>
 ✓
+</td>
+<td>
+<a href="errors.html#Rust_jsonpath___wildcard_bracket_notation_on_array">e</a>
 </td>
 <td>
 ✓
@@ -2362,6 +2511,9 @@ jsonpath_​lib
 ✓
 </td>
 <td>
+<a href="errors.html#Rust_jsonpath___wildcard_bracket_notation_on_null_value_array">e</a>
+</td>
+<td>
 ✓
 </td>
 </tr>
@@ -2406,6 +2558,9 @@ jsonpath_​lib
 </td>
 <td>
 ✗
+</td>
+<td>
+<a href="errors.html#Rust_jsonpath___wildcard_bracket_notation_on_object">e</a>
 </td>
 <td>
 ✓
@@ -2456,6 +2611,9 @@ jsonpath_​lib
 <td>
 ✓
 </td>
+<td>
+✓
+</td>
 </tr>
 <tr>
 <td><a href="results/wildcard_dot_notation_on_object.html">Wildcard dot notation on object</a></td>
@@ -2495,6 +2653,9 @@ jsonpath_​lib
 </td>
 <td>
 ✓
+</td>
+<td>
+✗
 </td>
 <td>
 ✗

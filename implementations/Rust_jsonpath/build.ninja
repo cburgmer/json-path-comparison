@@ -1,0 +1,9 @@
+root = implementations/Rust_jsonpath
+builddir = $root/build
+
+rule compile
+  command = (cd $root && cargo build) && mv $root/target/debug/rust_jsonpath $out && rm -r $root/target
+
+build $builddir/rust_jsonpath: compile | $root/src/main.rs
+
+build $root/install: phony $builddir/rust_jsonpath
