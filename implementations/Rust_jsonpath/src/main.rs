@@ -11,13 +11,10 @@ fn main() {
     let query = env::args().nth(1).unwrap();
 
     let json = serde_json::from_reader(io::stdin()).unwrap();
-    let selector = match Selector::new(&query) {
-        Ok(r) => r,
-        Err(e) => {
-            println!("{}", e);
-            process::exit(1);
-        }
-    };
+    let selector = Selector::new(&query).unwrap_or_else(|err| {
+        println!("{}", err);
+        process::exit(1);
+    });
     let result: Vec<&Value> = selector.find(&json).collect();
 
     serde_json::to_writer(io::stdout(), &result).unwrap();
