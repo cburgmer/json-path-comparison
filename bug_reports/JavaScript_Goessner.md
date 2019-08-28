@@ -3,6 +3,62 @@ Results do not match other implementations
 The following queries provide results that do not match those of other implementations of JSONPath
 (compare https://cburgmer.github.io/json-path-comparison/):
 
+- [ ] `$[1]`
+  Input:
+  ```
+  ["one element"]
+  ```
+  Expected output:
+  ```
+  []
+  ```
+  Error:
+  ```
+  jsonpath returned false, this might indicate an error
+  ```
+
+- [ ] `$.missing`
+  Input:
+  ```
+  {"key": "value"}
+  ```
+  Expected output:
+  ```
+  []
+  ```
+  Error:
+  ```
+  jsonpath returned false, this might indicate an error
+  ```
+
+- [ ] `$.key`
+  Input:
+  ```
+  [0, 1]
+  ```
+  Expected output:
+  ```
+  []
+  ```
+  Error:
+  ```
+  jsonpath returned false, this might indicate an error
+  ```
+
+- [ ] `$.key`
+  Input:
+  ```
+  [{"key": "value"}]
+  ```
+  Expected output:
+  ```
+  []
+  ```
+  Error:
+  ```
+  jsonpath returned false, this might indicate an error
+  ```
+
 - [ ] `$`
   Input:
   ```

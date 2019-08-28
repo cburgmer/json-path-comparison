@@ -69,6 +69,80 @@ The following queries provide results that do not match those of other implement
   	... 8 more
   ```
 
+- [ ] `$[0:4:2]`
+  Input:
+  ```
+  ["first", "second", "third", "forth", "fifth"]
+  ```
+  Expected output:
+  ```
+  ["first", "third"]
+  ```
+  Error:
+  ```
+  Exception in thread "main" org.antlr.v4.runtime.misc.ParseCancellationException
+  	at org.antlr.v4.runtime.BailErrorStrategy.recoverInline(BailErrorStrategy.java:66)
+  	at org.antlr.v4.runtime.Parser.match(Parser.java:206)
+  	at org.jsfr.json.compiler.JsonPathParser.slicing(JsonPathParser.java:636)
+  	at org.jsfr.json.compiler.JsonPathParser.relativePath(JsonPathParser.java:265)
+  	at org.jsfr.json.compiler.JsonPathParser.path(JsonPathParser.java:159)
+  	at org.jsfr.json.compiler.JsonPathCompiler.compile(JsonPathCompiler.java:283)
+  	at org.jsfr.json.compiler.JsonPathCompiler.compile(JsonPathCompiler.java:273)
+  	at org.jsfr.json.JsonSurfer.collectAll(JsonSurfer.java:262)
+  	at query.App.main(App.java:27)
+  Caused by: org.antlr.v4.runtime.InputMismatchException
+  	at org.antlr.v4.runtime.BailErrorStrategy.recoverInline(BailErrorStrategy.java:61)
+  	... 8 more
+  ```
+
+- [ ] `$[?(@.key>=42)]`
+  Input:
+  ```
+  [{"key": 0}, {"key": 42}, {"key": -1}, {"key": 41}, {"key": 43}, {"key": 42.0001}, {"key": 41.9999}, {"key": 100}, {"some": "value"}]
+  ```
+  Expected output:
+  ```
+  [{"key": 42}, {"key": 43}, {"key": 42.0001}, {"key": 100}]
+  ```
+  Actual output:
+  ```
+  [{"key": 42}, {"key": 41}, {"key": 43}, {"key": 42.0001}, {"key": 41.9999}, {"key": 100}]
+  ```
+
+- [ ] `$[?(@.key<42)]`
+  Input:
+  ```
+  [{"key": 0}, {"key": "value"}]
+  ```
+  Expected output:
+  ```
+  [{"key": 0}]
+  ```
+  Error:
+  ```
+  Exception in thread "main" org.jsfr.json.exception.JsonSurfingException: Parser is stopped
+  	at org.jsfr.json.DefaultErrorHandlingStrategy.handleParsingException(DefaultErrorHandlingStrategy.java:35)
+  	at org.jsfr.json.JacksonParser$JacksonResumableParser.parse(JacksonParser.java:143)
+  	at org.jsfr.json.JacksonParser.parse(JacksonParser.java:228)
+  	at org.jsfr.json.JsonSurfer.surf(JsonSurfer.java:180)
+  	at org.jsfr.json.JsonSurfer.collectAll(JsonSurfer.java:289)
+  	at org.jsfr.json.JsonSurfer.collectAll(JsonSurfer.java:273)
+  	at org.jsfr.json.JsonSurfer.collectAll(JsonSurfer.java:262)
+  	at query.App.main(App.java:27)
+  Caused by: java.lang.NumberFormatException: Character " is neither a decimal digit number, decimal point, nor "e" notation exponential mark.
+  	at java.base/java.math.BigDecimal.<init>(BigDecimal.java:518)
+  	at java.base/java.math.BigDecimal.<init>(BigDecimal.java:401)
+  	at java.base/java.math.BigDecimal.<init>(BigDecimal.java:834)
+  	at org.jsfr.json.filter.LessThanNumPredicate.apply(LessThanNumPredicate.java:49)
+  	at org.jsfr.json.JsonFilterVerifier.primitive(JsonFilterVerifier.java:116)
+  	at org.jsfr.json.ContentDispatcher.primitive(ContentDispatcher.java:147)
+  	at org.jsfr.json.ContentDispatcher.primitive(ContentDispatcher.java:147)
+  	at org.jsfr.json.SurfingContext.primitive(SurfingContext.java:299)
+  	at org.jsfr.json.JacksonParser$JacksonResumableParser.doPare(JacksonParser.java:176)
+  	at org.jsfr.json.JacksonParser$JacksonResumableParser.parse(JacksonParser.java:141)
+  	... 6 more
+  ```
+
 - [ ] `$..key`
   Input:
   ```
