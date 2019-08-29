@@ -6,7 +6,6 @@ use Remorhaz\JSON\Path\Processor\Processor;
 use Remorhaz\JSON\Path\Query\QueryFactory;
 
 $json = file_get_contents("php://stdin");
-$o = json_decode($json);
 
 try {
     $r = Processor::create()
