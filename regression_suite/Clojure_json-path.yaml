@@ -18,10 +18,6 @@ queries:
     document: ["first", "second", "third"]
     result: "third"
     status: open
-  - id: array_index_out_of_bounds
-    selector: $[1]
-    document: ["one element"]
-    status: error
   - id: array_index_slice_end_out_of_bounds
     selector: $[1:10]
     document: ["first", "second", "third"]
@@ -174,21 +170,6 @@ queries:
     document: {"key": "value"}
     result: "value"
     status: pass
-  - id: key_dot_notation_not_found
-    selector: $.missing
-    document: {"key": "value"}
-    result: null
-    status: open
-  - id: key_dot_notation_on_array
-    selector: $.key
-    document: [0, 1]
-    result: null
-    status: open
-  - id: key_dot_notation_on_array_of_matching_object
-    selector: $.key
-    document: [{"key": "value"}]
-    result: null
-    status: open
   - id: key_dot_notation_on_array_value
     selector: $.key
     document: {"key": ["first", "second"]}
