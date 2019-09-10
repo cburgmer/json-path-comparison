@@ -44,6 +44,33 @@ The following queries provide results that do not match those of other implement
   ["first", "second", "third"]
   ```
 
+- [ ] `$[::2]`
+  Input:
+  ```
+  ["first", "second", "third", "forth", "fifth"]
+  ```
+  Expected output:
+  ```
+  ["first", "third", "fifth"]
+  ```
+  Error:
+  ```
+  SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+  SLF4J: Defaulting to no-operation (NOP) logger implementation
+  SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+  Exception in thread "main" com.jayway.jsonpath.InvalidPathException: Failed to parse SliceOperation: ::2
+  	at com.jayway.jsonpath.internal.path.ArraySliceOperation.parse(ArraySliceOperation.java:70)
+  	at com.jayway.jsonpath.internal.path.PathCompiler.readArrayToken(PathCompiler.java:537)
+  	at com.jayway.jsonpath.internal.path.PathCompiler.readNextToken(PathCompiler.java:139)
+  	at com.jayway.jsonpath.internal.path.PathCompiler.readContextToken(PathCompiler.java:124)
+  	at com.jayway.jsonpath.internal.path.PathCompiler.compile(PathCompiler.java:58)
+  	at com.jayway.jsonpath.internal.path.PathCompiler.compile(PathCompiler.java:75)
+  	at com.jayway.jsonpath.JsonPath.<init>(JsonPath.java:101)
+  	at com.jayway.jsonpath.JsonPath.compile(JsonPath.java:467)
+  	at com.jayway.jsonpath.internal.JsonContext.read(JsonContext.java:87)
+  	at query.App.main(App.java:28)
+  ```
+
 - [ ] `$['key','another']`
   Input:
   ```

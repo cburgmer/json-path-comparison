@@ -29,6 +29,10 @@ queries:
     document: ["first", "second", "third"]
     result: ["third"]
     status: pass
+  - id: array_index_slice_negative_step
+    selector: $[::-2]
+    document: ["first", "second", "third", "forth", "fifth"]
+    status: error
   - id: array_index_slice_no_start_no_end
     selector: $[:]
     document: ["first", "second"]
@@ -49,6 +53,10 @@ queries:
     document: ["first", "second", "third", "forth", "fifth"]
     result: ["second", "third"]
     status: pass
+  - id: array_index_slice_start_end_negative_step
+    selector: $[3:0:-2]
+    document: ["first", "second", "third", "forth", "fifth"]
+    status: error
   - id: array_index_slice_start_end_step
     selector: $[0:3:2]
     document: ["first", "second", "third", "forth", "fifth"]
@@ -77,6 +85,11 @@ queries:
     selector: $[0:1]
     document: ["first", "second"]
     result: ["first"]
+    status: pass
+  - id: array_index_slice_step
+    selector: $[::2]
+    document: ["first", "second", "third", "forth", "fifth"]
+    result: ["first", "third", "fifth"]
     status: pass
   - id: array_index_union
     selector: $[0,1]

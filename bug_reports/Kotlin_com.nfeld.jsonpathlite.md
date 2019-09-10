@@ -42,6 +42,20 @@ The following queries provide results that do not match those of other implement
   ["first", "second", "third"]
   ```
 
+- [ ] `$[::2]`
+  Input:
+  ```
+  ["first", "second", "third", "forth", "fifth"]
+  ```
+  Expected output:
+  ```
+  ["first", "third", "fifth"]
+  ```
+  Actual output:
+  ```
+  ["first", "second"]
+  ```
+
 - [ ] `$[?(@.key>42)]`
   Input:
   ```
