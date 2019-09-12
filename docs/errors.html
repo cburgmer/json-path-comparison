@@ -81,11 +81,33 @@ Rust (jsonpath), Array index last
 <pre><code>parsing error
 </code></pre>
 
+<h3 id="Golang_github.com-oliveagle-jsonpath___array_index_slice_end_out_of_bounds">
+Golang (github.com-oliveagle-jsonpath), Array index slice end out of bounds
+</h3>
+
+<pre><code>panic: index [to] out of range: len: 3, to: 10
+
+goroutine 1 [running]:
+main.main()
+    /json-path-comparison/implementations/Golang_github.com-oliveagle-jsonpath/main.go:24 +0x221
+</code></pre>
+
 <h3 id="Rust_jsonpath___array_index_slice_last_no_end">
 Rust (jsonpath), Array index slice last no end
 </h3>
 
 <pre><code>parsing error
+</code></pre>
+
+<h3 id="Golang_github.com-oliveagle-jsonpath___array_index_slice_negative_step">
+Golang (github.com-oliveagle-jsonpath), Array index slice negative step
+</h3>
+
+<pre><code>panic: only support one range(from, to): [  -2]
+
+goroutine 1 [running]:
+main.main()
+    /json-path-comparison/implementations/Golang_github.com-oliveagle-jsonpath/main.go:24 +0x221
 </code></pre>
 
 <h3 id="JavaScript_Goessner___array_index_slice_negative_step">
@@ -258,6 +280,17 @@ Rust (jsonpath), Array index slice no start no end
 <pre><code>parsing error
 </code></pre>
 
+<h3 id="Golang_github.com-oliveagle-jsonpath___array_index_slice_start_end_negative_step">
+Golang (github.com-oliveagle-jsonpath), Array index slice start end negative step
+</h3>
+
+<pre><code>panic: only support one range(from, to): [3 0 -2]
+
+goroutine 1 [running]:
+main.main()
+    /json-path-comparison/implementations/Golang_github.com-oliveagle-jsonpath/main.go:24 +0x221
+</code></pre>
+
 <h3 id="JavaScript_Goessner___array_index_slice_start_end_negative_step">
 JavaScript (Goessner), Array index slice start end negative step
 </h3>
@@ -321,6 +354,17 @@ $[3:0:-2]
 ^^^^^^
 </code></pre>
 
+<h3 id="Golang_github.com-oliveagle-jsonpath___array_index_slice_start_end_step">
+Golang (github.com-oliveagle-jsonpath), Array index slice start end step
+</h3>
+
+<pre><code>panic: only support one range(from, to): [0 3 2]
+
+goroutine 1 [running]:
+main.main()
+    /json-path-comparison/implementations/Golang_github.com-oliveagle-jsonpath/main.go:24 +0x221
+</code></pre>
+
 <h3 id="Java_com.github.jsurfer___array_index_slice_start_end_step">
 Java (com.github.jsurfer), Array index slice start end step
 </h3>
@@ -352,6 +396,17 @@ Rust (jsonpath), Array index slice start end step
 </h3>
 
 <pre><code>parsing error
+</code></pre>
+
+<h3 id="Golang_github.com-oliveagle-jsonpath___array_index_slice_start_end_step_0">
+Golang (github.com-oliveagle-jsonpath), Array index slice start end step 0
+</h3>
+
+<pre><code>panic: only support one range(from, to): [0 3 0]
+
+goroutine 1 [running]:
+main.main()
+    /json-path-comparison/implementations/Golang_github.com-oliveagle-jsonpath/main.go:24 +0x221
 </code></pre>
 
 <h3 id="JavaScript_Goessner___array_index_slice_start_end_step_0">
@@ -429,6 +484,17 @@ Rust (jsonpath_lib), Array index slice start end step 0
 <pre><code>panic occurred
 </code></pre>
 
+<h3 id="Golang_github.com-oliveagle-jsonpath___array_index_slice_start_end_step_1">
+Golang (github.com-oliveagle-jsonpath), Array index slice start end step 1
+</h3>
+
+<pre><code>panic: only support one range(from, to): [0 3 1]
+
+goroutine 1 [running]:
+main.main()
+    /json-path-comparison/implementations/Golang_github.com-oliveagle-jsonpath/main.go:24 +0x221
+</code></pre>
+
 <h3 id="Java_com.github.jsurfer___array_index_slice_start_end_step_1">
 Java (com.github.jsurfer), Array index slice start end step 1
 </h3>
@@ -460,6 +526,17 @@ Rust (jsonpath), Array index slice start end step 1
 </h3>
 
 <pre><code>parsing error
+</code></pre>
+
+<h3 id="Golang_github.com-oliveagle-jsonpath___array_index_slice_start_end_step_non_aligned">
+Golang (github.com-oliveagle-jsonpath), Array index slice start end step non aligned
+</h3>
+
+<pre><code>panic: only support one range(from, to): [0 4 2]
+
+goroutine 1 [running]:
+main.main()
+    /json-path-comparison/implementations/Golang_github.com-oliveagle-jsonpath/main.go:24 +0x221
 </code></pre>
 
 <h3 id="Java_com.github.jsurfer___array_index_slice_start_end_step_non_aligned">
@@ -514,6 +591,17 @@ Python (jsonpath), Array index slice start equals end
 </h3>
 
 <pre><code>jsonpath returned false, this might indicate an error
+</code></pre>
+
+<h3 id="Golang_github.com-oliveagle-jsonpath___array_index_slice_step">
+Golang (github.com-oliveagle-jsonpath), Array index slice step
+</h3>
+
+<pre><code>panic: only support one range(from, to): [  2]
+
+goroutine 1 [running]:
+main.main()
+    /json-path-comparison/implementations/Golang_github.com-oliveagle-jsonpath/main.go:24 +0x221
 </code></pre>
 
 <h3 id="Java_com.github.jsurfer___array_index_slice_step">
@@ -1055,6 +1143,18 @@ Clojure (json-path), Key bracket notation
 Expecting value: line 1 column 1 (char 0)
 </code></pre>
 
+<h3 id="Golang_github.com-oliveagle-jsonpath___key_bracket_notation">
+Golang (github.com-oliveagle-jsonpath), Key bracket notation
+</h3>
+
+<pre><code>panic: strconv.Atoi: parsing "'key'": invalid syntax
+
+goroutine 1 [running]:
+main.main()
+    /json-path-comparison/implementations/Golang_github.com-oliveagle-jsonpath/main.go:24 +0x221
+Expecting value: line 1 column 1 (char 0)
+</code></pre>
+
 <h3 id="Rust_jsonpath___key_bracket_notation">
 Rust (jsonpath), Key bracket notation
 </h3>
@@ -1086,6 +1186,17 @@ Clojure (json-path), Key bracket notation union
     at json_path_comparison.core.main(Unknown Source)
 </code></pre>
 
+<h3 id="Golang_github.com-oliveagle-jsonpath___key_bracket_notation_union">
+Golang (github.com-oliveagle-jsonpath), Key bracket notation union
+</h3>
+
+<pre><code>panic: strconv.Atoi: parsing "'key'": invalid syntax
+
+goroutine 1 [running]:
+main.main()
+    /json-path-comparison/implementations/Golang_github.com-oliveagle-jsonpath/main.go:24 +0x221
+</code></pre>
+
 <h3 id="Rust_jsonpath___key_bracket_notation_union">
 Rust (jsonpath), Key bracket notation union
 </h3>
@@ -1115,6 +1226,18 @@ Clojure (json-path), Key bracket notation with double quotes
     at json_path_comparison.core$_main.doInvoke(core.clj:6)
     at clojure.lang.RestFn.applyTo(RestFn.java:137)
     at json_path_comparison.core.main(Unknown Source)
+Expecting value: line 1 column 1 (char 0)
+</code></pre>
+
+<h3 id="Golang_github.com-oliveagle-jsonpath___key_bracket_notation_with_double_quotes">
+Golang (github.com-oliveagle-jsonpath), Key bracket notation with double quotes
+</h3>
+
+<pre><code>panic: strconv.Atoi: parsing "\"key\"": invalid syntax
+
+goroutine 1 [running]:
+main.main()
+    /json-path-comparison/implementations/Golang_github.com-oliveagle-jsonpath/main.go:24 +0x221
 Expecting value: line 1 column 1 (char 0)
 </code></pre>
 
@@ -1208,6 +1331,18 @@ Clojure (json-path), Key bracket notation with number
 Expecting value: line 1 column 1 (char 0)
 </code></pre>
 
+<h3 id="Golang_github.com-oliveagle-jsonpath___key_bracket_notation_with_number">
+Golang (github.com-oliveagle-jsonpath), Key bracket notation with number
+</h3>
+
+<pre><code>panic: strconv.Atoi: parsing "'0'": invalid syntax
+
+goroutine 1 [running]:
+main.main()
+    /json-path-comparison/implementations/Golang_github.com-oliveagle-jsonpath/main.go:24 +0x221
+Expecting value: line 1 column 1 (char 0)
+</code></pre>
+
 <h3 id="Rust_jsonpath___key_bracket_notation_with_number">
 Rust (jsonpath), Key bracket notation with number
 </h3>
@@ -1237,6 +1372,18 @@ Clojure (json-path), Key bracket notation with number without quotes
     at json_path_comparison.core$_main.doInvoke(core.clj:6)
     at clojure.lang.RestFn.applyTo(RestFn.java:137)
     at json_path_comparison.core.main(Unknown Source)
+Expecting value: line 1 column 1 (char 0)
+</code></pre>
+
+<h3 id="Golang_github.com-oliveagle-jsonpath___key_bracket_notation_with_number_without_quotes">
+Golang (github.com-oliveagle-jsonpath), Key bracket notation with number without quotes
+</h3>
+
+<pre><code>panic: object is not Slice
+
+goroutine 1 [running]:
+main.main()
+    /json-path-comparison/implementations/Golang_github.com-oliveagle-jsonpath/main.go:24 +0x221
 Expecting value: line 1 column 1 (char 0)
 </code></pre>
 
@@ -1288,6 +1435,18 @@ Clojure (json-path), Key bracket notation with single quote
     at json_path_comparison.core$_main.doInvoke(core.clj:6)
     at clojure.lang.RestFn.applyTo(RestFn.java:137)
     at json_path_comparison.core.main(Unknown Source)
+Expecting value: line 1 column 1 (char 0)
+</code></pre>
+
+<h3 id="Golang_github.com-oliveagle-jsonpath___key_bracket_notation_with_single_quote">
+Golang (github.com-oliveagle-jsonpath), Key bracket notation with single quote
+</h3>
+
+<pre><code>panic: strconv.Atoi: parsing "'single'quote'": invalid syntax
+
+goroutine 1 [running]:
+main.main()
+    /json-path-comparison/implementations/Golang_github.com-oliveagle-jsonpath/main.go:24 +0x221
 Expecting value: line 1 column 1 (char 0)
 </code></pre>
 
@@ -1401,6 +1560,18 @@ Clojure (json-path), Key bracket notation with single quote escaped
 Expecting value: line 1 column 1 (char 0)
 </code></pre>
 
+<h3 id="Golang_github.com-oliveagle-jsonpath___key_bracket_notation_with_single_quote_escaped">
+Golang (github.com-oliveagle-jsonpath), Key bracket notation with single quote escaped
+</h3>
+
+<pre><code>panic: strconv.Atoi: parsing "'single\\'quote'": invalid syntax
+
+goroutine 1 [running]:
+main.main()
+    /json-path-comparison/implementations/Golang_github.com-oliveagle-jsonpath/main.go:24 +0x221
+Expecting value: line 1 column 1 (char 0)
+</code></pre>
+
 <h3 id="JavaScript_Goessner___key_bracket_notation_with_single_quote_escaped">
 JavaScript (Goessner), Key bracket notation with single quote escaped
 </h3>
@@ -1461,11 +1632,35 @@ Clojure (json-path), Key bracket notation with special characters
 Expecting value: line 1 column 1 (char 0)
 </code></pre>
 
+<h3 id="Golang_github.com-oliveagle-jsonpath___key_bracket_notation_with_special_characters">
+Golang (github.com-oliveagle-jsonpath), Key bracket notation with special characters
+</h3>
+
+<pre><code>panic: strconv.Atoi: parsing "\"chars'": invalid syntax
+
+goroutine 1 [running]:
+main.main()
+    /json-path-comparison/implementations/Golang_github.com-oliveagle-jsonpath/main.go:24 +0x221
+Expecting value: line 1 column 1 (char 0)
+</code></pre>
+
 <h3 id="Rust_jsonpath___key_bracket_notation_with_special_characters">
 Rust (jsonpath), Key bracket notation with special characters
 </h3>
 
 <pre><code>parsing error
+</code></pre>
+
+<h3 id="Golang_github.com-oliveagle-jsonpath___key_bracket_notation_with_star_literal">
+Golang (github.com-oliveagle-jsonpath), Key bracket notation with star literal
+</h3>
+
+<pre><code>panic: strconv.Atoi: parsing "'*'": invalid syntax
+
+goroutine 1 [running]:
+main.main()
+    /json-path-comparison/implementations/Golang_github.com-oliveagle-jsonpath/main.go:24 +0x221
+Expecting value: line 1 column 1 (char 0)
 </code></pre>
 
 <h3 id="Python_jsonpath___key_bracket_notation_with_star_literal">
@@ -1504,6 +1699,18 @@ Clojure (json-path), Key bracket notation without quotes
     at json_path_comparison.core$_main.doInvoke(core.clj:6)
     at clojure.lang.RestFn.applyTo(RestFn.java:137)
     at json_path_comparison.core.main(Unknown Source)
+Expecting value: line 1 column 1 (char 0)
+</code></pre>
+
+<h3 id="Golang_github.com-oliveagle-jsonpath___key_bracket_notation_without_quotes">
+Golang (github.com-oliveagle-jsonpath), Key bracket notation without quotes
+</h3>
+
+<pre><code>panic: strconv.Atoi: parsing "key": invalid syntax
+
+goroutine 1 [running]:
+main.main()
+    /json-path-comparison/implementations/Golang_github.com-oliveagle-jsonpath/main.go:24 +0x221
 Expecting value: line 1 column 1 (char 0)
 </code></pre>
 
@@ -1628,6 +1835,17 @@ Clojure (json-path), Recursive array index
     at json_path_comparison.core.main(Unknown Source)
 </code></pre>
 
+<h3 id="Golang_github.com-oliveagle-jsonpath___recursive_array_index">
+Golang (github.com-oliveagle-jsonpath), Recursive array index
+</h3>
+
+<pre><code>panic: expression don't support in filter
+
+goroutine 1 [running]:
+main.main()
+    /json-path-comparison/implementations/Golang_github.com-oliveagle-jsonpath/main.go:24 +0x221
+</code></pre>
+
 <h3 id="PHP_galbar-jsonpath___recursive_array_index">
 PHP (galbar-jsonpath), Recursive array index
 </h3>
@@ -1656,11 +1874,33 @@ Rust (jsonpath), Recursive array index
 <pre><code>parsing error
 </code></pre>
 
+<h3 id="Golang_github.com-oliveagle-jsonpath___recursive_key">
+Golang (github.com-oliveagle-jsonpath), Recursive key
+</h3>
+
+<pre><code>panic: expression don't support in filter
+
+goroutine 1 [running]:
+main.main()
+    /json-path-comparison/implementations/Golang_github.com-oliveagle-jsonpath/main.go:24 +0x221
+</code></pre>
+
 <h3 id="Rust_jsonpath___recursive_key">
 Rust (jsonpath), Recursive key
 </h3>
 
 <pre><code>parsing error
+</code></pre>
+
+<h3 id="Golang_github.com-oliveagle-jsonpath___recursive_on_nested_object">
+Golang (github.com-oliveagle-jsonpath), Recursive on nested object
+</h3>
+
+<pre><code>panic: expression don't support in filter
+
+goroutine 1 [running]:
+main.main()
+    /json-path-comparison/implementations/Golang_github.com-oliveagle-jsonpath/main.go:24 +0x221
 </code></pre>
 
 <h3 id="Rust_jsonpath___recursive_on_nested_object">
@@ -1670,6 +1910,17 @@ Rust (jsonpath), Recursive on nested object
 <pre><code>parsing error
 </code></pre>
 
+<h3 id="Golang_github.com-oliveagle-jsonpath___recursive_wildcard">
+Golang (github.com-oliveagle-jsonpath), Recursive wildcard
+</h3>
+
+<pre><code>panic: expression don't support in filter
+
+goroutine 1 [running]:
+main.main()
+    /json-path-comparison/implementations/Golang_github.com-oliveagle-jsonpath/main.go:24 +0x221
+</code></pre>
+
 <h3 id="Rust_jsonpath___recursive_wildcard">
 Rust (jsonpath), Recursive wildcard
 </h3>
@@ -1677,11 +1928,33 @@ Rust (jsonpath), Recursive wildcard
 <pre><code>parsing error
 </code></pre>
 
+<h3 id="Golang_github.com-oliveagle-jsonpath___recursive_wildcard_on_null_value_array">
+Golang (github.com-oliveagle-jsonpath), Recursive wildcard on null value array
+</h3>
+
+<pre><code>panic: expression don't support in filter
+
+goroutine 1 [running]:
+main.main()
+    /json-path-comparison/implementations/Golang_github.com-oliveagle-jsonpath/main.go:24 +0x221
+</code></pre>
+
 <h3 id="Rust_jsonpath___recursive_wildcard_on_null_value_array">
 Rust (jsonpath), Recursive wildcard on null value array
 </h3>
 
 <pre><code>parsing error
+</code></pre>
+
+<h3 id="Golang_github.com-oliveagle-jsonpath___recursive_wildcard_on_scalar">
+Golang (github.com-oliveagle-jsonpath), Recursive wildcard on scalar
+</h3>
+
+<pre><code>panic: expression don't support in filter
+
+goroutine 1 [running]:
+main.main()
+    /json-path-comparison/implementations/Golang_github.com-oliveagle-jsonpath/main.go:24 +0x221
 </code></pre>
 
 <h3 id="JavaScript_Goessner___recursive_wildcard_on_scalar">
@@ -1777,6 +2050,18 @@ Clojure (json-path), Script expression
     at json_path_comparison.core$_main.doInvoke(core.clj:6)
     at clojure.lang.RestFn.applyTo(RestFn.java:137)
     at json_path_comparison.core.main(Unknown Source)
+Expecting value: line 1 column 1 (char 0)
+</code></pre>
+
+<h3 id="Golang_github.com-oliveagle-jsonpath___script_expression">
+Golang (github.com-oliveagle-jsonpath), Script expression
+</h3>
+
+<pre><code>panic: strconv.Atoi: parsing "(@.length-1)": invalid syntax
+
+goroutine 1 [running]:
+main.main()
+    /json-path-comparison/implementations/Golang_github.com-oliveagle-jsonpath/main.go:24 +0x221
 Expecting value: line 1 column 1 (char 0)
 </code></pre>
 
@@ -1911,6 +2196,17 @@ Rust (jsonpath), Wildcard bracket notation on null value array
 <pre><code>parsing error
 </code></pre>
 
+<h3 id="Golang_github.com-oliveagle-jsonpath___wildcard_bracket_notation_on_object">
+Golang (github.com-oliveagle-jsonpath), Wildcard bracket notation on object
+</h3>
+
+<pre><code>panic: object is not Slice
+
+goroutine 1 [running]:
+main.main()
+    /json-path-comparison/implementations/Golang_github.com-oliveagle-jsonpath/main.go:24 +0x221
+</code></pre>
+
 <h3 id="Kotlin_com.nfeld.jsonpathlite___wildcard_bracket_notation_on_object">
 Kotlin (com.nfeld.jsonpathlite), Wildcard bracket notation on object
 </h3>
@@ -1929,6 +2225,28 @@ Rust (jsonpath), Wildcard bracket notation on object
 </h3>
 
 <pre><code>parsing error
+</code></pre>
+
+<h3 id="Golang_github.com-oliveagle-jsonpath___wildcard_dot_notation_on_array">
+Golang (github.com-oliveagle-jsonpath), Wildcard dot notation on array
+</h3>
+
+<pre><code>panic: expression don't support in filter
+
+goroutine 1 [running]:
+main.main()
+    /json-path-comparison/implementations/Golang_github.com-oliveagle-jsonpath/main.go:24 +0x221
+</code></pre>
+
+<h3 id="Golang_github.com-oliveagle-jsonpath___wildcard_dot_notation_on_object">
+Golang (github.com-oliveagle-jsonpath), Wildcard dot notation on object
+</h3>
+
+<pre><code>panic: expression don't support in filter
+
+goroutine 1 [running]:
+main.main()
+    /json-path-comparison/implementations/Golang_github.com-oliveagle-jsonpath/main.go:24 +0x221
 </code></pre>
 </article>
 <a href="https://github.com/cburgmer/json-path-comparison" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>

@@ -16,7 +16,7 @@ queries:
     selector: $[-1]
     document: ["first", "second", "third"]
     result: ["third"]
-    status: open
+    status: pass
   - id: array_index_slice_end_out_of_bounds
     selector: $[1:10]
     document: ["first", "second", "third"]
