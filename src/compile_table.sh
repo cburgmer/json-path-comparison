@@ -117,24 +117,9 @@ header_row() {
 }
 
 main() {
-    echo "# Comparison of different implementations of JSONPath
+    echo "# JSONPath Comparison
 
-## How
-
-We execute all available implementations against the same queries.
-Outcomes are compared across implementations, and judged based on a simple consensus:
-a majority of half of all implementations (rounded up) plus one is required
-(guarantees difference of 2 votes even in critical cases).
-This table makes no statement on the correctness of any of the implementations.
-
-## Goal
-
-This comparison is meant to create visibility,
-help implementers find issues by sharing test cases,
-and finally give guidance on interpretation of the [initial posts by Goessner](https://goessner.net/articles/JsonPath/).
-The motivation of the consensus in particular is to drive the discussion towards a shared understanding of the JSONPath proposal.
-
-## Comparison
+See how [JSONPath](https://goessner.net/articles/JsonPath/) is implemented across different languages.
 "
     echo
     echo "<table style=\"overflow: unset;\">" # Need to reset style for sticky headers
@@ -159,6 +144,21 @@ The motivation of the consensus in particular is to drive the discussion towards
 - ?, no clear consensus amongst the implementations (the results disagree and/or a lot of implementations error)
 - e, the implementation failed executing the query and probably does not support this type of query
 - ¹, this implementation returns queries with only a single possible match as a scalar element (e.g. '\$[0]' => '42'). For the sake of comparing to other implementations these results are converted and wrapped in a list here.
+
+## How
+
+We execute all available implementations against the same queries.
+Outcomes are compared across implementations, and judged based on a simple consensus:
+a majority of half of all implementations (rounded up) plus one is required
+(guarantees difference of 2 votes even in critical cases).
+This table makes no statement on the correctness of any of the implementations.
+
+## Goal
+
+This comparison is meant to create visibility,
+help implementers find issues by sharing test cases,
+and finally give guidance on interpretation of the [initial posts by Goessner](https://goessner.net/articles/JsonPath/).
+The motivation of the consensus in particular is to drive the discussion towards a shared understanding of the JSONPath proposal.
 
 ## Contribute
 
