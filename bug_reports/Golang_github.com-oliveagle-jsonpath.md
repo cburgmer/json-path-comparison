@@ -14,11 +14,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  panic: index [to] out of range: len: 3, to: 10
-  
-  goroutine 1 [running]:
-  main.main()
-  	/json-path-comparison/implementations/Golang_github.com-oliveagle-jsonpath/main.go:24 +0x221
+  index [to] out of range: len: 3, to: 10
   ```
 
 - [ ] `$[:2]`
@@ -60,11 +56,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  panic: only support one range(from, to): [0 3 2]
-  
-  goroutine 1 [running]:
-  main.main()
-  	/json-path-comparison/implementations/Golang_github.com-oliveagle-jsonpath/main.go:24 +0x221
+  only support one range(from, to): [0 3 2]
   ```
 
 - [ ] `$[0:3:1]`
@@ -78,11 +70,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  panic: only support one range(from, to): [0 3 1]
-  
-  goroutine 1 [running]:
-  main.main()
-  	/json-path-comparison/implementations/Golang_github.com-oliveagle-jsonpath/main.go:24 +0x221
+  only support one range(from, to): [0 3 1]
   ```
 
 - [ ] `$[0:1]`
@@ -110,11 +98,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  panic: only support one range(from, to): [  2]
-  
-  goroutine 1 [running]:
-  main.main()
-  	/json-path-comparison/implementations/Golang_github.com-oliveagle-jsonpath/main.go:24 +0x221
+  only support one range(from, to): [  2]
   ```
 
 - [ ] `$[?(@.key>42)]`
@@ -170,11 +154,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  panic: strconv.Atoi: parsing "'key'": invalid syntax
-  
-  goroutine 1 [running]:
-  main.main()
-  	/json-path-comparison/implementations/Golang_github.com-oliveagle-jsonpath/main.go:24 +0x221
+  strconv.Atoi: parsing "'key'": invalid syntax
   Expecting value: line 1 column 1 (char 0)
   ```
 
@@ -189,11 +169,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  panic: strconv.Atoi: parsing "'key'": invalid syntax
-  
-  goroutine 1 [running]:
-  main.main()
-  	/json-path-comparison/implementations/Golang_github.com-oliveagle-jsonpath/main.go:24 +0x221
+  strconv.Atoi: parsing "'key'": invalid syntax
   ```
 
 - [ ] `$['0']`
@@ -207,11 +183,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  panic: strconv.Atoi: parsing "'0'": invalid syntax
-  
-  goroutine 1 [running]:
-  main.main()
-  	/json-path-comparison/implementations/Golang_github.com-oliveagle-jsonpath/main.go:24 +0x221
+  strconv.Atoi: parsing "'0'": invalid syntax
   Expecting value: line 1 column 1 (char 0)
   ```
 
@@ -226,11 +198,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  panic: strconv.Atoi: parsing "\"chars'": invalid syntax
-  
-  goroutine 1 [running]:
-  main.main()
-  	/json-path-comparison/implementations/Golang_github.com-oliveagle-jsonpath/main.go:24 +0x221
+  strconv.Atoi: parsing "\"chars'": invalid syntax
   Expecting value: line 1 column 1 (char 0)
   ```
 
@@ -245,11 +213,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  panic: strconv.Atoi: parsing "'*'": invalid syntax
-  
-  goroutine 1 [running]:
-  main.main()
-  	/json-path-comparison/implementations/Golang_github.com-oliveagle-jsonpath/main.go:24 +0x221
+  strconv.Atoi: parsing "'*'": invalid syntax
   Expecting value: line 1 column 1 (char 0)
   ```
 
@@ -264,11 +228,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  panic: expression don't support in filter
-  
-  goroutine 1 [running]:
-  main.main()
-  	/json-path-comparison/implementations/Golang_github.com-oliveagle-jsonpath/main.go:24 +0x221
+  expression don't support in filter
   ```
 
 - [ ] `$.store..price`
@@ -282,11 +242,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  panic: expression don't support in filter
-  
-  goroutine 1 [running]:
-  main.main()
-  	/json-path-comparison/implementations/Golang_github.com-oliveagle-jsonpath/main.go:24 +0x221
+  expression don't support in filter
   ```
 
 - [ ] `$..*`
@@ -300,11 +256,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  panic: expression don't support in filter
-  
-  goroutine 1 [running]:
-  main.main()
-  	/json-path-comparison/implementations/Golang_github.com-oliveagle-jsonpath/main.go:24 +0x221
+  expression don't support in filter
   ```
 
 - [ ] `$..*`
@@ -318,11 +270,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  panic: expression don't support in filter
-  
-  goroutine 1 [running]:
-  main.main()
-  	/json-path-comparison/implementations/Golang_github.com-oliveagle-jsonpath/main.go:24 +0x221
+  expression don't support in filter
   ```
 
 - [ ] `$[*]`
@@ -336,11 +284,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  panic: object is not Slice
-  
-  goroutine 1 [running]:
-  main.main()
-  	/json-path-comparison/implementations/Golang_github.com-oliveagle-jsonpath/main.go:24 +0x221
+  object is not Slice
   ```
 
 - [ ] `$.*`
@@ -354,11 +298,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  panic: expression don't support in filter
-  
-  goroutine 1 [running]:
-  main.main()
-  	/json-path-comparison/implementations/Golang_github.com-oliveagle-jsonpath/main.go:24 +0x221
+  expression don't support in filter
   ```
 
 - [ ] `$.*`
@@ -372,11 +312,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  panic: expression don't support in filter
-  
-  goroutine 1 [running]:
-  main.main()
-  	/json-path-comparison/implementations/Golang_github.com-oliveagle-jsonpath/main.go:24 +0x221
+  expression don't support in filter
   ```
 
 

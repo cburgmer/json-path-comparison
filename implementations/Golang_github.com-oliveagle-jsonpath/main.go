@@ -13,7 +13,8 @@ func main() {
 
 	data, err := ioutil.ReadAll(os.Stdin)
 	if err != nil {
-		panic(err)
+		fmt.Fprintln(os.Stderr, err)
+		os.Exit(1)
 	}
 
 	var json_data interface{}
@@ -21,7 +22,8 @@ func main() {
 
 	result, err := jsonpath.JsonPathLookup(json_data, selector)
 	if err != nil {
-		panic(err)
+		fmt.Fprintln(os.Stderr, err)
+		os.Exit(1)
 	}
 	json_result, err := json.Marshal(result)
 	fmt.Println(string(json_result))
