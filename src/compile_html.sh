@@ -19,8 +19,20 @@ markdown_into_beautiful_html() {
 EOF
 }
 
+table_highlight_effect() {
+    cat
+    cat <<EOF
+<style>
+.markdown-body tbody tr:target,
+.markdown-body tbody tr:hover {
+  background-color: #ffa;
+}
+</style>
+EOF
+}
+
 main() {
-    markdown_into_beautiful_html < "$file" | resolve_links
+    markdown_into_beautiful_html < "$file" | resolve_links | table_highlight_effect
 }
 
 main
