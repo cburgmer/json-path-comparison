@@ -105,7 +105,7 @@ header_row() {
     echo "<th></th>"
     while IFS= read -r implementation; do
         echo "<th>"
-        echo "<div style=\"writing-mode: vertical-lr;\">"
+        echo "<div style=\"writing-mode: vertical-rl;\">"
         sed "s/[^_]*_\(.*\)/\1/" <<< "$implementation" | wrap_with_link "$implementation"
         if [[ -f "./implementations/${implementation}/SINGLE_POSSIBLE_MATCH_RETURNED_AS_SCALAR" ]]; then
             echo "¹"
