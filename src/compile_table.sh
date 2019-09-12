@@ -51,8 +51,11 @@ compile_row() {
     selector="$(cat "${selector_file}")"
     query_name="$(pretty_query_name "$query")"
 
-    echo "<tr>"
-    echo "<td><a href=\"results/${query}.md\">${query_name}</a></td>"
+    echo "<tr id=\"${query}\">"
+    echo "<td>"
+    echo "<a href=\"#${query}\" style=\"color: lightgrey;\">#</a>"
+    echo "<a href=\"results/${query}.md\">${query_name}</a>"
+    echo "</td>"
     echo "<td><code>${selector}</code></td>"
 
     while IFS= read -r implementation; do
