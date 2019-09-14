@@ -31,34 +31,6 @@ The following queries provide results that do not match those of other implement
   [null]
   ```
 
-- [ ] `$..*`
-  Input:
-  ```
-  {"key": "value", "another key": {"complex": "string", "primitives": [0, 1]}}
-  ```
-  Expected output:
-  ```
-  ["value", {"complex": "string", "primitives": [0, 1]}, "string", [0, 1], 0, 1]
-  ```
-  Actual output:
-  ```
-  [{"another key": {"complex": "string", "primitives": [0, 1]}, "key": "value"}, "value", {"complex": "string", "primitives": [0, 1]}, "string", [0, 1], 0, 1]
-  ```
-
-- [ ] `$..*`
-  Input:
-  ```
-  [40, null, 42]
-  ```
-  Expected output:
-  ```
-  [40, null, 42]
-  ```
-  Actual output:
-  ```
-  [[40, null, 42], 40, null, 42]
-  ```
-
 - [ ] `$[*]`
   Input:
   ```

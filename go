@@ -10,9 +10,15 @@ set -euo pipefail
 readonly script_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 readonly docs_dir="./docs"
 
-for dep in ninja java mvn cargo git go node python3 markdown php composer curl; do
+for dep in ninja java mvn cargo git go node python3 markdown php composer curl gcc pkg-config; do
     if ! which "$dep" > /dev/null; then
         echo >&2 "Please install $dep"
+        exit 1
+    fi
+done
+
+for dep in glib-2.0 json-glib-1.0 gio-unix-2.0; do
+    if ! pkg-config --cflags "$dep" > /dev/null; then
         exit 1
     fi
 done
