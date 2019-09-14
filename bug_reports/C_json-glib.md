@@ -42,7 +42,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  Terminated
+  timeout: sending signal TERM to command ‘build/main’
   ```
 
 - [ ] `$[?(@.key>42)]`
