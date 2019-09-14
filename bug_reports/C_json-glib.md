@@ -56,7 +56,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  Unable to compile selector `$[?(@.key>42)]': Invalid array index definition *?(@.key>42)]*
+  Unable to compile selector `$[?(@.key>42)]': Invalid array index definition “?(@.key>42)]”
   ```
 
 - [ ] `$[?(@.key<42)]`
@@ -70,7 +70,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  Unable to compile selector `$[?(@.key<42)]': Invalid array index definition *?(@.key<42)]*
+  Unable to compile selector `$[?(@.key<42)]': Invalid array index definition “?(@.key<42)]”
   ```
 
 - [ ] `$[?(@.key)]`
@@ -84,7 +84,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  Unable to compile selector `$[?(@.key)]': Invalid array index definition *?(@.key)]*
+  Unable to compile selector `$[?(@.key)]': Invalid array index definition “?(@.key)]”
   ```
 
 - [ ] `$..key`
