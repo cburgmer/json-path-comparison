@@ -3,6 +3,20 @@ Results do not match other implementations
 The following queries provide results that do not match those of other implementations of JSONPath
 (compare https://cburgmer.github.io/json-path-comparison/):
 
+- [ ] `$[0:3:2]`
+  Input:
+  ```
+  ["first", "second", "third", "forth", "fifth"]
+  ```
+  Expected output:
+  ```
+  ["first", "third"]
+  ```
+  Error:
+  ```
+  Exception('Parse error at 1:5 near token : (:)')
+  ```
+
 - [ ] `$[0:3:1]`
   Input:
   ```
@@ -15,6 +29,20 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   Exception('Parse error at 1:5 near token : (:)')
+  ```
+
+- [ ] `$[::2]`
+  Input:
+  ```
+  ["first", "second", "third", "forth", "fifth"]
+  ```
+  Expected output:
+  ```
+  ["first", "third", "fifth"]
+  ```
+  Error:
+  ```
+  Exception('Parse error at 1:3 near token : (:)')
   ```
 
 - [ ] `$[0,1]`
@@ -71,6 +99,34 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   JsonPathLexerError('Error on line 1, col 2: Unexpected character: ? ')
+  ```
+
+- [ ] `$..*`
+  Input:
+  ```
+  {"key": "value", "another key": {"complex": "string", "primitives": [0, 1]}}
+  ```
+  Expected output:
+  ```
+  ["value", {"complex": "string", "primitives": [0, 1]}, "string", [0, 1], 0, 1]
+  ```
+  Actual output:
+  ```
+  ["value", {"complex": "string", "primitives": [0, 1]}, "string", [0, 1]]
+  ```
+
+- [ ] `$..*`
+  Input:
+  ```
+  [40, null, 42]
+  ```
+  Expected output:
+  ```
+  [40, null, 42]
+  ```
+  Actual output:
+  ```
+  []
   ```
 
 - [ ] `$[*]`

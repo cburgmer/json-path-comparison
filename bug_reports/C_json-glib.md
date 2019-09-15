@@ -31,6 +31,20 @@ The following queries provide results that do not match those of other implement
   []
   ```
 
+- [ ] `$[0:3:2]`
+  Input:
+  ```
+  ["first", "second", "third", "forth", "fifth"]
+  ```
+  Expected output:
+  ```
+  ["first", "third"]
+  ```
+  Error:
+  ```
+  timeout: sending signal TERM to command ‘build/main’
+  ```
+
 - [ ] `$[0:3:1]`
   Input:
   ```
@@ -43,6 +57,20 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   timeout: sending signal TERM to command ‘build/main’
+  ```
+
+- [ ] `$[::2]`
+  Input:
+  ```
+  ["first", "second", "third", "forth", "fifth"]
+  ```
+  Expected output:
+  ```
+  ["first", "third", "fifth"]
+  ```
+  Actual output:
+  ```
+  []
   ```
 
 - [ ] `$[?(@.key>42)]`
@@ -99,6 +127,34 @@ The following queries provide results that do not match those of other implement
   Actual output:
   ```
   ["value", "something", {"key": "russian dolls"}, "top"]
+  ```
+
+- [ ] `$..*`
+  Input:
+  ```
+  {"key": "value", "another key": {"complex": "string", "primitives": [0, 1]}}
+  ```
+  Expected output:
+  ```
+  ["value", {"complex": "string", "primitives": [0, 1]}, "string", [0, 1], 0, 1]
+  ```
+  Actual output:
+  ```
+  []
+  ```
+
+- [ ] `$..*`
+  Input:
+  ```
+  [40, null, 42]
+  ```
+  Expected output:
+  ```
+  [40, null, 42]
+  ```
+  Actual output:
+  ```
+  []
   ```
 
 - [ ] `$[*]`

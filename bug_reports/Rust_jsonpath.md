@@ -45,6 +45,20 @@ The following queries provide results that do not match those of other implement
   ["second", "third", "forth"]
   ```
 
+- [ ] `$[0:3:2]`
+  Input:
+  ```
+  ["first", "second", "third", "forth", "fifth"]
+  ```
+  Expected output:
+  ```
+  ["first", "third"]
+  ```
+  Error:
+  ```
+  parsing error
+  ```
+
 - [ ] `$[0:3:1]`
   Input:
   ```
@@ -71,6 +85,20 @@ The following queries provide results that do not match those of other implement
   Actual output:
   ```
   ["first", "second"]
+  ```
+
+- [ ] `$[::2]`
+  Input:
+  ```
+  ["first", "second", "third", "forth", "fifth"]
+  ```
+  Expected output:
+  ```
+  ["first", "third", "fifth"]
+  ```
+  Error:
+  ```
+  parsing error
   ```
 
 - [ ] `$[0,1]`
@@ -179,6 +207,34 @@ The following queries provide results that do not match those of other implement
   Expected output:
   ```
   [8.95, 12.99, 8.99, 22.99, 19.95]
+  ```
+  Error:
+  ```
+  parsing error
+  ```
+
+- [ ] `$..*`
+  Input:
+  ```
+  {"key": "value", "another key": {"complex": "string", "primitives": [0, 1]}}
+  ```
+  Expected output:
+  ```
+  ["value", {"complex": "string", "primitives": [0, 1]}, "string", [0, 1], 0, 1]
+  ```
+  Error:
+  ```
+  parsing error
+  ```
+
+- [ ] `$..*`
+  Input:
+  ```
+  [40, null, 42]
+  ```
+  Expected output:
+  ```
+  [40, null, 42]
   ```
   Error:
   ```

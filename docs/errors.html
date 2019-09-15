@@ -2,6 +2,14 @@
 <article class="markdown-body">
 <h2>Errors</h2>
 
+<h3 id="Golang_github.com-PaesslerAG-jsonpath___array_index_dot_notation">
+Golang (github.com-PaesslerAG-jsonpath), Array index dot notation
+</h3>
+
+<pre><code>parsing error: $.2  :1:2 - 1:4 unexpected Float while scanning operator
+Expecting value: line 1 column 1 (char 0)
+</code></pre>
+
 <h3 id="Java_com.github.jsurfer___array_index_dot_notation">
 Java (com.github.jsurfer), Array index dot notation
 </h3>
@@ -51,6 +59,14 @@ Python (jsonpath-rw), Array index dot notation
 </h3>
 
 <pre><code>Exception('Parse error at 1:2 near token 2 (NUMBER)')
+</code></pre>
+
+<h3 id="Golang_github.com-PaesslerAG-jsonpath___array_index_last">
+Golang (github.com-PaesslerAG-jsonpath), Array index last
+</h3>
+
+<pre><code>index -1 out of bounds
+Expecting value: line 1 column 1 (char 0)
 </code></pre>
 
 <h3 id="JavaScript_Goessner___array_index_last">
@@ -718,6 +734,13 @@ Clojure (json-path), Filter greater than
     at json_path_comparison.core.main(Unknown Source)
 </code></pre>
 
+<h3 id="Golang_github.com-PaesslerAG-jsonpath___filter_greater_than">
+Golang (github.com-PaesslerAG-jsonpath), Filter greater than
+</h3>
+
+<pre><code>parsing error: $[?(@.key&gt;42)]   :1:10 - 1:11 unexpected "&gt;" while scanning parentheses expected ")"
+</code></pre>
+
 <h3 id="Kotlin_com.nfeld.jsonpathlite___filter_greater_than">
 Kotlin (com.nfeld.jsonpathlite), Filter greater than
 </h3>
@@ -796,6 +819,13 @@ Clojure (json-path), Filter greater than or equal
     at json_path_comparison.core$_main.doInvoke(core.clj:6)
     at clojure.lang.RestFn.applyTo(RestFn.java:137)
     at json_path_comparison.core.main(Unknown Source)
+</code></pre>
+
+<h3 id="Golang_github.com-PaesslerAG-jsonpath___filter_greater_than_or_equal">
+Golang (github.com-PaesslerAG-jsonpath), Filter greater than or equal
+</h3>
+
+<pre><code>parsing error: $[?(@.key&gt;=42)]   - 1:12 unknown operator &gt;=
 </code></pre>
 
 <h3 id="Kotlin_com.nfeld.jsonpathlite___filter_greater_than_or_equal">
@@ -885,6 +915,13 @@ Clojure (json-path), Filter less than
     at json_path_comparison.core.main(Unknown Source)
 </code></pre>
 
+<h3 id="Golang_github.com-PaesslerAG-jsonpath___filter_less_than">
+Golang (github.com-PaesslerAG-jsonpath), Filter less than
+</h3>
+
+<pre><code>parsing error: $[?(@.key&lt;42)]   :1:10 - 1:11 unexpected "&lt;" while scanning parentheses expected ")"
+</code></pre>
+
 <h3 id="Kotlin_com.nfeld.jsonpathlite___filter_less_than">
 Kotlin (com.nfeld.jsonpathlite), Filter less than
 </h3>
@@ -963,6 +1000,13 @@ Clojure (json-path), Filter less than on string
     at json_path_comparison.core$_main.doInvoke(core.clj:6)
     at clojure.lang.RestFn.applyTo(RestFn.java:137)
     at json_path_comparison.core.main(Unknown Source)
+</code></pre>
+
+<h3 id="Golang_github.com-PaesslerAG-jsonpath___filter_less_than_on_string">
+Golang (github.com-PaesslerAG-jsonpath), Filter less than on string
+</h3>
+
+<pre><code>parsing error: $[?(@.key&lt;42)]   :1:10 - 1:11 unexpected "&lt;" while scanning parentheses expected ")"
 </code></pre>
 
 <h3 id="Java_com.github.jsurfer___filter_less_than_on_string">
@@ -1079,6 +1123,13 @@ Clojure (json-path), Filter less than or equal
     at json_path_comparison.core.main(Unknown Source)
 </code></pre>
 
+<h3 id="Golang_github.com-PaesslerAG-jsonpath___filter_less_than_or_equal">
+Golang (github.com-PaesslerAG-jsonpath), Filter less than or equal
+</h3>
+
+<pre><code>parsing error: $[?(@.key&lt;=42)]   - 1:12 unknown operator &lt;=
+</code></pre>
+
 <h3 id="Kotlin_com.nfeld.jsonpathlite___filter_less_than_or_equal">
 Kotlin (com.nfeld.jsonpathlite), Filter less than or equal
 </h3>
@@ -1179,6 +1230,14 @@ Clojure (json-path), Key bracket notation
 Expecting value: line 1 column 1 (char 0)
 </code></pre>
 
+<h3 id="Golang_github.com-PaesslerAG-jsonpath___key_bracket_notation">
+Golang (github.com-PaesslerAG-jsonpath), Key bracket notation
+</h3>
+
+<pre><code>parsing error: $['key'] :1:3 - 1:8 could not parse string: invalid syntax
+Expecting value: line 1 column 1 (char 0)
+</code></pre>
+
 <h3 id="Golang_github.com-oliveagle-jsonpath___key_bracket_notation">
 Golang (github.com-oliveagle-jsonpath), Key bracket notation
 </h3>
@@ -1216,6 +1275,13 @@ Clojure (json-path), Key bracket notation union
     at json_path_comparison.core$_main.doInvoke(core.clj:6)
     at clojure.lang.RestFn.applyTo(RestFn.java:137)
     at json_path_comparison.core.main(Unknown Source)
+</code></pre>
+
+<h3 id="Golang_github.com-PaesslerAG-jsonpath___key_bracket_notation_union">
+Golang (github.com-PaesslerAG-jsonpath), Key bracket notation union
+</h3>
+
+<pre><code>parsing error: $['key','another']   :1:3 - 1:8 could not parse string: invalid syntax
 </code></pre>
 
 <h3 id="Golang_github.com-oliveagle-jsonpath___key_bracket_notation_union">
@@ -1461,6 +1527,14 @@ Clojure (json-path), Key bracket notation with single quote
 Expecting value: line 1 column 1 (char 0)
 </code></pre>
 
+<h3 id="Golang_github.com-PaesslerAG-jsonpath___key_bracket_notation_with_single_quote">
+Golang (github.com-PaesslerAG-jsonpath), Key bracket notation with single quote
+</h3>
+
+<pre><code>parsing error: $['single'quote']    :1:3 - 1:11 could not parse string: invalid syntax
+Expecting value: line 1 column 1 (char 0)
+</code></pre>
+
 <h3 id="Golang_github.com-oliveagle-jsonpath___key_bracket_notation_with_single_quote">
 Golang (github.com-oliveagle-jsonpath), Key bracket notation with single quote
 </h3>
@@ -1579,6 +1653,14 @@ Clojure (json-path), Key bracket notation with single quote escaped
 Expecting value: line 1 column 1 (char 0)
 </code></pre>
 
+<h3 id="Golang_github.com-PaesslerAG-jsonpath___key_bracket_notation_with_single_quote_escaped">
+Golang (github.com-PaesslerAG-jsonpath), Key bracket notation with single quote escaped
+</h3>
+
+<pre><code>parsing error: $['single\'quote']   :1:3 - 1:18 could not parse string: invalid syntax
+Expecting value: line 1 column 1 (char 0)
+</code></pre>
+
 <h3 id="Golang_github.com-oliveagle-jsonpath___key_bracket_notation_with_single_quote_escaped">
 Golang (github.com-oliveagle-jsonpath), Key bracket notation with single quote escaped
 </h3>
@@ -1644,6 +1726,14 @@ Clojure (json-path), Key bracket notation with special characters
     at json_path_comparison.core$_main.doInvoke(core.clj:6)
     at clojure.lang.RestFn.applyTo(RestFn.java:137)
     at json_path_comparison.core.main(Unknown Source)
+Expecting value: line 1 column 1 (char 0)
+</code></pre>
+
+<h3 id="Golang_github.com-PaesslerAG-jsonpath___key_bracket_notation_with_special_characters">
+Golang (github.com-PaesslerAG-jsonpath), Key bracket notation with special characters
+</h3>
+
+<pre><code>parsing error: $['special:"chars']  :1:3 - 1:19 could not parse string: invalid syntax
 Expecting value: line 1 column 1 (char 0)
 </code></pre>
 
@@ -1713,6 +1803,14 @@ Clojure (json-path), Key bracket notation without quotes
     at json_path_comparison.core$_main.doInvoke(core.clj:6)
     at clojure.lang.RestFn.applyTo(RestFn.java:137)
     at json_path_comparison.core.main(Unknown Source)
+Expecting value: line 1 column 1 (char 0)
+</code></pre>
+
+<h3 id="Golang_github.com-PaesslerAG-jsonpath___key_bracket_notation_without_quotes">
+Golang (github.com-PaesslerAG-jsonpath), Key bracket notation without quotes
+</h3>
+
+<pre><code>unknown key value
 Expecting value: line 1 column 1 (char 0)
 </code></pre>
 
@@ -2050,6 +2148,14 @@ Clojure (json-path), Script expression
     at json_path_comparison.core$_main.doInvoke(core.clj:6)
     at clojure.lang.RestFn.applyTo(RestFn.java:137)
     at json_path_comparison.core.main(Unknown Source)
+Expecting value: line 1 column 1 (char 0)
+</code></pre>
+
+<h3 id="Golang_github.com-PaesslerAG-jsonpath___script_expression">
+Golang (github.com-PaesslerAG-jsonpath), Script expression
+</h3>
+
+<pre><code>parsing error: $[(@.length-1)]  :1:12 - 1:13 unexpected "-" while scanning parentheses expected ")"
 Expecting value: line 1 column 1 (char 0)
 </code></pre>
 

@@ -67,7 +67,8 @@ queries:
     selector: $[0:3:2]
     document: ["first", "second", "third", "forth", "fifth"]
     result: "first"
-    status: open
+    status: fail
+    consensus: ["first", "third"]
   - id: array_index_slice_start_end_step_0
     selector: $[0:3:0]
     document: ["first", "second", "third", "forth", "fifth"]
@@ -99,7 +100,8 @@ queries:
     selector: $[::2]
     document: ["first", "second", "third", "forth", "fifth"]
     result: "third"
-    status: open
+    status: fail
+    consensus: ["first", "third", "fifth"]
   - id: array_index_union
     selector: $[0,1]
     document: ["first", "second", "third"]
@@ -211,12 +213,13 @@ queries:
     selector: $..*
     document: {"key": "value", "another key": {"complex": "string", "primitives": [0, 1]}}
     result: ["value", {"complex": "string", "primitives": [0, 1]}, "string", [0, 1], 0, 1]
-    status: open
+    status: pass
   - id: recursive_wildcard_on_null_value_array
     selector: $..*
     document: [40, null, 42]
     result: [40, 42]
-    status: open
+    status: fail
+    consensus: [40, null, 42]
   - id: recursive_wildcard_on_scalar
     selector: $..*
     document: 42
