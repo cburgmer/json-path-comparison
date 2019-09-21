@@ -198,9 +198,8 @@ queries:
   - id: recursive_on_nested_object
     selector: $.store..price
     document: {"store": {"book": [{"category": "reference", "author": "Nigel Rees", "title": "Sayings of the Century", "price": 8.95}, {"category": "fiction", "author": "Evelyn Waugh", "title": "Sword of Honour", "price": 12.99}, {"category": "fiction", "author": "Herman Melville", "title": "Moby Dick", "isbn": "0-553-21311-3", "price": 8.99}, {"category": "fiction", "author": "J. R. R. Tolkien", "title": "The Lord of the Rings", "isbn": "0-395-19395-8", "price": 22.99}], "bicycle": {"color": "red", "price": 19.95}}}
-    result: [19.95, 8.95, 12.99, 8.99, 22.99]
-    status: fail
-    consensus: [8.95, 12.99, 8.99, 22.99, 19.95]
+    result: [8.95, 12.99, 8.99, 22.99, 19.95]
+    status: pass
   - id: recursive_wildcard
     selector: $..*
     document: {"key": "value", "another key": {"complex": "string", "primitives": [0, 1]}}
@@ -249,6 +248,6 @@ queries:
   - id: wildcard_dot_notation_on_object
     selector: $.*
     document: {"some": "string", "int": 42, "object": {"key": "value"}, "array": [0, 1]}
-    result: [[0, 1], "string", 42, {"key": "value"}]
+    result: [42, {"key": "value"}, [0, 1], "string"]
     status: fail
     consensus: ["string", 42, {"key": "value"}, [0, 1]]

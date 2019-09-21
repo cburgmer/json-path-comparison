@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5fcd31892284a818e63ecdf53cfb0850",
+    "content-hash": "92b9c3dad214d8c4a223cb4f7c245be1",
     "packages": [
         {
             "name": "nikic/php-parser",
@@ -256,16 +256,16 @@
         },
         {
             "name": "remorhaz/php-json-path",
-            "version": "v0.5.3",
+            "version": "v0.5.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/remorhaz/php-json-path.git",
-                "reference": "392c1cbf8f690c847d5745b813b94171a6ae7e72"
+                "reference": "224846d10a5d9b402d0e1676a8fb9e3a5578e201"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/remorhaz/php-json-path/zipball/392c1cbf8f690c847d5745b813b94171a6ae7e72",
-                "reference": "392c1cbf8f690c847d5745b813b94171a6ae7e72",
+                "url": "https://api.github.com/repos/remorhaz/php-json-path/zipball/224846d10a5d9b402d0e1676a8fb9e3a5578e201",
+                "reference": "224846d10a5d9b402d0e1676a8fb9e3a5578e201",
                 "shasum": ""
             },
             "require": {
@@ -309,7 +309,7 @@
                 "json path",
                 "jsonpath"
             ],
-            "time": "2019-09-21T15:37:56+00:00"
+            "time": "2019-09-21T20:53:17+00:00"
         },
         {
             "name": "remorhaz/php-unilex",

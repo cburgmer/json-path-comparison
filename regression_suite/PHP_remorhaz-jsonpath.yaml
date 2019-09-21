@@ -175,7 +175,8 @@ queries:
   - id: key_bracket_notation_without_quotes
     selector: $[key]
     document: {"key": "value"}
-    status: error
+    result: ["value"]
+    status: open
   - id: key_dot_notation
     selector: $.key
     document: {"key": "value"}
@@ -194,7 +195,7 @@ queries:
   - id: recursive_array_index
     selector: $..[0]
     document: ["first", {"key": ["first nested", {"more": [{"nested": ["deepest", "second"]}, ["more", "values"]]}]}]
-    result: ["first nested", {"nested": ["deepest", "second"]}, "deepest", "more"]
+    result: ["first", "first nested", {"nested": ["deepest", "second"]}, "deepest", "more"]
     status: open
   - id: recursive_key
     selector: $..key
