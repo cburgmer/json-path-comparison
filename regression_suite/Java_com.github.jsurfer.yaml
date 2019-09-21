@@ -17,11 +17,6 @@ queries:
     document: ["first", "second", "third"]
     result: []
     status: open
-  - id: array_index_out_of_bounds
-    selector: $[1]
-    document: ["one element"]
-    result: []
-    status: pass
   - id: array_index_slice_end_out_of_bounds
     selector: $[1:10]
     document: ["first", "second", "third"]
@@ -33,6 +28,10 @@ queries:
     result: ["first", "second", "third"]
     status: fail
     consensus: ["third"]
+  - id: array_index_slice_negative_step
+    selector: $[::-2]
+    document: ["first", "second", "third", "forth", "fifth"]
+    status: error
   - id: array_index_slice_no_start_no_end
     selector: $[:]
     document: ["first", "second"]
@@ -53,6 +52,10 @@ queries:
     document: ["first", "second", "third", "forth", "fifth"]
     result: ["second", "third"]
     status: pass
+  - id: array_index_slice_start_end_negative_step
+    selector: $[3:0:-2]
+    document: ["first", "second", "third", "forth", "fifth"]
+    status: error
   - id: array_index_slice_start_end_step
     selector: $[0:3:2]
     document: ["first", "second", "third", "forth", "fifth"]
@@ -71,7 +74,6 @@ queries:
     selector: $[0:4:2]
     document: ["first", "second", "third", "forth", "fifth"]
     status: error
-    consensus: ["first", "third"]
   - id: array_index_slice_start_equals_end
     selector: $[0:0]
     document: ["first", "second"]
@@ -82,6 +84,11 @@ queries:
     document: ["first", "second"]
     result: ["first"]
     status: pass
+  - id: array_index_slice_step
+    selector: $[::2]
+    document: ["first", "second", "third", "forth", "fifth"]
+    status: error
+    consensus: ["first", "third", "fifth"]
   - id: array_index_union
     selector: $[0,1]
     document: ["first", "second", "third"]
@@ -96,8 +103,7 @@ queries:
     selector: $[?(@.key>=42)]
     document: [{"key": 0}, {"key": 42}, {"key": -1}, {"key": 41}, {"key": 43}, {"key": 42.0001}, {"key": 41.9999}, {"key": 100}, {"some": "value"}]
     result: [{"key": 42}, {"key": 41}, {"key": 43}, {"key": 42.0001}, {"key": 41.9999}, {"key": 100}]
-    status: fail
-    consensus: [{"key": 42}, {"key": 43}, {"key": 42.0001}, {"key": 100}]
+    status: open
   - id: filter_less_than
     selector: $[?(@.key<42)]
     document: [{"key": 0}, {"key": 42}, {"key": -1}, {"key": 41}, {"key": 43}, {"key": 42.0001}, {"key": 41.9999}, {"key": 100}, {"some": "value"}]
@@ -107,7 +113,6 @@ queries:
     selector: $[?(@.key<42)]
     document: [{"key": 0}, {"key": "value"}]
     status: error
-    consensus: [{"key": 0}]
   - id: filter_less_than_or_equal
     selector: $[?(@.key<=42)]
     document: [{"key": 0}, {"key": 42}, {"key": -1}, {"key": 41}, {"key": 43}, {"key": 42.0001}, {"key": 41.9999}, {"key": 100}, {"some": "value"}]
@@ -127,7 +132,7 @@ queries:
     selector: $['key','another']
     document: {"key": "value", "another": "entry"}
     result: ["value", "entry"]
-    status: pass
+    status: open
   - id: key_bracket_notation_with_double_quotes
     selector: $["key"]
     document: {"key": "value"}
@@ -169,21 +174,6 @@ queries:
     selector: $.key
     document: {"key": "value"}
     result: ["value"]
-    status: pass
-  - id: key_dot_notation_not_found
-    selector: $.missing
-    document: {"key": "value"}
-    result: []
-    status: pass
-  - id: key_dot_notation_on_array
-    selector: $.key
-    document: [0, 1]
-    result: []
-    status: pass
-  - id: key_dot_notation_on_array_of_matching_object
-    selector: $.key
-    document: [{"key": "value"}]
-    result: []
     status: pass
   - id: key_dot_notation_on_array_value
     selector: $.key

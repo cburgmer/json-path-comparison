@@ -73,20 +73,6 @@ The following queries provide results that do not match those of other implement
   parsing error
   ```
 
-- [ ] `$[0:4:2]`
-  Input:
-  ```
-  ["first", "second", "third", "forth", "fifth"]
-  ```
-  Expected output:
-  ```
-  ["first", "third"]
-  ```
-  Error:
-  ```
-  parsing error
-  ```
-
 - [ ] `$[0:1]`
   Input:
   ```
@@ -101,6 +87,20 @@ The following queries provide results that do not match those of other implement
   ["first", "second"]
   ```
 
+- [ ] `$[::2]`
+  Input:
+  ```
+  ["first", "second", "third", "forth", "fifth"]
+  ```
+  Expected output:
+  ```
+  ["first", "third", "fifth"]
+  ```
+  Error:
+  ```
+  parsing error
+  ```
+
 - [ ] `$[0,1]`
   Input:
   ```
@@ -109,20 +109,6 @@ The following queries provide results that do not match those of other implement
   Expected output:
   ```
   ["first", "second"]
-  ```
-  Error:
-  ```
-  parsing error
-  ```
-
-- [ ] `$[?(@.key>=42)]`
-  Input:
-  ```
-  [{"key": 0}, {"key": 42}, {"key": -1}, {"key": 41}, {"key": 43}, {"key": 42.0001}, {"key": 41.9999}, {"key": 100}, {"some": "value"}]
-  ```
-  Expected output:
-  ```
-  [{"key": 42}, {"key": 43}, {"key": 42.0001}, {"key": 100}]
   ```
   Error:
   ```
@@ -151,20 +137,6 @@ The following queries provide results that do not match those of other implement
   Expected output:
   ```
   ["value"]
-  ```
-  Error:
-  ```
-  parsing error
-  ```
-
-- [ ] `$['key','another']`
-  Input:
-  ```
-  {"key": "value", "another": "entry"}
-  ```
-  Expected output:
-  ```
-  ["value", "entry"]
   ```
   Error:
   ```

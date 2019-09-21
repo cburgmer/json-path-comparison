@@ -1,123 +1,173 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/3.0.1/github-markdown.css">
 <article class="markdown-body">
-<h1>Comparison of different implementations of JSONPath</h1>
+<h1>JSONPath Comparison</h1>
 
-<h2>How</h2>
+<p>See how <a href="https://goessner.net/articles/JsonPath/">JSONPath</a> is implemented across different languages.</p>
 
-<p>We execute all available implementations against the same queries.
-Outcomes are compared across implementations, and judged based on a simple consensus:
-a majority of half of all implementations (rounded up) plus one is required
-(guarantees difference of 2 votes even in critical cases).
-This table makes no statement on the correctness of any of the implementations.</p>
-
-<h2>Goal</h2>
-
-<p>This comparison is meant to create visibility,
-help implementers find issues by sharing test cases,
-and finally give guidance on interpretation of the <a href="https://goessner.net/articles/JsonPath/">initial posts by Goessner</a>.
-The motivation of the consensus in particular is to drive the discussion towards a shared understanding of the JSONPath proposal.</p>
-
-<h2>Comparison</h2>
-
-<table>
+<table style="overflow: unset;">
 <thead>
-<tr>
-<th></th>
-<th></th>
-<th colspan="1">Clojure</th>
-<th colspan="3">JavaScript</th>
-<th colspan="2">Java</th>
-<th colspan="1">Kotlin</th>
-<th colspan="3">PHP</th>
-<th colspan="2">Python</th>
-<th colspan="1">Ruby</th>
-<th colspan="2">Rust</th>
+<tr style="height: 2rem;">
+<th style="position: sticky; top: 0; background: #ffffffaa;"></th>
+<th style="position: sticky; top: 0; background: #ffffffaa;"></th>
+<th style="position: sticky; top: 0; background: #ffffffaa;" colspan="1">C</th>
+<th style="position: sticky; top: 0; background: #ffffffaa;" colspan="1">Clojure</th>
+<th style="position: sticky; top: 0; background: #ffffffaa;" colspan="2">Golang</th>
+<th style="position: sticky; top: 0; background: #ffffffaa;" colspan="3">JavaScript</th>
+<th style="position: sticky; top: 0; background: #ffffffaa;" colspan="2">Java</th>
+<th style="position: sticky; top: 0; background: #ffffffaa;" colspan="1">Kotlin</th>
+<th style="position: sticky; top: 0; background: #ffffffaa;" colspan="4">PHP</th>
+<th style="position: sticky; top: 0; background: #ffffffaa;" colspan="2">Python</th>
+<th style="position: sticky; top: 0; background: #ffffffaa;" colspan="1">Ruby</th>
+<th style="position: sticky; top: 0; background: #ffffffaa;" colspan="2">Rust</th>
 </tr>
 <tr>
-<th></th>
-<th></th>
-<th>
+<th style="position: sticky; top: 2rem; background: #f6f8faaa;"></th>
+<th style="position: sticky; top: 2rem; background: #f6f8faaa;"></th>
+<th style="position: sticky; top: 2rem; background: #f6f8faaa;">
+<div style="writing-mode: vertical-rl;">
+<a href="https://developer.gnome.org/json-glib/stable/JsonPath.html">
+json-glib
+</a>
+</div>
+</th>
+<th style="position: sticky; top: 2rem; background: #f6f8faaa;">
+<div style="writing-mode: vertical-rl;">
 <a href="https://github.com/gga/json-path">
 json-path
 </a>
 ¹
+</div>
 </th>
-<th>
+<th style="position: sticky; top: 2rem; background: #f6f8faaa;">
+<div style="writing-mode: vertical-rl;">
+<a href="https://github.com/PaesslerAG/jsonpath">
+github.com-PaesslerAG-jsonpath
+</a>
+¹
+</div>
+</th>
+<th style="position: sticky; top: 2rem; background: #f6f8faaa;">
+<div style="writing-mode: vertical-rl;">
+<a href="https://github.com/oliveagle/jsonpath">
+github.com-oliveagle-jsonpath
+</a>
+¹
+</div>
+</th>
+<th style="position: sticky; top: 2rem; background: #f6f8faaa;">
+<div style="writing-mode: vertical-rl;">
 <a href="https://code.google.com/archive/p/jsonpath/">
 Goessner
 </a>
+</div>
 </th>
-<th>
+<th style="position: sticky; top: 2rem; background: #f6f8faaa;">
+<div style="writing-mode: vertical-rl;">
 <a href="https://github.com/dchester/jsonpath">
 jsonpath
 </a>
+</div>
 </th>
-<th>
+<th style="position: sticky; top: 2rem; background: #f6f8faaa;">
+<div style="writing-mode: vertical-rl;">
 <a href="https://github.com/s3u/JSONPath">
 jsonpath-plus
 </a>
+</div>
 </th>
-<th>
+<th style="position: sticky; top: 2rem; background: #f6f8faaa;">
+<div style="writing-mode: vertical-rl;">
 <a href="https://github.com/jsurfer/JsonSurfer">
-com.​github.​jsurfer
+com.github.jsurfer
 </a>
+</div>
 </th>
-<th>
+<th style="position: sticky; top: 2rem; background: #f6f8faaa;">
+<div style="writing-mode: vertical-rl;">
 <a href="https://github.com/json-path/JsonPath/">
-com.​jayway.​jsonpath
+com.jayway.jsonpath
 </a>
+</div>
 </th>
-<th>
+<th style="position: sticky; top: 2rem; background: #f6f8faaa;">
+<div style="writing-mode: vertical-rl;">
 <a href="https://github.com/codeniko/JsonPathLite">
-com.​nfeld.​jsonpathlite
+com.nfeld.jsonpathlite
 </a>
 ¹
+</div>
 </th>
-<th>
+<th style="position: sticky; top: 2rem; background: #f6f8faaa;">
+<div style="writing-mode: vertical-rl;">
 <a href="https://code.google.com/archive/p/jsonpath/">
 Goessner
 </a>
+</div>
 </th>
-<th>
+<th style="position: sticky; top: 2rem; background: #f6f8faaa;">
+<div style="writing-mode: vertical-rl;">
 <a href="https://github.com/FlowCommunications/JSONPath">
 flow-jsonpath
 </a>
+</div>
 </th>
-<th>
+<th style="position: sticky; top: 2rem; background: #f6f8faaa;">
+<div style="writing-mode: vertical-rl;">
 <a href="https://github.com/Galbar/JsonPath-PHP">
 galbar-jsonpath
 </a>
+</div>
 </th>
-<th>
+<th style="position: sticky; top: 2rem; background: #f6f8faaa;">
+<div style="writing-mode: vertical-rl;">
+<a href="https://github.com/remorhaz/php-json-path/">
+remorhaz-jsonpath
+</a>
+</div>
+</th>
+<th style="position: sticky; top: 2rem; background: #f6f8faaa;">
+<div style="writing-mode: vertical-rl;">
 <a href="http://www.ultimate.com/phil/python/#jsonpath">
 jsonpath
 </a>
+</div>
 </th>
-<th>
+<th style="position: sticky; top: 2rem; background: #f6f8faaa;">
+<div style="writing-mode: vertical-rl;">
 <a href="https://github.com/kennknowles/python-jsonpath-rw">
 jsonpath-rw
 </a>
+</div>
 </th>
-<th>
+<th style="position: sticky; top: 2rem; background: #f6f8faaa;">
+<div style="writing-mode: vertical-rl;">
 <a href="https://github.com/joshbuddy/jsonpath">
 jsonpath
 </a>
+</div>
 </th>
-<th>
+<th style="position: sticky; top: 2rem; background: #f6f8faaa;">
+<div style="writing-mode: vertical-rl;">
 <a href="https://github.com/greyblake/jsonpath-rs">
 jsonpath
 </a>
+</div>
 </th>
-<th>
+<th style="position: sticky; top: 2rem; background: #f6f8faaa;">
+<div style="writing-mode: vertical-rl;">
 <a href="https://github.com/freestrings/jsonpath">
-jsonpath_​lib
+jsonpath_lib
 </a>
+</div>
 </th>
 </tr>
 </thead>
 <tbody>
-<tr>
-<td><a href="results/array_index.html">Array index</a></td>
+<tr id="array_index">
+<td>
+<a href="#array_index" style="color: lightgrey;">#</a>
+<a href="results/array_index.html">Array index</a>
+</td>
 <td><code>$[2]</code></td>
 <td>
 ✓
@@ -164,10 +214,34 @@ jsonpath_​lib
 <td>
 ✓
 </td>
+<td>
+✓
+</td>
+<td>
+✓
+</td>
+<td>
+✓
+</td>
+<td>
+✓
+</td>
 </tr>
-<tr>
-<td><a href="results/array_index_dot_notation.html">Array index dot notation</a></td>
+<tr id="array_index_dot_notation">
+<td>
+<a href="#array_index_dot_notation" style="color: lightgrey;">#</a>
+<a href="results/array_index_dot_notation.html">Array index dot notation</a>
+</td>
 <td><code>$.2</code></td>
+<td>
+?
+</td>
+<td>
+?
+</td>
+<td>
+<a href="errors.html#Golang_github.com-PaesslerAG-jsonpath___array_index_dot_notation">e</a>
+</td>
 <td>
 ?
 </td>
@@ -202,6 +276,9 @@ jsonpath_​lib
 ?
 </td>
 <td>
+?
+</td>
+<td>
 <a href="errors.html#Python_jsonpath-rw___array_index_dot_notation">e</a>
 </td>
 <td>
@@ -214,9 +291,21 @@ jsonpath_​lib
 ?
 </td>
 </tr>
-<tr>
-<td><a href="results/array_index_last.html">Array index last</a></td>
+<tr id="array_index_last">
+<td>
+<a href="#array_index_last" style="color: lightgrey;">#</a>
+<a href="results/array_index_last.html">Array index last</a>
+</td>
 <td><code>$[-1]</code></td>
+<td>
+?
+</td>
+<td>
+?
+</td>
+<td>
+<a href="errors.html#Golang_github.com-PaesslerAG-jsonpath___array_index_last">e</a>
+</td>
 <td>
 ?
 </td>
@@ -248,6 +337,9 @@ jsonpath_​lib
 ?
 </td>
 <td>
+?
+</td>
+<td>
 <a href="errors.html#Python_jsonpath___array_index_last">e</a>
 </td>
 <td>
@@ -263,60 +355,26 @@ jsonpath_​lib
 ?
 </td>
 </tr>
-<tr>
-<td><a href="results/array_index_out_of_bounds.html">Array index out of bounds</a></td>
-<td><code>$[1]</code></td>
+<tr id="array_index_slice_end_out_of_bounds">
 <td>
-<a href="errors.html#Clojure_json-path___array_index_out_of_bounds">e</a>
+<a href="#array_index_slice_end_out_of_bounds" style="color: lightgrey;">#</a>
+<a href="results/array_index_slice_end_out_of_bounds.html">Array index slice end out of bounds</a>
 </td>
-<td>
-<a href="errors.html#JavaScript_Goessner___array_index_out_of_bounds">e</a>
-</td>
-<td>
-?
-</td>
-<td>
-?
-</td>
-<td>
-?
-</td>
-<td>
-<a href="errors.html#Java_com.jayway.jsonpath___array_index_out_of_bounds">e</a>
-</td>
-<td>
-?
-</td>
-<td>
-<a href="errors.html#PHP_Goessner___array_index_out_of_bounds">e</a>
-</td>
-<td>
-?
-</td>
-<td>
-<a href="errors.html#PHP_galbar-jsonpath___array_index_out_of_bounds">e</a>
-</td>
-<td>
-<a href="errors.html#Python_jsonpath___array_index_out_of_bounds">e</a>
-</td>
-<td>
-?
-</td>
-<td>
-?
-</td>
-<td>
-?
-</td>
-<td>
-?
-</td>
-</tr>
-<tr>
-<td><a href="results/array_index_slice_end_out_of_bounds.html">Array index slice end out of bounds</a></td>
 <td><code>$[1:10]</code></td>
 <td>
+✓
+</td>
+<td>
 ✗
+</td>
+<td>
+✓
+</td>
+<td>
+<a href="errors.html#Golang_github.com-oliveagle-jsonpath___array_index_slice_end_out_of_bounds">e</a>
+</td>
+<td>
+✓
 </td>
 <td>
 ✓
@@ -361,23 +419,38 @@ jsonpath_​lib
 ✓
 </td>
 </tr>
-<tr>
-<td><a href="results/array_index_slice_last_no_end.html">Array index slice last no end</a></td>
+<tr id="array_index_slice_last_no_end">
+<td>
+<a href="#array_index_slice_last_no_end" style="color: lightgrey;">#</a>
+<a href="results/array_index_slice_last_no_end.html">Array index slice last no end</a>
+</td>
 <td><code>$[-1:]</code></td>
 <td>
-✗
-</td>
-<td>
-✓
-</td>
-<td>
-✓
-</td>
-<td>
 ✓
 </td>
 <td>
 ✗
+</td>
+<td>
+✓
+</td>
+<td>
+✓
+</td>
+<td>
+✓
+</td>
+<td>
+✓
+</td>
+<td>
+✓
+</td>
+<td>
+✗
+</td>
+<td>
+✓
 </td>
 <td>
 ✓
@@ -410,11 +483,87 @@ jsonpath_​lib
 ✓
 </td>
 </tr>
-<tr>
-<td><a href="results/array_index_slice_no_start_no_end.html">Array index slice no start no end</a></td>
+<tr id="array_index_slice_negative_step">
+<td>
+<a href="#array_index_slice_negative_step" style="color: lightgrey;">#</a>
+<a href="results/array_index_slice_negative_step.html">Array index slice negative step</a>
+</td>
+<td><code>$[::-2]</code></td>
+<td>
+?
+</td>
+<td>
+?
+</td>
+<td>
+?
+</td>
+<td>
+<a href="errors.html#Golang_github.com-oliveagle-jsonpath___array_index_slice_negative_step">e</a>
+</td>
+<td>
+<a href="errors.html#JavaScript_Goessner___array_index_slice_negative_step">e</a>
+</td>
+<td>
+?
+</td>
+<td>
+?
+</td>
+<td>
+<a href="errors.html#Java_com.github.jsurfer___array_index_slice_negative_step">e</a>
+</td>
+<td>
+<a href="errors.html#Java_com.jayway.jsonpath___array_index_slice_negative_step">e</a>
+</td>
+<td>
+?
+</td>
+<td>
+<a href="errors.html#PHP_Goessner___array_index_slice_negative_step">e</a>
+</td>
+<td>
+<a href="errors.html#PHP_flow-jsonpath___array_index_slice_negative_step">e</a>
+</td>
+<td>
+?
+</td>
+<td>
+?
+</td>
+<td>
+<a href="errors.html#Python_jsonpath___array_index_slice_negative_step">e</a>
+</td>
+<td>
+<a href="errors.html#Python_jsonpath-rw___array_index_slice_negative_step">e</a>
+</td>
+<td>
+<a href="errors.html#Ruby_jsonpath___array_index_slice_negative_step">e</a>
+</td>
+<td>
+<a href="errors.html#Rust_jsonpath___array_index_slice_negative_step">e</a>
+</td>
+<td>
+<a href="errors.html#Rust_jsonpath_lib___array_index_slice_negative_step">e</a>
+</td>
+</tr>
+<tr id="array_index_slice_no_start_no_end">
+<td>
+<a href="#array_index_slice_no_start_no_end" style="color: lightgrey;">#</a>
+<a href="results/array_index_slice_no_start_no_end.html">Array index slice no start no end</a>
+</td>
 <td><code>$[:]</code></td>
 <td>
+✗
+</td>
+<td>
 <a href="errors.html#Clojure_json-path___array_index_slice_no_start_no_end">e</a>
+</td>
+<td>
+✓
+</td>
+<td>
+✓
 </td>
 <td>
 ✓
@@ -453,16 +602,31 @@ jsonpath_​lib
 ✓
 </td>
 <td>
+✓
+</td>
+<td>
 <a href="errors.html#Rust_jsonpath___array_index_slice_no_start_no_end">e</a>
 </td>
 <td>
 ✓
 </td>
 </tr>
-<tr>
-<td><a href="results/array_index_slice_only_end.html">Array index slice only end</a></td>
+<tr id="array_index_slice_only_end">
+<td>
+<a href="#array_index_slice_only_end" style="color: lightgrey;">#</a>
+<a href="results/array_index_slice_only_end.html">Array index slice only end</a>
+</td>
 <td><code>$[:2]</code></td>
 <td>
+✓
+</td>
+<td>
+✗
+</td>
+<td>
+✓
+</td>
+<td>
 ✗
 </td>
 <td>
@@ -488,6 +652,9 @@ jsonpath_​lib
 </td>
 <td>
 ✗
+</td>
+<td>
+✓
 </td>
 <td>
 ✓
@@ -508,13 +675,28 @@ jsonpath_​lib
 ✓
 </td>
 </tr>
-<tr>
-<td><a href="results/array_index_slice_only_start.html">Array index slice only start</a></td>
+<tr id="array_index_slice_only_start">
+<td>
+<a href="#array_index_slice_only_start" style="color: lightgrey;">#</a>
+<a href="results/array_index_slice_only_start.html">Array index slice only start</a>
+</td>
 <td><code>$[1:]</code></td>
 <td>
 ✗
 </td>
 <td>
+✗
+</td>
+<td>
+✓
+</td>
+<td>
+✓
+</td>
+<td>
+✓
+</td>
+<td>
 ✓
 </td>
 <td>
@@ -557,10 +739,22 @@ jsonpath_​lib
 ✓
 </td>
 </tr>
-<tr>
-<td><a href="results/array_index_slice_start_end.html">Array index slice start end</a></td>
+<tr id="array_index_slice_start_end">
+<td>
+<a href="#array_index_slice_start_end" style="color: lightgrey;">#</a>
+<a href="results/array_index_slice_start_end.html">Array index slice start end</a>
+</td>
 <td><code>$[1:3]</code></td>
 <td>
+✓
+</td>
+<td>
+✗
+</td>
+<td>
+✓
+</td>
+<td>
 ✗
 </td>
 <td>
@@ -586,6 +780,9 @@ jsonpath_​lib
 </td>
 <td>
 ✗
+</td>
+<td>
+✓
 </td>
 <td>
 ✓
@@ -606,11 +803,87 @@ jsonpath_​lib
 ✓
 </td>
 </tr>
-<tr>
-<td><a href="results/array_index_slice_start_end_step.html">Array index slice start end step</a></td>
+<tr id="array_index_slice_start_end_negative_step">
+<td>
+<a href="#array_index_slice_start_end_negative_step" style="color: lightgrey;">#</a>
+<a href="results/array_index_slice_start_end_negative_step.html">Array index slice start end negative step</a>
+</td>
+<td><code>$[3:0:-2]</code></td>
+<td>
+?
+</td>
+<td>
+?
+</td>
+<td>
+?
+</td>
+<td>
+<a href="errors.html#Golang_github.com-oliveagle-jsonpath___array_index_slice_start_end_negative_step">e</a>
+</td>
+<td>
+<a href="errors.html#JavaScript_Goessner___array_index_slice_start_end_negative_step">e</a>
+</td>
+<td>
+?
+</td>
+<td>
+?
+</td>
+<td>
+<a href="errors.html#Java_com.github.jsurfer___array_index_slice_start_end_negative_step">e</a>
+</td>
+<td>
+?
+</td>
+<td>
+?
+</td>
+<td>
+<a href="errors.html#PHP_Goessner___array_index_slice_start_end_negative_step">e</a>
+</td>
+<td>
+?
+</td>
+<td>
+?
+</td>
+<td>
+?
+</td>
+<td>
+?
+</td>
+<td>
+<a href="errors.html#Python_jsonpath-rw___array_index_slice_start_end_negative_step">e</a>
+</td>
+<td>
+<a href="errors.html#Ruby_jsonpath___array_index_slice_start_end_negative_step">e</a>
+</td>
+<td>
+<a href="errors.html#Rust_jsonpath___array_index_slice_start_end_negative_step">e</a>
+</td>
+<td>
+<a href="errors.html#Rust_jsonpath_lib___array_index_slice_start_end_negative_step">e</a>
+</td>
+</tr>
+<tr id="array_index_slice_start_end_step">
+<td>
+<a href="#array_index_slice_start_end_step" style="color: lightgrey;">#</a>
+<a href="results/array_index_slice_start_end_step.html">Array index slice start end step</a>
+</td>
 <td><code>$[0:3:2]</code></td>
 <td>
+<a href="errors.html#C_json-glib___array_index_slice_start_end_step">e</a>
+</td>
+<td>
 ✗
+</td>
+<td>
+✓
+</td>
+<td>
+<a href="errors.html#Golang_github.com-oliveagle-jsonpath___array_index_slice_start_end_step">e</a>
 </td>
 <td>
 ✓
@@ -643,6 +916,9 @@ jsonpath_​lib
 ✓
 </td>
 <td>
+✓
+</td>
+<td>
 <a href="errors.html#Python_jsonpath-rw___array_index_slice_start_end_step">e</a>
 </td>
 <td>
@@ -655,11 +931,23 @@ jsonpath_​lib
 ✓
 </td>
 </tr>
-<tr>
-<td><a href="results/array_index_slice_start_end_step_0.html">Array index slice start end step 0</a></td>
+<tr id="array_index_slice_start_end_step_0">
+<td>
+<a href="#array_index_slice_start_end_step_0" style="color: lightgrey;">#</a>
+<a href="results/array_index_slice_start_end_step_0.html">Array index slice start end step 0</a>
+</td>
 <td><code>$[0:3:0]</code></td>
 <td>
+<a href="errors.html#C_json-glib___array_index_slice_start_end_step_0">e</a>
+</td>
+<td>
 ?
+</td>
+<td>
+?
+</td>
+<td>
+<a href="errors.html#Golang_github.com-oliveagle-jsonpath___array_index_slice_start_end_step_0">e</a>
 </td>
 <td>
 <a href="errors.html#JavaScript_Goessner___array_index_slice_start_end_step_0">e</a>
@@ -689,6 +977,9 @@ jsonpath_​lib
 <a href="errors.html#PHP_galbar-jsonpath___array_index_slice_start_end_step_0">e</a>
 </td>
 <td>
+?
+</td>
+<td>
 <a href="errors.html#Python_jsonpath___array_index_slice_start_end_step_0">e</a>
 </td>
 <td>
@@ -704,11 +995,23 @@ jsonpath_​lib
 <a href="errors.html#Rust_jsonpath_lib___array_index_slice_start_end_step_0">e</a>
 </td>
 </tr>
-<tr>
-<td><a href="results/array_index_slice_start_end_step_1.html">Array index slice start end step 1</a></td>
+<tr id="array_index_slice_start_end_step_1">
+<td>
+<a href="#array_index_slice_start_end_step_1" style="color: lightgrey;">#</a>
+<a href="results/array_index_slice_start_end_step_1.html">Array index slice start end step 1</a>
+</td>
 <td><code>$[0:3:1]</code></td>
 <td>
+<a href="errors.html#C_json-glib___array_index_slice_start_end_step_1">e</a>
+</td>
+<td>
 ✗
+</td>
+<td>
+✓
+</td>
+<td>
+<a href="errors.html#Golang_github.com-oliveagle-jsonpath___array_index_slice_start_end_step_1">e</a>
 </td>
 <td>
 ✓
@@ -741,6 +1044,9 @@ jsonpath_​lib
 ✓
 </td>
 <td>
+✓
+</td>
+<td>
 <a href="errors.html#Python_jsonpath-rw___array_index_slice_start_end_step_1">e</a>
 </td>
 <td>
@@ -753,11 +1059,23 @@ jsonpath_​lib
 ✓
 </td>
 </tr>
-<tr>
-<td><a href="results/array_index_slice_start_end_step_non_aligned.html">Array index slice start end step non aligned</a></td>
+<tr id="array_index_slice_start_end_step_non_aligned">
+<td>
+<a href="#array_index_slice_start_end_step_non_aligned" style="color: lightgrey;">#</a>
+<a href="results/array_index_slice_start_end_step_non_aligned.html">Array index slice start end step non aligned</a>
+</td>
 <td><code>$[0:4:2]</code></td>
 <td>
+<a href="errors.html#C_json-glib___array_index_slice_start_end_step_non_aligned">e</a>
+</td>
+<td>
 ?
+</td>
+<td>
+?
+</td>
+<td>
+<a href="errors.html#Golang_github.com-oliveagle-jsonpath___array_index_slice_start_end_step_non_aligned">e</a>
 </td>
 <td>
 ?
@@ -790,6 +1108,9 @@ jsonpath_​lib
 ?
 </td>
 <td>
+?
+</td>
+<td>
 <a href="errors.html#Python_jsonpath-rw___array_index_slice_start_end_step_non_aligned">e</a>
 </td>
 <td>
@@ -802,9 +1123,21 @@ jsonpath_​lib
 ?
 </td>
 </tr>
-<tr>
-<td><a href="results/array_index_slice_start_equals_end.html">Array index slice start equals end</a></td>
+<tr id="array_index_slice_start_equals_end">
+<td>
+<a href="#array_index_slice_start_equals_end" style="color: lightgrey;">#</a>
+<a href="results/array_index_slice_start_equals_end.html">Array index slice start equals end</a>
+</td>
 <td><code>$[0:0]</code></td>
+<td>
+?
+</td>
+<td>
+?
+</td>
+<td>
+?
+</td>
 <td>
 ?
 </td>
@@ -836,6 +1169,9 @@ jsonpath_​lib
 <a href="errors.html#PHP_galbar-jsonpath___array_index_slice_start_equals_end">e</a>
 </td>
 <td>
+?
+</td>
+<td>
 <a href="errors.html#Python_jsonpath___array_index_slice_start_equals_end">e</a>
 </td>
 <td>
@@ -851,10 +1187,22 @@ jsonpath_​lib
 ?
 </td>
 </tr>
-<tr>
-<td><a href="results/array_index_slice_start_plus_one.html">Array index slice start plus one</a></td>
+<tr id="array_index_slice_start_plus_one">
+<td>
+<a href="#array_index_slice_start_plus_one" style="color: lightgrey;">#</a>
+<a href="results/array_index_slice_start_plus_one.html">Array index slice start plus one</a>
+</td>
 <td><code>$[0:1]</code></td>
 <td>
+✓
+</td>
+<td>
+✗
+</td>
+<td>
+✓
+</td>
+<td>
 ✗
 </td>
 <td>
@@ -880,6 +1228,9 @@ jsonpath_​lib
 </td>
 <td>
 ✗
+</td>
+<td>
+✓
 </td>
 <td>
 ✓
@@ -900,11 +1251,90 @@ jsonpath_​lib
 ✓
 </td>
 </tr>
-<tr>
-<td><a href="results/array_index_union.html">Array index union</a></td>
-<td><code>$[0,1]</code></td>
+<tr id="array_index_slice_step">
+<td>
+<a href="#array_index_slice_step" style="color: lightgrey;">#</a>
+<a href="results/array_index_slice_step.html">Array index slice step</a>
+</td>
+<td><code>$[::2]</code></td>
 <td>
 ✗
+</td>
+<td>
+✗
+</td>
+<td>
+✓
+</td>
+<td>
+<a href="errors.html#Golang_github.com-oliveagle-jsonpath___array_index_slice_step">e</a>
+</td>
+<td>
+✓
+</td>
+<td>
+✓
+</td>
+<td>
+✓
+</td>
+<td>
+<a href="errors.html#Java_com.github.jsurfer___array_index_slice_step">e</a>
+</td>
+<td>
+<a href="errors.html#Java_com.jayway.jsonpath___array_index_slice_step">e</a>
+</td>
+<td>
+✗
+</td>
+<td>
+✓
+</td>
+<td>
+✓
+</td>
+<td>
+✓
+</td>
+<td>
+✓
+</td>
+<td>
+✓
+</td>
+<td>
+<a href="errors.html#Python_jsonpath-rw___array_index_slice_step">e</a>
+</td>
+<td>
+✓
+</td>
+<td>
+<a href="errors.html#Rust_jsonpath___array_index_slice_step">e</a>
+</td>
+<td>
+✓
+</td>
+</tr>
+<tr id="array_index_union">
+<td>
+<a href="#array_index_union" style="color: lightgrey;">#</a>
+<a href="results/array_index_union.html">Array index union</a>
+</td>
+<td><code>$[0,1]</code></td>
+<td>
+✓
+</td>
+<td>
+✗
+</td>
+<td>
+✓
+</td>
+<td>
+✓
+</td>
+<td>
+✓
 </td>
 <td>
 ✓
@@ -949,11 +1379,23 @@ jsonpath_​lib
 ✓
 </td>
 </tr>
-<tr>
-<td><a href="results/filter_greater_than.html">Filter greater than</a></td>
+<tr id="filter_greater_than">
+<td>
+<a href="#filter_greater_than" style="color: lightgrey;">#</a>
+<a href="results/filter_greater_than.html">Filter greater than</a>
+</td>
 <td><code>$[?(@.key>42)]</code></td>
 <td>
+<a href="errors.html#C_json-glib___filter_greater_than">e</a>
+</td>
+<td>
 <a href="errors.html#Clojure_json-path___filter_greater_than">e</a>
+</td>
+<td>
+<a href="errors.html#Golang_github.com-PaesslerAG-jsonpath___filter_greater_than">e</a>
+</td>
+<td>
+✗
 </td>
 <td>
 ✓
@@ -986,6 +1428,9 @@ jsonpath_​lib
 ✓
 </td>
 <td>
+✓
+</td>
+<td>
 <a href="errors.html#Python_jsonpath-rw___filter_greater_than">e</a>
 </td>
 <td>
@@ -998,11 +1443,23 @@ jsonpath_​lib
 ✓
 </td>
 </tr>
-<tr>
-<td><a href="results/filter_greater_than_or_equal.html">Filter greater than or equal</a></td>
+<tr id="filter_greater_than_or_equal">
+<td>
+<a href="#filter_greater_than_or_equal" style="color: lightgrey;">#</a>
+<a href="results/filter_greater_than_or_equal.html">Filter greater than or equal</a>
+</td>
 <td><code>$[?(@.key>=42)]</code></td>
 <td>
+<a href="errors.html#C_json-glib___filter_greater_than_or_equal">e</a>
+</td>
+<td>
 <a href="errors.html#Clojure_json-path___filter_greater_than_or_equal">e</a>
+</td>
+<td>
+<a href="errors.html#Golang_github.com-PaesslerAG-jsonpath___filter_greater_than_or_equal">e</a>
+</td>
+<td>
+?
 </td>
 <td>
 ?
@@ -1035,6 +1492,9 @@ jsonpath_​lib
 ?
 </td>
 <td>
+?
+</td>
+<td>
 <a href="errors.html#Python_jsonpath-rw___filter_greater_than_or_equal">e</a>
 </td>
 <td>
@@ -1047,11 +1507,23 @@ jsonpath_​lib
 ?
 </td>
 </tr>
-<tr>
-<td><a href="results/filter_less_than.html">Filter less than</a></td>
+<tr id="filter_less_than">
+<td>
+<a href="#filter_less_than" style="color: lightgrey;">#</a>
+<a href="results/filter_less_than.html">Filter less than</a>
+</td>
 <td><code>$[?(@.key<42)]</code></td>
 <td>
+<a href="errors.html#C_json-glib___filter_less_than">e</a>
+</td>
+<td>
 <a href="errors.html#Clojure_json-path___filter_less_than">e</a>
+</td>
+<td>
+<a href="errors.html#Golang_github.com-PaesslerAG-jsonpath___filter_less_than">e</a>
+</td>
+<td>
+✗
 </td>
 <td>
 ✓
@@ -1084,6 +1556,9 @@ jsonpath_​lib
 ✓
 </td>
 <td>
+✓
+</td>
+<td>
 <a href="errors.html#Python_jsonpath-rw___filter_less_than">e</a>
 </td>
 <td>
@@ -1096,11 +1571,23 @@ jsonpath_​lib
 ✓
 </td>
 </tr>
-<tr>
-<td><a href="results/filter_less_than_on_string.html">Filter less than on string</a></td>
+<tr id="filter_less_than_on_string">
+<td>
+<a href="#filter_less_than_on_string" style="color: lightgrey;">#</a>
+<a href="results/filter_less_than_on_string.html">Filter less than on string</a>
+</td>
 <td><code>$[?(@.key<42)]</code></td>
 <td>
+<a href="errors.html#C_json-glib___filter_less_than_on_string">e</a>
+</td>
+<td>
 <a href="errors.html#Clojure_json-path___filter_less_than_on_string">e</a>
+</td>
+<td>
+<a href="errors.html#Golang_github.com-PaesslerAG-jsonpath___filter_less_than_on_string">e</a>
+</td>
+<td>
+?
 </td>
 <td>
 ?
@@ -1133,6 +1620,9 @@ jsonpath_​lib
 ?
 </td>
 <td>
+?
+</td>
+<td>
 <a href="errors.html#Python_jsonpath-rw___filter_less_than_on_string">e</a>
 </td>
 <td>
@@ -1145,11 +1635,23 @@ jsonpath_​lib
 ?
 </td>
 </tr>
-<tr>
-<td><a href="results/filter_less_than_or_equal.html">Filter less than or equal</a></td>
+<tr id="filter_less_than_or_equal">
+<td>
+<a href="#filter_less_than_or_equal" style="color: lightgrey;">#</a>
+<a href="results/filter_less_than_or_equal.html">Filter less than or equal</a>
+</td>
 <td><code>$[?(@.key<=42)]</code></td>
 <td>
+<a href="errors.html#C_json-glib___filter_less_than_or_equal">e</a>
+</td>
+<td>
 <a href="errors.html#Clojure_json-path___filter_less_than_or_equal">e</a>
+</td>
+<td>
+<a href="errors.html#Golang_github.com-PaesslerAG-jsonpath___filter_less_than_or_equal">e</a>
+</td>
+<td>
+?
 </td>
 <td>
 ?
@@ -1182,6 +1684,9 @@ jsonpath_​lib
 ?
 </td>
 <td>
+?
+</td>
+<td>
 <a href="errors.html#Python_jsonpath-rw___filter_less_than_or_equal">e</a>
 </td>
 <td>
@@ -1194,11 +1699,23 @@ jsonpath_​lib
 ?
 </td>
 </tr>
-<tr>
-<td><a href="results/filter_with_value.html">Filter with value</a></td>
+<tr id="filter_with_value">
+<td>
+<a href="#filter_with_value" style="color: lightgrey;">#</a>
+<a href="results/filter_with_value.html">Filter with value</a>
+</td>
 <td><code>$[?(@.key)]</code></td>
 <td>
+<a href="errors.html#C_json-glib___filter_with_value">e</a>
+</td>
+<td>
 ✓
+</td>
+<td>
+✗
+</td>
+<td>
+✗
 </td>
 <td>
 ✓
@@ -1231,6 +1748,9 @@ jsonpath_​lib
 ✓
 </td>
 <td>
+✓
+</td>
+<td>
 <a href="errors.html#Python_jsonpath-rw___filter_with_value">e</a>
 </td>
 <td>
@@ -1243,11 +1763,26 @@ jsonpath_​lib
 ✓
 </td>
 </tr>
-<tr>
-<td><a href="results/key_bracket_notation.html">Key bracket notation</a></td>
+<tr id="key_bracket_notation">
+<td>
+<a href="#key_bracket_notation" style="color: lightgrey;">#</a>
+<a href="results/key_bracket_notation.html">Key bracket notation</a>
+</td>
 <td><code>$['key']</code></td>
 <td>
+✓
+</td>
+<td>
 <a href="errors.html#Clojure_json-path___key_bracket_notation">e</a>
+</td>
+<td>
+<a href="errors.html#Golang_github.com-PaesslerAG-jsonpath___key_bracket_notation">e</a>
+</td>
+<td>
+<a href="errors.html#Golang_github.com-oliveagle-jsonpath___key_bracket_notation">e</a>
+</td>
+<td>
+✓
 </td>
 <td>
 ✓
@@ -1292,60 +1827,87 @@ jsonpath_​lib
 ✓
 </td>
 </tr>
-<tr>
-<td><a href="results/key_bracket_notation_union.html">Key bracket notation union</a></td>
+<tr id="key_bracket_notation_union">
+<td>
+<a href="#key_bracket_notation_union" style="color: lightgrey;">#</a>
+<a href="results/key_bracket_notation_union.html">Key bracket notation union</a>
+</td>
 <td><code>$['key','another']</code></td>
+<td>
+?
+</td>
 <td>
 <a href="errors.html#Clojure_json-path___key_bracket_notation_union">e</a>
 </td>
 <td>
-✓
+<a href="errors.html#Golang_github.com-PaesslerAG-jsonpath___key_bracket_notation_union">e</a>
 </td>
 <td>
-✓
+<a href="errors.html#Golang_github.com-oliveagle-jsonpath___key_bracket_notation_union">e</a>
 </td>
 <td>
-✗
+?
 </td>
 <td>
-✓
+?
 </td>
 <td>
-✗
+?
 </td>
 <td>
-✗
+?
 </td>
 <td>
-✓
+?
 </td>
 <td>
-✗
+?
 </td>
 <td>
-✓
+?
 </td>
 <td>
-✓
+?
 </td>
 <td>
-✓
+?
 </td>
 <td>
-✓
+?
+</td>
+<td>
+?
+</td>
+<td>
+?
+</td>
+<td>
+?
 </td>
 <td>
 <a href="errors.html#Rust_jsonpath___key_bracket_notation_union">e</a>
 </td>
 <td>
-✓
+?
 </td>
 </tr>
-<tr>
-<td><a href="results/key_bracket_notation_with_double_quotes.html">Key bracket notation with double quotes</a></td>
+<tr id="key_bracket_notation_with_double_quotes">
+<td>
+<a href="#key_bracket_notation_with_double_quotes" style="color: lightgrey;">#</a>
+<a href="results/key_bracket_notation_with_double_quotes.html">Key bracket notation with double quotes</a>
+</td>
 <td><code>$["key"]</code></td>
 <td>
+<a href="errors.html#C_json-glib___key_bracket_notation_with_double_quotes">e</a>
+</td>
+<td>
 <a href="errors.html#Clojure_json-path___key_bracket_notation_with_double_quotes">e</a>
+</td>
+<td>
+?
+</td>
+<td>
+<a href="errors.html#Golang_github.com-oliveagle-jsonpath___key_bracket_notation_with_double_quotes">e</a>
 </td>
 <td>
 <a href="errors.html#JavaScript_Goessner___key_bracket_notation_with_double_quotes">e</a>
@@ -1375,6 +1937,9 @@ jsonpath_​lib
 ?
 </td>
 <td>
+?
+</td>
+<td>
 <a href="errors.html#Python_jsonpath___key_bracket_notation_with_double_quotes">e</a>
 </td>
 <td>
@@ -1390,11 +1955,23 @@ jsonpath_​lib
 ?
 </td>
 </tr>
-<tr>
-<td><a href="results/key_bracket_notation_with_number.html">Key bracket notation with number</a></td>
+<tr id="key_bracket_notation_with_number">
+<td>
+<a href="#key_bracket_notation_with_number" style="color: lightgrey;">#</a>
+<a href="results/key_bracket_notation_with_number.html">Key bracket notation with number</a>
+</td>
 <td><code>$['0']</code></td>
 <td>
+✓
+</td>
+<td>
 <a href="errors.html#Clojure_json-path___key_bracket_notation_with_number">e</a>
+</td>
+<td>
+✓
+</td>
+<td>
+<a href="errors.html#Golang_github.com-oliveagle-jsonpath___key_bracket_notation_with_number">e</a>
 </td>
 <td>
 ✓
@@ -1416,6 +1993,9 @@ jsonpath_​lib
 </td>
 <td>
 ✗
+</td>
+<td>
+✓
 </td>
 <td>
 ✓
@@ -1439,11 +2019,23 @@ jsonpath_​lib
 ✓
 </td>
 </tr>
-<tr>
-<td><a href="results/key_bracket_notation_with_number_without_quotes.html">Key bracket notation with number without quotes</a></td>
+<tr id="key_bracket_notation_with_number_without_quotes">
+<td>
+<a href="#key_bracket_notation_with_number_without_quotes" style="color: lightgrey;">#</a>
+<a href="results/key_bracket_notation_with_number_without_quotes.html">Key bracket notation with number without quotes</a>
+</td>
 <td><code>$[0]</code></td>
 <td>
+?
+</td>
+<td>
 <a href="errors.html#Clojure_json-path___key_bracket_notation_with_number_without_quotes">e</a>
+</td>
+<td>
+?
+</td>
+<td>
+<a href="errors.html#Golang_github.com-oliveagle-jsonpath___key_bracket_notation_with_number_without_quotes">e</a>
 </td>
 <td>
 ?
@@ -1476,6 +2068,9 @@ jsonpath_​lib
 ?
 </td>
 <td>
+?
+</td>
+<td>
 <a href="errors.html#Python_jsonpath-rw___key_bracket_notation_with_number_without_quotes">e</a>
 </td>
 <td>
@@ -1488,11 +2083,23 @@ jsonpath_​lib
 ?
 </td>
 </tr>
-<tr>
-<td><a href="results/key_bracket_notation_with_single_quote.html">Key bracket notation with single quote</a></td>
+<tr id="key_bracket_notation_with_single_quote">
+<td>
+<a href="#key_bracket_notation_with_single_quote" style="color: lightgrey;">#</a>
+<a href="results/key_bracket_notation_with_single_quote.html">Key bracket notation with single quote</a>
+</td>
 <td><code>$['single'quote']</code></td>
 <td>
+?
+</td>
+<td>
 <a href="errors.html#Clojure_json-path___key_bracket_notation_with_single_quote">e</a>
+</td>
+<td>
+<a href="errors.html#Golang_github.com-PaesslerAG-jsonpath___key_bracket_notation_with_single_quote">e</a>
+</td>
+<td>
+<a href="errors.html#Golang_github.com-oliveagle-jsonpath___key_bracket_notation_with_single_quote">e</a>
 </td>
 <td>
 ?
@@ -1522,6 +2129,9 @@ jsonpath_​lib
 ?
 </td>
 <td>
+<a href="errors.html#PHP_remorhaz-jsonpath___key_bracket_notation_with_single_quote">e</a>
+</td>
+<td>
 ?
 </td>
 <td>
@@ -1537,11 +2147,23 @@ jsonpath_​lib
 <a href="errors.html#Rust_jsonpath_lib___key_bracket_notation_with_single_quote">e</a>
 </td>
 </tr>
-<tr>
-<td><a href="results/key_bracket_notation_with_single_quote_escaped.html">Key bracket notation with single quote escaped</a></td>
+<tr id="key_bracket_notation_with_single_quote_escaped">
+<td>
+<a href="#key_bracket_notation_with_single_quote_escaped" style="color: lightgrey;">#</a>
+<a href="results/key_bracket_notation_with_single_quote_escaped.html">Key bracket notation with single quote escaped</a>
+</td>
 <td><code>$['single\'quote']</code></td>
 <td>
+?
+</td>
+<td>
 <a href="errors.html#Clojure_json-path___key_bracket_notation_with_single_quote_escaped">e</a>
+</td>
+<td>
+<a href="errors.html#Golang_github.com-PaesslerAG-jsonpath___key_bracket_notation_with_single_quote_escaped">e</a>
+</td>
+<td>
+<a href="errors.html#Golang_github.com-oliveagle-jsonpath___key_bracket_notation_with_single_quote_escaped">e</a>
 </td>
 <td>
 <a href="errors.html#JavaScript_Goessner___key_bracket_notation_with_single_quote_escaped">e</a>
@@ -1571,6 +2193,9 @@ jsonpath_​lib
 <a href="errors.html#PHP_galbar-jsonpath___key_bracket_notation_with_single_quote_escaped">e</a>
 </td>
 <td>
+?
+</td>
+<td>
 <a href="errors.html#Python_jsonpath___key_bracket_notation_with_single_quote_escaped">e</a>
 </td>
 <td>
@@ -1586,11 +2211,26 @@ jsonpath_​lib
 ?
 </td>
 </tr>
-<tr>
-<td><a href="results/key_bracket_notation_with_special_characters.html">Key bracket notation with special characters</a></td>
+<tr id="key_bracket_notation_with_special_characters">
+<td>
+<a href="#key_bracket_notation_with_special_characters" style="color: lightgrey;">#</a>
+<a href="results/key_bracket_notation_with_special_characters.html">Key bracket notation with special characters</a>
+</td>
 <td><code>$['special:"chars']</code></td>
 <td>
+✓
+</td>
+<td>
 <a href="errors.html#Clojure_json-path___key_bracket_notation_with_special_characters">e</a>
+</td>
+<td>
+<a href="errors.html#Golang_github.com-PaesslerAG-jsonpath___key_bracket_notation_with_special_characters">e</a>
+</td>
+<td>
+<a href="errors.html#Golang_github.com-oliveagle-jsonpath___key_bracket_notation_with_special_characters">e</a>
+</td>
+<td>
+✓
 </td>
 <td>
 ✓
@@ -1635,11 +2275,26 @@ jsonpath_​lib
 ✓
 </td>
 </tr>
-<tr>
-<td><a href="results/key_bracket_notation_with_star_literal.html">Key bracket notation with star literal</a></td>
+<tr id="key_bracket_notation_with_star_literal">
+<td>
+<a href="#key_bracket_notation_with_star_literal" style="color: lightgrey;">#</a>
+<a href="results/key_bracket_notation_with_star_literal.html">Key bracket notation with star literal</a>
+</td>
 <td><code>$['*']</code></td>
 <td>
+✓
+</td>
+<td>
 ✗
+</td>
+<td>
+✓
+</td>
+<td>
+<a href="errors.html#Golang_github.com-oliveagle-jsonpath___key_bracket_notation_with_star_literal">e</a>
+</td>
+<td>
+✓
 </td>
 <td>
 ✓
@@ -1684,11 +2339,23 @@ jsonpath_​lib
 ✓
 </td>
 </tr>
-<tr>
-<td><a href="results/key_bracket_notation_without_quotes.html">Key bracket notation without quotes</a></td>
+<tr id="key_bracket_notation_without_quotes">
+<td>
+<a href="#key_bracket_notation_without_quotes" style="color: lightgrey;">#</a>
+<a href="results/key_bracket_notation_without_quotes.html">Key bracket notation without quotes</a>
+</td>
 <td><code>$[key]</code></td>
 <td>
+<a href="errors.html#C_json-glib___key_bracket_notation_without_quotes">e</a>
+</td>
+<td>
 <a href="errors.html#Clojure_json-path___key_bracket_notation_without_quotes">e</a>
+</td>
+<td>
+<a href="errors.html#Golang_github.com-PaesslerAG-jsonpath___key_bracket_notation_without_quotes">e</a>
+</td>
+<td>
+<a href="errors.html#Golang_github.com-oliveagle-jsonpath___key_bracket_notation_without_quotes">e</a>
 </td>
 <td>
 ?
@@ -1718,6 +2385,9 @@ jsonpath_​lib
 ?
 </td>
 <td>
+<a href="errors.html#PHP_remorhaz-jsonpath___key_bracket_notation_without_quotes">e</a>
+</td>
+<td>
 ?
 </td>
 <td>
@@ -1733,8 +2403,11 @@ jsonpath_​lib
 <a href="errors.html#Rust_jsonpath_lib___key_bracket_notation_without_quotes">e</a>
 </td>
 </tr>
-<tr>
-<td><a href="results/key_dot_notation.html">Key dot notation</a></td>
+<tr id="key_dot_notation">
+<td>
+<a href="#key_dot_notation" style="color: lightgrey;">#</a>
+<a href="results/key_dot_notation.html">Key dot notation</a>
+</td>
 <td><code>$.key</code></td>
 <td>
 ✓
@@ -1781,156 +2454,24 @@ jsonpath_​lib
 <td>
 ✓
 </td>
-</tr>
-<tr>
-<td><a href="results/key_dot_notation_not_found.html">Key dot notation not found</a></td>
-<td><code>$.missing</code></td>
 <td>
-?
+✓
 </td>
 <td>
-<a href="errors.html#JavaScript_Goessner___key_dot_notation_not_found">e</a>
+✓
 </td>
 <td>
-?
+✓
 </td>
 <td>
-?
-</td>
-<td>
-?
-</td>
-<td>
-<a href="errors.html#Java_com.jayway.jsonpath___key_dot_notation_not_found">e</a>
-</td>
-<td>
-?
-</td>
-<td>
-<a href="errors.html#PHP_Goessner___key_dot_notation_not_found">e</a>
-</td>
-<td>
-?
-</td>
-<td>
-<a href="errors.html#PHP_galbar-jsonpath___key_dot_notation_not_found">e</a>
-</td>
-<td>
-<a href="errors.html#Python_jsonpath___key_dot_notation_not_found">e</a>
-</td>
-<td>
-?
-</td>
-<td>
-?
-</td>
-<td>
-?
-</td>
-<td>
-?
+✓
 </td>
 </tr>
-<tr>
-<td><a href="results/key_dot_notation_on_array.html">Key dot notation on array</a></td>
-<td><code>$.key</code></td>
+<tr id="key_dot_notation_on_array_value">
 <td>
-?
+<a href="#key_dot_notation_on_array_value" style="color: lightgrey;">#</a>
+<a href="results/key_dot_notation_on_array_value.html">Key dot notation on array value</a>
 </td>
-<td>
-<a href="errors.html#JavaScript_Goessner___key_dot_notation_on_array">e</a>
-</td>
-<td>
-?
-</td>
-<td>
-?
-</td>
-<td>
-?
-</td>
-<td>
-<a href="errors.html#Java_com.jayway.jsonpath___key_dot_notation_on_array">e</a>
-</td>
-<td>
-?
-</td>
-<td>
-<a href="errors.html#PHP_Goessner___key_dot_notation_on_array">e</a>
-</td>
-<td>
-?
-</td>
-<td>
-<a href="errors.html#PHP_galbar-jsonpath___key_dot_notation_on_array">e</a>
-</td>
-<td>
-<a href="errors.html#Python_jsonpath___key_dot_notation_on_array">e</a>
-</td>
-<td>
-?
-</td>
-<td>
-?
-</td>
-<td>
-?
-</td>
-<td>
-?
-</td>
-</tr>
-<tr>
-<td><a href="results/key_dot_notation_on_array_of_matching_object.html">Key dot notation on array of matching object</a></td>
-<td><code>$.key</code></td>
-<td>
-?
-</td>
-<td>
-<a href="errors.html#JavaScript_Goessner___key_dot_notation_on_array_of_matching_object">e</a>
-</td>
-<td>
-?
-</td>
-<td>
-?
-</td>
-<td>
-?
-</td>
-<td>
-<a href="errors.html#Java_com.jayway.jsonpath___key_dot_notation_on_array_of_matching_object">e</a>
-</td>
-<td>
-?
-</td>
-<td>
-<a href="errors.html#PHP_Goessner___key_dot_notation_on_array_of_matching_object">e</a>
-</td>
-<td>
-?
-</td>
-<td>
-<a href="errors.html#PHP_galbar-jsonpath___key_dot_notation_on_array_of_matching_object">e</a>
-</td>
-<td>
-<a href="errors.html#Python_jsonpath___key_dot_notation_on_array_of_matching_object">e</a>
-</td>
-<td>
-?
-</td>
-<td>
-?
-</td>
-<td>
-?
-</td>
-<td>
-?
-</td>
-</tr>
-<tr>
-<td><a href="results/key_dot_notation_on_array_value.html">Key dot notation on array value</a></td>
 <td><code>$.key</code></td>
 <td>
 ✓
@@ -1977,9 +2518,24 @@ jsonpath_​lib
 <td>
 ✓
 </td>
+<td>
+✓
+</td>
+<td>
+✓
+</td>
+<td>
+✓
+</td>
+<td>
+✓
+</td>
 </tr>
-<tr>
-<td><a href="results/key_dot_notation_on_null_value.html">Key dot notation on null value</a></td>
+<tr id="key_dot_notation_on_null_value">
+<td>
+<a href="#key_dot_notation_on_null_value" style="color: lightgrey;">#</a>
+<a href="results/key_dot_notation_on_null_value.html">Key dot notation on null value</a>
+</td>
 <td><code>$.key</code></td>
 <td>
 ✓
@@ -2026,12 +2582,36 @@ jsonpath_​lib
 <td>
 ✓
 </td>
+<td>
+✓
+</td>
+<td>
+✓
+</td>
+<td>
+✓
+</td>
+<td>
+✓
+</td>
 </tr>
-<tr>
-<td><a href="results/recursive_array_index.html">Recursive array index</a></td>
+<tr id="recursive_array_index">
+<td>
+<a href="#recursive_array_index" style="color: lightgrey;">#</a>
+<a href="results/recursive_array_index.html">Recursive array index</a>
+</td>
 <td><code>$..[0]</code></td>
 <td>
+<a href="errors.html#C_json-glib___recursive_array_index">e</a>
+</td>
+<td>
 <a href="errors.html#Clojure_json-path___recursive_array_index">e</a>
+</td>
+<td>
+?
+</td>
+<td>
+<a href="errors.html#Golang_github.com-oliveagle-jsonpath___recursive_array_index">e</a>
 </td>
 <td>
 ?
@@ -2064,6 +2644,9 @@ jsonpath_​lib
 ?
 </td>
 <td>
+?
+</td>
+<td>
 <a href="errors.html#Python_jsonpath-rw___recursive_array_index">e</a>
 </td>
 <td>
@@ -2076,11 +2659,23 @@ jsonpath_​lib
 ?
 </td>
 </tr>
-<tr>
-<td><a href="results/recursive_key.html">Recursive key</a></td>
+<tr id="recursive_key">
+<td>
+<a href="#recursive_key" style="color: lightgrey;">#</a>
+<a href="results/recursive_key.html">Recursive key</a>
+</td>
 <td><code>$..key</code></td>
 <td>
+✗
+</td>
+<td>
 ✓
+</td>
+<td>
+✓
+</td>
+<td>
+<a href="errors.html#Golang_github.com-oliveagle-jsonpath___recursive_key">e</a>
 </td>
 <td>
 ✓
@@ -2108,6 +2703,9 @@ jsonpath_​lib
 </td>
 <td>
 ✓
+</td>
+<td>
+✗
 </td>
 <td>
 ✓
@@ -2125,11 +2723,23 @@ jsonpath_​lib
 ✓
 </td>
 </tr>
-<tr>
-<td><a href="results/recursive_on_nested_object.html">Recursive on nested object</a></td>
+<tr id="recursive_on_nested_object">
+<td>
+<a href="#recursive_on_nested_object" style="color: lightgrey;">#</a>
+<a href="results/recursive_on_nested_object.html">Recursive on nested object</a>
+</td>
 <td><code>$.store..price</code></td>
 <td>
 ✓
+</td>
+<td>
+✓
+</td>
+<td>
+✗
+</td>
+<td>
+<a href="errors.html#Golang_github.com-oliveagle-jsonpath___recursive_on_nested_object">e</a>
 </td>
 <td>
 ✓
@@ -2148,6 +2758,9 @@ jsonpath_​lib
 </td>
 <td>
 ✗
+</td>
+<td>
+✓
 </td>
 <td>
 ✓
@@ -2174,11 +2787,23 @@ jsonpath_​lib
 ✓
 </td>
 </tr>
-<tr>
-<td><a href="results/recursive_wildcard.html">Recursive wildcard</a></td>
+<tr id="recursive_wildcard">
+<td>
+<a href="#recursive_wildcard" style="color: lightgrey;">#</a>
+<a href="results/recursive_wildcard.html">Recursive wildcard</a>
+</td>
 <td><code>$..*</code></td>
 <td>
+✗
+</td>
+<td>
 ✓
+</td>
+<td>
+✓
+</td>
+<td>
+<a href="errors.html#Golang_github.com-oliveagle-jsonpath___recursive_wildcard">e</a>
 </td>
 <td>
 ✓
@@ -2206,6 +2831,9 @@ jsonpath_​lib
 </td>
 <td>
 ✗
+</td>
+<td>
+✓
 </td>
 <td>
 ✓
@@ -2223,13 +2851,25 @@ jsonpath_​lib
 ✓
 </td>
 </tr>
-<tr>
-<td><a href="results/recursive_wildcard_on_null_value_array.html">Recursive wildcard on null value array</a></td>
+<tr id="recursive_wildcard_on_null_value_array">
+<td>
+<a href="#recursive_wildcard_on_null_value_array" style="color: lightgrey;">#</a>
+<a href="results/recursive_wildcard_on_null_value_array.html">Recursive wildcard on null value array</a>
+</td>
 <td><code>$..*</code></td>
 <td>
 ✗
 </td>
 <td>
+✗
+</td>
+<td>
+✓
+</td>
+<td>
+<a href="errors.html#Golang_github.com-oliveagle-jsonpath___recursive_wildcard_on_null_value_array">e</a>
+</td>
+<td>
 ✓
 </td>
 <td>
@@ -2255,6 +2895,9 @@ jsonpath_​lib
 </td>
 <td>
 ✗
+</td>
+<td>
+✓
 </td>
 <td>
 ✓
@@ -2272,11 +2915,23 @@ jsonpath_​lib
 ✓
 </td>
 </tr>
-<tr>
-<td><a href="results/recursive_wildcard_on_scalar.html">Recursive wildcard on scalar</a></td>
+<tr id="recursive_wildcard_on_scalar">
+<td>
+<a href="#recursive_wildcard_on_scalar" style="color: lightgrey;">#</a>
+<a href="results/recursive_wildcard_on_scalar.html">Recursive wildcard on scalar</a>
+</td>
 <td><code>$..*</code></td>
 <td>
 ?
+</td>
+<td>
+?
+</td>
+<td>
+?
+</td>
+<td>
+<a href="errors.html#Golang_github.com-oliveagle-jsonpath___recursive_wildcard_on_scalar">e</a>
 </td>
 <td>
 <a href="errors.html#JavaScript_Goessner___recursive_wildcard_on_scalar">e</a>
@@ -2306,6 +2961,9 @@ jsonpath_​lib
 ?
 </td>
 <td>
+?
+</td>
+<td>
 <a href="errors.html#Python_jsonpath___recursive_wildcard_on_scalar">e</a>
 </td>
 <td>
@@ -2321,9 +2979,21 @@ jsonpath_​lib
 ?
 </td>
 </tr>
-<tr>
-<td><a href="results/root.html">Root</a></td>
+<tr id="root">
+<td>
+<a href="#root" style="color: lightgrey;">#</a>
+<a href="results/root.html">Root</a>
+</td>
 <td><code>$</code></td>
+<td>
+✓
+</td>
+<td>
+✓
+</td>
+<td>
+✓
+</td>
 <td>
 ✓
 </td>
@@ -2355,6 +3025,9 @@ jsonpath_​lib
 ✓
 </td>
 <td>
+✓
+</td>
+<td>
 <a href="errors.html#Python_jsonpath___root">e</a>
 </td>
 <td>
@@ -2370,11 +3043,23 @@ jsonpath_​lib
 ✓
 </td>
 </tr>
-<tr>
-<td><a href="results/script_expression.html">Script expression</a></td>
+<tr id="script_expression">
+<td>
+<a href="#script_expression" style="color: lightgrey;">#</a>
+<a href="results/script_expression.html">Script expression</a>
+</td>
 <td><code>$[(@.length-1)]</code></td>
 <td>
+<a href="errors.html#C_json-glib___script_expression">e</a>
+</td>
+<td>
 <a href="errors.html#Clojure_json-path___script_expression">e</a>
+</td>
+<td>
+<a href="errors.html#Golang_github.com-PaesslerAG-jsonpath___script_expression">e</a>
+</td>
+<td>
+<a href="errors.html#Golang_github.com-oliveagle-jsonpath___script_expression">e</a>
 </td>
 <td>
 ?
@@ -2404,6 +3089,9 @@ jsonpath_​lib
 <a href="errors.html#PHP_galbar-jsonpath___script_expression">e</a>
 </td>
 <td>
+<a href="errors.html#PHP_remorhaz-jsonpath___script_expression">e</a>
+</td>
+<td>
 ?
 </td>
 <td>
@@ -2419,9 +3107,21 @@ jsonpath_​lib
 <a href="errors.html#Rust_jsonpath_lib___script_expression">e</a>
 </td>
 </tr>
-<tr>
-<td><a href="results/wildcard_bracket_notation_on_array.html">Wildcard bracket notation on array</a></td>
+<tr id="wildcard_bracket_notation_on_array">
+<td>
+<a href="#wildcard_bracket_notation_on_array" style="color: lightgrey;">#</a>
+<a href="results/wildcard_bracket_notation_on_array.html">Wildcard bracket notation on array</a>
+</td>
 <td><code>$[*]</code></td>
+<td>
+✓
+</td>
+<td>
+✓
+</td>
+<td>
+✓
+</td>
 <td>
 ✓
 </td>
@@ -2462,15 +3162,30 @@ jsonpath_​lib
 ✓
 </td>
 <td>
+✓
+</td>
+<td>
 <a href="errors.html#Rust_jsonpath___wildcard_bracket_notation_on_array">e</a>
 </td>
 <td>
 ✓
 </td>
 </tr>
-<tr>
-<td><a href="results/wildcard_bracket_notation_on_null_value_array.html">Wildcard bracket notation on null value array</a></td>
+<tr id="wildcard_bracket_notation_on_null_value_array">
+<td>
+<a href="#wildcard_bracket_notation_on_null_value_array" style="color: lightgrey;">#</a>
+<a href="results/wildcard_bracket_notation_on_null_value_array.html">Wildcard bracket notation on null value array</a>
+</td>
 <td><code>$[*]</code></td>
+<td>
+✓
+</td>
+<td>
+✓
+</td>
+<td>
+✓
+</td>
 <td>
 ✓
 </td>
@@ -2511,17 +3226,32 @@ jsonpath_​lib
 ✓
 </td>
 <td>
+✓
+</td>
+<td>
 <a href="errors.html#Rust_jsonpath___wildcard_bracket_notation_on_null_value_array">e</a>
 </td>
 <td>
 ✓
 </td>
 </tr>
-<tr>
-<td><a href="results/wildcard_bracket_notation_on_object.html">Wildcard bracket notation on object</a></td>
+<tr id="wildcard_bracket_notation_on_object">
+<td>
+<a href="#wildcard_bracket_notation_on_object" style="color: lightgrey;">#</a>
+<a href="results/wildcard_bracket_notation_on_object.html">Wildcard bracket notation on object</a>
+</td>
 <td><code>$[*]</code></td>
 <td>
+✗
+</td>
+<td>
 ✓
+</td>
+<td>
+✗
+</td>
+<td>
+<a href="errors.html#Golang_github.com-oliveagle-jsonpath___wildcard_bracket_notation_on_object">e</a>
 </td>
 <td>
 ✓
@@ -2554,6 +3284,9 @@ jsonpath_​lib
 ✓
 </td>
 <td>
+✓
+</td>
+<td>
 ✗
 </td>
 <td>
@@ -2566,11 +3299,23 @@ jsonpath_​lib
 ✓
 </td>
 </tr>
-<tr>
-<td><a href="results/wildcard_dot_notation_on_array.html">Wildcard dot notation on array</a></td>
+<tr id="wildcard_dot_notation_on_array">
+<td>
+<a href="#wildcard_dot_notation_on_array" style="color: lightgrey;">#</a>
+<a href="results/wildcard_dot_notation_on_array.html">Wildcard dot notation on array</a>
+</td>
 <td><code>$.*</code></td>
 <td>
+✗
+</td>
+<td>
 ✓
+</td>
+<td>
+✓
+</td>
+<td>
+<a href="errors.html#Golang_github.com-oliveagle-jsonpath___wildcard_dot_notation_on_array">e</a>
 </td>
 <td>
 ✓
@@ -2589,6 +3334,9 @@ jsonpath_​lib
 </td>
 <td>
 ✗
+</td>
+<td>
+✓
 </td>
 <td>
 ✓
@@ -2615,11 +3363,23 @@ jsonpath_​lib
 ✓
 </td>
 </tr>
-<tr>
-<td><a href="results/wildcard_dot_notation_on_object.html">Wildcard dot notation on object</a></td>
+<tr id="wildcard_dot_notation_on_object">
+<td>
+<a href="#wildcard_dot_notation_on_object" style="color: lightgrey;">#</a>
+<a href="results/wildcard_dot_notation_on_object.html">Wildcard dot notation on object</a>
+</td>
 <td><code>$.*</code></td>
 <td>
 ✓
+</td>
+<td>
+✓
+</td>
+<td>
+✗
+</td>
+<td>
+<a href="errors.html#Golang_github.com-oliveagle-jsonpath___wildcard_dot_notation_on_object">e</a>
 </td>
 <td>
 ✓
@@ -2638,6 +3398,9 @@ jsonpath_​lib
 </td>
 <td>
 ✗
+</td>
+<td>
+✓
 </td>
 <td>
 ✓
@@ -2677,8 +3440,29 @@ jsonpath_​lib
 <li>¹, this implementation returns queries with only a single possible match as a scalar element (e.g. '$[0]' => '42'). For the sake of comparing to other implementations these results are converted and wrapped in a list here.</li>
 </ul>
 
+<h2>How</h2>
+
+<p>We execute all available implementations against the same queries.
+Outcomes are compared across implementations, and judged based on a simple consensus:
+a majority of half of all implementations (rounded up) plus one is required
+(guarantees difference of 2 votes even in critical cases).
+This table makes no statement on the correctness of any of the implementations.</p>
+
+<h2>Goal</h2>
+
+<p>This comparison is meant to create visibility,
+help implementers find issues by sharing test cases,
+and finally give guidance on interpretation of the <a href="https://goessner.net/articles/JsonPath/">initial posts by Goessner</a>.
+The motivation of the consensus in particular is to drive the discussion towards a shared understanding of the JSONPath proposal.</p>
+
 <h2>Contribute</h2>
 
 <p>Please help to add more queries, extend the list of implementations or fix errors. See <a href="https://github.com/cburgmer/json-path-comparison">https://github.com/cburgmer/json-path-comparison</a>.</p>
 </article>
 <a href="https://github.com/cburgmer/json-path-comparison" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+<style>
+.markdown-body tbody tr:target,
+.markdown-body tbody tr:hover {
+  background-color: #ffa;
+}
+</style>

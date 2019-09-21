@@ -18,11 +18,6 @@ queries:
     document: ["first", "second", "third"]
     result: ["third"]
     status: open
-  - id: array_index_out_of_bounds
-    selector: $[1]
-    document: ["one element"]
-    result: []
-    status: open
   - id: array_index_slice_end_out_of_bounds
     selector: $[1:10]
     document: ["first", "second", "third"]
@@ -33,6 +28,10 @@ queries:
     document: ["first", "second", "third"]
     result: ["third"]
     status: pass
+  - id: array_index_slice_negative_step
+    selector: $[::-2]
+    document: ["first", "second", "third", "forth", "fifth"]
+    status: error
   - id: array_index_slice_no_start_no_end
     selector: $[:]
     document: ["first", "second"]
@@ -55,6 +54,11 @@ queries:
     result: ["second", "third", "forth"]
     status: fail
     consensus: ["second", "third"]
+  - id: array_index_slice_start_end_negative_step
+    selector: $[3:0:-2]
+    document: ["first", "second", "third", "forth", "fifth"]
+    result: []
+    status: open
   - id: array_index_slice_start_end_step
     selector: $[0:3:2]
     document: ["first", "second", "third", "forth", "fifth"]
@@ -87,6 +91,11 @@ queries:
     result: ["first", "second"]
     status: fail
     consensus: ["first"]
+  - id: array_index_slice_step
+    selector: $[::2]
+    document: ["first", "second", "third", "forth", "fifth"]
+    result: ["first", "third", "fifth"]
+    status: pass
   - id: array_index_union
     selector: $[0,1]
     document: ["first", "second", "third"]
@@ -131,8 +140,7 @@ queries:
     selector: $['key','another']
     document: {"key": "value", "another": "entry"}
     result: []
-    status: fail
-    consensus: ["value", "entry"]
+    status: open
   - id: key_bracket_notation_with_double_quotes
     selector: $["key"]
     document: {"key": "value"}
@@ -178,21 +186,6 @@ queries:
     document: {"key": "value"}
     result: ["value"]
     status: pass
-  - id: key_dot_notation_not_found
-    selector: $.missing
-    document: {"key": "value"}
-    result: []
-    status: open
-  - id: key_dot_notation_on_array
-    selector: $.key
-    document: [0, 1]
-    result: []
-    status: open
-  - id: key_dot_notation_on_array_of_matching_object
-    selector: $.key
-    document: [{"key": "value"}]
-    result: []
-    status: open
   - id: key_dot_notation_on_array_value
     selector: $.key
     document: {"key": ["first", "second"]}

@@ -3,6 +3,9 @@ include __DIR__ . '/vendor/autoload.php';
 
 use Flow\JSONPath\JSONPath;
 
+# don't leak absolute paths via warnings which we don't care for anyway as it's somebody else's code we are running
+error_reporting(E_ERROR | E_PARSE);
+
 $json = file_get_contents("php://stdin");
 $o = json_decode($json);
 

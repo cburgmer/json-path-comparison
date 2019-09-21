@@ -17,20 +17,6 @@ The following queries provide results that do not match those of other implement
   []
   ```
 
-- [ ] `$[?(@.key<42)]`
-  Input:
-  ```
-  [{"key": 0}, {"key": "value"}]
-  ```
-  Expected output:
-  ```
-  [{"key": 0}]
-  ```
-  Error:
-  ```
-  comparison of String with Float failed
-  ```
-
 - [ ] `$['0']`
   Input:
   ```

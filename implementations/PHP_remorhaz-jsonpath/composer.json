@@ -1,5 +1,5 @@
 {
     "require": {
-        "remorhaz/php-json-path": "0.5.2"
+        "remorhaz/php-json-path": "0.5.3"
     }
 }

@@ -3,19 +3,6 @@ Results do not match other implementations
 The following queries provide results that do not match those of other implementations of JSONPath
 (compare https://cburgmer.github.io/json-path-comparison/):
 
-- [ ] `$[1]`
-  Input:
-  ```
-  ["one element"]
-  ```
-  Expected output:
-  ```
-  []
-  ```
-  Error:
-  ```
-  jsonpath returned false, this might indicate an error```
-
 - [ ] `$[?(@.key>42)]`
   Input:
   ```
@@ -30,20 +17,6 @@ The following queries provide results that do not match those of other implement
   ArgumentCountError
   ```
 
-- [ ] `$[?(@.key>=42)]`
-  Input:
-  ```
-  [{"key": 0}, {"key": 42}, {"key": -1}, {"key": 41}, {"key": 43}, {"key": 42.0001}, {"key": 41.9999}, {"key": 100}, {"some": "value"}]
-  ```
-  Expected output:
-  ```
-  [{"key": 42}, {"key": 43}, {"key": 42.0001}, {"key": 100}]
-  ```
-  Error:
-  ```
-  ArgumentCountError
-  ```
-
 - [ ] `$[?(@.key<42)]`
   Input:
   ```
@@ -52,20 +25,6 @@ The following queries provide results that do not match those of other implement
   Expected output:
   ```
   [{"key": 0}, {"key": -1}, {"key": 41}, {"key": 41.9999}]
-  ```
-  Error:
-  ```
-  ArgumentCountError
-  ```
-
-- [ ] `$[?(@.key<42)]`
-  Input:
-  ```
-  [{"key": 0}, {"key": "value"}]
-  ```
-  Expected output:
-  ```
-  [{"key": 0}]
   ```
   Error:
   ```
@@ -99,45 +58,6 @@ The following queries provide results that do not match those of other implement
   ```
   [["value"]]
   ```
-
-- [ ] `$.missing`
-  Input:
-  ```
-  {"key": "value"}
-  ```
-  Expected output:
-  ```
-  []
-  ```
-  Error:
-  ```
-  jsonpath returned false, this might indicate an error```
-
-- [ ] `$.key`
-  Input:
-  ```
-  [0, 1]
-  ```
-  Expected output:
-  ```
-  []
-  ```
-  Error:
-  ```
-  jsonpath returned false, this might indicate an error```
-
-- [ ] `$.key`
-  Input:
-  ```
-  [{"key": "value"}]
-  ```
-  Expected output:
-  ```
-  []
-  ```
-  Error:
-  ```
-  jsonpath returned false, this might indicate an error```
 
 - [ ] `$`
   Input:

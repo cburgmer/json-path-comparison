@@ -3,20 +3,6 @@ Results do not match other implementations
 The following queries provide results that do not match those of other implementations of JSONPath
 (compare https://cburgmer.github.io/json-path-comparison/):
 
-- [ ] `$[1]`
-  Input:
-  ```
-  ["one element"]
-  ```
-  Expected output:
-  ```
-  []
-  ```
-  Actual output:
-  ```
-  [null]
-  ```
-
 - [ ] `$[:]`
   Input:
   ```
@@ -56,18 +42,18 @@ The following queries provide results that do not match those of other implement
   ["first", "second", "third"]
   ```
 
-- [ ] `$[0:4:2]`
+- [ ] `$[::2]`
   Input:
   ```
   ["first", "second", "third", "forth", "fifth"]
   ```
   Expected output:
   ```
-  ["first", "third"]
+  ["first", "third", "fifth"]
   ```
   Actual output:
   ```
-  ["first", "second", "third", "forth"]
+  ["first", "second"]
   ```
 
 - [ ] `$[?(@.key>42)]`
@@ -78,26 +64,6 @@ The following queries provide results that do not match those of other implement
   Expected output:
   ```
   [{"key": 43}, {"key": 42.0001}, {"key": 100}]
-  ```
-  Error:
-  ```
-  Exception in thread "main" java.lang.IllegalArgumentException: Unexpected char, char=?, index=2
-  	at com.nfeld.jsonpathlite.PathCompiler.compileBracket$json_path_lite(PathCompiler.kt:198)
-  	at com.nfeld.jsonpathlite.PathCompiler.compile$json_path_lite(PathCompiler.kt:59)
-  	at com.nfeld.jsonpathlite.JsonPath.<init>(JsonPath.kt:17)
-  	at com.nfeld.jsonpathlite.extension.JSONArrayKt.read(JSONArray.kt:8)
-  	at com.nfeld.jsonpathlite.JsonArray.read(JsonResult.kt:12)
-  	at query.AppKt.main(App.kt:10)
-  ```
-
-- [ ] `$[?(@.key>=42)]`
-  Input:
-  ```
-  [{"key": 0}, {"key": 42}, {"key": -1}, {"key": 41}, {"key": 43}, {"key": 42.0001}, {"key": 41.9999}, {"key": 100}, {"some": "value"}]
-  ```
-  Expected output:
-  ```
-  [{"key": 42}, {"key": 43}, {"key": 42.0001}, {"key": 100}]
   ```
   Error:
   ```
@@ -130,26 +96,6 @@ The following queries provide results that do not match those of other implement
   	at query.AppKt.main(App.kt:10)
   ```
 
-- [ ] `$[?(@.key<42)]`
-  Input:
-  ```
-  [{"key": 0}, {"key": "value"}]
-  ```
-  Expected output:
-  ```
-  [{"key": 0}]
-  ```
-  Error:
-  ```
-  Exception in thread "main" java.lang.IllegalArgumentException: Unexpected char, char=?, index=2
-  	at com.nfeld.jsonpathlite.PathCompiler.compileBracket$json_path_lite(PathCompiler.kt:198)
-  	at com.nfeld.jsonpathlite.PathCompiler.compile$json_path_lite(PathCompiler.kt:59)
-  	at com.nfeld.jsonpathlite.JsonPath.<init>(JsonPath.kt:17)
-  	at com.nfeld.jsonpathlite.extension.JSONArrayKt.read(JSONArray.kt:8)
-  	at com.nfeld.jsonpathlite.JsonArray.read(JsonResult.kt:12)
-  	at query.AppKt.main(App.kt:10)
-  ```
-
 - [ ] `$[?(@.key)]`
   Input:
   ```
@@ -168,62 +114,6 @@ The following queries provide results that do not match those of other implement
   	at com.nfeld.jsonpathlite.extension.JSONArrayKt.read(JSONArray.kt:8)
   	at com.nfeld.jsonpathlite.JsonArray.read(JsonResult.kt:12)
   	at query.AppKt.main(App.kt:10)
-  ```
-
-- [ ] `$['key','another']`
-  Input:
-  ```
-  {"key": "value", "another": "entry"}
-  ```
-  Expected output:
-  ```
-  ["value", "entry"]
-  ```
-  Actual output:
-  ```
-  {"another": "entry", "key": "value"}
-  ```
-
-- [ ] `$.missing`
-  Input:
-  ```
-  {"key": "value"}
-  ```
-  Expected output:
-  ```
-  []
-  ```
-  Actual output:
-  ```
-  [null]
-  ```
-
-- [ ] `$.key`
-  Input:
-  ```
-  [0, 1]
-  ```
-  Expected output:
-  ```
-  []
-  ```
-  Actual output:
-  ```
-  [null]
-  ```
-
-- [ ] `$.key`
-  Input:
-  ```
-  [{"key": "value"}]
-  ```
-  Expected output:
-  ```
-  []
-  ```
-  Actual output:
-  ```
-  [null]
   ```
 
 - [ ] `$.store..price`

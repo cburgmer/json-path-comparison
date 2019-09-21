@@ -17,10 +17,6 @@ queries:
     selector: $[-1]
     document: ["first", "second", "third"]
     status: error
-  - id: array_index_out_of_bounds
-    selector: $[1]
-    document: ["one element"]
-    status: error
   - id: array_index_slice_end_out_of_bounds
     selector: $[1:10]
     document: ["first", "second", "third"]
@@ -31,6 +27,10 @@ queries:
     document: ["first", "second", "third"]
     result: ["third"]
     status: pass
+  - id: array_index_slice_negative_step
+    selector: $[::-2]
+    document: ["first", "second", "third", "forth", "fifth"]
+    status: error
   - id: array_index_slice_no_start_no_end
     selector: $[:]
     document: ["first", "second"]
@@ -51,6 +51,10 @@ queries:
     document: ["first", "second", "third", "forth", "fifth"]
     result: ["second", "third"]
     status: pass
+  - id: array_index_slice_start_end_negative_step
+    selector: $[3:0:-2]
+    document: ["first", "second", "third", "forth", "fifth"]
+    status: error
   - id: array_index_slice_start_end_step
     selector: $[0:3:2]
     document: ["first", "second", "third", "forth", "fifth"]
@@ -80,6 +84,11 @@ queries:
     selector: $[0:1]
     document: ["first", "second"]
     result: ["first"]
+    status: pass
+  - id: array_index_slice_step
+    selector: $[::2]
+    document: ["first", "second", "third", "forth", "fifth"]
+    result: ["first", "third", "fifth"]
     status: pass
   - id: array_index_union
     selector: $[0,1]
@@ -122,7 +131,7 @@ queries:
     selector: $['key','another']
     document: {"key": "value", "another": "entry"}
     result: ["value", "entry"]
-    status: pass
+    status: open
   - id: key_bracket_notation_with_double_quotes
     selector: $["key"]
     document: {"key": "value"}
@@ -167,18 +176,6 @@ queries:
     document: {"key": "value"}
     result: ["value"]
     status: pass
-  - id: key_dot_notation_not_found
-    selector: $.missing
-    document: {"key": "value"}
-    status: error
-  - id: key_dot_notation_on_array
-    selector: $.key
-    document: [0, 1]
-    status: error
-  - id: key_dot_notation_on_array_of_matching_object
-    selector: $.key
-    document: [{"key": "value"}]
-    status: error
   - id: key_dot_notation_on_array_value
     selector: $.key
     document: {"key": ["first", "second"]}

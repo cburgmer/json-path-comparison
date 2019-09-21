@@ -17,7 +17,7 @@ fail_on_absolute_paths_leaked() {
     # Best way to avoid them in most languages is to catch exceptions and
     # print a simple error instead.
     local file="$1"
-    if grep '/home\|/Users\|/usr' < "$file" > /dev/null; then
+    if grep '/json-path-comparison/' < "$file" > /dev/null; then
         echo "This error message includes an absolute path which will make it hard to reproduce on other machines."
         echo "Please change the script to error without it."
         echo

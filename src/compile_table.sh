@@ -51,8 +51,11 @@ compile_row() {
     selector="$(cat "${selector_file}")"
     query_name="$(pretty_query_name "$query")"
 
-    echo "<tr>"
-    echo "<td><a href=\"results/${query}.md\">${query_name}</a></td>"
+    echo "<tr id=\"${query}\">"
+    echo "<td>"
+    echo "<a href=\"#${query}\" style=\"color: lightgrey;\">#</a>"
+    echo "<a href=\"results/${query}.md\">${query_name}</a>"
+    echo "</td>"
     echo "<td><code>${selector}</code></td>"
 
     while IFS= read -r implementation; do
@@ -73,13 +76,8 @@ implementation_language_header() {
         category="$(awk '{print $2}' <<< "$category_entry")"
         count="$(awk '{print $1}' <<< "$category_entry")"
 
-        echo "<th colspan=\"${count}\">${category}</th>"
+        echo "<th style=\"position: sticky; top: 0; background: #ffffffaa;\" colspan=\"${count}\">${category}</th>"
     done <<< "$(all_implementations | sed "s/\([^_]*\)_.*/\1/" | uniq -c)"
-}
-
-break_library_names() {
-    # you can't see it, but we are appending a zero-width space to help the browser break words
-    sed "s/\([\._]\)/\1​/g"
 }
 
 wrap_with_link() {
@@ -96,48 +94,35 @@ wrap_with_link() {
 header_row() {
     local implementation
 
-    echo "<tr>"
-    echo "<th></th>"
-    echo "<th></th>"
+    echo "<tr style=\"height: 2rem;\">"
+    echo "<th style=\"position: sticky; top: 0; background: #ffffffaa;\"></th>"
+    echo "<th style=\"position: sticky; top: 0; background: #ffffffaa;\"></th>"
     implementation_language_header
     echo "</tr>"
 
     echo "<tr>"
-    echo "<th></th>"
-    echo "<th></th>"
+    echo "<th style=\"position: sticky; top: 2rem; background: #f6f8faaa;\"></th>"
+    echo "<th style=\"position: sticky; top: 2rem; background: #f6f8faaa;\"></th>"
     while IFS= read -r implementation; do
-        echo "<th>"
-        sed "s/[^_]*_\(.*\)/\1/" <<< "$implementation" | break_library_names | wrap_with_link "$implementation"
+        echo "<th style=\"position: sticky; top: 2rem; background: #f6f8faaa;\">"
+        echo "<div style=\"writing-mode: vertical-rl;\">"
+        sed "s/[^_]*_\(.*\)/\1/" <<< "$implementation" | wrap_with_link "$implementation"
         if [[ -f "./implementations/${implementation}/SINGLE_POSSIBLE_MATCH_RETURNED_AS_SCALAR" ]]; then
             echo "¹"
         fi
+        echo "</div>"
         echo "</th>"
     done <<< "$(all_implementations)"
     echo "</tr>"
 }
 
 main() {
-    echo "# Comparison of different implementations of JSONPath
+    echo "# JSONPath Comparison
 
-## How
-
-We execute all available implementations against the same queries.
-Outcomes are compared across implementations, and judged based on a simple consensus:
-a majority of half of all implementations (rounded up) plus one is required
-(guarantees difference of 2 votes even in critical cases).
-This table makes no statement on the correctness of any of the implementations.
-
-## Goal
-
-This comparison is meant to create visibility,
-help implementers find issues by sharing test cases,
-and finally give guidance on interpretation of the [initial posts by Goessner](https://goessner.net/articles/JsonPath/).
-The motivation of the consensus in particular is to drive the discussion towards a shared understanding of the JSONPath proposal.
-
-## Comparison
+See how [JSONPath](https://goessner.net/articles/JsonPath/) is implemented across different languages.
 "
     echo
-    echo "<table>"
+    echo "<table style=\"overflow: unset;\">" # Need to reset style for sticky headers
 
     echo "<thead>"
     header_row
@@ -159,6 +144,21 @@ The motivation of the consensus in particular is to drive the discussion towards
 - ?, no clear consensus amongst the implementations (the results disagree and/or a lot of implementations error)
 - e, the implementation failed executing the query and probably does not support this type of query
 - ¹, this implementation returns queries with only a single possible match as a scalar element (e.g. '\$[0]' => '42'). For the sake of comparing to other implementations these results are converted and wrapped in a list here.
+
+## How
+
+We execute all available implementations against the same queries.
+Outcomes are compared across implementations, and judged based on a simple consensus:
+a majority of half of all implementations (rounded up) plus one is required
+(guarantees difference of 2 votes even in critical cases).
+This table makes no statement on the correctness of any of the implementations.
+
+## Goal
+
+This comparison is meant to create visibility,
+help implementers find issues by sharing test cases,
+and finally give guidance on interpretation of the [initial posts by Goessner](https://goessner.net/articles/JsonPath/).
+The motivation of the consensus in particular is to drive the discussion towards a shared understanding of the JSONPath proposal.
 
 ## Contribute
 
