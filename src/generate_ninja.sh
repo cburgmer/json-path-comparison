@@ -10,7 +10,7 @@ readonly docs_dir="docs"
 readonly regression_suite="regression_suite"
 
 all_implementations() {
-    find ./implementations -type d -maxdepth 1 -mindepth 1 -print0 | xargs -0 -n1 basename | sort
+    find ./implementations -name run.sh -maxdepth 2 -print0 | xargs -0 -n1 dirname | xargs -n1 basename | sort
 }
 
 all_queries() {
