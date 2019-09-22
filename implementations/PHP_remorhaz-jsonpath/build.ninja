@@ -1,9 +1,9 @@
-root = implementations/PHP_galbar-jsonpath
+root = implementations/PHP_remorhaz-jsonpath
 builddir = $root/build
 
 rule install
   command = (cd $root && composer install) && echo > $out
 
-build $builddir/composer_installed: install | $root/composer.json  $root/composer.lock
+build $builddir/composer_installed: install | $root/composer.json $root/composer.lock
 
 build $root/install: phony $builddir/composer_installed
