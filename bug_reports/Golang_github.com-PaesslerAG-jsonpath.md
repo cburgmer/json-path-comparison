@@ -75,6 +75,21 @@ The following queries provide results that do not match those of other implement
   Expecting value: line 1 column 1 (char 0)
   ```
 
+- [ ] `$.['key']`
+  Input:
+  ```
+  {"key": "value"}
+  ```
+  Expected output:
+  ```
+  ["value"]
+  ```
+  Error:
+  ```
+  parsing error: $.['key']	:1:3 - 1:4 unexpected "[" while scanning JSON select expected Ident, "." or "*"
+  Expecting value: line 1 column 1 (char 0)
+  ```
+
 - [ ] `$[*]`
   Input:
   ```

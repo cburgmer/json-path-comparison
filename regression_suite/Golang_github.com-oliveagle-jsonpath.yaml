@@ -174,6 +174,19 @@ queries:
     selector: $[key]
     document: {"key": "value"}
     status: error
+  - id: key_dot_bracket_notation
+    selector: $.['key']
+    document: {"key": "value"}
+    status: error
+    consensus: "value"
+  - id: key_dot_bracket_notation_with_double_quotes
+    selector: $.["key"]
+    document: {"key": "value"}
+    status: error
+  - id: key_dot_bracket_notation_without_quotes
+    selector: $.[key]
+    document: {"key": "value"}
+    status: error
   - id: key_dot_notation
     selector: $.key
     document: {"key": "value"}
@@ -189,6 +202,14 @@ queries:
     document: {"key": null}
     result: null
     status: pass
+  - id: key_dot_notation_with_double_quotes
+    selector: $."key"
+    document: {"key": "value"}
+    status: error
+  - id: key_dot_notation_with_single_quotes
+    selector: $.'key'
+    document: {"key": "value"}
+    status: error
   - id: recursive_array_index
     selector: $..[0]
     document: ["first", {"key": ["first nested", {"more": [{"nested": ["deepest", "second"]}, ["more", "values"]]}]}]
@@ -198,6 +219,14 @@ queries:
     document: {"object": {"key": "value", "array": [{"key": "something"}, {"key": {"key": "russian dolls"}}]}, "key": "top"}
     status: error
     consensus: ["top", "value", "something", {"key": "russian dolls"}, "russian dolls"]
+  - id: recursive_key_with_double_quotes
+    selector: $.."key"
+    document: {"object": {"key": "value", "array": [{"key": "something"}, {"key": {"key": "russian dolls"}}]}, "key": "top"}
+    status: error
+  - id: recursive_key_with_single_quotes
+    selector: $..'key'
+    document: {"object": {"key": "value", "array": [{"key": "something"}, {"key": {"key": "russian dolls"}}]}, "key": "top"}
+    status: error
   - id: recursive_on_nested_object
     selector: $.store..price
     document: {"store": {"book": [{"category": "reference", "author": "Nigel Rees", "title": "Sayings of the Century", "price": 8.95}, {"category": "fiction", "author": "Evelyn Waugh", "title": "Sword of Honour", "price": 12.99}, {"category": "fiction", "author": "Herman Melville", "title": "Moby Dick", "isbn": "0-553-21311-3", "price": 8.99}, {"category": "fiction", "author": "J. R. R. Tolkien", "title": "The Lord of the Rings", "isbn": "0-395-19395-8", "price": 22.99}], "bicycle": {"color": "red", "price": 19.95}}}

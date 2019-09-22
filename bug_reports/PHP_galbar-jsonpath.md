@@ -17,6 +17,20 @@ The following queries provide results that do not match those of other implement
   [{"key": 0}, {"key": -1}, {"key": 41}, {"key": 41.9999}, {"some": "value"}]
   ```
 
+- [ ] `$.['key']`
+  Input:
+  ```
+  {"key": "value"}
+  ```
+  Expected output:
+  ```
+  ["value"]
+  ```
+  Error:
+  ```
+  Invalid JSONPath error: 'Error in JSONPath near '.['key']''
+  ```
+
 - [ ] `$..*`
   Input:
   ```
