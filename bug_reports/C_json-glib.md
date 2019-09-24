@@ -115,6 +115,20 @@ The following queries provide results that do not match those of other implement
   Unable to compile selector `$[?(@.key)]': Invalid array index definition “?(@.key)]”
   ```
 
+- [ ] `$.['key']`
+  Input:
+  ```
+  {"key": "value"}
+  ```
+  Expected output:
+  ```
+  ["value"]
+  ```
+  Error:
+  ```
+  Unable to compile selector `$.['key']': Missing member name or wildcard after . character
+  ```
+
 - [ ] `$..key`
   Input:
   ```

@@ -203,6 +203,21 @@ The following queries provide results that do not match those of other implement
   Expecting value: line 1 column 1 (char 0)
   ```
 
+- [ ] `$.['key']`
+  Input:
+  ```
+  {"key": "value"}
+  ```
+  Expected output:
+  ```
+  ["value"]
+  ```
+  Error:
+  ```
+  strconv.Atoi: parsing "'key'": invalid syntax
+  Expecting value: line 1 column 1 (char 0)
+  ```
+
 - [ ] `$..key`
   Input:
   ```

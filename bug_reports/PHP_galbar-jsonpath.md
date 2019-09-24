@@ -3,6 +3,20 @@ Results do not match other implementations
 The following queries provide results that do not match those of other implementations of JSONPath
 (compare https://cburgmer.github.io/json-path-comparison/):
 
+- [ ] `$.2`
+  Input:
+  ```
+  {"a": "first", "2": "second", "b": "third"}
+  ```
+  Expected output:
+  ```
+  ["second"]
+  ```
+  Error:
+  ```
+  Invalid JSONPath error: 'Error in JSONPath near '.2''
+  ```
+
 - [ ] `$[?(@.key<42)]`
   Input:
   ```
@@ -15,6 +29,20 @@ The following queries provide results that do not match those of other implement
   Actual output:
   ```
   [{"key": 0}, {"key": -1}, {"key": 41}, {"key": 41.9999}, {"some": "value"}]
+  ```
+
+- [ ] `$.['key']`
+  Input:
+  ```
+  {"key": "value"}
+  ```
+  Expected output:
+  ```
+  ["value"]
+  ```
+  Error:
+  ```
+  Invalid JSONPath error: 'Error in JSONPath near '.['key']''
   ```
 
 - [ ] `$..*`

@@ -1,0 +1,10 @@
+{
+    "object": {
+        "key": "value",
+        "array": [
+            {"key": "something"},
+            {"key": {"key": "russian dolls"}}
+        ]
+    },
+    "key": "top"
+}

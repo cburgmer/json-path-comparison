@@ -3,6 +3,21 @@ Results do not match other implementations
 The following queries provide results that do not match those of other implementations of JSONPath
 (compare https://cburgmer.github.io/json-path-comparison/):
 
+- [ ] `$.2`
+  Input:
+  ```
+  {"a": "first", "2": "second", "b": "third"}
+  ```
+  Expected output:
+  ```
+  ["second"]
+  ```
+  Error:
+  ```
+  parsing error: $.2	:1:2 - 1:4 unexpected Float while scanning operator
+  Expecting value: line 1 column 1 (char 0)
+  ```
+
 - [ ] `$[?(@.key>42)]`
   Input:
   ```
@@ -72,6 +87,21 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   parsing error: $['special:"chars']	:1:3 - 1:19 could not parse string: invalid syntax
+  Expecting value: line 1 column 1 (char 0)
+  ```
+
+- [ ] `$.['key']`
+  Input:
+  ```
+  {"key": "value"}
+  ```
+  Expected output:
+  ```
+  ["value"]
+  ```
+  Error:
+  ```
+  parsing error: $.['key']	:1:3 - 1:4 unexpected "[" while scanning JSON select expected Ident, "." or "*"
   Expecting value: line 1 column 1 (char 0)
   ```
 
