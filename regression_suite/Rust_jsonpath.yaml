@@ -13,6 +13,11 @@ queries:
     document: ["first", "second", "third", "forth", "fifth"]
     result: []
     status: open
+  - id: array_index_dot_notation_on_object
+    selector: $.2
+    document: {"a": "first", "2": "second", "b": "third"}
+    result: ["second"]
+    status: pass
   - id: array_index_last
     selector: $[-1]
     document: ["first", "second", "third"]

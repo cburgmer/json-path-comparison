@@ -12,6 +12,11 @@ queries:
     selector: $.2
     document: ["first", "second", "third", "forth", "fifth"]
     status: error
+  - id: array_index_dot_notation_on_object
+    selector: $.2
+    document: {"a": "first", "2": "second", "b": "third"}
+    status: error
+    consensus: "second"
   - id: array_index_last
     selector: $[-1]
     document: ["first", "second", "third"]
