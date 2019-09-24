@@ -21,6 +21,24 @@ See https://cburgmer.github.io/json-path-comparison/ for the table generated fro
 
 ## How to
 
+### Run the comparison locally
+
+Run
+
+    ./src/wrap_in_docker.sh ./go
+
+Skip ./src/wrap_in_docker.sh if you don't want to run against Docker, so the
+command becomes `./go`.
+
+### One-off comparisons
+
+You can quickly execute a query against all implementations by running:
+
+    echo '{"a": 1}' | ./src/wrap_in_docker.sh ./src/one_off.sh '$.a'
+
+Currently you need to make sure you've run `./src/wrap_in_docker.sh ./go` once before.
+(Skip ./src/wrap_in_docker.sh if you don't want to run against Docker.)
+
 ### Regression test suite
 
 If you are an author of an upstream implementation, you can use the report generated here to test for regressions in your logic. The regression document is generated for every implementation individually so you can handle outcomes differently depending on whether they match the consensus or not.
@@ -33,7 +51,5 @@ You can easily add another library/implementation to the comparison. Copy a comp
 
 Adding more tests should be fairly easy. Add a new directory under [./queries](./queries) and give it a `selector` and `document.json`
 . Scalar queries have a specific handling, compare [./queries/array_index](./queries/array_index).
-
-Run `./go` to build the table. Or, if you want to avoid installing all the dependencies and prefer docker, do `./src/wrap_in_docker.sh ./go` instead.
 
 And last but not least, clarifying any differences and fixing bugs identified in upstream is the main goal of this comparison!
