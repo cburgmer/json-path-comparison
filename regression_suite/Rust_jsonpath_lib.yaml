@@ -242,6 +242,11 @@ queries:
     document: {"some": "string", "int": 42, "object": {"key": "value"}, "array": [0, 1]}
     result: ["string", 42, {"key": "value"}, [0, 1]]
     status: pass
+  - id: wildcard_bracket_notation_with_key_on_nested_objects
+    selector: $[*].bar[*].baz
+    document: [{"bar": [{"baz": "hello"}]}]
+    result: ["hello"]
+    status: pass
   - id: wildcard_dot_notation_on_array
     selector: $.*
     document: ["string", 42, {"key": "value"}, [0, 1]]

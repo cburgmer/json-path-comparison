@@ -2339,6 +2339,26 @@ Rust (jsonpath), Wildcard bracket notation on object
 <pre><code>parsing error
 </code></pre>
 
+<h3 id="Kotlin_com.nfeld.jsonpathlite___wildcard_bracket_notation_with_key_on_nested_objects">
+Kotlin (com.nfeld.jsonpathlite), Wildcard bracket notation with key on nested objects
+</h3>
+
+<pre><code>Exception in thread "main" java.lang.IllegalArgumentException: Unexpected char, char=*, index=2
+    at com.nfeld.jsonpathlite.PathCompiler.compileBracket$json_path_lite(PathCompiler.kt:198)
+    at com.nfeld.jsonpathlite.PathCompiler.compile$json_path_lite(PathCompiler.kt:59)
+    at com.nfeld.jsonpathlite.JsonPath.&lt;init&gt;(JsonPath.kt:17)
+    at com.nfeld.jsonpathlite.extension.JSONArrayKt.read(JSONArray.kt:8)
+    at com.nfeld.jsonpathlite.JsonArray.read(JsonResult.kt:12)
+    at query.AppKt.main(App.kt:10)
+</code></pre>
+
+<h3 id="Rust_jsonpath___wildcard_bracket_notation_with_key_on_nested_objects">
+Rust (jsonpath), Wildcard bracket notation with key on nested objects
+</h3>
+
+<pre><code>parsing error
+</code></pre>
+
 <h3 id="Golang_github.com-oliveagle-jsonpath___wildcard_dot_notation_on_array">
 Golang (github.com-oliveagle-jsonpath), Wildcard dot notation on array
 </h3>

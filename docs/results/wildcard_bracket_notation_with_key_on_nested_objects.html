@@ -1,19 +1,12 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/3.0.1/github-markdown.css">
 <article class="markdown-body">
-<h2>Wildcard dot notation on object</h2>
+<h2>Wildcard bracket notation with key on nested objects</h2>
 
 <h3>Setup</h3>
 
-<p>Selector: <code>$.*</code></p>
+<p>Selector: <code>$[*].bar[*].baz</code></p>
 
-<pre><code>{
-    "some": "string",
-    "int": 42,
-    "object": {
-        "key": "value"
-    },
-    "array": [0, 1]
-}
+<pre><code>[{"bar": [{"baz": "hello"}]}]
 </code></pre>
 
 <h3>Results</h3>
@@ -21,52 +14,23 @@
 <h4>Gold Standard (consensus)</h4>
 
 <pre><code>[
-  "string",
-  42,
-  {
-    "key": "value"
-  },
+  "hello"
+]
+</code></pre>
+
+<h4>Clojure (json-path)</h4>
+
+<pre><code>[
+  null
+]
+</code></pre>
+
+<h4>Golang (github.com-oliveagle-jsonpath)</h4>
+
+<pre><code>[
   [
-    0,
-    1
+    "hello"
   ]
-]
-</code></pre>
-
-<h4>Kotlin (com.nfeld.jsonpathlite)</h4>
-
-<pre><code>null
-</code></pre>
-
-<h4>Ruby (jsonpath)</h4>
-
-<pre><code>[
-  {
-    "array": [
-      0,
-      1
-    ],
-    "int": 42,
-    "object": {
-      "key": "value"
-    },
-    "some": "string"
-  }
-]
-</code></pre>
-
-<h4>Rust (jsonpath)</h4>
-
-<pre><code>[
-  [
-    0,
-    1
-  ],
-  42,
-  {
-    "key": "value"
-  },
-  "string"
 ]
 </code></pre>
 </article>

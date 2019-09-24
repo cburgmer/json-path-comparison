@@ -86,20 +86,6 @@ The following queries provide results that do not match those of other implement
   ```
   Actual output:
   ```
-  [[0, 1], "string", 42, {"key": "value"}]
-  ```
-
-- [ ] `$.*`
-  Input:
-  ```
-  {"some": "string", "int": 42, "object": {"key": "value"}, "array": [0, 1]}
-  ```
-  Expected output:
-  ```
-  ["string", 42, {"key": "value"}, [0, 1]]
-  ```
-  Actual output:
-  ```
   [42, {"key": "value"}, [0, 1], "string"]
   ```
 
