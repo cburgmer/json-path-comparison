@@ -20,34 +20,8 @@
 <h4>Gold Standard (consensus)</h4>
 
 <pre><code>[
-  "value",
-  {
-    "complex": "string",
-    "primitives": [
-      0,
-      1
-    ]
-  },
   "string",
-  [
-    0,
-    1
-  ],
-  0,
-  1
-]
-</code></pre>
-
-<h4>C (json-glib)</h4>
-
-<pre><code>[]
-</code></pre>
-
-<h4>Java (com.github.jsurfer)</h4>
-
-<pre><code>[
   "value",
-  "string",
   0,
   1,
   [
@@ -64,6 +38,11 @@
 ]
 </code></pre>
 
+<h4>C (json-glib)</h4>
+
+<pre><code>[]
+</code></pre>
+
 <h4>Kotlin (com.nfeld.jsonpathlite)</h4>
 
 <pre><code>[]
@@ -72,6 +51,21 @@
 <h4>PHP (galbar-jsonpath)</h4>
 
 <pre><code>[
+  "string",
+  "value",
+  0,
+  1,
+  [
+    0,
+    1
+  ],
+  {
+    "complex": "string",
+    "primitives": [
+      0,
+      1
+    ]
+  },
   {
     "another key": {
       "complex": "string",
@@ -81,29 +75,40 @@
       ]
     },
     "key": "value"
-  },
-  "value",
-  {
-    "complex": "string",
-    "primitives": [
-      0,
-      1
-    ]
-  },
-  "string",
-  [
-    0,
-    1
-  ],
-  0,
-  1
+  }
 ]
 </code></pre>
 
 <h4>Python (jsonpath-rw)</h4>
 
 <pre><code>[
+  "string",
   "value",
+  [
+    0,
+    1
+  ],
+  {
+    "complex": "string",
+    "primitives": [
+      0,
+      1
+    ]
+  }
+]
+</code></pre>
+
+<h4>Ruby (jsonpath)</h4>
+
+<pre><code>[
+  "string",
+  "value",
+  0,
+  1,
+  [
+    0,
+    1
+  ],
   {
     "complex": "string",
     "primitives": [
@@ -111,17 +116,6 @@
       1
     ]
   },
-  "string",
-  [
-    0,
-    1
-  ]
-]
-</code></pre>
-
-<h4>Ruby (jsonpath)</h4>
-
-<pre><code>[
   {
     "another key": {
       "complex": "string",
@@ -131,22 +125,7 @@
       ]
     },
     "key": "value"
-  },
-  "value",
-  {
-    "complex": "string",
-    "primitives": [
-      0,
-      1
-    ]
-  },
-  "string",
-  [
-    0,
-    1
-  ],
-  0,
-  1
+  }
 ]
 </code></pre>
 </article>

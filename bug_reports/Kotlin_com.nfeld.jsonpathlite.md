@@ -116,20 +116,6 @@ The following queries provide results that do not match those of other implement
   	at query.AppKt.main(App.kt:10)
   ```
 
-- [ ] `$.store..price`
-  Input:
-  ```
-  {"store": {"book": [{"category": "reference", "author": "Nigel Rees", "title": "Sayings of the Century", "price": 8.95}, {"category": "fiction", "author": "Evelyn Waugh", "title": "Sword of Honour", "price": 12.99}, {"category": "fiction", "author": "Herman Melville", "title": "Moby Dick", "isbn": "0-553-21311-3", "price": 8.99}, {"category": "fiction", "author": "J. R. R. Tolkien", "title": "The Lord of the Rings", "isbn": "0-395-19395-8", "price": 22.99}], "bicycle": {"color": "red", "price": 19.95}}}
-  ```
-  Expected output:
-  ```
-  [8.95, 12.99, 8.99, 22.99, 19.95]
-  ```
-  Actual output:
-  ```
-  [19.95, 8.95, 12.99, 8.99, 22.99]
-  ```
-
 - [ ] `$..*`
   Input:
   ```
@@ -137,7 +123,7 @@ The following queries provide results that do not match those of other implement
   ```
   Expected output:
   ```
-  ["value", {"complex": "string", "primitives": [0, 1]}, "string", [0, 1], 0, 1]
+  ["string", "value", 0, 1, [0, 1], {"complex": "string", "primitives": [0, 1]}]
   ```
   Actual output:
   ```
@@ -205,7 +191,7 @@ The following queries provide results that do not match those of other implement
   ```
   Expected output:
   ```
-  ["string", 42, {"key": "value"}, [0, 1]]
+  ["string", 42, [0, 1], {"key": "value"}]
   ```
   Error:
   ```
@@ -259,7 +245,7 @@ The following queries provide results that do not match those of other implement
   ```
   Expected output:
   ```
-  ["string", 42, {"key": "value"}, [0, 1]]
+  ["string", 42, [0, 1], {"key": "value"}]
   ```
   Actual output:
   ```

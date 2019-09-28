@@ -12,6 +12,16 @@ wrap_scalar_if_needed() {
     fi
 }
 
+canonical_order_if_needed() {
+    local query="$1"
+
+    if [[ -f "${query}/ALLOW_UNORDERED" ]]; then
+        ./src/sort_json_array.py
+    else
+        cat
+    fi
+}
+
 fail_on_absolute_paths_leaked() {
     # Absolute paths will make it hard to provide a reproducible outcome
     # Best way to avoid them in most languages is to catch exceptions and
@@ -36,7 +46,8 @@ run_query() {
     selector="$(cat "${selector_file}")"
 
     if "$implementation"/run.sh "$selector" < "$document" > "$tmp_output"; then
-        wrap_scalar_if_needed "$implementation" "$query" < "$tmp_output"
+        wrap_scalar_if_needed "$implementation" "$query" < "$tmp_output" \
+            | canonical_order_if_needed "$query"
         rm "$tmp_output"
     else
         cat "$tmp_output"

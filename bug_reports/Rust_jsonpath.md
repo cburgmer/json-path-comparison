@@ -206,7 +206,7 @@ The following queries provide results that do not match those of other implement
   ```
   Expected output:
   ```
-  ["top", "value", "something", {"key": "russian dolls"}, "russian dolls"]
+  ["russian dolls", "something", "top", "value", {"key": "russian dolls"}]
   ```
   Error:
   ```
@@ -220,7 +220,7 @@ The following queries provide results that do not match those of other implement
   ```
   Expected output:
   ```
-  [8.95, 12.99, 8.99, 22.99, 19.95]
+  [12.99, 19.95, 22.99, 8.95, 8.99]
   ```
   Error:
   ```
@@ -234,7 +234,7 @@ The following queries provide results that do not match those of other implement
   ```
   Expected output:
   ```
-  ["value", {"complex": "string", "primitives": [0, 1]}, "string", [0, 1], 0, 1]
+  ["string", "value", 0, 1, [0, 1], {"complex": "string", "primitives": [0, 1]}]
   ```
   Error:
   ```
@@ -290,7 +290,7 @@ The following queries provide results that do not match those of other implement
   ```
   Expected output:
   ```
-  ["string", 42, {"key": "value"}, [0, 1]]
+  ["string", 42, [0, 1], {"key": "value"}]
   ```
   Error:
   ```
@@ -309,20 +309,6 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   parsing error
-  ```
-
-- [ ] `$.*`
-  Input:
-  ```
-  {"some": "string", "int": 42, "object": {"key": "value"}, "array": [0, 1]}
-  ```
-  Expected output:
-  ```
-  ["string", 42, {"key": "value"}, [0, 1]]
-  ```
-  Actual output:
-  ```
-  [[0, 1], 42, {"key": "value"}, "string"]
   ```
 
 

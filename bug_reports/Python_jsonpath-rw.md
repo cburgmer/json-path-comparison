@@ -122,11 +122,11 @@ The following queries provide results that do not match those of other implement
   ```
   Expected output:
   ```
-  ["value", {"complex": "string", "primitives": [0, 1]}, "string", [0, 1], 0, 1]
+  ["string", "value", 0, 1, [0, 1], {"complex": "string", "primitives": [0, 1]}]
   ```
   Actual output:
   ```
-  ["value", {"complex": "string", "primitives": [0, 1]}, "string", [0, 1]]
+  ["string", "value", [0, 1], {"complex": "string", "primitives": [0, 1]}]
   ```
 
 - [ ] `$..*`
@@ -150,7 +150,7 @@ The following queries provide results that do not match those of other implement
   ```
   Expected output:
   ```
-  ["string", 42, {"key": "value"}, [0, 1]]
+  ["string", 42, [0, 1], {"key": "value"}]
   ```
   Actual output:
   ```
