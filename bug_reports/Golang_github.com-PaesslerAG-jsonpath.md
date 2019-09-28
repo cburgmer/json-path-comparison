@@ -15,7 +15,6 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   parsing error: $.2	:1:2 - 1:4 unexpected Float while scanning operator
-  Expecting value: line 1 column 1 (char 0)
   ```
 
 - [ ] `$[?(@.key>42)]`
@@ -72,7 +71,6 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   parsing error: $['key']	:1:3 - 1:8 could not parse string: invalid syntax
-  Expecting value: line 1 column 1 (char 0)
   ```
 
 - [ ] `$['special:"chars']`
@@ -87,7 +85,6 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   parsing error: $['special:"chars']	:1:3 - 1:19 could not parse string: invalid syntax
-  Expecting value: line 1 column 1 (char 0)
   ```
 
 - [ ] `$.['key']`
@@ -102,21 +99,6 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   parsing error: $.['key']	:1:3 - 1:4 unexpected "[" while scanning JSON select expected Ident, "." or "*"
-  Expecting value: line 1 column 1 (char 0)
-  ```
-
-- [ ] `$[*]`
-  Input:
-  ```
-  {"some": "string", "int": 42, "object": {"key": "value"}, "array": [0, 1]}
-  ```
-  Expected output:
-  ```
-  ["string", 42, {"key": "value"}, [0, 1]]
-  ```
-  Actual output:
-  ```
-  [42, {"key": "value"}, [0, 1], "string"]
   ```
 
 

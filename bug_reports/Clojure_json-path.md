@@ -259,7 +259,6 @@ The following queries provide results that do not match those of other implement
   	at json_path_comparison.core$_main.doInvoke(core.clj:6)
   	at clojure.lang.RestFn.applyTo(RestFn.java:137)
   	at json_path_comparison.core.main(Unknown Source)
-  Expecting value: line 1 column 1 (char 0)
   ```
 
 - [ ] `$['0']`
@@ -291,7 +290,6 @@ The following queries provide results that do not match those of other implement
   	at json_path_comparison.core$_main.doInvoke(core.clj:6)
   	at clojure.lang.RestFn.applyTo(RestFn.java:137)
   	at json_path_comparison.core.main(Unknown Source)
-  Expecting value: line 1 column 1 (char 0)
   ```
 
 - [ ] `$['special:"chars']`
@@ -323,7 +321,6 @@ The following queries provide results that do not match those of other implement
   	at json_path_comparison.core$_main.doInvoke(core.clj:6)
   	at clojure.lang.RestFn.applyTo(RestFn.java:137)
   	at json_path_comparison.core.main(Unknown Source)
-  Expecting value: line 1 column 1 (char 0)
   ```
 
 - [ ] `$['*']`
@@ -369,7 +366,6 @@ The following queries provide results that do not match those of other implement
   	at json_path_comparison.core$_main.doInvoke(core.clj:6)
   	at clojure.lang.RestFn.applyTo(RestFn.java:137)
   	at json_path_comparison.core.main(Unknown Source)
-  Expecting value: line 1 column 1 (char 0)
   ```
 
 - [ ] `$..*`

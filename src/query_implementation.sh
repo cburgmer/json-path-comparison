@@ -31,10 +31,18 @@ run_query() {
     local implementation="$2"
     local selector_file="$query"/selector
     local document="$query"/document.json
+    local tmp_output="/tmp/query_implementation.tmp.$$"
     local selector
     selector="$(cat "${selector_file}")"
 
-    "$implementation"/run.sh "$selector" < "$document" | wrap_scalar_if_needed "$implementation" "$query"
+    if "$implementation"/run.sh "$selector" < "$document" > "$tmp_output"; then
+        wrap_scalar_if_needed "$implementation" "$query" < "$tmp_output"
+        rm "$tmp_output"
+    else
+        cat "$tmp_output"
+        rm "$tmp_output"
+        return 1
+    fi
 }
 
 main() {

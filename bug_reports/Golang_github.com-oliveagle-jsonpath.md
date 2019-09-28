@@ -155,7 +155,6 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   strconv.Atoi: parsing "'key'": invalid syntax
-  Expecting value: line 1 column 1 (char 0)
   ```
 
 - [ ] `$['0']`
@@ -170,7 +169,6 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   strconv.Atoi: parsing "'0'": invalid syntax
-  Expecting value: line 1 column 1 (char 0)
   ```
 
 - [ ] `$['special:"chars']`
@@ -185,7 +183,6 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   strconv.Atoi: parsing "\"chars'": invalid syntax
-  Expecting value: line 1 column 1 (char 0)
   ```
 
 - [ ] `$['*']`
@@ -200,7 +197,6 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   strconv.Atoi: parsing "'*'": invalid syntax
-  Expecting value: line 1 column 1 (char 0)
   ```
 
 - [ ] `$.['key']`
@@ -215,7 +211,6 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   strconv.Atoi: parsing "'key'": invalid syntax
-  Expecting value: line 1 column 1 (char 0)
   ```
 
 - [ ] `$..key`
