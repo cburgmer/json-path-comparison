@@ -242,7 +242,7 @@ The following queries provide results that do not match those of other implement
   ```
   Expected output:
   ```
-  ["top", "value", "something", {"key": "russian dolls"}, "russian dolls"]
+  ["russian dolls", "something", "top", "value", {"key": "russian dolls"}]
   ```
   Actual output:
   ```
@@ -256,11 +256,25 @@ The following queries provide results that do not match those of other implement
   ```
   Expected output:
   ```
-  [8.95, 12.99, 8.99, 22.99, 19.95]
+  [12.99, 19.95, 22.99, 8.95, 8.99]
   ```
   Actual output:
   ```
   {"bicycle": {"price": 19.95}, "book": [{"price": 8.95}, {"price": 12.99}, {"price": 8.99}, {"price": 22.99}]}
+  ```
+
+- [ ] `$..*`
+  Input:
+  ```
+  {"key": "value", "another key": {"complex": "string", "primitives": [0, 1]}}
+  ```
+  Expected output:
+  ```
+  ["string", "value", 0, 1, [0, 1], {"complex": "string", "primitives": [0, 1]}]
+  ```
+  Actual output:
+  ```
+  {"another key": {"complex": "string", "primitives": [0, 1]}, "key": "value"}
   ```
 
 - [ ] `$`
@@ -299,7 +313,7 @@ The following queries provide results that do not match those of other implement
   ```
   Expected output:
   ```
-  ["string", 42, {"key": "value"}, [0, 1]]
+  ["string", 42, [0, 1], {"key": "value"}]
   ```
   Actual output:
   ```
@@ -341,7 +355,7 @@ The following queries provide results that do not match those of other implement
   ```
   Expected output:
   ```
-  ["string", 42, {"key": "value"}, [0, 1]]
+  ["string", 42, [0, 1], {"key": "value"}]
   ```
   Actual output:
   ```

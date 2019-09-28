@@ -227,9 +227,9 @@ queries:
   - id: recursive_key
     selector: $..key
     document: {"object": {"key": "value", "array": [{"key": "something"}, {"key": {"key": "russian dolls"}}]}, "key": "top"}
-    result: ["value", "something", {"key": "russian dolls"}, "top"]
+    result: ["something", "top", "value", {"key": "russian dolls"}]
     status: fail
-    consensus: ["top", "value", "something", {"key": "russian dolls"}, "russian dolls"]
+    consensus: ["russian dolls", "something", "top", "value", {"key": "russian dolls"}]
   - id: recursive_key_with_double_quotes
     selector: $.."key"
     document: {"object": {"key": "value", "array": [{"key": "something"}, {"key": {"key": "russian dolls"}}]}, "key": "top"}
@@ -243,13 +243,14 @@ queries:
   - id: recursive_on_nested_object
     selector: $.store..price
     document: {"store": {"book": [{"category": "reference", "author": "Nigel Rees", "title": "Sayings of the Century", "price": 8.95}, {"category": "fiction", "author": "Evelyn Waugh", "title": "Sword of Honour", "price": 12.99}, {"category": "fiction", "author": "Herman Melville", "title": "Moby Dick", "isbn": "0-553-21311-3", "price": 8.99}, {"category": "fiction", "author": "J. R. R. Tolkien", "title": "The Lord of the Rings", "isbn": "0-395-19395-8", "price": 22.99}], "bicycle": {"color": "red", "price": 19.95}}}
-    result: [8.95, 12.99, 8.99, 22.99, 19.95]
+    result: [12.99, 19.95, 22.99, 8.95, 8.99]
     status: pass
   - id: recursive_wildcard
     selector: $..*
     document: {"key": "value", "another key": {"complex": "string", "primitives": [0, 1]}}
     result: []
-    status: open
+    status: fail
+    consensus: ["string", "value", 0, 1, [0, 1], {"complex": "string", "primitives": [0, 1]}]
   - id: recursive_wildcard_on_null_value_array
     selector: $..*
     document: [40, null, 42]
@@ -285,7 +286,7 @@ queries:
     document: {"some": "string", "int": 42, "object": {"key": "value"}, "array": [0, 1]}
     result: [{"array": [0, 1], "int": 42, "object": {"key": "value"}, "some": "string"}]
     status: fail
-    consensus: ["string", 42, {"key": "value"}, [0, 1]]
+    consensus: ["string", 42, [0, 1], {"key": "value"}]
   - id: wildcard_bracket_notation_with_key_on_nested_objects
     selector: $[*].bar[*].baz
     document: [{"bar": [{"baz": "hello"}]}]
@@ -300,5 +301,5 @@ queries:
   - id: wildcard_dot_notation_on_object
     selector: $.*
     document: {"some": "string", "int": 42, "object": {"key": "value"}, "array": [0, 1]}
-    result: ["string", 42, {"key": "value"}, [0, 1]]
+    result: ["string", 42, [0, 1], {"key": "value"}]
     status: pass

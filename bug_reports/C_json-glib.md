@@ -108,11 +108,25 @@ The following queries provide results that do not match those of other implement
   ```
   Expected output:
   ```
-  ["top", "value", "something", {"key": "russian dolls"}, "russian dolls"]
+  ["russian dolls", "something", "top", "value", {"key": "russian dolls"}]
   ```
   Actual output:
   ```
-  ["value", "something", {"key": "russian dolls"}, "top"]
+  ["something", "top", "value", {"key": "russian dolls"}]
+  ```
+
+- [ ] `$..*`
+  Input:
+  ```
+  {"key": "value", "another key": {"complex": "string", "primitives": [0, 1]}}
+  ```
+  Expected output:
+  ```
+  ["string", "value", 0, 1, [0, 1], {"complex": "string", "primitives": [0, 1]}]
+  ```
+  Actual output:
+  ```
+  []
   ```
 
 - [ ] `$..*`
@@ -136,7 +150,7 @@ The following queries provide results that do not match those of other implement
   ```
   Expected output:
   ```
-  ["string", 42, {"key": "value"}, [0, 1]]
+  ["string", 42, [0, 1], {"key": "value"}]
   ```
   Actual output:
   ```
