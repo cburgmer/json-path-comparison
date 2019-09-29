@@ -1,7 +1,6 @@
 root = implementations/C_json-glib
 builddir = $root/build
 
-# Hack target directory because golang is bad, again
 rule build
   command = mkdir -p $$(dirname $out) && gcc `pkg-config --cflags glib-2.0 json-glib-1.0 gio-unix-2.0` $in `pkg-config --libs glib-2.0 json-glib-1.0 gio-unix-2.0` -o $out
 
