@@ -146,20 +146,6 @@ The following queries provide results that do not match those of other implement
 - [ ] `$..*`
   Input:
   ```
-  {"key": "value", "another key": {"complex": "string", "primitives": [0, 1]}}
-  ```
-  Expected output:
-  ```
-  ["value", {"complex": "string", "primitives": [0, 1]}, "string", [0, 1], 0, 1]
-  ```
-  Actual output:
-  ```
-  []
-  ```
-
-- [ ] `$..*`
-  Input:
-  ```
   [40, null, 42]
   ```
   Expected output:

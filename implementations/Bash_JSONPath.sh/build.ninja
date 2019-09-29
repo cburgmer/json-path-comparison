@@ -1,0 +1,9 @@
+root = implementations/Bash_JSONPath.sh
+builddir = $root/build
+
+rule install
+  command = $root/install.sh $out
+
+build $builddir/JSONPath.sh: install | $root/install.sh
+
+build $root/install: phony $builddir/JSONPath.sh

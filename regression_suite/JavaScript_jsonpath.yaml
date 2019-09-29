@@ -248,7 +248,7 @@ queries:
     selector: $..*
     document: {"key": "value", "another key": {"complex": "string", "primitives": [0, 1]}}
     result: ["value", {"complex": "string", "primitives": [0, 1]}, "string", [0, 1], 0, 1]
-    status: pass
+    status: open
   - id: recursive_wildcard_on_null_value_array
     selector: $..*
     document: [40, null, 42]

@@ -3,6 +3,20 @@ Results do not match other implementations
 The following queries provide results that do not match those of other implementations of JSONPath
 (compare https://cburgmer.github.io/json-path-comparison/):
 
+- [ ] `$.2`
+  Input:
+  ```
+  {"a": "first", "2": "second", "b": "third"}
+  ```
+  Expected output:
+  ```
+  ["second"]
+  ```
+  Actual output:
+  ```
+  {"2": "second"}
+  ```
+
 - [ ] `$[1:10]`
   Input:
   ```
@@ -14,35 +28,37 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  index [to] out of range: len: 3, to: 10
+  sed: bad regex '\[(([0-9]+|"[^"]+")[],]){9999}(.*)': Invalid contents of {}
+  Expecting value: line 3 column 1 (char 2)
   ```
 
-- [ ] `$[:2]`
+- [ ] `$[-1:]`
   Input:
   ```
-  ["first", "second", "third", "forth", "fifth"]
+  ["first", "second", "third"]
   ```
   Expected output:
   ```
-  ["first", "second"]
+  ["third"]
   ```
   Actual output:
   ```
   ["first", "second", "third"]
   ```
 
-- [ ] `$[1:3]`
+- [ ] `$[1:]`
   Input:
   ```
   ["first", "second", "third", "forth", "fifth"]
   ```
   Expected output:
   ```
-  ["second", "third"]
+  ["second", "third", "forth", "fifth"]
   ```
-  Actual output:
+  Error:
   ```
-  ["second", "third", "forth"]
+  sed: bad regex '\[(([0-9]+|"[^"]+")[],]){9999}(.*)': Invalid contents of {}
+  Expecting value: line 3 column 1 (char 2)
   ```
 
 - [ ] `$[0:3:2]`
@@ -54,9 +70,9 @@ The following queries provide results that do not match those of other implement
   ```
   ["first", "third"]
   ```
-  Error:
+  Actual output:
   ```
-  only support one range(from, to): [0 3 2]
+  ["first", "second", "third", "forth", "fifth"]
   ```
 
 - [ ] `$[0:3:1]`
@@ -68,23 +84,9 @@ The following queries provide results that do not match those of other implement
   ```
   ["first", "second", "third"]
   ```
-  Error:
-  ```
-  only support one range(from, to): [0 3 1]
-  ```
-
-- [ ] `$[0:1]`
-  Input:
-  ```
-  ["first", "second"]
-  ```
-  Expected output:
-  ```
-  ["first"]
-  ```
   Actual output:
   ```
-  ["first", "second"]
+  ["first", "second", "third", "forth", "fifth"]
   ```
 
 - [ ] `$[::2]`
@@ -96,9 +98,9 @@ The following queries provide results that do not match those of other implement
   ```
   ["first", "third", "fifth"]
   ```
-  Error:
+  Actual output:
   ```
-  only support one range(from, to): [  2]
+  ["first", "second", "third", "forth", "fifth"]
   ```
 
 - [ ] `$[?(@.key>42)]`
@@ -110,9 +112,10 @@ The following queries provide results that do not match those of other implement
   ```
   [{"key": 43}, {"key": 42.0001}, {"key": 100}]
   ```
-  Actual output:
+  Error:
   ```
-  []
+  sed: bad regex '\[(([0-9]+|"[^"]+")[],]){9999}(.*)': Invalid contents of {}
+  Expecting value: line 3 column 1 (char 2)
   ```
 
 - [ ] `$[?(@.key<42)]`
@@ -124,9 +127,10 @@ The following queries provide results that do not match those of other implement
   ```
   [{"key": 0}, {"key": -1}, {"key": 41}, {"key": 41.9999}]
   ```
-  Actual output:
+  Error:
   ```
-  []
+  sed: bad regex '\[(([0-9]+|"[^"]+")[],]){9999}(.*)': Invalid contents of {}
+  Expecting value: line 3 column 1 (char 2)
   ```
 
 - [ ] `$[?(@.key)]`
@@ -138,9 +142,10 @@ The following queries provide results that do not match those of other implement
   ```
   [{"key": "value"}]
   ```
-  Actual output:
+  Error:
   ```
-  []
+  sed: bad regex '\[(([0-9]+|"[^"]+")[],]){9999}(.*)': Invalid contents of {}
+  Expecting value: line 3 column 1 (char 2)
   ```
 
 - [ ] `$['key']`
@@ -152,9 +157,9 @@ The following queries provide results that do not match those of other implement
   ```
   ["value"]
   ```
-  Error:
+  Actual output:
   ```
-  strconv.Atoi: parsing "'key'": invalid syntax
+  {"key": "value"}
   ```
 
 - [ ] `$['0']`
@@ -168,7 +173,8 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  strconv.Atoi: parsing "'0'": invalid syntax
+  sed: bad regex '\[(([0-9]+|"[^"]+")[],]){9999}(.*)': Invalid contents of {}
+  Expecting value: line 3 column 1 (char 2)
   ```
 
 - [ ] `$['special:"chars']`
@@ -182,7 +188,8 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  strconv.Atoi: parsing "\"chars'": invalid syntax
+  sed: bad regex '\[(([0-9]+|"[^"]+")[],]){9999}(.*)': Invalid contents of {}
+  Expecting value: line 3 column 1 (char 2)
   ```
 
 - [ ] `$['*']`
@@ -196,7 +203,8 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  strconv.Atoi: parsing "'*'": invalid syntax
+  sed: bad regex '\[(([0-9]+|"[^"]+")[],]){9999}(.*)': Invalid contents of {}
+  Expecting value: line 3 column 1 (char 2)
   ```
 
 - [ ] `$.['key']`
@@ -208,9 +216,51 @@ The following queries provide results that do not match those of other implement
   ```
   ["value"]
   ```
-  Error:
+  Actual output:
   ```
-  strconv.Atoi: parsing "'key'": invalid syntax
+  {"key": "value"}
+  ```
+
+- [ ] `$.key`
+  Input:
+  ```
+  {"key": "value"}
+  ```
+  Expected output:
+  ```
+  ["value"]
+  ```
+  Actual output:
+  ```
+  {"key": "value"}
+  ```
+
+- [ ] `$.key`
+  Input:
+  ```
+  {"key": ["first", "second"]}
+  ```
+  Expected output:
+  ```
+  [["first", "second"]]
+  ```
+  Actual output:
+  ```
+  ["first", "second"]
+  ```
+
+- [ ] `$.key`
+  Input:
+  ```
+  {"key": null}
+  ```
+  Expected output:
+  ```
+  [null]
+  ```
+  Actual output:
+  ```
+  {"key": null}
   ```
 
 - [ ] `$..key`
@@ -222,9 +272,9 @@ The following queries provide results that do not match those of other implement
   ```
   ["top", "value", "something", {"key": "russian dolls"}, "russian dolls"]
   ```
-  Error:
+  Actual output:
   ```
-  expression don't support in filter
+  {"key": "top", "object": {"array": [{"key": "something"}, {"key": {"key": "russian dolls"}}], "key": "value"}}
   ```
 
 - [ ] `$.store..price`
@@ -236,23 +286,38 @@ The following queries provide results that do not match those of other implement
   ```
   [8.95, 12.99, 8.99, 22.99, 19.95]
   ```
-  Error:
+  Actual output:
   ```
-  expression don't support in filter
+  {"bicycle": {"price": 19.95}, "book": [{"price": 8.95}, {"price": 12.99}, {"price": 8.99}, {"price": 22.99}]}
   ```
 
-- [ ] `$..*`
+- [ ] `$`
   Input:
   ```
-  [40, null, 42]
+  {"key": "value", "another key": {"complex": ["a", 1]}}
   ```
   Expected output:
   ```
-  [40, null, 42]
+  [{"another key": {"complex": ["a", 1]}, "key": "value"}]
   ```
   Error:
   ```
-  expression don't support in filter
+  sed: bad regex '\[(([0-9]+|"[^"]+")[],]){9999}(.*)': Invalid contents of {}
+  Expecting value: line 3 column 1 (char 2)
+  ```
+
+- [ ] `$[*]`
+  Input:
+  ```
+  ["string", 42, {"key": "value"}, [0, 1]]
+  ```
+  Expected output:
+  ```
+  ["string", 42, {"key": "value"}, [0, 1]]
+  ```
+  Error:
+  ```
+  Extra data: line 4 column 6 (char 28)
   ```
 
 - [ ] `$[*]`
@@ -264,9 +329,9 @@ The following queries provide results that do not match those of other implement
   ```
   ["string", 42, {"key": "value"}, [0, 1]]
   ```
-  Error:
+  Actual output:
   ```
-  object is not Slice
+  {"array": [0, 1], "int": 42, "object": {"key": "value"}, "some": "string"}
   ```
 
 - [ ] `$[*].bar[*].baz`
@@ -280,7 +345,7 @@ The following queries provide results that do not match those of other implement
   ```
   Actual output:
   ```
-  [["hello"]]
+  {"baz": "hello"}
   ```
 
 - [ ] `$.*`
@@ -294,7 +359,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  expression don't support in filter
+  Extra data: line 4 column 6 (char 28)
   ```
 
 - [ ] `$.*`
@@ -306,10 +371,10 @@ The following queries provide results that do not match those of other implement
   ```
   ["string", 42, {"key": "value"}, [0, 1]]
   ```
-  Error:
+  Actual output:
   ```
-  expression don't support in filter
+  {"array": [0, 1], "int": 42, "object": {"key": "value"}, "some": "string"}
   ```
 
 
-For reference, the output was generated by the program in https://github.com/cburgmer/json-path-comparison/tree/master/implementations/Golang_github.com-oliveagle-jsonpath.
+For reference, the output was generated by the program in https://github.com/cburgmer/json-path-comparison/tree/master/implementations/Bash_JSONPath.sh.

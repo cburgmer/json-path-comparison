@@ -32,7 +32,7 @@ main() {
 testquery = '\\\\\$\$''[1]'
 
 rule test_compilation
-  command = bash -c "diff --ignore-space-change <(echo 42) <(\$in/run.sh '\$testquery' <<< '[0, 42]') || diff --ignore-space-change <(echo '[42]') <(\$in/run.sh '\$testquery' <<< '[0, 42]')" > \$out
+  command = bash -c "diff --ignore-space-change <(echo 42) <(\$in/run.sh '\$testquery' <<< '[0, 42]' | tr -d ' \n') || diff --ignore-space-change <(echo '[42]') <(\$in/run.sh '\$testquery' <<< '[0, 42]' | tr -d ' \n')" > \$out
 EOF
         while IFS= read -r implementation; do
             if [[ -f "implementations/${implementation}/build.ninja" ]]; then # we are slowly migrating all implementation to build via ninja as well
