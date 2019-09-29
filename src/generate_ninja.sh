@@ -28,8 +28,11 @@ main() {
 
     {
         cat <<EOF
+# Not fully sure why we need to quote this times 3. The outer quote layer at least is for Bash :)
+testquery = '\\\\\$\$''[1]'
+
 rule test_compilation
-  command = bash -c "diff --ignore-space-change <(echo 42) <(\$in/run.sh '\$\$[1]' <<< '[0, 42]') || diff --ignore-space-change <(echo '[42]') <(\$in/run.sh '\$\$[1]' <<< '[0, 42]')" > \$out
+  command = bash -c "diff --ignore-space-change <(echo 42) <(\$in/run.sh '\$testquery' <<< '[0, 42]') || diff --ignore-space-change <(echo '[42]') <(\$in/run.sh '\$testquery' <<< '[0, 42]')" > \$out
 EOF
         while IFS= read -r implementation; do
             if [[ -f "implementations/${implementation}/build.ninja" ]]; then # we are slowly migrating all implementation to build via ninja as well
