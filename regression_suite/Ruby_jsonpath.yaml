@@ -19,6 +19,11 @@ queries:
     result: [null]
     status: fail
     consensus: ["second"]
+  - id: array_index_first
+    selector: $[0]
+    document: ["first", "second", "third", "forth", "fifth"]
+    result: ["first"]
+    status: pass
   - id: array_index_last
     selector: $[-1]
     document: ["first", "second", "third"]
