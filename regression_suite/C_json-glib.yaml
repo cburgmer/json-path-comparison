@@ -74,7 +74,6 @@ queries:
     selector: $[0:3:2]
     document: ["first", "second", "third", "forth", "fifth"]
     status: error
-    consensus: ["first", "third"]
   - id: array_index_slice_start_end_step_0
     selector: $[0:3:0]
     document: ["first", "second", "third", "forth", "fifth"]
@@ -102,8 +101,7 @@ queries:
     selector: $[::2]
     document: ["first", "second", "third", "forth", "fifth"]
     result: []
-    status: fail
-    consensus: ["first", "third", "fifth"]
+    status: open
   - id: array_index_union
     selector: $[0,1]
     document: ["first", "second", "third"]

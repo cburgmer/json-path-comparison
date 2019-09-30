@@ -70,7 +70,7 @@ queries:
     selector: $[0:3:2]
     document: ["first", "second", "third", "forth", "fifth"]
     result: ["first", "third"]
-    status: pass
+    status: open
   - id: array_index_slice_start_end_step_0
     selector: $[0:3:0]
     document: ["first", "second", "third", "forth", "fifth"]
@@ -98,7 +98,7 @@ queries:
     selector: $[::2]
     document: ["first", "second", "third", "forth", "fifth"]
     result: ["first", "third", "fifth"]
-    status: pass
+    status: open
   - id: array_index_union
     selector: $[0,1]
     document: ["first", "second", "third"]

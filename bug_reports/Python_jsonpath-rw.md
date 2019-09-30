@@ -17,20 +17,6 @@ The following queries provide results that do not match those of other implement
   Exception('Parse error at 1:2 near token 2 (NUMBER)')
   ```
 
-- [ ] `$[0:3:2]`
-  Input:
-  ```
-  ["first", "second", "third", "forth", "fifth"]
-  ```
-  Expected output:
-  ```
-  ["first", "third"]
-  ```
-  Error:
-  ```
-  Exception('Parse error at 1:5 near token : (:)')
-  ```
-
 - [ ] `$[0:3:1]`
   Input:
   ```
@@ -43,20 +29,6 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   Exception('Parse error at 1:5 near token : (:)')
-  ```
-
-- [ ] `$[::2]`
-  Input:
-  ```
-  ["first", "second", "third", "forth", "fifth"]
-  ```
-  Expected output:
-  ```
-  ["first", "third", "fifth"]
-  ```
-  Error:
-  ```
-  Exception('Parse error at 1:3 near token : (:)')
   ```
 
 - [ ] `$[0,1]`

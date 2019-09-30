@@ -31,20 +31,6 @@ The following queries provide results that do not match those of other implement
   []
   ```
 
-- [ ] `$[0:3:2]`
-  Input:
-  ```
-  ["first", "second", "third", "forth", "fifth"]
-  ```
-  Expected output:
-  ```
-  ["first", "third"]
-  ```
-  Error:
-  ```
-  timeout: sending signal TERM to command ‘build/main’
-  ```
-
 - [ ] `$[0:3:1]`
   Input:
   ```
@@ -57,20 +43,6 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   timeout: sending signal TERM to command ‘build/main’
-  ```
-
-- [ ] `$[::2]`
-  Input:
-  ```
-  ["first", "second", "third", "forth", "fifth"]
-  ```
-  Expected output:
-  ```
-  ["first", "third", "fifth"]
-  ```
-  Actual output:
-  ```
-  []
   ```
 
 - [ ] `$[?(@.key>42)]`
