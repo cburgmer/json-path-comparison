@@ -3549,6 +3549,7 @@ jsonpath_lib
 <td>
 <a href="#recursive_key" style="color: lightgrey;">#</a>
 <a href="results/recursive_key.html">Recursive key</a>
+²
 </td>
 <td><code>$..key</code></td>
 <td>
@@ -3622,6 +3623,7 @@ jsonpath_lib
 <td>
 <a href="#recursive_key_with_double_quotes" style="color: lightgrey;">#</a>
 <a href="results/recursive_key_with_double_quotes.html">Recursive key with double quotes</a>
+²
 </td>
 <td><code>$.."key"</code></td>
 <td>
@@ -3695,6 +3697,7 @@ jsonpath_lib
 <td>
 <a href="#recursive_key_with_single_quotes" style="color: lightgrey;">#</a>
 <a href="results/recursive_key_with_single_quotes.html">Recursive key with single quotes</a>
+²
 </td>
 <td><code>$..'key'</code></td>
 <td>
@@ -3768,6 +3771,7 @@ jsonpath_lib
 <td>
 <a href="#recursive_on_nested_object" style="color: lightgrey;">#</a>
 <a href="results/recursive_on_nested_object.html">Recursive on nested object</a>
+²
 </td>
 <td><code>$.store..price</code></td>
 <td>
@@ -3841,6 +3845,7 @@ jsonpath_lib
 <td>
 <a href="#recursive_wildcard" style="color: lightgrey;">#</a>
 <a href="results/recursive_wildcard.html">Recursive wildcard</a>
+²
 </td>
 <td><code>$..*</code></td>
 <td>
@@ -4352,6 +4357,7 @@ jsonpath_lib
 <td>
 <a href="#wildcard_bracket_notation_on_object" style="color: lightgrey;">#</a>
 <a href="results/wildcard_bracket_notation_on_object.html">Wildcard bracket notation on object</a>
+²
 </td>
 <td><code>$[*]</code></td>
 <td>
@@ -4571,6 +4577,7 @@ jsonpath_lib
 <td>
 <a href="#wildcard_dot_notation_on_object" style="color: lightgrey;">#</a>
 <a href="results/wildcard_dot_notation_on_object.html">Wildcard dot notation on object</a>
+²
 </td>
 <td><code>$.*</code></td>
 <td>
@@ -4646,11 +4653,12 @@ jsonpath_lib
 <h2>Explanation</h2>
 
 <ul>
-<li>✓, the result of this implementation matches the majority of results</li>
-<li>✗, the result does not match a majority</li>
-<li>?, no clear consensus amongst the implementations (the results disagree and/or a lot of implementations error)</li>
-<li>e, the implementation failed executing the query and probably does not support this type of query</li>
-<li>¹, this implementation returns queries with only a single possible match as a scalar element (e.g. '$[0]' => '42'). For the sake of comparing to other implementations these results are converted and wrapped in a list here.</li>
+<li>✓ The result of this implementation matches the majority of results.</li>
+<li>✗ The result does not match a majority.</li>
+<li>? No clear consensus amongst the implementations (the results disagree and/or a lot of implementations error).</li>
+<li>e The implementation failed executing the query and probably does not support this type of query.</li>
+<li>¹ This implementation returns queries with only a single possible match as a scalar element (e.g. '$[0]' => '42'). For the sake of comparing to other implementations these results are converted and wrapped in a list here.</li>
+<li>² It is unclear whether results for this query have a defined order, and some implementations might apply different and even non-deterministic ordering. For comparison the results are sorted into a canonical order.</li>
 </ul>
 
 <h2>How</h2>

@@ -55,6 +55,9 @@ compile_row() {
     echo "<td>"
     echo "<a href=\"#${query}\" style=\"color: lightgrey;\">#</a>"
     echo "<a href=\"results/${query}.md\">${query_name}</a>"
+    if [[ -f "${query_dir}/ALLOW_UNORDERED" ]]; then
+        echo "²"
+    fi
     echo "</td>"
     echo "<td><code>${selector}</code></td>"
 
@@ -139,11 +142,12 @@ See how [JSONPath](https://goessner.net/articles/JsonPath/) is implemented acros
     echo "
 ## Explanation
 
-- ✓, the result of this implementation matches the majority of results
-- ✗, the result does not match a majority
-- ?, no clear consensus amongst the implementations (the results disagree and/or a lot of implementations error)
-- e, the implementation failed executing the query and probably does not support this type of query
-- ¹, this implementation returns queries with only a single possible match as a scalar element (e.g. '\$[0]' => '42'). For the sake of comparing to other implementations these results are converted and wrapped in a list here.
+- ✓ The result of this implementation matches the majority of results.
+- ✗ The result does not match a majority.
+- ? No clear consensus amongst the implementations (the results disagree and/or a lot of implementations error).
+- e The implementation failed executing the query and probably does not support this type of query.
+- ¹ This implementation returns queries with only a single possible match as a scalar element (e.g. '\$[0]' => '42'). For the sake of comparing to other implementations these results are converted and wrapped in a list here.
+- ² It is unclear whether results for this query have a defined order, and some implementations might apply different and even non-deterministic ordering. For comparison the results are sorted into a canonical order.
 
 ## How
 
