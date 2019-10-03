@@ -17,6 +17,21 @@ The following queries provide results that do not match those of other implement
   {"2": "second"}
   ```
 
+- [ ] `$[-1]`
+  Input:
+  ```
+  ["first", "second", "third"]
+  ```
+  Expected output:
+  ```
+  ["third"]
+  ```
+  Error:
+  ```
+  sed: bad regex '\[(([0-9]+|"[^"]+")[],]){9999}(.*)': Invalid contents of {}
+  Expecting value: line 3 column 1 (char 2)
+  ```
+
 - [ ] `$[1:10]`
   Input:
   ```
@@ -61,6 +76,20 @@ The following queries provide results that do not match those of other implement
   Expecting value: line 3 column 1 (char 2)
   ```
 
+- [ ] `$[0:3:2]`
+  Input:
+  ```
+  ["first", "second", "third", "forth", "fifth"]
+  ```
+  Expected output:
+  ```
+  ["first", "third"]
+  ```
+  Actual output:
+  ```
+  ["first", "second", "third", "forth", "fifth"]
+  ```
+
 - [ ] `$[0:3:1]`
   Input:
   ```
@@ -69,6 +98,20 @@ The following queries provide results that do not match those of other implement
   Expected output:
   ```
   ["first", "second", "third"]
+  ```
+  Actual output:
+  ```
+  ["first", "second", "third", "forth", "fifth"]
+  ```
+
+- [ ] `$[::2]`
+  Input:
+  ```
+  ["first", "second", "third", "forth", "fifth"]
+  ```
+  Expected output:
+  ```
+  ["first", "third", "fifth"]
   ```
   Actual output:
   ```

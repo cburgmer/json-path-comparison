@@ -17,6 +17,19 @@ The following queries provide results that do not match those of other implement
   [["first", "second", "third", "forth", "fifth"]]
   ```
 
+- [ ] `$[-1]`
+  Input:
+  ```
+  ["first", "second", "third"]
+  ```
+  Expected output:
+  ```
+  ["third"]
+  ```
+  Error:
+  ```
+  jsonpath returned false, this might indicate an error```
+
 - [ ] `$[?(@.key>42)]`
   Input:
   ```

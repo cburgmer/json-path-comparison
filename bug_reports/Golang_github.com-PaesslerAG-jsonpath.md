@@ -17,6 +17,20 @@ The following queries provide results that do not match those of other implement
   parsing error: $.2	:1:2 - 1:4 unexpected Float while scanning operator
   ```
 
+- [ ] `$[-1]`
+  Input:
+  ```
+  ["first", "second", "third"]
+  ```
+  Expected output:
+  ```
+  ["third"]
+  ```
+  Error:
+  ```
+  index -1 out of bounds
+  ```
+
 - [ ] `$[?(@.key>42)]`
   Input:
   ```

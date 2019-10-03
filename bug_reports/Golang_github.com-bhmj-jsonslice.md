@@ -17,6 +17,20 @@ The following queries provide results that do not match those of other implement
   specified array element not found
   ```
 
+- [ ] `$[0:3:2]`
+  Input:
+  ```
+  ["first", "second", "third", "forth", "fifth"]
+  ```
+  Expected output:
+  ```
+  ["first", "third"]
+  ```
+  Error:
+  ```
+  path: index bound missing at 5
+  ```
+
 - [ ] `$[0:3:1]`
   Input:
   ```
@@ -29,6 +43,20 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   path: index bound missing at 5
+  ```
+
+- [ ] `$[::2]`
+  Input:
+  ```
+  ["first", "second", "third", "forth", "fifth"]
+  ```
+  Expected output:
+  ```
+  ["first", "third", "fifth"]
+  ```
+  Error:
+  ```
+  path: index bound missing at 3
   ```
 
 - [ ] `$['key']`

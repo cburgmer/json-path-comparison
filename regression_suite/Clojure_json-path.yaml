@@ -27,7 +27,7 @@ queries:
     selector: $[-1]
     document: ["first", "second", "third"]
     result: "third"
-    status: open
+    status: pass
   - id: array_index_slice_end_out_of_bounds
     selector: $[1:10]
     document: ["first", "second", "third"]
@@ -77,7 +77,8 @@ queries:
     selector: $[0:3:2]
     document: ["first", "second", "third", "forth", "fifth"]
     result: "first"
-    status: open
+    status: fail
+    consensus: ["first", "third"]
   - id: array_index_slice_start_end_step_0
     selector: $[0:3:0]
     document: ["first", "second", "third", "forth", "fifth"]
@@ -109,7 +110,8 @@ queries:
     selector: $[::2]
     document: ["first", "second", "third", "forth", "fifth"]
     result: "third"
-    status: open
+    status: fail
+    consensus: ["first", "third", "fifth"]
   - id: array_index_union
     selector: $[0,1]
     document: ["first", "second", "third"]

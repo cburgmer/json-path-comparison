@@ -1,0 +1,13 @@
+root = implementations/Perl_JSON-Path
+builddir = $root/build
+
+rule cpanm
+  command = curl -L -o $out https://raw.githubusercontent.com/miyagawa/cpanminus/master/cpanm && chmod a+x $out
+
+rule install_json_path
+  command = $in -nL $builddir JSON::Path && $in -nL $builddir JSON && echo > $out
+
+build $builddir/cpanm: cpanm
+build $builddir/cpan_installed: install_json_path $builddir/cpanm
+
+build $root/install: phony $builddir/cpan_installed
