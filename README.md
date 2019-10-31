@@ -49,6 +49,14 @@ For example, the Clojure json-path implementation has a [regression suite based 
 
 You can easily add another library/implementation to the comparison. Copy a comparable setup in [./implementations](./implementations) and adapt. Be aware that some implementations decide to return queries for single values as scalars, compare [./implementations/Clojure_json-path](./implementations/Clojure_json-path).
 
+Test the implementation's ninja build script via (using Clojure as an example)
+
+    ./src/generate_ninja.sh && ninja build/test_compilation/Clojure_json-path
+
+Test a query by running (again Clojure as example)
+
+    ./src/query_implementation.sh queries/array_index implementations/Clojure_json-path
+
 Adding more tests should be fairly easy. Add a new directory under [./queries](./queries) and give it a `selector` and `document.json`
 . Scalar queries have a specific handling, compare [./queries/array_index](./queries/array_index).
 
