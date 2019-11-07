@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "92b9c3dad214d8c4a223cb4f7c245be1",
+    "content-hash": "417a931b6cf0eae093fdfd2073bf72dc",
     "packages": [
         {
             "name": "nikic/php-parser",
-            "version": "v4.2.4",
+            "version": "v4.2.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nikic/PHP-Parser.git",
-                "reference": "97e59c7a16464196a8b9c77c47df68e4a39a45c4"
+                "reference": "b76bbc3c51f22c570648de48e8c2d941ed5e2cf2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/97e59c7a16464196a8b9c77c47df68e4a39a45c4",
-                "reference": "97e59c7a16464196a8b9c77c47df68e4a39a45c4",
+                "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/b76bbc3c51f22c570648de48e8c2d941ed5e2cf2",
+                "reference": "b76bbc3c51f22c570648de48e8c2d941ed5e2cf2",
                 "shasum": ""
             },
             "require": {
@@ -25,6 +25,7 @@
                 "php": ">=7.0"
             },
             "require-dev": {
+                "ircmaxell/php-yacc": "0.0.4",
                 "phpunit/phpunit": "^6.5 || ^7.0 || ^8.0"
             },
             "bin": [
@@ -55,7 +56,7 @@
                 "parser",
                 "php"
             ],
-            "time": "2019-09-01T07:51:21+00:00"
+            "time": "2019-10-25T18:33:07+00:00"
         },
         {
             "name": "phpdocumentor/reflection-common",
@@ -209,16 +210,16 @@
         },
         {
             "name": "psr/log",
-            "version": "1.1.0",
+            "version": "1.1.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/php-fig/log.git",
-                "reference": "6c001f1daafa3a3ac1d8ff69ee4db8e799a654dd"
+                "reference": "446d54b4cb6bf489fc9d75f55843658e6f25d801"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/php-fig/log/zipball/6c001f1daafa3a3ac1d8ff69ee4db8e799a654dd",
-                "reference": "6c001f1daafa3a3ac1d8ff69ee4db8e799a654dd",
+                "url": "https://api.github.com/repos/php-fig/log/zipball/446d54b4cb6bf489fc9d75f55843658e6f25d801",
+                "reference": "446d54b4cb6bf489fc9d75f55843658e6f25d801",
                 "shasum": ""
             },
             "require": {
@@ -227,7 +228,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.0.x-dev"
+                    "dev-master": "1.1.x-dev"
                 }
             },
             "autoload": {
@@ -252,34 +253,82 @@
                 "psr",
                 "psr-3"
             ],
-            "time": "2018-11-20T15:27:04+00:00"
+            "time": "2019-11-01T11:05:21+00:00"
         },
         {
-            "name": "remorhaz/php-json-path",
-            "version": "v0.5.4",
+            "name": "remorhaz/php-json-data",
+            "version": "v0.5.1",
             "source": {
                 "type": "git",
-                "url": "https://github.com/remorhaz/php-json-path.git",
-                "reference": "224846d10a5d9b402d0e1676a8fb9e3a5578e201"
+                "url": "https://github.com/remorhaz/php-json-data.git",
+                "reference": "ea08dba981e66e1218f74d0f358e8e79825e3205"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/remorhaz/php-json-path/zipball/224846d10a5d9b402d0e1676a8fb9e3a5578e201",
-                "reference": "224846d10a5d9b402d0e1676a8fb9e3a5578e201",
+                "url": "https://api.github.com/repos/remorhaz/php-json-data/zipball/ea08dba981e66e1218f74d0f358e8e79825e3205",
+                "reference": "ea08dba981e66e1218f74d0f358e8e79825e3205",
+                "shasum": ""
+            },
+            "require": {
+                "ext-json": "*",
+                "php": "^7.3"
+            },
+            "require-dev": {
+                "infection/infection": "^0.14.0",
+                "phpunit/phpunit": "^8.3",
+                "squizlabs/php_codesniffer": "^3.4"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Remorhaz\\JSON\\Data\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Edward Surov",
+                    "email": "zoohie@gmail.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "JSON Data Accessors",
+            "homepage": "https://github.com/remorhaz/php-json-data",
+            "keywords": [
+                "json"
+            ],
+            "time": "2019-11-04T13:49:42+00:00"
+        },
+        {
+            "name": "remorhaz/php-json-path",
+            "version": "v0.6.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/remorhaz/php-json-path.git",
+                "reference": "df6c45d2e074c23c59c6351679deb8fbc44d5700"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/remorhaz/php-json-path/zipball/df6c45d2e074c23c59c6351679deb8fbc44d5700",
+                "reference": "df6c45d2e074c23c59c6351679deb8fbc44d5700",
                 "shasum": ""
             },
             "require": {
                 "ext-intl": "*",
                 "ext-json": "*",
-                "nikic/php-parser": "^4.2",
+                "nikic/php-parser": "^4.2.5",
                 "php": "^7.3",
+                "remorhaz/php-json-data": "^0.5.1",
                 "remorhaz/php-unilex": "^0.0.14"
             },
             "require-dev": {
-                "infection/infection": "^0.14",
+                "infection/infection": "^0.14.2",
                 "phing/phing": "^2.16",
-                "phpunit/phpunit": "^8.2",
-                "squizlabs/php_codesniffer": "^3.2.0"
+                "phpunit/phpunit": "^8.4.3",
+                "squizlabs/php_codesniffer": "^3.5.2"
             },
             "type": "library",
             "autoload": {
@@ -287,8 +336,7 @@
                     "Remorhaz\\JSON\\Path\\": [
                         "src/",
                         "generated/"
-                    ],
-                    "Remorhaz\\JSON\\Data\\": "src/Data/"
+                    ]
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -309,7 +357,7 @@
                 "json path",
                 "jsonpath"
             ],
-            "time": "2019-09-21T20:53:17+00:00"
+            "time": "2019-11-06T10:27:37+00:00"
         },
         {
             "name": "remorhaz/php-unilex",
