@@ -1211,10 +1211,11 @@ Caused by: java.lang.NumberFormatException: Character " is neither a decimal dig
     at java.base/java.math.BigDecimal.&lt;init&gt;(BigDecimal.java:401)
     at java.base/java.math.BigDecimal.&lt;init&gt;(BigDecimal.java:834)
     at org.jsfr.json.filter.LessThanNumPredicate.apply(LessThanNumPredicate.java:49)
-    at org.jsfr.json.JsonFilterVerifier.primitive(JsonFilterVerifier.java:116)
+    at org.jsfr.json.JsonFilterVerifier.primitive(JsonFilterVerifier.java:119)
     at org.jsfr.json.ContentDispatcher.primitive(ContentDispatcher.java:147)
+    at org.jsfr.json.FilterVerifierDispatcher.primitive(FilterVerifierDispatcher.java:30)
     at org.jsfr.json.ContentDispatcher.primitive(ContentDispatcher.java:147)
-    at org.jsfr.json.SurfingContext.primitive(SurfingContext.java:299)
+    at org.jsfr.json.SurfingContext.primitive(SurfingContext.java:316)
     at org.jsfr.json.JacksonParser$JacksonResumableParser.doPare(JacksonParser.java:176)
     at org.jsfr.json.JacksonParser$JacksonResumableParser.parse(JacksonParser.java:141)
     ... 6 more
