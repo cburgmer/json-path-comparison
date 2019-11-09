@@ -42,8 +42,8 @@
             "authors": [
                 {
                     "name": "Alessio Linares",
-                    "role": "Software Engineer",
-                    "email": "alessio.linares@skyscanner.net"
+                    "email": "alessio.linares@skyscanner.net",
+                    "role": "Software Engineer"
                 }
             ],
             "description": "JSONPath implementation for querying and updating JSON objects",
