@@ -309,7 +309,7 @@ Clojure (json-path), Array index slice no start no end
     at json_path.walker$walk_selector.invoke(walker.clj:63)
     at json_path.walker$walk.invokeStatic(walker.clj:87)
     at json_path.walker$walk.invoke(walker.clj:84)
-    at json_path.walker$walk$fn__221.invoke(walker.clj:89)
+    at json_path.walker$walk$fn__1026.invoke(walker.clj:89)
     at json_path.walker$map_SHARP_.invokeStatic(walker.clj:22)
     at json_path.walker$map_SHARP_.invoke(walker.clj:17)
     at json_path.walker$walk.invokeStatic(walker.clj:89)
@@ -356,9 +356,8 @@ Kotlin (com.nfeld.jsonpathlite), Array index slice no start no end
     at java.base/java.util.ArrayList.get(ArrayList.java:458)
     at com.nfeld.jsonpathlite.PathCompiler.compileBracket$json_path_lite(PathCompiler.kt:232)
     at com.nfeld.jsonpathlite.PathCompiler.compile$json_path_lite(PathCompiler.kt:59)
-    at com.nfeld.jsonpathlite.JsonPath.&lt;init&gt;(JsonPath.kt:17)
-    at com.nfeld.jsonpathlite.extension.JSONArrayKt.read(JSONArray.kt:8)
-    at com.nfeld.jsonpathlite.JsonArray.read(JsonResult.kt:12)
+    at com.nfeld.jsonpathlite.JsonPath.&lt;init&gt;(JsonPath.kt:24)
+    at com.nfeld.jsonpathlite.JsonArray.read(JsonResult.kt:11)
     at query.AppKt.main(App.kt:10)
 </code></pre>
 
@@ -878,9 +877,8 @@ Kotlin (com.nfeld.jsonpathlite), Filter greater than
 <pre><code>Exception in thread "main" java.lang.IllegalArgumentException: Unexpected char, char=?, index=2
     at com.nfeld.jsonpathlite.PathCompiler.compileBracket$json_path_lite(PathCompiler.kt:198)
     at com.nfeld.jsonpathlite.PathCompiler.compile$json_path_lite(PathCompiler.kt:59)
-    at com.nfeld.jsonpathlite.JsonPath.&lt;init&gt;(JsonPath.kt:17)
-    at com.nfeld.jsonpathlite.extension.JSONArrayKt.read(JSONArray.kt:8)
-    at com.nfeld.jsonpathlite.JsonArray.read(JsonResult.kt:12)
+    at com.nfeld.jsonpathlite.JsonPath.&lt;init&gt;(JsonPath.kt:24)
+    at com.nfeld.jsonpathlite.JsonArray.read(JsonResult.kt:11)
     at query.AppKt.main(App.kt:10)
 </code></pre>
 
@@ -937,7 +935,7 @@ Clojure (json-path), Filter greater than or equal
     at json_path.walker$eval_eq_expr.invoke(walker.clj:6)
     at json_path.walker$eval_expr.invokeStatic(walker.clj:12)
     at json_path.walker$eval_expr.invoke(walker.clj:9)
-    at json_path.walker$walk_selector$fn__210.invoke(walker.clj:81)
+    at json_path.walker$walk_selector$fn__1015.invoke(walker.clj:81)
     at clojure.core$filter$fn__5878.invoke(core.clj:2817)
     at clojure.lang.LazySeq.sval(LazySeq.java:42)
     at clojure.lang.LazySeq.seq(LazySeq.java:51)
@@ -981,9 +979,8 @@ Kotlin (com.nfeld.jsonpathlite), Filter greater than or equal
 <pre><code>Exception in thread "main" java.lang.IllegalArgumentException: Unexpected char, char=?, index=2
     at com.nfeld.jsonpathlite.PathCompiler.compileBracket$json_path_lite(PathCompiler.kt:198)
     at com.nfeld.jsonpathlite.PathCompiler.compile$json_path_lite(PathCompiler.kt:59)
-    at com.nfeld.jsonpathlite.JsonPath.&lt;init&gt;(JsonPath.kt:17)
-    at com.nfeld.jsonpathlite.extension.JSONArrayKt.read(JSONArray.kt:8)
-    at com.nfeld.jsonpathlite.JsonArray.read(JsonResult.kt:12)
+    at com.nfeld.jsonpathlite.JsonPath.&lt;init&gt;(JsonPath.kt:24)
+    at com.nfeld.jsonpathlite.JsonArray.read(JsonResult.kt:11)
     at query.AppKt.main(App.kt:10)
 </code></pre>
 
@@ -1047,7 +1044,7 @@ Clojure (json-path), Filter less than
     at json_path.walker$eval_eq_expr.invoke(walker.clj:6)
     at json_path.walker$eval_expr.invokeStatic(walker.clj:12)
     at json_path.walker$eval_expr.invoke(walker.clj:9)
-    at json_path.walker$walk_selector$fn__210.invoke(walker.clj:81)
+    at json_path.walker$walk_selector$fn__1015.invoke(walker.clj:81)
     at clojure.core$filter$fn__5878.invoke(core.clj:2817)
     at clojure.lang.LazySeq.sval(LazySeq.java:42)
     at clojure.lang.LazySeq.seq(LazySeq.java:51)
@@ -1091,9 +1088,8 @@ Kotlin (com.nfeld.jsonpathlite), Filter less than
 <pre><code>Exception in thread "main" java.lang.IllegalArgumentException: Unexpected char, char=?, index=2
     at com.nfeld.jsonpathlite.PathCompiler.compileBracket$json_path_lite(PathCompiler.kt:198)
     at com.nfeld.jsonpathlite.PathCompiler.compile$json_path_lite(PathCompiler.kt:59)
-    at com.nfeld.jsonpathlite.JsonPath.&lt;init&gt;(JsonPath.kt:17)
-    at com.nfeld.jsonpathlite.extension.JSONArrayKt.read(JSONArray.kt:8)
-    at com.nfeld.jsonpathlite.JsonArray.read(JsonResult.kt:12)
+    at com.nfeld.jsonpathlite.JsonPath.&lt;init&gt;(JsonPath.kt:24)
+    at com.nfeld.jsonpathlite.JsonArray.read(JsonResult.kt:11)
     at query.AppKt.main(App.kt:10)
 </code></pre>
 
@@ -1149,7 +1145,7 @@ Clojure (json-path), Filter less than on string
     at json_path.walker$eval_eq_expr.invoke(walker.clj:6)
     at json_path.walker$eval_expr.invokeStatic(walker.clj:12)
     at json_path.walker$eval_expr.invoke(walker.clj:9)
-    at json_path.walker$walk_selector$fn__210.invoke(walker.clj:81)
+    at json_path.walker$walk_selector$fn__1015.invoke(walker.clj:81)
     at clojure.core$filter$fn__5878.invoke(core.clj:2817)
     at clojure.lang.LazySeq.sval(LazySeq.java:42)
     at clojure.lang.LazySeq.seq(LazySeq.java:51)
@@ -1228,9 +1224,8 @@ Kotlin (com.nfeld.jsonpathlite), Filter less than on string
 <pre><code>Exception in thread "main" java.lang.IllegalArgumentException: Unexpected char, char=?, index=2
     at com.nfeld.jsonpathlite.PathCompiler.compileBracket$json_path_lite(PathCompiler.kt:198)
     at com.nfeld.jsonpathlite.PathCompiler.compile$json_path_lite(PathCompiler.kt:59)
-    at com.nfeld.jsonpathlite.JsonPath.&lt;init&gt;(JsonPath.kt:17)
-    at com.nfeld.jsonpathlite.extension.JSONArrayKt.read(JSONArray.kt:8)
-    at com.nfeld.jsonpathlite.JsonArray.read(JsonResult.kt:12)
+    at com.nfeld.jsonpathlite.JsonPath.&lt;init&gt;(JsonPath.kt:24)
+    at com.nfeld.jsonpathlite.JsonArray.read(JsonResult.kt:11)
     at query.AppKt.main(App.kt:10)
 </code></pre>
 
@@ -1294,7 +1289,7 @@ Clojure (json-path), Filter less than or equal
     at json_path.walker$eval_eq_expr.invoke(walker.clj:6)
     at json_path.walker$eval_expr.invokeStatic(walker.clj:12)
     at json_path.walker$eval_expr.invoke(walker.clj:9)
-    at json_path.walker$walk_selector$fn__210.invoke(walker.clj:81)
+    at json_path.walker$walk_selector$fn__1015.invoke(walker.clj:81)
     at clojure.core$filter$fn__5878.invoke(core.clj:2817)
     at clojure.lang.LazySeq.sval(LazySeq.java:42)
     at clojure.lang.LazySeq.seq(LazySeq.java:51)
@@ -1338,9 +1333,8 @@ Kotlin (com.nfeld.jsonpathlite), Filter less than or equal
 <pre><code>Exception in thread "main" java.lang.IllegalArgumentException: Unexpected char, char=?, index=2
     at com.nfeld.jsonpathlite.PathCompiler.compileBracket$json_path_lite(PathCompiler.kt:198)
     at com.nfeld.jsonpathlite.PathCompiler.compile$json_path_lite(PathCompiler.kt:59)
-    at com.nfeld.jsonpathlite.JsonPath.&lt;init&gt;(JsonPath.kt:17)
-    at com.nfeld.jsonpathlite.extension.JSONArrayKt.read(JSONArray.kt:8)
-    at com.nfeld.jsonpathlite.JsonArray.read(JsonResult.kt:12)
+    at com.nfeld.jsonpathlite.JsonPath.&lt;init&gt;(JsonPath.kt:24)
+    at com.nfeld.jsonpathlite.JsonArray.read(JsonResult.kt:11)
     at query.AppKt.main(App.kt:10)
 </code></pre>
 
@@ -1394,9 +1388,8 @@ Kotlin (com.nfeld.jsonpathlite), Filter with value
 <pre><code>Exception in thread "main" java.lang.IllegalArgumentException: Unexpected char, char=?, index=2
     at com.nfeld.jsonpathlite.PathCompiler.compileBracket$json_path_lite(PathCompiler.kt:198)
     at com.nfeld.jsonpathlite.PathCompiler.compile$json_path_lite(PathCompiler.kt:59)
-    at com.nfeld.jsonpathlite.JsonPath.&lt;init&gt;(JsonPath.kt:17)
-    at com.nfeld.jsonpathlite.extension.JSONArrayKt.read(JSONArray.kt:8)
-    at com.nfeld.jsonpathlite.JsonArray.read(JsonResult.kt:12)
+    at com.nfeld.jsonpathlite.JsonPath.&lt;init&gt;(JsonPath.kt:24)
+    at com.nfeld.jsonpathlite.JsonArray.read(JsonResult.kt:11)
     at query.AppKt.main(App.kt:10)
 </code></pre>
 
@@ -1437,7 +1430,7 @@ Clojure (json-path), Key bracket notation
     at json_path.walker$walk_selector.invoke(walker.clj:63)
     at json_path.walker$walk.invokeStatic(walker.clj:87)
     at json_path.walker$walk.invoke(walker.clj:84)
-    at json_path.walker$walk$fn__221.invoke(walker.clj:89)
+    at json_path.walker$walk$fn__1026.invoke(walker.clj:89)
     at json_path.walker$map_SHARP_.invokeStatic(walker.clj:22)
     at json_path.walker$map_SHARP_.invoke(walker.clj:17)
     at json_path.walker$walk.invokeStatic(walker.clj:89)
@@ -1489,7 +1482,7 @@ Clojure (json-path), Key bracket notation union
     at json_path.walker$walk_selector.invoke(walker.clj:63)
     at json_path.walker$walk.invokeStatic(walker.clj:87)
     at json_path.walker$walk.invoke(walker.clj:84)
-    at json_path.walker$walk$fn__221.invoke(walker.clj:89)
+    at json_path.walker$walk$fn__1026.invoke(walker.clj:89)
     at json_path.walker$map_SHARP_.invokeStatic(walker.clj:22)
     at json_path.walker$map_SHARP_.invoke(walker.clj:17)
     at json_path.walker$walk.invokeStatic(walker.clj:89)
@@ -1548,7 +1541,7 @@ Clojure (json-path), Key bracket notation with double quotes
     at json_path.walker$walk_selector.invoke(walker.clj:63)
     at json_path.walker$walk.invokeStatic(walker.clj:87)
     at json_path.walker$walk.invoke(walker.clj:84)
-    at json_path.walker$walk$fn__221.invoke(walker.clj:89)
+    at json_path.walker$walk$fn__1026.invoke(walker.clj:89)
     at json_path.walker$map_SHARP_.invokeStatic(walker.clj:22)
     at json_path.walker$map_SHARP_.invoke(walker.clj:17)
     at json_path.walker$walk.invokeStatic(walker.clj:89)
@@ -1614,9 +1607,8 @@ Kotlin (com.nfeld.jsonpathlite), Key bracket notation with double quotes
 <pre><code>Exception in thread "main" java.lang.IllegalArgumentException: Unexpected char, char=", index=2
     at com.nfeld.jsonpathlite.PathCompiler.compileBracket$json_path_lite(PathCompiler.kt:198)
     at com.nfeld.jsonpathlite.PathCompiler.compile$json_path_lite(PathCompiler.kt:59)
-    at com.nfeld.jsonpathlite.JsonPath.&lt;init&gt;(JsonPath.kt:17)
-    at com.nfeld.jsonpathlite.extension.JSONObjectKt.read(JSONObject.kt:8)
-    at com.nfeld.jsonpathlite.JsonObject.read(JsonResult.kt:8)
+    at com.nfeld.jsonpathlite.JsonPath.&lt;init&gt;(JsonPath.kt:24)
+    at com.nfeld.jsonpathlite.JsonObject.read(JsonResult.kt:7)
     at query.AppKt.main(App.kt:10)
 </code></pre>
 
@@ -1658,7 +1650,7 @@ Clojure (json-path), Key bracket notation with number
     at json_path.walker$walk_selector.invoke(walker.clj:63)
     at json_path.walker$walk.invokeStatic(walker.clj:87)
     at json_path.walker$walk.invoke(walker.clj:84)
-    at json_path.walker$walk$fn__221.invoke(walker.clj:89)
+    at json_path.walker$walk$fn__1026.invoke(walker.clj:89)
     at json_path.walker$map_SHARP_.invokeStatic(walker.clj:22)
     at json_path.walker$map_SHARP_.invoke(walker.clj:17)
     at json_path.walker$walk.invokeStatic(walker.clj:89)
@@ -1711,7 +1703,7 @@ Clojure (json-path), Key bracket notation with number without quotes
     at json_path.walker$walk_selector.invoke(walker.clj:63)
     at json_path.walker$walk.invokeStatic(walker.clj:87)
     at json_path.walker$walk.invoke(walker.clj:84)
-    at json_path.walker$walk$fn__221.invoke(walker.clj:89)
+    at json_path.walker$walk$fn__1026.invoke(walker.clj:89)
     at json_path.walker$map_SHARP_.invokeStatic(walker.clj:22)
     at json_path.walker$map_SHARP_.invoke(walker.clj:17)
     at json_path.walker$walk.invokeStatic(walker.clj:89)
@@ -1783,7 +1775,7 @@ Clojure (json-path), Key bracket notation with single quote
     at json_path.walker$walk_selector.invoke(walker.clj:63)
     at json_path.walker$walk.invokeStatic(walker.clj:87)
     at json_path.walker$walk.invoke(walker.clj:84)
-    at json_path.walker$walk$fn__221.invoke(walker.clj:89)
+    at json_path.walker$walk$fn__1026.invoke(walker.clj:89)
     at json_path.walker$map_SHARP_.invokeStatic(walker.clj:22)
     at json_path.walker$map_SHARP_.invoke(walker.clj:17)
     at json_path.walker$walk.invokeStatic(walker.clj:89)
@@ -1874,9 +1866,8 @@ Kotlin (com.nfeld.jsonpathlite), Key bracket notation with single quote
 
 <pre><code>Exception in thread "main" java.lang.IllegalArgumentException: Expecting closing array bracket with a value inside
     at com.nfeld.jsonpathlite.PathCompiler.compile$json_path_lite(PathCompiler.kt:76)
-    at com.nfeld.jsonpathlite.JsonPath.&lt;init&gt;(JsonPath.kt:17)
-    at com.nfeld.jsonpathlite.extension.JSONObjectKt.read(JSONObject.kt:8)
-    at com.nfeld.jsonpathlite.JsonObject.read(JsonResult.kt:8)
+    at com.nfeld.jsonpathlite.JsonPath.&lt;init&gt;(JsonPath.kt:24)
+    at com.nfeld.jsonpathlite.JsonObject.read(JsonResult.kt:7)
     at query.AppKt.main(App.kt:10)
 </code></pre>
 
@@ -1927,7 +1918,7 @@ Clojure (json-path), Key bracket notation with single quote escaped
     at json_path.walker$walk_selector.invoke(walker.clj:63)
     at json_path.walker$walk.invokeStatic(walker.clj:87)
     at json_path.walker$walk.invoke(walker.clj:84)
-    at json_path.walker$walk$fn__221.invoke(walker.clj:89)
+    at json_path.walker$walk$fn__1026.invoke(walker.clj:89)
     at json_path.walker$map_SHARP_.invokeStatic(walker.clj:22)
     at json_path.walker$map_SHARP_.invoke(walker.clj:17)
     at json_path.walker$walk.invokeStatic(walker.clj:89)
@@ -2015,7 +2006,7 @@ Clojure (json-path), Key bracket notation with special characters
     at json_path.walker$walk_selector.invoke(walker.clj:63)
     at json_path.walker$walk.invokeStatic(walker.clj:87)
     at json_path.walker$walk.invoke(walker.clj:84)
-    at json_path.walker$walk$fn__221.invoke(walker.clj:89)
+    at json_path.walker$walk$fn__1026.invoke(walker.clj:89)
     at json_path.walker$map_SHARP_.invokeStatic(walker.clj:22)
     at json_path.walker$map_SHARP_.invoke(walker.clj:17)
     at json_path.walker$walk.invokeStatic(walker.clj:89)
@@ -2110,7 +2101,7 @@ Clojure (json-path), Key bracket notation without quotes
     at json_path.walker$walk_selector.invoke(walker.clj:63)
     at json_path.walker$walk.invokeStatic(walker.clj:87)
     at json_path.walker$walk.invoke(walker.clj:84)
-    at json_path.walker$walk$fn__221.invoke(walker.clj:89)
+    at json_path.walker$walk$fn__1026.invoke(walker.clj:89)
     at json_path.walker$map_SHARP_.invokeStatic(walker.clj:22)
     at json_path.walker$map_SHARP_.invoke(walker.clj:17)
     at json_path.walker$walk.invokeStatic(walker.clj:89)
@@ -2203,9 +2194,8 @@ Kotlin (com.nfeld.jsonpathlite), Key bracket notation without quotes
 <pre><code>Exception in thread "main" java.lang.IllegalArgumentException: Unexpected char, char=k, index=2
     at com.nfeld.jsonpathlite.PathCompiler.compileBracket$json_path_lite(PathCompiler.kt:198)
     at com.nfeld.jsonpathlite.PathCompiler.compile$json_path_lite(PathCompiler.kt:59)
-    at com.nfeld.jsonpathlite.JsonPath.&lt;init&gt;(JsonPath.kt:17)
-    at com.nfeld.jsonpathlite.extension.JSONObjectKt.read(JSONObject.kt:8)
-    at com.nfeld.jsonpathlite.JsonObject.read(JsonResult.kt:8)
+    at com.nfeld.jsonpathlite.JsonPath.&lt;init&gt;(JsonPath.kt:24)
+    at com.nfeld.jsonpathlite.JsonObject.read(JsonResult.kt:7)
     at query.AppKt.main(App.kt:10)
 </code></pre>
 
@@ -2248,7 +2238,7 @@ Clojure (json-path), Key dot bracket notation
     at json_path.walker$walk_selector.invoke(walker.clj:63)
     at json_path.walker$walk.invokeStatic(walker.clj:87)
     at json_path.walker$walk.invoke(walker.clj:84)
-    at json_path.walker$walk$fn__221.invoke(walker.clj:89)
+    at json_path.walker$walk$fn__1026.invoke(walker.clj:89)
     at json_path.walker$map_SHARP_.invokeStatic(walker.clj:22)
     at json_path.walker$map_SHARP_.invoke(walker.clj:17)
     at json_path.walker$walk.invokeStatic(walker.clj:89)
@@ -2336,7 +2326,7 @@ Clojure (json-path), Key dot bracket notation with double quotes
     at json_path.walker$walk_selector.invoke(walker.clj:63)
     at json_path.walker$walk.invokeStatic(walker.clj:87)
     at json_path.walker$walk.invoke(walker.clj:84)
-    at json_path.walker$walk$fn__221.invoke(walker.clj:89)
+    at json_path.walker$walk$fn__1026.invoke(walker.clj:89)
     at json_path.walker$map_SHARP_.invokeStatic(walker.clj:22)
     at json_path.walker$map_SHARP_.invoke(walker.clj:17)
     at json_path.walker$walk.invokeStatic(walker.clj:89)
@@ -2415,9 +2405,8 @@ Kotlin (com.nfeld.jsonpathlite), Key dot bracket notation with double quotes
 <pre><code>Exception in thread "main" java.lang.IllegalArgumentException: Unexpected char, char=", index=3
     at com.nfeld.jsonpathlite.PathCompiler.compileBracket$json_path_lite(PathCompiler.kt:198)
     at com.nfeld.jsonpathlite.PathCompiler.compile$json_path_lite(PathCompiler.kt:59)
-    at com.nfeld.jsonpathlite.JsonPath.&lt;init&gt;(JsonPath.kt:17)
-    at com.nfeld.jsonpathlite.extension.JSONObjectKt.read(JSONObject.kt:8)
-    at com.nfeld.jsonpathlite.JsonObject.read(JsonResult.kt:8)
+    at com.nfeld.jsonpathlite.JsonPath.&lt;init&gt;(JsonPath.kt:24)
+    at com.nfeld.jsonpathlite.JsonObject.read(JsonResult.kt:7)
     at query.AppKt.main(App.kt:10)
 </code></pre>
 
@@ -2465,7 +2454,7 @@ Clojure (json-path), Key dot bracket notation without quotes
     at json_path.walker$walk_selector.invoke(walker.clj:63)
     at json_path.walker$walk.invokeStatic(walker.clj:87)
     at json_path.walker$walk.invoke(walker.clj:84)
-    at json_path.walker$walk$fn__221.invoke(walker.clj:89)
+    at json_path.walker$walk$fn__1026.invoke(walker.clj:89)
     at json_path.walker$map_SHARP_.invokeStatic(walker.clj:22)
     at json_path.walker$map_SHARP_.invoke(walker.clj:17)
     at json_path.walker$walk.invokeStatic(walker.clj:89)
@@ -2558,9 +2547,8 @@ Kotlin (com.nfeld.jsonpathlite), Key dot bracket notation without quotes
 <pre><code>Exception in thread "main" java.lang.IllegalArgumentException: Unexpected char, char=k, index=3
     at com.nfeld.jsonpathlite.PathCompiler.compileBracket$json_path_lite(PathCompiler.kt:198)
     at com.nfeld.jsonpathlite.PathCompiler.compile$json_path_lite(PathCompiler.kt:59)
-    at com.nfeld.jsonpathlite.JsonPath.&lt;init&gt;(JsonPath.kt:17)
-    at com.nfeld.jsonpathlite.extension.JSONObjectKt.read(JSONObject.kt:8)
-    at com.nfeld.jsonpathlite.JsonObject.read(JsonResult.kt:8)
+    at com.nfeld.jsonpathlite.JsonPath.&lt;init&gt;(JsonPath.kt:24)
+    at com.nfeld.jsonpathlite.JsonObject.read(JsonResult.kt:7)
     at query.AppKt.main(App.kt:10)
 </code></pre>
 
@@ -2802,7 +2790,7 @@ Clojure (json-path), Recursive array index
     at json_path.walker$walk_selector.invoke(walker.clj:63)
     at json_path.walker$walk.invokeStatic(walker.clj:87)
     at json_path.walker$walk.invoke(walker.clj:84)
-    at json_path.walker$walk$fn__221.invoke(walker.clj:89)
+    at json_path.walker$walk$fn__1026.invoke(walker.clj:89)
     at json_path.walker$map_SHARP_.invokeStatic(walker.clj:22)
     at json_path.walker$map_SHARP_.invoke(walker.clj:17)
     at clojure.core$partial$fn__5824.invoke(core.clj:2624)
@@ -3143,10 +3131,10 @@ Kotlin (com.nfeld.jsonpathlite), Recursive wildcard on scalar
 </h3>
 
 <pre><code>Exception in thread "main" org.json.JSONException: A JSONArray text must start with '[' at 1 [character 2 line 1]
-    at org.json.JSONTokener.syntaxError(JSONTokener.java:505)
+    at org.json.JSONTokener.syntaxError(JSONTokener.java:507)
     at org.json.JSONArray.&lt;init&gt;(JSONArray.java:109)
     at org.json.JSONArray.&lt;init&gt;(JSONArray.java:162)
-    at com.nfeld.jsonpathlite.JsonPath$Companion.parse(JsonPath.kt:98)
+    at com.nfeld.jsonpathlite.JsonPath$Companion.parse(JsonPath.kt:107)
     at query.AppKt.main(App.kt:10)
 </code></pre>
 
@@ -3235,7 +3223,7 @@ Clojure (json-path), Script expression
     at json_path.walker$walk_selector.invoke(walker.clj:63)
     at json_path.walker$walk.invokeStatic(walker.clj:87)
     at json_path.walker$walk.invoke(walker.clj:84)
-    at json_path.walker$walk$fn__221.invoke(walker.clj:89)
+    at json_path.walker$walk$fn__1026.invoke(walker.clj:89)
     at json_path.walker$map_SHARP_.invokeStatic(walker.clj:22)
     at json_path.walker$map_SHARP_.invoke(walker.clj:17)
     at json_path.walker$walk.invokeStatic(walker.clj:89)
@@ -3318,9 +3306,8 @@ Kotlin (com.nfeld.jsonpathlite), Script expression
 <pre><code>Exception in thread "main" java.lang.IllegalArgumentException: Unexpected char, char=(, index=2
     at com.nfeld.jsonpathlite.PathCompiler.compileBracket$json_path_lite(PathCompiler.kt:198)
     at com.nfeld.jsonpathlite.PathCompiler.compile$json_path_lite(PathCompiler.kt:59)
-    at com.nfeld.jsonpathlite.JsonPath.&lt;init&gt;(JsonPath.kt:17)
-    at com.nfeld.jsonpathlite.extension.JSONArrayKt.read(JSONArray.kt:8)
-    at com.nfeld.jsonpathlite.JsonArray.read(JsonResult.kt:12)
+    at com.nfeld.jsonpathlite.JsonPath.&lt;init&gt;(JsonPath.kt:24)
+    at com.nfeld.jsonpathlite.JsonArray.read(JsonResult.kt:11)
     at query.AppKt.main(App.kt:10)
 </code></pre>
 
@@ -3402,9 +3389,8 @@ Kotlin (com.nfeld.jsonpathlite), Wildcard bracket notation on array
 <pre><code>Exception in thread "main" java.lang.IllegalArgumentException: Unexpected char, char=*, index=2
     at com.nfeld.jsonpathlite.PathCompiler.compileBracket$json_path_lite(PathCompiler.kt:198)
     at com.nfeld.jsonpathlite.PathCompiler.compile$json_path_lite(PathCompiler.kt:59)
-    at com.nfeld.jsonpathlite.JsonPath.&lt;init&gt;(JsonPath.kt:17)
-    at com.nfeld.jsonpathlite.extension.JSONArrayKt.read(JSONArray.kt:8)
-    at com.nfeld.jsonpathlite.JsonArray.read(JsonResult.kt:12)
+    at com.nfeld.jsonpathlite.JsonPath.&lt;init&gt;(JsonPath.kt:24)
+    at com.nfeld.jsonpathlite.JsonArray.read(JsonResult.kt:11)
     at query.AppKt.main(App.kt:10)
 </code></pre>
 
@@ -3429,9 +3415,8 @@ Kotlin (com.nfeld.jsonpathlite), Wildcard bracket notation on null value array
 <pre><code>Exception in thread "main" java.lang.IllegalArgumentException: Unexpected char, char=*, index=2
     at com.nfeld.jsonpathlite.PathCompiler.compileBracket$json_path_lite(PathCompiler.kt:198)
     at com.nfeld.jsonpathlite.PathCompiler.compile$json_path_lite(PathCompiler.kt:59)
-    at com.nfeld.jsonpathlite.JsonPath.&lt;init&gt;(JsonPath.kt:17)
-    at com.nfeld.jsonpathlite.extension.JSONArrayKt.read(JSONArray.kt:8)
-    at com.nfeld.jsonpathlite.JsonArray.read(JsonResult.kt:12)
+    at com.nfeld.jsonpathlite.JsonPath.&lt;init&gt;(JsonPath.kt:24)
+    at com.nfeld.jsonpathlite.JsonArray.read(JsonResult.kt:11)
     at query.AppKt.main(App.kt:10)
 </code></pre>
 
@@ -3463,9 +3448,8 @@ Kotlin (com.nfeld.jsonpathlite), Wildcard bracket notation on object
 <pre><code>Exception in thread "main" java.lang.IllegalArgumentException: Unexpected char, char=*, index=2
     at com.nfeld.jsonpathlite.PathCompiler.compileBracket$json_path_lite(PathCompiler.kt:198)
     at com.nfeld.jsonpathlite.PathCompiler.compile$json_path_lite(PathCompiler.kt:59)
-    at com.nfeld.jsonpathlite.JsonPath.&lt;init&gt;(JsonPath.kt:17)
-    at com.nfeld.jsonpathlite.extension.JSONObjectKt.read(JSONObject.kt:8)
-    at com.nfeld.jsonpathlite.JsonObject.read(JsonResult.kt:8)
+    at com.nfeld.jsonpathlite.JsonPath.&lt;init&gt;(JsonPath.kt:24)
+    at com.nfeld.jsonpathlite.JsonObject.read(JsonResult.kt:7)
     at query.AppKt.main(App.kt:10)
 </code></pre>
 
@@ -3490,9 +3474,8 @@ Kotlin (com.nfeld.jsonpathlite), Wildcard bracket notation with key on nested ob
 <pre><code>Exception in thread "main" java.lang.IllegalArgumentException: Unexpected char, char=*, index=2
     at com.nfeld.jsonpathlite.PathCompiler.compileBracket$json_path_lite(PathCompiler.kt:198)
     at com.nfeld.jsonpathlite.PathCompiler.compile$json_path_lite(PathCompiler.kt:59)
-    at com.nfeld.jsonpathlite.JsonPath.&lt;init&gt;(JsonPath.kt:17)
-    at com.nfeld.jsonpathlite.extension.JSONArrayKt.read(JSONArray.kt:8)
-    at com.nfeld.jsonpathlite.JsonArray.read(JsonResult.kt:12)
+    at com.nfeld.jsonpathlite.JsonPath.&lt;init&gt;(JsonPath.kt:24)
+    at com.nfeld.jsonpathlite.JsonArray.read(JsonResult.kt:11)
     at query.AppKt.main(App.kt:10)
 </code></pre>
 

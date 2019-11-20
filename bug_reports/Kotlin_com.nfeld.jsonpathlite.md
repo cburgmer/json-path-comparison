@@ -22,9 +22,8 @@ The following queries provide results that do not match those of other implement
   	at java.base/java.util.ArrayList.get(ArrayList.java:458)
   	at com.nfeld.jsonpathlite.PathCompiler.compileBracket$json_path_lite(PathCompiler.kt:232)
   	at com.nfeld.jsonpathlite.PathCompiler.compile$json_path_lite(PathCompiler.kt:59)
-  	at com.nfeld.jsonpathlite.JsonPath.<init>(JsonPath.kt:17)
-  	at com.nfeld.jsonpathlite.extension.JSONArrayKt.read(JSONArray.kt:8)
-  	at com.nfeld.jsonpathlite.JsonArray.read(JsonResult.kt:12)
+  	at com.nfeld.jsonpathlite.JsonPath.<init>(JsonPath.kt:24)
+  	at com.nfeld.jsonpathlite.JsonArray.read(JsonResult.kt:11)
   	at query.AppKt.main(App.kt:10)
   ```
 
@@ -70,9 +69,8 @@ The following queries provide results that do not match those of other implement
   Exception in thread "main" java.lang.IllegalArgumentException: Unexpected char, char=?, index=2
   	at com.nfeld.jsonpathlite.PathCompiler.compileBracket$json_path_lite(PathCompiler.kt:198)
   	at com.nfeld.jsonpathlite.PathCompiler.compile$json_path_lite(PathCompiler.kt:59)
-  	at com.nfeld.jsonpathlite.JsonPath.<init>(JsonPath.kt:17)
-  	at com.nfeld.jsonpathlite.extension.JSONArrayKt.read(JSONArray.kt:8)
-  	at com.nfeld.jsonpathlite.JsonArray.read(JsonResult.kt:12)
+  	at com.nfeld.jsonpathlite.JsonPath.<init>(JsonPath.kt:24)
+  	at com.nfeld.jsonpathlite.JsonArray.read(JsonResult.kt:11)
   	at query.AppKt.main(App.kt:10)
   ```
 
@@ -90,9 +88,8 @@ The following queries provide results that do not match those of other implement
   Exception in thread "main" java.lang.IllegalArgumentException: Unexpected char, char=?, index=2
   	at com.nfeld.jsonpathlite.PathCompiler.compileBracket$json_path_lite(PathCompiler.kt:198)
   	at com.nfeld.jsonpathlite.PathCompiler.compile$json_path_lite(PathCompiler.kt:59)
-  	at com.nfeld.jsonpathlite.JsonPath.<init>(JsonPath.kt:17)
-  	at com.nfeld.jsonpathlite.extension.JSONArrayKt.read(JSONArray.kt:8)
-  	at com.nfeld.jsonpathlite.JsonArray.read(JsonResult.kt:12)
+  	at com.nfeld.jsonpathlite.JsonPath.<init>(JsonPath.kt:24)
+  	at com.nfeld.jsonpathlite.JsonArray.read(JsonResult.kt:11)
   	at query.AppKt.main(App.kt:10)
   ```
 
@@ -110,9 +107,8 @@ The following queries provide results that do not match those of other implement
   Exception in thread "main" java.lang.IllegalArgumentException: Unexpected char, char=?, index=2
   	at com.nfeld.jsonpathlite.PathCompiler.compileBracket$json_path_lite(PathCompiler.kt:198)
   	at com.nfeld.jsonpathlite.PathCompiler.compile$json_path_lite(PathCompiler.kt:59)
-  	at com.nfeld.jsonpathlite.JsonPath.<init>(JsonPath.kt:17)
-  	at com.nfeld.jsonpathlite.extension.JSONArrayKt.read(JSONArray.kt:8)
-  	at com.nfeld.jsonpathlite.JsonArray.read(JsonResult.kt:12)
+  	at com.nfeld.jsonpathlite.JsonPath.<init>(JsonPath.kt:24)
+  	at com.nfeld.jsonpathlite.JsonArray.read(JsonResult.kt:11)
   	at query.AppKt.main(App.kt:10)
   ```
 
@@ -158,9 +154,8 @@ The following queries provide results that do not match those of other implement
   Exception in thread "main" java.lang.IllegalArgumentException: Unexpected char, char=*, index=2
   	at com.nfeld.jsonpathlite.PathCompiler.compileBracket$json_path_lite(PathCompiler.kt:198)
   	at com.nfeld.jsonpathlite.PathCompiler.compile$json_path_lite(PathCompiler.kt:59)
-  	at com.nfeld.jsonpathlite.JsonPath.<init>(JsonPath.kt:17)
-  	at com.nfeld.jsonpathlite.extension.JSONArrayKt.read(JSONArray.kt:8)
-  	at com.nfeld.jsonpathlite.JsonArray.read(JsonResult.kt:12)
+  	at com.nfeld.jsonpathlite.JsonPath.<init>(JsonPath.kt:24)
+  	at com.nfeld.jsonpathlite.JsonArray.read(JsonResult.kt:11)
   	at query.AppKt.main(App.kt:10)
   ```
 
@@ -178,9 +173,8 @@ The following queries provide results that do not match those of other implement
   Exception in thread "main" java.lang.IllegalArgumentException: Unexpected char, char=*, index=2
   	at com.nfeld.jsonpathlite.PathCompiler.compileBracket$json_path_lite(PathCompiler.kt:198)
   	at com.nfeld.jsonpathlite.PathCompiler.compile$json_path_lite(PathCompiler.kt:59)
-  	at com.nfeld.jsonpathlite.JsonPath.<init>(JsonPath.kt:17)
-  	at com.nfeld.jsonpathlite.extension.JSONArrayKt.read(JSONArray.kt:8)
-  	at com.nfeld.jsonpathlite.JsonArray.read(JsonResult.kt:12)
+  	at com.nfeld.jsonpathlite.JsonPath.<init>(JsonPath.kt:24)
+  	at com.nfeld.jsonpathlite.JsonArray.read(JsonResult.kt:11)
   	at query.AppKt.main(App.kt:10)
   ```
 
@@ -198,9 +192,8 @@ The following queries provide results that do not match those of other implement
   Exception in thread "main" java.lang.IllegalArgumentException: Unexpected char, char=*, index=2
   	at com.nfeld.jsonpathlite.PathCompiler.compileBracket$json_path_lite(PathCompiler.kt:198)
   	at com.nfeld.jsonpathlite.PathCompiler.compile$json_path_lite(PathCompiler.kt:59)
-  	at com.nfeld.jsonpathlite.JsonPath.<init>(JsonPath.kt:17)
-  	at com.nfeld.jsonpathlite.extension.JSONObjectKt.read(JSONObject.kt:8)
-  	at com.nfeld.jsonpathlite.JsonObject.read(JsonResult.kt:8)
+  	at com.nfeld.jsonpathlite.JsonPath.<init>(JsonPath.kt:24)
+  	at com.nfeld.jsonpathlite.JsonObject.read(JsonResult.kt:7)
   	at query.AppKt.main(App.kt:10)
   ```
 
@@ -218,9 +211,8 @@ The following queries provide results that do not match those of other implement
   Exception in thread "main" java.lang.IllegalArgumentException: Unexpected char, char=*, index=2
   	at com.nfeld.jsonpathlite.PathCompiler.compileBracket$json_path_lite(PathCompiler.kt:198)
   	at com.nfeld.jsonpathlite.PathCompiler.compile$json_path_lite(PathCompiler.kt:59)
-  	at com.nfeld.jsonpathlite.JsonPath.<init>(JsonPath.kt:17)
-  	at com.nfeld.jsonpathlite.extension.JSONArrayKt.read(JSONArray.kt:8)
-  	at com.nfeld.jsonpathlite.JsonArray.read(JsonResult.kt:12)
+  	at com.nfeld.jsonpathlite.JsonPath.<init>(JsonPath.kt:24)
+  	at com.nfeld.jsonpathlite.JsonArray.read(JsonResult.kt:11)
   	at query.AppKt.main(App.kt:10)
   ```
 
