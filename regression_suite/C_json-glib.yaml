@@ -123,7 +123,6 @@ queries:
     selector: $[?(@.key<42)]
     document: [{"key": 0}, {"key": 42}, {"key": -1}, {"key": 41}, {"key": 43}, {"key": 42.0001}, {"key": 41.9999}, {"key": 100}, {"some": "value"}]
     status: error
-    consensus: [{"key": 0}, {"key": -1}, {"key": 41}, {"key": 41.9999}]
   - id: filter_less_than_on_string
     selector: $[?(@.key<42)]
     document: [{"key": 0}, {"key": "value"}]

@@ -24,6 +24,15 @@ Golang (github.com-bhmj-jsonslice), Array index dot notation
 <pre><code>object expected
 </code></pre>
 
+<h3 id="Haskell_jsonpath___array_index_dot_notation">
+Haskell (jsonpath), Array index dot notation
+</h3>
+
+<pre><code>json-path-comparison: expected object, found ["first","second","third","forth","fifth"]
+CallStack (from HasCallStack):
+  error, called at app/Main.hs:18:22 in main:Main
+</code></pre>
+
 <h3 id="Java_com.github.jsurfer___array_index_dot_notation">
 Java (com.github.jsurfer), Array index dot notation
 </h3>
@@ -201,6 +210,13 @@ Golang (github.com-oliveagle-jsonpath), Array index slice negative step
 <pre><code>only support one range(from, to): [  -2]
 </code></pre>
 
+<h3 id="Haskell_jsonpath___array_index_slice_negative_step">
+Haskell (jsonpath), Array index slice negative step
+</h3>
+
+<pre><code>implementations/Haskell_jsonpath/run.sh: line 6: 32611 Killed                  "$script_dir"/build/json-path-comparison "$@"
+</code></pre>
+
 <h3 id="JavaScript_Goessner___array_index_slice_negative_step">
 JavaScript (Goessner), Array index slice negative step
 </h3>
@@ -322,6 +338,17 @@ Clojure (json-path), Array index slice no start no end
     at json_path_comparison.core$_main.doInvoke(core.clj:6)
     at clojure.lang.RestFn.applyTo(RestFn.java:137)
     at json_path_comparison.core.main(Unknown Source)
+</code></pre>
+
+<h3 id="Haskell_jsonpath___array_index_slice_no_start_no_end">
+Haskell (jsonpath), Array index slice no start no end
+</h3>
+
+<pre><code>json-path-comparison: serachBegingingWithSlice: string
+CallStack (from HasCallStack):
+  error, called at app/Main.hs:36:7 in main:Main
+Invalid JSONPath: $[:]
+ Error: serachBegingingWithSlice: string
 </code></pre>
 
 <h3 id="Java_com.jayway.jsonpath___array_index_slice_no_start_no_end">
@@ -547,6 +574,13 @@ Golang (github.com-oliveagle-jsonpath), Array index slice start end step 0
 </h3>
 
 <pre><code>only support one range(from, to): [0 3 0]
+</code></pre>
+
+<h3 id="Haskell_jsonpath___array_index_slice_start_end_step_0">
+Haskell (jsonpath), Array index slice start end step 0
+</h3>
+
+<pre><code>implementations/Haskell_jsonpath/run.sh: line 6: 36566 Killed                  "$script_dir"/build/json-path-comparison "$@"
 </code></pre>
 
 <h3 id="JavaScript_Goessner___array_index_slice_start_end_step_0">
@@ -870,6 +904,13 @@ Golang (github.com-PaesslerAG-jsonpath), Filter greater than
 <pre><code>parsing error: $[?(@.key&gt;42)]   :1:10 - 1:11 unexpected "&gt;" while scanning parentheses expected ")"
 </code></pre>
 
+<h3 id="Haskell_jsonpath___filter_greater_than">
+Haskell (jsonpath), Filter greater than
+</h3>
+
+<pre><code>json-path-comparison: src/Data/JSONPath/Execute.hs:(71,1)-(72,60): Non-exhaustive patterns in function executeCondition
+</code></pre>
+
 <h3 id="Kotlin_com.nfeld.jsonpathlite___filter_greater_than">
 Kotlin (com.nfeld.jsonpathlite), Filter greater than
 </h3>
@@ -970,6 +1011,17 @@ Golang (github.com-PaesslerAG-jsonpath), Filter greater than or equal
 </h3>
 
 <pre><code>parsing error: $[?(@.key&gt;=42)]   - 1:12 unknown operator &gt;=
+</code></pre>
+
+<h3 id="Haskell_jsonpath___filter_greater_than_or_equal">
+Haskell (jsonpath), Filter greater than or equal
+</h3>
+
+<pre><code>json-path-comparison: serachBegingingWithSlice: string
+CallStack (from HasCallStack):
+  error, called at app/Main.hs:36:7 in main:Main
+Invalid JSONPath: $[?(@.key&gt;=42)]
+ Error: serachBegingingWithSlice: string
 </code></pre>
 
 <h3 id="Kotlin_com.nfeld.jsonpathlite___filter_greater_than_or_equal">
@@ -1081,6 +1133,13 @@ Golang (github.com-PaesslerAG-jsonpath), Filter less than
 <pre><code>parsing error: $[?(@.key&lt;42)]   :1:10 - 1:11 unexpected "&lt;" while scanning parentheses expected ")"
 </code></pre>
 
+<h3 id="Haskell_jsonpath___filter_less_than">
+Haskell (jsonpath), Filter less than
+</h3>
+
+<pre><code>json-path-comparison: src/Data/JSONPath/Execute.hs:(71,1)-(72,60): Non-exhaustive patterns in function executeCondition
+</code></pre>
+
 <h3 id="Kotlin_com.nfeld.jsonpathlite___filter_less_than">
 Kotlin (com.nfeld.jsonpathlite), Filter less than
 </h3>
@@ -1187,6 +1246,13 @@ Golang (github.com-bhmj-jsonslice), Filter less than on string
 </h3>
 
 <pre><code>operand types do not match
+</code></pre>
+
+<h3 id="Haskell_jsonpath___filter_less_than_on_string">
+Haskell (jsonpath), Filter less than on string
+</h3>
+
+<pre><code>json-path-comparison: src/Data/JSONPath/Execute.hs:(71,1)-(72,60): Non-exhaustive patterns in function executeCondition
 </code></pre>
 
 <h3 id="Java_com.github.jsurfer___filter_less_than_on_string">
@@ -1326,6 +1392,17 @@ Golang (github.com-PaesslerAG-jsonpath), Filter less than or equal
 <pre><code>parsing error: $[?(@.key&lt;=42)]   - 1:12 unknown operator &lt;=
 </code></pre>
 
+<h3 id="Haskell_jsonpath___filter_less_than_or_equal">
+Haskell (jsonpath), Filter less than or equal
+</h3>
+
+<pre><code>json-path-comparison: serachBegingingWithSlice: string
+CallStack (from HasCallStack):
+  error, called at app/Main.hs:36:7 in main:Main
+Invalid JSONPath: $[?(@.key&lt;=42)]
+ Error: serachBegingingWithSlice: string
+</code></pre>
+
 <h3 id="Kotlin_com.nfeld.jsonpathlite___filter_less_than_or_equal">
 Kotlin (com.nfeld.jsonpathlite), Filter less than or equal
 </h3>
@@ -1379,6 +1456,17 @@ C (json-glib), Filter with value
 </h3>
 
 <pre><code>Unable to compile selector `$[?(@.key)]': Invalid array index definition “?(@.key)]”
+</code></pre>
+
+<h3 id="Haskell_jsonpath___filter_with_value">
+Haskell (jsonpath), Filter with value
+</h3>
+
+<pre><code>json-path-comparison: serachBegingingWithSlice: string
+CallStack (from HasCallStack):
+  error, called at app/Main.hs:36:7 in main:Main
+Invalid JSONPath: $[?(@.key)]
+ Error: serachBegingingWithSlice: string
 </code></pre>
 
 <h3 id="Kotlin_com.nfeld.jsonpathlite___filter_with_value">
@@ -1518,6 +1606,17 @@ Golang (github.com-oliveagle-jsonpath), Key bracket notation union
 <pre><code>strconv.Atoi: parsing "'key'": invalid syntax
 </code></pre>
 
+<h3 id="Haskell_jsonpath___key_bracket_notation_union">
+Haskell (jsonpath), Key bracket notation union
+</h3>
+
+<pre><code>json-path-comparison: serachBegingingWithSlice: string
+CallStack (from HasCallStack):
+  error, called at app/Main.hs:36:7 in main:Main
+Invalid JSONPath: $['key','another']
+ Error: serachBegingingWithSlice: string
+</code></pre>
+
 <h3 id="Rust_jsonpath___key_bracket_notation_union">
 Rust (jsonpath), Key bracket notation union
 </h3>
@@ -1568,6 +1667,17 @@ Golang (github.com-oliveagle-jsonpath), Key bracket notation with double quotes
 </h3>
 
 <pre><code>strconv.Atoi: parsing "\"key\"": invalid syntax
+</code></pre>
+
+<h3 id="Haskell_jsonpath___key_bracket_notation_with_double_quotes">
+Haskell (jsonpath), Key bracket notation with double quotes
+</h3>
+
+<pre><code>json-path-comparison: serachBegingingWithSlice: string
+CallStack (from HasCallStack):
+  error, called at app/Main.hs:36:7 in main:Main
+Invalid JSONPath: $["key"]
+ Error: serachBegingingWithSlice: string
 </code></pre>
 
 <h3 id="JavaScript_Goessner___key_bracket_notation_with_double_quotes">
@@ -1732,6 +1842,15 @@ Golang (github.com-oliveagle-jsonpath), Key bracket notation with number without
 <pre><code>object is not Slice
 </code></pre>
 
+<h3 id="Haskell_jsonpath___key_bracket_notation_with_number_without_quotes">
+Haskell (jsonpath), Key bracket notation with number without quotes
+</h3>
+
+<pre><code>json-path-comparison: expected array, found {"0":"value"}
+CallStack (from HasCallStack):
+  error, called at app/Main.hs:18:22 in main:Main
+</code></pre>
+
 <h3 id="Java_com.jayway.jsonpath___key_bracket_notation_with_number_without_quotes">
 Java (com.jayway.jsonpath), Key bracket notation with number without quotes
 </h3>
@@ -1809,6 +1928,17 @@ Golang (github.com-oliveagle-jsonpath), Key bracket notation with single quote
 </h3>
 
 <pre><code>strconv.Atoi: parsing "'single'quote'": invalid syntax
+</code></pre>
+
+<h3 id="Haskell_jsonpath___key_bracket_notation_with_single_quote">
+Haskell (jsonpath), Key bracket notation with single quote
+</h3>
+
+<pre><code>json-path-comparison: serachBegingingWithSlice: string
+CallStack (from HasCallStack):
+  error, called at app/Main.hs:36:7 in main:Main
+Invalid JSONPath: $['single'quote']
+ Error: serachBegingingWithSlice: string
 </code></pre>
 
 <h3 id="JavaScript_jsonpath___key_bracket_notation_with_single_quote">
@@ -1954,6 +2084,17 @@ Golang (github.com-oliveagle-jsonpath), Key bracket notation with single quote e
 <pre><code>strconv.Atoi: parsing "'single\\'quote'": invalid syntax
 </code></pre>
 
+<h3 id="Haskell_jsonpath___key_bracket_notation_with_single_quote_escaped">
+Haskell (jsonpath), Key bracket notation with single quote escaped
+</h3>
+
+<pre><code>json-path-comparison: serachBegingingWithSlice: string
+CallStack (from HasCallStack):
+  error, called at app/Main.hs:36:7 in main:Main
+Invalid JSONPath: $['single\'quote']
+ Error: serachBegingingWithSlice: string
+</code></pre>
+
 <h3 id="JavaScript_Goessner___key_bracket_notation_with_single_quote_escaped">
 JavaScript (Goessner), Key bracket notation with single quote escaped
 </h3>
@@ -2042,6 +2183,17 @@ Golang (github.com-oliveagle-jsonpath), Key bracket notation with special charac
 <pre><code>strconv.Atoi: parsing "\"chars'": invalid syntax
 </code></pre>
 
+<h3 id="Haskell_jsonpath___key_bracket_notation_with_special_characters">
+Haskell (jsonpath), Key bracket notation with special characters
+</h3>
+
+<pre><code>json-path-comparison: serachBegingingWithSlice: string
+CallStack (from HasCallStack):
+  error, called at app/Main.hs:36:7 in main:Main
+Invalid JSONPath: $['special:"chars']
+ Error: serachBegingingWithSlice: string
+</code></pre>
+
 <h3 id="Rust_jsonpath___key_bracket_notation_with_special_characters">
 Rust (jsonpath), Key bracket notation with special characters
 </h3>
@@ -2069,6 +2221,17 @@ Golang (github.com-oliveagle-jsonpath), Key bracket notation with star literal
 </h3>
 
 <pre><code>strconv.Atoi: parsing "'*'": invalid syntax
+</code></pre>
+
+<h3 id="Haskell_jsonpath___key_bracket_notation_with_star_literal">
+Haskell (jsonpath), Key bracket notation with star literal
+</h3>
+
+<pre><code>json-path-comparison: serachBegingingWithSlice: string
+CallStack (from HasCallStack):
+  error, called at app/Main.hs:36:7 in main:Main
+Invalid JSONPath: $['*']
+ Error: serachBegingingWithSlice: string
 </code></pre>
 
 <h3 id="Python_jsonpath___key_bracket_notation_with_star_literal">
@@ -2135,6 +2298,17 @@ Golang (github.com-oliveagle-jsonpath), Key bracket notation without quotes
 </h3>
 
 <pre><code>strconv.Atoi: parsing "key": invalid syntax
+</code></pre>
+
+<h3 id="Haskell_jsonpath___key_bracket_notation_without_quotes">
+Haskell (jsonpath), Key bracket notation without quotes
+</h3>
+
+<pre><code>json-path-comparison: serachBegingingWithSlice: string
+CallStack (from HasCallStack):
+  error, called at app/Main.hs:36:7 in main:Main
+Invalid JSONPath: $[key]
+ Error: serachBegingingWithSlice: string
 </code></pre>
 
 <h3 id="JavaScript_jsonpath___key_bracket_notation_without_quotes">
@@ -2267,6 +2441,17 @@ Golang (github.com-oliveagle-jsonpath), Key dot bracket notation
 <pre><code>strconv.Atoi: parsing "'key'": invalid syntax
 </code></pre>
 
+<h3 id="Haskell_jsonpath___key_dot_bracket_notation">
+Haskell (jsonpath), Key dot bracket notation
+</h3>
+
+<pre><code>json-path-comparison: serachBegingingWithSlice: string
+CallStack (from HasCallStack):
+  error, called at app/Main.hs:36:7 in main:Main
+Invalid JSONPath: $.['key']
+ Error: serachBegingingWithSlice: string
+</code></pre>
+
 <h3 id="JavaScript_jsonpath___key_dot_bracket_notation">
 JavaScript (jsonpath), Key dot bracket notation
 </h3>
@@ -2360,6 +2545,17 @@ Golang (github.com-oliveagle-jsonpath), Key dot bracket notation with double quo
 </h3>
 
 <pre><code>strconv.Atoi: parsing "\"key\"": invalid syntax
+</code></pre>
+
+<h3 id="Haskell_jsonpath___key_dot_bracket_notation_with_double_quotes">
+Haskell (jsonpath), Key dot bracket notation with double quotes
+</h3>
+
+<pre><code>json-path-comparison: serachBegingingWithSlice: string
+CallStack (from HasCallStack):
+  error, called at app/Main.hs:36:7 in main:Main
+Invalid JSONPath: $.["key"]
+ Error: serachBegingingWithSlice: string
 </code></pre>
 
 <h3 id="JavaScript_Goessner___key_dot_bracket_notation_with_double_quotes">
@@ -2490,6 +2686,17 @@ Golang (github.com-oliveagle-jsonpath), Key dot bracket notation without quotes
 <pre><code>strconv.Atoi: parsing "key": invalid syntax
 </code></pre>
 
+<h3 id="Haskell_jsonpath___key_dot_bracket_notation_without_quotes">
+Haskell (jsonpath), Key dot bracket notation without quotes
+</h3>
+
+<pre><code>json-path-comparison: serachBegingingWithSlice: string
+CallStack (from HasCallStack):
+  error, called at app/Main.hs:36:7 in main:Main
+Invalid JSONPath: $.[key]
+ Error: serachBegingingWithSlice: string
+</code></pre>
+
 <h3 id="JavaScript_jsonpath___key_dot_bracket_notation_without_quotes">
 JavaScript (jsonpath), Key dot bracket notation without quotes
 </h3>
@@ -2603,6 +2810,17 @@ Golang (github.com-oliveagle-jsonpath), Key dot notation with double quotes
 <pre><code>key error: "key" not found in object
 </code></pre>
 
+<h3 id="Haskell_jsonpath___key_dot_notation_with_double_quotes">
+Haskell (jsonpath), Key dot notation with double quotes
+</h3>
+
+<pre><code>json-path-comparison: serachBegingingWithSlice: string
+CallStack (from HasCallStack):
+  error, called at app/Main.hs:36:7 in main:Main
+Invalid JSONPath: $."key"
+ Error: serachBegingingWithSlice: string
+</code></pre>
+
 <h3 id="JavaScript_Goessner___key_dot_notation_with_double_quotes">
 JavaScript (Goessner), Key dot notation with double quotes
 </h3>
@@ -2698,6 +2916,17 @@ Golang (github.com-oliveagle-jsonpath), Key dot notation with single quotes
 </h3>
 
 <pre><code>key error: 'key' not found in object
+</code></pre>
+
+<h3 id="Haskell_jsonpath___key_dot_notation_with_single_quotes">
+Haskell (jsonpath), Key dot notation with single quotes
+</h3>
+
+<pre><code>json-path-comparison: serachBegingingWithSlice: string
+CallStack (from HasCallStack):
+  error, called at app/Main.hs:36:7 in main:Main
+Invalid JSONPath: $.'key'
+ Error: serachBegingingWithSlice: string
 </code></pre>
 
 <h3 id="JavaScript_jsonpath___key_dot_notation_with_single_quotes">
@@ -2902,6 +3131,17 @@ Golang (github.com-oliveagle-jsonpath), Recursive key with double quotes
 <pre><code>expression don't support in filter
 </code></pre>
 
+<h3 id="Haskell_jsonpath___recursive_key_with_double_quotes">
+Haskell (jsonpath), Recursive key with double quotes
+</h3>
+
+<pre><code>json-path-comparison: serachBegingingWithSlice: Failed reading: not a search element
+CallStack (from HasCallStack):
+  error, called at app/Main.hs:36:7 in main:Main
+Invalid JSONPath: $.."key"
+ Error: serachBegingingWithSlice: Failed reading: not a search element
+</code></pre>
+
 <h3 id="JavaScript_Goessner___recursive_key_with_double_quotes">
 JavaScript (Goessner), Recursive key with double quotes
 </h3>
@@ -2982,6 +3222,17 @@ Golang (github.com-oliveagle-jsonpath), Recursive key with single quotes
 </h3>
 
 <pre><code>expression don't support in filter
+</code></pre>
+
+<h3 id="Haskell_jsonpath___recursive_key_with_single_quotes">
+Haskell (jsonpath), Recursive key with single quotes
+</h3>
+
+<pre><code>json-path-comparison: serachBegingingWithSlice: Failed reading: not a search element
+CallStack (from HasCallStack):
+  error, called at app/Main.hs:36:7 in main:Main
+Invalid JSONPath: $..'key'
+ Error: serachBegingingWithSlice: Failed reading: not a search element
 </code></pre>
 
 <h3 id="JavaScript_jsonpath___recursive_key_with_single_quotes">
@@ -3112,6 +3363,15 @@ Golang (github.com-oliveagle-jsonpath), Recursive wildcard on scalar
 <pre><code>expression don't support in filter
 </code></pre>
 
+<h3 id="Haskell_jsonpath___recursive_wildcard_on_scalar">
+Haskell (jsonpath), Recursive wildcard on scalar
+</h3>
+
+<pre><code>json-path-comparison: Search failed
+CallStack (from HasCallStack):
+  error, called at app/Main.hs:18:22 in main:Main
+</code></pre>
+
 <h3 id="JavaScript_Goessner___recursive_wildcard_on_scalar">
 JavaScript (Goessner), Recursive wildcard on scalar
 </h3>
@@ -3172,6 +3432,17 @@ Bash (JSONPath.sh), Root
 
 <pre><code>sed: bad regex '\[(([0-9]+|"[^"]+")[],]){9999}(.*)': Invalid contents of {}
 Expecting value: line 3 column 1 (char 2)
+</code></pre>
+
+<h3 id="Haskell_jsonpath___root">
+Haskell (jsonpath), Root
+</h3>
+
+<pre><code>json-path-comparison: serachBegingingWithSlice: not enough input
+CallStack (from HasCallStack):
+  error, called at app/Main.hs:36:7 in main:Main
+Invalid JSONPath: $
+ Error: serachBegingingWithSlice: not enough input
 </code></pre>
 
 <h3 id="JavaScript_Goessner___root">
@@ -3257,6 +3528,17 @@ Golang (github.com-oliveagle-jsonpath), Script expression
 </h3>
 
 <pre><code>strconv.Atoi: parsing "(@.length-1)": invalid syntax
+</code></pre>
+
+<h3 id="Haskell_jsonpath___script_expression">
+Haskell (jsonpath), Script expression
+</h3>
+
+<pre><code>json-path-comparison: serachBegingingWithSlice: string
+CallStack (from HasCallStack):
+  error, called at app/Main.hs:36:7 in main:Main
+Invalid JSONPath: $[(@.length-1)]
+ Error: serachBegingingWithSlice: string
 </code></pre>
 
 <h3 id="Java_com.github.jsurfer___script_expression">
