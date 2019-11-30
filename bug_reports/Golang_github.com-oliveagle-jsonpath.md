@@ -73,6 +73,20 @@ The following queries provide results that do not match those of other implement
   only support one range(from, to): [0 3 1]
   ```
 
+- [ ] `$[0:4:2]`
+  Input:
+  ```
+  ["first", "second", "third", "forth", "fifth"]
+  ```
+  Expected output:
+  ```
+  ["first", "third"]
+  ```
+  Error:
+  ```
+  only support one range(from, to): [0 4 2]
+  ```
+
 - [ ] `$[0:1]`
   Input:
   ```

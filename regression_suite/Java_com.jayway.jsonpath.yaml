@@ -86,7 +86,8 @@ queries:
     selector: $[0:4:2]
     document: ["first", "second", "third", "forth", "fifth"]
     result: ["first", "second", "third", "forth"]
-    status: open
+    status: fail
+    consensus: ["first", "third"]
   - id: array_index_slice_start_equals_end
     selector: $[0:0]
     document: ["first", "second"]
