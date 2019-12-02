@@ -3,3 +3,4 @@
 .ninja_log
 /build.ninja
 /implementations/*/build/
+/cabal-cache/
