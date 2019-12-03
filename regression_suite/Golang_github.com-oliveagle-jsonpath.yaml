@@ -108,6 +108,12 @@ queries:
     document: ["first", "second", "third"]
     result: ["first", "second"]
     status: pass
+  - id: filter_equal
+    selector: $[?(@.key==42)]
+    document: [{"key": 0}, {"key": 42}, {"key": -1}, {"key": 41}, {"key": 43}, {"key": 42.0001}, {"key": 41.9999}, {"key": 100}, {"some": "value"}]
+    result: []
+    status: fail
+    consensus: [{"key": 42}]
   - id: filter_greater_than
     selector: $[?(@.key>42)]
     document: [{"key": 0}, {"key": 42}, {"key": -1}, {"key": 41}, {"key": 43}, {"key": 42.0001}, {"key": 41.9999}, {"key": 100}]

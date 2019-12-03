@@ -812,6 +812,54 @@ Rust (jsonpath), Array index union
 <pre><code>parsing error
 </code></pre>
 
+<h3 id="Bash_JSONPath.sh___filter_equal">
+Bash (JSONPath.sh), Filter equal
+</h3>
+
+<pre><code>sed: bad regex '\[(([0-9]+|"[^"]+")[],]){9999}(.*)': Invalid contents of {}
+Expecting value: line 3 column 1 (char 2)
+</code></pre>
+
+<h3 id="C_json-glib___filter_equal">
+C (json-glib), Filter equal
+</h3>
+
+<pre><code>Unable to compile selector `$[?(@.key==42)]': Invalid array index definition “?(@.key==42)]”
+</code></pre>
+
+<h3 id="Kotlin_com.nfeld.jsonpathlite___filter_equal">
+Kotlin (com.nfeld.jsonpathlite), Filter equal
+</h3>
+
+<pre><code>Exception in thread "main" java.lang.IllegalArgumentException: Unexpected char, char=?, index=2
+    at com.nfeld.jsonpathlite.PathCompiler.compileBracket$json_path_lite(PathCompiler.kt:198)
+    at com.nfeld.jsonpathlite.PathCompiler.compile$json_path_lite(PathCompiler.kt:59)
+    at com.nfeld.jsonpathlite.JsonPath.&lt;init&gt;(JsonPath.kt:24)
+    at com.nfeld.jsonpathlite.JsonArray.read(JsonResult.kt:11)
+    at query.AppKt.main(App.kt:10)
+</code></pre>
+
+<h3 id="PHP_Goessner___filter_equal">
+PHP (Goessner), Filter equal
+</h3>
+
+<pre><code>ArgumentCountError
+</code></pre>
+
+<h3 id="Perl_JSON-Path___filter_equal">
+Perl (JSON-Path), Filter equal
+</h3>
+
+<pre><code>non-safe evaluation, died at main.pl line 12.
+</code></pre>
+
+<h3 id="Python_jsonpath-rw___filter_equal">
+Python (jsonpath-rw), Filter equal
+</h3>
+
+<pre><code>JsonPathLexerError('Error on line 1, col 2: Unexpected character: ? ')
+</code></pre>
+
 <h3 id="Bash_JSONPath.sh___filter_greater_than">
 Bash (JSONPath.sh), Filter greater than
 </h3>
