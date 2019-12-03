@@ -134,11 +134,21 @@ queries:
     document: [{"key": 0}, {"key": 42}, {"key": -1}, {"key": 41}, {"key": 43}, {"key": 42.0001}, {"key": 41.9999}, {"key": 100}, {"some": "value"}]
     result: [{"key": 0}, {"key": 42}, {"key": -1}, {"key": 41}, {"key": 41.9999}]
     status: open
+  - id: filter_null
+    selector: $[?(@.key==null)]
+    document: [{"some": "some value"}, {"key": null}, {"key": "value"}]
+    result: [{"some": "some value"}, {"key": null}]
+    status: open
   - id: filter_with_value
     selector: $[?(@.key)]
     document: [{"some": "some value"}, {"key": "value"}]
     result: [{"key": "value"}]
     status: pass
+  - id: filter_without_value
+    selector: $[?(!@.key)]
+    document: [{"some": "some value"}, {"key": null}, {"key": "value"}]
+    result: [{"some": "some value"}, {"key": null}]
+    status: open
   - id: key_bracket_notation
     selector: $['key']
     document: {"key": "value"}
