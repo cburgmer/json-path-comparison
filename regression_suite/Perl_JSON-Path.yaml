@@ -137,6 +137,10 @@ queries:
     document: [{"some": "some value"}, {"key": "value"}]
     status: error
     consensus: [{"key": "value"}]
+  - id: filter_with_value_on_null
+    selector: $[?(@.key)]
+    document: [{"some": "some value"}, {"key": null}, {"key": "value"}]
+    status: error
   - id: filter_without_value
     selector: $[?(!@.key)]
     document: [{"some": "some value"}, {"key": null}, {"key": "value"}]

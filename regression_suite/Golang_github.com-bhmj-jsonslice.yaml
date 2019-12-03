@@ -141,6 +141,11 @@ queries:
     document: [{"some": "some value"}, {"key": "value"}]
     result: [{"key": "value"}]
     status: pass
+  - id: filter_with_value_on_null
+    selector: $[?(@.key)]
+    document: [{"some": "some value"}, {"key": null}, {"key": "value"}]
+    result: [{"key": "value"}]
+    status: open
   - id: filter_without_value
     selector: $[?(!@.key)]
     document: [{"some": "some value"}, {"key": null}, {"key": "value"}]

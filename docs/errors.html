@@ -1558,6 +1558,72 @@ Rust (jsonpath), Filter with value
 <pre><code>parsing error
 </code></pre>
 
+<h3 id="Bash_JSONPath.sh___filter_with_value_on_null">
+Bash (JSONPath.sh), Filter with value on null
+</h3>
+
+<pre><code>sed: bad regex '\[(([0-9]+|"[^"]+")[],]){9999}(.*)': Invalid contents of {}
+Expecting value: line 3 column 1 (char 2)
+</code></pre>
+
+<h3 id="C_json-glib___filter_with_value_on_null">
+C (json-glib), Filter with value on null
+</h3>
+
+<pre><code>Unable to compile selector `$[?(@.key)]': Invalid array index definition “?(@.key)]”
+</code></pre>
+
+<h3 id="Haskell_jsonpath___filter_with_value_on_null">
+Haskell (jsonpath), Filter with value on null
+</h3>
+
+<pre><code>json-path-comparison: serachBegingingWithSlice: string
+CallStack (from HasCallStack):
+  error, called at app/Main.hs:36:7 in main:Main
+Invalid JSONPath: $[?(@.key)]
+ Error: serachBegingingWithSlice: string
+</code></pre>
+
+<h3 id="Kotlin_com.nfeld.jsonpathlite___filter_with_value_on_null">
+Kotlin (com.nfeld.jsonpathlite), Filter with value on null
+</h3>
+
+<pre><code>Exception in thread "main" java.lang.IllegalArgumentException: Unexpected char, char=?, index=2
+    at com.nfeld.jsonpathlite.PathCompiler.compileBracket$json_path_lite(PathCompiler.kt:198)
+    at com.nfeld.jsonpathlite.PathCompiler.compile$json_path_lite(PathCompiler.kt:59)
+    at com.nfeld.jsonpathlite.JsonPath.&lt;init&gt;(JsonPath.kt:24)
+    at com.nfeld.jsonpathlite.JsonArray.read(JsonResult.kt:11)
+    at query.AppKt.main(App.kt:10)
+</code></pre>
+
+<h3 id="PHP_Goessner___filter_with_value_on_null">
+PHP (Goessner), Filter with value on null
+</h3>
+
+<pre><code>ArgumentCountError
+</code></pre>
+
+<h3 id="Perl_JSON-Path___filter_with_value_on_null">
+Perl (JSON-Path), Filter with value on null
+</h3>
+
+<pre><code>non-safe evaluation, died at main.pl line 12.
+</code></pre>
+
+<h3 id="Python_jsonpath-rw___filter_with_value_on_null">
+Python (jsonpath-rw), Filter with value on null
+</h3>
+
+<pre><code>JsonPathLexerError('Error on line 1, col 2: Unexpected character: ? ')
+</code></pre>
+
+<h3 id="Rust_jsonpath___filter_with_value_on_null">
+Rust (jsonpath), Filter with value on null
+</h3>
+
+<pre><code>parsing error
+</code></pre>
+
 <h3 id="Bash_JSONPath.sh___filter_without_value">
 Bash (JSONPath.sh), Filter without value
 </h3>
