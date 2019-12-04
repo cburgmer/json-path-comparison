@@ -2008,6 +2008,153 @@ Rust (jsonpath), Key bracket notation union
 <pre><code>parsing error
 </code></pre>
 
+<h3 id="Bash_JSONPath.sh___key_bracket_notation_with_at_literal">
+Bash (JSONPath.sh), Key bracket notation with at literal
+</h3>
+
+<pre><code>sed: bad regex '\[(([0-9]+|"[^"]+")[],]){9999}(.*)': Invalid contents of {}
+Expecting value: line 3 column 1 (char 2)
+</code></pre>
+
+<h3 id="Clojure_json-path___key_bracket_notation_with_at_literal">
+Clojure (json-path), Key bracket notation with at literal
+</h3>
+
+<pre><code>Exception in thread "main" java.lang.Exception: object must be an array.
+    at json_path.walker$walk_selector.invokeStatic(walker.clj:74)
+    at json_path.walker$walk_selector.invoke(walker.clj:63)
+    at json_path.walker$walk.invokeStatic(walker.clj:87)
+    at json_path.walker$walk.invoke(walker.clj:84)
+    at json_path.walker$walk$fn__1026.invoke(walker.clj:89)
+    at json_path.walker$map_SHARP_.invokeStatic(walker.clj:22)
+    at json_path.walker$map_SHARP_.invoke(walker.clj:17)
+    at json_path.walker$walk.invokeStatic(walker.clj:89)
+    at json_path.walker$walk.invoke(walker.clj:84)
+    at json_path$query.invokeStatic(json_path.clj:7)
+    at json_path$query.invoke(json_path.clj:6)
+    at json_path$at_path.invokeStatic(json_path.clj:10)
+    at json_path$at_path.invoke(json_path.clj:9)
+    at json_path_comparison.core$_main.invokeStatic(core.clj:10)
+    at json_path_comparison.core$_main.doInvoke(core.clj:6)
+    at clojure.lang.RestFn.applyTo(RestFn.java:137)
+    at json_path_comparison.core.main(Unknown Source)
+</code></pre>
+
+<h3 id="Golang_github.com-oliveagle-jsonpath___key_bracket_notation_with_at_literal">
+Golang (github.com-oliveagle-jsonpath), Key bracket notation with at literal
+</h3>
+
+<pre><code>strconv.Atoi: parsing "'@'": invalid syntax
+</code></pre>
+
+<h3 id="Haskell_jsonpath___key_bracket_notation_with_at_literal">
+Haskell (jsonpath), Key bracket notation with at literal
+</h3>
+
+<pre><code>json-path-comparison: serachBegingingWithSlice: string
+CallStack (from HasCallStack):
+  error, called at app/Main.hs:36:7 in main:Main
+Invalid JSONPath: $['@']
+ Error: serachBegingingWithSlice: string
+</code></pre>
+
+<h3 id="JavaScript_jsonpath-plus___key_bracket_notation_with_at_literal">
+JavaScript (jsonpath-plus), Key bracket notation with at literal
+</h3>
+
+<pre><code>Unknown value type
+</code></pre>
+
+<h3 id="Perl_JSON-Path___key_bracket_notation_with_at_literal">
+Perl (JSON-Path), Key bracket notation with at literal
+</h3>
+
+<pre><code>Assertion ("@" is not an operator) failed!
+ at build/lib/perl5/Carp/Assert.pm line 282, &lt;STDIN&gt; line 3.
+    Carp::Assert::assert(...) called at build/lib/perl5/JSON/Path/Evaluator.pm line 217
+    JSON::Path::Evaluator::_evaluate(...) called at build/lib/perl5/JSON/Path/Evaluator.pm line 122
+    JSON::Path::Evaluator::evaluate(...) called at build/lib/perl5/JSON/Path/Evaluator.pm line 97
+    JSON::Path::Evaluator::evaluate_jsonpath(...) called at build/lib/perl5/JSON/Path.pm line 107
+    JSON::Path::values(...) called at main.pl line 12
+</code></pre>
+
+<h3 id="Rust_jsonpath___key_bracket_notation_with_at_literal">
+Rust (jsonpath), Key bracket notation with at literal
+</h3>
+
+<pre><code>parsing error
+</code></pre>
+
+<h3 id="Bash_JSONPath.sh___key_bracket_notation_with_dollar_literal">
+Bash (JSONPath.sh), Key bracket notation with dollar literal
+</h3>
+
+<pre><code>sed: bad regex '\[(([0-9]+|"[^"]+")[],]){9999}(.*)': Invalid contents of {}
+Expecting value: line 3 column 1 (char 2)
+</code></pre>
+
+<h3 id="Clojure_json-path___key_bracket_notation_with_dollar_literal">
+Clojure (json-path), Key bracket notation with dollar literal
+</h3>
+
+<pre><code>Exception in thread "main" java.lang.Exception: object must be an array.
+    at json_path.walker$walk_selector.invokeStatic(walker.clj:74)
+    at json_path.walker$walk_selector.invoke(walker.clj:63)
+    at json_path.walker$walk.invokeStatic(walker.clj:87)
+    at json_path.walker$walk.invoke(walker.clj:84)
+    at json_path.walker$walk$fn__1026.invoke(walker.clj:89)
+    at json_path.walker$map_SHARP_.invokeStatic(walker.clj:22)
+    at json_path.walker$map_SHARP_.invoke(walker.clj:17)
+    at json_path.walker$walk.invokeStatic(walker.clj:89)
+    at json_path.walker$walk.invoke(walker.clj:84)
+    at json_path$query.invokeStatic(json_path.clj:7)
+    at json_path$query.invoke(json_path.clj:6)
+    at json_path$at_path.invokeStatic(json_path.clj:10)
+    at json_path$at_path.invoke(json_path.clj:9)
+    at json_path_comparison.core$_main.invokeStatic(core.clj:10)
+    at json_path_comparison.core$_main.doInvoke(core.clj:6)
+    at clojure.lang.RestFn.applyTo(RestFn.java:137)
+    at json_path_comparison.core.main(Unknown Source)
+</code></pre>
+
+<h3 id="Golang_github.com-oliveagle-jsonpath___key_bracket_notation_with_dollar_literal">
+Golang (github.com-oliveagle-jsonpath), Key bracket notation with dollar literal
+</h3>
+
+<pre><code>strconv.Atoi: parsing "'$'": invalid syntax
+</code></pre>
+
+<h3 id="Haskell_jsonpath___key_bracket_notation_with_dollar_literal">
+Haskell (jsonpath), Key bracket notation with dollar literal
+</h3>
+
+<pre><code>json-path-comparison: serachBegingingWithSlice: string
+CallStack (from HasCallStack):
+  error, called at app/Main.hs:36:7 in main:Main
+Invalid JSONPath: $['$']
+ Error: serachBegingingWithSlice: string
+</code></pre>
+
+<h3 id="Perl_JSON-Path___key_bracket_notation_with_dollar_literal">
+Perl (JSON-Path), Key bracket notation with dollar literal
+</h3>
+
+<pre><code>Assertion ("$" is not an operator) failed!
+ at build/lib/perl5/Carp/Assert.pm line 282, &lt;STDIN&gt; line 3.
+    Carp::Assert::assert(...) called at build/lib/perl5/JSON/Path/Evaluator.pm line 217
+    JSON::Path::Evaluator::_evaluate(...) called at build/lib/perl5/JSON/Path/Evaluator.pm line 122
+    JSON::Path::Evaluator::evaluate(...) called at build/lib/perl5/JSON/Path/Evaluator.pm line 97
+    JSON::Path::Evaluator::evaluate_jsonpath(...) called at build/lib/perl5/JSON/Path.pm line 107
+    JSON::Path::values(...) called at main.pl line 12
+</code></pre>
+
+<h3 id="Rust_jsonpath___key_bracket_notation_with_dollar_literal">
+Rust (jsonpath), Key bracket notation with dollar literal
+</h3>
+
+<pre><code>parsing error
+</code></pre>
+
 <h3 id="C_json-glib___key_bracket_notation_with_double_quotes">
 C (json-glib), Key bracket notation with double quotes
 </h3>

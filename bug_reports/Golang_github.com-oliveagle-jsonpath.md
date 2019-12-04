@@ -171,6 +171,34 @@ The following queries provide results that do not match those of other implement
   strconv.Atoi: parsing "'key'": invalid syntax
   ```
 
+- [ ] `$['@']`
+  Input:
+  ```
+  {"@": "value"}
+  ```
+  Expected output:
+  ```
+  ["value"]
+  ```
+  Error:
+  ```
+  strconv.Atoi: parsing "'@'": invalid syntax
+  ```
+
+- [ ] `$['$']`
+  Input:
+  ```
+  {"$": "value"}
+  ```
+  Expected output:
+  ```
+  ["value"]
+  ```
+  Error:
+  ```
+  strconv.Atoi: parsing "'$'": invalid syntax
+  ```
+
 - [ ] `$['0']`
   Input:
   ```
@@ -202,7 +230,7 @@ The following queries provide results that do not match those of other implement
 - [ ] `$['*']`
   Input:
   ```
-  {"*": "value"}
+  {"*": "value", "another": "entry"}
   ```
   Expected output:
   ```

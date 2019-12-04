@@ -173,6 +173,16 @@ queries:
     document: {"key": "value", "another": "entry"}
     result: [{"another": "entry", "key": "value"}]
     status: open
+  - id: key_bracket_notation_with_at_literal
+    selector: $['@']
+    document: {"@": "value"}
+    result: ["value"]
+    status: pass
+  - id: key_bracket_notation_with_dollar_literal
+    selector: $['$']
+    document: {"$": "value"}
+    result: ["value"]
+    status: pass
   - id: key_bracket_notation_with_double_quotes
     selector: $["key"]
     document: {"key": "value"}
@@ -203,7 +213,7 @@ queries:
     status: pass
   - id: key_bracket_notation_with_star_literal
     selector: $['*']
-    document: {"*": "value"}
+    document: {"*": "value", "another": "entry"}
     result: ["value"]
     status: pass
   - id: key_bracket_notation_without_quotes

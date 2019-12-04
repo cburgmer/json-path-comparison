@@ -143,6 +143,20 @@ The following queries provide results that do not match those of other implement
   Unable to compile selector `$[?(@.key)]': Invalid array index definition “?(@.key)]”
   ```
 
+- [ ] `$['*']`
+  Input:
+  ```
+  {"*": "value", "another": "entry"}
+  ```
+  Expected output:
+  ```
+  ["value"]
+  ```
+  Actual output:
+  ```
+  ["value", "entry"]
+  ```
+
 - [ ] `$.['key']`
   Input:
   ```

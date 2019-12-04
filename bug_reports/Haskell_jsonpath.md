@@ -54,6 +54,42 @@ The following queries provide results that do not match those of other implement
    Error: serachBegingingWithSlice: string
   ```
 
+- [ ] `$['@']`
+  Input:
+  ```
+  {"@": "value"}
+  ```
+  Expected output:
+  ```
+  ["value"]
+  ```
+  Error:
+  ```
+  json-path-comparison: serachBegingingWithSlice: string
+  CallStack (from HasCallStack):
+    error, called at app/Main.hs:36:7 in main:Main
+  Invalid JSONPath: $['@']
+   Error: serachBegingingWithSlice: string
+  ```
+
+- [ ] `$['$']`
+  Input:
+  ```
+  {"$": "value"}
+  ```
+  Expected output:
+  ```
+  ["value"]
+  ```
+  Error:
+  ```
+  json-path-comparison: serachBegingingWithSlice: string
+  CallStack (from HasCallStack):
+    error, called at app/Main.hs:36:7 in main:Main
+  Invalid JSONPath: $['$']
+   Error: serachBegingingWithSlice: string
+  ```
+
 - [ ] `$['special:"chars']`
   Input:
   ```
@@ -75,7 +111,7 @@ The following queries provide results that do not match those of other implement
 - [ ] `$['*']`
   Input:
   ```
-  {"*": "value"}
+  {"*": "value", "another": "entry"}
   ```
   Expected output:
   ```

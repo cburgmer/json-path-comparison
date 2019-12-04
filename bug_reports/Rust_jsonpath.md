@@ -185,6 +185,34 @@ The following queries provide results that do not match those of other implement
   parsing error
   ```
 
+- [ ] `$['@']`
+  Input:
+  ```
+  {"@": "value"}
+  ```
+  Expected output:
+  ```
+  ["value"]
+  ```
+  Error:
+  ```
+  parsing error
+  ```
+
+- [ ] `$['$']`
+  Input:
+  ```
+  {"$": "value"}
+  ```
+  Expected output:
+  ```
+  ["value"]
+  ```
+  Error:
+  ```
+  parsing error
+  ```
+
 - [ ] `$['0']`
   Input:
   ```
@@ -216,7 +244,7 @@ The following queries provide results that do not match those of other implement
 - [ ] `$['*']`
   Input:
   ```
-  {"*": "value"}
+  {"*": "value", "another": "entry"}
   ```
   Expected output:
   ```

@@ -191,6 +191,36 @@ The following queries provide results that do not match those of other implement
   {"key": "value"}
   ```
 
+- [ ] `$['@']`
+  Input:
+  ```
+  {"@": "value"}
+  ```
+  Expected output:
+  ```
+  ["value"]
+  ```
+  Error:
+  ```
+  sed: bad regex '\[(([0-9]+|"[^"]+")[],]){9999}(.*)': Invalid contents of {}
+  Expecting value: line 3 column 1 (char 2)
+  ```
+
+- [ ] `$['$']`
+  Input:
+  ```
+  {"$": "value"}
+  ```
+  Expected output:
+  ```
+  ["value"]
+  ```
+  Error:
+  ```
+  sed: bad regex '\[(([0-9]+|"[^"]+")[],]){9999}(.*)': Invalid contents of {}
+  Expecting value: line 3 column 1 (char 2)
+  ```
+
 - [ ] `$['0']`
   Input:
   ```
@@ -224,7 +254,7 @@ The following queries provide results that do not match those of other implement
 - [ ] `$['*']`
   Input:
   ```
-  {"*": "value"}
+  {"*": "value", "another": "entry"}
   ```
   Expected output:
   ```
