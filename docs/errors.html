@@ -193,7 +193,7 @@ Golang (github.com-oliveagle-jsonpath), Array index slice negative step
 Haskell (jsonpath), Array index slice negative step
 </h3>
 
-<pre><code>implementations/Haskell_jsonpath/run.sh: line 6: 11199 Killed                  "$script_dir"/build/json-path-comparison "$@"
+<pre><code>implementations/Haskell_jsonpath/run.sh: line 6: 34905 Killed                  "$script_dir"/build/json-path-comparison "$@"
 </code></pre>
 
 <h3 id="JavaScript_Goessner___array_index_slice_negative_step">
@@ -538,7 +538,7 @@ Golang (github.com-oliveagle-jsonpath), Array index slice start end step 0
 Haskell (jsonpath), Array index slice start end step 0
 </h3>
 
-<pre><code>implementations/Haskell_jsonpath/run.sh: line 6: 11462 Killed                  "$script_dir"/build/json-path-comparison "$@"
+<pre><code>implementations/Haskell_jsonpath/run.sh: line 6: 38858 Killed                  "$script_dir"/build/json-path-comparison "$@"
 </code></pre>
 
 <h3 id="JavaScript_Goessner___array_index_slice_start_end_step_0">
@@ -807,6 +807,110 @@ Python (jsonpath-rw), Array index union
 
 <h3 id="Rust_jsonpath___array_index_union">
 Rust (jsonpath), Array index union
+</h3>
+
+<pre><code>parsing error
+</code></pre>
+
+<h3 id="Bash_JSONPath.sh___filter_current_object_with_value">
+Bash (JSONPath.sh), Filter current object with value
+</h3>
+
+<pre><code>egrep: bad regex '^\["?","(","@"[],]': Missing ')'
+sed: bad regex '\[(([0-9]+|"[^"]+")[],]){9999}(.*)': Invalid contents of {}
+Expecting value: line 3 column 1 (char 2)
+</code></pre>
+
+<h3 id="C_json-glib___filter_current_object_with_value">
+C (json-glib), Filter current object with value
+</h3>
+
+<pre><code>Unable to compile selector `$[?(@)]': Invalid array index definition “?(@)]”
+</code></pre>
+
+<h3 id="Haskell_jsonpath___filter_current_object_with_value">
+Haskell (jsonpath), Filter current object with value
+</h3>
+
+<pre><code>json-path-comparison: serachBegingingWithSlice: string
+CallStack (from HasCallStack):
+  error, called at app/Main.hs:36:7 in main:Main
+Invalid JSONPath: $[?(@)]
+ Error: serachBegingingWithSlice: string
+</code></pre>
+
+<h3 id="JavaScript_jsonpath-plus___filter_current_object_with_value">
+JavaScript (jsonpath-plus), Filter current object with value
+</h3>
+
+<pre><code>evalmachine.&lt;anonymous&gt;:1
+</code></pre>
+
+<h3 id="Java_com.github.jsurfer___filter_current_object_with_value">
+Java (com.github.jsurfer), Filter current object with value
+</h3>
+
+<pre><code>line 1:5 no viable alternative at input '@)]'
+Exception in thread "main" org.antlr.v4.runtime.misc.ParseCancellationException
+    at org.antlr.v4.runtime.BailErrorStrategy.recover(BailErrorStrategy.java:51)
+    at org.jsfr.json.compiler.JsonPathParser.filterExpr(JsonPathParser.java:947)
+    at org.jsfr.json.compiler.JsonPathParser.filter(JsonPathParser.java:768)
+    at org.jsfr.json.compiler.JsonPathParser.relativePath(JsonPathParser.java:307)
+    at org.jsfr.json.compiler.JsonPathParser.path(JsonPathParser.java:159)
+    at org.jsfr.json.compiler.JsonPathCompiler.compile(JsonPathCompiler.java:283)
+    at org.jsfr.json.compiler.JsonPathCompiler.compile(JsonPathCompiler.java:273)
+    at org.jsfr.json.JsonSurfer.collectAll(JsonSurfer.java:262)
+    at query.App.main(App.java:27)
+Caused by: org.antlr.v4.runtime.NoViableAltException
+    at org.antlr.v4.runtime.atn.ParserATNSimulator.noViableAlt(ParserATNSimulator.java:2026)
+    at org.antlr.v4.runtime.atn.ParserATNSimulator.execATN(ParserATNSimulator.java:467)
+    at org.antlr.v4.runtime.atn.ParserATNSimulator.adaptivePredict(ParserATNSimulator.java:393)
+    at org.jsfr.json.compiler.JsonPathParser.filterExpr(JsonPathParser.java:843)
+    ... 7 more
+</code></pre>
+
+<h3 id="Kotlin_com.nfeld.jsonpathlite___filter_current_object_with_value">
+Kotlin (com.nfeld.jsonpathlite), Filter current object with value
+</h3>
+
+<pre><code>Exception in thread "main" java.lang.IllegalArgumentException: Unexpected char, char=?, index=2
+    at com.nfeld.jsonpathlite.PathCompiler.compileBracket$json_path_lite(PathCompiler.kt:198)
+    at com.nfeld.jsonpathlite.PathCompiler.compile$json_path_lite(PathCompiler.kt:59)
+    at com.nfeld.jsonpathlite.JsonPath.&lt;init&gt;(JsonPath.kt:24)
+    at com.nfeld.jsonpathlite.JsonArray.read(JsonResult.kt:11)
+    at query.AppKt.main(App.kt:10)
+</code></pre>
+
+<h3 id="PHP_Goessner___filter_current_object_with_value">
+PHP (Goessner), Filter current object with value
+</h3>
+
+<pre><code>ArgumentCountError
+</code></pre>
+
+<h3 id="PHP_flow-jsonpath___filter_current_object_with_value">
+PHP (flow-jsonpath), Filter current object with value
+</h3>
+
+<pre><code>Error: 'Malformed filter query'
+</code></pre>
+
+<h3 id="Perl_JSON-Path___filter_current_object_with_value">
+Perl (JSON-Path), Filter current object with value
+</h3>
+
+<pre><code>non-safe evaluation, died at main.pl line 12.
+</code></pre>
+
+<h3 id="Python_jsonpath-rw___filter_current_object_with_value">
+Python (jsonpath-rw), Filter current object with value
+</h3>
+
+<pre><code>JsonPathLexerError('Error on line 1, col 2: Unexpected character: ? ')
+</code></pre>
+
+<h3 id="Rust_jsonpath___filter_current_object_with_value">
+Rust (jsonpath), Filter current object with value
 </h3>
 
 <pre><code>parsing error

@@ -107,6 +107,11 @@ queries:
     document: ["first", "second", "third"]
     result: ["first", "second"]
     status: pass
+  - id: filter_current_object_with_value
+    selector: $[?(@)]
+    document: ["some value", null, "value"]
+    result: ["some value", "value"]
+    status: open
   - id: filter_equal
     selector: $[?(@.key==42)]
     document: [{"key": 0}, {"key": 42}, {"key": -1}, {"key": 41}, {"key": 43}, {"key": 42.0001}, {"key": 41.9999}, {"key": 100}, {"some": "value"}]
