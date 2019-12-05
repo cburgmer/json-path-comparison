@@ -17,6 +17,19 @@ The following queries provide results that do not match those of other implement
   Invalid JSONPath error: 'Error in JSONPath near '.2''
   ```
 
+- [ ] `$[0:0]`
+  Input:
+  ```
+  ["first", "second"]
+  ```
+  Expected output:
+  ```
+  []
+  ```
+  Error:
+  ```
+  jsonpath returned false, this might indicate an error```
+
 - [ ] `$.['key']`
   Input:
   ```

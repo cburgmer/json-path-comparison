@@ -148,6 +148,20 @@ The following queries provide results that do not match those of other implement
   "first"
   ```
 
+- [ ] `$[0:0]`
+  Input:
+  ```
+  ["first", "second"]
+  ```
+  Expected output:
+  ```
+  []
+  ```
+  Actual output:
+  ```
+  "first"
+  ```
+
 - [ ] `$[0:1]`
   Input:
   ```

@@ -100,7 +100,8 @@ queries:
     selector: $[0:0]
     document: ["first", "second"]
     result: "first"
-    status: open
+    status: fail
+    consensus: []
   - id: array_index_slice_start_plus_one
     selector: $[0:1]
     document: ["first", "second"]

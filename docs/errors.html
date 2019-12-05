@@ -77,6 +77,14 @@ Python (jsonpath-rw), Array index dot notation
 <pre><code>Exception('Parse error at 1:2 near token 2 (NUMBER)')
 </code></pre>
 
+<h3 id="Python_jsonpath2___array_index_dot_notation">
+Python (jsonpath2), Array index dot notation
+</h3>
+
+<pre><code>line 1:2 mismatched input '2' expecting {'*', ID}
+ValueError("line 1:2 mismatched input '2' expecting {'*', ID}")
+</code></pre>
+
 <h3 id="Golang_github.com-PaesslerAG-jsonpath___array_index_dot_notation_on_object">
 Golang (github.com-PaesslerAG-jsonpath), Array index dot notation on object
 </h3>
@@ -115,6 +123,14 @@ Python (jsonpath-rw), Array index dot notation on object
 </h3>
 
 <pre><code>Exception('Parse error at 1:2 near token 2 (NUMBER)')
+</code></pre>
+
+<h3 id="Python_jsonpath2___array_index_dot_notation_on_object">
+Python (jsonpath2), Array index dot notation on object
+</h3>
+
+<pre><code>line 1:2 mismatched input '2' expecting {'*', ID}
+ValueError("line 1:2 mismatched input '2' expecting {'*', ID}")
 </code></pre>
 
 <h3 id="Bash_JSONPath.sh___array_index_last">
@@ -193,7 +209,7 @@ Golang (github.com-oliveagle-jsonpath), Array index slice negative step
 Haskell (jsonpath), Array index slice negative step
 </h3>
 
-<pre><code>implementations/Haskell_jsonpath/run.sh: line 6: 14341 Killed                  "$script_dir"/build/json-path-comparison "$@"
+<pre><code>implementations/Haskell_jsonpath/run.sh: line 6: 12053 Killed                  "$script_dir"/build/json-path-comparison "$@"
 </code></pre>
 
 <h3 id="JavaScript_Goessner___array_index_slice_negative_step">
@@ -538,7 +554,7 @@ Golang (github.com-oliveagle-jsonpath), Array index slice start end step 0
 Haskell (jsonpath), Array index slice start end step 0
 </h3>
 
-<pre><code>implementations/Haskell_jsonpath/run.sh: line 6: 14520 Killed                  "$script_dir"/build/json-path-comparison "$@"
+<pre><code>implementations/Haskell_jsonpath/run.sh: line 6: 12249 Killed                  "$script_dir"/build/json-path-comparison "$@"
 </code></pre>
 
 <h3 id="JavaScript_Goessner___array_index_slice_start_end_step_0">
@@ -600,6 +616,13 @@ Python (jsonpath-rw), Array index slice start end step 0
 </h3>
 
 <pre><code>Exception('Parse error at 1:5 near token : (:)')
+</code></pre>
+
+<h3 id="Python_jsonpath2___array_index_slice_start_end_step_0">
+Python (jsonpath2), Array index slice start end step 0
+</h3>
+
+<pre><code>ValueError('range() arg 3 must not be zero')
 </code></pre>
 
 <h3 id="Ruby_jsonpath___array_index_slice_start_end_step_0">
@@ -962,6 +985,14 @@ Python (jsonpath-rw), Filter equal
 </h3>
 
 <pre><code>JsonPathLexerError('Error on line 1, col 2: Unexpected character: ? ')
+</code></pre>
+
+<h3 id="Python_jsonpath2___filter_equal">
+Python (jsonpath2), Filter equal
+</h3>
+
+<pre><code>line 1:10 extraneous input '=' expecting {'@', '$', 'true', 'false', 'null', '{', '[', STRING, NUMBER}
+ValueError("line 1:10 extraneous input '=' expecting {'@', '$', 'true', 'false', 'null', '{', '[', STRING, NUMBER}")
 </code></pre>
 
 <h3 id="Bash_JSONPath.sh___filter_greater_than">
@@ -1628,6 +1659,14 @@ Python (jsonpath-rw), Filter null
 <pre><code>JsonPathLexerError('Error on line 1, col 2: Unexpected character: ? ')
 </code></pre>
 
+<h3 id="Python_jsonpath2___filter_null">
+Python (jsonpath2), Filter null
+</h3>
+
+<pre><code>line 1:10 extraneous input '=' expecting {'@', '$', 'true', 'false', 'null', '{', '[', STRING, NUMBER}
+ValueError("line 1:10 extraneous input '=' expecting {'@', '$', 'true', 'false', 'null', '{', '[', STRING, NUMBER}")
+</code></pre>
+
 <h3 id="Rust_jsonpath___filter_null">
 Rust (jsonpath), Filter null
 </h3>
@@ -1884,6 +1923,14 @@ Python (jsonpath-rw), Filter without value
 <pre><code>JsonPathLexerError('Error on line 1, col 2: Unexpected character: ? ')
 </code></pre>
 
+<h3 id="Python_jsonpath2___filter_without_value">
+Python (jsonpath2), Filter without value
+</h3>
+
+<pre><code>line 1:4 token recognition error at: '!@'
+ValueError("line 1:4 token recognition error at: '!@'")
+</code></pre>
+
 <h3 id="Ruby_jsonpath___filter_without_value">
 Ruby (jsonpath), Filter without value
 </h3>
@@ -1945,6 +1992,14 @@ Golang (github.com-oliveagle-jsonpath), Key bracket notation
 <pre><code>strconv.Atoi: parsing "'key'": invalid syntax
 </code></pre>
 
+<h3 id="Python_jsonpath2___key_bracket_notation">
+Python (jsonpath2), Key bracket notation
+</h3>
+
+<pre><code>line 1:2 token recognition error at: '''
+ValueError("line 1:2 token recognition error at: '''")
+</code></pre>
+
 <h3 id="Rust_jsonpath___key_bracket_notation">
 Rust (jsonpath), Key bracket notation
 </h3>
@@ -1999,6 +2054,14 @@ CallStack (from HasCallStack):
   error, called at app/Main.hs:36:7 in main:Main
 Invalid JSONPath: $['key','another']
  Error: serachBegingingWithSlice: string
+</code></pre>
+
+<h3 id="Python_jsonpath2___key_bracket_notation_union">
+Python (jsonpath2), Key bracket notation union
+</h3>
+
+<pre><code>line 1:2 token recognition error at: '''
+ValueError("line 1:2 token recognition error at: '''")
 </code></pre>
 
 <h3 id="Rust_jsonpath___key_bracket_notation_union">
@@ -2078,6 +2141,14 @@ Perl (JSON-Path), Key bracket notation with at literal
     JSON::Path::values(...) called at main.pl line 12
 </code></pre>
 
+<h3 id="Python_jsonpath2___key_bracket_notation_with_at_literal">
+Python (jsonpath2), Key bracket notation with at literal
+</h3>
+
+<pre><code>line 1:2 token recognition error at: '''
+ValueError("line 1:2 token recognition error at: '''")
+</code></pre>
+
 <h3 id="Rust_jsonpath___key_bracket_notation_with_at_literal">
 Rust (jsonpath), Key bracket notation with at literal
 </h3>
@@ -2146,6 +2217,14 @@ Perl (JSON-Path), Key bracket notation with dollar literal
     JSON::Path::Evaluator::evaluate(...) called at build/lib/perl5/JSON/Path/Evaluator.pm line 97
     JSON::Path::Evaluator::evaluate_jsonpath(...) called at build/lib/perl5/JSON/Path.pm line 107
     JSON::Path::values(...) called at main.pl line 12
+</code></pre>
+
+<h3 id="Python_jsonpath2___key_bracket_notation_with_dollar_literal">
+Python (jsonpath2), Key bracket notation with dollar literal
+</h3>
+
+<pre><code>line 1:2 token recognition error at: '''
+ValueError("line 1:2 token recognition error at: '''")
 </code></pre>
 
 <h3 id="Rust_jsonpath___key_bracket_notation_with_dollar_literal">
@@ -2304,6 +2383,14 @@ Golang (github.com-oliveagle-jsonpath), Key bracket notation with number
 </h3>
 
 <pre><code>strconv.Atoi: parsing "'0'": invalid syntax
+</code></pre>
+
+<h3 id="Python_jsonpath2___key_bracket_notation_with_number">
+Python (jsonpath2), Key bracket notation with number
+</h3>
+
+<pre><code>line 1:2 token recognition error at: '''
+ValueError("line 1:2 token recognition error at: '''")
 </code></pre>
 
 <h3 id="Rust_jsonpath___key_bracket_notation_with_number">
@@ -2525,6 +2612,14 @@ Python (jsonpath-rw), Key bracket notation with single quote
 <pre><code>Exception('Parse error at 1:10 near token quote (ID)')
 </code></pre>
 
+<h3 id="Python_jsonpath2___key_bracket_notation_with_single_quote">
+Python (jsonpath2), Key bracket notation with single quote
+</h3>
+
+<pre><code>line 1:2 token recognition error at: '''
+ValueError("line 1:2 token recognition error at: '''")
+</code></pre>
+
 <h3 id="Rust_jsonpath___key_bracket_notation_with_single_quote">
 Rust (jsonpath), Key bracket notation with single quote
 </h3>
@@ -2626,6 +2721,14 @@ Python (jsonpath), Key bracket notation with single quote escaped
 <pre><code>jsonpath returned false, this might indicate an error
 </code></pre>
 
+<h3 id="Python_jsonpath2___key_bracket_notation_with_single_quote_escaped">
+Python (jsonpath2), Key bracket notation with single quote escaped
+</h3>
+
+<pre><code>line 1:2 token recognition error at: '''
+ValueError("line 1:2 token recognition error at: '''")
+</code></pre>
+
 <h3 id="Rust_jsonpath___key_bracket_notation_with_single_quote_escaped">
 Rust (jsonpath), Key bracket notation with single quote escaped
 </h3>
@@ -2690,6 +2793,14 @@ Invalid JSONPath: $['special:"chars']
  Error: serachBegingingWithSlice: string
 </code></pre>
 
+<h3 id="Python_jsonpath2___key_bracket_notation_with_special_characters">
+Python (jsonpath2), Key bracket notation with special characters
+</h3>
+
+<pre><code>line 1:2 token recognition error at: '''
+ValueError("line 1:2 token recognition error at: '''")
+</code></pre>
+
 <h3 id="Rust_jsonpath___key_bracket_notation_with_special_characters">
 Rust (jsonpath), Key bracket notation with special characters
 </h3>
@@ -2728,6 +2839,14 @@ Python (jsonpath), Key bracket notation with star literal
 </h3>
 
 <pre><code>RecursionError('maximum recursion depth exceeded while calling a Python object')
+</code></pre>
+
+<h3 id="Python_jsonpath2___key_bracket_notation_with_star_literal">
+Python (jsonpath2), Key bracket notation with star literal
+</h3>
+
+<pre><code>line 1:2 token recognition error at: '''
+ValueError("line 1:2 token recognition error at: '''")
 </code></pre>
 
 <h3 id="Rust_jsonpath___key_bracket_notation_with_star_literal">
@@ -2855,6 +2974,14 @@ Kotlin (com.nfeld.jsonpathlite), Key bracket notation without quotes
     at query.AppKt.main(App.kt:10)
 </code></pre>
 
+<h3 id="Python_jsonpath2___key_bracket_notation_without_quotes">
+Python (jsonpath2), Key bracket notation without quotes
+</h3>
+
+<pre><code>line 1:5 mismatched input ']' expecting '('
+ValueError("line 1:5 mismatched input ']' expecting '('")
+</code></pre>
+
 <h3 id="Ruby_jsonpath___key_bracket_notation_without_quotes">
 Ruby (jsonpath), Key bracket notation without quotes
 </h3>
@@ -2968,6 +3095,14 @@ PHP (galbar-jsonpath), Key dot bracket notation
 </h3>
 
 <pre><code>Invalid JSONPath error: 'Error in JSONPath near '.['key']''
+</code></pre>
+
+<h3 id="Python_jsonpath2___key_dot_bracket_notation">
+Python (jsonpath2), Key dot bracket notation
+</h3>
+
+<pre><code>line 1:3 token recognition error at: '''
+ValueError("line 1:3 token recognition error at: '''")
 </code></pre>
 
 <h3 id="Rust_jsonpath___key_dot_bracket_notation">
@@ -3102,6 +3237,14 @@ Python (jsonpath), Key dot bracket notation with double quotes
 <pre><code>jsonpath returned false, this might indicate an error
 </code></pre>
 
+<h3 id="Python_jsonpath2___key_dot_bracket_notation_with_double_quotes">
+Python (jsonpath2), Key dot bracket notation with double quotes
+</h3>
+
+<pre><code>line 1:2 mismatched input '[' expecting {'*', ID}
+ValueError("line 1:2 mismatched input '[' expecting {'*', ID}")
+</code></pre>
+
 <h3 id="Rust_jsonpath___key_dot_bracket_notation_with_double_quotes">
 Rust (jsonpath), Key dot bracket notation with double quotes
 </h3>
@@ -3234,6 +3377,14 @@ PHP (galbar-jsonpath), Key dot bracket notation without quotes
 <pre><code>Invalid JSONPath error: 'Error in JSONPath near '.[key]''
 </code></pre>
 
+<h3 id="Python_jsonpath2___key_dot_bracket_notation_without_quotes">
+Python (jsonpath2), Key dot bracket notation without quotes
+</h3>
+
+<pre><code>line 1:2 extraneous input '[' expecting {'*', ID}
+ValueError("line 1:2 extraneous input '[' expecting {'*', ID}")
+</code></pre>
+
 <h3 id="Ruby_jsonpath___key_dot_bracket_notation_without_quotes">
 Ruby (jsonpath), Key dot bracket notation without quotes
 </h3>
@@ -3335,6 +3486,14 @@ Python (jsonpath), Key dot notation with double quotes
 <pre><code>jsonpath returned false, this might indicate an error
 </code></pre>
 
+<h3 id="Python_jsonpath2___key_dot_notation_with_double_quotes">
+Python (jsonpath2), Key dot notation with double quotes
+</h3>
+
+<pre><code>line 1:2 mismatched input '"key"' expecting {'*', ID}
+ValueError('line 1:2 mismatched input \'"key"\' expecting {\'*\', ID}')
+</code></pre>
+
 <h3 id="Ruby_jsonpath___key_dot_notation_with_double_quotes">
 Ruby (jsonpath), Key dot notation with double quotes
 </h3>
@@ -3432,6 +3591,14 @@ PHP (galbar-jsonpath), Key dot notation with single quotes
 </h3>
 
 <pre><code>Invalid JSONPath error: 'Error in JSONPath near '.'key'''
+</code></pre>
+
+<h3 id="Python_jsonpath2___key_dot_notation_with_single_quotes">
+Python (jsonpath2), Key dot notation with single quotes
+</h3>
+
+<pre><code>line 1:2 token recognition error at: '''
+ValueError("line 1:2 token recognition error at: '''")
 </code></pre>
 
 <h3 id="Rust_jsonpath___key_dot_notation_with_single_quotes">
@@ -3620,6 +3787,14 @@ Python (jsonpath), Recursive key with double quotes
 <pre><code>jsonpath returned false, this might indicate an error
 </code></pre>
 
+<h3 id="Python_jsonpath2___recursive_key_with_double_quotes">
+Python (jsonpath2), Recursive key with double quotes
+</h3>
+
+<pre><code>line 1:3 mismatched input '"key"' expecting {'*', '[', ID}
+ValueError('line 1:3 mismatched input \'"key"\' expecting {\'*\', \'[\', ID}')
+</code></pre>
+
 <h3 id="Ruby_jsonpath___recursive_key_with_double_quotes">
 Ruby (jsonpath), Recursive key with double quotes
 </h3>
@@ -3700,6 +3875,14 @@ PHP (galbar-jsonpath), Recursive key with single quotes
 </h3>
 
 <pre><code>Invalid JSONPath error: 'Error in JSONPath near '..'key'''
+</code></pre>
+
+<h3 id="Python_jsonpath2___recursive_key_with_single_quotes">
+Python (jsonpath2), Recursive key with single quotes
+</h3>
+
+<pre><code>line 1:3 token recognition error at: '''
+ValueError("line 1:3 token recognition error at: '''")
 </code></pre>
 
 <h3 id="Rust_jsonpath___recursive_key_with_single_quotes">
@@ -4044,6 +4227,14 @@ Python (jsonpath-rw), Script expression
 </h3>
 
 <pre><code>Exception('Parse error at 1:2 near token ( (()')
+</code></pre>
+
+<h3 id="Python_jsonpath2___script_expression">
+Python (jsonpath2), Script expression
+</h3>
+
+<pre><code>line 1:2 extraneous input '(' expecting {'@', '$', '*', ':', '?', ID, STRING, NUMBER}
+ValueError("line 1:2 extraneous input '(' expecting {'@', '$', '*', ':', '?', ID, STRING, NUMBER}")
 </code></pre>
 
 <h3 id="Rust_jsonpath___script_expression">

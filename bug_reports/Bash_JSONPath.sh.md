@@ -118,6 +118,20 @@ The following queries provide results that do not match those of other implement
   ["first", "second", "third", "forth", "fifth"]
   ```
 
+- [ ] `$[0:0]`
+  Input:
+  ```
+  ["first", "second"]
+  ```
+  Expected output:
+  ```
+  []
+  ```
+  Actual output:
+  ```
+  ["first", "second"]
+  ```
+
 - [ ] `$[::2]`
   Input:
   ```
