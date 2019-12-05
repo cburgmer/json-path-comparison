@@ -163,12 +163,12 @@ queries:
     status: open
   - id: key_bracket_notation_with_at_literal
     selector: $['@']
-    document: {"@": "value"}
+    document: {"@": "value", "another": "entry"}
     result: ["value"]
     status: pass
   - id: key_bracket_notation_with_dollar_literal
     selector: $['$']
-    document: {"$": "value"}
+    document: {"$": "value", "another": "entry"}
     result: ["value"]
     status: pass
   - id: key_bracket_notation_with_double_quotes

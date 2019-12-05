@@ -20,7 +20,7 @@ The following queries provide results that do not match those of other implement
 - [ ] `$['@']`
   Input:
   ```
-  {"@": "value"}
+  {"@": "value", "another": "entry"}
   ```
   Expected output:
   ```
@@ -34,7 +34,7 @@ The following queries provide results that do not match those of other implement
 - [ ] `$['$']`
   Input:
   ```
-  {"$": "value"}
+  {"$": "value", "another": "entry"}
   ```
   Expected output:
   ```
@@ -42,7 +42,7 @@ The following queries provide results that do not match those of other implement
   ```
   Actual output:
   ```
-  [{"$": "value"}]
+  [{"$": "value", "another": "entry"}]
   ```
 
 - [ ] `$['*']`

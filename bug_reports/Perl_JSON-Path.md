@@ -68,7 +68,7 @@ The following queries provide results that do not match those of other implement
 - [ ] `$['@']`
   Input:
   ```
-  {"@": "value"}
+  {"@": "value", "another": "entry"}
   ```
   Expected output:
   ```
@@ -77,7 +77,7 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   Assertion ("@" is not an operator) failed!
-   at build/lib/perl5/Carp/Assert.pm line 282, <STDIN> line 3.
+   at build/lib/perl5/Carp/Assert.pm line 282, <STDIN> line 4.
   	Carp::Assert::assert(...) called at build/lib/perl5/JSON/Path/Evaluator.pm line 217
   	JSON::Path::Evaluator::_evaluate(...) called at build/lib/perl5/JSON/Path/Evaluator.pm line 122
   	JSON::Path::Evaluator::evaluate(...) called at build/lib/perl5/JSON/Path/Evaluator.pm line 97
@@ -88,7 +88,7 @@ The following queries provide results that do not match those of other implement
 - [ ] `$['$']`
   Input:
   ```
-  {"$": "value"}
+  {"$": "value", "another": "entry"}
   ```
   Expected output:
   ```
@@ -97,7 +97,7 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   Assertion ("$" is not an operator) failed!
-   at build/lib/perl5/Carp/Assert.pm line 282, <STDIN> line 3.
+   at build/lib/perl5/Carp/Assert.pm line 282, <STDIN> line 4.
   	Carp::Assert::assert(...) called at build/lib/perl5/JSON/Path/Evaluator.pm line 217
   	JSON::Path::Evaluator::_evaluate(...) called at build/lib/perl5/JSON/Path/Evaluator.pm line 122
   	JSON::Path::Evaluator::evaluate(...) called at build/lib/perl5/JSON/Path/Evaluator.pm line 97
