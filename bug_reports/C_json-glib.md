@@ -157,20 +157,6 @@ The following queries provide results that do not match those of other implement
   ["value", "entry"]
   ```
 
-- [ ] `$.['key']`
-  Input:
-  ```
-  {"key": "value"}
-  ```
-  Expected output:
-  ```
-  ["value"]
-  ```
-  Error:
-  ```
-  Unable to compile selector `$.['key']': Missing member name or wildcard after . character
-  ```
-
 - [ ] `$..key`
   Input:
   ```

@@ -214,7 +214,7 @@ queries:
     selector: $.['key']
     document: {"key": "value"}
     result: ["value"]
-    status: pass
+    status: open
   - id: key_dot_bracket_notation_with_double_quotes
     selector: $.["key"]
     document: {"key": "value"}

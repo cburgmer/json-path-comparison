@@ -387,37 +387,6 @@ The following queries provide results that do not match those of other implement
   [["value", "entry"]]
   ```
 
-- [ ] `$.['key']`
-  Input:
-  ```
-  {"key": "value"}
-  ```
-  Expected output:
-  ```
-  ["value"]
-  ```
-  Error:
-  ```
-  Exception in thread "main" java.lang.Exception: object must be an array.
-  	at json_path.walker$walk_selector.invokeStatic(walker.clj:74)
-  	at json_path.walker$walk_selector.invoke(walker.clj:63)
-  	at json_path.walker$walk.invokeStatic(walker.clj:87)
-  	at json_path.walker$walk.invoke(walker.clj:84)
-  	at json_path.walker$walk$fn__1026.invoke(walker.clj:89)
-  	at json_path.walker$map_SHARP_.invokeStatic(walker.clj:22)
-  	at json_path.walker$map_SHARP_.invoke(walker.clj:17)
-  	at json_path.walker$walk.invokeStatic(walker.clj:89)
-  	at json_path.walker$walk.invoke(walker.clj:84)
-  	at json_path$query.invokeStatic(json_path.clj:7)
-  	at json_path$query.invoke(json_path.clj:6)
-  	at json_path$at_path.invokeStatic(json_path.clj:10)
-  	at json_path$at_path.invoke(json_path.clj:9)
-  	at json_path_comparison.core$_main.invokeStatic(core.clj:10)
-  	at json_path_comparison.core$_main.doInvoke(core.clj:6)
-  	at clojure.lang.RestFn.applyTo(RestFn.java:137)
-  	at json_path_comparison.core.main(Unknown Source)
-  ```
-
 - [ ] `$..*`
   Input:
   ```

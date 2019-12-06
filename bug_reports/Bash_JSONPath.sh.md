@@ -280,20 +280,6 @@ The following queries provide results that do not match those of other implement
   Expecting value: line 3 column 1 (char 2)
   ```
 
-- [ ] `$.['key']`
-  Input:
-  ```
-  {"key": "value"}
-  ```
-  Expected output:
-  ```
-  ["value"]
-  ```
-  Actual output:
-  ```
-  {"key": "value"}
-  ```
-
 - [ ] `$.key`
   Input:
   ```
