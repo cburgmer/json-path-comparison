@@ -9,8 +9,8 @@ readonly build_dir="$script_dir/build"
 mkdir -p "$build_dir"
 cd "$build_dir"
 
-readonly tmp_stdout="node_goessner_jsonpath.stdout.$$"
-readonly tmp_stderr="node_goessner_jsonpath.stderr.$$"
+readonly tmp_stdout="/tmp/node_goessner_jsonpath.stdout.$$"
+readonly tmp_stderr="/tmp/node_goessner_jsonpath.stderr.$$"
 
 output_and_cleanup() {
   local filter_out_of_memory="CALL_AND_RETRY_LAST Allocation failed"

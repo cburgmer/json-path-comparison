@@ -9,8 +9,8 @@ if [[ ! -d "node_modules" ]]; then
     npm install
 fi
 
-readonly tmp_stdout="node_jsonpath-plus.stdout.$$"
-readonly tmp_stderr="node_jsonpath-plus.stderr.$$"
+readonly tmp_stdout="/tmp/node_jsonpath-plus.stdout.$$"
+readonly tmp_stderr="/tmp/node_jsonpath-plus.stderr.$$"
 
 output_and_cleanup() {
     local filter_syntax_error_in_vm="evalmachine.<anonymous>:1"
