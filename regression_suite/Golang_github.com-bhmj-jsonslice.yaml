@@ -170,6 +170,11 @@ queries:
     document: {"key": "value", "another": "entry"}
     result: ["value", "entry"]
     status: open
+  - id: key_bracket_notation_union_with_key_on_nested_objects
+    selector: $['one','three'].key
+    document: {"one": {"key": "value"}, "two": {"k": "v"}, "three": {"some": "more", "key": "other value"}}
+    result: ["value", "other value"]
+    status: open
   - id: key_bracket_notation_with_at_literal
     selector: $['@']
     document: {"@": "value", "another": "entry"}
