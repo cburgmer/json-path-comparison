@@ -31,6 +31,20 @@ The following queries provide results that do not match those of other implement
   ["first", "second"]
   ```
 
+- [ ] `$['one','three'].key`
+  Input:
+  ```
+  {"one": {"key": "value"}, "two": {"k": "v"}, "three": {"some": "more", "key": "other value"}}
+  ```
+  Expected output:
+  ```
+  ["value", "other value"]
+  ```
+  Actual output:
+  ```
+  []
+  ```
+
 - [ ] `$['@']`
   Input:
   ```
@@ -57,6 +71,20 @@ The following queries provide results that do not match those of other implement
   Actual output:
   ```
   [{"$": "value", "another": "entry"}]
+  ```
+
+- [ ] `$["key"]`
+  Input:
+  ```
+  {"key": "value"}
+  ```
+  Expected output:
+  ```
+  ["value"]
+  ```
+  Actual output:
+  ```
+  []
   ```
 
 - [ ] `$['*']`

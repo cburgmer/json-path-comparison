@@ -61,6 +61,20 @@ The following queries provide results that do not match those of other implement
   []
   ```
 
+- [ ] `$[?(@.key<42)]`
+  Input:
+  ```
+  [{"key": 0}, {"key": 42}, {"key": -1}, {"key": 41}, {"key": 43}, {"key": 42.0001}, {"key": 41.9999}, {"key": 100}, {"some": "value"}]
+  ```
+  Expected output:
+  ```
+  [{"key": 0}, {"key": -1}, {"key": 41}, {"key": 41.9999}]
+  ```
+  Actual output:
+  ```
+  []
+  ```
+
 - [ ] `$[?(@.key)]`
   Input:
   ```
@@ -83,6 +97,21 @@ The following queries provide results that do not match those of other implement
   Expected output:
   ```
   ["value"]
+  ```
+  Error:
+  ```
+  line 1:2 token recognition error at: '''
+  ValueError("line 1:2 token recognition error at: '''")
+  ```
+
+- [ ] `$['one','three'].key`
+  Input:
+  ```
+  {"one": {"key": "value"}, "two": {"k": "v"}, "three": {"some": "more", "key": "other value"}}
+  ```
+  Expected output:
+  ```
+  ["value", "other value"]
   ```
   Error:
   ```

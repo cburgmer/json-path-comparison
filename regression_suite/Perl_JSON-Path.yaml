@@ -129,6 +129,7 @@ queries:
     selector: $[?(@.key<42)]
     document: [{"key": 0}, {"key": 42}, {"key": -1}, {"key": 41}, {"key": 43}, {"key": 42.0001}, {"key": 41.9999}, {"key": 100}, {"some": "value"}]
     status: error
+    consensus: [{"key": 0}, {"key": -1}, {"key": 41}, {"key": 41.9999}]
   - id: filter_less_than_on_string
     selector: $[?(@.key<42)]
     document: [{"key": 0}, {"key": "value"}]
@@ -168,6 +169,7 @@ queries:
     selector: $['one','three'].key
     document: {"one": {"key": "value"}, "two": {"k": "v"}, "three": {"some": "more", "key": "other value"}}
     status: error
+    consensus: ["value", "other value"]
   - id: key_bracket_notation_with_at_literal
     selector: $['@']
     document: {"@": "value", "another": "entry"}
@@ -182,7 +184,7 @@ queries:
     selector: $["key"]
     document: {"key": "value"}
     result: ["value"]
-    status: open
+    status: pass
   - id: key_bracket_notation_with_number
     selector: $['0']
     document: {"0": "value"}

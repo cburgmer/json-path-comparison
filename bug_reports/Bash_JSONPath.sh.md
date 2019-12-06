@@ -176,6 +176,21 @@ The following queries provide results that do not match those of other implement
   Expecting value: line 3 column 1 (char 2)
   ```
 
+- [ ] `$[?(@.key<42)]`
+  Input:
+  ```
+  [{"key": 0}, {"key": 42}, {"key": -1}, {"key": 41}, {"key": 43}, {"key": 42.0001}, {"key": 41.9999}, {"key": 100}, {"some": "value"}]
+  ```
+  Expected output:
+  ```
+  [{"key": 0}, {"key": -1}, {"key": 41}, {"key": 41.9999}]
+  ```
+  Error:
+  ```
+  sed: bad regex '\[(([0-9]+|"[^"]+")[],]){9999}(.*)': Invalid contents of {}
+  Expecting value: line 3 column 1 (char 2)
+  ```
+
 - [ ] `$[?(@.key)]`
   Input:
   ```
@@ -203,6 +218,20 @@ The following queries provide results that do not match those of other implement
   Actual output:
   ```
   {"key": "value"}
+  ```
+
+- [ ] `$['one','three'].key`
+  Input:
+  ```
+  {"one": {"key": "value"}, "two": {"k": "v"}, "three": {"some": "more", "key": "other value"}}
+  ```
+  Expected output:
+  ```
+  ["value", "other value"]
+  ```
+  Actual output:
+  ```
+  {"one": {"key": "value"}, "three": {"key": "other value"}}
   ```
 
 - [ ] `$['@']`
@@ -233,6 +262,20 @@ The following queries provide results that do not match those of other implement
   ```
   sed: bad regex '\[(([0-9]+|"[^"]+")[],]){9999}(.*)': Invalid contents of {}
   Expecting value: line 3 column 1 (char 2)
+  ```
+
+- [ ] `$["key"]`
+  Input:
+  ```
+  {"key": "value"}
+  ```
+  Expected output:
+  ```
+  ["value"]
+  ```
+  Actual output:
+  ```
+  {"key": "value"}
   ```
 
 - [ ] `$['0']`

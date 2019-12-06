@@ -157,6 +157,20 @@ The following queries provide results that do not match those of other implement
   []
   ```
 
+- [ ] `$[?(@.key<42)]`
+  Input:
+  ```
+  [{"key": 0}, {"key": 42}, {"key": -1}, {"key": 41}, {"key": 43}, {"key": 42.0001}, {"key": 41.9999}, {"key": 100}, {"some": "value"}]
+  ```
+  Expected output:
+  ```
+  [{"key": 0}, {"key": -1}, {"key": 41}, {"key": 41.9999}]
+  ```
+  Actual output:
+  ```
+  []
+  ```
+
 - [ ] `$[?(@.key)]`
   Input:
   ```
@@ -185,6 +199,20 @@ The following queries provide results that do not match those of other implement
   strconv.Atoi: parsing "'key'": invalid syntax
   ```
 
+- [ ] `$['one','three'].key`
+  Input:
+  ```
+  {"one": {"key": "value"}, "two": {"k": "v"}, "three": {"some": "more", "key": "other value"}}
+  ```
+  Expected output:
+  ```
+  ["value", "other value"]
+  ```
+  Error:
+  ```
+  strconv.Atoi: parsing "'one'": invalid syntax
+  ```
+
 - [ ] `$['@']`
   Input:
   ```
@@ -211,6 +239,20 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   strconv.Atoi: parsing "'$'": invalid syntax
+  ```
+
+- [ ] `$["key"]`
+  Input:
+  ```
+  {"key": "value"}
+  ```
+  Expected output:
+  ```
+  ["value"]
+  ```
+  Error:
+  ```
+  strconv.Atoi: parsing "\"key\"": invalid syntax
   ```
 
 - [ ] `$['0']`

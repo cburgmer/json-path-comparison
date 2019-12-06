@@ -249,7 +249,7 @@ Golang (github.com-oliveagle-jsonpath), Array index slice negative step
 Haskell (jsonpath), Array index slice negative step
 </h3>
 
-<pre><code>implementations/Haskell_jsonpath/run.sh: line 6: 15851 Killed                  "$script_dir"/build/json-path-comparison "$@"
+<pre><code>implementations/Haskell_jsonpath/run.sh: line 6: 31845 Killed                  "$script_dir"/build/json-path-comparison "$@"
 </code></pre>
 
 <h3 id="JavaScript_Goessner___array_index_slice_negative_step">
@@ -634,7 +634,7 @@ Golang (github.com-oliveagle-jsonpath), Array index slice start end step 0
 Haskell (jsonpath), Array index slice start end step 0
 </h3>
 
-<pre><code>implementations/Haskell_jsonpath/run.sh: line 6: 16037 Killed                  "$script_dir"/build/json-path-comparison "$@"
+<pre><code>implementations/Haskell_jsonpath/run.sh: line 6: 35849 Killed                  "$script_dir"/build/json-path-comparison "$@"
 </code></pre>
 
 <h3 id="JavaScript_Goessner___array_index_slice_start_end_step_0">
@@ -724,6 +724,38 @@ Rust (jsonpath_lib), Array index slice start end step 0
 </h3>
 
 <pre><code>panic occurred
+</code></pre>
+
+<h3 id="Scala_jsonpath___array_index_slice_start_end_step_0">
+Scala (jsonpath), Array index slice start end step 0
+</h3>
+
+<pre><code>Exception in thread "main" java.lang.IllegalArgumentException: requirement failed: size=0 and step=0, but both must be positive
+    at scala.collection.Iterator$GroupedIterator.&lt;init&gt;(Iterator.scala:1109)
+    at scala.collection.Iterator.grouped(Iterator.scala:1246)
+    at scala.collection.Iterator.grouped$(Iterator.scala:1245)
+    at scala.collection.AbstractIterator.grouped(Iterator.scala:1432)
+    at io.gatling.jsonpath.JsonPathWalker.sliceArray(JsonPath.scala:187)
+    at io.gatling.jsonpath.JsonPathWalker.walk1(JsonPath.scala:98)
+    at io.gatling.jsonpath.JsonPathWalker.walk(JsonPath.scala:50)
+    at io.gatling.jsonpath.JsonPathWalker.$anonfun$walk$1(JsonPath.scala:50)
+    at scala.collection.Iterator$$anon$11.nextCur(Iterator.scala:482)
+    at scala.collection.Iterator$$anon$11.hasNext(Iterator.scala:488)
+    at scala.collection.Iterator.foreach(Iterator.scala:944)
+    at scala.collection.Iterator.foreach$(Iterator.scala:944)
+    at scala.collection.AbstractIterator.foreach(Iterator.scala:1432)
+    at scala.collection.generic.Growable.$plus$plus$eq(Growable.scala:59)
+    at scala.collection.generic.Growable.$plus$plus$eq$(Growable.scala:50)
+    at scala.collection.mutable.ListBuffer.$plus$plus$eq(ListBuffer.scala:186)
+    at scala.collection.mutable.ListBuffer.$plus$plus$eq(ListBuffer.scala:44)
+    at scala.collection.TraversableOnce.to(TraversableOnce.scala:310)
+    at scala.collection.TraversableOnce.to$(TraversableOnce.scala:308)
+    at scala.collection.AbstractIterator.to(Iterator.scala:1432)
+    at scala.collection.TraversableOnce.toList(TraversableOnce.scala:294)
+    at scala.collection.TraversableOnce.toList$(TraversableOnce.scala:294)
+    at scala.collection.AbstractIterator.toList(Iterator.scala:1432)
+    at query.App$.main(App.scala:31)
+    at query.App.main(App.scala)
 </code></pre>
 
 <h3 id="C_json-glib___array_index_slice_start_end_step_1">
@@ -2094,6 +2126,13 @@ $[?(!@.key)]
 ^^^^
 </code></pre>
 
+<h3 id="Scala_jsonpath___filter_without_value">
+Scala (jsonpath), Filter without value
+</h3>
+
+<pre><code>JPError(end of input expected)
+</code></pre>
+
 <h3 id="Clojure_json-path___key_bracket_notation">
 Clojure (json-path), Key bracket notation
 </h3>
@@ -2864,6 +2903,13 @@ $['single'quote']
 ^^^^^^^^^^^^^^^^
 </code></pre>
 
+<h3 id="Scala_jsonpath___key_bracket_notation_with_single_quote">
+Scala (jsonpath), Key bracket notation with single quote
+</h3>
+
+<pre><code>JPError(end of input expected)
+</code></pre>
+
 <h3 id="Bash_JSONPath.sh___key_bracket_notation_with_single_quote_escaped">
 Bash (JSONPath.sh), Key bracket notation with single quote escaped
 </h3>
@@ -3253,6 +3299,13 @@ $[key]
 ^^
 </code></pre>
 
+<h3 id="Scala_jsonpath___key_bracket_notation_without_quotes">
+Scala (jsonpath), Key bracket notation without quotes
+</h3>
+
+<pre><code>JPError(end of input expected)
+</code></pre>
+
 <h3 id="C_json-glib___key_dot_bracket_notation">
 C (json-glib), Key dot bracket notation
 </h3>
@@ -3368,6 +3421,13 @@ Rust (jsonpath), Key dot bracket notation
 </h3>
 
 <pre><code>parsing error
+</code></pre>
+
+<h3 id="Scala_jsonpath___key_dot_bracket_notation">
+Scala (jsonpath), Key dot bracket notation
+</h3>
+
+<pre><code>JPError(end of input expected)
 </code></pre>
 
 <h3 id="C_json-glib___key_dot_bracket_notation_with_double_quotes">
@@ -3518,6 +3578,13 @@ Rust (jsonpath), Key dot bracket notation with double quotes
 </h3>
 
 <pre><code>parsing error
+</code></pre>
+
+<h3 id="Scala_jsonpath___key_dot_bracket_notation_with_double_quotes">
+Scala (jsonpath), Key dot bracket notation with double quotes
+</h3>
+
+<pre><code>JPError(end of input expected)
 </code></pre>
 
 <h3 id="C_json-glib___key_dot_bracket_notation_without_quotes">
@@ -3684,6 +3751,13 @@ Rust (jsonpath_lib), Key dot bracket notation without quotes
 <pre><code>path error: 
 $.[key]
 ^^^
+</code></pre>
+
+<h3 id="Scala_jsonpath___key_dot_bracket_notation_without_quotes">
+Scala (jsonpath), Key dot bracket notation without quotes
+</h3>
+
+<pre><code>JPError(end of input expected)
 </code></pre>
 
 <h3 id="Erlang_ejsonpath___key_dot_notation_with_double_quotes">
@@ -4016,6 +4090,13 @@ Rust (jsonpath), Recursive array index
 </h3>
 
 <pre><code>parsing error
+</code></pre>
+
+<h3 id="Scala_jsonpath___recursive_array_index">
+Scala (jsonpath), Recursive array index
+</h3>
+
+<pre><code>JPError(end of input expected)
 </code></pre>
 
 <h3 id="Erlang_ejsonpath___recursive_key">
@@ -4649,6 +4730,13 @@ Rust (jsonpath_lib), Script expression
 <pre><code>path error: 
 $[(@.length-1)]
 ^^^
+</code></pre>
+
+<h3 id="Scala_jsonpath___script_expression">
+Scala (jsonpath), Script expression
+</h3>
+
+<pre><code>JPError(end of input expected)
 </code></pre>
 
 <h3 id="Bash_JSONPath.sh___wildcard_bracket_notation_on_array">

@@ -199,6 +199,20 @@ The following queries provide results that do not match those of other implement
   parsing error
   ```
 
+- [ ] `$['one','three'].key`
+  Input:
+  ```
+  {"one": {"key": "value"}, "two": {"k": "v"}, "three": {"some": "more", "key": "other value"}}
+  ```
+  Expected output:
+  ```
+  ["value", "other value"]
+  ```
+  Error:
+  ```
+  parsing error
+  ```
+
 - [ ] `$['@']`
   Input:
   ```
@@ -217,6 +231,20 @@ The following queries provide results that do not match those of other implement
   Input:
   ```
   {"$": "value", "another": "entry"}
+  ```
+  Expected output:
+  ```
+  ["value"]
+  ```
+  Error:
+  ```
+  parsing error
+  ```
+
+- [ ] `$["key"]`
+  Input:
+  ```
+  {"key": "value"}
   ```
   Expected output:
   ```

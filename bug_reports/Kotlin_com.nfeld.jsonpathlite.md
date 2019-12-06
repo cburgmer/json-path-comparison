@@ -107,6 +107,25 @@ The following queries provide results that do not match those of other implement
   	at query.AppKt.main(App.kt:10)
   ```
 
+- [ ] `$[?(@.key<42)]`
+  Input:
+  ```
+  [{"key": 0}, {"key": 42}, {"key": -1}, {"key": 41}, {"key": 43}, {"key": 42.0001}, {"key": 41.9999}, {"key": 100}, {"some": "value"}]
+  ```
+  Expected output:
+  ```
+  [{"key": 0}, {"key": -1}, {"key": 41}, {"key": 41.9999}]
+  ```
+  Error:
+  ```
+  Exception in thread "main" java.lang.IllegalArgumentException: Unexpected char, char=?, index=2
+  	at com.nfeld.jsonpathlite.PathCompiler.compileBracket$json_path_lite(PathCompiler.kt:198)
+  	at com.nfeld.jsonpathlite.PathCompiler.compile$json_path_lite(PathCompiler.kt:59)
+  	at com.nfeld.jsonpathlite.JsonPath.<init>(JsonPath.kt:24)
+  	at com.nfeld.jsonpathlite.JsonArray.read(JsonResult.kt:11)
+  	at query.AppKt.main(App.kt:10)
+  ```
+
 - [ ] `$[?(@.key)]`
   Input:
   ```
@@ -123,6 +142,39 @@ The following queries provide results that do not match those of other implement
   	at com.nfeld.jsonpathlite.PathCompiler.compile$json_path_lite(PathCompiler.kt:59)
   	at com.nfeld.jsonpathlite.JsonPath.<init>(JsonPath.kt:24)
   	at com.nfeld.jsonpathlite.JsonArray.read(JsonResult.kt:11)
+  	at query.AppKt.main(App.kt:10)
+  ```
+
+- [ ] `$['one','three'].key`
+  Input:
+  ```
+  {"one": {"key": "value"}, "two": {"k": "v"}, "three": {"some": "more", "key": "other value"}}
+  ```
+  Expected output:
+  ```
+  ["value", "other value"]
+  ```
+  Actual output:
+  ```
+  null
+  ```
+
+- [ ] `$["key"]`
+  Input:
+  ```
+  {"key": "value"}
+  ```
+  Expected output:
+  ```
+  ["value"]
+  ```
+  Error:
+  ```
+  Exception in thread "main" java.lang.IllegalArgumentException: Unexpected char, char=", index=2
+  	at com.nfeld.jsonpathlite.PathCompiler.compileBracket$json_path_lite(PathCompiler.kt:198)
+  	at com.nfeld.jsonpathlite.PathCompiler.compile$json_path_lite(PathCompiler.kt:59)
+  	at com.nfeld.jsonpathlite.JsonPath.<init>(JsonPath.kt:24)
+  	at com.nfeld.jsonpathlite.JsonObject.read(JsonResult.kt:7)
   	at query.AppKt.main(App.kt:10)
   ```
 

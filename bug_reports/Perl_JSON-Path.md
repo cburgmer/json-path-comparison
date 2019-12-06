@@ -51,6 +51,20 @@ The following queries provide results that do not match those of other implement
   non-safe evaluation, died at main.pl line 12.
   ```
 
+- [ ] `$[?(@.key<42)]`
+  Input:
+  ```
+  [{"key": 0}, {"key": 42}, {"key": -1}, {"key": 41}, {"key": 43}, {"key": 42.0001}, {"key": 41.9999}, {"key": 100}, {"some": "value"}]
+  ```
+  Expected output:
+  ```
+  [{"key": 0}, {"key": -1}, {"key": 41}, {"key": 41.9999}]
+  ```
+  Error:
+  ```
+  non-safe evaluation, died at main.pl line 12.
+  ```
+
 - [ ] `$[?(@.key)]`
   Input:
   ```
@@ -63,6 +77,27 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   non-safe evaluation, died at main.pl line 12.
+  ```
+
+- [ ] `$['one','three'].key`
+  Input:
+  ```
+  {"one": {"key": "value"}, "two": {"k": "v"}, "three": {"some": "more", "key": "other value"}}
+  ```
+  Expected output:
+  ```
+  ["value", "other value"]
+  ```
+  Error:
+  ```
+  Assertion ("]" is not an operator) failed!
+   at build/lib/perl5/Carp/Assert.pm line 282, <STDIN> line 5.
+  	Carp::Assert::assert(...) called at build/lib/perl5/JSON/Path/Evaluator.pm line 217
+  	JSON::Path::Evaluator::_evaluate(...) called at build/lib/perl5/JSON/Path/Evaluator.pm line 225
+  	JSON::Path::Evaluator::_evaluate(...) called at build/lib/perl5/JSON/Path/Evaluator.pm line 122
+  	JSON::Path::Evaluator::evaluate(...) called at build/lib/perl5/JSON/Path/Evaluator.pm line 97
+  	JSON::Path::Evaluator::evaluate_jsonpath(...) called at build/lib/perl5/JSON/Path.pm line 107
+  	JSON::Path::values(...) called at main.pl line 12
   ```
 
 - [ ] `$['@']`
