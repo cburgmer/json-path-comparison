@@ -23,6 +23,12 @@ table_highlight_effect() {
     cat
     cat <<EOF
 <style>
+/* Make room for more columns */
+.markdown-body table td, .markdown-body table th {
+  padding: 6px 10px;
+}
+
+/* Hover effect */
 .markdown-body tbody tr:target,
 .markdown-body tbody tr:hover {
   background-color: #ffa;
