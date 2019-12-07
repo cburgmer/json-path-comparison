@@ -249,7 +249,7 @@ Golang (github.com-oliveagle-jsonpath), Array index slice negative step
 Haskell (jsonpath), Array index slice negative step
 </h3>
 
-<pre><code>implementations/Haskell_jsonpath/run.sh: line 6: 31845 Killed                  "$script_dir"/build/json-path-comparison "$@"
+<pre><code>implementations/Haskell_jsonpath/run.sh: line 6: 51380 Killed                  "$script_dir"/build/json-path-comparison "$@"
 </code></pre>
 
 <h3 id="JavaScript_Goessner___array_index_slice_negative_step">
@@ -634,7 +634,7 @@ Golang (github.com-oliveagle-jsonpath), Array index slice start end step 0
 Haskell (jsonpath), Array index slice start end step 0
 </h3>
 
-<pre><code>implementations/Haskell_jsonpath/run.sh: line 6: 35849 Killed                  "$script_dir"/build/json-path-comparison "$@"
+<pre><code>implementations/Haskell_jsonpath/run.sh: line 6: 51621 Killed                  "$script_dir"/build/json-path-comparison "$@"
 </code></pre>
 
 <h3 id="JavaScript_Goessner___array_index_slice_start_end_step_0">
@@ -1843,6 +1843,104 @@ Rust (jsonpath_lib), Filter null
 <pre><code>path error: 
 $[?(@.key==null)]
 ^^^^^^^^^^^^^^^
+</code></pre>
+
+<h3 id="Bash_JSONPath.sh___filter_with_boolean_operation">
+Bash (JSONPath.sh), Filter with boolean operation
+</h3>
+
+<pre><code>sed: bad regex '\[(([0-9]+|"[^"]+")[],]){9999}(.*)': Invalid contents of {}
+Expecting value: line 3 column 1 (char 2)
+</code></pre>
+
+<h3 id="C_json-glib___filter_with_boolean_operation">
+C (json-glib), Filter with boolean operation
+</h3>
+
+<pre><code>Unable to compile selector `$[?(@.key&gt;42 &amp;&amp; @.key&lt;44)]': Invalid array index definition “?(@.key&gt;42 &amp;&amp; @.key&lt;44)]”
+</code></pre>
+
+<h3 id="Erlang_ejsonpath___filter_with_boolean_operation">
+Erlang (ejsonpath), Filter with boolean operation
+</h3>
+
+<pre><code>init terminating in do_boot ({not_implemented,bin_op,&amp;&amp;})
+
+Crash dump is being written to: erl_crash.dump...done
+{"init terminating in do_boot",{not_implemented,bin_op,'&amp;&amp;'}}
+</code></pre>
+
+<h3 id="Golang_github.com-PaesslerAG-jsonpath___filter_with_boolean_operation">
+Golang (github.com-PaesslerAG-jsonpath), Filter with boolean operation
+</h3>
+
+<pre><code>parsing error: $[?(@.key&gt;42 &amp;&amp; @.key&lt;44)]   :1:10 - 1:11 unexpected "&gt;" while scanning parentheses expected ")"
+</code></pre>
+
+<h3 id="Haskell_jsonpath___filter_with_boolean_operation">
+Haskell (jsonpath), Filter with boolean operation
+</h3>
+
+<pre><code>json-path-comparison: serachBegingingWithSlice: string
+CallStack (from HasCallStack):
+  error, called at app/Main.hs:36:7 in main:Main
+Invalid JSONPath: $[?(@.key&gt;42 &amp;&amp; @.key&lt;44)]
+ Error: serachBegingingWithSlice: string
+</code></pre>
+
+<h3 id="Kotlin_com.nfeld.jsonpathlite___filter_with_boolean_operation">
+Kotlin (com.nfeld.jsonpathlite), Filter with boolean operation
+</h3>
+
+<pre><code>Exception in thread "main" java.lang.IllegalArgumentException: Unexpected char, char=?, index=2
+    at com.nfeld.jsonpathlite.PathCompiler.compileBracket$json_path_lite(PathCompiler.kt:198)
+    at com.nfeld.jsonpathlite.PathCompiler.compile$json_path_lite(PathCompiler.kt:59)
+    at com.nfeld.jsonpathlite.JsonPath.&lt;init&gt;(JsonPath.kt:24)
+    at com.nfeld.jsonpathlite.JsonArray.read(JsonResult.kt:11)
+    at query.AppKt.main(App.kt:10)
+</code></pre>
+
+<h3 id="PHP_Goessner___filter_with_boolean_operation">
+PHP (Goessner), Filter with boolean operation
+</h3>
+
+<pre><code>ArgumentCountError
+</code></pre>
+
+<h3 id="PHP_galbar-jsonpath___filter_with_boolean_operation">
+PHP (galbar-jsonpath), Filter with boolean operation
+</h3>
+
+<pre><code>Invalid JSONPath error: 'Error in JSONPath near '&gt;42 &amp;&amp; @.key''
+</code></pre>
+
+<h3 id="Perl_JSON-Path___filter_with_boolean_operation">
+Perl (JSON-Path), Filter with boolean operation
+</h3>
+
+<pre><code>non-safe evaluation, died at main.pl line 12.
+</code></pre>
+
+<h3 id="Python_jsonpath-rw___filter_with_boolean_operation">
+Python (jsonpath-rw), Filter with boolean operation
+</h3>
+
+<pre><code>JsonPathLexerError('Error on line 1, col 2: Unexpected character: ? ')
+</code></pre>
+
+<h3 id="Python_jsonpath2___filter_with_boolean_operation">
+Python (jsonpath2), Filter with boolean operation
+</h3>
+
+<pre><code>line 1:13 token recognition error at: '&amp;'
+ValueError("line 1:13 token recognition error at: '&amp;'")
+</code></pre>
+
+<h3 id="Rust_jsonpath___filter_with_boolean_operation">
+Rust (jsonpath), Filter with boolean operation
+</h3>
+
+<pre><code>parsing error
 </code></pre>
 
 <h3 id="Bash_JSONPath.sh___filter_with_value">
