@@ -43,7 +43,7 @@ ninja_rules() {
 rule configure
   command = ./src/generate_ninja.sh
   generator = 1
-build build.ninja: configure | ./src/generate_ninja.sh
+build build.ninja: configure | ./src/generate_ninja.sh queries/ implementations/
 
 EOF
 }

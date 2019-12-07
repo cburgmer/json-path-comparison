@@ -1,7 +1,7 @@
 rule configure
   command = ./src/generate_ninja.sh
   generator = 1
-build build.ninja: configure | ./src/generate_ninja.sh
+build build.ninja: configure | ./src/generate_ninja.sh queries/ implementations/
 
 # Not fully sure why we need to quote this times 3. The outer quote layer at least is for Bash :)
 testquery = '\\$$''[1]'
