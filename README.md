@@ -23,16 +23,17 @@ from the queries in [./queries](./queries).
 
 ## How to
 
-### Run the comparison locally
+### (Re-)Run the comparison locally
 
-Run
+To update the reports checked into Git under ./docs and others, run:
 
-    ./src/wrap_in_docker.sh ./go
+    ./src/wrap_in_docker.sh ninja
+    open docs/index.html
 
 This will take a while and some network bandwidth to install all Docker
 dependencies and build all implementations.
 Skip ./src/wrap_in_docker.sh if you don't want to run against Docker, so the
-command becomes `./go`.
+command becomes `ninja`.
 
 ### One-off comparisons
 
@@ -56,27 +57,26 @@ For example, the Clojure json-path implementation has a
 
 ### Add an implementation
 
-You can easily add another implementation to the comparison. Copy a comparable
-setup in [./implementations](./implementations) and adapt. Be aware that some
-implementations decide to return queries for single values as scalars, compare
+Copy a comparable setup in [./implementations](./implementations) and adapt.
+Be aware that some implementations decide to return queries for single values as
+scalars, compare
 [./implementations/Clojure_json-path](./implementations/Clojure_json-path).
 
-Test the implementation's ninja build script via (using Clojure as an example)
+Test the implementation's ninja build script via (using Clojure as an example):
 
     ninja -f implementations/Clojure_json-path/build.ninja
 
-Test a query by running (again Clojure as example)
+Test a query by running (again Clojure as example):
 
     ./src/query_implementation.sh queries/array_index implementations/Clojure_json-path
 
 ### Add a new query
 
-Adding more queries should be fairly easy. Add a new directory under
-[./queries](./queries) and give it a `selector` and `document.json`.
-Scalar queries have a specific handling, compare
+Add a new directory under [./queries](./queries) and give it a `selector` and
+`document.json`. Scalar queries have a specific handling, compare
 [./queries/array_index](./queries/array_index).
 
-Test a query against an implementation (Goessner's JavaScript as example)
+Test a query against an implementation (Goessner's JavaScript as example):
 
     ./src/query_implementation.sh queries/THE_NEW_QUERY implementations/JavaScript_Goessner
 
@@ -88,4 +88,4 @@ Some implementations can be automatically upgraded
 (Golang_github.com-bhmj-jsonslice as an example):
 
     ./implementations/Golang_github.com-bhmj-jsonslice/upgrade.sh
-    ./src/wrap_in_docker.sh ./go
+    ./src/wrap_in_docker.sh ninja

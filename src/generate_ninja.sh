@@ -22,6 +22,22 @@ all_queries() {
     find ./queries -type d -maxdepth 1 -mindepth 1 -print0 | xargs -0 -n1 basename
 }
 
+check_dependencies() {
+    local dep
+    for dep in ninja java mvn cargo git go node python3 markdown php composer curl gcc pkg-config perl wget ghc cabal erl rebar3; do
+        if ! which "$dep" > /dev/null; then
+            echo >&2 "Please install $dep"
+            exit 1
+        fi
+    done
+
+    for dep in glib-2.0 json-glib-1.0 gio-unix-2.0; do
+        if ! pkg-config --cflags "$dep" > /dev/null; then
+            exit 1
+        fi
+    done
+}
+
 ninja_rules() {
     cat <<EOF
 rule configure
@@ -30,7 +46,6 @@ rule configure
 build build.ninja: configure | ./src/generate_ninja.sh
 
 EOF
-
 }
 
 implementation_rules() {
@@ -194,6 +209,8 @@ EOF
 }
 
 main() {
+    check_dependencies
+
     {
         ninja_rules
         implementation_rules
