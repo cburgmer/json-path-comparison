@@ -43,6 +43,13 @@ EOF
         done <<< "$(all_implementations)"
         echo
 
+        echo -n "build ${test_compilation_dir}: phony"
+        while IFS= read -r implementation; do
+            echo -n " ${test_compilation_dir}/${implementation}"
+        done <<< "$(all_implementations)"
+        echo
+        echo
+
         echo
         cat <<EOF
 rule run

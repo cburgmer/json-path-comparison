@@ -22,6 +22,8 @@ main() {
     local selector_file="${tmp_query}/selector"
     local document_file="${tmp_query}/document.json"
 
+    ninja build/test_compilation
+
     mkdir "$tmp_query"
     echo "$selector" > "$selector_file"
     cat > "$document_file"
