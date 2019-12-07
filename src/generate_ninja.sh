@@ -168,7 +168,7 @@ rule compile_table
   command = ./src/compile_table.sh \$in > \$out
 EOF
     echo
-    echo "build ${markdown_dir}/index.md: compile_table ${results_dir} ${consensus_dir} | src/compile_table.sh"
+    echo "build ${markdown_dir}/index.md: compile_table ${results_dir} ${consensus_dir} | src/compile_table.sh queries/ implementations/"
     echo
 
     cat <<EOF
@@ -204,7 +204,7 @@ EOF
 
     echo
     while IFS= read -r implementation; do
-        echo "build ${regression_suite}/${implementation}.yaml: compile_regression_suite ${results_dir} ${consensus_dir} implementations/${implementation} | src/compile_regression_suite.sh"
+        echo "build ${regression_suite}/${implementation}.yaml: compile_regression_suite ${results_dir} ${consensus_dir} implementations/${implementation} | src/compile_regression_suite.sh queries/ implementations/"
     done <<< "$(all_implementations)"
 }
 

@@ -10,8 +10,8 @@ all_implementations() {
     find ./implementations -name run.sh -maxdepth 2 -print0 | xargs -0 -n1 dirname | xargs -n1 basename | sort
 }
 
-all_query_results() {
-    find "$results_dir" -type d -maxdepth 1 -mindepth 1 -print0 | xargs -0 -n1 basename | sort
+all_queries() {
+    find ./queries -type d -maxdepth 1 -mindepth 1 -print0 | xargs -0 -n1 basename | sort
 }
 
 give_mark() {
@@ -135,7 +135,7 @@ See how [JSONPath](https://goessner.net/articles/JsonPath/) is implemented acros
 
     while IFS= read -r query; do
         compile_row "$query"
-    done <<< "$(all_query_results)"
+    done <<< "$(all_queries)"
 
     echo "</tbody>"
     echo "</table>"

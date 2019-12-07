@@ -8,8 +8,8 @@ readonly implementation="$(basename "$implementation_dir")"
 
 . src/shared.sh
 
-all_query_results() {
-    find "$results_dir" -type d -maxdepth 1 -mindepth 1 -print0 | xargs -0 -n1 basename | sort
+all_queries() {
+    find ./queries -type d -maxdepth 1 -mindepth 1 -print0 | xargs -0 -n1 basename | sort
 }
 
 unwrap_scalar_if_needed() {
@@ -77,7 +77,7 @@ main() {
     echo "queries:"
     while IFS= read -r query; do
         query_entry "$query"
-    done <<< "$(all_query_results)"
+    done <<< "$(all_queries)"
 }
 
 main
