@@ -22,6 +22,17 @@ all_queries() {
     find ./queries -type d -maxdepth 1 -mindepth 1 -print0 | xargs -0 -n1 basename
 }
 
+ninja_rules() {
+    cat <<EOF
+rule configure
+  command = ./src/generate_ninja.sh
+  generator = 1
+build build.ninja: configure | ./src/generate_ninja.sh
+
+EOF
+
+}
+
 implementation_rules() {
     local implementation
 
@@ -184,6 +195,7 @@ EOF
 
 main() {
     {
+        ninja_rules
         implementation_rules
         query_rules
         consensus_rules

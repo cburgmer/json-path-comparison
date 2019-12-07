@@ -8,7 +8,6 @@
 set -euo pipefail
 
 readonly script_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-readonly docs_dir="./docs"
 
 for dep in ninja java mvn cargo git go node python3 markdown php composer curl gcc pkg-config perl wget ghc cabal erl rebar3; do
     if ! which "$dep" > /dev/null; then
@@ -25,6 +24,6 @@ done
 
 cd "$script_dir"
 
-./src/generate_ninja.sh && ninja
+ninja
 
 echo "Run \`open docs/index.html\`"
