@@ -331,8 +331,9 @@ queries:
   - id: wildcard_bracket_notation_with_key_on_nested_objects
     selector: $[*].bar[*].baz
     document: [{"bar": [{"baz": "hello"}]}]
-    result: ["hello"]
-    status: pass
+    result: [["hello"]]
+    status: fail
+    consensus: ["hello"]
   - id: wildcard_dot_notation_on_array
     selector: $.*
     document: ["string", 42, {"key": "value"}, [0, 1]]
