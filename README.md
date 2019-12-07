@@ -81,3 +81,11 @@ Test a query against an implementation (Goessner's JavaScript as example)
     ./src/query_implementation.sh queries/THE_NEW_QUERY implementations/JavaScript_Goessner
 
 See above "One-off comparisons" to execute against all implementations.
+
+### Upgrade an implementation
+
+Some implementations can be automatically upgraded
+(Golang_github.com-bhmj-jsonslice as an example):
+
+    ./implementations/Golang_github.com-bhmj-jsonslice/upgrade.sh
+    ./src/wrap_in_docker.sh ./go
