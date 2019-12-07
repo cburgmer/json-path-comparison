@@ -214,7 +214,7 @@ queries:
   - id: key_bracket_notation_with_star_literal
     selector: $['*']
     document: {"*": "value", "another": "entry"}
-    result: ["value", "entry"]
+    result: ["entry", "value"]
     status: fail
     consensus: ["value"]
   - id: key_bracket_notation_without_quotes
