@@ -7,3 +7,5 @@ docker rmi json-path-comparison || true
 rm -r cabal-cache || true
 find "$script_dir" -type d -name "build" | xargs rm -r
 find "$script_dir" -type d -name "deps" | xargs rm -r
+# This removes checked in artifacts, so this needs a fresh new build to restore
+rm -rf build docs regression_suite bug_reports
