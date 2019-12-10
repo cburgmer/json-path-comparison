@@ -18,7 +18,9 @@ from the queries in [./queries](./queries).
 ## Roadmap
 
 - Test filters `?()`
-- Provide a forum to clarify different interpretations
+- Provide a forum to clarify different interpretations.
+  See [OPEN_QUESTIONS.md](OPEN_QUESTIONS.md) for a rough start on visible
+  disagreements.
 - Compare custom features/syntax across implementations
 
 ## How to
