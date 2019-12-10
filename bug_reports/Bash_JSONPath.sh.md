@@ -30,6 +30,8 @@ The following queries provide results that do not match those of other implement
   ```
   sed: bad regex '\[(([0-9]+|"[^"]+")[],]){9999}(.*)': Invalid contents of {}
   Expecting value: line 3 column 1 (char 2)
+  
+  
   ```
 
 - [ ] `$[1:10]`
@@ -45,6 +47,8 @@ The following queries provide results that do not match those of other implement
   ```
   sed: bad regex '\[(([0-9]+|"[^"]+")[],]){9999}(.*)': Invalid contents of {}
   Expecting value: line 3 column 1 (char 2)
+  
+  
   ```
 
 - [ ] `$[-1:]`
@@ -74,6 +78,8 @@ The following queries provide results that do not match those of other implement
   ```
   sed: bad regex '\[(([0-9]+|"[^"]+")[],]){9999}(.*)': Invalid contents of {}
   Expecting value: line 3 column 1 (char 2)
+  
+  
   ```
 
 - [ ] `$[0:3:2]`
@@ -159,6 +165,8 @@ The following queries provide results that do not match those of other implement
   ```
   sed: bad regex '\[(([0-9]+|"[^"]+")[],]){9999}(.*)': Invalid contents of {}
   Expecting value: line 3 column 1 (char 2)
+  
+  
   ```
 
 - [ ] `$[?(@.key>42)]`
@@ -174,6 +182,8 @@ The following queries provide results that do not match those of other implement
   ```
   sed: bad regex '\[(([0-9]+|"[^"]+")[],]){9999}(.*)': Invalid contents of {}
   Expecting value: line 3 column 1 (char 2)
+  
+  
   ```
 
 - [ ] `$[?(@.key<42)]`
@@ -189,6 +199,8 @@ The following queries provide results that do not match those of other implement
   ```
   sed: bad regex '\[(([0-9]+|"[^"]+")[],]){9999}(.*)': Invalid contents of {}
   Expecting value: line 3 column 1 (char 2)
+  
+  
   ```
 
 - [ ] `$[?(@.key)]`
@@ -204,6 +216,8 @@ The following queries provide results that do not match those of other implement
   ```
   sed: bad regex '\[(([0-9]+|"[^"]+")[],]){9999}(.*)': Invalid contents of {}
   Expecting value: line 3 column 1 (char 2)
+  
+  
   ```
 
 - [ ] `$['key']`
@@ -247,6 +261,8 @@ The following queries provide results that do not match those of other implement
   ```
   sed: bad regex '\[(([0-9]+|"[^"]+")[],]){9999}(.*)': Invalid contents of {}
   Expecting value: line 3 column 1 (char 2)
+  
+  
   ```
 
 - [ ] `$['$']`
@@ -262,6 +278,8 @@ The following queries provide results that do not match those of other implement
   ```
   sed: bad regex '\[(([0-9]+|"[^"]+")[],]){9999}(.*)': Invalid contents of {}
   Expecting value: line 3 column 1 (char 2)
+  
+  
   ```
 
 - [ ] `$["key"]`
@@ -291,6 +309,8 @@ The following queries provide results that do not match those of other implement
   ```
   sed: bad regex '\[(([0-9]+|"[^"]+")[],]){9999}(.*)': Invalid contents of {}
   Expecting value: line 3 column 1 (char 2)
+  
+  
   ```
 
 - [ ] `$['special:"chars']`
@@ -306,6 +326,8 @@ The following queries provide results that do not match those of other implement
   ```
   sed: bad regex '\[(([0-9]+|"[^"]+")[],]){9999}(.*)': Invalid contents of {}
   Expecting value: line 3 column 1 (char 2)
+  
+  
   ```
 
 - [ ] `$['*']`
@@ -321,6 +343,8 @@ The following queries provide results that do not match those of other implement
   ```
   sed: bad regex '\[(([0-9]+|"[^"]+")[],]){9999}(.*)': Invalid contents of {}
   Expecting value: line 3 column 1 (char 2)
+  
+  
   ```
 
 - [ ] `$.key`
@@ -420,6 +444,8 @@ The following queries provide results that do not match those of other implement
   ```
   sed: bad regex '\[(([0-9]+|"[^"]+")[],]){9999}(.*)': Invalid contents of {}
   Expecting value: line 3 column 1 (char 2)
+  
+  
   ```
 
 - [ ] `$[*]`
@@ -434,6 +460,17 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   Extra data: line 4 column 6 (char 28)
+  [
+      "string",
+      42
+      ],
+      {
+          "key":"value"
+      },
+          0,
+          1
+      }
+  ]
   ```
 
 - [ ] `$[*]`
@@ -476,6 +513,17 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   Extra data: line 4 column 6 (char 28)
+  [
+      "string",
+      42
+      ],
+      {
+          "key":"value"
+      },
+          0,
+          1
+      }
+  ]
   ```
 
 - [ ] `$.*`

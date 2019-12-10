@@ -22,6 +22,10 @@ canonical_order_if_needed() {
     fi
 }
 
+check_json() {
+    python3 -m json.tool > /dev/null
+}
+
 fail_on_absolute_paths_leaked() {
     # Absolute paths will make it hard to provide a reproducible outcome
     # Best way to avoid them in most languages is to catch exceptions and
@@ -45,15 +49,27 @@ run_query() {
     local selector
     selector="$(cat "${selector_file}")"
 
-    if "$implementation"/run.sh "$selector" < "$document" > "$tmp_output"; then
-        wrap_scalar_if_needed "$implementation" "$query" < "$tmp_output" \
-            | canonical_order_if_needed "$query"
-        rm "$tmp_output"
-    else
+    if ! "$implementation"/run.sh "$selector" < "$document" > "$tmp_output"; then
         cat "$tmp_output"
         rm "$tmp_output"
         return 1
     fi
+
+    if [[ ! -s "$tmp_output" ]]; then
+        echo "No JSON output received"
+        rm "$tmp_output"
+        return 1
+    fi
+
+    if ! check_json < "$tmp_output"; then
+        cat "$tmp_output"
+        rm "$tmp_output"
+        return 1
+    fi
+
+    wrap_scalar_if_needed "$implementation" "$query" < "$tmp_output" \
+        | canonical_order_if_needed "$query"
+    rm "$tmp_output"
 }
 
 main() {

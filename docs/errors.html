@@ -4092,6 +4092,24 @@ Bash (JSONPath.sh), Recursive array index
 </h3>
 
 <pre><code>Extra data: line 3 column 6 (char 26)
+[
+    "first nested"
+    ],
+    {
+        "more":
+        [
+            {
+                "nested":
+                [
+                    "deepest",
+                    "second"
+                ]
+            },
+                "more"
+            }
+        ]
+    }
+]
 </code></pre>
 
 <h3 id="C_json-glib___recursive_array_index">
@@ -4842,6 +4860,17 @@ Bash (JSONPath.sh), Wildcard bracket notation on array
 </h3>
 
 <pre><code>Extra data: line 4 column 6 (char 28)
+[
+    "string",
+    42
+    ],
+    {
+        "key":"value"
+    },
+        0,
+        1
+    }
+]
 </code></pre>
 
 <h3 id="Kotlin_com.nfeld.jsonpathlite___wildcard_bracket_notation_on_array">
@@ -4932,6 +4961,17 @@ Bash (JSONPath.sh), Wildcard dot notation on array
 </h3>
 
 <pre><code>Extra data: line 4 column 6 (char 28)
+[
+    "string",
+    42
+    ],
+    {
+        "key":"value"
+    },
+        0,
+        1
+    }
+]
 </code></pre>
 
 <h3 id="Golang_github.com-oliveagle-jsonpath___wildcard_dot_notation_on_array">
