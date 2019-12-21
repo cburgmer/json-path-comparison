@@ -1,0 +1,14 @@
+root = implementations/Cpp_jsoncons
+builddir = $root/build
+
+rule install
+  command = $root/install.sh $out
+
+rule build
+  command = mkdir -p $$(dirname $out) && g++ -std=c++11 -I$builddir/includes $in -o $out
+
+build $builddir/includes: install | $root/install.sh
+
+build $builddir/main: build $root/main.cpp | $builddir/includes
+
+build $root/install: phony $builddir/main

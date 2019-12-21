@@ -183,8 +183,7 @@ queries:
     selector: $['one','three'].key
     document: {"one": {"key": "value"}, "two": {"k": "v"}, "three": {"some": "more", "key": "other value"}}
     result: []
-    status: fail
-    consensus: ["value", "other value"]
+    status: open
   - id: key_bracket_notation_with_at_literal
     selector: $['@']
     document: {"@": "value", "another": "entry"}

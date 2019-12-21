@@ -104,21 +104,6 @@ The following queries provide results that do not match those of other implement
   ValueError("line 1:2 token recognition error at: '''")
   ```
 
-- [ ] `$['one','three'].key`
-  Input:
-  ```
-  {"one": {"key": "value"}, "two": {"k": "v"}, "three": {"some": "more", "key": "other value"}}
-  ```
-  Expected output:
-  ```
-  ["value", "other value"]
-  ```
-  Error:
-  ```
-  line 1:2 token recognition error at: '''
-  ValueError("line 1:2 token recognition error at: '''")
-  ```
-
 - [ ] `$['@']`
   Input:
   ```

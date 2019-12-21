@@ -180,7 +180,6 @@ queries:
     selector: $['one','three'].key
     document: {"one": {"key": "value"}, "two": {"k": "v"}, "three": {"some": "more", "key": "other value"}}
     status: error
-    consensus: ["value", "other value"]
   - id: key_bracket_notation_with_at_literal
     selector: $['@']
     document: {"@": "value", "another": "entry"}

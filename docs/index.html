@@ -12,6 +12,7 @@
 <th style="position: sticky; top: 0; background: #ffffffaa;" colspan="1">Bash</th>
 <th style="position: sticky; top: 0; background: #ffffffaa;" colspan="1">C</th>
 <th style="position: sticky; top: 0; background: #ffffffaa;" colspan="1">Clojure</th>
+<th style="position: sticky; top: 0; background: #ffffffaa;" colspan="1">Cpp</th>
 <th style="position: sticky; top: 0; background: #ffffffaa;" colspan="1">Erlang</th>
 <th style="position: sticky; top: 0; background: #ffffffaa;" colspan="3">Golang</th>
 <th style="position: sticky; top: 0; background: #ffffffaa;" colspan="1">Haskell</th>
@@ -48,6 +49,13 @@ json-glib
 json-path
 </a>
 ¹
+</div>
+</th>
+<th style="position: sticky; top: 2rem; background: #f6f8faaa;">
+<div style="writing-mode: vertical-rl;">
+<a href="https://github.com/danielaparker/jsoncons">
+jsoncons
+</a>
 </div>
 </th>
 <th style="position: sticky; top: 2rem; background: #f6f8faaa;">
@@ -303,6 +311,9 @@ jsonpath
 <td>
 ✓
 </td>
+<td>
+✓
+</td>
 </tr>
 <tr id="array_index_dot_notation">
 <td>
@@ -312,6 +323,9 @@ jsonpath
 <td><code>$.2</code></td>
 <td>
 <a href="errors.html#Bash_JSONPath.sh___array_index_dot_notation">e</a>
+</td>
+<td>
+?
 </td>
 <td>
 ?
@@ -397,6 +411,9 @@ jsonpath
 <td><code>$.2</code></td>
 <td>
 ✗
+</td>
+<td>
+✓
 </td>
 <td>
 ✓
@@ -523,6 +540,9 @@ jsonpath
 ✓
 </td>
 <td>
+✓
+</td>
+<td>
 ✗
 </td>
 <td>
@@ -570,6 +590,9 @@ jsonpath
 </td>
 <td>
 ✗
+</td>
+<td>
+✓
 </td>
 <td>
 ✓
@@ -669,6 +692,9 @@ jsonpath
 ✓
 </td>
 <td>
+✓
+</td>
+<td>
 <a href="errors.html#Golang_github.com-oliveagle-jsonpath___array_index_slice_end_out_of_bounds">e</a>
 </td>
 <td>
@@ -743,6 +769,9 @@ jsonpath
 </td>
 <td>
 ✗
+</td>
+<td>
+✓
 </td>
 <td>
 <a href="errors.html#Erlang_ejsonpath___array_index_slice_last_no_end">e</a>
@@ -820,6 +849,9 @@ jsonpath
 <a href="results/array_index_slice_negative_step.html">Array index slice negative step</a>
 </td>
 <td><code>$[::-2]</code></td>
+<td>
+?
+</td>
 <td>
 ?
 </td>
@@ -915,6 +947,9 @@ jsonpath
 <a href="errors.html#Clojure_json-path___array_index_slice_no_start_no_end">e</a>
 </td>
 <td>
+✓
+</td>
+<td>
 <a href="errors.html#Erlang_ejsonpath___array_index_slice_no_start_no_end">e</a>
 </td>
 <td>
@@ -998,6 +1033,9 @@ jsonpath
 </td>
 <td>
 ✗
+</td>
+<td>
+✓
 </td>
 <td>
 ✓
@@ -1153,6 +1191,9 @@ jsonpath
 <td>
 ✓
 </td>
+<td>
+✓
+</td>
 </tr>
 <tr id="array_index_slice_start_end">
 <td>
@@ -1168,6 +1209,9 @@ jsonpath
 </td>
 <td>
 ✗
+</td>
+<td>
+✓
 </td>
 <td>
 ✗
@@ -1247,6 +1291,9 @@ jsonpath
 <td><code>$[3:0:-2]</code></td>
 <td>
 <a href="errors.html#Bash_JSONPath.sh___array_index_slice_start_end_negative_step">e</a>
+</td>
+<td>
+?
 </td>
 <td>
 ?
@@ -1340,6 +1387,9 @@ jsonpath
 ✗
 </td>
 <td>
+✓
+</td>
+<td>
 <a href="errors.html#Erlang_ejsonpath___array_index_slice_start_end_step">e</a>
 </td>
 <td>
@@ -1423,6 +1473,9 @@ jsonpath
 </td>
 <td>
 ?
+</td>
+<td>
+<a href="errors.html#Cpp_jsoncons___array_index_slice_start_end_step_0">e</a>
 </td>
 <td>
 <a href="errors.html#Erlang_ejsonpath___array_index_slice_start_end_step_0">e</a>
@@ -1519,6 +1572,9 @@ jsonpath
 ✓
 </td>
 <td>
+✓
+</td>
+<td>
 <a href="errors.html#Golang_github.com-oliveagle-jsonpath___array_index_slice_start_end_step_1">e</a>
 </td>
 <td>
@@ -1593,6 +1649,9 @@ jsonpath
 </td>
 <td>
 ✗
+</td>
+<td>
+✓
 </td>
 <td>
 <a href="errors.html#Erlang_ejsonpath___array_index_slice_start_end_step_non_aligned">e</a>
@@ -1689,6 +1748,9 @@ jsonpath
 ✓
 </td>
 <td>
+✓
+</td>
+<td>
 ✗
 </td>
 <td>
@@ -1774,6 +1836,9 @@ jsonpath
 ✓
 </td>
 <td>
+✓
+</td>
+<td>
 ✗
 </td>
 <td>
@@ -1848,6 +1913,9 @@ jsonpath
 </td>
 <td>
 ✗
+</td>
+<td>
+✓
 </td>
 <td>
 <a href="errors.html#Erlang_ejsonpath___array_index_slice_step">e</a>
@@ -1986,6 +2054,9 @@ jsonpath
 ✓
 </td>
 <td>
+✓
+</td>
+<td>
 <a href="errors.html#Python_jsonpath-rw___array_index_union">e</a>
 </td>
 <td>
@@ -2015,6 +2086,9 @@ jsonpath
 </td>
 <td>
 <a href="errors.html#C_json-glib___filter_current_object_with_value">e</a>
+</td>
+<td>
+?
 </td>
 <td>
 ?
@@ -2114,6 +2188,9 @@ jsonpath
 ✓
 </td>
 <td>
+✓
+</td>
+<td>
 ✗
 </td>
 <td>
@@ -2185,6 +2262,9 @@ jsonpath
 </td>
 <td>
 <a href="errors.html#C_json-glib___filter_greater_than">e</a>
+</td>
+<td>
+✓
 </td>
 <td>
 ✓
@@ -2275,6 +2355,9 @@ jsonpath
 <a href="errors.html#Clojure_json-path___filter_greater_than_or_equal">e</a>
 </td>
 <td>
+?
+</td>
+<td>
 <a href="errors.html#Erlang_ejsonpath___filter_greater_than_or_equal">e</a>
 </td>
 <td>
@@ -2358,6 +2441,9 @@ jsonpath
 </td>
 <td>
 <a href="errors.html#Clojure_json-path___filter_less_than">e</a>
+</td>
+<td>
+✓
 </td>
 <td>
 ✓
@@ -2448,6 +2534,9 @@ jsonpath
 ?
 </td>
 <td>
+?
+</td>
+<td>
 <a href="errors.html#Golang_github.com-PaesslerAG-jsonpath___filter_less_than_on_string">e</a>
 </td>
 <td>
@@ -2530,6 +2619,9 @@ jsonpath
 <a href="errors.html#Clojure_json-path___filter_less_than_or_equal">e</a>
 </td>
 <td>
+?
+</td>
+<td>
 <a href="errors.html#Erlang_ejsonpath___filter_less_than_or_equal">e</a>
 </td>
 <td>
@@ -2610,6 +2702,9 @@ jsonpath
 </td>
 <td>
 <a href="errors.html#C_json-glib___filter_null">e</a>
+</td>
+<td>
+?
 </td>
 <td>
 ?
@@ -2700,6 +2795,9 @@ jsonpath
 ?
 </td>
 <td>
+?
+</td>
+<td>
 <a href="errors.html#Erlang_ejsonpath___filter_with_boolean_operation">e</a>
 </td>
 <td>
@@ -2780,6 +2878,9 @@ jsonpath
 </td>
 <td>
 <a href="errors.html#C_json-glib___filter_with_value">e</a>
+</td>
+<td>
+✓
 </td>
 <td>
 ✓
@@ -2882,6 +2983,9 @@ jsonpath
 ?
 </td>
 <td>
+?
+</td>
+<td>
 <a href="errors.html#Haskell_jsonpath___filter_with_value_on_null">e</a>
 </td>
 <td>
@@ -2950,6 +3054,9 @@ jsonpath
 </td>
 <td>
 <a href="errors.html#C_json-glib___filter_without_value">e</a>
+</td>
+<td>
+?
 </td>
 <td>
 ?
@@ -3043,6 +3150,9 @@ jsonpath
 ✓
 </td>
 <td>
+✓
+</td>
+<td>
 <a href="errors.html#Golang_github.com-PaesslerAG-jsonpath___key_bracket_notation">e</a>
 </td>
 <td>
@@ -3128,6 +3238,9 @@ jsonpath
 ?
 </td>
 <td>
+?
+</td>
+<td>
 <a href="errors.html#Golang_github.com-PaesslerAG-jsonpath___key_bracket_notation_union">e</a>
 </td>
 <td>
@@ -3201,22 +3314,25 @@ jsonpath
 </td>
 <td><code>$['one','three'].key</code></td>
 <td>
-✗
+?
 </td>
 <td>
-✗
+?
 </td>
 <td>
 <a href="errors.html#Clojure_json-path___key_bracket_notation_union_with_key_on_nested_objects">e</a>
 </td>
 <td>
-✓
+?
+</td>
+<td>
+?
 </td>
 <td>
 <a href="errors.html#Golang_github.com-PaesslerAG-jsonpath___key_bracket_notation_union_with_key_on_nested_objects">e</a>
 </td>
 <td>
-✓
+?
 </td>
 <td>
 <a href="errors.html#Golang_github.com-oliveagle-jsonpath___key_bracket_notation_union_with_key_on_nested_objects">e</a>
@@ -3225,58 +3341,58 @@ jsonpath
 <a href="errors.html#Haskell_jsonpath___key_bracket_notation_union_with_key_on_nested_objects">e</a>
 </td>
 <td>
-✓
+?
 </td>
 <td>
-✓
+?
 </td>
 <td>
-✗
+?
 </td>
 <td>
-✓
+?
 </td>
 <td>
-✓
+?
 </td>
 <td>
-✗
+?
 </td>
 <td>
-✓
+?
 </td>
 <td>
-✗
+?
 </td>
 <td>
-✓
+?
 </td>
 <td>
-✓
+?
 </td>
 <td>
 <a href="errors.html#Perl_JSON-Path___key_bracket_notation_union_with_key_on_nested_objects">e</a>
 </td>
 <td>
-✓
+?
 </td>
 <td>
-✓
+?
 </td>
 <td>
 <a href="errors.html#Python_jsonpath2___key_bracket_notation_union_with_key_on_nested_objects">e</a>
 </td>
 <td>
-✓
+?
 </td>
 <td>
 <a href="errors.html#Rust_jsonpath___key_bracket_notation_union_with_key_on_nested_objects">e</a>
 </td>
 <td>
-✓
+?
 </td>
 <td>
-✓
+?
 </td>
 </tr>
 <tr id="key_bracket_notation_with_at_literal">
@@ -3293,6 +3409,9 @@ jsonpath
 </td>
 <td>
 <a href="errors.html#Clojure_json-path___key_bracket_notation_with_at_literal">e</a>
+</td>
+<td>
+✓
 </td>
 <td>
 ✓
@@ -3389,6 +3508,9 @@ jsonpath
 ✓
 </td>
 <td>
+✓
+</td>
+<td>
 <a href="errors.html#Golang_github.com-oliveagle-jsonpath___key_bracket_notation_with_dollar_literal">e</a>
 </td>
 <td>
@@ -3463,6 +3585,9 @@ jsonpath
 </td>
 <td>
 <a href="errors.html#Clojure_json-path___key_bracket_notation_with_double_quotes">e</a>
+</td>
+<td>
+✓
 </td>
 <td>
 ✓
@@ -3559,6 +3684,9 @@ jsonpath
 ✓
 </td>
 <td>
+✓
+</td>
+<td>
 <a href="errors.html#Golang_github.com-oliveagle-jsonpath___key_bracket_notation_with_number">e</a>
 </td>
 <td>
@@ -3633,6 +3761,9 @@ jsonpath
 </td>
 <td>
 <a href="errors.html#Clojure_json-path___key_bracket_notation_with_number_without_quotes">e</a>
+</td>
+<td>
+?
 </td>
 <td>
 ?
@@ -3720,6 +3851,9 @@ jsonpath
 <a href="errors.html#Clojure_json-path___key_bracket_notation_with_single_quote">e</a>
 </td>
 <td>
+<a href="errors.html#Cpp_jsoncons___key_bracket_notation_with_single_quote">e</a>
+</td>
+<td>
 <a href="errors.html#Erlang_ejsonpath___key_bracket_notation_with_single_quote">e</a>
 </td>
 <td>
@@ -3805,6 +3939,9 @@ jsonpath
 <a href="errors.html#Clojure_json-path___key_bracket_notation_with_single_quote_escaped">e</a>
 </td>
 <td>
+?
+</td>
+<td>
 <a href="errors.html#Erlang_ejsonpath___key_bracket_notation_with_single_quote_escaped">e</a>
 </td>
 <td>
@@ -3888,6 +4025,9 @@ jsonpath
 </td>
 <td>
 <a href="errors.html#Clojure_json-path___key_bracket_notation_with_special_characters">e</a>
+</td>
+<td>
+✓
 </td>
 <td>
 ✓
@@ -3984,6 +4124,9 @@ jsonpath
 ✓
 </td>
 <td>
+✓
+</td>
+<td>
 <a href="errors.html#Golang_github.com-oliveagle-jsonpath___key_bracket_notation_with_star_literal">e</a>
 </td>
 <td>
@@ -4058,6 +4201,9 @@ jsonpath
 </td>
 <td>
 <a href="errors.html#Clojure_json-path___key_bracket_notation_without_quotes">e</a>
+</td>
+<td>
+?
 </td>
 <td>
 <a href="errors.html#Erlang_ejsonpath___key_bracket_notation_without_quotes">e</a>
@@ -4145,6 +4291,9 @@ jsonpath
 <a href="errors.html#Clojure_json-path___key_dot_bracket_notation">e</a>
 </td>
 <td>
+<a href="errors.html#Cpp_jsoncons___key_dot_bracket_notation">e</a>
+</td>
+<td>
 <a href="errors.html#Erlang_ejsonpath___key_dot_bracket_notation">e</a>
 </td>
 <td>
@@ -4228,6 +4377,9 @@ jsonpath
 </td>
 <td>
 <a href="errors.html#Clojure_json-path___key_dot_bracket_notation_with_double_quotes">e</a>
+</td>
+<td>
+<a href="errors.html#Cpp_jsoncons___key_dot_bracket_notation_with_double_quotes">e</a>
 </td>
 <td>
 <a href="errors.html#Erlang_ejsonpath___key_dot_bracket_notation_with_double_quotes">e</a>
@@ -4315,6 +4467,9 @@ jsonpath
 <a href="errors.html#Clojure_json-path___key_dot_bracket_notation_without_quotes">e</a>
 </td>
 <td>
+<a href="errors.html#Cpp_jsoncons___key_dot_bracket_notation_without_quotes">e</a>
+</td>
+<td>
 <a href="errors.html#Erlang_ejsonpath___key_dot_bracket_notation_without_quotes">e</a>
 </td>
 <td>
@@ -4392,6 +4547,9 @@ jsonpath
 <td><code>$.key</code></td>
 <td>
 ✗
+</td>
+<td>
+✓
 </td>
 <td>
 ✓
@@ -4553,6 +4711,9 @@ jsonpath
 <td>
 ✓
 </td>
+<td>
+✓
+</td>
 </tr>
 <tr id="key_dot_notation_on_null_value">
 <td>
@@ -4638,6 +4799,9 @@ jsonpath
 <td>
 ✓
 </td>
+<td>
+✓
+</td>
 </tr>
 <tr id="key_dot_notation_with_double_quotes">
 <td>
@@ -4645,6 +4809,9 @@ jsonpath
 <a href="results/key_dot_notation_with_double_quotes.html">Key dot notation with double quotes</a>
 </td>
 <td><code>$."key"</code></td>
+<td>
+?
+</td>
 <td>
 ?
 </td>
@@ -4740,6 +4907,9 @@ jsonpath
 ?
 </td>
 <td>
+?
+</td>
+<td>
 <a href="errors.html#Erlang_ejsonpath___key_dot_notation_with_single_quotes">e</a>
 </td>
 <td>
@@ -4823,6 +4993,9 @@ jsonpath
 </td>
 <td>
 <a href="errors.html#Clojure_json-path___recursive_array_index">e</a>
+</td>
+<td>
+?
 </td>
 <td>
 <a href="errors.html#Erlang_ejsonpath___recursive_array_index">e</a>
@@ -4911,6 +5084,9 @@ jsonpath
 ✓
 </td>
 <td>
+✓
+</td>
+<td>
 <a href="errors.html#Erlang_ejsonpath___recursive_key">e</a>
 </td>
 <td>
@@ -4987,6 +5163,9 @@ jsonpath
 ²
 </td>
 <td><code>$.."key"</code></td>
+<td>
+?
+</td>
 <td>
 ?
 </td>
@@ -5083,6 +5262,9 @@ jsonpath
 ?
 </td>
 <td>
+?
+</td>
+<td>
 <a href="errors.html#Erlang_ejsonpath___recursive_key_with_single_quotes">e</a>
 </td>
 <td>
@@ -5161,6 +5343,9 @@ jsonpath
 <td><code>$.store..price</code></td>
 <td>
 ✗
+</td>
+<td>
+✓
 </td>
 <td>
 ✓
@@ -5255,6 +5440,9 @@ jsonpath
 ✓
 </td>
 <td>
+✗
+</td>
+<td>
 <a href="errors.html#Erlang_ejsonpath___recursive_wildcard">e</a>
 </td>
 <td>
@@ -5340,6 +5528,9 @@ jsonpath
 ✗
 </td>
 <td>
+✓
+</td>
+<td>
 <a href="errors.html#Erlang_ejsonpath___recursive_wildcard_on_null_value_array">e</a>
 </td>
 <td>
@@ -5417,6 +5608,9 @@ jsonpath
 <td><code>$..*</code></td>
 <td>
 <a href="errors.html#Bash_JSONPath.sh___recursive_wildcard_on_scalar">e</a>
+</td>
+<td>
+?
 </td>
 <td>
 ?
@@ -5510,6 +5704,9 @@ jsonpath
 ✓
 </td>
 <td>
+✓
+</td>
+<td>
 <a href="errors.html#Erlang_ejsonpath___root">e</a>
 </td>
 <td>
@@ -5595,6 +5792,9 @@ jsonpath
 <a href="errors.html#Clojure_json-path___script_expression">e</a>
 </td>
 <td>
+?
+</td>
+<td>
 <a href="errors.html#Erlang_ejsonpath___script_expression">e</a>
 </td>
 <td>
@@ -5672,6 +5872,9 @@ jsonpath
 <td><code>$[*]</code></td>
 <td>
 <a href="errors.html#Bash_JSONPath.sh___wildcard_bracket_notation_on_array">e</a>
+</td>
+<td>
+✓
 </td>
 <td>
 ✓
@@ -5795,6 +5998,9 @@ jsonpath
 ✓
 </td>
 <td>
+✓
+</td>
+<td>
 <a href="errors.html#Kotlin_com.nfeld.jsonpathlite___wildcard_bracket_notation_on_null_value_array">e</a>
 </td>
 <td>
@@ -5846,6 +6052,9 @@ jsonpath
 </td>
 <td>
 ✗
+</td>
+<td>
+✓
 </td>
 <td>
 ✓
@@ -5928,6 +6137,9 @@ jsonpath
 <td><code>$[*].bar[*].baz</code></td>
 <td>
 ✗
+</td>
+<td>
+✓
 </td>
 <td>
 ✓
@@ -6030,6 +6242,9 @@ jsonpath
 ✓
 </td>
 <td>
+✓
+</td>
+<td>
 <a href="errors.html#Golang_github.com-oliveagle-jsonpath___wildcard_dot_notation_on_array">e</a>
 </td>
 <td>
@@ -6099,6 +6314,9 @@ jsonpath
 <td><code>$.*</code></td>
 <td>
 ✗
+</td>
+<td>
+✓
 </td>
 <td>
 ✓

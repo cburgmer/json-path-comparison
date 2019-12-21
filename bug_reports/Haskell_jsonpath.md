@@ -69,24 +69,6 @@ The following queries provide results that do not match those of other implement
    Error: serachBegingingWithSlice: string
   ```
 
-- [ ] `$['one','three'].key`
-  Input:
-  ```
-  {"one": {"key": "value"}, "two": {"k": "v"}, "three": {"some": "more", "key": "other value"}}
-  ```
-  Expected output:
-  ```
-  ["value", "other value"]
-  ```
-  Error:
-  ```
-  json-path-comparison: serachBegingingWithSlice: string
-  CallStack (from HasCallStack):
-    error, called at app/Main.hs:36:7 in main:Main
-  Invalid JSONPath: $['one','three'].key
-   Error: serachBegingingWithSlice: string
-  ```
-
 - [ ] `$['@']`
   Input:
   ```
