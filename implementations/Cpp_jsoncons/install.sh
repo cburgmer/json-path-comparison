@@ -1,7 +1,10 @@
 #!/bin/bash
 set -euo pipefail
 
-readonly version="0.141.0"
+readonly script_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+
+version="$(cat "${script_dir}/version")"
+
 readonly source_url="https://github.com/danielaparker/jsoncons/archive/v${version}.tar.gz"
 readonly target_dir="$1"
 
