@@ -31,6 +31,20 @@ The following queries provide results that do not match those of other implement
   jsonpath returned false, this might indicate an error
   ```
 
+- [ ] `$['two.some']`
+  Input:
+  ```
+  {"one": {"key": "value"}, "two": {"some": "more", "key": "other value"}, "two.some": "42"}
+  ```
+  Expected output:
+  ```
+  ["42"]
+  ```
+  Actual output:
+  ```
+  ["more"]
+  ```
+
 - [ ] `$["key"]`
   Input:
   ```

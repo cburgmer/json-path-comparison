@@ -268,6 +268,20 @@ The following queries provide results that do not match those of other implement
   
   ```
 
+- [ ] `$['two.some']`
+  Input:
+  ```
+  {"one": {"key": "value"}, "two": {"some": "more", "key": "other value"}, "two.some": "42"}
+  ```
+  Expected output:
+  ```
+  ["42"]
+  ```
+  Actual output:
+  ```
+  {"two.some": "42"}
+  ```
+
 - [ ] `$["key"]`
   Input:
   ```

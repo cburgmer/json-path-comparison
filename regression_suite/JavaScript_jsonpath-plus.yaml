@@ -195,6 +195,16 @@ queries:
     result: [{"$": "value", "another": "entry"}]
     status: fail
     consensus: ["value"]
+  - id: key_bracket_notation_with_dot
+    selector: $['two.some']
+    document: {"one": {"key": "value"}, "two": {"some": "more", "key": "other value"}, "two.some": "42"}
+    result: ["42"]
+    status: pass
+  - id: key_bracket_notation_with_dot_without_quotes
+    selector: $[two.some]
+    document: {"one": {"key": "value"}, "two": {"some": "more", "key": "other value"}, "two.some": "42"}
+    result: ["42"]
+    status: open
   - id: key_bracket_notation_with_double_quotes
     selector: $["key"]
     document: {"key": "value"}

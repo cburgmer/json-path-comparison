@@ -227,6 +227,20 @@ The following queries provide results that do not match those of other implement
   strconv.Atoi: parsing "'$'": invalid syntax
   ```
 
+- [ ] `$['two.some']`
+  Input:
+  ```
+  {"one": {"key": "value"}, "two": {"some": "more", "key": "other value"}, "two.some": "42"}
+  ```
+  Expected output:
+  ```
+  ["42"]
+  ```
+  Error:
+  ```
+  strconv.Atoi: parsing "'two.some'": invalid syntax
+  ```
+
 - [ ] `$["key"]`
   Input:
   ```

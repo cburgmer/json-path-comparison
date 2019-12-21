@@ -1,0 +1,5 @@
+{
+    "one": {"key": "value"},
+    "two": {"some": "more", "key": "other value"},
+    "two.some": "42"
+}

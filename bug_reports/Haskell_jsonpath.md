@@ -105,6 +105,21 @@ The following queries provide results that do not match those of other implement
    Error: serachBegingingWithSlice: string
   ```
 
+- [ ] `$['two.some']`
+  Input:
+  ```
+  {"one": {"key": "value"}, "two": {"some": "more", "key": "other value"}, "two.some": "42"}
+  ```
+  Expected output:
+  ```
+  ["42"]
+  ```
+  Error:
+  ```
+  json-path-comparison: src/Data/JSONPath/Execute.hs:(29,1)-(63,29): Non-exhaustive patterns in function executeJSONPathElement
+  
+  ```
+
 - [ ] `$["key"]`
   Input:
   ```
