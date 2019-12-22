@@ -57,6 +57,8 @@ main() {
     echo "# It can be used to track regressions in implementations. This file can be complemented with the report specifically"
     echo "# generated for each implementation."
     echo
+    echo "# If a query holds a scalar result a consensus is given for both the list and the scalar response."
+    echo
 
     echo "queries:"
     while IFS= read -r query; do
