@@ -198,6 +198,13 @@ regression_suite_rules() {
     local implementation
 
     cat <<EOF
+rule compile_regression_suite_2
+  command = ./src/compile_regression_suite2.sh \$in > \$out
+EOF
+
+    echo "build ${regression_suite}/consensus.yaml: compile_regression_suite_2 ${results_dir} ${consensus_dir} | src/compile_regression_suite2.sh queries/ implementations/"
+
+    cat <<EOF
 rule compile_regression_suite
   command = ./src/compile_regression_suite.sh \$in > \$out
 EOF

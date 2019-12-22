@@ -2531,6 +2531,9 @@ build docs/results/array_index_slice_only_start.html: compile_html build/markdow
 build docs/results/key_bracket_notation_with_double_quotes.html: compile_html build/markdown/results/key_bracket_notation_with_double_quotes.md | src/compile_html.sh
 build docs/results/array_index_slice_start_end_step_0.html: compile_html build/markdown/results/array_index_slice_start_end_step_0.md | src/compile_html.sh
 
+rule compile_regression_suite_2
+  command = ./src/compile_regression_suite2.sh $in > $out
+build regression_suite/consensus.yaml: compile_regression_suite_2 build/results build/consensus | src/compile_regression_suite2.sh queries/ implementations/
 rule compile_regression_suite
   command = ./src/compile_regression_suite.sh $in > $out
 
