@@ -41,6 +41,10 @@ query_entry() {
     echo -n "    document: "
     ./src/oneliner_json.py < "./queries/${query}/document.json"
 
+    if [[ -f "./queries/${query}/ALLOW_UNORDERED" ]]; then
+        echo "    ordered: false"
+    fi
+
     if is_query_result_ok "${results_dir}/${query}/${implementation}"; then
         echo -n "    result: "
         query_result_payload "${results_dir}/${query}/${implementation}" | unwrap_scalar_if_needed "$query" | ./src/oneliner_json.py
