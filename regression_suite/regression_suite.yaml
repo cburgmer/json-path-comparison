@@ -6,6 +6,8 @@
 # It can be used to track regressions in implementations. This file can be complemented with the report specifically
 # generated for each implementation.
 
+# If a query holds a scalar result a consensus is given for both the list and the scalar response.
+
 queries:
   - id: array_index
     selector: $[2]

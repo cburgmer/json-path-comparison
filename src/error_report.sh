@@ -6,13 +6,12 @@ readonly results_dir="$1"
 
 . src/shared.sh
 
-all_errors() {
-    local implementation_query_result
-    while IFS= read -r implementation_query_result; do
-        if ! is_query_result_ok "$implementation_query_result"; then
-            echo "$implementation_query_result"
-        fi
-    done <<< "$(find "$results_dir" -type f)"
+all_implementations() {
+    find ./implementations -name run.sh -maxdepth 2 -print0 | xargs -0 -n1 dirname | xargs -n1 basename | sort
+}
+
+all_queries() {
+    find ./queries -type d -maxdepth 1 -mindepth 1 -print0 | xargs -0 -n1 basename | sort
 }
 
 nice_error_headline() {
@@ -30,29 +29,31 @@ error_headline_id() {
 }
 
 error_section() {
-    local implementation_query_result="$1"
-    local query
-    local implementation
-    query="$(basename $(dirname "$implementation_query_result"))"
-    implementation="$(basename "$implementation_query_result")"
+    local query="$1"
+    local implementation="$2"
 
     echo "<h3 id=\"$(error_headline_id "$query" "$implementation")\">"
     nice_error_headline "$query" "$implementation"
     echo "</h3>"
     echo
-    query_result_payload "$implementation_query_result" | pre_block
+    query_result_payload "${results_dir}/${query}/${implementation}" | pre_block
     echo
 }
 
 main() {
-    local implementation_query_result
+    local query
+    local implementation
 
     echo "## Errors"
     echo
 
-    while IFS= read -r implementation_query_result; do
-        error_section "$implementation_query_result"
-    done <<< "$(all_errors | sort)"
+    while IFS= read -r query; do
+        while IFS= read -r implementation; do
+            if ! is_query_result_ok "${results_dir}/${query}/${implementation}"; then
+                error_section "$query" "$implementation"
+            fi
+        done <<< "$(all_implementations)"
+    done <<< "$(all_queries)"
 }
 
 main
