@@ -52,7 +52,7 @@ generated here to test for regressions in your logic. The
 all queries and includes a consensus where one exists. Additionally
 a report is generated for every implementation which contains current results
 for queries where the consensus isn't matched or no consensus exists (see
-e.g. [regression_suite/Clojure_json-path.yaml](./regression_suite/Clojure_json-path.yaml).
+e.g. [regression_suite/Clojure_json-path.yaml](./regression_suite/Clojure_json-path.yaml)).
 
 See for example the [Clojure json-path regression test](https://github.com/gga/json-path/blob/master/test/json_path/test/regression_test.clj)
 on how those files can be put to use.

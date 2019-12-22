@@ -56,7 +56,9 @@ queries:
   - id: key_bracket_notation_union_with_key_on_nested_objects
     status: open
     result: ["value", "other value"]
-  - id: key_bracket_notation_with_dot_without_quotes
+  - id: key_bracket_notation_with_nested_object
+    status: error
+  - id: key_bracket_notation_with_nested_object_without_quotes
     status: error
   - id: key_bracket_notation_with_number_without_quotes
     status: error

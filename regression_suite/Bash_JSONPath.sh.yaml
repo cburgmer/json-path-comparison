@@ -83,12 +83,15 @@ queries:
   - id: key_bracket_notation_with_dot
     status: fail
     result: {"two.some": "42"}
-  - id: key_bracket_notation_with_dot_without_quotes
-    status: open
-    result: {"some": "more"}
   - id: key_bracket_notation_with_double_quotes
     status: fail
     result: {"key": "value"}
+  - id: key_bracket_notation_with_nested_object
+    status: open
+    result: {"some": "more"}
+  - id: key_bracket_notation_with_nested_object_without_quotes
+    status: open
+    result: {"some": "more"}
   - id: key_bracket_notation_with_number
     status: error
   - id: key_bracket_notation_with_number_without_quotes
