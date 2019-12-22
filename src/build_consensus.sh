@@ -5,12 +5,17 @@ readonly query_results="$1"
 
 . src/shared.sh
 
+all_implementations() {
+    find ./implementations -name run.sh -maxdepth 2 -print0 | xargs -0 -n1 dirname | xargs -n1 basename
+}
+
 all_ok_implementation_results() {
-    while IFS= read -r result; do
-        if is_query_result_ok "$result"; then
-            echo "$result"
+    local implementation
+    while IFS= read -r implementation; do
+        if is_query_result_ok "${query_results}/${implementation}"; then
+            echo "${query_results}/${implementation}"
         fi
-    done <<< "$(find "${query_results}" -type f)"
+    done <<< "$(all_implementations)"
 }
 
 consensus() {
@@ -37,7 +42,7 @@ consensus() {
 
 minimal_consensus() {
     local implementation_count
-    implementation_count=$(find ./implementations -name run.sh -maxdepth 2 | wc -l)
+    implementation_count=$(all_implementations | wc -l)
 
     # ceil(half) and +1 so consensus always has 2 more members than other side
     echo $(( (implementation_count + 1) / 2 + 1))
