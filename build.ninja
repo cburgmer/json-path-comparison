@@ -2531,36 +2531,36 @@ build docs/results/array_index_slice_only_start.html: compile_html build/markdow
 build docs/results/key_bracket_notation_with_double_quotes.html: compile_html build/markdown/results/key_bracket_notation_with_double_quotes.md | src/compile_html.sh
 build docs/results/array_index_slice_start_end_step_0.html: compile_html build/markdown/results/array_index_slice_start_end_step_0.md | src/compile_html.sh
 
-rule compile_regression_suite_2
-  command = ./src/compile_regression_suite2.sh $in > $out
-build regression_suite/consensus.yaml: compile_regression_suite_2 build/results build/consensus | src/compile_regression_suite2.sh queries/ implementations/
 rule compile_regression_suite
   command = ./src/compile_regression_suite.sh $in > $out
+build regression_suite/regression_suite.yaml: compile_regression_suite build/results build/consensus | src/compile_regression_suite.sh queries/ implementations/
+rule compile_implementation_report
+  command = ./src/compile_implementation_report.sh $in > $out
 
-build regression_suite/Bash_JSONPath.sh.yaml: compile_regression_suite build/results build/consensus implementations/Bash_JSONPath.sh | src/compile_regression_suite.sh queries/ implementations/
-build regression_suite/C_json-glib.yaml: compile_regression_suite build/results build/consensus implementations/C_json-glib | src/compile_regression_suite.sh queries/ implementations/
-build regression_suite/Clojure_json-path.yaml: compile_regression_suite build/results build/consensus implementations/Clojure_json-path | src/compile_regression_suite.sh queries/ implementations/
-build regression_suite/Cpp_jsoncons.yaml: compile_regression_suite build/results build/consensus implementations/Cpp_jsoncons | src/compile_regression_suite.sh queries/ implementations/
-build regression_suite/Erlang_ejsonpath.yaml: compile_regression_suite build/results build/consensus implementations/Erlang_ejsonpath | src/compile_regression_suite.sh queries/ implementations/
-build regression_suite/Golang_github.com-PaesslerAG-jsonpath.yaml: compile_regression_suite build/results build/consensus implementations/Golang_github.com-PaesslerAG-jsonpath | src/compile_regression_suite.sh queries/ implementations/
-build regression_suite/Golang_github.com-bhmj-jsonslice.yaml: compile_regression_suite build/results build/consensus implementations/Golang_github.com-bhmj-jsonslice | src/compile_regression_suite.sh queries/ implementations/
-build regression_suite/Golang_github.com-oliveagle-jsonpath.yaml: compile_regression_suite build/results build/consensus implementations/Golang_github.com-oliveagle-jsonpath | src/compile_regression_suite.sh queries/ implementations/
-build regression_suite/Haskell_jsonpath.yaml: compile_regression_suite build/results build/consensus implementations/Haskell_jsonpath | src/compile_regression_suite.sh queries/ implementations/
-build regression_suite/JavaScript_Goessner.yaml: compile_regression_suite build/results build/consensus implementations/JavaScript_Goessner | src/compile_regression_suite.sh queries/ implementations/
-build regression_suite/JavaScript_jsonpath.yaml: compile_regression_suite build/results build/consensus implementations/JavaScript_jsonpath | src/compile_regression_suite.sh queries/ implementations/
-build regression_suite/JavaScript_jsonpath-plus.yaml: compile_regression_suite build/results build/consensus implementations/JavaScript_jsonpath-plus | src/compile_regression_suite.sh queries/ implementations/
-build regression_suite/Java_com.github.jsurfer.yaml: compile_regression_suite build/results build/consensus implementations/Java_com.github.jsurfer | src/compile_regression_suite.sh queries/ implementations/
-build regression_suite/Java_com.jayway.jsonpath.yaml: compile_regression_suite build/results build/consensus implementations/Java_com.jayway.jsonpath | src/compile_regression_suite.sh queries/ implementations/
-build regression_suite/Kotlin_com.nfeld.jsonpathlite.yaml: compile_regression_suite build/results build/consensus implementations/Kotlin_com.nfeld.jsonpathlite | src/compile_regression_suite.sh queries/ implementations/
-build regression_suite/PHP_Goessner.yaml: compile_regression_suite build/results build/consensus implementations/PHP_Goessner | src/compile_regression_suite.sh queries/ implementations/
-build regression_suite/PHP_flow-jsonpath.yaml: compile_regression_suite build/results build/consensus implementations/PHP_flow-jsonpath | src/compile_regression_suite.sh queries/ implementations/
-build regression_suite/PHP_galbar-jsonpath.yaml: compile_regression_suite build/results build/consensus implementations/PHP_galbar-jsonpath | src/compile_regression_suite.sh queries/ implementations/
-build regression_suite/PHP_remorhaz-jsonpath.yaml: compile_regression_suite build/results build/consensus implementations/PHP_remorhaz-jsonpath | src/compile_regression_suite.sh queries/ implementations/
-build regression_suite/Perl_JSON-Path.yaml: compile_regression_suite build/results build/consensus implementations/Perl_JSON-Path | src/compile_regression_suite.sh queries/ implementations/
-build regression_suite/Python_jsonpath.yaml: compile_regression_suite build/results build/consensus implementations/Python_jsonpath | src/compile_regression_suite.sh queries/ implementations/
-build regression_suite/Python_jsonpath-rw.yaml: compile_regression_suite build/results build/consensus implementations/Python_jsonpath-rw | src/compile_regression_suite.sh queries/ implementations/
-build regression_suite/Python_jsonpath2.yaml: compile_regression_suite build/results build/consensus implementations/Python_jsonpath2 | src/compile_regression_suite.sh queries/ implementations/
-build regression_suite/Ruby_jsonpath.yaml: compile_regression_suite build/results build/consensus implementations/Ruby_jsonpath | src/compile_regression_suite.sh queries/ implementations/
-build regression_suite/Rust_jsonpath.yaml: compile_regression_suite build/results build/consensus implementations/Rust_jsonpath | src/compile_regression_suite.sh queries/ implementations/
-build regression_suite/Rust_jsonpath_lib.yaml: compile_regression_suite build/results build/consensus implementations/Rust_jsonpath_lib | src/compile_regression_suite.sh queries/ implementations/
-build regression_suite/Scala_jsonpath.yaml: compile_regression_suite build/results build/consensus implementations/Scala_jsonpath | src/compile_regression_suite.sh queries/ implementations/
+build regression_suite/Bash_JSONPath.sh.yaml: compile_implementation_report build/results build/consensus implementations/Bash_JSONPath.sh | src/compile_implementation_report.sh queries/ implementations/
+build regression_suite/C_json-glib.yaml: compile_implementation_report build/results build/consensus implementations/C_json-glib | src/compile_implementation_report.sh queries/ implementations/
+build regression_suite/Clojure_json-path.yaml: compile_implementation_report build/results build/consensus implementations/Clojure_json-path | src/compile_implementation_report.sh queries/ implementations/
+build regression_suite/Cpp_jsoncons.yaml: compile_implementation_report build/results build/consensus implementations/Cpp_jsoncons | src/compile_implementation_report.sh queries/ implementations/
+build regression_suite/Erlang_ejsonpath.yaml: compile_implementation_report build/results build/consensus implementations/Erlang_ejsonpath | src/compile_implementation_report.sh queries/ implementations/
+build regression_suite/Golang_github.com-PaesslerAG-jsonpath.yaml: compile_implementation_report build/results build/consensus implementations/Golang_github.com-PaesslerAG-jsonpath | src/compile_implementation_report.sh queries/ implementations/
+build regression_suite/Golang_github.com-bhmj-jsonslice.yaml: compile_implementation_report build/results build/consensus implementations/Golang_github.com-bhmj-jsonslice | src/compile_implementation_report.sh queries/ implementations/
+build regression_suite/Golang_github.com-oliveagle-jsonpath.yaml: compile_implementation_report build/results build/consensus implementations/Golang_github.com-oliveagle-jsonpath | src/compile_implementation_report.sh queries/ implementations/
+build regression_suite/Haskell_jsonpath.yaml: compile_implementation_report build/results build/consensus implementations/Haskell_jsonpath | src/compile_implementation_report.sh queries/ implementations/
+build regression_suite/JavaScript_Goessner.yaml: compile_implementation_report build/results build/consensus implementations/JavaScript_Goessner | src/compile_implementation_report.sh queries/ implementations/
+build regression_suite/JavaScript_jsonpath.yaml: compile_implementation_report build/results build/consensus implementations/JavaScript_jsonpath | src/compile_implementation_report.sh queries/ implementations/
+build regression_suite/JavaScript_jsonpath-plus.yaml: compile_implementation_report build/results build/consensus implementations/JavaScript_jsonpath-plus | src/compile_implementation_report.sh queries/ implementations/
+build regression_suite/Java_com.github.jsurfer.yaml: compile_implementation_report build/results build/consensus implementations/Java_com.github.jsurfer | src/compile_implementation_report.sh queries/ implementations/
+build regression_suite/Java_com.jayway.jsonpath.yaml: compile_implementation_report build/results build/consensus implementations/Java_com.jayway.jsonpath | src/compile_implementation_report.sh queries/ implementations/
+build regression_suite/Kotlin_com.nfeld.jsonpathlite.yaml: compile_implementation_report build/results build/consensus implementations/Kotlin_com.nfeld.jsonpathlite | src/compile_implementation_report.sh queries/ implementations/
+build regression_suite/PHP_Goessner.yaml: compile_implementation_report build/results build/consensus implementations/PHP_Goessner | src/compile_implementation_report.sh queries/ implementations/
+build regression_suite/PHP_flow-jsonpath.yaml: compile_implementation_report build/results build/consensus implementations/PHP_flow-jsonpath | src/compile_implementation_report.sh queries/ implementations/
+build regression_suite/PHP_galbar-jsonpath.yaml: compile_implementation_report build/results build/consensus implementations/PHP_galbar-jsonpath | src/compile_implementation_report.sh queries/ implementations/
+build regression_suite/PHP_remorhaz-jsonpath.yaml: compile_implementation_report build/results build/consensus implementations/PHP_remorhaz-jsonpath | src/compile_implementation_report.sh queries/ implementations/
+build regression_suite/Perl_JSON-Path.yaml: compile_implementation_report build/results build/consensus implementations/Perl_JSON-Path | src/compile_implementation_report.sh queries/ implementations/
+build regression_suite/Python_jsonpath.yaml: compile_implementation_report build/results build/consensus implementations/Python_jsonpath | src/compile_implementation_report.sh queries/ implementations/
+build regression_suite/Python_jsonpath-rw.yaml: compile_implementation_report build/results build/consensus implementations/Python_jsonpath-rw | src/compile_implementation_report.sh queries/ implementations/
+build regression_suite/Python_jsonpath2.yaml: compile_implementation_report build/results build/consensus implementations/Python_jsonpath2 | src/compile_implementation_report.sh queries/ implementations/
+build regression_suite/Ruby_jsonpath.yaml: compile_implementation_report build/results build/consensus implementations/Ruby_jsonpath | src/compile_implementation_report.sh queries/ implementations/
+build regression_suite/Rust_jsonpath.yaml: compile_implementation_report build/results build/consensus implementations/Rust_jsonpath | src/compile_implementation_report.sh queries/ implementations/
+build regression_suite/Rust_jsonpath_lib.yaml: compile_implementation_report build/results build/consensus implementations/Rust_jsonpath_lib | src/compile_implementation_report.sh queries/ implementations/
+build regression_suite/Scala_jsonpath.yaml: compile_implementation_report build/results build/consensus implementations/Scala_jsonpath | src/compile_implementation_report.sh queries/ implementations/

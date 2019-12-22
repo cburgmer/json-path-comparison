@@ -13,7 +13,7 @@ from the queries in [./queries](./queries).
 - Consensus-based decision on correctness
 - Output and error report for failures
 - Automatically generated bug reports
-- Regression test suites for upstream implementations
+- A [regression test suite](./regression_suite/regression_suite.yaml) for upstream implementations
 
 ## Roadmap
 

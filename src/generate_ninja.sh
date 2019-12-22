@@ -198,20 +198,20 @@ regression_suite_rules() {
     local implementation
 
     cat <<EOF
-rule compile_regression_suite_2
-  command = ./src/compile_regression_suite2.sh \$in > \$out
-EOF
-
-    echo "build ${regression_suite}/consensus.yaml: compile_regression_suite_2 ${results_dir} ${consensus_dir} | src/compile_regression_suite2.sh queries/ implementations/"
-
-    cat <<EOF
 rule compile_regression_suite
   command = ./src/compile_regression_suite.sh \$in > \$out
 EOF
 
+    echo "build ${regression_suite}/regression_suite.yaml: compile_regression_suite ${results_dir} ${consensus_dir} | src/compile_regression_suite.sh queries/ implementations/"
+
+    cat <<EOF
+rule compile_implementation_report
+  command = ./src/compile_implementation_report.sh \$in > \$out
+EOF
+
     echo
     while IFS= read -r implementation; do
-        echo "build ${regression_suite}/${implementation}.yaml: compile_regression_suite ${results_dir} ${consensus_dir} implementations/${implementation} | src/compile_regression_suite.sh queries/ implementations/"
+        echo "build ${regression_suite}/${implementation}.yaml: compile_implementation_report ${results_dir} ${consensus_dir} implementations/${implementation} | src/compile_implementation_report.sh queries/ implementations/"
     done <<< "$(all_implementations)"
 }
 
