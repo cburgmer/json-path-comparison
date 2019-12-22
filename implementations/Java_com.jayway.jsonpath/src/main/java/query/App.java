@@ -22,10 +22,7 @@ public class App {
             responseStrBuilder.append(inputStr);
         String json = responseStrBuilder.toString();
 
-        Configuration conf = Configuration.defaultConfiguration()
-            .addOptions(Option.ALWAYS_RETURN_LIST);
-
-        Object results = JsonPath.using(conf).parse(json).read(args[0]);
+        Object results = JsonPath.parse(json).read(args[0]);
 
         ObjectMapper mapper = new ObjectMapper();
         mapper.writeValue(System.out, results);

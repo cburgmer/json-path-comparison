@@ -27,7 +27,7 @@ The following queries provide results that do not match those of other implement
   	at com.jayway.jsonpath.JsonPath.<init>(JsonPath.java:101)
   	at com.jayway.jsonpath.JsonPath.compile(JsonPath.java:467)
   	at com.jayway.jsonpath.internal.JsonContext.read(JsonContext.java:87)
-  	at query.App.main(App.java:28)
+  	at query.App.main(App.java:25)
   ```
 
 - [ ] `$[0:3:2]`
@@ -82,7 +82,7 @@ The following queries provide results that do not match those of other implement
   	at com.jayway.jsonpath.JsonPath.<init>(JsonPath.java:101)
   	at com.jayway.jsonpath.JsonPath.compile(JsonPath.java:467)
   	at com.jayway.jsonpath.internal.JsonContext.read(JsonContext.java:87)
-  	at query.App.main(App.java:28)
+  	at query.App.main(App.java:25)
   ```
 
 
