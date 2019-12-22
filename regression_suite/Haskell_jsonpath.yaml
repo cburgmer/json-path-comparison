@@ -3,344 +3,88 @@
 
 implementation: Haskell_jsonpath
 queries:
-  - id: array_index
-    selector: $[2]
-    document: ["first", "second", "third", "forth", "fifth"]
-    result: "third"
-    status: pass
   - id: array_index_dot_notation
-    selector: $.2
-    document: ["first", "second", "third", "forth", "fifth"]
     status: error
-  - id: array_index_dot_notation_on_object
-    selector: $.2
-    document: {"a": "first", "2": "second", "b": "third"}
-    result: "second"
-    status: pass
-  - id: array_index_first
-    selector: $[0]
-    document: ["first", "second", "third", "forth", "fifth"]
-    result: "first"
-    status: pass
-  - id: array_index_last
-    selector: $[-1]
-    document: ["first", "second", "third"]
-    result: "third"
-    status: pass
-  - id: array_index_slice_end_out_of_bounds
-    selector: $[1:10]
-    document: ["first", "second", "third"]
-    result: ["second", "third"]
-    status: pass
-  - id: array_index_slice_last_no_end
-    selector: $[-1:]
-    document: ["first", "second", "third"]
-    result: ["third"]
-    status: pass
   - id: array_index_slice_negative_step
-    selector: $[::-2]
-    document: ["first", "second", "third", "forth", "fifth"]
     status: error
   - id: array_index_slice_no_start_no_end
-    selector: $[:]
-    document: ["first", "second"]
     status: error
-    consensus: ["first", "second"]
-  - id: array_index_slice_only_end
-    selector: $[:2]
-    document: ["first", "second", "third", "forth", "fifth"]
-    result: ["first", "second"]
-    status: pass
-  - id: array_index_slice_only_start
-    selector: $[1:]
-    document: ["first", "second", "third", "forth", "fifth"]
-    result: ["second", "third", "forth", "fifth"]
-    status: pass
-  - id: array_index_slice_start_end
-    selector: $[1:3]
-    document: ["first", "second", "third", "forth", "fifth"]
-    result: ["second", "third"]
-    status: pass
   - id: array_index_slice_start_end_negative_step
-    selector: $[3:0:-2]
-    document: ["first", "second", "third", "forth", "fifth"]
-    result: []
     status: open
-  - id: array_index_slice_start_end_step
-    selector: $[0:3:2]
-    document: ["first", "second", "third", "forth", "fifth"]
-    result: ["first", "third"]
-    status: pass
-  - id: array_index_slice_start_end_step_0
-    selector: $[0:3:0]
-    document: ["first", "second", "third", "forth", "fifth"]
-    status: error
-  - id: array_index_slice_start_end_step_1
-    selector: $[0:3:1]
-    document: ["first", "second", "third", "forth", "fifth"]
-    result: ["first", "second", "third"]
-    status: pass
-  - id: array_index_slice_start_end_step_non_aligned
-    selector: $[0:4:2]
-    document: ["first", "second", "third", "forth", "fifth"]
-    result: ["first", "third"]
-    status: pass
-  - id: array_index_slice_start_equals_end
-    selector: $[0:0]
-    document: ["first", "second"]
     result: []
-    status: pass
-  - id: array_index_slice_start_plus_one
-    selector: $[0:1]
-    document: ["first", "second"]
-    result: ["first"]
-    status: pass
-  - id: array_index_slice_step
-    selector: $[::2]
-    document: ["first", "second", "third", "forth", "fifth"]
-    result: ["first", "third", "fifth"]
-    status: pass
-  - id: array_index_union
-    selector: $[0,1]
-    document: ["first", "second", "third"]
-    result: ["first", "second"]
-    status: pass
+  - id: array_index_slice_start_end_step_0
+    status: error
   - id: filter_current_object_with_value
-    selector: $[?(@)]
-    document: ["some value", null, "value"]
     status: error
-  - id: filter_equal
-    selector: $[?(@.key==42)]
-    document: [{"key": 0}, {"key": 42}, {"key": -1}, {"key": 41}, {"key": 43}, {"key": 42.0001}, {"key": 41.9999}, {"key": 100}, {"some": "value"}]
-    result: [{"key": 42}]
-    status: pass
   - id: filter_greater_than
-    selector: $[?(@.key>42)]
-    document: [{"key": 0}, {"key": 42}, {"key": -1}, {"key": 41}, {"key": 43}, {"key": 42.0001}, {"key": 41.9999}, {"key": 100}]
     status: error
-    consensus: [{"key": 43}, {"key": 42.0001}, {"key": 100}]
   - id: filter_greater_than_or_equal
-    selector: $[?(@.key>=42)]
-    document: [{"key": 0}, {"key": 42}, {"key": -1}, {"key": 41}, {"key": 43}, {"key": 42.0001}, {"key": 41.9999}, {"key": 100}, {"some": "value"}]
     status: error
   - id: filter_less_than
-    selector: $[?(@.key<42)]
-    document: [{"key": 0}, {"key": 42}, {"key": -1}, {"key": 41}, {"key": 43}, {"key": 42.0001}, {"key": 41.9999}, {"key": 100}, {"some": "value"}]
     status: error
-    consensus: [{"key": 0}, {"key": -1}, {"key": 41}, {"key": 41.9999}]
   - id: filter_less_than_on_string
-    selector: $[?(@.key<42)]
-    document: [{"key": 0}, {"key": "value"}]
     status: error
   - id: filter_less_than_or_equal
-    selector: $[?(@.key<=42)]
-    document: [{"key": 0}, {"key": 42}, {"key": -1}, {"key": 41}, {"key": 43}, {"key": 42.0001}, {"key": 41.9999}, {"key": 100}, {"some": "value"}]
     status: error
   - id: filter_null
-    selector: $[?(@.key==null)]
-    document: [{"some": "some value"}, {"key": null}, {"key": "value"}]
     status: error
   - id: filter_with_boolean_operation
-    selector: $[?(@.key>42 && @.key<44)]
-    document: [{"key": 42}, {"key": 43}, {"key": 44}]
     status: error
   - id: filter_with_value
-    selector: $[?(@.key)]
-    document: [{"some": "some value"}, {"key": "value"}]
     status: error
-    consensus: [{"key": "value"}]
   - id: filter_with_value_on_null
-    selector: $[?(@.key)]
-    document: [{"some": "some value"}, {"key": null}, {"key": "value"}]
     status: error
   - id: filter_without_value
-    selector: $[?(!@.key)]
-    document: [{"some": "some value"}, {"key": null}, {"key": "value"}]
     status: error
-  - id: key_bracket_notation
-    selector: $['key']
-    document: {"key": "value"}
-    result: "value"
-    status: pass
   - id: key_bracket_notation_union
-    selector: $['key','another']
-    document: {"key": "value", "another": "entry"}
     status: error
   - id: key_bracket_notation_union_with_key_on_nested_objects
-    selector: $['one','three'].key
-    document: {"one": {"key": "value"}, "two": {"k": "v"}, "three": {"some": "more", "key": "other value"}}
     status: error
   - id: key_bracket_notation_with_at_literal
-    selector: $['@']
-    document: {"@": "value", "another": "entry"}
     status: error
-    consensus: "value"
   - id: key_bracket_notation_with_dollar_literal
-    selector: $['$']
-    document: {"$": "value", "another": "entry"}
     status: error
-    consensus: "value"
   - id: key_bracket_notation_with_dot
-    selector: $['two.some']
-    document: {"one": {"key": "value"}, "two": {"some": "more", "key": "other value"}, "two.some": "42"}
     status: error
-    consensus: ["42"]
   - id: key_bracket_notation_with_dot_without_quotes
-    selector: $[two.some]
-    document: {"one": {"key": "value"}, "two": {"some": "more", "key": "other value"}, "two.some": "42"}
     status: error
   - id: key_bracket_notation_with_double_quotes
-    selector: $["key"]
-    document: {"key": "value"}
     status: error
-    consensus: "value"
-  - id: key_bracket_notation_with_number
-    selector: $['0']
-    document: {"0": "value"}
-    result: "value"
-    status: pass
   - id: key_bracket_notation_with_number_without_quotes
-    selector: $[0]
-    document: {"0": "value"}
     status: error
   - id: key_bracket_notation_with_single_quote
-    selector: $['single'quote']
-    document: {"single'quote": "value"}
     status: error
   - id: key_bracket_notation_with_single_quote_escaped
-    selector: $['single\'quote']
-    document: {"single'quote": "value"}
     status: error
   - id: key_bracket_notation_with_special_characters
-    selector: $['special:"chars']
-    document: {"special:\"chars": "value"}
     status: error
-    consensus: "value"
   - id: key_bracket_notation_with_star_literal
-    selector: $['*']
-    document: {"*": "value", "another": "entry"}
     status: error
-    consensus: "value"
   - id: key_bracket_notation_without_quotes
-    selector: $[key]
-    document: {"key": "value"}
     status: error
   - id: key_dot_bracket_notation
-    selector: $.['key']
-    document: {"key": "value"}
     status: error
   - id: key_dot_bracket_notation_with_double_quotes
-    selector: $.["key"]
-    document: {"key": "value"}
     status: error
   - id: key_dot_bracket_notation_without_quotes
-    selector: $.[key]
-    document: {"key": "value"}
     status: error
-  - id: key_dot_notation
-    selector: $.key
-    document: {"key": "value"}
-    result: "value"
-    status: pass
-  - id: key_dot_notation_on_array_value
-    selector: $.key
-    document: {"key": ["first", "second"]}
-    result: ["first", "second"]
-    status: pass
-  - id: key_dot_notation_on_null_value
-    selector: $.key
-    document: {"key": null}
-    result: null
-    status: pass
   - id: key_dot_notation_with_double_quotes
-    selector: $."key"
-    document: {"key": "value"}
     status: error
   - id: key_dot_notation_with_single_quotes
-    selector: $.'key'
-    document: {"key": "value"}
     status: error
   - id: recursive_array_index
-    selector: $..[0]
-    document: ["first", {"key": ["first nested", {"more": [{"nested": ["deepest", "second"]}, ["more", "values"]]}]}]
-    result: ["first", "first nested", {"nested": ["deepest", "second"]}, "deepest", "more"]
     status: open
-  - id: recursive_key
-    selector: $..key
-    document: {"object": {"key": "value", "array": [{"key": "something"}, {"key": {"key": "russian dolls"}}]}, "key": "top"}
-    ordered: false
-    result: ["russian dolls", "something", "top", "value", {"key": "russian dolls"}]
-    status: pass
+    result: ["first", "first nested", {"nested": ["deepest", "second"]}, "deepest", "more"]
   - id: recursive_key_with_double_quotes
-    selector: $.."key"
-    document: {"object": {"key": "value", "array": [{"key": "something"}, {"key": {"key": "russian dolls"}}]}, "key": "top"}
-    ordered: false
     status: error
   - id: recursive_key_with_single_quotes
-    selector: $..'key'
-    document: {"object": {"key": "value", "array": [{"key": "something"}, {"key": {"key": "russian dolls"}}]}, "key": "top"}
-    ordered: false
     status: error
-  - id: recursive_on_nested_object
-    selector: $.store..price
-    document: {"store": {"book": [{"category": "reference", "author": "Nigel Rees", "title": "Sayings of the Century", "price": 8.95}, {"category": "fiction", "author": "Evelyn Waugh", "title": "Sword of Honour", "price": 12.99}, {"category": "fiction", "author": "Herman Melville", "title": "Moby Dick", "isbn": "0-553-21311-3", "price": 8.99}, {"category": "fiction", "author": "J. R. R. Tolkien", "title": "The Lord of the Rings", "isbn": "0-395-19395-8", "price": 22.99}], "bicycle": {"color": "red", "price": 19.95}}}
-    ordered: false
-    result: [12.99, 19.95, 22.99, 8.95, 8.99]
-    status: pass
-  - id: recursive_wildcard
-    selector: $..*
-    document: {"key": "value", "another key": {"complex": "string", "primitives": [0, 1]}}
-    ordered: false
-    result: ["string", "value", 0, 1, [0, 1], {"complex": "string", "primitives": [0, 1]}]
-    status: pass
-  - id: recursive_wildcard_on_null_value_array
-    selector: $..*
-    document: [40, null, 42]
-    result: [40, null, 42]
-    status: pass
   - id: recursive_wildcard_on_scalar
-    selector: $..*
-    document: 42
     status: error
   - id: root
-    selector: $
-    document: {"key": "value", "another key": {"complex": ["a", 1]}}
     status: error
-    consensus: {"another key": {"complex": ["a", 1]}, "key": "value"}
   - id: script_expression
-    selector: $[(@.length-1)]
-    document: ["first", "second", "third", "forth", "fifth"]
     status: error
-  - id: wildcard_bracket_notation_on_array
-    selector: $[*]
-    document: ["string", 42, {"key": "value"}, [0, 1]]
-    result: ["string", 42, {"key": "value"}, [0, 1]]
-    status: pass
-  - id: wildcard_bracket_notation_on_null_value_array
-    selector: $[*]
-    document: [40, null, 42]
-    result: [40, null, 42]
-    status: pass
-  - id: wildcard_bracket_notation_on_object
-    selector: $[*]
-    document: {"some": "string", "int": 42, "object": {"key": "value"}, "array": [0, 1]}
-    ordered: false
-    result: ["string", 42, [0, 1], {"key": "value"}]
-    status: pass
   - id: wildcard_bracket_notation_with_key_on_nested_objects
-    selector: $[*].bar[*].baz
-    document: [{"bar": [{"baz": "hello"}]}]
-    result: "hello"
     status: fail
-    consensus: ["hello"]
-  - id: wildcard_dot_notation_on_array
-    selector: $.*
-    document: ["string", 42, {"key": "value"}, [0, 1]]
-    result: ["string", 42, {"key": "value"}, [0, 1]]
-    status: pass
-  - id: wildcard_dot_notation_on_object
-    selector: $.*
-    document: {"some": "string", "int": 42, "object": {"key": "value"}, "array": [0, 1]}
-    ordered: false
-    result: ["string", 42, [0, 1], {"key": "value"}]
-    status: pass
+    result: "hello"

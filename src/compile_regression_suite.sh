@@ -22,49 +22,36 @@ unwrap_scalar_if_needed() {
     fi
 }
 
-gold_standard() {
+implementation_status() {
     local query="$1"
     local matching_implementations="${consensus_dir}/${query}"
-    local first_matching_implementation
-    first_matching_implementation="$(head -1 < "$matching_implementations")"
 
-    query_result_payload "${results_dir}/${query}/${first_matching_implementation}"
+    if is_query_result_ok "${results_dir}/${query}/${implementation}"; then
+        if [[ -s "$matching_implementations" ]]; then
+            if grep "^${implementation}\$" < "$matching_implementations" > /dev/null; then
+                echo "pass"
+            else
+                echo "fail"
+            fi
+        else
+            echo "open"
+        fi
+    else
+        echo "error"
+    fi
 }
 
 query_entry() {
     local query="$1"
-    local matching_implementations="${consensus_dir}/${query}"
+    local status
+    status="$(implementation_status "$query")"
 
-    echo "  - id: ${query}"
-    echo -n "    selector: "
-    cat "./queries/${query}/selector"
-    echo -n "    document: "
-    ./src/oneliner_json.py < "./queries/${query}/document.json"
-
-    if [[ -f "./queries/${query}/ALLOW_UNORDERED" ]]; then
-        echo "    ordered: false"
-    fi
-
-    if is_query_result_ok "${results_dir}/${query}/${implementation}"; then
-        echo -n "    result: "
-        query_result_payload "${results_dir}/${query}/${implementation}" | unwrap_scalar_if_needed "$query" | ./src/oneliner_json.py
-
-        if [[ -s "$matching_implementations" ]]; then
-            if grep "^${implementation}\$" < "$matching_implementations" > /dev/null; then
-                echo "    status: pass"
-            else
-                echo "    status: fail"
-                echo -n "    consensus: "
-                gold_standard "$query" | unwrap_scalar_if_needed "$query" | ./src/oneliner_json.py
-            fi
-        else
-            echo "    status: open"
-        fi
-    else
-        echo "    status: error"
-        if [[ -s "$matching_implementations" ]]; then
-            echo -n "    consensus: "
-            gold_standard "$query" | unwrap_scalar_if_needed "$query" | ./src/oneliner_json.py
+    if [[ "$status" != "pass" ]]; then
+        echo "  - id: ${query}"
+        echo "    status: ${status}"
+        if [[ "$status" != "error" ]]; then
+            echo -n "    result: "
+            query_result_payload "${results_dir}/${query}/${implementation}" | unwrap_scalar_if_needed "$query" | ./src/oneliner_json.py
         fi
     fi
 }
