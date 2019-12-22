@@ -47,12 +47,15 @@ You can quickly execute a query against all implementations by running:
 ### Regression test suite
 
 If you are an author of an upstream implementation, you can use the report
-generated here to test for regressions in your logic. The regression document is
-generated for every implementation individually so you can handle outcomes
-differently depending on whether they match the consensus or not.
+generated here to test for regressions in your logic. The
+[regression_suite/regression_suite.yaml](./regression_suite/regression_suite.yaml) holds
+all queries and includes a consensus where one exists. Additionally
+a report is generated for every implementation which contains current results
+for queries where the consensus isn't matched or no consensus exists (see
+e.g. [regression_suite/Clojure_json-path.yaml](./regression_suite/Clojure_json-path.yaml).
 
-For example, the Clojure json-path implementation has a
-[regression suite based on the above](https://github.com/gga/json-path/blob/master/test/json_path/test/regression_test.clj).
+See for example the [Clojure json-path regression test](https://github.com/gga/json-path/blob/master/test/json_path/test/regression_test.clj)
+on how those files can be put to use.
 
 ## Contribute
 
