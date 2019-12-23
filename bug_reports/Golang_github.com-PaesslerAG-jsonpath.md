@@ -87,6 +87,20 @@ The following queries provide results that do not match those of other implement
   parsing error: $['key']	:1:3 - 1:8 could not parse string: invalid syntax
   ```
 
+- [ ] `$['one','three'].key`
+  Input:
+  ```
+  {"one": {"key": "value"}, "two": {"k": "v"}, "three": {"some": "more", "key": "other value"}}
+  ```
+  Expected output:
+  ```
+  ["value", "other value"]
+  ```
+  Error:
+  ```
+  parsing error: $['one','three'].key	:1:3 - 1:8 could not parse string: invalid syntax
+  ```
+
 - [ ] `$['two.some']`
   Input:
   ```

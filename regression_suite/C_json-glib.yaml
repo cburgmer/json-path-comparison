@@ -63,7 +63,7 @@ queries:
     status: open
     result: ["value"]
   - id: key_bracket_notation_union_with_key_on_nested_objects
-    status: open
+    status: fail
     result: ["value"]
   - id: key_bracket_notation_with_double_quotes
     status: error

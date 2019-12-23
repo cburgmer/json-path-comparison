@@ -199,6 +199,20 @@ The following queries provide results that do not match those of other implement
   strconv.Atoi: parsing "'key'": invalid syntax
   ```
 
+- [ ] `$['one','three'].key`
+  Input:
+  ```
+  {"one": {"key": "value"}, "two": {"k": "v"}, "three": {"some": "more", "key": "other value"}}
+  ```
+  Expected output:
+  ```
+  ["value", "other value"]
+  ```
+  Error:
+  ```
+  strconv.Atoi: parsing "'one'": invalid syntax
+  ```
+
 - [ ] `$['@']`
   Input:
   ```

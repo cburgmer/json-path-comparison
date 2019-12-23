@@ -3,9 +3,10 @@ set -euo pipefail
 
 readonly script_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
-version="$(cat "${script_dir}/version")"
+tag="$(cat "${script_dir}/tag")"
+version="$(sed 's/^v//' <<< "$tag")"
 
-readonly source_url="https://github.com/danielaparker/jsoncons/archive/v${version}.tar.gz"
+readonly source_url="https://github.com/danielaparker/jsoncons/archive/${tag}.tar.gz"
 readonly target_dir="$1"
 
 readonly tmp_dir="/tmp/install_jsoncons.$$"

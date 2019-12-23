@@ -234,6 +234,20 @@ The following queries provide results that do not match those of other implement
   {"key": "value"}
   ```
 
+- [ ] `$['one','three'].key`
+  Input:
+  ```
+  {"one": {"key": "value"}, "two": {"k": "v"}, "three": {"some": "more", "key": "other value"}}
+  ```
+  Expected output:
+  ```
+  ["value", "other value"]
+  ```
+  Actual output:
+  ```
+  {"one": {"key": "value"}, "three": {"key": "other value"}}
+  ```
+
 - [ ] `$['@']`
   Input:
   ```

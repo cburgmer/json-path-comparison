@@ -74,7 +74,7 @@ queries:
     status: open
     result: {"another": "entry", "key": "value"}
   - id: key_bracket_notation_union_with_key_on_nested_objects
-    status: open
+    status: fail
     result: {"one": {"key": "value"}, "three": {"key": "other value"}}
   - id: key_bracket_notation_with_at_literal
     status: error
