@@ -4,11 +4,13 @@
 # an existing consensus or where no consensus exists.
 # It can be used to track changes in the underlying implementation and complements the regression report.
 
-implementation: Scala_jsonpath
+implementation: dotNET_Json.NET
 queries:
   - id: array_index_dot_notation
     status: open
     result: []
+  - id: array_index_last
+    status: error
   - id: array_index_slice_negative_step
     status: open
     result: ["fifth", "third", "first"]
@@ -24,8 +26,7 @@ queries:
     status: open
     result: [{"key": 42}, {"key": 43}, {"key": 42.0001}, {"key": 100}]
   - id: filter_less_than_on_string
-    status: open
-    result: [{"key": 0}]
+    status: error
   - id: filter_less_than_or_equal
     status: open
     result: [{"key": 0}, {"key": 42}, {"key": -1}, {"key": 41}, {"key": 41.9999}]
@@ -40,6 +41,8 @@ queries:
     result: [{"key": null}, {"key": "value"}]
   - id: filter_without_value
     status: error
+  - id: key_bracket_notation_with_double_quotes
+    status: error
   - id: key_bracket_notation_with_nested_object
     status: error
   - id: key_bracket_notation_with_nested_object_without_quotes
@@ -52,13 +55,11 @@ queries:
   - id: key_bracket_notation_with_single_quote_escaped
     status: open
     result: ["value"]
-  - id: key_bracket_notation_with_star_literal
-    status: fail
-    result: ["value", "entry"]
   - id: key_bracket_notation_without_quotes
     status: error
   - id: key_dot_bracket_notation
-    status: error
+    status: open
+    result: ["value"]
   - id: key_dot_bracket_notation_with_double_quotes
     status: error
   - id: key_dot_bracket_notation_without_quotes
@@ -70,10 +71,8 @@ queries:
     status: open
     result: []
   - id: recursive_array_index
-    status: error
-  - id: recursive_key
-    status: fail
-    result: ["something", "top", "value", {"key": "russian dolls"}]
+    status: open
+    result: ["first"]
   - id: recursive_key_with_double_quotes
     status: open
     result: []

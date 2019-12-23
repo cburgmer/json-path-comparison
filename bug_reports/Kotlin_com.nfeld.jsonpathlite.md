@@ -145,6 +145,20 @@ The following queries provide results that do not match those of other implement
   	at query.AppKt.main(App.kt:10)
   ```
 
+- [ ] `$['key','another']`
+  Input:
+  ```
+  {"key": "value", "another": "entry"}
+  ```
+  Expected output:
+  ```
+  ["value", "entry"]
+  ```
+  Actual output:
+  ```
+  {"another": "entry", "key": "value"}
+  ```
+
 - [ ] `$['one','three'].key`
   Input:
   ```

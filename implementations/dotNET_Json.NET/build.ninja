@@ -1,0 +1,4 @@
+root = implementations/dotNET_Json.NET
+builddir = $root/build
+
+build $root/install: phony

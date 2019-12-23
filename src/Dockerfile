@@ -34,3 +34,8 @@ RUN apk --no-cache add erlang erlang-crypto erlang-asn1 erlang-public-key erlang
 
 # Python
 RUN curl https://bootstrap.pypa.io/get-pip.py -o /tmp/get-pip.py && python3 /tmp/get-pip.py
+
+# .NET
+ENV PATH="/root/.dotnet:${PATH}"
+RUN curl -OL https://dotnetwebsite.azurewebsites.net/download/dotnet-core/scripts/v1/dotnet-install.sh \
+        && chmod a+x dotnet-install.sh && ./dotnet-install.sh
