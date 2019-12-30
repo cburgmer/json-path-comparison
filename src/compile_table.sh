@@ -79,7 +79,11 @@ implementation_language_header() {
         category="$(awk '{print $2}' <<< "$category_entry")"
         count="$(awk '{print $1}' <<< "$category_entry")"
 
-        echo "<th style=\"position: sticky; top: 0; background: #ffffffaa;\" colspan=\"${count}\">${category}</th>"
+        echo "<th style=\"position: sticky; top: 0; background: #ffffffaa;\" colspan=\"${count}\">"
+        echo "<span style=\"writing-mode: vertical-rl;\">"
+        echo "${category}"
+        echo "</span>"
+        echo "</th>"
     done <<< "$(all_implementations | sed "s/\([^_]*\)_.*/\1/" | uniq -c)"
 }
 
@@ -97,17 +101,17 @@ wrap_with_link() {
 header_row() {
     local implementation
 
-    echo "<tr style=\"height: 2rem;\">"
-    echo "<th style=\"position: sticky; top: 0; background: #ffffffaa;\"></th>"
-    echo "<th style=\"position: sticky; top: 0; background: #ffffffaa;\"></th>"
+    echo "<tr style=\"background: none\">"
+    echo "<th style=\"background: #ffffffaa;\"></th>"
+    echo "<th style=\"background: #ffffffaa;\"></th>"
     implementation_language_header
     echo "</tr>"
 
-    echo "<tr>"
-    echo "<th style=\"position: sticky; top: 2rem; background: #f6f8faaa;\"></th>"
-    echo "<th style=\"position: sticky; top: 2rem; background: #f6f8faaa;\"></th>"
+    echo "<tr style=\"background: none\">"
+    echo "<th style=\"background: #f6f8faaa;\"></th>"
+    echo "<th style=\"background: #f6f8faaa;\"></th>"
     while IFS= read -r implementation; do
-        echo "<th style=\"position: sticky; top: 2rem; background: #f6f8faaa;\">"
+        echo "<th style=\"background: #f6f8faaa;\">"
         echo "<div style=\"writing-mode: vertical-rl;\">"
         sed "s/[^_]*_\(.*\)/\1/" <<< "$implementation" | wrap_with_link "$implementation"
         if [[ -f "./implementations/${implementation}/SINGLE_POSSIBLE_MATCH_RETURNED_AS_SCALAR" ]]; then
@@ -127,7 +131,7 @@ See how [JSONPath](https://goessner.net/articles/JsonPath/) is implemented acros
     echo
     echo "<table style=\"overflow: unset;\">" # Need to reset style for sticky headers
 
-    echo "<thead>"
+    echo "<thead style=\"position: sticky; top: 0;\">"
     header_row
     echo "</thead>"
 
