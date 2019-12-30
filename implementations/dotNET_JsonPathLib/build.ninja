@@ -1,4 +1,9 @@
 root = implementations/dotNET_JsonPathLib
 builddir = $root/build
 
-build $root/install: phony
+rule build
+  command = cd $root && dotnet build -o $$(basename $out)
+
+build $builddir: build | $root/Dotnet_JsonPathLib.csproj $root/Program.cs $root/JsonNetValueSystem.cs $root/nuget.config
+
+build $root/install: phony $builddir
