@@ -25,7 +25,7 @@
 <th style="position: sticky; top: 0; background: #ffffffaa;" colspan="1">Ruby</th>
 <th style="position: sticky; top: 0; background: #ffffffaa;" colspan="2">Rust</th>
 <th style="position: sticky; top: 0; background: #ffffffaa;" colspan="1">Scala</th>
-<th style="position: sticky; top: 0; background: #ffffffaa;" colspan="2">dotNET</th>
+<th style="position: sticky; top: 0; background: #ffffffaa;" colspan="3">dotNET</th>
 </tr>
 <tr>
 <th style="position: sticky; top: 2rem; background: #f6f8faaa;"></th>
@@ -240,6 +240,13 @@ JsonPathLib
 </a>
 </div>
 </th>
+<th style="position: sticky; top: 2rem; background: #f6f8faaa;">
+<div style="writing-mode: vertical-rl;">
+<a href="https://github.com/gregsdennis/Manatee.Json">
+Manatee.Json
+</a>
+</div>
+</th>
 </tr>
 </thead>
 <tbody>
@@ -249,6 +256,9 @@ JsonPathLib
 <a href="results/array_index.html">Array index</a>
 </td>
 <td><code>$[2]</code></td>
+<td>
+✓
+</td>
 <td>
 ✓
 </td>
@@ -430,6 +440,9 @@ JsonPathLib
 <td>
 ?
 </td>
+<td>
+?
+</td>
 </tr>
 <tr id="array_index_dot_notation_on_object">
 <td>
@@ -524,6 +537,9 @@ JsonPathLib
 <td>
 ✓
 </td>
+<td>
+✓
+</td>
 </tr>
 <tr id="array_index_first">
 <td>
@@ -578,6 +594,9 @@ JsonPathLib
 </td>
 <td>
 ✗
+</td>
+<td>
+✓
 </td>
 <td>
 ✓
@@ -712,6 +731,9 @@ JsonPathLib
 <td>
 ✗
 </td>
+<td>
+✗
+</td>
 </tr>
 <tr id="array_index_slice_end_out_of_bounds">
 <td>
@@ -806,6 +828,9 @@ JsonPathLib
 <td>
 ✓
 </td>
+<td>
+<a href="errors.html#dotNET_Manatee.Json___array_index_slice_end_out_of_bounds">e</a>
+</td>
 </tr>
 <tr id="array_index_slice_last_no_end">
 <td>
@@ -887,6 +912,9 @@ JsonPathLib
 </td>
 <td>
 <a href="errors.html#Rust_jsonpath___array_index_slice_last_no_end">e</a>
+</td>
+<td>
+✓
 </td>
 <td>
 ✓
@@ -994,6 +1022,9 @@ JsonPathLib
 <td>
 ?
 </td>
+<td>
+?
+</td>
 </tr>
 <tr id="array_index_slice_no_start_no_end">
 <td>
@@ -1075,6 +1106,9 @@ JsonPathLib
 </td>
 <td>
 <a href="errors.html#Rust_jsonpath___array_index_slice_no_start_no_end">e</a>
+</td>
+<td>
+✓
 </td>
 <td>
 ✓
@@ -1182,6 +1216,9 @@ JsonPathLib
 <td>
 ✓
 </td>
+<td>
+✓
+</td>
 </tr>
 <tr id="array_index_slice_only_start">
 <td>
@@ -1197,6 +1234,9 @@ JsonPathLib
 </td>
 <td>
 ✗
+</td>
+<td>
+✓
 </td>
 <td>
 ✓
@@ -1370,6 +1410,9 @@ JsonPathLib
 <td>
 ✓
 </td>
+<td>
+✓
+</td>
 </tr>
 <tr id="array_index_slice_start_end_negative_step">
 <td>
@@ -1464,6 +1507,9 @@ JsonPathLib
 <td>
 ?
 </td>
+<td>
+<a href="errors.html#dotNET_Manatee.Json___array_index_slice_start_end_negative_step">e</a>
+</td>
 </tr>
 <tr id="array_index_slice_start_end_step">
 <td>
@@ -1545,6 +1591,9 @@ JsonPathLib
 </td>
 <td>
 <a href="errors.html#Rust_jsonpath___array_index_slice_start_end_step">e</a>
+</td>
+<td>
+✓
 </td>
 <td>
 ✓
@@ -1652,6 +1701,9 @@ JsonPathLib
 <td>
 <a href="errors.html#dotNET_JsonPathLib___array_index_slice_start_end_step_0">e</a>
 </td>
+<td>
+?
+</td>
 </tr>
 <tr id="array_index_slice_start_end_step_1">
 <td>
@@ -1733,6 +1785,9 @@ JsonPathLib
 </td>
 <td>
 <a href="errors.html#Rust_jsonpath___array_index_slice_start_end_step_1">e</a>
+</td>
+<td>
+✓
 </td>
 <td>
 ✓
@@ -1840,6 +1895,9 @@ JsonPathLib
 <td>
 ✓
 </td>
+<td>
+✓
+</td>
 </tr>
 <tr id="array_index_slice_start_equals_end">
 <td>
@@ -1921,6 +1979,9 @@ JsonPathLib
 </td>
 <td>
 ✗
+</td>
+<td>
+✓
 </td>
 <td>
 ✓
@@ -2028,6 +2089,9 @@ JsonPathLib
 <td>
 ✓
 </td>
+<td>
+✓
+</td>
 </tr>
 <tr id="array_index_slice_step">
 <td>
@@ -2109,6 +2173,9 @@ JsonPathLib
 </td>
 <td>
 <a href="errors.html#Rust_jsonpath___array_index_slice_step">e</a>
+</td>
+<td>
+✓
 </td>
 <td>
 ✓
@@ -2216,6 +2283,9 @@ JsonPathLib
 <td>
 ✓
 </td>
+<td>
+✓
+</td>
 </tr>
 <tr id="filter_current_object_with_value">
 <td>
@@ -2309,6 +2379,9 @@ JsonPathLib
 </td>
 <td>
 <a href="errors.html#dotNET_JsonPathLib___filter_current_object_with_value">e</a>
+</td>
+<td>
+<a href="errors.html#dotNET_Manatee.Json___filter_current_object_with_value">e</a>
 </td>
 </tr>
 <tr id="filter_equal">
@@ -2404,6 +2477,9 @@ JsonPathLib
 <td>
 ✓
 </td>
+<td>
+✓
+</td>
 </tr>
 <tr id="filter_greater_than">
 <td>
@@ -2479,6 +2555,9 @@ JsonPathLib
 </td>
 <td>
 ✗
+</td>
+<td>
+✓
 </td>
 <td>
 ✓
@@ -2592,6 +2671,9 @@ JsonPathLib
 <td>
 ?
 </td>
+<td>
+?
+</td>
 </tr>
 <tr id="filter_less_than">
 <td>
@@ -2685,6 +2767,9 @@ JsonPathLib
 </td>
 <td>
 ✗
+</td>
+<td>
+✓
 </td>
 </tr>
 <tr id="filter_less_than_on_string">
@@ -2780,6 +2865,9 @@ JsonPathLib
 <td>
 ?
 </td>
+<td>
+?
+</td>
 </tr>
 <tr id="filter_less_than_or_equal">
 <td>
@@ -2861,6 +2949,9 @@ JsonPathLib
 </td>
 <td>
 <a href="errors.html#Rust_jsonpath___filter_less_than_or_equal">e</a>
+</td>
+<td>
+?
 </td>
 <td>
 ?
@@ -2968,6 +3059,9 @@ JsonPathLib
 <td>
 ?
 </td>
+<td>
+<a href="errors.html#dotNET_Manatee.Json___filter_null">e</a>
+</td>
 </tr>
 <tr id="filter_with_boolean_operation">
 <td>
@@ -3049,6 +3143,9 @@ JsonPathLib
 </td>
 <td>
 <a href="errors.html#Rust_jsonpath___filter_with_boolean_operation">e</a>
+</td>
+<td>
+?
 </td>
 <td>
 ?
@@ -3156,6 +3253,9 @@ JsonPathLib
 <td>
 <a href="errors.html#dotNET_JsonPathLib___filter_with_value">e</a>
 </td>
+<td>
+✓
+</td>
 </tr>
 <tr id="filter_with_value_on_null">
 <td>
@@ -3250,6 +3350,9 @@ JsonPathLib
 <td>
 <a href="errors.html#dotNET_JsonPathLib___filter_with_value_on_null">e</a>
 </td>
+<td>
+?
+</td>
 </tr>
 <tr id="filter_without_value">
 <td>
@@ -3340,6 +3443,9 @@ JsonPathLib
 </td>
 <td>
 <a href="errors.html#dotNET_Json.NET___filter_without_value">e</a>
+</td>
+<td>
+?
 </td>
 <td>
 ?
@@ -3438,6 +3544,9 @@ JsonPathLib
 <td>
 ✓
 </td>
+<td>
+<a href="errors.html#dotNET_Manatee.Json___key_bracket_notation">e</a>
+</td>
 </tr>
 <tr id="key_bracket_notation_union">
 <td>
@@ -3531,6 +3640,9 @@ JsonPathLib
 </td>
 <td>
 ✓
+</td>
+<td>
+<a href="errors.html#dotNET_Manatee.Json___key_bracket_notation_union">e</a>
 </td>
 </tr>
 <tr id="key_bracket_notation_union_with_key_on_nested_objects">
@@ -3626,6 +3738,9 @@ JsonPathLib
 <td>
 ✓
 </td>
+<td>
+<a href="errors.html#dotNET_Manatee.Json___key_bracket_notation_union_with_key_on_nested_objects">e</a>
+</td>
 </tr>
 <tr id="key_bracket_notation_with_at_literal">
 <td>
@@ -3719,6 +3834,9 @@ JsonPathLib
 </td>
 <td>
 ✓
+</td>
+<td>
+<a href="errors.html#dotNET_Manatee.Json___key_bracket_notation_with_at_literal">e</a>
 </td>
 </tr>
 <tr id="key_bracket_notation_with_dollar_literal">
@@ -3814,6 +3932,9 @@ JsonPathLib
 <td>
 ✓
 </td>
+<td>
+<a href="errors.html#dotNET_Manatee.Json___key_bracket_notation_with_dollar_literal">e</a>
+</td>
 </tr>
 <tr id="key_bracket_notation_with_dot">
 <td>
@@ -3907,6 +4028,9 @@ JsonPathLib
 </td>
 <td>
 ✗
+</td>
+<td>
+<a href="errors.html#dotNET_Manatee.Json___key_bracket_notation_with_dot">e</a>
 </td>
 </tr>
 <tr id="key_bracket_notation_with_double_quotes">
@@ -4002,6 +4126,9 @@ JsonPathLib
 <td>
 ?
 </td>
+<td>
+<a href="errors.html#dotNET_Manatee.Json___key_bracket_notation_with_double_quotes">e</a>
+</td>
 </tr>
 <tr id="key_bracket_notation_with_nested_object">
 <td>
@@ -4095,6 +4222,9 @@ JsonPathLib
 </td>
 <td>
 ?
+</td>
+<td>
+<a href="errors.html#dotNET_Manatee.Json___key_bracket_notation_with_nested_object">e</a>
 </td>
 </tr>
 <tr id="key_bracket_notation_with_nested_object_without_quotes">
@@ -4190,6 +4320,9 @@ JsonPathLib
 <td>
 ?
 </td>
+<td>
+<a href="errors.html#dotNET_Manatee.Json___key_bracket_notation_with_nested_object_without_quotes">e</a>
+</td>
 </tr>
 <tr id="key_bracket_notation_with_number">
 <td>
@@ -4284,6 +4417,9 @@ JsonPathLib
 <td>
 ✓
 </td>
+<td>
+<a href="errors.html#dotNET_Manatee.Json___key_bracket_notation_with_number">e</a>
+</td>
 </tr>
 <tr id="key_bracket_notation_with_number_without_quotes">
 <td>
@@ -4356,6 +4492,9 @@ JsonPathLib
 </td>
 <td>
 <a href="errors.html#Python_jsonpath-rw___key_bracket_notation_with_number_without_quotes">e</a>
+</td>
+<td>
+?
 </td>
 <td>
 ?
@@ -4472,6 +4611,9 @@ JsonPathLib
 <td>
 ?
 </td>
+<td>
+<a href="errors.html#dotNET_Manatee.Json___key_bracket_notation_with_single_quote">e</a>
+</td>
 </tr>
 <tr id="key_bracket_notation_with_single_quote_escaped">
 <td>
@@ -4565,6 +4707,9 @@ JsonPathLib
 </td>
 <td>
 ?
+</td>
+<td>
+<a href="errors.html#dotNET_Manatee.Json___key_bracket_notation_with_single_quote_escaped">e</a>
 </td>
 </tr>
 <tr id="key_bracket_notation_with_special_characters">
@@ -4660,6 +4805,9 @@ JsonPathLib
 <td>
 ✓
 </td>
+<td>
+<a href="errors.html#dotNET_Manatee.Json___key_bracket_notation_with_special_characters">e</a>
+</td>
 </tr>
 <tr id="key_bracket_notation_with_star_literal">
 <td>
@@ -4753,6 +4901,9 @@ JsonPathLib
 </td>
 <td>
 ✓
+</td>
+<td>
+<a href="errors.html#dotNET_Manatee.Json___key_bracket_notation_with_star_literal">e</a>
 </td>
 </tr>
 <tr id="key_bracket_notation_without_quotes">
@@ -4848,6 +4999,9 @@ JsonPathLib
 <td>
 ?
 </td>
+<td>
+<a href="errors.html#dotNET_Manatee.Json___key_bracket_notation_without_quotes">e</a>
+</td>
 </tr>
 <tr id="key_dot_bracket_notation">
 <td>
@@ -4941,6 +5095,9 @@ JsonPathLib
 </td>
 <td>
 ?
+</td>
+<td>
+<a href="errors.html#dotNET_Manatee.Json___key_dot_bracket_notation">e</a>
 </td>
 </tr>
 <tr id="key_dot_bracket_notation_with_double_quotes">
@@ -5036,6 +5193,9 @@ JsonPathLib
 <td>
 ?
 </td>
+<td>
+<a href="errors.html#dotNET_Manatee.Json___key_dot_bracket_notation_with_double_quotes">e</a>
+</td>
 </tr>
 <tr id="key_dot_bracket_notation_without_quotes">
 <td>
@@ -5130,6 +5290,9 @@ JsonPathLib
 <td>
 ?
 </td>
+<td>
+<a href="errors.html#dotNET_Manatee.Json___key_dot_bracket_notation_without_quotes">e</a>
+</td>
 </tr>
 <tr id="key_dot_notation">
 <td>
@@ -5139,6 +5302,9 @@ JsonPathLib
 <td><code>$.key</code></td>
 <td>
 ✗
+</td>
+<td>
+✓
 </td>
 <td>
 ✓
@@ -5318,6 +5484,9 @@ JsonPathLib
 <td>
 ✓
 </td>
+<td>
+✓
+</td>
 </tr>
 <tr id="key_dot_notation_on_null_value">
 <td>
@@ -5327,6 +5496,9 @@ JsonPathLib
 <td><code>$.key</code></td>
 <td>
 ✗
+</td>
+<td>
+✓
 </td>
 <td>
 ✓
@@ -5506,6 +5678,9 @@ JsonPathLib
 <td>
 ?
 </td>
+<td>
+?
+</td>
 </tr>
 <tr id="key_dot_notation_with_single_quotes">
 <td>
@@ -5590,6 +5765,9 @@ JsonPathLib
 </td>
 <td>
 <a href="errors.html#Rust_jsonpath_lib___key_dot_notation_with_single_quotes">e</a>
+</td>
+<td>
+?
 </td>
 <td>
 ?
@@ -5694,6 +5872,9 @@ JsonPathLib
 <td>
 ?
 </td>
+<td>
+?
+</td>
 </tr>
 <tr id="recursive_key">
 <td>
@@ -5789,6 +5970,9 @@ JsonPathLib
 <td>
 ✓
 </td>
+<td>
+✓
+</td>
 </tr>
 <tr id="recursive_key_with_double_quotes">
 <td>
@@ -5874,6 +6058,9 @@ JsonPathLib
 </td>
 <td>
 <a href="errors.html#Rust_jsonpath_lib___recursive_key_with_double_quotes">e</a>
+</td>
+<td>
+?
 </td>
 <td>
 ?
@@ -5979,6 +6166,9 @@ JsonPathLib
 <td>
 ?
 </td>
+<td>
+?
+</td>
 </tr>
 <tr id="recursive_on_nested_object">
 <td>
@@ -6061,6 +6251,9 @@ JsonPathLib
 </td>
 <td>
 <a href="errors.html#Rust_jsonpath___recursive_on_nested_object">e</a>
+</td>
+<td>
+✓
 </td>
 <td>
 ✓
@@ -6169,6 +6362,9 @@ JsonPathLib
 <td>
 ✓
 </td>
+<td>
+✗
+</td>
 </tr>
 <tr id="recursive_wildcard_on_null_value_array">
 <td>
@@ -6262,6 +6458,9 @@ JsonPathLib
 </td>
 <td>
 ✓
+</td>
+<td>
+✗
 </td>
 </tr>
 <tr id="recursive_wildcard_on_scalar">
@@ -6357,6 +6556,9 @@ JsonPathLib
 <td>
 ?
 </td>
+<td>
+?
+</td>
 </tr>
 <tr id="root">
 <td>
@@ -6426,6 +6628,9 @@ JsonPathLib
 </td>
 <td>
 <a href="errors.html#Python_jsonpath___root">e</a>
+</td>
+<td>
+✓
 </td>
 <td>
 ✓
@@ -6545,6 +6750,9 @@ JsonPathLib
 <td>
 ?
 </td>
+<td>
+?
+</td>
 </tr>
 <tr id="wildcard_bracket_notation_on_array">
 <td>
@@ -6639,6 +6847,9 @@ JsonPathLib
 <td>
 ✓
 </td>
+<td>
+✓
+</td>
 </tr>
 <tr id="wildcard_bracket_notation_on_null_value_array">
 <td>
@@ -6720,6 +6931,9 @@ JsonPathLib
 </td>
 <td>
 <a href="errors.html#Rust_jsonpath___wildcard_bracket_notation_on_null_value_array">e</a>
+</td>
+<td>
+✓
 </td>
 <td>
 ✓
@@ -6828,6 +7042,9 @@ JsonPathLib
 <td>
 ✓
 </td>
+<td>
+✓
+</td>
 </tr>
 <tr id="wildcard_bracket_notation_with_key_on_nested_objects">
 <td>
@@ -6909,6 +7126,9 @@ JsonPathLib
 </td>
 <td>
 <a href="errors.html#Rust_jsonpath___wildcard_bracket_notation_with_key_on_nested_objects">e</a>
+</td>
+<td>
+✓
 </td>
 <td>
 ✓
@@ -7016,6 +7236,9 @@ JsonPathLib
 <td>
 ✓
 </td>
+<td>
+✓
+</td>
 </tr>
 <tr id="wildcard_dot_notation_on_object">
 <td>
@@ -7095,6 +7318,9 @@ JsonPathLib
 </td>
 <td>
 ✗
+</td>
+<td>
+✓
 </td>
 <td>
 ✓
