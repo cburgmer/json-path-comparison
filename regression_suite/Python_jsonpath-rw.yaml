@@ -50,6 +50,9 @@ queries:
     status: error
   - id: filter_without_value
     status: error
+  - id: key_bracket_notation_with_double_quotes
+    status: open
+    result: ["value"]
   - id: key_bracket_notation_with_nested_object
     status: error
   - id: key_bracket_notation_with_nested_object_without_quotes

@@ -185,20 +185,6 @@ The following queries provide results that do not match those of other implement
   ["value"]
   ```
 
-- [ ] `$["key"]`
-  Input:
-  ```
-  {"key": "value"}
-  ```
-  Expected output:
-  ```
-  ["value"]
-  ```
-  Error:
-  ```
-  Unable to compile selector `$["key"]': Invalid array index definition “"key"]”
-  ```
-
 - [ ] `$['*']`
   Input:
   ```

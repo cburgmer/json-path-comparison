@@ -4,80 +4,94 @@
 # an existing consensus or where no consensus exists.
 # It can be used to track changes in the underlying implementation and complements the regression report.
 
-implementation: Golang_github.com-bhmj-jsonslice
+implementation: dotNET_JsonPathLib
 queries:
   - id: array_index_dot_notation
     status: open
-    result: "third"
+    result: ["third"]
+  - id: array_index_last
+    status: fail
+    result: []
   - id: array_index_slice_negative_step
     status: open
-    result: ["fifth", "third", "first"]
+    result: []
   - id: array_index_slice_start_end_negative_step
     status: open
-    result: ["forth", "second"]
-  - id: array_index_slice_start_end_step_0
-    status: open
-    result: ["first", "second", "third"]
-  - id: filter_current_object_with_value
-    status: open
     result: []
+  - id: array_index_slice_start_end_step_0
+    status: error
+  - id: filter_current_object_with_value
+    status: error
   - id: filter_greater_than_or_equal
     status: open
     result: [{"key": 42}, {"key": 43}, {"key": 42.0001}, {"key": 100}]
+  - id: filter_less_than
+    status: fail
+    result: [{"key": 0}, {"key": -1}, {"key": 41}, {"key": 41.9999}, {"some": "value"}]
   - id: filter_less_than_on_string
-    status: error
+    status: open
+    result: [{"key": 0}]
   - id: filter_less_than_or_equal
     status: open
-    result: [{"key": 0}, {"key": 42}, {"key": -1}, {"key": 41}, {"key": 41.9999}]
+    result: [{"key": 0}, {"key": 42}, {"key": -1}, {"key": 41}, {"key": 41.9999}, {"some": "value"}]
   - id: filter_null
-    status: error
+    status: open
+    result: [{"some": "some value"}]
   - id: filter_with_boolean_operation
     status: open
     result: [{"key": 43}]
-  - id: filter_with_value_on_null
-    status: open
-    result: [{"key": "value"}]
-  - id: filter_without_value
+  - id: filter_with_value
     status: error
+  - id: filter_with_value_on_null
+    status: error
+  - id: filter_without_value
+    status: open
+    result: [{"some": "some value"}]
+  - id: key_bracket_notation_with_dot
+    status: fail
+    result: ["more"]
   - id: key_bracket_notation_with_double_quotes
     status: open
-    result: "value"
+    result: []
   - id: key_bracket_notation_with_nested_object
-    status: error
+    status: open
+    result: ["more"]
   - id: key_bracket_notation_with_nested_object_without_quotes
-    status: error
+    status: open
+    result: ["more"]
   - id: key_bracket_notation_with_number_without_quotes
     status: open
-    result: "value"
+    result: ["value"]
   - id: key_bracket_notation_with_single_quote
-    status: error
+    status: open
+    result: ["value"]
   - id: key_bracket_notation_with_single_quote_escaped
     status: open
-    result: "value"
+    result: []
   - id: key_bracket_notation_without_quotes
     status: open
-    result: "value"
+    result: ["value"]
   - id: key_dot_bracket_notation
     status: open
-    result: "value"
+    result: ["value"]
   - id: key_dot_bracket_notation_with_double_quotes
     status: open
-    result: "value"
+    result: []
   - id: key_dot_bracket_notation_without_quotes
     status: open
-    result: "value"
+    result: ["value"]
   - id: key_dot_notation_with_double_quotes
     status: open
-    result: "value"
+    result: []
   - id: key_dot_notation_with_single_quotes
     status: open
-    result: "value"
+    result: ["value"]
   - id: recursive_array_index
     status: open
     result: ["first", "first nested", {"nested": ["deepest", "second"]}, "deepest", "more"]
   - id: recursive_key_with_double_quotes
     status: open
-    result: ["russian dolls", "something", "top", "value", {"key": "russian dolls"}]
+    result: []
   - id: recursive_key_with_single_quotes
     status: open
     result: ["russian dolls", "something", "top", "value", {"key": "russian dolls"}]
@@ -85,7 +99,5 @@ queries:
     status: open
     result: []
   - id: script_expression
-    status: error
-  - id: wildcard_bracket_notation_with_key_on_nested_objects
-    status: fail
-    result: [["hello"]]
+    status: open
+    result: []

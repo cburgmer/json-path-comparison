@@ -52,6 +52,9 @@ queries:
     status: error
   - id: key_bracket_notation_with_dollar_literal
     status: error
+  - id: key_bracket_notation_with_double_quotes
+    status: open
+    result: ["value"]
   - id: key_bracket_notation_with_nested_object
     status: open
     result: []

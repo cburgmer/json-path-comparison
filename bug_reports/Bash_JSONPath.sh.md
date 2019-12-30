@@ -310,20 +310,6 @@ The following queries provide results that do not match those of other implement
   {"two.some": "42"}
   ```
 
-- [ ] `$["key"]`
-  Input:
-  ```
-  {"key": "value"}
-  ```
-  Expected output:
-  ```
-  ["value"]
-  ```
-  Actual output:
-  ```
-  {"key": "value"}
-  ```
-
 - [ ] `$['0']`
   Input:
   ```

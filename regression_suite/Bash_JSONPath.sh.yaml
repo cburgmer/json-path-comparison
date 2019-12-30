@@ -84,7 +84,7 @@ queries:
     status: fail
     result: {"two.some": "42"}
   - id: key_bracket_notation_with_double_quotes
-    status: fail
+    status: open
     result: {"key": "value"}
   - id: key_bracket_notation_with_nested_object
     status: open
