@@ -2,8 +2,8 @@ root = implementations/dotNET_Json.NET
 builddir = $root/build
 
 rule build
-  command = cd $root && dotnet build -o $$(basename $out)
+  command = cd $root && dotnet build -o $$(basename $$(dirname $out))
 
-build $builddir: build | $root/Dotnet_Json.NET.csproj $root/Program.cs
+build $builddir/Dotnet_Json.NET: build | $root/Dotnet_Json.NET.csproj $root/Program.cs
 
 build $root/install: phony $builddir
