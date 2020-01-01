@@ -6,4 +6,4 @@ rule build
 
 build $builddir/Dotnet_Json.NET: build | $root/Dotnet_Json.NET.csproj $root/Program.cs
 
-build $root/install: phony $builddir
+build $root/install: phony $builddir/Dotnet_Json.NET

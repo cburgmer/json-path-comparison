@@ -6,4 +6,4 @@ rule build
 
 build $builddir/Dotnet_JsonPathLib: build | $root/Dotnet_JsonPathLib.csproj $root/Program.cs $root/JsonNetValueSystem.cs $root/nuget.config
 
-build $root/install: phony $builddir
+build $root/install: phony $builddir/Dotnet_JsonPathLib
