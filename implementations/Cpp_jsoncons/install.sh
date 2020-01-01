@@ -10,13 +10,13 @@ readonly source_url="https://github.com/danielaparker/jsoncons/archive/${tag}.ta
 readonly target_dir="$1"
 
 readonly tmp_dir="/tmp/install_jsoncons.$$"
+readonly tmp_download="${tmp_dir}/jsoncons.tar.gz"
 
 mkdir -p "$target_dir"
 
 mkdir -p "$tmp_dir"
-curl --fail -L "$source_url" -o "$tmp_dir/jsoncons.tar.gz"
-
-tar -xzf "$tmp_dir/jsoncons.tar.gz" --directory "$tmp_dir"
+curl --fail -L "$source_url" -o "$tmp_download"
+tar -xzf "$tmp_download" --directory "$tmp_dir"
 
 mv "${tmp_dir}/jsoncons-${version}/include"/jsoncons "$target_dir"
 mv "${tmp_dir}/jsoncons-${version}/include"/jsoncons_ext "$target_dir"
