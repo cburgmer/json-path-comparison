@@ -1,0 +1,16 @@
+root = implementations/Objective-C_SMJJSONPath
+builddir = $root/build
+includes = $root/build/includes
+
+rule install
+  command = rm -rf $out && $root/install.sh $out
+
+rule compile
+  command = $root/compile.sh $out
+
+
+build $includes: install | $root/install.sh $root/tag
+
+build $builddir/main: compile $root/main.m | $builddir/includes $root/compile.sh
+
+build $root/install: phony $builddir/main
