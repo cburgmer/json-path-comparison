@@ -7,7 +7,7 @@ rule install
 rule build
   command = mkdir -p $$(dirname $out) && g++ -std=c++11 -I$builddir/includes $in -o $out
 
-build $builddir/includes: install | $root/install.sh
+build $builddir/includes: install | $root/install.sh $root/tag
 
 build $builddir/main: build $root/main.cpp | $builddir/includes
 
