@@ -199,20 +199,6 @@ The following queries provide results that do not match those of other implement
   parsing error
   ```
 
-- [ ] `$['key','another']`
-  Input:
-  ```
-  {"key": "value", "another": "entry"}
-  ```
-  Expected output:
-  ```
-  ["value", "entry"]
-  ```
-  Error:
-  ```
-  parsing error
-  ```
-
 - [ ] `$['one','three'].key`
   Input:
   ```

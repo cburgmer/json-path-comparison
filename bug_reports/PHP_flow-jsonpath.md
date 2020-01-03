@@ -87,20 +87,6 @@ The following queries provide results that do not match those of other implement
   ["first", "second"]
   ```
 
-- [ ] `$['key','another']`
-  Input:
-  ```
-  {"key": "value", "another": "entry"}
-  ```
-  Expected output:
-  ```
-  ["value", "entry"]
-  ```
-  Actual output:
-  ```
-  []
-  ```
-
 - [ ] `$['one','three'].key`
   Input:
   ```

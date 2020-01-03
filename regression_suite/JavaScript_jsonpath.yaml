@@ -44,6 +44,9 @@ queries:
   - id: filter_without_value
     status: open
     result: [{"some": "some value"}, {"key": null}]
+  - id: key_bracket_notation_union
+    status: open
+    result: ["value", "entry"]
   - id: key_bracket_notation_with_double_quotes
     status: open
     result: ["value"]

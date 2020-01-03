@@ -71,7 +71,7 @@ queries:
     status: fail
     result: {"key": "value"}
   - id: key_bracket_notation_union
-    status: fail
+    status: open
     result: {"another": "entry", "key": "value"}
   - id: key_bracket_notation_union_with_key_on_nested_objects
     status: fail

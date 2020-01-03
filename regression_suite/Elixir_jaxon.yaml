@@ -4,51 +4,89 @@
 # an existing consensus or where no consensus exists.
 # It can be used to track changes in the underlying implementation and complements the regression report.
 
-implementation: Scala_jsonpath
+implementation: Elixir_jaxon
 queries:
   - id: array_index_dot_notation
     status: open
     result: []
+  - id: array_index_last
+    status: fail
+    result: []
+  - id: array_index_slice_end_out_of_bounds
+    status: error
+  - id: array_index_slice_last_no_end
+    status: error
   - id: array_index_slice_negative_step
-    status: open
-    result: ["fifth", "third", "first"]
+    status: error
+  - id: array_index_slice_no_start_no_end
+    status: error
+  - id: array_index_slice_only_end
+    status: error
+  - id: array_index_slice_only_start
+    status: error
+  - id: array_index_slice_start_end
+    status: error
   - id: array_index_slice_start_end_negative_step
-    status: open
-    result: ["forth", "second"]
+    status: error
+  - id: array_index_slice_start_end_step
+    status: error
   - id: array_index_slice_start_end_step_0
     status: error
+  - id: array_index_slice_start_end_step_1
+    status: error
+  - id: array_index_slice_start_end_step_non_aligned
+    status: error
+  - id: array_index_slice_start_equals_end
+    status: error
+  - id: array_index_slice_start_plus_one
+    status: error
+  - id: array_index_slice_step
+    status: error
+  - id: array_index_union
+    status: error
   - id: filter_current_object_with_value
-    status: open
-    result: ["some value", null, "value"]
+    status: error
+  - id: filter_equal
+    status: error
+  - id: filter_greater_than
+    status: error
   - id: filter_greater_than_or_equal
-    status: open
-    result: [{"key": 42}, {"key": 43}, {"key": 42.0001}, {"key": 100}]
+    status: error
+  - id: filter_less_than
+    status: error
   - id: filter_less_than_on_string
-    status: open
-    result: [{"key": 0}]
+    status: error
   - id: filter_less_than_or_equal
-    status: open
-    result: [{"key": 0}, {"key": 42}, {"key": -1}, {"key": 41}, {"key": 41.9999}]
+    status: error
   - id: filter_null
-    status: open
-    result: [{"key": null}]
+    status: error
   - id: filter_with_boolean_operation
-    status: open
-    result: [{"key": 43}]
+    status: error
+  - id: filter_with_value
+    status: error
   - id: filter_with_value_on_null
-    status: open
-    result: [{"key": null}, {"key": "value"}]
+    status: error
   - id: filter_without_value
     status: error
+  - id: key_bracket_notation
+    status: error
   - id: key_bracket_notation_union
-    status: open
-    result: ["value", "entry"]
+    status: error
+  - id: key_bracket_notation_union_with_key_on_nested_objects
+    status: error
+  - id: key_bracket_notation_with_at_literal
+    status: error
+  - id: key_bracket_notation_with_dollar_literal
+    status: error
+  - id: key_bracket_notation_with_dot
+    status: error
   - id: key_bracket_notation_with_double_quotes
-    status: open
-    result: ["value"]
+    status: error
   - id: key_bracket_notation_with_nested_object
     status: error
   - id: key_bracket_notation_with_nested_object_without_quotes
+    status: error
+  - id: key_bracket_notation_with_number
     status: error
   - id: key_bracket_notation_with_number_without_quotes
     status: open
@@ -56,11 +94,11 @@ queries:
   - id: key_bracket_notation_with_single_quote
     status: error
   - id: key_bracket_notation_with_single_quote_escaped
-    status: open
-    result: ["value"]
+    status: error
+  - id: key_bracket_notation_with_special_characters
+    status: error
   - id: key_bracket_notation_with_star_literal
-    status: fail
-    result: ["value", "entry"]
+    status: error
   - id: key_bracket_notation_without_quotes
     status: error
   - id: key_dot_bracket_notation
@@ -71,35 +109,35 @@ queries:
     status: error
   - id: key_dot_notation_with_double_quotes
     status: open
-    result: []
+    result: ["value"]
   - id: key_dot_notation_with_single_quotes
     status: open
     result: []
   - id: recursive_array_index
-    status: error
+    status: open
+    result: ["first"]
   - id: recursive_key
     status: fail
-    result: ["something", "top", "value", {"key": "russian dolls"}]
+    result: ["top"]
   - id: recursive_key_with_double_quotes
     status: open
-    result: []
+    result: ["top"]
   - id: recursive_key_with_single_quotes
     status: open
     result: []
+  - id: recursive_on_nested_object
+    status: fail
+    result: []
   - id: recursive_wildcard
     status: fail
-    result: ["string", "value", 0, 1, [0, 1], {"complex": "string", "primitives": [0, 1]}, {"another key": {"complex": "string", "primitives": [0, 1]}, "key": "value"}]
-  - id: recursive_wildcard_on_null_value_array
-    status: fail
-    result: [[40, null, 42], 40, null, 42]
+    result: []
   - id: recursive_wildcard_on_scalar
-    status: open
-    result: [42]
+    status: error
   - id: script_expression
     status: error
   - id: wildcard_bracket_notation_on_object
     status: fail
     result: []
-  - id: wildcard_dot_notation_on_array
+  - id: wildcard_dot_notation_on_object
     status: fail
     result: []

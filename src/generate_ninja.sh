@@ -24,7 +24,7 @@ all_queries() {
 
 check_dependencies() {
     local dep
-    for dep in ninja java mvn cargo git go node python3 markdown php composer curl gcc g++ pkg-config perl wget ghc cabal erl rebar3 dotnet; do
+    for dep in ninja java mvn cargo git go node python3 markdown php composer curl gcc g++ pkg-config perl wget ghc cabal erl rebar3 dotnet elixir; do
         if ! which "$dep" > /dev/null; then
             echo >&2 "Please install $dep"
             exit 1

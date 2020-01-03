@@ -51,7 +51,7 @@ queries:
     status: open
     result: [{"some": "some value"}]
   - id: key_bracket_notation_union
-    status: fail
+    status: open
     result: {"another": "entry", "key": "value"}
   - id: key_bracket_notation_with_double_quotes
     status: open

@@ -79,20 +79,6 @@ The following queries provide results that do not match those of other implement
   non-safe evaluation, died at main.pl line 12.
   ```
 
-- [ ] `$['key','another']`
-  Input:
-  ```
-  {"key": "value", "another": "entry"}
-  ```
-  Expected output:
-  ```
-  ["value", "entry"]
-  ```
-  Actual output:
-  ```
-  []
-  ```
-
 - [ ] `$['one','three'].key`
   Input:
   ```

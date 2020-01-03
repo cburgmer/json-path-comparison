@@ -40,3 +40,6 @@ ENV PATH="/root/.dotnet:${PATH}"
 ENV DOTNET_ROOT="/root/.dotnet"
 RUN curl -OL https://dotnetwebsite.azurewebsites.net/download/dotnet-core/scripts/v1/dotnet-install.sh \
         && chmod a+x dotnet-install.sh && ./dotnet-install.sh
+
+# Elixir
+RUN apk --no-cache add elixir

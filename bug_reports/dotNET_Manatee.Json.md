@@ -45,20 +45,6 @@ The following queries provide results that do not match those of other implement
   Unrecognized JSON Path element. Path up to error: '$'
   ```
 
-- [ ] `$['key','another']`
-  Input:
-  ```
-  {"key": "value", "another": "entry"}
-  ```
-  Expected output:
-  ```
-  ["value", "entry"]
-  ```
-  Error:
-  ```
-  Unrecognized JSON Path element. Path up to error: '$'
-  ```
-
 - [ ] `$['one','three'].key`
   Input:
   ```
