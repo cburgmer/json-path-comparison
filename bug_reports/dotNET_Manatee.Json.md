@@ -17,20 +17,6 @@ The following queries provide results that do not match those of other implement
   []
   ```
 
-- [ ] `$[1:10]`
-  Input:
-  ```
-  ["first", "second", "third"]
-  ```
-  Expected output:
-  ```
-  ["second", "third"]
-  ```
-  Error:
-  ```
-  Offset and length were out of bounds for the array or count is greater than the number of elements from index to the end of the source collection.
-  ```
-
 - [ ] `$['key']`
   Input:
   ```
@@ -141,34 +127,6 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   Unrecognized JSON Path element. Path up to error: '$'
-  ```
-
-- [ ] `$..*`
-  Input:
-  ```
-  {"key": "value", "another key": {"complex": "string", "primitives": [0, 1]}}
-  ```
-  Expected output:
-  ```
-  ["string", "value", 0, 1, [0, 1], {"complex": "string", "primitives": [0, 1]}]
-  ```
-  Actual output:
-  ```
-  ["string", "value", 0, 1, [0, 1], {"complex": "string", "primitives": [0, 1]}, {"another key": {"complex": "string", "primitives": [0, 1]}, "key": "value"}]
-  ```
-
-- [ ] `$..*`
-  Input:
-  ```
-  [40, null, 42]
-  ```
-  Expected output:
-  ```
-  [40, null, 42]
-  ```
-  Actual output:
-  ```
-  [[40, null, 42], 40, null, 42]
   ```
 
 
