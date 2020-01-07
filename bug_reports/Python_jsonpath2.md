@@ -18,20 +18,6 @@ The following queries provide results that do not match those of other implement
   ValueError("line 1:2 mismatched input '2' expecting {'*', ID}")
   ```
 
-- [ ] `$[::2]`
-  Input:
-  ```
-  ["first", "second", "third", "forth", "fifth"]
-  ```
-  Expected output:
-  ```
-  ["first", "third", "fifth"]
-  ```
-  Actual output:
-  ```
-  ["first", "second"]
-  ```
-
 - [ ] `$[?(@.key==42)]`
   Input:
   ```

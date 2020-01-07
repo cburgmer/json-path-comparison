@@ -12,15 +12,12 @@ queries:
     status: error
   - id: array_index_slice_negative_step
     status: open
-    result: ["first", "second", "third"]
+    result: []
   - id: array_index_slice_start_end_negative_step
     status: open
     result: ["forth", "second"]
   - id: array_index_slice_start_end_step_0
     status: error
-  - id: array_index_slice_step
-    status: fail
-    result: ["first", "second"]
   - id: filter_current_object_with_value
     status: open
     result: [["some value", null, "value"]]
