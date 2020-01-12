@@ -80,6 +80,15 @@ PHP (galbar-jsonpath), Array index dot notation
 <pre><code>Invalid JSONPath error: 'Error in JSONPath near '.2''
 </code></pre>
 
+<h3 id="Postgres_SQL-JSON-Path___array_index_dot_notation">
+Postgres (SQL-JSON-Path), Array index dot notation
+</h3>
+
+<pre><code>ERROR:  syntax error, unexpected INT_P at or near "2" of jsonpath input
+LINE 1: ...'["first", "second", "third", "forth", "fifth"]', '$.2'))) r...
+                                                             ^
+</code></pre>
+
 <h3 id="Python_jsonpath-rw___array_index_dot_notation">
 Python (jsonpath-rw), Array index dot notation
 </h3>
@@ -138,6 +147,15 @@ PHP (galbar-jsonpath), Array index dot notation on object
 <pre><code>Invalid JSONPath error: 'Error in JSONPath near '.2''
 </code></pre>
 
+<h3 id="Postgres_SQL-JSON-Path___array_index_dot_notation_on_object">
+Postgres (SQL-JSON-Path), Array index dot notation on object
+</h3>
+
+<pre><code>ERROR:  syntax error, unexpected INT_P at or near "2" of jsonpath input
+LINE 1: ...ry('{"a": "first", "2": "second", "b": "third"}', '$.2'))) r...
+                                                             ^
+</code></pre>
+
 <h3 id="Python_jsonpath-rw___array_index_dot_notation_on_object">
 Python (jsonpath-rw), Array index dot notation on object
 </h3>
@@ -180,6 +198,13 @@ PHP (Goessner), Array index last
 </h3>
 
 <pre><code>jsonpath returned false, this might indicate an error
+</code></pre>
+
+<h3 id="Postgres_SQL-JSON-Path___array_index_last">
+Postgres (SQL-JSON-Path), Array index last
+</h3>
+
+<pre><code>Expecting value: line 3 column 1 (char 3)
 </code></pre>
 
 <h3 id="Python_jsonpath___array_index_last">
@@ -229,6 +254,15 @@ Golang (github.com-oliveagle-jsonpath), Array index slice end out of bounds
 <pre><code>index [to] out of range: len: 3, to: 10
 </code></pre>
 
+<h3 id="Postgres_SQL-JSON-Path___array_index_slice_end_out_of_bounds">
+Postgres (SQL-JSON-Path), Array index slice end out of bounds
+</h3>
+
+<pre><code>ERROR:  syntax error, unexpected $undefined, expecting ',' or ']' at or near ":" of jsonpath input
+LINE 1: ...(jsonb_path_query('["first", "second", "third"]', '$[1:10]')...
+                                                             ^
+</code></pre>
+
 <h3 id="Elixir_jaxon___array_index_slice_last_no_end">
 Elixir (jaxon), Array index slice last no end
 </h3>
@@ -248,6 +282,15 @@ Erlang (ejsonpath), Array index slice last no end
 
 Crash dump is being written to: erl_crash.dump...done
 {"init terminating in do_boot",{badmatch,{error,{1,ejsonpath_parse,["syntax error before: ","':'"]}}}}
+</code></pre>
+
+<h3 id="Postgres_SQL-JSON-Path___array_index_slice_last_no_end">
+Postgres (SQL-JSON-Path), Array index slice last no end
+</h3>
+
+<pre><code>ERROR:  syntax error, unexpected $undefined, expecting ',' or ']' at or near ":" of jsonpath input
+LINE 1: ...(jsonb_path_query('["first", "second", "third"]', '$[-1:]'))...
+                                                             ^
 </code></pre>
 
 <h3 id="Rust_jsonpath___array_index_slice_last_no_end">
@@ -289,7 +332,7 @@ Golang (github.com-oliveagle-jsonpath), Array index slice negative step
 Haskell (jsonpath), Array index slice negative step
 </h3>
 
-<pre><code>implementations/Haskell_jsonpath/run.sh: line 6: 66208 Killed                  "$script_dir"/build/json-path-comparison "$@"
+<pre><code>implementations/Haskell_jsonpath/run.sh: line 6:  5694 Killed                  "$script_dir"/build/json-path-comparison "$@"
 </code></pre>
 
 <h3 id="JavaScript_Goessner___array_index_slice_negative_step">
@@ -350,6 +393,15 @@ PHP (flow-jsonpath), Array index slice negative step
 </h3>
 
 <pre><code>timeout: sending signal TERM to command ‘php’
+</code></pre>
+
+<h3 id="Postgres_SQL-JSON-Path___array_index_slice_negative_step">
+Postgres (SQL-JSON-Path), Array index slice negative step
+</h3>
+
+<pre><code>ERROR:  syntax error, unexpected $undefined at or near ":" of jsonpath input
+LINE 1: ...'["first", "second", "third", "forth", "fifth"]', '$[::-2]')...
+                                                             ^
 </code></pre>
 
 <h3 id="Python_jsonpath___array_index_slice_negative_step">
@@ -497,6 +549,15 @@ Perl (JSON-Path), Array index slice no start no end
     JSON::Path::values(...) called at main.pl line 12
 </code></pre>
 
+<h3 id="Postgres_SQL-JSON-Path___array_index_slice_no_start_no_end">
+Postgres (SQL-JSON-Path), Array index slice no start no end
+</h3>
+
+<pre><code>ERROR:  syntax error, unexpected $undefined at or near ":" of jsonpath input
+LINE 4: ]', '$[:]'))) r;
+            ^
+</code></pre>
+
 <h3 id="Rust_jsonpath___array_index_slice_no_start_no_end">
 Rust (jsonpath), Array index slice no start no end
 </h3>
@@ -513,6 +574,15 @@ Elixir (jaxon), Array index slice only end
     lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
     (mix) lib/mix/task.ex:331: Mix.Task.run_task/3
     (mix) lib/mix/cli.ex:79: Mix.CLI.run_task/2
+</code></pre>
+
+<h3 id="Postgres_SQL-JSON-Path___array_index_slice_only_end">
+Postgres (SQL-JSON-Path), Array index slice only end
+</h3>
+
+<pre><code>ERROR:  syntax error, unexpected $undefined at or near ":" of jsonpath input
+LINE 1: ...'["first", "second", "third", "forth", "fifth"]', '$[:2]')))...
+                                                             ^
 </code></pre>
 
 <h3 id="Bash_JSONPath.sh___array_index_slice_only_start">
@@ -534,6 +604,15 @@ Elixir (jaxon), Array index slice only start
     (mix) lib/mix/cli.ex:79: Mix.CLI.run_task/2
 </code></pre>
 
+<h3 id="Postgres_SQL-JSON-Path___array_index_slice_only_start">
+Postgres (SQL-JSON-Path), Array index slice only start
+</h3>
+
+<pre><code>ERROR:  syntax error, unexpected $undefined, expecting ',' or ']' at or near ":" of jsonpath input
+LINE 1: ...'["first", "second", "third", "forth", "fifth"]', '$[1:]')))...
+                                                             ^
+</code></pre>
+
 <h3 id="Elixir_jaxon___array_index_slice_start_end">
 Elixir (jaxon), Array index slice start end
 </h3>
@@ -543,6 +622,15 @@ Elixir (jaxon), Array index slice start end
     lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
     (mix) lib/mix/task.ex:331: Mix.Task.run_task/3
     (mix) lib/mix/cli.ex:79: Mix.CLI.run_task/2
+</code></pre>
+
+<h3 id="Postgres_SQL-JSON-Path___array_index_slice_start_end">
+Postgres (SQL-JSON-Path), Array index slice start end
+</h3>
+
+<pre><code>ERROR:  syntax error, unexpected $undefined, expecting ',' or ']' at or near ":" of jsonpath input
+LINE 1: ...'["first", "second", "third", "forth", "fifth"]', '$[1:3]'))...
+                                                             ^
 </code></pre>
 
 <h3 id="Bash_JSONPath.sh___array_index_slice_start_end_negative_step">
@@ -612,6 +700,15 @@ PHP (Goessner), Array index slice start end negative step
 </h3>
 
 <pre><code>timeout: sending signal TERM to command ‘php’
+</code></pre>
+
+<h3 id="Postgres_SQL-JSON-Path___array_index_slice_start_end_negative_step">
+Postgres (SQL-JSON-Path), Array index slice start end negative step
+</h3>
+
+<pre><code>ERROR:  syntax error, unexpected $undefined, expecting ',' or ']' at or near ":" of jsonpath input
+LINE 1: ...'["first", "second", "third", "forth", "fifth"]', '$[3:0:-2]...
+                                                             ^
 </code></pre>
 
 <h3 id="Python_jsonpath-rw___array_index_slice_start_end_negative_step">
@@ -705,6 +802,15 @@ Caused by: org.antlr.v4.runtime.InputMismatchException
     ... 8 more
 </code></pre>
 
+<h3 id="Postgres_SQL-JSON-Path___array_index_slice_start_end_step">
+Postgres (SQL-JSON-Path), Array index slice start end step
+</h3>
+
+<pre><code>ERROR:  syntax error, unexpected $undefined, expecting ',' or ']' at or near ":" of jsonpath input
+LINE 1: ...'["first", "second", "third", "forth", "fifth"]', '$[0:3:2]'...
+                                                             ^
+</code></pre>
+
 <h3 id="Python_jsonpath-rw___array_index_slice_start_end_step">
 Python (jsonpath-rw), Array index slice start end step
 </h3>
@@ -765,7 +871,7 @@ Golang (github.com-oliveagle-jsonpath), Array index slice start end step 0
 Haskell (jsonpath), Array index slice start end step 0
 </h3>
 
-<pre><code>implementations/Haskell_jsonpath/run.sh: line 6: 66441 Killed                  "$script_dir"/build/json-path-comparison "$@"
+<pre><code>implementations/Haskell_jsonpath/run.sh: line 6:  5926 Killed                  "$script_dir"/build/json-path-comparison "$@"
 </code></pre>
 
 <h3 id="JavaScript_Goessner___array_index_slice_start_end_step_0">
@@ -813,6 +919,15 @@ Perl (JSON-Path), Array index slice start end step 0
 </h3>
 
 <pre><code>Illegal modulus zero at build/lib/perl5/JSON/Path/Evaluator.pm line 411, &lt;STDIN&gt; line 1.
+</code></pre>
+
+<h3 id="Postgres_SQL-JSON-Path___array_index_slice_start_end_step_0">
+Postgres (SQL-JSON-Path), Array index slice start end step 0
+</h3>
+
+<pre><code>ERROR:  syntax error, unexpected $undefined, expecting ',' or ']' at or near ":" of jsonpath input
+LINE 1: ...'["first", "second", "third", "forth", "fifth"]', '$[0:3:0]'...
+                                                             ^
 </code></pre>
 
 <h3 id="Python_jsonpath___array_index_slice_start_end_step_0">
@@ -947,6 +1062,15 @@ Caused by: org.antlr.v4.runtime.InputMismatchException
     ... 8 more
 </code></pre>
 
+<h3 id="Postgres_SQL-JSON-Path___array_index_slice_start_end_step_1">
+Postgres (SQL-JSON-Path), Array index slice start end step 1
+</h3>
+
+<pre><code>ERROR:  syntax error, unexpected $undefined, expecting ',' or ']' at or near ":" of jsonpath input
+LINE 1: ...'["first", "second", "third", "forth", "fifth"]', '$[0:3:1]'...
+                                                             ^
+</code></pre>
+
 <h3 id="Python_jsonpath-rw___array_index_slice_start_end_step_1">
 Python (jsonpath-rw), Array index slice start end step 1
 </h3>
@@ -1015,6 +1139,15 @@ Caused by: org.antlr.v4.runtime.InputMismatchException
     ... 8 more
 </code></pre>
 
+<h3 id="Postgres_SQL-JSON-Path___array_index_slice_start_end_step_non_aligned">
+Postgres (SQL-JSON-Path), Array index slice start end step non aligned
+</h3>
+
+<pre><code>ERROR:  syntax error, unexpected $undefined, expecting ',' or ']' at or near ":" of jsonpath input
+LINE 1: ...'["first", "second", "third", "forth", "fifth"]', '$[0:4:2]'...
+                                                             ^
+</code></pre>
+
 <h3 id="Python_jsonpath-rw___array_index_slice_start_end_step_non_aligned">
 Python (jsonpath-rw), Array index slice start end step non aligned
 </h3>
@@ -1054,6 +1187,15 @@ PHP (galbar-jsonpath), Array index slice start equals end
 <pre><code>jsonpath returned false, this might indicate an error
 </code></pre>
 
+<h3 id="Postgres_SQL-JSON-Path___array_index_slice_start_equals_end">
+Postgres (SQL-JSON-Path), Array index slice start equals end
+</h3>
+
+<pre><code>ERROR:  syntax error, unexpected $undefined, expecting ',' or ']' at or near ":" of jsonpath input
+LINE 4: ]', '$[0:0]'))) r;
+            ^
+</code></pre>
+
 <h3 id="Python_jsonpath___array_index_slice_start_equals_end">
 Python (jsonpath), Array index slice start equals end
 </h3>
@@ -1070,6 +1212,15 @@ Elixir (jaxon), Array index slice start plus one
     lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
     (mix) lib/mix/task.ex:331: Mix.Task.run_task/3
     (mix) lib/mix/cli.ex:79: Mix.CLI.run_task/2
+</code></pre>
+
+<h3 id="Postgres_SQL-JSON-Path___array_index_slice_start_plus_one">
+Postgres (SQL-JSON-Path), Array index slice start plus one
+</h3>
+
+<pre><code>ERROR:  syntax error, unexpected $undefined, expecting ',' or ']' at or near ":" of jsonpath input
+LINE 4: ]', '$[0:1]'))) r;
+            ^
 </code></pre>
 
 <h3 id="Elixir_jaxon___array_index_slice_step">
@@ -1137,6 +1288,15 @@ Exception in thread "main" com.jayway.jsonpath.InvalidPathException: Failed to p
     at com.jayway.jsonpath.JsonPath.compile(JsonPath.java:467)
     at com.jayway.jsonpath.internal.JsonContext.read(JsonContext.java:87)
     at query.App.main(App.java:25)
+</code></pre>
+
+<h3 id="Postgres_SQL-JSON-Path___array_index_slice_step">
+Postgres (SQL-JSON-Path), Array index slice step
+</h3>
+
+<pre><code>ERROR:  syntax error, unexpected $undefined at or near ":" of jsonpath input
+LINE 1: ...'["first", "second", "third", "forth", "fifth"]', '$[::2]'))...
+                                                             ^
 </code></pre>
 
 <h3 id="Python_jsonpath-rw___array_index_slice_step">
@@ -1279,6 +1439,15 @@ Perl (JSON-Path), Filter current object with value
 <pre><code>non-safe evaluation, died at main.pl line 12.
 </code></pre>
 
+<h3 id="Postgres_SQL-JSON-Path___filter_current_object_with_value">
+Postgres (SQL-JSON-Path), Filter current object with value
+</h3>
+
+<pre><code>ERROR:  syntax error, unexpected '?' at or near "?" of jsonpath input
+LINE 5: ]', '$[?(@)]'))) r;
+            ^
+</code></pre>
+
 <h3 id="Python_jsonpath-rw___filter_current_object_with_value">
 Python (jsonpath-rw), Filter current object with value
 </h3>
@@ -1357,6 +1526,15 @@ Perl (JSON-Path), Filter equal
 </h3>
 
 <pre><code>non-safe evaluation, died at main.pl line 12.
+</code></pre>
+
+<h3 id="Postgres_SQL-JSON-Path___filter_equal">
+Postgres (SQL-JSON-Path), Filter equal
+</h3>
+
+<pre><code>ERROR:  syntax error, unexpected '?' at or near "?" of jsonpath input
+LINE 11: ]', '$[?(@.key==42)]'))) r;
+             ^
 </code></pre>
 
 <h3 id="Python_jsonpath-rw___filter_equal">
@@ -1438,6 +1616,15 @@ Perl (JSON-Path), Filter greater than
 </h3>
 
 <pre><code>non-safe evaluation, died at main.pl line 12.
+</code></pre>
+
+<h3 id="Postgres_SQL-JSON-Path___filter_greater_than">
+Postgres (SQL-JSON-Path), Filter greater than
+</h3>
+
+<pre><code>ERROR:  syntax error, unexpected '?' at or near "?" of jsonpath input
+LINE 10: ]', '$[?(@.key&gt;42)]'))) r;
+             ^
 </code></pre>
 
 <h3 id="Python_jsonpath-rw___filter_greater_than">
@@ -1574,6 +1761,15 @@ Perl (JSON-Path), Filter greater than or equal
 <pre><code>non-safe evaluation, died at main.pl line 12.
 </code></pre>
 
+<h3 id="Postgres_SQL-JSON-Path___filter_greater_than_or_equal">
+Postgres (SQL-JSON-Path), Filter greater than or equal
+</h3>
+
+<pre><code>ERROR:  syntax error, unexpected '?' at or near "?" of jsonpath input
+LINE 11: ]', '$[?(@.key&gt;=42)]'))) r;
+             ^
+</code></pre>
+
 <h3 id="Python_jsonpath-rw___filter_greater_than_or_equal">
 Python (jsonpath-rw), Filter greater than or equal
 </h3>
@@ -1699,6 +1895,15 @@ Perl (JSON-Path), Filter less than
 </h3>
 
 <pre><code>non-safe evaluation, died at main.pl line 12.
+</code></pre>
+
+<h3 id="Postgres_SQL-JSON-Path___filter_less_than">
+Postgres (SQL-JSON-Path), Filter less than
+</h3>
+
+<pre><code>ERROR:  syntax error, unexpected '?' at or near "?" of jsonpath input
+LINE 11: ]', '$[?(@.key&lt;42)]'))) r;
+             ^
 </code></pre>
 
 <h3 id="Python_jsonpath-rw___filter_less_than">
@@ -1855,6 +2060,15 @@ Perl (JSON-Path), Filter less than on string
 <pre><code>non-safe evaluation, died at main.pl line 12.
 </code></pre>
 
+<h3 id="Postgres_SQL-JSON-Path___filter_less_than_on_string">
+Postgres (SQL-JSON-Path), Filter less than on string
+</h3>
+
+<pre><code>ERROR:  syntax error, unexpected '?' at or near "?" of jsonpath input
+LINE 4: ]', '$[?(@.key&lt;42)]'))) r;
+            ^
+</code></pre>
+
 <h3 id="Python_jsonpath-rw___filter_less_than_on_string">
 Python (jsonpath-rw), Filter less than on string
 </h3>
@@ -2003,6 +2217,15 @@ Perl (JSON-Path), Filter less than or equal
 <pre><code>non-safe evaluation, died at main.pl line 12.
 </code></pre>
 
+<h3 id="Postgres_SQL-JSON-Path___filter_less_than_or_equal">
+Postgres (SQL-JSON-Path), Filter less than or equal
+</h3>
+
+<pre><code>ERROR:  syntax error, unexpected '?' at or near "?" of jsonpath input
+LINE 11: ]', '$[?(@.key&lt;=42)]'))) r;
+             ^
+</code></pre>
+
 <h3 id="Python_jsonpath-rw___filter_less_than_or_equal">
 Python (jsonpath-rw), Filter less than or equal
 </h3>
@@ -2125,6 +2348,15 @@ Perl (JSON-Path), Filter null
 </h3>
 
 <pre><code>non-safe evaluation, died at main.pl line 12.
+</code></pre>
+
+<h3 id="Postgres_SQL-JSON-Path___filter_null">
+Postgres (SQL-JSON-Path), Filter null
+</h3>
+
+<pre><code>ERROR:  syntax error, unexpected '?' at or near "?" of jsonpath input
+LINE 5: ]', '$[?(@.key==null)]'))) r;
+            ^
 </code></pre>
 
 <h3 id="Python_jsonpath___filter_null">
@@ -2259,6 +2491,15 @@ Perl (JSON-Path), Filter with boolean operation
 <pre><code>non-safe evaluation, died at main.pl line 12.
 </code></pre>
 
+<h3 id="Postgres_SQL-JSON-Path___filter_with_boolean_operation">
+Postgres (SQL-JSON-Path), Filter with boolean operation
+</h3>
+
+<pre><code>ERROR:  syntax error, unexpected '?' at or near "?" of jsonpath input
+LINE 5: ]', '$[?(@.key&gt;42 &amp;&amp; @.key&lt;44)]'))) r;
+            ^
+</code></pre>
+
 <h3 id="Python_jsonpath-rw___filter_with_boolean_operation">
 Python (jsonpath-rw), Filter with boolean operation
 </h3>
@@ -2344,6 +2585,15 @@ Perl (JSON-Path), Filter with value
 <pre><code>non-safe evaluation, died at main.pl line 12.
 </code></pre>
 
+<h3 id="Postgres_SQL-JSON-Path___filter_with_value">
+Postgres (SQL-JSON-Path), Filter with value
+</h3>
+
+<pre><code>ERROR:  syntax error, unexpected '?' at or near "?" of jsonpath input
+LINE 4: ]', '$[?(@.key)]'))) r;
+            ^
+</code></pre>
+
 <h3 id="Python_jsonpath-rw___filter_with_value">
 Python (jsonpath-rw), Filter with value
 </h3>
@@ -2426,6 +2676,15 @@ Perl (JSON-Path), Filter with value on null
 </h3>
 
 <pre><code>non-safe evaluation, died at main.pl line 12.
+</code></pre>
+
+<h3 id="Postgres_SQL-JSON-Path___filter_with_value_on_null">
+Postgres (SQL-JSON-Path), Filter with value on null
+</h3>
+
+<pre><code>ERROR:  syntax error, unexpected '?' at or near "?" of jsonpath input
+LINE 5: ]', '$[?(@.key)]'))) r;
+            ^
 </code></pre>
 
 <h3 id="Python_jsonpath-rw___filter_with_value_on_null">
@@ -2571,6 +2830,15 @@ Perl (JSON-Path), Filter without value
 <pre><code>non-safe evaluation, died at main.pl line 12.
 </code></pre>
 
+<h3 id="Postgres_SQL-JSON-Path___filter_without_value">
+Postgres (SQL-JSON-Path), Filter without value
+</h3>
+
+<pre><code>ERROR:  syntax error, unexpected '?' at or near "?" of jsonpath input
+LINE 5: ]', '$[?(!@.key)]'))) r;
+            ^
+</code></pre>
+
 <h3 id="Python_jsonpath-rw___filter_without_value">
 Python (jsonpath-rw), Filter without value
 </h3>
@@ -2672,6 +2940,15 @@ Golang (github.com-oliveagle-jsonpath), Key bracket notation
 <pre><code>strconv.Atoi: parsing "'key'": invalid syntax
 </code></pre>
 
+<h3 id="Postgres_SQL-JSON-Path___key_bracket_notation">
+Postgres (SQL-JSON-Path), Key bracket notation
+</h3>
+
+<pre><code>ERROR:  syntax error at or near "key"
+LINE 3: }', '$['key']'))) r;
+                ^
+</code></pre>
+
 <h3 id="Python_jsonpath2___key_bracket_notation">
 Python (jsonpath2), Key bracket notation
 </h3>
@@ -2752,6 +3029,15 @@ CallStack (from HasCallStack):
   error, called at app/Main.hs:36:7 in main:Main
 Invalid JSONPath: $['key','another']
  Error: serachBegingingWithSlice: string
+</code></pre>
+
+<h3 id="Postgres_SQL-JSON-Path___key_bracket_notation_union">
+Postgres (SQL-JSON-Path), Key bracket notation union
+</h3>
+
+<pre><code>ERROR:  syntax error at or near "key"
+LINE 4: }', '$['key','another']'))) r;
+                ^
 </code></pre>
 
 <h3 id="Python_jsonpath2___key_bracket_notation_union">
@@ -2848,6 +3134,15 @@ Perl (JSON-Path), Key bracket notation union with key on nested objects
     JSON::Path::Evaluator::evaluate(...) called at build/lib/perl5/JSON/Path/Evaluator.pm line 97
     JSON::Path::Evaluator::evaluate_jsonpath(...) called at build/lib/perl5/JSON/Path.pm line 107
     JSON::Path::values(...) called at main.pl line 12
+</code></pre>
+
+<h3 id="Postgres_SQL-JSON-Path___key_bracket_notation_union_with_key_on_nested_objects">
+Postgres (SQL-JSON-Path), Key bracket notation union with key on nested objects
+</h3>
+
+<pre><code>ERROR:  syntax error at or near "one"
+LINE 5: }', '$['one','three'].key'))) r;
+                ^
 </code></pre>
 
 <h3 id="Python_jsonpath2___key_bracket_notation_union_with_key_on_nested_objects">
@@ -2953,6 +3248,16 @@ Perl (JSON-Path), Key bracket notation with at literal
     JSON::Path::values(...) called at main.pl line 12
 </code></pre>
 
+<h3 id="Postgres_SQL-JSON-Path___key_bracket_notation_with_at_literal">
+Postgres (SQL-JSON-Path), Key bracket notation with at literal
+</h3>
+
+<pre><code>ERROR:  operator is not unique: unknown @ unknown
+LINE 4: }', '$['@']'))) r;
+                ^
+HINT:  Could not choose a best candidate operator. You might need to add explicit type casts.
+</code></pre>
+
 <h3 id="Python_jsonpath2___key_bracket_notation_with_at_literal">
 Python (jsonpath2), Key bracket notation with at literal
 </h3>
@@ -3049,6 +3354,15 @@ Perl (JSON-Path), Key bracket notation with dollar literal
     JSON::Path::values(...) called at main.pl line 12
 </code></pre>
 
+<h3 id="Postgres_SQL-JSON-Path___key_bracket_notation_with_dollar_literal">
+Postgres (SQL-JSON-Path), Key bracket notation with dollar literal
+</h3>
+
+<pre><code>ERROR:  syntax error at or near "$"
+LINE 4: }', '$['$']'))) r;
+                ^
+</code></pre>
+
 <h3 id="Python_jsonpath2___key_bracket_notation_with_dollar_literal">
 Python (jsonpath2), Key bracket notation with dollar literal
 </h3>
@@ -3125,6 +3439,15 @@ Haskell (jsonpath), Key bracket notation with dot
 </h3>
 
 <pre><code>json-path-comparison: src/Data/JSONPath/Execute.hs:(29,1)-(63,29): Non-exhaustive patterns in function executeJSONPathElement
+</code></pre>
+
+<h3 id="Postgres_SQL-JSON-Path___key_bracket_notation_with_dot">
+Postgres (SQL-JSON-Path), Key bracket notation with dot
+</h3>
+
+<pre><code>ERROR:  syntax error at or near "two"
+LINE 5: }', '$['two.some']'))) r;
+                ^
 </code></pre>
 
 <h3 id="Python_jsonpath2___key_bracket_notation_with_dot">
@@ -3256,6 +3579,13 @@ PHP (Goessner), Key bracket notation with double quotes
 </h3>
 
 <pre><code>jsonpath returned false, this might indicate an error
+</code></pre>
+
+<h3 id="Postgres_SQL-JSON-Path___key_bracket_notation_with_double_quotes">
+Postgres (SQL-JSON-Path), Key bracket notation with double quotes
+</h3>
+
+<pre><code>ERROR:  jsonpath array subscript is not a single numeric value
 </code></pre>
 
 <h3 id="Python_jsonpath___key_bracket_notation_with_double_quotes">
@@ -3424,6 +3754,15 @@ PHP (remorhaz-jsonpath), Key bracket notation with nested object
 </h3>
 
 <pre><code>Error: 'Failed to build AST from JSONPath query: $['two'.'some']'
+</code></pre>
+
+<h3 id="Postgres_SQL-JSON-Path___key_bracket_notation_with_nested_object">
+Postgres (SQL-JSON-Path), Key bracket notation with nested object
+</h3>
+
+<pre><code>ERROR:  syntax error at or near "two"
+LINE 5: }', '$['two'.'some']'))) r;
+                ^
 </code></pre>
 
 <h3 id="Python_jsonpath-rw___key_bracket_notation_with_nested_object">
@@ -3645,6 +3984,15 @@ PHP (remorhaz-jsonpath), Key bracket notation with nested object without quotes
 <pre><code>Error: 'Failed to build AST from JSONPath query: $[two.some]'
 </code></pre>
 
+<h3 id="Postgres_SQL-JSON-Path___key_bracket_notation_with_nested_object_without_quotes">
+Postgres (SQL-JSON-Path), Key bracket notation with nested object without quotes
+</h3>
+
+<pre><code>ERROR:  syntax error, unexpected IDENT_P at end of jsonpath input
+LINE 5: }', '$[two.some]'))) r;
+            ^
+</code></pre>
+
 <h3 id="Python_jsonpath-rw___key_bracket_notation_with_nested_object_without_quotes">
 Python (jsonpath-rw), Key bracket notation with nested object without quotes
 </h3>
@@ -3752,6 +4100,15 @@ Golang (github.com-oliveagle-jsonpath), Key bracket notation with number
 </h3>
 
 <pre><code>strconv.Atoi: parsing "'0'": invalid syntax
+</code></pre>
+
+<h3 id="Postgres_SQL-JSON-Path___key_bracket_notation_with_number">
+Postgres (SQL-JSON-Path), Key bracket notation with number
+</h3>
+
+<pre><code>ERROR:  syntax error at or near "0"
+LINE 3: }', '$['0']'))) r;
+                ^
 </code></pre>
 
 <h3 id="Python_jsonpath2___key_bracket_notation_with_number">
@@ -4009,6 +4366,15 @@ PHP (remorhaz-jsonpath), Key bracket notation with single quote
 <pre><code>Error: 'Failed to build AST from JSONPath query: $['single'quote']'
 </code></pre>
 
+<h3 id="Postgres_SQL-JSON-Path___key_bracket_notation_with_single_quote">
+Postgres (SQL-JSON-Path), Key bracket notation with single quote
+</h3>
+
+<pre><code>ERROR:  syntax error at or near "quote"
+LINE 1: ...) FROM (SELECT to_json(jsonb_path_query('{"single'quote":"va...
+                                                             ^
+</code></pre>
+
 <h3 id="Python_jsonpath-rw___key_bracket_notation_with_single_quote">
 Python (jsonpath-rw), Key bracket notation with single quote
 </h3>
@@ -4160,6 +4526,15 @@ PHP (galbar-jsonpath), Key bracket notation with single quote escaped
 <pre><code>jsonpath returned false, this might indicate an error
 </code></pre>
 
+<h3 id="Postgres_SQL-JSON-Path___key_bracket_notation_with_single_quote_escaped">
+Postgres (SQL-JSON-Path), Key bracket notation with single quote escaped
+</h3>
+
+<pre><code>ERROR:  syntax error at or near "quote"
+LINE 1: ...) FROM (SELECT to_json(jsonb_path_query('{"single'quote":"va...
+                                                             ^
+</code></pre>
+
 <h3 id="Python_jsonpath___key_bracket_notation_with_single_quote_escaped">
 Python (jsonpath), Key bracket notation with single quote escaped
 </h3>
@@ -4257,6 +4632,15 @@ Invalid JSONPath: $['special:"chars']
  Error: serachBegingingWithSlice: string
 </code></pre>
 
+<h3 id="Postgres_SQL-JSON-Path___key_bracket_notation_with_special_characters">
+Postgres (SQL-JSON-Path), Key bracket notation with special characters
+</h3>
+
+<pre><code>ERROR:  syntax error at or near "special"
+LINE 1: ...onb_path_query('{"special:\"chars":"value"}', '$['special:"c...
+                                                             ^
+</code></pre>
+
 <h3 id="Python_jsonpath2___key_bracket_notation_with_special_characters">
 Python (jsonpath2), Key bracket notation with special characters
 </h3>
@@ -4314,6 +4698,16 @@ CallStack (from HasCallStack):
   error, called at app/Main.hs:36:7 in main:Main
 Invalid JSONPath: $['*']
  Error: serachBegingingWithSlice: string
+</code></pre>
+
+<h3 id="Postgres_SQL-JSON-Path___key_bracket_notation_with_star_literal">
+Postgres (SQL-JSON-Path), Key bracket notation with star literal
+</h3>
+
+<pre><code>ERROR:  operator is not unique: unknown * unknown
+LINE 4: }', '$['*']'))) r;
+                ^
+HINT:  Could not choose a best candidate operator. You might need to add explicit type casts.
 </code></pre>
 
 <h3 id="Python_jsonpath___key_bracket_notation_with_star_literal">
@@ -4482,6 +4876,15 @@ Kotlin (com.nfeld.jsonpathlite), Key bracket notation without quotes
     at com.nfeld.jsonpathlite.JsonPath.&lt;init&gt;(JsonPath.kt:24)
     at com.nfeld.jsonpathlite.JsonObject.read(JsonResult.kt:7)
     at query.AppKt.main(App.kt:10)
+</code></pre>
+
+<h3 id="Postgres_SQL-JSON-Path___key_bracket_notation_without_quotes">
+Postgres (SQL-JSON-Path), Key bracket notation without quotes
+</h3>
+
+<pre><code>ERROR:  syntax error, unexpected IDENT_P at end of jsonpath input
+LINE 3: }', '$[key]'))) r;
+            ^
 </code></pre>
 
 <h3 id="Python_jsonpath2___key_bracket_notation_without_quotes">
@@ -4654,6 +5057,15 @@ PHP (galbar-jsonpath), Key dot bracket notation
 </h3>
 
 <pre><code>Invalid JSONPath error: 'Error in JSONPath near '.['key']''
+</code></pre>
+
+<h3 id="Postgres_SQL-JSON-Path___key_dot_bracket_notation">
+Postgres (SQL-JSON-Path), Key dot bracket notation
+</h3>
+
+<pre><code>ERROR:  syntax error at or near "key"
+LINE 3: }', '$.['key']'))) r;
+                 ^
 </code></pre>
 
 <h3 id="Python_jsonpath2___key_dot_bracket_notation">
@@ -4829,6 +5241,15 @@ PHP (galbar-jsonpath), Key dot bracket notation with double quotes
 </h3>
 
 <pre><code>Invalid JSONPath error: 'Error in JSONPath near '.["key"]''
+</code></pre>
+
+<h3 id="Postgres_SQL-JSON-Path___key_dot_bracket_notation_with_double_quotes">
+Postgres (SQL-JSON-Path), Key dot bracket notation with double quotes
+</h3>
+
+<pre><code>ERROR:  syntax error, unexpected '[' at or near "[" of jsonpath input
+LINE 3: }', '$.["key"]'))) r;
+            ^
 </code></pre>
 
 <h3 id="Python_jsonpath___key_dot_bracket_notation_with_double_quotes">
@@ -5025,6 +5446,15 @@ PHP (galbar-jsonpath), Key dot bracket notation without quotes
 </h3>
 
 <pre><code>Invalid JSONPath error: 'Error in JSONPath near '.[key]''
+</code></pre>
+
+<h3 id="Postgres_SQL-JSON-Path___key_dot_bracket_notation_without_quotes">
+Postgres (SQL-JSON-Path), Key dot bracket notation without quotes
+</h3>
+
+<pre><code>ERROR:  syntax error, unexpected '[' at or near "[" of jsonpath input
+LINE 3: }', '$.[key]'))) r;
+            ^
 </code></pre>
 
 <h3 id="Python_jsonpath2___key_dot_bracket_notation_without_quotes">
@@ -5284,6 +5714,15 @@ PHP (galbar-jsonpath), Key dot notation with single quotes
 <pre><code>Invalid JSONPath error: 'Error in JSONPath near '.'key'''
 </code></pre>
 
+<h3 id="Postgres_SQL-JSON-Path___key_dot_notation_with_single_quotes">
+Postgres (SQL-JSON-Path), Key dot notation with single quotes
+</h3>
+
+<pre><code>ERROR:  syntax error at or near "key"
+LINE 3: }', '$.'key''))) r;
+                ^
+</code></pre>
+
 <h3 id="Python_jsonpath2___key_dot_notation_with_single_quotes">
 Python (jsonpath2), Key dot notation with single quotes
 </h3>
@@ -5408,6 +5847,15 @@ PHP (galbar-jsonpath), Recursive array index
 <pre><code>Invalid JSONPath error: 'Error in JSONPath near '..[0]''
 </code></pre>
 
+<h3 id="Postgres_SQL-JSON-Path___recursive_array_index">
+Postgres (SQL-JSON-Path), Recursive array index
+</h3>
+
+<pre><code>ERROR:  syntax error, unexpected '.' at or near "." of jsonpath input
+LINE 16: ]', '$..[0]'))) r;
+             ^
+</code></pre>
+
 <h3 id="Python_jsonpath-rw___recursive_array_index">
 Python (jsonpath-rw), Recursive array index
 </h3>
@@ -5451,6 +5899,15 @@ Golang (github.com-oliveagle-jsonpath), Recursive key
 </h3>
 
 <pre><code>expression don't support in filter
+</code></pre>
+
+<h3 id="Postgres_SQL-JSON-Path___recursive_key">
+Postgres (SQL-JSON-Path), Recursive key
+</h3>
+
+<pre><code>ERROR:  syntax error, unexpected '.' at or near "." of jsonpath input
+LINE 10: }', '$..key'))) r;
+             ^
 </code></pre>
 
 <h3 id="Rust_jsonpath___recursive_key">
@@ -5524,6 +5981,15 @@ PHP (galbar-jsonpath), Recursive key with double quotes
 </h3>
 
 <pre><code>Invalid JSONPath error: 'Error in JSONPath near '.."key"''
+</code></pre>
+
+<h3 id="Postgres_SQL-JSON-Path___recursive_key_with_double_quotes">
+Postgres (SQL-JSON-Path), Recursive key with double quotes
+</h3>
+
+<pre><code>ERROR:  syntax error, unexpected '.' at or near "." of jsonpath input
+LINE 10: }', '$.."key"'))) r;
+             ^
 </code></pre>
 
 <h3 id="Python_jsonpath___recursive_key_with_double_quotes">
@@ -5633,6 +6099,15 @@ PHP (galbar-jsonpath), Recursive key with single quotes
 <pre><code>Invalid JSONPath error: 'Error in JSONPath near '..'key'''
 </code></pre>
 
+<h3 id="Postgres_SQL-JSON-Path___recursive_key_with_single_quotes">
+Postgres (SQL-JSON-Path), Recursive key with single quotes
+</h3>
+
+<pre><code>ERROR:  syntax error at or near "key"
+LINE 10: }', '$..'key''))) r;
+                  ^
+</code></pre>
+
 <h3 id="Python_jsonpath2___recursive_key_with_single_quotes">
 Python (jsonpath2), Recursive key with single quotes
 </h3>
@@ -5674,6 +6149,15 @@ Golang (github.com-oliveagle-jsonpath), Recursive on nested object
 <pre><code>expression don't support in filter
 </code></pre>
 
+<h3 id="Postgres_SQL-JSON-Path___recursive_on_nested_object">
+Postgres (SQL-JSON-Path), Recursive on nested object
+</h3>
+
+<pre><code>ERROR:  syntax error, unexpected '.' at or near "." of jsonpath input
+LINE 36: }', '$.store..price'))) r;
+             ^
+</code></pre>
+
 <h3 id="Rust_jsonpath___recursive_on_nested_object">
 Rust (jsonpath), Recursive on nested object
 </h3>
@@ -5698,6 +6182,15 @@ Golang (github.com-oliveagle-jsonpath), Recursive wildcard
 <pre><code>expression don't support in filter
 </code></pre>
 
+<h3 id="Postgres_SQL-JSON-Path___recursive_wildcard">
+Postgres (SQL-JSON-Path), Recursive wildcard
+</h3>
+
+<pre><code>ERROR:  syntax error, unexpected '.' at or near "." of jsonpath input
+LINE 7: }', '$..*'))) r;
+            ^
+</code></pre>
+
 <h3 id="Rust_jsonpath___recursive_wildcard">
 Rust (jsonpath), Recursive wildcard
 </h3>
@@ -5720,6 +6213,15 @@ Golang (github.com-oliveagle-jsonpath), Recursive wildcard on null value array
 </h3>
 
 <pre><code>expression don't support in filter
+</code></pre>
+
+<h3 id="Postgres_SQL-JSON-Path___recursive_wildcard_on_null_value_array">
+Postgres (SQL-JSON-Path), Recursive wildcard on null value array
+</h3>
+
+<pre><code>ERROR:  syntax error, unexpected '.' at or near "." of jsonpath input
+LINE 5: ]', '$..*'))) r;
+            ^
 </code></pre>
 
 <h3 id="Rust_jsonpath___recursive_wildcard_on_null_value_array">
@@ -5815,6 +6317,15 @@ Perl (JSON-Path), Recursive wildcard on scalar
 </h3>
 
 <pre><code>JSON text must be an object or array (but found number, string, true, false or null, use allow_nonref to allow this) at main.pl line 9.
+</code></pre>
+
+<h3 id="Postgres_SQL-JSON-Path___recursive_wildcard_on_scalar">
+Postgres (SQL-JSON-Path), Recursive wildcard on scalar
+</h3>
+
+<pre><code>ERROR:  syntax error, unexpected '.' at or near "." of jsonpath input
+LINE 1: ...son)) FROM (SELECT to_json(jsonb_path_query('42', '$..*'))) ...
+                                                             ^
 </code></pre>
 
 <h3 id="Python_jsonpath___recursive_wildcard_on_scalar">
@@ -6061,6 +6572,15 @@ Perl (JSON-Path), Script expression
     JSON::Path::Evaluator::evaluate(...) called at build/lib/perl5/JSON/Path/Evaluator.pm line 97
     JSON::Path::Evaluator::evaluate_jsonpath(...) called at build/lib/perl5/JSON/Path.pm line 107
     JSON::Path::values(...) called at main.pl line 12
+</code></pre>
+
+<h3 id="Postgres_SQL-JSON-Path___script_expression">
+Postgres (SQL-JSON-Path), Script expression
+</h3>
+
+<pre><code>ERROR:  @ is not allowed in root expressions
+LINE 1: ...'["first", "second", "third", "forth", "fifth"]', '$[(@.leng...
+                                                             ^
 </code></pre>
 
 <h3 id="Python_jsonpath-rw___script_expression">

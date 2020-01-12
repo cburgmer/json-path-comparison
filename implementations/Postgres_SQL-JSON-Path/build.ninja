@@ -1,0 +1,3 @@
+root = implementations/Postgres_SQL-JSON-Path
+
+build $root/install: phony

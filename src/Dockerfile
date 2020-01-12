@@ -1,4 +1,4 @@
-FROM alpine:3.10
+FROM alpine:3.11
 
 RUN apk --no-cache upgrade \
         && apk --no-cache add bash ninja python3 markdown curl coreutils
@@ -36,10 +36,19 @@ RUN apk --no-cache add erlang erlang-crypto erlang-asn1 erlang-public-key erlang
 RUN curl https://bootstrap.pypa.io/get-pip.py -o /tmp/get-pip.py && python3 /tmp/get-pip.py
 
 # .NET
-ENV PATH="/root/.dotnet:${PATH}"
-ENV DOTNET_ROOT="/root/.dotnet"
+ENV DOTNET_INSTALL_DIR="/dotnet"
+ENV PATH="/dotnet:${PATH}"
+ENV DOTNET_ROOT="/dotnet"
 RUN curl -OL https://dotnetwebsite.azurewebsites.net/download/dotnet-core/scripts/v1/dotnet-install.sh \
         && chmod a+x dotnet-install.sh && ./dotnet-install.sh
 
 # Elixir
 RUN apk --no-cache add elixir
+
+# Postgres
+RUN apk --no-cache add postgresql
+RUN mkdir -p /run/postgresql && chown -R postgres:postgres /run/postgresql && chmod 2777 /run/postgresql
+ENV PGDATA /var/lib/postgresql/data
+RUN mkdir -p "$PGDATA" && chown -R postgres:postgres "$PGDATA" && chmod 0700 "$PGDATA"
+USER postgres
+RUN initdb
