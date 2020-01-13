@@ -2,7 +2,7 @@ root = implementations/Haskell_jsonpath
 builddir = $root/build
 
 rule install
-  command = cd $root && cabal v2-update && cabal v2-install exe:json-path-comparison --symlink-bindir build --overwrite-policy=always
+  command = $root/install.sh $$(dirname $out)
 
 build $builddir/json-path-comparison: install | $root/json-path-comparison.cabal $root/app/Main.hs
 
