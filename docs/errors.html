@@ -289,7 +289,7 @@ Golang (github.com-oliveagle-jsonpath), Array index slice negative step
 Haskell (jsonpath), Array index slice negative step
 </h3>
 
-<pre><code>implementations/Haskell_jsonpath/run.sh: line 6: 66208 Killed                  "$script_dir"/build/json-path-comparison "$@"
+<pre><code>timeout: sending signal TERM to command ‘./build/json-path-comparison’
 </code></pre>
 
 <h3 id="JavaScript_Goessner___array_index_slice_negative_step">
@@ -765,7 +765,7 @@ Golang (github.com-oliveagle-jsonpath), Array index slice start end step 0
 Haskell (jsonpath), Array index slice start end step 0
 </h3>
 
-<pre><code>implementations/Haskell_jsonpath/run.sh: line 6: 66441 Killed                  "$script_dir"/build/json-path-comparison "$@"
+<pre><code>timeout: sending signal TERM to command ‘./build/json-path-comparison’
 </code></pre>
 
 <h3 id="JavaScript_Goessner___array_index_slice_start_end_step_0">
@@ -5743,9 +5743,9 @@ Elixir (jaxon), Recursive wildcard on scalar
 
 <pre><code>** (Jaxon.ParseError) Unexpected number, expected a string, number, object, array instead.
     lib/jaxon/stream.ex:60: Jaxon.Stream.call_decode_fun/4
-    (elixir) lib/stream.ex:882: Stream.do_transform_user/6
-    (elixir) lib/enum.ex:3015: Enum.reverse/1
-    (elixir) lib/enum.ex:2649: Enum.to_list/1
+    (elixir) lib/stream.ex:898: Stream.do_transform_user/6
+    (elixir) lib/enum.ex:3023: Enum.reverse/1
+    (elixir) lib/enum.ex:2670: Enum.to_list/1
     lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
     (mix) lib/mix/task.ex:331: Mix.Task.run_task/3
     (mix) lib/mix/cli.ex:79: Mix.CLI.run_task/2
@@ -5808,13 +5808,6 @@ PHP (Goessner), Recursive wildcard on scalar
 </h3>
 
 <pre><code>jsonpath returned false, this might indicate an error
-</code></pre>
-
-<h3 id="Perl_JSON-Path___recursive_wildcard_on_scalar">
-Perl (JSON-Path), Recursive wildcard on scalar
-</h3>
-
-<pre><code>JSON text must be an object or array (but found number, string, true, false or null, use allow_nonref to allow this) at main.pl line 9.
 </code></pre>
 
 <h3 id="Python_jsonpath___recursive_wildcard_on_scalar">

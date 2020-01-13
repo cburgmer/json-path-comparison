@@ -1,4 +1,4 @@
-FROM alpine:3.10
+FROM alpine:3.11
 
 RUN apk --no-cache upgrade \
         && apk --no-cache add bash ninja python3 markdown curl coreutils
@@ -42,4 +42,4 @@ RUN curl -OL https://dotnetwebsite.azurewebsites.net/download/dotnet-core/script
         && chmod a+x dotnet-install.sh && ./dotnet-install.sh
 
 # Elixir
-RUN apk --no-cache add elixir
+RUN apk --no-cache add elixir && mix local.hex --force

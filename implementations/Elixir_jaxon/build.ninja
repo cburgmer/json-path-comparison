@@ -1,7 +1,7 @@
 root = implementations/Elixir_jaxon
 
 rule compile
-  command = (cd $root && mix local.hex --force && mix deps.get && mix compile)
+  command = (cd $root && mix local.hex --if-missing && mix deps.get && mix compile)
 
 build $root/_build/dev/lib/jsonpath/ebin/jsonpath.app: compile | $root/lib/jsonpath.ex $root/mix.exs $root/mix.lock
 
