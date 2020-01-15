@@ -19,7 +19,7 @@ RUN apk --no-cache add nodejs npm
 RUN apk --no-cache add openjdk11 maven
 
 # Perl
-RUN apk --no-cache add perl make wget
+RUN apk --no-cache add perl perl-dev make wget
 
 # C
 RUN apk --no-cache add gcc json-glib-dev

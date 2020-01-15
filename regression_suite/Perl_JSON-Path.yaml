@@ -110,8 +110,7 @@ queries:
     status: fail
     result: []
   - id: recursive_wildcard_on_scalar
-    status: open
-    result: []
+    status: error
   - id: root
     status: fail
     result: [""]
