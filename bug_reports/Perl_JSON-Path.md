@@ -20,7 +20,7 @@ The following queries provide results that do not match those of other implement
   	JSON::Path::Evaluator::_evaluate(...) called at build/lib/perl5/JSON/Path/Evaluator.pm line 122
   	JSON::Path::Evaluator::evaluate(...) called at build/lib/perl5/JSON/Path/Evaluator.pm line 97
   	JSON::Path::Evaluator::evaluate_jsonpath(...) called at build/lib/perl5/JSON/Path.pm line 107
-  	JSON::Path::values(...) called at main.pl line 12
+  	JSON::Path::values(...) called at main.pl line 11
   ```
 
 - [ ] `$[?(@.key==42)]`
@@ -34,7 +34,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  non-safe evaluation, died at main.pl line 12.
+  non-safe evaluation, died at main.pl line 11.
   ```
 
 - [ ] `$[?(@.key>42)]`
@@ -48,7 +48,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  non-safe evaluation, died at main.pl line 12.
+  non-safe evaluation, died at main.pl line 11.
   ```
 
 - [ ] `$[?(@.key<42)]`
@@ -62,7 +62,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  non-safe evaluation, died at main.pl line 12.
+  non-safe evaluation, died at main.pl line 11.
   ```
 
 - [ ] `$[?(@.key)]`
@@ -76,7 +76,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  non-safe evaluation, died at main.pl line 12.
+  non-safe evaluation, died at main.pl line 11.
   ```
 
 - [ ] `$['one','three'].key`
@@ -97,7 +97,7 @@ The following queries provide results that do not match those of other implement
   	JSON::Path::Evaluator::_evaluate(...) called at build/lib/perl5/JSON/Path/Evaluator.pm line 122
   	JSON::Path::Evaluator::evaluate(...) called at build/lib/perl5/JSON/Path/Evaluator.pm line 97
   	JSON::Path::Evaluator::evaluate_jsonpath(...) called at build/lib/perl5/JSON/Path.pm line 107
-  	JSON::Path::values(...) called at main.pl line 12
+  	JSON::Path::values(...) called at main.pl line 11
   ```
 
 - [ ] `$['@']`
@@ -117,7 +117,7 @@ The following queries provide results that do not match those of other implement
   	JSON::Path::Evaluator::_evaluate(...) called at build/lib/perl5/JSON/Path/Evaluator.pm line 122
   	JSON::Path::Evaluator::evaluate(...) called at build/lib/perl5/JSON/Path/Evaluator.pm line 97
   	JSON::Path::Evaluator::evaluate_jsonpath(...) called at build/lib/perl5/JSON/Path.pm line 107
-  	JSON::Path::values(...) called at main.pl line 12
+  	JSON::Path::values(...) called at main.pl line 11
   ```
 
 - [ ] `$['$']`
@@ -137,7 +137,7 @@ The following queries provide results that do not match those of other implement
   	JSON::Path::Evaluator::_evaluate(...) called at build/lib/perl5/JSON/Path/Evaluator.pm line 122
   	JSON::Path::Evaluator::evaluate(...) called at build/lib/perl5/JSON/Path/Evaluator.pm line 97
   	JSON::Path::Evaluator::evaluate_jsonpath(...) called at build/lib/perl5/JSON/Path.pm line 107
-  	JSON::Path::values(...) called at main.pl line 12
+  	JSON::Path::values(...) called at main.pl line 11
   ```
 
 - [ ] `$['special:"chars']`

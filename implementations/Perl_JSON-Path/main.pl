@@ -1,6 +1,5 @@
-use lib qw(./build/lib/perl5/);
+use JSON::MaybeXS;
 use JSON::Path;
-use JSON;
 use Try::Tiny;
 
 # Avoid hashes yielding unreproducible stack traces.

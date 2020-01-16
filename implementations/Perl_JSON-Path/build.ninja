@@ -5,7 +5,7 @@ rule cpanm
   command = curl -L -o $out https://raw.githubusercontent.com/miyagawa/cpanminus/master/cpanm && chmod a+x $out
 
 rule install_json_path
-  command = $in -nL $builddir JSON::Path && $in -nL $builddir JSON && $in -nL $builddir Cpanel::JSON::XS && echo > $out
+  command = $in --pureperl -nL $builddir JSON::Path && echo > $out
 
 build $builddir/cpanm: cpanm
 build $builddir/cpan_installed: install_json_path $builddir/cpanm
