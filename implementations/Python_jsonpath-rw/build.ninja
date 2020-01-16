@@ -2,7 +2,7 @@ root = implementations/Python_jsonpath-rw
 builddir = $root/build
 
 rule install
-  command = pip3 install -r $root/requirements.txt --prefix $root/deps && echo > $out
+  command = pip3 install -r $root/requirements.txt --prefix $builddir/deps && echo > $out
 
 build $builddir/pip_installed: install | $root/requirements.txt
 
