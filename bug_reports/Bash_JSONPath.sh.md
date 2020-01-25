@@ -28,7 +28,6 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  sed: bad regex '\[(([0-9]+|"[^"]+")[],]){9999}(.*)': Invalid contents of {}
   Expecting value: line 3 column 1 (char 2)
   
   
@@ -45,7 +44,6 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  sed: bad regex '\[(([0-9]+|"[^"]+")[],]){9999}(.*)': Invalid contents of {}
   Expecting value: line 3 column 1 (char 2)
   
   
@@ -76,7 +74,6 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  sed: bad regex '\[(([0-9]+|"[^"]+")[],]){9999}(.*)': Invalid contents of {}
   Expecting value: line 3 column 1 (char 2)
   
   
@@ -163,7 +160,6 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  sed: bad regex '\[(([0-9]+|"[^"]+")[],]){9999}(.*)': Invalid contents of {}
   Expecting value: line 3 column 1 (char 2)
   
   
@@ -180,7 +176,6 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  sed: bad regex '\[(([0-9]+|"[^"]+")[],]){9999}(.*)': Invalid contents of {}
   Expecting value: line 3 column 1 (char 2)
   
   
@@ -197,7 +192,6 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  sed: bad regex '\[(([0-9]+|"[^"]+")[],]){9999}(.*)': Invalid contents of {}
   Expecting value: line 3 column 1 (char 2)
   
   
@@ -214,7 +208,6 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  sed: bad regex '\[(([0-9]+|"[^"]+")[],]){9999}(.*)': Invalid contents of {}
   Expecting value: line 3 column 1 (char 2)
   
   
@@ -259,7 +252,6 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  sed: bad regex '\[(([0-9]+|"[^"]+")[],]){9999}(.*)': Invalid contents of {}
   Expecting value: line 3 column 1 (char 2)
   
   
@@ -276,7 +268,6 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  sed: bad regex '\[(([0-9]+|"[^"]+")[],]){9999}(.*)': Invalid contents of {}
   Expecting value: line 3 column 1 (char 2)
   
   
@@ -307,7 +298,6 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  sed: bad regex '\[(([0-9]+|"[^"]+")[],]){9999}(.*)': Invalid contents of {}
   Expecting value: line 3 column 1 (char 2)
   
   
@@ -324,7 +314,6 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  sed: bad regex '\[(([0-9]+|"[^"]+")[],]){9999}(.*)': Invalid contents of {}
   Expecting value: line 3 column 1 (char 2)
   
   
@@ -341,7 +330,6 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  sed: bad regex '\[(([0-9]+|"[^"]+")[],]){9999}(.*)': Invalid contents of {}
   Expecting value: line 3 column 1 (char 2)
   
   
@@ -442,7 +430,6 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  sed: bad regex '\[(([0-9]+|"[^"]+")[],]){9999}(.*)': Invalid contents of {}
   Expecting value: line 3 column 1 (char 2)
   
   

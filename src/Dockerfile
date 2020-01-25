@@ -43,3 +43,6 @@ RUN curl -OL https://dotnetwebsite.azurewebsites.net/download/dotnet-core/script
 
 # Elixir
 RUN apk --no-cache add elixir && mix local.hex --force
+
+# Bash
+RUN apk --no-cache add sed grep
