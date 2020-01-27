@@ -34,6 +34,9 @@ queries:
   - id: filter_with_boolean_operation
     status: open
     result: [{"key": 43}]
+  - id: filter_with_subfilter
+    status: open
+    result: [{"a": [{"price": 1}, {"price": 3}]}, {"a": [{"price": 11}]}, {"a": [{"price": 8}, {"price": 12}, {"price": 3}]}, {"a": []}]
   - id: filter_with_value_on_null
     status: open
     result: [{"key": "value"}]

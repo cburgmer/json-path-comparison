@@ -19,12 +19,17 @@ stdin.on('end', function () {
     const input = inputChunks.join(),
           json = JSON.parse(input);
 
-    const result = jsonpath(json, selector);
+    try {
+        const result = jsonpath(json, selector);
 
-    if (result === false) {
-        console.warn('jsonpath returned false, this might indicate an error');
+        if (result === false) {
+            console.warn('jsonpath returned false, this might indicate an error');
+            process.exit(1);
+        }
+
+        stdout.write(JSON.stringify(result));
+    } catch (e) {
+        console.error(e.message);
         process.exit(1);
     }
-
-    stdout.write(JSON.stringify(result));
 });

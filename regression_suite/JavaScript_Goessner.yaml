@@ -37,6 +37,8 @@ queries:
   - id: filter_with_boolean_operation
     status: open
     result: [{"key": 43}]
+  - id: filter_with_subfilter
+    status: error
   - id: filter_with_value_on_null
     status: open
     result: [{"key": "value"}]

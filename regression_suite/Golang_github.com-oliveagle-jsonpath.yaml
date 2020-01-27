@@ -64,6 +64,9 @@ queries:
   - id: filter_with_boolean_operation
     status: open
     result: []
+  - id: filter_with_subfilter
+    status: open
+    result: []
   - id: filter_with_value
     status: fail
     result: []

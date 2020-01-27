@@ -53,6 +53,8 @@ queries:
     status: error
   - id: filter_with_boolean_operation
     status: error
+  - id: filter_with_subfilter
+    status: error
   - id: filter_with_value
     status: error
   - id: filter_with_value_on_null

@@ -2267,6 +2267,243 @@ Rust (jsonpath), Filter with boolean operation
 <pre><code>parsing error
 </code></pre>
 
+<h3 id="Bash_JSONPath.sh___filter_with_subfilter">
+Bash (JSONPath.sh), Filter with subfilter
+</h3>
+
+<pre><code>Expecting value: line 3 column 1 (char 2)
+</code></pre>
+
+<h3 id="C_json-glib___filter_with_subfilter">
+C (json-glib), Filter with subfilter
+</h3>
+
+<pre><code>Unable to compile selector `$[?(@.a[?(@.price&gt;10)])]': Invalid array index definition “?(@.a[?(@.price&gt;10)])]”
+</code></pre>
+
+<h3 id="Clojure_json-path___filter_with_subfilter">
+Clojure (json-path), Filter with subfilter
+</h3>
+
+<pre><code>Exception in thread "main" java.lang.NullPointerException
+    at clojure.lang.Numbers.ops(Numbers.java:1068)
+    at clojure.lang.Numbers.gt(Numbers.java:259)
+    at clojure.core$_GT_.invokeStatic(core.clj:1077)
+    at clojure.core$_GT_.invoke(core.clj:1070)
+    at clojure.lang.AFn.applyToHelper(AFn.java:156)
+    at clojure.lang.RestFn.applyTo(RestFn.java:132)
+    at clojure.core$apply.invokeStatic(core.clj:665)
+    at clojure.core$apply.invoke(core.clj:660)
+    at json_path.walker$eval_eq_expr.invokeStatic(walker.clj:7)
+    at json_path.walker$eval_eq_expr.invoke(walker.clj:6)
+    at json_path.walker$eval_expr.invokeStatic(walker.clj:12)
+    at json_path.walker$eval_expr.invoke(walker.clj:9)
+    at json_path.walker$walk_selector$fn__1015.invoke(walker.clj:81)
+    at clojure.core$filter$fn__5878.invoke(core.clj:2817)
+    at clojure.lang.LazySeq.sval(LazySeq.java:42)
+    at clojure.lang.LazySeq.seq(LazySeq.java:51)
+    at clojure.lang.RT.seq(RT.java:531)
+    at clojure.core$seq__5387.invokeStatic(core.clj:137)
+    at clojure.core$map$fn__5851.invoke(core.clj:2746)
+    at clojure.lang.LazySeq.sval(LazySeq.java:42)
+    at clojure.lang.LazySeq.seq(LazySeq.java:51)
+    at clojure.lang.RT.seq(RT.java:531)
+    at clojure.core$seq__5387.invokeStatic(core.clj:137)
+    at clojure.core$seq__5387.invoke(core.clj:137)
+    at clojure.core$tree_seq$walk__6372$fn__6373.invoke(core.clj:4945)
+    at clojure.lang.LazySeq.sval(LazySeq.java:42)
+    at clojure.lang.LazySeq.seq(LazySeq.java:51)
+    at clojure.lang.LazySeq.more(LazySeq.java:87)
+    at clojure.lang.RT.more(RT.java:718)
+    at clojure.core$rest__5373.invokeStatic(core.clj:73)
+    at clojure.core$flatten.invokeStatic(core.clj:7136)
+    at clojure.core$flatten.invoke(core.clj:7136)
+    at json_path.walker$map_SHARP_.invokeStatic(walker.clj:20)
+    at json_path.walker$map_SHARP_.invoke(walker.clj:17)
+    at json_path.walker$walk.invokeStatic(walker.clj:89)
+    at json_path.walker$walk.invoke(walker.clj:84)
+    at json_path.walker$walk$fn__1026.invoke(walker.clj:89)
+    at json_path.walker$map_SHARP_.invokeStatic(walker.clj:22)
+    at json_path.walker$map_SHARP_.invoke(walker.clj:17)
+    at json_path.walker$walk.invokeStatic(walker.clj:89)
+    at json_path.walker$walk.invoke(walker.clj:84)
+    at json_path$query.invokeStatic(json_path.clj:7)
+    at json_path$query.invoke(json_path.clj:6)
+    at json_path$at_path.invokeStatic(json_path.clj:10)
+    at json_path$at_path.invoke(json_path.clj:9)
+    at json_path_comparison.core$_main.invokeStatic(core.clj:10)
+    at json_path_comparison.core$_main.doInvoke(core.clj:6)
+    at clojure.lang.RestFn.applyTo(RestFn.java:137)
+    at json_path_comparison.core.main(Unknown Source)
+</code></pre>
+
+<h3 id="Cpp_jsoncons___filter_with_subfilter">
+Cpp (jsoncons), Filter with subfilter
+</h3>
+
+<pre><code>Invalid path filter, unbalanced parenthesis at line 1 and column 18
+</code></pre>
+
+<h3 id="Elixir_jaxon___filter_with_subfilter">
+Elixir (jaxon), Filter with subfilter
+</h3>
+
+<pre><code>** (Jaxon.ParseError) Expected an integer at `?(@.a[?(@.`
+    lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
+    lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
+    (mix) lib/mix/task.ex:331: Mix.Task.run_task/3
+    (mix) lib/mix/cli.ex:79: Mix.CLI.run_task/2
+</code></pre>
+
+<h3 id="Golang_github.com-PaesslerAG-jsonpath___filter_with_subfilter">
+Golang (github.com-PaesslerAG-jsonpath), Filter with subfilter
+</h3>
+
+<pre><code>parsing error: $[?(@.a[?(@.price&gt;10)])] :1:18 - 1:19 unexpected "&gt;" while scanning parentheses expected ")"
+</code></pre>
+
+<h3 id="Haskell_jsonpath___filter_with_subfilter">
+Haskell (jsonpath), Filter with subfilter
+</h3>
+
+<pre><code>json-path-comparison: serachBegingingWithSlice: string
+CallStack (from HasCallStack):
+  error, called at app/Main.hs:36:7 in main:Main
+Invalid JSONPath: $[?(@.a[?(@.price&gt;10)])]
+ Error: serachBegingingWithSlice: string
+</code></pre>
+
+<h3 id="JavaScript_Goessner___filter_with_subfilter">
+JavaScript (Goessner), Filter with subfilter
+</h3>
+
+<pre><code>jsonPath: Unexpected token '?': _v.a[?(_v.price&gt;10)
+</code></pre>
+
+<h3 id="JavaScript_jsonpath___filter_with_subfilter">
+JavaScript (jsonpath), Filter with subfilter
+</h3>
+
+<pre><code>Lexical error on line 1. Unrecognized text.
+...?(@.a[?(@.price&gt;10)])]
+-----------------------^
+</code></pre>
+
+<h3 id="JavaScript_jsonpath-plus___filter_with_subfilter">
+JavaScript (jsonpath-plus), Filter with subfilter
+</h3>
+
+<pre><code>evalmachine.&lt;anonymous&gt;:1
+</code></pre>
+
+<h3 id="Java_com.github.jsurfer___filter_with_subfilter">
+Java (com.github.jsurfer), Filter with subfilter
+</h3>
+
+<pre><code>Exception in thread "main" java.lang.NullPointerException
+    at org.jsfr.json.compiler.JsonPathCompiler.visitFilterExist(JsonPathCompiler.java:207)
+    at org.jsfr.json.compiler.JsonPathCompiler.visitFilterExist(JsonPathCompiler.java:42)
+    at org.jsfr.json.compiler.JsonPathParser$FilterExistContext.accept(JsonPathParser.java:968)
+    at org.antlr.v4.runtime.tree.AbstractParseTreeVisitor.visitChildren(AbstractParseTreeVisitor.java:46)
+    at org.jsfr.json.compiler.JsonPathBaseVisitor.visitFilterExpr(JsonPathBaseVisitor.java:137)
+    at org.jsfr.json.compiler.JsonPathCompiler.visitFilterExpr(JsonPathCompiler.java:175)
+    at org.jsfr.json.compiler.JsonPathCompiler.visitFilterExpr(JsonPathCompiler.java:42)
+    at org.jsfr.json.compiler.JsonPathParser$FilterExprContext.accept(JsonPathParser.java:821)
+    at org.antlr.v4.runtime.tree.AbstractParseTreeVisitor.visitChildren(AbstractParseTreeVisitor.java:46)
+    at org.jsfr.json.compiler.JsonPathBaseVisitor.visitFilter(JsonPathBaseVisitor.java:130)
+    at org.jsfr.json.compiler.JsonPathCompiler.visitFilter(JsonPathCompiler.java:153)
+    at org.jsfr.json.compiler.JsonPathCompiler.visitFilter(JsonPathCompiler.java:42)
+    at org.jsfr.json.compiler.JsonPathParser$FilterContext.accept(JsonPathParser.java:754)
+    at org.antlr.v4.runtime.tree.AbstractParseTreeVisitor.visitChildren(AbstractParseTreeVisitor.java:46)
+    at org.jsfr.json.compiler.JsonPathBaseVisitor.visitRelativePath(JsonPathBaseVisitor.java:53)
+    at org.jsfr.json.compiler.JsonPathParser$RelativePathContext.accept(JsonPathParser.java:221)
+    at org.antlr.v4.runtime.tree.AbstractParseTreeVisitor.visitChildren(AbstractParseTreeVisitor.java:46)
+    at org.jsfr.json.compiler.JsonPathBaseVisitor.visitPath(JsonPathBaseVisitor.java:46)
+    at org.jsfr.json.compiler.JsonPathCompiler.visitPath(JsonPathCompiler.java:53)
+    at org.jsfr.json.compiler.JsonPathCompiler.visitPath(JsonPathCompiler.java:42)
+    at org.jsfr.json.compiler.JsonPathParser$PathContext.accept(JsonPathParser.java:138)
+    at org.antlr.v4.runtime.tree.AbstractParseTreeVisitor.visit(AbstractParseTreeVisitor.java:18)
+    at org.jsfr.json.compiler.JsonPathCompiler.compile(JsonPathCompiler.java:285)
+    at org.jsfr.json.compiler.JsonPathCompiler.compile(JsonPathCompiler.java:273)
+    at org.jsfr.json.JsonSurfer.collectAll(JsonSurfer.java:262)
+    at query.App.main(App.java:27)
+</code></pre>
+
+<h3 id="Kotlin_com.nfeld.jsonpathlite___filter_with_subfilter">
+Kotlin (com.nfeld.jsonpathlite), Filter with subfilter
+</h3>
+
+<pre><code>Exception in thread "main" java.lang.IllegalArgumentException: Unexpected char, char=?, index=2
+    at com.nfeld.jsonpathlite.PathCompiler.compileBracket$json_path_lite(PathCompiler.kt:198)
+    at com.nfeld.jsonpathlite.PathCompiler.compile$json_path_lite(PathCompiler.kt:59)
+    at com.nfeld.jsonpathlite.JsonPath.&lt;init&gt;(JsonPath.kt:24)
+    at com.nfeld.jsonpathlite.JsonArray.read(JsonResult.kt:11)
+    at query.AppKt.main(App.kt:10)
+</code></pre>
+
+<h3 id="PHP_Goessner___filter_with_subfilter">
+PHP (Goessner), Filter with subfilter
+</h3>
+
+<pre><code>ArgumentCountError
+</code></pre>
+
+<h3 id="PHP_flow-jsonpath___filter_with_subfilter">
+PHP (flow-jsonpath), Filter with subfilter
+</h3>
+
+<pre><code>Error: 'Malformed filter query'
+</code></pre>
+
+<h3 id="PHP_galbar-jsonpath___filter_with_subfilter">
+PHP (galbar-jsonpath), Filter with subfilter
+</h3>
+
+<pre><code>Invalid JSONPath error: 'Error in JSONPath near '[?(@.price''
+</code></pre>
+
+<h3 id="Perl_JSON-Path___filter_with_subfilter">
+Perl (JSON-Path), Filter with subfilter
+</h3>
+
+<pre><code>non-safe evaluation, died at main.pl line 11.
+</code></pre>
+
+<h3 id="Python_jsonpath___filter_with_subfilter">
+Python (jsonpath), Filter with subfilter
+</h3>
+
+<pre><code>jsonpath returned false, this might indicate an error
+</code></pre>
+
+<h3 id="Python_jsonpath-rw___filter_with_subfilter">
+Python (jsonpath-rw), Filter with subfilter
+</h3>
+
+<pre><code>JsonPathLexerError('Error on line 1, col 2: Unexpected character: ? ')
+</code></pre>
+
+<h3 id="Rust_jsonpath___filter_with_subfilter">
+Rust (jsonpath), Filter with subfilter
+</h3>
+
+<pre><code>parsing error
+</code></pre>
+
+<h3 id="dotNET_JsonPathLib___filter_with_subfilter">
+dotNET (JsonPathLib), Filter with subfilter
+</h3>
+
+<pre><code>Line 1: Unexpected token ?
+</code></pre>
+
+<h3 id="dotNET_Manatee.Json___filter_with_subfilter">
+dotNET (Manatee.Json), Filter with subfilter
+</h3>
+
+<pre><code>JSON Path expression indexers only support single constant values. Path up to error: '$'
+</code></pre>
+
 <h3 id="Bash_JSONPath.sh___filter_with_value">
 Bash (JSONPath.sh), Filter with value
 </h3>

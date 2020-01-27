@@ -123,6 +123,9 @@ queries:
   - id: filter_with_boolean_operation
     selector: $[?(@.key>42 && @.key<44)]
     document: [{"key": 42}, {"key": 43}, {"key": 44}]
+  - id: filter_with_subfilter
+    selector: $[?(@.a[?(@.price>10)])]
+    document: [{"a": [{"price": 1}, {"price": 3}]}, {"a": [{"price": 11}]}, {"a": [{"price": 8}, {"price": 12}, {"price": 3}]}, {"a": []}]
   - id: filter_with_value
     selector: $[?(@.key)]
     document: [{"some": "some value"}, {"key": "value"}]
