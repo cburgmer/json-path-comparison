@@ -1,9 +1,9 @@
 # json-path-comparison
-Comparison of the different implementations of JSONPath.
+Comparison of the different implementations of JSONPath and language agnostic test suite.
 
 Our goal is to show features of
 [JSONPath](https://goessner.net/articles/JsonPath/) in available libraries,
-and call out differences where libraries are not aligned.
+and support library authors to align on differences in their implementations.
 
 See https://cburgmer.github.io/json-path-comparison/ for the table generated
 from the queries in [./queries](./queries).
