@@ -33,22 +33,6 @@ The following queries provide results that do not match those of other implement
   
   ```
 
-- [ ] `$[1:10]`
-  Input:
-  ```
-  ["first", "second", "third"]
-  ```
-  Expected output:
-  ```
-  ["second", "third"]
-  ```
-  Error:
-  ```
-  Expecting value: line 3 column 1 (char 2)
-  
-  
-  ```
-
 - [ ] `$[-1:]`
   Input:
   ```
@@ -63,64 +47,6 @@ The following queries provide results that do not match those of other implement
   ["first", "second", "third"]
   ```
 
-- [ ] `$[1:]`
-  Input:
-  ```
-  ["first", "second", "third", "forth", "fifth"]
-  ```
-  Expected output:
-  ```
-  ["second", "third", "forth", "fifth"]
-  ```
-  Error:
-  ```
-  Expecting value: line 3 column 1 (char 2)
-  
-  
-  ```
-
-- [ ] `$[0:3:2]`
-  Input:
-  ```
-  ["first", "second", "third", "forth", "fifth"]
-  ```
-  Expected output:
-  ```
-  ["first", "third"]
-  ```
-  Actual output:
-  ```
-  ["first", "second", "third", "forth", "fifth"]
-  ```
-
-- [ ] `$[0:3:1]`
-  Input:
-  ```
-  ["first", "second", "third", "forth", "fifth"]
-  ```
-  Expected output:
-  ```
-  ["first", "second", "third"]
-  ```
-  Actual output:
-  ```
-  ["first", "second", "third", "forth", "fifth"]
-  ```
-
-- [ ] `$[0:4:2]`
-  Input:
-  ```
-  ["first", "second", "third", "forth", "fifth"]
-  ```
-  Expected output:
-  ```
-  ["first", "third"]
-  ```
-  Actual output:
-  ```
-  ["first", "second", "third", "forth", "fifth"]
-  ```
-
 - [ ] `$[0:0]`
   Input:
   ```
@@ -133,20 +59,6 @@ The following queries provide results that do not match those of other implement
   Actual output:
   ```
   ["first", "second"]
-  ```
-
-- [ ] `$[::2]`
-  Input:
-  ```
-  ["first", "second", "third", "forth", "fifth"]
-  ```
-  Expected output:
-  ```
-  ["first", "third", "fifth"]
-  ```
-  Actual output:
-  ```
-  ["first", "second", "third", "forth", "fifth"]
   ```
 
 - [ ] `$[?(@.key==42)]`

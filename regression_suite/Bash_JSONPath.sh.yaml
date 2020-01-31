@@ -13,36 +13,20 @@ queries:
     result: {"2": "second"}
   - id: array_index_last
     status: error
-  - id: array_index_slice_end_out_of_bounds
-    status: error
   - id: array_index_slice_last_no_end
     status: fail
     result: ["first", "second", "third"]
   - id: array_index_slice_negative_step
     status: open
     result: ["first", "second", "third", "forth", "fifth"]
-  - id: array_index_slice_only_start
-    status: error
   - id: array_index_slice_start_end_negative_step
     status: error
-  - id: array_index_slice_start_end_step
-    status: fail
-    result: ["first", "second", "third", "forth", "fifth"]
   - id: array_index_slice_start_end_step_0
     status: open
-    result: ["first", "second", "third", "forth", "fifth"]
-  - id: array_index_slice_start_end_step_1
-    status: fail
-    result: ["first", "second", "third", "forth", "fifth"]
-  - id: array_index_slice_start_end_step_non_aligned
-    status: fail
-    result: ["first", "second", "third", "forth", "fifth"]
+    result: ["first", "second", "third"]
   - id: array_index_slice_start_equals_end
     status: fail
     result: ["first", "second"]
-  - id: array_index_slice_step
-    status: fail
-    result: ["first", "second", "third", "forth", "fifth"]
   - id: filter_current_object_with_value
     status: error
   - id: filter_equal
