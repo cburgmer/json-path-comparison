@@ -128,6 +128,19 @@ The following queries provide results that do not match those of other implement
   [["value"]]
   ```
 
+- [ ] `$..*`
+  Input:
+  ```
+  42
+  ```
+  Expected output:
+  ```
+  []
+  ```
+  Error:
+  ```
+  jsonpath returned false, this might indicate an error```
+
 - [ ] `$`
   Input:
   ```

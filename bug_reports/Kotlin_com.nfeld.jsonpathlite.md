@@ -187,6 +187,25 @@ The following queries provide results that do not match those of other implement
   []
   ```
 
+- [ ] `$..*`
+  Input:
+  ```
+  42
+  ```
+  Expected output:
+  ```
+  []
+  ```
+  Error:
+  ```
+  Exception in thread "main" org.json.JSONException: A JSONArray text must start with '[' at 1 [character 2 line 1]
+  	at org.json.JSONTokener.syntaxError(JSONTokener.java:507)
+  	at org.json.JSONArray.<init>(JSONArray.java:109)
+  	at org.json.JSONArray.<init>(JSONArray.java:162)
+  	at com.nfeld.jsonpathlite.JsonPath$Companion.parse(JsonPath.kt:107)
+  	at query.AppKt.main(App.kt:10)
+  ```
+
 - [ ] `$[*]`
   Input:
   ```

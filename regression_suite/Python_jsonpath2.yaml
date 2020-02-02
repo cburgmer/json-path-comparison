@@ -104,8 +104,5 @@ queries:
     status: error
   - id: recursive_key_with_single_quotes
     status: error
-  - id: recursive_wildcard_on_scalar
-    status: open
-    result: []
   - id: script_expression
     status: error

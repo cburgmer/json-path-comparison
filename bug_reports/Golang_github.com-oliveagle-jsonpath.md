@@ -353,6 +353,20 @@ The following queries provide results that do not match those of other implement
   expression don't support in filter
   ```
 
+- [ ] `$..*`
+  Input:
+  ```
+  42
+  ```
+  Expected output:
+  ```
+  []
+  ```
+  Error:
+  ```
+  expression don't support in filter
+  ```
+
 - [ ] `$[*]`
   Input:
   ```

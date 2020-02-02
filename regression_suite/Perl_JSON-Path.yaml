@@ -111,9 +111,6 @@ queries:
   - id: recursive_wildcard_on_null_value_array
     status: fail
     result: []
-  - id: recursive_wildcard_on_scalar
-    status: open
-    result: []
   - id: root
     status: fail
     result: [""]

@@ -353,6 +353,20 @@ The following queries provide results that do not match those of other implement
   parsing error
   ```
 
+- [ ] `$..*`
+  Input:
+  ```
+  42
+  ```
+  Expected output:
+  ```
+  []
+  ```
+  Error:
+  ```
+  parsing error
+  ```
+
 - [ ] `$[*]`
   Input:
   ```

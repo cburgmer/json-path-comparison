@@ -174,6 +174,22 @@ The following queries provide results that do not match those of other implement
    Error: serachBegingingWithSlice: string
   ```
 
+- [ ] `$..*`
+  Input:
+  ```
+  42
+  ```
+  Expected output:
+  ```
+  []
+  ```
+  Error:
+  ```
+  json-path-comparison: Search failed
+  CallStack (from HasCallStack):
+    error, called at app/Main.hs:18:22 in main:Main
+  ```
+
 - [ ] `$`
   Input:
   ```

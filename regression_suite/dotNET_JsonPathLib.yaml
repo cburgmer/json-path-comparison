@@ -100,9 +100,6 @@ queries:
   - id: recursive_key_with_single_quotes
     status: open
     result: ["russian dolls", "something", "top", "value", {"key": "russian dolls"}]
-  - id: recursive_wildcard_on_scalar
-    status: open
-    result: []
   - id: script_expression
     status: open
     result: []

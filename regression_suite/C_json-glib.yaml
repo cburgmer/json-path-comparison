@@ -117,9 +117,6 @@ queries:
   - id: recursive_wildcard_on_null_value_array
     status: fail
     result: []
-  - id: recursive_wildcard_on_scalar
-    status: open
-    result: []
   - id: script_expression
     status: error
   - id: wildcard_bracket_notation_on_object

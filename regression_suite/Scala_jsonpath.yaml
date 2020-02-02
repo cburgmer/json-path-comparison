@@ -96,7 +96,7 @@ queries:
     status: fail
     result: [[40, null, 42], 40, null, 42]
   - id: recursive_wildcard_on_scalar
-    status: open
+    status: fail
     result: [42]
   - id: script_expression
     status: error

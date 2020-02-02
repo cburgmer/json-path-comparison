@@ -262,6 +262,7 @@ queries:
   - id: recursive_wildcard_on_scalar
     selector: $..*
     document: 42
+    consensus: []
   - id: root
     selector: $
     document: {"key": "value", "another key": {"complex": ["a", 1]}}

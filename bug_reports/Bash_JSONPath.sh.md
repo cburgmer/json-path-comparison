@@ -297,6 +297,22 @@ The following queries provide results that do not match those of other implement
   {"another key": {"complex": "string", "primitives": [0, 1]}, "key": "value"}
   ```
 
+- [ ] `$..*`
+  Input:
+  ```
+  42
+  ```
+  Expected output:
+  ```
+  []
+  ```
+  Error:
+  ```
+  Expecting value: line 3 column 1 (char 2)
+  
+  
+  ```
+
 - [ ] `$`
   Input:
   ```

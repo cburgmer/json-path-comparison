@@ -10,28 +10,18 @@ queries:
     status: error
   - id: array_index_dot_notation_on_object
     status: error
-  - id: array_index_slice_last_no_end
-    status: error
   - id: array_index_slice_negative_step
     status: error
-  - id: array_index_slice_no_start_no_end
-    status: error
-  - id: array_index_slice_start_end
-    status: fail
-    result: ["second", "third", "forth", "fifth"]
   - id: array_index_slice_start_end_negative_step
     status: error
-  - id: array_index_slice_start_end_step
-    status: error
   - id: array_index_slice_start_end_step_0
-    status: error
-  - id: array_index_slice_start_end_step_non_aligned
-    status: error
+    status: open
+    result: []
   - id: array_index_slice_step
     status: error
   - id: filter_current_object_with_value
     status: open
-    result: ["some value", "value"]
+    result: ["some value", null, "value"]
   - id: filter_greater_than_or_equal
     status: error
   - id: filter_less_than_on_string
@@ -63,7 +53,7 @@ queries:
     status: error
   - id: key_bracket_notation_with_number_without_quotes
     status: open
-    result: ["undefined"]
+    result: []
   - id: key_bracket_notation_with_single_quote
     status: error
   - id: key_bracket_notation_with_single_quote_escaped
@@ -82,21 +72,9 @@ queries:
     status: error
   - id: recursive_array_index
     status: error
-  - id: recursive_key
-    status: error
   - id: recursive_key_with_double_quotes
     status: error
   - id: recursive_key_with_single_quotes
-    status: error
-  - id: recursive_on_nested_object
-    status: error
-  - id: recursive_wildcard
-    status: error
-  - id: recursive_wildcard_on_null_value_array
-    status: error
-  - id: recursive_wildcard_on_scalar
-    status: error
-  - id: root
     status: error
   - id: script_expression
     status: error
