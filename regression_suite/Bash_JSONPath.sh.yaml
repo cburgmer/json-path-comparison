@@ -30,19 +30,20 @@ queries:
   - id: filter_current_object_with_value
     status: error
   - id: filter_equal
-    status: error
-  - id: filter_greater_than
-    status: error
+    status: fail
+    result: {"key": 42}
   - id: filter_greater_than_or_equal
-    status: error
-  - id: filter_less_than
-    status: error
+    status: open
+    result: [{"key": 42}, {"key": 43}, {"key": 42.0001}, {"key": 100}]
   - id: filter_less_than_on_string
-    status: error
+    status: open
+    result: [{"key": 0}, {"key": "value"}]
   - id: filter_less_than_or_equal
-    status: error
+    status: open
+    result: [{"key": 0}, {"key": 42}, {"key": -1}, {"key": 41}, {"key": 41.9999}]
   - id: filter_null
-    status: error
+    status: open
+    result: {"key": null}
   - id: filter_with_boolean_operation
     status: error
   - id: filter_with_subfilter
