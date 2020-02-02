@@ -16,7 +16,7 @@ The following queries provide results that do not match those of other implement
   ```
   init terminating in do_boot ({badmatch,{error,{1,ejsonpath_parse,syntax error before: 2}}})
   
-  Crash dump is being written to: erl_crash.dump...done
+  Crash dump is being written to: /dev/null...done
   {"init terminating in do_boot",{badmatch,{error,{1,ejsonpath_parse,["syntax error before: ",["2"]]}}}}
   ```
 
@@ -33,7 +33,7 @@ The following queries provide results that do not match those of other implement
   ```
   init terminating in do_boot ({badmatch,{error,{1,ejsonpath_parse,syntax error before: ':'}}})
   
-  Crash dump is being written to: erl_crash.dump...done
+  Crash dump is being written to: /dev/null...done
   {"init terminating in do_boot",{badmatch,{error,{1,ejsonpath_parse,["syntax error before: ","':'"]}}}}
   ```
 
