@@ -31,8 +31,8 @@ The following queries provide results that do not match those of other implement
   ** (Jaxon.ParseError) Expected an integer at `1:10]`
       lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
       lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
-      (mix) lib/mix/task.ex:331: Mix.Task.run_task/3
-      (mix) lib/mix/cli.ex:79: Mix.CLI.run_task/2
+      (mix 1.10.0) lib/mix/task.ex:330: Mix.Task.run_task/3
+      (mix 1.10.0) lib/mix/cli.ex:82: Mix.CLI.run_task/2
   ```
 
 - [ ] `$[-1:]`
@@ -49,8 +49,8 @@ The following queries provide results that do not match those of other implement
   ** (Jaxon.ParseError) Expected an integer at `-1:]`
       lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
       lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
-      (mix) lib/mix/task.ex:331: Mix.Task.run_task/3
-      (mix) lib/mix/cli.ex:79: Mix.CLI.run_task/2
+      (mix 1.10.0) lib/mix/task.ex:330: Mix.Task.run_task/3
+      (mix 1.10.0) lib/mix/cli.ex:82: Mix.CLI.run_task/2
   ```
 
 - [ ] `$[:]`
@@ -67,8 +67,8 @@ The following queries provide results that do not match those of other implement
   ** (Jaxon.ParseError) Expected an integer at `:]`
       lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
       lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
-      (mix) lib/mix/task.ex:331: Mix.Task.run_task/3
-      (mix) lib/mix/cli.ex:79: Mix.CLI.run_task/2
+      (mix 1.10.0) lib/mix/task.ex:330: Mix.Task.run_task/3
+      (mix 1.10.0) lib/mix/cli.ex:82: Mix.CLI.run_task/2
   ```
 
 - [ ] `$[:2]`
@@ -85,8 +85,8 @@ The following queries provide results that do not match those of other implement
   ** (Jaxon.ParseError) Expected an integer at `:2]`
       lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
       lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
-      (mix) lib/mix/task.ex:331: Mix.Task.run_task/3
-      (mix) lib/mix/cli.ex:79: Mix.CLI.run_task/2
+      (mix 1.10.0) lib/mix/task.ex:330: Mix.Task.run_task/3
+      (mix 1.10.0) lib/mix/cli.ex:82: Mix.CLI.run_task/2
   ```
 
 - [ ] `$[1:]`
@@ -103,8 +103,8 @@ The following queries provide results that do not match those of other implement
   ** (Jaxon.ParseError) Expected an integer at `1:]`
       lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
       lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
-      (mix) lib/mix/task.ex:331: Mix.Task.run_task/3
-      (mix) lib/mix/cli.ex:79: Mix.CLI.run_task/2
+      (mix 1.10.0) lib/mix/task.ex:330: Mix.Task.run_task/3
+      (mix 1.10.0) lib/mix/cli.ex:82: Mix.CLI.run_task/2
   ```
 
 - [ ] `$[1:3]`
@@ -121,8 +121,8 @@ The following queries provide results that do not match those of other implement
   ** (Jaxon.ParseError) Expected an integer at `1:3]`
       lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
       lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
-      (mix) lib/mix/task.ex:331: Mix.Task.run_task/3
-      (mix) lib/mix/cli.ex:79: Mix.CLI.run_task/2
+      (mix 1.10.0) lib/mix/task.ex:330: Mix.Task.run_task/3
+      (mix 1.10.0) lib/mix/cli.ex:82: Mix.CLI.run_task/2
   ```
 
 - [ ] `$[0:3:2]`
@@ -139,8 +139,8 @@ The following queries provide results that do not match those of other implement
   ** (Jaxon.ParseError) Expected an integer at `0:3:2]`
       lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
       lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
-      (mix) lib/mix/task.ex:331: Mix.Task.run_task/3
-      (mix) lib/mix/cli.ex:79: Mix.CLI.run_task/2
+      (mix 1.10.0) lib/mix/task.ex:330: Mix.Task.run_task/3
+      (mix 1.10.0) lib/mix/cli.ex:82: Mix.CLI.run_task/2
   ```
 
 - [ ] `$[0:3:1]`
@@ -157,8 +157,8 @@ The following queries provide results that do not match those of other implement
   ** (Jaxon.ParseError) Expected an integer at `0:3:1]`
       lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
       lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
-      (mix) lib/mix/task.ex:331: Mix.Task.run_task/3
-      (mix) lib/mix/cli.ex:79: Mix.CLI.run_task/2
+      (mix 1.10.0) lib/mix/task.ex:330: Mix.Task.run_task/3
+      (mix 1.10.0) lib/mix/cli.ex:82: Mix.CLI.run_task/2
   ```
 
 - [ ] `$[0:4:2]`
@@ -175,8 +175,8 @@ The following queries provide results that do not match those of other implement
   ** (Jaxon.ParseError) Expected an integer at `0:4:2]`
       lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
       lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
-      (mix) lib/mix/task.ex:331: Mix.Task.run_task/3
-      (mix) lib/mix/cli.ex:79: Mix.CLI.run_task/2
+      (mix 1.10.0) lib/mix/task.ex:330: Mix.Task.run_task/3
+      (mix 1.10.0) lib/mix/cli.ex:82: Mix.CLI.run_task/2
   ```
 
 - [ ] `$[0:0]`
@@ -193,8 +193,8 @@ The following queries provide results that do not match those of other implement
   ** (Jaxon.ParseError) Expected an integer at `0:0]`
       lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
       lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
-      (mix) lib/mix/task.ex:331: Mix.Task.run_task/3
-      (mix) lib/mix/cli.ex:79: Mix.CLI.run_task/2
+      (mix 1.10.0) lib/mix/task.ex:330: Mix.Task.run_task/3
+      (mix 1.10.0) lib/mix/cli.ex:82: Mix.CLI.run_task/2
   ```
 
 - [ ] `$[0:1]`
@@ -211,8 +211,8 @@ The following queries provide results that do not match those of other implement
   ** (Jaxon.ParseError) Expected an integer at `0:1]`
       lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
       lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
-      (mix) lib/mix/task.ex:331: Mix.Task.run_task/3
-      (mix) lib/mix/cli.ex:79: Mix.CLI.run_task/2
+      (mix 1.10.0) lib/mix/task.ex:330: Mix.Task.run_task/3
+      (mix 1.10.0) lib/mix/cli.ex:82: Mix.CLI.run_task/2
   ```
 
 - [ ] `$[::2]`
@@ -229,8 +229,8 @@ The following queries provide results that do not match those of other implement
   ** (Jaxon.ParseError) Expected an integer at `::2]`
       lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
       lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
-      (mix) lib/mix/task.ex:331: Mix.Task.run_task/3
-      (mix) lib/mix/cli.ex:79: Mix.CLI.run_task/2
+      (mix 1.10.0) lib/mix/task.ex:330: Mix.Task.run_task/3
+      (mix 1.10.0) lib/mix/cli.ex:82: Mix.CLI.run_task/2
   ```
 
 - [ ] `$[0,1]`
@@ -247,8 +247,8 @@ The following queries provide results that do not match those of other implement
   ** (Jaxon.ParseError) Expected an integer at `0,1]`
       lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
       lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
-      (mix) lib/mix/task.ex:331: Mix.Task.run_task/3
-      (mix) lib/mix/cli.ex:79: Mix.CLI.run_task/2
+      (mix 1.10.0) lib/mix/task.ex:330: Mix.Task.run_task/3
+      (mix 1.10.0) lib/mix/cli.ex:82: Mix.CLI.run_task/2
   ```
 
 - [ ] `$[?(@.key==42)]`
@@ -265,8 +265,8 @@ The following queries provide results that do not match those of other implement
   ** (Jaxon.ParseError) Expected an integer at `?(@.key==4`
       lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
       lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
-      (mix) lib/mix/task.ex:331: Mix.Task.run_task/3
-      (mix) lib/mix/cli.ex:79: Mix.CLI.run_task/2
+      (mix 1.10.0) lib/mix/task.ex:330: Mix.Task.run_task/3
+      (mix 1.10.0) lib/mix/cli.ex:82: Mix.CLI.run_task/2
   ```
 
 - [ ] `$[?(@.key>42)]`
@@ -283,8 +283,8 @@ The following queries provide results that do not match those of other implement
   ** (Jaxon.ParseError) Expected an integer at `?(@.key>42`
       lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
       lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
-      (mix) lib/mix/task.ex:331: Mix.Task.run_task/3
-      (mix) lib/mix/cli.ex:79: Mix.CLI.run_task/2
+      (mix 1.10.0) lib/mix/task.ex:330: Mix.Task.run_task/3
+      (mix 1.10.0) lib/mix/cli.ex:82: Mix.CLI.run_task/2
   ```
 
 - [ ] `$[?(@.key<42)]`
@@ -301,8 +301,8 @@ The following queries provide results that do not match those of other implement
   ** (Jaxon.ParseError) Expected an integer at `?(@.key<42`
       lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
       lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
-      (mix) lib/mix/task.ex:331: Mix.Task.run_task/3
-      (mix) lib/mix/cli.ex:79: Mix.CLI.run_task/2
+      (mix 1.10.0) lib/mix/task.ex:330: Mix.Task.run_task/3
+      (mix 1.10.0) lib/mix/cli.ex:82: Mix.CLI.run_task/2
   ```
 
 - [ ] `$[?(@.key)]`
@@ -319,8 +319,8 @@ The following queries provide results that do not match those of other implement
   ** (Jaxon.ParseError) Expected an integer at `?(@.key)]`
       lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
       lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
-      (mix) lib/mix/task.ex:331: Mix.Task.run_task/3
-      (mix) lib/mix/cli.ex:79: Mix.CLI.run_task/2
+      (mix 1.10.0) lib/mix/task.ex:330: Mix.Task.run_task/3
+      (mix 1.10.0) lib/mix/cli.ex:82: Mix.CLI.run_task/2
   ```
 
 - [ ] `$['key']`
@@ -337,8 +337,8 @@ The following queries provide results that do not match those of other implement
   ** (Jaxon.ParseError) Expected an integer at `'key']`
       lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
       lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
-      (mix) lib/mix/task.ex:331: Mix.Task.run_task/3
-      (mix) lib/mix/cli.ex:79: Mix.CLI.run_task/2
+      (mix 1.10.0) lib/mix/task.ex:330: Mix.Task.run_task/3
+      (mix 1.10.0) lib/mix/cli.ex:82: Mix.CLI.run_task/2
   ```
 
 - [ ] `$['one','three'].key`
@@ -355,8 +355,8 @@ The following queries provide results that do not match those of other implement
   ** (Jaxon.ParseError) Expected an integer at `'one','thr`
       lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
       lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
-      (mix) lib/mix/task.ex:331: Mix.Task.run_task/3
-      (mix) lib/mix/cli.ex:79: Mix.CLI.run_task/2
+      (mix 1.10.0) lib/mix/task.ex:330: Mix.Task.run_task/3
+      (mix 1.10.0) lib/mix/cli.ex:82: Mix.CLI.run_task/2
   ```
 
 - [ ] `$['@']`
@@ -373,8 +373,8 @@ The following queries provide results that do not match those of other implement
   ** (Jaxon.ParseError) Expected an integer at `'@']`
       lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
       lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
-      (mix) lib/mix/task.ex:331: Mix.Task.run_task/3
-      (mix) lib/mix/cli.ex:79: Mix.CLI.run_task/2
+      (mix 1.10.0) lib/mix/task.ex:330: Mix.Task.run_task/3
+      (mix 1.10.0) lib/mix/cli.ex:82: Mix.CLI.run_task/2
   ```
 
 - [ ] `$['$']`
@@ -391,8 +391,8 @@ The following queries provide results that do not match those of other implement
   ** (Jaxon.ParseError) Expected an integer at `'$']`
       lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
       lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
-      (mix) lib/mix/task.ex:331: Mix.Task.run_task/3
-      (mix) lib/mix/cli.ex:79: Mix.CLI.run_task/2
+      (mix 1.10.0) lib/mix/task.ex:330: Mix.Task.run_task/3
+      (mix 1.10.0) lib/mix/cli.ex:82: Mix.CLI.run_task/2
   ```
 
 - [ ] `$['two.some']`
@@ -409,8 +409,8 @@ The following queries provide results that do not match those of other implement
   ** (Jaxon.ParseError) Expected an integer at `'two.some'`
       lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
       lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
-      (mix) lib/mix/task.ex:331: Mix.Task.run_task/3
-      (mix) lib/mix/cli.ex:79: Mix.CLI.run_task/2
+      (mix 1.10.0) lib/mix/task.ex:330: Mix.Task.run_task/3
+      (mix 1.10.0) lib/mix/cli.ex:82: Mix.CLI.run_task/2
   ```
 
 - [ ] `$['0']`
@@ -427,8 +427,8 @@ The following queries provide results that do not match those of other implement
   ** (Jaxon.ParseError) Expected an integer at `'0']`
       lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
       lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
-      (mix) lib/mix/task.ex:331: Mix.Task.run_task/3
-      (mix) lib/mix/cli.ex:79: Mix.CLI.run_task/2
+      (mix 1.10.0) lib/mix/task.ex:330: Mix.Task.run_task/3
+      (mix 1.10.0) lib/mix/cli.ex:82: Mix.CLI.run_task/2
   ```
 
 - [ ] `$['special:"chars']`
@@ -445,8 +445,8 @@ The following queries provide results that do not match those of other implement
   ** (Jaxon.ParseError) Expected an integer at `'special:"`
       lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
       lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
-      (mix) lib/mix/task.ex:331: Mix.Task.run_task/3
-      (mix) lib/mix/cli.ex:79: Mix.CLI.run_task/2
+      (mix 1.10.0) lib/mix/task.ex:330: Mix.Task.run_task/3
+      (mix 1.10.0) lib/mix/cli.ex:82: Mix.CLI.run_task/2
   ```
 
 - [ ] `$['*']`
@@ -463,8 +463,8 @@ The following queries provide results that do not match those of other implement
   ** (Jaxon.ParseError) Expected an integer at `'*']`
       lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
       lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
-      (mix) lib/mix/task.ex:331: Mix.Task.run_task/3
-      (mix) lib/mix/cli.ex:79: Mix.CLI.run_task/2
+      (mix 1.10.0) lib/mix/task.ex:330: Mix.Task.run_task/3
+      (mix 1.10.0) lib/mix/cli.ex:82: Mix.CLI.run_task/2
   ```
 
 - [ ] `$..key`
