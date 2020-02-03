@@ -4,6 +4,6 @@ builddir = $root/build
 rule compile
   command = (cd $root && rebar3 compile)
 
-build $builddir/default/lib/jsonpath/ebin/jsonpath.beam: compile | $root/src/jsonpath.erl $root/rebar.lock
+build $builddir/default/lib/jsonpath/ebin/jsonpath.beam: compile | $root/src/jsonpath.erl
 
 build $root/install: phony $builddir/default/lib/jsonpath/ebin/jsonpath.beam
