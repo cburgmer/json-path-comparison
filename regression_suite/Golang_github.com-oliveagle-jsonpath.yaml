@@ -72,6 +72,9 @@ queries:
   - id: filter_null
     status: open
     result: []
+  - id: filter_regular_expression
+    status: open
+    result: []
   - id: filter_with_boolean_operation
     status: open
     result: []

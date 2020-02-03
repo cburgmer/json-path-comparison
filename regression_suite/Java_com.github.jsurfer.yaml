@@ -49,6 +49,9 @@ queries:
     result: [{"key": 0}, {"key": -1}]
   - id: filter_null
     status: error
+  - id: filter_regular_expression
+    status: open
+    result: [{"name": "hello world"}, {"name": "yes hello world"}]
   - id: filter_with_boolean_operation
     status: open
     result: [{"key": 43}]

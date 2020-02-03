@@ -39,6 +39,8 @@ queries:
     result: [{"key": 0}, {"key": 42}, {"key": -1}, {"key": 41}, {"key": 41.9999}]
   - id: filter_null
     status: error
+  - id: filter_regular_expression
+    status: error
   - id: filter_with_boolean_operation
     status: open
     result: [{"key": 43}]

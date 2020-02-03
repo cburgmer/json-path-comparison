@@ -134,6 +134,9 @@ queries:
   - id: filter_null
     selector: $[?(@.key==null)]
     document: [{"some": "some value"}, {"key": null}, {"key": "value"}]
+  - id: filter_regular_expression
+    selector: $[?(@.name=~/hello.*/)]
+    document: [{"name": "hullo world"}, {"name": "hello world"}, {"name": "yes hello world"}, {"name": "HELLO WORLD"}, {"name": "good bye"}]
   - id: filter_with_boolean_operation
     selector: $[?(@.key>42 && @.key<44)]
     document: [{"key": 42}, {"key": 43}, {"key": 44}]
