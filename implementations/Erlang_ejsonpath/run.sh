@@ -7,5 +7,4 @@ cd "${script_dir}"
 
 # Don't store crash dump, will make ninja continuously rebuild this project
 export ERL_CRASH_DUMP=/dev/null
-# Time out after some seconds
-timeout -v -s KILL 20 erl -noshell -run jsonpath start "$1" -s init stop -pa ./build/default/lib/jsonpath/ebin/ ./build/default/lib/jiffy/ebin/ ./build/default/lib/ejsonpath/ebin/
+erl -noshell -run jsonpath start "$1" -s init stop -pa ./build/default/lib/jsonpath/ebin/ ./build/default/lib/jiffy/ebin/ ./build/default/lib/ejsonpath/ebin/

@@ -15,15 +15,31 @@ read(Acc) ->
             Acc
     end.
 
+% https://stackoverflow.com/questions/44629823/how-to-apply-timeout-on-method-in-erlang
+execute(Selector, Doc) ->
+    TimeOut = 20000,
+    Self = self(),
+    _Pid = spawn(fun()->
+                         try
+                             Result = ejsonpath:execute(Selector, Doc),
+                             Self ! {self(), ok, Result}
+                         catch
+                             _:Reason -> Self ! {self(), error, Reason}
+                         end
+                 end),
+    receive
+        {_PidSpawned, ok, Result} -> Result;
+        {_PidSpawned, error, Reason} -> exit(Reason)
+    after
+        TimeOut -> exit("Timeout")
+    end.
+
 print_result(Selector, Doc) ->
-    Result = ejsonpath:execute(Selector, Doc),
+    Result = execute(Selector, Doc),
     Json = jiffy:encode(Result),
     io:fwrite("~s~n", [Json]).
 
 start([Selector]) ->
     Bin = read(),
     Doc = jiffy:decode(Bin, [return_maps]),
-    try print_result(Selector, Doc)
-    catch
-        _:Reason -> exit(Reason)
-    end.
+    print_result(Selector, Doc).
