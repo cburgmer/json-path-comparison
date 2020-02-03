@@ -31,6 +31,20 @@ The following queries provide results that do not match those of other implement
   index -1 out of bounds
   ```
 
+- [ ] `$[?(@.key=='value')]`
+  Input:
+  ```
+  [{"key": "some"}, {"key": "value"}]
+  ```
+  Expected output:
+  ```
+  [{"key": "value"}]
+  ```
+  Error:
+  ```
+  parsing error: $[?(@.key=='value')]	:1:12 - 1:19 could not parse string: invalid syntax
+  ```
+
 - [ ] `$[?(@.key>42)]`
   Input:
   ```

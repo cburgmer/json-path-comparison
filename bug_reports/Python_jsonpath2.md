@@ -33,6 +33,36 @@ The following queries provide results that do not match those of other implement
   ValueError("line 1:10 extraneous input '=' expecting {'@', '$', 'true', 'false', 'null', '{', '[', STRING, NUMBER}")
   ```
 
+- [ ] `$[?(@.key=="some.value")]`
+  Input:
+  ```
+  [{"key": "some"}, {"key": "value"}, {"key": "some.value"}]
+  ```
+  Expected output:
+  ```
+  [{"key": "some.value"}]
+  ```
+  Error:
+  ```
+  line 1:10 extraneous input '=' expecting {'@', '$', 'true', 'false', 'null', '{', '[', STRING, NUMBER}
+  ValueError("line 1:10 extraneous input '=' expecting {'@', '$', 'true', 'false', 'null', '{', '[', STRING, NUMBER}")
+  ```
+
+- [ ] `$[?(@.key=='value')]`
+  Input:
+  ```
+  [{"key": "some"}, {"key": "value"}]
+  ```
+  Expected output:
+  ```
+  [{"key": "value"}]
+  ```
+  Error:
+  ```
+  line 1:11 token recognition error at: '''
+  ValueError("line 1:11 token recognition error at: '''")
+  ```
+
 - [ ] `$[?(@.key>42)]`
   Input:
   ```

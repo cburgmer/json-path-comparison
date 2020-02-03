@@ -171,6 +171,20 @@ The following queries provide results that do not match those of other implement
   []
   ```
 
+- [ ] `$[?(@.key=="some.value")]`
+  Input:
+  ```
+  [{"key": "some"}, {"key": "value"}, {"key": "some.value"}]
+  ```
+  Expected output:
+  ```
+  [{"key": "some.value"}]
+  ```
+  Error:
+  ```
+  parsing error
+  ```
+
 - [ ] `$[?(@.key)]`
   Input:
   ```

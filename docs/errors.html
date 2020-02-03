@@ -1296,6 +1296,482 @@ Python (jsonpath2), Filter equal
 ValueError("line 1:10 extraneous input '=' expecting {'@', '$', 'true', 'false', 'null', '{', '[', STRING, NUMBER}")
 </code></pre>
 
+<h3 id="Bash_JSONPath.sh___filter_equal_on_object">
+Bash (JSONPath.sh), Filter equal on object
+</h3>
+
+<pre><code>Expecting value: line 3 column 1 (char 2)
+</code></pre>
+
+<h3 id="C_json-glib___filter_equal_on_object">
+C (json-glib), Filter equal on object
+</h3>
+
+<pre><code>Unable to compile selector `$[?(@.key==42)]': Invalid array index definition “?(@.key==42)]”
+</code></pre>
+
+<h3 id="Elixir_jaxon___filter_equal_on_object">
+Elixir (jaxon), Filter equal on object
+</h3>
+
+<pre><code>** (Jaxon.ParseError) Expected an integer at `?(@.key==4`
+    lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
+    lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
+    (mix 1.10.0) lib/mix/task.ex:330: Mix.Task.run_task/3
+    (mix 1.10.0) lib/mix/cli.ex:82: Mix.CLI.run_task/2
+</code></pre>
+
+<h3 id="Golang_github.com-oliveagle-jsonpath___filter_equal_on_object">
+Golang (github.com-oliveagle-jsonpath), Filter equal on object
+</h3>
+
+<pre><code>key error:  not found in object
+</code></pre>
+
+<h3 id="Haskell_jsonpath___filter_equal_on_object">
+Haskell (jsonpath), Filter equal on object
+</h3>
+
+<pre><code>json-path-comparison: expected array, found {"g":{"key":41.9999},"a":{"key":0},"d":{"key":41},"b":{"key":42},"e":{"key":43},"h":{"key":100},"c":{"key":-1},"f":{"key":42.0001},"i":{"some":"value"}}
+CallStack (from HasCallStack):
+  error, called at app/Main.hs:18:22 in main:Main
+</code></pre>
+
+<h3 id="Kotlin_com.nfeld.jsonpathlite___filter_equal_on_object">
+Kotlin (com.nfeld.jsonpathlite), Filter equal on object
+</h3>
+
+<pre><code>Exception in thread "main" java.lang.IllegalArgumentException: Unexpected char, char=?, index=2
+    at com.nfeld.jsonpathlite.PathCompiler.compileBracket$json_path_lite(PathCompiler.kt:198)
+    at com.nfeld.jsonpathlite.PathCompiler.compile$json_path_lite(PathCompiler.kt:59)
+    at com.nfeld.jsonpathlite.JsonPath.&lt;init&gt;(JsonPath.kt:24)
+    at com.nfeld.jsonpathlite.JsonObject.read(JsonResult.kt:7)
+    at query.AppKt.main(App.kt:10)
+</code></pre>
+
+<h3 id="PHP_Goessner___filter_equal_on_object">
+PHP (Goessner), Filter equal on object
+</h3>
+
+<pre><code>ArgumentCountError
+</code></pre>
+
+<h3 id="Perl_JSON-Path___filter_equal_on_object">
+Perl (JSON-Path), Filter equal on object
+</h3>
+
+<pre><code>non-safe evaluation, died at main.pl line 11.
+</code></pre>
+
+<h3 id="Python_jsonpath-rw___filter_equal_on_object">
+Python (jsonpath-rw), Filter equal on object
+</h3>
+
+<pre><code>JsonPathLexerError('Error on line 1, col 2: Unexpected character: ? ')
+</code></pre>
+
+<h3 id="Python_jsonpath2___filter_equal_on_object">
+Python (jsonpath2), Filter equal on object
+</h3>
+
+<pre><code>line 1:10 extraneous input '=' expecting {'@', '$', 'true', 'false', 'null', '{', '[', STRING, NUMBER}
+ValueError("line 1:10 extraneous input '=' expecting {'@', '$', 'true', 'false', 'null', '{', '[', STRING, NUMBER}")
+</code></pre>
+
+<h3 id="C_json-glib___filter_equal_on_string_with_dot">
+C (json-glib), Filter equal on string with dot
+</h3>
+
+<pre><code>Unable to compile selector `$[?(@.key=="some.value")]': Invalid array index definition “?(@.key=="some.value")]”
+</code></pre>
+
+<h3 id="Elixir_jaxon___filter_equal_on_string_with_dot">
+Elixir (jaxon), Filter equal on string with dot
+</h3>
+
+<pre><code>** (Jaxon.ParseError) Expected an integer at `?(@.key=="`
+    lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
+    lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
+    (mix 1.10.0) lib/mix/task.ex:330: Mix.Task.run_task/3
+    (mix 1.10.0) lib/mix/cli.ex:82: Mix.CLI.run_task/2
+</code></pre>
+
+<h3 id="Java_com.github.jsurfer___filter_equal_on_string_with_dot">
+Java (com.github.jsurfer), Filter equal on string with dot
+</h3>
+
+<pre><code>line 1:11 token recognition error at: '"'
+line 1:22 token recognition error at: '"'
+line 1:12 no viable alternative at input '@.key==some'
+Exception in thread "main" org.antlr.v4.runtime.misc.ParseCancellationException
+    at org.antlr.v4.runtime.BailErrorStrategy.recover(BailErrorStrategy.java:51)
+    at org.jsfr.json.compiler.JsonPathParser.filterExpr(JsonPathParser.java:947)
+    at org.jsfr.json.compiler.JsonPathParser.filter(JsonPathParser.java:768)
+    at org.jsfr.json.compiler.JsonPathParser.relativePath(JsonPathParser.java:307)
+    at org.jsfr.json.compiler.JsonPathParser.path(JsonPathParser.java:159)
+    at org.jsfr.json.compiler.JsonPathCompiler.compile(JsonPathCompiler.java:283)
+    at org.jsfr.json.compiler.JsonPathCompiler.compile(JsonPathCompiler.java:273)
+    at org.jsfr.json.JsonSurfer.collectAll(JsonSurfer.java:262)
+    at query.App.main(App.java:27)
+Caused by: org.antlr.v4.runtime.NoViableAltException
+    at org.antlr.v4.runtime.atn.ParserATNSimulator.noViableAlt(ParserATNSimulator.java:2026)
+    at org.antlr.v4.runtime.atn.ParserATNSimulator.execATN(ParserATNSimulator.java:467)
+    at org.antlr.v4.runtime.atn.ParserATNSimulator.adaptivePredict(ParserATNSimulator.java:393)
+    at org.jsfr.json.compiler.JsonPathParser.filterExpr(JsonPathParser.java:843)
+    ... 7 more
+</code></pre>
+
+<h3 id="Kotlin_com.nfeld.jsonpathlite___filter_equal_on_string_with_dot">
+Kotlin (com.nfeld.jsonpathlite), Filter equal on string with dot
+</h3>
+
+<pre><code>Exception in thread "main" java.lang.IllegalArgumentException: Unexpected char, char=?, index=2
+    at com.nfeld.jsonpathlite.PathCompiler.compileBracket$json_path_lite(PathCompiler.kt:198)
+    at com.nfeld.jsonpathlite.PathCompiler.compile$json_path_lite(PathCompiler.kt:59)
+    at com.nfeld.jsonpathlite.JsonPath.&lt;init&gt;(JsonPath.kt:24)
+    at com.nfeld.jsonpathlite.JsonArray.read(JsonResult.kt:11)
+    at query.AppKt.main(App.kt:10)
+</code></pre>
+
+<h3 id="PHP_Goessner___filter_equal_on_string_with_dot">
+PHP (Goessner), Filter equal on string with dot
+</h3>
+
+<pre><code>ArgumentCountError
+</code></pre>
+
+<h3 id="Perl_JSON-Path___filter_equal_on_string_with_dot">
+Perl (JSON-Path), Filter equal on string with dot
+</h3>
+
+<pre><code>non-safe evaluation, died at main.pl line 11.
+</code></pre>
+
+<h3 id="Python_jsonpath-rw___filter_equal_on_string_with_dot">
+Python (jsonpath-rw), Filter equal on string with dot
+</h3>
+
+<pre><code>JsonPathLexerError('Error on line 1, col 2: Unexpected character: ? ')
+</code></pre>
+
+<h3 id="Python_jsonpath2___filter_equal_on_string_with_dot">
+Python (jsonpath2), Filter equal on string with dot
+</h3>
+
+<pre><code>line 1:10 extraneous input '=' expecting {'@', '$', 'true', 'false', 'null', '{', '[', STRING, NUMBER}
+ValueError("line 1:10 extraneous input '=' expecting {'@', '$', 'true', 'false', 'null', '{', '[', STRING, NUMBER}")
+</code></pre>
+
+<h3 id="Rust_jsonpath___filter_equal_on_string_with_dot">
+Rust (jsonpath), Filter equal on string with dot
+</h3>
+
+<pre><code>parsing error
+</code></pre>
+
+<h3 id="dotNET_Json.NET___filter_equal_on_string_with_dot">
+dotNET (Json.NET), Filter equal on string with dot
+</h3>
+
+<pre><code>Unexpected character while parsing path query: "
+</code></pre>
+
+<h3 id="Bash_JSONPath.sh___filter_equal_on_string_with_single_quotes">
+Bash (JSONPath.sh), Filter equal on string with single quotes
+</h3>
+
+<pre><code>Expecting value: line 3 column 1 (char 2)
+</code></pre>
+
+<h3 id="C_json-glib___filter_equal_on_string_with_single_quotes">
+C (json-glib), Filter equal on string with single quotes
+</h3>
+
+<pre><code>Unable to compile selector `$[?(@.key=='value')]': Invalid array index definition “?(@.key=='value')]”
+</code></pre>
+
+<h3 id="Elixir_jaxon___filter_equal_on_string_with_single_quotes">
+Elixir (jaxon), Filter equal on string with single quotes
+</h3>
+
+<pre><code>** (Jaxon.ParseError) Expected an integer at `?(@.key=='`
+    lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
+    lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
+    (mix 1.10.0) lib/mix/task.ex:330: Mix.Task.run_task/3
+    (mix 1.10.0) lib/mix/cli.ex:82: Mix.CLI.run_task/2
+</code></pre>
+
+<h3 id="Golang_github.com-PaesslerAG-jsonpath___filter_equal_on_string_with_single_quotes">
+Golang (github.com-PaesslerAG-jsonpath), Filter equal on string with single quotes
+</h3>
+
+<pre><code>parsing error: $[?(@.key=='value')] :1:12 - 1:19 could not parse string: invalid syntax
+</code></pre>
+
+<h3 id="Haskell_jsonpath___filter_equal_on_string_with_single_quotes">
+Haskell (jsonpath), Filter equal on string with single quotes
+</h3>
+
+<pre><code>json-path-comparison: serachBegingingWithSlice: string
+CallStack (from HasCallStack):
+  error, called at app/Main.hs:36:7 in main:Main
+Invalid JSONPath: $[?(@.key=='value')]
+ Error: serachBegingingWithSlice: string
+</code></pre>
+
+<h3 id="Kotlin_com.nfeld.jsonpathlite___filter_equal_on_string_with_single_quotes">
+Kotlin (com.nfeld.jsonpathlite), Filter equal on string with single quotes
+</h3>
+
+<pre><code>Exception in thread "main" java.lang.IllegalArgumentException: Unexpected char, char=?, index=2
+    at com.nfeld.jsonpathlite.PathCompiler.compileBracket$json_path_lite(PathCompiler.kt:198)
+    at com.nfeld.jsonpathlite.PathCompiler.compile$json_path_lite(PathCompiler.kt:59)
+    at com.nfeld.jsonpathlite.JsonPath.&lt;init&gt;(JsonPath.kt:24)
+    at com.nfeld.jsonpathlite.JsonArray.read(JsonResult.kt:11)
+    at query.AppKt.main(App.kt:10)
+</code></pre>
+
+<h3 id="PHP_Goessner___filter_equal_on_string_with_single_quotes">
+PHP (Goessner), Filter equal on string with single quotes
+</h3>
+
+<pre><code>ArgumentCountError
+</code></pre>
+
+<h3 id="Perl_JSON-Path___filter_equal_on_string_with_single_quotes">
+Perl (JSON-Path), Filter equal on string with single quotes
+</h3>
+
+<pre><code>non-safe evaluation, died at main.pl line 11.
+</code></pre>
+
+<h3 id="Python_jsonpath-rw___filter_equal_on_string_with_single_quotes">
+Python (jsonpath-rw), Filter equal on string with single quotes
+</h3>
+
+<pre><code>JsonPathLexerError('Error on line 1, col 2: Unexpected character: ? ')
+</code></pre>
+
+<h3 id="Python_jsonpath2___filter_equal_on_string_with_single_quotes">
+Python (jsonpath2), Filter equal on string with single quotes
+</h3>
+
+<pre><code>line 1:11 token recognition error at: '''
+ValueError("line 1:11 token recognition error at: '''")
+</code></pre>
+
+<h3 id="C_json-glib___filter_equal_single_equal">
+C (json-glib), Filter equal single equal
+</h3>
+
+<pre><code>Unable to compile selector `$[?(@.key=42)]': Invalid array index definition “?(@.key=42)]”
+</code></pre>
+
+<h3 id="Cpp_jsoncons___filter_equal_single_equal">
+Cpp (jsoncons), Filter equal single equal
+</h3>
+
+<pre><code>Unsupported operator at line 1 and column 11
+</code></pre>
+
+<h3 id="Elixir_jaxon___filter_equal_single_equal">
+Elixir (jaxon), Filter equal single equal
+</h3>
+
+<pre><code>** (Jaxon.ParseError) Expected an integer at `?(@.key=42`
+    lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
+    lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
+    (mix 1.10.0) lib/mix/task.ex:330: Mix.Task.run_task/3
+    (mix 1.10.0) lib/mix/cli.ex:82: Mix.CLI.run_task/2
+</code></pre>
+
+<h3 id="Erlang_ejsonpath___filter_equal_single_equal">
+Erlang (ejsonpath), Filter equal single equal
+</h3>
+
+<pre><code>init terminating in do_boot (Timeout)
+
+Crash dump is being written to: /dev/null...done
+{"init terminating in do_boot","Timeout"}
+</code></pre>
+
+<h3 id="Golang_github.com-PaesslerAG-jsonpath___filter_equal_single_equal">
+Golang (github.com-PaesslerAG-jsonpath), Filter equal single equal
+</h3>
+
+<pre><code>parsing error: $[?(@.key=42)]   :1:10 - 1:11 unexpected "=" while scanning parentheses expected ")"
+</code></pre>
+
+<h3 id="Golang_github.com-bhmj-jsonslice___filter_equal_single_equal">
+Golang (github.com-bhmj-jsonslice), Filter equal single equal
+</h3>
+
+<pre><code>unknown token at 9
+</code></pre>
+
+<h3 id="Haskell_jsonpath___filter_equal_single_equal">
+Haskell (jsonpath), Filter equal single equal
+</h3>
+
+<pre><code>json-path-comparison: serachBegingingWithSlice: string
+CallStack (from HasCallStack):
+  error, called at app/Main.hs:36:7 in main:Main
+Invalid JSONPath: $[?(@.key=42)]
+ Error: serachBegingingWithSlice: string
+</code></pre>
+
+<h3 id="Java_com.github.jsurfer___filter_equal_single_equal">
+Java (com.github.jsurfer), Filter equal single equal
+</h3>
+
+<pre><code>line 1:9 token recognition error at: '=4'
+Exception in thread "main" org.antlr.v4.runtime.misc.ParseCancellationException
+    at org.antlr.v4.runtime.BailErrorStrategy.recoverInline(BailErrorStrategy.java:66)
+    at org.antlr.v4.runtime.Parser.match(Parser.java:206)
+    at org.jsfr.json.compiler.JsonPathParser.filter(JsonPathParser.java:770)
+    at org.jsfr.json.compiler.JsonPathParser.relativePath(JsonPathParser.java:307)
+    at org.jsfr.json.compiler.JsonPathParser.path(JsonPathParser.java:159)
+    at org.jsfr.json.compiler.JsonPathCompiler.compile(JsonPathCompiler.java:283)
+    at org.jsfr.json.compiler.JsonPathCompiler.compile(JsonPathCompiler.java:273)
+    at org.jsfr.json.JsonSurfer.collectAll(JsonSurfer.java:262)
+    at query.App.main(App.java:27)
+Caused by: org.antlr.v4.runtime.InputMismatchException
+    at org.antlr.v4.runtime.BailErrorStrategy.recoverInline(BailErrorStrategy.java:61)
+    ... 8 more
+</code></pre>
+
+<h3 id="Java_com.jayway.jsonpath___filter_equal_single_equal">
+Java (com.jayway.jsonpath), Filter equal single equal
+</h3>
+
+<pre><code>SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+Exception in thread "main" com.jayway.jsonpath.InvalidPathException: Expected character: )
+    at com.jayway.jsonpath.internal.CharacterIndex.readSignificantChar(CharacterIndex.java:218)
+    at com.jayway.jsonpath.internal.filter.FilterCompiler.readLogicalANDOperand(FilterCompiler.java:185)
+    at com.jayway.jsonpath.internal.filter.FilterCompiler.readLogicalAND(FilterCompiler.java:151)
+    at com.jayway.jsonpath.internal.filter.FilterCompiler.readLogicalOR(FilterCompiler.java:131)
+    at com.jayway.jsonpath.internal.filter.FilterCompiler.compile(FilterCompiler.java:77)
+    at com.jayway.jsonpath.internal.filter.FilterCompiler.compile(FilterCompiler.java:53)
+    at com.jayway.jsonpath.internal.path.PathCompiler.readFilterToken(PathCompiler.java:461)
+    at com.jayway.jsonpath.internal.path.PathCompiler.readNextToken(PathCompiler.java:141)
+    at com.jayway.jsonpath.internal.path.PathCompiler.readContextToken(PathCompiler.java:124)
+    at com.jayway.jsonpath.internal.path.PathCompiler.compile(PathCompiler.java:58)
+    at com.jayway.jsonpath.internal.path.PathCompiler.compile(PathCompiler.java:75)
+    at com.jayway.jsonpath.JsonPath.&lt;init&gt;(JsonPath.java:101)
+    at com.jayway.jsonpath.JsonPath.compile(JsonPath.java:467)
+    at com.jayway.jsonpath.internal.JsonContext.read(JsonContext.java:87)
+    at query.App.main(App.java:25)
+</code></pre>
+
+<h3 id="Kotlin_com.nfeld.jsonpathlite___filter_equal_single_equal">
+Kotlin (com.nfeld.jsonpathlite), Filter equal single equal
+</h3>
+
+<pre><code>Exception in thread "main" java.lang.IllegalArgumentException: Unexpected char, char=?, index=2
+    at com.nfeld.jsonpathlite.PathCompiler.compileBracket$json_path_lite(PathCompiler.kt:198)
+    at com.nfeld.jsonpathlite.PathCompiler.compile$json_path_lite(PathCompiler.kt:59)
+    at com.nfeld.jsonpathlite.JsonPath.&lt;init&gt;(JsonPath.kt:24)
+    at com.nfeld.jsonpathlite.JsonArray.read(JsonResult.kt:11)
+    at query.AppKt.main(App.kt:10)
+</code></pre>
+
+<h3 id="PHP_Goessner___filter_equal_single_equal">
+PHP (Goessner), Filter equal single equal
+</h3>
+
+<pre><code>ArgumentCountError
+</code></pre>
+
+<h3 id="PHP_galbar-jsonpath___filter_equal_single_equal">
+PHP (galbar-jsonpath), Filter equal single equal
+</h3>
+
+<pre><code>Invalid JSONPath error: 'Error in JSONPath near '=42''
+</code></pre>
+
+<h3 id="PHP_remorhaz-jsonpath___filter_equal_single_equal">
+PHP (remorhaz-jsonpath), Filter equal single equal
+</h3>
+
+<pre><code>Error: 'Failed to build AST from JSONPath query: $[?(@.key=42)]'
+</code></pre>
+
+<h3 id="Perl_JSON-Path___filter_equal_single_equal">
+Perl (JSON-Path), Filter equal single equal
+</h3>
+
+<pre><code>non-safe evaluation, died at main.pl line 11.
+</code></pre>
+
+<h3 id="Python_jsonpath___filter_equal_single_equal">
+Python (jsonpath), Filter equal single equal
+</h3>
+
+<pre><code>jsonpath returned false, this might indicate an error
+</code></pre>
+
+<h3 id="Python_jsonpath-rw___filter_equal_single_equal">
+Python (jsonpath-rw), Filter equal single equal
+</h3>
+
+<pre><code>JsonPathLexerError('Error on line 1, col 2: Unexpected character: ? ')
+</code></pre>
+
+<h3 id="Ruby_jsonpath___filter_equal_single_equal">
+Ruby (jsonpath), Filter equal single equal
+</h3>
+
+<pre><code>undefined method `=' for 0.0:Float
+Did you mean?  =~
+               ==
+</code></pre>
+
+<h3 id="Rust_jsonpath___filter_equal_single_equal">
+Rust (jsonpath), Filter equal single equal
+</h3>
+
+<pre><code>parsing error
+</code></pre>
+
+<h3 id="Rust_jsonpath_lib___filter_equal_single_equal">
+Rust (jsonpath_lib), Filter equal single equal
+</h3>
+
+<pre><code>path error: 
+$[?(@.key=42)]
+^^^^^^^^^
+</code></pre>
+
+<h3 id="Scala_jsonpath___filter_equal_single_equal">
+Scala (jsonpath), Filter equal single equal
+</h3>
+
+<pre><code>JPError(end of input expected)
+</code></pre>
+
+<h3 id="dotNET_Json.NET___filter_equal_single_equal">
+dotNET (Json.NET), Filter equal single equal
+</h3>
+
+<pre><code>Could not read query operator.
+</code></pre>
+
+<h3 id="dotNET_JsonPathLib___filter_equal_single_equal">
+dotNET (JsonPathLib), Filter equal single equal
+</h3>
+
+<pre><code>Object of type 'System.Double' cannot be converted to type 'Newtonsoft.Json.Linq.JToken'.
+</code></pre>
+
+<h3 id="dotNET_Manatee.Json___filter_equal_single_equal">
+dotNET (Manatee.Json), Filter equal single equal
+</h3>
+
+<pre><code>Unrecognized JSON Path Expression element. Path up to error: '$'
+</code></pre>
+
 <h3 id="C_json-glib___filter_greater_than">
 C (json-glib), Filter greater than
 </h3>

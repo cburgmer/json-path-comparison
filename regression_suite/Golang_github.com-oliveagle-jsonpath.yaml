@@ -43,6 +43,17 @@ queries:
   - id: filter_equal
     status: fail
     result: []
+  - id: filter_equal_on_object
+    status: error
+  - id: filter_equal_on_string_with_dot
+    status: fail
+    result: []
+  - id: filter_equal_on_string_with_single_quotes
+    status: fail
+    result: []
+  - id: filter_equal_single_equal
+    status: open
+    result: []
   - id: filter_greater_than
     status: fail
     result: []

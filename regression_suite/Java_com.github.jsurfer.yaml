@@ -32,6 +32,13 @@ queries:
     status: error
   - id: filter_current_object_with_value
     status: error
+  - id: filter_equal_on_object
+    status: open
+    result: []
+  - id: filter_equal_on_string_with_dot
+    status: error
+  - id: filter_equal_single_equal
+    status: error
   - id: filter_greater_than_or_equal
     status: open
     result: [{"key": 42}, {"key": 41}, {"key": 43}, {"key": 42.0001}, {"key": 41.9999}, {"key": 100}]

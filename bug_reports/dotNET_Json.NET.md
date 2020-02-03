@@ -17,6 +17,20 @@ The following queries provide results that do not match those of other implement
   Index was out of range. Must be non-negative and less than the size of the collection. (Parameter 'index')
   ```
 
+- [ ] `$[?(@.key=="some.value")]`
+  Input:
+  ```
+  [{"key": "some"}, {"key": "value"}, {"key": "some.value"}]
+  ```
+  Expected output:
+  ```
+  [{"key": "some.value"}]
+  ```
+  Error:
+  ```
+  Unexpected character while parsing path query: "
+  ```
+
 - [ ] `$..*`
   Input:
   ```

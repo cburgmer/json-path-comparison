@@ -62,6 +62,18 @@ queries:
   - id: filter_equal
     status: fail
     result: [{"some": "value"}]
+  - id: filter_equal_on_object
+    status: open
+    result: [{"some": "value"}]
+  - id: filter_equal_on_string_with_dot
+    status: fail
+    result: []
+  - id: filter_equal_on_string_with_single_quotes
+    status: fail
+    result: []
+  - id: filter_equal_single_equal
+    status: open
+    result: [{"key": 42}]
   - id: filter_greater_than_or_equal
     status: error
   - id: filter_less_than

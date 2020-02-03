@@ -75,6 +75,36 @@ The following queries provide results that do not match those of other implement
   {"key": 42}
   ```
 
+- [ ] `$[?(@.key=="some.value")]`
+  Input:
+  ```
+  [{"key": "some"}, {"key": "value"}, {"key": "some.value"}]
+  ```
+  Expected output:
+  ```
+  [{"key": "some.value"}]
+  ```
+  Actual output:
+  ```
+  {"key": "some.value"}
+  ```
+
+- [ ] `$[?(@.key=='value')]`
+  Input:
+  ```
+  [{"key": "some"}, {"key": "value"}]
+  ```
+  Expected output:
+  ```
+  [{"key": "value"}]
+  ```
+  Error:
+  ```
+  Expecting value: line 3 column 1 (char 2)
+  
+  
+  ```
+
 - [ ] `$[?(@.key)]`
   Input:
   ```

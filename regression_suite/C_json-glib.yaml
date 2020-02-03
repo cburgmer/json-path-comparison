@@ -39,6 +39,14 @@ queries:
     status: error
   - id: filter_equal
     status: error
+  - id: filter_equal_on_object
+    status: error
+  - id: filter_equal_on_string_with_dot
+    status: error
+  - id: filter_equal_on_string_with_single_quotes
+    status: error
+  - id: filter_equal_single_equal
+    status: error
   - id: filter_greater_than
     status: error
   - id: filter_greater_than_or_equal

@@ -100,6 +100,20 @@ queries:
     selector: $[?(@.key==42)]
     document: [{"key": 0}, {"key": 42}, {"key": -1}, {"key": 41}, {"key": 43}, {"key": 42.0001}, {"key": 41.9999}, {"key": 100}, {"some": "value"}]
     consensus: [{"key": 42}]
+  - id: filter_equal_on_object
+    selector: $[?(@.key==42)]
+    document: {"a": {"key": 0}, "b": {"key": 42}, "c": {"key": -1}, "d": {"key": 41}, "e": {"key": 43}, "f": {"key": 42.0001}, "g": {"key": 41.9999}, "h": {"key": 100}, "i": {"some": "value"}}
+  - id: filter_equal_on_string_with_dot
+    selector: $[?(@.key=="some.value")]
+    document: [{"key": "some"}, {"key": "value"}, {"key": "some.value"}]
+    consensus: [{"key": "some.value"}]
+  - id: filter_equal_on_string_with_single_quotes
+    selector: $[?(@.key=='value')]
+    document: [{"key": "some"}, {"key": "value"}]
+    consensus: [{"key": "value"}]
+  - id: filter_equal_single_equal
+    selector: $[?(@.key=42)]
+    document: [{"key": 0}, {"key": 42}, {"key": -1}, {"key": 41}, {"key": 43}, {"key": 42.0001}, {"key": 41.9999}, {"key": 100}, {"some": "value"}]
   - id: filter_greater_than
     selector: $[?(@.key>42)]
     document: [{"key": 0}, {"key": 42}, {"key": -1}, {"key": 41}, {"key": 43}, {"key": 42.0001}, {"key": 41.9999}, {"key": 100}]
