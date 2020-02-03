@@ -29,6 +29,9 @@ queries:
   - id: array_index_slice_start_end
     status: fail
     result: "second"
+  - id: array_index_slice_start_end_exact_match
+    status: fail
+    result: "first"
   - id: array_index_slice_start_end_negative_step
     status: open
     result: "forth"

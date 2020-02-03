@@ -45,6 +45,20 @@ The following queries provide results that do not match those of other implement
   ["second", "third", "forth"]
   ```
 
+- [ ] `$[0:5]`
+  Input:
+  ```
+  ["first", "second", "third", "forth", "fifth"]
+  ```
+  Expected output:
+  ```
+  ["first", "second", "third", "forth", "fifth"]
+  ```
+  Error:
+  ```
+  index [to] out of range: len: 5, to: 5
+  ```
+
 - [ ] `$[0:3:2]`
   Input:
   ```

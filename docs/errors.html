@@ -507,6 +507,24 @@ Elixir (jaxon), Array index slice start end
     (mix 1.10.0) lib/mix/cli.ex:82: Mix.CLI.run_task/2
 </code></pre>
 
+<h3 id="Elixir_jaxon___array_index_slice_start_end_exact_match">
+Elixir (jaxon), Array index slice start end exact match
+</h3>
+
+<pre><code>** (Jaxon.ParseError) Expected an integer at `0:5]`
+    lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
+    lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
+    (mix 1.10.0) lib/mix/task.ex:330: Mix.Task.run_task/3
+    (mix 1.10.0) lib/mix/cli.ex:82: Mix.CLI.run_task/2
+</code></pre>
+
+<h3 id="Golang_github.com-oliveagle-jsonpath___array_index_slice_start_end_exact_match">
+Golang (github.com-oliveagle-jsonpath), Array index slice start end exact match
+</h3>
+
+<pre><code>index [to] out of range: len: 5, to: 5
+</code></pre>
+
 <h3 id="Bash_JSONPath.sh___array_index_slice_start_end_negative_step">
 Bash (JSONPath.sh), Array index slice start end negative step
 </h3>

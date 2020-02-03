@@ -59,6 +59,10 @@ queries:
     selector: $[1:3]
     document: ["first", "second", "third", "forth", "fifth"]
     consensus: ["second", "third"]
+  - id: array_index_slice_start_end_exact_match
+    selector: $[0:5]
+    document: ["first", "second", "third", "forth", "fifth"]
+    consensus: ["first", "second", "third", "forth", "fifth"]
   - id: array_index_slice_start_end_negative_step
     selector: $[3:0:-2]
     document: ["first", "second", "third", "forth", "fifth"]
