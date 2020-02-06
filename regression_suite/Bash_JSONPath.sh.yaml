@@ -32,8 +32,16 @@ queries:
   - id: filter_equal
     status: fail
     result: {"key": 42}
+  - id: filter_equal_on_number_value_with_string_query
+    status: open
+    result: {"id": 2}
   - id: filter_equal_on_object
     status: error
+  - id: filter_equal_on_object_with_key_matching_query
+    status: error
+  - id: filter_equal_on_string_value_with_number_query
+    status: open
+    result: {"id": "2"}
   - id: filter_equal_on_string_with_dot
     status: fail
     result: {"key": "some.value"}

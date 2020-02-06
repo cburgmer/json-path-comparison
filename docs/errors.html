@@ -1314,6 +1314,107 @@ Python (jsonpath2), Filter equal
 ValueError("line 1:10 extraneous input '=' expecting {'@', '$', 'true', 'false', 'null', '{', '[', STRING, NUMBER}")
 </code></pre>
 
+<h3 id="C_json-glib___filter_equal_on_number_value_with_string_query">
+C (json-glib), Filter equal on number value with string query
+</h3>
+
+<pre><code>Unable to compile selector `$[?(@.id=="2")]': Invalid array index definition “?(@.id=="2")]”
+</code></pre>
+
+<h3 id="Elixir_jaxon___filter_equal_on_number_value_with_string_query">
+Elixir (jaxon), Filter equal on number value with string query
+</h3>
+
+<pre><code>** (Jaxon.ParseError) Expected an integer at `?(@.id=="2`
+    lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
+    lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
+    (mix 1.10.0) lib/mix/task.ex:330: Mix.Task.run_task/3
+    (mix 1.10.0) lib/mix/cli.ex:82: Mix.CLI.run_task/2
+</code></pre>
+
+<h3 id="Golang_github.com-bhmj-jsonslice___filter_equal_on_number_value_with_string_query">
+Golang (github.com-bhmj-jsonslice), Filter equal on number value with string query
+</h3>
+
+<pre><code>operand types do not match
+</code></pre>
+
+<h3 id="Haskell_jsonpath___filter_equal_on_number_value_with_string_query">
+Haskell (jsonpath), Filter equal on number value with string query
+</h3>
+
+<pre><code>json-path-comparison: src/Data/JSONPath/Execute.hs:(71,1)-(72,60): Non-exhaustive patterns in function executeCondition
+</code></pre>
+
+<h3 id="Kotlin_com.nfeld.jsonpathlite___filter_equal_on_number_value_with_string_query">
+Kotlin (com.nfeld.jsonpathlite), Filter equal on number value with string query
+</h3>
+
+<pre><code>Exception in thread "main" java.lang.IllegalArgumentException: Unexpected char, char=?, index=2
+    at com.nfeld.jsonpathlite.PathCompiler.compileBracket$json_path_lite(PathCompiler.kt:198)
+    at com.nfeld.jsonpathlite.PathCompiler.compile$json_path_lite(PathCompiler.kt:59)
+    at com.nfeld.jsonpathlite.JsonPath.&lt;init&gt;(JsonPath.kt:24)
+    at com.nfeld.jsonpathlite.JsonArray.read(JsonResult.kt:11)
+    at query.AppKt.main(App.kt:10)
+</code></pre>
+
+<h3 id="PHP_Goessner___filter_equal_on_number_value_with_string_query">
+PHP (Goessner), Filter equal on number value with string query
+</h3>
+
+<pre><code>ArgumentCountError
+</code></pre>
+
+<h3 id="PHP_galbar-jsonpath___filter_equal_on_number_value_with_string_query">
+PHP (galbar-jsonpath), Filter equal on number value with string query
+</h3>
+
+<pre><code>jsonpath returned false, this might indicate an error
+</code></pre>
+
+<h3 id="Perl_JSON-Path___filter_equal_on_number_value_with_string_query">
+Perl (JSON-Path), Filter equal on number value with string query
+</h3>
+
+<pre><code>non-safe evaluation, died at main.pl line 11.
+</code></pre>
+
+<h3 id="Python_jsonpath___filter_equal_on_number_value_with_string_query">
+Python (jsonpath), Filter equal on number value with string query
+</h3>
+
+<pre><code>jsonpath returned false, this might indicate an error
+</code></pre>
+
+<h3 id="Python_jsonpath-rw___filter_equal_on_number_value_with_string_query">
+Python (jsonpath-rw), Filter equal on number value with string query
+</h3>
+
+<pre><code>JsonPathLexerError('Error on line 1, col 2: Unexpected character: ? ')
+</code></pre>
+
+<h3 id="Python_jsonpath2___filter_equal_on_number_value_with_string_query">
+Python (jsonpath2), Filter equal on number value with string query
+</h3>
+
+<pre><code>line 1:9 extraneous input '=' expecting {'@', '$', 'true', 'false', 'null', '{', '[', STRING, NUMBER}
+ValueError("line 1:9 extraneous input '=' expecting {'@', '$', 'true', 'false', 'null', '{', '[', STRING, NUMBER}")
+</code></pre>
+
+<h3 id="Rust_jsonpath___filter_equal_on_number_value_with_string_query">
+Rust (jsonpath), Filter equal on number value with string query
+</h3>
+
+<pre><code>parsing error
+</code></pre>
+
+<h3 id="dotNET_Json.NET___filter_equal_on_number_value_with_string_query">
+dotNET (Json.NET), Filter equal on number value with string query
+</h3>
+
+<pre><code>Unexpected character while parsing path query: "
+</code></pre>
+
 <h3 id="Bash_JSONPath.sh___filter_equal_on_object">
 Bash (JSONPath.sh), Filter equal on object
 </h3>
@@ -1394,6 +1495,224 @@ Python (jsonpath2), Filter equal on object
 
 <pre><code>line 1:10 extraneous input '=' expecting {'@', '$', 'true', 'false', 'null', '{', '[', STRING, NUMBER}
 ValueError("line 1:10 extraneous input '=' expecting {'@', '$', 'true', 'false', 'null', '{', '[', STRING, NUMBER}")
+</code></pre>
+
+<h3 id="Bash_JSONPath.sh___filter_equal_on_object_with_key_matching_query">
+Bash (JSONPath.sh), Filter equal on object with key matching query
+</h3>
+
+<pre><code>Expecting value: line 3 column 1 (char 2)
+</code></pre>
+
+<h3 id="C_json-glib___filter_equal_on_object_with_key_matching_query">
+C (json-glib), Filter equal on object with key matching query
+</h3>
+
+<pre><code>Unable to compile selector `$[?(@.id==2)]': Invalid array index definition “?(@.id==2)]”
+</code></pre>
+
+<h3 id="Elixir_jaxon___filter_equal_on_object_with_key_matching_query">
+Elixir (jaxon), Filter equal on object with key matching query
+</h3>
+
+<pre><code>** (Jaxon.ParseError) Expected an integer at `?(@.id==2)`
+    lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
+    lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
+    (mix 1.10.0) lib/mix/task.ex:330: Mix.Task.run_task/3
+    (mix 1.10.0) lib/mix/cli.ex:82: Mix.CLI.run_task/2
+</code></pre>
+
+<h3 id="Golang_github.com-oliveagle-jsonpath___filter_equal_on_object_with_key_matching_query">
+Golang (github.com-oliveagle-jsonpath), Filter equal on object with key matching query
+</h3>
+
+<pre><code>key error:  not found in object
+</code></pre>
+
+<h3 id="Haskell_jsonpath___filter_equal_on_object_with_key_matching_query">
+Haskell (jsonpath), Filter equal on object with key matching query
+</h3>
+
+<pre><code>json-path-comparison: expected array, found {"id":2}
+CallStack (from HasCallStack):
+  error, called at app/Main.hs:18:22 in main:Main
+</code></pre>
+
+<h3 id="JavaScript_Goessner___filter_equal_on_object_with_key_matching_query">
+JavaScript (Goessner), Filter equal on object with key matching query
+</h3>
+
+<pre><code>jsonpath returned false, this might indicate an error
+</code></pre>
+
+<h3 id="Kotlin_com.nfeld.jsonpathlite___filter_equal_on_object_with_key_matching_query">
+Kotlin (com.nfeld.jsonpathlite), Filter equal on object with key matching query
+</h3>
+
+<pre><code>Exception in thread "main" java.lang.IllegalArgumentException: Unexpected char, char=?, index=2
+    at com.nfeld.jsonpathlite.PathCompiler.compileBracket$json_path_lite(PathCompiler.kt:198)
+    at com.nfeld.jsonpathlite.PathCompiler.compile$json_path_lite(PathCompiler.kt:59)
+    at com.nfeld.jsonpathlite.JsonPath.&lt;init&gt;(JsonPath.kt:24)
+    at com.nfeld.jsonpathlite.JsonObject.read(JsonResult.kt:7)
+    at query.AppKt.main(App.kt:10)
+</code></pre>
+
+<h3 id="PHP_Goessner___filter_equal_on_object_with_key_matching_query">
+PHP (Goessner), Filter equal on object with key matching query
+</h3>
+
+<pre><code>ArgumentCountError
+</code></pre>
+
+<h3 id="PHP_galbar-jsonpath___filter_equal_on_object_with_key_matching_query">
+PHP (galbar-jsonpath), Filter equal on object with key matching query
+</h3>
+
+<pre><code>jsonpath returned false, this might indicate an error
+</code></pre>
+
+<h3 id="Perl_JSON-Path___filter_equal_on_object_with_key_matching_query">
+Perl (JSON-Path), Filter equal on object with key matching query
+</h3>
+
+<pre><code>non-safe evaluation, died at main.pl line 11.
+</code></pre>
+
+<h3 id="Python_jsonpath___filter_equal_on_object_with_key_matching_query">
+Python (jsonpath), Filter equal on object with key matching query
+</h3>
+
+<pre><code>jsonpath returned false, this might indicate an error
+</code></pre>
+
+<h3 id="Python_jsonpath-rw___filter_equal_on_object_with_key_matching_query">
+Python (jsonpath-rw), Filter equal on object with key matching query
+</h3>
+
+<pre><code>JsonPathLexerError('Error on line 1, col 2: Unexpected character: ? ')
+</code></pre>
+
+<h3 id="Python_jsonpath2___filter_equal_on_object_with_key_matching_query">
+Python (jsonpath2), Filter equal on object with key matching query
+</h3>
+
+<pre><code>line 1:9 extraneous input '=' expecting {'@', '$', 'true', 'false', 'null', '{', '[', STRING, NUMBER}
+ValueError("line 1:9 extraneous input '=' expecting {'@', '$', 'true', 'false', 'null', '{', '[', STRING, NUMBER}")
+</code></pre>
+
+<h3 id="C_json-glib___filter_equal_on_string_value_with_number_query">
+C (json-glib), Filter equal on string value with number query
+</h3>
+
+<pre><code>Unable to compile selector `$[?(@.id==2)]': Invalid array index definition “?(@.id==2)]”
+</code></pre>
+
+<h3 id="Elixir_jaxon___filter_equal_on_string_value_with_number_query">
+Elixir (jaxon), Filter equal on string value with number query
+</h3>
+
+<pre><code>** (Jaxon.ParseError) Expected an integer at `?(@.id==2)`
+    lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
+    lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
+    (mix 1.10.0) lib/mix/task.ex:330: Mix.Task.run_task/3
+    (mix 1.10.0) lib/mix/cli.ex:82: Mix.CLI.run_task/2
+</code></pre>
+
+<h3 id="Golang_github.com-bhmj-jsonslice___filter_equal_on_string_value_with_number_query">
+Golang (github.com-bhmj-jsonslice), Filter equal on string value with number query
+</h3>
+
+<pre><code>operand types do not match
+</code></pre>
+
+<h3 id="Haskell_jsonpath___filter_equal_on_string_value_with_number_query">
+Haskell (jsonpath), Filter equal on string value with number query
+</h3>
+
+<pre><code>json-path-comparison: src/Data/JSONPath/Execute.hs:(71,1)-(72,60): Non-exhaustive patterns in function executeCondition
+</code></pre>
+
+<h3 id="Java_com.github.jsurfer___filter_equal_on_string_value_with_number_query">
+Java (com.github.jsurfer), Filter equal on string value with number query
+</h3>
+
+<pre><code>Exception in thread "main" org.jsfr.json.exception.JsonSurfingException: Parser is stopped
+    at org.jsfr.json.DefaultErrorHandlingStrategy.handleParsingException(DefaultErrorHandlingStrategy.java:35)
+    at org.jsfr.json.JacksonParser$JacksonResumableParser.parse(JacksonParser.java:143)
+    at org.jsfr.json.JacksonParser.parse(JacksonParser.java:228)
+    at org.jsfr.json.JsonSurfer.surf(JsonSurfer.java:180)
+    at org.jsfr.json.JsonSurfer.collectAll(JsonSurfer.java:289)
+    at org.jsfr.json.JsonSurfer.collectAll(JsonSurfer.java:273)
+    at org.jsfr.json.JsonSurfer.collectAll(JsonSurfer.java:262)
+    at query.App.main(App.java:27)
+Caused by: java.lang.NumberFormatException: Character " is neither a decimal digit number, decimal point, nor "e" notation exponential mark.
+    at java.base/java.math.BigDecimal.&lt;init&gt;(BigDecimal.java:518)
+    at java.base/java.math.BigDecimal.&lt;init&gt;(BigDecimal.java:401)
+    at java.base/java.math.BigDecimal.&lt;init&gt;(BigDecimal.java:834)
+    at org.jsfr.json.filter.EqualityNumPredicate.apply(EqualityNumPredicate.java:49)
+    at org.jsfr.json.JsonFilterVerifier.primitive(JsonFilterVerifier.java:119)
+    at org.jsfr.json.ContentDispatcher.primitive(ContentDispatcher.java:147)
+    at org.jsfr.json.FilterVerifierDispatcher.primitive(FilterVerifierDispatcher.java:30)
+    at org.jsfr.json.ContentDispatcher.primitive(ContentDispatcher.java:147)
+    at org.jsfr.json.SurfingContext.primitive(SurfingContext.java:316)
+    at org.jsfr.json.JacksonParser$JacksonResumableParser.doPare(JacksonParser.java:176)
+    at org.jsfr.json.JacksonParser$JacksonResumableParser.parse(JacksonParser.java:141)
+    ... 6 more
+</code></pre>
+
+<h3 id="Kotlin_com.nfeld.jsonpathlite___filter_equal_on_string_value_with_number_query">
+Kotlin (com.nfeld.jsonpathlite), Filter equal on string value with number query
+</h3>
+
+<pre><code>Exception in thread "main" java.lang.IllegalArgumentException: Unexpected char, char=?, index=2
+    at com.nfeld.jsonpathlite.PathCompiler.compileBracket$json_path_lite(PathCompiler.kt:198)
+    at com.nfeld.jsonpathlite.PathCompiler.compile$json_path_lite(PathCompiler.kt:59)
+    at com.nfeld.jsonpathlite.JsonPath.&lt;init&gt;(JsonPath.kt:24)
+    at com.nfeld.jsonpathlite.JsonArray.read(JsonResult.kt:11)
+    at query.AppKt.main(App.kt:10)
+</code></pre>
+
+<h3 id="PHP_Goessner___filter_equal_on_string_value_with_number_query">
+PHP (Goessner), Filter equal on string value with number query
+</h3>
+
+<pre><code>ArgumentCountError
+</code></pre>
+
+<h3 id="PHP_galbar-jsonpath___filter_equal_on_string_value_with_number_query">
+PHP (galbar-jsonpath), Filter equal on string value with number query
+</h3>
+
+<pre><code>jsonpath returned false, this might indicate an error
+</code></pre>
+
+<h3 id="Perl_JSON-Path___filter_equal_on_string_value_with_number_query">
+Perl (JSON-Path), Filter equal on string value with number query
+</h3>
+
+<pre><code>non-safe evaluation, died at main.pl line 11.
+</code></pre>
+
+<h3 id="Python_jsonpath___filter_equal_on_string_value_with_number_query">
+Python (jsonpath), Filter equal on string value with number query
+</h3>
+
+<pre><code>jsonpath returned false, this might indicate an error
+</code></pre>
+
+<h3 id="Python_jsonpath-rw___filter_equal_on_string_value_with_number_query">
+Python (jsonpath-rw), Filter equal on string value with number query
+</h3>
+
+<pre><code>JsonPathLexerError('Error on line 1, col 2: Unexpected character: ? ')
+</code></pre>
+
+<h3 id="Python_jsonpath2___filter_equal_on_string_value_with_number_query">
+Python (jsonpath2), Filter equal on string value with number query
+</h3>
+
+<pre><code>line 1:9 extraneous input '=' expecting {'@', '$', 'true', 'false', 'null', '{', '[', STRING, NUMBER}
+ValueError("line 1:9 extraneous input '=' expecting {'@', '$', 'true', 'false', 'null', '{', '[', STRING, NUMBER}")
 </code></pre>
 
 <h3 id="C_json-glib___filter_equal_on_string_with_dot">
