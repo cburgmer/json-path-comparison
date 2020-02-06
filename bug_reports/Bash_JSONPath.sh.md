@@ -33,6 +33,22 @@ The following queries provide results that do not match those of other implement
   
   ```
 
+- [ ] `$[1]`
+  Input:
+  ```
+  ["one element"]
+  ```
+  Expected output:
+  ```
+  []
+  ```
+  Error:
+  ```
+  Expecting value: line 3 column 1 (char 2)
+  
+  
+  ```
+
 - [ ] `$[-1:]`
   Input:
   ```
@@ -260,6 +276,22 @@ The following queries provide results that do not match those of other implement
 - [ ] `$.key`
   Input:
   ```
+  [0, 1]
+  ```
+  Expected output:
+  ```
+  []
+  ```
+  Error:
+  ```
+  Expecting value: line 3 column 1 (char 2)
+  
+  
+  ```
+
+- [ ] `$.key`
+  Input:
+  ```
   {"key": ["first", "second"]}
   ```
   Expected output:
@@ -299,6 +331,22 @@ The following queries provide results that do not match those of other implement
   Actual output:
   ```
   {"key": null}
+  ```
+
+- [ ] `$.missing`
+  Input:
+  ```
+  {"key": "value"}
+  ```
+  Expected output:
+  ```
+  []
+  ```
+  Error:
+  ```
+  Expecting value: line 3 column 1 (char 2)
+  
+  
   ```
 
 - [ ] `$..key`

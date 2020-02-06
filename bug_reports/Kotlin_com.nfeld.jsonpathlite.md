@@ -3,6 +3,20 @@ Results do not match other implementations
 The following queries provide results that do not match those of other implementations of JSONPath
 (compare https://cburgmer.github.io/json-path-comparison/):
 
+- [ ] `$[1]`
+  Input:
+  ```
+  ["one element"]
+  ```
+  Expected output:
+  ```
+  []
+  ```
+  Actual output:
+  ```
+  [null]
+  ```
+
 - [ ] `$[:]`
   Input:
   ```
@@ -197,10 +211,38 @@ The following queries provide results that do not match those of other implement
   null
   ```
 
+- [ ] `$.key`
+  Input:
+  ```
+  [0, 1]
+  ```
+  Expected output:
+  ```
+  []
+  ```
+  Actual output:
+  ```
+  [null]
+  ```
+
 - [ ] `$.id`
   Input:
   ```
   [{"id": 2}]
+  ```
+  Expected output:
+  ```
+  []
+  ```
+  Actual output:
+  ```
+  [null]
+  ```
+
+- [ ] `$.missing`
+  Input:
+  ```
+  {"key": "value"}
   ```
   Expected output:
   ```

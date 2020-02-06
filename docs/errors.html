@@ -201,6 +201,112 @@ dotNET (Json.NET), Array index last
 <pre><code>Index was out of range. Must be non-negative and less than the size of the collection. (Parameter 'index')
 </code></pre>
 
+<h3 id="Bash_JSONPath.sh___array_index_out_of_bounds">
+Bash (JSONPath.sh), Array index out of bounds
+</h3>
+
+<pre><code>Expecting value: line 3 column 1 (char 2)
+</code></pre>
+
+<h3 id="Clojure_json-path___array_index_out_of_bounds">
+Clojure (json-path), Array index out of bounds
+</h3>
+
+<pre><code>Exception in thread "main" java.lang.IndexOutOfBoundsException
+    at clojure.lang.RT.nthFrom(RT.java:924)
+    at clojure.lang.RT.nth(RT.java:893)
+    at json_path.walker$walk_selector.invokeStatic(walker.clj:74)
+    at json_path.walker$walk_selector.invoke(walker.clj:63)
+    at json_path.walker$walk.invokeStatic(walker.clj:87)
+    at json_path.walker$walk.invoke(walker.clj:84)
+    at json_path.walker$walk$fn__1026.invoke(walker.clj:89)
+    at json_path.walker$map_SHARP_.invokeStatic(walker.clj:22)
+    at json_path.walker$map_SHARP_.invoke(walker.clj:17)
+    at json_path.walker$walk.invokeStatic(walker.clj:89)
+    at json_path.walker$walk.invoke(walker.clj:84)
+    at json_path$query.invokeStatic(json_path.clj:7)
+    at json_path$query.invoke(json_path.clj:6)
+    at json_path$at_path.invokeStatic(json_path.clj:10)
+    at json_path$at_path.invoke(json_path.clj:9)
+    at json_path_comparison.core$_main.invokeStatic(core.clj:10)
+    at json_path_comparison.core$_main.doInvoke(core.clj:6)
+    at clojure.lang.RestFn.applyTo(RestFn.java:137)
+    at json_path_comparison.core.main(Unknown Source)
+</code></pre>
+
+<h3 id="Golang_github.com-PaesslerAG-jsonpath___array_index_out_of_bounds">
+Golang (github.com-PaesslerAG-jsonpath), Array index out of bounds
+</h3>
+
+<pre><code>index 1 out of bounds
+</code></pre>
+
+<h3 id="Golang_github.com-bhmj-jsonslice___array_index_out_of_bounds">
+Golang (github.com-bhmj-jsonslice), Array index out of bounds
+</h3>
+
+<pre><code>No JSON output received
+</code></pre>
+
+<h3 id="Golang_github.com-oliveagle-jsonpath___array_index_out_of_bounds">
+Golang (github.com-oliveagle-jsonpath), Array index out of bounds
+</h3>
+
+<pre><code>index out of range: len: 1, idx: 1
+</code></pre>
+
+<h3 id="Haskell_jsonpath___array_index_out_of_bounds">
+Haskell (jsonpath), Array index out of bounds
+</h3>
+
+<pre><code>json-path-comparison: index 1 invalid for array ["one element"]
+CallStack (from HasCallStack):
+  error, called at app/Main.hs:18:22 in main:Main
+</code></pre>
+
+<h3 id="JavaScript_Goessner___array_index_out_of_bounds">
+JavaScript (Goessner), Array index out of bounds
+</h3>
+
+<pre><code>jsonpath returned false, this might indicate an error
+</code></pre>
+
+<h3 id="Java_com.jayway.jsonpath___array_index_out_of_bounds">
+Java (com.jayway.jsonpath), Array index out of bounds
+</h3>
+
+<pre><code>SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+Exception in thread "main" com.jayway.jsonpath.PathNotFoundException: No results for path: $[1]
+    at com.jayway.jsonpath.internal.path.EvaluationContextImpl.getValue(EvaluationContextImpl.java:133)
+    at com.jayway.jsonpath.JsonPath.read(JsonPath.java:187)
+    at com.jayway.jsonpath.internal.JsonContext.read(JsonContext.java:102)
+    at com.jayway.jsonpath.internal.JsonContext.read(JsonContext.java:89)
+    at query.App.main(App.java:25)
+</code></pre>
+
+<h3 id="PHP_Goessner___array_index_out_of_bounds">
+PHP (Goessner), Array index out of bounds
+</h3>
+
+<pre><code>jsonpath returned false, this might indicate an error
+</code></pre>
+
+<h3 id="PHP_galbar-jsonpath___array_index_out_of_bounds">
+PHP (galbar-jsonpath), Array index out of bounds
+</h3>
+
+<pre><code>jsonpath returned false, this might indicate an error
+</code></pre>
+
+<h3 id="Python_jsonpath___array_index_out_of_bounds">
+Python (jsonpath), Array index out of bounds
+</h3>
+
+<pre><code>jsonpath returned false, this might indicate an error
+</code></pre>
+
 <h3 id="Elixir_jaxon___array_index_slice_end_out_of_bounds">
 Elixir (jaxon), Array index slice end out of bounds
 </h3>
@@ -6129,6 +6235,82 @@ dotNET (Manatee.Json), Key dot bracket notation without quotes
 <pre><code>Unrecognized JSON Path element. Path up to error: '$'
 </code></pre>
 
+<h3 id="Bash_JSONPath.sh___key_dot_notation_on_array">
+Bash (JSONPath.sh), Key dot notation on array
+</h3>
+
+<pre><code>Expecting value: line 3 column 1 (char 2)
+</code></pre>
+
+<h3 id="Golang_github.com-PaesslerAG-jsonpath___key_dot_notation_on_array">
+Golang (github.com-PaesslerAG-jsonpath), Key dot notation on array
+</h3>
+
+<pre><code>could not select value, invalid key: expected number but got key (string)
+</code></pre>
+
+<h3 id="Golang_github.com-bhmj-jsonslice___key_dot_notation_on_array">
+Golang (github.com-bhmj-jsonslice), Key dot notation on array
+</h3>
+
+<pre><code>No JSON output received
+</code></pre>
+
+<h3 id="Haskell_jsonpath___key_dot_notation_on_array">
+Haskell (jsonpath), Key dot notation on array
+</h3>
+
+<pre><code>json-path-comparison: expected object, found [0,1]
+CallStack (from HasCallStack):
+  error, called at app/Main.hs:18:22 in main:Main
+</code></pre>
+
+<h3 id="JavaScript_Goessner___key_dot_notation_on_array">
+JavaScript (Goessner), Key dot notation on array
+</h3>
+
+<pre><code>jsonpath returned false, this might indicate an error
+</code></pre>
+
+<h3 id="Java_com.jayway.jsonpath___key_dot_notation_on_array">
+Java (com.jayway.jsonpath), Key dot notation on array
+</h3>
+
+<pre><code>SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+Exception in thread "main" com.jayway.jsonpath.PathNotFoundException: Expected to find an object with property ['key'] in path $ but found 'net.minidev.json.JSONArray'. This is not a json object according to the JsonProvider: 'com.jayway.jsonpath.spi.json.JsonSmartJsonProvider'.
+    at com.jayway.jsonpath.internal.path.PropertyPathToken.evaluate(PropertyPathToken.java:71)
+    at com.jayway.jsonpath.internal.path.RootPathToken.evaluate(RootPathToken.java:62)
+    at com.jayway.jsonpath.internal.path.CompiledPath.evaluate(CompiledPath.java:53)
+    at com.jayway.jsonpath.internal.path.CompiledPath.evaluate(CompiledPath.java:61)
+    at com.jayway.jsonpath.JsonPath.read(JsonPath.java:187)
+    at com.jayway.jsonpath.internal.JsonContext.read(JsonContext.java:102)
+    at com.jayway.jsonpath.internal.JsonContext.read(JsonContext.java:89)
+    at query.App.main(App.java:25)
+</code></pre>
+
+<h3 id="PHP_Goessner___key_dot_notation_on_array">
+PHP (Goessner), Key dot notation on array
+</h3>
+
+<pre><code>jsonpath returned false, this might indicate an error
+</code></pre>
+
+<h3 id="PHP_galbar-jsonpath___key_dot_notation_on_array">
+PHP (galbar-jsonpath), Key dot notation on array
+</h3>
+
+<pre><code>jsonpath returned false, this might indicate an error
+</code></pre>
+
+<h3 id="Python_jsonpath___key_dot_notation_on_array">
+Python (jsonpath), Key dot notation on array
+</h3>
+
+<pre><code>jsonpath returned false, this might indicate an error
+</code></pre>
+
 <h3 id="Bash_JSONPath.sh___key_dot_notation_on_array_with_containing_object_matching_key">
 Bash (JSONPath.sh), Key dot notation on array with containing object matching key
 </h3>
@@ -6322,6 +6504,86 @@ Rust (jsonpath_lib), Key dot notation with double quotes
 <pre><code>path error: 
 $."key"
 ^^
+</code></pre>
+
+<h3 id="Bash_JSONPath.sh___key_dot_notation_with_missing_key">
+Bash (JSONPath.sh), Key dot notation with missing key
+</h3>
+
+<pre><code>Expecting value: line 3 column 1 (char 2)
+</code></pre>
+
+<h3 id="Golang_github.com-PaesslerAG-jsonpath___key_dot_notation_with_missing_key">
+Golang (github.com-PaesslerAG-jsonpath), Key dot notation with missing key
+</h3>
+
+<pre><code>unknown key missing
+</code></pre>
+
+<h3 id="Golang_github.com-bhmj-jsonslice___key_dot_notation_with_missing_key">
+Golang (github.com-bhmj-jsonslice), Key dot notation with missing key
+</h3>
+
+<pre><code>No JSON output received
+</code></pre>
+
+<h3 id="Golang_github.com-oliveagle-jsonpath___key_dot_notation_with_missing_key">
+Golang (github.com-oliveagle-jsonpath), Key dot notation with missing key
+</h3>
+
+<pre><code>key error: missing not found in object
+</code></pre>
+
+<h3 id="Haskell_jsonpath___key_dot_notation_with_missing_key">
+Haskell (jsonpath), Key dot notation with missing key
+</h3>
+
+<pre><code>json-path-comparison: expected key missing in object {"key":"value"}
+CallStack (from HasCallStack):
+  error, called at app/Main.hs:18:22 in main:Main
+</code></pre>
+
+<h3 id="JavaScript_Goessner___key_dot_notation_with_missing_key">
+JavaScript (Goessner), Key dot notation with missing key
+</h3>
+
+<pre><code>jsonpath returned false, this might indicate an error
+</code></pre>
+
+<h3 id="Java_com.jayway.jsonpath___key_dot_notation_with_missing_key">
+Java (com.jayway.jsonpath), Key dot notation with missing key
+</h3>
+
+<pre><code>SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+Exception in thread "main" com.jayway.jsonpath.PathNotFoundException: No results for path: $['missing']
+    at com.jayway.jsonpath.internal.path.EvaluationContextImpl.getValue(EvaluationContextImpl.java:133)
+    at com.jayway.jsonpath.JsonPath.read(JsonPath.java:187)
+    at com.jayway.jsonpath.internal.JsonContext.read(JsonContext.java:102)
+    at com.jayway.jsonpath.internal.JsonContext.read(JsonContext.java:89)
+    at query.App.main(App.java:25)
+</code></pre>
+
+<h3 id="PHP_Goessner___key_dot_notation_with_missing_key">
+PHP (Goessner), Key dot notation with missing key
+</h3>
+
+<pre><code>jsonpath returned false, this might indicate an error
+</code></pre>
+
+<h3 id="PHP_galbar-jsonpath___key_dot_notation_with_missing_key">
+PHP (galbar-jsonpath), Key dot notation with missing key
+</h3>
+
+<pre><code>jsonpath returned false, this might indicate an error
+</code></pre>
+
+<h3 id="Python_jsonpath___key_dot_notation_with_missing_key">
+Python (jsonpath), Key dot notation with missing key
+</h3>
+
+<pre><code>jsonpath returned false, this might indicate an error
 </code></pre>
 
 <h3 id="Erlang_ejsonpath___key_dot_notation_with_single_quotes">

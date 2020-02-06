@@ -32,6 +32,9 @@ queries:
     document: ["first", "second", "third"]
     consensus: ["third"]
     scalar-consensus: "third"
+  - id: array_index_out_of_bounds
+    selector: $[1]
+    document: ["one element"]
   - id: array_index_slice_end_out_of_bounds
     selector: $[1:10]
     document: ["first", "second", "third"]
@@ -243,6 +246,9 @@ queries:
     document: {"key": "value"}
     consensus: ["value"]
     scalar-consensus: "value"
+  - id: key_dot_notation_on_array
+    selector: $.key
+    document: [0, 1]
   - id: key_dot_notation_on_array_value
     selector: $.key
     document: {"key": ["first", "second"]}
@@ -258,6 +264,9 @@ queries:
     scalar-consensus: null
   - id: key_dot_notation_with_double_quotes
     selector: $."key"
+    document: {"key": "value"}
+  - id: key_dot_notation_with_missing_key
+    selector: $.missing
     document: {"key": "value"}
   - id: key_dot_notation_with_single_quotes
     selector: $.'key'

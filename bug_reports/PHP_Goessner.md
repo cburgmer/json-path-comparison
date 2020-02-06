@@ -30,6 +30,19 @@ The following queries provide results that do not match those of other implement
   ```
   jsonpath returned false, this might indicate an error```
 
+- [ ] `$[1]`
+  Input:
+  ```
+  ["one element"]
+  ```
+  Expected output:
+  ```
+  []
+  ```
+  Error:
+  ```
+  jsonpath returned false, this might indicate an error```
+
 - [ ] `$[0:0]`
   Input:
   ```
@@ -156,10 +169,36 @@ The following queries provide results that do not match those of other implement
   [["value"]]
   ```
 
+- [ ] `$.key`
+  Input:
+  ```
+  [0, 1]
+  ```
+  Expected output:
+  ```
+  []
+  ```
+  Error:
+  ```
+  jsonpath returned false, this might indicate an error```
+
 - [ ] `$.id`
   Input:
   ```
   [{"id": 2}]
+  ```
+  Expected output:
+  ```
+  []
+  ```
+  Error:
+  ```
+  jsonpath returned false, this might indicate an error```
+
+- [ ] `$.missing`
+  Input:
+  ```
+  {"key": "value"}
   ```
   Expected output:
   ```

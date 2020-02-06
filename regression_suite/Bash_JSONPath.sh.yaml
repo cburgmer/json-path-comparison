@@ -13,6 +13,8 @@ queries:
     result: {"2": "second"}
   - id: array_index_last
     status: error
+  - id: array_index_out_of_bounds
+    status: error
   - id: array_index_slice_last_no_end
     status: fail
     result: ["first", "second", "third"]
@@ -126,6 +128,8 @@ queries:
   - id: key_dot_notation
     status: fail
     result: {"key": "value"}
+  - id: key_dot_notation_on_array
+    status: error
   - id: key_dot_notation_on_array_value
     status: fail
     result: ["first", "second"]
@@ -137,6 +141,8 @@ queries:
   - id: key_dot_notation_with_double_quotes
     status: open
     result: {"key": "value"}
+  - id: key_dot_notation_with_missing_key
+    status: error
   - id: key_dot_notation_with_single_quotes
     status: open
     result: {"key": "value"}

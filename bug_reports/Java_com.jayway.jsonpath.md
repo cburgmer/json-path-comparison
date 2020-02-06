@@ -3,6 +3,28 @@ Results do not match other implementations
 The following queries provide results that do not match those of other implementations of JSONPath
 (compare https://cburgmer.github.io/json-path-comparison/):
 
+- [ ] `$[1]`
+  Input:
+  ```
+  ["one element"]
+  ```
+  Expected output:
+  ```
+  []
+  ```
+  Error:
+  ```
+  SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+  SLF4J: Defaulting to no-operation (NOP) logger implementation
+  SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+  Exception in thread "main" com.jayway.jsonpath.PathNotFoundException: No results for path: $[1]
+  	at com.jayway.jsonpath.internal.path.EvaluationContextImpl.getValue(EvaluationContextImpl.java:133)
+  	at com.jayway.jsonpath.JsonPath.read(JsonPath.java:187)
+  	at com.jayway.jsonpath.internal.JsonContext.read(JsonContext.java:102)
+  	at com.jayway.jsonpath.internal.JsonContext.read(JsonContext.java:89)
+  	at query.App.main(App.java:25)
+  ```
+
 - [ ] `$[:]`
   Input:
   ```
@@ -85,6 +107,31 @@ The following queries provide results that do not match those of other implement
   	at query.App.main(App.java:25)
   ```
 
+- [ ] `$.key`
+  Input:
+  ```
+  [0, 1]
+  ```
+  Expected output:
+  ```
+  []
+  ```
+  Error:
+  ```
+  SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+  SLF4J: Defaulting to no-operation (NOP) logger implementation
+  SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+  Exception in thread "main" com.jayway.jsonpath.PathNotFoundException: Expected to find an object with property ['key'] in path $ but found 'net.minidev.json.JSONArray'. This is not a json object according to the JsonProvider: 'com.jayway.jsonpath.spi.json.JsonSmartJsonProvider'.
+  	at com.jayway.jsonpath.internal.path.PropertyPathToken.evaluate(PropertyPathToken.java:71)
+  	at com.jayway.jsonpath.internal.path.RootPathToken.evaluate(RootPathToken.java:62)
+  	at com.jayway.jsonpath.internal.path.CompiledPath.evaluate(CompiledPath.java:53)
+  	at com.jayway.jsonpath.internal.path.CompiledPath.evaluate(CompiledPath.java:61)
+  	at com.jayway.jsonpath.JsonPath.read(JsonPath.java:187)
+  	at com.jayway.jsonpath.internal.JsonContext.read(JsonContext.java:102)
+  	at com.jayway.jsonpath.internal.JsonContext.read(JsonContext.java:89)
+  	at query.App.main(App.java:25)
+  ```
+
 - [ ] `$.id`
   Input:
   ```
@@ -104,6 +151,28 @@ The following queries provide results that do not match those of other implement
   	at com.jayway.jsonpath.internal.path.RootPathToken.evaluate(RootPathToken.java:62)
   	at com.jayway.jsonpath.internal.path.CompiledPath.evaluate(CompiledPath.java:53)
   	at com.jayway.jsonpath.internal.path.CompiledPath.evaluate(CompiledPath.java:61)
+  	at com.jayway.jsonpath.JsonPath.read(JsonPath.java:187)
+  	at com.jayway.jsonpath.internal.JsonContext.read(JsonContext.java:102)
+  	at com.jayway.jsonpath.internal.JsonContext.read(JsonContext.java:89)
+  	at query.App.main(App.java:25)
+  ```
+
+- [ ] `$.missing`
+  Input:
+  ```
+  {"key": "value"}
+  ```
+  Expected output:
+  ```
+  []
+  ```
+  Error:
+  ```
+  SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+  SLF4J: Defaulting to no-operation (NOP) logger implementation
+  SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+  Exception in thread "main" com.jayway.jsonpath.PathNotFoundException: No results for path: $['missing']
+  	at com.jayway.jsonpath.internal.path.EvaluationContextImpl.getValue(EvaluationContextImpl.java:133)
   	at com.jayway.jsonpath.JsonPath.read(JsonPath.java:187)
   	at com.jayway.jsonpath.internal.JsonContext.read(JsonContext.java:102)
   	at com.jayway.jsonpath.internal.JsonContext.read(JsonContext.java:89)

@@ -9,6 +9,8 @@ queries:
   - id: array_index_dot_notation
     status: open
     result: []
+  - id: array_index_out_of_bounds
+    status: error
   - id: array_index_slice_end_out_of_bounds
     status: error
   - id: array_index_slice_negative_step
@@ -138,10 +140,15 @@ queries:
     status: error
   - id: key_dot_bracket_notation_without_quotes
     status: error
+  - id: key_dot_notation_on_array
+    status: fail
+    result: []
   - id: key_dot_notation_on_array_with_containing_object_matching_key
     status: fail
     result: [2]
   - id: key_dot_notation_with_double_quotes
+    status: error
+  - id: key_dot_notation_with_missing_key
     status: error
   - id: key_dot_notation_with_single_quotes
     status: error

@@ -3,6 +3,20 @@ Results do not match other implementations
 The following queries provide results that do not match those of other implementations of JSONPath
 (compare https://cburgmer.github.io/json-path-comparison/):
 
+- [ ] `$[1]`
+  Input:
+  ```
+  ["one element"]
+  ```
+  Expected output:
+  ```
+  []
+  ```
+  Error:
+  ```
+  index out of range: len: 1, idx: 1
+  ```
+
 - [ ] `$[1:10]`
   Input:
   ```
@@ -339,6 +353,20 @@ The following queries provide results that do not match those of other implement
   strconv.Atoi: parsing "'*'": invalid syntax
   ```
 
+- [ ] `$.key`
+  Input:
+  ```
+  [0, 1]
+  ```
+  Expected output:
+  ```
+  []
+  ```
+  Actual output:
+  ```
+  [[]]
+  ```
+
 - [ ] `$.id`
   Input:
   ```
@@ -351,6 +379,20 @@ The following queries provide results that do not match those of other implement
   Actual output:
   ```
   [[2]]
+  ```
+
+- [ ] `$.missing`
+  Input:
+  ```
+  {"key": "value"}
+  ```
+  Expected output:
+  ```
+  []
+  ```
+  Error:
+  ```
+  key error: missing not found in object
   ```
 
 - [ ] `$..key`

@@ -3,6 +3,22 @@ Results do not match other implementations
 The following queries provide results that do not match those of other implementations of JSONPath
 (compare https://cburgmer.github.io/json-path-comparison/):
 
+- [ ] `$[1]`
+  Input:
+  ```
+  ["one element"]
+  ```
+  Expected output:
+  ```
+  []
+  ```
+  Error:
+  ```
+  json-path-comparison: index 1 invalid for array ["one element"]
+  CallStack (from HasCallStack):
+    error, called at app/Main.hs:18:22 in main:Main
+  ```
+
 - [ ] `$[:]`
   Input:
   ```
@@ -192,6 +208,22 @@ The following queries provide results that do not match those of other implement
    Error: serachBegingingWithSlice: string
   ```
 
+- [ ] `$.key`
+  Input:
+  ```
+  [0, 1]
+  ```
+  Expected output:
+  ```
+  []
+  ```
+  Error:
+  ```
+  json-path-comparison: expected object, found [0,1]
+  CallStack (from HasCallStack):
+    error, called at app/Main.hs:18:22 in main:Main
+  ```
+
 - [ ] `$.id`
   Input:
   ```
@@ -204,6 +236,22 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   json-path-comparison: expected object, found [{"id":2}]
+  CallStack (from HasCallStack):
+    error, called at app/Main.hs:18:22 in main:Main
+  ```
+
+- [ ] `$.missing`
+  Input:
+  ```
+  {"key": "value"}
+  ```
+  Expected output:
+  ```
+  []
+  ```
+  Error:
+  ```
+  json-path-comparison: expected key missing in object {"key":"value"}
   CallStack (from HasCallStack):
     error, called at app/Main.hs:18:22 in main:Main
   ```

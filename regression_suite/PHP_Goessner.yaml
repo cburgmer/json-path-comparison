@@ -14,6 +14,8 @@ queries:
     result: [["first", "second", "third", "forth", "fifth"]]
   - id: array_index_last
     status: error
+  - id: array_index_out_of_bounds
+    status: error
   - id: array_index_slice_negative_step
     status: error
   - id: array_index_slice_start_end_negative_step
@@ -102,9 +104,13 @@ queries:
   - id: key_dot_bracket_notation_without_quotes
     status: open
     result: ["value"]
+  - id: key_dot_notation_on_array
+    status: error
   - id: key_dot_notation_on_array_with_containing_object_matching_key
     status: error
   - id: key_dot_notation_with_double_quotes
+    status: error
+  - id: key_dot_notation_with_missing_key
     status: error
   - id: key_dot_notation_with_single_quotes
     status: open
