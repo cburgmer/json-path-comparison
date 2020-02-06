@@ -3,39 +3,6 @@ Results do not match other implementations
 The following queries provide results that do not match those of other implementations of JSONPath
 (compare https://cburgmer.github.io/json-path-comparison/):
 
-- [ ] `$[1]`
-  Input:
-  ```
-  ["one element"]
-  ```
-  Expected output:
-  ```
-  []
-  ```
-  Error:
-  ```
-  Exception in thread "main" java.lang.IndexOutOfBoundsException
-  	at clojure.lang.RT.nthFrom(RT.java:924)
-  	at clojure.lang.RT.nth(RT.java:893)
-  	at json_path.walker$walk_selector.invokeStatic(walker.clj:74)
-  	at json_path.walker$walk_selector.invoke(walker.clj:63)
-  	at json_path.walker$walk.invokeStatic(walker.clj:87)
-  	at json_path.walker$walk.invoke(walker.clj:84)
-  	at json_path.walker$walk$fn__1026.invoke(walker.clj:89)
-  	at json_path.walker$map_SHARP_.invokeStatic(walker.clj:22)
-  	at json_path.walker$map_SHARP_.invoke(walker.clj:17)
-  	at json_path.walker$walk.invokeStatic(walker.clj:89)
-  	at json_path.walker$walk.invoke(walker.clj:84)
-  	at json_path$query.invokeStatic(json_path.clj:7)
-  	at json_path$query.invoke(json_path.clj:6)
-  	at json_path$at_path.invokeStatic(json_path.clj:10)
-  	at json_path$at_path.invoke(json_path.clj:9)
-  	at json_path_comparison.core$_main.invokeStatic(core.clj:10)
-  	at json_path_comparison.core$_main.doInvoke(core.clj:6)
-  	at clojure.lang.RestFn.applyTo(RestFn.java:137)
-  	at json_path_comparison.core.main(Unknown Source)
-  ```
-
 - [ ] `$[1:10]`
   Input:
   ```
@@ -354,7 +321,7 @@ The following queries provide results that do not match those of other implement
   ```
   Expected output:
   ```
-  ["value"]
+  "value"
   ```
   Error:
   ```
@@ -416,7 +383,7 @@ The following queries provide results that do not match those of other implement
   ```
   Expected output:
   ```
-  ["value"]
+  "value"
   ```
   Error:
   ```
@@ -447,7 +414,7 @@ The following queries provide results that do not match those of other implement
   ```
   Expected output:
   ```
-  ["value"]
+  "value"
   ```
   Error:
   ```
@@ -478,7 +445,7 @@ The following queries provide results that do not match those of other implement
   ```
   Expected output:
   ```
-  ["42"]
+  "42"
   ```
   Error:
   ```
@@ -509,7 +476,7 @@ The following queries provide results that do not match those of other implement
   ```
   Expected output:
   ```
-  ["value"]
+  "value"
   ```
   Error:
   ```
@@ -540,7 +507,7 @@ The following queries provide results that do not match those of other implement
   ```
   Expected output:
   ```
-  ["value"]
+  "value"
   ```
   Error:
   ```
@@ -571,53 +538,11 @@ The following queries provide results that do not match those of other implement
   ```
   Expected output:
   ```
-  ["value"]
+  "value"
   ```
   Actual output:
   ```
   ["value", "entry"]
-  ```
-
-- [ ] `$.key`
-  Input:
-  ```
-  [0, 1]
-  ```
-  Expected output:
-  ```
-  []
-  ```
-  Actual output:
-  ```
-  null
-  ```
-
-- [ ] `$.id`
-  Input:
-  ```
-  [{"id": 2}]
-  ```
-  Expected output:
-  ```
-  []
-  ```
-  Actual output:
-  ```
-  null
-  ```
-
-- [ ] `$.missing`
-  Input:
-  ```
-  {"key": "value"}
-  ```
-  Expected output:
-  ```
-  []
-  ```
-  Actual output:
-  ```
-  null
   ```
 
 - [ ] `$..*`

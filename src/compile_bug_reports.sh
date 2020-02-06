@@ -65,18 +65,33 @@ unwrap_scalar_if_needed() {
     fi
 }
 
+# https://github.com/cburgmer/json-path-comparison/issues/1
+needs_workaround_for_unknown_scalar_consensus() {
+    local query="$1"
+    local consensus="$2"
+    test -f "./implementations/${implementation}/SINGLE_POSSIBLE_MATCH_RETURNED_AS_SCALAR" \
+        && test -f "./queries/${query}/SCALAR_RESULT" \
+        && test "$consensus" == "[]"
+}
+
 failing_query() {
     local query="$1"
     local selector
+    local consensus
 
     selector="$(cat "./queries/${query}/selector")"
+    consensus="$(gold_standard "$query")"
+
+    if needs_workaround_for_unknown_scalar_consensus "$query" "$consensus"; then
+        return
+    fi
 
     echo "- [ ] \`${selector}\`"
     {
         echo "Input:"
         ./src/oneliner_json.py < "./queries/${query}/document.json" | code_block
         echo "Expected output:"
-        gold_standard "$query" | ./src/oneliner_json.py | code_block
+        unwrap_scalar_if_needed "$query" <<< "$consensus" | ./src/oneliner_json.py | code_block
 
         if is_query_result_ok "${results_dir}/${query}/${implementation}"; then
             echo "Actual output:"
