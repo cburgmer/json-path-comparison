@@ -575,7 +575,7 @@ The following queries provide results that do not match those of other implement
   ```
   Actual output:
   ```
-  [["value", "entry"]]
+  ["value", "entry"]
   ```
 
 - [ ] `$.key`
@@ -589,7 +589,7 @@ The following queries provide results that do not match those of other implement
   ```
   Actual output:
   ```
-  [null]
+  null
   ```
 
 - [ ] `$.id`
@@ -603,7 +603,7 @@ The following queries provide results that do not match those of other implement
   ```
   Actual output:
   ```
-  [null]
+  null
   ```
 
 - [ ] `$.missing`
@@ -617,7 +617,7 @@ The following queries provide results that do not match those of other implement
   ```
   Actual output:
   ```
-  [null]
+  null
   ```
 
 - [ ] `$..*`

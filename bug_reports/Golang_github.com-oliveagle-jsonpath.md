@@ -364,7 +364,7 @@ The following queries provide results that do not match those of other implement
   ```
   Actual output:
   ```
-  [[]]
+  []
   ```
 
 - [ ] `$.id`
@@ -378,7 +378,7 @@ The following queries provide results that do not match those of other implement
   ```
   Actual output:
   ```
-  [[2]]
+  [2]
   ```
 
 - [ ] `$.missing`

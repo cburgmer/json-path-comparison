@@ -55,6 +55,16 @@ gold_standard() {
     query_result_payload "${results_dir}/${query}/${first_matching_implementation}"
 }
 
+unwrap_scalar_if_needed() {
+    local query="$1"
+
+    if [[ -f "./implementations/${implementation}/SINGLE_POSSIBLE_MATCH_RETURNED_AS_SCALAR" && -f "./queries/${query}/SCALAR_RESULT" ]]; then
+        ./src/unwrap_scalar.py
+    else
+        cat
+    fi
+}
+
 failing_query() {
     local query="$1"
     local selector
@@ -70,7 +80,7 @@ failing_query() {
 
         if is_query_result_ok "${results_dir}/${query}/${implementation}"; then
             echo "Actual output:"
-            query_result_payload "${results_dir}/${query}/${implementation}" | ./src/oneliner_json.py | code_block
+            query_result_payload "${results_dir}/${query}/${implementation}" | unwrap_scalar_if_needed "$query" | ./src/oneliner_json.py | code_block
         else
             echo "Error:"
             query_result_payload "${results_dir}/${query}/${implementation}" | code_block
