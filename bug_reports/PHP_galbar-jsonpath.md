@@ -45,6 +45,20 @@ The following queries provide results that do not match those of other implement
   [{"key": 0}, {"key": -1}, {"key": 41}, {"key": 41.9999}, {"some": "value"}]
   ```
 
+- [ ] `$.id`
+  Input:
+  ```
+  [{"id": 2}]
+  ```
+  Expected output:
+  ```
+  []
+  ```
+  Error:
+  ```
+  jsonpath returned false, this might indicate an error
+  ```
+
 - [ ] `$..*`
   Input:
   ```

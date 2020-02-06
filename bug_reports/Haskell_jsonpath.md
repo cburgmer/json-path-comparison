@@ -192,6 +192,22 @@ The following queries provide results that do not match those of other implement
    Error: serachBegingingWithSlice: string
   ```
 
+- [ ] `$.id`
+  Input:
+  ```
+  [{"id": 2}]
+  ```
+  Expected output:
+  ```
+  []
+  ```
+  Error:
+  ```
+  json-path-comparison: expected object, found [{"id":2}]
+  CallStack (from HasCallStack):
+    error, called at app/Main.hs:18:22 in main:Main
+  ```
+
 - [ ] `$..*`
   Input:
   ```

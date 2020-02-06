@@ -129,6 +129,8 @@ queries:
   - id: key_dot_notation_on_array_value
     status: fail
     result: ["first", "second"]
+  - id: key_dot_notation_on_array_with_containing_object_matching_key
+    status: error
   - id: key_dot_notation_on_null_value
     status: fail
     result: {"key": null}

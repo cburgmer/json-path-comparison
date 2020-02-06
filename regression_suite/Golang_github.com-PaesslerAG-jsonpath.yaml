@@ -98,6 +98,8 @@ queries:
     status: error
   - id: key_dot_bracket_notation_without_quotes
     status: error
+  - id: key_dot_notation_on_array_with_containing_object_matching_key
+    status: error
   - id: key_dot_notation_with_double_quotes
     status: error
   - id: key_dot_notation_with_single_quotes

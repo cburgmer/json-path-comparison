@@ -271,6 +271,22 @@ The following queries provide results that do not match those of other implement
   ["first", "second"]
   ```
 
+- [ ] `$.id`
+  Input:
+  ```
+  [{"id": 2}]
+  ```
+  Expected output:
+  ```
+  []
+  ```
+  Error:
+  ```
+  Expecting value: line 3 column 1 (char 2)
+  
+  
+  ```
+
 - [ ] `$.key`
   Input:
   ```

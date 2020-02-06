@@ -248,6 +248,9 @@ queries:
     document: {"key": ["first", "second"]}
     consensus: [["first", "second"]]
     scalar-consensus: ["first", "second"]
+  - id: key_dot_notation_on_array_with_containing_object_matching_key
+    selector: $.id
+    document: [{"id": 2}]
   - id: key_dot_notation_on_null_value
     selector: $.key
     document: {"key": null}

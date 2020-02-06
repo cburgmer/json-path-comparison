@@ -197,6 +197,20 @@ The following queries provide results that do not match those of other implement
   null
   ```
 
+- [ ] `$.id`
+  Input:
+  ```
+  [{"id": 2}]
+  ```
+  Expected output:
+  ```
+  []
+  ```
+  Actual output:
+  ```
+  [null]
+  ```
+
 - [ ] `$..*`
   Input:
   ```

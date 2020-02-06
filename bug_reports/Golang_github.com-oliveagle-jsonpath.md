@@ -339,6 +339,20 @@ The following queries provide results that do not match those of other implement
   strconv.Atoi: parsing "'*'": invalid syntax
   ```
 
+- [ ] `$.id`
+  Input:
+  ```
+  [{"id": 2}]
+  ```
+  Expected output:
+  ```
+  []
+  ```
+  Actual output:
+  ```
+  [[2]]
+  ```
+
 - [ ] `$..key`
   Input:
   ```

@@ -545,6 +545,20 @@ The following queries provide results that do not match those of other implement
   [["value", "entry"]]
   ```
 
+- [ ] `$.id`
+  Input:
+  ```
+  [{"id": 2}]
+  ```
+  Expected output:
+  ```
+  []
+  ```
+  Actual output:
+  ```
+  [null]
+  ```
+
 - [ ] `$..*`
   Input:
   ```
