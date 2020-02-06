@@ -274,6 +274,9 @@ queries:
   - id: recursive_array_index
     selector: $..[0]
     document: ["first", {"key": ["first nested", {"more": [{"nested": ["deepest", "second"]}, ["more", "values"]]}]}]
+  - id: recursive_descent
+    selector: $..
+    document: [{"a": {"b": "c"}}]
   - id: recursive_key
     selector: $..key
     document: {"object": {"key": "value", "array": [{"key": "something"}, {"key": {"key": "russian dolls"}}]}, "key": "top"}

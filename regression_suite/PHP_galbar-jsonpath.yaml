@@ -102,6 +102,8 @@ queries:
     status: error
   - id: recursive_array_index
     status: error
+  - id: recursive_descent
+    status: error
   - id: recursive_key_with_double_quotes
     status: error
   - id: recursive_key_with_single_quotes

@@ -169,6 +169,9 @@ queries:
     result: "value"
   - id: recursive_array_index
     status: error
+  - id: recursive_descent
+    status: open
+    result: [[{"a": {"b": "c"}}], {"a": {"b": "c"}}, {"b": "c"}]
   - id: recursive_key_with_double_quotes
     status: open
     result: []

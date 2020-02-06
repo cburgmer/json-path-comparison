@@ -115,6 +115,9 @@ queries:
   - id: recursive_array_index
     status: open
     result: []
+  - id: recursive_descent
+    status: open
+    result: []
   - id: recursive_key_with_double_quotes
     status: open
     result: ["russian dolls", "something", "top", "value", {"key": "russian dolls"}]

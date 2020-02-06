@@ -148,6 +148,9 @@ queries:
     result: {"key": "value"}
   - id: recursive_array_index
     status: error
+  - id: recursive_descent
+    status: open
+    result: {"b": "c"}
   - id: recursive_key
     status: fail
     result: {"key": "top", "object": {"array": [{"key": "something"}, {"key": {"key": "russian dolls"}}], "key": "value"}}

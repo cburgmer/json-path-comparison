@@ -136,6 +136,9 @@ queries:
   - id: recursive_array_index
     status: open
     result: ["first"]
+  - id: recursive_descent
+    status: open
+    result: [[{"a": {"b": "c"}}]]
   - id: recursive_key
     status: fail
     result: ["top"]
