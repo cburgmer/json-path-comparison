@@ -13,6 +13,8 @@ queries:
     result: {"2": "second"}
   - id: array_index_last
     status: error
+  - id: array_index_on_string
+    status: error
   - id: array_index_out_of_bounds
     status: error
   - id: array_index_slice_last_no_end

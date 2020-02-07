@@ -11,6 +11,9 @@ queries:
     result: []
   - id: array_index_last
     status: error
+  - id: array_index_on_string
+    status: open
+    result: []
   - id: array_index_slice_negative_step
     status: open
     result: ["fifth", "third", "first"]

@@ -8,6 +8,8 @@ implementation: Haskell_jsonpath
 queries:
   - id: array_index_dot_notation
     status: error
+  - id: array_index_on_string
+    status: error
   - id: array_index_out_of_bounds
     status: error
   - id: array_index_slice_negative_step

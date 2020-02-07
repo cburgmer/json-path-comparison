@@ -10,6 +10,9 @@ queries:
     status: error
   - id: array_index_dot_notation_on_object
     status: error
+  - id: array_index_on_string
+    status: open
+    result: []
   - id: array_index_slice_negative_step
     status: open
     result: []

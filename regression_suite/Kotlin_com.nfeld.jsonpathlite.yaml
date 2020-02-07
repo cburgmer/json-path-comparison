@@ -9,6 +9,8 @@ queries:
   - id: array_index_dot_notation
     status: open
     result: null
+  - id: array_index_on_string
+    status: error
   - id: array_index_out_of_bounds
     status: fail
     result: null

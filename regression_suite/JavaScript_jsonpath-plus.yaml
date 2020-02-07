@@ -12,6 +12,9 @@ queries:
   - id: array_index_last
     status: fail
     result: []
+  - id: array_index_on_string
+    status: open
+    result: ["H"]
   - id: array_index_slice_negative_step
     status: open
     result: []

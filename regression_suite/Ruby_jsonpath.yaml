@@ -12,6 +12,8 @@ queries:
   - id: array_index_dot_notation_on_object
     status: fail
     result: [null]
+  - id: array_index_on_string
+    status: error
   - id: array_index_slice_end_out_of_bounds
     status: fail
     result: []

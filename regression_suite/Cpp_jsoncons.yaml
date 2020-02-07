@@ -9,6 +9,9 @@ queries:
   - id: array_index_dot_notation
     status: open
     result: ["third"]
+  - id: array_index_on_string
+    status: open
+    result: ["H"]
   - id: array_index_slice_negative_step
     status: open
     result: ["fifth", "third", "first"]

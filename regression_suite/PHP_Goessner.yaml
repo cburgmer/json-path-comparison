@@ -14,6 +14,9 @@ queries:
     result: [["first", "second", "third", "forth", "fifth"]]
   - id: array_index_last
     status: error
+  - id: array_index_on_string
+    status: open
+    result: ["Hello World"]
   - id: array_index_out_of_bounds
     status: error
   - id: array_index_slice_negative_step

@@ -32,6 +32,9 @@ queries:
     document: ["first", "second", "third"]
     consensus: ["third"]
     scalar-consensus: "third"
+  - id: array_index_on_string
+    selector: $[0]
+    document: "Hello World"
   - id: array_index_out_of_bounds
     selector: $[1]
     document: ["one element"]

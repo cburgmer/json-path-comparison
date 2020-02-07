@@ -12,6 +12,8 @@ queries:
   - id: array_index_last
     status: fail
     result: []
+  - id: array_index_on_string
+    status: error
   - id: array_index_slice_end_out_of_bounds
     status: error
   - id: array_index_slice_last_no_end
