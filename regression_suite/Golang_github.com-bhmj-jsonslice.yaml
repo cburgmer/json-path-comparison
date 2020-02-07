@@ -22,6 +22,9 @@ queries:
   - id: array_index_slice_start_end_step_0
     status: open
     result: ["first", "second", "third"]
+  - id: array_index_union_with_decreasing_order
+    status: fail
+    result: [2, 5]
   - id: array_index_union_with_slice
     status: error
   - id: filter_current_object_with_value

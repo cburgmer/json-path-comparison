@@ -77,6 +77,20 @@ The following queries provide results that do not match those of other implement
   ["first", "second"]
   ```
 
+- [ ] `$[4,1]`
+  Input:
+  ```
+  [1, 2, 3, 4, 5]
+  ```
+  Expected output:
+  ```
+  [5, 2]
+  ```
+  Actual output:
+  ```
+  [2, 5]
+  ```
+
 - [ ] `$[?(@.key==42)]`
   Input:
   ```

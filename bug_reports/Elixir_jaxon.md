@@ -269,6 +269,24 @@ The following queries provide results that do not match those of other implement
       (mix 1.10.0) lib/mix/cli.ex:82: Mix.CLI.run_task/2
   ```
 
+- [ ] `$[4,1]`
+  Input:
+  ```
+  [1, 2, 3, 4, 5]
+  ```
+  Expected output:
+  ```
+  [5, 2]
+  ```
+  Error:
+  ```
+  ** (Jaxon.ParseError) Expected an integer at `4,1]`
+      lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
+      lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
+      (mix 1.10.0) lib/mix/task.ex:330: Mix.Task.run_task/3
+      (mix 1.10.0) lib/mix/cli.ex:82: Mix.CLI.run_task/2
+  ```
+
 - [ ] `$[?(@.key==42)]`
   Input:
   ```

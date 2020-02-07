@@ -63,6 +63,9 @@ queries:
   - id: array_index_union
     status: fail
     result: "first"
+  - id: array_index_union_with_decreasing_order
+    status: fail
+    result: 5
   - id: array_index_union_with_slice
     status: open
     result: 2
