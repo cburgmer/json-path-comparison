@@ -7,8 +7,8 @@ readonly implementation_dir="$3"
 
 . src/shared.sh
 
-all_query_results() {
-    find "$results_dir" -type d -maxdepth 1 -mindepth 1 -print0 | xargs -0 -n1 basename | sort
+all_queries() {
+    find ./queries -type d -maxdepth 1 -mindepth 1 -print0 | xargs -0 -n1 basename | sort
 }
 
 indent_2() {
@@ -115,7 +115,7 @@ process_implementation() {
         if is_failing_while_gold_standard_exists "$query" "$implementation"; then
             failing_query "$query"
         fi
-    done <<< "$(all_query_results)"
+    done <<< "$(all_queries)"
 
     footer "$implementation"
 }
