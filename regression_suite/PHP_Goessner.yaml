@@ -121,6 +121,8 @@ queries:
   - id: recursive_descent
     status: open
     result: [[{"a": {"b": "c"}}], {"a": {"b": "c"}}, {"b": "c"}]
+  - id: recursive_filter
+    status: error
   - id: recursive_key_with_double_quotes
     status: error
   - id: recursive_key_with_single_quotes

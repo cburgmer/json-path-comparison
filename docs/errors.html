@@ -6974,6 +6974,126 @@ dotNET (Manatee.Json), Recursive descent
 <pre><code>Unrecognized JSON Path element. Path up to error: '$'
 </code></pre>
 
+<h3 id="Bash_JSONPath.sh___recursive_filter">
+Bash (JSONPath.sh), Recursive filter
+</h3>
+
+<pre><code>Expecting ',' delimiter: line 4 column 10 (char 32)
+[
+    {
+        "id":2
+    }    [
+        {
+            "id":2
+        }
+    ]
+]
+</code></pre>
+
+<h3 id="C_json-glib___recursive_filter">
+C (json-glib), Recursive filter
+</h3>
+
+<pre><code>Unable to compile selector `$..[?(@.id==2)]': Missing member name or wildcard after . character
+</code></pre>
+
+<h3 id="Elixir_jaxon___recursive_filter">
+Elixir (jaxon), Recursive filter
+</h3>
+
+<pre><code>** (Jaxon.ParseError) Expected an integer at `?(@.id==2)`
+    lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
+    lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
+    (mix 1.10.0) lib/mix/task.ex:330: Mix.Task.run_task/3
+    (mix 1.10.0) lib/mix/cli.ex:82: Mix.CLI.run_task/2
+</code></pre>
+
+<h3 id="Erlang_ejsonpath___recursive_filter">
+Erlang (ejsonpath), Recursive filter
+</h3>
+
+<pre><code>init terminating in do_boot ({badmatch,{error,{1,ejsonpath_parse,syntax error before: '['}}})
+
+Crash dump is being written to: /dev/null...done
+{"init terminating in do_boot",{badmatch,{error,{1,ejsonpath_parse,["syntax error before: ","'['"]}}}}
+</code></pre>
+
+<h3 id="Golang_github.com-oliveagle-jsonpath___recursive_filter">
+Golang (github.com-oliveagle-jsonpath), Recursive filter
+</h3>
+
+<pre><code>expression don't support in filter
+</code></pre>
+
+<h3 id="Haskell_jsonpath___recursive_filter">
+Haskell (jsonpath), Recursive filter
+</h3>
+
+<pre><code>json-path-comparison: src/Data/JSONPath/Execute.hs:(71,1)-(72,60): Non-exhaustive patterns in function executeCondition
+</code></pre>
+
+<h3 id="Kotlin_com.nfeld.jsonpathlite___recursive_filter">
+Kotlin (com.nfeld.jsonpathlite), Recursive filter
+</h3>
+
+<pre><code>Exception in thread "main" java.lang.IllegalArgumentException: Unexpected char, char=?, index=4
+    at com.nfeld.jsonpathlite.PathCompiler.compileBracket$json_path_lite(PathCompiler.kt:198)
+    at com.nfeld.jsonpathlite.PathCompiler.compile$json_path_lite(PathCompiler.kt:59)
+    at com.nfeld.jsonpathlite.JsonPath.&lt;init&gt;(JsonPath.kt:24)
+    at com.nfeld.jsonpathlite.JsonObject.read(JsonResult.kt:7)
+    at query.AppKt.main(App.kt:10)
+</code></pre>
+
+<h3 id="PHP_Goessner___recursive_filter">
+PHP (Goessner), Recursive filter
+</h3>
+
+<pre><code>ArgumentCountError
+</code></pre>
+
+<h3 id="PHP_galbar-jsonpath___recursive_filter">
+PHP (galbar-jsonpath), Recursive filter
+</h3>
+
+<pre><code>Invalid JSONPath error: 'Error in JSONPath near '..[?(@.id==2)]''
+</code></pre>
+
+<h3 id="Perl_JSON-Path___recursive_filter">
+Perl (JSON-Path), Recursive filter
+</h3>
+
+<pre><code>non-safe evaluation, died at main.pl line 11.
+</code></pre>
+
+<h3 id="Python_jsonpath-rw___recursive_filter">
+Python (jsonpath-rw), Recursive filter
+</h3>
+
+<pre><code>JsonPathLexerError('Error on line 1, col 4: Unexpected character: ? ')
+</code></pre>
+
+<h3 id="Python_jsonpath2___recursive_filter">
+Python (jsonpath2), Recursive filter
+</h3>
+
+<pre><code>line 1:11 extraneous input '=' expecting {'@', '$', 'true', 'false', 'null', '{', '[', STRING, NUMBER}
+ValueError("line 1:11 extraneous input '=' expecting {'@', '$', 'true', 'false', 'null', '{', '[', STRING, NUMBER}")
+</code></pre>
+
+<h3 id="Rust_jsonpath___recursive_filter">
+Rust (jsonpath), Recursive filter
+</h3>
+
+<pre><code>parsing error
+</code></pre>
+
+<h3 id="dotNET_Manatee.Json___recursive_filter">
+dotNET (Manatee.Json), Recursive filter
+</h3>
+
+<pre><code>Unrecognized JSON Path element. Path up to error: '$'
+</code></pre>
+
 <h3 id="Golang_github.com-oliveagle-jsonpath___recursive_key">
 Golang (github.com-oliveagle-jsonpath), Recursive key
 </h3>

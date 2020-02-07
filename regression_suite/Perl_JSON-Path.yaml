@@ -118,6 +118,8 @@ queries:
   - id: recursive_descent
     status: open
     result: []
+  - id: recursive_filter
+    status: error
   - id: recursive_key_with_double_quotes
     status: open
     result: ["russian dolls", "something", "top", "value", {"key": "russian dolls"}]

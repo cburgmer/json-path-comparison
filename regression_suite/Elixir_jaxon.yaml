@@ -139,6 +139,8 @@ queries:
   - id: recursive_descent
     status: open
     result: [[{"a": {"b": "c"}}]]
+  - id: recursive_filter
+    status: error
   - id: recursive_key
     status: fail
     result: ["top"]

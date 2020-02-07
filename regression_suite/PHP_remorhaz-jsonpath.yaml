@@ -103,6 +103,9 @@ queries:
     result: ["first", "first nested", {"nested": ["deepest", "second"]}, "deepest", "more"]
   - id: recursive_descent
     status: error
+  - id: recursive_filter
+    status: open
+    result: [{"id": 2, "more": [{"id": 2}, {"more": {"id": 2}}, {"id": {"id": 2}}, [{"id": 2}]]}, {"id": 2}, {"id": 2}, {"id": 2}, {"id": 2}, {"id": 2}, {"id": 2}]
   - id: recursive_key_with_double_quotes
     status: open
     result: ["russian dolls", "something", "top", "value", {"key": "russian dolls"}]
