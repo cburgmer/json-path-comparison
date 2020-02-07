@@ -38,6 +38,9 @@ queries:
   - id: array_index_slice_start_plus_one
     status: fail
     result: ["first", "second"]
+  - id: array_index_union_with_slice
+    status: open
+    result: [2, 3, 4]
   - id: filter_current_object_with_value
     status: error
   - id: filter_equal_on_number_value_with_string_query

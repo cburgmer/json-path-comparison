@@ -1385,6 +1385,145 @@ Rust (jsonpath), Array index union
 <pre><code>parsing error
 </code></pre>
 
+<h3 id="Bash_JSONPath.sh___array_index_union_with_slice">
+Bash (JSONPath.sh), Array index union with slice
+</h3>
+
+<pre><code>Expecting value: line 3 column 1 (char 2)
+</code></pre>
+
+<h3 id="C_json-glib___array_index_union_with_slice">
+C (json-glib), Array index union with slice
+</h3>
+
+<pre><code>Unable to compile selector `$[1:3,4]': Invalid slice definition “1:3,4]”
+</code></pre>
+
+<h3 id="Elixir_jaxon___array_index_union_with_slice">
+Elixir (jaxon), Array index union with slice
+</h3>
+
+<pre><code>** (Jaxon.ParseError) Expected an integer at `1:3,4]`
+    lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
+    lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
+    (mix 1.10.0) lib/mix/task.ex:330: Mix.Task.run_task/3
+    (mix 1.10.0) lib/mix/cli.ex:82: Mix.CLI.run_task/2
+</code></pre>
+
+<h3 id="Erlang_ejsonpath___array_index_union_with_slice">
+Erlang (ejsonpath), Array index union with slice
+</h3>
+
+<pre><code>init terminating in do_boot ({badmatch,{error,{1,ejsonpath_parse,syntax error before: ','}}})
+
+Crash dump is being written to: /dev/null...done
+{"init terminating in do_boot",{badmatch,{error,{1,ejsonpath_parse,["syntax error before: ","','"]}}}}
+</code></pre>
+
+<h3 id="Golang_github.com-PaesslerAG-jsonpath___array_index_union_with_slice">
+Golang (github.com-PaesslerAG-jsonpath), Array index union with slice
+</h3>
+
+<pre><code>parsing error: $[1:3,4] :1:6 - 1:7 mixed 58 and 44 in JSON bracket
+</code></pre>
+
+<h3 id="Golang_github.com-bhmj-jsonslice___array_index_union_with_slice">
+Golang (github.com-bhmj-jsonslice), Array index union with slice
+</h3>
+
+<pre><code>path: invalid character at 5
+</code></pre>
+
+<h3 id="Golang_github.com-oliveagle-jsonpath___array_index_union_with_slice">
+Golang (github.com-oliveagle-jsonpath), Array index union with slice
+</h3>
+
+<pre><code>strconv.Atoi: parsing "3,4": invalid syntax
+</code></pre>
+
+<h3 id="Java_com.github.jsurfer___array_index_union_with_slice">
+Java (com.github.jsurfer), Array index union with slice
+</h3>
+
+<pre><code>Exception in thread "main" org.antlr.v4.runtime.misc.ParseCancellationException
+    at org.antlr.v4.runtime.BailErrorStrategy.recoverInline(BailErrorStrategy.java:66)
+    at org.antlr.v4.runtime.Parser.match(Parser.java:206)
+    at org.jsfr.json.compiler.JsonPathParser.slicing(JsonPathParser.java:636)
+    at org.jsfr.json.compiler.JsonPathParser.relativePath(JsonPathParser.java:265)
+    at org.jsfr.json.compiler.JsonPathParser.path(JsonPathParser.java:159)
+    at org.jsfr.json.compiler.JsonPathCompiler.compile(JsonPathCompiler.java:283)
+    at org.jsfr.json.compiler.JsonPathCompiler.compile(JsonPathCompiler.java:273)
+    at org.jsfr.json.JsonSurfer.collectAll(JsonSurfer.java:262)
+    at query.App.main(App.java:27)
+Caused by: org.antlr.v4.runtime.InputMismatchException
+    at org.antlr.v4.runtime.BailErrorStrategy.recoverInline(BailErrorStrategy.java:61)
+    ... 8 more
+</code></pre>
+
+<h3 id="Java_com.jayway.jsonpath___array_index_union_with_slice">
+Java (com.jayway.jsonpath), Array index union with slice
+</h3>
+
+<pre><code>SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+Exception in thread "main" com.jayway.jsonpath.InvalidPathException: Failed to parse SliceOperation: 1:3,4
+    at com.jayway.jsonpath.internal.path.ArraySliceOperation.parse(ArraySliceOperation.java:54)
+    at com.jayway.jsonpath.internal.path.PathCompiler.readArrayToken(PathCompiler.java:537)
+    at com.jayway.jsonpath.internal.path.PathCompiler.readNextToken(PathCompiler.java:139)
+    at com.jayway.jsonpath.internal.path.PathCompiler.readContextToken(PathCompiler.java:124)
+    at com.jayway.jsonpath.internal.path.PathCompiler.compile(PathCompiler.java:58)
+    at com.jayway.jsonpath.internal.path.PathCompiler.compile(PathCompiler.java:75)
+    at com.jayway.jsonpath.JsonPath.&lt;init&gt;(JsonPath.java:101)
+    at com.jayway.jsonpath.JsonPath.compile(JsonPath.java:467)
+    at com.jayway.jsonpath.internal.JsonContext.read(JsonContext.java:87)
+    at query.App.main(App.java:25)
+</code></pre>
+
+<h3 id="PHP_galbar-jsonpath___array_index_union_with_slice">
+PHP (galbar-jsonpath), Array index union with slice
+</h3>
+
+<pre><code>Invalid JSONPath error: 'Error in JSONPath near '1:3,4''
+</code></pre>
+
+<h3 id="PHP_remorhaz-jsonpath___array_index_union_with_slice">
+PHP (remorhaz-jsonpath), Array index union with slice
+</h3>
+
+<pre><code>Error: 'Failed to build AST from JSONPath query: $[1:3,4]'
+</code></pre>
+
+<h3 id="Python_jsonpath-rw___array_index_union_with_slice">
+Python (jsonpath-rw), Array index union with slice
+</h3>
+
+<pre><code>Exception('Parse error at 1:5 near token , (,)')
+</code></pre>
+
+<h3 id="Rust_jsonpath___array_index_union_with_slice">
+Rust (jsonpath), Array index union with slice
+</h3>
+
+<pre><code>parsing error
+</code></pre>
+
+<h3 id="Rust_jsonpath_lib___array_index_union_with_slice">
+Rust (jsonpath_lib), Array index union with slice
+</h3>
+
+<pre><code>path error: 
+$[1:3,4]
+^^^^^^
+</code></pre>
+
+<h3 id="Scala_jsonpath___array_index_union_with_slice">
+Scala (jsonpath), Array index union with slice
+</h3>
+
+<pre><code>JPError(end of input expected)
+</code></pre>
+
 <h3 id="Bash_JSONPath.sh___filter_current_object_with_value">
 Bash (JSONPath.sh), Filter current object with value
 </h3>

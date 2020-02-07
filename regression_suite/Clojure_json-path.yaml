@@ -63,6 +63,9 @@ queries:
   - id: array_index_union
     status: fail
     result: "first"
+  - id: array_index_union_with_slice
+    status: open
+    result: 2
   - id: filter_current_object_with_value
     status: open
     result: ["some value", "value"]

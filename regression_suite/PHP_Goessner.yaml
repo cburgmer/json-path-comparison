@@ -29,6 +29,9 @@ queries:
   - id: array_index_slice_start_equals_end
     status: fail
     result: ["first", "second"]
+  - id: array_index_union_with_slice
+    status: open
+    result: [2, 3, 5]
   - id: filter_current_object_with_value
     status: error
   - id: filter_equal

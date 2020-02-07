@@ -43,6 +43,8 @@ queries:
     result: ["first", "second"]
   - id: array_index_slice_step
     status: error
+  - id: array_index_union_with_slice
+    status: error
   - id: filter_current_object_with_value
     status: open
     result: []

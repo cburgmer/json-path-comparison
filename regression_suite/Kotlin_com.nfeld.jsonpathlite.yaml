@@ -34,6 +34,9 @@ queries:
   - id: array_index_slice_step
     status: fail
     result: ["first", "second"]
+  - id: array_index_union_with_slice
+    status: open
+    result: [2, 3]
   - id: filter_current_object_with_value
     status: error
   - id: filter_equal
