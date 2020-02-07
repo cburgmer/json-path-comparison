@@ -17,6 +17,9 @@ from the queries in [./queries](./queries).
 
 ## Roadmap
 
+- More tests
+  - Operators
+  - Precedence of operators (see https://github.com/danielaparker/jsoncons/issues/110)
 - Provide a forum to clarify different interpretations.
   See [OPEN_QUESTIONS.md](OPEN_QUESTIONS.md) for a rough start on visible
   disagreements.
