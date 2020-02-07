@@ -7246,6 +7246,120 @@ dotNET (Manatee.Json), Recursive filter
 <pre><code>Unrecognized JSON Path element. Path up to error: '$'
 </code></pre>
 
+<h3 id="Bash_JSONPath.sh___recursive_filter_with_value">
+Bash (JSONPath.sh), Recursive filter with value
+</h3>
+
+<pre><code>Expecting value: line 3 column 1 (char 2)
+</code></pre>
+
+<h3 id="C_json-glib___recursive_filter_with_value">
+C (json-glib), Recursive filter with value
+</h3>
+
+<pre><code>Unable to compile selector `$..[?(@.id)]': Missing member name or wildcard after . character
+</code></pre>
+
+<h3 id="Elixir_jaxon___recursive_filter_with_value">
+Elixir (jaxon), Recursive filter with value
+</h3>
+
+<pre><code>** (Jaxon.ParseError) Expected an integer at `?(@.id)]`
+    lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
+    lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
+    (mix 1.10.0) lib/mix/task.ex:330: Mix.Task.run_task/3
+    (mix 1.10.0) lib/mix/cli.ex:82: Mix.CLI.run_task/2
+</code></pre>
+
+<h3 id="Erlang_ejsonpath___recursive_filter_with_value">
+Erlang (ejsonpath), Recursive filter with value
+</h3>
+
+<pre><code>init terminating in do_boot ({badmatch,{error,{1,ejsonpath_parse,syntax error before: '['}}})
+
+Crash dump is being written to: /dev/null...done
+{"init terminating in do_boot",{badmatch,{error,{1,ejsonpath_parse,["syntax error before: ","'['"]}}}}
+</code></pre>
+
+<h3 id="Golang_github.com-oliveagle-jsonpath___recursive_filter_with_value">
+Golang (github.com-oliveagle-jsonpath), Recursive filter with value
+</h3>
+
+<pre><code>expression don't support in filter
+</code></pre>
+
+<h3 id="Haskell_jsonpath___recursive_filter_with_value">
+Haskell (jsonpath), Recursive filter with value
+</h3>
+
+<pre><code>json-path-comparison: serachBegingingWithSlice &gt; serachBegingingWithSlice: string
+CallStack (from HasCallStack):
+  error, called at app/Main.hs:36:7 in main:Main
+Invalid JSONPath: $..[?(@.id)]
+ Error: serachBegingingWithSlice &gt; serachBegingingWithSlice: string
+</code></pre>
+
+<h3 id="Kotlin_com.nfeld.jsonpathlite___recursive_filter_with_value">
+Kotlin (com.nfeld.jsonpathlite), Recursive filter with value
+</h3>
+
+<pre><code>Exception in thread "main" java.lang.IllegalArgumentException: Unexpected char, char=?, index=4
+    at com.nfeld.jsonpathlite.PathCompiler.compileBracket$json_path_lite(PathCompiler.kt:198)
+    at com.nfeld.jsonpathlite.PathCompiler.compile$json_path_lite(PathCompiler.kt:59)
+    at com.nfeld.jsonpathlite.JsonPath.&lt;init&gt;(JsonPath.kt:24)
+    at com.nfeld.jsonpathlite.JsonObject.read(JsonResult.kt:7)
+    at query.AppKt.main(App.kt:10)
+</code></pre>
+
+<h3 id="PHP_Goessner___recursive_filter_with_value">
+PHP (Goessner), Recursive filter with value
+</h3>
+
+<pre><code>ArgumentCountError
+</code></pre>
+
+<h3 id="PHP_galbar-jsonpath___recursive_filter_with_value">
+PHP (galbar-jsonpath), Recursive filter with value
+</h3>
+
+<pre><code>Invalid JSONPath error: 'Error in JSONPath near '..[?(@.id)]''
+</code></pre>
+
+<h3 id="Perl_JSON-Path___recursive_filter_with_value">
+Perl (JSON-Path), Recursive filter with value
+</h3>
+
+<pre><code>non-safe evaluation, died at main.pl line 11.
+</code></pre>
+
+<h3 id="Python_jsonpath-rw___recursive_filter_with_value">
+Python (jsonpath-rw), Recursive filter with value
+</h3>
+
+<pre><code>JsonPathLexerError('Error on line 1, col 4: Unexpected character: ? ')
+</code></pre>
+
+<h3 id="Rust_jsonpath___recursive_filter_with_value">
+Rust (jsonpath), Recursive filter with value
+</h3>
+
+<pre><code>parsing error
+</code></pre>
+
+<h3 id="dotNET_JsonPathLib___recursive_filter_with_value">
+dotNET (JsonPathLib), Recursive filter with value
+</h3>
+
+<pre><code>Unable to cast object of type 'Newtonsoft.Json.Linq.JObject' to type 'System.IConvertible'.
+</code></pre>
+
+<h3 id="dotNET_Manatee.Json___recursive_filter_with_value">
+dotNET (Manatee.Json), Recursive filter with value
+</h3>
+
+<pre><code>Unrecognized JSON Path element. Path up to error: '$'
+</code></pre>
+
 <h3 id="Golang_github.com-oliveagle-jsonpath___recursive_key">
 Golang (github.com-oliveagle-jsonpath), Recursive key
 </h3>

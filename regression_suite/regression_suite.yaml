@@ -283,6 +283,9 @@ queries:
   - id: recursive_filter
     selector: $..[?(@.id==2)]
     document: {"id": 2, "more": [{"id": 2}, {"more": {"id": 2}}, {"id": {"id": 2}}, [{"id": 2}]]}
+  - id: recursive_filter_with_value
+    selector: $..[?(@.id)]
+    document: {"id": 2, "more": [{"id": 2}, {"more": {"id": 2}}, {"id": {"id": 2}}, [{"id": 2}]]}
   - id: recursive_key
     selector: $..key
     document: {"object": {"key": "value", "array": [{"key": "something"}, {"key": {"key": "russian dolls"}}]}, "key": "top"}

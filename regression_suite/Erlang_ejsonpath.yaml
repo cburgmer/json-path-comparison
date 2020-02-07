@@ -95,6 +95,8 @@ queries:
     result: [[{"a": {"b": "c"}}], {"a": {"b": "c"}}, {"b": "c"}, "c"]
   - id: recursive_filter
     status: error
+  - id: recursive_filter_with_value
+    status: error
   - id: recursive_key_with_double_quotes
     status: error
   - id: recursive_key_with_single_quotes

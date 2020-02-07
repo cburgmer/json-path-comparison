@@ -143,6 +143,8 @@ queries:
     result: [[{"a": {"b": "c"}}]]
   - id: recursive_filter
     status: error
+  - id: recursive_filter_with_value
+    status: error
   - id: recursive_key
     status: fail
     result: ["top"]
