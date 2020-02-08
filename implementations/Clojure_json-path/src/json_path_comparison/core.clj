@@ -7,4 +7,8 @@
   (let [path (first args)
         in (slurp *in*)
         json (j/parse-string in true)]
-    (println (j/generate-string (json-path/at-path path json)))))
+    (try
+      (println (j/generate-string (json-path/at-path path json)))
+      (catch Exception e
+        (do (println (.getClass e) (.getMessage e))
+            (System/exit 1))))))

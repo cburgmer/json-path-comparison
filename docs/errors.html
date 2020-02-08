@@ -212,24 +212,7 @@ Bash (JSONPath.sh), Array index on string
 Clojure (json-path), Array index on string
 </h3>
 
-<pre><code>Exception in thread "main" java.lang.Exception: object must be an array.
-    at json_path.walker$walk_selector.invokeStatic(walker.clj:74)
-    at json_path.walker$walk_selector.invoke(walker.clj:63)
-    at json_path.walker$walk.invokeStatic(walker.clj:87)
-    at json_path.walker$walk.invoke(walker.clj:84)
-    at json_path.walker$walk$fn__1026.invoke(walker.clj:89)
-    at json_path.walker$map_SHARP_.invokeStatic(walker.clj:22)
-    at json_path.walker$map_SHARP_.invoke(walker.clj:17)
-    at json_path.walker$walk.invokeStatic(walker.clj:89)
-    at json_path.walker$walk.invoke(walker.clj:84)
-    at json_path$query.invokeStatic(json_path.clj:7)
-    at json_path$query.invoke(json_path.clj:6)
-    at json_path$at_path.invokeStatic(json_path.clj:10)
-    at json_path$at_path.invoke(json_path.clj:9)
-    at json_path_comparison.core$_main.invokeStatic(core.clj:10)
-    at json_path_comparison.core$_main.doInvoke(core.clj:6)
-    at clojure.lang.RestFn.applyTo(RestFn.java:137)
-    at json_path_comparison.core.main(Unknown Source)
+<pre><code>java.lang.Exception object must be an array.
 </code></pre>
 
 <h3 id="Elixir_jaxon___array_index_on_string">
@@ -359,26 +342,7 @@ Bash (JSONPath.sh), Array index out of bounds
 Clojure (json-path), Array index out of bounds
 </h3>
 
-<pre><code>Exception in thread "main" java.lang.IndexOutOfBoundsException
-    at clojure.lang.RT.nthFrom(RT.java:924)
-    at clojure.lang.RT.nth(RT.java:893)
-    at json_path.walker$walk_selector.invokeStatic(walker.clj:74)
-    at json_path.walker$walk_selector.invoke(walker.clj:63)
-    at json_path.walker$walk.invokeStatic(walker.clj:87)
-    at json_path.walker$walk.invoke(walker.clj:84)
-    at json_path.walker$walk$fn__1026.invoke(walker.clj:89)
-    at json_path.walker$map_SHARP_.invokeStatic(walker.clj:22)
-    at json_path.walker$map_SHARP_.invoke(walker.clj:17)
-    at json_path.walker$walk.invokeStatic(walker.clj:89)
-    at json_path.walker$walk.invoke(walker.clj:84)
-    at json_path$query.invokeStatic(json_path.clj:7)
-    at json_path$query.invoke(json_path.clj:6)
-    at json_path$at_path.invokeStatic(json_path.clj:10)
-    at json_path$at_path.invoke(json_path.clj:9)
-    at json_path_comparison.core$_main.invokeStatic(core.clj:10)
-    at json_path_comparison.core$_main.doInvoke(core.clj:6)
-    at clojure.lang.RestFn.applyTo(RestFn.java:137)
-    at json_path_comparison.core.main(Unknown Source)
+<pre><code>java.lang.IndexOutOfBoundsException nil
 </code></pre>
 
 <h3 id="Golang_github.com-PaesslerAG-jsonpath___array_index_out_of_bounds">
@@ -626,26 +590,7 @@ $[::-2]
 Clojure (json-path), Array index slice no start no end
 </h3>
 
-<pre><code>Exception in thread "main" java.lang.NumberFormatException: null
-    at java.base/java.lang.Integer.parseInt(Integer.java:620)
-    at java.base/java.lang.Integer.parseInt(Integer.java:776)
-    at json_path.walker$walk_selector.invokeStatic(walker.clj:70)
-    at json_path.walker$walk_selector.invoke(walker.clj:63)
-    at json_path.walker$walk.invokeStatic(walker.clj:87)
-    at json_path.walker$walk.invoke(walker.clj:84)
-    at json_path.walker$walk$fn__1026.invoke(walker.clj:89)
-    at json_path.walker$map_SHARP_.invokeStatic(walker.clj:22)
-    at json_path.walker$map_SHARP_.invoke(walker.clj:17)
-    at json_path.walker$walk.invokeStatic(walker.clj:89)
-    at json_path.walker$walk.invoke(walker.clj:84)
-    at json_path$query.invokeStatic(json_path.clj:7)
-    at json_path$query.invoke(json_path.clj:6)
-    at json_path$at_path.invokeStatic(json_path.clj:10)
-    at json_path$at_path.invoke(json_path.clj:9)
-    at json_path_comparison.core$_main.invokeStatic(core.clj:10)
-    at json_path_comparison.core$_main.doInvoke(core.clj:6)
-    at clojure.lang.RestFn.applyTo(RestFn.java:137)
-    at json_path_comparison.core.main(Unknown Source)
+<pre><code>java.lang.NumberFormatException null
 </code></pre>
 
 <h3 id="Elixir_jaxon___array_index_slice_no_start_no_end">
@@ -2542,47 +2487,7 @@ C (json-glib), Filter greater than or equal
 Clojure (json-path), Filter greater than or equal
 </h3>
 
-<pre><code>Exception in thread "main" java.lang.NullPointerException
-    at clojure.lang.Numbers.ops(Numbers.java:1068)
-    at clojure.lang.Numbers.gte(Numbers.java:263)
-    at clojure.core$_GT__EQ_.invokeStatic(core.clj:1092)
-    at clojure.core$_GT__EQ_.invoke(core.clj:1085)
-    at clojure.lang.AFn.applyToHelper(AFn.java:156)
-    at clojure.lang.RestFn.applyTo(RestFn.java:132)
-    at clojure.core$apply.invokeStatic(core.clj:665)
-    at clojure.core$apply.invoke(core.clj:660)
-    at json_path.walker$eval_eq_expr.invokeStatic(walker.clj:7)
-    at json_path.walker$eval_eq_expr.invoke(walker.clj:6)
-    at json_path.walker$eval_expr.invokeStatic(walker.clj:12)
-    at json_path.walker$eval_expr.invoke(walker.clj:9)
-    at json_path.walker$walk_selector$fn__1015.invoke(walker.clj:81)
-    at clojure.core$filter$fn__5878.invoke(core.clj:2817)
-    at clojure.lang.LazySeq.sval(LazySeq.java:42)
-    at clojure.lang.LazySeq.seq(LazySeq.java:51)
-    at clojure.lang.RT.seq(RT.java:531)
-    at clojure.core$seq__5387.invokeStatic(core.clj:137)
-    at clojure.core$map$fn__5851.invoke(core.clj:2746)
-    at clojure.lang.LazySeq.sval(LazySeq.java:42)
-    at clojure.lang.LazySeq.seq(LazySeq.java:51)
-    at clojure.lang.RT.seq(RT.java:531)
-    at clojure.core$seq__5387.invokeStatic(core.clj:137)
-    at clojure.core$seq__5387.invoke(core.clj:137)
-    at clojure.core$tree_seq$walk__6372$fn__6373.invoke(core.clj:4945)
-    at clojure.lang.LazySeq.sval(LazySeq.java:42)
-    at clojure.lang.LazySeq.seq(LazySeq.java:51)
-    at clojure.lang.LazySeq.more(LazySeq.java:87)
-    at clojure.lang.RT.more(RT.java:718)
-    at clojure.core$rest__5373.invokeStatic(core.clj:73)
-    at clojure.core$flatten.invokeStatic(core.clj:7136)
-    at clojure.core$flatten.invoke(core.clj:7136)
-    at json_path.walker$map_SHARP_.invokeStatic(walker.clj:20)
-    at json_path.walker$map_SHARP_.invoke(walker.clj:17)
-    at json_path$at_path.invokeStatic(json_path.clj:10)
-    at json_path$at_path.invoke(json_path.clj:9)
-    at json_path_comparison.core$_main.invokeStatic(core.clj:10)
-    at json_path_comparison.core$_main.doInvoke(core.clj:6)
-    at clojure.lang.RestFn.applyTo(RestFn.java:137)
-    at json_path_comparison.core.main(Unknown Source)
+<pre><code>java.lang.NullPointerException nil
 </code></pre>
 
 <h3 id="Elixir_jaxon___filter_greater_than_or_equal">
@@ -2670,47 +2575,7 @@ C (json-glib), Filter less than
 Clojure (json-path), Filter less than
 </h3>
 
-<pre><code>Exception in thread "main" java.lang.NullPointerException
-    at clojure.lang.Numbers.ops(Numbers.java:1068)
-    at clojure.lang.Numbers.lt(Numbers.java:251)
-    at clojure.core$_LT_.invokeStatic(core.clj:907)
-    at clojure.core$_LT_.invoke(core.clj:900)
-    at clojure.lang.AFn.applyToHelper(AFn.java:156)
-    at clojure.lang.RestFn.applyTo(RestFn.java:132)
-    at clojure.core$apply.invokeStatic(core.clj:665)
-    at clojure.core$apply.invoke(core.clj:660)
-    at json_path.walker$eval_eq_expr.invokeStatic(walker.clj:7)
-    at json_path.walker$eval_eq_expr.invoke(walker.clj:6)
-    at json_path.walker$eval_expr.invokeStatic(walker.clj:12)
-    at json_path.walker$eval_expr.invoke(walker.clj:9)
-    at json_path.walker$walk_selector$fn__1015.invoke(walker.clj:81)
-    at clojure.core$filter$fn__5878.invoke(core.clj:2817)
-    at clojure.lang.LazySeq.sval(LazySeq.java:42)
-    at clojure.lang.LazySeq.seq(LazySeq.java:51)
-    at clojure.lang.RT.seq(RT.java:531)
-    at clojure.core$seq__5387.invokeStatic(core.clj:137)
-    at clojure.core$map$fn__5851.invoke(core.clj:2746)
-    at clojure.lang.LazySeq.sval(LazySeq.java:42)
-    at clojure.lang.LazySeq.seq(LazySeq.java:51)
-    at clojure.lang.RT.seq(RT.java:531)
-    at clojure.core$seq__5387.invokeStatic(core.clj:137)
-    at clojure.core$seq__5387.invoke(core.clj:137)
-    at clojure.core$tree_seq$walk__6372$fn__6373.invoke(core.clj:4945)
-    at clojure.lang.LazySeq.sval(LazySeq.java:42)
-    at clojure.lang.LazySeq.seq(LazySeq.java:51)
-    at clojure.lang.LazySeq.more(LazySeq.java:87)
-    at clojure.lang.RT.more(RT.java:718)
-    at clojure.core$rest__5373.invokeStatic(core.clj:73)
-    at clojure.core$flatten.invokeStatic(core.clj:7136)
-    at clojure.core$flatten.invoke(core.clj:7136)
-    at json_path.walker$map_SHARP_.invokeStatic(walker.clj:20)
-    at json_path.walker$map_SHARP_.invoke(walker.clj:17)
-    at json_path$at_path.invokeStatic(json_path.clj:10)
-    at json_path$at_path.invoke(json_path.clj:9)
-    at json_path_comparison.core$_main.invokeStatic(core.clj:10)
-    at json_path_comparison.core$_main.doInvoke(core.clj:6)
-    at clojure.lang.RestFn.applyTo(RestFn.java:137)
-    at json_path_comparison.core.main(Unknown Source)
+<pre><code>java.lang.NullPointerException nil
 </code></pre>
 
 <h3 id="Elixir_jaxon___filter_less_than">
@@ -2777,46 +2642,7 @@ C (json-glib), Filter less than on string
 Clojure (json-path), Filter less than on string
 </h3>
 
-<pre><code>Exception in thread "main" java.lang.ClassCastException: class java.lang.String cannot be cast to class java.lang.Number (java.lang.String and java.lang.Number are in module java.base of loader 'bootstrap')
-    at clojure.lang.Numbers.lt(Numbers.java:251)
-    at clojure.core$_LT_.invokeStatic(core.clj:907)
-    at clojure.core$_LT_.invoke(core.clj:900)
-    at clojure.lang.AFn.applyToHelper(AFn.java:156)
-    at clojure.lang.RestFn.applyTo(RestFn.java:132)
-    at clojure.core$apply.invokeStatic(core.clj:665)
-    at clojure.core$apply.invoke(core.clj:660)
-    at json_path.walker$eval_eq_expr.invokeStatic(walker.clj:7)
-    at json_path.walker$eval_eq_expr.invoke(walker.clj:6)
-    at json_path.walker$eval_expr.invokeStatic(walker.clj:12)
-    at json_path.walker$eval_expr.invoke(walker.clj:9)
-    at json_path.walker$walk_selector$fn__1015.invoke(walker.clj:81)
-    at clojure.core$filter$fn__5878.invoke(core.clj:2817)
-    at clojure.lang.LazySeq.sval(LazySeq.java:42)
-    at clojure.lang.LazySeq.seq(LazySeq.java:51)
-    at clojure.lang.RT.seq(RT.java:531)
-    at clojure.core$seq__5387.invokeStatic(core.clj:137)
-    at clojure.core$map$fn__5851.invoke(core.clj:2746)
-    at clojure.lang.LazySeq.sval(LazySeq.java:42)
-    at clojure.lang.LazySeq.seq(LazySeq.java:51)
-    at clojure.lang.RT.seq(RT.java:531)
-    at clojure.core$seq__5387.invokeStatic(core.clj:137)
-    at clojure.core$seq__5387.invoke(core.clj:137)
-    at clojure.core$tree_seq$walk__6372$fn__6373.invoke(core.clj:4945)
-    at clojure.lang.LazySeq.sval(LazySeq.java:42)
-    at clojure.lang.LazySeq.seq(LazySeq.java:51)
-    at clojure.lang.LazySeq.more(LazySeq.java:87)
-    at clojure.lang.RT.more(RT.java:718)
-    at clojure.core$rest__5373.invokeStatic(core.clj:73)
-    at clojure.core$flatten.invokeStatic(core.clj:7136)
-    at clojure.core$flatten.invoke(core.clj:7136)
-    at json_path.walker$map_SHARP_.invokeStatic(walker.clj:20)
-    at json_path.walker$map_SHARP_.invoke(walker.clj:17)
-    at json_path$at_path.invokeStatic(json_path.clj:10)
-    at json_path$at_path.invoke(json_path.clj:9)
-    at json_path_comparison.core$_main.invokeStatic(core.clj:10)
-    at json_path_comparison.core$_main.doInvoke(core.clj:6)
-    at clojure.lang.RestFn.applyTo(RestFn.java:137)
-    at json_path_comparison.core.main(Unknown Source)
+<pre><code>java.lang.ClassCastException class java.lang.String cannot be cast to class java.lang.Number (java.lang.String and java.lang.Number are in module java.base of loader 'bootstrap')
 </code></pre>
 
 <h3 id="Elixir_jaxon___filter_less_than_on_string">
@@ -2932,47 +2758,7 @@ C (json-glib), Filter less than or equal
 Clojure (json-path), Filter less than or equal
 </h3>
 
-<pre><code>Exception in thread "main" java.lang.NullPointerException
-    at clojure.lang.Numbers.ops(Numbers.java:1068)
-    at clojure.lang.Numbers.lte(Numbers.java:255)
-    at clojure.core$_LT__EQ_.invokeStatic(core.clj:1062)
-    at clojure.core$_LT__EQ_.invoke(core.clj:1055)
-    at clojure.lang.AFn.applyToHelper(AFn.java:156)
-    at clojure.lang.RestFn.applyTo(RestFn.java:132)
-    at clojure.core$apply.invokeStatic(core.clj:665)
-    at clojure.core$apply.invoke(core.clj:660)
-    at json_path.walker$eval_eq_expr.invokeStatic(walker.clj:7)
-    at json_path.walker$eval_eq_expr.invoke(walker.clj:6)
-    at json_path.walker$eval_expr.invokeStatic(walker.clj:12)
-    at json_path.walker$eval_expr.invoke(walker.clj:9)
-    at json_path.walker$walk_selector$fn__1015.invoke(walker.clj:81)
-    at clojure.core$filter$fn__5878.invoke(core.clj:2817)
-    at clojure.lang.LazySeq.sval(LazySeq.java:42)
-    at clojure.lang.LazySeq.seq(LazySeq.java:51)
-    at clojure.lang.RT.seq(RT.java:531)
-    at clojure.core$seq__5387.invokeStatic(core.clj:137)
-    at clojure.core$map$fn__5851.invoke(core.clj:2746)
-    at clojure.lang.LazySeq.sval(LazySeq.java:42)
-    at clojure.lang.LazySeq.seq(LazySeq.java:51)
-    at clojure.lang.RT.seq(RT.java:531)
-    at clojure.core$seq__5387.invokeStatic(core.clj:137)
-    at clojure.core$seq__5387.invoke(core.clj:137)
-    at clojure.core$tree_seq$walk__6372$fn__6373.invoke(core.clj:4945)
-    at clojure.lang.LazySeq.sval(LazySeq.java:42)
-    at clojure.lang.LazySeq.seq(LazySeq.java:51)
-    at clojure.lang.LazySeq.more(LazySeq.java:87)
-    at clojure.lang.RT.more(RT.java:718)
-    at clojure.core$rest__5373.invokeStatic(core.clj:73)
-    at clojure.core$flatten.invokeStatic(core.clj:7136)
-    at clojure.core$flatten.invoke(core.clj:7136)
-    at json_path.walker$map_SHARP_.invokeStatic(walker.clj:20)
-    at json_path.walker$map_SHARP_.invoke(walker.clj:17)
-    at json_path$at_path.invokeStatic(json_path.clj:10)
-    at json_path$at_path.invoke(json_path.clj:9)
-    at json_path_comparison.core$_main.invokeStatic(core.clj:10)
-    at json_path_comparison.core$_main.doInvoke(core.clj:6)
-    at clojure.lang.RestFn.applyTo(RestFn.java:137)
-    at json_path_comparison.core.main(Unknown Source)
+<pre><code>java.lang.NullPointerException nil
 </code></pre>
 
 <h3 id="Elixir_jaxon___filter_less_than_or_equal">
@@ -3445,56 +3231,7 @@ C (json-glib), Filter with subfilter
 Clojure (json-path), Filter with subfilter
 </h3>
 
-<pre><code>Exception in thread "main" java.lang.NullPointerException
-    at clojure.lang.Numbers.ops(Numbers.java:1068)
-    at clojure.lang.Numbers.gt(Numbers.java:259)
-    at clojure.core$_GT_.invokeStatic(core.clj:1077)
-    at clojure.core$_GT_.invoke(core.clj:1070)
-    at clojure.lang.AFn.applyToHelper(AFn.java:156)
-    at clojure.lang.RestFn.applyTo(RestFn.java:132)
-    at clojure.core$apply.invokeStatic(core.clj:665)
-    at clojure.core$apply.invoke(core.clj:660)
-    at json_path.walker$eval_eq_expr.invokeStatic(walker.clj:7)
-    at json_path.walker$eval_eq_expr.invoke(walker.clj:6)
-    at json_path.walker$eval_expr.invokeStatic(walker.clj:12)
-    at json_path.walker$eval_expr.invoke(walker.clj:9)
-    at json_path.walker$walk_selector$fn__1015.invoke(walker.clj:81)
-    at clojure.core$filter$fn__5878.invoke(core.clj:2817)
-    at clojure.lang.LazySeq.sval(LazySeq.java:42)
-    at clojure.lang.LazySeq.seq(LazySeq.java:51)
-    at clojure.lang.RT.seq(RT.java:531)
-    at clojure.core$seq__5387.invokeStatic(core.clj:137)
-    at clojure.core$map$fn__5851.invoke(core.clj:2746)
-    at clojure.lang.LazySeq.sval(LazySeq.java:42)
-    at clojure.lang.LazySeq.seq(LazySeq.java:51)
-    at clojure.lang.RT.seq(RT.java:531)
-    at clojure.core$seq__5387.invokeStatic(core.clj:137)
-    at clojure.core$seq__5387.invoke(core.clj:137)
-    at clojure.core$tree_seq$walk__6372$fn__6373.invoke(core.clj:4945)
-    at clojure.lang.LazySeq.sval(LazySeq.java:42)
-    at clojure.lang.LazySeq.seq(LazySeq.java:51)
-    at clojure.lang.LazySeq.more(LazySeq.java:87)
-    at clojure.lang.RT.more(RT.java:718)
-    at clojure.core$rest__5373.invokeStatic(core.clj:73)
-    at clojure.core$flatten.invokeStatic(core.clj:7136)
-    at clojure.core$flatten.invoke(core.clj:7136)
-    at json_path.walker$map_SHARP_.invokeStatic(walker.clj:20)
-    at json_path.walker$map_SHARP_.invoke(walker.clj:17)
-    at json_path.walker$walk.invokeStatic(walker.clj:89)
-    at json_path.walker$walk.invoke(walker.clj:84)
-    at json_path.walker$walk$fn__1026.invoke(walker.clj:89)
-    at json_path.walker$map_SHARP_.invokeStatic(walker.clj:22)
-    at json_path.walker$map_SHARP_.invoke(walker.clj:17)
-    at json_path.walker$walk.invokeStatic(walker.clj:89)
-    at json_path.walker$walk.invoke(walker.clj:84)
-    at json_path$query.invokeStatic(json_path.clj:7)
-    at json_path$query.invoke(json_path.clj:6)
-    at json_path$at_path.invokeStatic(json_path.clj:10)
-    at json_path$at_path.invoke(json_path.clj:9)
-    at json_path_comparison.core$_main.invokeStatic(core.clj:10)
-    at json_path_comparison.core$_main.doInvoke(core.clj:6)
-    at clojure.lang.RestFn.applyTo(RestFn.java:137)
-    at json_path_comparison.core.main(Unknown Source)
+<pre><code>java.lang.NullPointerException nil
 </code></pre>
 
 <h3 id="Cpp_jsoncons___filter_with_subfilter">
@@ -3987,24 +3724,7 @@ dotNET (Json.NET), Filter without value
 Clojure (json-path), Key bracket notation
 </h3>
 
-<pre><code>Exception in thread "main" java.lang.Exception: object must be an array.
-    at json_path.walker$walk_selector.invokeStatic(walker.clj:74)
-    at json_path.walker$walk_selector.invoke(walker.clj:63)
-    at json_path.walker$walk.invokeStatic(walker.clj:87)
-    at json_path.walker$walk.invoke(walker.clj:84)
-    at json_path.walker$walk$fn__1026.invoke(walker.clj:89)
-    at json_path.walker$map_SHARP_.invokeStatic(walker.clj:22)
-    at json_path.walker$map_SHARP_.invoke(walker.clj:17)
-    at json_path.walker$walk.invokeStatic(walker.clj:89)
-    at json_path.walker$walk.invoke(walker.clj:84)
-    at json_path$query.invokeStatic(json_path.clj:7)
-    at json_path$query.invoke(json_path.clj:6)
-    at json_path$at_path.invokeStatic(json_path.clj:10)
-    at json_path$at_path.invoke(json_path.clj:9)
-    at json_path_comparison.core$_main.invokeStatic(core.clj:10)
-    at json_path_comparison.core$_main.doInvoke(core.clj:6)
-    at clojure.lang.RestFn.applyTo(RestFn.java:137)
-    at json_path_comparison.core.main(Unknown Source)
+<pre><code>java.lang.Exception object must be an array.
 </code></pre>
 
 <h3 id="Elixir_jaxon___key_bracket_notation">
@@ -4058,24 +3778,7 @@ dotNET (Manatee.Json), Key bracket notation
 Clojure (json-path), Key bracket notation union
 </h3>
 
-<pre><code>Exception in thread "main" java.lang.Exception: object must be an array.
-    at json_path.walker$walk_selector.invokeStatic(walker.clj:74)
-    at json_path.walker$walk_selector.invoke(walker.clj:63)
-    at json_path.walker$walk.invokeStatic(walker.clj:87)
-    at json_path.walker$walk.invoke(walker.clj:84)
-    at json_path.walker$walk$fn__1026.invoke(walker.clj:89)
-    at json_path.walker$map_SHARP_.invokeStatic(walker.clj:22)
-    at json_path.walker$map_SHARP_.invoke(walker.clj:17)
-    at json_path.walker$walk.invokeStatic(walker.clj:89)
-    at json_path.walker$walk.invoke(walker.clj:84)
-    at json_path$query.invokeStatic(json_path.clj:7)
-    at json_path$query.invoke(json_path.clj:6)
-    at json_path$at_path.invokeStatic(json_path.clj:10)
-    at json_path$at_path.invoke(json_path.clj:9)
-    at json_path_comparison.core$_main.invokeStatic(core.clj:10)
-    at json_path_comparison.core$_main.doInvoke(core.clj:6)
-    at clojure.lang.RestFn.applyTo(RestFn.java:137)
-    at json_path_comparison.core.main(Unknown Source)
+<pre><code>java.lang.Exception object must be an array.
 </code></pre>
 
 <h3 id="Elixir_jaxon___key_bracket_notation_union">
@@ -4140,24 +3843,7 @@ dotNET (Manatee.Json), Key bracket notation union
 Clojure (json-path), Key bracket notation union with key on nested objects
 </h3>
 
-<pre><code>Exception in thread "main" java.lang.Exception: object must be an array.
-    at json_path.walker$walk_selector.invokeStatic(walker.clj:74)
-    at json_path.walker$walk_selector.invoke(walker.clj:63)
-    at json_path.walker$walk.invokeStatic(walker.clj:87)
-    at json_path.walker$walk.invoke(walker.clj:84)
-    at json_path.walker$walk$fn__1026.invoke(walker.clj:89)
-    at json_path.walker$map_SHARP_.invokeStatic(walker.clj:22)
-    at json_path.walker$map_SHARP_.invoke(walker.clj:17)
-    at json_path.walker$walk.invokeStatic(walker.clj:89)
-    at json_path.walker$walk.invoke(walker.clj:84)
-    at json_path$query.invokeStatic(json_path.clj:7)
-    at json_path$query.invoke(json_path.clj:6)
-    at json_path$at_path.invokeStatic(json_path.clj:10)
-    at json_path$at_path.invoke(json_path.clj:9)
-    at json_path_comparison.core$_main.invokeStatic(core.clj:10)
-    at json_path_comparison.core$_main.doInvoke(core.clj:6)
-    at clojure.lang.RestFn.applyTo(RestFn.java:137)
-    at json_path_comparison.core.main(Unknown Source)
+<pre><code>java.lang.Exception object must be an array.
 </code></pre>
 
 <h3 id="Elixir_jaxon___key_bracket_notation_union_with_key_on_nested_objects">
@@ -4243,24 +3929,7 @@ Bash (JSONPath.sh), Key bracket notation with at literal
 Clojure (json-path), Key bracket notation with at literal
 </h3>
 
-<pre><code>Exception in thread "main" java.lang.Exception: object must be an array.
-    at json_path.walker$walk_selector.invokeStatic(walker.clj:74)
-    at json_path.walker$walk_selector.invoke(walker.clj:63)
-    at json_path.walker$walk.invokeStatic(walker.clj:87)
-    at json_path.walker$walk.invoke(walker.clj:84)
-    at json_path.walker$walk$fn__1026.invoke(walker.clj:89)
-    at json_path.walker$map_SHARP_.invokeStatic(walker.clj:22)
-    at json_path.walker$map_SHARP_.invoke(walker.clj:17)
-    at json_path.walker$walk.invokeStatic(walker.clj:89)
-    at json_path.walker$walk.invoke(walker.clj:84)
-    at json_path$query.invokeStatic(json_path.clj:7)
-    at json_path$query.invoke(json_path.clj:6)
-    at json_path$at_path.invokeStatic(json_path.clj:10)
-    at json_path$at_path.invoke(json_path.clj:9)
-    at json_path_comparison.core$_main.invokeStatic(core.clj:10)
-    at json_path_comparison.core$_main.doInvoke(core.clj:6)
-    at clojure.lang.RestFn.applyTo(RestFn.java:137)
-    at json_path_comparison.core.main(Unknown Source)
+<pre><code>java.lang.Exception object must be an array.
 </code></pre>
 
 <h3 id="Elixir_jaxon___key_bracket_notation_with_at_literal">
@@ -4345,24 +4014,7 @@ Bash (JSONPath.sh), Key bracket notation with dollar literal
 Clojure (json-path), Key bracket notation with dollar literal
 </h3>
 
-<pre><code>Exception in thread "main" java.lang.Exception: object must be an array.
-    at json_path.walker$walk_selector.invokeStatic(walker.clj:74)
-    at json_path.walker$walk_selector.invoke(walker.clj:63)
-    at json_path.walker$walk.invokeStatic(walker.clj:87)
-    at json_path.walker$walk.invoke(walker.clj:84)
-    at json_path.walker$walk$fn__1026.invoke(walker.clj:89)
-    at json_path.walker$map_SHARP_.invokeStatic(walker.clj:22)
-    at json_path.walker$map_SHARP_.invoke(walker.clj:17)
-    at json_path.walker$walk.invokeStatic(walker.clj:89)
-    at json_path.walker$walk.invoke(walker.clj:84)
-    at json_path$query.invokeStatic(json_path.clj:7)
-    at json_path$query.invoke(json_path.clj:6)
-    at json_path$at_path.invokeStatic(json_path.clj:10)
-    at json_path$at_path.invoke(json_path.clj:9)
-    at json_path_comparison.core$_main.invokeStatic(core.clj:10)
-    at json_path_comparison.core$_main.doInvoke(core.clj:6)
-    at clojure.lang.RestFn.applyTo(RestFn.java:137)
-    at json_path_comparison.core.main(Unknown Source)
+<pre><code>java.lang.Exception object must be an array.
 </code></pre>
 
 <h3 id="Elixir_jaxon___key_bracket_notation_with_dollar_literal">
@@ -4433,24 +4085,7 @@ dotNET (Manatee.Json), Key bracket notation with dollar literal
 Clojure (json-path), Key bracket notation with dot
 </h3>
 
-<pre><code>Exception in thread "main" java.lang.Exception: object must be an array.
-    at json_path.walker$walk_selector.invokeStatic(walker.clj:74)
-    at json_path.walker$walk_selector.invoke(walker.clj:63)
-    at json_path.walker$walk.invokeStatic(walker.clj:87)
-    at json_path.walker$walk.invoke(walker.clj:84)
-    at json_path.walker$walk$fn__1026.invoke(walker.clj:89)
-    at json_path.walker$map_SHARP_.invokeStatic(walker.clj:22)
-    at json_path.walker$map_SHARP_.invoke(walker.clj:17)
-    at json_path.walker$walk.invokeStatic(walker.clj:89)
-    at json_path.walker$walk.invoke(walker.clj:84)
-    at json_path$query.invokeStatic(json_path.clj:7)
-    at json_path$query.invoke(json_path.clj:6)
-    at json_path$at_path.invokeStatic(json_path.clj:10)
-    at json_path$at_path.invoke(json_path.clj:9)
-    at json_path_comparison.core$_main.invokeStatic(core.clj:10)
-    at json_path_comparison.core$_main.doInvoke(core.clj:6)
-    at clojure.lang.RestFn.applyTo(RestFn.java:137)
-    at json_path_comparison.core.main(Unknown Source)
+<pre><code>java.lang.Exception object must be an array.
 </code></pre>
 
 <h3 id="Elixir_jaxon___key_bracket_notation_with_dot">
@@ -4518,24 +4153,7 @@ C (json-glib), Key bracket notation with double quotes
 Clojure (json-path), Key bracket notation with double quotes
 </h3>
 
-<pre><code>Exception in thread "main" java.lang.Exception: object must be an array.
-    at json_path.walker$walk_selector.invokeStatic(walker.clj:74)
-    at json_path.walker$walk_selector.invoke(walker.clj:63)
-    at json_path.walker$walk.invokeStatic(walker.clj:87)
-    at json_path.walker$walk.invoke(walker.clj:84)
-    at json_path.walker$walk$fn__1026.invoke(walker.clj:89)
-    at json_path.walker$map_SHARP_.invokeStatic(walker.clj:22)
-    at json_path.walker$map_SHARP_.invoke(walker.clj:17)
-    at json_path.walker$walk.invokeStatic(walker.clj:89)
-    at json_path.walker$walk.invoke(walker.clj:84)
-    at json_path$query.invokeStatic(json_path.clj:7)
-    at json_path$query.invoke(json_path.clj:6)
-    at json_path$at_path.invokeStatic(json_path.clj:10)
-    at json_path$at_path.invoke(json_path.clj:9)
-    at json_path_comparison.core$_main.invokeStatic(core.clj:10)
-    at json_path_comparison.core$_main.doInvoke(core.clj:6)
-    at clojure.lang.RestFn.applyTo(RestFn.java:137)
-    at json_path_comparison.core.main(Unknown Source)
+<pre><code>java.lang.Exception object must be an array.
 </code></pre>
 
 <h3 id="Elixir_jaxon___key_bracket_notation_with_double_quotes">
@@ -4643,24 +4261,7 @@ dotNET (Manatee.Json), Key bracket notation with double quotes
 Clojure (json-path), Key bracket notation with nested object
 </h3>
 
-<pre><code>Exception in thread "main" java.lang.Exception: object must be an array.
-    at json_path.walker$walk_selector.invokeStatic(walker.clj:74)
-    at json_path.walker$walk_selector.invoke(walker.clj:63)
-    at json_path.walker$walk.invokeStatic(walker.clj:87)
-    at json_path.walker$walk.invoke(walker.clj:84)
-    at json_path.walker$walk$fn__1026.invoke(walker.clj:89)
-    at json_path.walker$map_SHARP_.invokeStatic(walker.clj:22)
-    at json_path.walker$map_SHARP_.invoke(walker.clj:17)
-    at json_path.walker$walk.invokeStatic(walker.clj:89)
-    at json_path.walker$walk.invoke(walker.clj:84)
-    at json_path$query.invokeStatic(json_path.clj:7)
-    at json_path$query.invoke(json_path.clj:6)
-    at json_path$at_path.invokeStatic(json_path.clj:10)
-    at json_path$at_path.invoke(json_path.clj:9)
-    at json_path_comparison.core$_main.invokeStatic(core.clj:10)
-    at json_path_comparison.core$_main.doInvoke(core.clj:6)
-    at clojure.lang.RestFn.applyTo(RestFn.java:137)
-    at json_path_comparison.core.main(Unknown Source)
+<pre><code>java.lang.Exception object must be an array.
 </code></pre>
 
 <h3 id="Elixir_jaxon___key_bracket_notation_with_nested_object">
@@ -4842,24 +4443,7 @@ C (json-glib), Key bracket notation with nested object without quotes
 Clojure (json-path), Key bracket notation with nested object without quotes
 </h3>
 
-<pre><code>Exception in thread "main" java.lang.Exception: object must be an array.
-    at json_path.walker$walk_selector.invokeStatic(walker.clj:74)
-    at json_path.walker$walk_selector.invoke(walker.clj:63)
-    at json_path.walker$walk.invokeStatic(walker.clj:87)
-    at json_path.walker$walk.invoke(walker.clj:84)
-    at json_path.walker$walk$fn__1026.invoke(walker.clj:89)
-    at json_path.walker$map_SHARP_.invokeStatic(walker.clj:22)
-    at json_path.walker$map_SHARP_.invoke(walker.clj:17)
-    at json_path.walker$walk.invokeStatic(walker.clj:89)
-    at json_path.walker$walk.invoke(walker.clj:84)
-    at json_path$query.invokeStatic(json_path.clj:7)
-    at json_path$query.invoke(json_path.clj:6)
-    at json_path$at_path.invokeStatic(json_path.clj:10)
-    at json_path$at_path.invoke(json_path.clj:9)
-    at json_path_comparison.core$_main.invokeStatic(core.clj:10)
-    at json_path_comparison.core$_main.doInvoke(core.clj:6)
-    at clojure.lang.RestFn.applyTo(RestFn.java:137)
-    at json_path_comparison.core.main(Unknown Source)
+<pre><code>java.lang.Exception object must be an array.
 </code></pre>
 
 <h3 id="Elixir_jaxon___key_bracket_notation_with_nested_object_without_quotes">
@@ -5063,24 +4647,7 @@ Bash (JSONPath.sh), Key bracket notation with number
 Clojure (json-path), Key bracket notation with number
 </h3>
 
-<pre><code>Exception in thread "main" java.lang.Exception: object must be an array.
-    at json_path.walker$walk_selector.invokeStatic(walker.clj:74)
-    at json_path.walker$walk_selector.invoke(walker.clj:63)
-    at json_path.walker$walk.invokeStatic(walker.clj:87)
-    at json_path.walker$walk.invoke(walker.clj:84)
-    at json_path.walker$walk$fn__1026.invoke(walker.clj:89)
-    at json_path.walker$map_SHARP_.invokeStatic(walker.clj:22)
-    at json_path.walker$map_SHARP_.invoke(walker.clj:17)
-    at json_path.walker$walk.invokeStatic(walker.clj:89)
-    at json_path.walker$walk.invoke(walker.clj:84)
-    at json_path$query.invokeStatic(json_path.clj:7)
-    at json_path$query.invoke(json_path.clj:6)
-    at json_path$at_path.invokeStatic(json_path.clj:10)
-    at json_path$at_path.invoke(json_path.clj:9)
-    at json_path_comparison.core$_main.invokeStatic(core.clj:10)
-    at json_path_comparison.core$_main.doInvoke(core.clj:6)
-    at clojure.lang.RestFn.applyTo(RestFn.java:137)
-    at json_path_comparison.core.main(Unknown Source)
+<pre><code>java.lang.Exception object must be an array.
 </code></pre>
 
 <h3 id="Elixir_jaxon___key_bracket_notation_with_number">
@@ -5134,24 +4701,7 @@ Bash (JSONPath.sh), Key bracket notation with number without quotes
 Clojure (json-path), Key bracket notation with number without quotes
 </h3>
 
-<pre><code>Exception in thread "main" java.lang.Exception: object must be an array.
-    at json_path.walker$walk_selector.invokeStatic(walker.clj:74)
-    at json_path.walker$walk_selector.invoke(walker.clj:63)
-    at json_path.walker$walk.invokeStatic(walker.clj:87)
-    at json_path.walker$walk.invoke(walker.clj:84)
-    at json_path.walker$walk$fn__1026.invoke(walker.clj:89)
-    at json_path.walker$map_SHARP_.invokeStatic(walker.clj:22)
-    at json_path.walker$map_SHARP_.invoke(walker.clj:17)
-    at json_path.walker$walk.invokeStatic(walker.clj:89)
-    at json_path.walker$walk.invoke(walker.clj:84)
-    at json_path$query.invokeStatic(json_path.clj:7)
-    at json_path$query.invoke(json_path.clj:6)
-    at json_path$at_path.invokeStatic(json_path.clj:10)
-    at json_path$at_path.invoke(json_path.clj:9)
-    at json_path_comparison.core$_main.invokeStatic(core.clj:10)
-    at json_path_comparison.core$_main.doInvoke(core.clj:6)
-    at clojure.lang.RestFn.applyTo(RestFn.java:137)
-    at json_path_comparison.core.main(Unknown Source)
+<pre><code>java.lang.Exception object must be an array.
 </code></pre>
 
 <h3 id="Golang_github.com-oliveagle-jsonpath___key_bracket_notation_with_number_without_quotes">
@@ -5207,24 +4757,7 @@ Bash (JSONPath.sh), Key bracket notation with single quote
 Clojure (json-path), Key bracket notation with single quote
 </h3>
 
-<pre><code>Exception in thread "main" java.lang.Exception: object must be an array.
-    at json_path.walker$walk_selector.invokeStatic(walker.clj:74)
-    at json_path.walker$walk_selector.invoke(walker.clj:63)
-    at json_path.walker$walk.invokeStatic(walker.clj:87)
-    at json_path.walker$walk.invoke(walker.clj:84)
-    at json_path.walker$walk$fn__1026.invoke(walker.clj:89)
-    at json_path.walker$map_SHARP_.invokeStatic(walker.clj:22)
-    at json_path.walker$map_SHARP_.invoke(walker.clj:17)
-    at json_path.walker$walk.invokeStatic(walker.clj:89)
-    at json_path.walker$walk.invoke(walker.clj:84)
-    at json_path$query.invokeStatic(json_path.clj:7)
-    at json_path$query.invoke(json_path.clj:6)
-    at json_path$at_path.invokeStatic(json_path.clj:10)
-    at json_path$at_path.invoke(json_path.clj:9)
-    at json_path_comparison.core$_main.invokeStatic(core.clj:10)
-    at json_path_comparison.core$_main.doInvoke(core.clj:6)
-    at clojure.lang.RestFn.applyTo(RestFn.java:137)
-    at json_path_comparison.core.main(Unknown Source)
+<pre><code>java.lang.Exception object must be an array.
 </code></pre>
 
 <h3 id="Cpp_jsoncons___key_bracket_notation_with_single_quote">
@@ -5413,24 +4946,7 @@ Bash (JSONPath.sh), Key bracket notation with single quote escaped
 Clojure (json-path), Key bracket notation with single quote escaped
 </h3>
 
-<pre><code>Exception in thread "main" java.lang.Exception: object must be an array.
-    at json_path.walker$walk_selector.invokeStatic(walker.clj:74)
-    at json_path.walker$walk_selector.invoke(walker.clj:63)
-    at json_path.walker$walk.invokeStatic(walker.clj:87)
-    at json_path.walker$walk.invoke(walker.clj:84)
-    at json_path.walker$walk$fn__1026.invoke(walker.clj:89)
-    at json_path.walker$map_SHARP_.invokeStatic(walker.clj:22)
-    at json_path.walker$map_SHARP_.invoke(walker.clj:17)
-    at json_path.walker$walk.invokeStatic(walker.clj:89)
-    at json_path.walker$walk.invoke(walker.clj:84)
-    at json_path$query.invokeStatic(json_path.clj:7)
-    at json_path$query.invoke(json_path.clj:6)
-    at json_path$at_path.invokeStatic(json_path.clj:10)
-    at json_path$at_path.invoke(json_path.clj:9)
-    at json_path_comparison.core$_main.invokeStatic(core.clj:10)
-    at json_path_comparison.core$_main.doInvoke(core.clj:6)
-    at clojure.lang.RestFn.applyTo(RestFn.java:137)
-    at json_path_comparison.core.main(Unknown Source)
+<pre><code>java.lang.Exception object must be an array.
 </code></pre>
 
 <h3 id="Elixir_jaxon___key_bracket_notation_with_single_quote_escaped">
@@ -5540,24 +5056,7 @@ Bash (JSONPath.sh), Key bracket notation with special characters
 Clojure (json-path), Key bracket notation with special characters
 </h3>
 
-<pre><code>Exception in thread "main" java.lang.Exception: object must be an array.
-    at json_path.walker$walk_selector.invokeStatic(walker.clj:74)
-    at json_path.walker$walk_selector.invoke(walker.clj:63)
-    at json_path.walker$walk.invokeStatic(walker.clj:87)
-    at json_path.walker$walk.invoke(walker.clj:84)
-    at json_path.walker$walk$fn__1026.invoke(walker.clj:89)
-    at json_path.walker$map_SHARP_.invokeStatic(walker.clj:22)
-    at json_path.walker$map_SHARP_.invoke(walker.clj:17)
-    at json_path.walker$walk.invokeStatic(walker.clj:89)
-    at json_path.walker$walk.invoke(walker.clj:84)
-    at json_path$query.invokeStatic(json_path.clj:7)
-    at json_path$query.invoke(json_path.clj:6)
-    at json_path$at_path.invokeStatic(json_path.clj:10)
-    at json_path$at_path.invoke(json_path.clj:9)
-    at json_path_comparison.core$_main.invokeStatic(core.clj:10)
-    at json_path_comparison.core$_main.doInvoke(core.clj:6)
-    at clojure.lang.RestFn.applyTo(RestFn.java:137)
-    at json_path_comparison.core.main(Unknown Source)
+<pre><code>java.lang.Exception object must be an array.
 </code></pre>
 
 <h3 id="Elixir_jaxon___key_bracket_notation_with_special_characters">
@@ -5694,24 +5193,7 @@ C (json-glib), Key bracket notation without quotes
 Clojure (json-path), Key bracket notation without quotes
 </h3>
 
-<pre><code>Exception in thread "main" java.lang.Exception: object must be an array.
-    at json_path.walker$walk_selector.invokeStatic(walker.clj:74)
-    at json_path.walker$walk_selector.invoke(walker.clj:63)
-    at json_path.walker$walk.invokeStatic(walker.clj:87)
-    at json_path.walker$walk.invoke(walker.clj:84)
-    at json_path.walker$walk$fn__1026.invoke(walker.clj:89)
-    at json_path.walker$map_SHARP_.invokeStatic(walker.clj:22)
-    at json_path.walker$map_SHARP_.invoke(walker.clj:17)
-    at json_path.walker$walk.invokeStatic(walker.clj:89)
-    at json_path.walker$walk.invoke(walker.clj:84)
-    at json_path$query.invokeStatic(json_path.clj:7)
-    at json_path$query.invoke(json_path.clj:6)
-    at json_path$at_path.invokeStatic(json_path.clj:10)
-    at json_path$at_path.invoke(json_path.clj:9)
-    at json_path_comparison.core$_main.invokeStatic(core.clj:10)
-    at json_path_comparison.core$_main.doInvoke(core.clj:6)
-    at clojure.lang.RestFn.applyTo(RestFn.java:137)
-    at json_path_comparison.core.main(Unknown Source)
+<pre><code>java.lang.Exception object must be an array.
 </code></pre>
 
 <h3 id="Elixir_jaxon___key_bracket_notation_without_quotes">
@@ -5880,24 +5362,7 @@ C (json-glib), Key dot bracket notation
 Clojure (json-path), Key dot bracket notation
 </h3>
 
-<pre><code>Exception in thread "main" java.lang.Exception: object must be an array.
-    at json_path.walker$walk_selector.invokeStatic(walker.clj:74)
-    at json_path.walker$walk_selector.invoke(walker.clj:63)
-    at json_path.walker$walk.invokeStatic(walker.clj:87)
-    at json_path.walker$walk.invoke(walker.clj:84)
-    at json_path.walker$walk$fn__1026.invoke(walker.clj:89)
-    at json_path.walker$map_SHARP_.invokeStatic(walker.clj:22)
-    at json_path.walker$map_SHARP_.invoke(walker.clj:17)
-    at json_path.walker$walk.invokeStatic(walker.clj:89)
-    at json_path.walker$walk.invoke(walker.clj:84)
-    at json_path$query.invokeStatic(json_path.clj:7)
-    at json_path$query.invoke(json_path.clj:6)
-    at json_path$at_path.invokeStatic(json_path.clj:10)
-    at json_path$at_path.invoke(json_path.clj:9)
-    at json_path_comparison.core$_main.invokeStatic(core.clj:10)
-    at json_path_comparison.core$_main.doInvoke(core.clj:6)
-    at clojure.lang.RestFn.applyTo(RestFn.java:137)
-    at json_path_comparison.core.main(Unknown Source)
+<pre><code>java.lang.Exception object must be an array.
 </code></pre>
 
 <h3 id="Cpp_jsoncons___key_dot_bracket_notation">
@@ -6029,24 +5494,7 @@ C (json-glib), Key dot bracket notation with double quotes
 Clojure (json-path), Key dot bracket notation with double quotes
 </h3>
 
-<pre><code>Exception in thread "main" java.lang.Exception: object must be an array.
-    at json_path.walker$walk_selector.invokeStatic(walker.clj:74)
-    at json_path.walker$walk_selector.invoke(walker.clj:63)
-    at json_path.walker$walk.invokeStatic(walker.clj:87)
-    at json_path.walker$walk.invoke(walker.clj:84)
-    at json_path.walker$walk$fn__1026.invoke(walker.clj:89)
-    at json_path.walker$map_SHARP_.invokeStatic(walker.clj:22)
-    at json_path.walker$map_SHARP_.invoke(walker.clj:17)
-    at json_path.walker$walk.invokeStatic(walker.clj:89)
-    at json_path.walker$walk.invoke(walker.clj:84)
-    at json_path$query.invokeStatic(json_path.clj:7)
-    at json_path$query.invoke(json_path.clj:6)
-    at json_path$at_path.invokeStatic(json_path.clj:10)
-    at json_path$at_path.invoke(json_path.clj:9)
-    at json_path_comparison.core$_main.invokeStatic(core.clj:10)
-    at json_path_comparison.core$_main.doInvoke(core.clj:6)
-    at clojure.lang.RestFn.applyTo(RestFn.java:137)
-    at json_path_comparison.core.main(Unknown Source)
+<pre><code>java.lang.Exception object must be an array.
 </code></pre>
 
 <h3 id="Cpp_jsoncons___key_dot_bracket_notation_with_double_quotes">
@@ -6213,24 +5661,7 @@ C (json-glib), Key dot bracket notation without quotes
 Clojure (json-path), Key dot bracket notation without quotes
 </h3>
 
-<pre><code>Exception in thread "main" java.lang.Exception: object must be an array.
-    at json_path.walker$walk_selector.invokeStatic(walker.clj:74)
-    at json_path.walker$walk_selector.invoke(walker.clj:63)
-    at json_path.walker$walk.invokeStatic(walker.clj:87)
-    at json_path.walker$walk.invoke(walker.clj:84)
-    at json_path.walker$walk$fn__1026.invoke(walker.clj:89)
-    at json_path.walker$map_SHARP_.invokeStatic(walker.clj:22)
-    at json_path.walker$map_SHARP_.invoke(walker.clj:17)
-    at json_path.walker$walk.invokeStatic(walker.clj:89)
-    at json_path.walker$walk.invoke(walker.clj:84)
-    at json_path$query.invokeStatic(json_path.clj:7)
-    at json_path$query.invoke(json_path.clj:6)
-    at json_path$at_path.invokeStatic(json_path.clj:10)
-    at json_path$at_path.invoke(json_path.clj:9)
-    at json_path_comparison.core$_main.invokeStatic(core.clj:10)
-    at json_path_comparison.core$_main.doInvoke(core.clj:6)
-    at clojure.lang.RestFn.applyTo(RestFn.java:137)
-    at json_path_comparison.core.main(Unknown Source)
+<pre><code>java.lang.Exception object must be an array.
 </code></pre>
 
 <h3 id="Cpp_jsoncons___key_dot_bracket_notation_without_quotes">
@@ -6899,44 +6330,7 @@ C (json-glib), Recursive array index
 Clojure (json-path), Recursive array index
 </h3>
 
-<pre><code>Exception in thread "main" java.lang.Exception: object must be an array.
-    at json_path.walker$walk_selector.invokeStatic(walker.clj:74)
-    at json_path.walker$walk_selector.invoke(walker.clj:63)
-    at json_path.walker$walk.invokeStatic(walker.clj:87)
-    at json_path.walker$walk.invoke(walker.clj:84)
-    at json_path.walker$walk$fn__1026.invoke(walker.clj:89)
-    at json_path.walker$map_SHARP_.invokeStatic(walker.clj:22)
-    at json_path.walker$map_SHARP_.invoke(walker.clj:17)
-    at clojure.core$partial$fn__5824.invoke(core.clj:2624)
-    at clojure.core$map$fn__5851.invoke(core.clj:2755)
-    at clojure.lang.LazySeq.sval(LazySeq.java:42)
-    at clojure.lang.LazySeq.seq(LazySeq.java:51)
-    at clojure.lang.RT.seq(RT.java:531)
-    at clojure.core$seq__5387.invokeStatic(core.clj:137)
-    at clojure.core$map$fn__5851.invoke(core.clj:2746)
-    at clojure.lang.LazySeq.sval(LazySeq.java:42)
-    at clojure.lang.LazySeq.seq(LazySeq.java:51)
-    at clojure.lang.Cons.next(Cons.java:39)
-    at clojure.lang.RT.boundedLength(RT.java:1788)
-    at clojure.lang.RestFn.applyTo(RestFn.java:130)
-    at clojure.core$apply.invokeStatic(core.clj:665)
-    at clojure.core$mapcat.invokeStatic(core.clj:2783)
-    at clojure.core$tree_seq$walk__6372$fn__6373.invoke(core.clj:4945)
-    at clojure.lang.LazySeq.sval(LazySeq.java:42)
-    at clojure.lang.LazySeq.seq(LazySeq.java:51)
-    at clojure.lang.LazySeq.more(LazySeq.java:87)
-    at clojure.lang.RT.more(RT.java:718)
-    at clojure.core$rest__5373.invokeStatic(core.clj:73)
-    at clojure.core$flatten.invokeStatic(core.clj:7136)
-    at clojure.core$flatten.invoke(core.clj:7136)
-    at json_path.walker$map_SHARP_.invokeStatic(walker.clj:20)
-    at json_path.walker$map_SHARP_.invoke(walker.clj:17)
-    at json_path$at_path.invokeStatic(json_path.clj:10)
-    at json_path$at_path.invoke(json_path.clj:9)
-    at json_path_comparison.core$_main.invokeStatic(core.clj:10)
-    at json_path_comparison.core$_main.doInvoke(core.clj:6)
-    at clojure.lang.RestFn.applyTo(RestFn.java:137)
-    at json_path_comparison.core.main(Unknown Source)
+<pre><code>java.lang.Exception object must be an array.
 </code></pre>
 
 <h3 id="Erlang_ejsonpath___recursive_array_index">
@@ -7755,27 +7149,7 @@ C (json-glib), Script expression
 Clojure (json-path), Script expression
 </h3>
 
-<pre><code>Exception in thread "main" java.lang.NumberFormatException: For input string: "("
-    at java.base/java.lang.NumberFormatException.forInputString(NumberFormatException.java:68)
-    at java.base/java.lang.Integer.parseInt(Integer.java:644)
-    at java.base/java.lang.Integer.parseInt(Integer.java:776)
-    at json_path.walker$walk_selector.invokeStatic(walker.clj:70)
-    at json_path.walker$walk_selector.invoke(walker.clj:63)
-    at json_path.walker$walk.invokeStatic(walker.clj:87)
-    at json_path.walker$walk.invoke(walker.clj:84)
-    at json_path.walker$walk$fn__1026.invoke(walker.clj:89)
-    at json_path.walker$map_SHARP_.invokeStatic(walker.clj:22)
-    at json_path.walker$map_SHARP_.invoke(walker.clj:17)
-    at json_path.walker$walk.invokeStatic(walker.clj:89)
-    at json_path.walker$walk.invoke(walker.clj:84)
-    at json_path$query.invokeStatic(json_path.clj:7)
-    at json_path$query.invoke(json_path.clj:6)
-    at json_path$at_path.invokeStatic(json_path.clj:10)
-    at json_path$at_path.invoke(json_path.clj:9)
-    at json_path_comparison.core$_main.invokeStatic(core.clj:10)
-    at json_path_comparison.core$_main.doInvoke(core.clj:6)
-    at clojure.lang.RestFn.applyTo(RestFn.java:137)
-    at json_path_comparison.core.main(Unknown Source)
+<pre><code>java.lang.NumberFormatException For input string: "("
 </code></pre>
 
 <h3 id="Elixir_jaxon___script_expression">
