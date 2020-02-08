@@ -316,12 +316,7 @@ Exception in thread "main" com.jayway.jsonpath.PathNotFoundException: Filter: [0
 Kotlin (com.nfeld.jsonpathlite), Array index on string
 </h3>
 
-<pre><code>Exception in thread "main" org.json.JSONException: A JSONArray text must start with '[' at 1 [character 2 line 1]
-    at org.json.JSONTokener.syntaxError(JSONTokener.java:507)
-    at org.json.JSONArray.&lt;init&gt;(JSONArray.java:109)
-    at org.json.JSONArray.&lt;init&gt;(JSONArray.java:162)
-    at com.nfeld.jsonpathlite.JsonPath$Companion.parse(JsonPath.kt:107)
-    at query.AppKt.main(App.kt:10)
+<pre><code>A JSONArray text must start with '[' at 1 [character 2 line 1]
 </code></pre>
 
 <h3 id="PHP_galbar-jsonpath___array_index_on_string">
@@ -632,8 +627,8 @@ Clojure (json-path), Array index slice no start no end
 </h3>
 
 <pre><code>Exception in thread "main" java.lang.NumberFormatException: null
-    at java.base/java.lang.Integer.parseInt(Integer.java:614)
-    at java.base/java.lang.Integer.parseInt(Integer.java:770)
+    at java.base/java.lang.Integer.parseInt(Integer.java:620)
+    at java.base/java.lang.Integer.parseInt(Integer.java:776)
     at json_path.walker$walk_selector.invokeStatic(walker.clj:70)
     at json_path.walker$walk_selector.invoke(walker.clj:63)
     at json_path.walker$walk.invokeStatic(walker.clj:87)
@@ -699,17 +694,7 @@ Exception in thread "main" com.jayway.jsonpath.InvalidPathException: Failed to p
 Kotlin (com.nfeld.jsonpathlite), Array index slice no start no end
 </h3>
 
-<pre><code>Exception in thread "main" java.lang.IndexOutOfBoundsException: Index 0 out of bounds for length 0
-    at java.base/jdk.internal.util.Preconditions.outOfBounds(Preconditions.java:64)
-    at java.base/jdk.internal.util.Preconditions.outOfBoundsCheckIndex(Preconditions.java:70)
-    at java.base/jdk.internal.util.Preconditions.checkIndex(Preconditions.java:248)
-    at java.base/java.util.Objects.checkIndex(Objects.java:372)
-    at java.base/java.util.ArrayList.get(ArrayList.java:458)
-    at com.nfeld.jsonpathlite.PathCompiler.compileBracket$json_path_lite(PathCompiler.kt:232)
-    at com.nfeld.jsonpathlite.PathCompiler.compile$json_path_lite(PathCompiler.kt:59)
-    at com.nfeld.jsonpathlite.JsonPath.&lt;init&gt;(JsonPath.kt:24)
-    at com.nfeld.jsonpathlite.JsonArray.read(JsonResult.kt:11)
-    at query.AppKt.main(App.kt:10)
+<pre><code>Index 0 out of bounds for length 0
 </code></pre>
 
 <h3 id="Perl_JSON-Path___array_index_slice_no_start_no_end">
@@ -1620,12 +1605,7 @@ Caused by: org.antlr.v4.runtime.NoViableAltException
 Kotlin (com.nfeld.jsonpathlite), Filter current object with value
 </h3>
 
-<pre><code>Exception in thread "main" java.lang.IllegalArgumentException: Unexpected char, char=?, index=2
-    at com.nfeld.jsonpathlite.PathCompiler.compileBracket$json_path_lite(PathCompiler.kt:198)
-    at com.nfeld.jsonpathlite.PathCompiler.compile$json_path_lite(PathCompiler.kt:59)
-    at com.nfeld.jsonpathlite.JsonPath.&lt;init&gt;(JsonPath.kt:24)
-    at com.nfeld.jsonpathlite.JsonArray.read(JsonResult.kt:11)
-    at query.AppKt.main(App.kt:10)
+<pre><code>Unexpected char, char=?, index=2
 </code></pre>
 
 <h3 id="PHP_Goessner___filter_current_object_with_value">
@@ -1699,12 +1679,7 @@ Elixir (jaxon), Filter equal
 Kotlin (com.nfeld.jsonpathlite), Filter equal
 </h3>
 
-<pre><code>Exception in thread "main" java.lang.IllegalArgumentException: Unexpected char, char=?, index=2
-    at com.nfeld.jsonpathlite.PathCompiler.compileBracket$json_path_lite(PathCompiler.kt:198)
-    at com.nfeld.jsonpathlite.PathCompiler.compile$json_path_lite(PathCompiler.kt:59)
-    at com.nfeld.jsonpathlite.JsonPath.&lt;init&gt;(JsonPath.kt:24)
-    at com.nfeld.jsonpathlite.JsonArray.read(JsonResult.kt:11)
-    at query.AppKt.main(App.kt:10)
+<pre><code>Unexpected char, char=?, index=2
 </code></pre>
 
 <h3 id="PHP_Goessner___filter_equal">
@@ -1772,12 +1747,7 @@ Haskell (jsonpath), Filter equal on number value with string query
 Kotlin (com.nfeld.jsonpathlite), Filter equal on number value with string query
 </h3>
 
-<pre><code>Exception in thread "main" java.lang.IllegalArgumentException: Unexpected char, char=?, index=2
-    at com.nfeld.jsonpathlite.PathCompiler.compileBracket$json_path_lite(PathCompiler.kt:198)
-    at com.nfeld.jsonpathlite.PathCompiler.compile$json_path_lite(PathCompiler.kt:59)
-    at com.nfeld.jsonpathlite.JsonPath.&lt;init&gt;(JsonPath.kt:24)
-    at com.nfeld.jsonpathlite.JsonArray.read(JsonResult.kt:11)
-    at query.AppKt.main(App.kt:10)
+<pre><code>Unexpected char, char=?, index=2
 </code></pre>
 
 <h3 id="PHP_Goessner___filter_equal_on_number_value_with_string_query">
@@ -1882,12 +1852,7 @@ CallStack (from HasCallStack):
 Kotlin (com.nfeld.jsonpathlite), Filter equal on object
 </h3>
 
-<pre><code>Exception in thread "main" java.lang.IllegalArgumentException: Unexpected char, char=?, index=2
-    at com.nfeld.jsonpathlite.PathCompiler.compileBracket$json_path_lite(PathCompiler.kt:198)
-    at com.nfeld.jsonpathlite.PathCompiler.compile$json_path_lite(PathCompiler.kt:59)
-    at com.nfeld.jsonpathlite.JsonPath.&lt;init&gt;(JsonPath.kt:24)
-    at com.nfeld.jsonpathlite.JsonObject.read(JsonResult.kt:7)
-    at query.AppKt.main(App.kt:10)
+<pre><code>Unexpected char, char=?, index=2
 </code></pre>
 
 <h3 id="PHP_Goessner___filter_equal_on_object">
@@ -1971,12 +1936,7 @@ JavaScript (Goessner), Filter equal on object with key matching query
 Kotlin (com.nfeld.jsonpathlite), Filter equal on object with key matching query
 </h3>
 
-<pre><code>Exception in thread "main" java.lang.IllegalArgumentException: Unexpected char, char=?, index=2
-    at com.nfeld.jsonpathlite.PathCompiler.compileBracket$json_path_lite(PathCompiler.kt:198)
-    at com.nfeld.jsonpathlite.PathCompiler.compile$json_path_lite(PathCompiler.kt:59)
-    at com.nfeld.jsonpathlite.JsonPath.&lt;init&gt;(JsonPath.kt:24)
-    at com.nfeld.jsonpathlite.JsonObject.read(JsonResult.kt:7)
-    at query.AppKt.main(App.kt:10)
+<pre><code>Unexpected char, char=?, index=2
 </code></pre>
 
 <h3 id="PHP_Goessner___filter_equal_on_object_with_key_matching_query">
@@ -2086,12 +2046,7 @@ Caused by: java.lang.NumberFormatException: Character " is neither a decimal dig
 Kotlin (com.nfeld.jsonpathlite), Filter equal on string value with number query
 </h3>
 
-<pre><code>Exception in thread "main" java.lang.IllegalArgumentException: Unexpected char, char=?, index=2
-    at com.nfeld.jsonpathlite.PathCompiler.compileBracket$json_path_lite(PathCompiler.kt:198)
-    at com.nfeld.jsonpathlite.PathCompiler.compile$json_path_lite(PathCompiler.kt:59)
-    at com.nfeld.jsonpathlite.JsonPath.&lt;init&gt;(JsonPath.kt:24)
-    at com.nfeld.jsonpathlite.JsonArray.read(JsonResult.kt:11)
-    at query.AppKt.main(App.kt:10)
+<pre><code>Unexpected char, char=?, index=2
 </code></pre>
 
 <h3 id="PHP_Goessner___filter_equal_on_string_value_with_number_query">
@@ -2184,12 +2139,7 @@ Caused by: org.antlr.v4.runtime.NoViableAltException
 Kotlin (com.nfeld.jsonpathlite), Filter equal on string with dot
 </h3>
 
-<pre><code>Exception in thread "main" java.lang.IllegalArgumentException: Unexpected char, char=?, index=2
-    at com.nfeld.jsonpathlite.PathCompiler.compileBracket$json_path_lite(PathCompiler.kt:198)
-    at com.nfeld.jsonpathlite.PathCompiler.compile$json_path_lite(PathCompiler.kt:59)
-    at com.nfeld.jsonpathlite.JsonPath.&lt;init&gt;(JsonPath.kt:24)
-    at com.nfeld.jsonpathlite.JsonArray.read(JsonResult.kt:11)
-    at query.AppKt.main(App.kt:10)
+<pre><code>Unexpected char, char=?, index=2
 </code></pre>
 
 <h3 id="PHP_Goessner___filter_equal_on_string_with_dot">
@@ -2282,12 +2232,7 @@ Invalid JSONPath: $[?(@.key=='value')]
 Kotlin (com.nfeld.jsonpathlite), Filter equal on string with single quotes
 </h3>
 
-<pre><code>Exception in thread "main" java.lang.IllegalArgumentException: Unexpected char, char=?, index=2
-    at com.nfeld.jsonpathlite.PathCompiler.compileBracket$json_path_lite(PathCompiler.kt:198)
-    at com.nfeld.jsonpathlite.PathCompiler.compile$json_path_lite(PathCompiler.kt:59)
-    at com.nfeld.jsonpathlite.JsonPath.&lt;init&gt;(JsonPath.kt:24)
-    at com.nfeld.jsonpathlite.JsonArray.read(JsonResult.kt:11)
-    at query.AppKt.main(App.kt:10)
+<pre><code>Unexpected char, char=?, index=2
 </code></pre>
 
 <h3 id="PHP_Goessner___filter_equal_on_string_with_single_quotes">
@@ -2428,12 +2373,7 @@ Exception in thread "main" com.jayway.jsonpath.InvalidPathException: Expected ch
 Kotlin (com.nfeld.jsonpathlite), Filter equal single equal
 </h3>
 
-<pre><code>Exception in thread "main" java.lang.IllegalArgumentException: Unexpected char, char=?, index=2
-    at com.nfeld.jsonpathlite.PathCompiler.compileBracket$json_path_lite(PathCompiler.kt:198)
-    at com.nfeld.jsonpathlite.PathCompiler.compile$json_path_lite(PathCompiler.kt:59)
-    at com.nfeld.jsonpathlite.JsonPath.&lt;init&gt;(JsonPath.kt:24)
-    at com.nfeld.jsonpathlite.JsonArray.read(JsonResult.kt:11)
-    at query.AppKt.main(App.kt:10)
+<pre><code>Unexpected char, char=?, index=2
 </code></pre>
 
 <h3 id="PHP_Goessner___filter_equal_single_equal">
@@ -2567,12 +2507,7 @@ Haskell (jsonpath), Filter greater than
 Kotlin (com.nfeld.jsonpathlite), Filter greater than
 </h3>
 
-<pre><code>Exception in thread "main" java.lang.IllegalArgumentException: Unexpected char, char=?, index=2
-    at com.nfeld.jsonpathlite.PathCompiler.compileBracket$json_path_lite(PathCompiler.kt:198)
-    at com.nfeld.jsonpathlite.PathCompiler.compile$json_path_lite(PathCompiler.kt:59)
-    at com.nfeld.jsonpathlite.JsonPath.&lt;init&gt;(JsonPath.kt:24)
-    at com.nfeld.jsonpathlite.JsonArray.read(JsonResult.kt:11)
-    at query.AppKt.main(App.kt:10)
+<pre><code>Unexpected char, char=?, index=2
 </code></pre>
 
 <h3 id="PHP_Goessner___filter_greater_than">
@@ -2693,12 +2628,7 @@ Invalid JSONPath: $[?(@.key&gt;=42)]
 Kotlin (com.nfeld.jsonpathlite), Filter greater than or equal
 </h3>
 
-<pre><code>Exception in thread "main" java.lang.IllegalArgumentException: Unexpected char, char=?, index=2
-    at com.nfeld.jsonpathlite.PathCompiler.compileBracket$json_path_lite(PathCompiler.kt:198)
-    at com.nfeld.jsonpathlite.PathCompiler.compile$json_path_lite(PathCompiler.kt:59)
-    at com.nfeld.jsonpathlite.JsonPath.&lt;init&gt;(JsonPath.kt:24)
-    at com.nfeld.jsonpathlite.JsonArray.read(JsonResult.kt:11)
-    at query.AppKt.main(App.kt:10)
+<pre><code>Unexpected char, char=?, index=2
 </code></pre>
 
 <h3 id="PHP_Goessner___filter_greater_than_or_equal">
@@ -2812,12 +2742,7 @@ Haskell (jsonpath), Filter less than
 Kotlin (com.nfeld.jsonpathlite), Filter less than
 </h3>
 
-<pre><code>Exception in thread "main" java.lang.IllegalArgumentException: Unexpected char, char=?, index=2
-    at com.nfeld.jsonpathlite.PathCompiler.compileBracket$json_path_lite(PathCompiler.kt:198)
-    at com.nfeld.jsonpathlite.PathCompiler.compile$json_path_lite(PathCompiler.kt:59)
-    at com.nfeld.jsonpathlite.JsonPath.&lt;init&gt;(JsonPath.kt:24)
-    at com.nfeld.jsonpathlite.JsonArray.read(JsonResult.kt:11)
-    at query.AppKt.main(App.kt:10)
+<pre><code>Unexpected char, char=?, index=2
 </code></pre>
 
 <h3 id="PHP_Goessner___filter_less_than">
@@ -2958,12 +2883,7 @@ Caused by: java.lang.NumberFormatException: Character " is neither a decimal dig
 Kotlin (com.nfeld.jsonpathlite), Filter less than on string
 </h3>
 
-<pre><code>Exception in thread "main" java.lang.IllegalArgumentException: Unexpected char, char=?, index=2
-    at com.nfeld.jsonpathlite.PathCompiler.compileBracket$json_path_lite(PathCompiler.kt:198)
-    at com.nfeld.jsonpathlite.PathCompiler.compile$json_path_lite(PathCompiler.kt:59)
-    at com.nfeld.jsonpathlite.JsonPath.&lt;init&gt;(JsonPath.kt:24)
-    at com.nfeld.jsonpathlite.JsonArray.read(JsonResult.kt:11)
-    at query.AppKt.main(App.kt:10)
+<pre><code>Unexpected char, char=?, index=2
 </code></pre>
 
 <h3 id="PHP_Goessner___filter_less_than_on_string">
@@ -3098,12 +3018,7 @@ Invalid JSONPath: $[?(@.key&lt;=42)]
 Kotlin (com.nfeld.jsonpathlite), Filter less than or equal
 </h3>
 
-<pre><code>Exception in thread "main" java.lang.IllegalArgumentException: Unexpected char, char=?, index=2
-    at com.nfeld.jsonpathlite.PathCompiler.compileBracket$json_path_lite(PathCompiler.kt:198)
-    at com.nfeld.jsonpathlite.PathCompiler.compile$json_path_lite(PathCompiler.kt:59)
-    at com.nfeld.jsonpathlite.JsonPath.&lt;init&gt;(JsonPath.kt:24)
-    at com.nfeld.jsonpathlite.JsonArray.read(JsonResult.kt:11)
-    at query.AppKt.main(App.kt:10)
+<pre><code>Unexpected char, char=?, index=2
 </code></pre>
 
 <h3 id="PHP_Goessner___filter_less_than_or_equal">
@@ -3214,12 +3129,7 @@ Caused by: org.antlr.v4.runtime.NoViableAltException
 Kotlin (com.nfeld.jsonpathlite), Filter null
 </h3>
 
-<pre><code>Exception in thread "main" java.lang.IllegalArgumentException: Unexpected char, char=?, index=2
-    at com.nfeld.jsonpathlite.PathCompiler.compileBracket$json_path_lite(PathCompiler.kt:198)
-    at com.nfeld.jsonpathlite.PathCompiler.compile$json_path_lite(PathCompiler.kt:59)
-    at com.nfeld.jsonpathlite.JsonPath.&lt;init&gt;(JsonPath.kt:24)
-    at com.nfeld.jsonpathlite.JsonArray.read(JsonResult.kt:11)
-    at query.AppKt.main(App.kt:10)
+<pre><code>Unexpected char, char=?, index=2
 </code></pre>
 
 <h3 id="PHP_Goessner___filter_null">
@@ -3338,12 +3248,7 @@ Invalid JSONPath: $[?(@.name=~/hello.*/)]
 Kotlin (com.nfeld.jsonpathlite), Filter regular expression
 </h3>
 
-<pre><code>Exception in thread "main" java.lang.IllegalArgumentException: Unexpected char, char=?, index=2
-    at com.nfeld.jsonpathlite.PathCompiler.compileBracket$json_path_lite(PathCompiler.kt:198)
-    at com.nfeld.jsonpathlite.PathCompiler.compile$json_path_lite(PathCompiler.kt:59)
-    at com.nfeld.jsonpathlite.JsonPath.&lt;init&gt;(JsonPath.kt:24)
-    at com.nfeld.jsonpathlite.JsonArray.read(JsonResult.kt:11)
-    at query.AppKt.main(App.kt:10)
+<pre><code>Unexpected char, char=?, index=2
 </code></pre>
 
 <h3 id="PHP_Goessner___filter_regular_expression">
@@ -3476,12 +3381,7 @@ Invalid JSONPath: $[?(@.key&gt;42 &amp;&amp; @.key&lt;44)]
 Kotlin (com.nfeld.jsonpathlite), Filter with boolean operation
 </h3>
 
-<pre><code>Exception in thread "main" java.lang.IllegalArgumentException: Unexpected char, char=?, index=2
-    at com.nfeld.jsonpathlite.PathCompiler.compileBracket$json_path_lite(PathCompiler.kt:198)
-    at com.nfeld.jsonpathlite.PathCompiler.compile$json_path_lite(PathCompiler.kt:59)
-    at com.nfeld.jsonpathlite.JsonPath.&lt;init&gt;(JsonPath.kt:24)
-    at com.nfeld.jsonpathlite.JsonArray.read(JsonResult.kt:11)
-    at query.AppKt.main(App.kt:10)
+<pre><code>Unexpected char, char=?, index=2
 </code></pre>
 
 <h3 id="PHP_Goessner___filter_with_boolean_operation">
@@ -3693,12 +3593,7 @@ Java (com.github.jsurfer), Filter with subfilter
 Kotlin (com.nfeld.jsonpathlite), Filter with subfilter
 </h3>
 
-<pre><code>Exception in thread "main" java.lang.IllegalArgumentException: Unexpected char, char=?, index=2
-    at com.nfeld.jsonpathlite.PathCompiler.compileBracket$json_path_lite(PathCompiler.kt:198)
-    at com.nfeld.jsonpathlite.PathCompiler.compile$json_path_lite(PathCompiler.kt:59)
-    at com.nfeld.jsonpathlite.JsonPath.&lt;init&gt;(JsonPath.kt:24)
-    at com.nfeld.jsonpathlite.JsonArray.read(JsonResult.kt:11)
-    at query.AppKt.main(App.kt:10)
+<pre><code>Unexpected char, char=?, index=2
 </code></pre>
 
 <h3 id="PHP_Goessner___filter_with_subfilter">
@@ -3804,12 +3699,7 @@ Invalid JSONPath: $[?(@.key)]
 Kotlin (com.nfeld.jsonpathlite), Filter with value
 </h3>
 
-<pre><code>Exception in thread "main" java.lang.IllegalArgumentException: Unexpected char, char=?, index=2
-    at com.nfeld.jsonpathlite.PathCompiler.compileBracket$json_path_lite(PathCompiler.kt:198)
-    at com.nfeld.jsonpathlite.PathCompiler.compile$json_path_lite(PathCompiler.kt:59)
-    at com.nfeld.jsonpathlite.JsonPath.&lt;init&gt;(JsonPath.kt:24)
-    at com.nfeld.jsonpathlite.JsonArray.read(JsonResult.kt:11)
-    at query.AppKt.main(App.kt:10)
+<pre><code>Unexpected char, char=?, index=2
 </code></pre>
 
 <h3 id="PHP_Goessner___filter_with_value">
@@ -3887,12 +3777,7 @@ Invalid JSONPath: $[?(@.key)]
 Kotlin (com.nfeld.jsonpathlite), Filter with value on null
 </h3>
 
-<pre><code>Exception in thread "main" java.lang.IllegalArgumentException: Unexpected char, char=?, index=2
-    at com.nfeld.jsonpathlite.PathCompiler.compileBracket$json_path_lite(PathCompiler.kt:198)
-    at com.nfeld.jsonpathlite.PathCompiler.compile$json_path_lite(PathCompiler.kt:59)
-    at com.nfeld.jsonpathlite.JsonPath.&lt;init&gt;(JsonPath.kt:24)
-    at com.nfeld.jsonpathlite.JsonArray.read(JsonResult.kt:11)
-    at query.AppKt.main(App.kt:10)
+<pre><code>Unexpected char, char=?, index=2
 </code></pre>
 
 <h3 id="PHP_Goessner___filter_with_value_on_null">
@@ -4015,12 +3900,7 @@ Caused by: org.antlr.v4.runtime.InputMismatchException
 Kotlin (com.nfeld.jsonpathlite), Filter without value
 </h3>
 
-<pre><code>Exception in thread "main" java.lang.IllegalArgumentException: Unexpected char, char=?, index=2
-    at com.nfeld.jsonpathlite.PathCompiler.compileBracket$json_path_lite(PathCompiler.kt:198)
-    at com.nfeld.jsonpathlite.PathCompiler.compile$json_path_lite(PathCompiler.kt:59)
-    at com.nfeld.jsonpathlite.JsonPath.&lt;init&gt;(JsonPath.kt:24)
-    at com.nfeld.jsonpathlite.JsonArray.read(JsonResult.kt:11)
-    at query.AppKt.main(App.kt:10)
+<pre><code>Unexpected char, char=?, index=2
 </code></pre>
 
 <h3 id="PHP_Goessner___filter_without_value">
@@ -4721,12 +4601,7 @@ Caused by: org.antlr.v4.runtime.NoViableAltException
 Kotlin (com.nfeld.jsonpathlite), Key bracket notation with double quotes
 </h3>
 
-<pre><code>Exception in thread "main" java.lang.IllegalArgumentException: Unexpected char, char=", index=2
-    at com.nfeld.jsonpathlite.PathCompiler.compileBracket$json_path_lite(PathCompiler.kt:198)
-    at com.nfeld.jsonpathlite.PathCompiler.compile$json_path_lite(PathCompiler.kt:59)
-    at com.nfeld.jsonpathlite.JsonPath.&lt;init&gt;(JsonPath.kt:24)
-    at com.nfeld.jsonpathlite.JsonObject.read(JsonResult.kt:7)
-    at query.AppKt.main(App.kt:10)
+<pre><code>Unexpected char, char=", index=2
 </code></pre>
 
 <h3 id="PHP_Goessner___key_bracket_notation_with_double_quotes">
@@ -5094,12 +4969,7 @@ Exception in thread "main" com.jayway.jsonpath.InvalidPathException: Could not p
 Kotlin (com.nfeld.jsonpathlite), Key bracket notation with nested object without quotes
 </h3>
 
-<pre><code>Exception in thread "main" java.lang.IllegalArgumentException: Unexpected char, char=t, index=2
-    at com.nfeld.jsonpathlite.PathCompiler.compileBracket$json_path_lite(PathCompiler.kt:198)
-    at com.nfeld.jsonpathlite.PathCompiler.compile$json_path_lite(PathCompiler.kt:59)
-    at com.nfeld.jsonpathlite.JsonPath.&lt;init&gt;(JsonPath.kt:24)
-    at com.nfeld.jsonpathlite.JsonObject.read(JsonResult.kt:7)
-    at query.AppKt.main(App.kt:10)
+<pre><code>Unexpected char, char=t, index=2
 </code></pre>
 
 <h3 id="PHP_flow-jsonpath___key_bracket_notation_with_nested_object_without_quotes">
@@ -5470,11 +5340,7 @@ Exception in thread "main" com.jayway.jsonpath.InvalidPathException: Property mu
 Kotlin (com.nfeld.jsonpathlite), Key bracket notation with single quote
 </h3>
 
-<pre><code>Exception in thread "main" java.lang.IllegalArgumentException: Expecting closing array bracket with a value inside
-    at com.nfeld.jsonpathlite.PathCompiler.compile$json_path_lite(PathCompiler.kt:76)
-    at com.nfeld.jsonpathlite.JsonPath.&lt;init&gt;(JsonPath.kt:24)
-    at com.nfeld.jsonpathlite.JsonObject.read(JsonResult.kt:7)
-    at query.AppKt.main(App.kt:10)
+<pre><code>Expecting closing array bracket with a value inside
 </code></pre>
 
 <h3 id="PHP_remorhaz-jsonpath___key_bracket_notation_with_single_quote">
@@ -5948,12 +5814,7 @@ Exception in thread "main" com.jayway.jsonpath.InvalidPathException: Could not p
 Kotlin (com.nfeld.jsonpathlite), Key bracket notation without quotes
 </h3>
 
-<pre><code>Exception in thread "main" java.lang.IllegalArgumentException: Unexpected char, char=k, index=2
-    at com.nfeld.jsonpathlite.PathCompiler.compileBracket$json_path_lite(PathCompiler.kt:198)
-    at com.nfeld.jsonpathlite.PathCompiler.compile$json_path_lite(PathCompiler.kt:59)
-    at com.nfeld.jsonpathlite.JsonPath.&lt;init&gt;(JsonPath.kt:24)
-    at com.nfeld.jsonpathlite.JsonObject.read(JsonResult.kt:7)
-    at query.AppKt.main(App.kt:10)
+<pre><code>Unexpected char, char=k, index=2
 </code></pre>
 
 <h3 id="Python_jsonpath2___key_bracket_notation_without_quotes">
@@ -6281,12 +6142,7 @@ Caused by: org.antlr.v4.runtime.InputMismatchException
 Kotlin (com.nfeld.jsonpathlite), Key dot bracket notation with double quotes
 </h3>
 
-<pre><code>Exception in thread "main" java.lang.IllegalArgumentException: Unexpected char, char=", index=3
-    at com.nfeld.jsonpathlite.PathCompiler.compileBracket$json_path_lite(PathCompiler.kt:198)
-    at com.nfeld.jsonpathlite.PathCompiler.compile$json_path_lite(PathCompiler.kt:59)
-    at com.nfeld.jsonpathlite.JsonPath.&lt;init&gt;(JsonPath.kt:24)
-    at com.nfeld.jsonpathlite.JsonObject.read(JsonResult.kt:7)
-    at query.AppKt.main(App.kt:10)
+<pre><code>Unexpected char, char=", index=3
 </code></pre>
 
 <h3 id="PHP_Goessner___key_dot_bracket_notation_with_double_quotes">
@@ -6484,12 +6340,7 @@ Exception in thread "main" com.jayway.jsonpath.InvalidPathException: Could not p
 Kotlin (com.nfeld.jsonpathlite), Key dot bracket notation without quotes
 </h3>
 
-<pre><code>Exception in thread "main" java.lang.IllegalArgumentException: Unexpected char, char=k, index=3
-    at com.nfeld.jsonpathlite.PathCompiler.compileBracket$json_path_lite(PathCompiler.kt:198)
-    at com.nfeld.jsonpathlite.PathCompiler.compile$json_path_lite(PathCompiler.kt:59)
-    at com.nfeld.jsonpathlite.JsonPath.&lt;init&gt;(JsonPath.kt:24)
-    at com.nfeld.jsonpathlite.JsonObject.read(JsonResult.kt:7)
-    at query.AppKt.main(App.kt:10)
+<pre><code>Unexpected char, char=k, index=3
 </code></pre>
 
 <h3 id="PHP_galbar-jsonpath___key_dot_bracket_notation_without_quotes">
@@ -7352,12 +7203,7 @@ Haskell (jsonpath), Recursive filter
 Kotlin (com.nfeld.jsonpathlite), Recursive filter
 </h3>
 
-<pre><code>Exception in thread "main" java.lang.IllegalArgumentException: Unexpected char, char=?, index=4
-    at com.nfeld.jsonpathlite.PathCompiler.compileBracket$json_path_lite(PathCompiler.kt:198)
-    at com.nfeld.jsonpathlite.PathCompiler.compile$json_path_lite(PathCompiler.kt:59)
-    at com.nfeld.jsonpathlite.JsonPath.&lt;init&gt;(JsonPath.kt:24)
-    at com.nfeld.jsonpathlite.JsonObject.read(JsonResult.kt:7)
-    at query.AppKt.main(App.kt:10)
+<pre><code>Unexpected char, char=?, index=4
 </code></pre>
 
 <h3 id="PHP_Goessner___recursive_filter">
@@ -7467,12 +7313,7 @@ Invalid JSONPath: $..[?(@.id)]
 Kotlin (com.nfeld.jsonpathlite), Recursive filter with value
 </h3>
 
-<pre><code>Exception in thread "main" java.lang.IllegalArgumentException: Unexpected char, char=?, index=4
-    at com.nfeld.jsonpathlite.PathCompiler.compileBracket$json_path_lite(PathCompiler.kt:198)
-    at com.nfeld.jsonpathlite.PathCompiler.compile$json_path_lite(PathCompiler.kt:59)
-    at com.nfeld.jsonpathlite.JsonPath.&lt;init&gt;(JsonPath.kt:24)
-    at com.nfeld.jsonpathlite.JsonObject.read(JsonResult.kt:7)
-    at query.AppKt.main(App.kt:10)
+<pre><code>Unexpected char, char=?, index=4
 </code></pre>
 
 <h3 id="PHP_Goessner___recursive_filter_with_value">
@@ -7832,12 +7673,7 @@ JavaScript (jsonpath), Recursive wildcard on scalar
 Kotlin (com.nfeld.jsonpathlite), Recursive wildcard on scalar
 </h3>
 
-<pre><code>Exception in thread "main" org.json.JSONException: A JSONArray text must start with '[' at 1 [character 2 line 1]
-    at org.json.JSONTokener.syntaxError(JSONTokener.java:507)
-    at org.json.JSONArray.&lt;init&gt;(JSONArray.java:109)
-    at org.json.JSONArray.&lt;init&gt;(JSONArray.java:162)
-    at com.nfeld.jsonpathlite.JsonPath$Companion.parse(JsonPath.kt:107)
-    at query.AppKt.main(App.kt:10)
+<pre><code>A JSONArray text must start with '[' at 1 [character 2 line 1]
 </code></pre>
 
 <h3 id="PHP_Goessner___recursive_wildcard_on_scalar">
@@ -7920,9 +7756,9 @@ Clojure (json-path), Script expression
 </h3>
 
 <pre><code>Exception in thread "main" java.lang.NumberFormatException: For input string: "("
-    at java.base/java.lang.NumberFormatException.forInputString(NumberFormatException.java:65)
-    at java.base/java.lang.Integer.parseInt(Integer.java:638)
-    at java.base/java.lang.Integer.parseInt(Integer.java:770)
+    at java.base/java.lang.NumberFormatException.forInputString(NumberFormatException.java:68)
+    at java.base/java.lang.Integer.parseInt(Integer.java:644)
+    at java.base/java.lang.Integer.parseInt(Integer.java:776)
     at json_path.walker$walk_selector.invokeStatic(walker.clj:70)
     at json_path.walker$walk_selector.invoke(walker.clj:63)
     at json_path.walker$walk.invokeStatic(walker.clj:87)
@@ -8039,12 +7875,7 @@ Exception in thread "main" com.jayway.jsonpath.InvalidPathException: Could not p
 Kotlin (com.nfeld.jsonpathlite), Script expression
 </h3>
 
-<pre><code>Exception in thread "main" java.lang.IllegalArgumentException: Unexpected char, char=(, index=2
-    at com.nfeld.jsonpathlite.PathCompiler.compileBracket$json_path_lite(PathCompiler.kt:198)
-    at com.nfeld.jsonpathlite.PathCompiler.compile$json_path_lite(PathCompiler.kt:59)
-    at com.nfeld.jsonpathlite.JsonPath.&lt;init&gt;(JsonPath.kt:24)
-    at com.nfeld.jsonpathlite.JsonArray.read(JsonResult.kt:11)
-    at query.AppKt.main(App.kt:10)
+<pre><code>Unexpected char, char=(, index=2
 </code></pre>
 
 <h3 id="PHP_Goessner___script_expression">
@@ -8148,12 +7979,7 @@ Bash (JSONPath.sh), Wildcard bracket notation on array
 Kotlin (com.nfeld.jsonpathlite), Wildcard bracket notation on array
 </h3>
 
-<pre><code>Exception in thread "main" java.lang.IllegalArgumentException: Unexpected char, char=*, index=2
-    at com.nfeld.jsonpathlite.PathCompiler.compileBracket$json_path_lite(PathCompiler.kt:198)
-    at com.nfeld.jsonpathlite.PathCompiler.compile$json_path_lite(PathCompiler.kt:59)
-    at com.nfeld.jsonpathlite.JsonPath.&lt;init&gt;(JsonPath.kt:24)
-    at com.nfeld.jsonpathlite.JsonArray.read(JsonResult.kt:11)
-    at query.AppKt.main(App.kt:10)
+<pre><code>Unexpected char, char=*, index=2
 </code></pre>
 
 <h3 id="Rust_jsonpath___wildcard_bracket_notation_on_array">
@@ -8167,12 +7993,7 @@ Rust (jsonpath), Wildcard bracket notation on array
 Kotlin (com.nfeld.jsonpathlite), Wildcard bracket notation on null value array
 </h3>
 
-<pre><code>Exception in thread "main" java.lang.IllegalArgumentException: Unexpected char, char=*, index=2
-    at com.nfeld.jsonpathlite.PathCompiler.compileBracket$json_path_lite(PathCompiler.kt:198)
-    at com.nfeld.jsonpathlite.PathCompiler.compile$json_path_lite(PathCompiler.kt:59)
-    at com.nfeld.jsonpathlite.JsonPath.&lt;init&gt;(JsonPath.kt:24)
-    at com.nfeld.jsonpathlite.JsonArray.read(JsonResult.kt:11)
-    at query.AppKt.main(App.kt:10)
+<pre><code>Unexpected char, char=*, index=2
 </code></pre>
 
 <h3 id="Rust_jsonpath___wildcard_bracket_notation_on_null_value_array">
@@ -8193,12 +8014,7 @@ Golang (github.com-oliveagle-jsonpath), Wildcard bracket notation on object
 Kotlin (com.nfeld.jsonpathlite), Wildcard bracket notation on object
 </h3>
 
-<pre><code>Exception in thread "main" java.lang.IllegalArgumentException: Unexpected char, char=*, index=2
-    at com.nfeld.jsonpathlite.PathCompiler.compileBracket$json_path_lite(PathCompiler.kt:198)
-    at com.nfeld.jsonpathlite.PathCompiler.compile$json_path_lite(PathCompiler.kt:59)
-    at com.nfeld.jsonpathlite.JsonPath.&lt;init&gt;(JsonPath.kt:24)
-    at com.nfeld.jsonpathlite.JsonObject.read(JsonResult.kt:7)
-    at query.AppKt.main(App.kt:10)
+<pre><code>Unexpected char, char=*, index=2
 </code></pre>
 
 <h3 id="Rust_jsonpath___wildcard_bracket_notation_on_object">
@@ -8212,12 +8028,7 @@ Rust (jsonpath), Wildcard bracket notation on object
 Kotlin (com.nfeld.jsonpathlite), Wildcard bracket notation with key on nested objects
 </h3>
 
-<pre><code>Exception in thread "main" java.lang.IllegalArgumentException: Unexpected char, char=*, index=2
-    at com.nfeld.jsonpathlite.PathCompiler.compileBracket$json_path_lite(PathCompiler.kt:198)
-    at com.nfeld.jsonpathlite.PathCompiler.compile$json_path_lite(PathCompiler.kt:59)
-    at com.nfeld.jsonpathlite.JsonPath.&lt;init&gt;(JsonPath.kt:24)
-    at com.nfeld.jsonpathlite.JsonArray.read(JsonResult.kt:11)
-    at query.AppKt.main(App.kt:10)
+<pre><code>Unexpected char, char=*, index=2
 </code></pre>
 
 <h3 id="Rust_jsonpath___wildcard_bracket_notation_with_key_on_nested_objects">

@@ -43,8 +43,8 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   Exception in thread "main" java.lang.NumberFormatException: null
-  	at java.base/java.lang.Integer.parseInt(Integer.java:614)
-  	at java.base/java.lang.Integer.parseInt(Integer.java:770)
+  	at java.base/java.lang.Integer.parseInt(Integer.java:620)
+  	at java.base/java.lang.Integer.parseInt(Integer.java:776)
   	at json_path.walker$walk_selector.invokeStatic(walker.clj:70)
   	at json_path.walker$walk_selector.invoke(walker.clj:63)
   	at json_path.walker$walk.invokeStatic(walker.clj:87)
