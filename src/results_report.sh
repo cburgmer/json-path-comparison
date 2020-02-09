@@ -74,7 +74,7 @@ main() {
     echo "## Results"
 
     if [[ -s "$matching_implementations" ]]; then
-        echo "###  Consensus"
+        echo '<h3 id="consensus">Consensus</h3>'
         echo
         gold_standard | pre_block
         echo
@@ -87,7 +87,9 @@ main() {
         echo
 
         while IFS= read -r implementation; do
-            echo "#### $(pretty_implementation_name "$implementation")"
+            echo "<h4 id=\"$implementation\">"
+            pretty_implementation_name "$implementation"
+            echo "</h4>"
             echo
             query_result_payload "${results_dir}/${query}/${implementation}" | pre_block
             echo
@@ -101,7 +103,9 @@ main() {
         echo
 
         while IFS= read -r implementation; do
-            echo "#### $(pretty_implementation_name "$implementation")"
+            echo "<h4 id=\"$implementation\">"
+            pretty_implementation_name "$implementation"
+            echo "</h4>"
             echo
             query_result_payload "${results_dir}/${query}/${implementation}" | pre_block
             echo

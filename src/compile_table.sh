@@ -21,24 +21,24 @@ give_mark() {
 
     # Matching consensus?
     if grep "^${implementation}\$" < "$matching_implementations" > /dev/null; then
-        echo "✓"
+        echo "<a href=\"results/${query}.md#consensus\">✓</a>"
         return
     fi
 
     # Error?
 
     if ! is_query_result_ok "${results_dir}/${query}/${implementation}"; then
-        echo "e"
+        echo "<a href=\"results/${query}.md#${implementation}\">e</a>"
         return
     fi
 
     # So we are an outlier, but is there actually any gold standard?
     if [[ -s "$matching_implementations" ]]; then
-        echo "✗"
+        echo "<a href=\"results/${query}.md#${implementation}\">✗</a>"
         return
     fi
 
-    echo "?"
+    echo "<a href=\"results/${query}.md#${implementation}\">?</a>"
 }
 
 compile_row() {

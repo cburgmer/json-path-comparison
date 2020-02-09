@@ -19,7 +19,7 @@ markdown_into_beautiful_html() {
 EOF
 }
 
-table_highlight_effect() {
+adjust_css() {
     cat
     cat <<EOF
 <style>
@@ -27,10 +27,18 @@ table_highlight_effect() {
 .markdown-body table td, .markdown-body table th {
   padding: 6px 10px;
 }
+</style>
+EOF
+}
 
-/* Hover effect */
-.markdown-body tbody tr:target,
-.markdown-body tbody tr:hover {
+highlight_effect() {
+    cat
+    cat <<EOF
+<style>
+h3:target,
+h4:target,
+tbody tr:target,
+tbody tr:hover {
   background-color: #ffa;
 }
 </style>
@@ -38,7 +46,7 @@ EOF
 }
 
 main() {
-    markdown_into_beautiful_html < "$file" | resolve_links | table_highlight_effect
+    markdown_into_beautiful_html < "$file" | resolve_links | highlight_effect | adjust_css
 }
 
 main
