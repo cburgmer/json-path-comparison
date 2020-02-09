@@ -3406,11 +3406,6 @@ build bug_reports/dotNET_Json.NET.md: compile_bug_reports build/results build/co
 build bug_reports/dotNET_JsonPathLib.md: compile_bug_reports build/results build/consensus implementations/dotNET_JsonPathLib | src/compile_bug_reports.sh
 build bug_reports/dotNET_Manatee.Json.md: compile_bug_reports build/results build/consensus implementations/dotNET_Manatee.Json | src/compile_bug_reports.sh
 
-rule error_report
-  command = ./src/error_report.sh $in > $out
-
-build build/markdown/errors.md: error_report build/results | src/error_report.sh
-
 rule compile_table
   command = ./src/compile_table.sh $in > $out
 
@@ -3516,7 +3511,6 @@ build build/markdown/results/array_index_slice_start_end_step_0.md: results_repo
 rule compile_html
   command = ./src/compile_html.sh $in > $out
 
-build docs/errors.html: compile_html build/markdown/errors.md | src/compile_html.sh
 build docs/index.html: compile_html build/markdown/index.md | src/compile_html.sh
 build docs/results/wildcard_dot_notation_on_object.html: compile_html build/markdown/results/wildcard_dot_notation_on_object.md | src/compile_html.sh
 build docs/results/filter_equal.html: compile_html build/markdown/results/filter_equal.md | src/compile_html.sh

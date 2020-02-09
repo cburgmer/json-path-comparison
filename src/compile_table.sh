@@ -28,7 +28,7 @@ give_mark() {
     # Error?
 
     if ! is_query_result_ok "${results_dir}/${query}/${implementation}"; then
-        echo "<a href=\"errors.md#${implementation}___${query}\">e</a>"
+        echo "e"
         return
     fi
 

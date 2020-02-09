@@ -157,14 +157,6 @@ final_report_rules() {
     local query
 
     cat <<EOF
-rule error_report
-  command = ./src/error_report.sh \$in > \$out
-EOF
-    echo
-    echo "build ${markdown_dir}/errors.md: error_report ${results_dir} | src/error_report.sh"
-    echo
-
-    cat <<EOF
 rule compile_table
   command = ./src/compile_table.sh \$in > \$out
 EOF
@@ -187,7 +179,6 @@ rule compile_html
   command = ./src/compile_html.sh \$in > \$out
 EOF
     echo
-    echo "build ${docs_dir}/errors.html: compile_html ${markdown_dir}/errors.md | src/compile_html.sh"
     echo "build ${docs_dir}/index.html: compile_html ${markdown_dir}/index.md | src/compile_html.sh"
     while IFS= read -r query; do
         echo "build ${docs_dir}/results/${query}.html: compile_html ${markdown_dir}/results/${query}.md | src/compile_html.sh"
