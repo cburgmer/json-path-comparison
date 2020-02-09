@@ -9,6 +9,10 @@ readonly query="$(basename "$query_dir")"
 
 . src/shared.sh
 
+all_implementations() {
+    find ./implementations -name run.sh -maxdepth 2 -print0 | xargs -0 -n1 dirname | xargs -n1 basename | sort
+}
+
 is_outlier() {
     local implementation="$1"
     local matching_implementations="${consensus_dir}/${query}"
@@ -22,7 +26,16 @@ implementation_outliers() {
         if is_outlier "$implementation"; then
             echo "$implementation"
         fi
-    done <<< "$(find ./implementations -name run.sh -maxdepth 2 -print0 | xargs -0 -n1 dirname | xargs -n1 basename | sort)"
+    done <<< "$(all_implementations)"
+}
+
+implementation_errors() {
+    local implementation
+    while IFS= read -r implementation; do
+        if ! is_query_result_ok "${results_dir}/${query}/${implementation}"; then
+            echo "$implementation"
+        fi
+    done <<< "$(all_implementations)"
 }
 
 output_setup() {
@@ -48,33 +61,52 @@ gold_standard() {
 main() {
     local matching_implementations="${consensus_dir}/${query}"
     local implementation
+    local outliers
+    local errors
 
-    echo "## $(pretty_query_name "$query")"
+    echo "# $(pretty_query_name "$query")"
     echo
 
-    echo "### Setup"
+    echo "## Setup"
     output_setup
     echo
 
-    echo "### Results"
+    echo "## Results"
 
     if [[ -s "$matching_implementations" ]]; then
-        echo "####  Gold Standard (consensus)"
+        echo "###  Consensus"
         echo
         gold_standard | pre_block
         echo
     fi
 
-    while IFS= read -r implementation; do
-        if [[ -z "$implementation" ]]; then
-            break
-        fi
+    outliers="$(implementation_outliers)"
 
-        echo "#### $(pretty_implementation_name "$implementation")"
+    if [[ -n "$outliers" ]]; then
+        echo "### Other responses"
         echo
-        query_result_payload "${results_dir}/${query}/${implementation}" | pre_block
+
+        while IFS= read -r implementation; do
+            echo "#### $(pretty_implementation_name "$implementation")"
+            echo
+            query_result_payload "${results_dir}/${query}/${implementation}" | pre_block
+            echo
+        done <<< "$outliers"
+    fi
+
+    errors="$(implementation_errors)"
+
+    if [[ -n "$errors" ]]; then
+        echo "### Errors"
         echo
-    done <<< "$(implementation_outliers)"
+
+        while IFS= read -r implementation; do
+            echo "#### $(pretty_implementation_name "$implementation")"
+            echo
+            query_result_payload "${results_dir}/${query}/${implementation}" | pre_block
+            echo
+        done <<< "$errors"
+    fi
 }
 
 main
