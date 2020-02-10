@@ -4,7 +4,8 @@ set -euo pipefail
 readonly file="$1"
 
 resolve_links() {
-    sed 's/<a href="\([^"]*\).md\(#[^"]*\)*">/<a href="\1.html\2">/'
+    # Convert relative URLs from md to html
+    perl -ne 's/<a href="(?!https?:\/\/)([^"]*).md(#[^"]*)?">/<a href="\1.html\2">/; print;'
 }
 
 markdown_into_beautiful_html() {
