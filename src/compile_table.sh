@@ -127,6 +127,7 @@ main() {
     echo "# JSONPath Comparison
 
 See how [JSONPath](https://goessner.net/articles/JsonPath/) is implemented across different languages.
+See the [FAQ](https://github.com/cburgmer/json-path-comparison/blob/master/FAQ.md) for why we are doing this and where the results come from.
 "
     echo
     echo "<table style=\"overflow: unset;\">" # Need to reset style for sticky headers
@@ -152,25 +153,6 @@ See how [JSONPath](https://goessner.net/articles/JsonPath/) is implemented acros
 - e The implementation failed executing the query and probably does not support this type of query.
 - ¹ This implementation returns queries with only a single possible match as a scalar element (e.g. '\$[0]' => '42'). For the sake of comparing to other implementations these results are converted and wrapped in a list here.
 - ² It is unclear whether results for this query have a defined order, and some implementations might apply different and even non-deterministic ordering. For comparison the results are sorted into a canonical order.
-
-## How
-
-We execute all available implementations against the same queries.
-Outcomes are compared across implementations, and judged based on a simple consensus:
-a majority of half of all implementations (rounded up) plus one is required
-(guarantees difference of 2 votes even in critical cases).
-This table makes no statement on the correctness of any of the implementations.
-
-## Goal
-
-This comparison is meant to create visibility,
-help implementers find issues by sharing test cases,
-and finally give guidance on interpretation of the [initial posts by Goessner](https://goessner.net/articles/JsonPath/).
-The motivation of the consensus in particular is to drive the discussion towards a shared understanding of the JSONPath proposal.
-
-## Contribute
-
-Please help to add more queries, extend the list of implementations or fix errors. See [https://github.com/cburgmer/json-path-comparison](https://github.com/cburgmer/json-path-comparison).
 "
 }
 
