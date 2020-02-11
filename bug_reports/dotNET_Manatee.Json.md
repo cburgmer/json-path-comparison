@@ -3,34 +3,6 @@ Results do not match other implementations
 The following queries provide results that do not match those of other implementations of JSONPath
 (compare https://cburgmer.github.io/json-path-comparison/):
 
-- [ ] `$[-1]`
-  Input:
-  ```
-  ["first", "second", "third"]
-  ```
-  Expected output:
-  ```
-  ["third"]
-  ```
-  Actual output:
-  ```
-  []
-  ```
-
-- [ ] `$['key']`
-  Input:
-  ```
-  {"key": "value"}
-  ```
-  Expected output:
-  ```
-  ["value"]
-  ```
-  Error:
-  ```
-  Unrecognized JSON Path element. Path up to error: '$'
-  ```
-
 - [ ] `$['one','three'].key`
   Input:
   ```
@@ -42,91 +14,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  Unrecognized JSON Path element. Path up to error: '$'
-  ```
-
-- [ ] `$['@']`
-  Input:
-  ```
-  {"@": "value", "another": "entry"}
-  ```
-  Expected output:
-  ```
-  ["value"]
-  ```
-  Error:
-  ```
-  Unrecognized JSON Path element. Path up to error: '$'
-  ```
-
-- [ ] `$['$']`
-  Input:
-  ```
-  {"$": "value", "another": "entry"}
-  ```
-  Expected output:
-  ```
-  ["value"]
-  ```
-  Error:
-  ```
-  Unrecognized JSON Path element. Path up to error: '$'
-  ```
-
-- [ ] `$['two.some']`
-  Input:
-  ```
-  {"one": {"key": "value"}, "two": {"some": "more", "key": "other value"}, "two.some": "42"}
-  ```
-  Expected output:
-  ```
-  ["42"]
-  ```
-  Error:
-  ```
-  Unrecognized JSON Path element. Path up to error: '$'
-  ```
-
-- [ ] `$['0']`
-  Input:
-  ```
-  {"0": "value"}
-  ```
-  Expected output:
-  ```
-  ["value"]
-  ```
-  Error:
-  ```
-  Unrecognized JSON Path element. Path up to error: '$'
-  ```
-
-- [ ] `$['special:"chars']`
-  Input:
-  ```
-  {"special:\"chars": "value"}
-  ```
-  Expected output:
-  ```
-  ["value"]
-  ```
-  Error:
-  ```
-  Unrecognized JSON Path element. Path up to error: '$'
-  ```
-
-- [ ] `$['*']`
-  Input:
-  ```
-  {"*": "value", "another": "entry"}
-  ```
-  Expected output:
-  ```
-  ["value"]
-  ```
-  Error:
-  ```
-  Unrecognized JSON Path element. Path up to error: '$'
+  Expected close bracket. Path up to error: '$'
   ```
 
 
