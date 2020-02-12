@@ -80,6 +80,12 @@ queries:
     status: error
   - id: key_bracket_notation_union
     status: error
+  - id: key_bracket_notation_union_after_array_index
+    status: error
+  - id: key_bracket_notation_union_after_array_slice
+    status: error
+  - id: key_bracket_notation_union_after_wildcard_dot_notation
+    status: error
   - id: key_bracket_notation_union_with_key_on_nested_objects
     status: error
   - id: key_bracket_notation_with_at_literal

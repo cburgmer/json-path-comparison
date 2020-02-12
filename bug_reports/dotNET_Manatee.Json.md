@@ -3,6 +3,20 @@ Results do not match other implementations
 The following queries provide results that do not match those of other implementations of JSONPath
 (compare https://cburgmer.github.io/json-path-comparison/):
 
+- [ ] `$[0]['c','d']`
+  Input:
+  ```
+  [{"c": "cc1", "d": "dd1", "e": "ee1"}, {"c": "cc2", "d": "dd2", "e": "ee2"}]
+  ```
+  Expected output:
+  ```
+  ["cc1", "dd1"]
+  ```
+  Error:
+  ```
+  Expected close bracket. Path up to error: '$[0]'
+  ```
+
 - [ ] `$['one','three'].key`
   Input:
   ```

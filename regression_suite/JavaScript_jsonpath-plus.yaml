@@ -76,6 +76,15 @@ queries:
   - id: key_bracket_notation_union
     status: open
     result: []
+  - id: key_bracket_notation_union_after_array_index
+    status: fail
+    result: []
+  - id: key_bracket_notation_union_after_array_slice
+    status: open
+    result: []
+  - id: key_bracket_notation_union_after_wildcard_dot_notation
+    status: open
+    result: []
   - id: key_bracket_notation_union_with_key_on_nested_objects
     status: fail
     result: []

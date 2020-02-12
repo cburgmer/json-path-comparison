@@ -87,6 +87,20 @@ The following queries provide results that do not match those of other implement
    Error: serachBegingingWithSlice: string
   ```
 
+- [ ] `$[0]['c','d']`
+  Input:
+  ```
+  [{"c": "cc1", "d": "dd1", "e": "ee1"}, {"c": "cc2", "d": "dd2", "e": "ee2"}]
+  ```
+  Expected output:
+  ```
+  ["cc1", "dd1"]
+  ```
+  Actual output:
+  ```
+  {"c": "cc1", "d": "dd1", "e": "ee1"}
+  ```
+
 - [ ] `$['one','three'].key`
   Input:
   ```

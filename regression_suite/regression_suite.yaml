@@ -187,6 +187,16 @@ queries:
   - id: key_bracket_notation_union
     selector: $['key','another']
     document: {"key": "value", "another": "entry"}
+  - id: key_bracket_notation_union_after_array_index
+    selector: $[0]['c','d']
+    document: [{"c": "cc1", "d": "dd1", "e": "ee1"}, {"c": "cc2", "d": "dd2", "e": "ee2"}]
+    consensus: ["cc1", "dd1"]
+  - id: key_bracket_notation_union_after_array_slice
+    selector: $[:]['c','d']
+    document: [{"c": "cc1", "d": "dd1", "e": "ee1"}, {"c": "cc2", "d": "dd2", "e": "ee2"}]
+  - id: key_bracket_notation_union_after_wildcard_dot_notation
+    selector: $.*['c','d']
+    document: [{"c": "cc1", "d": "dd1", "e": "ee1"}, {"c": "cc2", "d": "dd2", "e": "ee2"}]
   - id: key_bracket_notation_union_with_key_on_nested_objects
     selector: $['one','three'].key
     document: {"one": {"key": "value"}, "two": {"k": "v"}, "three": {"some": "more", "key": "other value"}}

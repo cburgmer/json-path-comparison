@@ -413,6 +413,20 @@ The following queries provide results that do not match those of other implement
       (mix 1.10.0) lib/mix/cli.ex:82: Mix.CLI.run_task/2
   ```
 
+- [ ] `$[0]['c','d']`
+  Input:
+  ```
+  [{"c": "cc1", "d": "dd1", "e": "ee1"}, {"c": "cc2", "d": "dd2", "e": "ee2"}]
+  ```
+  Expected output:
+  ```
+  ["cc1", "dd1"]
+  ```
+  Actual output:
+  ```
+  []
+  ```
+
 - [ ] `$['one','three'].key`
   Input:
   ```

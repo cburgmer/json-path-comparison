@@ -70,6 +70,12 @@ queries:
   - id: key_bracket_notation_union
     status: open
     result: ["value", "entry"]
+  - id: key_bracket_notation_union_after_array_slice
+    status: open
+    result: ["cc1", "dd1", "cc2", "dd2"]
+  - id: key_bracket_notation_union_after_wildcard_dot_notation
+    status: open
+    result: ["cc1", "dd1", "cc2", "dd2"]
   - id: key_bracket_notation_with_double_quotes
     status: open
     result: ["value"]
