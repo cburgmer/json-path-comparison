@@ -96,6 +96,9 @@ queries:
   - id: filter_equal_single_equal
     status: open
     result: [{"key": 42}]
+  - id: filter_equal_with_root_reference
+    status: open
+    result: [{"key": 42}]
   - id: filter_greater_than_or_equal
     status: error
   - id: filter_less_than

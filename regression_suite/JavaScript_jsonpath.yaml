@@ -43,6 +43,9 @@ queries:
   - id: filter_equal_single_equal
     status: open
     result: []
+  - id: filter_equal_with_root_reference
+    status: open
+    result: []
   - id: filter_greater_than_or_equal
     status: open
     result: [{"key": 42}, {"key": 43}, {"key": 42.0001}, {"key": 100}]

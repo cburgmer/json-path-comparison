@@ -44,6 +44,8 @@ queries:
   - id: filter_equal_single_equal
     status: open
     result: []
+  - id: filter_equal_with_root_reference
+    status: error
   - id: filter_greater_than
     status: fail
     result: []

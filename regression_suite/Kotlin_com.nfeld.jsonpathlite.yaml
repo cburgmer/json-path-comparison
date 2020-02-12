@@ -55,6 +55,8 @@ queries:
     status: error
   - id: filter_equal_single_equal
     status: error
+  - id: filter_equal_with_root_reference
+    status: error
   - id: filter_greater_than
     status: error
   - id: filter_greater_than_or_equal
