@@ -186,6 +186,9 @@ queries:
     status: error
   - id: script_expression
     status: error
+  - id: wildcard_bracket_notation_after_array_slice
+    status: fail
+    result: [[1, 2], ["a", "b"], [0, 0]]
   - id: wildcard_bracket_notation_on_object
     status: error
   - id: wildcard_bracket_notation_with_key_on_nested_objects

@@ -451,6 +451,28 @@ The following queries provide results that do not match those of other implement
   
   ```
 
+- [ ] `$[0:2][*]`
+  Input:
+  ```
+  [[1, 2], ["a", "b"], [0, 0]]
+  ```
+  Expected output:
+  ```
+  [1, 2, "a", "b"]
+  ```
+  Error:
+  ```
+  Extra data: line 4 column 6 (char 28)
+  [
+          1,
+          2
+      ],
+          "a",
+          "b"
+      
+  ]
+  ```
+
 - [ ] `$[*]`
   Input:
   ```

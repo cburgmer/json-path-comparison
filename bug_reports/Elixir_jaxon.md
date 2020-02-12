@@ -616,6 +616,24 @@ The following queries provide results that do not match those of other implement
       (mix 1.10.0) lib/mix/cli.ex:82: Mix.CLI.run_task/2
   ```
 
+- [ ] `$[0:2][*]`
+  Input:
+  ```
+  [[1, 2], ["a", "b"], [0, 0]]
+  ```
+  Expected output:
+  ```
+  [1, 2, "a", "b"]
+  ```
+  Error:
+  ```
+  ** (Jaxon.ParseError) Expected an integer at `0:2][*]`
+      lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
+      lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
+      (mix 1.10.0) lib/mix/task.ex:330: Mix.Task.run_task/3
+      (mix 1.10.0) lib/mix/cli.ex:82: Mix.CLI.run_task/2
+  ```
+
 - [ ] `$[*]`
   Input:
   ```

@@ -203,3 +203,6 @@ queries:
     result: [40, 42]
   - id: script_expression
     status: error
+  - id: wildcard_bracket_notation_after_array_slice
+    status: fail
+    result: [1, 2]

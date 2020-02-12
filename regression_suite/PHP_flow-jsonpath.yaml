@@ -154,3 +154,6 @@ queries:
   - id: script_expression
     status: open
     result: ["fifth"]
+  - id: wildcard_bracket_notation_after_array_slice
+    status: fail
+    result: [1, 2, "a", "b", 0, 0]

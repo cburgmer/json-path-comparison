@@ -423,6 +423,20 @@ The following queries provide results that do not match those of other implement
   expression don't support in filter
   ```
 
+- [ ] `$[0:2][*]`
+  Input:
+  ```
+  [[1, 2], ["a", "b"], [0, 0]]
+  ```
+  Expected output:
+  ```
+  [1, 2, "a", "b"]
+  ```
+  Actual output:
+  ```
+  [[1, 2], ["a", "b"], [0, 0]]
+  ```
+
 - [ ] `$[*]`
   Input:
   ```

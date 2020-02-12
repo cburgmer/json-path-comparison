@@ -161,6 +161,8 @@ queries:
     status: error
   - id: script_expression
     status: error
+  - id: wildcard_bracket_notation_after_array_slice
+    status: error
   - id: wildcard_bracket_notation_on_array
     status: error
   - id: wildcard_bracket_notation_on_null_value_array
