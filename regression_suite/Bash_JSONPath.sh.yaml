@@ -197,6 +197,8 @@ queries:
     status: error
   - id: script_expression
     status: error
+  - id: union_with_filter
+    status: error
   - id: wildcard_bracket_notation_after_array_slice
     status: error
   - id: wildcard_bracket_notation_on_array

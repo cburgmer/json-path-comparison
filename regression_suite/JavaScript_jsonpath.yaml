@@ -128,3 +128,5 @@ queries:
   - id: script_expression
     status: open
     result: ["fifth"]
+  - id: union_with_filter
+    status: error

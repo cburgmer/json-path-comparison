@@ -349,6 +349,9 @@ queries:
   - id: script_expression
     selector: $[(@.length-1)]
     document: ["first", "second", "third", "forth", "fifth"]
+  - id: union_with_filter
+    selector: $[?(@<3),?(@>6)]
+    document: [1, 8, 3, 10, 7, 2, 6, 4]
   - id: wildcard_bracket_notation_after_array_slice
     selector: $[0:2][*]
     document: [[1, 2], ["a", "b"], [0, 0]]

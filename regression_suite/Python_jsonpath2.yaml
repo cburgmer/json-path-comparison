@@ -144,3 +144,6 @@ queries:
     status: error
   - id: script_expression
     status: error
+  - id: union_with_filter
+    status: open
+    result: []

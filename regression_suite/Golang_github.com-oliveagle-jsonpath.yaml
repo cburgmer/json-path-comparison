@@ -189,6 +189,9 @@ queries:
     status: error
   - id: script_expression
     status: error
+  - id: union_with_filter
+    status: open
+    result: []
   - id: wildcard_bracket_notation_after_array_slice
     status: fail
     result: [[1, 2], ["a", "b"], [0, 0]]

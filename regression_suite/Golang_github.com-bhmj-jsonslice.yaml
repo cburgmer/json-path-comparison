@@ -136,6 +136,8 @@ queries:
     result: ["russian dolls", "something", "top", "value", {"key": "russian dolls"}]
   - id: script_expression
     status: error
+  - id: union_with_filter
+    status: error
   - id: wildcard_bracket_notation_after_array_slice
     status: fail
     result: [[1, 2], ["a", "b"]]

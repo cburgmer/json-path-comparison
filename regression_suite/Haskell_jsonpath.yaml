@@ -138,6 +138,8 @@ queries:
     status: error
   - id: script_expression
     status: error
+  - id: union_with_filter
+    status: error
   - id: wildcard_bracket_notation_with_key_on_nested_objects
     status: fail
     result: "hello"

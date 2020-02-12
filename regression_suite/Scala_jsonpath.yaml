@@ -138,6 +138,8 @@ queries:
     result: [42]
   - id: script_expression
     status: error
+  - id: union_with_filter
+    status: error
   - id: wildcard_bracket_notation_on_object
     status: fail
     result: []

@@ -146,6 +146,9 @@ queries:
   - id: script_expression
     status: open
     result: ["fifth"]
+  - id: union_with_filter
+    status: open
+    result: [1, 2, 8, 10, 7]
   - id: wildcard_bracket_notation_on_object
     status: fail
     result: [null, null, null, null]
