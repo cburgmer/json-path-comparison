@@ -26,3 +26,7 @@ of the implementation, from a broader look patterns are visible.
 - Are queries on an object ordered?
 
 - Should JSONPath support uniform script expressions across languages?
+
+- Is `null` considered a value when filtering e.g. `[?(@.key)]`?
+
+- Is mising key and a key with value `null` equal when filtering for `[?(@.key==null)]`?
