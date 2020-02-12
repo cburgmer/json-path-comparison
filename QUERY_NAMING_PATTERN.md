@@ -41,7 +41,7 @@ We use a limited set of prepositions to describe queries more specifically:
 
 The following regular expression describes how the prepositions relate to each other:
 
-((OPERATOR)(with .*)? after )*(OPERATOR)(with .*)?( on .*)?
+    ((OPERATOR)(with .*)? after )*(OPERATOR)(with .*)?( on .*)?
 
 One exception: the "root" operator is used to describe the trivial query `$`,
 but excluded for any other more complex query.
