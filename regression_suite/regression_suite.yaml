@@ -269,6 +269,10 @@ queries:
     document: {"key": "value"}
     consensus: ["value"]
     scalar-consensus: "value"
+  - id: key_dot_notation_after_wildcard_bracket_notation
+    selector: $[*].a
+    document: [{"a": 1}, {"b": 1}, {"a": 1}]
+    consensus: [1, 1]
   - id: key_dot_notation_on_array
     selector: $.key
     document: [0, 1]

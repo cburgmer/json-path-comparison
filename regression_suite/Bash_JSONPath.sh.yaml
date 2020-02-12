@@ -146,6 +146,9 @@ queries:
   - id: key_dot_notation
     status: fail
     result: {"key": "value"}
+  - id: key_dot_notation_after_wildcard_bracket_notation
+    status: fail
+    result: [{"a": 1}, {"a": 1}]
   - id: key_dot_notation_on_array
     status: error
   - id: key_dot_notation_on_array_value

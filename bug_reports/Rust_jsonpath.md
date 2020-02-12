@@ -339,6 +339,20 @@ The following queries provide results that do not match those of other implement
   parsing error
   ```
 
+- [ ] `$[*].a`
+  Input:
+  ```
+  [{"a": 1}, {"b": 1}, {"a": 1}]
+  ```
+  Expected output:
+  ```
+  [1, 1]
+  ```
+  Error:
+  ```
+  parsing error
+  ```
+
 - [ ] `$..key`
   Input:
   ```

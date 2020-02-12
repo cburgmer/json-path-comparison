@@ -206,6 +206,22 @@ The following queries provide results that do not match those of other implement
    Error: serachBegingingWithSlice: string
   ```
 
+- [ ] `$[*].a`
+  Input:
+  ```
+  [{"a": 1}, {"b": 1}, {"a": 1}]
+  ```
+  Expected output:
+  ```
+  [1, 1]
+  ```
+  Error:
+  ```
+  json-path-comparison: expected key a in object {"b":1}
+  CallStack (from HasCallStack):
+    error, called at app/Main.hs:18:22 in main:Main
+  ```
+
 - [ ] `$..*`
   Input:
   ```

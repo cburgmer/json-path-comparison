@@ -169,6 +169,9 @@ queries:
     status: error
   - id: key_dot_bracket_notation_without_quotes
     status: error
+  - id: key_dot_notation_after_wildcard_bracket_notation
+    status: fail
+    result: [1, null, 1]
   - id: key_dot_notation_on_array
     status: fail
     result: null

@@ -135,6 +135,8 @@ queries:
     status: error
   - id: key_dot_bracket_notation_without_quotes
     status: error
+  - id: key_dot_notation_after_wildcard_bracket_notation
+    status: error
   - id: key_dot_notation_with_double_quotes
     status: error
   - id: key_dot_notation_with_single_quotes

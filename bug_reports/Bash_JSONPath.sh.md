@@ -301,6 +301,20 @@ The following queries provide results that do not match those of other implement
   {"key": "value"}
   ```
 
+- [ ] `$[*].a`
+  Input:
+  ```
+  [{"a": 1}, {"b": 1}, {"a": 1}]
+  ```
+  Expected output:
+  ```
+  [1, 1]
+  ```
+  Actual output:
+  ```
+  [{"a": 1}, {"a": 1}]
+  ```
+
 - [ ] `$.key`
   Input:
   ```

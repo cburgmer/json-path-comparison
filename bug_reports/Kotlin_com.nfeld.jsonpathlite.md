@@ -171,6 +171,20 @@ The following queries provide results that do not match those of other implement
   null
   ```
 
+- [ ] `$[*].a`
+  Input:
+  ```
+  [{"a": 1}, {"b": 1}, {"a": 1}]
+  ```
+  Expected output:
+  ```
+  [1, 1]
+  ```
+  Error:
+  ```
+  Unexpected char, char=*, index=2
+  ```
+
 - [ ] `$..*`
   Input:
   ```
