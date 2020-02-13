@@ -2,8 +2,17 @@
 
 ## Why?
 
-So queries can be easy discussed in bug reports, clarify the intent of the query
-(e.g. the area of test) and group queries easily by sorting alphabetically.
+So queries can be easily discussed in bug reports, clarify the intent of the
+query (e.g. the area of test) and group queries easily by sorting
+alphabetically.
+
+## Naming
+
+- Operator: fragment of a JSONPath selector.
+- Selector: one or more operators passed to the JSONPath evaluation, starting
+  with the root operator.
+- Document: JSON payload the selector is evaluated against.
+- Query: Pair of selector and a document.
 
 ## Open questions
 - Will this translate to the current table
@@ -13,10 +22,15 @@ So queries can be easy discussed in bug reports, clarify the intent of the query
 
 ## Operator notations
 
-As a comparative approach we try to stay impartial and keep interpretation out
-of the naming scheme. We hence choose to call operators by their form. For
-example we will not make any difference between `$[0]` and `$['a']` and call
-both "bracket notation".
+As a comparative approach we try to stay impartial and not imply any intent via
+the naming scheme. We hence choose to call operators by their form instead of
+their potential function. For example we will not distinguish between `$[0]`
+("subscript operator") and `$['a']` ("child operator") and instead call both
+"bracket notation".
+
+This will allow us to take no sides when talking for example about `$[0]` on
+a document like `{"0": 1}`. Is the selector treated as an array index or a key
+without any wrapping quotes? We leave this up to the implementation to decide.
 
 - array slice `[:]`, e.g. `[0:2]`, `[-1:]`, `[0:3:2]`
 - union `[ , ]`, e.g. `[0, 2]`, `['a', 'b']`, `[1, 3:5]`
@@ -28,20 +42,28 @@ both "bracket notation".
 - recursive descent `..`
 - root `$`
 
-## Complex queries
+## Query notations
 
-We use a limited set of prepositions to describe queries more specifically:
+A trivial query (with an unspecified document) for selector `$` is "root".
 
-- ... on ..., described specific input query is executed on
-  e.g. dot notation on array
-- ... with/without ..., describes specific selector configuration
-  e.g. bracket notation with double quotes
-- ... after ..., complex query with multiple selector notations in reverse order
-  dot notation after recursive descent
+Simple queries will consist of the root and another operator, e.g. `$.key`.
+Such queries we will just call by the latter operator, e.g. "dot notation".
 
-The following regular expression describes how the prepositions relate to each other:
+For more complex queries we use a limited set of prepositions:
+
+- ... with/without ..., when describing a specific selector configuration,
+  e.g. `$["key"]`: "bracket notation with double quotes"
+- ... on ..., when describing the document of the query,
+  e.g. for a document `[1, 42]` with selector `$.key`: "dot notation on array"
+- ... after ..., when chaining operators to form a complex query, calling out
+  the operators in reverse order,
+  e.g. `$..key`: "dot notation after recursive descent"
+
+The following regular expression describes how the prepositions are intended
+to be placed relatively to each other:
 
     ((OPERATOR)(with .*)? after )*(OPERATOR)(with .*)?( on .*)?
 
-One exception: the "root" operator is used to describe the trivial query `$`,
-but excluded for any other more complex query.
+A complex example hence could be:
+"array slice without start and end after bracket notation with wildcard on
+nested arrays" for `$[*][:]` on document `[[1], [2, 3]]`.
