@@ -346,6 +346,11 @@ queries:
     document: {"key": "value", "another key": {"complex": ["a", 1]}}
     consensus: [{"another key": {"complex": ["a", 1]}, "key": "value"}]
     scalar-consensus: {"another key": {"complex": ["a", 1]}, "key": "value"}
+  - id: root_on_scalar
+    selector: $
+    document: 42
+    consensus: [42]
+    scalar-consensus: 42
   - id: script_expression
     selector: $[(@.length-1)]
     document: ["first", "second", "third", "forth", "fifth"]

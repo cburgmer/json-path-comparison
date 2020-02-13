@@ -132,6 +132,9 @@ queries:
     result: ["russian dolls", "something", "top", "value", {"key": "russian dolls"}]
   - id: recursive_key_with_single_quotes
     status: error
+  - id: root_on_scalar
+    status: fail
+    result: []
   - id: script_expression
     status: error
   - id: union_with_filter

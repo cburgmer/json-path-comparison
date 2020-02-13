@@ -160,6 +160,8 @@ queries:
     result: []
   - id: recursive_wildcard_on_scalar
     status: error
+  - id: root_on_scalar
+    status: error
   - id: script_expression
     status: error
   - id: union_with_filter

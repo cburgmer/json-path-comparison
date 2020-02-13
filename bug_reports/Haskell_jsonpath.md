@@ -256,6 +256,24 @@ The following queries provide results that do not match those of other implement
    Error: serachBegingingWithSlice: not enough input
   ```
 
+- [ ] `$`
+  Input:
+  ```
+  42
+  ```
+  Expected output:
+  ```
+  42
+  ```
+  Error:
+  ```
+  json-path-comparison: serachBegingingWithSlice: not enough input
+  CallStack (from HasCallStack):
+    error, called at app/Main.hs:36:7 in main:Main
+  Invalid JSONPath: $
+   Error: serachBegingingWithSlice: not enough input
+  ```
+
 - [ ] `$[*].bar[*].baz`
   Input:
   ```

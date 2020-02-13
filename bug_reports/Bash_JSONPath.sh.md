@@ -465,6 +465,23 @@ The following queries provide results that do not match those of other implement
   
   ```
 
+- [ ] `$`
+  Input:
+  ```
+  42
+  ```
+  Expected output:
+  ```
+  [42]
+  ```
+  Error:
+  ```
+  ./node_modules/jsonpath.sh/JSONPath.sh: line 761: path: bad array subscript
+  ./node_modules/jsonpath.sh/JSONPath.sh: line 778: closers[pathlen]: bad array subscript
+  Expecting value: line 2 column 1 (char 6)
+      [
+  ```
+
 - [ ] `$[0:2][*]`
   Input:
   ```

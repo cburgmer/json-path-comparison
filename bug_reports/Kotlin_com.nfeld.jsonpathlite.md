@@ -227,6 +227,20 @@ The following queries provide results that do not match those of other implement
   A JSONArray text must start with '[' at 1 [character 2 line 1]
   ```
 
+- [ ] `$`
+  Input:
+  ```
+  42
+  ```
+  Expected output:
+  ```
+  42
+  ```
+  Error:
+  ```
+  A JSONArray text must start with '[' at 1 [character 2 line 1]
+  ```
+
 - [ ] `$[0:2][*]`
   Input:
   ```
