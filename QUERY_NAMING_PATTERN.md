@@ -2,11 +2,10 @@
 
 ## Why?
 
-So queries can be easily discussed in bug reports, clarify the intent of the
-query (e.g. the area of test) and group queries easily by sorting
-alphabetically.
+So queries can be easily referred to in bug reports, clarify the intent of the
+test and group queries easily by sorting alphabetically.
 
-## Naming
+## Definitions
 
 - Operator: fragment of a JSONPath selector.
 - Selector: one or more operators passed to the JSONPath evaluation, starting
@@ -42,7 +41,7 @@ without any wrapping quotes? We leave this up to the implementation to decide.
 - recursive descent `..`
 - root `$`
 
-## Query notations
+## Query naming
 
 A trivial query (with an unspecified document) for selector `$` is "root".
 
@@ -62,7 +61,7 @@ For more complex queries we use a limited set of prepositions:
 The following regular expression describes how the prepositions are intended
 to be placed relatively to each other:
 
-    ((OPERATOR)(with .*)? after )*(OPERATOR)(with .*)?( on .*)?
+    ((OPERATOR)((with|without) .*)? after )*(OPERATOR)((with|without) .*)?( on .*)?
 
 A complex example hence could be:
 "array slice without start and end after bracket notation with wildcard on
