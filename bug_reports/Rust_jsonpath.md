@@ -31,6 +31,20 @@ The following queries provide results that do not match those of other implement
   parsing error
   ```
 
+- [ ] `$[-4:]`
+  Input:
+  ```
+  ["first", "second", "third"]
+  ```
+  Expected output:
+  ```
+  ["first", "second", "third"]
+  ```
+  Error:
+  ```
+  parsing error
+  ```
+
 - [ ] `$[:]`
   Input:
   ```
@@ -39,6 +53,20 @@ The following queries provide results that do not match those of other implement
   Expected output:
   ```
   ["first", "second"]
+  ```
+  Error:
+  ```
+  parsing error
+  ```
+
+- [ ] `$[-2:]`
+  Input:
+  ```
+  ["first", "second", "third"]
+  ```
+  Expected output:
+  ```
+  ["second", "third"]
   ```
   Error:
   ```

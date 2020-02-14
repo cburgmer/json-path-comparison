@@ -14,6 +14,9 @@ queries:
   - id: array_index_out_of_bounds
     status: fail
     result: null
+  - id: array_index_slice_negative_start_out_of_bounds
+    status: fail
+    result: []
   - id: array_index_slice_negative_step
     status: open
     result: ["first", "second", "third"]

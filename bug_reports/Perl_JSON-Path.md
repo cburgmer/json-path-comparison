@@ -3,6 +3,20 @@ Results do not match other implementations
 The following queries provide results that do not match those of other implementations of JSONPath
 (compare https://cburgmer.github.io/json-path-comparison/):
 
+- [ ] `$[-4:]`
+  Input:
+  ```
+  ["first", "second", "third"]
+  ```
+  Expected output:
+  ```
+  ["first", "second", "third"]
+  ```
+  Actual output:
+  ```
+  ["first", "second", "third", "first", "second", "third"]
+  ```
+
 - [ ] `$[:]`
   Input:
   ```
@@ -21,6 +35,20 @@ The following queries provide results that do not match those of other implement
   	JSON::Path::Evaluator::evaluate(...) called at build/lib/perl5/JSON/Path/Evaluator.pm line 97
   	JSON::Path::Evaluator::evaluate_jsonpath(...) called at build/lib/perl5/JSON/Path.pm line 107
   	JSON::Path::values(...) called at main.pl line 11
+  ```
+
+- [ ] `$[-2:]`
+  Input:
+  ```
+  ["first", "second", "third"]
+  ```
+  Expected output:
+  ```
+  ["second", "third"]
+  ```
+  Actual output:
+  ```
+  ["second", "third", "first", "second", "third"]
   ```
 
 - [ ] `$[?(@.key==42)]`

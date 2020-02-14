@@ -25,6 +25,9 @@ queries:
     result: ["first", "second", "third", "forth", "fifth"]
   - id: array_index_slice_out_of_bounds
     status: error
+  - id: array_index_slice_start_-2_and_open_end
+    status: fail
+    result: ["first", "second", "third"]
   - id: array_index_slice_start_end_negative_step
     status: error
   - id: array_index_slice_start_end_step_0

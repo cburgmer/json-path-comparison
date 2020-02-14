@@ -21,6 +21,9 @@ queries:
     result: ["first", "second", "third"]
   - id: array_index_slice_negative_step
     status: error
+  - id: array_index_slice_start_-2_and_open_end
+    status: fail
+    result: ["first", "second", "third"]
   - id: array_index_slice_start_end_negative_step
     status: error
   - id: array_index_slice_start_end_step

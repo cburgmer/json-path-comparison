@@ -3,6 +3,20 @@ Results do not match other implementations
 The following queries provide results that do not match those of other implementations of JSONPath
 (compare https://cburgmer.github.io/json-path-comparison/):
 
+- [ ] `$[-4:]`
+  Input:
+  ```
+  ["first", "second", "third"]
+  ```
+  Expected output:
+  ```
+  ["first", "second", "third"]
+  ```
+  Error:
+  ```
+  Number was less than the array's lower bound in the first dimension. (Parameter 'sourceIndex')
+  ```
+
 - [ ] `$[0]['c','d']`
   Input:
   ```

@@ -31,6 +31,20 @@ The following queries provide results that do not match those of other implement
   "third"
   ```
 
+- [ ] `$[-4:]`
+  Input:
+  ```
+  ["first", "second", "third"]
+  ```
+  Expected output:
+  ```
+  ["first", "second", "third"]
+  ```
+  Error:
+  ```
+  java.lang.IndexOutOfBoundsException nil
+  ```
+
 - [ ] `$[:]`
   Input:
   ```
@@ -85,6 +99,20 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   java.lang.IndexOutOfBoundsException nil
+  ```
+
+- [ ] `$[-2:]`
+  Input:
+  ```
+  ["first", "second", "third"]
+  ```
+  Expected output:
+  ```
+  ["second", "third"]
+  ```
+  Actual output:
+  ```
+  "second"
   ```
 
 - [ ] `$[1:3]`

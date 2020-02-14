@@ -11,11 +11,17 @@ queries:
     result: ["third"]
   - id: array_index_on_string
     status: error
+  - id: array_index_slice_negative_start_out_of_bounds
+    status: fail
+    result: ["first", "second", "third", "first", "second", "third"]
   - id: array_index_slice_negative_step
     status: open
     result: ["fifth", "forth", "third", "second", "first"]
   - id: array_index_slice_no_start_no_end
     status: error
+  - id: array_index_slice_start_-2_and_open_end
+    status: fail
+    result: ["second", "third", "first", "second", "third"]
   - id: array_index_slice_start_end_negative_step
     status: open
     result: []

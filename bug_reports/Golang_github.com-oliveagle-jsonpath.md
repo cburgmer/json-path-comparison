@@ -17,6 +17,20 @@ The following queries provide results that do not match those of other implement
   index [to] out of range: len: 3, to: 10
   ```
 
+- [ ] `$[-4:]`
+  Input:
+  ```
+  ["first", "second", "third"]
+  ```
+  Expected output:
+  ```
+  ["first", "second", "third"]
+  ```
+  Error:
+  ```
+  index [from] out of range: len: 3, from: -4
+  ```
+
 - [ ] `$[:2]`
   Input:
   ```

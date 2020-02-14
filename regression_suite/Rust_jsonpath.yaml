@@ -16,9 +16,13 @@ queries:
     result: []
   - id: array_index_slice_last_no_end
     status: error
+  - id: array_index_slice_negative_start_out_of_bounds
+    status: error
   - id: array_index_slice_negative_step
     status: error
   - id: array_index_slice_no_start_no_end
+    status: error
+  - id: array_index_slice_start_-2_and_open_end
     status: error
   - id: array_index_slice_start_end
     status: fail

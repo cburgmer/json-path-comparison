@@ -31,6 +31,20 @@ The following queries provide results that do not match those of other implement
   []
   ```
 
+- [ ] `$[-4:]`
+  Input:
+  ```
+  ["first", "second", "third"]
+  ```
+  Expected output:
+  ```
+  ["first", "second", "third"]
+  ```
+  Actual output:
+  ```
+  ["third"]
+  ```
+
 - [ ] `$[0:0]`
   Input:
   ```
