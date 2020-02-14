@@ -31,6 +31,20 @@ The following queries provide results that do not match those of other implement
   ["first", "second", "third"]
   ```
 
+- [ ] `$[7:10]`
+  Input:
+  ```
+  ["first", "second", "third"]
+  ```
+  Expected output:
+  ```
+  []
+  ```
+  Error:
+  ```
+  index [from] out of range: len: 3, from: 7
+  ```
+
 - [ ] `$[1:3]`
   Input:
   ```

@@ -30,6 +30,8 @@ queries:
   - id: array_index_slice_only_start
     status: fail
     result: "second"
+  - id: array_index_slice_out_of_bounds
+    status: error
   - id: array_index_slice_start_end
     status: fail
     result: "second"

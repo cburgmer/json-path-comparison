@@ -61,6 +61,10 @@ queries:
     selector: $[1:]
     document: ["first", "second", "third", "forth", "fifth"]
     consensus: ["second", "third", "forth", "fifth"]
+  - id: array_index_slice_out_of_bounds
+    selector: $[7:10]
+    document: ["first", "second", "third"]
+    consensus: []
   - id: array_index_slice_start_end
     selector: $[1:3]
     document: ["first", "second", "third", "forth", "fifth"]
