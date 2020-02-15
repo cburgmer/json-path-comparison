@@ -22,7 +22,7 @@ The following queries provide results that do not match those of other implement
   	at org.jsfr.json.compiler.JsonPathParser.path(JsonPathParser.java:159)
   	at org.jsfr.json.compiler.JsonPathCompiler.compile(JsonPathCompiler.java:283)
   	at org.jsfr.json.compiler.JsonPathCompiler.compile(JsonPathCompiler.java:273)
-  	at org.jsfr.json.JsonSurfer.collectAll(JsonSurfer.java:262)
+  	at org.jsfr.json.JsonSurfer.collectAll(JsonSurfer.java:284)
   	at query.App.main(App.java:27)
   Caused by: org.antlr.v4.runtime.InputMismatchException
   	at org.antlr.v4.runtime.BailErrorStrategy.recoverInline(BailErrorStrategy.java:61)
@@ -90,7 +90,7 @@ The following queries provide results that do not match those of other implement
   	at org.jsfr.json.compiler.JsonPathParser.path(JsonPathParser.java:159)
   	at org.jsfr.json.compiler.JsonPathCompiler.compile(JsonPathCompiler.java:283)
   	at org.jsfr.json.compiler.JsonPathCompiler.compile(JsonPathCompiler.java:273)
-  	at org.jsfr.json.JsonSurfer.collectAll(JsonSurfer.java:262)
+  	at org.jsfr.json.JsonSurfer.collectAll(JsonSurfer.java:284)
   	at query.App.main(App.java:27)
   Caused by: org.antlr.v4.runtime.InputMismatchException
   	at org.antlr.v4.runtime.BailErrorStrategy.recoverInline(BailErrorStrategy.java:61)
@@ -116,7 +116,7 @@ The following queries provide results that do not match those of other implement
   	at org.jsfr.json.compiler.JsonPathParser.path(JsonPathParser.java:159)
   	at org.jsfr.json.compiler.JsonPathCompiler.compile(JsonPathCompiler.java:283)
   	at org.jsfr.json.compiler.JsonPathCompiler.compile(JsonPathCompiler.java:273)
-  	at org.jsfr.json.JsonSurfer.collectAll(JsonSurfer.java:262)
+  	at org.jsfr.json.JsonSurfer.collectAll(JsonSurfer.java:284)
   	at query.App.main(App.java:27)
   Caused by: org.antlr.v4.runtime.InputMismatchException
   	at org.antlr.v4.runtime.BailErrorStrategy.recoverInline(BailErrorStrategy.java:61)
@@ -142,7 +142,7 @@ The following queries provide results that do not match those of other implement
   	at org.jsfr.json.compiler.JsonPathParser.path(JsonPathParser.java:159)
   	at org.jsfr.json.compiler.JsonPathCompiler.compile(JsonPathCompiler.java:283)
   	at org.jsfr.json.compiler.JsonPathCompiler.compile(JsonPathCompiler.java:273)
-  	at org.jsfr.json.JsonSurfer.collectAll(JsonSurfer.java:262)
+  	at org.jsfr.json.JsonSurfer.collectAll(JsonSurfer.java:284)
   	at query.App.main(App.java:27)
   Caused by: org.antlr.v4.runtime.InputMismatchException
   	at org.antlr.v4.runtime.BailErrorStrategy.recoverInline(BailErrorStrategy.java:61)
@@ -168,7 +168,7 @@ The following queries provide results that do not match those of other implement
   	at org.jsfr.json.compiler.JsonPathParser.path(JsonPathParser.java:159)
   	at org.jsfr.json.compiler.JsonPathCompiler.compile(JsonPathCompiler.java:283)
   	at org.jsfr.json.compiler.JsonPathCompiler.compile(JsonPathCompiler.java:273)
-  	at org.jsfr.json.JsonSurfer.collectAll(JsonSurfer.java:262)
+  	at org.jsfr.json.JsonSurfer.collectAll(JsonSurfer.java:284)
   	at query.App.main(App.java:27)
   Caused by: org.antlr.v4.runtime.InputMismatchException
   	at org.antlr.v4.runtime.BailErrorStrategy.recoverInline(BailErrorStrategy.java:61)
@@ -211,7 +211,7 @@ The following queries provide results that do not match those of other implement
   	at org.jsfr.json.compiler.JsonPathParser.path(JsonPathParser.java:159)
   	at org.jsfr.json.compiler.JsonPathCompiler.compile(JsonPathCompiler.java:283)
   	at org.jsfr.json.compiler.JsonPathCompiler.compile(JsonPathCompiler.java:273)
-  	at org.jsfr.json.JsonSurfer.collectAll(JsonSurfer.java:262)
+  	at org.jsfr.json.JsonSurfer.collectAll(JsonSurfer.java:284)
   	at query.App.main(App.java:27)
   Caused by: org.antlr.v4.runtime.NoViableAltException
   	at org.antlr.v4.runtime.atn.ParserATNSimulator.noViableAlt(ParserATNSimulator.java:2026)

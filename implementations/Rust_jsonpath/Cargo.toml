@@ -6,4 +6,4 @@ edition = "2018"
 
 [dependencies]
 serde_json = "1.0.39"
-jsonpath = "0.1.1"
+jsonpath = "*"
