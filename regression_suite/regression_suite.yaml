@@ -231,6 +231,11 @@ queries:
     document: {"one": {"key": "value"}, "two": {"some": "more", "key": "other value"}, "two.some": "42"}
     consensus: ["42"]
     scalar-consensus: "42"
+  - id: key_bracket_notation_with_dot_literal
+    selector: $['.']
+    document: {".": "value", "another": "entry"}
+    consensus: ["value"]
+    scalar-consensus: "value"
   - id: key_bracket_notation_with_double_quotes
     selector: $["key"]
     document: {"key": "value"}

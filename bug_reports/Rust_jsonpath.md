@@ -325,6 +325,20 @@ The following queries provide results that do not match those of other implement
   parsing error
   ```
 
+- [ ] `$['.']`
+  Input:
+  ```
+  {".": "value", "another": "entry"}
+  ```
+  Expected output:
+  ```
+  ["value"]
+  ```
+  Error:
+  ```
+  parsing error
+  ```
+
 - [ ] `$['0']`
   Input:
   ```

@@ -87,6 +87,9 @@ queries:
   - id: key_bracket_notation_with_dot
     status: fail
     result: ["more"]
+  - id: key_bracket_notation_with_dot_literal
+    status: fail
+    result: [{".": "value", "another": "entry"}]
   - id: key_bracket_notation_with_double_quotes
     status: error
   - id: key_bracket_notation_with_nested_object

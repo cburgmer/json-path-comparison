@@ -269,6 +269,22 @@ The following queries provide results that do not match those of other implement
   {"two.some": "42"}
   ```
 
+- [ ] `$['.']`
+  Input:
+  ```
+  {".": "value", "another": "entry"}
+  ```
+  Expected output:
+  ```
+  ["value"]
+  ```
+  Error:
+  ```
+  Expecting value: line 3 column 1 (char 2)
+  
+  
+  ```
+
 - [ ] `$['0']`
   Input:
   ```

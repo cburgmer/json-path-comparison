@@ -168,6 +168,20 @@ The following queries provide results that do not match those of other implement
   ["more"]
   ```
 
+- [ ] `$['.']`
+  Input:
+  ```
+  {".": "value", "another": "entry"}
+  ```
+  Expected output:
+  ```
+  ["value"]
+  ```
+  Actual output:
+  ```
+  [{".": "value", "another": "entry"}]
+  ```
+
 - [ ] `$['0']`
   Input:
   ```
