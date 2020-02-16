@@ -101,6 +101,20 @@ The following queries provide results that do not match those of other implement
   ["first", "second", "third"]
   ```
 
+- [ ] `$[::]`
+  Input:
+  ```
+  ["first", "second"]
+  ```
+  Expected output:
+  ```
+  ["first", "second"]
+  ```
+  Error:
+  ```
+  only support one range(from, to): [  ]
+  ```
+
 - [ ] `$[-4:]`
   Input:
   ```
@@ -155,6 +169,20 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   only support one range(from, to): [0 4 2]
+  ```
+
+- [ ] `$[1:3:]`
+  Input:
+  ```
+  ["first", "second", "third", "forth", "fifth"]
+  ```
+  Expected output:
+  ```
+  ["second", "third"]
+  ```
+  Error:
+  ```
+  only support one range(from, to): [1 3 ]
   ```
 
 - [ ] `$[::2]`

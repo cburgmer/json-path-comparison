@@ -21,6 +21,42 @@ The following queries provide results that do not match those of other implement
    Error: serachBegingingWithSlice: string
   ```
 
+- [ ] `$[::]`
+  Input:
+  ```
+  ["first", "second"]
+  ```
+  Expected output:
+  ```
+  ["first", "second"]
+  ```
+  Error:
+  ```
+  json-path-comparison: serachBegingingWithSlice: string
+  CallStack (from HasCallStack):
+    error, called at app/Main.hs:36:7 in main:Main
+  Invalid JSONPath: $[::]
+   Error: serachBegingingWithSlice: string
+  ```
+
+- [ ] `$[1:3:]`
+  Input:
+  ```
+  ["first", "second", "third", "forth", "fifth"]
+  ```
+  Expected output:
+  ```
+  ["second", "third"]
+  ```
+  Error:
+  ```
+  json-path-comparison: serachBegingingWithSlice: string
+  CallStack (from HasCallStack):
+    error, called at app/Main.hs:36:7 in main:Main
+  Invalid JSONPath: $[1:3:]
+   Error: serachBegingingWithSlice: string
+  ```
+
 - [ ] `$['two.some']`
   Input:
   ```

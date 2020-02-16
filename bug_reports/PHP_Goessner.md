@@ -16,6 +16,19 @@ The following queries provide results that do not match those of other implement
   ```
   jsonpath returned false, this might indicate an error```
 
+- [ ] `$[2:1]`
+  Input:
+  ```
+  ["first", "second", "third", "forth"]
+  ```
+  Expected output:
+  ```
+  []
+  ```
+  Error:
+  ```
+  jsonpath returned false, this might indicate an error```
+
 - [ ] `$[0:0]`
   Input:
   ```

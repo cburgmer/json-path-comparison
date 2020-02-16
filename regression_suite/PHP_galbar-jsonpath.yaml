@@ -8,6 +8,8 @@ implementation: PHP_galbar-jsonpath
 queries:
   - id: array_slice_on_non_overlapping_array
     status: error
+  - id: array_slice_with_interval_of_-1
+    status: error
   - id: array_slice_with_interval_of_0
     status: error
   - id: array_slice_with_negative_step

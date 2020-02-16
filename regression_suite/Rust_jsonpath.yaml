@@ -21,6 +21,8 @@ queries:
     status: error
   - id: array_slice_with_open_start_and_end
     status: error
+  - id: array_slice_with_open_start_and_end_and_step_empty
+    status: error
   - id: array_slice_with_start_-1_and_open_end
     status: error
   - id: array_slice_with_start_-2_and_open_end
@@ -34,6 +36,8 @@ queries:
   - id: array_slice_with_step_1
     status: error
   - id: array_slice_with_step_but_end_not_aligned
+    status: error
+  - id: array_slice_with_step_empty
     status: error
   - id: array_slice_with_step_only
     status: error

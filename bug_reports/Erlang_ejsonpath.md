@@ -3,6 +3,40 @@ Results do not match other implementations
 The following queries provide results that do not match those of other implementations of JSONPath
 (compare https://cburgmer.github.io/json-path-comparison/):
 
+- [ ] `$[::]`
+  Input:
+  ```
+  ["first", "second"]
+  ```
+  Expected output:
+  ```
+  ["first", "second"]
+  ```
+  Error:
+  ```
+  init terminating in do_boot ({badmatch,{error,{1,ejsonpath_parse,syntax error before: ':'}}})
+  
+  Crash dump is being written to: /dev/null...done
+  {"init terminating in do_boot",{badmatch,{error,{1,ejsonpath_parse,["syntax error before: ","':'"]}}}}
+  ```
+
+- [ ] `$[1:3:]`
+  Input:
+  ```
+  ["first", "second", "third", "forth", "fifth"]
+  ```
+  Expected output:
+  ```
+  ["second", "third"]
+  ```
+  Error:
+  ```
+  init terminating in do_boot ({badmatch,{error,{1,ejsonpath_parse,syntax error before: ']'}}})
+  
+  Crash dump is being written to: /dev/null...done
+  {"init terminating in do_boot",{badmatch,{error,{1,ejsonpath_parse,["syntax error before: ","']'"]}}}}
+  ```
+
 - [ ] `$[::2]`
   Input:
   ```

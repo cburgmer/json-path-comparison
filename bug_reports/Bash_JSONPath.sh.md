@@ -19,6 +19,23 @@ The following queries provide results that do not match those of other implement
   
   ```
 
+- [ ] `$[2:1]`
+  Input:
+  ```
+  ["first", "second", "third", "forth"]
+  ```
+  Expected output:
+  ```
+  []
+  ```
+  Error:
+  ```
+  ggrep: Invalid range end
+  Expecting value: line 3 column 1 (char 2)
+  
+  
+  ```
+
 - [ ] `$[0:0]`
   Input:
   ```

@@ -3,6 +3,32 @@ Results do not match other implementations
 The following queries provide results that do not match those of other implementations of JSONPath
 (compare https://cburgmer.github.io/json-path-comparison/):
 
+- [ ] `$[::]`
+  Input:
+  ```
+  ["first", "second"]
+  ```
+  Expected output:
+  ```
+  ["first", "second"]
+  ```
+  Error:
+  ```
+  Exception in thread "main" org.antlr.v4.runtime.misc.ParseCancellationException
+  	at org.antlr.v4.runtime.BailErrorStrategy.recoverInline(BailErrorStrategy.java:66)
+  	at org.antlr.v4.runtime.Parser.match(Parser.java:206)
+  	at org.jsfr.json.compiler.JsonPathParser.slicing(JsonPathParser.java:636)
+  	at org.jsfr.json.compiler.JsonPathParser.relativePath(JsonPathParser.java:265)
+  	at org.jsfr.json.compiler.JsonPathParser.path(JsonPathParser.java:159)
+  	at org.jsfr.json.compiler.JsonPathCompiler.compile(JsonPathCompiler.java:283)
+  	at org.jsfr.json.compiler.JsonPathCompiler.compile(JsonPathCompiler.java:273)
+  	at org.jsfr.json.JsonSurfer.collectAll(JsonSurfer.java:284)
+  	at query.App.main(App.java:27)
+  Caused by: org.antlr.v4.runtime.InputMismatchException
+  	at org.antlr.v4.runtime.BailErrorStrategy.recoverInline(BailErrorStrategy.java:61)
+  	... 8 more
+  ```
+
 - [ ] `$[-1:]`
   Input:
   ```
@@ -91,6 +117,32 @@ The following queries provide results that do not match those of other implement
   Expected output:
   ```
   ["first", "third"]
+  ```
+  Error:
+  ```
+  Exception in thread "main" org.antlr.v4.runtime.misc.ParseCancellationException
+  	at org.antlr.v4.runtime.BailErrorStrategy.recoverInline(BailErrorStrategy.java:66)
+  	at org.antlr.v4.runtime.Parser.match(Parser.java:206)
+  	at org.jsfr.json.compiler.JsonPathParser.slicing(JsonPathParser.java:636)
+  	at org.jsfr.json.compiler.JsonPathParser.relativePath(JsonPathParser.java:265)
+  	at org.jsfr.json.compiler.JsonPathParser.path(JsonPathParser.java:159)
+  	at org.jsfr.json.compiler.JsonPathCompiler.compile(JsonPathCompiler.java:283)
+  	at org.jsfr.json.compiler.JsonPathCompiler.compile(JsonPathCompiler.java:273)
+  	at org.jsfr.json.JsonSurfer.collectAll(JsonSurfer.java:284)
+  	at query.App.main(App.java:27)
+  Caused by: org.antlr.v4.runtime.InputMismatchException
+  	at org.antlr.v4.runtime.BailErrorStrategy.recoverInline(BailErrorStrategy.java:61)
+  	... 8 more
+  ```
+
+- [ ] `$[1:3:]`
+  Input:
+  ```
+  ["first", "second", "third", "forth", "fifth"]
+  ```
+  Expected output:
+  ```
+  ["second", "third"]
   ```
   Error:
   ```

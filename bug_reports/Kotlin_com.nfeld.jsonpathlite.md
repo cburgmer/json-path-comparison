@@ -17,6 +17,20 @@ The following queries provide results that do not match those of other implement
   Index 0 out of bounds for length 0
   ```
 
+- [ ] `$[::]`
+  Input:
+  ```
+  ["first", "second"]
+  ```
+  Expected output:
+  ```
+  ["first", "second"]
+  ```
+  Error:
+  ```
+  For input string: ""
+  ```
+
 - [ ] `$[-4:]`
   Input:
   ```

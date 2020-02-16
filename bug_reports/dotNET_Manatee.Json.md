@@ -3,6 +3,20 @@ Results do not match other implementations
 The following queries provide results that do not match those of other implementations of JSONPath
 (compare https://cburgmer.github.io/json-path-comparison/):
 
+- [ ] `$[2:1]`
+  Input:
+  ```
+  ["first", "second", "third", "forth"]
+  ```
+  Expected output:
+  ```
+  []
+  ```
+  Error:
+  ```
+  Arithmetic operation resulted in an overflow.
+  ```
+
 - [ ] `$[-4:]`
   Input:
   ```

@@ -35,6 +35,9 @@ queries:
   - id: array_slice_with_step_but_end_not_aligned
     status: fail
     result: ["first", "third", "fifth"]
+  - id: array_slice_with_step_empty
+    status: fail
+    result: ["second", "third", "forth"]
   - id: bracket_notation_with_double_quotes
     status: open
     result: ["value"]

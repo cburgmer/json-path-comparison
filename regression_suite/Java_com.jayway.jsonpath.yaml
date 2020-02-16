@@ -13,6 +13,8 @@ queries:
     status: error
   - id: array_slice_with_open_start_and_end
     status: error
+  - id: array_slice_with_open_start_and_end_and_step_empty
+    status: error
   - id: array_slice_with_step
     status: fail
     result: ["first", "second", "third"]
