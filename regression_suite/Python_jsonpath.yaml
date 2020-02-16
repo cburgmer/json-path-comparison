@@ -151,5 +151,9 @@ queries:
     status: error
   - id: wildcard_bracket_notation_on_empty_array
     status: error
+  - id: wildcard_bracket_notation_on_empty_object
+    status: error
   - id: wildcard_dot_notation_on_empty_array
+    status: error
+  - id: wildcard_dot_notation_on_empty_object
     status: error

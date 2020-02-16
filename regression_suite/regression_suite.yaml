@@ -381,6 +381,10 @@ queries:
     selector: $[*]
     document: []
     consensus: []
+  - id: wildcard_bracket_notation_on_empty_object
+    selector: $[*]
+    document: {}
+    consensus: []
   - id: wildcard_bracket_notation_on_null_value_array
     selector: $[*]
     document: [40, null, 42]
@@ -401,6 +405,10 @@ queries:
   - id: wildcard_dot_notation_on_empty_array
     selector: $.*
     document: []
+    consensus: []
+  - id: wildcard_dot_notation_on_empty_object
+    selector: $.*
+    document: {}
     consensus: []
   - id: wildcard_dot_notation_on_object
     selector: $.*

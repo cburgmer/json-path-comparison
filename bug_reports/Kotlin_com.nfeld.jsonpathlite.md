@@ -300,6 +300,20 @@ The following queries provide results that do not match those of other implement
 - [ ] `$[*]`
   Input:
   ```
+  {}
+  ```
+  Expected output:
+  ```
+  []
+  ```
+  Error:
+  ```
+  Unexpected char, char=*, index=2
+  ```
+
+- [ ] `$[*]`
+  Input:
+  ```
   [40, null, 42]
   ```
   Expected output:
@@ -357,6 +371,20 @@ The following queries provide results that do not match those of other implement
   Input:
   ```
   []
+  ```
+  Expected output:
+  ```
+  []
+  ```
+  Actual output:
+  ```
+  null
+  ```
+
+- [ ] `$.*`
+  Input:
+  ```
+  {}
   ```
   Expected output:
   ```

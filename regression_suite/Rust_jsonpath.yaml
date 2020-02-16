@@ -177,6 +177,8 @@ queries:
     status: error
   - id: wildcard_bracket_notation_on_empty_array
     status: error
+  - id: wildcard_bracket_notation_on_empty_object
+    status: error
   - id: wildcard_bracket_notation_on_null_value_array
     status: error
   - id: wildcard_bracket_notation_on_object

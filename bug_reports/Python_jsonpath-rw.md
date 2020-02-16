@@ -230,6 +230,20 @@ The following queries provide results that do not match those of other implement
 - [ ] `$[*]`
   Input:
   ```
+  {}
+  ```
+  Expected output:
+  ```
+  []
+  ```
+  Actual output:
+  ```
+  [{}]
+  ```
+
+- [ ] `$[*]`
+  Input:
+  ```
   {"some": "string", "int": 42, "object": {"key": "value"}, "array": [0, 1]}
   ```
   Expected output:

@@ -145,6 +145,9 @@ queries:
     status: error
   - id: union_with_filter
     status: error
+  - id: wildcard_bracket_notation_on_empty_object
+    status: fail
+    result: [{}]
   - id: wildcard_bracket_notation_on_object
     status: fail
     result: [{"array": [0, 1], "int": 42, "object": {"key": "value"}, "some": "string"}]

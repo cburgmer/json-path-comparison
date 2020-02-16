@@ -482,6 +482,20 @@ The following queries provide results that do not match those of other implement
 - [ ] `$[*]`
   Input:
   ```
+  {}
+  ```
+  Expected output:
+  ```
+  []
+  ```
+  Error:
+  ```
+  object is not Slice
+  ```
+
+- [ ] `$[*]`
+  Input:
+  ```
   {"some": "string", "int": 42, "object": {"key": "value"}, "array": [0, 1]}
   ```
   Expected output:
@@ -525,6 +539,20 @@ The following queries provide results that do not match those of other implement
   Input:
   ```
   []
+  ```
+  Expected output:
+  ```
+  []
+  ```
+  Error:
+  ```
+  expression don't support in filter
+  ```
+
+- [ ] `$.*`
+  Input:
+  ```
+  {}
   ```
   Expected output:
   ```

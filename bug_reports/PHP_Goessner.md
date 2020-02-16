@@ -274,10 +274,38 @@ The following queries provide results that do not match those of other implement
   null
   ```
 
+- [ ] `$[*]`
+  Input:
+  ```
+  {}
+  ```
+  Expected output:
+  ```
+  []
+  ```
+  Actual output:
+  ```
+  null
+  ```
+
 - [ ] `$.*`
   Input:
   ```
   []
+  ```
+  Expected output:
+  ```
+  []
+  ```
+  Actual output:
+  ```
+  null
+  ```
+
+- [ ] `$.*`
+  Input:
+  ```
+  {}
   ```
   Expected output:
   ```

@@ -118,6 +118,20 @@ The following queries provide results that do not match those of other implement
 - [ ] `$[*]`
   Input:
   ```
+  {}
+  ```
+  Expected output:
+  ```
+  []
+  ```
+  Error:
+  ```
+  divided by 0
+  ```
+
+- [ ] `$[*]`
+  Input:
+  ```
   {"some": "string", "int": 42, "object": {"key": "value"}, "array": [0, 1]}
   ```
   Expected output:
@@ -155,6 +169,20 @@ The following queries provide results that do not match those of other implement
   Actual output:
   ```
   [[]]
+  ```
+
+- [ ] `$.*`
+  Input:
+  ```
+  {}
+  ```
+  Expected output:
+  ```
+  []
+  ```
+  Actual output:
+  ```
+  [{}]
   ```
 
 - [ ] `$.*`
