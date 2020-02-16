@@ -158,6 +158,9 @@ queries:
   - id: wildcard_dot_notation_on_array
     status: fail
     result: [["string", 42, {"key": "value"}, [0, 1]]]
+  - id: wildcard_dot_notation_on_empty_array
+    status: fail
+    result: [[]]
   - id: wildcard_dot_notation_on_object
     status: fail
     result: [{"array": [0, 1], "int": 42, "object": {"key": "value"}, "some": "string"}]

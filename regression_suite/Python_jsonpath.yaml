@@ -149,3 +149,7 @@ queries:
     result: ["fifth"]
   - id: union_with_filter
     status: error
+  - id: wildcard_bracket_notation_on_empty_array
+    status: error
+  - id: wildcard_dot_notation_on_empty_array
+    status: error

@@ -173,6 +173,8 @@ queries:
     status: error
   - id: wildcard_bracket_notation_on_array
     status: error
+  - id: wildcard_bracket_notation_on_empty_array
+    status: error
   - id: wildcard_bracket_notation_on_null_value_array
     status: error
   - id: wildcard_bracket_notation_on_object
@@ -180,6 +182,9 @@ queries:
   - id: wildcard_bracket_notation_with_key_on_nested_objects
     status: error
   - id: wildcard_dot_notation_on_array
+    status: fail
+    result: null
+  - id: wildcard_dot_notation_on_empty_array
     status: fail
     result: null
   - id: wildcard_dot_notation_on_object

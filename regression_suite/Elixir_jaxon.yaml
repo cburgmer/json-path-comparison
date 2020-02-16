@@ -187,9 +187,13 @@ queries:
     status: error
   - id: wildcard_bracket_notation_after_array_slice
     status: error
+  - id: wildcard_bracket_notation_on_empty_array
+    status: error
   - id: wildcard_bracket_notation_on_object
     status: fail
     result: []
+  - id: wildcard_dot_notation_on_empty_array
+    status: error
   - id: wildcard_dot_notation_on_object
     status: fail
     result: []

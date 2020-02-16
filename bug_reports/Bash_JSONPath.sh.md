@@ -562,6 +562,22 @@ The following queries provide results that do not match those of other implement
 - [ ] `$[*]`
   Input:
   ```
+  []
+  ```
+  Expected output:
+  ```
+  []
+  ```
+  Error:
+  ```
+  Expecting value: line 3 column 1 (char 2)
+  
+  
+  ```
+
+- [ ] `$[*]`
+  Input:
+  ```
   {"some": "string", "int": 42, "object": {"key": "value"}, "array": [0, 1]}
   ```
   Expected output:
@@ -610,6 +626,22 @@ The following queries provide results that do not match those of other implement
           1
       }
   ]
+  ```
+
+- [ ] `$.*`
+  Input:
+  ```
+  []
+  ```
+  Expected output:
+  ```
+  []
+  ```
+  Error:
+  ```
+  Expecting value: line 3 column 1 (char 2)
+  
+  
   ```
 
 - [ ] `$.*`

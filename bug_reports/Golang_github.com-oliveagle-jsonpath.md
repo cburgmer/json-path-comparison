@@ -468,6 +468,20 @@ The following queries provide results that do not match those of other implement
 - [ ] `$[*]`
   Input:
   ```
+  []
+  ```
+  Expected output:
+  ```
+  []
+  ```
+  Error:
+  ```
+  index [from] out of range: len: 0, from: 0
+  ```
+
+- [ ] `$[*]`
+  Input:
+  ```
   {"some": "string", "int": 42, "object": {"key": "value"}, "array": [0, 1]}
   ```
   Expected output:
@@ -501,6 +515,20 @@ The following queries provide results that do not match those of other implement
   Expected output:
   ```
   ["string", 42, {"key": "value"}, [0, 1]]
+  ```
+  Error:
+  ```
+  expression don't support in filter
+  ```
+
+- [ ] `$.*`
+  Input:
+  ```
+  []
+  ```
+  Expected output:
+  ```
+  []
   ```
   Error:
   ```

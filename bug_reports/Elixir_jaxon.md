@@ -691,6 +691,27 @@ The following queries provide results that do not match those of other implement
 - [ ] `$[*]`
   Input:
   ```
+  []
+  ```
+  Expected output:
+  ```
+  []
+  ```
+  Error:
+  ```
+  ** (Jaxon.ParseError) Unexpected a closing bracket, expected a string, number, object, array instead.
+      lib/jaxon/stream.ex:60: Jaxon.Stream.call_decode_fun/4
+      (elixir 1.10.0) lib/stream.ex:897: Stream.do_transform_user/6
+      (elixir 1.10.0) lib/enum.ex:3383: Enum.reverse/1
+      (elixir 1.10.0) lib/enum.ex:2984: Enum.to_list/1
+      lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
+      (mix 1.10.0) lib/mix/task.ex:330: Mix.Task.run_task/3
+      (mix 1.10.0) lib/mix/cli.ex:82: Mix.CLI.run_task/2
+  ```
+
+- [ ] `$[*]`
+  Input:
+  ```
   {"some": "string", "int": 42, "object": {"key": "value"}, "array": [0, 1]}
   ```
   Expected output:
@@ -700,6 +721,27 @@ The following queries provide results that do not match those of other implement
   Actual output:
   ```
   []
+  ```
+
+- [ ] `$.*`
+  Input:
+  ```
+  []
+  ```
+  Expected output:
+  ```
+  []
+  ```
+  Error:
+  ```
+  ** (Jaxon.ParseError) Unexpected a closing bracket, expected a string, number, object, array instead.
+      lib/jaxon/stream.ex:60: Jaxon.Stream.call_decode_fun/4
+      (elixir 1.10.0) lib/stream.ex:897: Stream.do_transform_user/6
+      (elixir 1.10.0) lib/enum.ex:3383: Enum.reverse/1
+      (elixir 1.10.0) lib/enum.ex:2984: Enum.to_list/1
+      lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
+      (mix 1.10.0) lib/mix/task.ex:330: Mix.Task.run_task/3
+      (mix 1.10.0) lib/mix/cli.ex:82: Mix.CLI.run_task/2
   ```
 
 - [ ] `$.*`

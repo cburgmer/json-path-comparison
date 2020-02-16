@@ -377,6 +377,10 @@ queries:
     selector: $[*]
     document: ["string", 42, {"key": "value"}, [0, 1]]
     consensus: ["string", 42, {"key": "value"}, [0, 1]]
+  - id: wildcard_bracket_notation_on_empty_array
+    selector: $[*]
+    document: []
+    consensus: []
   - id: wildcard_bracket_notation_on_null_value_array
     selector: $[*]
     document: [40, null, 42]
@@ -394,6 +398,10 @@ queries:
     selector: $.*
     document: ["string", 42, {"key": "value"}, [0, 1]]
     consensus: ["string", 42, {"key": "value"}, [0, 1]]
+  - id: wildcard_dot_notation_on_empty_array
+    selector: $.*
+    document: []
+    consensus: []
   - id: wildcard_dot_notation_on_object
     selector: $.*
     document: {"some": "string", "int": 42, "object": {"key": "value"}, "array": [0, 1]}

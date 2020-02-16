@@ -482,6 +482,20 @@ The following queries provide results that do not match those of other implement
 - [ ] `$[*]`
   Input:
   ```
+  []
+  ```
+  Expected output:
+  ```
+  []
+  ```
+  Error:
+  ```
+  parsing error
+  ```
+
+- [ ] `$[*]`
+  Input:
+  ```
   [40, null, 42]
   ```
   Expected output:

@@ -156,3 +156,9 @@ queries:
     status: error
   - id: union_with_filter
     status: error
+  - id: wildcard_bracket_notation_on_empty_array
+    status: fail
+    result: null
+  - id: wildcard_dot_notation_on_empty_array
+    status: fail
+    result: null

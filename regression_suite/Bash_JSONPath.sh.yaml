@@ -210,6 +210,8 @@ queries:
     status: error
   - id: wildcard_bracket_notation_on_array
     status: error
+  - id: wildcard_bracket_notation_on_empty_array
+    status: error
   - id: wildcard_bracket_notation_on_object
     status: fail
     result: {"array": [0, 1], "int": 42, "object": {"key": "value"}, "some": "string"}
@@ -217,6 +219,8 @@ queries:
     status: fail
     result: {"baz": "hello"}
   - id: wildcard_dot_notation_on_array
+    status: error
+  - id: wildcard_dot_notation_on_empty_array
     status: error
   - id: wildcard_dot_notation_on_object
     status: fail
