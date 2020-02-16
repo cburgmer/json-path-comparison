@@ -21,6 +21,175 @@ The following queries provide results that do not match those of other implement
    Error: serachBegingingWithSlice: string
   ```
 
+- [ ] `$['two.some']`
+  Input:
+  ```
+  {"one": {"key": "value"}, "two": {"some": "more", "key": "other value"}, "two.some": "42"}
+  ```
+  Expected output:
+  ```
+  "42"
+  ```
+  Error:
+  ```
+  json-path-comparison: src/Data/JSONPath/Execute.hs:(29,1)-(63,29): Non-exhaustive patterns in function executeJSONPathElement
+  
+  ```
+
+- [ ] `$['@']`
+  Input:
+  ```
+  {"@": "value", "another": "entry"}
+  ```
+  Expected output:
+  ```
+  "value"
+  ```
+  Error:
+  ```
+  json-path-comparison: serachBegingingWithSlice: string
+  CallStack (from HasCallStack):
+    error, called at app/Main.hs:36:7 in main:Main
+  Invalid JSONPath: $['@']
+   Error: serachBegingingWithSlice: string
+  ```
+
+- [ ] `$['.']`
+  Input:
+  ```
+  {".": "value", "another": "entry"}
+  ```
+  Expected output:
+  ```
+  "value"
+  ```
+  Error:
+  ```
+  json-path-comparison: serachBegingingWithSlice: string
+  CallStack (from HasCallStack):
+    error, called at app/Main.hs:36:7 in main:Main
+  Invalid JSONPath: $['.']
+   Error: serachBegingingWithSlice: string
+  ```
+
+- [ ] `$['$']`
+  Input:
+  ```
+  {"$": "value", "another": "entry"}
+  ```
+  Expected output:
+  ```
+  "value"
+  ```
+  Error:
+  ```
+  json-path-comparison: serachBegingingWithSlice: string
+  CallStack (from HasCallStack):
+    error, called at app/Main.hs:36:7 in main:Main
+  Invalid JSONPath: $['$']
+   Error: serachBegingingWithSlice: string
+  ```
+
+- [ ] `$['*']`
+  Input:
+  ```
+  {"*": "value", "another": "entry"}
+  ```
+  Expected output:
+  ```
+  "value"
+  ```
+  Error:
+  ```
+  json-path-comparison: serachBegingingWithSlice: string
+  CallStack (from HasCallStack):
+    error, called at app/Main.hs:36:7 in main:Main
+  Invalid JSONPath: $['*']
+   Error: serachBegingingWithSlice: string
+  ```
+
+- [ ] `$['special:"chars']`
+  Input:
+  ```
+  {"special:\"chars": "value"}
+  ```
+  Expected output:
+  ```
+  "value"
+  ```
+  Error:
+  ```
+  json-path-comparison: serachBegingingWithSlice: string
+  CallStack (from HasCallStack):
+    error, called at app/Main.hs:36:7 in main:Main
+  Invalid JSONPath: $['special:"chars']
+   Error: serachBegingingWithSlice: string
+  ```
+
+- [ ] `$[*].a`
+  Input:
+  ```
+  [{"a": 1}, {"b": 1}, {"a": 1}]
+  ```
+  Expected output:
+  ```
+  [1, 1]
+  ```
+  Error:
+  ```
+  json-path-comparison: expected key a in object {"b":1}
+  CallStack (from HasCallStack):
+    error, called at app/Main.hs:18:22 in main:Main
+  ```
+
+- [ ] `$[*].bar[*].baz`
+  Input:
+  ```
+  [{"bar": [{"baz": "hello"}]}]
+  ```
+  Expected output:
+  ```
+  ["hello"]
+  ```
+  Actual output:
+  ```
+  "hello"
+  ```
+
+- [ ] `$['one','three'].key`
+  Input:
+  ```
+  {"one": {"key": "value"}, "two": {"k": "v"}, "three": {"some": "more", "key": "other value"}}
+  ```
+  Expected output:
+  ```
+  ["value", "other value"]
+  ```
+  Error:
+  ```
+  json-path-comparison: serachBegingingWithSlice: string
+  CallStack (from HasCallStack):
+    error, called at app/Main.hs:36:7 in main:Main
+  Invalid JSONPath: $['one','three'].key
+   Error: serachBegingingWithSlice: string
+  ```
+
+- [ ] `$..*`
+  Input:
+  ```
+  42
+  ```
+  Expected output:
+  ```
+  []
+  ```
+  Error:
+  ```
+  json-path-comparison: Search failed
+  CallStack (from HasCallStack):
+    error, called at app/Main.hs:18:22 in main:Main
+  ```
+
 - [ ] `$[?(@.key=='value')]`
   Input:
   ```
@@ -87,175 +256,6 @@ The following queries provide results that do not match those of other implement
    Error: serachBegingingWithSlice: string
   ```
 
-- [ ] `$[0]['c','d']`
-  Input:
-  ```
-  [{"c": "cc1", "d": "dd1", "e": "ee1"}, {"c": "cc2", "d": "dd2", "e": "ee2"}]
-  ```
-  Expected output:
-  ```
-  ["cc1", "dd1"]
-  ```
-  Actual output:
-  ```
-  {"c": "cc1", "d": "dd1", "e": "ee1"}
-  ```
-
-- [ ] `$['one','three'].key`
-  Input:
-  ```
-  {"one": {"key": "value"}, "two": {"k": "v"}, "three": {"some": "more", "key": "other value"}}
-  ```
-  Expected output:
-  ```
-  ["value", "other value"]
-  ```
-  Error:
-  ```
-  json-path-comparison: serachBegingingWithSlice: string
-  CallStack (from HasCallStack):
-    error, called at app/Main.hs:36:7 in main:Main
-  Invalid JSONPath: $['one','three'].key
-   Error: serachBegingingWithSlice: string
-  ```
-
-- [ ] `$['@']`
-  Input:
-  ```
-  {"@": "value", "another": "entry"}
-  ```
-  Expected output:
-  ```
-  "value"
-  ```
-  Error:
-  ```
-  json-path-comparison: serachBegingingWithSlice: string
-  CallStack (from HasCallStack):
-    error, called at app/Main.hs:36:7 in main:Main
-  Invalid JSONPath: $['@']
-   Error: serachBegingingWithSlice: string
-  ```
-
-- [ ] `$['$']`
-  Input:
-  ```
-  {"$": "value", "another": "entry"}
-  ```
-  Expected output:
-  ```
-  "value"
-  ```
-  Error:
-  ```
-  json-path-comparison: serachBegingingWithSlice: string
-  CallStack (from HasCallStack):
-    error, called at app/Main.hs:36:7 in main:Main
-  Invalid JSONPath: $['$']
-   Error: serachBegingingWithSlice: string
-  ```
-
-- [ ] `$['two.some']`
-  Input:
-  ```
-  {"one": {"key": "value"}, "two": {"some": "more", "key": "other value"}, "two.some": "42"}
-  ```
-  Expected output:
-  ```
-  "42"
-  ```
-  Error:
-  ```
-  json-path-comparison: src/Data/JSONPath/Execute.hs:(29,1)-(63,29): Non-exhaustive patterns in function executeJSONPathElement
-  
-  ```
-
-- [ ] `$['.']`
-  Input:
-  ```
-  {".": "value", "another": "entry"}
-  ```
-  Expected output:
-  ```
-  "value"
-  ```
-  Error:
-  ```
-  json-path-comparison: serachBegingingWithSlice: string
-  CallStack (from HasCallStack):
-    error, called at app/Main.hs:36:7 in main:Main
-  Invalid JSONPath: $['.']
-   Error: serachBegingingWithSlice: string
-  ```
-
-- [ ] `$['special:"chars']`
-  Input:
-  ```
-  {"special:\"chars": "value"}
-  ```
-  Expected output:
-  ```
-  "value"
-  ```
-  Error:
-  ```
-  json-path-comparison: serachBegingingWithSlice: string
-  CallStack (from HasCallStack):
-    error, called at app/Main.hs:36:7 in main:Main
-  Invalid JSONPath: $['special:"chars']
-   Error: serachBegingingWithSlice: string
-  ```
-
-- [ ] `$['*']`
-  Input:
-  ```
-  {"*": "value", "another": "entry"}
-  ```
-  Expected output:
-  ```
-  "value"
-  ```
-  Error:
-  ```
-  json-path-comparison: serachBegingingWithSlice: string
-  CallStack (from HasCallStack):
-    error, called at app/Main.hs:36:7 in main:Main
-  Invalid JSONPath: $['*']
-   Error: serachBegingingWithSlice: string
-  ```
-
-- [ ] `$[*].a`
-  Input:
-  ```
-  [{"a": 1}, {"b": 1}, {"a": 1}]
-  ```
-  Expected output:
-  ```
-  [1, 1]
-  ```
-  Error:
-  ```
-  json-path-comparison: expected key a in object {"b":1}
-  CallStack (from HasCallStack):
-    error, called at app/Main.hs:18:22 in main:Main
-  ```
-
-- [ ] `$..*`
-  Input:
-  ```
-  42
-  ```
-  Expected output:
-  ```
-  []
-  ```
-  Error:
-  ```
-  json-path-comparison: Search failed
-  CallStack (from HasCallStack):
-    error, called at app/Main.hs:18:22 in main:Main
-  ```
-
 - [ ] `$`
   Input:
   ```
@@ -292,18 +292,18 @@ The following queries provide results that do not match those of other implement
    Error: serachBegingingWithSlice: not enough input
   ```
 
-- [ ] `$[*].bar[*].baz`
+- [ ] `$[0]['c','d']`
   Input:
   ```
-  [{"bar": [{"baz": "hello"}]}]
+  [{"c": "cc1", "d": "dd1", "e": "ee1"}, {"c": "cc2", "d": "dd2", "e": "ee2"}]
   ```
   Expected output:
   ```
-  ["hello"]
+  ["cc1", "dd1"]
   ```
   Actual output:
   ```
-  "hello"
+  {"c": "cc1", "d": "dd1", "e": "ee1"}
   ```
 
 

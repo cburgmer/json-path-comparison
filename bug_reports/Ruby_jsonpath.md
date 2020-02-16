@@ -3,20 +3,6 @@ Results do not match other implementations
 The following queries provide results that do not match those of other implementations of JSONPath
 (compare https://cburgmer.github.io/json-path-comparison/):
 
-- [ ] `$.2`
-  Input:
-  ```
-  {"a": "first", "2": "second", "b": "third"}
-  ```
-  Expected output:
-  ```
-  ["second"]
-  ```
-  Actual output:
-  ```
-  [null]
-  ```
-
 - [ ] `$[1:10]`
   Input:
   ```
@@ -29,20 +15,6 @@ The following queries provide results that do not match those of other implement
   Actual output:
   ```
   []
-  ```
-
-- [ ] `$[-4:]`
-  Input:
-  ```
-  ["first", "second", "third"]
-  ```
-  Expected output:
-  ```
-  ["first", "second", "third"]
-  ```
-  Actual output:
-  ```
-  ["third"]
   ```
 
 - [ ] `$[0:0]`
@@ -59,6 +31,20 @@ The following queries provide results that do not match those of other implement
   ["first"]
   ```
 
+- [ ] `$[-4:]`
+  Input:
+  ```
+  ["first", "second", "third"]
+  ```
+  Expected output:
+  ```
+  ["first", "second", "third"]
+  ```
+  Actual output:
+  ```
+  ["third"]
+  ```
+
 - [ ] `$['0']`
   Input:
   ```
@@ -67,6 +53,48 @@ The following queries provide results that do not match those of other implement
   Expected output:
   ```
   ["value"]
+  ```
+  Actual output:
+  ```
+  [null]
+  ```
+
+- [ ] `$[*]`
+  Input:
+  ```
+  {}
+  ```
+  Expected output:
+  ```
+  []
+  ```
+  Error:
+  ```
+  divided by 0
+  ```
+
+- [ ] `$[*]`
+  Input:
+  ```
+  {"some": "string", "int": 42, "object": {"key": "value"}, "array": [0, 1]}
+  ```
+  Expected output:
+  ```
+  ["string", 42, [0, 1], {"key": "value"}]
+  ```
+  Actual output:
+  ```
+  [null, null, null, null]
+  ```
+
+- [ ] `$.2`
+  Input:
+  ```
+  {"a": "first", "2": "second", "b": "third"}
+  ```
+  Expected output:
+  ```
+  ["second"]
   ```
   Actual output:
   ```
@@ -113,34 +141,6 @@ The following queries provide results that do not match those of other implement
   Actual output:
   ```
   [42]
-  ```
-
-- [ ] `$[*]`
-  Input:
-  ```
-  {}
-  ```
-  Expected output:
-  ```
-  []
-  ```
-  Error:
-  ```
-  divided by 0
-  ```
-
-- [ ] `$[*]`
-  Input:
-  ```
-  {"some": "string", "int": 42, "object": {"key": "value"}, "array": [0, 1]}
-  ```
-  Expected output:
-  ```
-  ["string", 42, [0, 1], {"key": "value"}]
-  ```
-  Actual output:
-  ```
-  [null, null, null, null]
   ```
 
 - [ ] `$.*`

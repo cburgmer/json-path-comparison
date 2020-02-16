@@ -3,6 +3,141 @@ Results do not match other implementations
 The following queries provide results that do not match those of other implementations of JSONPath
 (compare https://cburgmer.github.io/json-path-comparison/):
 
+- [ ] `$['key']`
+  Input:
+  ```
+  {"key": "value"}
+  ```
+  Expected output:
+  ```
+  ["value"]
+  ```
+  Error:
+  ```
+  line 1:2 token recognition error at: '''
+  ValueError("line 1:2 token recognition error at: '''")
+  ```
+
+- [ ] `$['two.some']`
+  Input:
+  ```
+  {"one": {"key": "value"}, "two": {"some": "more", "key": "other value"}, "two.some": "42"}
+  ```
+  Expected output:
+  ```
+  ["42"]
+  ```
+  Error:
+  ```
+  line 1:2 token recognition error at: '''
+  ValueError("line 1:2 token recognition error at: '''")
+  ```
+
+- [ ] `$['@']`
+  Input:
+  ```
+  {"@": "value", "another": "entry"}
+  ```
+  Expected output:
+  ```
+  ["value"]
+  ```
+  Error:
+  ```
+  line 1:2 token recognition error at: '''
+  ValueError("line 1:2 token recognition error at: '''")
+  ```
+
+- [ ] `$['.']`
+  Input:
+  ```
+  {".": "value", "another": "entry"}
+  ```
+  Expected output:
+  ```
+  ["value"]
+  ```
+  Error:
+  ```
+  line 1:2 token recognition error at: '''
+  ValueError("line 1:2 token recognition error at: '''")
+  ```
+
+- [ ] `$['0']`
+  Input:
+  ```
+  {"0": "value"}
+  ```
+  Expected output:
+  ```
+  ["value"]
+  ```
+  Error:
+  ```
+  line 1:2 token recognition error at: '''
+  ValueError("line 1:2 token recognition error at: '''")
+  ```
+
+- [ ] `$['$']`
+  Input:
+  ```
+  {"$": "value", "another": "entry"}
+  ```
+  Expected output:
+  ```
+  ["value"]
+  ```
+  Error:
+  ```
+  line 1:2 token recognition error at: '''
+  ValueError("line 1:2 token recognition error at: '''")
+  ```
+
+- [ ] `$['*']`
+  Input:
+  ```
+  {"*": "value", "another": "entry"}
+  ```
+  Expected output:
+  ```
+  ["value"]
+  ```
+  Error:
+  ```
+  line 1:2 token recognition error at: '''
+  ValueError("line 1:2 token recognition error at: '''")
+  ```
+
+- [ ] `$['special:"chars']`
+  Input:
+  ```
+  {"special:\"chars": "value"}
+  ```
+  Expected output:
+  ```
+  ["value"]
+  ```
+  Error:
+  ```
+  line 1:2 token recognition error at: '''
+  ValueError("line 1:2 token recognition error at: '''")
+  ```
+
+- [ ] `$['one','three'].key`
+  Input:
+  ```
+  {"one": {"key": "value"}, "two": {"k": "v"}, "three": {"some": "more", "key": "other value"}}
+  ```
+  Expected output:
+  ```
+  ["value", "other value"]
+  ```
+  Error:
+  ```
+  line 1:2 token recognition error at: '''
+  ValueError("line 1:2 token recognition error at: '''")
+  ```
+
 - [ ] `$.2`
   Input:
   ```
@@ -105,21 +240,6 @@ The following queries provide results that do not match those of other implement
   []
   ```
 
-- [ ] `$['key']`
-  Input:
-  ```
-  {"key": "value"}
-  ```
-  Expected output:
-  ```
-  ["value"]
-  ```
-  Error:
-  ```
-  line 1:2 token recognition error at: '''
-  ValueError("line 1:2 token recognition error at: '''")
-  ```
-
 - [ ] `$[0]['c','d']`
   Input:
   ```
@@ -133,126 +253,6 @@ The following queries provide results that do not match those of other implement
   ```
   line 1:5 token recognition error at: '''
   ValueError("line 1:5 token recognition error at: '''")
-  ```
-
-- [ ] `$['one','three'].key`
-  Input:
-  ```
-  {"one": {"key": "value"}, "two": {"k": "v"}, "three": {"some": "more", "key": "other value"}}
-  ```
-  Expected output:
-  ```
-  ["value", "other value"]
-  ```
-  Error:
-  ```
-  line 1:2 token recognition error at: '''
-  ValueError("line 1:2 token recognition error at: '''")
-  ```
-
-- [ ] `$['@']`
-  Input:
-  ```
-  {"@": "value", "another": "entry"}
-  ```
-  Expected output:
-  ```
-  ["value"]
-  ```
-  Error:
-  ```
-  line 1:2 token recognition error at: '''
-  ValueError("line 1:2 token recognition error at: '''")
-  ```
-
-- [ ] `$['$']`
-  Input:
-  ```
-  {"$": "value", "another": "entry"}
-  ```
-  Expected output:
-  ```
-  ["value"]
-  ```
-  Error:
-  ```
-  line 1:2 token recognition error at: '''
-  ValueError("line 1:2 token recognition error at: '''")
-  ```
-
-- [ ] `$['two.some']`
-  Input:
-  ```
-  {"one": {"key": "value"}, "two": {"some": "more", "key": "other value"}, "two.some": "42"}
-  ```
-  Expected output:
-  ```
-  ["42"]
-  ```
-  Error:
-  ```
-  line 1:2 token recognition error at: '''
-  ValueError("line 1:2 token recognition error at: '''")
-  ```
-
-- [ ] `$['.']`
-  Input:
-  ```
-  {".": "value", "another": "entry"}
-  ```
-  Expected output:
-  ```
-  ["value"]
-  ```
-  Error:
-  ```
-  line 1:2 token recognition error at: '''
-  ValueError("line 1:2 token recognition error at: '''")
-  ```
-
-- [ ] `$['0']`
-  Input:
-  ```
-  {"0": "value"}
-  ```
-  Expected output:
-  ```
-  ["value"]
-  ```
-  Error:
-  ```
-  line 1:2 token recognition error at: '''
-  ValueError("line 1:2 token recognition error at: '''")
-  ```
-
-- [ ] `$['special:"chars']`
-  Input:
-  ```
-  {"special:\"chars": "value"}
-  ```
-  Expected output:
-  ```
-  ["value"]
-  ```
-  Error:
-  ```
-  line 1:2 token recognition error at: '''
-  ValueError("line 1:2 token recognition error at: '''")
-  ```
-
-- [ ] `$['*']`
-  Input:
-  ```
-  {"*": "value", "another": "entry"}
-  ```
-  Expected output:
-  ```
-  ["value"]
-  ```
-  Error:
-  ```
-  line 1:2 token recognition error at: '''
-  ValueError("line 1:2 token recognition error at: '''")
   ```
 
 

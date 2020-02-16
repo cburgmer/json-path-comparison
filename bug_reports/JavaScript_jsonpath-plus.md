@@ -3,20 +3,6 @@ Results do not match other implementations
 The following queries provide results that do not match those of other implementations of JSONPath
 (compare https://cburgmer.github.io/json-path-comparison/):
 
-- [ ] `$[-1]`
-  Input:
-  ```
-  ["first", "second", "third"]
-  ```
-  Expected output:
-  ```
-  ["third"]
-  ```
-  Actual output:
-  ```
-  []
-  ```
-
 - [ ] `$[0:0]`
   Input:
   ```
@@ -31,28 +17,14 @@ The following queries provide results that do not match those of other implement
   ["first", "second"]
   ```
 
-- [ ] `$[0]['c','d']`
+- [ ] `$[-1]`
   Input:
   ```
-  [{"c": "cc1", "d": "dd1", "e": "ee1"}, {"c": "cc2", "d": "dd2", "e": "ee2"}]
+  ["first", "second", "third"]
   ```
   Expected output:
   ```
-  ["cc1", "dd1"]
-  ```
-  Actual output:
-  ```
-  []
-  ```
-
-- [ ] `$['one','three'].key`
-  Input:
-  ```
-  {"one": {"key": "value"}, "two": {"k": "v"}, "three": {"some": "more", "key": "other value"}}
-  ```
-  Expected output:
-  ```
-  ["value", "other value"]
+  ["third"]
   ```
   Actual output:
   ```
@@ -99,6 +71,34 @@ The following queries provide results that do not match those of other implement
   Actual output:
   ```
   ["value", "entry"]
+  ```
+
+- [ ] `$['one','three'].key`
+  Input:
+  ```
+  {"one": {"key": "value"}, "two": {"k": "v"}, "three": {"some": "more", "key": "other value"}}
+  ```
+  Expected output:
+  ```
+  ["value", "other value"]
+  ```
+  Actual output:
+  ```
+  []
+  ```
+
+- [ ] `$[0]['c','d']`
+  Input:
+  ```
+  [{"c": "cc1", "d": "dd1", "e": "ee1"}, {"c": "cc2", "d": "dd2", "e": "ee2"}]
+  ```
+  Expected output:
+  ```
+  ["cc1", "dd1"]
+  ```
+  Actual output:
+  ```
+  []
   ```
 
 

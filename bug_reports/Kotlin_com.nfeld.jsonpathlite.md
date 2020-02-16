@@ -3,20 +3,6 @@ Results do not match other implementations
 The following queries provide results that do not match those of other implementations of JSONPath
 (compare https://cburgmer.github.io/json-path-comparison/):
 
-- [ ] `$[-4:]`
-  Input:
-  ```
-  ["first", "second", "third"]
-  ```
-  Expected output:
-  ```
-  ["first", "second", "third"]
-  ```
-  Actual output:
-  ```
-  []
-  ```
-
 - [ ] `$[:]`
   Input:
   ```
@@ -29,6 +15,20 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   Index 0 out of bounds for length 0
+  ```
+
+- [ ] `$[-4:]`
+  Input:
+  ```
+  ["first", "second", "third"]
+  ```
+  Expected output:
+  ```
+  ["first", "second", "third"]
+  ```
+  Actual output:
+  ```
+  []
   ```
 
 - [ ] `$[0:3:2]`
@@ -71,188 +71,6 @@ The following queries provide results that do not match those of other implement
   Actual output:
   ```
   ["first", "second"]
-  ```
-
-- [ ] `$[?(@.key==42)]`
-  Input:
-  ```
-  [{"key": 0}, {"key": 42}, {"key": -1}, {"key": 41}, {"key": 43}, {"key": 42.0001}, {"key": 41.9999}, {"key": 100}, {"some": "value"}]
-  ```
-  Expected output:
-  ```
-  [{"key": 42}]
-  ```
-  Error:
-  ```
-  Unexpected char, char=?, index=2
-  ```
-
-- [ ] `$[?(@.key=="some.value")]`
-  Input:
-  ```
-  [{"key": "some"}, {"key": "value"}, {"key": "some.value"}]
-  ```
-  Expected output:
-  ```
-  [{"key": "some.value"}]
-  ```
-  Error:
-  ```
-  Unexpected char, char=?, index=2
-  ```
-
-- [ ] `$[?(@.key=='value')]`
-  Input:
-  ```
-  [{"key": "some"}, {"key": "value"}]
-  ```
-  Expected output:
-  ```
-  [{"key": "value"}]
-  ```
-  Error:
-  ```
-  Unexpected char, char=?, index=2
-  ```
-
-- [ ] `$[?(@.key>42)]`
-  Input:
-  ```
-  [{"key": 0}, {"key": 42}, {"key": -1}, {"key": 41}, {"key": 43}, {"key": 42.0001}, {"key": 41.9999}, {"key": 100}]
-  ```
-  Expected output:
-  ```
-  [{"key": 43}, {"key": 42.0001}, {"key": 100}]
-  ```
-  Error:
-  ```
-  Unexpected char, char=?, index=2
-  ```
-
-- [ ] `$[?(@.key<42)]`
-  Input:
-  ```
-  [{"key": 0}, {"key": 42}, {"key": -1}, {"key": 41}, {"key": 43}, {"key": 42.0001}, {"key": 41.9999}, {"key": 100}, {"some": "value"}]
-  ```
-  Expected output:
-  ```
-  [{"key": 0}, {"key": -1}, {"key": 41}, {"key": 41.9999}]
-  ```
-  Error:
-  ```
-  Unexpected char, char=?, index=2
-  ```
-
-- [ ] `$[?(@.key)]`
-  Input:
-  ```
-  [{"some": "some value"}, {"key": "value"}]
-  ```
-  Expected output:
-  ```
-  [{"key": "value"}]
-  ```
-  Error:
-  ```
-  Unexpected char, char=?, index=2
-  ```
-
-- [ ] `$[0]['c','d']`
-  Input:
-  ```
-  [{"c": "cc1", "d": "dd1", "e": "ee1"}, {"c": "cc2", "d": "dd2", "e": "ee2"}]
-  ```
-  Expected output:
-  ```
-  ["cc1", "dd1"]
-  ```
-  Actual output:
-  ```
-  {"c": "cc1", "d": "dd1"}
-  ```
-
-- [ ] `$['one','three'].key`
-  Input:
-  ```
-  {"one": {"key": "value"}, "two": {"k": "v"}, "three": {"some": "more", "key": "other value"}}
-  ```
-  Expected output:
-  ```
-  ["value", "other value"]
-  ```
-  Actual output:
-  ```
-  null
-  ```
-
-- [ ] `$[*].a`
-  Input:
-  ```
-  [{"a": 1}, {"b": 1}, {"a": 1}]
-  ```
-  Expected output:
-  ```
-  [1, 1]
-  ```
-  Error:
-  ```
-  Unexpected char, char=*, index=2
-  ```
-
-- [ ] `$..*`
-  Input:
-  ```
-  {"key": "value", "another key": {"complex": "string", "primitives": [0, 1]}}
-  ```
-  Expected output:
-  ```
-  ["string", "value", 0, 1, [0, 1], {"complex": "string", "primitives": [0, 1]}]
-  ```
-  Actual output:
-  ```
-  []
-  ```
-
-- [ ] `$..*`
-  Input:
-  ```
-  [40, null, 42]
-  ```
-  Expected output:
-  ```
-  [40, null, 42]
-  ```
-  Actual output:
-  ```
-  []
-  ```
-
-- [ ] `$..*`
-  Input:
-  ```
-  42
-  ```
-  Expected output:
-  ```
-  []
-  ```
-  Error:
-  ```
-  A JSONArray text must start with '[' at 1 [character 2 line 1]
-  ```
-
-- [ ] `$`
-  Input:
-  ```
-  42
-  ```
-  Expected output:
-  ```
-  42
-  ```
-  Error:
-  ```
-  A JSONArray text must start with '[' at 1 [character 2 line 1]
   ```
 
 - [ ] `$[0:2][*]`
@@ -339,6 +157,20 @@ The following queries provide results that do not match those of other implement
   Unexpected char, char=*, index=2
   ```
 
+- [ ] `$[*].a`
+  Input:
+  ```
+  [{"a": 1}, {"b": 1}, {"a": 1}]
+  ```
+  Expected output:
+  ```
+  [1, 1]
+  ```
+  Error:
+  ```
+  Unexpected char, char=*, index=2
+  ```
+
 - [ ] `$[*].bar[*].baz`
   Input:
   ```
@@ -351,6 +183,62 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   Unexpected char, char=*, index=2
+  ```
+
+- [ ] `$['one','three'].key`
+  Input:
+  ```
+  {"one": {"key": "value"}, "two": {"k": "v"}, "three": {"some": "more", "key": "other value"}}
+  ```
+  Expected output:
+  ```
+  ["value", "other value"]
+  ```
+  Actual output:
+  ```
+  null
+  ```
+
+- [ ] `$..*`
+  Input:
+  ```
+  {"key": "value", "another key": {"complex": "string", "primitives": [0, 1]}}
+  ```
+  Expected output:
+  ```
+  ["string", "value", 0, 1, [0, 1], {"complex": "string", "primitives": [0, 1]}]
+  ```
+  Actual output:
+  ```
+  []
+  ```
+
+- [ ] `$..*`
+  Input:
+  ```
+  [40, null, 42]
+  ```
+  Expected output:
+  ```
+  [40, null, 42]
+  ```
+  Actual output:
+  ```
+  []
+  ```
+
+- [ ] `$..*`
+  Input:
+  ```
+  42
+  ```
+  Expected output:
+  ```
+  []
+  ```
+  Error:
+  ```
+  A JSONArray text must start with '[' at 1 [character 2 line 1]
   ```
 
 - [ ] `$.*`
@@ -407,6 +295,118 @@ The following queries provide results that do not match those of other implement
   Actual output:
   ```
   null
+  ```
+
+- [ ] `$[?(@.key==42)]`
+  Input:
+  ```
+  [{"key": 0}, {"key": 42}, {"key": -1}, {"key": 41}, {"key": 43}, {"key": 42.0001}, {"key": 41.9999}, {"key": 100}, {"some": "value"}]
+  ```
+  Expected output:
+  ```
+  [{"key": 42}]
+  ```
+  Error:
+  ```
+  Unexpected char, char=?, index=2
+  ```
+
+- [ ] `$[?(@.key=="some.value")]`
+  Input:
+  ```
+  [{"key": "some"}, {"key": "value"}, {"key": "some.value"}]
+  ```
+  Expected output:
+  ```
+  [{"key": "some.value"}]
+  ```
+  Error:
+  ```
+  Unexpected char, char=?, index=2
+  ```
+
+- [ ] `$[?(@.key=='value')]`
+  Input:
+  ```
+  [{"key": "some"}, {"key": "value"}]
+  ```
+  Expected output:
+  ```
+  [{"key": "value"}]
+  ```
+  Error:
+  ```
+  Unexpected char, char=?, index=2
+  ```
+
+- [ ] `$[?(@.key>42)]`
+  Input:
+  ```
+  [{"key": 0}, {"key": 42}, {"key": -1}, {"key": 41}, {"key": 43}, {"key": 42.0001}, {"key": 41.9999}, {"key": 100}]
+  ```
+  Expected output:
+  ```
+  [{"key": 43}, {"key": 42.0001}, {"key": 100}]
+  ```
+  Error:
+  ```
+  Unexpected char, char=?, index=2
+  ```
+
+- [ ] `$[?(@.key<42)]`
+  Input:
+  ```
+  [{"key": 0}, {"key": 42}, {"key": -1}, {"key": 41}, {"key": 43}, {"key": 42.0001}, {"key": 41.9999}, {"key": 100}, {"some": "value"}]
+  ```
+  Expected output:
+  ```
+  [{"key": 0}, {"key": -1}, {"key": 41}, {"key": 41.9999}]
+  ```
+  Error:
+  ```
+  Unexpected char, char=?, index=2
+  ```
+
+- [ ] `$[?(@.key)]`
+  Input:
+  ```
+  [{"some": "some value"}, {"key": "value"}]
+  ```
+  Expected output:
+  ```
+  [{"key": "value"}]
+  ```
+  Error:
+  ```
+  Unexpected char, char=?, index=2
+  ```
+
+- [ ] `$`
+  Input:
+  ```
+  42
+  ```
+  Expected output:
+  ```
+  42
+  ```
+  Error:
+  ```
+  A JSONArray text must start with '[' at 1 [character 2 line 1]
+  ```
+
+- [ ] `$[0]['c','d']`
+  Input:
+  ```
+  [{"c": "cc1", "d": "dd1", "e": "ee1"}, {"c": "cc2", "d": "dd2", "e": "ee2"}]
+  ```
+  Expected output:
+  ```
+  ["cc1", "dd1"]
+  ```
+  Actual output:
+  ```
+  {"c": "cc1", "d": "dd1"}
   ```
 
 

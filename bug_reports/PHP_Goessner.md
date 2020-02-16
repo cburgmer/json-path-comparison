@@ -3,46 +3,6 @@ Results do not match other implementations
 The following queries provide results that do not match those of other implementations of JSONPath
 (compare https://cburgmer.github.io/json-path-comparison/):
 
-- [ ] `$[0]`
-  Input:
-  ```
-  ["first", "second", "third", "forth", "fifth"]
-  ```
-  Expected output:
-  ```
-  ["first"]
-  ```
-  Actual output:
-  ```
-  [["first", "second", "third", "forth", "fifth"]]
-  ```
-
-- [ ] `$[-1]`
-  Input:
-  ```
-  ["first", "second", "third"]
-  ```
-  Expected output:
-  ```
-  ["third"]
-  ```
-  Error:
-  ```
-  jsonpath returned false, this might indicate an error```
-
-- [ ] `$[1]`
-  Input:
-  ```
-  ["one element"]
-  ```
-  Expected output:
-  ```
-  []
-  ```
-  Error:
-  ```
-  jsonpath returned false, this might indicate an error```
-
 - [ ] `$[7:10]`
   Input:
   ```
@@ -68,6 +28,196 @@ The following queries provide results that do not match those of other implement
   Actual output:
   ```
   ["first", "second"]
+  ```
+
+- [ ] `$['two.some']`
+  Input:
+  ```
+  {"one": {"key": "value"}, "two": {"some": "more", "key": "other value"}, "two.some": "42"}
+  ```
+  Expected output:
+  ```
+  ["42"]
+  ```
+  Actual output:
+  ```
+  ["more"]
+  ```
+
+- [ ] `$[-1]`
+  Input:
+  ```
+  ["first", "second", "third"]
+  ```
+  Expected output:
+  ```
+  ["third"]
+  ```
+  Error:
+  ```
+  jsonpath returned false, this might indicate an error```
+
+- [ ] `$[0]`
+  Input:
+  ```
+  ["first", "second", "third", "forth", "fifth"]
+  ```
+  Expected output:
+  ```
+  ["first"]
+  ```
+  Actual output:
+  ```
+  [["first", "second", "third", "forth", "fifth"]]
+  ```
+
+- [ ] `$[1]`
+  Input:
+  ```
+  ["one element"]
+  ```
+  Expected output:
+  ```
+  []
+  ```
+  Error:
+  ```
+  jsonpath returned false, this might indicate an error```
+
+- [ ] `$['.']`
+  Input:
+  ```
+  {".": "value", "another": "entry"}
+  ```
+  Expected output:
+  ```
+  ["value"]
+  ```
+  Actual output:
+  ```
+  [{".": "value", "another": "entry"}]
+  ```
+
+- [ ] `$['0']`
+  Input:
+  ```
+  {"0": "value"}
+  ```
+  Expected output:
+  ```
+  ["value"]
+  ```
+  Actual output:
+  ```
+  [["value"]]
+  ```
+
+- [ ] `$[*]`
+  Input:
+  ```
+  []
+  ```
+  Expected output:
+  ```
+  []
+  ```
+  Actual output:
+  ```
+  null
+  ```
+
+- [ ] `$[*]`
+  Input:
+  ```
+  {}
+  ```
+  Expected output:
+  ```
+  []
+  ```
+  Actual output:
+  ```
+  null
+  ```
+
+- [ ] `$.key`
+  Input:
+  ```
+  [0, 1]
+  ```
+  Expected output:
+  ```
+  []
+  ```
+  Error:
+  ```
+  jsonpath returned false, this might indicate an error```
+
+- [ ] `$.id`
+  Input:
+  ```
+  [{"id": 2}]
+  ```
+  Expected output:
+  ```
+  []
+  ```
+  Error:
+  ```
+  jsonpath returned false, this might indicate an error```
+
+- [ ] `$.missing`
+  Input:
+  ```
+  {"key": "value"}
+  ```
+  Expected output:
+  ```
+  []
+  ```
+  Error:
+  ```
+  jsonpath returned false, this might indicate an error```
+
+- [ ] `$..*`
+  Input:
+  ```
+  42
+  ```
+  Expected output:
+  ```
+  []
+  ```
+  Error:
+  ```
+  jsonpath returned false, this might indicate an error```
+
+- [ ] `$.*`
+  Input:
+  ```
+  []
+  ```
+  Expected output:
+  ```
+  []
+  ```
+  Actual output:
+  ```
+  null
+  ```
+
+- [ ] `$.*`
+  Input:
+  ```
+  {}
+  ```
+  Expected output:
+  ```
+  []
+  ```
+  Actual output:
+  ```
+  null
   ```
 
 - [ ] `$[?(@.key==42)]`
@@ -154,100 +304,6 @@ The following queries provide results that do not match those of other implement
   ArgumentCountError
   ```
 
-- [ ] `$['two.some']`
-  Input:
-  ```
-  {"one": {"key": "value"}, "two": {"some": "more", "key": "other value"}, "two.some": "42"}
-  ```
-  Expected output:
-  ```
-  ["42"]
-  ```
-  Actual output:
-  ```
-  ["more"]
-  ```
-
-- [ ] `$['.']`
-  Input:
-  ```
-  {".": "value", "another": "entry"}
-  ```
-  Expected output:
-  ```
-  ["value"]
-  ```
-  Actual output:
-  ```
-  [{".": "value", "another": "entry"}]
-  ```
-
-- [ ] `$['0']`
-  Input:
-  ```
-  {"0": "value"}
-  ```
-  Expected output:
-  ```
-  ["value"]
-  ```
-  Actual output:
-  ```
-  [["value"]]
-  ```
-
-- [ ] `$.key`
-  Input:
-  ```
-  [0, 1]
-  ```
-  Expected output:
-  ```
-  []
-  ```
-  Error:
-  ```
-  jsonpath returned false, this might indicate an error```
-
-- [ ] `$.id`
-  Input:
-  ```
-  [{"id": 2}]
-  ```
-  Expected output:
-  ```
-  []
-  ```
-  Error:
-  ```
-  jsonpath returned false, this might indicate an error```
-
-- [ ] `$.missing`
-  Input:
-  ```
-  {"key": "value"}
-  ```
-  Expected output:
-  ```
-  []
-  ```
-  Error:
-  ```
-  jsonpath returned false, this might indicate an error```
-
-- [ ] `$..*`
-  Input:
-  ```
-  42
-  ```
-  Expected output:
-  ```
-  []
-  ```
-  Error:
-  ```
-  jsonpath returned false, this might indicate an error```
-
 - [ ] `$`
   Input:
   ```
@@ -273,62 +329,6 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   jsonpath returned false, this might indicate an error```
-
-- [ ] `$[*]`
-  Input:
-  ```
-  []
-  ```
-  Expected output:
-  ```
-  []
-  ```
-  Actual output:
-  ```
-  null
-  ```
-
-- [ ] `$[*]`
-  Input:
-  ```
-  {}
-  ```
-  Expected output:
-  ```
-  []
-  ```
-  Actual output:
-  ```
-  null
-  ```
-
-- [ ] `$.*`
-  Input:
-  ```
-  []
-  ```
-  Expected output:
-  ```
-  []
-  ```
-  Actual output:
-  ```
-  null
-  ```
-
-- [ ] `$.*`
-  Input:
-  ```
-  {}
-  ```
-  Expected output:
-  ```
-  []
-  ```
-  Actual output:
-  ```
-  null
-  ```
 
 
 For reference, the output was generated by the program in https://github.com/cburgmer/json-path-comparison/tree/master/implementations/PHP_Goessner.

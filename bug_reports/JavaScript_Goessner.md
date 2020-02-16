@@ -3,34 +3,6 @@ Results do not match other implementations
 The following queries provide results that do not match those of other implementations of JSONPath
 (compare https://cburgmer.github.io/json-path-comparison/):
 
-- [ ] `$[-1]`
-  Input:
-  ```
-  ["first", "second", "third"]
-  ```
-  Expected output:
-  ```
-  ["third"]
-  ```
-  Error:
-  ```
-  jsonpath returned false, this might indicate an error
-  ```
-
-- [ ] `$[1]`
-  Input:
-  ```
-  ["one element"]
-  ```
-  Expected output:
-  ```
-  []
-  ```
-  Error:
-  ```
-  jsonpath returned false, this might indicate an error
-  ```
-
 - [ ] `$[7:10]`
   Input:
   ```
@@ -73,6 +45,34 @@ The following queries provide results that do not match those of other implement
   ["more"]
   ```
 
+- [ ] `$[-1]`
+  Input:
+  ```
+  ["first", "second", "third"]
+  ```
+  Expected output:
+  ```
+  ["third"]
+  ```
+  Error:
+  ```
+  jsonpath returned false, this might indicate an error
+  ```
+
+- [ ] `$[1]`
+  Input:
+  ```
+  ["one element"]
+  ```
+  Expected output:
+  ```
+  []
+  ```
+  Error:
+  ```
+  jsonpath returned false, this might indicate an error
+  ```
+
 - [ ] `$['.']`
   Input:
   ```
@@ -85,6 +85,34 @@ The following queries provide results that do not match those of other implement
   Actual output:
   ```
   [{".": "value", "another": "entry"}]
+  ```
+
+- [ ] `$[*]`
+  Input:
+  ```
+  []
+  ```
+  Expected output:
+  ```
+  []
+  ```
+  Error:
+  ```
+  jsonpath returned false, this might indicate an error
+  ```
+
+- [ ] `$[*]`
+  Input:
+  ```
+  {}
+  ```
+  Expected output:
+  ```
+  []
+  ```
+  Error:
+  ```
+  jsonpath returned false, this might indicate an error
   ```
 
 - [ ] `$.key`
@@ -143,6 +171,34 @@ The following queries provide results that do not match those of other implement
   jsonpath returned false, this might indicate an error
   ```
 
+- [ ] `$.*`
+  Input:
+  ```
+  []
+  ```
+  Expected output:
+  ```
+  []
+  ```
+  Error:
+  ```
+  jsonpath returned false, this might indicate an error
+  ```
+
+- [ ] `$.*`
+  Input:
+  ```
+  {}
+  ```
+  Expected output:
+  ```
+  []
+  ```
+  Error:
+  ```
+  jsonpath returned false, this might indicate an error
+  ```
+
 - [ ] `$`
   Input:
   ```
@@ -165,62 +221,6 @@ The following queries provide results that do not match those of other implement
   Expected output:
   ```
   [42]
-  ```
-  Error:
-  ```
-  jsonpath returned false, this might indicate an error
-  ```
-
-- [ ] `$[*]`
-  Input:
-  ```
-  []
-  ```
-  Expected output:
-  ```
-  []
-  ```
-  Error:
-  ```
-  jsonpath returned false, this might indicate an error
-  ```
-
-- [ ] `$[*]`
-  Input:
-  ```
-  {}
-  ```
-  Expected output:
-  ```
-  []
-  ```
-  Error:
-  ```
-  jsonpath returned false, this might indicate an error
-  ```
-
-- [ ] `$.*`
-  Input:
-  ```
-  []
-  ```
-  Expected output:
-  ```
-  []
-  ```
-  Error:
-  ```
-  jsonpath returned false, this might indicate an error
-  ```
-
-- [ ] `$.*`
-  Input:
-  ```
-  {}
-  ```
-  Expected output:
-  ```
-  []
   ```
   Error:
   ```

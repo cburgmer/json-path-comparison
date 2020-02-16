@@ -3,23 +3,6 @@ Results do not match other implementations
 The following queries provide results that do not match those of other implementations of JSONPath
 (compare https://cburgmer.github.io/json-path-comparison/):
 
-- [ ] `$.2`
-  Input:
-  ```
-  {"a": "first", "2": "second", "b": "third"}
-  ```
-  Expected output:
-  ```
-  ["second"]
-  ```
-  Error:
-  ```
-  init terminating in do_boot ({badmatch,{error,{1,ejsonpath_parse,syntax error before: 2}}})
-  
-  Crash dump is being written to: /dev/null...done
-  {"init terminating in do_boot",{badmatch,{error,{1,ejsonpath_parse,["syntax error before: ",["2"]]}}}}
-  ```
-
 - [ ] `$[::2]`
   Input:
   ```
@@ -35,6 +18,23 @@ The following queries provide results that do not match those of other implement
   
   Crash dump is being written to: /dev/null...done
   {"init terminating in do_boot",{badmatch,{error,{1,ejsonpath_parse,["syntax error before: ","':'"]}}}}
+  ```
+
+- [ ] `$.2`
+  Input:
+  ```
+  {"a": "first", "2": "second", "b": "third"}
+  ```
+  Expected output:
+  ```
+  ["second"]
+  ```
+  Error:
+  ```
+  init terminating in do_boot ({badmatch,{error,{1,ejsonpath_parse,syntax error before: 2}}})
+  
+  Crash dump is being written to: /dev/null...done
+  {"init terminating in do_boot",{badmatch,{error,{1,ejsonpath_parse,["syntax error before: ",["2"]]}}}}
   ```
 
 

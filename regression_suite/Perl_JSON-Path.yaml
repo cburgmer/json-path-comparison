@@ -6,156 +6,142 @@
 
 implementation: Perl_JSON-Path
 queries:
-  - id: array_index_dot_notation
+  - id: array_slice_with_negative_step
     status: open
-    result: ["third"]
-  - id: array_index_on_string
-    status: error
-  - id: array_index_slice_negative_start_out_of_bounds
-    status: fail
-    result: ["first", "second", "third", "first", "second", "third"]
-  - id: array_index_slice_negative_step
+    result: []
+  - id: array_slice_with_negative_step_only
     status: open
     result: ["fifth", "forth", "third", "second", "first"]
-  - id: array_index_slice_no_start_no_end
+  - id: array_slice_with_open_start_and_end
     status: error
-  - id: array_index_slice_start_-2_and_open_end
+  - id: array_slice_with_start_-2_and_open_end
     status: fail
     result: ["second", "third", "first", "second", "third"]
-  - id: array_index_slice_start_end_negative_step
-    status: open
-    result: []
-  - id: array_index_slice_start_end_step_0
-    status: error
-  - id: array_index_union_with_slice
-    status: open
-    result: [2, 3]
-  - id: filter_current_object_with_value
-    status: error
-  - id: filter_equal
-    status: error
-  - id: filter_equal_on_number_value_with_string_query
-    status: error
-  - id: filter_equal_on_object
-    status: error
-  - id: filter_equal_on_object_with_key_matching_query
-    status: error
-  - id: filter_equal_on_string_value_with_number_query
-    status: error
-  - id: filter_equal_on_string_with_dot
-    status: error
-  - id: filter_equal_on_string_with_single_quotes
-    status: error
-  - id: filter_equal_single_equal
-    status: error
-  - id: filter_equal_with_root_reference
-    status: error
-  - id: filter_greater_than
-    status: error
-  - id: filter_greater_than_or_equal
-    status: error
-  - id: filter_less_than
-    status: error
-  - id: filter_less_than_on_string
-    status: error
-  - id: filter_less_than_or_equal
-    status: error
-  - id: filter_null
-    status: error
-  - id: filter_regular_expression
-    status: error
-  - id: filter_with_boolean_operation
-    status: error
-  - id: filter_with_subfilter
-    status: error
-  - id: filter_with_value
-    status: error
-  - id: filter_with_value_on_null
-    status: error
-  - id: filter_without_value
-    status: error
-  - id: key_bracket_notation_union
-    status: open
-    result: []
-  - id: key_bracket_notation_union_after_array_index
+  - id: array_slice_with_start_large_negative_number_and_open_end_on_short_array
     status: fail
-    result: []
-  - id: key_bracket_notation_union_after_array_slice
+    result: ["first", "second", "third", "first", "second", "third"]
+  - id: array_slice_with_step_0
     status: error
-  - id: key_bracket_notation_union_after_wildcard_dot_notation
-    status: open
-    result: []
-  - id: key_bracket_notation_union_with_key_on_nested_objects
-    status: error
-  - id: key_bracket_notation_with_at_literal
-    status: error
-  - id: key_bracket_notation_with_dollar_literal
-    status: error
-  - id: key_bracket_notation_with_dot_literal
-    status: error
-  - id: key_bracket_notation_with_double_quotes
+  - id: bracket_notation_with_double_quotes
     status: open
     result: ["value"]
-  - id: key_bracket_notation_with_nested_object
+  - id: bracket_notation_with_number_after_recursive_descent
     status: open
     result: []
-  - id: key_bracket_notation_with_nested_object_without_quotes
-    status: open
-    result: []
-  - id: key_bracket_notation_with_number_without_quotes
+  - id: bracket_notation_with_number_on_object
     status: open
     result: ["value"]
-  - id: key_bracket_notation_with_single_quote
-    status: open
-    result: []
-  - id: key_bracket_notation_with_single_quote_escaped
-    status: open
-    result: []
-  - id: key_bracket_notation_with_special_characters
-    status: fail
-    result: []
-  - id: key_bracket_notation_with_star_literal
+  - id: bracket_notation_with_number_on_string
+    status: error
+  - id: bracket_notation_with_quoted_current_object_literal
+    status: error
+  - id: bracket_notation_with_quoted_dot_literal
+    status: error
+  - id: bracket_notation_with_quoted_root_literal
+    status: error
+  - id: bracket_notation_with_quoted_wildcard_literal
     status: fail
     result: ["value", "entry"]
-  - id: key_bracket_notation_without_quotes
-    status: open
-    result: ["value"]
-  - id: key_dot_bracket_notation
-    status: open
-    result: ["value"]
-  - id: key_dot_bracket_notation_with_double_quotes
-    status: open
-    result: ["value"]
-  - id: key_dot_bracket_notation_without_quotes
-    status: open
-    result: ["value"]
-  - id: key_dot_notation_with_double_quotes
-    status: open
-    result: ["value"]
-  - id: key_dot_notation_with_single_quotes
-    status: open
-    result: ["value"]
-  - id: recursive_array_index
+  - id: bracket_notation_with_single_quote
     status: open
     result: []
+  - id: bracket_notation_with_single_quote_escaped
+    status: open
+    result: []
+  - id: bracket_notation_with_special_characters
+    status: fail
+    result: []
+  - id: bracket_notation_with_two_literals_separated_by_dot
+    status: open
+    result: []
+  - id: bracket_notation_with_two_literals_separated_by_dot_without_quotes
+    status: open
+    result: []
+  - id: bracket_notation_without_quotes
+    status: open
+    result: ["value"]
+  - id: dot_bracket_notation
+    status: open
+    result: ["value"]
+  - id: dot_bracket_notation_with_double_quotes
+    status: open
+    result: ["value"]
+  - id: dot_bracket_notation_without_quotes
+    status: open
+    result: ["value"]
+  - id: dot_notation_after_union_with_keys
+    status: error
+  - id: dot_notation_with_double_quotes
+    status: open
+    result: ["value"]
+  - id: dot_notation_with_double_quotes_after_recursive_descent
+    status: open
+    result: ["russian dolls", "something", "top", "value", {"key": "russian dolls"}]
+  - id: dot_notation_with_number
+    status: open
+    result: ["third"]
+  - id: dot_notation_with_single_quotes
+    status: open
+    result: ["value"]
+  - id: dot_notation_with_single_quotes_after_recursive_descent
+    status: open
+    result: ["russian dolls", "something", "top", "value", {"key": "russian dolls"}]
+  - id: dot_notation_with_wildcard_after_recursive_descent
+    status: fail
+    result: []
+  - id: dot_notation_with_wildcard_after_recursive_descent_on_null_value_array
+    status: fail
+    result: []
+  - id: filter_expression_after_recursive_descent
+    status: error
+  - id: filter_expression_with_boolean_and_operator
+    status: error
+  - id: filter_expression_with_current_object
+    status: error
+  - id: filter_expression_with_equals
+    status: error
+  - id: filter_expression_with_equals_null
+    status: error
+  - id: filter_expression_with_equals_number_value_on_string_value
+    status: error
+  - id: filter_expression_with_equals_on_object
+    status: error
+  - id: filter_expression_with_equals_on_object_with_key_matching_query
+    status: error
+  - id: filter_expression_with_equals_on_string_with_dot
+    status: error
+  - id: filter_expression_with_equals_string_value_on_number_value
+    status: error
+  - id: filter_expression_with_equals_value_with_single_quotes
+    status: error
+  - id: filter_expression_with_equals_with_root_reference
+    status: error
+  - id: filter_expression_with_greater_than
+    status: error
+  - id: filter_expression_with_greater_than_or_equal
+    status: error
+  - id: filter_expression_with_less_than
+    status: error
+  - id: filter_expression_with_less_than_number_on_string_value
+    status: error
+  - id: filter_expression_with_less_than_or_equal
+    status: error
+  - id: filter_expression_with_regular_expression
+    status: error
+  - id: filter_expression_with_single_equal
+    status: error
+  - id: filter_expression_with_subfilter
+    status: error
+  - id: filter_expression_with_value
+    status: error
+  - id: filter_expression_with_value_after_recursive_descent
+    status: error
+  - id: filter_expression_with_value_on_null_value
+    status: error
+  - id: filter_expression_without_value
+    status: error
   - id: recursive_descent
     status: open
-    result: []
-  - id: recursive_filter
-    status: error
-  - id: recursive_filter_with_value
-    status: error
-  - id: recursive_key_with_double_quotes
-    status: open
-    result: ["russian dolls", "something", "top", "value", {"key": "russian dolls"}]
-  - id: recursive_key_with_single_quotes
-    status: open
-    result: ["russian dolls", "something", "top", "value", {"key": "russian dolls"}]
-  - id: recursive_wildcard
-    status: fail
-    result: []
-  - id: recursive_wildcard_on_null_value_array
-    status: fail
     result: []
   - id: root
     status: fail
@@ -167,3 +153,17 @@ queries:
     status: error
   - id: union_with_filter
     status: error
+  - id: union_with_keys
+    status: open
+    result: []
+  - id: union_with_keys_after_array_slice
+    status: error
+  - id: union_with_keys_after_bracket_notation
+    status: fail
+    result: []
+  - id: union_with_keys_after_dot_notation_with_wildcard
+    status: open
+    result: []
+  - id: union_with_slice_and_number
+    status: open
+    result: [2, 3]

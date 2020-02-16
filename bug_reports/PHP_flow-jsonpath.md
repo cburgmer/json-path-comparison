@@ -3,34 +3,6 @@ Results do not match other implementations
 The following queries provide results that do not match those of other implementations of JSONPath
 (compare https://cburgmer.github.io/json-path-comparison/):
 
-- [ ] `$[-4:]`
-  Input:
-  ```
-  ["first", "second", "third"]
-  ```
-  Expected output:
-  ```
-  ["first", "second", "third"]
-  ```
-  Actual output:
-  ```
-  [null, "first", "second", "third"]
-  ```
-
-- [ ] `$[:2]`
-  Input:
-  ```
-  ["first", "second", "third", "forth", "fifth"]
-  ```
-  Expected output:
-  ```
-  ["first", "second"]
-  ```
-  Actual output:
-  ```
-  ["first", "second", "third"]
-  ```
-
 - [ ] `$[1:3]`
   Input:
   ```
@@ -43,34 +15,6 @@ The following queries provide results that do not match those of other implement
   Actual output:
   ```
   ["second", "third", "forth"]
-  ```
-
-- [ ] `$[0:3:1]`
-  Input:
-  ```
-  ["first", "second", "third", "forth", "fifth"]
-  ```
-  Expected output:
-  ```
-  ["first", "second", "third"]
-  ```
-  Actual output:
-  ```
-  ["first", "second", "third", "forth"]
-  ```
-
-- [ ] `$[0:4:2]`
-  Input:
-  ```
-  ["first", "second", "third", "forth", "fifth"]
-  ```
-  Expected output:
-  ```
-  ["first", "third"]
-  ```
-  Actual output:
-  ```
-  ["first", "third", "fifth"]
   ```
 
 - [ ] `$[0:0]`
@@ -101,18 +45,74 @@ The following queries provide results that do not match those of other implement
   ["first", "second"]
   ```
 
-- [ ] `$[0]['c','d']`
+- [ ] `$[:2]`
   Input:
   ```
-  [{"c": "cc1", "d": "dd1", "e": "ee1"}, {"c": "cc2", "d": "dd2", "e": "ee2"}]
+  ["first", "second", "third", "forth", "fifth"]
   ```
   Expected output:
   ```
-  ["cc1", "dd1"]
+  ["first", "second"]
   ```
   Actual output:
   ```
-  []
+  ["first", "second", "third"]
+  ```
+
+- [ ] `$[-4:]`
+  Input:
+  ```
+  ["first", "second", "third"]
+  ```
+  Expected output:
+  ```
+  ["first", "second", "third"]
+  ```
+  Actual output:
+  ```
+  [null, "first", "second", "third"]
+  ```
+
+- [ ] `$[0:3:1]`
+  Input:
+  ```
+  ["first", "second", "third", "forth", "fifth"]
+  ```
+  Expected output:
+  ```
+  ["first", "second", "third"]
+  ```
+  Actual output:
+  ```
+  ["first", "second", "third", "forth"]
+  ```
+
+- [ ] `$[0:4:2]`
+  Input:
+  ```
+  ["first", "second", "third", "forth", "fifth"]
+  ```
+  Expected output:
+  ```
+  ["first", "third"]
+  ```
+  Actual output:
+  ```
+  ["first", "third", "fifth"]
+  ```
+
+- [ ] `$[0:2][*]`
+  Input:
+  ```
+  [[1, 2], ["a", "b"], [0, 0]]
+  ```
+  Expected output:
+  ```
+  [1, 2, "a", "b"]
+  ```
+  Actual output:
+  ```
+  [1, 2, "a", "b", 0, 0]
   ```
 
 - [ ] `$['one','three'].key`
@@ -129,18 +129,18 @@ The following queries provide results that do not match those of other implement
   []
   ```
 
-- [ ] `$[0:2][*]`
+- [ ] `$[0]['c','d']`
   Input:
   ```
-  [[1, 2], ["a", "b"], [0, 0]]
+  [{"c": "cc1", "d": "dd1", "e": "ee1"}, {"c": "cc2", "d": "dd2", "e": "ee2"}]
   ```
   Expected output:
   ```
-  [1, 2, "a", "b"]
+  ["cc1", "dd1"]
   ```
   Actual output:
   ```
-  [1, 2, "a", "b", 0, 0]
+  []
   ```
 
 

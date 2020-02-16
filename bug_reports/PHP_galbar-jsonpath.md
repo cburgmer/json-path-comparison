@@ -3,34 +3,6 @@ Results do not match other implementations
 The following queries provide results that do not match those of other implementations of JSONPath
 (compare https://cburgmer.github.io/json-path-comparison/):
 
-- [ ] `$.2`
-  Input:
-  ```
-  {"a": "first", "2": "second", "b": "third"}
-  ```
-  Expected output:
-  ```
-  ["second"]
-  ```
-  Error:
-  ```
-  Invalid JSONPath error: 'Error in JSONPath near '.2''
-  ```
-
-- [ ] `$[1]`
-  Input:
-  ```
-  ["one element"]
-  ```
-  Expected output:
-  ```
-  []
-  ```
-  Error:
-  ```
-  jsonpath returned false, this might indicate an error
-  ```
-
 - [ ] `$[7:10]`
   Input:
   ```
@@ -59,18 +31,46 @@ The following queries provide results that do not match those of other implement
   jsonpath returned false, this might indicate an error
   ```
 
-- [ ] `$[?(@.key<42)]`
+- [ ] `$[1]`
   Input:
   ```
-  [{"key": 0}, {"key": 42}, {"key": -1}, {"key": 41}, {"key": 43}, {"key": 42.0001}, {"key": 41.9999}, {"key": 100}, {"some": "value"}]
+  ["one element"]
   ```
   Expected output:
   ```
-  [{"key": 0}, {"key": -1}, {"key": 41}, {"key": 41.9999}]
+  []
   ```
-  Actual output:
+  Error:
   ```
-  [{"key": 0}, {"key": -1}, {"key": 41}, {"key": 41.9999}, {"some": "value"}]
+  jsonpath returned false, this might indicate an error
+  ```
+
+- [ ] `$[*]`
+  Input:
+  ```
+  []
+  ```
+  Expected output:
+  ```
+  []
+  ```
+  Error:
+  ```
+  jsonpath returned false, this might indicate an error
+  ```
+
+- [ ] `$[*]`
+  Input:
+  ```
+  {}
+  ```
+  Expected output:
+  ```
+  []
+  ```
+  Error:
+  ```
+  jsonpath returned false, this might indicate an error
   ```
 
 - [ ] `$.key`
@@ -115,6 +115,20 @@ The following queries provide results that do not match those of other implement
   jsonpath returned false, this might indicate an error
   ```
 
+- [ ] `$.2`
+  Input:
+  ```
+  {"a": "first", "2": "second", "b": "third"}
+  ```
+  Expected output:
+  ```
+  ["second"]
+  ```
+  Error:
+  ```
+  Invalid JSONPath error: 'Error in JSONPath near '.2''
+  ```
+
 - [ ] `$..*`
   Input:
   ```
@@ -157,34 +171,6 @@ The following queries provide results that do not match those of other implement
   [42]
   ```
 
-- [ ] `$[*]`
-  Input:
-  ```
-  []
-  ```
-  Expected output:
-  ```
-  []
-  ```
-  Error:
-  ```
-  jsonpath returned false, this might indicate an error
-  ```
-
-- [ ] `$[*]`
-  Input:
-  ```
-  {}
-  ```
-  Expected output:
-  ```
-  []
-  ```
-  Error:
-  ```
-  jsonpath returned false, this might indicate an error
-  ```
-
 - [ ] `$.*`
   Input:
   ```
@@ -211,6 +197,20 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   jsonpath returned false, this might indicate an error
+  ```
+
+- [ ] `$[?(@.key<42)]`
+  Input:
+  ```
+  [{"key": 0}, {"key": 42}, {"key": -1}, {"key": 41}, {"key": 43}, {"key": 42.0001}, {"key": 41.9999}, {"key": 100}, {"some": "value"}]
+  ```
+  Expected output:
+  ```
+  [{"key": 0}, {"key": -1}, {"key": 41}, {"key": 41.9999}]
+  ```
+  Actual output:
+  ```
+  [{"key": 0}, {"key": -1}, {"key": 41}, {"key": 41.9999}, {"some": "value"}]
   ```
 
 

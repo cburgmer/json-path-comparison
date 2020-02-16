@@ -17,18 +17,18 @@ The following queries provide results that do not match those of other implement
   Index was out of range. Must be non-negative and less than the size of the collection. (Parameter 'index')
   ```
 
-- [ ] `$[?(@.key=="some.value")]`
+- [ ] `$[*]`
   Input:
   ```
-  [{"key": "some"}, {"key": "value"}, {"key": "some.value"}]
+  {"some": "string", "int": 42, "object": {"key": "value"}, "array": [0, 1]}
   ```
   Expected output:
   ```
-  [{"key": "some.value"}]
+  ["string", 42, [0, 1], {"key": "value"}]
   ```
-  Error:
+  Actual output:
   ```
-  Unexpected character while parsing path query: "
+  []
   ```
 
 - [ ] `$..*`
@@ -73,20 +73,6 @@ The following queries provide results that do not match those of other implement
   [42]
   ```
 
-- [ ] `$[*]`
-  Input:
-  ```
-  {"some": "string", "int": 42, "object": {"key": "value"}, "array": [0, 1]}
-  ```
-  Expected output:
-  ```
-  ["string", 42, [0, 1], {"key": "value"}]
-  ```
-  Actual output:
-  ```
-  []
-  ```
-
 - [ ] `$.*`
   Input:
   ```
@@ -99,6 +85,20 @@ The following queries provide results that do not match those of other implement
   Actual output:
   ```
   []
+  ```
+
+- [ ] `$[?(@.key=="some.value")]`
+  Input:
+  ```
+  [{"key": "some"}, {"key": "value"}, {"key": "some.value"}]
+  ```
+  Expected output:
+  ```
+  [{"key": "some.value"}]
+  ```
+  Error:
+  ```
+  Unexpected character while parsing path query: "
   ```
 
 

@@ -3,20 +3,6 @@ Results do not match other implementations
 The following queries provide results that do not match those of other implementations of JSONPath
 (compare https://cburgmer.github.io/json-path-comparison/):
 
-- [ ] `$.2`
-  Input:
-  ```
-  {"a": "first", "2": "second", "b": "third"}
-  ```
-  Expected output:
-  ```
-  ["second"]
-  ```
-  Error:
-  ```
-  Exception('Parse error at 1:2 near token 2 (NUMBER)')
-  ```
-
 - [ ] `$[0:3:2]`
   Input:
   ```
@@ -73,32 +59,102 @@ The following queries provide results that do not match those of other implement
   Exception('Parse error at 1:3 near token : (:)')
   ```
 
-- [ ] `$[0,1]`
+- [ ] `$['*']`
   Input:
   ```
-  ["first", "second", "third"]
+  {"*": "value", "another": "entry"}
   ```
   Expected output:
   ```
-  ["first", "second"]
+  ["value"]
   ```
-  Error:
+  Actual output:
   ```
-  Exception('Parse error at 1:3 near token , (,)')
+  ["value", "entry"]
   ```
 
-- [ ] `$[4,1]`
+- [ ] `$[*]`
   Input:
   ```
-  [1, 2, 3, 4, 5]
+  {}
   ```
   Expected output:
   ```
-  [5, 2]
+  []
+  ```
+  Actual output:
+  ```
+  [{}]
+  ```
+
+- [ ] `$[*]`
+  Input:
+  ```
+  {"some": "string", "int": 42, "object": {"key": "value"}, "array": [0, 1]}
+  ```
+  Expected output:
+  ```
+  ["string", 42, [0, 1], {"key": "value"}]
+  ```
+  Actual output:
+  ```
+  [{"array": [0, 1], "int": 42, "object": {"key": "value"}, "some": "string"}]
+  ```
+
+- [ ] `$.2`
+  Input:
+  ```
+  {"a": "first", "2": "second", "b": "third"}
+  ```
+  Expected output:
+  ```
+  ["second"]
   ```
   Error:
   ```
-  Exception('Parse error at 1:3 near token , (,)')
+  Exception('Parse error at 1:2 near token 2 (NUMBER)')
+  ```
+
+- [ ] `$..*`
+  Input:
+  ```
+  {"key": "value", "another key": {"complex": "string", "primitives": [0, 1]}}
+  ```
+  Expected output:
+  ```
+  ["string", "value", 0, 1, [0, 1], {"complex": "string", "primitives": [0, 1]}]
+  ```
+  Actual output:
+  ```
+  ["string", "value", [0, 1], {"complex": "string", "primitives": [0, 1]}]
+  ```
+
+- [ ] `$..*`
+  Input:
+  ```
+  [40, null, 42]
+  ```
+  Expected output:
+  ```
+  [40, null, 42]
+  ```
+  Actual output:
+  ```
+  []
+  ```
+
+- [ ] `$.*`
+  Input:
+  ```
+  ["string", 42, {"key": "value"}, [0, 1]]
+  ```
+  Expected output:
+  ```
+  ["string", 42, {"key": "value"}, [0, 1]]
+  ```
+  Actual output:
+  ```
+  []
   ```
 
 - [ ] `$[?(@.key==42)]`
@@ -185,88 +241,32 @@ The following queries provide results that do not match those of other implement
   JsonPathLexerError('Error on line 1, col 2: Unexpected character: ? ')
   ```
 
-- [ ] `$['*']`
+- [ ] `$[0,1]`
   Input:
   ```
-  {"*": "value", "another": "entry"}
+  ["first", "second", "third"]
   ```
   Expected output:
   ```
-  ["value"]
+  ["first", "second"]
   ```
-  Actual output:
+  Error:
   ```
-  ["value", "entry"]
+  Exception('Parse error at 1:3 near token , (,)')
   ```
 
-- [ ] `$..*`
+- [ ] `$[4,1]`
   Input:
   ```
-  {"key": "value", "another key": {"complex": "string", "primitives": [0, 1]}}
+  [1, 2, 3, 4, 5]
   ```
   Expected output:
   ```
-  ["string", "value", 0, 1, [0, 1], {"complex": "string", "primitives": [0, 1]}]
+  [5, 2]
   ```
-  Actual output:
+  Error:
   ```
-  ["string", "value", [0, 1], {"complex": "string", "primitives": [0, 1]}]
-  ```
-
-- [ ] `$..*`
-  Input:
-  ```
-  [40, null, 42]
-  ```
-  Expected output:
-  ```
-  [40, null, 42]
-  ```
-  Actual output:
-  ```
-  []
-  ```
-
-- [ ] `$[*]`
-  Input:
-  ```
-  {}
-  ```
-  Expected output:
-  ```
-  []
-  ```
-  Actual output:
-  ```
-  [{}]
-  ```
-
-- [ ] `$[*]`
-  Input:
-  ```
-  {"some": "string", "int": 42, "object": {"key": "value"}, "array": [0, 1]}
-  ```
-  Expected output:
-  ```
-  ["string", 42, [0, 1], {"key": "value"}]
-  ```
-  Actual output:
-  ```
-  [{"array": [0, 1], "int": 42, "object": {"key": "value"}, "some": "string"}]
-  ```
-
-- [ ] `$.*`
-  Input:
-  ```
-  ["string", 42, {"key": "value"}, [0, 1]]
-  ```
-  Expected output:
-  ```
-  ["string", 42, {"key": "value"}, [0, 1]]
-  ```
-  Actual output:
-  ```
-  []
+  Exception('Parse error at 1:3 near token , (,)')
   ```
 
 

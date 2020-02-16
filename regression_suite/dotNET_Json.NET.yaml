@@ -6,142 +6,142 @@
 
 implementation: dotNET_Json.NET
 queries:
-  - id: array_index_dot_notation
-    status: open
-    result: []
-  - id: array_index_last
-    status: error
-  - id: array_index_on_string
-    status: open
-    result: []
-  - id: array_index_slice_negative_step
-    status: open
-    result: ["fifth", "third", "first"]
-  - id: array_index_slice_start_end_negative_step
+  - id: array_slice_with_negative_step
     status: open
     result: ["forth", "second"]
-  - id: array_index_slice_start_end_step_0
+  - id: array_slice_with_negative_step_only
+    status: open
+    result: ["fifth", "third", "first"]
+  - id: array_slice_with_step_0
     status: error
-  - id: array_index_union_with_slice
-    status: open
-    result: [4, 5]
-  - id: filter_current_object_with_value
-    status: open
-    result: ["some value", null, "value"]
-  - id: filter_equal_on_number_value_with_string_query
+  - id: bracket_notation_with_double_quotes
     status: error
-  - id: filter_equal_on_object
-    status: open
-    result: []
-  - id: filter_equal_on_object_with_key_matching_query
-    status: open
-    result: []
-  - id: filter_equal_on_string_value_with_number_query
-    status: open
-    result: []
-  - id: filter_equal_on_string_with_dot
+  - id: bracket_notation_with_number_-1
     status: error
-  - id: filter_equal_single_equal
-    status: error
-  - id: filter_equal_with_root_reference
-    status: open
-    result: [{"key": 42}]
-  - id: filter_greater_than_or_equal
-    status: open
-    result: [{"key": 42}, {"key": 43}, {"key": 42.0001}, {"key": 100}]
-  - id: filter_less_than_on_string
-    status: error
-  - id: filter_less_than_or_equal
-    status: open
-    result: [{"key": 0}, {"key": 42}, {"key": -1}, {"key": 41}, {"key": 41.9999}]
-  - id: filter_null
-    status: open
-    result: [{"key": null}]
-  - id: filter_regular_expression
-    status: open
-    result: [{"name": "hello world"}, {"name": "yes hello world"}]
-  - id: filter_with_boolean_operation
-    status: open
-    result: [{"key": 43}]
-  - id: filter_with_subfilter
-    status: open
-    result: [{"a": [{"price": 11}]}, {"a": [{"price": 8}, {"price": 12}, {"price": 3}]}]
-  - id: filter_with_value_on_null
-    status: open
-    result: [{"key": null}, {"key": "value"}]
-  - id: filter_without_value
-    status: error
-  - id: key_bracket_notation_union
-    status: open
-    result: ["value", "entry"]
-  - id: key_bracket_notation_union_after_array_slice
-    status: open
-    result: ["cc1", "dd1", "cc2", "dd2"]
-  - id: key_bracket_notation_union_after_wildcard_dot_notation
-    status: open
-    result: []
-  - id: key_bracket_notation_with_double_quotes
-    status: error
-  - id: key_bracket_notation_with_nested_object
-    status: error
-  - id: key_bracket_notation_with_nested_object_without_quotes
-    status: error
-  - id: key_bracket_notation_with_number_without_quotes
-    status: open
-    result: []
-  - id: key_bracket_notation_with_single_quote
-    status: error
-  - id: key_bracket_notation_with_single_quote_escaped
-    status: open
-    result: ["value"]
-  - id: key_bracket_notation_without_quotes
-    status: error
-  - id: key_dot_bracket_notation
-    status: open
-    result: ["value"]
-  - id: key_dot_bracket_notation_with_double_quotes
-    status: error
-  - id: key_dot_bracket_notation_without_quotes
-    status: error
-  - id: key_dot_notation_with_double_quotes
-    status: open
-    result: []
-  - id: key_dot_notation_with_single_quotes
-    status: open
-    result: []
-  - id: recursive_array_index
+  - id: bracket_notation_with_number_after_recursive_descent
     status: open
     result: ["first"]
-  - id: recursive_descent
+  - id: bracket_notation_with_number_on_object
+    status: open
+    result: []
+  - id: bracket_notation_with_number_on_string
+    status: open
+    result: []
+  - id: bracket_notation_with_single_quote
     status: error
-  - id: recursive_filter
+  - id: bracket_notation_with_single_quote_escaped
     status: open
-    result: [{"id": 2, "more": [{"id": 2}, {"more": {"id": 2}}, {"id": {"id": 2}}, [{"id": 2}]]}, {"id": 2}, {"id": 2}, {"id": 2}, {"id": 2}]
-  - id: recursive_filter_with_value
+    result: ["value"]
+  - id: bracket_notation_with_two_literals_separated_by_dot
+    status: error
+  - id: bracket_notation_with_two_literals_separated_by_dot_without_quotes
+    status: error
+  - id: bracket_notation_with_wildcard_on_object
+    status: fail
+    result: []
+  - id: bracket_notation_without_quotes
+    status: error
+  - id: dot_bracket_notation
     status: open
-    result: [{"id": 2, "more": [{"id": 2}, {"more": {"id": 2}}, {"id": {"id": 2}}, [{"id": 2}]]}, {"id": 2}, {"id": 2}, {"id": {"id": 2}}, {"id": 2}, {"id": 2}]
-  - id: recursive_key_with_double_quotes
+    result: ["value"]
+  - id: dot_bracket_notation_with_double_quotes
+    status: error
+  - id: dot_bracket_notation_without_quotes
+    status: error
+  - id: dot_notation_with_double_quotes
     status: open
     result: []
-  - id: recursive_key_with_single_quotes
+  - id: dot_notation_with_double_quotes_after_recursive_descent
     status: open
     result: []
-  - id: recursive_wildcard
+  - id: dot_notation_with_number
+    status: open
+    result: []
+  - id: dot_notation_with_single_quotes
+    status: open
+    result: []
+  - id: dot_notation_with_single_quotes_after_recursive_descent
+    status: open
+    result: []
+  - id: dot_notation_with_wildcard_after_recursive_descent
     status: fail
     result: ["string", "value", 0, 1, [0, 1], {"complex": "string", "primitives": [0, 1]}, {"another key": {"complex": "string", "primitives": [0, 1]}, "key": "value"}]
-  - id: recursive_wildcard_on_null_value_array
+  - id: dot_notation_with_wildcard_after_recursive_descent_on_null_value_array
     status: fail
     result: [[40, null, 42], 40, null, 42]
-  - id: recursive_wildcard_on_scalar
+  - id: dot_notation_with_wildcard_after_recursive_descent_on_scalar
     status: fail
     result: [42]
+  - id: dot_notation_with_wildcard_on_array
+    status: fail
+    result: []
+  - id: filter_expression_after_recursive_descent
+    status: open
+    result: [{"id": 2, "more": [{"id": 2}, {"more": {"id": 2}}, {"id": {"id": 2}}, [{"id": 2}]]}, {"id": 2}, {"id": 2}, {"id": 2}, {"id": 2}]
+  - id: filter_expression_with_boolean_and_operator
+    status: open
+    result: [{"key": 43}]
+  - id: filter_expression_with_current_object
+    status: open
+    result: ["some value", null, "value"]
+  - id: filter_expression_with_equals_null
+    status: open
+    result: [{"key": null}]
+  - id: filter_expression_with_equals_number_value_on_string_value
+    status: open
+    result: []
+  - id: filter_expression_with_equals_on_object
+    status: open
+    result: []
+  - id: filter_expression_with_equals_on_object_with_key_matching_query
+    status: open
+    result: []
+  - id: filter_expression_with_equals_on_string_with_dot
+    status: error
+  - id: filter_expression_with_equals_string_value_on_number_value
+    status: error
+  - id: filter_expression_with_equals_with_root_reference
+    status: open
+    result: [{"key": 42}]
+  - id: filter_expression_with_greater_than_or_equal
+    status: open
+    result: [{"key": 42}, {"key": 43}, {"key": 42.0001}, {"key": 100}]
+  - id: filter_expression_with_less_than_number_on_string_value
+    status: error
+  - id: filter_expression_with_less_than_or_equal
+    status: open
+    result: [{"key": 0}, {"key": 42}, {"key": -1}, {"key": 41}, {"key": 41.9999}]
+  - id: filter_expression_with_regular_expression
+    status: open
+    result: [{"name": "hello world"}, {"name": "yes hello world"}]
+  - id: filter_expression_with_single_equal
+    status: error
+  - id: filter_expression_with_subfilter
+    status: open
+    result: [{"a": [{"price": 11}]}, {"a": [{"price": 8}, {"price": 12}, {"price": 3}]}]
+  - id: filter_expression_with_value_after_recursive_descent
+    status: open
+    result: [{"id": 2, "more": [{"id": 2}, {"more": {"id": 2}}, {"id": {"id": 2}}, [{"id": 2}]]}, {"id": 2}, {"id": 2}, {"id": {"id": 2}}, {"id": 2}, {"id": 2}]
+  - id: filter_expression_with_value_on_null_value
+    status: open
+    result: [{"key": null}, {"key": "value"}]
+  - id: filter_expression_without_value
+    status: error
+  - id: recursive_descent
+    status: error
   - id: script_expression
     status: error
   - id: union_with_filter
     status: error
-  - id: wildcard_bracket_notation_on_object
-    status: fail
+  - id: union_with_keys
+    status: open
+    result: ["value", "entry"]
+  - id: union_with_keys_after_array_slice
+    status: open
+    result: ["cc1", "dd1", "cc2", "dd2"]
+  - id: union_with_keys_after_dot_notation_with_wildcard
+    status: open
     result: []
-  - id: wildcard_dot_notation_on_array
-    status: fail
-    result: []
+  - id: union_with_slice_and_number
+    status: open
+    result: [4, 5]

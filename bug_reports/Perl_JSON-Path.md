@@ -3,20 +3,6 @@ Results do not match other implementations
 The following queries provide results that do not match those of other implementations of JSONPath
 (compare https://cburgmer.github.io/json-path-comparison/):
 
-- [ ] `$[-4:]`
-  Input:
-  ```
-  ["first", "second", "third"]
-  ```
-  Expected output:
-  ```
-  ["first", "second", "third"]
-  ```
-  Actual output:
-  ```
-  ["first", "second", "third", "first", "second", "third"]
-  ```
-
 - [ ] `$[:]`
   Input:
   ```
@@ -49,6 +35,157 @@ The following queries provide results that do not match those of other implement
   Actual output:
   ```
   ["second", "third", "first", "second", "third"]
+  ```
+
+- [ ] `$[-4:]`
+  Input:
+  ```
+  ["first", "second", "third"]
+  ```
+  Expected output:
+  ```
+  ["first", "second", "third"]
+  ```
+  Actual output:
+  ```
+  ["first", "second", "third", "first", "second", "third"]
+  ```
+
+- [ ] `$['@']`
+  Input:
+  ```
+  {"@": "value", "another": "entry"}
+  ```
+  Expected output:
+  ```
+  ["value"]
+  ```
+  Error:
+  ```
+  Assertion ("@" is not an operator) failed!
+   at build/lib/perl5/Carp/Assert.pm line 282, <STDIN> line 4.
+  	Carp::Assert::assert(...) called at build/lib/perl5/JSON/Path/Evaluator.pm line 217
+  	JSON::Path::Evaluator::_evaluate(...) called at build/lib/perl5/JSON/Path/Evaluator.pm line 122
+  	JSON::Path::Evaluator::evaluate(...) called at build/lib/perl5/JSON/Path/Evaluator.pm line 97
+  	JSON::Path::Evaluator::evaluate_jsonpath(...) called at build/lib/perl5/JSON/Path.pm line 107
+  	JSON::Path::values(...) called at main.pl line 11
+  ```
+
+- [ ] `$['.']`
+  Input:
+  ```
+  {".": "value", "another": "entry"}
+  ```
+  Expected output:
+  ```
+  ["value"]
+  ```
+  Error:
+  ```
+  Assertion ("." is not an operator) failed!
+   at build/lib/perl5/Carp/Assert.pm line 282, <STDIN> line 4.
+  	Carp::Assert::assert(...) called at build/lib/perl5/JSON/Path/Evaluator.pm line 217
+  	JSON::Path::Evaluator::_evaluate(...) called at build/lib/perl5/JSON/Path/Evaluator.pm line 122
+  	JSON::Path::Evaluator::evaluate(...) called at build/lib/perl5/JSON/Path/Evaluator.pm line 97
+  	JSON::Path::Evaluator::evaluate_jsonpath(...) called at build/lib/perl5/JSON/Path.pm line 107
+  	JSON::Path::values(...) called at main.pl line 11
+  ```
+
+- [ ] `$['$']`
+  Input:
+  ```
+  {"$": "value", "another": "entry"}
+  ```
+  Expected output:
+  ```
+  ["value"]
+  ```
+  Error:
+  ```
+  Assertion ("$" is not an operator) failed!
+   at build/lib/perl5/Carp/Assert.pm line 282, <STDIN> line 4.
+  	Carp::Assert::assert(...) called at build/lib/perl5/JSON/Path/Evaluator.pm line 217
+  	JSON::Path::Evaluator::_evaluate(...) called at build/lib/perl5/JSON/Path/Evaluator.pm line 122
+  	JSON::Path::Evaluator::evaluate(...) called at build/lib/perl5/JSON/Path/Evaluator.pm line 97
+  	JSON::Path::Evaluator::evaluate_jsonpath(...) called at build/lib/perl5/JSON/Path.pm line 107
+  	JSON::Path::values(...) called at main.pl line 11
+  ```
+
+- [ ] `$['*']`
+  Input:
+  ```
+  {"*": "value", "another": "entry"}
+  ```
+  Expected output:
+  ```
+  ["value"]
+  ```
+  Actual output:
+  ```
+  ["value", "entry"]
+  ```
+
+- [ ] `$['special:"chars']`
+  Input:
+  ```
+  {"special:\"chars": "value"}
+  ```
+  Expected output:
+  ```
+  ["value"]
+  ```
+  Actual output:
+  ```
+  []
+  ```
+
+- [ ] `$['one','three'].key`
+  Input:
+  ```
+  {"one": {"key": "value"}, "two": {"k": "v"}, "three": {"some": "more", "key": "other value"}}
+  ```
+  Expected output:
+  ```
+  ["value", "other value"]
+  ```
+  Error:
+  ```
+  Assertion ("]" is not an operator) failed!
+   at build/lib/perl5/Carp/Assert.pm line 282, <STDIN> line 5.
+  	Carp::Assert::assert(...) called at build/lib/perl5/JSON/Path/Evaluator.pm line 217
+  	JSON::Path::Evaluator::_evaluate(...) called at build/lib/perl5/JSON/Path/Evaluator.pm line 225
+  	JSON::Path::Evaluator::_evaluate(...) called at build/lib/perl5/JSON/Path/Evaluator.pm line 122
+  	JSON::Path::Evaluator::evaluate(...) called at build/lib/perl5/JSON/Path/Evaluator.pm line 97
+  	JSON::Path::Evaluator::evaluate_jsonpath(...) called at build/lib/perl5/JSON/Path.pm line 107
+  	JSON::Path::values(...) called at main.pl line 11
+  ```
+
+- [ ] `$..*`
+  Input:
+  ```
+  {"key": "value", "another key": {"complex": "string", "primitives": [0, 1]}}
+  ```
+  Expected output:
+  ```
+  ["string", "value", 0, 1, [0, 1], {"complex": "string", "primitives": [0, 1]}]
+  ```
+  Actual output:
+  ```
+  []
+  ```
+
+- [ ] `$..*`
+  Input:
+  ```
+  [40, null, 42]
+  ```
+  Expected output:
+  ```
+  [40, null, 42]
+  ```
+  Actual output:
+  ```
+  []
   ```
 
 - [ ] `$[?(@.key==42)]`
@@ -135,157 +272,6 @@ The following queries provide results that do not match those of other implement
   non-safe evaluation, died at main.pl line 11.
   ```
 
-- [ ] `$[0]['c','d']`
-  Input:
-  ```
-  [{"c": "cc1", "d": "dd1", "e": "ee1"}, {"c": "cc2", "d": "dd2", "e": "ee2"}]
-  ```
-  Expected output:
-  ```
-  ["cc1", "dd1"]
-  ```
-  Actual output:
-  ```
-  []
-  ```
-
-- [ ] `$['one','three'].key`
-  Input:
-  ```
-  {"one": {"key": "value"}, "two": {"k": "v"}, "three": {"some": "more", "key": "other value"}}
-  ```
-  Expected output:
-  ```
-  ["value", "other value"]
-  ```
-  Error:
-  ```
-  Assertion ("]" is not an operator) failed!
-   at build/lib/perl5/Carp/Assert.pm line 282, <STDIN> line 5.
-  	Carp::Assert::assert(...) called at build/lib/perl5/JSON/Path/Evaluator.pm line 217
-  	JSON::Path::Evaluator::_evaluate(...) called at build/lib/perl5/JSON/Path/Evaluator.pm line 225
-  	JSON::Path::Evaluator::_evaluate(...) called at build/lib/perl5/JSON/Path/Evaluator.pm line 122
-  	JSON::Path::Evaluator::evaluate(...) called at build/lib/perl5/JSON/Path/Evaluator.pm line 97
-  	JSON::Path::Evaluator::evaluate_jsonpath(...) called at build/lib/perl5/JSON/Path.pm line 107
-  	JSON::Path::values(...) called at main.pl line 11
-  ```
-
-- [ ] `$['@']`
-  Input:
-  ```
-  {"@": "value", "another": "entry"}
-  ```
-  Expected output:
-  ```
-  ["value"]
-  ```
-  Error:
-  ```
-  Assertion ("@" is not an operator) failed!
-   at build/lib/perl5/Carp/Assert.pm line 282, <STDIN> line 4.
-  	Carp::Assert::assert(...) called at build/lib/perl5/JSON/Path/Evaluator.pm line 217
-  	JSON::Path::Evaluator::_evaluate(...) called at build/lib/perl5/JSON/Path/Evaluator.pm line 122
-  	JSON::Path::Evaluator::evaluate(...) called at build/lib/perl5/JSON/Path/Evaluator.pm line 97
-  	JSON::Path::Evaluator::evaluate_jsonpath(...) called at build/lib/perl5/JSON/Path.pm line 107
-  	JSON::Path::values(...) called at main.pl line 11
-  ```
-
-- [ ] `$['$']`
-  Input:
-  ```
-  {"$": "value", "another": "entry"}
-  ```
-  Expected output:
-  ```
-  ["value"]
-  ```
-  Error:
-  ```
-  Assertion ("$" is not an operator) failed!
-   at build/lib/perl5/Carp/Assert.pm line 282, <STDIN> line 4.
-  	Carp::Assert::assert(...) called at build/lib/perl5/JSON/Path/Evaluator.pm line 217
-  	JSON::Path::Evaluator::_evaluate(...) called at build/lib/perl5/JSON/Path/Evaluator.pm line 122
-  	JSON::Path::Evaluator::evaluate(...) called at build/lib/perl5/JSON/Path/Evaluator.pm line 97
-  	JSON::Path::Evaluator::evaluate_jsonpath(...) called at build/lib/perl5/JSON/Path.pm line 107
-  	JSON::Path::values(...) called at main.pl line 11
-  ```
-
-- [ ] `$['.']`
-  Input:
-  ```
-  {".": "value", "another": "entry"}
-  ```
-  Expected output:
-  ```
-  ["value"]
-  ```
-  Error:
-  ```
-  Assertion ("." is not an operator) failed!
-   at build/lib/perl5/Carp/Assert.pm line 282, <STDIN> line 4.
-  	Carp::Assert::assert(...) called at build/lib/perl5/JSON/Path/Evaluator.pm line 217
-  	JSON::Path::Evaluator::_evaluate(...) called at build/lib/perl5/JSON/Path/Evaluator.pm line 122
-  	JSON::Path::Evaluator::evaluate(...) called at build/lib/perl5/JSON/Path/Evaluator.pm line 97
-  	JSON::Path::Evaluator::evaluate_jsonpath(...) called at build/lib/perl5/JSON/Path.pm line 107
-  	JSON::Path::values(...) called at main.pl line 11
-  ```
-
-- [ ] `$['special:"chars']`
-  Input:
-  ```
-  {"special:\"chars": "value"}
-  ```
-  Expected output:
-  ```
-  ["value"]
-  ```
-  Actual output:
-  ```
-  []
-  ```
-
-- [ ] `$['*']`
-  Input:
-  ```
-  {"*": "value", "another": "entry"}
-  ```
-  Expected output:
-  ```
-  ["value"]
-  ```
-  Actual output:
-  ```
-  ["value", "entry"]
-  ```
-
-- [ ] `$..*`
-  Input:
-  ```
-  {"key": "value", "another key": {"complex": "string", "primitives": [0, 1]}}
-  ```
-  Expected output:
-  ```
-  ["string", "value", 0, 1, [0, 1], {"complex": "string", "primitives": [0, 1]}]
-  ```
-  Actual output:
-  ```
-  []
-  ```
-
-- [ ] `$..*`
-  Input:
-  ```
-  [40, null, 42]
-  ```
-  Expected output:
-  ```
-  [40, null, 42]
-  ```
-  Actual output:
-  ```
-  []
-  ```
-
 - [ ] `$`
   Input:
   ```
@@ -308,6 +294,20 @@ The following queries provide results that do not match those of other implement
   Expected output:
   ```
   [42]
+  ```
+  Actual output:
+  ```
+  []
+  ```
+
+- [ ] `$[0]['c','d']`
+  Input:
+  ```
+  [{"c": "cc1", "d": "dd1", "e": "ee1"}, {"c": "cc2", "d": "dd2", "e": "ee2"}]
+  ```
+  Expected output:
+  ```
+  ["cc1", "dd1"]
   ```
   Actual output:
   ```

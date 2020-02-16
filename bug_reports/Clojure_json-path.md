@@ -3,118 +3,6 @@ Results do not match other implementations
 The following queries provide results that do not match those of other implementations of JSONPath
 (compare https://cburgmer.github.io/json-path-comparison/):
 
-- [ ] `$[1:10]`
-  Input:
-  ```
-  ["first", "second", "third"]
-  ```
-  Expected output:
-  ```
-  ["second", "third"]
-  ```
-  Actual output:
-  ```
-  "second"
-  ```
-
-- [ ] `$[-1:]`
-  Input:
-  ```
-  ["first", "second", "third"]
-  ```
-  Expected output:
-  ```
-  ["third"]
-  ```
-  Actual output:
-  ```
-  "third"
-  ```
-
-- [ ] `$[-4:]`
-  Input:
-  ```
-  ["first", "second", "third"]
-  ```
-  Expected output:
-  ```
-  ["first", "second", "third"]
-  ```
-  Error:
-  ```
-  java.lang.IndexOutOfBoundsException nil
-  ```
-
-- [ ] `$[:]`
-  Input:
-  ```
-  ["first", "second"]
-  ```
-  Expected output:
-  ```
-  ["first", "second"]
-  ```
-  Error:
-  ```
-  java.lang.NumberFormatException null
-  ```
-
-- [ ] `$[:2]`
-  Input:
-  ```
-  ["first", "second", "third", "forth", "fifth"]
-  ```
-  Expected output:
-  ```
-  ["first", "second"]
-  ```
-  Actual output:
-  ```
-  "third"
-  ```
-
-- [ ] `$[1:]`
-  Input:
-  ```
-  ["first", "second", "third", "forth", "fifth"]
-  ```
-  Expected output:
-  ```
-  ["second", "third", "forth", "fifth"]
-  ```
-  Actual output:
-  ```
-  "second"
-  ```
-
-- [ ] `$[7:10]`
-  Input:
-  ```
-  ["first", "second", "third"]
-  ```
-  Expected output:
-  ```
-  []
-  ```
-  Error:
-  ```
-  java.lang.IndexOutOfBoundsException nil
-  ```
-
-- [ ] `$[-2:]`
-  Input:
-  ```
-  ["first", "second", "third"]
-  ```
-  Expected output:
-  ```
-  ["second", "third"]
-  ```
-  Actual output:
-  ```
-  "second"
-  ```
-
 - [ ] `$[1:3]`
   Input:
   ```
@@ -141,6 +29,146 @@ The following queries provide results that do not match those of other implement
   Actual output:
   ```
   "first"
+  ```
+
+- [ ] `$[7:10]`
+  Input:
+  ```
+  ["first", "second", "third"]
+  ```
+  Expected output:
+  ```
+  []
+  ```
+  Error:
+  ```
+  java.lang.IndexOutOfBoundsException nil
+  ```
+
+- [ ] `$[1:10]`
+  Input:
+  ```
+  ["first", "second", "third"]
+  ```
+  Expected output:
+  ```
+  ["second", "third"]
+  ```
+  Actual output:
+  ```
+  "second"
+  ```
+
+- [ ] `$[0:0]`
+  Input:
+  ```
+  ["first", "second"]
+  ```
+  Expected output:
+  ```
+  []
+  ```
+  Actual output:
+  ```
+  "first"
+  ```
+
+- [ ] `$[0:1]`
+  Input:
+  ```
+  ["first", "second"]
+  ```
+  Expected output:
+  ```
+  ["first"]
+  ```
+  Actual output:
+  ```
+  "first"
+  ```
+
+- [ ] `$[1:]`
+  Input:
+  ```
+  ["first", "second", "third", "forth", "fifth"]
+  ```
+  Expected output:
+  ```
+  ["second", "third", "forth", "fifth"]
+  ```
+  Actual output:
+  ```
+  "second"
+  ```
+
+- [ ] `$[:2]`
+  Input:
+  ```
+  ["first", "second", "third", "forth", "fifth"]
+  ```
+  Expected output:
+  ```
+  ["first", "second"]
+  ```
+  Actual output:
+  ```
+  "third"
+  ```
+
+- [ ] `$[:]`
+  Input:
+  ```
+  ["first", "second"]
+  ```
+  Expected output:
+  ```
+  ["first", "second"]
+  ```
+  Error:
+  ```
+  java.lang.NumberFormatException null
+  ```
+
+- [ ] `$[-1:]`
+  Input:
+  ```
+  ["first", "second", "third"]
+  ```
+  Expected output:
+  ```
+  ["third"]
+  ```
+  Actual output:
+  ```
+  "third"
+  ```
+
+- [ ] `$[-2:]`
+  Input:
+  ```
+  ["first", "second", "third"]
+  ```
+  Expected output:
+  ```
+  ["second", "third"]
+  ```
+  Actual output:
+  ```
+  "second"
+  ```
+
+- [ ] `$[-4:]`
+  Input:
+  ```
+  ["first", "second", "third"]
+  ```
+  Expected output:
+  ```
+  ["first", "second", "third"]
+  ```
+  Error:
+  ```
+  java.lang.IndexOutOfBoundsException nil
   ```
 
 - [ ] `$[0:3:2]`
@@ -185,34 +213,6 @@ The following queries provide results that do not match those of other implement
   "first"
   ```
 
-- [ ] `$[0:0]`
-  Input:
-  ```
-  ["first", "second"]
-  ```
-  Expected output:
-  ```
-  []
-  ```
-  Actual output:
-  ```
-  "first"
-  ```
-
-- [ ] `$[0:1]`
-  Input:
-  ```
-  ["first", "second"]
-  ```
-  Expected output:
-  ```
-  ["first"]
-  ```
-  Actual output:
-  ```
-  "first"
-  ```
-
 - [ ] `$[::2]`
   Input:
   ```
@@ -227,32 +227,172 @@ The following queries provide results that do not match those of other implement
   "third"
   ```
 
-- [ ] `$[0,1]`
+- [ ] `$['key']`
   Input:
   ```
-  ["first", "second", "third"]
+  {"key": "value"}
   ```
   Expected output:
   ```
-  ["first", "second"]
+  "value"
   ```
-  Actual output:
+  Error:
   ```
-  "first"
+  java.lang.Exception object must be an array.
   ```
 
-- [ ] `$[4,1]`
+- [ ] `$['two.some']`
   Input:
   ```
-  [1, 2, 3, 4, 5]
+  {"one": {"key": "value"}, "two": {"some": "more", "key": "other value"}, "two.some": "42"}
   ```
   Expected output:
   ```
-  [5, 2]
+  "42"
+  ```
+  Error:
+  ```
+  java.lang.Exception object must be an array.
+  ```
+
+- [ ] `$['@']`
+  Input:
+  ```
+  {"@": "value", "another": "entry"}
+  ```
+  Expected output:
+  ```
+  "value"
+  ```
+  Error:
+  ```
+  java.lang.Exception object must be an array.
+  ```
+
+- [ ] `$['.']`
+  Input:
+  ```
+  {".": "value", "another": "entry"}
+  ```
+  Expected output:
+  ```
+  "value"
+  ```
+  Error:
+  ```
+  java.lang.Exception object must be an array.
+  ```
+
+- [ ] `$['0']`
+  Input:
+  ```
+  {"0": "value"}
+  ```
+  Expected output:
+  ```
+  "value"
+  ```
+  Error:
+  ```
+  java.lang.Exception object must be an array.
+  ```
+
+- [ ] `$['$']`
+  Input:
+  ```
+  {"$": "value", "another": "entry"}
+  ```
+  Expected output:
+  ```
+  "value"
+  ```
+  Error:
+  ```
+  java.lang.Exception object must be an array.
+  ```
+
+- [ ] `$['*']`
+  Input:
+  ```
+  {"*": "value", "another": "entry"}
+  ```
+  Expected output:
+  ```
+  "value"
   ```
   Actual output:
   ```
-  5
+  ["value", "entry"]
+  ```
+
+- [ ] `$['special:"chars']`
+  Input:
+  ```
+  {"special:\"chars": "value"}
+  ```
+  Expected output:
+  ```
+  "value"
+  ```
+  Error:
+  ```
+  java.lang.Exception object must be an array.
+  ```
+
+- [ ] `$[0:2][*]`
+  Input:
+  ```
+  [[1, 2], ["a", "b"], [0, 0]]
+  ```
+  Expected output:
+  ```
+  [1, 2, "a", "b"]
+  ```
+  Actual output:
+  ```
+  [1, 2]
+  ```
+
+- [ ] `$[*].a`
+  Input:
+  ```
+  [{"a": 1}, {"b": 1}, {"a": 1}]
+  ```
+  Expected output:
+  ```
+  [1, 1]
+  ```
+  Actual output:
+  ```
+  [1, null, 1]
+  ```
+
+- [ ] `$['one','three'].key`
+  Input:
+  ```
+  {"one": {"key": "value"}, "two": {"k": "v"}, "three": {"some": "more", "key": "other value"}}
+  ```
+  Expected output:
+  ```
+  ["value", "other value"]
+  ```
+  Error:
+  ```
+  java.lang.Exception object must be an array.
+  ```
+
+- [ ] `$..*`
+  Input:
+  ```
+  [40, null, 42]
+  ```
+  Expected output:
+  ```
+  [40, null, 42]
+  ```
+  Actual output:
+  ```
+  [40, 42]
   ```
 
 - [ ] `$[?(@.key==42)]`
@@ -311,20 +451,6 @@ The following queries provide results that do not match those of other implement
   java.lang.NullPointerException nil
   ```
 
-- [ ] `$['key']`
-  Input:
-  ```
-  {"key": "value"}
-  ```
-  Expected output:
-  ```
-  "value"
-  ```
-  Error:
-  ```
-  java.lang.Exception object must be an array.
-  ```
-
 - [ ] `$[0]['c','d']`
   Input:
   ```
@@ -339,158 +465,32 @@ The following queries provide results that do not match those of other implement
   java.lang.Exception object must be an array.
   ```
 
-- [ ] `$['one','three'].key`
+- [ ] `$[0,1]`
   Input:
   ```
-  {"one": {"key": "value"}, "two": {"k": "v"}, "three": {"some": "more", "key": "other value"}}
+  ["first", "second", "third"]
   ```
   Expected output:
   ```
-  ["value", "other value"]
-  ```
-  Error:
-  ```
-  java.lang.Exception object must be an array.
-  ```
-
-- [ ] `$['@']`
-  Input:
-  ```
-  {"@": "value", "another": "entry"}
-  ```
-  Expected output:
-  ```
-  "value"
-  ```
-  Error:
-  ```
-  java.lang.Exception object must be an array.
-  ```
-
-- [ ] `$['$']`
-  Input:
-  ```
-  {"$": "value", "another": "entry"}
-  ```
-  Expected output:
-  ```
-  "value"
-  ```
-  Error:
-  ```
-  java.lang.Exception object must be an array.
-  ```
-
-- [ ] `$['two.some']`
-  Input:
-  ```
-  {"one": {"key": "value"}, "two": {"some": "more", "key": "other value"}, "two.some": "42"}
-  ```
-  Expected output:
-  ```
-  "42"
-  ```
-  Error:
-  ```
-  java.lang.Exception object must be an array.
-  ```
-
-- [ ] `$['.']`
-  Input:
-  ```
-  {".": "value", "another": "entry"}
-  ```
-  Expected output:
-  ```
-  "value"
-  ```
-  Error:
-  ```
-  java.lang.Exception object must be an array.
-  ```
-
-- [ ] `$['0']`
-  Input:
-  ```
-  {"0": "value"}
-  ```
-  Expected output:
-  ```
-  "value"
-  ```
-  Error:
-  ```
-  java.lang.Exception object must be an array.
-  ```
-
-- [ ] `$['special:"chars']`
-  Input:
-  ```
-  {"special:\"chars": "value"}
-  ```
-  Expected output:
-  ```
-  "value"
-  ```
-  Error:
-  ```
-  java.lang.Exception object must be an array.
-  ```
-
-- [ ] `$['*']`
-  Input:
-  ```
-  {"*": "value", "another": "entry"}
-  ```
-  Expected output:
-  ```
-  "value"
+  ["first", "second"]
   ```
   Actual output:
   ```
-  ["value", "entry"]
+  "first"
   ```
 
-- [ ] `$[*].a`
+- [ ] `$[4,1]`
   Input:
   ```
-  [{"a": 1}, {"b": 1}, {"a": 1}]
+  [1, 2, 3, 4, 5]
   ```
   Expected output:
   ```
-  [1, 1]
+  [5, 2]
   ```
   Actual output:
   ```
-  [1, null, 1]
-  ```
-
-- [ ] `$..*`
-  Input:
-  ```
-  [40, null, 42]
-  ```
-  Expected output:
-  ```
-  [40, null, 42]
-  ```
-  Actual output:
-  ```
-  [40, 42]
-  ```
-
-- [ ] `$[0:2][*]`
-  Input:
-  ```
-  [[1, 2], ["a", "b"], [0, 0]]
-  ```
-  Expected output:
-  ```
-  [1, 2, "a", "b"]
-  ```
-  Actual output:
-  ```
-  [1, 2]
+  5
   ```
 
 

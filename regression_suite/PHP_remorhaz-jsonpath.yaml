@@ -6,133 +6,133 @@
 
 implementation: PHP_remorhaz-jsonpath
 queries:
-  - id: array_index_dot_notation
-    status: open
-    result: []
-  - id: array_index_on_string
-    status: open
-    result: []
-  - id: array_index_slice_negative_step
-    status: open
-    result: ["first", "third", "fifth"]
-  - id: array_index_slice_start_end_negative_step
+  - id: array_slice_with_negative_step
     status: open
     result: ["second", "forth"]
-  - id: array_index_slice_start_end_step_0
+  - id: array_slice_with_negative_step_only
+    status: open
+    result: ["first", "third", "fifth"]
+  - id: array_slice_with_step_0
     status: open
     result: []
-  - id: array_index_union_with_decreasing_order
-    status: fail
-    result: [2, 5]
-  - id: array_index_union_with_slice
-    status: error
-  - id: filter_current_object_with_value
-    status: open
-    result: ["some value", null, "value"]
-  - id: filter_equal_on_number_value_with_string_query
-    status: open
-    result: []
-  - id: filter_equal_on_object
-    status: open
-    result: []
-  - id: filter_equal_on_object_with_key_matching_query
-    status: open
-    result: [{"id": 2}]
-  - id: filter_equal_on_string_value_with_number_query
-    status: open
-    result: []
-  - id: filter_equal_single_equal
-    status: error
-  - id: filter_equal_with_root_reference
-    status: open
-    result: []
-  - id: filter_greater_than_or_equal
-    status: open
-    result: [{"key": 42}, {"key": 43}, {"key": 42.0001}, {"key": 100}]
-  - id: filter_less_than_on_string
-    status: open
-    result: [{"key": 0}]
-  - id: filter_less_than_or_equal
-    status: open
-    result: [{"key": 0}, {"key": 42}, {"key": -1}, {"key": 41}, {"key": 41.9999}]
-  - id: filter_null
-    status: open
-    result: [{"key": null}]
-  - id: filter_regular_expression
-    status: open
-    result: [{"name": "hello world"}, {"name": "yes hello world"}]
-  - id: filter_with_boolean_operation
-    status: open
-    result: [{"key": 43}]
-  - id: filter_with_subfilter
-    status: open
-    result: [{"a": [{"price": 11}]}, {"a": [{"price": 8}, {"price": 12}, {"price": 3}]}]
-  - id: filter_with_value_on_null
-    status: open
-    result: [{"key": null}, {"key": "value"}]
-  - id: filter_without_value
-    status: open
-    result: [{"some": "some value"}]
-  - id: key_bracket_notation_union
-    status: open
-    result: ["value", "entry"]
-  - id: key_bracket_notation_union_after_array_slice
-    status: open
-    result: ["cc1", "dd1", "cc2", "dd2"]
-  - id: key_bracket_notation_union_after_wildcard_dot_notation
-    status: open
-    result: ["cc1", "dd1", "cc2", "dd2"]
-  - id: key_bracket_notation_with_double_quotes
+  - id: bracket_notation_with_double_quotes
     status: open
     result: ["value"]
-  - id: key_bracket_notation_with_nested_object
-    status: error
-  - id: key_bracket_notation_with_nested_object_without_quotes
-    status: error
-  - id: key_bracket_notation_with_number_without_quotes
-    status: open
-    result: []
-  - id: key_bracket_notation_with_single_quote
-    status: error
-  - id: key_bracket_notation_with_single_quote_escaped
-    status: open
-    result: ["value"]
-  - id: key_bracket_notation_without_quotes
-    status: open
-    result: ["value"]
-  - id: key_dot_bracket_notation
-    status: open
-    result: ["value"]
-  - id: key_dot_bracket_notation_with_double_quotes
-    status: open
-    result: ["value"]
-  - id: key_dot_bracket_notation_without_quotes
-    status: open
-    result: ["value"]
-  - id: key_dot_notation_with_double_quotes
-    status: open
-    result: ["value"]
-  - id: key_dot_notation_with_single_quotes
-    status: open
-    result: ["value"]
-  - id: recursive_array_index
+  - id: bracket_notation_with_number_after_recursive_descent
     status: open
     result: ["first", "first nested", {"nested": ["deepest", "second"]}, "deepest", "more"]
-  - id: recursive_descent
+  - id: bracket_notation_with_number_on_object
+    status: open
+    result: []
+  - id: bracket_notation_with_number_on_string
+    status: open
+    result: []
+  - id: bracket_notation_with_single_quote
     status: error
-  - id: recursive_filter
+  - id: bracket_notation_with_single_quote_escaped
+    status: open
+    result: ["value"]
+  - id: bracket_notation_with_two_literals_separated_by_dot
+    status: error
+  - id: bracket_notation_with_two_literals_separated_by_dot_without_quotes
+    status: error
+  - id: bracket_notation_without_quotes
+    status: open
+    result: ["value"]
+  - id: dot_bracket_notation
+    status: open
+    result: ["value"]
+  - id: dot_bracket_notation_with_double_quotes
+    status: open
+    result: ["value"]
+  - id: dot_bracket_notation_without_quotes
+    status: open
+    result: ["value"]
+  - id: dot_notation_with_double_quotes
+    status: open
+    result: ["value"]
+  - id: dot_notation_with_double_quotes_after_recursive_descent
+    status: open
+    result: ["russian dolls", "something", "top", "value", {"key": "russian dolls"}]
+  - id: dot_notation_with_number
+    status: open
+    result: []
+  - id: dot_notation_with_single_quotes
+    status: open
+    result: ["value"]
+  - id: dot_notation_with_single_quotes_after_recursive_descent
+    status: open
+    result: ["russian dolls", "something", "top", "value", {"key": "russian dolls"}]
+  - id: filter_expression_after_recursive_descent
     status: open
     result: [{"id": 2, "more": [{"id": 2}, {"more": {"id": 2}}, {"id": {"id": 2}}, [{"id": 2}]]}, {"id": 2}, {"id": 2}, {"id": 2}, {"id": 2}, {"id": 2}, {"id": 2}]
-  - id: recursive_filter_with_value
+  - id: filter_expression_with_boolean_and_operator
+    status: open
+    result: [{"key": 43}]
+  - id: filter_expression_with_current_object
+    status: open
+    result: ["some value", null, "value"]
+  - id: filter_expression_with_equals_null
+    status: open
+    result: [{"key": null}]
+  - id: filter_expression_with_equals_number_value_on_string_value
+    status: open
+    result: []
+  - id: filter_expression_with_equals_on_object
+    status: open
+    result: []
+  - id: filter_expression_with_equals_on_object_with_key_matching_query
+    status: open
+    result: [{"id": 2}]
+  - id: filter_expression_with_equals_string_value_on_number_value
+    status: open
+    result: []
+  - id: filter_expression_with_equals_with_root_reference
+    status: open
+    result: []
+  - id: filter_expression_with_greater_than_or_equal
+    status: open
+    result: [{"key": 42}, {"key": 43}, {"key": 42.0001}, {"key": 100}]
+  - id: filter_expression_with_less_than_number_on_string_value
+    status: open
+    result: [{"key": 0}]
+  - id: filter_expression_with_less_than_or_equal
+    status: open
+    result: [{"key": 0}, {"key": 42}, {"key": -1}, {"key": 41}, {"key": 41.9999}]
+  - id: filter_expression_with_regular_expression
+    status: open
+    result: [{"name": "hello world"}, {"name": "yes hello world"}]
+  - id: filter_expression_with_single_equal
+    status: error
+  - id: filter_expression_with_subfilter
+    status: open
+    result: [{"a": [{"price": 11}]}, {"a": [{"price": 8}, {"price": 12}, {"price": 3}]}]
+  - id: filter_expression_with_value_after_recursive_descent
     status: open
     result: [{"id": 2, "more": [{"id": 2}, {"more": {"id": 2}}, {"id": {"id": 2}}, [{"id": 2}]]}, {"id": 2}, {"id": {"id": 2}}, {"id": 2}, {"id": 2}, {"id": {"id": 2}}, {"id": 2}, {"id": 2}, {"id": 2}]
-  - id: recursive_key_with_double_quotes
+  - id: filter_expression_with_value_on_null_value
     status: open
-    result: ["russian dolls", "something", "top", "value", {"key": "russian dolls"}]
-  - id: recursive_key_with_single_quotes
+    result: [{"key": null}, {"key": "value"}]
+  - id: filter_expression_without_value
     status: open
-    result: ["russian dolls", "something", "top", "value", {"key": "russian dolls"}]
+    result: [{"some": "some value"}]
+  - id: recursive_descent
+    status: error
   - id: script_expression
     status: error
   - id: union_with_filter
+    status: error
+  - id: union_with_keys
+    status: open
+    result: ["value", "entry"]
+  - id: union_with_keys_after_array_slice
+    status: open
+    result: ["cc1", "dd1", "cc2", "dd2"]
+  - id: union_with_keys_after_dot_notation_with_wildcard
+    status: open
+    result: ["cc1", "dd1", "cc2", "dd2"]
+  - id: union_with_numbers_in_decreasing_order
+    status: fail
+    result: [2, 5]
+  - id: union_with_slice_and_number
     status: error

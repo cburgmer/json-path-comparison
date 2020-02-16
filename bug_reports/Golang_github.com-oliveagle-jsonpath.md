@@ -3,62 +3,6 @@ Results do not match other implementations
 The following queries provide results that do not match those of other implementations of JSONPath
 (compare https://cburgmer.github.io/json-path-comparison/):
 
-- [ ] `$[1:10]`
-  Input:
-  ```
-  ["first", "second", "third"]
-  ```
-  Expected output:
-  ```
-  ["second", "third"]
-  ```
-  Error:
-  ```
-  index [to] out of range: len: 3, to: 10
-  ```
-
-- [ ] `$[-4:]`
-  Input:
-  ```
-  ["first", "second", "third"]
-  ```
-  Expected output:
-  ```
-  ["first", "second", "third"]
-  ```
-  Error:
-  ```
-  index [from] out of range: len: 3, from: -4
-  ```
-
-- [ ] `$[:2]`
-  Input:
-  ```
-  ["first", "second", "third", "forth", "fifth"]
-  ```
-  Expected output:
-  ```
-  ["first", "second"]
-  ```
-  Actual output:
-  ```
-  ["first", "second", "third"]
-  ```
-
-- [ ] `$[7:10]`
-  Input:
-  ```
-  ["first", "second", "third"]
-  ```
-  Expected output:
-  ```
-  []
-  ```
-  Error:
-  ```
-  index [from] out of range: len: 3, from: 7
-  ```
-
 - [ ] `$[1:3]`
   Input:
   ```
@@ -85,6 +29,90 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   index [to] out of range: len: 5, to: 5
+  ```
+
+- [ ] `$[7:10]`
+  Input:
+  ```
+  ["first", "second", "third"]
+  ```
+  Expected output:
+  ```
+  []
+  ```
+  Error:
+  ```
+  index [from] out of range: len: 3, from: 7
+  ```
+
+- [ ] `$[1:10]`
+  Input:
+  ```
+  ["first", "second", "third"]
+  ```
+  Expected output:
+  ```
+  ["second", "third"]
+  ```
+  Error:
+  ```
+  index [to] out of range: len: 3, to: 10
+  ```
+
+- [ ] `$[0:0]`
+  Input:
+  ```
+  ["first", "second"]
+  ```
+  Expected output:
+  ```
+  []
+  ```
+  Actual output:
+  ```
+  ["first"]
+  ```
+
+- [ ] `$[0:1]`
+  Input:
+  ```
+  ["first", "second"]
+  ```
+  Expected output:
+  ```
+  ["first"]
+  ```
+  Actual output:
+  ```
+  ["first", "second"]
+  ```
+
+- [ ] `$[:2]`
+  Input:
+  ```
+  ["first", "second", "third", "forth", "fifth"]
+  ```
+  Expected output:
+  ```
+  ["first", "second"]
+  ```
+  Actual output:
+  ```
+  ["first", "second", "third"]
+  ```
+
+- [ ] `$[-4:]`
+  Input:
+  ```
+  ["first", "second", "third"]
+  ```
+  Expected output:
+  ```
+  ["first", "second", "third"]
+  ```
+  Error:
+  ```
+  index [from] out of range: len: 3, from: -4
   ```
 
 - [ ] `$[0:3:2]`
@@ -129,34 +157,6 @@ The following queries provide results that do not match those of other implement
   only support one range(from, to): [0 4 2]
   ```
 
-- [ ] `$[0:0]`
-  Input:
-  ```
-  ["first", "second"]
-  ```
-  Expected output:
-  ```
-  []
-  ```
-  Actual output:
-  ```
-  ["first"]
-  ```
-
-- [ ] `$[0:1]`
-  Input:
-  ```
-  ["first", "second"]
-  ```
-  Expected output:
-  ```
-  ["first"]
-  ```
-  Actual output:
-  ```
-  ["first", "second"]
-  ```
-
 - [ ] `$[::2]`
   Input:
   ```
@@ -169,6 +169,328 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   only support one range(from, to): [  2]
+  ```
+
+- [ ] `$['key']`
+  Input:
+  ```
+  {"key": "value"}
+  ```
+  Expected output:
+  ```
+  "value"
+  ```
+  Error:
+  ```
+  strconv.Atoi: parsing "'key'": invalid syntax
+  ```
+
+- [ ] `$['two.some']`
+  Input:
+  ```
+  {"one": {"key": "value"}, "two": {"some": "more", "key": "other value"}, "two.some": "42"}
+  ```
+  Expected output:
+  ```
+  "42"
+  ```
+  Error:
+  ```
+  strconv.Atoi: parsing "'two.some'": invalid syntax
+  ```
+
+- [ ] `$['@']`
+  Input:
+  ```
+  {"@": "value", "another": "entry"}
+  ```
+  Expected output:
+  ```
+  "value"
+  ```
+  Error:
+  ```
+  strconv.Atoi: parsing "'@'": invalid syntax
+  ```
+
+- [ ] `$['.']`
+  Input:
+  ```
+  {".": "value", "another": "entry"}
+  ```
+  Expected output:
+  ```
+  "value"
+  ```
+  Error:
+  ```
+  strconv.Atoi: parsing "'.'": invalid syntax
+  ```
+
+- [ ] `$['0']`
+  Input:
+  ```
+  {"0": "value"}
+  ```
+  Expected output:
+  ```
+  "value"
+  ```
+  Error:
+  ```
+  strconv.Atoi: parsing "'0'": invalid syntax
+  ```
+
+- [ ] `$['$']`
+  Input:
+  ```
+  {"$": "value", "another": "entry"}
+  ```
+  Expected output:
+  ```
+  "value"
+  ```
+  Error:
+  ```
+  strconv.Atoi: parsing "'$'": invalid syntax
+  ```
+
+- [ ] `$['*']`
+  Input:
+  ```
+  {"*": "value", "another": "entry"}
+  ```
+  Expected output:
+  ```
+  "value"
+  ```
+  Error:
+  ```
+  strconv.Atoi: parsing "'*'": invalid syntax
+  ```
+
+- [ ] `$['special:"chars']`
+  Input:
+  ```
+  {"special:\"chars": "value"}
+  ```
+  Expected output:
+  ```
+  "value"
+  ```
+  Error:
+  ```
+  strconv.Atoi: parsing "\"chars'": invalid syntax
+  ```
+
+- [ ] `$[0:2][*]`
+  Input:
+  ```
+  [[1, 2], ["a", "b"], [0, 0]]
+  ```
+  Expected output:
+  ```
+  [1, 2, "a", "b"]
+  ```
+  Actual output:
+  ```
+  [[1, 2], ["a", "b"], [0, 0]]
+  ```
+
+- [ ] `$[*]`
+  Input:
+  ```
+  []
+  ```
+  Expected output:
+  ```
+  []
+  ```
+  Error:
+  ```
+  index [from] out of range: len: 0, from: 0
+  ```
+
+- [ ] `$[*]`
+  Input:
+  ```
+  {}
+  ```
+  Expected output:
+  ```
+  []
+  ```
+  Error:
+  ```
+  object is not Slice
+  ```
+
+- [ ] `$[*]`
+  Input:
+  ```
+  {"some": "string", "int": 42, "object": {"key": "value"}, "array": [0, 1]}
+  ```
+  Expected output:
+  ```
+  ["string", 42, [0, 1], {"key": "value"}]
+  ```
+  Error:
+  ```
+  object is not Slice
+  ```
+
+- [ ] `$[*].bar[*].baz`
+  Input:
+  ```
+  [{"bar": [{"baz": "hello"}]}]
+  ```
+  Expected output:
+  ```
+  ["hello"]
+  ```
+  Actual output:
+  ```
+  [["hello"]]
+  ```
+
+- [ ] `$..key`
+  Input:
+  ```
+  {"object": {"key": "value", "array": [{"key": "something"}, {"key": {"key": "russian dolls"}}]}, "key": "top"}
+  ```
+  Expected output:
+  ```
+  ["russian dolls", "something", "top", "value", {"key": "russian dolls"}]
+  ```
+  Error:
+  ```
+  expression don't support in filter
+  ```
+
+- [ ] `$.store..price`
+  Input:
+  ```
+  {"store": {"book": [{"category": "reference", "author": "Nigel Rees", "title": "Sayings of the Century", "price": 8.95}, {"category": "fiction", "author": "Evelyn Waugh", "title": "Sword of Honour", "price": 12.99}, {"category": "fiction", "author": "Herman Melville", "title": "Moby Dick", "isbn": "0-553-21311-3", "price": 8.99}, {"category": "fiction", "author": "J. R. R. Tolkien", "title": "The Lord of the Rings", "isbn": "0-395-19395-8", "price": 22.99}], "bicycle": {"color": "red", "price": 19.95}}}
+  ```
+  Expected output:
+  ```
+  [12.99, 19.95, 22.99, 8.95, 8.99]
+  ```
+  Error:
+  ```
+  expression don't support in filter
+  ```
+
+- [ ] `$['one','three'].key`
+  Input:
+  ```
+  {"one": {"key": "value"}, "two": {"k": "v"}, "three": {"some": "more", "key": "other value"}}
+  ```
+  Expected output:
+  ```
+  ["value", "other value"]
+  ```
+  Error:
+  ```
+  strconv.Atoi: parsing "'one'": invalid syntax
+  ```
+
+- [ ] `$..*`
+  Input:
+  ```
+  {"key": "value", "another key": {"complex": "string", "primitives": [0, 1]}}
+  ```
+  Expected output:
+  ```
+  ["string", "value", 0, 1, [0, 1], {"complex": "string", "primitives": [0, 1]}]
+  ```
+  Error:
+  ```
+  expression don't support in filter
+  ```
+
+- [ ] `$..*`
+  Input:
+  ```
+  [40, null, 42]
+  ```
+  Expected output:
+  ```
+  [40, null, 42]
+  ```
+  Error:
+  ```
+  expression don't support in filter
+  ```
+
+- [ ] `$..*`
+  Input:
+  ```
+  42
+  ```
+  Expected output:
+  ```
+  []
+  ```
+  Error:
+  ```
+  expression don't support in filter
+  ```
+
+- [ ] `$.*`
+  Input:
+  ```
+  ["string", 42, {"key": "value"}, [0, 1]]
+  ```
+  Expected output:
+  ```
+  ["string", 42, {"key": "value"}, [0, 1]]
+  ```
+  Error:
+  ```
+  expression don't support in filter
+  ```
+
+- [ ] `$.*`
+  Input:
+  ```
+  []
+  ```
+  Expected output:
+  ```
+  []
+  ```
+  Error:
+  ```
+  expression don't support in filter
+  ```
+
+- [ ] `$.*`
+  Input:
+  ```
+  {}
+  ```
+  Expected output:
+  ```
+  []
+  ```
+  Error:
+  ```
+  expression don't support in filter
+  ```
+
+- [ ] `$.*`
+  Input:
+  ```
+  {"some": "string", "int": 42, "object": {"key": "value"}, "array": [0, 1]}
+  ```
+  Expected output:
+  ```
+  ["string", 42, [0, 1], {"key": "value"}]
+  ```
+  Error:
+  ```
+  expression don't support in filter
   ```
 
 - [ ] `$[?(@.key==42)]`
@@ -255,20 +577,6 @@ The following queries provide results that do not match those of other implement
   []
   ```
 
-- [ ] `$['key']`
-  Input:
-  ```
-  {"key": "value"}
-  ```
-  Expected output:
-  ```
-  "value"
-  ```
-  Error:
-  ```
-  strconv.Atoi: parsing "'key'": invalid syntax
-  ```
-
 - [ ] `$[0]['c','d']`
   Input:
   ```
@@ -281,314 +589,6 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   strconv.Atoi: parsing "'c'": invalid syntax
-  ```
-
-- [ ] `$['one','three'].key`
-  Input:
-  ```
-  {"one": {"key": "value"}, "two": {"k": "v"}, "three": {"some": "more", "key": "other value"}}
-  ```
-  Expected output:
-  ```
-  ["value", "other value"]
-  ```
-  Error:
-  ```
-  strconv.Atoi: parsing "'one'": invalid syntax
-  ```
-
-- [ ] `$['@']`
-  Input:
-  ```
-  {"@": "value", "another": "entry"}
-  ```
-  Expected output:
-  ```
-  "value"
-  ```
-  Error:
-  ```
-  strconv.Atoi: parsing "'@'": invalid syntax
-  ```
-
-- [ ] `$['$']`
-  Input:
-  ```
-  {"$": "value", "another": "entry"}
-  ```
-  Expected output:
-  ```
-  "value"
-  ```
-  Error:
-  ```
-  strconv.Atoi: parsing "'$'": invalid syntax
-  ```
-
-- [ ] `$['two.some']`
-  Input:
-  ```
-  {"one": {"key": "value"}, "two": {"some": "more", "key": "other value"}, "two.some": "42"}
-  ```
-  Expected output:
-  ```
-  "42"
-  ```
-  Error:
-  ```
-  strconv.Atoi: parsing "'two.some'": invalid syntax
-  ```
-
-- [ ] `$['.']`
-  Input:
-  ```
-  {".": "value", "another": "entry"}
-  ```
-  Expected output:
-  ```
-  "value"
-  ```
-  Error:
-  ```
-  strconv.Atoi: parsing "'.'": invalid syntax
-  ```
-
-- [ ] `$['0']`
-  Input:
-  ```
-  {"0": "value"}
-  ```
-  Expected output:
-  ```
-  "value"
-  ```
-  Error:
-  ```
-  strconv.Atoi: parsing "'0'": invalid syntax
-  ```
-
-- [ ] `$['special:"chars']`
-  Input:
-  ```
-  {"special:\"chars": "value"}
-  ```
-  Expected output:
-  ```
-  "value"
-  ```
-  Error:
-  ```
-  strconv.Atoi: parsing "\"chars'": invalid syntax
-  ```
-
-- [ ] `$['*']`
-  Input:
-  ```
-  {"*": "value", "another": "entry"}
-  ```
-  Expected output:
-  ```
-  "value"
-  ```
-  Error:
-  ```
-  strconv.Atoi: parsing "'*'": invalid syntax
-  ```
-
-- [ ] `$..key`
-  Input:
-  ```
-  {"object": {"key": "value", "array": [{"key": "something"}, {"key": {"key": "russian dolls"}}]}, "key": "top"}
-  ```
-  Expected output:
-  ```
-  ["russian dolls", "something", "top", "value", {"key": "russian dolls"}]
-  ```
-  Error:
-  ```
-  expression don't support in filter
-  ```
-
-- [ ] `$.store..price`
-  Input:
-  ```
-  {"store": {"book": [{"category": "reference", "author": "Nigel Rees", "title": "Sayings of the Century", "price": 8.95}, {"category": "fiction", "author": "Evelyn Waugh", "title": "Sword of Honour", "price": 12.99}, {"category": "fiction", "author": "Herman Melville", "title": "Moby Dick", "isbn": "0-553-21311-3", "price": 8.99}, {"category": "fiction", "author": "J. R. R. Tolkien", "title": "The Lord of the Rings", "isbn": "0-395-19395-8", "price": 22.99}], "bicycle": {"color": "red", "price": 19.95}}}
-  ```
-  Expected output:
-  ```
-  [12.99, 19.95, 22.99, 8.95, 8.99]
-  ```
-  Error:
-  ```
-  expression don't support in filter
-  ```
-
-- [ ] `$..*`
-  Input:
-  ```
-  {"key": "value", "another key": {"complex": "string", "primitives": [0, 1]}}
-  ```
-  Expected output:
-  ```
-  ["string", "value", 0, 1, [0, 1], {"complex": "string", "primitives": [0, 1]}]
-  ```
-  Error:
-  ```
-  expression don't support in filter
-  ```
-
-- [ ] `$..*`
-  Input:
-  ```
-  [40, null, 42]
-  ```
-  Expected output:
-  ```
-  [40, null, 42]
-  ```
-  Error:
-  ```
-  expression don't support in filter
-  ```
-
-- [ ] `$..*`
-  Input:
-  ```
-  42
-  ```
-  Expected output:
-  ```
-  []
-  ```
-  Error:
-  ```
-  expression don't support in filter
-  ```
-
-- [ ] `$[0:2][*]`
-  Input:
-  ```
-  [[1, 2], ["a", "b"], [0, 0]]
-  ```
-  Expected output:
-  ```
-  [1, 2, "a", "b"]
-  ```
-  Actual output:
-  ```
-  [[1, 2], ["a", "b"], [0, 0]]
-  ```
-
-- [ ] `$[*]`
-  Input:
-  ```
-  []
-  ```
-  Expected output:
-  ```
-  []
-  ```
-  Error:
-  ```
-  index [from] out of range: len: 0, from: 0
-  ```
-
-- [ ] `$[*]`
-  Input:
-  ```
-  {}
-  ```
-  Expected output:
-  ```
-  []
-  ```
-  Error:
-  ```
-  object is not Slice
-  ```
-
-- [ ] `$[*]`
-  Input:
-  ```
-  {"some": "string", "int": 42, "object": {"key": "value"}, "array": [0, 1]}
-  ```
-  Expected output:
-  ```
-  ["string", 42, [0, 1], {"key": "value"}]
-  ```
-  Error:
-  ```
-  object is not Slice
-  ```
-
-- [ ] `$[*].bar[*].baz`
-  Input:
-  ```
-  [{"bar": [{"baz": "hello"}]}]
-  ```
-  Expected output:
-  ```
-  ["hello"]
-  ```
-  Actual output:
-  ```
-  [["hello"]]
-  ```
-
-- [ ] `$.*`
-  Input:
-  ```
-  ["string", 42, {"key": "value"}, [0, 1]]
-  ```
-  Expected output:
-  ```
-  ["string", 42, {"key": "value"}, [0, 1]]
-  ```
-  Error:
-  ```
-  expression don't support in filter
-  ```
-
-- [ ] `$.*`
-  Input:
-  ```
-  []
-  ```
-  Expected output:
-  ```
-  []
-  ```
-  Error:
-  ```
-  expression don't support in filter
-  ```
-
-- [ ] `$.*`
-  Input:
-  ```
-  {}
-  ```
-  Expected output:
-  ```
-  []
-  ```
-  Error:
-  ```
-  expression don't support in filter
-  ```
-
-- [ ] `$.*`
-  Input:
-  ```
-  {"some": "string", "int": 42, "object": {"key": "value"}, "array": [0, 1]}
-  ```
-  Expected output:
-  ```
-  ["string", 42, [0, 1], {"key": "value"}]
-  ```
-  Error:
-  ```
-  expression don't support in filter
   ```
 
 

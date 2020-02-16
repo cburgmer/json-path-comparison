@@ -17,6 +17,20 @@ The following queries provide results that do not match those of other implement
   ["value", "entry"]
   ```
 
+- [ ] `$[*]`
+  Input:
+  ```
+  {"some": "string", "int": 42, "object": {"key": "value"}, "array": [0, 1]}
+  ```
+  Expected output:
+  ```
+  ["string", 42, [0, 1], {"key": "value"}]
+  ```
+  Actual output:
+  ```
+  []
+  ```
+
 - [ ] `$..key`
   Input:
   ```
@@ -71,20 +85,6 @@ The following queries provide results that do not match those of other implement
   Actual output:
   ```
   [42]
-  ```
-
-- [ ] `$[*]`
-  Input:
-  ```
-  {"some": "string", "int": 42, "object": {"key": "value"}, "array": [0, 1]}
-  ```
-  Expected output:
-  ```
-  ["string", 42, [0, 1], {"key": "value"}]
-  ```
-  Actual output:
-  ```
-  []
   ```
 
 - [ ] `$.*`

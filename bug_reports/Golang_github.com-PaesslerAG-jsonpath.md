@@ -3,18 +3,32 @@ Results do not match other implementations
 The following queries provide results that do not match those of other implementations of JSONPath
 (compare https://cburgmer.github.io/json-path-comparison/):
 
-- [ ] `$.2`
+- [ ] `$['key']`
   Input:
   ```
-  {"a": "first", "2": "second", "b": "third"}
+  {"key": "value"}
   ```
   Expected output:
   ```
-  "second"
+  "value"
   ```
   Error:
   ```
-  parsing error: $.2	:1:2 - 1:4 unexpected Float while scanning operator
+  parsing error: $['key']	:1:3 - 1:8 could not parse string: invalid syntax
+  ```
+
+- [ ] `$['two.some']`
+  Input:
+  ```
+  {"one": {"key": "value"}, "two": {"some": "more", "key": "other value"}, "two.some": "42"}
+  ```
+  Expected output:
+  ```
+  "42"
+  ```
+  Error:
+  ```
+  parsing error: $['two.some']	:1:3 - 1:13 could not parse string: invalid syntax
   ```
 
 - [ ] `$[-1]`
@@ -29,6 +43,48 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   index -1 out of bounds
+  ```
+
+- [ ] `$['special:"chars']`
+  Input:
+  ```
+  {"special:\"chars": "value"}
+  ```
+  Expected output:
+  ```
+  "value"
+  ```
+  Error:
+  ```
+  parsing error: $['special:"chars']	:1:3 - 1:19 could not parse string: invalid syntax
+  ```
+
+- [ ] `$['one','three'].key`
+  Input:
+  ```
+  {"one": {"key": "value"}, "two": {"k": "v"}, "three": {"some": "more", "key": "other value"}}
+  ```
+  Expected output:
+  ```
+  ["value", "other value"]
+  ```
+  Error:
+  ```
+  parsing error: $['one','three'].key	:1:3 - 1:8 could not parse string: invalid syntax
+  ```
+
+- [ ] `$.2`
+  Input:
+  ```
+  {"a": "first", "2": "second", "b": "third"}
+  ```
+  Expected output:
+  ```
+  "second"
+  ```
+  Error:
+  ```
+  parsing error: $.2	:1:2 - 1:4 unexpected Float while scanning operator
   ```
 
 - [ ] `$[?(@.key=='value')]`
@@ -85,62 +141,6 @@ The following queries provide results that do not match those of other implement
   Actual output:
   ```
   []
-  ```
-
-- [ ] `$['key']`
-  Input:
-  ```
-  {"key": "value"}
-  ```
-  Expected output:
-  ```
-  "value"
-  ```
-  Error:
-  ```
-  parsing error: $['key']	:1:3 - 1:8 could not parse string: invalid syntax
-  ```
-
-- [ ] `$['one','three'].key`
-  Input:
-  ```
-  {"one": {"key": "value"}, "two": {"k": "v"}, "three": {"some": "more", "key": "other value"}}
-  ```
-  Expected output:
-  ```
-  ["value", "other value"]
-  ```
-  Error:
-  ```
-  parsing error: $['one','three'].key	:1:3 - 1:8 could not parse string: invalid syntax
-  ```
-
-- [ ] `$['two.some']`
-  Input:
-  ```
-  {"one": {"key": "value"}, "two": {"some": "more", "key": "other value"}, "two.some": "42"}
-  ```
-  Expected output:
-  ```
-  "42"
-  ```
-  Error:
-  ```
-  parsing error: $['two.some']	:1:3 - 1:13 could not parse string: invalid syntax
-  ```
-
-- [ ] `$['special:"chars']`
-  Input:
-  ```
-  {"special:\"chars": "value"}
-  ```
-  Expected output:
-  ```
-  "value"
-  ```
-  Error:
-  ```
-  parsing error: $['special:"chars']	:1:3 - 1:19 could not parse string: invalid syntax
   ```
 
 

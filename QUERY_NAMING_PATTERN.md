@@ -13,12 +13,6 @@ test and group queries easily by sorting alphabetically.
 - Document: JSON payload the selector is evaluated against.
 - Query: Pair of selector and a document.
 
-## Open questions
-- Will this translate to the current table
-- Is this consistent
-- Do we look ahead and try to think about grouping already?
-  How would we group given the complex query syntax?
-
 ## Operator notations
 
 As a comparative approach we try to stay impartial and not imply any intent via
