@@ -96,6 +96,25 @@ from "bad" thus seems hard, and we would very much prefer putting this energy
 into fixing issues :)
 
 
+## What are the rules for other queries to be covered?
+
+More queries can always be added. There's plenty of room for edge cases in
+JSONPath.
+
+Here's a few good indicators that the query you are looking at should be added:
+
+- Implementations disagree on the results. This can be verified via
+  `./src/one_off.sh`.
+- The particular query isn't already covered by one of the existing ones.
+  Similar queries are quickly found when naming one's query following
+  QUERY_NAMING_PATTERN.md and following the alphabetic ordering in the
+  comparison table.
+- The query doesn't involve too many subsequent operators. A too long query
+  should probably be broken down to narrow the area of test. Obviously a long
+  query is good if a shorter version does not expose the same deviation in
+  implementations' responses.
+
+
 ## Looks like you have it all figured out?
 
 On the contrary, JSONPath is complex enough, many more edge cases exist and

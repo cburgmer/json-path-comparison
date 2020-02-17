@@ -79,6 +79,10 @@ queries:
     status: error
   - id: dot_notation_after_bracket_notation_with_wildcard_after_dot_notation_after_bracket_notation_with_wildcard
     status: error
+  - id: dot_notation_after_bracket_notation_with_wildcard_on_one_matching
+    status: error
+  - id: dot_notation_after_bracket_notation_with_wildcard_on_some_matching
+    status: error
   - id: dot_notation_after_union_with_keys
     status: fail
     result: null

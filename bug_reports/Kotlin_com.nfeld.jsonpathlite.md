@@ -174,7 +174,7 @@ The following queries provide results that do not match those of other implement
 - [ ] `$[*].a`
   Input:
   ```
-  [{"a": 1}, {"b": 1}, {"a": 1}]
+  [{"a": 1}, {"a": 1}]
   ```
   Expected output:
   ```
@@ -193,6 +193,34 @@ The following queries provide results that do not match those of other implement
   Expected output:
   ```
   ["hello"]
+  ```
+  Error:
+  ```
+  Unexpected char, char=*, index=2
+  ```
+
+- [ ] `$[*].a`
+  Input:
+  ```
+  [{"a": 1}]
+  ```
+  Expected output:
+  ```
+  [1]
+  ```
+  Error:
+  ```
+  Unexpected char, char=*, index=2
+  ```
+
+- [ ] `$[*].a`
+  Input:
+  ```
+  [{"a": 1}, {"b": 1}]
+  ```
+  Expected output:
+  ```
+  [1]
   ```
   Error:
   ```

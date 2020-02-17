@@ -220,12 +220,20 @@ queries:
     scalar-consensus: "value"
   - id: dot_notation_after_bracket_notation_with_wildcard
     selector: $[*].a
-    document: [{"a": 1}, {"b": 1}, {"a": 1}]
+    document: [{"a": 1}, {"a": 1}]
     consensus: [1, 1]
   - id: dot_notation_after_bracket_notation_with_wildcard_after_dot_notation_after_bracket_notation_with_wildcard
     selector: $[*].bar[*].baz
     document: [{"bar": [{"baz": "hello"}]}]
     consensus: ["hello"]
+  - id: dot_notation_after_bracket_notation_with_wildcard_on_one_matching
+    selector: $[*].a
+    document: [{"a": 1}]
+    consensus: [1]
+  - id: dot_notation_after_bracket_notation_with_wildcard_on_some_matching
+    selector: $[*].a
+    document: [{"a": 1}, {"b": 1}]
+    consensus: [1]
   - id: dot_notation_after_recursive_descent
     selector: $..key
     document: {"object": {"key": "value", "array": [{"key": "something"}, {"key": {"key": "russian dolls"}}]}, "key": "top"}

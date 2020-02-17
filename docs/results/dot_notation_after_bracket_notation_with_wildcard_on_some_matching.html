@@ -1,12 +1,12 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/3.0.1/github-markdown.css">
 <article class="markdown-body">
-<h1>Dot notation after bracket notation with wildcard</h1>
+<h1>Dot notation after bracket notation with wildcard on some matching</h1>
 
 <h2>Setup</h2>
 
 <p>Selector: <code>$[*].a</code></p>
 
-<pre><code>[{"a": 1},{"a": 1}]
+<pre><code>[{"a": 1},{"b": 1}]
 </code></pre>
 
 <h2>Results</h2>
@@ -14,7 +14,6 @@
 <h3 id="consensus">Consensus</h3>
 
 <pre><code>[
-  1,
   1
 ]
 </code></pre>
@@ -25,17 +24,31 @@
 Bash (JSONPath.sh)
 </h4>
 
+<pre><code>{
+  "a": 1
+}
+</code></pre>
+
+<h4 id="Clojure_json-path">
+Clojure (json-path)
+</h4>
+
 <pre><code>[
-  {
-    "a": 1
-  },
-  {
-    "a": 1
-  }
+  1,
+  null
 ]
 </code></pre>
 
 <h3>Errors</h3>
+
+<h4 id="Haskell_jsonpath">
+Haskell (jsonpath)
+</h4>
+
+<pre><code>json-path-comparison: expected key a in object {"b":1}
+CallStack (from HasCallStack):
+  error, called at app/Main.hs:18:22 in main:Main
+</code></pre>
 
 <h4 id="Kotlin_com.nfeld.jsonpathlite">
 Kotlin (com.nfeld.jsonpathlite)

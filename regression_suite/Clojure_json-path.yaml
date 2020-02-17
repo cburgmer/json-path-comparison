@@ -114,9 +114,9 @@ queries:
     status: error
   - id: dot_bracket_notation_without_quotes
     status: error
-  - id: dot_notation_after_bracket_notation_with_wildcard
+  - id: dot_notation_after_bracket_notation_with_wildcard_on_some_matching
     status: fail
-    result: [1, null, 1]
+    result: [1, null]
   - id: dot_notation_after_union_with_keys
     status: error
   - id: dot_notation_on_array
