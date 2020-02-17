@@ -325,6 +325,20 @@ The following queries provide results that do not match those of other implement
   [[1, 2], ["a", "b"], [0, 0]]
   ```
 
+- [ ] `$[*].bar[*]`
+  Input:
+  ```
+  [{"bar": [42]}]
+  ```
+  Expected output:
+  ```
+  [42]
+  ```
+  Actual output:
+  ```
+  [[42]]
+  ```
+
 - [ ] `$[*]`
   Input:
   ```
@@ -421,6 +435,20 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   strconv.Atoi: parsing "'one'": invalid syntax
+  ```
+
+- [ ] `$.*.bar.*`
+  Input:
+  ```
+  [{"bar": [42]}]
+  ```
+  Expected output:
+  ```
+  [42]
+  ```
+  Error:
+  ```
+  expression don't support in filter
   ```
 
 - [ ] `$..*`

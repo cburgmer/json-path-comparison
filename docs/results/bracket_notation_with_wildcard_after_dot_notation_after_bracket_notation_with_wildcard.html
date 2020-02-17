@@ -1,12 +1,12 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/3.0.1/github-markdown.css">
 <article class="markdown-body">
-<h1>Dot notation after bracket notation with wildcard after dot notation after bracket notation with wildcard</h1>
+<h1>Bracket notation with wildcard after dot notation after bracket notation with wildcard</h1>
 
 <h2>Setup</h2>
 
-<p>Selector: <code>$[*].bar[*].baz</code></p>
+<p>Selector: <code>$[*].bar[*]</code></p>
 
-<pre><code>[{"bar": [{"baz": "hello"}]}]
+<pre><code>[{"bar": [42]}]
 </code></pre>
 
 <h2>Results</h2>
@@ -14,20 +14,11 @@
 <h3 id="consensus">Consensus</h3>
 
 <pre><code>[
-  "hello"
+  42
 ]
 </code></pre>
 
 <h3>Other responses</h3>
-
-<h4 id="Bash_JSONPath.sh">
-Bash (JSONPath.sh)
-</h4>
-
-<pre><code>{
-  "baz": "hello"
-}
-</code></pre>
 
 <h4 id="Golang_github.com-bhmj-jsonslice">
 Golang (github.com-bhmj-jsonslice)
@@ -35,7 +26,7 @@ Golang (github.com-bhmj-jsonslice)
 
 <pre><code>[
   [
-    "hello"
+    42
   ]
 ]
 </code></pre>
@@ -46,16 +37,9 @@ Golang (github.com-oliveagle-jsonpath)
 
 <pre><code>[
   [
-    "hello"
+    42
   ]
 ]
-</code></pre>
-
-<h4 id="Haskell_jsonpath">
-Haskell (jsonpath)
-</h4>
-
-<pre><code>"hello"
 </code></pre>
 
 <h3>Errors</h3>

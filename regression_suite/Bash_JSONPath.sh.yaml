@@ -97,9 +97,6 @@ queries:
   - id: dot_notation_after_bracket_notation_with_wildcard
     status: fail
     result: [{"a": 1}, {"a": 1}]
-  - id: dot_notation_after_bracket_notation_with_wildcard_after_dot_notation_after_bracket_notation_with_wildcard
-    status: fail
-    result: {"baz": "hello"}
   - id: dot_notation_after_bracket_notation_with_wildcard_on_one_matching
     status: fail
     result: {"a": 1}

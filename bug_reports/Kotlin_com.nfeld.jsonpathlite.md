@@ -101,6 +101,20 @@ The following queries provide results that do not match those of other implement
   Unexpected char, char=*, index=7
   ```
 
+- [ ] `$[*].bar[*]`
+  Input:
+  ```
+  [{"bar": [42]}]
+  ```
+  Expected output:
+  ```
+  [42]
+  ```
+  Error:
+  ```
+  Unexpected char, char=*, index=2
+  ```
+
 - [ ] `$[*]`
   Input:
   ```
@@ -235,6 +249,20 @@ The following queries provide results that do not match those of other implement
   Expected output:
   ```
   ["value", "other value"]
+  ```
+  Actual output:
+  ```
+  null
+  ```
+
+- [ ] `$.*.bar.*`
+  Input:
+  ```
+  [{"bar": [42]}]
+  ```
+  Expected output:
+  ```
+  [42]
   ```
   Actual output:
   ```

@@ -17,6 +17,20 @@ The following queries provide results that do not match those of other implement
   [[1, 2], ["a", "b"]]
   ```
 
+- [ ] `$[*].bar[*]`
+  Input:
+  ```
+  [{"bar": [42]}]
+  ```
+  Expected output:
+  ```
+  [42]
+  ```
+  Actual output:
+  ```
+  [[42]]
+  ```
+
 - [ ] `$[*].bar[*].baz`
   Input:
   ```
@@ -29,6 +43,20 @@ The following queries provide results that do not match those of other implement
   Actual output:
   ```
   [["hello"]]
+  ```
+
+- [ ] `$.*.bar.*`
+  Input:
+  ```
+  [{"bar": [42]}]
+  ```
+  Expected output:
+  ```
+  [42]
+  ```
+  Actual output:
+  ```
+  [[42]]
   ```
 
 - [ ] `$[4,1]`

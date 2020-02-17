@@ -58,9 +58,6 @@ queries:
     status: error
   - id: dot_bracket_notation_without_quotes
     status: error
-  - id: dot_notation_after_bracket_notation_with_wildcard_after_dot_notation_after_bracket_notation_with_wildcard
-    status: fail
-    result: "hello"
   - id: dot_notation_after_bracket_notation_with_wildcard_on_one_matching
     status: fail
     result: 1

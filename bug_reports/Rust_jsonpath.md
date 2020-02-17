@@ -325,6 +325,20 @@ The following queries provide results that do not match those of other implement
   parsing error
   ```
 
+- [ ] `$[*].bar[*]`
+  Input:
+  ```
+  [{"bar": [42]}]
+  ```
+  Expected output:
+  ```
+  [42]
+  ```
+  Error:
+  ```
+  parsing error
+  ```
+
 - [ ] `$[*]`
   Input:
   ```

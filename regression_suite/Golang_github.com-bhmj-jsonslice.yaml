@@ -40,6 +40,9 @@ queries:
   - id: bracket_notation_with_wildcard_after_array_slice
     status: fail
     result: [[1, 2], ["a", "b"]]
+  - id: bracket_notation_with_wildcard_after_dot_notation_after_bracket_notation_with_wildcard
+    status: fail
+    result: [[42]]
   - id: bracket_notation_without_quotes
     status: open
     result: "value"
@@ -52,9 +55,6 @@ queries:
   - id: dot_bracket_notation_without_quotes
     status: open
     result: "value"
-  - id: dot_notation_after_bracket_notation_with_wildcard_after_dot_notation_after_bracket_notation_with_wildcard
-    status: fail
-    result: [["hello"]]
   - id: dot_notation_on_array
     status: error
   - id: dot_notation_on_array_with_containing_object_matching_key
@@ -76,6 +76,9 @@ queries:
   - id: dot_notation_with_single_quotes_after_recursive_descent
     status: open
     result: ["russian dolls", "something", "top", "value", {"key": "russian dolls"}]
+  - id: dot_notation_with_wildcard_after_dot_notation_after_dot_notation_with_wildcard
+    status: fail
+    result: [[42]]
   - id: filter_expression_after_recursive_descent
     status: open
     result: []

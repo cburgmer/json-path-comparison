@@ -180,6 +180,10 @@ queries:
     selector: $[0:2][*]
     document: [[1, 2], ["a", "b"], [0, 0]]
     consensus: [1, 2, "a", "b"]
+  - id: bracket_notation_with_wildcard_after_dot_notation_after_bracket_notation_with_wildcard
+    selector: $[*].bar[*]
+    document: [{"bar": [42]}]
+    consensus: [42]
   - id: bracket_notation_with_wildcard_on_array
     selector: $[*]
     document: ["string", 42, {"key": "value"}, [0, 1]]
@@ -222,10 +226,6 @@ queries:
     selector: $[*].a
     document: [{"a": 1}, {"a": 1}]
     consensus: [1, 1]
-  - id: dot_notation_after_bracket_notation_with_wildcard_after_dot_notation_after_bracket_notation_with_wildcard
-    selector: $[*].bar[*].baz
-    document: [{"bar": [{"baz": "hello"}]}]
-    consensus: ["hello"]
   - id: dot_notation_after_bracket_notation_with_wildcard_on_one_matching
     selector: $[*].a
     document: [{"a": 1}]
@@ -289,6 +289,10 @@ queries:
     selector: $..'key'
     document: {"object": {"key": "value", "array": [{"key": "something"}, {"key": {"key": "russian dolls"}}]}, "key": "top"}
     ordered: false
+  - id: dot_notation_with_wildcard_after_dot_notation_after_dot_notation_with_wildcard
+    selector: $.*.bar.*
+    document: [{"bar": [42]}]
+    consensus: [42]
   - id: dot_notation_with_wildcard_after_recursive_descent
     selector: $..*
     document: {"key": "value", "another key": {"complex": "string", "primitives": [0, 1]}}

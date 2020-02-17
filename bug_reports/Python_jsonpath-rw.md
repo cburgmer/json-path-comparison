@@ -143,6 +143,20 @@ The following queries provide results that do not match those of other implement
   Exception('Parse error at 1:2 near token 2 (NUMBER)')
   ```
 
+- [ ] `$.*.bar.*`
+  Input:
+  ```
+  [{"bar": [42]}]
+  ```
+  Expected output:
+  ```
+  [42]
+  ```
+  Actual output:
+  ```
+  []
+  ```
+
 - [ ] `$..*`
   Input:
   ```

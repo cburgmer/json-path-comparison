@@ -56,6 +56,8 @@ queries:
     status: error
   - id: bracket_notation_with_wildcard_after_array_slice
     status: error
+  - id: bracket_notation_with_wildcard_after_dot_notation_after_bracket_notation_with_wildcard
+    status: error
   - id: bracket_notation_with_wildcard_on_array
     status: error
   - id: bracket_notation_with_wildcard_on_empty_array
@@ -76,8 +78,6 @@ queries:
   - id: dot_bracket_notation_without_quotes
     status: error
   - id: dot_notation_after_bracket_notation_with_wildcard
-    status: error
-  - id: dot_notation_after_bracket_notation_with_wildcard_after_dot_notation_after_bracket_notation_with_wildcard
     status: error
   - id: dot_notation_after_bracket_notation_with_wildcard_on_one_matching
     status: error
@@ -110,6 +110,9 @@ queries:
   - id: dot_notation_with_single_quotes_after_recursive_descent
     status: open
     result: []
+  - id: dot_notation_with_wildcard_after_dot_notation_after_dot_notation_with_wildcard
+    status: fail
+    result: null
   - id: dot_notation_with_wildcard_after_recursive_descent
     status: fail
     result: []
