@@ -70,6 +70,9 @@ queries:
     result: {"some": "more"}
   - id: bracket_notation_with_wildcard_after_array_slice
     status: error
+  - id: bracket_notation_with_wildcard_after_recursive_descent
+    status: open
+    result: {"another key": {"complex": "string", "primitives": [0, 1]}, "key": "value"}
   - id: bracket_notation_with_wildcard_on_array
     status: error
   - id: bracket_notation_with_wildcard_on_empty_array

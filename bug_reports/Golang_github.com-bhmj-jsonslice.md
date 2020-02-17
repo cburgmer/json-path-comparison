@@ -31,20 +31,6 @@ The following queries provide results that do not match those of other implement
   [[42]]
   ```
 
-- [ ] `$[*].bar[*].baz`
-  Input:
-  ```
-  [{"bar": [{"baz": "hello"}]}]
-  ```
-  Expected output:
-  ```
-  ["hello"]
-  ```
-  Actual output:
-  ```
-  [["hello"]]
-  ```
-
 - [ ] `$.*.bar.*`
   Input:
   ```

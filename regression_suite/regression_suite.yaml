@@ -184,6 +184,10 @@ queries:
     selector: $[*].bar[*]
     document: [{"bar": [42]}]
     consensus: [42]
+  - id: bracket_notation_with_wildcard_after_recursive_descent
+    selector: $..[*]
+    document: {"key": "value", "another key": {"complex": "string", "primitives": [0, 1]}}
+    ordered: false
   - id: bracket_notation_with_wildcard_on_array
     selector: $[*]
     document: ["string", 42, {"key": "value"}, [0, 1]]

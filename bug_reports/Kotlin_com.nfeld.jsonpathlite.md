@@ -199,20 +199,6 @@ The following queries provide results that do not match those of other implement
   Unexpected char, char=*, index=2
   ```
 
-- [ ] `$[*].bar[*].baz`
-  Input:
-  ```
-  [{"bar": [{"baz": "hello"}]}]
-  ```
-  Expected output:
-  ```
-  ["hello"]
-  ```
-  Error:
-  ```
-  Unexpected char, char=*, index=2
-  ```
-
 - [ ] `$[*].a`
   Input:
   ```

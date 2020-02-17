@@ -162,20 +162,6 @@ The following queries provide results that do not match those of other implement
    Error: serachBegingingWithSlice: string
   ```
 
-- [ ] `$[*].bar[*].baz`
-  Input:
-  ```
-  [{"bar": [{"baz": "hello"}]}]
-  ```
-  Expected output:
-  ```
-  ["hello"]
-  ```
-  Actual output:
-  ```
-  "hello"
-  ```
-
 - [ ] `$[*].a`
   Input:
   ```

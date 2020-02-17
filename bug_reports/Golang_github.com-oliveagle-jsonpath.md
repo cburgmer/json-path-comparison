@@ -381,20 +381,6 @@ The following queries provide results that do not match those of other implement
   object is not Slice
   ```
 
-- [ ] `$[*].bar[*].baz`
-  Input:
-  ```
-  [{"bar": [{"baz": "hello"}]}]
-  ```
-  Expected output:
-  ```
-  ["hello"]
-  ```
-  Actual output:
-  ```
-  [["hello"]]
-  ```
-
 - [ ] `$..key`
   Input:
   ```

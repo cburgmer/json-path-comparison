@@ -355,20 +355,6 @@ The following queries provide results that do not match those of other implement
   [{"a": 1}, {"a": 1}]
   ```
 
-- [ ] `$[*].bar[*].baz`
-  Input:
-  ```
-  [{"bar": [{"baz": "hello"}]}]
-  ```
-  Expected output:
-  ```
-  ["hello"]
-  ```
-  Actual output:
-  ```
-  {"baz": "hello"}
-  ```
-
 - [ ] `$[*].a`
   Input:
   ```

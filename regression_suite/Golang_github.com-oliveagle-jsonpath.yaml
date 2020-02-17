@@ -84,6 +84,8 @@ queries:
   - id: bracket_notation_with_wildcard_after_dot_notation_after_bracket_notation_with_wildcard
     status: fail
     result: [[42]]
+  - id: bracket_notation_with_wildcard_after_recursive_descent
+    status: error
   - id: bracket_notation_with_wildcard_on_empty_array
     status: error
   - id: bracket_notation_with_wildcard_on_empty_object

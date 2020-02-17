@@ -423,20 +423,6 @@ The following queries provide results that do not match those of other implement
   parsing error
   ```
 
-- [ ] `$[*].bar[*].baz`
-  Input:
-  ```
-  [{"bar": [{"baz": "hello"}]}]
-  ```
-  Expected output:
-  ```
-  ["hello"]
-  ```
-  Error:
-  ```
-  parsing error
-  ```
-
 - [ ] `$[*].a`
   Input:
   ```

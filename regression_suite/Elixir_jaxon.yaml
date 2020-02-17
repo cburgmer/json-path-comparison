@@ -89,6 +89,9 @@ queries:
     status: error
   - id: bracket_notation_with_wildcard_after_array_slice
     status: error
+  - id: bracket_notation_with_wildcard_after_recursive_descent
+    status: open
+    result: []
   - id: bracket_notation_with_wildcard_on_empty_array
     status: error
   - id: bracket_notation_with_wildcard_on_object
