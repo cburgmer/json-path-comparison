@@ -75,60 +75,6 @@ The following queries provide results that do not match those of other implement
       (mix 1.10.0) lib/mix/cli.ex:82: Mix.CLI.run_task/2
   ```
 
-- [ ] `$[2:1]`
-  Input:
-  ```
-  ["first", "second", "third", "forth"]
-  ```
-  Expected output:
-  ```
-  []
-  ```
-  Error:
-  ```
-  ** (Jaxon.ParseError) Expected an integer at `2:1]`
-      lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
-      lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
-      (mix 1.10.0) lib/mix/task.ex:330: Mix.Task.run_task/3
-      (mix 1.10.0) lib/mix/cli.ex:82: Mix.CLI.run_task/2
-  ```
-
-- [ ] `$[0:0]`
-  Input:
-  ```
-  ["first", "second"]
-  ```
-  Expected output:
-  ```
-  []
-  ```
-  Error:
-  ```
-  ** (Jaxon.ParseError) Expected an integer at `0:0]`
-      lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
-      lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
-      (mix 1.10.0) lib/mix/task.ex:330: Mix.Task.run_task/3
-      (mix 1.10.0) lib/mix/cli.ex:82: Mix.CLI.run_task/2
-  ```
-
-- [ ] `$[0:1]`
-  Input:
-  ```
-  ["first", "second"]
-  ```
-  Expected output:
-  ```
-  ["first"]
-  ```
-  Error:
-  ```
-  ** (Jaxon.ParseError) Expected an integer at `0:1]`
-      lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
-      lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
-      (mix 1.10.0) lib/mix/task.ex:330: Mix.Task.run_task/3
-      (mix 1.10.0) lib/mix/cli.ex:82: Mix.CLI.run_task/2
-  ```
-
 - [ ] `$[1:]`
   Input:
   ```
@@ -195,6 +141,60 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   ** (Jaxon.ParseError) Expected an integer at `::]`
+      lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
+      lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
+      (mix 1.10.0) lib/mix/task.ex:330: Mix.Task.run_task/3
+      (mix 1.10.0) lib/mix/cli.ex:82: Mix.CLI.run_task/2
+  ```
+
+- [ ] `$[2:1]`
+  Input:
+  ```
+  ["first", "second", "third", "forth"]
+  ```
+  Expected output:
+  ```
+  []
+  ```
+  Error:
+  ```
+  ** (Jaxon.ParseError) Expected an integer at `2:1]`
+      lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
+      lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
+      (mix 1.10.0) lib/mix/task.ex:330: Mix.Task.run_task/3
+      (mix 1.10.0) lib/mix/cli.ex:82: Mix.CLI.run_task/2
+  ```
+
+- [ ] `$[0:0]`
+  Input:
+  ```
+  ["first", "second"]
+  ```
+  Expected output:
+  ```
+  []
+  ```
+  Error:
+  ```
+  ** (Jaxon.ParseError) Expected an integer at `0:0]`
+      lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
+      lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
+      (mix 1.10.0) lib/mix/task.ex:330: Mix.Task.run_task/3
+      (mix 1.10.0) lib/mix/cli.ex:82: Mix.CLI.run_task/2
+  ```
+
+- [ ] `$[0:1]`
+  Input:
+  ```
+  ["first", "second"]
+  ```
+  Expected output:
+  ```
+  ["first"]
+  ```
+  Error:
+  ```
+  ** (Jaxon.ParseError) Expected an integer at `0:1]`
       lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
       lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
       (mix 1.10.0) lib/mix/task.ex:330: Mix.Task.run_task/3

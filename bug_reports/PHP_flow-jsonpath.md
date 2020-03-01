@@ -17,6 +17,20 @@ The following queries provide results that do not match those of other implement
   ["second", "third", "forth"]
   ```
 
+- [ ] `$[:2]`
+  Input:
+  ```
+  ["first", "second", "third", "forth", "fifth"]
+  ```
+  Expected output:
+  ```
+  ["first", "second"]
+  ```
+  Actual output:
+  ```
+  ["first", "second", "third"]
+  ```
+
 - [ ] `$[0:0]`
   Input:
   ```
@@ -43,20 +57,6 @@ The following queries provide results that do not match those of other implement
   Actual output:
   ```
   ["first", "second"]
-  ```
-
-- [ ] `$[:2]`
-  Input:
-  ```
-  ["first", "second", "third", "forth", "fifth"]
-  ```
-  Expected output:
-  ```
-  ["first", "second"]
-  ```
-  Actual output:
-  ```
-  ["first", "second", "third"]
   ```
 
 - [ ] `$[-4:]`

@@ -17,15 +17,6 @@ queries:
   - id: array_slice_on_partially_overlapping_array
     status: fail
     result: "second"
-  - id: array_slice_with_interval_of_-1
-    status: fail
-    result: "third"
-  - id: array_slice_with_interval_of_0
-    status: fail
-    result: "first"
-  - id: array_slice_with_interval_of_1
-    status: fail
-    result: "first"
   - id: array_slice_with_negative_step
     status: open
     result: "forth"
@@ -42,6 +33,15 @@ queries:
     status: error
   - id: array_slice_with_open_start_and_end_and_step_empty
     status: error
+  - id: array_slice_with_range_of_-1
+    status: fail
+    result: "third"
+  - id: array_slice_with_range_of_0
+    status: fail
+    result: "first"
+  - id: array_slice_with_range_of_1
+    status: fail
+    result: "first"
   - id: array_slice_with_start_-1_and_open_end
     status: fail
     result: "third"

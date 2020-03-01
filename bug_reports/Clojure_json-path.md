@@ -59,48 +59,6 @@ The following queries provide results that do not match those of other implement
   "second"
   ```
 
-- [ ] `$[2:1]`
-  Input:
-  ```
-  ["first", "second", "third", "forth"]
-  ```
-  Expected output:
-  ```
-  []
-  ```
-  Actual output:
-  ```
-  "third"
-  ```
-
-- [ ] `$[0:0]`
-  Input:
-  ```
-  ["first", "second"]
-  ```
-  Expected output:
-  ```
-  []
-  ```
-  Actual output:
-  ```
-  "first"
-  ```
-
-- [ ] `$[0:1]`
-  Input:
-  ```
-  ["first", "second"]
-  ```
-  Expected output:
-  ```
-  ["first"]
-  ```
-  Actual output:
-  ```
-  "first"
-  ```
-
 - [ ] `$[1:]`
   Input:
   ```
@@ -155,6 +113,48 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   java.lang.NumberFormatException null
+  ```
+
+- [ ] `$[2:1]`
+  Input:
+  ```
+  ["first", "second", "third", "forth"]
+  ```
+  Expected output:
+  ```
+  []
+  ```
+  Actual output:
+  ```
+  "third"
+  ```
+
+- [ ] `$[0:0]`
+  Input:
+  ```
+  ["first", "second"]
+  ```
+  Expected output:
+  ```
+  []
+  ```
+  Actual output:
+  ```
+  "first"
+  ```
+
+- [ ] `$[0:1]`
+  Input:
+  ```
+  ["first", "second"]
+  ```
+  Expected output:
+  ```
+  ["first"]
+  ```
+  Actual output:
+  ```
+  "first"
   ```
 
 - [ ] `$[-1:]`

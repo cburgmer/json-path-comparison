@@ -17,34 +17,6 @@ The following queries provide results that do not match those of other implement
   ["second", "third", "forth"]
   ```
 
-- [ ] `$[0:0]`
-  Input:
-  ```
-  ["first", "second"]
-  ```
-  Expected output:
-  ```
-  []
-  ```
-  Actual output:
-  ```
-  ["first"]
-  ```
-
-- [ ] `$[0:1]`
-  Input:
-  ```
-  ["first", "second"]
-  ```
-  Expected output:
-  ```
-  ["first"]
-  ```
-  Actual output:
-  ```
-  ["first", "second"]
-  ```
-
 - [ ] `$[:]`
   Input:
   ```
@@ -71,6 +43,34 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   parsing error
+  ```
+
+- [ ] `$[0:0]`
+  Input:
+  ```
+  ["first", "second"]
+  ```
+  Expected output:
+  ```
+  []
+  ```
+  Actual output:
+  ```
+  ["first"]
+  ```
+
+- [ ] `$[0:1]`
+  Input:
+  ```
+  ["first", "second"]
+  ```
+  Expected output:
+  ```
+  ["first"]
+  ```
+  Actual output:
+  ```
+  ["first", "second"]
   ```
 
 - [ ] `$[-1:]`
