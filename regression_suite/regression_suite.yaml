@@ -25,18 +25,6 @@ queries:
     selector: $[1:10]
     document: ["first", "second", "third"]
     consensus: ["second", "third"]
-  - id: array_slice_with_interval_of_-1
-    selector: $[2:1]
-    document: ["first", "second", "third", "forth"]
-    consensus: []
-  - id: array_slice_with_interval_of_0
-    selector: $[0:0]
-    document: ["first", "second"]
-    consensus: []
-  - id: array_slice_with_interval_of_1
-    selector: $[0:1]
-    document: ["first", "second"]
-    consensus: ["first"]
   - id: array_slice_with_negative_step
     selector: $[3:0:-2]
     document: ["first", "second", "third", "forth", "fifth"]
@@ -59,6 +47,18 @@ queries:
     selector: $[::]
     document: ["first", "second"]
     consensus: ["first", "second"]
+  - id: array_slice_with_range_of_-1
+    selector: $[2:1]
+    document: ["first", "second", "third", "forth"]
+    consensus: []
+  - id: array_slice_with_range_of_0
+    selector: $[0:0]
+    document: ["first", "second"]
+    consensus: []
+  - id: array_slice_with_range_of_1
+    selector: $[0:1]
+    document: ["first", "second"]
+    consensus: ["first"]
   - id: array_slice_with_start_-1_and_open_end
     selector: $[-1:]
     document: ["first", "second", "third"]

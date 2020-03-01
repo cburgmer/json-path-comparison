@@ -15,12 +15,6 @@ queries:
     status: error
   - id: array_slice_on_partially_overlapping_array
     status: error
-  - id: array_slice_with_interval_of_0
-    status: fail
-    result: ["first"]
-  - id: array_slice_with_interval_of_1
-    status: fail
-    result: ["first", "second"]
   - id: array_slice_with_negative_step
     status: error
   - id: array_slice_with_negative_step_only
@@ -30,6 +24,12 @@ queries:
     result: ["first", "second", "third"]
   - id: array_slice_with_open_start_and_end_and_step_empty
     status: error
+  - id: array_slice_with_range_of_0
+    status: fail
+    result: ["first"]
+  - id: array_slice_with_range_of_1
+    status: fail
+    result: ["first", "second"]
   - id: array_slice_with_start_large_negative_number_and_open_end_on_short_array
     status: error
   - id: array_slice_with_step

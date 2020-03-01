@@ -59,34 +59,6 @@ The following queries provide results that do not match those of other implement
   index [to] out of range: len: 3, to: 10
   ```
 
-- [ ] `$[0:0]`
-  Input:
-  ```
-  ["first", "second"]
-  ```
-  Expected output:
-  ```
-  []
-  ```
-  Actual output:
-  ```
-  ["first"]
-  ```
-
-- [ ] `$[0:1]`
-  Input:
-  ```
-  ["first", "second"]
-  ```
-  Expected output:
-  ```
-  ["first"]
-  ```
-  Actual output:
-  ```
-  ["first", "second"]
-  ```
-
 - [ ] `$[:2]`
   Input:
   ```
@@ -113,6 +85,34 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   only support one range(from, to): [  ]
+  ```
+
+- [ ] `$[0:0]`
+  Input:
+  ```
+  ["first", "second"]
+  ```
+  Expected output:
+  ```
+  []
+  ```
+  Actual output:
+  ```
+  ["first"]
+  ```
+
+- [ ] `$[0:1]`
+  Input:
+  ```
+  ["first", "second"]
+  ```
+  Expected output:
+  ```
+  ["first"]
+  ```
+  Actual output:
+  ```
+  ["first", "second"]
   ```
 
 - [ ] `$[-4:]`

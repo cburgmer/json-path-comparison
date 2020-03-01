@@ -6,15 +6,15 @@
 
 implementation: JavaScript_jsonpath-plus
 queries:
-  - id: array_slice_with_interval_of_0
-    status: fail
-    result: ["first", "second"]
   - id: array_slice_with_negative_step
     status: open
     result: []
   - id: array_slice_with_negative_step_only
     status: open
     result: []
+  - id: array_slice_with_range_of_0
+    status: fail
+    result: ["first", "second"]
   - id: array_slice_with_step_0
     status: open
     result: ["first", "second", "third"]
