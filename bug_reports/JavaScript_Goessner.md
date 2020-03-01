@@ -45,20 +45,6 @@ The following queries provide results that do not match those of other implement
   jsonpath returned false, this might indicate an error
   ```
 
-- [ ] `$['two.some']`
-  Input:
-  ```
-  {"one": {"key": "value"}, "two": {"some": "more", "key": "other value"}, "two.some": "42"}
-  ```
-  Expected output:
-  ```
-  ["42"]
-  ```
-  Actual output:
-  ```
-  ["more"]
-  ```
-
 - [ ] `$[-1]`
   Input:
   ```
@@ -85,20 +71,6 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   jsonpath returned false, this might indicate an error
-  ```
-
-- [ ] `$['.']`
-  Input:
-  ```
-  {".": "value", "another": "entry"}
-  ```
-  Expected output:
-  ```
-  ["value"]
-  ```
-  Actual output:
-  ```
-  [{".": "value", "another": "entry"}]
   ```
 
 - [ ] `$[*]`
@@ -207,34 +179,6 @@ The following queries provide results that do not match those of other implement
   Expected output:
   ```
   []
-  ```
-  Error:
-  ```
-  jsonpath returned false, this might indicate an error
-  ```
-
-- [ ] `$`
-  Input:
-  ```
-  {"key": "value", "another key": {"complex": ["a", 1]}}
-  ```
-  Expected output:
-  ```
-  [{"another key": {"complex": ["a", 1]}, "key": "value"}]
-  ```
-  Error:
-  ```
-  jsonpath returned false, this might indicate an error
-  ```
-
-- [ ] `$`
-  Input:
-  ```
-  42
-  ```
-  Expected output:
-  ```
-  [42]
   ```
   Error:
   ```

@@ -11,11 +11,7 @@ curl --fail -Lo "$zip_target" "$source_url"
 
 unzip -q "$zip_target" -d "$zip_content_target"
 
-# Make lib requireable
-{
-    cat "$zip_content_target"/jsonpath/trunk/src/js/jsonpath.js
-    echo "module.exports = jsonPath;"
-} > "$target"
+cp "$zip_content_target"/jsonpath/trunk/src/php/jsonpath.php "$target"
 
 rm -rf "$zip_content_target"
 rm "$zip_target"

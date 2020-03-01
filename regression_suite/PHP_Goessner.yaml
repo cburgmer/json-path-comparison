@@ -20,41 +20,27 @@ queries:
   - id: array_slice_with_step_0
     status: open
     result: ["first", "second", "third"]
-  - id: bracket_notation_with_dot
-    status: fail
-    result: ["more"]
   - id: bracket_notation_with_double_quotes
     status: error
   - id: bracket_notation_with_number_-1
     status: error
-  - id: bracket_notation_with_number_0
-    status: fail
-    result: [["first", "second", "third", "forth", "fifth"]]
   - id: bracket_notation_with_number_after_recursive_descent
     status: open
-    result: [["first", {"key": ["first nested", {"more": [{"nested": ["deepest", "second"]}, ["more", "values"]]}]}], {"key": ["first nested", {"more": [{"nested": ["deepest", "second"]}, ["more", "values"]]}]}, ["first nested", {"more": [{"nested": ["deepest", "second"]}, ["more", "values"]]}], {"more": [{"nested": ["deepest", "second"]}, ["more", "values"]]}, [{"nested": ["deepest", "second"]}, ["more", "values"]], {"nested": ["deepest", "second"]}, ["deepest", "second"], ["more", "values"]]
+    result: ["first", "first nested", {"nested": ["deepest", "second"]}, "deepest", "more"]
   - id: bracket_notation_with_number_on_object
     status: open
-    result: [["value"]]
+    result: ["value"]
   - id: bracket_notation_with_number_on_short_array
     status: error
   - id: bracket_notation_with_number_on_string
-    status: open
-    result: ["Hello World"]
-  - id: bracket_notation_with_quoted_dot_literal
-    status: fail
-    result: [{".": "value", "another": "entry"}]
-  - id: bracket_notation_with_quoted_number_on_object
-    status: fail
-    result: [["value"]]
+    status: error
   - id: bracket_notation_with_single_quote
     status: open
     result: ["value"]
   - id: bracket_notation_with_single_quote_escaped
     status: error
   - id: bracket_notation_with_two_literals_separated_by_dot
-    status: open
-    result: ["more"]
+    status: error
   - id: bracket_notation_with_two_literals_separated_by_dot_without_quotes
     status: open
     result: ["more"]

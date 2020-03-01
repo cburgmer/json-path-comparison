@@ -2,8 +2,8 @@ root = implementations/PHP_Goessner
 builddir = $root/build
 
 rule install
-  command = curl --fail -Lo $out https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/jsonpath/jsonpath-0.8.1.php
+  command = $root/install.sh $out
 
-build $builddir/jsonpath.php: install
+build $builddir/jsonpath.php: install | $root/install.sh
 
 build $root/install: phony $builddir/jsonpath.php
