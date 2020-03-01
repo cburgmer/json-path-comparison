@@ -14,11 +14,11 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  json-path-comparison: serachBegingingWithSlice: string
+  json-path-comparison: searchBeginningWithSlice: string
   CallStack (from HasCallStack):
     error, called at app/Main.hs:36:7 in main:Main
   Invalid JSONPath: $[:]
-   Error: serachBegingingWithSlice: string
+   Error: searchBeginningWithSlice: string
   ```
 
 - [ ] `$[::]`
@@ -32,11 +32,11 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  json-path-comparison: serachBegingingWithSlice: string
+  json-path-comparison: searchBeginningWithSlice: string
   CallStack (from HasCallStack):
     error, called at app/Main.hs:36:7 in main:Main
   Invalid JSONPath: $[::]
-   Error: serachBegingingWithSlice: string
+   Error: searchBeginningWithSlice: string
   ```
 
 - [ ] `$[1:3:]`
@@ -50,11 +50,11 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  json-path-comparison: serachBegingingWithSlice: string
+  json-path-comparison: searchBeginningWithSlice: string
   CallStack (from HasCallStack):
     error, called at app/Main.hs:36:7 in main:Main
   Invalid JSONPath: $[1:3:]
-   Error: serachBegingingWithSlice: string
+   Error: searchBeginningWithSlice: string
   ```
 
 - [ ] `$['two.some']`
@@ -83,11 +83,11 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  json-path-comparison: serachBegingingWithSlice: string
+  json-path-comparison: searchBeginningWithSlice: string
   CallStack (from HasCallStack):
     error, called at app/Main.hs:36:7 in main:Main
   Invalid JSONPath: $['@']
-   Error: serachBegingingWithSlice: string
+   Error: searchBeginningWithSlice: string
   ```
 
 - [ ] `$['.']`
@@ -101,11 +101,11 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  json-path-comparison: serachBegingingWithSlice: string
+  json-path-comparison: searchBeginningWithSlice: string
   CallStack (from HasCallStack):
     error, called at app/Main.hs:36:7 in main:Main
   Invalid JSONPath: $['.']
-   Error: serachBegingingWithSlice: string
+   Error: searchBeginningWithSlice: string
   ```
 
 - [ ] `$['$']`
@@ -119,11 +119,11 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  json-path-comparison: serachBegingingWithSlice: string
+  json-path-comparison: searchBeginningWithSlice: string
   CallStack (from HasCallStack):
     error, called at app/Main.hs:36:7 in main:Main
   Invalid JSONPath: $['$']
-   Error: serachBegingingWithSlice: string
+   Error: searchBeginningWithSlice: string
   ```
 
 - [ ] `$['*']`
@@ -137,11 +137,11 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  json-path-comparison: serachBegingingWithSlice: string
+  json-path-comparison: searchBeginningWithSlice: string
   CallStack (from HasCallStack):
     error, called at app/Main.hs:36:7 in main:Main
   Invalid JSONPath: $['*']
-   Error: serachBegingingWithSlice: string
+   Error: searchBeginningWithSlice: string
   ```
 
 - [ ] `$['special:"chars']`
@@ -155,11 +155,11 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  json-path-comparison: serachBegingingWithSlice: string
+  json-path-comparison: searchBeginningWithSlice: string
   CallStack (from HasCallStack):
     error, called at app/Main.hs:36:7 in main:Main
   Invalid JSONPath: $['special:"chars']
-   Error: serachBegingingWithSlice: string
+   Error: searchBeginningWithSlice: string
   ```
 
 - [ ] `$[*].a`
@@ -203,11 +203,11 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  json-path-comparison: serachBegingingWithSlice: string
+  json-path-comparison: searchBeginningWithSlice: string
   CallStack (from HasCallStack):
     error, called at app/Main.hs:36:7 in main:Main
   Invalid JSONPath: $['one','three'].key
-   Error: serachBegingingWithSlice: string
+   Error: searchBeginningWithSlice: string
   ```
 
 - [ ] `$..*`
@@ -237,11 +237,11 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  json-path-comparison: serachBegingingWithSlice: string
+  json-path-comparison: searchBeginningWithSlice: string
   CallStack (from HasCallStack):
     error, called at app/Main.hs:36:7 in main:Main
   Invalid JSONPath: $[?(@.key=='value')]
-   Error: serachBegingingWithSlice: string
+   Error: searchBeginningWithSlice: string
   ```
 
 - [ ] `$[?(@.key>42)]`
@@ -285,11 +285,11 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  json-path-comparison: serachBegingingWithSlice: string
+  json-path-comparison: searchBeginningWithSlice: string
   CallStack (from HasCallStack):
     error, called at app/Main.hs:36:7 in main:Main
   Invalid JSONPath: $[?(@.key)]
-   Error: serachBegingingWithSlice: string
+   Error: searchBeginningWithSlice: string
   ```
 
 - [ ] `$`
@@ -303,11 +303,11 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  json-path-comparison: serachBegingingWithSlice: not enough input
+  json-path-comparison: searchBeginningWithSlice: not enough input
   CallStack (from HasCallStack):
     error, called at app/Main.hs:36:7 in main:Main
   Invalid JSONPath: $
-   Error: serachBegingingWithSlice: not enough input
+   Error: searchBeginningWithSlice: not enough input
   ```
 
 - [ ] `$`
@@ -321,11 +321,11 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  json-path-comparison: serachBegingingWithSlice: not enough input
+  json-path-comparison: searchBeginningWithSlice: not enough input
   CallStack (from HasCallStack):
     error, called at app/Main.hs:36:7 in main:Main
   Invalid JSONPath: $
-   Error: serachBegingingWithSlice: not enough input
+   Error: searchBeginningWithSlice: not enough input
   ```
 
 - [ ] `$[0]['c','d']`

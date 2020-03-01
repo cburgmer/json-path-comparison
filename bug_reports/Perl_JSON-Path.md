@@ -122,7 +122,7 @@ The following queries provide results that do not match those of other implement
   ```
   Actual output:
   ```
-  ["value", "entry"]
+  ["entry", "value"]
   ```
 
 - [ ] `$['special:"chars']`
