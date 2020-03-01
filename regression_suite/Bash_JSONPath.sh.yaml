@@ -88,6 +88,9 @@ queries:
   - id: dot_bracket_notation
     status: open
     result: {"key": "value"}
+  - id: dot_bracket_notation_on_nested_object
+    status: open
+    result: {"key": "value"}
   - id: dot_bracket_notation_with_double_quotes
     status: open
     result: {"key": "value"}
@@ -177,6 +180,9 @@ queries:
     status: error
   - id: filter_expression_with_equals_on_object_with_key_matching_query
     status: error
+  - id: filter_expression_with_equals_on_string_with_at_sign
+    status: open
+    result: {"key": "hi@example.com"}
   - id: filter_expression_with_equals_on_string_with_dot
     status: fail
     result: {"key": "some.value"}
