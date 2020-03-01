@@ -353,6 +353,20 @@ The following queries provide results that do not match those of other implement
   null
   ```
 
+- [ ] `$[?(@['key']==42)]`
+  Input:
+  ```
+  [{"key": 0}, {"key": 42}, {"key": -1}, {"key": 41}, {"key": 43}, {"key": 42.0001}, {"key": 41.9999}, {"key": 100}, {"some": "value"}]
+  ```
+  Expected output:
+  ```
+  [{"key": 42}]
+  ```
+  Error:
+  ```
+  Unexpected char, char=?, index=2
+  ```
+
 - [ ] `$[?(@.key==42)]`
   Input:
   ```

@@ -148,6 +148,8 @@ queries:
   - id: filter_expression_with_boolean_and_operator
     status: open
     result: []
+  - id: filter_expression_with_bracket_notation
+    status: error
   - id: filter_expression_with_current_object
     status: open
     result: []

@@ -9,6 +9,14 @@ import (
 )
 
 func main() {
+	defer func() {
+		e := recover()
+		if (e != nil) {
+			fmt.Fprintln(os.Stderr, e)
+			os.Exit(1)
+		}
+	}()
+
 	selector := os.Args[1]
 
 	data, err := ioutil.ReadAll(os.Stdin)

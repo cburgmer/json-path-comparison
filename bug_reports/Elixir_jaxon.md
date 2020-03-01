@@ -672,6 +672,24 @@ The following queries provide results that do not match those of other implement
   []
   ```
 
+- [ ] `$[?(@['key']==42)]`
+  Input:
+  ```
+  [{"key": 0}, {"key": 42}, {"key": -1}, {"key": 41}, {"key": 43}, {"key": 42.0001}, {"key": 41.9999}, {"key": 100}, {"some": "value"}]
+  ```
+  Expected output:
+  ```
+  [{"key": 42}]
+  ```
+  Error:
+  ```
+  ** (Jaxon.ParseError) Expected an integer at `?(@['key']`
+      lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
+      lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
+      (mix 1.10.0) lib/mix/task.ex:330: Mix.Task.run_task/3
+      (mix 1.10.0) lib/mix/cli.ex:82: Mix.CLI.run_task/2
+  ```
+
 - [ ] `$[?(@.key==42)]`
   Input:
   ```

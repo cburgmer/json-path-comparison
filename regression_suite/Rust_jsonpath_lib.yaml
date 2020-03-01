@@ -69,6 +69,9 @@ queries:
   - id: filter_expression_with_boolean_and_operator
     status: open
     result: [{"key": 43}]
+  - id: filter_expression_with_bracket_notation
+    status: fail
+    result: [null]
   - id: filter_expression_with_current_object
     status: open
     result: [["some value", null, "value"]]
