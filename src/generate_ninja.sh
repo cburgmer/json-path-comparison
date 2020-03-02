@@ -24,7 +24,7 @@ all_queries() {
 
 check_dependencies() {
     local dep
-    for dep in ninja java mvn cargo git go node python3 markdown php composer curl gcc g++ pkg-config perl wget ghc cabal erl rebar3 dotnet elixir gawk; do
+    for dep in ninja java mvn cargo git go node unzip python3 markdown php composer curl gcc g++ pkg-config perl wget ghc cabal erl rebar3 dotnet elixir gawk; do
         if ! which "$dep" > /dev/null; then
             echo >&2 "Please install $dep"
             echo >&2 "If you use homebrew you might want to use ./src/Brewfile"

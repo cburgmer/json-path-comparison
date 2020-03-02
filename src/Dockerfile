@@ -13,7 +13,7 @@ RUN apk --no-cache add cargo
 RUN apk --no-cache add php php-intl php-tokenizer composer
 
 # JavaScript
-RUN apk --no-cache add nodejs npm
+RUN apk --no-cache add nodejs npm unzip
 
 # Java + Clojure + Kotlin
 RUN apk --no-cache add openjdk11 maven
