@@ -17,7 +17,7 @@ read(Acc) ->
 
 % https://stackoverflow.com/questions/44629823/how-to-apply-timeout-on-method-in-erlang
 execute(Selector, Doc) ->
-    TimeOut = 20000,
+    TimeOut = 10000,
     Self = self(),
     _Pid = spawn(fun()->
                          try
