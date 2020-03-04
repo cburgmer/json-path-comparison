@@ -274,20 +274,6 @@ The following queries provide results that do not match those of other implement
   ArgumentCountError
   ```
 
-- [ ] `$[?(@.key)]`
-  Input:
-  ```
-  [{"some": "some value"}, {"key": "value"}]
-  ```
-  Expected output:
-  ```
-  [{"key": "value"}]
-  ```
-  Error:
-  ```
-  ArgumentCountError
-  ```
-
 - [ ] `$`
   Input:
   ```

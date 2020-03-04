@@ -353,20 +353,6 @@ The following queries provide results that do not match those of other implement
   Unable to compile selector `$[?(@.key<42)]': Invalid array index definition “?(@.key<42)]”
   ```
 
-- [ ] `$[?(@.key)]`
-  Input:
-  ```
-  [{"some": "some value"}, {"key": "value"}]
-  ```
-  Expected output:
-  ```
-  [{"key": "value"}]
-  ```
-  Error:
-  ```
-  Unable to compile selector `$[?(@.key)]': Invalid array index definition “?(@.key)]”
-  ```
-
 - [ ] `$[0]['c','d']`
   Input:
   ```

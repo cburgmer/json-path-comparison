@@ -451,20 +451,6 @@ The following queries provide results that do not match those of other implement
   Unexpected char, char=?, index=2
   ```
 
-- [ ] `$[?(@.key)]`
-  Input:
-  ```
-  [{"some": "some value"}, {"key": "value"}]
-  ```
-  Expected output:
-  ```
-  [{"key": "value"}]
-  ```
-  Error:
-  ```
-  Unexpected char, char=?, index=2
-  ```
-
 - [ ] `$`
   Input:
   ```

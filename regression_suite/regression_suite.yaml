@@ -434,14 +434,10 @@ queries:
     document: [{"a": [{"price": 1}, {"price": 3}]}, {"a": [{"price": 11}]}, {"a": [{"price": 8}, {"price": 12}, {"price": 3}]}, {"a": []}]
   - id: filter_expression_with_value
     selector: $[?(@.key)]
-    document: [{"some": "some value"}, {"key": "value"}]
-    consensus: [{"key": "value"}]
+    document: [{"some": "some value"}, {"key": true}, {"key": false}, {"key": null}, {"key": "value"}, {"key": ""}, {"key": 0}, {"key": 1}, {"key": -1}, {"key": {}}, {"key": []}]
   - id: filter_expression_with_value_after_recursive_descent
     selector: $..[?(@.id)]
     document: {"id": 2, "more": [{"id": 2}, {"more": {"id": 2}}, {"id": {"id": 2}}, [{"id": 2}]]}
-  - id: filter_expression_with_value_on_null_value
-    selector: $[?(@.key)]
-    document: [{"some": "some value"}, {"key": null}, {"key": "value"}]
   - id: filter_expression_without_value
     selector: $[?(!@.key)]
     document: [{"some": "some value"}, {"key": null}, {"key": "value"}]

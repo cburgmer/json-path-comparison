@@ -708,22 +708,6 @@ The following queries provide results that do not match those of other implement
   
   ```
 
-- [ ] `$[?(@.key)]`
-  Input:
-  ```
-  [{"some": "some value"}, {"key": "value"}]
-  ```
-  Expected output:
-  ```
-  [{"key": "value"}]
-  ```
-  Error:
-  ```
-  Expecting value: line 3 column 1 (char 2)
-  
-  
-  ```
-
 - [ ] `$`
   Input:
   ```

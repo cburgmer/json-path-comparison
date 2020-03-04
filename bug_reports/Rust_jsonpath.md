@@ -591,20 +591,6 @@ The following queries provide results that do not match those of other implement
   parsing error
   ```
 
-- [ ] `$[?(@.key)]`
-  Input:
-  ```
-  [{"some": "some value"}, {"key": "value"}]
-  ```
-  Expected output:
-  ```
-  [{"key": "value"}]
-  ```
-  Error:
-  ```
-  parsing error
-  ```
-
 - [ ] `$[0]['c','d']`
   Input:
   ```

@@ -144,14 +144,11 @@ queries:
   - id: filter_expression_with_subfilter
     status: error
   - id: filter_expression_with_value
-    status: fail
-    result: []
+    status: open
+    result: [{"key": true}, {"key": 1}, {"key": -1}]
   - id: filter_expression_with_value_after_recursive_descent
     status: open
     result: [{"id": 2}, {"id": 2}, {"id": 2}, {"id": 2}]
-  - id: filter_expression_with_value_on_null_value
-    status: open
-    result: []
   - id: filter_expression_without_value
     status: error
   - id: recursive_descent

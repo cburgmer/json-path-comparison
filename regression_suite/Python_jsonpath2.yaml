@@ -147,14 +147,11 @@ queries:
     status: open
     result: []
   - id: filter_expression_with_value
-    status: fail
+    status: open
     result: []
   - id: filter_expression_with_value_after_recursive_descent
     status: open
     result: [{"id": 2, "more": [{"id": 2}, {"more": {"id": 2}}, {"id": {"id": 2}}, [{"id": 2}]]}, {"id": 2}, {"id": 2}, {"id": {"id": 2}}, {"id": 2}, {"id": 2}]
-  - id: filter_expression_with_value_on_null_value
-    status: open
-    result: []
   - id: filter_expression_without_value
     status: error
   - id: recursive_descent

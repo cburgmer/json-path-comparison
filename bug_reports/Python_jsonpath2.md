@@ -256,20 +256,6 @@ The following queries provide results that do not match those of other implement
   []
   ```
 
-- [ ] `$[?(@.key)]`
-  Input:
-  ```
-  [{"some": "some value"}, {"key": "value"}]
-  ```
-  Expected output:
-  ```
-  [{"key": "value"}]
-  ```
-  Actual output:
-  ```
-  []
-  ```
-
 - [ ] `$[0]['c','d']`
   Input:
   ```
