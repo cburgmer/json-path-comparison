@@ -159,6 +159,20 @@ The following queries provide results that do not match those of other implement
   []
   ```
 
+- [ ] `$[?(@.id==42)].name`
+  Input:
+  ```
+  [{"id": 42, "name": "forty-two"}, {"id": 1, "name": "one"}]
+  ```
+  Expected output:
+  ```
+  ["forty-two"]
+  ```
+  Error:
+  ```
+  non-safe evaluation, died at main.pl line 11.
+  ```
+
 - [ ] `$['one','three'].key`
   Input:
   ```

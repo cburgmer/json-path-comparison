@@ -122,6 +122,9 @@ queries:
   - id: dot_notation_after_bracket_notation_with_wildcard_on_some_matching
     status: fail
     result: {"a": 1}
+  - id: dot_notation_after_filter_expression
+    status: fail
+    result: {"name": "forty-two"}
   - id: dot_notation_after_recursive_descent
     status: fail
     result: {"key": "top", "object": {"array": [{"key": "something"}, {"key": {"key": "russian dolls"}}], "key": "value"}}

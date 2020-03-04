@@ -119,6 +119,9 @@ queries:
     status: error
   - id: dot_notation_after_bracket_notation_with_wildcard_on_some_matching
     status: error
+  - id: dot_notation_after_filter_expression
+    status: fail
+    result: []
   - id: dot_notation_after_recursive_descent
     status: error
   - id: dot_notation_after_recursive_descent_after_dot_notation

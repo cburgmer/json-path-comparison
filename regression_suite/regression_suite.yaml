@@ -262,6 +262,10 @@ queries:
     selector: $[*].a
     document: [{"a": 1}, {"b": 1}]
     consensus: [1]
+  - id: dot_notation_after_filter_expression
+    selector: $[?(@.id==42)].name
+    document: [{"id": 42, "name": "forty-two"}, {"id": 1, "name": "one"}]
+    consensus: ["forty-two"]
   - id: dot_notation_after_recursive_descent
     selector: $..key
     document: {"object": {"key": "value", "array": [{"key": "something"}, {"key": {"key": "russian dolls"}}]}, "key": "top"}

@@ -82,6 +82,8 @@ queries:
   - id: dot_bracket_notation_without_quotes
     status: open
     result: ["value"]
+  - id: dot_notation_after_filter_expression
+    status: error
   - id: dot_notation_with_double_quotes
     status: open
     result: ["value"]

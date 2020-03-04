@@ -465,6 +465,20 @@ The following queries provide results that do not match those of other implement
   parsing error
   ```
 
+- [ ] `$[?(@.id==42)].name`
+  Input:
+  ```
+  [{"id": 42, "name": "forty-two"}, {"id": 1, "name": "one"}]
+  ```
+  Expected output:
+  ```
+  ["forty-two"]
+  ```
+  Actual output:
+  ```
+  []
+  ```
+
 - [ ] `$..key`
   Input:
   ```

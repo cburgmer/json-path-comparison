@@ -241,6 +241,20 @@ The following queries provide results that do not match those of other implement
   Unexpected char, char=*, index=2
   ```
 
+- [ ] `$[?(@.id==42)].name`
+  Input:
+  ```
+  [{"id": 42, "name": "forty-two"}, {"id": 1, "name": "one"}]
+  ```
+  Expected output:
+  ```
+  ["forty-two"]
+  ```
+  Error:
+  ```
+  Unexpected char, char=?, index=2
+  ```
+
 - [ ] `$['one','three'].key`
   Input:
   ```

@@ -138,6 +138,21 @@ The following queries provide results that do not match those of other implement
   ValueError("line 1:2 token recognition error at: '''")
   ```
 
+- [ ] `$[?(@.id==42)].name`
+  Input:
+  ```
+  [{"id": 42, "name": "forty-two"}, {"id": 1, "name": "one"}]
+  ```
+  Expected output:
+  ```
+  ["forty-two"]
+  ```
+  Error:
+  ```
+  line 1:9 extraneous input '=' expecting {'@', '$', 'true', 'false', 'null', '{', '[', STRING, NUMBER}
+  ValueError("line 1:9 extraneous input '=' expecting {'@', '$', 'true', 'false', 'null', '{', '[', STRING, NUMBER}")
+  ```
+
 - [ ] `$['one','three'].key`
   Input:
   ```

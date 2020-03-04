@@ -129,6 +129,20 @@ The following queries provide results that do not match those of other implement
   [{"array": [0, 1], "int": 42, "object": {"key": "value"}, "some": "string"}]
   ```
 
+- [ ] `$[?(@.id==42)].name`
+  Input:
+  ```
+  [{"id": 42, "name": "forty-two"}, {"id": 1, "name": "one"}]
+  ```
+  Expected output:
+  ```
+  ["forty-two"]
+  ```
+  Error:
+  ```
+  JsonPathLexerError('Error on line 1, col 2: Unexpected character: ? ')
+  ```
+
 - [ ] `$.2`
   Input:
   ```
