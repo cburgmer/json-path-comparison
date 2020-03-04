@@ -1,6 +1,8 @@
 <?php
 include __DIR__ . '/vendor/autoload.php';
 
+error_reporting(E_ERROR | E_PARSE);
+
 use JsonPath\JsonObject;
 use JsonPath\InvalidJsonPathException;
 

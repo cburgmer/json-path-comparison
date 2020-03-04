@@ -105,6 +105,8 @@ queries:
     result: [{"@key": 42}]
   - id: filter_expression_with_current_object
     status: error
+  - id: filter_expression_with_empty_expression
+    status: error
   - id: filter_expression_with_equals_false
     status: open
     result: [{"key": false}]
