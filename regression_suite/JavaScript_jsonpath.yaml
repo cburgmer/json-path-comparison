@@ -145,7 +145,7 @@ queries:
     result: [{"id": 2}, {"id": {"id": 2}}, {"id": 2}, {"id": 2}, {"id": 2}]
   - id: filter_expression_without_value
     status: open
-    result: [{"some": "some value"}, {"key": null}]
+    result: [{"some": "some value"}, {"key": false}, {"key": null}, {"key": ""}, {"key": 0}]
   - id: recursive_descent
     status: error
   - id: root_on_scalar
