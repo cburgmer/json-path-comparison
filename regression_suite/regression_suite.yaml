@@ -21,6 +21,10 @@ queries:
     selector: $[7:10]
     document: ["first", "second", "third"]
     consensus: []
+  - id: array_slice_on_object
+    selector: $[1:3]
+    document: {":": 42, "more": "string", "a": 1, "b": 2, "c": 3}
+    consensus: []
   - id: array_slice_on_partially_overlapping_array
     selector: $[1:10]
     document: ["first", "second", "third"]

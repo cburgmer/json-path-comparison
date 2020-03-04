@@ -6,6 +6,8 @@
 
 implementation: Java_com.jayway.jsonpath
 queries:
+  - id: array_slice_on_object
+    status: error
   - id: array_slice_with_negative_step
     status: open
     result: []

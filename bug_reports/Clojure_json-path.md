@@ -45,6 +45,20 @@ The following queries provide results that do not match those of other implement
   java.lang.IndexOutOfBoundsException nil
   ```
 
+- [ ] `$[1:3]`
+  Input:
+  ```
+  {":": 42, "more": "string", "a": 1, "b": 2, "c": 3}
+  ```
+  Expected output:
+  ```
+  []
+  ```
+  Error:
+  ```
+  java.lang.Exception object must be an array.
+  ```
+
 - [ ] `$[1:10]`
   Input:
   ```

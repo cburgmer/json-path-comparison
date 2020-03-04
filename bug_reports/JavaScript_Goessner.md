@@ -17,6 +17,20 @@ The following queries provide results that do not match those of other implement
   jsonpath returned false, this might indicate an error
   ```
 
+- [ ] `$[1:3]`
+  Input:
+  ```
+  {":": 42, "more": "string", "a": 1, "b": 2, "c": 3}
+  ```
+  Expected output:
+  ```
+  []
+  ```
+  Error:
+  ```
+  jsonpath returned false, this might indicate an error
+  ```
+
 - [ ] `$[2:1]`
   Input:
   ```

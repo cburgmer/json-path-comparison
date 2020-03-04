@@ -51,6 +51,22 @@ The following queries provide results that do not match those of other implement
       lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
   ```
 
+- [ ] `$[1:3]`
+  Input:
+  ```
+  {":": 42, "more": "string", "a": 1, "b": 2, "c": 3}
+  ```
+  Expected output:
+  ```
+  []
+  ```
+  Error:
+  ```
+  ** (Jaxon.ParseError) Expected an integer at `1:3]`
+      lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
+      lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
+  ```
+
 - [ ] `$[1:10]`
   Input:
   ```

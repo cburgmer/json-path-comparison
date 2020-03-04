@@ -8,6 +8,8 @@ implementation: JavaScript_Goessner
 queries:
   - id: array_slice_on_non_overlapping_array
     status: error
+  - id: array_slice_on_object
+    status: error
   - id: array_slice_with_negative_step
     status: error
   - id: array_slice_with_negative_step_only

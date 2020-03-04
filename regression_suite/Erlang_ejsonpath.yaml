@@ -6,6 +6,8 @@
 
 implementation: Erlang_ejsonpath
 queries:
+  - id: array_slice_on_object
+    status: error
   - id: array_slice_with_negative_step
     status: error
   - id: array_slice_with_negative_step_only
