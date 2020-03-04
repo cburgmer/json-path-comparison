@@ -51,6 +51,26 @@ The following queries provide results that do not match those of other implement
   ["first", "second", "third", "first", "second", "third"]
   ```
 
+- [ ] `$[':']`
+  Input:
+  ```
+  {":": "value", "another": "entry"}
+  ```
+  Expected output:
+  ```
+  ["value"]
+  ```
+  Error:
+  ```
+  Assertion (":" is not an operator) failed!
+   at build/lib/perl5/Carp/Assert.pm line 282, <STDIN> line 4.
+  	Carp::Assert::assert(...) called at build/lib/perl5/JSON/Path/Evaluator.pm line 217
+  	JSON::Path::Evaluator::_evaluate(...) called at build/lib/perl5/JSON/Path/Evaluator.pm line 122
+  	JSON::Path::Evaluator::evaluate(...) called at build/lib/perl5/JSON/Path/Evaluator.pm line 97
+  	JSON::Path::Evaluator::evaluate_jsonpath(...) called at build/lib/perl5/JSON/Path.pm line 107
+  	JSON::Path::values(...) called at main.pl line 11
+  ```
+
 - [ ] `$['@']`
   Input:
   ```

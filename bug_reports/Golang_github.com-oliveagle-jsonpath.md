@@ -241,6 +241,20 @@ The following queries provide results that do not match those of other implement
   strconv.Atoi: parsing "'two.some'": invalid syntax
   ```
 
+- [ ] `$[':']`
+  Input:
+  ```
+  {":": "value", "another": "entry"}
+  ```
+  Expected output:
+  ```
+  "value"
+  ```
+  Error:
+  ```
+  strconv.Atoi: parsing "'": invalid syntax
+  ```
+
 - [ ] `$['@']`
   Input:
   ```
