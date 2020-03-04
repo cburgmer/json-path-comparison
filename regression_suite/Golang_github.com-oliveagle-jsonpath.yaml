@@ -221,6 +221,9 @@ queries:
   - id: filter_expression_with_less_than_or_equal
     status: open
     result: []
+  - id: filter_expression_with_negation_and_equals
+    status: open
+    result: []
   - id: filter_expression_with_regular_expression
     status: open
     result: []
