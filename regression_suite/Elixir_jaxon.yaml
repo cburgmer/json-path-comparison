@@ -167,6 +167,10 @@ queries:
     status: error
   - id: filter_expression_with_bracket_notation_and_current_object_literal
     status: error
+  - id: filter_expression_with_bracket_notation_with_number
+    status: error
+  - id: filter_expression_with_bracket_notation_with_number_on_object
+    status: error
   - id: filter_expression_with_current_object
     status: error
   - id: filter_expression_with_empty_expression

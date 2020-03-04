@@ -274,6 +274,24 @@ The following queries provide results that do not match those of other implement
     error, called at app/Main.hs:18:22 in main:Main
   ```
 
+- [ ] `$[?(@[1]=='b')]`
+  Input:
+  ```
+  [["a", "b"], ["x", "y"]]
+  ```
+  Expected output:
+  ```
+  [["a", "b"]]
+  ```
+  Error:
+  ```
+  json-path-comparison: searchBeginningWithSlice: string
+  CallStack (from HasCallStack):
+    error, called at app/Main.hs:36:7 in main:Main
+  Invalid JSONPath: $[?(@[1]=='b')]
+   Error: searchBeginningWithSlice: string
+  ```
+
 - [ ] `$[?(@.key=='value')]`
   Input:
   ```

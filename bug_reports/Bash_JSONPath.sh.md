@@ -678,6 +678,22 @@ The following queries provide results that do not match those of other implement
   
   ```
 
+- [ ] `$[?(@[1]=='b')]`
+  Input:
+  ```
+  [["a", "b"], ["x", "y"]]
+  ```
+  Expected output:
+  ```
+  [["a", "b"]]
+  ```
+  Error:
+  ```
+  Expecting value: line 3 column 1 (char 2)
+  
+  
+  ```
+
 - [ ] `$[?(@.key==42)]`
   Input:
   ```

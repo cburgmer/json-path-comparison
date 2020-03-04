@@ -227,6 +227,20 @@ The following queries provide results that do not match those of other implement
   JsonPathLexerError('Error on line 1, col 2: Unexpected character: ? ')
   ```
 
+- [ ] `$[?(@[1]=='b')]`
+  Input:
+  ```
+  [["a", "b"], ["x", "y"]]
+  ```
+  Expected output:
+  ```
+  [["a", "b"]]
+  ```
+  Error:
+  ```
+  JsonPathLexerError('Error on line 1, col 2: Unexpected character: ? ')
+  ```
+
 - [ ] `$[?(@.key==42)]`
   Input:
   ```

@@ -297,6 +297,20 @@ The following queries provide results that do not match those of other implement
   Unable to compile selector `$[?(@['key']==42)]': Invalid array index definition “?(@['key']==42)]”
   ```
 
+- [ ] `$[?(@[1]=='b')]`
+  Input:
+  ```
+  [["a", "b"], ["x", "y"]]
+  ```
+  Expected output:
+  ```
+  [["a", "b"]]
+  ```
+  Error:
+  ```
+  Unable to compile selector `$[?(@[1]=='b')]': Invalid array index definition “?(@[1]=='b')]”
+  ```
+
 - [ ] `$[?(@.key==42)]`
   Input:
   ```

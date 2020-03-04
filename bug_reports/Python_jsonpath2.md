@@ -198,6 +198,21 @@ The following queries provide results that do not match those of other implement
   ValueError("line 1:6 token recognition error at: '''")
   ```
 
+- [ ] `$[?(@[1]=='b')]`
+  Input:
+  ```
+  [["a", "b"], ["x", "y"]]
+  ```
+  Expected output:
+  ```
+  [["a", "b"]]
+  ```
+  Error:
+  ```
+  line 1:10 token recognition error at: '''
+  ValueError("line 1:10 token recognition error at: '''")
+  ```
+
 - [ ] `$[?(@.key==42)]`
   Input:
   ```

@@ -218,6 +218,20 @@ The following queries provide results that do not match those of other implement
   ArgumentCountError
   ```
 
+- [ ] `$[?(@[1]=='b')]`
+  Input:
+  ```
+  [["a", "b"], ["x", "y"]]
+  ```
+  Expected output:
+  ```
+  [["a", "b"]]
+  ```
+  Error:
+  ```
+  ArgumentCountError
+  ```
+
 - [ ] `$[?(@.key==42)]`
   Input:
   ```

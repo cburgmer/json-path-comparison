@@ -493,6 +493,20 @@ The following queries provide results that do not match those of other implement
   java.lang.Exception object must be an array.
   ```
 
+- [ ] `$[?(@[1]=='b')]`
+  Input:
+  ```
+  [["a", "b"], ["x", "y"]]
+  ```
+  Expected output:
+  ```
+  [["a", "b"]]
+  ```
+  Actual output:
+  ```
+  [null, null]
+  ```
+
 - [ ] `$[?(@.key==42)]`
   Input:
   ```
