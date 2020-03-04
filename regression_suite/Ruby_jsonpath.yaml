@@ -120,6 +120,9 @@ queries:
   - id: dot_notation_with_wildcard_on_object
     status: fail
     result: [{"array": [0, 1], "int": 42, "object": {"key": "value"}, "some": "string"}]
+  - id: dot_notation_without_root
+    status: open
+    result: ["value"]
   - id: filter_expression_after_recursive_descent
     status: open
     result: [{"id": 2, "more": [{"id": 2}, {"more": {"id": 2}}, {"id": {"id": 2}}, [{"id": 2}]]}, {"id": 2}, {"id": 2}, {"id": 2}, {"id": 2}, {"id": 2}, {"id": 2}]

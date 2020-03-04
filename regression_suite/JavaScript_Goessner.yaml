@@ -102,6 +102,9 @@ queries:
     status: error
   - id: dot_notation_with_wildcard_on_empty_object
     status: error
+  - id: dot_notation_without_root
+    status: open
+    result: ["value"]
   - id: filter_expression_after_recursive_descent
     status: open
     result: [2, [{"id": 2}, {"more": {"id": 2}}, {"id": {"id": 2}}, [{"id": 2}]], {"id": 2}, 2, 2, 2, {"id": 2}, 2]

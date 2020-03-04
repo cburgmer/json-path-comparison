@@ -164,6 +164,9 @@ queries:
   - id: dot_notation_with_wildcard_after_recursive_descent_on_null_value_array
     status: fail
     result: [40, 42]
+  - id: dot_notation_without_root
+    status: open
+    result: null
   - id: filter_expression_after_recursive_descent
     status: open
     result: [2, [{"id": 2}, {"more": {"id": 2}}, {"id": {"id": 2}}, [{"id": 2}]], {"more": {"id": 2}}, [{"id": 2}], 2, 2, 2, 2]

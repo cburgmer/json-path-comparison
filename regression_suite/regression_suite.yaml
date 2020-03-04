@@ -351,6 +351,9 @@ queries:
     document: {"some": "string", "int": 42, "object": {"key": "value"}, "array": [0, 1]}
     ordered: false
     consensus: ["string", 42, [0, 1], {"key": "value"}]
+  - id: dot_notation_without_root
+    selector: key
+    document: {"key": "value"}
   - id: filter_expression_after_recursive_descent
     selector: $..[?(@.id==2)]
     document: {"id": 2, "more": [{"id": 2}, {"more": {"id": 2}}, {"id": {"id": 2}}, [{"id": 2}]]}

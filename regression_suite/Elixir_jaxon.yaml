@@ -152,6 +152,9 @@ queries:
   - id: dot_notation_with_wildcard_on_object
     status: fail
     result: []
+  - id: dot_notation_without_root
+    status: open
+    result: ["value"]
   - id: filter_expression_after_recursive_descent
     status: error
   - id: filter_expression_with_boolean_and_operator

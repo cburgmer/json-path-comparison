@@ -75,6 +75,9 @@ queries:
     status: error
   - id: dot_notation_with_wildcard_after_recursive_descent_on_scalar
     status: error
+  - id: dot_notation_without_root
+    status: open
+    result: ["value"]
   - id: filter_expression_after_recursive_descent
     status: open
     result: [{"id": 2}, {"id": 2}, {"id": 2}, {"id": 2}]

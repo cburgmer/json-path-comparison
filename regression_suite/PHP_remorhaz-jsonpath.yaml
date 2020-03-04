@@ -81,6 +81,8 @@ queries:
   - id: dot_notation_with_single_quotes_after_recursive_descent
     status: open
     result: ["russian dolls", "something", "top", "value", {"key": "russian dolls"}]
+  - id: dot_notation_without_root
+    status: error
   - id: filter_expression_after_recursive_descent
     status: open
     result: [{"id": 2, "more": [{"id": 2}, {"more": {"id": 2}}, {"id": {"id": 2}}, [{"id": 2}]]}, {"id": 2}, {"id": 2}, {"id": 2}, {"id": 2}, {"id": 2}, {"id": 2}]
