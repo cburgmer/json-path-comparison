@@ -50,6 +50,8 @@ queries:
     status: error
   - id: bracket_notation_with_double_quotes
     status: error
+  - id: bracket_notation_with_empty_string
+    status: error
   - id: bracket_notation_with_number_after_recursive_descent
     status: error
   - id: bracket_notation_with_number_on_object

@@ -22,6 +22,9 @@ queries:
     result: ["first", "second", "third"]
   - id: bracket_notation_with_double_quotes
     status: error
+  - id: bracket_notation_with_empty_string
+    status: open
+    result: [{"": 42}]
   - id: bracket_notation_with_number_-1
     status: error
   - id: bracket_notation_with_number_after_recursive_descent

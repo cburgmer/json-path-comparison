@@ -107,6 +107,9 @@ queries:
   - id: bracket_notation_with_double_quotes
     selector: $["key"]
     document: {"key": "value"}
+  - id: bracket_notation_with_empty_string
+    selector: $['']
+    document: {"": 42}
   - id: bracket_notation_with_number
     selector: $[2]
     document: ["first", "second", "third", "forth", "fifth"]

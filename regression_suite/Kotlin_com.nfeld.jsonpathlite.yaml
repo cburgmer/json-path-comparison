@@ -33,6 +33,8 @@ queries:
     result: ["first", "second"]
   - id: bracket_notation_with_double_quotes
     status: error
+  - id: bracket_notation_with_empty_string
+    status: error
   - id: bracket_notation_with_number_after_recursive_descent
     status: open
     result: ["first", "first nested", {"nested": ["deepest", "second"]}, "deepest", "more"]
