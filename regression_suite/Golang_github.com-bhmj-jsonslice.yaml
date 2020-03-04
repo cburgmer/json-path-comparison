@@ -96,6 +96,9 @@ queries:
     result: [[42]]
   - id: dot_notation_without_root
     status: error
+  - id: filter_expression_after_dot_notation_with_wildcard_after_recursive_descent
+    status: open
+    result: [{"more": {"id": 5, "name": "next to last"}, "one": [{"id": 1, "name": "first"}, {"id": 2, "name": "next"}, {"id": 3, "name": "another"}, {"id": 4, "name": "more"}]}, [{"id": 1, "name": "first"}, {"id": 2, "name": "next"}, {"id": 3, "name": "another"}, {"id": 4, "name": "more"}], "first", 1, "next", 2, "another", 3, "more", 4, {"id": 5, "name": "next to last"}, "next to last", 5, "last", 6]
   - id: filter_expression_after_recursive_descent
     status: open
     result: []

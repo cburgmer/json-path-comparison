@@ -105,6 +105,9 @@ queries:
   - id: dot_notation_without_root
     status: open
     result: ["value"]
+  - id: filter_expression_after_dot_notation_with_wildcard_after_recursive_descent
+    status: open
+    result: ["last", 6, {"id": 3, "name": "another"}, {"id": 4, "name": "more"}, "next to last", 5, "another", 3, "more", 4]
   - id: filter_expression_after_recursive_descent
     status: open
     result: [2, [{"id": 2}, {"more": {"id": 2}}, {"id": {"id": 2}}, [{"id": 2}]], {"id": 2}, 2, 2, 2, {"id": 2}, 2]
