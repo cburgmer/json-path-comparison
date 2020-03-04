@@ -371,6 +371,9 @@ queries:
   - id: filter_expression_with_equals_number_value_on_string_value
     selector: $[?(@.id==2)]
     document: [{"id": "2"}]
+  - id: filter_expression_with_equals_on_array_of_numbers
+    selector: $[?(@==42)]
+    document: [0, 42, -1, 41, 43, 42.0001, 41.9999, null, 100]
   - id: filter_expression_with_equals_on_object
     selector: $[?(@.key==42)]
     document: {"a": {"key": 0}, "b": {"key": 42}, "c": {"key": -1}, "d": {"key": 41}, "e": {"key": 43}, "f": {"key": 42.0001}, "g": {"key": 41.9999}, "h": {"key": 100}, "i": {"some": "value"}}
@@ -450,8 +453,8 @@ queries:
     selector: $[(@.length-1)]
     document: ["first", "second", "third", "forth", "fifth"]
   - id: union_with_filter
-    selector: $[?(@<3),?(@>6)]
-    document: [1, 8, 3, 10, 7, 2, 6, 4]
+    selector: $[?(@.key<3),?(@.key>6)]
+    document: [{"key": 1}, {"key": 8}, {"key": 3}, {"key": 10}, {"key": 7}, {"key": 2}, {"key": 6}, {"key": 4}]
   - id: union_with_keys
     selector: $['key','another']
     document: {"key": "value", "another": "entry"}
