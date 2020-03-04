@@ -12,6 +12,9 @@ queries:
     status: error
   - id: array_slice_with_open_start_and_end_and_step_empty
     status: error
+  - id: array_slice_with_open_start_and_end_on_object
+    status: open
+    result: [{":": 42, "more": "string"}]
   - id: array_slice_with_step
     status: error
   - id: array_slice_with_step_0

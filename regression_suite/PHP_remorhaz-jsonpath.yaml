@@ -12,6 +12,9 @@ queries:
   - id: array_slice_with_negative_step_only
     status: open
     result: ["first", "third", "fifth"]
+  - id: array_slice_with_open_start_and_end_on_object
+    status: open
+    result: []
   - id: array_slice_with_step_0
     status: open
     result: []

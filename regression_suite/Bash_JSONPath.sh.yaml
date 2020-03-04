@@ -13,6 +13,9 @@ queries:
   - id: array_slice_with_negative_step_only
     status: open
     result: ["first", "second", "third", "forth", "fifth"]
+  - id: array_slice_with_open_start_and_end_on_object
+    status: open
+    result: {":": 42, "more": "string"}
   - id: array_slice_with_range_of_-1
     status: error
   - id: array_slice_with_range_of_0

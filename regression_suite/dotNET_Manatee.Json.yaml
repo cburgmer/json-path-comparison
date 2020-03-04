@@ -12,6 +12,9 @@ queries:
   - id: array_slice_with_negative_step_only
     status: open
     result: []
+  - id: array_slice_with_open_start_and_end_on_object
+    status: open
+    result: [42, "string"]
   - id: array_slice_with_range_of_-1
     status: error
   - id: array_slice_with_start_large_negative_number_and_open_end_on_short_array

@@ -33,6 +33,8 @@ queries:
     status: error
   - id: array_slice_with_open_start_and_end_and_step_empty
     status: error
+  - id: array_slice_with_open_start_and_end_on_object
+    status: error
   - id: array_slice_with_range_of_-1
     status: fail
     result: "third"

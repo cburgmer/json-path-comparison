@@ -47,6 +47,9 @@ queries:
     selector: $[::]
     document: ["first", "second"]
     consensus: ["first", "second"]
+  - id: array_slice_with_open_start_and_end_on_object
+    selector: $[:]
+    document: {":": 42, "more": "string"}
   - id: array_slice_with_range_of_-1
     selector: $[2:1]
     document: ["first", "second", "third", "forth"]
