@@ -106,6 +106,9 @@ queries:
     document: {"key": "value"}
     consensus: ["value"]
     scalar-consensus: "value"
+  - id: bracket_notation_on_object_without_key
+    selector: $['missing']
+    document: {"key": "value"}
   - id: bracket_notation_with_dot
     selector: $['two.some']
     document: {"one": {"key": "value"}, "two": {"some": "more", "key": "other value"}, "two.some": "42"}
@@ -468,6 +471,9 @@ queries:
   - id: union_with_keys_after_dot_notation_with_wildcard
     selector: $.*['c','d']
     document: [{"c": "cc1", "d": "dd1", "e": "ee1"}, {"c": "cc2", "d": "dd2", "e": "ee2"}]
+  - id: union_with_keys_on_object_without_key
+    selector: $['missing','key']
+    document: {"key": "value", "another": "entry"}
   - id: union_with_numbers
     selector: $[0,1]
     document: ["first", "second", "third"]

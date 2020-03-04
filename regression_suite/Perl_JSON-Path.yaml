@@ -24,6 +24,9 @@ queries:
     result: ["first", "second", "third", "first", "second", "third"]
   - id: array_slice_with_step_0
     status: error
+  - id: bracket_notation_on_object_without_key
+    status: open
+    result: []
   - id: bracket_notation_with_double_quotes
     status: open
     result: ["value"]
@@ -183,6 +186,9 @@ queries:
     status: fail
     result: []
   - id: union_with_keys_after_dot_notation_with_wildcard
+    status: open
+    result: []
+  - id: union_with_keys_on_object_without_key
     status: open
     result: []
   - id: union_with_slice_and_number

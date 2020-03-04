@@ -56,6 +56,8 @@ queries:
     status: error
   - id: bracket_notation
     status: error
+  - id: bracket_notation_on_object_without_key
+    status: error
   - id: bracket_notation_with_dot
     status: error
   - id: bracket_notation_with_double_quotes
@@ -219,6 +221,8 @@ queries:
     status: fail
     result: []
   - id: union_with_keys_after_dot_notation_with_wildcard
+    status: error
+  - id: union_with_keys_on_object_without_key
     status: error
   - id: union_with_numbers
     status: error

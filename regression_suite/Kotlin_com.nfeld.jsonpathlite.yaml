@@ -36,6 +36,9 @@ queries:
   - id: array_slice_with_step_only
     status: fail
     result: ["first", "second"]
+  - id: bracket_notation_on_object_without_key
+    status: open
+    result: null
   - id: bracket_notation_with_double_quotes
     status: error
   - id: bracket_notation_with_empty_string
@@ -221,6 +224,9 @@ queries:
   - id: union_with_keys_after_dot_notation_with_wildcard
     status: open
     result: null
+  - id: union_with_keys_on_object_without_key
+    status: open
+    result: {"key": "value"}
   - id: union_with_slice_and_number
     status: open
     result: [2, 3]
