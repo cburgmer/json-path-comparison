@@ -177,6 +177,9 @@ queries:
     document: {"*": "value", "another": "entry"}
     consensus: ["value"]
     scalar-consensus: "value"
+  - id: bracket_notation_with_quoted_wildcard_literal_on_object_without_key
+    selector: $['*']
+    document: {"another": "entry"}
   - id: bracket_notation_with_single_quote
     selector: $['single'quote']
     document: {"single'quote": "value"}

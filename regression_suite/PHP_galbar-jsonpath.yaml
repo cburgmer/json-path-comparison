@@ -41,6 +41,8 @@ queries:
     status: error
   - id: bracket_notation_with_number_on_string
     status: error
+  - id: bracket_notation_with_quoted_wildcard_literal_on_object_without_key
+    status: error
   - id: bracket_notation_with_single_quote
     status: open
     result: ["value"]

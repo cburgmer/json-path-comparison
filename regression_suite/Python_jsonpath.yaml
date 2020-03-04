@@ -51,6 +51,9 @@ queries:
     result: [{".": "value", "another": "entry"}, "value", "entry"]
   - id: bracket_notation_with_quoted_wildcard_literal
     status: error
+  - id: bracket_notation_with_quoted_wildcard_literal_on_object_without_key
+    status: open
+    result: ["entry"]
   - id: bracket_notation_with_single_quote
     status: open
     result: ["value"]
