@@ -369,7 +369,7 @@ queries:
     document: [{"@key": 0}, {"@key": 42}, {"key": 42}, {"@key": 43}, {"some": "value"}]
   - id: filter_expression_with_current_object
     selector: $[?(@)]
-    document: ["some value", null, "value"]
+    document: ["some value", null, "value", 0, 1, -1, "", [], {}]
   - id: filter_expression_with_equals
     selector: $[?(@.key==42)]
     document: [{"key": 0}, {"key": 42}, {"key": -1}, {"key": 41}, {"key": 43}, {"key": 42.0001}, {"key": 41.9999}, {"key": 100}, {"some": "value"}]

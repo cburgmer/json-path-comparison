@@ -91,7 +91,7 @@ queries:
     result: [null]
   - id: filter_expression_with_current_object
     status: open
-    result: [["some value", null, "value"]]
+    result: [["some value", null, "value", 0, 1, -1, "", [], {}]]
   - id: filter_expression_with_equals_null
     status: error
   - id: filter_expression_with_equals_number_value_on_string_value

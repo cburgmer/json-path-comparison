@@ -1,5 +1,11 @@
 [
     "some value",
     null,
-    "value"
+    "value",
+    0,
+    1,
+    -1,
+    "",
+    [],
+    {}
 ]
