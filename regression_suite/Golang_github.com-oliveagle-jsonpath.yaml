@@ -172,6 +172,9 @@ queries:
   - id: filter_expression_with_equals
     status: fail
     result: []
+  - id: filter_expression_with_equals_false
+    status: open
+    result: []
   - id: filter_expression_with_equals_null
     status: open
     result: []
@@ -192,6 +195,9 @@ queries:
     status: fail
     result: []
   - id: filter_expression_with_equals_string_value_on_number_value
+    status: open
+    result: []
+  - id: filter_expression_with_equals_true
     status: open
     result: []
   - id: filter_expression_with_equals_value_with_single_quotes

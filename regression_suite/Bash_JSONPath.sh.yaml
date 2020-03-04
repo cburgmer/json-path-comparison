@@ -190,6 +190,9 @@ queries:
   - id: filter_expression_with_equals
     status: fail
     result: {"key": 42}
+  - id: filter_expression_with_equals_false
+    status: open
+    result: {"key": false}
   - id: filter_expression_with_equals_null
     status: open
     result: {"key": null}
@@ -211,6 +214,9 @@ queries:
   - id: filter_expression_with_equals_string_value_on_number_value
     status: open
     result: {"id": 2}
+  - id: filter_expression_with_equals_true
+    status: open
+    result: {"key": true}
   - id: filter_expression_with_equals_value_with_single_quotes
     status: error
   - id: filter_expression_with_equals_with_root_reference

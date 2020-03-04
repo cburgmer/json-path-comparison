@@ -111,6 +111,9 @@ queries:
   - id: filter_expression_with_current_object
     status: open
     result: ["some value", null, "value", 0, 1, -1, "", [], {}]
+  - id: filter_expression_with_equals_false
+    status: open
+    result: [{"key": false}]
   - id: filter_expression_with_equals_null
     status: open
     result: [{"key": null}]
@@ -132,6 +135,9 @@ queries:
     status: error
   - id: filter_expression_with_equals_string_value_on_number_value
     status: error
+  - id: filter_expression_with_equals_true
+    status: open
+    result: [{"key": true}]
   - id: filter_expression_with_equals_with_root_reference
     status: open
     result: [{"key": 42}]
@@ -153,7 +159,7 @@ queries:
     result: [{"a": [{"price": 11}]}, {"a": [{"price": 8}, {"price": 12}, {"price": 3}]}]
   - id: filter_expression_with_value
     status: open
-    result: [{"key": true}, {"key": false}, {"key": null}, {"key": "value"}, {"key": ""}, {"key": 0}, {"key": 1}, {"key": -1}, {"key": {}}, {"key": []}]
+    result: [{"key": true}, {"key": false}, {"key": null}, {"key": "value"}, {"key": ""}, {"key": 0}, {"key": 1}, {"key": -1}, {"key": 42}, {"key": {}}, {"key": []}]
   - id: filter_expression_with_value_after_recursive_descent
     status: open
     result: [{"id": 2, "more": [{"id": 2}, {"more": {"id": 2}}, {"id": {"id": 2}}, [{"id": 2}]]}, {"id": 2}, {"id": 2}, {"id": {"id": 2}}, {"id": 2}, {"id": 2}]

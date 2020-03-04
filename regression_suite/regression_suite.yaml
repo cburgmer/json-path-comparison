@@ -374,9 +374,12 @@ queries:
     selector: $[?(@.key==42)]
     document: [{"key": 0}, {"key": 42}, {"key": -1}, {"key": 41}, {"key": 43}, {"key": 42.0001}, {"key": 41.9999}, {"key": 100}, {"some": "value"}]
     consensus: [{"key": 42}]
+  - id: filter_expression_with_equals_false
+    selector: $[?(@.key==false)]
+    document: [{"some": "some value"}, {"key": true}, {"key": false}, {"key": null}, {"key": "value"}, {"key": ""}, {"key": 0}, {"key": 1}, {"key": -1}, {"key": 42}, {"key": {}}, {"key": []}]
   - id: filter_expression_with_equals_null
     selector: $[?(@.key==null)]
-    document: [{"some": "some value"}, {"key": null}, {"key": "value"}]
+    document: [{"some": "some value"}, {"key": true}, {"key": false}, {"key": null}, {"key": "value"}, {"key": ""}, {"key": 0}, {"key": 1}, {"key": -1}, {"key": 42}, {"key": {}}, {"key": []}]
   - id: filter_expression_with_equals_number_value_on_string_value
     selector: $[?(@.id==2)]
     document: [{"id": "2"}]
@@ -399,6 +402,9 @@ queries:
   - id: filter_expression_with_equals_string_value_on_number_value
     selector: $[?(@.id=="2")]
     document: [{"id": 2}]
+  - id: filter_expression_with_equals_true
+    selector: $[?(@.key==true)]
+    document: [{"some": "some value"}, {"key": true}, {"key": false}, {"key": null}, {"key": "value"}, {"key": ""}, {"key": 0}, {"key": 1}, {"key": -1}, {"key": 42}, {"key": {}}, {"key": []}]
   - id: filter_expression_with_equals_value_with_single_quotes
     selector: $[?(@.key=='value')]
     document: [{"key": "some"}, {"key": "value"}]
@@ -434,7 +440,7 @@ queries:
     document: [{"a": [{"price": 1}, {"price": 3}]}, {"a": [{"price": 11}]}, {"a": [{"price": 8}, {"price": 12}, {"price": 3}]}, {"a": []}]
   - id: filter_expression_with_value
     selector: $[?(@.key)]
-    document: [{"some": "some value"}, {"key": true}, {"key": false}, {"key": null}, {"key": "value"}, {"key": ""}, {"key": 0}, {"key": 1}, {"key": -1}, {"key": {}}, {"key": []}]
+    document: [{"some": "some value"}, {"key": true}, {"key": false}, {"key": null}, {"key": "value"}, {"key": ""}, {"key": 0}, {"key": 1}, {"key": -1}, {"key": 42}, {"key": {}}, {"key": []}]
   - id: filter_expression_with_value_after_recursive_descent
     selector: $..[?(@.id)]
     document: {"id": 2, "more": [{"id": 2}, {"more": {"id": 2}}, {"id": {"id": 2}}, [{"id": 2}]]}
