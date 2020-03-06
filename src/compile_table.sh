@@ -41,6 +41,11 @@ give_mark() {
     echo "<a href=\"results/${query}.md#${implementation}\">?</a>"
 }
 
+has_consensus() {
+    local query="$1"
+    test -s "${consensus_dir}/${query}"
+}
+
 compile_row() {
     local query="$1"
     local query_dir="./queries/${query}"
@@ -48,10 +53,17 @@ compile_row() {
     local selector
     local query_name
     local implementation
+    local status
     selector="$(cat "${selector_file}")"
     query_name="$(pretty_query_name "$query")"
 
-    echo "<tr id=\"${query}\">"
+    if has_consensus "$query"; then
+        status="consensus"
+    else
+        status="no_consensus"
+    fi;
+
+    echo "<tr id=\"${query}\" class=\"${status}\">"
     echo "<td>"
     echo "<a href=\"#${query}\" style=\"color: lightgrey;\">#</a>"
     echo "<a href=\"results/${query}.md\">${query_name}</a>"

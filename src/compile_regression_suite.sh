@@ -26,9 +26,13 @@ needs_workaround_for_unknown_scalar_consensus() {
     test -f "./queries/${query}/SCALAR_RESULT" && test "$consensus" == "[]"
 }
 
+has_consensus() {
+    local query="$1"
+    test -s "${consensus_dir}/${query}"
+}
+
 query_entry() {
     local query="$1"
-    local matching_implementations="${consensus_dir}/${query}"
     local consensus
 
     echo "  - id: ${query}"
@@ -42,7 +46,7 @@ query_entry() {
     fi
 
 
-    if [[ -s "$matching_implementations" ]]; then
+    if has_consensus "$query"; then
         consensus="$(gold_standard "$query")"
         if ! needs_workaround_for_unknown_scalar_consensus "$query" "$consensus"; then
             echo -n "    consensus: "

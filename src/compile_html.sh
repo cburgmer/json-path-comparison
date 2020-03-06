@@ -32,6 +32,20 @@ adjust_css() {
 EOF
 }
 
+table_consensus_colouring() {
+    cat
+    cat <<EOF
+<style>
+.markdown-body tbody tr.consensus {
+  background: #e9f8fa;
+}
+.markdown-body tbody tr.no_consensus {
+  background: #fff;
+}
+</style>
+EOF
+}
+
 highlight_effect() {
     cat
     # Make sure the selector is more specific than the markdown CSS
@@ -48,7 +62,7 @@ EOF
 }
 
 main() {
-    markdown_into_beautiful_html < "$file" | resolve_links | highlight_effect | adjust_css
+    markdown_into_beautiful_html < "$file" | resolve_links | adjust_css | table_consensus_colouring | highlight_effect
 }
 
 main
