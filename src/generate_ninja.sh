@@ -4,7 +4,6 @@ set -euo pipefail
 readonly test_compilation_dir="build/test_compilation"
 readonly results_dir="build/results"
 readonly consensus_dir="build/consensus"
-readonly consensus2_dir="build/consensus2"
 readonly relative_majority_dir="build/relative_majority"
 readonly markdown_dir="build/markdown"
 readonly bug_reports_dir="bug_reports"
@@ -147,31 +146,13 @@ rule build_consensus
 EOF
     echo
     while IFS= read -r query; do
-        echo "build ${consensus_dir}/${query}: build_consensus ${results_dir}/${query} | src/build_consensus.sh"
+        echo "build ${consensus_dir}/${query}: build_consensus ${results_dir}/${query} ${relative_majority_dir}/${query} | src/build_consensus.sh"
     done <<< "$(all_queries)"
     echo
     # Aggregate consensus build
     echo -n "build ${consensus_dir}: phony"
     while IFS= read -r query; do
         echo -n " ${consensus_dir}/${query}"
-    done <<< "$(all_queries)"
-    echo
-    echo
-
-
-    cat <<EOF
-rule build_consensus2
-  command = ./src/build_consensus2.sh \$in > \$out
-EOF
-    echo
-    while IFS= read -r query; do
-        echo "build ${consensus2_dir}/${query}: build_consensus2 ${results_dir}/${query} ${relative_majority_dir}/${query} | src/build_consensus2.sh"
-    done <<< "$(all_queries)"
-    echo
-    # Aggregate consensus build
-    echo -n "build ${consensus2_dir}: phony"
-    while IFS= read -r query; do
-        echo -n " ${consensus2_dir}/${query}"
     done <<< "$(all_queries)"
     echo
     echo
@@ -186,7 +167,7 @@ rule compile_bug_reports
 EOF
     echo
     while IFS= read -r implementation; do
-        echo "build ${bug_reports_dir}/${implementation}.md: compile_bug_reports ${results_dir} ${relative_majority_dir} ${consensus2_dir} implementations/${implementation} | src/compile_bug_reports.sh"
+        echo "build ${bug_reports_dir}/${implementation}.md: compile_bug_reports ${results_dir} ${relative_majority_dir} ${consensus_dir} implementations/${implementation} | src/compile_bug_reports.sh"
     done <<< "$(all_implementations)"
     echo
 }
@@ -199,7 +180,7 @@ rule compile_table
   command = ./src/compile_table.sh \$in > \$out
 EOF
     echo
-    echo "build ${markdown_dir}/index.md: compile_table ${results_dir} ${relative_majority_dir} ${consensus2_dir} | src/compile_table.sh queries/ implementations/"
+    echo "build ${markdown_dir}/index.md: compile_table ${results_dir} ${relative_majority_dir} ${consensus_dir} | src/compile_table.sh queries/ implementations/"
     echo
 
     cat <<EOF
@@ -208,7 +189,7 @@ rule results_report
 EOF
     echo
     while IFS= read -r query; do
-        echo "build ${markdown_dir}/results/${query}.md: results_report ${results_dir} ${relative_majority_dir} ${consensus2_dir} queries/${query} | src/results_report.sh"
+        echo "build ${markdown_dir}/results/${query}.md: results_report ${results_dir} ${relative_majority_dir} ${consensus_dir} queries/${query} | src/results_report.sh"
     done <<< "$(all_queries)"
     echo
 
@@ -232,7 +213,7 @@ rule compile_regression_suite
   command = ./src/compile_regression_suite.sh \$in > \$out
 EOF
 
-    echo "build ${regression_suite}/regression_suite.yaml: compile_regression_suite ${consensus2_dir} | src/compile_regression_suite.sh queries/ implementations/"
+    echo "build ${regression_suite}/regression_suite.yaml: compile_regression_suite ${consensus_dir} | src/compile_regression_suite.sh queries/ implementations/"
 
     cat <<EOF
 rule compile_implementation_report
@@ -241,7 +222,7 @@ EOF
 
     echo
     while IFS= read -r implementation; do
-        echo "build ${regression_suite}/${implementation}.yaml: compile_implementation_report ${results_dir} ${relative_majority_dir} ${consensus2_dir} implementations/${implementation} | src/compile_implementation_report.sh queries/ implementations/"
+        echo "build ${regression_suite}/${implementation}.yaml: compile_implementation_report ${results_dir} ${relative_majority_dir} ${consensus_dir} implementations/${implementation} | src/compile_implementation_report.sh queries/ implementations/"
     done <<< "$(all_implementations)"
 }
 

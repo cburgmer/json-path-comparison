@@ -2,6 +2,7 @@
 set -euo pipefail
 
 readonly query_results="$1"
+readonly relative_majority_result="$2"
 
 . src/shared.sh
 
@@ -9,35 +10,22 @@ all_implementations() {
     find ./implementations -name run.sh -maxdepth 2 -print0 | xargs -0 -n1 dirname | xargs -n1 basename
 }
 
-all_ok_implementation_results() {
-    local implementation
-    while IFS= read -r implementation; do
-        if is_query_result_ok "${query_results}/${implementation}"; then
-            echo "${query_results}/${implementation}"
-        fi
-    done <<< "$(all_implementations)"
+gold_standard() {
+    local first_matching_implementation
+    first_matching_implementation="$(head -1 < "$relative_majority_result")"
+
+    query_result_payload "${query_results}/${first_matching_implementation}"
 }
 
 consensus() {
     local min_consensus="$1"
+    local majority_size
 
-    local tmp_consensus_results="/tmp/build_consensus.$$"
-    # with a canonical representation we can just rely on a simple checksum
-    all_ok_implementation_results | xargs -n1 md5sum > "$tmp_consensus_results"
+    majority_size="$(wc -l < "$relative_majority_result")"
 
-    local most_frequent_match
-    most_frequent_match="$(awk '{ print $1 }' < "$tmp_consensus_results" | sort | uniq -c | sort -n | tail -1)"
-
-    local highest_agreement_count
-    local highest_agreement_checksum
-    highest_agreement_count="$(awk '{ print $1 }' <<< "$most_frequent_match")"
-
-    if [[ "$highest_agreement_count" -ge $min_consensus ]]; then
-        highest_agreement_checksum="$(awk '{ print $2 }' <<< "$most_frequent_match")"
-        grep "^${highest_agreement_checksum} " < "$tmp_consensus_results" | awk '{ print $2 }' | xargs -n1 basename
+    if [[ "$majority_size" -ge $min_consensus ]]; then
+        gold_standard
     fi
-
-    rm "$tmp_consensus_results"
 }
 
 minimal_consensus() {
