@@ -23,6 +23,8 @@ of the implementation, from a broader look patterns are visible.
 
 - Does a key bracket notation union query return an array or an object?
 
+  Compare https://github.com/s3u/JSONPath/issues/108 for a syntax addition to return the latter.
+
 - Are queries on an object ordered?
 
 - Should JSONPath support uniform script expressions across languages?
