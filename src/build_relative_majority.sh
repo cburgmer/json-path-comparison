@@ -24,10 +24,19 @@ main() {
     all_ok_implementation_results | xargs -n1 md5sum > "$tmp_relative_majority_results"
 
     local most_frequent_match
+    local highest_agreement_checksum
     most_frequent_match="$(awk '{ print $1 }' < "$tmp_relative_majority_results" | sort | uniq -c | sort -n | tail -1)"
-
+    highest_agreement_no="$(awk '{ print $1 }' <<< "$most_frequent_match")"
     highest_agreement_checksum="$(awk '{ print $2 }' <<< "$most_frequent_match")"
-    grep "^${highest_agreement_checksum} " < "$tmp_relative_majority_results" | awk '{ print $2 }' | xargs -n1 basename
+
+    local second_most_frequent_match
+    local second_highest_agreement_no
+    second_most_frequent_match="$(awk '{ print $1 }' < "$tmp_relative_majority_results" | sort | uniq -c | sort -n | tail -2 | head -1)"
+    second_highest_agreement_no="$(awk '{ print $1 }' <<< "$second_most_frequent_match")"
+
+    if [[ "$second_highest_agreement_no" -ne "$highest_agreement_no" ]]; then
+        grep "^${highest_agreement_checksum} " < "$tmp_relative_majority_results" | awk '{ print $2 }' | xargs -n1 basename
+    fi
 
     rm "$tmp_relative_majority_results"
 }
