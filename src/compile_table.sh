@@ -21,41 +21,36 @@ is_in_majority() {
     grep "^${implementation}\$" < "${relative_majority_dir}/${query}" > /dev/null
 }
 
+has_consensus() {
+    local query="$1"
+    test -s "${consensus_dir}/${query}"
+}
+
 give_mark() {
     local query="$1"
     local implementation="$2"
-    local matching_implementations="${consensus_dir}/${query}"
-
-    # Matching consensus?
-    if grep "^${implementation}\$" < "$matching_implementations" > /dev/null; then
-        echo "<a href=\"results/${query}.md#consensus\">✓</a>"
-        return
-    fi
 
     # Error?
-
     if ! is_query_result_ok "${results_dir}/${query}/${implementation}"; then
         echo "<a href=\"results/${query}.md#${implementation}\">e</a>"
         return
     fi
 
-    # So we are an outlier, but is there actually any gold standard?
-    if [[ -s "$matching_implementations" ]]; then
-        echo "<a href=\"results/${query}.md#${implementation}\">✗</a>"
-        return
-    fi
-
     if is_in_majority "$query" "$implementation"; then
-        echo "<a href=\"results/${query}.md#${implementation}\">➚</a>"
-        return
+        if has_consensus "$query"; then
+            echo "<a href=\"results/${query}.md#consensus\">✓</a>"
+        else
+            echo "<a href=\"results/${query}.md#${implementation}\">➚</a>"
+        fi
+    else
+        # So we are an outlier, but is there actually any gold standard?
+        if has_consensus "$query"; then
+            echo "<a href=\"results/${query}.md#${implementation}\">✗</a>"
+        else
+            echo "<a href=\"results/${query}.md#${implementation}\">➘</a>"
+        fi
     fi
 
-    echo "<a href=\"results/${query}.md#${implementation}\">➘</a>"
-}
-
-has_consensus() {
-    local query="$1"
-    test -s "${consensus_dir}/${query}"
 }
 
 compile_row() {

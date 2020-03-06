@@ -4,6 +4,7 @@ set -euo pipefail
 readonly test_compilation_dir="build/test_compilation"
 readonly results_dir="build/results"
 readonly consensus_dir="build/consensus"
+readonly consensus2_dir="build/consensus2"
 readonly relative_majority_dir="build/relative_majority"
 readonly markdown_dir="build/markdown"
 readonly bug_reports_dir="bug_reports"
@@ -156,6 +157,24 @@ EOF
     done <<< "$(all_queries)"
     echo
     echo
+
+
+    cat <<EOF
+rule build_consensus2
+  command = ./src/build_consensus2.sh \$in > \$out
+EOF
+    echo
+    while IFS= read -r query; do
+        echo "build ${consensus2_dir}/${query}: build_consensus2 ${results_dir}/${query} ${relative_majority_dir}/${query} | src/build_consensus2.sh"
+    done <<< "$(all_queries)"
+    echo
+    # Aggregate consensus build
+    echo -n "build ${consensus2_dir}: phony"
+    while IFS= read -r query; do
+        echo -n " ${consensus2_dir}/${query}"
+    done <<< "$(all_queries)"
+    echo
+    echo
 }
 
 bug_report_rules() {
@@ -180,7 +199,7 @@ rule compile_table
   command = ./src/compile_table.sh \$in > \$out
 EOF
     echo
-    echo "build ${markdown_dir}/index.md: compile_table ${results_dir} ${relative_majority_dir} ${consensus_dir} | src/compile_table.sh queries/ implementations/"
+    echo "build ${markdown_dir}/index.md: compile_table ${results_dir} ${relative_majority_dir} ${consensus2_dir} | src/compile_table.sh queries/ implementations/"
     echo
 
     cat <<EOF
