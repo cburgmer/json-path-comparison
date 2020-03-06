@@ -36,7 +36,10 @@ table_consensus_colouring() {
     cat
     cat <<EOF
 <style>
-.markdown-body tbody tr.consensus {
+.markdown-body tbody tr.consensus:nth-child(2n+1) {
+  background: #eff;
+}
+.markdown-body tbody tr.consensus:nth-child(2n) {
   background: #e9f8fa;
 }
 .markdown-body tbody tr.no_consensus {
