@@ -15,10 +15,10 @@ by sharing test cases, and finally give guidance on interpretation of the
 ## Where are the expected results coming from?
 
 Given there is no extensive test suite and implementations in the wild disagree
-widely, we take the rather unorthodox approach and just ask the majority.
+widely, we take the rather unorthodox approach and just look for a consensus.
 
-The majority is based on a consensus across all supported implementations. This
-is achieved by executing a query against all implementations and finally
+The consensus is based on the majority across all supported implementations.
+This is achieved by executing a query against all implementations and finally
 comparing the results. If a majority of half of all implementations (rounded up)
 plus one agree on an outcome we speak of a consensus. This guarantees difference
 of at least 2 votes even in critical cases.

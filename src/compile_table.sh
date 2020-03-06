@@ -2,7 +2,7 @@
 set -euo pipefail
 
 readonly results_dir="$1"
-readonly relative_majority_dir="$2"
+readonly majority_dir="$2"
 readonly consensus_dir="$3"
 
 . src/shared.sh
@@ -18,7 +18,7 @@ all_queries() {
 is_in_majority() {
     local query="$1"
     local implementation="$2"
-    grep "^${implementation}\$" < "${relative_majority_dir}/${query}" > /dev/null
+    grep "^${implementation}\$" < "${majority_dir}/${query}" > /dev/null
 }
 
 has_consensus() {
@@ -166,9 +166,9 @@ See the [FAQ](https://github.com/cburgmer/json-path-comparison/blob/master/FAQ.m
     echo "
 ## Explanation
 
-- ✓ The result of this implementation matches the majority of results.
-- ✗ The result does not match a majority.
-- ➚ and ➘: no clear consensus amongst the implementations (the results disagree and/or a lot of implementations error), but ➚ indicates a probable future consensus judging by relative numbers.
+- ✓ The result of this implementation matches the consensus of results.
+- ✗ The result does not match the consensus.
+- ➚ and ➘: no clear consensus amongst the implementations (the results disagree and/or a lot of implementations error), but ➚ indicates a majority (and probable future consensus).
 - e The implementation failed executing the query and probably does not support this type of query.
 - ¹ This implementation returns queries with only a single possible match as a scalar element (e.g. <code>\$[0] => 42</code>). For the sake of comparing to other implementations these results are converted and wrapped in an array here.
 - ² It is unclear whether results for this query have a defined order, and some implementations might apply different and even non-deterministic ordering. For comparison the results are sorted into a canonical order.

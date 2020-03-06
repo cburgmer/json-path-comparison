@@ -19,12 +19,12 @@ all_ok_implementation_results() {
 }
 
 main() {
-    local tmp_relative_majority_results="/tmp/build_relative_majority.$$"
+    local tmp_majority_results="/tmp/build_majority.$$"
     # with a canonical representation we can just rely on a simple checksum
-    all_ok_implementation_results | xargs -n1 md5sum > "$tmp_relative_majority_results"
+    all_ok_implementation_results | xargs -n1 md5sum > "$tmp_majority_results"
 
-    local best_two_candidates="/tmp/build_relative_majority_best_two.$$"
-    awk '{ print $1 }' < "$tmp_relative_majority_results" | sort | uniq -c | sort -n | tail -2 > "$best_two_candidates"
+    local best_two_candidates="/tmp/build_majority_best_two.$$"
+    awk '{ print $1 }' < "$tmp_majority_results" | sort | uniq -c | sort -n | tail -2 > "$best_two_candidates"
 
     local most_frequent_match
     local highest_agreement_checksum
@@ -39,10 +39,10 @@ main() {
 
 
     if [[ "$(wc -l < "$best_two_candidates")" -eq 1 ]] || [[ "$second_highest_agreement_no" -ne "$highest_agreement_no" ]]; then
-        grep "^${highest_agreement_checksum} " < "$tmp_relative_majority_results" | awk '{ print $2 }' | xargs -n1 basename
+        grep "^${highest_agreement_checksum} " < "$tmp_majority_results" | awk '{ print $2 }' | xargs -n1 basename
     fi
 
-    rm "$tmp_relative_majority_results"
+    rm "$tmp_majority_results"
     rm "$best_two_candidates"
 }
 

@@ -3,7 +3,7 @@
 set -euo pipefail
 
 readonly results_dir="$1"
-readonly relative_majority_dir="$2"
+readonly majority_dir="$2"
 readonly consensus_dir="$3"
 readonly query_dir="$4"
 readonly query="$(basename "$query_dir")"
@@ -16,7 +16,7 @@ all_implementations() {
 
 is_in_majority() {
     local implementation="$1"
-    grep "^${implementation}\$" < "${relative_majority_dir}/${query}" > /dev/null
+    grep "^${implementation}\$" < "${majority_dir}/${query}" > /dev/null
 }
 
 has_consensus() {

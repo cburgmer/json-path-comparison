@@ -2,7 +2,7 @@
 set -euo pipefail
 
 readonly query_results="$1"
-readonly relative_majority_result="$2"
+readonly majority_result="$2"
 
 . src/shared.sh
 
@@ -12,7 +12,7 @@ all_implementations() {
 
 gold_standard() {
     local first_matching_implementation
-    first_matching_implementation="$(head -1 < "$relative_majority_result")"
+    first_matching_implementation="$(head -1 < "$majority_result")"
 
     query_result_payload "${query_results}/${first_matching_implementation}"
 }
@@ -21,7 +21,7 @@ consensus() {
     local min_consensus="$1"
     local majority_size
 
-    majority_size="$(wc -l < "$relative_majority_result")"
+    majority_size="$(wc -l < "$majority_result")"
 
     if [[ "$majority_size" -ge $min_consensus ]]; then
         gold_standard
