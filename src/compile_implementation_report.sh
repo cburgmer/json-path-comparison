@@ -2,8 +2,9 @@
 set -euo pipefail
 
 readonly results_dir="$1"
-readonly consensus_dir="$2"
-readonly implementation_dir="$3"
+readonly relative_majority_dir="$2"
+readonly consensus_dir="$3"
+readonly implementation_dir="$4"
 readonly implementation="$(basename "$implementation_dir")"
 
 . src/shared.sh
@@ -22,23 +23,35 @@ unwrap_scalar_if_needed() {
     fi
 }
 
+is_implementation_in_majority_for() {
+    local query="$1"
+    grep "^${implementation}\$" < "${relative_majority_dir}/${query}" > /dev/null
+}
+
+has_consensus() {
+    local query="$1"
+    test -s "${consensus_dir}/${query}"
+}
+
 implementation_status() {
     local query="$1"
-    local matching_implementations="${consensus_dir}/${query}"
 
-    if is_query_result_ok "${results_dir}/${query}/${implementation}"; then
-        if [[ -s "$matching_implementations" ]]; then
-            if grep "^${implementation}\$" < "$matching_implementations" > /dev/null; then
-                echo "pass"
-            else
-                echo "fail"
-            fi
-        else
-            echo "open"
-        fi
-    else
+    if ! is_query_result_ok "${results_dir}/${query}/${implementation}"; then
         echo "error"
+        return
     fi
+
+    if ! has_consensus "$query"; then
+        echo "open"
+        return
+    fi
+
+    if is_implementation_in_majority_for "$query"; then
+        echo "pass"
+        return
+    fi
+
+    echo "fail"
 }
 
 query_entry() {

@@ -1,29 +1,17 @@
 #!/bin/bash
 set -euo pipefail
 
-readonly results_dir="$1"
-readonly consensus_dir="$2"
-
-. src/shared.sh
+readonly consensus_dir="$1"
 
 all_queries() {
     find ./queries -type d -maxdepth 1 -mindepth 1 -print0 | xargs -0 -n1 basename | sort
-}
-
-gold_standard() {
-    local query="$1"
-    local matching_implementations="${consensus_dir}/${query}"
-    local first_matching_implementation
-    first_matching_implementation="$(head -1 < "$matching_implementations")"
-
-    query_result_payload "${results_dir}/${query}/${first_matching_implementation}"
 }
 
 # https://github.com/cburgmer/json-path-comparison/issues/1
 needs_workaround_for_unknown_scalar_consensus() {
     local query="$1"
     local consensus="$2"
-    test -f "./queries/${query}/SCALAR_RESULT" && test "$consensus" == "[]"
+    test -f "./queries/${query}/SCALAR_RESULT" && test "$(cat "$consensus")" == "[]"
 }
 
 has_consensus() {
@@ -47,13 +35,13 @@ query_entry() {
 
 
     if has_consensus "$query"; then
-        consensus="$(gold_standard "$query")"
+        consensus="${consensus_dir}/${query}"
         if ! needs_workaround_for_unknown_scalar_consensus "$query" "$consensus"; then
             echo -n "    consensus: "
-            ./src/oneliner_json.py <<< "$consensus"
+            ./src/oneliner_json.py < "$consensus"
             if [[ -f "./queries/${query}/SCALAR_RESULT" ]]; then
                 echo -n "    scalar-consensus: "
-                ./src/unwrap_scalar.py <<< "$consensus" | ./src/oneliner_json.py
+                ./src/unwrap_scalar.py < "$consensus" | ./src/oneliner_json.py
             fi
         fi
     fi

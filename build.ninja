@@ -5163,37 +5163,37 @@ build build/consensus2: phony build/consensus2/array_slice_with_open_start_and_e
 rule compile_bug_reports
   command = ./src/compile_bug_reports.sh $in > $out
 
-build bug_reports/Bash_JSONPath.sh.md: compile_bug_reports build/results build/consensus implementations/Bash_JSONPath.sh | src/compile_bug_reports.sh
-build bug_reports/C_json-glib.md: compile_bug_reports build/results build/consensus implementations/C_json-glib | src/compile_bug_reports.sh
-build bug_reports/Clojure_json-path.md: compile_bug_reports build/results build/consensus implementations/Clojure_json-path | src/compile_bug_reports.sh
-build bug_reports/Cpp_jsoncons.md: compile_bug_reports build/results build/consensus implementations/Cpp_jsoncons | src/compile_bug_reports.sh
-build bug_reports/Elixir_jaxon.md: compile_bug_reports build/results build/consensus implementations/Elixir_jaxon | src/compile_bug_reports.sh
-build bug_reports/Erlang_ejsonpath.md: compile_bug_reports build/results build/consensus implementations/Erlang_ejsonpath | src/compile_bug_reports.sh
-build bug_reports/Golang_github.com-PaesslerAG-jsonpath.md: compile_bug_reports build/results build/consensus implementations/Golang_github.com-PaesslerAG-jsonpath | src/compile_bug_reports.sh
-build bug_reports/Golang_github.com-bhmj-jsonslice.md: compile_bug_reports build/results build/consensus implementations/Golang_github.com-bhmj-jsonslice | src/compile_bug_reports.sh
-build bug_reports/Golang_github.com-oliveagle-jsonpath.md: compile_bug_reports build/results build/consensus implementations/Golang_github.com-oliveagle-jsonpath | src/compile_bug_reports.sh
-build bug_reports/Haskell_jsonpath.md: compile_bug_reports build/results build/consensus implementations/Haskell_jsonpath | src/compile_bug_reports.sh
-build bug_reports/JavaScript_Goessner.md: compile_bug_reports build/results build/consensus implementations/JavaScript_Goessner | src/compile_bug_reports.sh
-build bug_reports/JavaScript_jsonpath.md: compile_bug_reports build/results build/consensus implementations/JavaScript_jsonpath | src/compile_bug_reports.sh
-build bug_reports/JavaScript_jsonpath-plus.md: compile_bug_reports build/results build/consensus implementations/JavaScript_jsonpath-plus | src/compile_bug_reports.sh
-build bug_reports/Java_com.github.jsurfer.md: compile_bug_reports build/results build/consensus implementations/Java_com.github.jsurfer | src/compile_bug_reports.sh
-build bug_reports/Java_com.jayway.jsonpath.md: compile_bug_reports build/results build/consensus implementations/Java_com.jayway.jsonpath | src/compile_bug_reports.sh
-build bug_reports/Kotlin_com.nfeld.jsonpathlite.md: compile_bug_reports build/results build/consensus implementations/Kotlin_com.nfeld.jsonpathlite | src/compile_bug_reports.sh
-build bug_reports/PHP_Goessner.md: compile_bug_reports build/results build/consensus implementations/PHP_Goessner | src/compile_bug_reports.sh
-build bug_reports/PHP_flow-jsonpath.md: compile_bug_reports build/results build/consensus implementations/PHP_flow-jsonpath | src/compile_bug_reports.sh
-build bug_reports/PHP_galbar-jsonpath.md: compile_bug_reports build/results build/consensus implementations/PHP_galbar-jsonpath | src/compile_bug_reports.sh
-build bug_reports/PHP_remorhaz-jsonpath.md: compile_bug_reports build/results build/consensus implementations/PHP_remorhaz-jsonpath | src/compile_bug_reports.sh
-build bug_reports/Perl_JSON-Path.md: compile_bug_reports build/results build/consensus implementations/Perl_JSON-Path | src/compile_bug_reports.sh
-build bug_reports/Python_jsonpath.md: compile_bug_reports build/results build/consensus implementations/Python_jsonpath | src/compile_bug_reports.sh
-build bug_reports/Python_jsonpath-rw.md: compile_bug_reports build/results build/consensus implementations/Python_jsonpath-rw | src/compile_bug_reports.sh
-build bug_reports/Python_jsonpath2.md: compile_bug_reports build/results build/consensus implementations/Python_jsonpath2 | src/compile_bug_reports.sh
-build bug_reports/Ruby_jsonpath.md: compile_bug_reports build/results build/consensus implementations/Ruby_jsonpath | src/compile_bug_reports.sh
-build bug_reports/Rust_jsonpath.md: compile_bug_reports build/results build/consensus implementations/Rust_jsonpath | src/compile_bug_reports.sh
-build bug_reports/Rust_jsonpath_lib.md: compile_bug_reports build/results build/consensus implementations/Rust_jsonpath_lib | src/compile_bug_reports.sh
-build bug_reports/Scala_jsonpath.md: compile_bug_reports build/results build/consensus implementations/Scala_jsonpath | src/compile_bug_reports.sh
-build bug_reports/dotNET_Json.NET.md: compile_bug_reports build/results build/consensus implementations/dotNET_Json.NET | src/compile_bug_reports.sh
-build bug_reports/dotNET_JsonPathLib.md: compile_bug_reports build/results build/consensus implementations/dotNET_JsonPathLib | src/compile_bug_reports.sh
-build bug_reports/dotNET_Manatee.Json.md: compile_bug_reports build/results build/consensus implementations/dotNET_Manatee.Json | src/compile_bug_reports.sh
+build bug_reports/Bash_JSONPath.sh.md: compile_bug_reports build/results build/relative_majority build/consensus2 implementations/Bash_JSONPath.sh | src/compile_bug_reports.sh
+build bug_reports/C_json-glib.md: compile_bug_reports build/results build/relative_majority build/consensus2 implementations/C_json-glib | src/compile_bug_reports.sh
+build bug_reports/Clojure_json-path.md: compile_bug_reports build/results build/relative_majority build/consensus2 implementations/Clojure_json-path | src/compile_bug_reports.sh
+build bug_reports/Cpp_jsoncons.md: compile_bug_reports build/results build/relative_majority build/consensus2 implementations/Cpp_jsoncons | src/compile_bug_reports.sh
+build bug_reports/Elixir_jaxon.md: compile_bug_reports build/results build/relative_majority build/consensus2 implementations/Elixir_jaxon | src/compile_bug_reports.sh
+build bug_reports/Erlang_ejsonpath.md: compile_bug_reports build/results build/relative_majority build/consensus2 implementations/Erlang_ejsonpath | src/compile_bug_reports.sh
+build bug_reports/Golang_github.com-PaesslerAG-jsonpath.md: compile_bug_reports build/results build/relative_majority build/consensus2 implementations/Golang_github.com-PaesslerAG-jsonpath | src/compile_bug_reports.sh
+build bug_reports/Golang_github.com-bhmj-jsonslice.md: compile_bug_reports build/results build/relative_majority build/consensus2 implementations/Golang_github.com-bhmj-jsonslice | src/compile_bug_reports.sh
+build bug_reports/Golang_github.com-oliveagle-jsonpath.md: compile_bug_reports build/results build/relative_majority build/consensus2 implementations/Golang_github.com-oliveagle-jsonpath | src/compile_bug_reports.sh
+build bug_reports/Haskell_jsonpath.md: compile_bug_reports build/results build/relative_majority build/consensus2 implementations/Haskell_jsonpath | src/compile_bug_reports.sh
+build bug_reports/JavaScript_Goessner.md: compile_bug_reports build/results build/relative_majority build/consensus2 implementations/JavaScript_Goessner | src/compile_bug_reports.sh
+build bug_reports/JavaScript_jsonpath.md: compile_bug_reports build/results build/relative_majority build/consensus2 implementations/JavaScript_jsonpath | src/compile_bug_reports.sh
+build bug_reports/JavaScript_jsonpath-plus.md: compile_bug_reports build/results build/relative_majority build/consensus2 implementations/JavaScript_jsonpath-plus | src/compile_bug_reports.sh
+build bug_reports/Java_com.github.jsurfer.md: compile_bug_reports build/results build/relative_majority build/consensus2 implementations/Java_com.github.jsurfer | src/compile_bug_reports.sh
+build bug_reports/Java_com.jayway.jsonpath.md: compile_bug_reports build/results build/relative_majority build/consensus2 implementations/Java_com.jayway.jsonpath | src/compile_bug_reports.sh
+build bug_reports/Kotlin_com.nfeld.jsonpathlite.md: compile_bug_reports build/results build/relative_majority build/consensus2 implementations/Kotlin_com.nfeld.jsonpathlite | src/compile_bug_reports.sh
+build bug_reports/PHP_Goessner.md: compile_bug_reports build/results build/relative_majority build/consensus2 implementations/PHP_Goessner | src/compile_bug_reports.sh
+build bug_reports/PHP_flow-jsonpath.md: compile_bug_reports build/results build/relative_majority build/consensus2 implementations/PHP_flow-jsonpath | src/compile_bug_reports.sh
+build bug_reports/PHP_galbar-jsonpath.md: compile_bug_reports build/results build/relative_majority build/consensus2 implementations/PHP_galbar-jsonpath | src/compile_bug_reports.sh
+build bug_reports/PHP_remorhaz-jsonpath.md: compile_bug_reports build/results build/relative_majority build/consensus2 implementations/PHP_remorhaz-jsonpath | src/compile_bug_reports.sh
+build bug_reports/Perl_JSON-Path.md: compile_bug_reports build/results build/relative_majority build/consensus2 implementations/Perl_JSON-Path | src/compile_bug_reports.sh
+build bug_reports/Python_jsonpath.md: compile_bug_reports build/results build/relative_majority build/consensus2 implementations/Python_jsonpath | src/compile_bug_reports.sh
+build bug_reports/Python_jsonpath-rw.md: compile_bug_reports build/results build/relative_majority build/consensus2 implementations/Python_jsonpath-rw | src/compile_bug_reports.sh
+build bug_reports/Python_jsonpath2.md: compile_bug_reports build/results build/relative_majority build/consensus2 implementations/Python_jsonpath2 | src/compile_bug_reports.sh
+build bug_reports/Ruby_jsonpath.md: compile_bug_reports build/results build/relative_majority build/consensus2 implementations/Ruby_jsonpath | src/compile_bug_reports.sh
+build bug_reports/Rust_jsonpath.md: compile_bug_reports build/results build/relative_majority build/consensus2 implementations/Rust_jsonpath | src/compile_bug_reports.sh
+build bug_reports/Rust_jsonpath_lib.md: compile_bug_reports build/results build/relative_majority build/consensus2 implementations/Rust_jsonpath_lib | src/compile_bug_reports.sh
+build bug_reports/Scala_jsonpath.md: compile_bug_reports build/results build/relative_majority build/consensus2 implementations/Scala_jsonpath | src/compile_bug_reports.sh
+build bug_reports/dotNET_Json.NET.md: compile_bug_reports build/results build/relative_majority build/consensus2 implementations/dotNET_Json.NET | src/compile_bug_reports.sh
+build bug_reports/dotNET_JsonPathLib.md: compile_bug_reports build/results build/relative_majority build/consensus2 implementations/dotNET_JsonPathLib | src/compile_bug_reports.sh
+build bug_reports/dotNET_Manatee.Json.md: compile_bug_reports build/results build/relative_majority build/consensus2 implementations/dotNET_Manatee.Json | src/compile_bug_reports.sh
 
 rule compile_table
   command = ./src/compile_table.sh $in > $out
@@ -5203,142 +5203,142 @@ build build/markdown/index.md: compile_table build/results build/relative_majori
 rule results_report
   command = ./src/results_report.sh $in > $out
 
-build build/markdown/results/array_slice_with_open_start_and_end_and_step_empty.md: results_report build/results build/consensus queries/array_slice_with_open_start_and_end_and_step_empty | src/results_report.sh
-build build/markdown/results/dot_notation.md: results_report build/results build/consensus queries/dot_notation | src/results_report.sh
-build build/markdown/results/bracket_notation_with_special_characters.md: results_report build/results build/consensus queries/bracket_notation_with_special_characters | src/results_report.sh
-build build/markdown/results/array_slice_with_step.md: results_report build/results build/consensus queries/array_slice_with_step | src/results_report.sh
-build build/markdown/results/filter_expression_with_equals_number_value_on_string_value.md: results_report build/results build/consensus queries/filter_expression_with_equals_number_value_on_string_value | src/results_report.sh
-build build/markdown/results/filter_expression_with_less_than.md: results_report build/results build/consensus queries/filter_expression_with_less_than | src/results_report.sh
-build build/markdown/results/filter_expression_with_bracket_notation_with_number.md: results_report build/results build/consensus queries/filter_expression_with_bracket_notation_with_number | src/results_report.sh
-build build/markdown/results/filter_expression_with_less_than_or_equal.md: results_report build/results build/consensus queries/filter_expression_with_less_than_or_equal | src/results_report.sh
-build build/markdown/results/filter_expression_with_equals.md: results_report build/results build/consensus queries/filter_expression_with_equals | src/results_report.sh
-build build/markdown/results/bracket_notation_with_empty_string.md: results_report build/results build/consensus queries/bracket_notation_with_empty_string | src/results_report.sh
-build build/markdown/results/bracket_notation_with_two_literals_separated_by_dot_without_quotes.md: results_report build/results build/consensus queries/bracket_notation_with_two_literals_separated_by_dot_without_quotes | src/results_report.sh
-build build/markdown/results/bracket_notation_with_two_literals_separated_by_dot.md: results_report build/results build/consensus queries/bracket_notation_with_two_literals_separated_by_dot | src/results_report.sh
-build build/markdown/results/array_slice_with_step_0.md: results_report build/results build/consensus queries/array_slice_with_step_0 | src/results_report.sh
-build build/markdown/results/array_slice_on_object.md: results_report build/results build/consensus queries/array_slice_on_object | src/results_report.sh
-build build/markdown/results/array_slice_with_range_of_0.md: results_report build/results build/consensus queries/array_slice_with_range_of_0 | src/results_report.sh
-build build/markdown/results/dot_notation_with_single_quotes.md: results_report build/results build/consensus queries/dot_notation_with_single_quotes | src/results_report.sh
-build build/markdown/results/array_slice_with_negative_step_only.md: results_report build/results build/consensus queries/array_slice_with_negative_step_only | src/results_report.sh
-build build/markdown/results/union_with_numbers.md: results_report build/results build/consensus queries/union_with_numbers | src/results_report.sh
-build build/markdown/results/filter_expression_with_equals_on_object.md: results_report build/results build/consensus queries/filter_expression_with_equals_on_object | src/results_report.sh
-build build/markdown/results/filter_expression_with_negation_and_equals.md: results_report build/results build/consensus queries/filter_expression_with_negation_and_equals | src/results_report.sh
-build build/markdown/results/array_slice_with_range_of_1.md: results_report build/results build/consensus queries/array_slice_with_range_of_1 | src/results_report.sh
-build build/markdown/results/union_with_keys_after_dot_notation_with_wildcard.md: results_report build/results build/consensus queries/union_with_keys_after_dot_notation_with_wildcard | src/results_report.sh
-build build/markdown/results/bracket_notation_with_quoted_wildcard_literal.md: results_report build/results build/consensus queries/bracket_notation_with_quoted_wildcard_literal | src/results_report.sh
-build build/markdown/results/bracket_notation_with_single_quote.md: results_report build/results build/consensus queries/bracket_notation_with_single_quote | src/results_report.sh
-build build/markdown/results/filter_expression_with_regular_expression.md: results_report build/results build/consensus queries/filter_expression_with_regular_expression | src/results_report.sh
-build build/markdown/results/filter_expression_with_equals_null.md: results_report build/results build/consensus queries/filter_expression_with_equals_null | src/results_report.sh
-build build/markdown/results/array_slice_with_step_1.md: results_report build/results build/consensus queries/array_slice_with_step_1 | src/results_report.sh
-build build/markdown/results/script_expression.md: results_report build/results build/consensus queries/script_expression | src/results_report.sh
-build build/markdown/results/bracket_notation_with_number_on_object.md: results_report build/results build/consensus queries/bracket_notation_with_number_on_object | src/results_report.sh
-build build/markdown/results/array_slice_with_step_empty.md: results_report build/results build/consensus queries/array_slice_with_step_empty | src/results_report.sh
-build build/markdown/results/dot_bracket_notation_without_quotes.md: results_report build/results build/consensus queries/dot_bracket_notation_without_quotes | src/results_report.sh
-build build/markdown/results/filter_expression_with_boolean_and_operator.md: results_report build/results build/consensus queries/filter_expression_with_boolean_and_operator | src/results_report.sh
-build build/markdown/results/dot_notation_with_wildcard_on_empty_array.md: results_report build/results build/consensus queries/dot_notation_with_wildcard_on_empty_array | src/results_report.sh
-build build/markdown/results/dot_notation_with_wildcard_after_recursive_descent_on_null_value_array.md: results_report build/results build/consensus queries/dot_notation_with_wildcard_after_recursive_descent_on_null_value_array | src/results_report.sh
-build build/markdown/results/array_slice_with_start_-1_and_open_end.md: results_report build/results build/consensus queries/array_slice_with_start_-1_and_open_end | src/results_report.sh
-build build/markdown/results/bracket_notation_with_quoted_array_slice_literal.md: results_report build/results build/consensus queries/bracket_notation_with_quoted_array_slice_literal | src/results_report.sh
-build build/markdown/results/array_slice_with_negative_step.md: results_report build/results build/consensus queries/array_slice_with_negative_step | src/results_report.sh
-build build/markdown/results/array_slice_with_step_only.md: results_report build/results build/consensus queries/array_slice_with_step_only | src/results_report.sh
-build build/markdown/results/bracket_notation_with_quoted_dot_literal.md: results_report build/results build/consensus queries/bracket_notation_with_quoted_dot_literal | src/results_report.sh
-build build/markdown/results/filter_expression_with_bracket_notation_and_current_object_literal.md: results_report build/results build/consensus queries/filter_expression_with_bracket_notation_and_current_object_literal | src/results_report.sh
-build build/markdown/results/filter_expression_with_greater_than.md: results_report build/results build/consensus queries/filter_expression_with_greater_than | src/results_report.sh
-build build/markdown/results/array_slice_with_open_end.md: results_report build/results build/consensus queries/array_slice_with_open_end | src/results_report.sh
-build build/markdown/results/filter_expression_with_value.md: results_report build/results build/consensus queries/filter_expression_with_value | src/results_report.sh
-build build/markdown/results/union_with_numbers_in_decreasing_order.md: results_report build/results build/consensus queries/union_with_numbers_in_decreasing_order | src/results_report.sh
-build build/markdown/results/filter_expression_after_recursive_descent.md: results_report build/results build/consensus queries/filter_expression_after_recursive_descent | src/results_report.sh
-build build/markdown/results/filter_expression_with_current_object.md: results_report build/results build/consensus queries/filter_expression_with_current_object | src/results_report.sh
-build build/markdown/results/bracket_notation_with_number_on_short_array.md: results_report build/results build/consensus queries/bracket_notation_with_number_on_short_array | src/results_report.sh
-build build/markdown/results/dot_notation_with_double_quotes.md: results_report build/results build/consensus queries/dot_notation_with_double_quotes | src/results_report.sh
-build build/markdown/results/array_slice_with_open_start.md: results_report build/results build/consensus queries/array_slice_with_open_start | src/results_report.sh
-build build/markdown/results/bracket_notation_with_number_on_string.md: results_report build/results build/consensus queries/bracket_notation_with_number_on_string | src/results_report.sh
-build build/markdown/results/bracket_notation_with_number_after_recursive_descent.md: results_report build/results build/consensus queries/bracket_notation_with_number_after_recursive_descent | src/results_report.sh
-build build/markdown/results/array_slice.md: results_report build/results build/consensus queries/array_slice | src/results_report.sh
-build build/markdown/results/bracket_notation_with_wildcard_after_recursive_descent.md: results_report build/results build/consensus queries/bracket_notation_with_wildcard_after_recursive_descent | src/results_report.sh
-build build/markdown/results/bracket_notation_with_dot.md: results_report build/results build/consensus queries/bracket_notation_with_dot | src/results_report.sh
-build build/markdown/results/filter_expression_with_single_equal.md: results_report build/results build/consensus queries/filter_expression_with_single_equal | src/results_report.sh
-build build/markdown/results/filter_expression_with_equals_value_with_single_quotes.md: results_report build/results build/consensus queries/filter_expression_with_equals_value_with_single_quotes | src/results_report.sh
-build build/markdown/results/filter_expression_with_equals_on_object_with_key_matching_query.md: results_report build/results build/consensus queries/filter_expression_with_equals_on_object_with_key_matching_query | src/results_report.sh
-build build/markdown/results/dot_notation_on_object_without_key.md: results_report build/results build/consensus queries/dot_notation_on_object_without_key | src/results_report.sh
-build build/markdown/results/union_with_filter.md: results_report build/results build/consensus queries/union_with_filter | src/results_report.sh
-build build/markdown/results/dot_notation_after_bracket_notation_with_wildcard_on_one_matching.md: results_report build/results build/consensus queries/dot_notation_after_bracket_notation_with_wildcard_on_one_matching | src/results_report.sh
-build build/markdown/results/dot_notation_after_bracket_notation_with_wildcard_on_some_matching.md: results_report build/results build/consensus queries/dot_notation_after_bracket_notation_with_wildcard_on_some_matching | src/results_report.sh
-build build/markdown/results/dot_notation_with_wildcard_after_dot_notation_after_dot_notation_with_wildcard.md: results_report build/results build/consensus queries/dot_notation_with_wildcard_after_dot_notation_after_dot_notation_with_wildcard | src/results_report.sh
-build build/markdown/results/union_with_slice_and_number.md: results_report build/results build/consensus queries/union_with_slice_and_number | src/results_report.sh
-build build/markdown/results/bracket_notation_with_wildcard_on_null_value_array.md: results_report build/results build/consensus queries/bracket_notation_with_wildcard_on_null_value_array | src/results_report.sh
-build build/markdown/results/dot_notation_after_bracket_notation_with_wildcard.md: results_report build/results build/consensus queries/dot_notation_after_bracket_notation_with_wildcard | src/results_report.sh
-build build/markdown/results/dot_notation_with_wildcard_after_recursive_descent.md: results_report build/results build/consensus queries/dot_notation_with_wildcard_after_recursive_descent | src/results_report.sh
-build build/markdown/results/filter_expression_with_equals_with_root_reference.md: results_report build/results build/consensus queries/filter_expression_with_equals_with_root_reference | src/results_report.sh
-build build/markdown/results/filter_expression_with_equals_on_array_of_numbers.md: results_report build/results build/consensus queries/filter_expression_with_equals_on_array_of_numbers | src/results_report.sh
-build build/markdown/results/array_slice_on_exact_match.md: results_report build/results build/consensus queries/array_slice_on_exact_match | src/results_report.sh
-build build/markdown/results/filter_expression_with_bracket_notation_with_number_on_object.md: results_report build/results build/consensus queries/filter_expression_with_bracket_notation_with_number_on_object | src/results_report.sh
-build build/markdown/results/filter_expression_with_less_than_number_on_string_value.md: results_report build/results build/consensus queries/filter_expression_with_less_than_number_on_string_value | src/results_report.sh
-build build/markdown/results/filter_expression_with_equals_true.md: results_report build/results build/consensus queries/filter_expression_with_equals_true | src/results_report.sh
-build build/markdown/results/bracket_notation_with_wildcard_on_array.md: results_report build/results build/consensus queries/bracket_notation_with_wildcard_on_array | src/results_report.sh
-build build/markdown/results/bracket_notation_with_quoted_wildcard_literal_on_object_without_key.md: results_report build/results build/consensus queries/bracket_notation_with_quoted_wildcard_literal_on_object_without_key | src/results_report.sh
-build build/markdown/results/dot_notation_without_root.md: results_report build/results build/consensus queries/dot_notation_without_root | src/results_report.sh
-build build/markdown/results/filter_expression_with_value_after_recursive_descent.md: results_report build/results build/consensus queries/filter_expression_with_value_after_recursive_descent | src/results_report.sh
-build build/markdown/results/array_slice_with_start_large_negative_number_and_open_end_on_short_array.md: results_report build/results build/consensus queries/array_slice_with_start_large_negative_number_and_open_end_on_short_array | src/results_report.sh
-build build/markdown/results/bracket_notation_with_wildcard_on_object.md: results_report build/results build/consensus queries/bracket_notation_with_wildcard_on_object | src/results_report.sh
-build build/markdown/results/filter_expression_after_dot_notation_with_wildcard_after_recursive_descent.md: results_report build/results build/consensus queries/filter_expression_after_dot_notation_with_wildcard_after_recursive_descent | src/results_report.sh
-build build/markdown/results/array_slice_with_start_-2_and_open_end.md: results_report build/results build/consensus queries/array_slice_with_start_-2_and_open_end | src/results_report.sh
-build build/markdown/results/dot_bracket_notation.md: results_report build/results build/consensus queries/dot_bracket_notation | src/results_report.sh
-build build/markdown/results/dot_notation_on_null_value.md: results_report build/results build/consensus queries/dot_notation_on_null_value | src/results_report.sh
-build build/markdown/results/array_slice_with_range_of_-1.md: results_report build/results build/consensus queries/array_slice_with_range_of_-1 | src/results_report.sh
-build build/markdown/results/dot_notation_with_wildcard_after_recursive_descent_on_scalar.md: results_report build/results build/consensus queries/dot_notation_with_wildcard_after_recursive_descent_on_scalar | src/results_report.sh
-build build/markdown/results/root_on_scalar.md: results_report build/results build/consensus queries/root_on_scalar | src/results_report.sh
-build build/markdown/results/bracket_notation_with_number.md: results_report build/results build/consensus queries/bracket_notation_with_number | src/results_report.sh
-build build/markdown/results/dot_bracket_notation_on_nested_object.md: results_report build/results build/consensus queries/dot_bracket_notation_on_nested_object | src/results_report.sh
-build build/markdown/results/dot_notation_with_number_on_object.md: results_report build/results build/consensus queries/dot_notation_with_number_on_object | src/results_report.sh
-build build/markdown/results/array_slice_with_open_start_and_end_on_object.md: results_report build/results build/consensus queries/array_slice_with_open_start_and_end_on_object | src/results_report.sh
-build build/markdown/results/union_with_keys_on_object_without_key.md: results_report build/results build/consensus queries/union_with_keys_on_object_without_key | src/results_report.sh
-build build/markdown/results/dot_notation_with_wildcard_on_object.md: results_report build/results build/consensus queries/dot_notation_with_wildcard_on_object | src/results_report.sh
-build build/markdown/results/root.md: results_report build/results build/consensus queries/root | src/results_report.sh
-build build/markdown/results/filter_expression_without_value.md: results_report build/results build/consensus queries/filter_expression_without_value | src/results_report.sh
-build build/markdown/results/dot_bracket_notation_with_double_quotes.md: results_report build/results build/consensus queries/dot_bracket_notation_with_double_quotes | src/results_report.sh
-build build/markdown/results/array_slice_with_step_but_end_not_aligned.md: results_report build/results build/consensus queries/array_slice_with_step_but_end_not_aligned | src/results_report.sh
-build build/markdown/results/dot_notation_after_recursive_descent.md: results_report build/results build/consensus queries/dot_notation_after_recursive_descent | src/results_report.sh
-build build/markdown/results/array_slice_with_open_start_and_end.md: results_report build/results build/consensus queries/array_slice_with_open_start_and_end | src/results_report.sh
-build build/markdown/results/bracket_notation_with_wildcard_after_array_slice.md: results_report build/results build/consensus queries/bracket_notation_with_wildcard_after_array_slice | src/results_report.sh
-build build/markdown/results/union_with_keys.md: results_report build/results build/consensus queries/union_with_keys | src/results_report.sh
-build build/markdown/results/bracket_notation_with_quoted_root_literal.md: results_report build/results build/consensus queries/bracket_notation_with_quoted_root_literal | src/results_report.sh
-build build/markdown/results/filter_expression_with_greater_than_or_equal.md: results_report build/results build/consensus queries/filter_expression_with_greater_than_or_equal | src/results_report.sh
-build build/markdown/results/dot_notation_on_array_with_containing_object_matching_key.md: results_report build/results build/consensus queries/dot_notation_on_array_with_containing_object_matching_key | src/results_report.sh
-build build/markdown/results/dot_notation_with_wildcard_on_empty_object.md: results_report build/results build/consensus queries/dot_notation_with_wildcard_on_empty_object | src/results_report.sh
-build build/markdown/results/bracket_notation_with_number_0.md: results_report build/results build/consensus queries/bracket_notation_with_number_0 | src/results_report.sh
-build build/markdown/results/bracket_notation_with_single_quote_escaped.md: results_report build/results build/consensus queries/bracket_notation_with_single_quote_escaped | src/results_report.sh
-build build/markdown/results/dot_notation_with_single_quotes_after_recursive_descent.md: results_report build/results build/consensus queries/dot_notation_with_single_quotes_after_recursive_descent | src/results_report.sh
-build build/markdown/results/bracket_notation.md: results_report build/results build/consensus queries/bracket_notation | src/results_report.sh
-build build/markdown/results/union_with_keys_after_bracket_notation.md: results_report build/results build/consensus queries/union_with_keys_after_bracket_notation | src/results_report.sh
-build build/markdown/results/bracket_notation_with_wildcard_on_empty_array.md: results_report build/results build/consensus queries/bracket_notation_with_wildcard_on_empty_array | src/results_report.sh
-build build/markdown/results/bracket_notation_with_quoted_number_on_object.md: results_report build/results build/consensus queries/bracket_notation_with_quoted_number_on_object | src/results_report.sh
-build build/markdown/results/dot_notation_after_filter_expression.md: results_report build/results build/consensus queries/dot_notation_after_filter_expression | src/results_report.sh
-build build/markdown/results/filter_expression_with_empty_expression.md: results_report build/results build/consensus queries/filter_expression_with_empty_expression | src/results_report.sh
-build build/markdown/results/filter_expression_with_bracket_notation.md: results_report build/results build/consensus queries/filter_expression_with_bracket_notation | src/results_report.sh
-build build/markdown/results/filter_expression_with_equals_false.md: results_report build/results build/consensus queries/filter_expression_with_equals_false | src/results_report.sh
-build build/markdown/results/recursive_descent.md: results_report build/results build/consensus queries/recursive_descent | src/results_report.sh
-build build/markdown/results/array_slice_on_non_overlapping_array.md: results_report build/results build/consensus queries/array_slice_on_non_overlapping_array | src/results_report.sh
-build build/markdown/results/filter_expression_with_equals_on_string_with_dot_literal.md: results_report build/results build/consensus queries/filter_expression_with_equals_on_string_with_dot_literal | src/results_report.sh
-build build/markdown/results/dot_notation_with_number.md: results_report build/results build/consensus queries/dot_notation_with_number | src/results_report.sh
-build build/markdown/results/filter_expression_with_equals_on_string_with_current_object_literal.md: results_report build/results build/consensus queries/filter_expression_with_equals_on_string_with_current_object_literal | src/results_report.sh
-build build/markdown/results/dot_notation_with_wildcard_on_array.md: results_report build/results build/consensus queries/dot_notation_with_wildcard_on_array | src/results_report.sh
-build build/markdown/results/dot_notation_after_union_with_keys.md: results_report build/results build/consensus queries/dot_notation_after_union_with_keys | src/results_report.sh
-build build/markdown/results/filter_expression_with_subfilter.md: results_report build/results build/consensus queries/filter_expression_with_subfilter | src/results_report.sh
-build build/markdown/results/dot_notation_with_double_quotes_after_recursive_descent.md: results_report build/results build/consensus queries/dot_notation_with_double_quotes_after_recursive_descent | src/results_report.sh
-build build/markdown/results/bracket_notation_with_quoted_current_object_literal.md: results_report build/results build/consensus queries/bracket_notation_with_quoted_current_object_literal | src/results_report.sh
-build build/markdown/results/bracket_notation_without_quotes.md: results_report build/results build/consensus queries/bracket_notation_without_quotes | src/results_report.sh
-build build/markdown/results/union_with_keys_after_array_slice.md: results_report build/results build/consensus queries/union_with_keys_after_array_slice | src/results_report.sh
-build build/markdown/results/dot_notation_on_array_value.md: results_report build/results build/consensus queries/dot_notation_on_array_value | src/results_report.sh
-build build/markdown/results/bracket_notation_with_wildcard_on_empty_object.md: results_report build/results build/consensus queries/bracket_notation_with_wildcard_on_empty_object | src/results_report.sh
-build build/markdown/results/dot_notation_after_recursive_descent_after_dot_notation.md: results_report build/results build/consensus queries/dot_notation_after_recursive_descent_after_dot_notation | src/results_report.sh
-build build/markdown/results/bracket_notation_with_wildcard_after_dot_notation_after_bracket_notation_with_wildcard.md: results_report build/results build/consensus queries/bracket_notation_with_wildcard_after_dot_notation_after_bracket_notation_with_wildcard | src/results_report.sh
-build build/markdown/results/filter_expression_with_equals_string_value_on_number_value.md: results_report build/results build/consensus queries/filter_expression_with_equals_string_value_on_number_value | src/results_report.sh
-build build/markdown/results/bracket_notation_on_object_without_key.md: results_report build/results build/consensus queries/bracket_notation_on_object_without_key | src/results_report.sh
-build build/markdown/results/bracket_notation_with_double_quotes.md: results_report build/results build/consensus queries/bracket_notation_with_double_quotes | src/results_report.sh
-build build/markdown/results/bracket_notation_with_number_-1.md: results_report build/results build/consensus queries/bracket_notation_with_number_-1 | src/results_report.sh
-build build/markdown/results/array_slice_on_partially_overlapping_array.md: results_report build/results build/consensus queries/array_slice_on_partially_overlapping_array | src/results_report.sh
-build build/markdown/results/dot_notation_on_array.md: results_report build/results build/consensus queries/dot_notation_on_array | src/results_report.sh
+build build/markdown/results/array_slice_with_open_start_and_end_and_step_empty.md: results_report build/results build/relative_majority build/consensus2 queries/array_slice_with_open_start_and_end_and_step_empty | src/results_report.sh
+build build/markdown/results/dot_notation.md: results_report build/results build/relative_majority build/consensus2 queries/dot_notation | src/results_report.sh
+build build/markdown/results/bracket_notation_with_special_characters.md: results_report build/results build/relative_majority build/consensus2 queries/bracket_notation_with_special_characters | src/results_report.sh
+build build/markdown/results/array_slice_with_step.md: results_report build/results build/relative_majority build/consensus2 queries/array_slice_with_step | src/results_report.sh
+build build/markdown/results/filter_expression_with_equals_number_value_on_string_value.md: results_report build/results build/relative_majority build/consensus2 queries/filter_expression_with_equals_number_value_on_string_value | src/results_report.sh
+build build/markdown/results/filter_expression_with_less_than.md: results_report build/results build/relative_majority build/consensus2 queries/filter_expression_with_less_than | src/results_report.sh
+build build/markdown/results/filter_expression_with_bracket_notation_with_number.md: results_report build/results build/relative_majority build/consensus2 queries/filter_expression_with_bracket_notation_with_number | src/results_report.sh
+build build/markdown/results/filter_expression_with_less_than_or_equal.md: results_report build/results build/relative_majority build/consensus2 queries/filter_expression_with_less_than_or_equal | src/results_report.sh
+build build/markdown/results/filter_expression_with_equals.md: results_report build/results build/relative_majority build/consensus2 queries/filter_expression_with_equals | src/results_report.sh
+build build/markdown/results/bracket_notation_with_empty_string.md: results_report build/results build/relative_majority build/consensus2 queries/bracket_notation_with_empty_string | src/results_report.sh
+build build/markdown/results/bracket_notation_with_two_literals_separated_by_dot_without_quotes.md: results_report build/results build/relative_majority build/consensus2 queries/bracket_notation_with_two_literals_separated_by_dot_without_quotes | src/results_report.sh
+build build/markdown/results/bracket_notation_with_two_literals_separated_by_dot.md: results_report build/results build/relative_majority build/consensus2 queries/bracket_notation_with_two_literals_separated_by_dot | src/results_report.sh
+build build/markdown/results/array_slice_with_step_0.md: results_report build/results build/relative_majority build/consensus2 queries/array_slice_with_step_0 | src/results_report.sh
+build build/markdown/results/array_slice_on_object.md: results_report build/results build/relative_majority build/consensus2 queries/array_slice_on_object | src/results_report.sh
+build build/markdown/results/array_slice_with_range_of_0.md: results_report build/results build/relative_majority build/consensus2 queries/array_slice_with_range_of_0 | src/results_report.sh
+build build/markdown/results/dot_notation_with_single_quotes.md: results_report build/results build/relative_majority build/consensus2 queries/dot_notation_with_single_quotes | src/results_report.sh
+build build/markdown/results/array_slice_with_negative_step_only.md: results_report build/results build/relative_majority build/consensus2 queries/array_slice_with_negative_step_only | src/results_report.sh
+build build/markdown/results/union_with_numbers.md: results_report build/results build/relative_majority build/consensus2 queries/union_with_numbers | src/results_report.sh
+build build/markdown/results/filter_expression_with_equals_on_object.md: results_report build/results build/relative_majority build/consensus2 queries/filter_expression_with_equals_on_object | src/results_report.sh
+build build/markdown/results/filter_expression_with_negation_and_equals.md: results_report build/results build/relative_majority build/consensus2 queries/filter_expression_with_negation_and_equals | src/results_report.sh
+build build/markdown/results/array_slice_with_range_of_1.md: results_report build/results build/relative_majority build/consensus2 queries/array_slice_with_range_of_1 | src/results_report.sh
+build build/markdown/results/union_with_keys_after_dot_notation_with_wildcard.md: results_report build/results build/relative_majority build/consensus2 queries/union_with_keys_after_dot_notation_with_wildcard | src/results_report.sh
+build build/markdown/results/bracket_notation_with_quoted_wildcard_literal.md: results_report build/results build/relative_majority build/consensus2 queries/bracket_notation_with_quoted_wildcard_literal | src/results_report.sh
+build build/markdown/results/bracket_notation_with_single_quote.md: results_report build/results build/relative_majority build/consensus2 queries/bracket_notation_with_single_quote | src/results_report.sh
+build build/markdown/results/filter_expression_with_regular_expression.md: results_report build/results build/relative_majority build/consensus2 queries/filter_expression_with_regular_expression | src/results_report.sh
+build build/markdown/results/filter_expression_with_equals_null.md: results_report build/results build/relative_majority build/consensus2 queries/filter_expression_with_equals_null | src/results_report.sh
+build build/markdown/results/array_slice_with_step_1.md: results_report build/results build/relative_majority build/consensus2 queries/array_slice_with_step_1 | src/results_report.sh
+build build/markdown/results/script_expression.md: results_report build/results build/relative_majority build/consensus2 queries/script_expression | src/results_report.sh
+build build/markdown/results/bracket_notation_with_number_on_object.md: results_report build/results build/relative_majority build/consensus2 queries/bracket_notation_with_number_on_object | src/results_report.sh
+build build/markdown/results/array_slice_with_step_empty.md: results_report build/results build/relative_majority build/consensus2 queries/array_slice_with_step_empty | src/results_report.sh
+build build/markdown/results/dot_bracket_notation_without_quotes.md: results_report build/results build/relative_majority build/consensus2 queries/dot_bracket_notation_without_quotes | src/results_report.sh
+build build/markdown/results/filter_expression_with_boolean_and_operator.md: results_report build/results build/relative_majority build/consensus2 queries/filter_expression_with_boolean_and_operator | src/results_report.sh
+build build/markdown/results/dot_notation_with_wildcard_on_empty_array.md: results_report build/results build/relative_majority build/consensus2 queries/dot_notation_with_wildcard_on_empty_array | src/results_report.sh
+build build/markdown/results/dot_notation_with_wildcard_after_recursive_descent_on_null_value_array.md: results_report build/results build/relative_majority build/consensus2 queries/dot_notation_with_wildcard_after_recursive_descent_on_null_value_array | src/results_report.sh
+build build/markdown/results/array_slice_with_start_-1_and_open_end.md: results_report build/results build/relative_majority build/consensus2 queries/array_slice_with_start_-1_and_open_end | src/results_report.sh
+build build/markdown/results/bracket_notation_with_quoted_array_slice_literal.md: results_report build/results build/relative_majority build/consensus2 queries/bracket_notation_with_quoted_array_slice_literal | src/results_report.sh
+build build/markdown/results/array_slice_with_negative_step.md: results_report build/results build/relative_majority build/consensus2 queries/array_slice_with_negative_step | src/results_report.sh
+build build/markdown/results/array_slice_with_step_only.md: results_report build/results build/relative_majority build/consensus2 queries/array_slice_with_step_only | src/results_report.sh
+build build/markdown/results/bracket_notation_with_quoted_dot_literal.md: results_report build/results build/relative_majority build/consensus2 queries/bracket_notation_with_quoted_dot_literal | src/results_report.sh
+build build/markdown/results/filter_expression_with_bracket_notation_and_current_object_literal.md: results_report build/results build/relative_majority build/consensus2 queries/filter_expression_with_bracket_notation_and_current_object_literal | src/results_report.sh
+build build/markdown/results/filter_expression_with_greater_than.md: results_report build/results build/relative_majority build/consensus2 queries/filter_expression_with_greater_than | src/results_report.sh
+build build/markdown/results/array_slice_with_open_end.md: results_report build/results build/relative_majority build/consensus2 queries/array_slice_with_open_end | src/results_report.sh
+build build/markdown/results/filter_expression_with_value.md: results_report build/results build/relative_majority build/consensus2 queries/filter_expression_with_value | src/results_report.sh
+build build/markdown/results/union_with_numbers_in_decreasing_order.md: results_report build/results build/relative_majority build/consensus2 queries/union_with_numbers_in_decreasing_order | src/results_report.sh
+build build/markdown/results/filter_expression_after_recursive_descent.md: results_report build/results build/relative_majority build/consensus2 queries/filter_expression_after_recursive_descent | src/results_report.sh
+build build/markdown/results/filter_expression_with_current_object.md: results_report build/results build/relative_majority build/consensus2 queries/filter_expression_with_current_object | src/results_report.sh
+build build/markdown/results/bracket_notation_with_number_on_short_array.md: results_report build/results build/relative_majority build/consensus2 queries/bracket_notation_with_number_on_short_array | src/results_report.sh
+build build/markdown/results/dot_notation_with_double_quotes.md: results_report build/results build/relative_majority build/consensus2 queries/dot_notation_with_double_quotes | src/results_report.sh
+build build/markdown/results/array_slice_with_open_start.md: results_report build/results build/relative_majority build/consensus2 queries/array_slice_with_open_start | src/results_report.sh
+build build/markdown/results/bracket_notation_with_number_on_string.md: results_report build/results build/relative_majority build/consensus2 queries/bracket_notation_with_number_on_string | src/results_report.sh
+build build/markdown/results/bracket_notation_with_number_after_recursive_descent.md: results_report build/results build/relative_majority build/consensus2 queries/bracket_notation_with_number_after_recursive_descent | src/results_report.sh
+build build/markdown/results/array_slice.md: results_report build/results build/relative_majority build/consensus2 queries/array_slice | src/results_report.sh
+build build/markdown/results/bracket_notation_with_wildcard_after_recursive_descent.md: results_report build/results build/relative_majority build/consensus2 queries/bracket_notation_with_wildcard_after_recursive_descent | src/results_report.sh
+build build/markdown/results/bracket_notation_with_dot.md: results_report build/results build/relative_majority build/consensus2 queries/bracket_notation_with_dot | src/results_report.sh
+build build/markdown/results/filter_expression_with_single_equal.md: results_report build/results build/relative_majority build/consensus2 queries/filter_expression_with_single_equal | src/results_report.sh
+build build/markdown/results/filter_expression_with_equals_value_with_single_quotes.md: results_report build/results build/relative_majority build/consensus2 queries/filter_expression_with_equals_value_with_single_quotes | src/results_report.sh
+build build/markdown/results/filter_expression_with_equals_on_object_with_key_matching_query.md: results_report build/results build/relative_majority build/consensus2 queries/filter_expression_with_equals_on_object_with_key_matching_query | src/results_report.sh
+build build/markdown/results/dot_notation_on_object_without_key.md: results_report build/results build/relative_majority build/consensus2 queries/dot_notation_on_object_without_key | src/results_report.sh
+build build/markdown/results/union_with_filter.md: results_report build/results build/relative_majority build/consensus2 queries/union_with_filter | src/results_report.sh
+build build/markdown/results/dot_notation_after_bracket_notation_with_wildcard_on_one_matching.md: results_report build/results build/relative_majority build/consensus2 queries/dot_notation_after_bracket_notation_with_wildcard_on_one_matching | src/results_report.sh
+build build/markdown/results/dot_notation_after_bracket_notation_with_wildcard_on_some_matching.md: results_report build/results build/relative_majority build/consensus2 queries/dot_notation_after_bracket_notation_with_wildcard_on_some_matching | src/results_report.sh
+build build/markdown/results/dot_notation_with_wildcard_after_dot_notation_after_dot_notation_with_wildcard.md: results_report build/results build/relative_majority build/consensus2 queries/dot_notation_with_wildcard_after_dot_notation_after_dot_notation_with_wildcard | src/results_report.sh
+build build/markdown/results/union_with_slice_and_number.md: results_report build/results build/relative_majority build/consensus2 queries/union_with_slice_and_number | src/results_report.sh
+build build/markdown/results/bracket_notation_with_wildcard_on_null_value_array.md: results_report build/results build/relative_majority build/consensus2 queries/bracket_notation_with_wildcard_on_null_value_array | src/results_report.sh
+build build/markdown/results/dot_notation_after_bracket_notation_with_wildcard.md: results_report build/results build/relative_majority build/consensus2 queries/dot_notation_after_bracket_notation_with_wildcard | src/results_report.sh
+build build/markdown/results/dot_notation_with_wildcard_after_recursive_descent.md: results_report build/results build/relative_majority build/consensus2 queries/dot_notation_with_wildcard_after_recursive_descent | src/results_report.sh
+build build/markdown/results/filter_expression_with_equals_with_root_reference.md: results_report build/results build/relative_majority build/consensus2 queries/filter_expression_with_equals_with_root_reference | src/results_report.sh
+build build/markdown/results/filter_expression_with_equals_on_array_of_numbers.md: results_report build/results build/relative_majority build/consensus2 queries/filter_expression_with_equals_on_array_of_numbers | src/results_report.sh
+build build/markdown/results/array_slice_on_exact_match.md: results_report build/results build/relative_majority build/consensus2 queries/array_slice_on_exact_match | src/results_report.sh
+build build/markdown/results/filter_expression_with_bracket_notation_with_number_on_object.md: results_report build/results build/relative_majority build/consensus2 queries/filter_expression_with_bracket_notation_with_number_on_object | src/results_report.sh
+build build/markdown/results/filter_expression_with_less_than_number_on_string_value.md: results_report build/results build/relative_majority build/consensus2 queries/filter_expression_with_less_than_number_on_string_value | src/results_report.sh
+build build/markdown/results/filter_expression_with_equals_true.md: results_report build/results build/relative_majority build/consensus2 queries/filter_expression_with_equals_true | src/results_report.sh
+build build/markdown/results/bracket_notation_with_wildcard_on_array.md: results_report build/results build/relative_majority build/consensus2 queries/bracket_notation_with_wildcard_on_array | src/results_report.sh
+build build/markdown/results/bracket_notation_with_quoted_wildcard_literal_on_object_without_key.md: results_report build/results build/relative_majority build/consensus2 queries/bracket_notation_with_quoted_wildcard_literal_on_object_without_key | src/results_report.sh
+build build/markdown/results/dot_notation_without_root.md: results_report build/results build/relative_majority build/consensus2 queries/dot_notation_without_root | src/results_report.sh
+build build/markdown/results/filter_expression_with_value_after_recursive_descent.md: results_report build/results build/relative_majority build/consensus2 queries/filter_expression_with_value_after_recursive_descent | src/results_report.sh
+build build/markdown/results/array_slice_with_start_large_negative_number_and_open_end_on_short_array.md: results_report build/results build/relative_majority build/consensus2 queries/array_slice_with_start_large_negative_number_and_open_end_on_short_array | src/results_report.sh
+build build/markdown/results/bracket_notation_with_wildcard_on_object.md: results_report build/results build/relative_majority build/consensus2 queries/bracket_notation_with_wildcard_on_object | src/results_report.sh
+build build/markdown/results/filter_expression_after_dot_notation_with_wildcard_after_recursive_descent.md: results_report build/results build/relative_majority build/consensus2 queries/filter_expression_after_dot_notation_with_wildcard_after_recursive_descent | src/results_report.sh
+build build/markdown/results/array_slice_with_start_-2_and_open_end.md: results_report build/results build/relative_majority build/consensus2 queries/array_slice_with_start_-2_and_open_end | src/results_report.sh
+build build/markdown/results/dot_bracket_notation.md: results_report build/results build/relative_majority build/consensus2 queries/dot_bracket_notation | src/results_report.sh
+build build/markdown/results/dot_notation_on_null_value.md: results_report build/results build/relative_majority build/consensus2 queries/dot_notation_on_null_value | src/results_report.sh
+build build/markdown/results/array_slice_with_range_of_-1.md: results_report build/results build/relative_majority build/consensus2 queries/array_slice_with_range_of_-1 | src/results_report.sh
+build build/markdown/results/dot_notation_with_wildcard_after_recursive_descent_on_scalar.md: results_report build/results build/relative_majority build/consensus2 queries/dot_notation_with_wildcard_after_recursive_descent_on_scalar | src/results_report.sh
+build build/markdown/results/root_on_scalar.md: results_report build/results build/relative_majority build/consensus2 queries/root_on_scalar | src/results_report.sh
+build build/markdown/results/bracket_notation_with_number.md: results_report build/results build/relative_majority build/consensus2 queries/bracket_notation_with_number | src/results_report.sh
+build build/markdown/results/dot_bracket_notation_on_nested_object.md: results_report build/results build/relative_majority build/consensus2 queries/dot_bracket_notation_on_nested_object | src/results_report.sh
+build build/markdown/results/dot_notation_with_number_on_object.md: results_report build/results build/relative_majority build/consensus2 queries/dot_notation_with_number_on_object | src/results_report.sh
+build build/markdown/results/array_slice_with_open_start_and_end_on_object.md: results_report build/results build/relative_majority build/consensus2 queries/array_slice_with_open_start_and_end_on_object | src/results_report.sh
+build build/markdown/results/union_with_keys_on_object_without_key.md: results_report build/results build/relative_majority build/consensus2 queries/union_with_keys_on_object_without_key | src/results_report.sh
+build build/markdown/results/dot_notation_with_wildcard_on_object.md: results_report build/results build/relative_majority build/consensus2 queries/dot_notation_with_wildcard_on_object | src/results_report.sh
+build build/markdown/results/root.md: results_report build/results build/relative_majority build/consensus2 queries/root | src/results_report.sh
+build build/markdown/results/filter_expression_without_value.md: results_report build/results build/relative_majority build/consensus2 queries/filter_expression_without_value | src/results_report.sh
+build build/markdown/results/dot_bracket_notation_with_double_quotes.md: results_report build/results build/relative_majority build/consensus2 queries/dot_bracket_notation_with_double_quotes | src/results_report.sh
+build build/markdown/results/array_slice_with_step_but_end_not_aligned.md: results_report build/results build/relative_majority build/consensus2 queries/array_slice_with_step_but_end_not_aligned | src/results_report.sh
+build build/markdown/results/dot_notation_after_recursive_descent.md: results_report build/results build/relative_majority build/consensus2 queries/dot_notation_after_recursive_descent | src/results_report.sh
+build build/markdown/results/array_slice_with_open_start_and_end.md: results_report build/results build/relative_majority build/consensus2 queries/array_slice_with_open_start_and_end | src/results_report.sh
+build build/markdown/results/bracket_notation_with_wildcard_after_array_slice.md: results_report build/results build/relative_majority build/consensus2 queries/bracket_notation_with_wildcard_after_array_slice | src/results_report.sh
+build build/markdown/results/union_with_keys.md: results_report build/results build/relative_majority build/consensus2 queries/union_with_keys | src/results_report.sh
+build build/markdown/results/bracket_notation_with_quoted_root_literal.md: results_report build/results build/relative_majority build/consensus2 queries/bracket_notation_with_quoted_root_literal | src/results_report.sh
+build build/markdown/results/filter_expression_with_greater_than_or_equal.md: results_report build/results build/relative_majority build/consensus2 queries/filter_expression_with_greater_than_or_equal | src/results_report.sh
+build build/markdown/results/dot_notation_on_array_with_containing_object_matching_key.md: results_report build/results build/relative_majority build/consensus2 queries/dot_notation_on_array_with_containing_object_matching_key | src/results_report.sh
+build build/markdown/results/dot_notation_with_wildcard_on_empty_object.md: results_report build/results build/relative_majority build/consensus2 queries/dot_notation_with_wildcard_on_empty_object | src/results_report.sh
+build build/markdown/results/bracket_notation_with_number_0.md: results_report build/results build/relative_majority build/consensus2 queries/bracket_notation_with_number_0 | src/results_report.sh
+build build/markdown/results/bracket_notation_with_single_quote_escaped.md: results_report build/results build/relative_majority build/consensus2 queries/bracket_notation_with_single_quote_escaped | src/results_report.sh
+build build/markdown/results/dot_notation_with_single_quotes_after_recursive_descent.md: results_report build/results build/relative_majority build/consensus2 queries/dot_notation_with_single_quotes_after_recursive_descent | src/results_report.sh
+build build/markdown/results/bracket_notation.md: results_report build/results build/relative_majority build/consensus2 queries/bracket_notation | src/results_report.sh
+build build/markdown/results/union_with_keys_after_bracket_notation.md: results_report build/results build/relative_majority build/consensus2 queries/union_with_keys_after_bracket_notation | src/results_report.sh
+build build/markdown/results/bracket_notation_with_wildcard_on_empty_array.md: results_report build/results build/relative_majority build/consensus2 queries/bracket_notation_with_wildcard_on_empty_array | src/results_report.sh
+build build/markdown/results/bracket_notation_with_quoted_number_on_object.md: results_report build/results build/relative_majority build/consensus2 queries/bracket_notation_with_quoted_number_on_object | src/results_report.sh
+build build/markdown/results/dot_notation_after_filter_expression.md: results_report build/results build/relative_majority build/consensus2 queries/dot_notation_after_filter_expression | src/results_report.sh
+build build/markdown/results/filter_expression_with_empty_expression.md: results_report build/results build/relative_majority build/consensus2 queries/filter_expression_with_empty_expression | src/results_report.sh
+build build/markdown/results/filter_expression_with_bracket_notation.md: results_report build/results build/relative_majority build/consensus2 queries/filter_expression_with_bracket_notation | src/results_report.sh
+build build/markdown/results/filter_expression_with_equals_false.md: results_report build/results build/relative_majority build/consensus2 queries/filter_expression_with_equals_false | src/results_report.sh
+build build/markdown/results/recursive_descent.md: results_report build/results build/relative_majority build/consensus2 queries/recursive_descent | src/results_report.sh
+build build/markdown/results/array_slice_on_non_overlapping_array.md: results_report build/results build/relative_majority build/consensus2 queries/array_slice_on_non_overlapping_array | src/results_report.sh
+build build/markdown/results/filter_expression_with_equals_on_string_with_dot_literal.md: results_report build/results build/relative_majority build/consensus2 queries/filter_expression_with_equals_on_string_with_dot_literal | src/results_report.sh
+build build/markdown/results/dot_notation_with_number.md: results_report build/results build/relative_majority build/consensus2 queries/dot_notation_with_number | src/results_report.sh
+build build/markdown/results/filter_expression_with_equals_on_string_with_current_object_literal.md: results_report build/results build/relative_majority build/consensus2 queries/filter_expression_with_equals_on_string_with_current_object_literal | src/results_report.sh
+build build/markdown/results/dot_notation_with_wildcard_on_array.md: results_report build/results build/relative_majority build/consensus2 queries/dot_notation_with_wildcard_on_array | src/results_report.sh
+build build/markdown/results/dot_notation_after_union_with_keys.md: results_report build/results build/relative_majority build/consensus2 queries/dot_notation_after_union_with_keys | src/results_report.sh
+build build/markdown/results/filter_expression_with_subfilter.md: results_report build/results build/relative_majority build/consensus2 queries/filter_expression_with_subfilter | src/results_report.sh
+build build/markdown/results/dot_notation_with_double_quotes_after_recursive_descent.md: results_report build/results build/relative_majority build/consensus2 queries/dot_notation_with_double_quotes_after_recursive_descent | src/results_report.sh
+build build/markdown/results/bracket_notation_with_quoted_current_object_literal.md: results_report build/results build/relative_majority build/consensus2 queries/bracket_notation_with_quoted_current_object_literal | src/results_report.sh
+build build/markdown/results/bracket_notation_without_quotes.md: results_report build/results build/relative_majority build/consensus2 queries/bracket_notation_without_quotes | src/results_report.sh
+build build/markdown/results/union_with_keys_after_array_slice.md: results_report build/results build/relative_majority build/consensus2 queries/union_with_keys_after_array_slice | src/results_report.sh
+build build/markdown/results/dot_notation_on_array_value.md: results_report build/results build/relative_majority build/consensus2 queries/dot_notation_on_array_value | src/results_report.sh
+build build/markdown/results/bracket_notation_with_wildcard_on_empty_object.md: results_report build/results build/relative_majority build/consensus2 queries/bracket_notation_with_wildcard_on_empty_object | src/results_report.sh
+build build/markdown/results/dot_notation_after_recursive_descent_after_dot_notation.md: results_report build/results build/relative_majority build/consensus2 queries/dot_notation_after_recursive_descent_after_dot_notation | src/results_report.sh
+build build/markdown/results/bracket_notation_with_wildcard_after_dot_notation_after_bracket_notation_with_wildcard.md: results_report build/results build/relative_majority build/consensus2 queries/bracket_notation_with_wildcard_after_dot_notation_after_bracket_notation_with_wildcard | src/results_report.sh
+build build/markdown/results/filter_expression_with_equals_string_value_on_number_value.md: results_report build/results build/relative_majority build/consensus2 queries/filter_expression_with_equals_string_value_on_number_value | src/results_report.sh
+build build/markdown/results/bracket_notation_on_object_without_key.md: results_report build/results build/relative_majority build/consensus2 queries/bracket_notation_on_object_without_key | src/results_report.sh
+build build/markdown/results/bracket_notation_with_double_quotes.md: results_report build/results build/relative_majority build/consensus2 queries/bracket_notation_with_double_quotes | src/results_report.sh
+build build/markdown/results/bracket_notation_with_number_-1.md: results_report build/results build/relative_majority build/consensus2 queries/bracket_notation_with_number_-1 | src/results_report.sh
+build build/markdown/results/array_slice_on_partially_overlapping_array.md: results_report build/results build/relative_majority build/consensus2 queries/array_slice_on_partially_overlapping_array | src/results_report.sh
+build build/markdown/results/dot_notation_on_array.md: results_report build/results build/relative_majority build/consensus2 queries/dot_notation_on_array | src/results_report.sh
 
 rule compile_html
   command = ./src/compile_html.sh $in > $out
@@ -5483,38 +5483,38 @@ build docs/results/dot_notation_on_array.html: compile_html build/markdown/resul
 
 rule compile_regression_suite
   command = ./src/compile_regression_suite.sh $in > $out
-build regression_suite/regression_suite.yaml: compile_regression_suite build/results build/consensus | src/compile_regression_suite.sh queries/ implementations/
+build regression_suite/regression_suite.yaml: compile_regression_suite build/consensus2 | src/compile_regression_suite.sh queries/ implementations/
 rule compile_implementation_report
   command = ./src/compile_implementation_report.sh $in > $out
 
-build regression_suite/Bash_JSONPath.sh.yaml: compile_implementation_report build/results build/consensus implementations/Bash_JSONPath.sh | src/compile_implementation_report.sh queries/ implementations/
-build regression_suite/C_json-glib.yaml: compile_implementation_report build/results build/consensus implementations/C_json-glib | src/compile_implementation_report.sh queries/ implementations/
-build regression_suite/Clojure_json-path.yaml: compile_implementation_report build/results build/consensus implementations/Clojure_json-path | src/compile_implementation_report.sh queries/ implementations/
-build regression_suite/Cpp_jsoncons.yaml: compile_implementation_report build/results build/consensus implementations/Cpp_jsoncons | src/compile_implementation_report.sh queries/ implementations/
-build regression_suite/Elixir_jaxon.yaml: compile_implementation_report build/results build/consensus implementations/Elixir_jaxon | src/compile_implementation_report.sh queries/ implementations/
-build regression_suite/Erlang_ejsonpath.yaml: compile_implementation_report build/results build/consensus implementations/Erlang_ejsonpath | src/compile_implementation_report.sh queries/ implementations/
-build regression_suite/Golang_github.com-PaesslerAG-jsonpath.yaml: compile_implementation_report build/results build/consensus implementations/Golang_github.com-PaesslerAG-jsonpath | src/compile_implementation_report.sh queries/ implementations/
-build regression_suite/Golang_github.com-bhmj-jsonslice.yaml: compile_implementation_report build/results build/consensus implementations/Golang_github.com-bhmj-jsonslice | src/compile_implementation_report.sh queries/ implementations/
-build regression_suite/Golang_github.com-oliveagle-jsonpath.yaml: compile_implementation_report build/results build/consensus implementations/Golang_github.com-oliveagle-jsonpath | src/compile_implementation_report.sh queries/ implementations/
-build regression_suite/Haskell_jsonpath.yaml: compile_implementation_report build/results build/consensus implementations/Haskell_jsonpath | src/compile_implementation_report.sh queries/ implementations/
-build regression_suite/JavaScript_Goessner.yaml: compile_implementation_report build/results build/consensus implementations/JavaScript_Goessner | src/compile_implementation_report.sh queries/ implementations/
-build regression_suite/JavaScript_jsonpath.yaml: compile_implementation_report build/results build/consensus implementations/JavaScript_jsonpath | src/compile_implementation_report.sh queries/ implementations/
-build regression_suite/JavaScript_jsonpath-plus.yaml: compile_implementation_report build/results build/consensus implementations/JavaScript_jsonpath-plus | src/compile_implementation_report.sh queries/ implementations/
-build regression_suite/Java_com.github.jsurfer.yaml: compile_implementation_report build/results build/consensus implementations/Java_com.github.jsurfer | src/compile_implementation_report.sh queries/ implementations/
-build regression_suite/Java_com.jayway.jsonpath.yaml: compile_implementation_report build/results build/consensus implementations/Java_com.jayway.jsonpath | src/compile_implementation_report.sh queries/ implementations/
-build regression_suite/Kotlin_com.nfeld.jsonpathlite.yaml: compile_implementation_report build/results build/consensus implementations/Kotlin_com.nfeld.jsonpathlite | src/compile_implementation_report.sh queries/ implementations/
-build regression_suite/PHP_Goessner.yaml: compile_implementation_report build/results build/consensus implementations/PHP_Goessner | src/compile_implementation_report.sh queries/ implementations/
-build regression_suite/PHP_flow-jsonpath.yaml: compile_implementation_report build/results build/consensus implementations/PHP_flow-jsonpath | src/compile_implementation_report.sh queries/ implementations/
-build regression_suite/PHP_galbar-jsonpath.yaml: compile_implementation_report build/results build/consensus implementations/PHP_galbar-jsonpath | src/compile_implementation_report.sh queries/ implementations/
-build regression_suite/PHP_remorhaz-jsonpath.yaml: compile_implementation_report build/results build/consensus implementations/PHP_remorhaz-jsonpath | src/compile_implementation_report.sh queries/ implementations/
-build regression_suite/Perl_JSON-Path.yaml: compile_implementation_report build/results build/consensus implementations/Perl_JSON-Path | src/compile_implementation_report.sh queries/ implementations/
-build regression_suite/Python_jsonpath.yaml: compile_implementation_report build/results build/consensus implementations/Python_jsonpath | src/compile_implementation_report.sh queries/ implementations/
-build regression_suite/Python_jsonpath-rw.yaml: compile_implementation_report build/results build/consensus implementations/Python_jsonpath-rw | src/compile_implementation_report.sh queries/ implementations/
-build regression_suite/Python_jsonpath2.yaml: compile_implementation_report build/results build/consensus implementations/Python_jsonpath2 | src/compile_implementation_report.sh queries/ implementations/
-build regression_suite/Ruby_jsonpath.yaml: compile_implementation_report build/results build/consensus implementations/Ruby_jsonpath | src/compile_implementation_report.sh queries/ implementations/
-build regression_suite/Rust_jsonpath.yaml: compile_implementation_report build/results build/consensus implementations/Rust_jsonpath | src/compile_implementation_report.sh queries/ implementations/
-build regression_suite/Rust_jsonpath_lib.yaml: compile_implementation_report build/results build/consensus implementations/Rust_jsonpath_lib | src/compile_implementation_report.sh queries/ implementations/
-build regression_suite/Scala_jsonpath.yaml: compile_implementation_report build/results build/consensus implementations/Scala_jsonpath | src/compile_implementation_report.sh queries/ implementations/
-build regression_suite/dotNET_Json.NET.yaml: compile_implementation_report build/results build/consensus implementations/dotNET_Json.NET | src/compile_implementation_report.sh queries/ implementations/
-build regression_suite/dotNET_JsonPathLib.yaml: compile_implementation_report build/results build/consensus implementations/dotNET_JsonPathLib | src/compile_implementation_report.sh queries/ implementations/
-build regression_suite/dotNET_Manatee.Json.yaml: compile_implementation_report build/results build/consensus implementations/dotNET_Manatee.Json | src/compile_implementation_report.sh queries/ implementations/
+build regression_suite/Bash_JSONPath.sh.yaml: compile_implementation_report build/results build/relative_majority build/consensus2 implementations/Bash_JSONPath.sh | src/compile_implementation_report.sh queries/ implementations/
+build regression_suite/C_json-glib.yaml: compile_implementation_report build/results build/relative_majority build/consensus2 implementations/C_json-glib | src/compile_implementation_report.sh queries/ implementations/
+build regression_suite/Clojure_json-path.yaml: compile_implementation_report build/results build/relative_majority build/consensus2 implementations/Clojure_json-path | src/compile_implementation_report.sh queries/ implementations/
+build regression_suite/Cpp_jsoncons.yaml: compile_implementation_report build/results build/relative_majority build/consensus2 implementations/Cpp_jsoncons | src/compile_implementation_report.sh queries/ implementations/
+build regression_suite/Elixir_jaxon.yaml: compile_implementation_report build/results build/relative_majority build/consensus2 implementations/Elixir_jaxon | src/compile_implementation_report.sh queries/ implementations/
+build regression_suite/Erlang_ejsonpath.yaml: compile_implementation_report build/results build/relative_majority build/consensus2 implementations/Erlang_ejsonpath | src/compile_implementation_report.sh queries/ implementations/
+build regression_suite/Golang_github.com-PaesslerAG-jsonpath.yaml: compile_implementation_report build/results build/relative_majority build/consensus2 implementations/Golang_github.com-PaesslerAG-jsonpath | src/compile_implementation_report.sh queries/ implementations/
+build regression_suite/Golang_github.com-bhmj-jsonslice.yaml: compile_implementation_report build/results build/relative_majority build/consensus2 implementations/Golang_github.com-bhmj-jsonslice | src/compile_implementation_report.sh queries/ implementations/
+build regression_suite/Golang_github.com-oliveagle-jsonpath.yaml: compile_implementation_report build/results build/relative_majority build/consensus2 implementations/Golang_github.com-oliveagle-jsonpath | src/compile_implementation_report.sh queries/ implementations/
+build regression_suite/Haskell_jsonpath.yaml: compile_implementation_report build/results build/relative_majority build/consensus2 implementations/Haskell_jsonpath | src/compile_implementation_report.sh queries/ implementations/
+build regression_suite/JavaScript_Goessner.yaml: compile_implementation_report build/results build/relative_majority build/consensus2 implementations/JavaScript_Goessner | src/compile_implementation_report.sh queries/ implementations/
+build regression_suite/JavaScript_jsonpath.yaml: compile_implementation_report build/results build/relative_majority build/consensus2 implementations/JavaScript_jsonpath | src/compile_implementation_report.sh queries/ implementations/
+build regression_suite/JavaScript_jsonpath-plus.yaml: compile_implementation_report build/results build/relative_majority build/consensus2 implementations/JavaScript_jsonpath-plus | src/compile_implementation_report.sh queries/ implementations/
+build regression_suite/Java_com.github.jsurfer.yaml: compile_implementation_report build/results build/relative_majority build/consensus2 implementations/Java_com.github.jsurfer | src/compile_implementation_report.sh queries/ implementations/
+build regression_suite/Java_com.jayway.jsonpath.yaml: compile_implementation_report build/results build/relative_majority build/consensus2 implementations/Java_com.jayway.jsonpath | src/compile_implementation_report.sh queries/ implementations/
+build regression_suite/Kotlin_com.nfeld.jsonpathlite.yaml: compile_implementation_report build/results build/relative_majority build/consensus2 implementations/Kotlin_com.nfeld.jsonpathlite | src/compile_implementation_report.sh queries/ implementations/
+build regression_suite/PHP_Goessner.yaml: compile_implementation_report build/results build/relative_majority build/consensus2 implementations/PHP_Goessner | src/compile_implementation_report.sh queries/ implementations/
+build regression_suite/PHP_flow-jsonpath.yaml: compile_implementation_report build/results build/relative_majority build/consensus2 implementations/PHP_flow-jsonpath | src/compile_implementation_report.sh queries/ implementations/
+build regression_suite/PHP_galbar-jsonpath.yaml: compile_implementation_report build/results build/relative_majority build/consensus2 implementations/PHP_galbar-jsonpath | src/compile_implementation_report.sh queries/ implementations/
+build regression_suite/PHP_remorhaz-jsonpath.yaml: compile_implementation_report build/results build/relative_majority build/consensus2 implementations/PHP_remorhaz-jsonpath | src/compile_implementation_report.sh queries/ implementations/
+build regression_suite/Perl_JSON-Path.yaml: compile_implementation_report build/results build/relative_majority build/consensus2 implementations/Perl_JSON-Path | src/compile_implementation_report.sh queries/ implementations/
+build regression_suite/Python_jsonpath.yaml: compile_implementation_report build/results build/relative_majority build/consensus2 implementations/Python_jsonpath | src/compile_implementation_report.sh queries/ implementations/
+build regression_suite/Python_jsonpath-rw.yaml: compile_implementation_report build/results build/relative_majority build/consensus2 implementations/Python_jsonpath-rw | src/compile_implementation_report.sh queries/ implementations/
+build regression_suite/Python_jsonpath2.yaml: compile_implementation_report build/results build/relative_majority build/consensus2 implementations/Python_jsonpath2 | src/compile_implementation_report.sh queries/ implementations/
+build regression_suite/Ruby_jsonpath.yaml: compile_implementation_report build/results build/relative_majority build/consensus2 implementations/Ruby_jsonpath | src/compile_implementation_report.sh queries/ implementations/
+build regression_suite/Rust_jsonpath.yaml: compile_implementation_report build/results build/relative_majority build/consensus2 implementations/Rust_jsonpath | src/compile_implementation_report.sh queries/ implementations/
+build regression_suite/Rust_jsonpath_lib.yaml: compile_implementation_report build/results build/relative_majority build/consensus2 implementations/Rust_jsonpath_lib | src/compile_implementation_report.sh queries/ implementations/
+build regression_suite/Scala_jsonpath.yaml: compile_implementation_report build/results build/relative_majority build/consensus2 implementations/Scala_jsonpath | src/compile_implementation_report.sh queries/ implementations/
+build regression_suite/dotNET_Json.NET.yaml: compile_implementation_report build/results build/relative_majority build/consensus2 implementations/dotNET_Json.NET | src/compile_implementation_report.sh queries/ implementations/
+build regression_suite/dotNET_JsonPathLib.yaml: compile_implementation_report build/results build/relative_majority build/consensus2 implementations/dotNET_JsonPathLib | src/compile_implementation_report.sh queries/ implementations/
+build regression_suite/dotNET_Manatee.Json.yaml: compile_implementation_report build/results build/relative_majority build/consensus2 implementations/dotNET_Manatee.Json | src/compile_implementation_report.sh queries/ implementations/

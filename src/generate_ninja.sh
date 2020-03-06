@@ -186,7 +186,7 @@ rule compile_bug_reports
 EOF
     echo
     while IFS= read -r implementation; do
-        echo "build ${bug_reports_dir}/${implementation}.md: compile_bug_reports ${results_dir} ${consensus_dir} implementations/${implementation} | src/compile_bug_reports.sh"
+        echo "build ${bug_reports_dir}/${implementation}.md: compile_bug_reports ${results_dir} ${relative_majority_dir} ${consensus2_dir} implementations/${implementation} | src/compile_bug_reports.sh"
     done <<< "$(all_implementations)"
     echo
 }
@@ -208,7 +208,7 @@ rule results_report
 EOF
     echo
     while IFS= read -r query; do
-        echo "build ${markdown_dir}/results/${query}.md: results_report ${results_dir} ${consensus_dir} queries/${query} | src/results_report.sh"
+        echo "build ${markdown_dir}/results/${query}.md: results_report ${results_dir} ${relative_majority_dir} ${consensus2_dir} queries/${query} | src/results_report.sh"
     done <<< "$(all_queries)"
     echo
 
@@ -232,7 +232,7 @@ rule compile_regression_suite
   command = ./src/compile_regression_suite.sh \$in > \$out
 EOF
 
-    echo "build ${regression_suite}/regression_suite.yaml: compile_regression_suite ${results_dir} ${consensus_dir} | src/compile_regression_suite.sh queries/ implementations/"
+    echo "build ${regression_suite}/regression_suite.yaml: compile_regression_suite ${consensus2_dir} | src/compile_regression_suite.sh queries/ implementations/"
 
     cat <<EOF
 rule compile_implementation_report
@@ -241,7 +241,7 @@ EOF
 
     echo
     while IFS= read -r implementation; do
-        echo "build ${regression_suite}/${implementation}.yaml: compile_implementation_report ${results_dir} ${consensus_dir} implementations/${implementation} | src/compile_implementation_report.sh queries/ implementations/"
+        echo "build ${regression_suite}/${implementation}.yaml: compile_implementation_report ${results_dir} ${relative_majority_dir} ${consensus2_dir} implementations/${implementation} | src/compile_implementation_report.sh queries/ implementations/"
     done <<< "$(all_implementations)"
 }
 

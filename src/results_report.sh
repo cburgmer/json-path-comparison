@@ -3,8 +3,9 @@
 set -euo pipefail
 
 readonly results_dir="$1"
-readonly consensus_dir="$2"
-readonly query_dir="$3"
+readonly relative_majority_dir="$2"
+readonly consensus_dir="$3"
+readonly query_dir="$4"
 readonly query="$(basename "$query_dir")"
 
 . src/shared.sh
@@ -13,11 +14,18 @@ all_implementations() {
     find ./implementations -name run.sh -maxdepth 2 -print0 | xargs -0 -n1 dirname | xargs -n1 basename | sort
 }
 
+is_in_majority() {
+    local implementation="$1"
+    grep "^${implementation}\$" < "${relative_majority_dir}/${query}" > /dev/null
+}
+
+has_consensus() {
+    test -s "${consensus_dir}/${query}"
+}
+
 is_outlier() {
     local implementation="$1"
-    local matching_implementations="${consensus_dir}/${query}"
-
-    is_query_result_ok "${results_dir}/${query}/${implementation}" && ! grep "^${implementation}\$" < "$matching_implementations" > /dev/null
+    is_query_result_ok "${results_dir}/${query}/${implementation}" && (! has_consensus || ! is_in_majority "$implementation")
 }
 
 implementation_outliers() {
@@ -50,16 +58,7 @@ output_setup() {
     pre_block < "$document"
 }
 
-gold_standard() {
-    local matching_implementations="${consensus_dir}/${query}"
-    local first_matching_implementation
-    first_matching_implementation="$(head -1 < "$matching_implementations")"
-
-    query_result_payload "${results_dir}/${query}/${first_matching_implementation}"
-}
-
 main() {
-    local matching_implementations="${consensus_dir}/${query}"
     local implementation
     local outliers
     local errors
@@ -73,10 +72,10 @@ main() {
 
     echo "## Results"
 
-    if [[ -s "$matching_implementations" ]]; then
+    if has_consensus; then
         echo '<h3 id="consensus">Consensus</h3>'
         echo
-        gold_standard | pre_block
+        pre_block < "${consensus_dir}/${query}"
         echo
     fi
 
