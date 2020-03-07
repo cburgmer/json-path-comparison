@@ -97,9 +97,13 @@ queries:
   - id: filter_expression_with_equals
     status: open
     result: [{"key": 42}]
+  - id: filter_expression_with_equals_array
+    status: error
   - id: filter_expression_with_equals_false
     status: error
   - id: filter_expression_with_equals_null
+    status: error
+  - id: filter_expression_with_equals_object
     status: error
   - id: filter_expression_with_equals_on_array_of_numbers
     status: open

@@ -118,12 +118,18 @@ queries:
   - id: filter_expression_with_equals
     status: open
     result: [{"key": 42}, {"key": "42"}]
+  - id: filter_expression_with_equals_array
+    status: open
+    result: [{"d": ["v1", "v2"]}]
   - id: filter_expression_with_equals_false
     status: open
     result: [{"key": false}]
   - id: filter_expression_with_equals_null
     status: open
     result: [{"key": null}]
+  - id: filter_expression_with_equals_object
+    status: open
+    result: [{"d": {"k": "v"}}]
   - id: filter_expression_with_equals_on_array_of_numbers
     status: open
     result: [42]
