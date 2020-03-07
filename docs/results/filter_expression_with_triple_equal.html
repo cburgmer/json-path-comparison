@@ -1,10 +1,10 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/3.0.1/github-markdown.css">
 <article class="markdown-body">
-<h1>Filter expression with single equal</h1>
+<h1>Filter expression with triple equal</h1>
 
 <h2>Setup</h2>
 
-<p>Selector: <code>$[?(@.key=42)]</code></p>
+<p>Selector: <code>$[?(@.key===42)]</code></p>
 
 <pre><code>[
     {"key": 0},
@@ -34,27 +34,16 @@
 
 <h3>Other responses</h3>
 
-<h4 id="Bash_JSONPath.sh">
-Bash (JSONPath.sh)
-</h4>
-
-<pre><code>[
-  {
-    "key": 42
-  },
-  {
-    "key": "42"
-  }
-]
-</code></pre>
-
 <h4 id="Clojure_json-path">
 Clojure (json-path)
 </h4>
 
 <pre><code>[
   {
-    "key": 42
+    "key": null
+  },
+  {
+    "some": "value"
   }
 ]
 </code></pre>
@@ -73,64 +62,6 @@ JavaScript (Goessner)
 <pre><code>[
   {
     "key": 42
-  },
-  {
-    "key": 42
-  },
-  {
-    "key": 42
-  },
-  {
-    "key": 42
-  },
-  {
-    "key": 42
-  },
-  {
-    "key": 42
-  },
-  {
-    "key": 42
-  },
-  {
-    "key": 42
-  },
-  {
-    "key": 42
-  },
-  {
-    "key": 42
-  },
-  {
-    "key": 42
-  },
-  {
-    "key": 42
-  },
-  {
-    "key": 42
-  },
-  {
-    "key": 42
-  },
-  {
-    "key": 42
-  },
-  {
-    "key": 42
-  },
-  {
-    "key": 42
-  },
-  {
-    "key": 42
-  },
-  {
-    "key": 42
-  },
-  {
-    "key": 42,
-    "some": "value"
   }
 ]
 </code></pre>
@@ -139,7 +70,11 @@ JavaScript (Goessner)
 JavaScript (jsonpath)
 </h4>
 
-<pre><code>[]
+<pre><code>[
+  {
+    "key": 42
+  }
+]
 </code></pre>
 
 <h4 id="JavaScript_jsonpath-plus">
@@ -149,64 +84,17 @@ JavaScript (jsonpath-plus)
 <pre><code>[
   {
     "key": 42
-  },
+  }
+]
+</code></pre>
+
+<h4 id="Java_com.jayway.jsonpath">
+Java (com.jayway.jsonpath)
+</h4>
+
+<pre><code>[
   {
     "key": 42
-  },
-  {
-    "key": 42
-  },
-  {
-    "key": 42
-  },
-  {
-    "key": 42
-  },
-  {
-    "key": 42
-  },
-  {
-    "key": 42
-  },
-  {
-    "key": 42
-  },
-  {
-    "key": 42
-  },
-  {
-    "key": 42
-  },
-  {
-    "key": 42
-  },
-  {
-    "key": 42
-  },
-  {
-    "key": 42
-  },
-  {
-    "key": 42
-  },
-  {
-    "key": 42
-  },
-  {
-    "key": 42
-  },
-  {
-    "key": 42
-  },
-  {
-    "key": 42
-  },
-  {
-    "key": 42
-  },
-  {
-    "key": 42,
-    "some": "value"
   }
 ]
 </code></pre>
@@ -217,16 +105,24 @@ PHP (flow-jsonpath)
 
 <pre><code>[
   {
-    "key": 42
-  },
-  {
-    "key": "42"
+    "key": 0
   }
 ]
 </code></pre>
 
-<h4 id="Python_jsonpath2">
-Python (jsonpath2)
+<h4 id="dotNET_Json.NET">
+dotNET (Json.NET)
+</h4>
+
+<pre><code>[
+  {
+    "key": 42
+  }
+]
+</code></pre>
+
+<h4 id="dotNET_JsonPathLib">
+dotNET (JsonPathLib)
 </h4>
 
 <pre><code>[]
@@ -234,25 +130,32 @@ Python (jsonpath2)
 
 <h3>Errors</h3>
 
+<h4 id="Bash_JSONPath.sh">
+Bash (JSONPath.sh)
+</h4>
+
+<pre><code>Expecting value: line 3 column 1 (char 2)
+</code></pre>
+
 <h4 id="C_json-glib">
 C (json-glib)
 </h4>
 
-<pre><code>Unable to compile selector `$[?(@.key=42)]': Invalid array index definition “?(@.key=42)]”
+<pre><code>Unable to compile selector `$[?(@.key===42)]': Invalid array index definition “?(@.key===42)]”
 </code></pre>
 
 <h4 id="Cpp_jsoncons">
 Cpp (jsoncons)
 </h4>
 
-<pre><code>Unsupported operator at line 1 and column 11
+<pre><code>Unsupported operator at line 1 and column 13
 </code></pre>
 
 <h4 id="Elixir_jaxon">
 Elixir (jaxon)
 </h4>
 
-<pre><code>** (Jaxon.ParseError) Expected an integer at `?(@.key=42`
+<pre><code>** (Jaxon.ParseError) Expected an integer at `?(@.key===`
     lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
     lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
 </code></pre>
@@ -271,14 +174,14 @@ Crash dump is being written to: /dev/null...done
 Golang (github.com-PaesslerAG-jsonpath)
 </h4>
 
-<pre><code>parsing error: $[?(@.key=42)]   :1:10 - 1:11 unexpected "=" while scanning parentheses expected ")"
+<pre><code>parsing error: $[?(@.key===42)]  - 1:13 unknown operator ===
 </code></pre>
 
 <h4 id="Golang_github.com-bhmj-jsonslice">
 Golang (github.com-bhmj-jsonslice)
 </h4>
 
-<pre><code>unknown token at 9
+<pre><code>unknown token at 11
 </code></pre>
 
 <h4 id="Haskell_jsonpath">
@@ -288,7 +191,7 @@ Haskell (jsonpath)
 <pre><code>json-path-comparison: searchBeginningWithSlice: string
 CallStack (from HasCallStack):
   error, called at app/Main.hs:36:7 in main:Main
-Invalid JSONPath: $[?(@.key=42)]
+Invalid JSONPath: $[?(@.key===42)]
  Error: searchBeginningWithSlice: string
 </code></pre>
 
@@ -296,45 +199,29 @@ Invalid JSONPath: $[?(@.key=42)]
 Java (com.github.jsurfer)
 </h4>
 
-<pre><code>line 1:9 token recognition error at: '=4'
-Exception in thread "main" org.antlr.v4.runtime.misc.ParseCancellationException
-    at org.antlr.v4.runtime.BailErrorStrategy.recoverInline(BailErrorStrategy.java:66)
-    at org.antlr.v4.runtime.Parser.match(Parser.java:206)
-    at org.jsfr.json.compiler.JsonPathParser.filter(JsonPathParser.java:770)
-    at org.jsfr.json.compiler.JsonPathParser.relativePath(JsonPathParser.java:307)
-    at org.jsfr.json.compiler.JsonPathParser.path(JsonPathParser.java:159)
-    at org.jsfr.json.compiler.JsonPathCompiler.compile(JsonPathCompiler.java:283)
-    at org.jsfr.json.compiler.JsonPathCompiler.compile(JsonPathCompiler.java:273)
+<pre><code>line 1:11 token recognition error at: '=4'
+Exception in thread "main" org.jsfr.json.exception.JsonSurfingException: Parser is stopped
+    at org.jsfr.json.DefaultErrorHandlingStrategy.handleParsingException(DefaultErrorHandlingStrategy.java:35)
+    at org.jsfr.json.JacksonParser$JacksonResumableParser.parse(JacksonParser.java:143)
+    at org.jsfr.json.JacksonParser.parse(JacksonParser.java:228)
+    at org.jsfr.json.JsonSurfer.surf(JsonSurfer.java:180)
+    at org.jsfr.json.JsonSurfer.collectAll(JsonSurfer.java:315)
+    at org.jsfr.json.JsonSurfer.collectAll(JsonSurfer.java:297)
     at org.jsfr.json.JsonSurfer.collectAll(JsonSurfer.java:284)
     at query.App.main(App.java:27)
-Caused by: org.antlr.v4.runtime.InputMismatchException
-    at org.antlr.v4.runtime.BailErrorStrategy.recoverInline(BailErrorStrategy.java:61)
-    ... 8 more
-</code></pre>
-
-<h4 id="Java_com.jayway.jsonpath">
-Java (com.jayway.jsonpath)
-</h4>
-
-<pre><code>SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
-SLF4J: Defaulting to no-operation (NOP) logger implementation
-SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
-Exception in thread "main" com.jayway.jsonpath.InvalidPathException: Expected character: )
-    at com.jayway.jsonpath.internal.CharacterIndex.readSignificantChar(CharacterIndex.java:218)
-    at com.jayway.jsonpath.internal.filter.FilterCompiler.readLogicalANDOperand(FilterCompiler.java:185)
-    at com.jayway.jsonpath.internal.filter.FilterCompiler.readLogicalAND(FilterCompiler.java:151)
-    at com.jayway.jsonpath.internal.filter.FilterCompiler.readLogicalOR(FilterCompiler.java:131)
-    at com.jayway.jsonpath.internal.filter.FilterCompiler.compile(FilterCompiler.java:77)
-    at com.jayway.jsonpath.internal.filter.FilterCompiler.compile(FilterCompiler.java:53)
-    at com.jayway.jsonpath.internal.path.PathCompiler.readFilterToken(PathCompiler.java:461)
-    at com.jayway.jsonpath.internal.path.PathCompiler.readNextToken(PathCompiler.java:141)
-    at com.jayway.jsonpath.internal.path.PathCompiler.readContextToken(PathCompiler.java:124)
-    at com.jayway.jsonpath.internal.path.PathCompiler.compile(PathCompiler.java:58)
-    at com.jayway.jsonpath.internal.path.PathCompiler.compile(PathCompiler.java:75)
-    at com.jayway.jsonpath.JsonPath.&lt;init&gt;(JsonPath.java:101)
-    at com.jayway.jsonpath.JsonPath.compile(JsonPath.java:467)
-    at com.jayway.jsonpath.internal.JsonContext.read(JsonContext.java:87)
-    at query.App.main(App.java:25)
+Caused by: java.lang.NumberFormatException: Character " is neither a decimal digit number, decimal point, nor "e" notation exponential mark.
+    at java.base/java.math.BigDecimal.&lt;init&gt;(BigDecimal.java:518)
+    at java.base/java.math.BigDecimal.&lt;init&gt;(BigDecimal.java:401)
+    at java.base/java.math.BigDecimal.&lt;init&gt;(BigDecimal.java:834)
+    at org.jsfr.json.filter.EqualityNumPredicate.apply(EqualityNumPredicate.java:49)
+    at org.jsfr.json.JsonFilterVerifier.primitive(JsonFilterVerifier.java:119)
+    at org.jsfr.json.ContentDispatcher.primitive(ContentDispatcher.java:147)
+    at org.jsfr.json.FilterVerifierDispatcher.primitive(FilterVerifierDispatcher.java:30)
+    at org.jsfr.json.ContentDispatcher.primitive(ContentDispatcher.java:147)
+    at org.jsfr.json.SurfingContext.primitive(SurfingContext.java:321)
+    at org.jsfr.json.JacksonParser$JacksonResumableParser.doPare(JacksonParser.java:176)
+    at org.jsfr.json.JacksonParser$JacksonResumableParser.parse(JacksonParser.java:141)
+    ... 6 more
 </code></pre>
 
 <h4 id="Kotlin_com.nfeld.jsonpathlite">
@@ -355,14 +242,14 @@ PHP (Goessner)
 PHP (galbar-jsonpath)
 </h4>
 
-<pre><code>Invalid JSONPath error: 'Error in JSONPath near '=42''
+<pre><code>Invalid JSONPath error: 'Error in JSONPath near '=''
 </code></pre>
 
 <h4 id="PHP_remorhaz-jsonpath">
 PHP (remorhaz-jsonpath)
 </h4>
 
-<pre><code>Error: 'Failed to build AST from JSONPath query: $[?(@.key=42)]'
+<pre><code>Error: 'Failed to build AST from JSONPath query: $[?(@.key===42)]'
 </code></pre>
 
 <h4 id="Perl_JSON-Path">
@@ -386,6 +273,14 @@ Python (jsonpath-rw)
 <pre><code>JsonPathLexerError('Error on line 1, col 2: Unexpected character: ? ')
 </code></pre>
 
+<h4 id="Python_jsonpath2">
+Python (jsonpath2)
+</h4>
+
+<pre><code>line 1:10 mismatched input '=' expecting {'@', '$', 'true', 'false', 'null', '{', '[', STRING, NUMBER}
+ValueError("line 1:10 mismatched input '=' expecting {'@', '$', 'true', 'false', 'null', '{', '[', STRING, NUMBER}")
+</code></pre>
+
 <h4 id="Ruby_jsonpath">
 Ruby (jsonpath)
 </h4>
@@ -407,8 +302,8 @@ Rust (jsonpath_lib)
 </h4>
 
 <pre><code>path error: 
-$[?(@.key=42)]
-^^^^^^^^^
+$[?(@.key===42)]
+^^^^^^^^^^^
 </code></pre>
 
 <h4 id="Scala_jsonpath">
@@ -416,20 +311,6 @@ Scala (jsonpath)
 </h4>
 
 <pre><code>JPError(end of input expected)
-</code></pre>
-
-<h4 id="dotNET_Json.NET">
-dotNET (Json.NET)
-</h4>
-
-<pre><code>Could not read query operator.
-</code></pre>
-
-<h4 id="dotNET_JsonPathLib">
-dotNET (JsonPathLib)
-</h4>
-
-<pre><code>Object of type 'System.Double' cannot be converted to type 'Newtonsoft.Json.Linq.JToken'.
 </code></pre>
 
 <h4 id="dotNET_Manatee.Json">

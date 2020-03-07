@@ -180,9 +180,12 @@ queries:
     result: [{"name": -1}, {"name": -1}, {"name": -1}, {"name": -1}, {"name": -1}]
   - id: filter_expression_with_single_equal
     status: open
-    result: [{"key": 42}, {"key": 42}, {"key": 42}, {"key": 42}, {"key": 42}, {"key": 42}, {"key": 42}, {"key": 42}, {"key": 42, "some": "value"}]
+    result: [{"key": 42}, {"key": 42}, {"key": 42}, {"key": 42}, {"key": 42}, {"key": 42}, {"key": 42}, {"key": 42}, {"key": 42}, {"key": 42}, {"key": 42}, {"key": 42}, {"key": 42}, {"key": 42}, {"key": 42}, {"key": 42}, {"key": 42}, {"key": 42}, {"key": 42}, {"key": 42, "some": "value"}]
   - id: filter_expression_with_subfilter
     status: error
+  - id: filter_expression_with_triple_equal
+    status: open
+    result: [{"key": 42}]
   - id: filter_expression_with_value
     status: open
     result: [{"key": true}, {"key": "value"}, {"key": 1}, {"key": -1}, {"key": 42}, {"key": {}}, {"key": []}]
