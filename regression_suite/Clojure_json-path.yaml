@@ -140,6 +140,9 @@ queries:
   - id: dot_notation_after_filter_expression
     status: fail
     result: []
+  - id: dot_notation_after_union
+    status: fail
+    result: "ey"
   - id: dot_notation_after_union_with_keys
     status: error
   - id: dot_notation_on_array
@@ -273,6 +276,9 @@ queries:
     result: [[{"a": {"b": "c"}}], {"a": {"b": "c"}}, {"b": "c"}]
   - id: script_expression
     status: error
+  - id: union
+    status: fail
+    result: "first"
   - id: union_with_filter
     status: open
     result: [{"key": 1}, {"key": 2}]
@@ -286,9 +292,6 @@ queries:
     status: error
   - id: union_with_keys_on_object_without_key
     status: error
-  - id: union_with_numbers
-    status: fail
-    result: "first"
   - id: union_with_numbers_in_decreasing_order
     status: fail
     result: 5

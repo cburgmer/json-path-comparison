@@ -585,6 +585,22 @@ The following queries provide results that do not match those of other implement
   []
   ```
 
+- [ ] `$[0,2].key`
+  Input:
+  ```
+  [{"key": "ey"}, {"key": "bee"}, {"key": "see"}]
+  ```
+  Expected output:
+  ```
+  ["ey", "see"]
+  ```
+  Error:
+  ```
+  ** (Jaxon.ParseError) Expected an integer at `0,2].key`
+      lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
+      lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
+  ```
+
 - [ ] `$['one','three'].key`
   Input:
   ```
@@ -741,20 +757,6 @@ The following queries provide results that do not match those of other implement
       lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
   ```
 
-- [ ] `$[0]['c','d']`
-  Input:
-  ```
-  [{"c": "cc1", "d": "dd1", "e": "ee1"}, {"c": "cc2", "d": "dd2", "e": "ee2"}]
-  ```
-  Expected output:
-  ```
-  ["cc1", "dd1"]
-  ```
-  Actual output:
-  ```
-  []
-  ```
-
 - [ ] `$[0,1]`
   Input:
   ```
@@ -769,6 +771,20 @@ The following queries provide results that do not match those of other implement
   ** (Jaxon.ParseError) Expected an integer at `0,1]`
       lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
       lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
+  ```
+
+- [ ] `$[0]['c','d']`
+  Input:
+  ```
+  [{"c": "cc1", "d": "dd1", "e": "ee1"}, {"c": "cc2", "d": "dd2", "e": "ee2"}]
+  ```
+  Expected output:
+  ```
+  ["cc1", "dd1"]
+  ```
+  Actual output:
+  ```
+  []
   ```
 
 - [ ] `$[4,1]`

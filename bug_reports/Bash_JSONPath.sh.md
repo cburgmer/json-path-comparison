@@ -489,6 +489,20 @@ The following queries provide results that do not match those of other implement
   {"bicycle": {"price": 19.95}, "book": [{"price": 8.95}, {"price": 12.99}, {"price": 8.99}, {"price": 22.99}]}
   ```
 
+- [ ] `$[0,2].key`
+  Input:
+  ```
+  [{"key": "ey"}, {"key": "bee"}, {"key": "see"}]
+  ```
+  Expected output:
+  ```
+  ["ey", "see"]
+  ```
+  Actual output:
+  ```
+  [{"key": "ey"}, {"key": "see"}]
+  ```
+
 - [ ] `$['one','three'].key`
   Input:
   ```

@@ -103,6 +103,9 @@ queries:
     status: error
   - id: dot_notation_after_filter_expression
     status: error
+  - id: dot_notation_after_union
+    status: fail
+    result: null
   - id: dot_notation_after_union_with_keys
     status: fail
     result: null

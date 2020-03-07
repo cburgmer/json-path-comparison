@@ -521,6 +521,20 @@ The following queries provide results that do not match those of other implement
   parsing error
   ```
 
+- [ ] `$[0,2].key`
+  Input:
+  ```
+  [{"key": "ey"}, {"key": "bee"}, {"key": "see"}]
+  ```
+  Expected output:
+  ```
+  ["ey", "see"]
+  ```
+  Error:
+  ```
+  parsing error
+  ```
+
 - [ ] `$['one','three'].key`
   Input:
   ```
@@ -619,20 +633,6 @@ The following queries provide results that do not match those of other implement
   parsing error
   ```
 
-- [ ] `$[0]['c','d']`
-  Input:
-  ```
-  [{"c": "cc1", "d": "dd1", "e": "ee1"}, {"c": "cc2", "d": "dd2", "e": "ee2"}]
-  ```
-  Expected output:
-  ```
-  ["cc1", "dd1"]
-  ```
-  Error:
-  ```
-  parsing error
-  ```
-
 - [ ] `$[0,1]`
   Input:
   ```
@@ -641,6 +641,20 @@ The following queries provide results that do not match those of other implement
   Expected output:
   ```
   ["first", "second"]
+  ```
+  Error:
+  ```
+  parsing error
+  ```
+
+- [ ] `$[0]['c','d']`
+  Input:
+  ```
+  [{"c": "cc1", "d": "dd1", "e": "ee1"}, {"c": "cc2", "d": "dd2", "e": "ee2"}]
+  ```
+  Expected output:
+  ```
+  ["cc1", "dd1"]
   ```
   Error:
   ```

@@ -157,6 +157,20 @@ The following queries provide results that do not match those of other implement
   JsonPathLexerError('Error on line 1, col 2: Unexpected character: ? ')
   ```
 
+- [ ] `$[0,2].key`
+  Input:
+  ```
+  [{"key": "ey"}, {"key": "bee"}, {"key": "see"}]
+  ```
+  Expected output:
+  ```
+  ["ey", "see"]
+  ```
+  Error:
+  ```
+  Exception('Parse error at 1:3 near token , (,)')
+  ```
+
 - [ ] `$.2`
   Input:
   ```

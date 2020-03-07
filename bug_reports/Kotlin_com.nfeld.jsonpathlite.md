@@ -255,6 +255,20 @@ The following queries provide results that do not match those of other implement
   Unexpected char, char=?, index=2
   ```
 
+- [ ] `$[0,2].key`
+  Input:
+  ```
+  [{"key": "ey"}, {"key": "bee"}, {"key": "see"}]
+  ```
+  Expected output:
+  ```
+  ["ey", "see"]
+  ```
+  Actual output:
+  ```
+  null
+  ```
+
 - [ ] `$['one','three'].key`
   Input:
   ```

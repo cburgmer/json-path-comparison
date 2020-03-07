@@ -86,6 +86,8 @@ queries:
     status: error
   - id: dot_notation_after_filter_expression
     status: error
+  - id: dot_notation_after_union
+    status: error
   - id: dot_notation_with_double_quotes
     status: open
     result: ["value"]
@@ -193,6 +195,8 @@ queries:
     status: error
   - id: script_expression
     status: error
+  - id: union
+    status: error
   - id: union_with_filter
     status: error
   - id: union_with_keys
@@ -207,8 +211,6 @@ queries:
   - id: union_with_keys_on_object_without_key
     status: open
     result: ["value"]
-  - id: union_with_numbers
-    status: error
   - id: union_with_numbers_in_decreasing_order
     status: error
   - id: union_with_slice_and_number

@@ -130,6 +130,8 @@ queries:
   - id: dot_notation_after_recursive_descent_after_dot_notation
     status: fail
     result: []
+  - id: dot_notation_after_union
+    status: error
   - id: dot_notation_after_union_with_keys
     status: error
   - id: dot_notation_with_double_quotes
@@ -237,6 +239,8 @@ queries:
     result: [[{"a": {"b": "c"}}]]
   - id: script_expression
     status: error
+  - id: union
+    status: error
   - id: union_with_filter
     status: error
   - id: union_with_keys
@@ -249,8 +253,6 @@ queries:
   - id: union_with_keys_after_dot_notation_with_wildcard
     status: error
   - id: union_with_keys_on_object_without_key
-    status: error
-  - id: union_with_numbers
     status: error
   - id: union_with_numbers_in_decreasing_order
     status: error

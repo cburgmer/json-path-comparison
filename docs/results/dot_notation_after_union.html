@@ -1,12 +1,12 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/3.0.1/github-markdown.css">
 <article class="markdown-body">
-<h1>Union with numbers</h1>
+<h1>Dot notation after union</h1>
 
 <h2>Setup</h2>
 
-<p>Selector: <code>$[0,1]</code></p>
+<p>Selector: <code>$[0,2].key</code></p>
 
-<pre><code>["first", "second", "third"]
+<pre><code>[{"key": "ey"}, {"key": "bee"}, {"key": "see"}]
 </code></pre>
 
 <h2>Results</h2>
@@ -14,18 +14,39 @@
 <h3 id="consensus">Consensus</h3>
 
 <pre><code>[
-  "first",
-  "second"
+  "ey",
+  "see"
 ]
 </code></pre>
 
 <h3>Other responses</h3>
 
+<h4 id="Bash_JSONPath.sh">
+Bash (JSONPath.sh)
+</h4>
+
+<pre><code>[
+  {
+    "key": "ey"
+  },
+  {
+    "key": "see"
+  }
+]
+</code></pre>
+
 <h4 id="Clojure_json-path">
 Clojure (json-path)
 </h4>
 
-<pre><code>"first"
+<pre><code>"ey"
+</code></pre>
+
+<h4 id="Kotlin_com.nfeld.jsonpathlite">
+Kotlin (com.nfeld.jsonpathlite)
+</h4>
+
+<pre><code>null
 </code></pre>
 
 <h3>Errors</h3>
@@ -34,7 +55,7 @@ Clojure (json-path)
 Elixir (jaxon)
 </h4>
 
-<pre><code>** (Jaxon.ParseError) Expected an integer at `0,1]`
+<pre><code>** (Jaxon.ParseError) Expected an integer at `0,2].key`
     lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
     lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
 </code></pre>

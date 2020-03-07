@@ -282,6 +282,10 @@ queries:
     document: {"store": {"book": [{"category": "reference", "author": "Nigel Rees", "title": "Sayings of the Century", "price": 8.95}, {"category": "fiction", "author": "Evelyn Waugh", "title": "Sword of Honour", "price": 12.99}, {"category": "fiction", "author": "Herman Melville", "title": "Moby Dick", "isbn": "0-553-21311-3", "price": 8.99}, {"category": "fiction", "author": "J. R. R. Tolkien", "title": "The Lord of the Rings", "isbn": "0-395-19395-8", "price": 22.99}], "bicycle": {"color": "red", "price": 19.95}}}
     ordered: false
     consensus: [12.99, 19.95, 22.99, 8.95, 8.99]
+  - id: dot_notation_after_union
+    selector: $[0,2].key
+    document: [{"key": "ey"}, {"key": "bee"}, {"key": "see"}]
+    consensus: ["ey", "see"]
   - id: dot_notation_after_union_with_keys
     selector: $['one','three'].key
     document: {"one": {"key": "value"}, "two": {"k": "v"}, "three": {"some": "more", "key": "other value"}}
@@ -499,6 +503,10 @@ queries:
   - id: script_expression
     selector: $[(@.length-1)]
     document: ["first", "second", "third", "forth", "fifth"]
+  - id: union
+    selector: $[0,1]
+    document: ["first", "second", "third"]
+    consensus: ["first", "second"]
   - id: union_with_filter
     selector: $[?(@.key<3),?(@.key>6)]
     document: [{"key": 1}, {"key": 8}, {"key": 3}, {"key": 10}, {"key": 7}, {"key": 2}, {"key": 6}, {"key": 4}]
@@ -518,10 +526,6 @@ queries:
   - id: union_with_keys_on_object_without_key
     selector: $['missing','key']
     document: {"key": "value", "another": "entry"}
-  - id: union_with_numbers
-    selector: $[0,1]
-    document: ["first", "second", "third"]
-    consensus: ["first", "second"]
   - id: union_with_numbers_in_decreasing_order
     selector: $[4,1]
     document: [1, 2, 3, 4, 5]

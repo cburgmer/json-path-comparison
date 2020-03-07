@@ -133,6 +133,9 @@ queries:
   - id: dot_notation_after_recursive_descent_after_dot_notation
     status: fail
     result: {"bicycle": {"price": 19.95}, "book": [{"price": 8.95}, {"price": 12.99}, {"price": 8.99}, {"price": 22.99}]}
+  - id: dot_notation_after_union
+    status: fail
+    result: [{"key": "ey"}, {"key": "see"}]
   - id: dot_notation_after_union_with_keys
     status: fail
     result: {"one": {"key": "value"}, "three": {"key": "other value"}}

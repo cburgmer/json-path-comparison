@@ -465,6 +465,20 @@ The following queries provide results that do not match those of other implement
   []
   ```
 
+- [ ] `$[0,2].key`
+  Input:
+  ```
+  [{"key": "ey"}, {"key": "bee"}, {"key": "see"}]
+  ```
+  Expected output:
+  ```
+  ["ey", "see"]
+  ```
+  Actual output:
+  ```
+  "ey"
+  ```
+
 - [ ] `$['one','three'].key`
   Input:
   ```
@@ -549,20 +563,6 @@ The following queries provide results that do not match those of other implement
   java.lang.NullPointerException nil
   ```
 
-- [ ] `$[0]['c','d']`
-  Input:
-  ```
-  [{"c": "cc1", "d": "dd1", "e": "ee1"}, {"c": "cc2", "d": "dd2", "e": "ee2"}]
-  ```
-  Expected output:
-  ```
-  ["cc1", "dd1"]
-  ```
-  Error:
-  ```
-  java.lang.Exception object must be an array.
-  ```
-
 - [ ] `$[0,1]`
   Input:
   ```
@@ -575,6 +575,20 @@ The following queries provide results that do not match those of other implement
   Actual output:
   ```
   "first"
+  ```
+
+- [ ] `$[0]['c','d']`
+  Input:
+  ```
+  [{"c": "cc1", "d": "dd1", "e": "ee1"}, {"c": "cc2", "d": "dd2", "e": "ee2"}]
+  ```
+  Expected output:
+  ```
+  ["cc1", "dd1"]
+  ```
+  Error:
+  ```
+  java.lang.Exception object must be an array.
   ```
 
 - [ ] `$[4,1]`
