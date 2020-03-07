@@ -17,6 +17,20 @@ The following queries provide results that do not match those of other implement
   Index was out of range. Must be non-negative and less than the size of the collection. (Parameter 'index')
   ```
 
+- [ ] `$..[0]`
+  Input:
+  ```
+  ["first", {"key": ["first nested", {"more": [{"nested": ["deepest", "second"]}, ["more", "values"]]}]}]
+  ```
+  Expected output:
+  ```
+  ["deepest", "first nested", "first", "more", {"nested": ["deepest", "second"]}]
+  ```
+  Actual output:
+  ```
+  ["first"]
+  ```
+
 - [ ] `$[*]`
   Input:
   ```
@@ -66,11 +80,11 @@ The following queries provide results that do not match those of other implement
   ```
   Expected output:
   ```
-  [40, null, 42]
+  [40, 42, null]
   ```
   Actual output:
   ```
-  [[40, null, 42], 40, null, 42]
+  [40, 42, [40, null, 42], null]
   ```
 
 - [ ] `$..*`

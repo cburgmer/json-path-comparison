@@ -71,6 +71,23 @@ The following queries provide results that do not match those of other implement
   {"init terminating in do_boot",{badmatch,{error,{1,ejsonpath_parse,["syntax error before: ","':'"]}}}}
   ```
 
+- [ ] `$..[0]`
+  Input:
+  ```
+  ["first", {"key": ["first nested", {"more": [{"nested": ["deepest", "second"]}, ["more", "values"]]}]}]
+  ```
+  Expected output:
+  ```
+  ["deepest", "first nested", "first", "more", {"nested": ["deepest", "second"]}]
+  ```
+  Error:
+  ```
+  init terminating in do_boot ({badmatch,{error,{1,ejsonpath_parse,syntax error before: '['}}})
+  
+  Crash dump is being written to: /dev/null...done
+  {"init terminating in do_boot",{badmatch,{error,{1,ejsonpath_parse,["syntax error before: ","'['"]}}}}
+  ```
+
 - [ ] `$.2`
   Input:
   ```

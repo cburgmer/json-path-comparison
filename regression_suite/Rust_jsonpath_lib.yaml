@@ -28,7 +28,7 @@ queries:
     status: open
     result: [42]
   - id: bracket_notation_with_number_after_recursive_descent
-    status: open
+    status: fail
     result: ["first"]
   - id: bracket_notation_with_number_on_object
     status: open
@@ -79,7 +79,7 @@ queries:
     status: error
   - id: filter_expression_after_dot_notation_with_wildcard_after_recursive_descent
     status: open
-    result: [{"id": 6, "name": "last"}, {"id": 3, "name": "another"}, {"id": 4, "name": "more"}, {"id": 5, "name": "next to last"}]
+    result: [{"id": 3, "name": "another"}, {"id": 6, "name": "last"}, {"id": 4, "name": "more"}, {"id": 5, "name": "next to last"}]
   - id: filter_expression_after_recursive_descent
     status: open
     result: [{"id": 2}, {"id": 2}, {"id": 2}, {"id": 2}]
@@ -165,7 +165,7 @@ queries:
     result: [{"key": true}, {"key": false}, {"key": null}, {"key": "value"}, {"key": ""}, {"key": 0}, {"key": 1}, {"key": -1}, {"key": 42}, {"key": {}}, {"key": []}]
   - id: filter_expression_with_value_after_recursive_descent
     status: open
-    result: [{"id": 2}, {"id": {"id": 2}}, {"id": 2}, {"id": 2}, {"id": 2}]
+    result: [{"id": 2}, {"id": 2}, {"id": 2}, {"id": 2}, {"id": {"id": 2}}]
   - id: filter_expression_without_value
     status: error
   - id: recursive_descent

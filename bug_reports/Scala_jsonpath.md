@@ -3,6 +3,20 @@ Results do not match other implementations
 The following queries provide results that do not match those of other implementations of JSONPath
 (compare https://cburgmer.github.io/json-path-comparison/):
 
+- [ ] `$..[0]`
+  Input:
+  ```
+  ["first", {"key": ["first nested", {"more": [{"nested": ["deepest", "second"]}, ["more", "values"]]}]}]
+  ```
+  Expected output:
+  ```
+  ["deepest", "first nested", "first", "more", {"nested": ["deepest", "second"]}]
+  ```
+  Error:
+  ```
+  JPError(end of input expected)
+  ```
+
 - [ ] `$['*']`
   Input:
   ```
@@ -80,11 +94,11 @@ The following queries provide results that do not match those of other implement
   ```
   Expected output:
   ```
-  [40, null, 42]
+  [40, 42, null]
   ```
   Actual output:
   ```
-  [[40, null, 42], 40, null, 42]
+  [40, 42, [40, null, 42], null]
   ```
 
 - [ ] `$..*`

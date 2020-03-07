@@ -59,6 +59,20 @@ The following queries provide results that do not match those of other implement
   ["third"]
   ```
 
+- [ ] `$..[0]`
+  Input:
+  ```
+  ["first", {"key": ["first nested", {"more": [{"nested": ["deepest", "second"]}, ["more", "values"]]}]}]
+  ```
+  Expected output:
+  ```
+  ["deepest", "first nested", "first", "more", {"nested": ["deepest", "second"]}]
+  ```
+  Error:
+  ```
+  no implicit conversion of Integer into String
+  ```
+
 - [ ] `$['0']`
   Input:
   ```
@@ -150,11 +164,11 @@ The following queries provide results that do not match those of other implement
   ```
   Expected output:
   ```
-  [40, null, 42]
+  [40, 42, null]
   ```
   Actual output:
   ```
-  [[40, null, 42], 40, null, 42]
+  [40, 42, [40, null, 42], null]
   ```
 
 - [ ] `$..*`

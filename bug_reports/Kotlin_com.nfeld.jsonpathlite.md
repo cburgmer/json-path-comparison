@@ -304,7 +304,7 @@ The following queries provide results that do not match those of other implement
   ```
   Expected output:
   ```
-  [40, null, 42]
+  [40, 42, null]
   ```
   Actual output:
   ```

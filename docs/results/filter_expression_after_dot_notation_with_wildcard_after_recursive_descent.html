@@ -66,12 +66,8 @@ Cpp (jsoncons)
 
 <pre><code>[
   {
-    "id": 6,
-    "name": "last"
-  },
-  {
-    "id": 5,
-    "name": "next to last"
+    "id": 3,
+    "name": "another"
   },
   {
     "id": 3,
@@ -81,6 +77,186 @@ Cpp (jsoncons)
     "id": 4,
     "name": "more"
   },
+  {
+    "id": 4,
+    "name": "more"
+  },
+  {
+    "id": 5,
+    "name": "next to last"
+  },
+  {
+    "id": 6,
+    "name": "last"
+  }
+]
+</code></pre>
+
+<h4 id="Erlang_ejsonpath">
+Erlang (ejsonpath)
+</h4>
+
+<pre><code>[
+  "another",
+  "another",
+  "first",
+  "first",
+  "last",
+  "last",
+  "more",
+  "more",
+  "next to last",
+  "next to last",
+  "next",
+  "next",
+  1,
+  1,
+  2,
+  2,
+  3,
+  3,
+  4,
+  4,
+  5,
+  5,
+  6,
+  6,
+  [
+    {
+      "id": 1,
+      "name": "first"
+    },
+    {
+      "id": 2,
+      "name": "next"
+    },
+    {
+      "id": 3,
+      "name": "another"
+    },
+    {
+      "id": 4,
+      "name": "more"
+    }
+  ],
+  {
+    "id": 3,
+    "name": "another"
+  },
+  {
+    "id": 4,
+    "name": "more"
+  },
+  {
+    "id": 5,
+    "name": "next to last"
+  },
+  {
+    "more": {
+      "id": 5,
+      "name": "next to last"
+    },
+    "one": [
+      {
+        "id": 1,
+        "name": "first"
+      },
+      {
+        "id": 2,
+        "name": "next"
+      },
+      {
+        "id": 3,
+        "name": "another"
+      },
+      {
+        "id": 4,
+        "name": "more"
+      }
+    ]
+  }
+]
+</code></pre>
+
+<h4 id="Golang_github.com-bhmj-jsonslice">
+Golang (github.com-bhmj-jsonslice)
+</h4>
+
+<pre><code>[
+  "another",
+  "first",
+  "last",
+  "more",
+  "next to last",
+  "next",
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  [
+    {
+      "id": 1,
+      "name": "first"
+    },
+    {
+      "id": 2,
+      "name": "next"
+    },
+    {
+      "id": 3,
+      "name": "another"
+    },
+    {
+      "id": 4,
+      "name": "more"
+    }
+  ],
+  {
+    "id": 5,
+    "name": "next to last"
+  },
+  {
+    "more": {
+      "id": 5,
+      "name": "next to last"
+    },
+    "one": [
+      {
+        "id": 1,
+        "name": "first"
+      },
+      {
+        "id": 2,
+        "name": "next"
+      },
+      {
+        "id": 3,
+        "name": "another"
+      },
+      {
+        "id": 4,
+        "name": "more"
+      }
+    ]
+  }
+]
+</code></pre>
+
+<h4 id="JavaScript_Goessner">
+JavaScript (Goessner)
+</h4>
+
+<pre><code>[
+  "another",
+  "last",
+  "more",
+  "next to last",
+  3,
+  4,
+  5,
+  6,
   {
     "id": 3,
     "name": "another"
@@ -92,198 +268,22 @@ Cpp (jsoncons)
 ]
 </code></pre>
 
-<h4 id="Erlang_ejsonpath">
-Erlang (ejsonpath)
-</h4>
-
-<pre><code>[
-  {
-    "more": {
-      "id": 5,
-      "name": "next to last"
-    },
-    "one": [
-      {
-        "id": 1,
-        "name": "first"
-      },
-      {
-        "id": 2,
-        "name": "next"
-      },
-      {
-        "id": 3,
-        "name": "another"
-      },
-      {
-        "id": 4,
-        "name": "more"
-      }
-    ]
-  },
-  6,
-  "last",
-  {
-    "id": 5,
-    "name": "next to last"
-  },
-  [
-    {
-      "id": 1,
-      "name": "first"
-    },
-    {
-      "id": 2,
-      "name": "next"
-    },
-    {
-      "id": 3,
-      "name": "another"
-    },
-    {
-      "id": 4,
-      "name": "more"
-    }
-  ],
-  5,
-  "next to last",
-  {
-    "id": 3,
-    "name": "another"
-  },
-  {
-    "id": 4,
-    "name": "more"
-  },
-  5,
-  "next to last",
-  1,
-  "first",
-  2,
-  "next",
-  3,
-  "another",
-  4,
-  "more",
-  1,
-  "first",
-  2,
-  "next",
-  3,
-  "another",
-  4,
-  "more",
-  6,
-  "last"
-]
-</code></pre>
-
-<h4 id="Golang_github.com-bhmj-jsonslice">
-Golang (github.com-bhmj-jsonslice)
-</h4>
-
-<pre><code>[
-  {
-    "more": {
-      "id": 5,
-      "name": "next to last"
-    },
-    "one": [
-      {
-        "id": 1,
-        "name": "first"
-      },
-      {
-        "id": 2,
-        "name": "next"
-      },
-      {
-        "id": 3,
-        "name": "another"
-      },
-      {
-        "id": 4,
-        "name": "more"
-      }
-    ]
-  },
-  [
-    {
-      "id": 1,
-      "name": "first"
-    },
-    {
-      "id": 2,
-      "name": "next"
-    },
-    {
-      "id": 3,
-      "name": "another"
-    },
-    {
-      "id": 4,
-      "name": "more"
-    }
-  ],
-  "first",
-  1,
-  "next",
-  2,
-  "another",
-  3,
-  "more",
-  4,
-  {
-    "id": 5,
-    "name": "next to last"
-  },
-  "next to last",
-  5,
-  "last",
-  6
-]
-</code></pre>
-
-<h4 id="JavaScript_Goessner">
-JavaScript (Goessner)
-</h4>
-
-<pre><code>[
-  "last",
-  6,
-  {
-    "id": 3,
-    "name": "another"
-  },
-  {
-    "id": 4,
-    "name": "more"
-  },
-  "next to last",
-  5,
-  "another",
-  3,
-  "more",
-  4
-]
-</code></pre>
-
 <h4 id="JavaScript_jsonpath">
 JavaScript (jsonpath)
 </h4>
 
 <pre><code>[
   {
-    "id": 5,
-    "name": "next to last"
-  },
-  {
     "id": 3,
     "name": "another"
   },
   {
     "id": 4,
     "name": "more"
+  },
+  {
+    "id": 5,
+    "name": "next to last"
   }
 ]
 </code></pre>
@@ -294,16 +294,16 @@ JavaScript (jsonpath-plus)
 
 <pre><code>[
   {
-    "id": 5,
-    "name": "next to last"
-  },
-  {
     "id": 3,
     "name": "another"
   },
   {
     "id": 4,
     "name": "more"
+  },
+  {
+    "id": 5,
+    "name": "next to last"
   }
 ]
 </code></pre>
@@ -330,12 +330,20 @@ Java (com.jayway.jsonpath)
 
 <pre><code>[
   {
-    "id": 6,
-    "name": "last"
+    "id": 3,
+    "name": "another"
   },
   {
     "id": 3,
     "name": "another"
+  },
+  {
+    "id": 6,
+    "name": "last"
+  },
+  {
+    "id": 4,
+    "name": "more"
   },
   {
     "id": 4,
@@ -344,14 +352,6 @@ Java (com.jayway.jsonpath)
   {
     "id": 5,
     "name": "next to last"
-  },
-  {
-    "id": 3,
-    "name": "another"
-  },
-  {
-    "id": 4,
-    "name": "more"
   }
 ]
 </code></pre>
@@ -362,16 +362,16 @@ PHP (flow-jsonpath)
 
 <pre><code>[
   {
-    "id": 5,
-    "name": "next to last"
-  },
-  {
     "id": 3,
     "name": "another"
   },
   {
     "id": 4,
     "name": "more"
+  },
+  {
+    "id": 5,
+    "name": "next to last"
   }
 ]
 </code></pre>
@@ -382,20 +382,20 @@ PHP (galbar-jsonpath)
 
 <pre><code>[
   {
-    "id": 6,
-    "name": "last"
-  },
-  {
-    "id": 5,
-    "name": "next to last"
-  },
-  {
     "id": 3,
     "name": "another"
   },
   {
+    "id": 6,
+    "name": "last"
+  },
+  {
     "id": 4,
     "name": "more"
+  },
+  {
+    "id": 5,
+    "name": "next to last"
   }
 ]
 </code></pre>
@@ -410,12 +410,16 @@ PHP (remorhaz-jsonpath)
     "name": "another"
   },
   {
-    "id": 4,
-    "name": "more"
-  },
-  {
     "id": 3,
     "name": "another"
+  },
+  {
+    "id": 6,
+    "name": "last"
+  },
+  {
+    "id": 4,
+    "name": "more"
   },
   {
     "id": 4,
@@ -424,10 +428,6 @@ PHP (remorhaz-jsonpath)
   {
     "id": 5,
     "name": "next to last"
-  },
-  {
-    "id": 6,
-    "name": "last"
   }
 ]
 </code></pre>
@@ -438,16 +438,16 @@ Python (jsonpath)
 
 <pre><code>[
   {
-    "id": 5,
-    "name": "next to last"
-  },
-  {
     "id": 3,
     "name": "another"
   },
   {
     "id": 4,
     "name": "more"
+  },
+  {
+    "id": 5,
+    "name": "next to last"
   }
 ]
 </code></pre>
@@ -458,20 +458,20 @@ Python (jsonpath2)
 
 <pre><code>[
   {
-    "id": 6,
-    "name": "last"
-  },
-  {
-    "id": 5,
-    "name": "next to last"
-  },
-  {
     "id": 3,
     "name": "another"
   },
   {
+    "id": 6,
+    "name": "last"
+  },
+  {
     "id": 4,
     "name": "more"
+  },
+  {
+    "id": 5,
+    "name": "next to last"
   }
 ]
 </code></pre>
@@ -482,92 +482,84 @@ Ruby (jsonpath)
 
 <pre><code>[
   {
+    "id": 3,
+    "name": "another"
+  },
+  {
+    "id": 3,
+    "name": "another"
+  },
+  {
+    "id": 3,
+    "name": "another"
+  },
+  {
+    "id": 3,
+    "name": "another"
+  },
+  {
+    "id": 3,
+    "name": "another"
+  },
+  {
+    "id": 3,
+    "name": "another"
+  },
+  {
+    "id": 3,
+    "name": "another"
+  },
+  {
+    "id": 3,
+    "name": "another"
+  },
+  {
+    "id": 3,
+    "name": "another"
+  },
+  {
     "id": 6,
     "name": "last"
   },
   {
-    "id": 3,
-    "name": "another"
-  },
-  {
-    "id": 4,
-    "name": "more"
-  },
-  {
-    "id": 3,
-    "name": "another"
-  },
-  {
-    "id": 4,
-    "name": "more"
-  },
-  {
-    "id": 5,
-    "name": "next to last"
+    "id": 6,
+    "name": "last"
   },
   {
     "id": 6,
     "name": "last"
   },
   {
-    "id": 3,
-    "name": "another"
+    "id": 4,
+    "name": "more"
   },
   {
     "id": 4,
     "name": "more"
   },
   {
-    "id": 3,
-    "name": "another"
+    "id": 4,
+    "name": "more"
   },
   {
     "id": 4,
     "name": "more"
   },
   {
-    "id": 5,
-    "name": "next to last"
-  },
-  {
-    "id": 3,
-    "name": "another"
+    "id": 4,
+    "name": "more"
   },
   {
     "id": 4,
     "name": "more"
   },
   {
-    "id": 3,
-    "name": "another"
-  },
-  {
     "id": 4,
     "name": "more"
   },
   {
-    "id": 5,
-    "name": "next to last"
-  },
-  {
-    "id": 3,
-    "name": "another"
-  },
-  {
     "id": 4,
     "name": "more"
-  },
-  {
-    "id": 3,
-    "name": "another"
-  },
-  {
-    "id": 4,
-    "name": "more"
-  },
-  {
-    "id": 3,
-    "name": "another"
   },
   {
     "id": 4,
@@ -578,8 +570,16 @@ Ruby (jsonpath)
     "name": "next to last"
   },
   {
-    "id": 6,
-    "name": "last"
+    "id": 5,
+    "name": "next to last"
+  },
+  {
+    "id": 5,
+    "name": "next to last"
+  },
+  {
+    "id": 5,
+    "name": "next to last"
   }
 ]
 </code></pre>
@@ -590,12 +590,12 @@ Rust (jsonpath_lib)
 
 <pre><code>[
   {
-    "id": 6,
-    "name": "last"
-  },
-  {
     "id": 3,
     "name": "another"
+  },
+  {
+    "id": 6,
+    "name": "last"
   },
   {
     "id": 4,
@@ -618,16 +618,16 @@ Scala (jsonpath)
     "name": "another"
   },
   {
+    "id": 6,
+    "name": "last"
+  },
+  {
     "id": 4,
     "name": "more"
   },
   {
     "id": 5,
     "name": "next to last"
-  },
-  {
-    "id": 6,
-    "name": "last"
   }
 ]
 </code></pre>
@@ -638,12 +638,12 @@ dotNET (Json.NET)
 
 <pre><code>[
   {
-    "id": 6,
-    "name": "last"
-  },
-  {
     "id": 3,
     "name": "another"
+  },
+  {
+    "id": 6,
+    "name": "last"
   },
   {
     "id": 4,
@@ -658,16 +658,16 @@ dotNET (JsonPathLib)
 
 <pre><code>[
   {
-    "id": 5,
-    "name": "next to last"
-  },
-  {
     "id": 3,
     "name": "another"
   },
   {
     "id": 4,
     "name": "more"
+  },
+  {
+    "id": 5,
+    "name": "next to last"
   }
 ]
 </code></pre>
@@ -678,16 +678,16 @@ dotNET (Manatee.Json)
 
 <pre><code>[
   {
-    "id": 5,
-    "name": "next to last"
-  },
-  {
     "id": 3,
     "name": "another"
   },
   {
     "id": 4,
     "name": "more"
+  },
+  {
+    "id": 5,
+    "name": "next to last"
   }
 ]
 </code></pre>

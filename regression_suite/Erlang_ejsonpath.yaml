@@ -78,7 +78,7 @@ queries:
     status: error
   - id: filter_expression_after_dot_notation_with_wildcard_after_recursive_descent
     status: open
-    result: [{"more": {"id": 5, "name": "next to last"}, "one": [{"id": 1, "name": "first"}, {"id": 2, "name": "next"}, {"id": 3, "name": "another"}, {"id": 4, "name": "more"}]}, 6, "last", {"id": 5, "name": "next to last"}, [{"id": 1, "name": "first"}, {"id": 2, "name": "next"}, {"id": 3, "name": "another"}, {"id": 4, "name": "more"}], 5, "next to last", {"id": 3, "name": "another"}, {"id": 4, "name": "more"}, 5, "next to last", 1, "first", 2, "next", 3, "another", 4, "more", 1, "first", 2, "next", 3, "another", 4, "more", 6, "last"]
+    result: ["another", "another", "first", "first", "last", "last", "more", "more", "next to last", "next to last", "next", "next", 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, [{"id": 1, "name": "first"}, {"id": 2, "name": "next"}, {"id": 3, "name": "another"}, {"id": 4, "name": "more"}], {"id": 3, "name": "another"}, {"id": 4, "name": "more"}, {"id": 5, "name": "next to last"}, {"more": {"id": 5, "name": "next to last"}, "one": [{"id": 1, "name": "first"}, {"id": 2, "name": "next"}, {"id": 3, "name": "another"}, {"id": 4, "name": "more"}]}]
   - id: filter_expression_after_recursive_descent
     status: error
   - id: filter_expression_with_boolean_and_operator
@@ -156,7 +156,7 @@ queries:
     status: error
   - id: recursive_descent
     status: open
-    result: [[{"a": {"b": "c"}}], {"a": {"b": "c"}}, {"b": "c"}, "c"]
+    result: ["c", [{"a": {"b": "c"}}], {"a": {"b": "c"}}, {"b": "c"}]
   - id: script_expression
     status: error
   - id: union_with_filter

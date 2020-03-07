@@ -227,6 +227,20 @@ The following queries provide results that do not match those of other implement
   parsing error
   ```
 
+- [ ] `$..[0]`
+  Input:
+  ```
+  ["first", {"key": ["first nested", {"more": [{"nested": ["deepest", "second"]}, ["more", "values"]]}]}]
+  ```
+  Expected output:
+  ```
+  ["deepest", "first nested", "first", "more", {"nested": ["deepest", "second"]}]
+  ```
+  Error:
+  ```
+  parsing error
+  ```
+
 - [ ] `$[':']`
   Input:
   ```
@@ -542,7 +556,7 @@ The following queries provide results that do not match those of other implement
   ```
   Expected output:
   ```
-  [40, null, 42]
+  [40, 42, null]
   ```
   Error:
   ```

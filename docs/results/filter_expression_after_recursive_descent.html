@@ -19,6 +19,10 @@ Clojure (json-path)
 
 <pre><code>[
   2,
+  2,
+  2,
+  2,
+  2,
   [
     {
       "id": 2
@@ -39,20 +43,16 @@ Clojure (json-path)
       }
     ]
   ],
-  {
-    "more": {
-      "id": 2
-    }
-  },
   [
     {
       "id": 2
     }
   ],
-  2,
-  2,
-  2,
-  2
+  {
+    "more": {
+      "id": 2
+    }
+  }
 ]
 </code></pre>
 
@@ -132,6 +132,10 @@ JavaScript (Goessner)
 
 <pre><code>[
   2,
+  2,
+  2,
+  2,
+  2,
   [
     {
       "id": 2
@@ -155,13 +159,9 @@ JavaScript (Goessner)
   {
     "id": 2
   },
-  2,
-  2,
-  2,
   {
     "id": 2
-  },
-  2
+  }
 ]
 </code></pre>
 
@@ -210,13 +210,16 @@ Java (com.github.jsurfer)
 </h4>
 
 <pre><code>[
+  [
+    {
+      "id": 2
+    }
+  ],
   {
     "id": 2
   },
   {
-    "more": {
-      "id": 2
-    }
+    "id": 2
   },
   {
     "id": {
@@ -224,13 +227,10 @@ Java (com.github.jsurfer)
     }
   },
   {
-    "id": 2
-  },
-  [
-    {
+    "more": {
       "id": 2
     }
-  ]
+  }
 ]
 </code></pre>
 

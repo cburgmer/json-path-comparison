@@ -138,6 +138,38 @@ The following queries provide results that do not match those of other implement
   
   ```
 
+- [ ] `$..[0]`
+  Input:
+  ```
+  ["first", {"key": ["first nested", {"more": [{"nested": ["deepest", "second"]}, ["more", "values"]]}]}]
+  ```
+  Expected output:
+  ```
+  ["deepest", "first nested", "first", "more", {"nested": ["deepest", "second"]}]
+  ```
+  Error:
+  ```
+  Extra data: line 3 column 6 (char 26)
+  [
+      "first nested"
+      ],
+      {
+          "more":
+          [
+              {
+                  "nested":
+                  [
+                      "deepest",
+                      "second"
+                  ]
+              },
+                  "more"
+              }
+          ]
+      }
+  ]
+  ```
+
 - [ ] `$[1]`
   Input:
   ```

@@ -28,7 +28,7 @@ queries:
   - id: bracket_notation_with_number_-1
     status: error
   - id: bracket_notation_with_number_after_recursive_descent
-    status: open
+    status: fail
     result: ["first"]
   - id: bracket_notation_with_number_on_object
     status: open
@@ -89,7 +89,7 @@ queries:
     result: ["string", "value", 0, 1, [0, 1], {"complex": "string", "primitives": [0, 1]}, {"another key": {"complex": "string", "primitives": [0, 1]}, "key": "value"}]
   - id: dot_notation_with_wildcard_after_recursive_descent_on_null_value_array
     status: fail
-    result: [[40, null, 42], 40, null, 42]
+    result: [40, 42, [40, null, 42], null]
   - id: dot_notation_with_wildcard_after_recursive_descent_on_scalar
     status: fail
     result: [42]
@@ -101,7 +101,7 @@ queries:
     result: ["value"]
   - id: filter_expression_after_dot_notation_with_wildcard_after_recursive_descent
     status: open
-    result: [{"id": 6, "name": "last"}, {"id": 3, "name": "another"}, {"id": 4, "name": "more"}]
+    result: [{"id": 3, "name": "another"}, {"id": 6, "name": "last"}, {"id": 4, "name": "more"}]
   - id: filter_expression_after_recursive_descent
     status: open
     result: [{"id": 2, "more": [{"id": 2}, {"more": {"id": 2}}, {"id": {"id": 2}}, [{"id": 2}]]}, {"id": 2}, {"id": 2}, {"id": 2}, {"id": 2}]
@@ -182,7 +182,7 @@ queries:
     result: [{"key": true}, {"key": false}, {"key": null}, {"key": "value"}, {"key": ""}, {"key": 0}, {"key": 1}, {"key": -1}, {"key": 42}, {"key": {}}, {"key": []}]
   - id: filter_expression_with_value_after_recursive_descent
     status: open
-    result: [{"id": 2, "more": [{"id": 2}, {"more": {"id": 2}}, {"id": {"id": 2}}, [{"id": 2}]]}, {"id": 2}, {"id": 2}, {"id": {"id": 2}}, {"id": 2}, {"id": 2}]
+    result: [{"id": 2, "more": [{"id": 2}, {"more": {"id": 2}}, {"id": {"id": 2}}, [{"id": 2}]]}, {"id": 2}, {"id": 2}, {"id": 2}, {"id": 2}, {"id": {"id": 2}}]
   - id: filter_expression_without_value
     status: error
   - id: recursive_descent

@@ -138,6 +138,8 @@ queries:
   - id: bracket_notation_with_number_after_recursive_descent
     selector: $..[0]
     document: ["first", {"key": ["first nested", {"more": [{"nested": ["deepest", "second"]}, ["more", "values"]]}]}]
+    ordered: false
+    consensus: ["deepest", "first nested", "first", "more", {"nested": ["deepest", "second"]}]
   - id: bracket_notation_with_number_on_object
     selector: $[0]
     document: {"0": "value"}
@@ -333,10 +335,12 @@ queries:
   - id: dot_notation_with_wildcard_after_recursive_descent_on_null_value_array
     selector: $..*
     document: [40, null, 42]
-    consensus: [40, null, 42]
+    ordered: false
+    consensus: [40, 42, null]
   - id: dot_notation_with_wildcard_after_recursive_descent_on_scalar
     selector: $..*
     document: 42
+    ordered: false
     consensus: []
   - id: dot_notation_with_wildcard_on_array
     selector: $.*
@@ -361,9 +365,11 @@ queries:
   - id: filter_expression_after_dot_notation_with_wildcard_after_recursive_descent
     selector: $..*[?(@.id>2)]
     document: [{"complext": {"one": [{"name": "first", "id": 1}, {"name": "next", "id": 2}, {"name": "another", "id": 3}, {"name": "more", "id": 4}], "more": {"name": "next to last", "id": 5}}}, {"name": "last", "id": 6}]
+    ordered: false
   - id: filter_expression_after_recursive_descent
     selector: $..[?(@.id==2)]
     document: {"id": 2, "more": [{"id": 2}, {"more": {"id": 2}}, {"id": {"id": 2}}, [{"id": 2}]]}
+    ordered: false
   - id: filter_expression_with_boolean_and_operator
     selector: $[?(@.key>42 && @.key<44)]
     document: [{"key": 42}, {"key": 43}, {"key": 44}]
@@ -468,12 +474,14 @@ queries:
   - id: filter_expression_with_value_after_recursive_descent
     selector: $..[?(@.id)]
     document: {"id": 2, "more": [{"id": 2}, {"more": {"id": 2}}, {"id": {"id": 2}}, [{"id": 2}]]}
+    ordered: false
   - id: filter_expression_without_value
     selector: $[?(!@.key)]
     document: [{"some": "some value"}, {"key": true}, {"key": false}, {"key": null}, {"key": "value"}, {"key": ""}, {"key": 0}, {"key": 1}, {"key": -1}, {"key": 42}, {"key": {}}, {"key": []}]
   - id: recursive_descent
     selector: $..
     document: [{"a": {"b": "c"}}]
+    ordered: false
   - id: root
     selector: $
     document: {"key": "value", "another key": {"complex": ["a", 1]}}
