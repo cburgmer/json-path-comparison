@@ -65,6 +65,8 @@ queries:
     status: error
   - id: bracket_notation_with_quoted_root_literal
     status: error
+  - id: bracket_notation_with_quoted_union_literal
+    status: error
   - id: bracket_notation_with_quoted_wildcard_literal
     status: error
   - id: bracket_notation_with_quoted_wildcard_literal_on_object_without_key

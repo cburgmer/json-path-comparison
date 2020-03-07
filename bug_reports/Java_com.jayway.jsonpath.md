@@ -138,6 +138,33 @@ The following queries provide results that do not match those of other implement
   	at query.App.main(App.java:25)
   ```
 
+- [ ] `$[',']`
+  Input:
+  ```
+  {",": "value", "another": "entry"}
+  ```
+  Expected output:
+  ```
+  "value"
+  ```
+  Error:
+  ```
+  SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+  SLF4J: Defaulting to no-operation (NOP) logger implementation
+  SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+  Exception in thread "main" com.jayway.jsonpath.InvalidPathException: Found empty property at index 5
+  	at com.jayway.jsonpath.internal.path.PathCompiler.fail(PathCompiler.java:616)
+  	at com.jayway.jsonpath.internal.path.PathCompiler.readBracketPropertyToken(PathCompiler.java:579)
+  	at com.jayway.jsonpath.internal.path.PathCompiler.readNextToken(PathCompiler.java:138)
+  	at com.jayway.jsonpath.internal.path.PathCompiler.readContextToken(PathCompiler.java:124)
+  	at com.jayway.jsonpath.internal.path.PathCompiler.compile(PathCompiler.java:58)
+  	at com.jayway.jsonpath.internal.path.PathCompiler.compile(PathCompiler.java:75)
+  	at com.jayway.jsonpath.JsonPath.<init>(JsonPath.java:101)
+  	at com.jayway.jsonpath.JsonPath.compile(JsonPath.java:467)
+  	at com.jayway.jsonpath.internal.JsonContext.read(JsonContext.java:87)
+  	at query.App.main(App.java:25)
+  ```
+
 - [ ] `$[0]['c','d']`
   Input:
   ```

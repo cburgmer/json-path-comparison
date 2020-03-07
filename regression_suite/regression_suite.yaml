@@ -174,6 +174,11 @@ queries:
     document: {"$": "value", "another": "entry"}
     consensus: ["value"]
     scalar-consensus: "value"
+  - id: bracket_notation_with_quoted_union_literal
+    selector: $[',']
+    document: {",": "value", "another": "entry"}
+    consensus: ["value"]
+    scalar-consensus: "value"
   - id: bracket_notation_with_quoted_wildcard_literal
     selector: $['*']
     document: {"*": "value", "another": "entry"}
