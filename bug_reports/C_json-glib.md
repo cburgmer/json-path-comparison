@@ -115,20 +115,6 @@ The following queries provide results that do not match those of other implement
   []
   ```
 
-- [ ] `$[-1]`
-  Input:
-  ```
-  ["first", "second", "third"]
-  ```
-  Expected output:
-  ```
-  ["third"]
-  ```
-  Actual output:
-  ```
-  []
-  ```
-
 - [ ] `$..[0]`
   Input:
   ```
@@ -141,6 +127,20 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   Unable to compile selector `$..[0]': Missing member name or wildcard after . character
+  ```
+
+- [ ] `$[-1]`
+  Input:
+  ```
+  ["first", "second", "third"]
+  ```
+  Expected output:
+  ```
+  ["third"]
+  ```
+  Actual output:
+  ```
+  []
   ```
 
 - [ ] `$['*']`

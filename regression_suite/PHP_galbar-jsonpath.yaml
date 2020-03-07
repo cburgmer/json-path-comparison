@@ -24,6 +24,8 @@ queries:
     status: error
   - id: array_slice_with_step_0
     status: error
+  - id: bracket_notation_after_recursive_descent
+    status: error
   - id: bracket_notation_on_object_without_key
     status: error
   - id: bracket_notation_with_double_quotes
@@ -32,8 +34,6 @@ queries:
   - id: bracket_notation_with_empty_string
     status: open
     result: [42]
-  - id: bracket_notation_with_number_after_recursive_descent
-    status: error
   - id: bracket_notation_with_number_on_object
     status: open
     result: ["value"]
@@ -68,6 +68,8 @@ queries:
   - id: dot_bracket_notation_with_double_quotes
     status: error
   - id: dot_bracket_notation_without_quotes
+    status: error
+  - id: dot_notation_after_bracket_notation_after_recursive_descent
     status: error
   - id: dot_notation_on_array
     status: error

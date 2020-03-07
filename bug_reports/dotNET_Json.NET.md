@@ -3,20 +3,6 @@ Results do not match other implementations
 The following queries provide results that do not match those of other implementations of JSONPath
 (compare https://cburgmer.github.io/json-path-comparison/):
 
-- [ ] `$[-1]`
-  Input:
-  ```
-  ["first", "second", "third"]
-  ```
-  Expected output:
-  ```
-  ["third"]
-  ```
-  Error:
-  ```
-  Index was out of range. Must be non-negative and less than the size of the collection. (Parameter 'index')
-  ```
-
 - [ ] `$..[0]`
   Input:
   ```
@@ -29,6 +15,20 @@ The following queries provide results that do not match those of other implement
   Actual output:
   ```
   ["first"]
+  ```
+
+- [ ] `$[-1]`
+  Input:
+  ```
+  ["first", "second", "third"]
+  ```
+  Expected output:
+  ```
+  ["third"]
+  ```
+  Error:
+  ```
+  Index was out of range. Must be non-negative and less than the size of the collection. (Parameter 'index')
   ```
 
 - [ ] `$[*]`

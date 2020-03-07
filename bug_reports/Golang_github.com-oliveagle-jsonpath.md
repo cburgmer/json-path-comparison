@@ -227,20 +227,6 @@ The following queries provide results that do not match those of other implement
   strconv.Atoi: parsing "'key'": invalid syntax
   ```
 
-- [ ] `$['two.some']`
-  Input:
-  ```
-  {"one": {"key": "value"}, "two": {"some": "more", "key": "other value"}, "two.some": "42"}
-  ```
-  Expected output:
-  ```
-  "42"
-  ```
-  Error:
-  ```
-  strconv.Atoi: parsing "'two.some'": invalid syntax
-  ```
-
 - [ ] `$..[0]`
   Input:
   ```
@@ -253,6 +239,20 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   expression don't support in filter
+  ```
+
+- [ ] `$['two.some']`
+  Input:
+  ```
+  {"one": {"key": "value"}, "two": {"some": "more", "key": "other value"}, "two.some": "42"}
+  ```
+  Expected output:
+  ```
+  "42"
+  ```
+  Error:
+  ```
+  strconv.Atoi: parsing "'two.some'": invalid syntax
   ```
 
 - [ ] `$[':']`

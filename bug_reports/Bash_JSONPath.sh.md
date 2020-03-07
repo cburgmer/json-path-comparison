@@ -108,36 +108,6 @@ The following queries provide results that do not match those of other implement
   {"key": "value"}
   ```
 
-- [ ] `$['two.some']`
-  Input:
-  ```
-  {"one": {"key": "value"}, "two": {"some": "more", "key": "other value"}, "two.some": "42"}
-  ```
-  Expected output:
-  ```
-  ["42"]
-  ```
-  Actual output:
-  ```
-  {"two.some": "42"}
-  ```
-
-- [ ] `$[-1]`
-  Input:
-  ```
-  ["first", "second", "third"]
-  ```
-  Expected output:
-  ```
-  ["third"]
-  ```
-  Error:
-  ```
-  Expecting value: line 3 column 1 (char 2)
-  
-  
-  ```
-
 - [ ] `$..[0]`
   Input:
   ```
@@ -168,6 +138,36 @@ The following queries provide results that do not match those of other implement
           ]
       }
   ]
+  ```
+
+- [ ] `$['two.some']`
+  Input:
+  ```
+  {"one": {"key": "value"}, "two": {"some": "more", "key": "other value"}, "two.some": "42"}
+  ```
+  Expected output:
+  ```
+  ["42"]
+  ```
+  Actual output:
+  ```
+  {"two.some": "42"}
+  ```
+
+- [ ] `$[-1]`
+  Input:
+  ```
+  ["first", "second", "third"]
+  ```
+  Expected output:
+  ```
+  ["third"]
+  ```
+  Error:
+  ```
+  Expecting value: line 3 column 1 (char 2)
+  
+  
   ```
 
 - [ ] `$[1]`

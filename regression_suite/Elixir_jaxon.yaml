@@ -56,6 +56,9 @@ queries:
     status: error
   - id: bracket_notation
     status: error
+  - id: bracket_notation_after_recursive_descent
+    status: fail
+    result: ["first"]
   - id: bracket_notation_on_object_without_key
     status: error
   - id: bracket_notation_with_dot
@@ -67,9 +70,6 @@ queries:
   - id: bracket_notation_with_number_-1
     status: fail
     result: []
-  - id: bracket_notation_with_number_after_recursive_descent
-    status: fail
-    result: ["first"]
   - id: bracket_notation_with_number_on_object
     status: open
     result: []
@@ -119,6 +119,9 @@ queries:
     status: error
   - id: dot_bracket_notation_without_quotes
     status: error
+  - id: dot_notation_after_bracket_notation_after_recursive_descent
+    status: open
+    result: []
   - id: dot_notation_after_filter_expression
     status: error
   - id: dot_notation_after_recursive_descent

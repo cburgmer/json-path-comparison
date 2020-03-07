@@ -24,6 +24,9 @@ queries:
     result: ["first", "second", "third", "first", "second", "third"]
   - id: array_slice_with_step_0
     status: error
+  - id: bracket_notation_after_recursive_descent
+    status: fail
+    result: []
   - id: bracket_notation_on_object_without_key
     status: open
     result: []
@@ -33,9 +36,6 @@ queries:
   - id: bracket_notation_with_empty_string
     status: open
     result: [42]
-  - id: bracket_notation_with_number_after_recursive_descent
-    status: fail
-    result: []
   - id: bracket_notation_with_number_on_object
     status: open
     result: ["value"]
@@ -88,6 +88,9 @@ queries:
   - id: dot_bracket_notation_without_quotes
     status: open
     result: ["value"]
+  - id: dot_notation_after_bracket_notation_after_recursive_descent
+    status: open
+    result: []
   - id: dot_notation_after_filter_expression
     status: error
   - id: dot_notation_after_union_with_keys

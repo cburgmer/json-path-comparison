@@ -297,20 +297,6 @@ The following queries provide results that do not match those of other implement
   java.lang.Exception object must be an array.
   ```
 
-- [ ] `$['two.some']`
-  Input:
-  ```
-  {"one": {"key": "value"}, "two": {"some": "more", "key": "other value"}, "two.some": "42"}
-  ```
-  Expected output:
-  ```
-  "42"
-  ```
-  Error:
-  ```
-  java.lang.Exception object must be an array.
-  ```
-
 - [ ] `$..[0]`
   Input:
   ```
@@ -319,6 +305,20 @@ The following queries provide results that do not match those of other implement
   Expected output:
   ```
   ["deepest", "first nested", "first", "more", {"nested": ["deepest", "second"]}]
+  ```
+  Error:
+  ```
+  java.lang.Exception object must be an array.
+  ```
+
+- [ ] `$['two.some']`
+  Input:
+  ```
+  {"one": {"key": "value"}, "two": {"some": "more", "key": "other value"}, "two.some": "42"}
+  ```
+  Expected output:
+  ```
+  "42"
   ```
   Error:
   ```

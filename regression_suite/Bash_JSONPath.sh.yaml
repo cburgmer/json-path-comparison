@@ -35,6 +35,8 @@ queries:
   - id: bracket_notation
     status: fail
     result: {"key": "value"}
+  - id: bracket_notation_after_recursive_descent
+    status: error
   - id: bracket_notation_on_object_without_key
     status: error
   - id: bracket_notation_with_dot
@@ -46,8 +48,6 @@ queries:
   - id: bracket_notation_with_empty_string
     status: error
   - id: bracket_notation_with_number_-1
-    status: error
-  - id: bracket_notation_with_number_after_recursive_descent
     status: error
   - id: bracket_notation_with_number_on_object
     status: error
@@ -113,6 +113,8 @@ queries:
   - id: dot_notation
     status: fail
     result: {"key": "value"}
+  - id: dot_notation_after_bracket_notation_after_recursive_descent
+    status: error
   - id: dot_notation_after_bracket_notation_with_wildcard
     status: fail
     result: [{"a": 1}, {"a": 1}]

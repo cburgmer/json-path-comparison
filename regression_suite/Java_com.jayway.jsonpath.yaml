@@ -71,6 +71,9 @@ queries:
     result: "value"
   - id: dot_bracket_notation_without_quotes
     status: error
+  - id: dot_notation_after_bracket_notation_after_recursive_descent
+    status: open
+    result: ["some value", 100, 200, 300, 400, 42, 500, 600]
   - id: dot_notation_on_array
     status: error
   - id: dot_notation_on_array_with_containing_object_matching_key

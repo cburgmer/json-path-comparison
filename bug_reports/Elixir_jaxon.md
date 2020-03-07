@@ -339,6 +339,20 @@ The following queries provide results that do not match those of other implement
       lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
   ```
 
+- [ ] `$..[0]`
+  Input:
+  ```
+  ["first", {"key": ["first nested", {"more": [{"nested": ["deepest", "second"]}, ["more", "values"]]}]}]
+  ```
+  Expected output:
+  ```
+  ["deepest", "first nested", "first", "more", {"nested": ["deepest", "second"]}]
+  ```
+  Actual output:
+  ```
+  ["first"]
+  ```
+
 - [ ] `$['two.some']`
   Input:
   ```
@@ -367,20 +381,6 @@ The following queries provide results that do not match those of other implement
   Actual output:
   ```
   []
-  ```
-
-- [ ] `$..[0]`
-  Input:
-  ```
-  ["first", {"key": ["first nested", {"more": [{"nested": ["deepest", "second"]}, ["more", "values"]]}]}]
-  ```
-  Expected output:
-  ```
-  ["deepest", "first nested", "first", "more", {"nested": ["deepest", "second"]}]
-  ```
-  Actual output:
-  ```
-  ["first"]
   ```
 
 - [ ] `$[':']`
