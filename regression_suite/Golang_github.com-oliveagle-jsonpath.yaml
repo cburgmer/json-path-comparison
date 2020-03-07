@@ -182,7 +182,7 @@ queries:
     status: open
     result: []
   - id: filter_expression_with_equals
-    status: fail
+    status: open
     result: []
   - id: filter_expression_with_equals_false
     status: open
@@ -212,8 +212,11 @@ queries:
   - id: filter_expression_with_equals_true
     status: open
     result: []
+  - id: filter_expression_with_equals_value_with_double_quotes
+    status: open
+    result: []
   - id: filter_expression_with_equals_value_with_single_quotes
-    status: fail
+    status: open
     result: []
   - id: filter_expression_with_equals_with_root_reference
     status: open

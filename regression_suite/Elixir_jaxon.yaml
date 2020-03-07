@@ -197,6 +197,8 @@ queries:
     status: error
   - id: filter_expression_with_equals_true
     status: error
+  - id: filter_expression_with_equals_value_with_double_quotes
+    status: error
   - id: filter_expression_with_equals_value_with_single_quotes
     status: error
   - id: filter_expression_with_equals_with_root_reference

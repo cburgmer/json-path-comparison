@@ -121,6 +121,8 @@ queries:
     status: error
   - id: filter_expression_with_empty_expression
     status: error
+  - id: filter_expression_with_equals
+    status: error
   - id: filter_expression_with_equals_false
     status: error
   - id: filter_expression_with_equals_null
@@ -139,6 +141,8 @@ queries:
   - id: filter_expression_with_equals_string_value_on_number_value
     status: error
   - id: filter_expression_with_equals_true
+    status: error
+  - id: filter_expression_with_equals_value_with_double_quotes
     status: error
   - id: filter_expression_with_equals_value_with_single_quotes
     status: error

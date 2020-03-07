@@ -10,25 +10,27 @@
     {"key": 0},
     {"key": 42},
     {"key": -1},
+    {"key": 1},
     {"key": 41},
     {"key": 43},
     {"key": 42.0001},
     {"key": 41.9999},
     {"key": 100},
+    {"key": "some"},
+    {"key": "42"},
+    {"key": null},
+    {"key": 420},
+    {"key": ""},
+    {"key": {}},
+    {"key": []},
+    {"key": [42]},
+    {"key": {"key": 42}},
+    {"key": {"some": 42}},
     {"some": "value"}
 ]
 </code></pre>
 
 <h2>Results</h2>
-
-<h3 id="consensus">Consensus</h3>
-
-<pre><code>[
-  {
-    "key": 42
-  }
-]
-</code></pre>
 
 <h3>Other responses</h3>
 
@@ -36,9 +38,14 @@
 Bash (JSONPath.sh)
 </h4>
 
-<pre><code>{
-  "key": 42
-}
+<pre><code>[
+  {
+    "key": 42
+  },
+  {
+    "key": "42"
+  }
+]
 </code></pre>
 
 <h4 id="Clojure_json-path">
@@ -47,7 +54,43 @@ Clojure (json-path)
 
 <pre><code>[
   {
+    "key": null
+  },
+  {
     "some": "value"
+  }
+]
+</code></pre>
+
+<h4 id="Cpp_jsoncons">
+Cpp (jsoncons)
+</h4>
+
+<pre><code>[
+  {
+    "key": 42
+  }
+]
+</code></pre>
+
+<h4 id="Erlang_ejsonpath">
+Erlang (ejsonpath)
+</h4>
+
+<pre><code>[
+  {
+    "key": 42
+  }
+]
+</code></pre>
+
+<h4 id="Golang_github.com-PaesslerAG-jsonpath">
+Golang (github.com-PaesslerAG-jsonpath)
+</h4>
+
+<pre><code>[
+  {
+    "key": 42
   }
 ]
 </code></pre>
@@ -59,11 +102,201 @@ Golang (github.com-oliveagle-jsonpath)
 <pre><code>[]
 </code></pre>
 
+<h4 id="JavaScript_Goessner">
+JavaScript (Goessner)
+</h4>
+
+<pre><code>[
+  {
+    "key": 42
+  },
+  {
+    "key": "42"
+  },
+  {
+    "key": [
+      42
+    ]
+  }
+]
+</code></pre>
+
+<h4 id="JavaScript_jsonpath">
+JavaScript (jsonpath)
+</h4>
+
+<pre><code>[
+  {
+    "key": 42
+  },
+  {
+    "key": "42"
+  },
+  {
+    "key": [
+      42
+    ]
+  }
+]
+</code></pre>
+
+<h4 id="JavaScript_jsonpath-plus">
+JavaScript (jsonpath-plus)
+</h4>
+
+<pre><code>[
+  {
+    "key": 42
+  },
+  {
+    "key": "42"
+  },
+  {
+    "key": [
+      42
+    ]
+  }
+]
+</code></pre>
+
+<h4 id="Java_com.jayway.jsonpath">
+Java (com.jayway.jsonpath)
+</h4>
+
+<pre><code>[
+  {
+    "key": 42
+  },
+  {
+    "key": "42"
+  }
+]
+</code></pre>
+
+<h4 id="PHP_flow-jsonpath">
+PHP (flow-jsonpath)
+</h4>
+
+<pre><code>[
+  {
+    "key": 42
+  },
+  {
+    "key": "42"
+  }
+]
+</code></pre>
+
+<h4 id="PHP_galbar-jsonpath">
+PHP (galbar-jsonpath)
+</h4>
+
+<pre><code>[
+  {
+    "key": 42
+  }
+]
+</code></pre>
+
+<h4 id="PHP_remorhaz-jsonpath">
+PHP (remorhaz-jsonpath)
+</h4>
+
+<pre><code>[
+  {
+    "key": 42
+  }
+]
+</code></pre>
+
+<h4 id="Python_jsonpath">
+Python (jsonpath)
+</h4>
+
+<pre><code>[
+  {
+    "key": 42
+  }
+]
+</code></pre>
+
+<h4 id="Ruby_jsonpath">
+Ruby (jsonpath)
+</h4>
+
+<pre><code>[
+  {
+    "key": 42
+  },
+  {
+    "key": "42"
+  }
+]
+</code></pre>
+
 <h4 id="Rust_jsonpath">
 Rust (jsonpath)
 </h4>
 
 <pre><code>[]
+</code></pre>
+
+<h4 id="Rust_jsonpath_lib">
+Rust (jsonpath_lib)
+</h4>
+
+<pre><code>[
+  {
+    "key": 42
+  }
+]
+</code></pre>
+
+<h4 id="Scala_jsonpath">
+Scala (jsonpath)
+</h4>
+
+<pre><code>[
+  {
+    "key": 42
+  }
+]
+</code></pre>
+
+<h4 id="dotNET_Json.NET">
+dotNET (Json.NET)
+</h4>
+
+<pre><code>[
+  {
+    "key": 42
+  }
+]
+</code></pre>
+
+<h4 id="dotNET_JsonPathLib">
+dotNET (JsonPathLib)
+</h4>
+
+<pre><code>[
+  {
+    "key": 42
+  },
+  {
+    "key": "42"
+  }
+]
+</code></pre>
+
+<h4 id="dotNET_Manatee.Json">
+dotNET (Manatee.Json)
+</h4>
+
+<pre><code>[
+  {
+    "key": 42
+  }
+]
 </code></pre>
 
 <h3>Errors</h3>
@@ -82,6 +315,48 @@ Elixir (jaxon)
 <pre><code>** (Jaxon.ParseError) Expected an integer at `?(@.key==4`
     lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
     lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
+</code></pre>
+
+<h4 id="Golang_github.com-bhmj-jsonslice">
+Golang (github.com-bhmj-jsonslice)
+</h4>
+
+<pre><code>operand types do not match
+</code></pre>
+
+<h4 id="Haskell_jsonpath">
+Haskell (jsonpath)
+</h4>
+
+<pre><code>json-path-comparison: src/Data/JSONPath/Execute.hs:(71,1)-(72,60): Non-exhaustive patterns in function executeCondition
+</code></pre>
+
+<h4 id="Java_com.github.jsurfer">
+Java (com.github.jsurfer)
+</h4>
+
+<pre><code>Exception in thread "main" org.jsfr.json.exception.JsonSurfingException: Parser is stopped
+    at org.jsfr.json.DefaultErrorHandlingStrategy.handleParsingException(DefaultErrorHandlingStrategy.java:35)
+    at org.jsfr.json.JacksonParser$JacksonResumableParser.parse(JacksonParser.java:143)
+    at org.jsfr.json.JacksonParser.parse(JacksonParser.java:228)
+    at org.jsfr.json.JsonSurfer.surf(JsonSurfer.java:180)
+    at org.jsfr.json.JsonSurfer.collectAll(JsonSurfer.java:315)
+    at org.jsfr.json.JsonSurfer.collectAll(JsonSurfer.java:297)
+    at org.jsfr.json.JsonSurfer.collectAll(JsonSurfer.java:284)
+    at query.App.main(App.java:27)
+Caused by: java.lang.NumberFormatException: Character " is neither a decimal digit number, decimal point, nor "e" notation exponential mark.
+    at java.base/java.math.BigDecimal.&lt;init&gt;(BigDecimal.java:518)
+    at java.base/java.math.BigDecimal.&lt;init&gt;(BigDecimal.java:401)
+    at java.base/java.math.BigDecimal.&lt;init&gt;(BigDecimal.java:834)
+    at org.jsfr.json.filter.EqualityNumPredicate.apply(EqualityNumPredicate.java:49)
+    at org.jsfr.json.JsonFilterVerifier.primitive(JsonFilterVerifier.java:119)
+    at org.jsfr.json.ContentDispatcher.primitive(ContentDispatcher.java:147)
+    at org.jsfr.json.FilterVerifierDispatcher.primitive(FilterVerifierDispatcher.java:30)
+    at org.jsfr.json.ContentDispatcher.primitive(ContentDispatcher.java:147)
+    at org.jsfr.json.SurfingContext.primitive(SurfingContext.java:321)
+    at org.jsfr.json.JacksonParser$JacksonResumableParser.doPare(JacksonParser.java:176)
+    at org.jsfr.json.JacksonParser$JacksonResumableParser.parse(JacksonParser.java:141)
+    ... 6 more
 </code></pre>
 
 <h4 id="Kotlin_com.nfeld.jsonpathlite">

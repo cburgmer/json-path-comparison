@@ -168,7 +168,7 @@ queries:
   - id: filter_expression_with_empty_expression
     status: error
   - id: filter_expression_with_equals
-    status: fail
+    status: open
     result: []
   - id: filter_expression_with_equals_false
     status: error
@@ -194,6 +194,11 @@ queries:
     status: error
   - id: filter_expression_with_equals_true
     status: error
+  - id: filter_expression_with_equals_value_with_double_quotes
+    status: error
+  - id: filter_expression_with_equals_value_with_single_quotes
+    status: open
+    result: [{"key": "value"}]
   - id: filter_expression_with_equals_with_root_reference
     status: error
   - id: filter_expression_with_greater_than_or_equal

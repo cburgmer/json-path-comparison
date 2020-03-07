@@ -389,8 +389,7 @@ queries:
     document: [1, {"key": 42}, "value", null]
   - id: filter_expression_with_equals
     selector: $[?(@.key==42)]
-    document: [{"key": 0}, {"key": 42}, {"key": -1}, {"key": 41}, {"key": 43}, {"key": 42.0001}, {"key": 41.9999}, {"key": 100}, {"some": "value"}]
-    consensus: [{"key": 42}]
+    document: [{"key": 0}, {"key": 42}, {"key": -1}, {"key": 1}, {"key": 41}, {"key": 43}, {"key": 42.0001}, {"key": 41.9999}, {"key": 100}, {"key": "some"}, {"key": "42"}, {"key": null}, {"key": 420}, {"key": ""}, {"key": {}}, {"key": []}, {"key": [42]}, {"key": {"key": 42}}, {"key": {"some": 42}}, {"some": "value"}]
   - id: filter_expression_with_equals_false
     selector: $[?(@.key==false)]
     document: [{"some": "some value"}, {"key": true}, {"key": false}, {"key": null}, {"key": "value"}, {"key": ""}, {"key": 0}, {"key": 1}, {"key": -1}, {"key": 42}, {"key": {}}, {"key": []}]
@@ -422,10 +421,12 @@ queries:
   - id: filter_expression_with_equals_true
     selector: $[?(@.key==true)]
     document: [{"some": "some value"}, {"key": true}, {"key": false}, {"key": null}, {"key": "value"}, {"key": ""}, {"key": 0}, {"key": 1}, {"key": -1}, {"key": 42}, {"key": {}}, {"key": []}]
+  - id: filter_expression_with_equals_value_with_double_quotes
+    selector: $[?(@.key=="value")]
+    document: [{"key": "some"}, {"key": "value"}, {"key": null}, {"key": 0}, {"key": 1}, {"key": -1}, {"key": ""}, {"key": {}}, {"key": []}, {"key": "valuemore"}, {"key": "morevalue"}, {"key": ["value"]}, {"key": {"some": "value"}}, {"key": {"key": "value"}}, {"some": "value"}]
   - id: filter_expression_with_equals_value_with_single_quotes
     selector: $[?(@.key=='value')]
-    document: [{"key": "some"}, {"key": "value"}]
-    consensus: [{"key": "value"}]
+    document: [{"key": "some"}, {"key": "value"}, {"key": null}, {"key": 0}, {"key": 1}, {"key": -1}, {"key": ""}, {"key": {}}, {"key": []}, {"key": "valuemore"}, {"key": "morevalue"}, {"key": ["value"]}, {"key": {"some": "value"}}, {"key": {"key": "value"}}, {"some": "value"}]
   - id: filter_expression_with_equals_with_root_reference
     selector: $.items[?(@.key==$.value)]
     document: {"value": 42, "items": [{"key": 10}, {"key": 42}, {"key": 50}]}

@@ -133,6 +133,9 @@ queries:
     result: ["some value", "value", 1, -1]
   - id: filter_expression_with_empty_expression
     status: error
+  - id: filter_expression_with_equals
+    status: open
+    result: [{"key": 42}]
   - id: filter_expression_with_equals_false
     status: error
   - id: filter_expression_with_equals_null
@@ -153,6 +156,12 @@ queries:
     status: error
   - id: filter_expression_with_equals_true
     status: error
+  - id: filter_expression_with_equals_value_with_double_quotes
+    status: open
+    result: [{"key": "value"}]
+  - id: filter_expression_with_equals_value_with_single_quotes
+    status: open
+    result: [{"key": "value"}]
   - id: filter_expression_with_equals_with_root_reference
     status: error
   - id: filter_expression_with_greater_than_or_equal

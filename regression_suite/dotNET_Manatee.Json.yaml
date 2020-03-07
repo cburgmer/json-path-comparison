@@ -107,6 +107,9 @@ queries:
     status: error
   - id: filter_expression_with_empty_expression
     status: error
+  - id: filter_expression_with_equals
+    status: open
+    result: [{"key": 42}]
   - id: filter_expression_with_equals_false
     status: open
     result: [{"some": "some value"}, {"key": false}]
@@ -133,6 +136,12 @@ queries:
   - id: filter_expression_with_equals_true
     status: open
     result: [{"key": true}, {"key": null}, {"key": "value"}, {"key": ""}, {"key": 0}, {"key": 1}, {"key": -1}, {"key": 42}, {"key": {}}, {"key": []}]
+  - id: filter_expression_with_equals_value_with_double_quotes
+    status: open
+    result: [{"key": "value"}]
+  - id: filter_expression_with_equals_value_with_single_quotes
+    status: open
+    result: [{"key": "value"}]
   - id: filter_expression_with_equals_with_root_reference
     status: open
     result: [{"key": 42}]
