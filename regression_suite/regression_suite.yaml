@@ -185,6 +185,12 @@ queries:
     document: {"$": "value", "another": "entry"}
     consensus: ["value"]
     scalar-consensus: "value"
+  - id: bracket_notation_with_quoted_special_characters_combined
+    selector: $[':@."$,*\'\\']
+    document: {":@.\"$,*'\\": 42}
+  - id: bracket_notation_with_quoted_string_and_unescaped_single_quote
+    selector: $['single'quote']
+    document: {"single'quote": "value"}
   - id: bracket_notation_with_quoted_union_literal
     selector: $[',']
     document: {",": "value", "another": "entry"}
@@ -198,12 +204,6 @@ queries:
   - id: bracket_notation_with_quoted_wildcard_literal_on_object_without_key
     selector: $['*']
     document: {"another": "entry"}
-  - id: bracket_notation_with_single_quote
-    selector: $['single'quote']
-    document: {"single'quote": "value"}
-  - id: bracket_notation_with_single_quote_escaped
-    selector: $['single\'quote']
-    document: {"single'quote": "value"}
   - id: bracket_notation_with_two_literals_separated_by_dot
     selector: $['two'.'some']
     document: {"one": {"key": "value"}, "two": {"some": "more", "key": "other value"}, "two.some": "42"}

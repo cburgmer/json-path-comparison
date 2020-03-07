@@ -56,14 +56,13 @@ queries:
   - id: bracket_notation_with_quoted_escaped_single_quote
     status: open
     result: null
+  - id: bracket_notation_with_quoted_special_characters_combined
+    status: error
+  - id: bracket_notation_with_quoted_string_and_unescaped_single_quote
+    status: error
   - id: bracket_notation_with_quoted_wildcard_literal_on_object_without_key
     status: open
     result: null
-  - id: bracket_notation_with_single_quote
-    status: error
-  - id: bracket_notation_with_single_quote_escaped
-    status: open
-    result: {}
   - id: bracket_notation_with_two_literals_separated_by_dot
     status: open
     result: {"two": {"key": "other value", "some": "more"}}
