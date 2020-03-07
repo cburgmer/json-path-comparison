@@ -245,6 +245,8 @@ queries:
     result: [{"key": 0}, {"key": 42}, {"key": -1}, {"key": 41}, {"key": 41.9999}]
   - id: filter_expression_with_negation_and_equals
     status: error
+  - id: filter_expression_with_not_equals
+    status: error
   - id: filter_expression_with_regular_expression
     status: error
   - id: filter_expression_with_single_equal
