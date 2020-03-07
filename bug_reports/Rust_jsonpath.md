@@ -283,6 +283,20 @@ The following queries provide results that do not match those of other implement
   parsing error
   ```
 
+- [ ] `$['"']`
+  Input:
+  ```
+  {"\"": "value", "another": "entry"}
+  ```
+  Expected output:
+  ```
+  ["value"]
+  ```
+  Error:
+  ```
+  parsing error
+  ```
+
 - [ ] `$['0']`
   Input:
   ```
@@ -329,20 +343,6 @@ The following queries provide results that do not match those of other implement
   Input:
   ```
   {"*": "value", "another": "entry"}
-  ```
-  Expected output:
-  ```
-  ["value"]
-  ```
-  Error:
-  ```
-  parsing error
-  ```
-
-- [ ] `$['special:"chars']`
-  Input:
-  ```
-  {"special:\"chars": "value"}
   ```
   Expected output:
   ```

@@ -297,6 +297,20 @@ The following queries provide results that do not match those of other implement
   strconv.Atoi: parsing "'.'": invalid syntax
   ```
 
+- [ ] `$['"']`
+  Input:
+  ```
+  {"\"": "value", "another": "entry"}
+  ```
+  Expected output:
+  ```
+  "value"
+  ```
+  Error:
+  ```
+  strconv.Atoi: parsing "'\"'": invalid syntax
+  ```
+
 - [ ] `$['0']`
   Input:
   ```
@@ -351,20 +365,6 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   strconv.Atoi: parsing "'*'": invalid syntax
-  ```
-
-- [ ] `$['special:"chars']`
-  Input:
-  ```
-  {"special:\"chars": "value"}
-  ```
-  Expected output:
-  ```
-  "value"
-  ```
-  Error:
-  ```
-  strconv.Atoi: parsing "\"chars'": invalid syntax
   ```
 
 - [ ] `$[0:2][*]`

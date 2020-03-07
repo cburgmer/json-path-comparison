@@ -45,20 +45,6 @@ The following queries provide results that do not match those of other implement
   index -1 out of bounds
   ```
 
-- [ ] `$['special:"chars']`
-  Input:
-  ```
-  {"special:\"chars": "value"}
-  ```
-  Expected output:
-  ```
-  "value"
-  ```
-  Error:
-  ```
-  parsing error: $['special:"chars']	:1:3 - 1:19 could not parse string: invalid syntax
-  ```
-
 - [ ] `$['one','three'].key`
   Input:
   ```

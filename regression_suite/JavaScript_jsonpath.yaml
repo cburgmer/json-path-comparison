@@ -34,6 +34,12 @@ queries:
     result: []
   - id: bracket_notation_with_number_on_string
     status: error
+  - id: bracket_notation_with_quoted_escaped_backslash
+    status: open
+    result: []
+  - id: bracket_notation_with_quoted_escaped_single_quote
+    status: open
+    result: []
   - id: bracket_notation_with_quoted_wildcard_literal_on_object_without_key
     status: open
     result: []

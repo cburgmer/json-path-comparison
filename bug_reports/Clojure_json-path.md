@@ -367,6 +367,20 @@ The following queries provide results that do not match those of other implement
   java.lang.Exception object must be an array.
   ```
 
+- [ ] `$['"']`
+  Input:
+  ```
+  {"\"": "value", "another": "entry"}
+  ```
+  Expected output:
+  ```
+  "value"
+  ```
+  Error:
+  ```
+  java.lang.Exception object must be an array.
+  ```
+
 - [ ] `$['0']`
   Input:
   ```
@@ -421,20 +435,6 @@ The following queries provide results that do not match those of other implement
   Actual output:
   ```
   ["value", "entry"]
-  ```
-
-- [ ] `$['special:"chars']`
-  Input:
-  ```
-  {"special:\"chars": "value"}
-  ```
-  Expected output:
-  ```
-  "value"
-  ```
-  Error:
-  ```
-  java.lang.Exception object must be an array.
   ```
 
 - [ ] `$[0:2][*]`

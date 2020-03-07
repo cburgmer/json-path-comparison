@@ -78,6 +78,21 @@ The following queries provide results that do not match those of other implement
   ValueError("line 1:2 token recognition error at: '''")
   ```
 
+- [ ] `$['"']`
+  Input:
+  ```
+  {"\"": "value", "another": "entry"}
+  ```
+  Expected output:
+  ```
+  ["value"]
+  ```
+  Error:
+  ```
+  line 1:2 token recognition error at: '''
+  ValueError("line 1:2 token recognition error at: '''")
+  ```
+
 - [ ] `$['0']`
   Input:
   ```
@@ -127,21 +142,6 @@ The following queries provide results that do not match those of other implement
   Input:
   ```
   {"*": "value", "another": "entry"}
-  ```
-  Expected output:
-  ```
-  ["value"]
-  ```
-  Error:
-  ```
-  line 1:2 token recognition error at: '''
-  ValueError("line 1:2 token recognition error at: '''")
-  ```
-
-- [ ] `$['special:"chars']`
-  Input:
-  ```
-  {"special:\"chars": "value"}
   ```
   Expected output:
   ```

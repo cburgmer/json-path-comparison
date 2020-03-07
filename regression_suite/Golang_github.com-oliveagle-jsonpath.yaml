@@ -72,6 +72,12 @@ queries:
     status: error
   - id: bracket_notation_with_quoted_dot_literal
     status: error
+  - id: bracket_notation_with_quoted_double_quote_literal
+    status: error
+  - id: bracket_notation_with_quoted_escaped_backslash
+    status: error
+  - id: bracket_notation_with_quoted_escaped_single_quote
+    status: error
   - id: bracket_notation_with_quoted_number_on_object
     status: error
   - id: bracket_notation_with_quoted_root_literal
@@ -85,8 +91,6 @@ queries:
   - id: bracket_notation_with_single_quote
     status: error
   - id: bracket_notation_with_single_quote_escaped
-    status: error
-  - id: bracket_notation_with_special_characters
     status: error
   - id: bracket_notation_with_two_literals_separated_by_dot
     status: error
