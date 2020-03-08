@@ -1,35 +1,37 @@
-FROM alpine:3.11
+FROM ubuntu:20.04
 
-RUN apk --no-cache upgrade \
-        && apk --no-cache add bash ninja python3 markdown curl coreutils
+ENV DEBIAN_FRONTEND=noninteractive
+
+RUN apt-get update \
+        && apt-get install -y --no-install-recommends bash ninja-build python3 markdown curl coreutils
 
 # Golang
-RUN apk --no-cache add go git
+RUN apt-get install -y --no-install-recommends golang-go git
 
 # Rust
-RUN apk --no-cache add cargo
+RUN apt-get install -y --no-install-recommends cargo
 
 # PHP
-RUN apk --no-cache add php php-intl php-tokenizer composer
+RUN apt-get install -y --no-install-recommends php php-intl php-tokenizer composer
 
 # JavaScript
-RUN apk --no-cache add nodejs npm unzip
+RUN apt-get install -y --no-install-recommends nodejs npm unzip
 
 # Java + Clojure + Kotlin
-RUN apk --no-cache add openjdk11 maven
+RUN apt-get install -y --no-install-recommends openjdk-11-jdk maven
 
 # Perl
-RUN apk --no-cache add perl make wget
+RUN apt-get install -y --no-install-recommends perl make wget
 
 # C
-RUN apk --no-cache add gcc json-glib-dev
+RUN apt-get install -y --no-install-recommends gcc libjson-glib-dev
 
 # Haskell
-RUN apk --no-cache add cabal ghc
+RUN apt-get install -y --no-install-recommends cabal-install ghc
 
 # Erlang
 # rebar3 as pkg only found in alpine:edge
-RUN apk --no-cache add erlang erlang-crypto erlang-asn1 erlang-public-key erlang-ssl erlang-dev g++ \
+RUN apt-get install -y --no-install-recommends erlang erlang-crypto erlang-asn1 erlang-public-key erlang-ssl erlang-dev g++ \
         && curl -L https://s3.amazonaws.com/rebar3/rebar3 -o /usr/local/bin/rebar3 && chmod +x /usr/local/bin/rebar3
 
 # Python
@@ -42,7 +44,7 @@ RUN curl -OL https://dotnetwebsite.azurewebsites.net/download/dotnet-core/script
         && chmod a+x dotnet-install.sh && ./dotnet-install.sh
 
 # Elixir
-RUN apk --no-cache add elixir && mix local.hex --force
+RUN apt-get install -y --no-install-recommends elixir && mix local.hex --force
 
 # Bash
-RUN apk --no-cache add sed grep gawk
+RUN apt-get install -y --no-install-recommends sed grep gawk
