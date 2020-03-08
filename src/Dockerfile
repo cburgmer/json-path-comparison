@@ -27,7 +27,12 @@ RUN apt-get install -y --no-install-recommends perl make wget
 RUN apt-get install -y --no-install-recommends gcc libjson-glib-dev
 
 # Haskell
-RUN apt-get install -y --no-install-recommends cabal-install ghc
+# Get newest cabal outside of Ubuntu channel
+RUN apt-get install -y --no-install-recommends ghc xz-utils \
+        && curl -L https://downloads.haskell.org/~cabal/cabal-install-latest/cabal-install-3.0.0.0-x86_64-unknown-linux.tar.xz -o cabal-install.tar.xz \
+        && tar -xf cabal-install.tar.xz \
+        && mv cabal /usr/local/bin/ \
+        && rm cabal-install.tar.xz
 
 # Erlang
 # rebar3 as pkg only found in alpine:edge

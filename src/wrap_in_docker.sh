@@ -7,4 +7,4 @@ readonly target_image=json-path-comparison
 
 docker build -t "$target_image" "$script_dir"
 
-docker run --rm -v "$(pwd):/json-path-comparison" -v "$(pwd)/cabal-cache":/root/.cabal -i "$target_image" sh -c "cd /json-path-comparison && $RUN_ARGS"
+docker run --rm -v "$(pwd):/json-path-comparison" -i "$target_image" sh -c "cd /json-path-comparison && $RUN_ARGS"
