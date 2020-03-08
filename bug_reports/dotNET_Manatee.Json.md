@@ -17,34 +17,6 @@ The following queries provide results that do not match those of other implement
   ["string", 1]
   ```
 
-- [ ] `$[2:1]`
-  Input:
-  ```
-  ["first", "second", "third", "forth"]
-  ```
-  Expected output:
-  ```
-  []
-  ```
-  Error:
-  ```
-  Arithmetic operation resulted in an overflow.
-  ```
-
-- [ ] `$[-4:]`
-  Input:
-  ```
-  ["first", "second", "third"]
-  ```
-  Expected output:
-  ```
-  ["first", "second", "third"]
-  ```
-  Error:
-  ```
-  Number was less than the array's lower bound in the first dimension. (Parameter 'sourceIndex')
-  ```
-
 - [ ] `$['one','three'].key`
   Input:
   ```

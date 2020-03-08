@@ -6,7 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Manatee.Json" Version="12.2.0" />
+    <PackageReference Include="Manatee.Json" Version="12.3.1" />
   </ItemGroup>
 
 </Project>
