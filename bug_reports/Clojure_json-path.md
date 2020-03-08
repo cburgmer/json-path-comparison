@@ -325,6 +325,20 @@ The following queries provide results that do not match those of other implement
   java.lang.Exception object must be an array.
   ```
 
+- [ ] `$["key"]`
+  Input:
+  ```
+  {"key": "value"}
+  ```
+  Expected output:
+  ```
+  "value"
+  ```
+  Error:
+  ```
+  java.lang.Exception object must be an array.
+  ```
+
 - [ ] `$[':']`
   Input:
   ```

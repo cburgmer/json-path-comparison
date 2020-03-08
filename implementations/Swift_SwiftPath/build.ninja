@@ -1,0 +1,9 @@
+root = implementations/Swift_SwiftPath
+builddir = $root/build
+
+rule build
+  command = cd $root && swift build && cd - && cp $root/.build/*/debug/Swift_SwiftPath $out && rm -r $root/.build
+
+build $builddir/Swift_SwiftPath: build | $root/Package.swift $root/Sources/Swift_SwiftPath/main.swift
+
+build $root/install: phony $builddir/Swift_SwiftPath

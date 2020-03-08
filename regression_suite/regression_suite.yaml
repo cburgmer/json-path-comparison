@@ -122,6 +122,8 @@ queries:
   - id: bracket_notation_with_double_quotes
     selector: $["key"]
     document: {"key": "value"}
+    consensus: ["value"]
+    scalar-consensus: "value"
   - id: bracket_notation_with_empty_string
     selector: $['']
     document: {"": 42}

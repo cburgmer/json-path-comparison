@@ -43,7 +43,7 @@ queries:
     status: fail
     result: {"two.some": "42"}
   - id: bracket_notation_with_double_quotes
-    status: open
+    status: fail
     result: {"key": "value"}
   - id: bracket_notation_with_empty_string
     status: error

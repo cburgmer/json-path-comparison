@@ -24,7 +24,7 @@ queries:
     status: fail
     result: ["more"]
   - id: bracket_notation_with_double_quotes
-    status: open
+    status: fail
     result: []
   - id: bracket_notation_with_empty_string
     status: open

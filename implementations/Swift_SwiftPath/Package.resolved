@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "SwiftPath",
+        "repositoryURL": "https://github.com/cburgmer/SwiftPath.git",
+        "state": {
+          "branch": null,
+          "revision": "11616da4f782a30442586e18ecb3509a416ef003",
+          "version": "0.2.1"
+        }
+      }
+    ]
+  },
+  "version": 1
+}

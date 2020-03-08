@@ -187,6 +187,36 @@ The following queries provide results that do not match those of other implement
   	... 8 more
   ```
 
+- [ ] `$["key"]`
+  Input:
+  ```
+  {"key": "value"}
+  ```
+  Expected output:
+  ```
+  ["value"]
+  ```
+  Error:
+  ```
+  line 1:2 token recognition error at: '"'
+  line 1:6 token recognition error at: '"'
+  line 1:3 no viable alternative at input '[key'
+  Exception in thread "main" org.antlr.v4.runtime.misc.ParseCancellationException
+  	at org.antlr.v4.runtime.BailErrorStrategy.recover(BailErrorStrategy.java:51)
+  	at org.jsfr.json.compiler.JsonPathParser.relativePath(JsonPathParser.java:315)
+  	at org.jsfr.json.compiler.JsonPathParser.path(JsonPathParser.java:159)
+  	at org.jsfr.json.compiler.JsonPathCompiler.compile(JsonPathCompiler.java:283)
+  	at org.jsfr.json.compiler.JsonPathCompiler.compile(JsonPathCompiler.java:273)
+  	at org.jsfr.json.JsonSurfer.collectAll(JsonSurfer.java:284)
+  	at query.App.main(App.java:27)
+  Caused by: org.antlr.v4.runtime.NoViableAltException
+  	at org.antlr.v4.runtime.atn.ParserATNSimulator.noViableAlt(ParserATNSimulator.java:2026)
+  	at org.antlr.v4.runtime.atn.ParserATNSimulator.execATN(ParserATNSimulator.java:467)
+  	at org.antlr.v4.runtime.atn.ParserATNSimulator.adaptivePredict(ParserATNSimulator.java:393)
+  	at org.jsfr.json.compiler.JsonPathParser.relativePath(JsonPathParser.java:232)
+  	... 5 more
+  ```
+
 - [ ] `$[-1]`
   Input:
   ```

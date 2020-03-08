@@ -73,6 +73,20 @@ The following queries provide results that do not match those of other implement
   ["more"]
   ```
 
+- [ ] `$["key"]`
+  Input:
+  ```
+  {"key": "value"}
+  ```
+  Expected output:
+  ```
+  ["value"]
+  ```
+  Error:
+  ```
+  jsonpath returned false, this might indicate an error
+  ```
+
 - [ ] `$[-1]`
   Input:
   ```
