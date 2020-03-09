@@ -11,8 +11,14 @@ all_implementations() {
     find ./implementations -name run.sh -maxdepth 2 -print0 | xargs -0 -n1 dirname | xargs -n1 basename | sort
 }
 
+group_queries_by_functionality() {
+    # For sorting assume max. 4 selector segments and a pair (2) of
+    # base selector + selector option. Finally the 'on' part => 9 columns
+    xargs -n1 -I% ./src/split_query_name.py % | sort -t$'\t' -k1 -k2 -k3 -k4 -k5 -k6 -k7 -k8 -k9 | tr -d $'\t'
+}
+
 all_queries() {
-    find ./queries -type d -maxdepth 1 -mindepth 1 -print0 | xargs -0 -n1 basename | sort
+    find ./queries -type d -maxdepth 1 -mindepth 1 -print0 | xargs -0 -n1 basename | group_queries_by_functionality
 }
 
 is_in_majority() {
