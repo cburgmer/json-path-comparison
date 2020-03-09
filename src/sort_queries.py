@@ -17,9 +17,7 @@ def split_selector_segments(selector_only_query):
 def split_with(selector_segment):
     return re.search(r'^(.+?)((?:_(?:with|without)_.+)?)$', selector_segment).groups()
 
-def main():
-    query = sys.argv[1]
-
+def annotate_query(query):
     selector_only_query, on_document_specifier = split_on(query)
 
     selector_segments = split_selector_segments(selector_only_query)
@@ -38,7 +36,15 @@ def main():
         parts.append('')
     parts.append(on_document_specifier)
 
-    print('\t'.join(parts))
+    return parts
+
+def main():
+    queries = []
+    for query in sys.stdin:
+        queries.append(tuple(annotate_query(query.replace('\n', ''))))
+
+    for query in sorted(queries):
+        print(''.join(query))
 
 if __name__ == '__main__':
     main()
