@@ -2,14 +2,15 @@
 import sys
 import re
 
-MAX_OPERATORS=4
-
 def split_on(q):
     fragments = q.split('_on_')
     if len(fragments) == 1:
         return q, ''
     else:
-        return '_on_'.join(fragments[:-1]), '_on_' + fragments[-1]
+        # Split on the last _on_ to hopefully reduce surprises.
+        # Assumption is that there's more (complex) text to the left than to the
+        # right of it.
+        return '_on_'.join(fragments[:-1]), fragments[-1]
 
 def split_operators(selector_only_query):
     return selector_only_query.split(r'_after_')
@@ -17,34 +18,28 @@ def split_operators(selector_only_query):
 def split_operator_parameter(selector_segment):
     return re.search(r'^(.+?)((?:_(?:with|without)_.+)?)$', selector_segment).groups()
 
-def annotate_query(query):
+def split_query(query):
+    """
+    Splits the query into it's components.
+
+    E.g.
+    "array slice without start and end after bracket notation with wildcard on
+      nested arrays"
+    returns
+    ([("array slice", "without start and end"), ("bracket notation", "with wildcard")], "nested arrays")
+    """
     selector_only_query, on_document_specifier = split_on(query)
 
     operators = split_operators(selector_only_query)
+    parts = [split_operator_parameter(o) for o in operators]
 
-    parts = []
-    parts += split_operator_parameter(operators[0])
-
-    for operator in operators[1:]:
-        base_operator, operator_parameter = split_operator_parameter(operator)
-        parts.append('_after_' + base_operator)
-        parts.append(operator_parameter)
-
-    # HACK move 'on' part to the very end to avoid it from clashing with the
-    #  other sort keys.
-    while len(parts) < 2 * MAX_OPERATORS:
-        parts.append('')
-    parts.append(on_document_specifier)
-
-    return parts
+    return tuple([parts, on_document_specifier])
 
 def main():
-    queries = []
-    for query in sys.stdin:
-        queries.append(tuple(annotate_query(query.replace('\n', ''))))
+    queries = [q.replace('\n', '') for q in sys.stdin]
 
-    for query in sorted(queries):
-        print(''.join(query))
+    for query in sorted(queries, key=split_query):
+        print(query)
 
 if __name__ == '__main__':
     main()

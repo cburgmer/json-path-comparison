@@ -5380,7 +5380,7 @@ build bug_reports/dotNET_Manatee.Json.md: compile_bug_reports build/results buil
 rule compile_table
   command = ./src/compile_table.sh $in > $out
 
-build build/markdown/index.md: compile_table build/results build/majority build/consensus | src/compile_table.sh queries/ implementations/
+build build/markdown/index.md: compile_table build/results build/majority build/consensus | src/compile_table.sh src/sort_queries.py queries/ implementations/
 
 rule results_report
   command = ./src/results_report.sh $in > $out

@@ -180,7 +180,7 @@ rule compile_table
   command = ./src/compile_table.sh \$in > \$out
 EOF
     echo
-    echo "build ${markdown_dir}/index.md: compile_table ${results_dir} ${majority_dir} ${consensus_dir} | src/compile_table.sh queries/ implementations/"
+    echo "build ${markdown_dir}/index.md: compile_table ${results_dir} ${majority_dir} ${consensus_dir} | src/compile_table.sh src/sort_queries.py queries/ implementations/"
     echo
 
     cat <<EOF
