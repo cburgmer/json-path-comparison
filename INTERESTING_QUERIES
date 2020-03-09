@@ -1,0 +1,7 @@
+- document: [{"key": [{"id": 1}, {"id": 2}]}, {"key": [{"id": 2}, {"id": 3}]}, {"key": [{"id": 3}, {"id": 4}]}, {"key": [{"id": 2}]}]
+  selector: "$[?(@.key[*].id==2)]"
+- document: [{"d": [1, 2, 3]}, {"d": [2]}, {"d": [1]}, {"d": [3, 4]}, {"d": [4, 2]}]' | ./src/one_off.sh '$[?(2 in @.d)]
+  selector: "$[?(2 in @.d)]"
+- document: [[1], [2,3]]
+  selector "$.*[1]"
+

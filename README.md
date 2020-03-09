@@ -17,13 +17,33 @@ from the queries in [./queries](./queries).
 
 ## Roadmap
 
+Done:
+
+- Cover as much implementations as possible [#10](https://github.com/cburgmer/json-path-comparison/issues/10)
+- Find and report issues in implementations
+- Make missing consensus visible
+
+Short term:
+
+- Go through (past) issues of implementations to find more corner cases to query for.
+- Guide implementations to tackle queries without consensus to create one
+  - Experiment: Report questionable responses to implementations where no consensus exists yet.
+  - Experiment: Suggest solutions and try opening a discussion.
+
+Mid term:
+
 - More tests
   - Operators
   - Precedence of operators (see https://github.com/danielaparker/jsoncons/issues/110)
+  - Open queries documented in [INTERESTING_QUERIES](./INTERESTING_QUERIES).
 - Provide a forum to clarify different interpretations.
-  See [OPEN_QUESTIONS.md](OPEN_QUESTIONS.md) for a rough start on visible
+  See [OPEN_QUESTIONS.md](./OPEN_QUESTIONS.md) for a rough start on visible
   disagreements.
+
+Long term:
+
 - Compare custom features/syntax across implementations
+- Investigate output path feature across implementations [#29](https://github.com/cburgmer/json-path-comparison/issues/29)
 
 ## How to
 
