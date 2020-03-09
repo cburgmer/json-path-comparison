@@ -3,7 +3,8 @@
 ## Why?
 
 JSONPath feels like a simple enough query language to grok and is supported
-across all major programming languages. Also it seems JSON is here to stay.
+across all major programming languages. Also it seems JSON is here to stay -
+being able to query it is valuable.
 
 Let's just make sure it's implemented consistently so we can avoid surprises.
 
