@@ -7,8 +7,7 @@
 implementation: Cpp_jsoncons
 queries:
   - id: array_slice_with_negative_step
-    status: open
-    result: []
+    status: error
   - id: array_slice_with_negative_step_only
     status: open
     result: ["fifth", "third", "first"]
@@ -17,9 +16,8 @@ queries:
   - id: array_slice_with_open_start_and_end_on_object
     status: open
     result: []
-  - id: array_slice_with_start_large_negative_number_and_open_end_on_short_array
-    status: fail
-    result: []
+  - id: array_slice_with_range_of_0
+    status: error
   - id: array_slice_with_step_0
     status: error
   - id: array_slice_with_step_empty

@@ -17,18 +17,18 @@ The following queries provide results that do not match those of other implement
   Expected slice step at line 1 and column 5
   ```
 
-- [ ] `$[-4:]`
+- [ ] `$[0:0]`
   Input:
   ```
-  ["first", "second", "third"]
+  ["first", "second"]
   ```
   Expected output:
   ```
-  ["first", "second", "third"]
-  ```
-  Actual output:
-  ```
   []
+  ```
+  Error:
+  ```
+  Expected slice end at line 1 and column 6
   ```
 
 - [ ] `$[1:3:]`
