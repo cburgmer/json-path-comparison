@@ -56,9 +56,6 @@ queries:
     result: []
   - id: bracket_notation_without_quotes
     status: error
-  - id: dot_bracket_notation
-    status: open
-    result: ["value"]
   - id: dot_bracket_notation_on_nested_object
     status: open
     result: ["value"]

@@ -14,7 +14,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  timeout: sending signal TERM to command './build/Swift_SwiftPath'
+  Can't parse selector
   ```
 
 - [ ] `$[0:5]`
@@ -28,7 +28,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  timeout: sending signal TERM to command './build/Swift_SwiftPath'
+  Can't parse selector
   ```
 
 - [ ] `$[7:10]`
@@ -42,7 +42,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  timeout: sending signal TERM to command './build/Swift_SwiftPath'
+  Can't parse selector
   ```
 
 - [ ] `$[1:3]`
@@ -56,7 +56,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  timeout: sending signal TERM to command './build/Swift_SwiftPath'
+  Can't parse selector
   ```
 
 - [ ] `$[1:10]`
@@ -70,7 +70,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  timeout: sending signal TERM to command './build/Swift_SwiftPath'
+  Can't parse selector
   ```
 
 - [ ] `$[1:]`
@@ -84,7 +84,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  timeout: sending signal TERM to command './build/Swift_SwiftPath'
+  Can't parse selector
   ```
 
 - [ ] `$[:2]`
@@ -98,7 +98,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  timeout: sending signal TERM to command './build/Swift_SwiftPath'
+  Can't parse selector
   ```
 
 - [ ] `$[:]`
@@ -112,7 +112,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  timeout: sending signal TERM to command './build/Swift_SwiftPath'
+  Can't parse selector
   ```
 
 - [ ] `$[::]`
@@ -126,7 +126,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  timeout: sending signal TERM to command './build/Swift_SwiftPath'
+  Can't parse selector
   ```
 
 - [ ] `$[2:1]`
@@ -140,7 +140,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  timeout: sending signal TERM to command './build/Swift_SwiftPath'
+  Can't parse selector
   ```
 
 - [ ] `$[0:0]`
@@ -154,7 +154,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  timeout: sending signal TERM to command './build/Swift_SwiftPath'
+  Can't parse selector
   ```
 
 - [ ] `$[0:1]`
@@ -168,7 +168,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  timeout: sending signal TERM to command './build/Swift_SwiftPath'
+  Can't parse selector
   ```
 
 - [ ] `$[-1:]`
@@ -182,7 +182,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  timeout: sending signal TERM to command './build/Swift_SwiftPath'
+  Can't parse selector
   ```
 
 - [ ] `$[-2:]`
@@ -196,7 +196,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  timeout: sending signal TERM to command './build/Swift_SwiftPath'
+  Can't parse selector
   ```
 
 - [ ] `$[-4:]`
@@ -210,7 +210,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  timeout: sending signal TERM to command './build/Swift_SwiftPath'
+  Can't parse selector
   ```
 
 - [ ] `$[0:3:2]`
@@ -224,7 +224,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  timeout: sending signal TERM to command './build/Swift_SwiftPath'
+  Can't parse selector
   ```
 
 - [ ] `$[0:3:1]`
@@ -238,7 +238,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  timeout: sending signal TERM to command './build/Swift_SwiftPath'
+  Can't parse selector
   ```
 
 - [ ] `$[0:4:2]`
@@ -252,7 +252,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  timeout: sending signal TERM to command './build/Swift_SwiftPath'
+  Can't parse selector
   ```
 
 - [ ] `$[1:3:]`
@@ -266,7 +266,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  timeout: sending signal TERM to command './build/Swift_SwiftPath'
+  Can't parse selector
   ```
 
 - [ ] `$[::2]`
@@ -280,7 +280,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  timeout: sending signal TERM to command './build/Swift_SwiftPath'
+  Can't parse selector
   ```
 
 - [ ] `$..[0]`
@@ -294,7 +294,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  indexOutOfBounds
+  Can't parse selector
   ```
 
 - [ ] `$['"']`
@@ -308,7 +308,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  timeout: sending signal TERM to command './build/Swift_SwiftPath'
+  Can't parse selector
   ```
 
 - [ ] `$[0:2][*]`
@@ -322,7 +322,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  timeout: sending signal TERM to command './build/Swift_SwiftPath'
+  Can't parse selector
   ```
 
 - [ ] `$[*].bar[*]`
@@ -336,7 +336,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  timeout: sending signal TERM to command './build/Swift_SwiftPath'
+  Can't parse selector
   ```
 
 - [ ] `$[*]`
@@ -350,7 +350,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  timeout: sending signal TERM to command './build/Swift_SwiftPath'
+  Can't parse selector
   ```
 
 - [ ] `$[*]`
@@ -364,7 +364,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  timeout: sending signal TERM to command './build/Swift_SwiftPath'
+  Can't parse selector
   ```
 
 - [ ] `$[*]`
@@ -378,7 +378,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  timeout: sending signal TERM to command './build/Swift_SwiftPath'
+  Can't parse selector
   ```
 
 - [ ] `$[*]`
@@ -392,7 +392,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  timeout: sending signal TERM to command './build/Swift_SwiftPath'
+  Can't parse selector
   ```
 
 - [ ] `$[*]`
@@ -406,7 +406,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  timeout: sending signal TERM to command './build/Swift_SwiftPath'
+  Can't parse selector
   ```
 
 - [ ] `$[*].a`
@@ -420,7 +420,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  timeout: sending signal TERM to command './build/Swift_SwiftPath'
+  Can't parse selector
   ```
 
 - [ ] `$[*].a`
@@ -434,7 +434,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  timeout: sending signal TERM to command './build/Swift_SwiftPath'
+  Can't parse selector
   ```
 
 - [ ] `$[*].a`
@@ -448,7 +448,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  timeout: sending signal TERM to command './build/Swift_SwiftPath'
+  Can't parse selector
   ```
 
 - [ ] `$[?(@.id==42)].name`
@@ -462,7 +462,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  timeout: sending signal TERM to command './build/Swift_SwiftPath'
+  Can't parse selector
   ```
 
 - [ ] `$..key`
@@ -476,7 +476,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  Can't execute query
+  Can't parse selector
   ```
 
 - [ ] `$.store..price`
@@ -490,21 +490,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  Can't execute query
-  ```
-
-- [ ] `$[0,2].key`
-  Input:
-  ```
-  [{"key": "ey"}, {"key": "bee"}, {"key": "see"}]
-  ```
-  Expected output:
-  ```
-  ["ey", "see"]
-  ```
-  Error:
-  ```
-  timeout: sending signal TERM to command './build/Swift_SwiftPath'
+  Can't parse selector
   ```
 
 - [ ] `$['one','three'].key`
@@ -518,7 +504,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  timeout: sending signal TERM to command './build/Swift_SwiftPath'
+  Can't execute query
   ```
 
 - [ ] `$.2`
@@ -560,7 +546,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  Can't execute query
+  Can't parse selector
   ```
 
 - [ ] `$..*`
@@ -574,7 +560,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  expectingAnObject
+  Can't parse selector
   ```
 
 - [ ] `$..*`
@@ -588,7 +574,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  expectingAnObject
+  Can't parse selector
   ```
 
 - [ ] `$.*`
@@ -630,7 +616,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  timeout: sending signal TERM to command './build/Swift_SwiftPath'
+  Can't parse selector
   ```
 
 - [ ] `$[?(@[1]=='b')]`
@@ -644,7 +630,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  timeout: sending signal TERM to command './build/Swift_SwiftPath'
+  Can't parse selector
   ```
 
 - [ ] `$[?(@.key=="some.value")]`
@@ -658,7 +644,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  timeout: sending signal TERM to command './build/Swift_SwiftPath'
+  Can't parse selector
   ```
 
 - [ ] `$[?(@.key>42)]`
@@ -672,7 +658,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  timeout: sending signal TERM to command './build/Swift_SwiftPath'
+  Can't parse selector
   ```
 
 - [ ] `$[?(@.key<42)]`
@@ -686,7 +672,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  timeout: sending signal TERM to command './build/Swift_SwiftPath'
+  Can't parse selector
   ```
 
 - [ ] `$[0]['c','d']`
@@ -698,9 +684,9 @@ The following queries provide results that do not match those of other implement
   ```
   ["cc1", "dd1"]
   ```
-  Error:
+  Actual output:
   ```
-  timeout: sending signal TERM to command './build/Swift_SwiftPath'
+  {"c": "cc1", "d": "dd1"}
   ```
 
 

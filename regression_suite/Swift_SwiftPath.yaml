@@ -59,8 +59,7 @@ queries:
   - id: bracket_notation_on_object_without_key
     status: error
   - id: bracket_notation_with_empty_string
-    status: open
-    result: 42
+    status: error
   - id: bracket_notation_with_number_on_object
     status: error
   - id: bracket_notation_with_number_on_short_array
@@ -72,8 +71,7 @@ queries:
   - id: bracket_notation_with_quoted_escaped_backslash
     status: error
   - id: bracket_notation_with_quoted_escaped_single_quote
-    status: open
-    result: {"'": "value"}
+    status: error
   - id: bracket_notation_with_quoted_special_characters_combined
     status: error
   - id: bracket_notation_with_quoted_string_and_unescaped_single_quote
@@ -102,12 +100,12 @@ queries:
     status: error
   - id: bracket_notation_without_quotes
     status: error
-  - id: dot_bracket_notation
-    status: error
   - id: dot_bracket_notation_on_nested_object
-    status: error
+    status: open
+    result: "value"
   - id: dot_bracket_notation_with_double_quotes
-    status: error
+    status: open
+    result: "value"
   - id: dot_bracket_notation_without_quotes
     status: error
   - id: dot_notation_after_bracket_notation_after_recursive_descent
@@ -123,8 +121,6 @@ queries:
   - id: dot_notation_after_recursive_descent
     status: error
   - id: dot_notation_after_recursive_descent_after_dot_notation
-    status: error
-  - id: dot_notation_after_union
     status: error
   - id: dot_notation_after_union_with_keys
     status: error
@@ -250,7 +246,8 @@ queries:
   - id: union_with_keys_after_array_slice
     status: error
   - id: union_with_keys_after_bracket_notation
-    status: error
+    status: fail
+    result: {"c": "cc1", "d": "dd1"}
   - id: union_with_keys_after_dot_notation_with_wildcard
     status: error
   - id: union_with_keys_on_object_without_key

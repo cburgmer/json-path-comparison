@@ -9,7 +9,7 @@ let selector: String = CommandLine.arguments[1]
 
 var input: String = ""
 while let line = readLine() {
-    input = input + line
+    input = input + line + "\n"
 }
 
 guard let path: SwiftPath = SwiftPath(selector) else {

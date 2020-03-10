@@ -143,6 +143,20 @@ The following queries provide results that do not match those of other implement
   jsonpath returned false, this might indicate an error
   ```
 
+- [ ] `$.['key']`
+  Input:
+  ```
+  {"key": "value"}
+  ```
+  Expected output:
+  ```
+  ["value"]
+  ```
+  Error:
+  ```
+  Invalid JSONPath error: 'Error in JSONPath near '.['key']''
+  ```
+
 - [ ] `$.key`
   Input:
   ```
