@@ -67,7 +67,7 @@ queries:
     status: error
   - id: bracket_notation_with_quoted_wildcard_literal
     status: fail
-    result: ["entry", "value"]
+    result: ["value", "entry"]
   - id: bracket_notation_with_quoted_wildcard_literal_on_object_without_key
     status: open
     result: ["entry"]
@@ -108,6 +108,9 @@ queries:
   - id: dot_notation_with_double_quotes_after_recursive_descent
     status: open
     result: ["russian dolls", "something", "top", "value", {"key": "russian dolls"}]
+  - id: dot_notation_with_non_ASCII_key
+    status: fail
+    result: []
   - id: dot_notation_with_number
     status: open
     result: ["third"]

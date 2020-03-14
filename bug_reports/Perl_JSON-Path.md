@@ -196,7 +196,7 @@ The following queries provide results that do not match those of other implement
   ```
   Actual output:
   ```
-  ["entry", "value"]
+  ["value", "entry"]
   ```
 
 - [ ] `$[?(@.id==42)].name`
@@ -232,6 +232,20 @@ The following queries provide results that do not match those of other implement
   	JSON::Path::Evaluator::evaluate(...) called at build/lib/perl5/JSON/Path/Evaluator.pm line 97
   	JSON::Path::Evaluator::evaluate_jsonpath(...) called at build/lib/perl5/JSON/Path.pm line 107
   	JSON::Path::values(...) called at main.pl line 11
+  ```
+
+- [ ] `$.屬性`
+  Input:
+  ```
+  {"\u5c6c\u6027": "value"}
+  ```
+  Expected output:
+  ```
+  ["value"]
+  ```
+  Actual output:
+  ```
+  []
   ```
 
 - [ ] `$..*`

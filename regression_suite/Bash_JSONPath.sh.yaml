@@ -163,6 +163,8 @@ queries:
   - id: dot_notation_with_double_quotes_after_recursive_descent
     status: open
     result: {"key": "top", "object": {"array": [{"key": "something"}, {"key": {"key": "russian dolls"}}], "key": "value"}}
+  - id: dot_notation_with_non_ASCII_key
+    status: error
   - id: dot_notation_with_number
     status: error
   - id: dot_notation_with_number_on_object

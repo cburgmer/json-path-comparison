@@ -129,6 +129,20 @@ The following queries provide results that do not match those of other implement
   [null, null, null, null]
   ```
 
+- [ ] `$.屬性`
+  Input:
+  ```
+  {"\u5c6c\u6027": "value"}
+  ```
+  Expected output:
+  ```
+  ["value"]
+  ```
+  Actual output:
+  ```
+  []
+  ```
+
 - [ ] `$.2`
   Input:
   ```

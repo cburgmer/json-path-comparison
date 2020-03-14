@@ -183,6 +183,21 @@ The following queries provide results that do not match those of other implement
   ValueError("line 1:2 token recognition error at: '''")
   ```
 
+- [ ] `$.屬性`
+  Input:
+  ```
+  {"\u5c6c\u6027": "value"}
+  ```
+  Expected output:
+  ```
+  ["value"]
+  ```
+  Error:
+  ```
+  line 1:2 token recognition error at: '屬'
+  ValueError("line 1:2 token recognition error at: '屬'")
+  ```
+
 - [ ] `$.2`
   Input:
   ```

@@ -327,6 +327,11 @@ queries:
     selector: $.."key"
     document: {"object": {"key": "value", "array": [{"key": "something"}, {"key": {"key": "russian dolls"}}]}, "key": "top"}
     ordered: false
+  - id: dot_notation_with_non_ASCII_key
+    selector: $.屬性
+    document: {"\u5c6c\u6027": "value"}
+    consensus: ["value"]
+    scalar-consensus: "value"
   - id: dot_notation_with_number
     selector: $.2
     document: ["first", "second", "third", "forth", "fifth"]
