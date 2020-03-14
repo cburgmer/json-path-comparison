@@ -381,6 +381,20 @@ The following queries provide results that do not match those of other implement
   parsing error
   ```
 
+- [ ] `$..[*]`
+  Input:
+  ```
+  {"key": "value", "another key": {"complex": "string", "primitives": [0, 1]}}
+  ```
+  Expected output:
+  ```
+  ["string", "value", 0, 1, [0, 1], {"complex": "string", "primitives": [0, 1]}]
+  ```
+  Error:
+  ```
+  parsing error
+  ```
+
 - [ ] `$[*]`
   Input:
   ```
@@ -445,6 +459,20 @@ The following queries provide results that do not match those of other implement
   Expected output:
   ```
   ["string", 42, [0, 1], {"key": "value"}]
+  ```
+  Error:
+  ```
+  parsing error
+  ```
+
+- [ ] `$.['key']`
+  Input:
+  ```
+  {"key": "value"}
+  ```
+  Expected output:
+  ```
+  ["value"]
   ```
   Error:
   ```

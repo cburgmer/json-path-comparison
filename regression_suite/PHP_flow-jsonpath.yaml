@@ -78,13 +78,7 @@ queries:
   - id: bracket_notation_with_wildcard_after_array_slice
     status: fail
     result: [1, 2, "a", "b", 0, 0]
-  - id: bracket_notation_with_wildcard_after_recursive_descent
-    status: open
-    result: ["string", "value", 0, 1, [0, 1], {"complex": "string", "primitives": [0, 1]}]
   - id: bracket_notation_without_quotes
-    status: open
-    result: ["value"]
-  - id: dot_bracket_notation
     status: open
     result: ["value"]
   - id: dot_bracket_notation_on_nested_object

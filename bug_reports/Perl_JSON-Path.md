@@ -199,6 +199,20 @@ The following queries provide results that do not match those of other implement
   ["value", "entry"]
   ```
 
+- [ ] `$..[*]`
+  Input:
+  ```
+  {"key": "value", "another key": {"complex": "string", "primitives": [0, 1]}}
+  ```
+  Expected output:
+  ```
+  ["string", "value", 0, 1, [0, 1], {"complex": "string", "primitives": [0, 1]}]
+  ```
+  Actual output:
+  ```
+  []
+  ```
+
 - [ ] `$[?(@.id==42)].name`
   Input:
   ```

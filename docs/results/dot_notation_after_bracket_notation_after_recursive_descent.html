@@ -274,6 +274,14 @@ Clojure (json-path)
 <pre><code>java.lang.Exception object must be an array.
 </code></pre>
 
+<h4 id="Elixir_warpath">
+Elixir (warpath)
+</h4>
+
+<pre><code>** (Warpath.UnsupportedOperationError) You are trying to traverse a list using dot notation '$.kk[1].key', that it's not allowed for list type. You can use something like '$.kk[1][*].key' instead.
+    lib/jsonpath.ex:9: Mix.Tasks.Execute.run/1
+</code></pre>
+
 <h4 id="Erlang_ejsonpath">
 Erlang (ejsonpath)
 </h4>

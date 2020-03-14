@@ -88,6 +88,40 @@ The following queries provide results that do not match those of other implement
   {"init terminating in do_boot",{badmatch,{error,{1,ejsonpath_parse,["syntax error before: ","'['"]}}}}
   ```
 
+- [ ] `$..[*]`
+  Input:
+  ```
+  {"key": "value", "another key": {"complex": "string", "primitives": [0, 1]}}
+  ```
+  Expected output:
+  ```
+  ["string", "value", 0, 1, [0, 1], {"complex": "string", "primitives": [0, 1]}]
+  ```
+  Error:
+  ```
+  init terminating in do_boot ({badmatch,{error,{1,ejsonpath_parse,syntax error before: '['}}})
+  
+  Crash dump is being written to: /dev/null...done
+  {"init terminating in do_boot",{badmatch,{error,{1,ejsonpath_parse,["syntax error before: ","'['"]}}}}
+  ```
+
+- [ ] `$.['key']`
+  Input:
+  ```
+  {"key": "value"}
+  ```
+  Expected output:
+  ```
+  ["value"]
+  ```
+  Error:
+  ```
+  init terminating in do_boot ({badmatch,{error,{1,ejsonpath_parse,syntax error before: '['}}})
+  
+  Crash dump is being written to: /dev/null...done
+  {"init terminating in do_boot",{badmatch,{error,{1,ejsonpath_parse,["syntax error before: ","'['"]}}}}
+  ```
+
 - [ ] `$.key-dash`
   Input:
   ```

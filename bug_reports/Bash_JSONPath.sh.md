@@ -336,6 +336,20 @@ The following queries provide results that do not match those of other implement
   ]
   ```
 
+- [ ] `$..[*]`
+  Input:
+  ```
+  {"key": "value", "another key": {"complex": "string", "primitives": [0, 1]}}
+  ```
+  Expected output:
+  ```
+  ["string", "value", 0, 1, [0, 1], {"complex": "string", "primitives": [0, 1]}]
+  ```
+  Actual output:
+  ```
+  {"another key": {"complex": "string", "primitives": [0, 1]}, "key": "value"}
+  ```
+
 - [ ] `$[*]`
   Input:
   ```
@@ -405,6 +419,20 @@ The following queries provide results that do not match those of other implement
   Actual output:
   ```
   {"array": [0, 1], "int": 42, "object": {"key": "value"}, "some": "string"}
+  ```
+
+- [ ] `$.['key']`
+  Input:
+  ```
+  {"key": "value"}
+  ```
+  Expected output:
+  ```
+  ["value"]
+  ```
+  Actual output:
+  ```
+  {"key": "value"}
   ```
 
 - [ ] `$.key`

@@ -157,6 +157,20 @@ The following queries provide results that do not match those of other implement
   ["value", "entry"]
   ```
 
+- [ ] `$..[*]`
+  Input:
+  ```
+  {"key": "value", "another key": {"complex": "string", "primitives": [0, 1]}}
+  ```
+  Expected output:
+  ```
+  ["string", "value", 0, 1, [0, 1], {"complex": "string", "primitives": [0, 1]}]
+  ```
+  Error:
+  ```
+  Unable to compile selector `$..[*]': Missing member name or wildcard after . character
+  ```
+
 - [ ] `$[*]`
   Input:
   ```
@@ -183,6 +197,20 @@ The following queries provide results that do not match those of other implement
   Actual output:
   ```
   [{"array": [0, 1], "int": 42, "object": {"key": "value"}, "some": "string"}]
+  ```
+
+- [ ] `$.['key']`
+  Input:
+  ```
+  {"key": "value"}
+  ```
+  Expected output:
+  ```
+  ["value"]
+  ```
+  Error:
+  ```
+  Unable to compile selector `$.['key']': Missing member name or wildcard after . character
   ```
 
 - [ ] `$[?(@.id==42)].name`

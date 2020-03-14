@@ -129,6 +129,20 @@ The following queries provide results that do not match those of other implement
   Unexpected char, char=*, index=2
   ```
 
+- [ ] `$..[*]`
+  Input:
+  ```
+  {"key": "value", "another key": {"complex": "string", "primitives": [0, 1]}}
+  ```
+  Expected output:
+  ```
+  ["string", "value", 0, 1, [0, 1], {"complex": "string", "primitives": [0, 1]}]
+  ```
+  Error:
+  ```
+  Unexpected char, char=*, index=4
+  ```
+
 - [ ] `$[*]`
   Input:
   ```

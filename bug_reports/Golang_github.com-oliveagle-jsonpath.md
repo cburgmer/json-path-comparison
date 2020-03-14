@@ -395,6 +395,20 @@ The following queries provide results that do not match those of other implement
   [[42]]
   ```
 
+- [ ] `$..[*]`
+  Input:
+  ```
+  {"key": "value", "another key": {"complex": "string", "primitives": [0, 1]}}
+  ```
+  Expected output:
+  ```
+  ["string", "value", 0, 1, [0, 1], {"complex": "string", "primitives": [0, 1]}]
+  ```
+  Error:
+  ```
+  expression don't support in filter
+  ```
+
 - [ ] `$[*]`
   Input:
   ```
@@ -435,6 +449,20 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   object is not Slice
+  ```
+
+- [ ] `$.['key']`
+  Input:
+  ```
+  {"key": "value"}
+  ```
+  Expected output:
+  ```
+  "value"
+  ```
+  Error:
+  ```
+  strconv.Atoi: parsing "'key'": invalid syntax
   ```
 
 - [ ] `$[?(@.id==42)].name`
