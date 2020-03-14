@@ -34,6 +34,7 @@ EOF
 
 table_consensus_colouring() {
     cat
+    # Make sure the selector is more specific than the markdown CSS
     cat <<EOF
 <style>
 .markdown-body tbody tr.consensus:nth-child(2n+1) {
@@ -51,14 +52,13 @@ EOF
 
 highlight_effect() {
     cat
-    # Make sure the selector is more specific than the markdown CSS
     cat <<EOF
 <style>
 h3:target,
 h4:target,
-.markdown-body tbody tr:target,
-.markdown-body tbody tr:hover {
-  background-color: #ffa;
+tbody tr:target,
+tbody tr:hover {
+  background-color: #ffa !important;
 }
 </style>
 EOF
