@@ -625,6 +625,20 @@ The following queries provide results that do not match those of other implement
   
   ```
 
+- [ ] `$.key-dash`
+  Input:
+  ```
+  {"key-dash": "value"}
+  ```
+  Expected output:
+  ```
+  ["value"]
+  ```
+  Actual output:
+  ```
+  {"key-dash": "value"}
+  ```
+
 - [ ] `$.屬性`
   Input:
   ```

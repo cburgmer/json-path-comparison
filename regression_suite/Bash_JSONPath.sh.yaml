@@ -159,6 +159,9 @@ queries:
     result: {"key": null}
   - id: dot_notation_on_object_without_key
     status: error
+  - id: dot_notation_with_dash
+    status: fail
+    result: {"key-dash": "value"}
   - id: dot_notation_with_double_quotes
     status: open
     result: {"key": "value"}

@@ -17,6 +17,22 @@ The following queries provide results that do not match those of other implement
   []
   ```
 
+- [ ] `$.key-dash`
+  Input:
+  ```
+  {"key-dash": "value"}
+  ```
+  Expected output:
+  ```
+  ["value"]
+  ```
+  Error:
+  ```
+  Lexical error on line 1. Unrecognized text.
+  $.key-dash
+  -----^
+  ```
+
 - [ ] `$.屬性`
   Input:
   ```

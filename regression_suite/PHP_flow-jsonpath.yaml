@@ -102,6 +102,8 @@ queries:
   - id: dot_notation_after_union_with_keys
     status: fail
     result: []
+  - id: dot_notation_with_dash
+    status: error
   - id: dot_notation_with_double_quotes
     status: open
     result: ["value"]

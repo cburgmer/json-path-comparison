@@ -325,6 +325,11 @@ queries:
   - id: dot_notation_on_object_without_key
     selector: $.missing
     document: {"key": "value"}
+  - id: dot_notation_with_dash
+    selector: $.key-dash
+    document: {"key-dash": "value"}
+    consensus: ["value"]
+    scalar-consensus: "value"
   - id: dot_notation_with_double_quotes
     selector: $."key"
     document: {"key": "value"}

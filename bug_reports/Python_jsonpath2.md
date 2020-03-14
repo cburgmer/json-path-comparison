@@ -183,6 +183,21 @@ The following queries provide results that do not match those of other implement
   ValueError("line 1:2 token recognition error at: '''")
   ```
 
+- [ ] `$.key-dash`
+  Input:
+  ```
+  {"key-dash": "value"}
+  ```
+  Expected output:
+  ```
+  ["value"]
+  ```
+  Error:
+  ```
+  line 1:5 token recognition error at: '-d'
+  ValueError("line 1:5 token recognition error at: '-d'")
+  ```
+
 - [ ] `$.屬性`
   Input:
   ```

@@ -143,6 +143,20 @@ The following queries provide results that do not match those of other implement
   []
   ```
 
+- [ ] `$.key-dash`
+  Input:
+  ```
+  {"key-dash": "value"}
+  ```
+  Expected output:
+  ```
+  ["value"]
+  ```
+  Error:
+  ```
+  Error: 'Unable to parse token key-dash in expression: .key-dash'
+  ```
+
 - [ ] `$.屬性`
   Input:
   ```

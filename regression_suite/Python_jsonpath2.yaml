@@ -84,6 +84,8 @@ queries:
     status: error
   - id: dot_notation_after_union_with_keys
     status: error
+  - id: dot_notation_with_dash
+    status: error
   - id: dot_notation_with_double_quotes
     status: error
   - id: dot_notation_with_double_quotes_after_recursive_descent

@@ -31,6 +31,20 @@ The following queries provide results that do not match those of other implement
   Expected close bracket. Path up to error: '$'
   ```
 
+- [ ] `$.key-dash`
+  Input:
+  ```
+  {"key-dash": "value"}
+  ```
+  Expected output:
+  ```
+  ["value"]
+  ```
+  Error:
+  ```
+  Unrecognized JSON Path element. Path up to error: '$.key'
+  ```
+
 - [ ] `$[0]['c','d']`
   Input:
   ```

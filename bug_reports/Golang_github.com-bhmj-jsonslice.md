@@ -31,6 +31,20 @@ The following queries provide results that do not match those of other implement
   [[42]]
   ```
 
+- [ ] `$.key-dash`
+  Input:
+  ```
+  {"key-dash": "value"}
+  ```
+  Expected output:
+  ```
+  "value"
+  ```
+  Error:
+  ```
+  No JSON output received
+  ```
+
 - [ ] `$.*.bar.*`
   Input:
   ```
