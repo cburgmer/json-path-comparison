@@ -190,6 +190,12 @@ queries:
   - id: root_on_scalar
     status: fail
     result: []
+  - id: root_on_scalar_false
+    status: fail
+    result: []
+  - id: root_on_scalar_true
+    status: fail
+    result: []
   - id: script_expression
     status: error
   - id: union_with_filter

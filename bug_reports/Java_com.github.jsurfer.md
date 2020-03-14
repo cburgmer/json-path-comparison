@@ -273,6 +273,34 @@ The following queries provide results that do not match those of other implement
   []
   ```
 
+- [ ] `$`
+  Input:
+  ```
+  false
+  ```
+  Expected output:
+  ```
+  [false]
+  ```
+  Actual output:
+  ```
+  []
+  ```
+
+- [ ] `$`
+  Input:
+  ```
+  true
+  ```
+  Expected output:
+  ```
+  [true]
+  ```
+  Actual output:
+  ```
+  []
+  ```
+
 - [ ] `$[4,1]`
   Input:
   ```

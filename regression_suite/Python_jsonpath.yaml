@@ -211,6 +211,10 @@ queries:
     status: error
   - id: root_on_scalar
     status: error
+  - id: root_on_scalar_false
+    status: error
+  - id: root_on_scalar_true
+    status: error
   - id: script_expression
     status: open
     result: ["fifth"]

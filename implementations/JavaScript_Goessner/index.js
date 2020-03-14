@@ -26,6 +26,10 @@ stdin.on('end', function () {
             console.warn('jsonpath returned false, this might indicate an error');
             process.exit(1);
         }
+        if (result === undefined) {
+            console.error(result);
+            process.exit(1);
+        }
 
         stdout.write(JSON.stringify(result));
     } catch (e) {

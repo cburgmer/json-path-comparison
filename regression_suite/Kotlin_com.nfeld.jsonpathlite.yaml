@@ -243,6 +243,10 @@ queries:
     result: [{"a": {"b": "c"}}]
   - id: root_on_scalar
     status: error
+  - id: root_on_scalar_false
+    status: error
+  - id: root_on_scalar_true
+    status: error
   - id: script_expression
     status: error
   - id: union_with_filter

@@ -582,6 +582,22 @@ The following queries provide results that do not match those of other implement
 - [ ] `$.key`
   Input:
   ```
+  {"key": {}}
+  ```
+  Expected output:
+  ```
+  [{}]
+  ```
+  Error:
+  ```
+  Expecting value: line 3 column 1 (char 2)
+  
+  
+  ```
+
+- [ ] `$.key`
+  Input:
+  ```
   {"key": null}
   ```
   Expected output:
@@ -810,6 +826,40 @@ The following queries provide results that do not match those of other implement
   Expected output:
   ```
   [42]
+  ```
+  Error:
+  ```
+  ./node_modules/jsonpath.sh/JSONPath.sh: line 761: path: bad array subscript
+  ./node_modules/jsonpath.sh/JSONPath.sh: line 778: closers[pathlen]: bad array subscript
+  Expecting value: line 2 column 1 (char 6)
+      [
+  ```
+
+- [ ] `$`
+  Input:
+  ```
+  false
+  ```
+  Expected output:
+  ```
+  [false]
+  ```
+  Error:
+  ```
+  ./node_modules/jsonpath.sh/JSONPath.sh: line 761: path: bad array subscript
+  ./node_modules/jsonpath.sh/JSONPath.sh: line 778: closers[pathlen]: bad array subscript
+  Expecting value: line 2 column 1 (char 6)
+      [
+  ```
+
+- [ ] `$`
+  Input:
+  ```
+  true
+  ```
+  Expected output:
+  ```
+  [true]
   ```
   Error:
   ```

@@ -21,6 +21,10 @@ stdin.on('end', function () {
 
     try {
         const result = JSONPath({path: selector, wrap: true, json});
+        if (result === undefined) {
+            console.error(result);
+            process.exit(1);
+        }
         stdout.write(JSON.stringify(result));
     } catch (e) {
         console.error(e.message);

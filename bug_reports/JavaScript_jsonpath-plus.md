@@ -115,6 +115,20 @@ The following queries provide results that do not match those of other implement
   []
   ```
 
+- [ ] `$`
+  Input:
+  ```
+  false
+  ```
+  Expected output:
+  ```
+  [false]
+  ```
+  Error:
+  ```
+  undefined
+  ```
+
 - [ ] `$[0]['c','d']`
   Input:
   ```

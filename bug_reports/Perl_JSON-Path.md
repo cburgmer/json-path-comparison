@@ -374,6 +374,34 @@ The following queries provide results that do not match those of other implement
   []
   ```
 
+- [ ] `$`
+  Input:
+  ```
+  false
+  ```
+  Expected output:
+  ```
+  [false]
+  ```
+  Error:
+  ```
+  Missing required argument 'root' in constructor at build/lib/perl5/JSON/Path.pm line 107.
+  ```
+
+- [ ] `$`
+  Input:
+  ```
+  true
+  ```
+  Expected output:
+  ```
+  [true]
+  ```
+  Actual output:
+  ```
+  [""]
+  ```
+
 - [ ] `$[0]['c','d']`
   Input:
   ```

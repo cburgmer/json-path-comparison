@@ -479,6 +479,34 @@ The following queries provide results that do not match those of other implement
   A JSONArray text must start with '[' at 1 [character 2 line 1]
   ```
 
+- [ ] `$`
+  Input:
+  ```
+  false
+  ```
+  Expected output:
+  ```
+  false
+  ```
+  Error:
+  ```
+  A JSONArray text must start with '[' at 1 [character 2 line 1]
+  ```
+
+- [ ] `$`
+  Input:
+  ```
+  true
+  ```
+  Expected output:
+  ```
+  true
+  ```
+  Error:
+  ```
+  A JSONArray text must start with '[' at 1 [character 2 line 1]
+  ```
+
 - [ ] `$[0]['c','d']`
   Input:
   ```

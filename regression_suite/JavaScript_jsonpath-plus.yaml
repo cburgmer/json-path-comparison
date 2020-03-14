@@ -214,6 +214,8 @@ queries:
   - id: recursive_descent
     status: open
     result: [[{"a": {"b": "c"}}], {"a": {"b": "c"}}, {"b": "c"}]
+  - id: root_on_scalar_false
+    status: error
   - id: script_expression
     status: open
     result: ["fifth"]

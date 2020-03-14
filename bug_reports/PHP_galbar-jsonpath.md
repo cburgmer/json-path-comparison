@@ -171,6 +171,20 @@ The following queries provide results that do not match those of other implement
   jsonpath returned false, this might indicate an error
   ```
 
+- [ ] `$.key`
+  Input:
+  ```
+  {"key": {}}
+  ```
+  Expected output:
+  ```
+  [{}]
+  ```
+  Actual output:
+  ```
+  [[]]
+  ```
+
 - [ ] `$.missing`
   Input:
   ```

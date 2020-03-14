@@ -394,6 +394,42 @@ The following queries provide results that do not match those of other implement
    Error: searchBeginningWithSlice: not enough input
   ```
 
+- [ ] `$`
+  Input:
+  ```
+  false
+  ```
+  Expected output:
+  ```
+  false
+  ```
+  Error:
+  ```
+  json-path-comparison: searchBeginningWithSlice: not enough input
+  CallStack (from HasCallStack):
+    error, called at app/Main.hs:36:7 in main:Main
+  Invalid JSONPath: $
+   Error: searchBeginningWithSlice: not enough input
+  ```
+
+- [ ] `$`
+  Input:
+  ```
+  true
+  ```
+  Expected output:
+  ```
+  true
+  ```
+  Error:
+  ```
+  json-path-comparison: searchBeginningWithSlice: not enough input
+  CallStack (from HasCallStack):
+    error, called at app/Main.hs:36:7 in main:Main
+  Invalid JSONPath: $
+   Error: searchBeginningWithSlice: not enough input
+  ```
+
 - [ ] `$[0]['c','d']`
   Input:
   ```
