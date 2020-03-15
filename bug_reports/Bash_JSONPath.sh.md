@@ -667,6 +667,20 @@ The following queries provide results that do not match those of other implement
   {"key-dash": "value"}
   ```
 
+- [ ] `$.null`
+  Input:
+  ```
+  {"null": "value"}
+  ```
+  Expected output:
+  ```
+  ["value"]
+  ```
+  Actual output:
+  ```
+  {"null": "value"}
+  ```
+
 - [ ] `$.屬性`
   Input:
   ```

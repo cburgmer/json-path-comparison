@@ -213,6 +213,21 @@ The following queries provide results that do not match those of other implement
   ValueError("line 1:5 token recognition error at: '-d'")
   ```
 
+- [ ] `$.null`
+  Input:
+  ```
+  {"null": "value"}
+  ```
+  Expected output:
+  ```
+  ["value"]
+  ```
+  Error:
+  ```
+  line 1:2 mismatched input 'null' expecting {'*', ID}
+  ValueError("line 1:2 mismatched input 'null' expecting {'*', ID}")
+  ```
+
 - [ ] `$.屬性`
   Input:
   ```
