@@ -35,7 +35,13 @@ queries:
   - id: bracket_notation_with_double_quotes
     status: open
     result: ["value"]
+  - id: bracket_notation_with_empty_path
+    status: open
+    result: []
   - id: bracket_notation_with_empty_string
+    status: open
+    result: [42]
+  - id: bracket_notation_with_empty_string_doubled_quoted
     status: open
     result: [42]
   - id: bracket_notation_with_number_on_object

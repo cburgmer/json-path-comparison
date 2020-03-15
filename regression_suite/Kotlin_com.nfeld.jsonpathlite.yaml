@@ -41,7 +41,11 @@ queries:
     result: null
   - id: bracket_notation_with_double_quotes
     status: error
+  - id: bracket_notation_with_empty_path
+    status: error
   - id: bracket_notation_with_empty_string
+    status: error
+  - id: bracket_notation_with_empty_string_doubled_quoted
     status: error
   - id: bracket_notation_with_number_on_object
     status: open

@@ -122,9 +122,15 @@ queries:
   - id: bracket_notation_with_double_quotes
     selector: $["key"]
     document: {"key": "value"}
+  - id: bracket_notation_with_empty_path
+    selector: $[]
+    document: {"": 42, "''": 123, "\"\"": 222}
   - id: bracket_notation_with_empty_string
     selector: $['']
-    document: {"": 42}
+    document: {"": 42, "''": 123, "\"\"": 222}
+  - id: bracket_notation_with_empty_string_doubled_quoted
+    selector: $[""]
+    document: {"": 42, "''": 123, "\"\"": 222}
   - id: bracket_notation_with_number
     selector: $[2]
     document: ["first", "second", "third", "forth", "fifth"]
