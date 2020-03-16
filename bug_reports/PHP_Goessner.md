@@ -246,6 +246,20 @@ The following queries provide results that do not match those of other implement
   ArgumentCountError
   ```
 
+- [ ] `$[?(@.key==43)]`
+  Input:
+  ```
+  [{"key": 42}]
+  ```
+  Expected output:
+  ```
+  []
+  ```
+  Error:
+  ```
+  ArgumentCountError
+  ```
+
 - [ ] `$[?(@.key=="some.value")]`
   Input:
   ```

@@ -288,6 +288,21 @@ The following queries provide results that do not match those of other implement
   ValueError("line 1:10 token recognition error at: '''")
   ```
 
+- [ ] `$[?(@.key==43)]`
+  Input:
+  ```
+  [{"key": 42}]
+  ```
+  Expected output:
+  ```
+  []
+  ```
+  Error:
+  ```
+  line 1:10 extraneous input '=' expecting {'@', '$', 'true', 'false', 'null', '{', '[', STRING, NUMBER}
+  ValueError("line 1:10 extraneous input '=' expecting {'@', '$', 'true', 'false', 'null', '{', '[', STRING, NUMBER}")
+  ```
+
 - [ ] `$[?(@.key=="some.value")]`
   Input:
   ```

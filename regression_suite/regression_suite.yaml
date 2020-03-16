@@ -462,6 +462,10 @@ queries:
   - id: filter_expression_with_equals_on_array_of_numbers
     selector: $[?(@==42)]
     document: [0, 42, -1, 41, 43, 42.0001, 41.9999, null, 100]
+  - id: filter_expression_with_equals_on_array_without_match
+    selector: $[?(@.key==43)]
+    document: [{"key": 42}]
+    consensus: []
   - id: filter_expression_with_equals_on_object
     selector: $[?(@.key==42)]
     document: {"a": {"key": 0}, "b": {"key": 42}, "c": {"key": -1}, "d": {"key": 41}, "e": {"key": 43}, "f": {"key": 42.0001}, "g": {"key": 41.9999}, "h": {"key": 100}, "i": {"some": "value"}}

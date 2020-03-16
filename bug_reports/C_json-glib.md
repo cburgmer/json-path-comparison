@@ -353,6 +353,20 @@ The following queries provide results that do not match those of other implement
   Unable to compile selector `$[?(@[1]=='b')]': Invalid array index definition “?(@[1]=='b')]”
   ```
 
+- [ ] `$[?(@.key==43)]`
+  Input:
+  ```
+  [{"key": 42}]
+  ```
+  Expected output:
+  ```
+  []
+  ```
+  Error:
+  ```
+  Unable to compile selector `$[?(@.key==43)]': Invalid array index definition “?(@.key==43)]”
+  ```
+
 - [ ] `$[?(@.key=="some.value")]`
   Input:
   ```

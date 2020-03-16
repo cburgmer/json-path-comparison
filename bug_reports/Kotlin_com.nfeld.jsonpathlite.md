@@ -437,6 +437,20 @@ The following queries provide results that do not match those of other implement
   Unexpected char, char=?, index=2
   ```
 
+- [ ] `$[?(@.key==43)]`
+  Input:
+  ```
+  [{"key": 42}]
+  ```
+  Expected output:
+  ```
+  []
+  ```
+  Error:
+  ```
+  Unexpected char, char=?, index=2
+  ```
+
 - [ ] `$[?(@.key=="some.value")]`
   Input:
   ```

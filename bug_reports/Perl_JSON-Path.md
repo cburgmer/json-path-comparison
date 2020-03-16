@@ -318,6 +318,20 @@ The following queries provide results that do not match those of other implement
   non-safe evaluation, died at main.pl line 11.
   ```
 
+- [ ] `$[?(@.key==43)]`
+  Input:
+  ```
+  [{"key": 42}]
+  ```
+  Expected output:
+  ```
+  []
+  ```
+  Error:
+  ```
+  non-safe evaluation, died at main.pl line 11.
+  ```
+
 - [ ] `$[?(@.key=="some.value")]`
   Input:
   ```
