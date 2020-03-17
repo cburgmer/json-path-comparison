@@ -6,7 +6,7 @@ import PackageDescription
 let package = Package(
   name: "Swift_SwiftPath",
   dependencies: [
-    .package(url: "https://github.com/cburgmer/SwiftPath.git", from: "0.2.1"),
+    .package(url: "https://github.com/g-mark/SwiftPath.git", .branch("develop")),
   ],
   targets: [
     // Targets are the basic building blocks of a package. A target can define a module or a test suite.
