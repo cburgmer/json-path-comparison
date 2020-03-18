@@ -438,6 +438,9 @@ queries:
   - id: filter_expression_with_current_object
     selector: $[?(@)]
     document: ["some value", null, "value", 0, 1, -1, "", [], {}]
+  - id: filter_expression_with_different_grouped_operators
+    selector: $[?(@.a && (@.b || @.c))]
+    document: [{"a": true}, {"a": true, "b": true}, {"a": true, "b": true, "c": true}, {"b": true, "c": true}, {"a": true, "c": true}, {"c": true}, {"b": true}]
   - id: filter_expression_with_different_ungrouped_operators
     selector: $[?(@.a && @.b || @.c)]
     document: [{"a": true, "b": true}, {"c": true}, {"d": true}]

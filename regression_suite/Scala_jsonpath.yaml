@@ -128,6 +128,8 @@ queries:
   - id: filter_expression_with_current_object
     status: open
     result: ["some value", null, "value", 0, 1, -1, "", [], {}]
+  - id: filter_expression_with_different_grouped_operators
+    status: error
   - id: filter_expression_with_different_ungrouped_operators
     status: open
     result: [{"a": true, "b": true}, {"c": true}]
