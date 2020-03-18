@@ -73,6 +73,20 @@ The following queries provide results that do not match those of other implement
   no implicit conversion of Integer into String
   ```
 
+- [ ] `$[']']`
+  Input:
+  ```
+  {"]": 42}
+  ```
+  Expected output:
+  ```
+  [42]
+  ```
+  Error:
+  ```
+  unmatched closing bracket
+  ```
+
 - [ ] `$['0']`
   Input:
   ```

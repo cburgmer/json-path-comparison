@@ -87,6 +87,20 @@ The following queries provide results that do not match those of other implement
   jsonpath returned false, this might indicate an error
   ```
 
+- [ ] `$[']']`
+  Input:
+  ```
+  {"]": 42}
+  ```
+  Expected output:
+  ```
+  [42]
+  ```
+  Error:
+  ```
+  Invalid JSONPath error: 'Error in JSONPath near ''''
+  ```
+
 - [ ] `$['"']`
   Input:
   ```

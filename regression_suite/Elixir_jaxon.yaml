@@ -81,6 +81,8 @@ queries:
     status: error
   - id: bracket_notation_with_quoted_array_slice_literal
     status: error
+  - id: bracket_notation_with_quoted_closing_bracket_literal
+    status: error
   - id: bracket_notation_with_quoted_current_object_literal
     status: error
   - id: bracket_notation_with_quoted_dot_literal

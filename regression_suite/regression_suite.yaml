@@ -160,6 +160,11 @@ queries:
     document: {":": "value", "another": "entry"}
     consensus: ["value"]
     scalar-consensus: "value"
+  - id: bracket_notation_with_quoted_closing_bracket_literal
+    selector: $[']']
+    document: {"]": 42}
+    consensus: [42]
+    scalar-consensus: 42
   - id: bracket_notation_with_quoted_current_object_literal
     selector: $['@']
     document: {"@": "value", "another": "entry"}

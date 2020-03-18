@@ -31,6 +31,20 @@ The following queries provide results that do not match those of other implement
   []
   ```
 
+- [ ] `$[']']`
+  Input:
+  ```
+  {"]": 42}
+  ```
+  Expected output:
+  ```
+  [42]
+  ```
+  Actual output:
+  ```
+  [{"]": 42}]
+  ```
+
 - [ ] `$['.']`
   Input:
   ```

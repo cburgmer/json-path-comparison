@@ -269,6 +269,20 @@ The following queries provide results that do not match those of other implement
   strconv.Atoi: parsing "'": invalid syntax
   ```
 
+- [ ] `$[']']`
+  Input:
+  ```
+  {"]": 42}
+  ```
+  Expected output:
+  ```
+  42
+  ```
+  Error:
+  ```
+  strconv.Atoi: parsing "'": invalid syntax
+  ```
+
 - [ ] `$['@']`
   Input:
   ```
