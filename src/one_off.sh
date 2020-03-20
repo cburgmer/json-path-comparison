@@ -3,7 +3,7 @@ set -euo pipefail
 
 
 all_implementations() {
-    find ./implementations -name run.sh -maxdepth 2 -print0 | xargs -0 -n1 dirname
+    find ./implementations -name run.sh -maxdepth 2 -print0 | xargs -0 -n1 dirname | sort
 }
 
 execute_queries() {
