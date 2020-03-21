@@ -428,7 +428,7 @@ queries:
     ordered: false
   - id: filter_expression_on_object
     selector: $[?(@.key)]
-    document: {"key": 42}
+    document: {"key": 42, "another": {"key": 1}}
   - id: filter_expression_with_boolean_and_operator
     selector: $[?(@.key>42 && @.key<44)]
     document: [{"key": 42}, {"key": 43}, {"key": 44}]

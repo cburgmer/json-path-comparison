@@ -6,7 +6,7 @@
 
 <p>Selector: <code>$[?(@.key)]</code></p>
 
-<pre><code>{"key": 42}
+<pre><code>{"key": 42, "another": {"key": 1}}
 </code></pre>
 
 <h2>Results</h2>
@@ -17,7 +17,11 @@
 Clojure (json-path)
 </h4>
 
-<pre><code>[]
+<pre><code>[
+  {
+    "key": 1
+  }
+]
 </code></pre>
 
 <h4 id="Cpp_jsoncons">
@@ -26,6 +30,9 @@ Cpp (jsoncons)
 
 <pre><code>[
   {
+    "another": {
+      "key": 1
+    },
     "key": 42
   }
 ]
@@ -37,6 +44,9 @@ Elixir (warpath)
 
 <pre><code>[
   {
+    "another": {
+      "key": 1
+    },
     "key": 42
   }
 ]
@@ -46,14 +56,22 @@ Elixir (warpath)
 Erlang (ejsonpath)
 </h4>
 
-<pre><code>[]
+<pre><code>[
+  {
+    "key": 1
+  }
+]
 </code></pre>
 
 <h4 id="Golang_github.com-PaesslerAG-jsonpath">
 Golang (github.com-PaesslerAG-jsonpath)
 </h4>
 
-<pre><code>[]
+<pre><code>[
+  {
+    "key": 1
+  }
+]
 </code></pre>
 
 <h4 id="Golang_github.com-bhmj-jsonslice">
@@ -68,7 +86,10 @@ JavaScript (Goessner)
 </h4>
 
 <pre><code>[
-  42
+  42,
+  {
+    "key": 1
+  }
 ]
 </code></pre>
 
@@ -76,14 +97,22 @@ JavaScript (Goessner)
 JavaScript (jsonpath)
 </h4>
 
-<pre><code>[]
+<pre><code>[
+  {
+    "key": 1
+  }
+]
 </code></pre>
 
 <h4 id="JavaScript_jsonpath-plus">
 JavaScript (jsonpath-plus)
 </h4>
 
-<pre><code>[]
+<pre><code>[
+  {
+    "key": 1
+  }
+]
 </code></pre>
 
 <h4 id="Java_com.github.jsurfer">
@@ -99,6 +128,9 @@ Java (com.jayway.jsonpath)
 
 <pre><code>[
   {
+    "another": {
+      "key": 1
+    },
     "key": 42
   }
 ]
@@ -108,7 +140,22 @@ Java (com.jayway.jsonpath)
 PHP (flow-jsonpath)
 </h4>
 
-<pre><code>[]
+<pre><code>[
+  {
+    "key": 1
+  }
+]
+</code></pre>
+
+<h4 id="PHP_galbar-jsonpath">
+PHP (galbar-jsonpath)
+</h4>
+
+<pre><code>[
+  {
+    "key": 1
+  }
+]
 </code></pre>
 
 <h4 id="PHP_remorhaz-jsonpath">
@@ -117,7 +164,21 @@ PHP (remorhaz-jsonpath)
 
 <pre><code>[
   {
+    "another": {
+      "key": 1
+    },
     "key": 42
+  }
+]
+</code></pre>
+
+<h4 id="Python_jsonpath">
+Python (jsonpath)
+</h4>
+
+<pre><code>[
+  {
+    "key": 1
   }
 ]
 </code></pre>
@@ -128,6 +189,9 @@ Python (jsonpath2)
 
 <pre><code>[
   {
+    "another": {
+      "key": 1
+    },
     "key": 42
   }
 ]
@@ -139,6 +203,9 @@ Ruby (jsonpath)
 
 <pre><code>[
   {
+    "another": {
+      "key": 1
+    },
     "key": 42
   }
 ]
@@ -150,6 +217,9 @@ Rust (jsonpath_lib)
 
 <pre><code>[
   {
+    "another": {
+      "key": 1
+    },
     "key": 42
   }
 ]
@@ -161,6 +231,9 @@ Scala (jsonpath)
 
 <pre><code>[
   {
+    "another": {
+      "key": 1
+    },
     "key": 42
   }
 ]
@@ -177,14 +250,22 @@ dotNET (Json.NET)
 dotNET (JsonPathLib)
 </h4>
 
-<pre><code>[]
+<pre><code>[
+  {
+    "key": 1
+  }
+]
 </code></pre>
 
 <h4 id="dotNET_Manatee.Json">
 dotNET (Manatee.Json)
 </h4>
 
-<pre><code>[]
+<pre><code>[
+  {
+    "key": 1
+  }
+]
 </code></pre>
 
 <h3>Errors</h3>
@@ -244,25 +325,11 @@ PHP (Goessner)
 <pre><code>ArgumentCountError
 </code></pre>
 
-<h4 id="PHP_galbar-jsonpath">
-PHP (galbar-jsonpath)
-</h4>
-
-<pre><code>jsonpath returned false, this might indicate an error
-</code></pre>
-
 <h4 id="Perl_JSON-Path">
 Perl (JSON-Path)
 </h4>
 
 <pre><code>non-safe evaluation, died at main.pl line 11.
-</code></pre>
-
-<h4 id="Python_jsonpath">
-Python (jsonpath)
-</h4>
-
-<pre><code>jsonpath returned false, this might indicate an error
 </code></pre>
 
 <h4 id="Python_jsonpath-rw">

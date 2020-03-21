@@ -119,7 +119,7 @@ queries:
     result: [2, 2, 2, 2, 2, [{"id": 2}, {"more": {"id": 2}}, {"id": {"id": 2}}, [{"id": 2}]], {"id": 2}, {"id": 2}]
   - id: filter_expression_on_object
     status: open
-    result: [42]
+    result: [42, {"key": 1}]
   - id: filter_expression_with_boolean_and_operator
     status: open
     result: [{"key": 43}]

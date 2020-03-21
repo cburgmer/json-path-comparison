@@ -132,7 +132,8 @@ queries:
   - id: filter_expression_after_recursive_descent
     status: error
   - id: filter_expression_on_object
-    status: error
+    status: open
+    result: [{"key": 1}]
   - id: filter_expression_with_boolean_and_operator
     status: error
   - id: filter_expression_with_bracket_notation_and_current_object_literal
