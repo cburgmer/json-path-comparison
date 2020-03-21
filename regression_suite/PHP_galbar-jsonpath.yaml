@@ -39,6 +39,8 @@ queries:
   - id: bracket_notation_with_empty_string_doubled_quoted
     status: open
     result: [42]
+  - id: bracket_notation_with_number_-1_on_empty_array
+    status: error
   - id: bracket_notation_with_number_on_object
     status: open
     result: ["value"]

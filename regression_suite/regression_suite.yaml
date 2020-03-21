@@ -141,6 +141,9 @@ queries:
     document: ["first", "second", "third"]
     consensus: ["third"]
     scalar-consensus: "third"
+  - id: bracket_notation_with_number_-1_on_empty_array
+    selector: $[-1]
+    document: []
   - id: bracket_notation_with_number_0
     selector: $[0]
     document: ["first", "second", "third", "forth", "fifth"]

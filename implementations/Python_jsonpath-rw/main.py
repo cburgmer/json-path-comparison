@@ -14,7 +14,7 @@ def main():
     j = json.loads(sys.stdin.read())
     try:
         results = [match.value for match in query.find(j)]
-    except KeyError as e:
+    except (IndexError, KeyError) as e:
         print(repr(e))
         sys.exit(1)
 
