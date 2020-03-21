@@ -194,6 +194,9 @@ queries:
   - id: filter_expression_after_recursive_descent
     status: open
     result: [2, 2, 2, 2, 2, [{"id": 2}, {"more": {"id": 2}}, {"id": {"id": 2}}, [{"id": 2}]], [{"id": 2}], {"more": {"id": 2}}]
+  - id: filter_expression_on_object
+    status: open
+    result: []
   - id: filter_expression_with_boolean_and_operator
     status: open
     result: [{"key": 43}, {"key": 44}]

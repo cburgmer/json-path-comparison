@@ -16,7 +16,3 @@
   selector: "$[?(@[0].key==42)]"
 - document: {"key": 1, "some": 2, "more": 3}
   selector: "$(key,more)"
-- document: {"foo": {"key": 42}}
-  selector: "$..[?(@.key)]"
-- document: {"key": 42}
-  selector: "$[?(@.key)]"

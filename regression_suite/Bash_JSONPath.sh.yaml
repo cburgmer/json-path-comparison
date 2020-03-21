@@ -215,6 +215,8 @@ queries:
     result: [{"id": 3, "name": "another"}, {"id": 4, "name": "more"}]
   - id: filter_expression_after_recursive_descent
     status: error
+  - id: filter_expression_on_object
+    status: error
   - id: filter_expression_with_boolean_and_operator
     status: error
   - id: filter_expression_with_bracket_notation
