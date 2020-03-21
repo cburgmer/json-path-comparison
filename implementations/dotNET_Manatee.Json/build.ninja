@@ -2,7 +2,7 @@ root = implementations/dotNET_Manatee.Json
 builddir = $root/build
 
 rule build
-  command = cd $root && dotnet build -o $$(basename $$(dirname $out))
+  command = $root/install.sh $$(basename $$(dirname $out))
 
 build $builddir/Dotnet_Manatee.Json: build | $root/Dotnet_Manatee.Json.csproj $root/Program.cs
 
