@@ -56,7 +56,7 @@ The following queries provide results that do not match those of other implement
   ```
   ["first", {"key": ["first nested", {"more": [{"nested": ["deepest", "second"]}, ["more", "values"]]}]}]
   ```
-  Expected output:
+  Expected output (in any order as no consensus on ordering exists):
   ```
   ["deepest", "first nested", "first", "more", {"nested": ["deepest", "second"]}]
   ```
@@ -224,7 +224,7 @@ The following queries provide results that do not match those of other implement
   ```
   {"key": "value", "another key": {"complex": "string", "primitives": [0, 1]}}
   ```
-  Expected output:
+  Expected output (in any order as no consensus on ordering exists):
   ```
   ["string", "value", 0, 1, [0, 1], {"complex": "string", "primitives": [0, 1]}]
   ```
@@ -287,7 +287,7 @@ The following queries provide results that do not match those of other implement
   ```
   {"key": "value", "another key": {"complex": "string", "primitives": [0, 1]}}
   ```
-  Expected output:
+  Expected output (in any order as no consensus on ordering exists):
   ```
   ["string", "value", 0, 1, [0, 1], {"complex": "string", "primitives": [0, 1]}]
   ```
@@ -301,7 +301,7 @@ The following queries provide results that do not match those of other implement
   ```
   [40, null, 42]
   ```
-  Expected output:
+  Expected output (in any order as no consensus on ordering exists):
   ```
   [40, 42, null]
   ```

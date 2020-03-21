@@ -80,7 +80,11 @@ failing_query() {
     {
         echo "Input:"
         ./src/oneliner_json.py < "./queries/${query}/document.json" | code_block
-        echo "Expected output:"
+        if [[ -f "./queries/${query}/ALLOW_UNORDERED" ]]; then
+            echo "Expected output (in any order as no consensus on ordering exists):"
+        else
+            echo "Expected output:"
+        fi
         unwrap_scalar_if_needed "$query" < "${consensus_dir}/${query}" | ./src/oneliner_json.py | code_block
 
         if is_query_result_ok "${results_dir}/${query}/${implementation}"; then

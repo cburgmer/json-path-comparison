@@ -232,7 +232,7 @@ The following queries provide results that do not match those of other implement
   ```
   ["first", {"key": ["first nested", {"more": [{"nested": ["deepest", "second"]}, ["more", "values"]]}]}]
   ```
-  Expected output:
+  Expected output (in any order as no consensus on ordering exists):
   ```
   ["deepest", "first nested", "first", "more", {"nested": ["deepest", "second"]}]
   ```
@@ -414,7 +414,7 @@ The following queries provide results that do not match those of other implement
   ```
   {"key": "value", "another key": {"complex": "string", "primitives": [0, 1]}}
   ```
-  Expected output:
+  Expected output (in any order as no consensus on ordering exists):
   ```
   ["string", "value", 0, 1, [0, 1], {"complex": "string", "primitives": [0, 1]}]
   ```
@@ -456,7 +456,7 @@ The following queries provide results that do not match those of other implement
   ```
   {"some": "string", "int": 42, "object": {"key": "value"}, "array": [0, 1]}
   ```
-  Expected output:
+  Expected output (in any order as no consensus on ordering exists):
   ```
   ["string", 42, [0, 1], {"key": "value"}]
   ```
@@ -498,7 +498,7 @@ The following queries provide results that do not match those of other implement
   ```
   {"object": {"key": "value", "array": [{"key": "something"}, {"key": {"key": "russian dolls"}}]}, "key": "top"}
   ```
-  Expected output:
+  Expected output (in any order as no consensus on ordering exists):
   ```
   ["russian dolls", "something", "top", "value", {"key": "russian dolls"}]
   ```
@@ -512,7 +512,7 @@ The following queries provide results that do not match those of other implement
   ```
   {"store": {"book": [{"category": "reference", "author": "Nigel Rees", "title": "Sayings of the Century", "price": 8.95}, {"category": "fiction", "author": "Evelyn Waugh", "title": "Sword of Honour", "price": 12.99}, {"category": "fiction", "author": "Herman Melville", "title": "Moby Dick", "isbn": "0-553-21311-3", "price": 8.99}, {"category": "fiction", "author": "J. R. R. Tolkien", "title": "The Lord of the Rings", "isbn": "0-395-19395-8", "price": 22.99}], "bicycle": {"color": "red", "price": 19.95}}}
   ```
-  Expected output:
+  Expected output (in any order as no consensus on ordering exists):
   ```
   [12.99, 19.95, 22.99, 8.95, 8.99]
   ```
@@ -554,7 +554,7 @@ The following queries provide results that do not match those of other implement
   ```
   {"key": "value", "another key": {"complex": "string", "primitives": [0, 1]}}
   ```
-  Expected output:
+  Expected output (in any order as no consensus on ordering exists):
   ```
   ["string", "value", 0, 1, [0, 1], {"complex": "string", "primitives": [0, 1]}]
   ```
@@ -568,7 +568,7 @@ The following queries provide results that do not match those of other implement
   ```
   [40, null, 42]
   ```
-  Expected output:
+  Expected output (in any order as no consensus on ordering exists):
   ```
   [40, 42, null]
   ```
@@ -582,7 +582,7 @@ The following queries provide results that do not match those of other implement
   ```
   42
   ```
-  Expected output:
+  Expected output (in any order as no consensus on ordering exists):
   ```
   []
   ```
@@ -638,7 +638,7 @@ The following queries provide results that do not match those of other implement
   ```
   {"some": "string", "int": 42, "object": {"key": "value"}, "array": [0, 1]}
   ```
-  Expected output:
+  Expected output (in any order as no consensus on ordering exists):
   ```
   ["string", 42, [0, 1], {"key": "value"}]
   ```

@@ -182,7 +182,7 @@ The following queries provide results that do not match those of other implement
   ```
   42
   ```
-  Expected output:
+  Expected output (in any order as no consensus on ordering exists):
   ```
   []
   ```
