@@ -84,6 +84,9 @@ queries:
   - id: dot_notation_with_number
     status: open
     result: ["third"]
+  - id: dot_notation_with_number_-1
+    status: open
+    result: []
   - id: dot_notation_with_single_quotes
     status: error
   - id: dot_notation_with_single_quotes_after_recursive_descent
