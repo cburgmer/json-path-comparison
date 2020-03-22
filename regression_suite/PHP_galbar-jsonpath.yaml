@@ -111,6 +111,8 @@ queries:
     status: error
   - id: dot_notation_with_single_quotes_after_recursive_descent
     status: error
+  - id: dot_notation_with_single_quotes_and_dot
+    status: error
   - id: dot_notation_with_wildcard_after_recursive_descent
     status: fail
     result: ["string", "value", 0, 1, [0, 1], {"complex": "string", "primitives": [0, 1]}, {"another key": {"complex": "string", "primitives": [0, 1]}, "key": "value"}]

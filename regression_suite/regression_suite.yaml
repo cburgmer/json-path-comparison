@@ -178,6 +178,11 @@ queries:
     document: {".": "value", "another": "entry"}
     consensus: ["value"]
     scalar-consensus: "value"
+  - id: bracket_notation_with_quoted_dot_wildcard
+    selector: $['.*']
+    document: {"key": 42, ".*": 1, "": 10}
+    consensus: [1]
+    scalar-consensus: 1
   - id: bracket_notation_with_quoted_double_quote_literal
     selector: $['"']
     document: {"\"": "value", "another": "entry"}
@@ -218,6 +223,11 @@ queries:
   - id: bracket_notation_with_quoted_wildcard_literal_on_object_without_key
     selector: $['*']
     document: {"another": "entry"}
+  - id: bracket_notation_with_string_including_dot_wildcard
+    selector: $['ni.*']
+    document: {"nice": 42, "ni.*": 1, "mice": 100}
+    consensus: [1]
+    scalar-consensus: 1
   - id: bracket_notation_with_two_literals_separated_by_dot
     selector: $['two'.'some']
     document: {"one": {"key": "value"}, "two": {"some": "more", "key": "other value"}, "two.some": "42"}
@@ -379,6 +389,9 @@ queries:
     selector: $..'key'
     document: {"object": {"key": "value", "array": [{"key": "something"}, {"key": {"key": "russian dolls"}}]}, "key": "top"}
     ordered: false
+  - id: dot_notation_with_single_quotes_and_dot
+    selector: $.'some.key'
+    document: {"some.key": 42, "some": {"key": "value"}}
   - id: dot_notation_with_wildcard_after_dot_notation_after_dot_notation_with_wildcard
     selector: $.*.bar.*
     document: [{"bar": [42]}]

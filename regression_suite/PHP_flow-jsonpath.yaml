@@ -125,6 +125,8 @@ queries:
   - id: dot_notation_with_single_quotes_after_recursive_descent
     status: open
     result: ["russian dolls", "something", "top", "value", {"key": "russian dolls"}]
+  - id: dot_notation_with_single_quotes_and_dot
+    status: error
   - id: dot_notation_without_root
     status: open
     result: ["value"]

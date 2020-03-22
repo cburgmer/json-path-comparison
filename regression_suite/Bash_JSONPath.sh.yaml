@@ -70,6 +70,8 @@ queries:
     status: error
   - id: bracket_notation_with_quoted_dot_literal
     status: error
+  - id: bracket_notation_with_quoted_dot_wildcard
+    status: error
   - id: bracket_notation_with_quoted_double_quote_literal
     status: error
   - id: bracket_notation_with_quoted_escaped_backslash
@@ -90,6 +92,9 @@ queries:
     status: error
   - id: bracket_notation_with_quoted_wildcard_literal_on_object_without_key
     status: error
+  - id: bracket_notation_with_string_including_dot_wildcard
+    status: fail
+    result: {"ni.*": 1, "nice": 42}
   - id: bracket_notation_with_two_literals_separated_by_dot
     status: open
     result: {"some": "more"}
@@ -193,6 +198,9 @@ queries:
   - id: dot_notation_with_single_quotes_after_recursive_descent
     status: open
     result: {"key": "top", "object": {"array": [{"key": "something"}, {"key": {"key": "russian dolls"}}], "key": "value"}}
+  - id: dot_notation_with_single_quotes_and_dot
+    status: open
+    result: {"some.key": 42}
   - id: dot_notation_with_wildcard_after_recursive_descent
     status: fail
     result: {"another key": {"complex": "string", "primitives": [0, 1]}, "key": "value"}

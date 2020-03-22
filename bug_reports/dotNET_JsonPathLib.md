@@ -59,6 +59,34 @@ The following queries provide results that do not match those of other implement
   [{".": "value", "another": "entry"}]
   ```
 
+- [ ] `$['.*']`
+  Input:
+  ```
+  {"key": 42, ".*": 1, "": 10}
+  ```
+  Expected output:
+  ```
+  [1]
+  ```
+  Actual output:
+  ```
+  [42, 1, 10]
+  ```
+
+- [ ] `$['ni.*']`
+  Input:
+  ```
+  {"nice": 42, "ni.*": 1, "mice": 100}
+  ```
+  Expected output:
+  ```
+  [1]
+  ```
+  Actual output:
+  ```
+  []
+  ```
+
 - [ ] `$[?(@[1]=='b')]`
   Input:
   ```

@@ -381,6 +381,20 @@ The following queries provide results that do not match those of other implement
   java.lang.Exception object must be an array.
   ```
 
+- [ ] `$['.*']`
+  Input:
+  ```
+  {"key": 42, ".*": 1, "": 10}
+  ```
+  Expected output:
+  ```
+  1
+  ```
+  Error:
+  ```
+  java.lang.Exception object must be an array.
+  ```
+
 - [ ] `$['"']`
   Input:
   ```
@@ -449,6 +463,20 @@ The following queries provide results that do not match those of other implement
   Actual output:
   ```
   ["value", "entry"]
+  ```
+
+- [ ] `$['ni.*']`
+  Input:
+  ```
+  {"nice": 42, "ni.*": 1, "mice": 100}
+  ```
+  Expected output:
+  ```
+  1
+  ```
+  Error:
+  ```
+  java.lang.Exception object must be an array.
   ```
 
 - [ ] `$[0:2][*]`

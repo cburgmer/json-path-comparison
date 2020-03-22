@@ -89,6 +89,8 @@ queries:
     status: error
   - id: bracket_notation_with_quoted_dot_literal
     status: error
+  - id: bracket_notation_with_quoted_dot_wildcard
+    status: error
   - id: bracket_notation_with_quoted_double_quote_literal
     status: error
   - id: bracket_notation_with_quoted_escaped_backslash
@@ -108,6 +110,8 @@ queries:
   - id: bracket_notation_with_quoted_wildcard_literal
     status: error
   - id: bracket_notation_with_quoted_wildcard_literal_on_object_without_key
+    status: error
+  - id: bracket_notation_with_string_including_dot_wildcard
     status: error
   - id: bracket_notation_with_two_literals_separated_by_dot
     status: error
@@ -161,6 +165,9 @@ queries:
     status: open
     result: []
   - id: dot_notation_with_single_quotes_after_recursive_descent
+    status: open
+    result: []
+  - id: dot_notation_with_single_quotes_and_dot
     status: open
     result: []
   - id: dot_notation_with_wildcard_after_recursive_descent

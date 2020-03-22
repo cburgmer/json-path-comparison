@@ -129,6 +129,20 @@ The following queries provide results that do not match those of other implement
   [{".": "value", "another": "entry"}, "value", "entry"]
   ```
 
+- [ ] `$['.*']`
+  Input:
+  ```
+  {"key": 42, ".*": 1, "": 10}
+  ```
+  Expected output:
+  ```
+  [1]
+  ```
+  Actual output:
+  ```
+  [42, 1, 10]
+  ```
+
 - [ ] `$['*']`
   Input:
   ```
@@ -141,6 +155,20 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   RecursionError('maximum recursion depth exceeded while calling a Python object')
+  ```
+
+- [ ] `$['ni.*']`
+  Input:
+  ```
+  {"nice": 42, "ni.*": 1, "mice": 100}
+  ```
+  Expected output:
+  ```
+  [1]
+  ```
+  Error:
+  ```
+  jsonpath returned false, this might indicate an error
   ```
 
 - [ ] `$[*]`

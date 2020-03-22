@@ -93,6 +93,8 @@ queries:
     status: error
   - id: dot_notation_with_single_quotes_after_recursive_descent
     status: error
+  - id: dot_notation_with_single_quotes_and_dot
+    status: error
   - id: dot_notation_without_root
     status: error
   - id: filter_expression_after_dot_notation_with_wildcard_after_recursive_descent

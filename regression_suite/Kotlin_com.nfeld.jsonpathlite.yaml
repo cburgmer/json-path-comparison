@@ -141,6 +141,9 @@ queries:
   - id: dot_notation_with_single_quotes_after_recursive_descent
     status: open
     result: []
+  - id: dot_notation_with_single_quotes_and_dot
+    status: open
+    result: null
   - id: dot_notation_with_wildcard_after_dot_notation_after_dot_notation_with_wildcard
     status: fail
     result: null

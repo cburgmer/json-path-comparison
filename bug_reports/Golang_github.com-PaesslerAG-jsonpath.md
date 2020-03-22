@@ -45,6 +45,34 @@ The following queries provide results that do not match those of other implement
   index -1 out of bounds
   ```
 
+- [ ] `$['.*']`
+  Input:
+  ```
+  {"key": 42, ".*": 1, "": 10}
+  ```
+  Expected output:
+  ```
+  1
+  ```
+  Error:
+  ```
+  parsing error: $['.*']	:1:3 - 1:7 could not parse string: invalid syntax
+  ```
+
+- [ ] `$['ni.*']`
+  Input:
+  ```
+  {"nice": 42, "ni.*": 1, "mice": 100}
+  ```
+  Expected output:
+  ```
+  1
+  ```
+  Error:
+  ```
+  parsing error: $['ni.*']	:1:3 - 1:9 could not parse string: invalid syntax
+  ```
+
 - [ ] `$.['key']`
   Input:
   ```

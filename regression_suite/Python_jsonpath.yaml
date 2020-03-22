@@ -57,6 +57,9 @@ queries:
   - id: bracket_notation_with_quoted_dot_literal
     status: fail
     result: [{".": "value", "another": "entry"}, "value", "entry"]
+  - id: bracket_notation_with_quoted_dot_wildcard
+    status: fail
+    result: [42, 1, 10]
   - id: bracket_notation_with_quoted_escaped_backslash
     status: error
   - id: bracket_notation_with_quoted_escaped_single_quote
@@ -71,6 +74,8 @@ queries:
   - id: bracket_notation_with_quoted_wildcard_literal_on_object_without_key
     status: open
     result: ["entry"]
+  - id: bracket_notation_with_string_including_dot_wildcard
+    status: error
   - id: bracket_notation_with_two_literals_separated_by_dot
     status: open
     result: ["more"]
@@ -114,6 +119,9 @@ queries:
   - id: dot_notation_with_single_quotes_after_recursive_descent
     status: open
     result: ["russian dolls", "something", "top", "value", {"key": "russian dolls"}]
+  - id: dot_notation_with_single_quotes_and_dot
+    status: open
+    result: ["value"]
   - id: dot_notation_with_wildcard_after_recursive_descent_on_scalar
     status: error
   - id: dot_notation_with_wildcard_on_empty_array

@@ -2,11 +2,7 @@
   selector: "$[?(@.key[*].id==2)]"
 - document: [[1], [2,3]]
   selector: "$.*[1]"
-- document: {"some.key": 42, "some": {"key": "value"}}
-  selector: "$.'some.key'"
 - document: [[1, 2, 3], [4, 5, 6]]
   selector: "$.*[0:2]"
-- document: {"nice": 42, "ni.*": 1, "mice": 100}
-  selector: "$['ni.*']"
 - document: [[{"key": 42}], [{"key": 1}]]
   selector: "$[?(@[0].key==42)]"
