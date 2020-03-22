@@ -247,3 +247,5 @@ queries:
   - id: union_with_slice_and_number
     status: open
     result: [4, 5]
+  - id: union_with_wildcard_and_number
+    status: error

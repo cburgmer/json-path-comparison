@@ -270,3 +270,5 @@ queries:
     result: []
   - id: union_with_slice_and_number
     status: error
+  - id: union_with_wildcard_and_number
+    status: error

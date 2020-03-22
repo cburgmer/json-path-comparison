@@ -264,3 +264,5 @@ queries:
   - id: union_with_slice_and_number
     status: open
     result: [2, 3, 4]
+  - id: union_with_wildcard_and_number
+    status: error
