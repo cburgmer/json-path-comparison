@@ -512,6 +512,12 @@ queries:
   - id: filter_expression_with_greater_than_or_equal
     selector: $[?(@.key>=42)]
     document: [{"key": 0}, {"key": 42}, {"key": -1}, {"key": 41}, {"key": 43}, {"key": 42.0001}, {"key": 41.9999}, {"key": 100}, {"some": "value"}]
+  - id: filter_expression_with_in_array_of_values
+    selector: $[?(@.d in [2, 3])]
+    document: [{"d": 1}, {"d": 2}, {"d": 1}, {"d": 3}, {"d": 4}]
+  - id: filter_expression_with_in_current_object
+    selector: $[?(2 in @.d)]
+    document: [{"d": [1, 2, 3]}, {"d": [2]}, {"d": [1]}, {"d": [3, 4]}, {"d": [4, 2]}]
   - id: filter_expression_with_less_than
     selector: $[?(@.key<42)]
     document: [{"key": 0}, {"key": 42}, {"key": -1}, {"key": 41}, {"key": 43}, {"key": 42.0001}, {"key": 41.9999}, {"key": 100}, {"some": "value"}]
@@ -550,6 +556,9 @@ queries:
   - id: filter_expression_without_value
     selector: $[?(!@.key)]
     document: [{"some": "some value"}, {"key": true}, {"key": false}, {"key": null}, {"key": "value"}, {"key": ""}, {"key": 0}, {"key": 1}, {"key": -1}, {"key": 42}, {"key": {}}, {"key": []}]
+  - id: parens_notation
+    selector: $(key,more)
+    document: {"key": 1, "some": 2, "more": 3}
   - id: recursive_descent
     selector: $..
     document: [{"a": {"b": "c"}}]

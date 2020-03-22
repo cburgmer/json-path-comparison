@@ -265,6 +265,11 @@ queries:
     result: [{"key": 42}]
   - id: filter_expression_with_greater_than_or_equal
     status: error
+  - id: filter_expression_with_in_array_of_values
+    status: error
+  - id: filter_expression_with_in_current_object
+    status: open
+    result: []
   - id: filter_expression_with_less_than
     status: error
   - id: filter_expression_with_less_than_number_on_string_value
@@ -297,6 +302,9 @@ queries:
   - id: filter_expression_without_value
     status: open
     result: [{"key": true}, {"key": false}, {"key": "value"}, {"key": ""}, {"key": 0}, {"key": 1}, {"key": -1}, {"key": 42}, {"key": {}}, {"key": []}]
+  - id: parens_notation
+    status: open
+    result: null
   - id: recursive_descent
     status: open
     result: [[{"a": {"b": "c"}}], {"a": {"b": "c"}}, {"b": "c"}]

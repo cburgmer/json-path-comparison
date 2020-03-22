@@ -180,6 +180,12 @@ queries:
   - id: filter_expression_with_greater_than_or_equal
     status: open
     result: [{"key": 42}, {"key": 43}, {"key": 42.0001}, {"key": 100}]
+  - id: filter_expression_with_in_array_of_values
+    status: open
+    result: [{"d": 1}, {"d": 1}]
+  - id: filter_expression_with_in_current_object
+    status: open
+    result: [{"d": [1, 2, 3]}]
   - id: filter_expression_with_less_than_number_on_string_value
     status: open
     result: [{"key": 0}]
@@ -212,6 +218,8 @@ queries:
   - id: filter_expression_without_value
     status: open
     result: [{"some": "some value"}, {"key": false}, {"key": null}, {"key": ""}, {"key": 0}]
+  - id: parens_notation
+    status: error
   - id: recursive_descent
     status: open
     result: [[{"a": {"b": "c"}}], {"a": {"b": "c"}}, {"b": "c"}]

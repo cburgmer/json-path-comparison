@@ -248,6 +248,11 @@ queries:
   - id: filter_expression_with_greater_than_or_equal
     status: open
     result: []
+  - id: filter_expression_with_in_array_of_values
+    status: error
+  - id: filter_expression_with_in_current_object
+    status: open
+    result: []
   - id: filter_expression_with_less_than
     status: fail
     result: []
@@ -283,6 +288,8 @@ queries:
   - id: filter_expression_without_value
     status: open
     result: []
+  - id: parens_notation
+    status: error
   - id: recursive_descent
     status: error
   - id: script_expression
