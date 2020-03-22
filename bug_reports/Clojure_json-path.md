@@ -325,6 +325,20 @@ The following queries provide results that do not match those of other implement
   java.lang.Exception object must be an array.
   ```
 
+- [ ] `$.*[1]`
+  Input:
+  ```
+  [[1], [2, 3]]
+  ```
+  Expected output:
+  ```
+  [3]
+  ```
+  Error:
+  ```
+  java.lang.IndexOutOfBoundsException nil
+  ```
+
 - [ ] `$[':']`
   Input:
   ```

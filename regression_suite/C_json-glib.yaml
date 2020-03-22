@@ -58,6 +58,9 @@ queries:
   - id: bracket_notation_with_number_-1_on_empty_array
     status: open
     result: []
+  - id: bracket_notation_with_number_after_dot_notation_with_wildcard_on_nested_arrays_with_different_length
+    status: fail
+    result: [[[1], [2, 3]]]
   - id: bracket_notation_with_number_on_object
     status: open
     result: []
@@ -136,6 +139,9 @@ queries:
   - id: dot_notation_with_wildcard_after_dot_notation_after_dot_notation_with_wildcard
     status: fail
     result: [[{"bar": [42]}]]
+  - id: dot_notation_with_wildcard_after_dot_notation_with_wildcard_on_nested_arrays
+    status: fail
+    result: [[[1, 2, 3], [4, 5, 6]]]
   - id: dot_notation_with_wildcard_after_recursive_descent
     status: fail
     result: []

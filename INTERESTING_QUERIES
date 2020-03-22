@@ -1,8 +1,4 @@
 - document: [{"key": [{"id": 1}, {"id": 2}]}, {"key": [{"id": 2}, {"id": 3}]}, {"key": [{"id": 3}, {"id": 4}]}, {"key": [{"id": 2}]}]
   selector: "$[?(@.key[*].id==2)]"
-- document: [[1], [2,3]]
-  selector: "$.*[1]"
-- document: [[1, 2, 3], [4, 5, 6]]
-  selector: "$.*[0:2]"
 - document: [[{"key": 42}], [{"key": 1}]]
   selector: "$[?(@[0].key==42)]"

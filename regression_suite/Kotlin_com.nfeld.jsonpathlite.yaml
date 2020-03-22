@@ -50,6 +50,9 @@ queries:
   - id: bracket_notation_with_number_-1_on_empty_array
     status: open
     result: null
+  - id: bracket_notation_with_number_after_dot_notation_with_wildcard_on_nested_arrays_with_different_length
+    status: fail
+    result: null
   - id: bracket_notation_with_number_on_object
     status: open
     result: null
@@ -145,6 +148,9 @@ queries:
     status: open
     result: null
   - id: dot_notation_with_wildcard_after_dot_notation_after_dot_notation_with_wildcard
+    status: fail
+    result: null
+  - id: dot_notation_with_wildcard_after_dot_notation_with_wildcard_on_nested_arrays
     status: fail
     result: null
   - id: dot_notation_with_wildcard_after_recursive_descent

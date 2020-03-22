@@ -66,6 +66,9 @@ queries:
     status: error
   - id: bracket_notation_with_number_-1_on_empty_array
     status: error
+  - id: bracket_notation_with_number_after_dot_notation_with_wildcard_on_nested_arrays_with_different_length
+    status: fail
+    result: []
   - id: bracket_notation_with_number_on_object
     status: error
   - id: bracket_notation_with_number_on_short_array
@@ -165,6 +168,8 @@ queries:
   - id: dot_notation_with_single_quotes_and_dot
     status: error
   - id: dot_notation_with_wildcard_after_dot_notation_after_dot_notation_with_wildcard
+    status: error
+  - id: dot_notation_with_wildcard_after_dot_notation_with_wildcard_on_nested_arrays
     status: error
   - id: dot_notation_with_wildcard_after_recursive_descent
     status: error

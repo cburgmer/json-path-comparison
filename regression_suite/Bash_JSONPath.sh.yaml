@@ -201,6 +201,8 @@ queries:
   - id: dot_notation_with_single_quotes_and_dot
     status: open
     result: {"some.key": 42}
+  - id: dot_notation_with_wildcard_after_dot_notation_with_wildcard_on_nested_arrays
+    status: error
   - id: dot_notation_with_wildcard_after_recursive_descent
     status: fail
     result: {"another key": {"complex": "string", "primitives": [0, 1]}, "key": "value"}

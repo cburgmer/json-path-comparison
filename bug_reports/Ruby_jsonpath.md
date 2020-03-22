@@ -73,6 +73,20 @@ The following queries provide results that do not match those of other implement
   no implicit conversion of Integer into String
   ```
 
+- [ ] `$.*[1]`
+  Input:
+  ```
+  [[1], [2, 3]]
+  ```
+  Expected output:
+  ```
+  [3]
+  ```
+  Error:
+  ```
+  no implicit conversion of Integer into String
+  ```
+
 - [ ] `$[']']`
   Input:
   ```
@@ -197,6 +211,20 @@ The following queries provide results that do not match those of other implement
   Actual output:
   ```
   [[42]]
+  ```
+
+- [ ] `$.*.*`
+  Input:
+  ```
+  [[1, 2, 3], [4, 5, 6]]
+  ```
+  Expected output:
+  ```
+  [1, 2, 3, 4, 5, 6]
+  ```
+  Actual output:
+  ```
+  [[[1, 2, 3], [4, 5, 6]], [1, 2, 3], 1, 2, 3, [4, 5, 6], 4, 5, 6]
   ```
 
 - [ ] `$..*`

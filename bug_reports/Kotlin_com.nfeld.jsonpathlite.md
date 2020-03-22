@@ -101,6 +101,20 @@ The following queries provide results that do not match those of other implement
   ["first", "second"]
   ```
 
+- [ ] `$.*[1]`
+  Input:
+  ```
+  [[1], [2, 3]]
+  ```
+  Expected output:
+  ```
+  [3]
+  ```
+  Actual output:
+  ```
+  null
+  ```
+
 - [ ] `$[0:2][*]`
   Input:
   ```
@@ -305,6 +319,20 @@ The following queries provide results that do not match those of other implement
   Expected output:
   ```
   [42]
+  ```
+  Actual output:
+  ```
+  null
+  ```
+
+- [ ] `$.*.*`
+  Input:
+  ```
+  [[1, 2, 3], [4, 5, 6]]
+  ```
+  Expected output:
+  ```
+  [1, 2, 3, 4, 5, 6]
   ```
   Actual output:
   ```

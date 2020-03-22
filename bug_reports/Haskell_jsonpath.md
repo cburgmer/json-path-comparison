@@ -88,6 +88,22 @@ The following queries provide results that do not match those of other implement
   
   ```
 
+- [ ] `$.*[1]`
+  Input:
+  ```
+  [[1], [2, 3]]
+  ```
+  Expected output:
+  ```
+  [3]
+  ```
+  Error:
+  ```
+  json-path-comparison: index 1 invalid for array [1]
+  CallStack (from HasCallStack):
+    error, called at app/Main.hs:18:22 in main:Main
+  ```
+
 - [ ] `$[':']`
   Input:
   ```

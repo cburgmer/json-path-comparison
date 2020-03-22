@@ -149,6 +149,10 @@ queries:
     document: ["first", "second", "third", "forth", "fifth"]
     consensus: ["first"]
     scalar-consensus: "first"
+  - id: bracket_notation_with_number_after_dot_notation_with_wildcard_on_nested_arrays_with_different_length
+    selector: $.*[1]
+    document: [[1], [2, 3]]
+    consensus: [3]
   - id: bracket_notation_with_number_on_object
     selector: $[0]
     document: {"0": "value"}
@@ -396,6 +400,10 @@ queries:
     selector: $.*.bar.*
     document: [{"bar": [42]}]
     consensus: [42]
+  - id: dot_notation_with_wildcard_after_dot_notation_with_wildcard_on_nested_arrays
+    selector: $.*.*
+    document: [[1, 2, 3], [4, 5, 6]]
+    consensus: [1, 2, 3, 4, 5, 6]
   - id: dot_notation_with_wildcard_after_recursive_descent
     selector: $..*
     document: {"key": "value", "another key": {"complex": "string", "primitives": [0, 1]}}

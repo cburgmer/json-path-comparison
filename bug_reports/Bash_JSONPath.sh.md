@@ -757,6 +757,30 @@ The following queries provide results that do not match those of other implement
   {"2": "second"}
   ```
 
+- [ ] `$.*.*`
+  Input:
+  ```
+  [[1, 2, 3], [4, 5, 6]]
+  ```
+  Expected output:
+  ```
+  [1, 2, 3, 4, 5, 6]
+  ```
+  Error:
+  ```
+  Extra data: line 5 column 6 (char 39)
+  [
+          1,
+          2,
+          3
+      ],
+          4,
+          5,
+          6
+      
+  ]
+  ```
+
 - [ ] `$..*`
   Input:
   ```
