@@ -344,6 +344,9 @@ queries:
   - id: union_with_slice_and_number
     status: open
     result: 2
+  - id: union_with_spaces
+    status: fail
+    result: "first"
   - id: union_with_wildcard_and_number
     status: open
     result: ["first", "second", "third", "forth", "fifth"]

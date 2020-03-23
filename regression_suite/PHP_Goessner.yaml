@@ -246,6 +246,8 @@ queries:
   - id: union_with_slice_and_number
     status: open
     result: [2, 3, 5]
+  - id: union_with_spaces
+    status: error
   - id: union_with_wildcard_and_number
     status: open
     result: ["first", "second", "third", "forth", "fifth", "second"]
