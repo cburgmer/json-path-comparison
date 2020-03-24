@@ -110,6 +110,9 @@ queries:
   - id: dot_notation_with_double_quotes_after_recursive_descent
     status: open
     result: []
+  - id: dot_notation_with_empty_path
+    status: open
+    result: [{"key": 42}]
   - id: dot_notation_with_number
     status: open
     result: ["third"]
