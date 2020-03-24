@@ -17,23 +17,6 @@ The following queries provide results that do not match those of other implement
   []
   ```
 
-- [ ] `$.['key']`
-  Input:
-  ```
-  {"key": "value"}
-  ```
-  Expected output:
-  ```
-  ["value"]
-  ```
-  Error:
-  ```
-  Parse error on line 1:
-  $.['key']
-  --^
-  Expecting 'STAR', 'IDENTIFIER', 'SCRIPT_EXPRESSION', 'INTEGER', 'END', got '['
-  ```
-
 - [ ] `$.key-dash`
   Input:
   ```

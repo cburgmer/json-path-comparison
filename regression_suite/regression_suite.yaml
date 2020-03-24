@@ -277,18 +277,13 @@ queries:
     document: {"key": "value"}
   - id: dot_bracket_notation
     selector: "$.['key']"
-    document: {"key": "value"}
-    consensus: ["value"]
-    scalar-consensus: "value"
-  - id: dot_bracket_notation_on_nested_object
-    selector: "$.['key']"
     document: {"key": "value", "other": {"key": [{"key": 42}]}}
   - id: dot_bracket_notation_with_double_quotes
     selector: "$.[\"key\"]"
-    document: {"key": "value"}
+    document: {"key": "value", "other": {"key": [{"key": 42}]}}
   - id: dot_bracket_notation_without_quotes
     selector: "$.[key]"
-    document: {"key": "value"}
+    document: {"key": "value", "other": {"key": [{"key": 42}]}}
   - id: dot_notation
     selector: "$.key"
     document: {"key": "value"}

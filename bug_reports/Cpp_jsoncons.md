@@ -45,20 +45,6 @@ The following queries provide results that do not match those of other implement
   Expected slice step at line 1 and column 7
   ```
 
-- [ ] `$.['key']`
-  Input:
-  ```
-  {"key": "value"}
-  ```
-  Expected output:
-  ```
-  ["value"]
-  ```
-  Error:
-  ```
-  Expected a name following a dot at line 1 and column 3
-  ```
-
 - [ ] `$[ 0 , 1 ]`
   Input:
   ```

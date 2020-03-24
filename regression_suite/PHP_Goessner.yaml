@@ -76,14 +76,14 @@ queries:
   - id: bracket_notation_without_quotes
     status: open
     result: ["value"]
-  - id: dot_bracket_notation_on_nested_object
+  - id: dot_bracket_notation
     status: open
     result: ["value", [{"key": 42}], 42]
   - id: dot_bracket_notation_with_double_quotes
     status: error
   - id: dot_bracket_notation_without_quotes
     status: open
-    result: ["value"]
+    result: ["value", [{"key": 42}], 42]
   - id: dot_notation_after_bracket_notation_after_recursive_descent
     status: open
     result: [200, 42, 500]

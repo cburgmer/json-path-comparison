@@ -119,9 +119,6 @@ queries:
     status: open
     result: {"key": "value"}
   - id: dot_bracket_notation
-    status: fail
-    result: {"key": "value"}
-  - id: dot_bracket_notation_on_nested_object
     status: open
     result: {"key": "value"}
   - id: dot_bracket_notation_with_double_quotes

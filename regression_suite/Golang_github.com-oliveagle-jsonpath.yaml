@@ -129,8 +129,6 @@ queries:
     status: error
   - id: dot_bracket_notation
     status: error
-  - id: dot_bracket_notation_on_nested_object
-    status: error
   - id: dot_bracket_notation_with_double_quotes
     status: error
   - id: dot_bracket_notation_without_quotes

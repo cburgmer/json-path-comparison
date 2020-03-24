@@ -73,20 +73,6 @@ The following queries provide results that do not match those of other implement
   parsing error: $['ni.*']	:1:3 - 1:9 could not parse string: invalid syntax
   ```
 
-- [ ] `$.['key']`
-  Input:
-  ```
-  {"key": "value"}
-  ```
-  Expected output:
-  ```
-  "value"
-  ```
-  Error:
-  ```
-  parsing error: $.['key']	:1:3 - 1:4 unexpected "[" while scanning JSON select expected Ident, "." or "*"
-  ```
-
 - [ ] `$['one','three'].key`
   Input:
   ```

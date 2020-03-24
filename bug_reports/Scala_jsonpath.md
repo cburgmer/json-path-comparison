@@ -73,20 +73,6 @@ The following queries provide results that do not match those of other implement
   []
   ```
 
-- [ ] `$.['key']`
-  Input:
-  ```
-  {"key": "value"}
-  ```
-  Expected output:
-  ```
-  ["value"]
-  ```
-  Error:
-  ```
-  JPError(end of input expected)
-  ```
-
 - [ ] `$..key`
   Input:
   ```
