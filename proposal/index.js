@@ -22,7 +22,9 @@ const readStdin = () => {
 const parseDotNotation = (remainingSelector) => {
   const match = remainingSelector.match(/^[\p{L}\d_-]+/u);
   if (!match) {
-    throw new Error("Invalid Selector: child name missing");
+    throw new Error(
+      `Invalid Selector: child name missing or invalid child name ${remainingSelector}`
+    );
   }
   return [match[0], match[0].length];
 };
@@ -87,12 +89,36 @@ const parseBrackets = (selector) => {
   );
 };
 
+const parseRecursiveDescent = (remainingSelector) => {
+  if (remainingSelector.startsWith("[*]")) {
+    return [["all"], 3];
+  } else if (remainingSelector.startsWith("[")) {
+    const [children, selectorSubstrLength] = parseBrackets(remainingSelector);
+    return [["children", children], selectorSubstrLength];
+  } else if (remainingSelector.startsWith("*")) {
+    return [["all"], 2];
+  }
+
+  const [child, selectorSubstrLength] = parseDotNotation(remainingSelector);
+  return [["children", [child]], 1 + selectorSubstrLength];
+};
+
 const parseSelector = (selector) => {
   let i = 0;
   let operators = [];
   while (i < selector.length) {
     const remainingSelector = selector.substr(i);
-    if (remainingSelector.startsWith(".*")) {
+    if (remainingSelector === "..") {
+      operators.push(["recursiveDescent"]);
+      i += 2;
+    } else if (remainingSelector.startsWith("..")) {
+      const [operator, selectorSubstrLength] = parseRecursiveDescent(
+        remainingSelector.substr(2)
+      );
+      operators.push(["recursiveDescent"]);
+      operators.push(operator);
+      i += 2 + selectorSubstrLength;
+    } else if (remainingSelector.startsWith(".*")) {
       operators.push(["all"]);
       i += 2;
     } else if (remainingSelector.startsWith(".")) {
@@ -134,8 +160,7 @@ const childrenOperator = (value, children) => {
       } else {
         return [];
       }
-    }
-    if (value[child] !== undefined) {
+    } else if (typeof value === "object" && value[child] !== undefined) {
       return [value[child]];
     }
     return [];
@@ -145,11 +170,22 @@ const childrenOperator = (value, children) => {
 const allOperator = (value) => {
   if (Array.isArray(value)) {
     return value;
-  } else if (typeof value === "object") {
+  } else if (typeof value === "object" && value !== null) {
     return Object.values(value);
   }
 
   return [];
+};
+
+const recursiveDescentOperator = (value) => {
+  if (Array.isArray(value)) {
+    return [value].concat(value.flatMap((v) => recursiveDescentOperator(v)));
+  } else if (typeof value === "object" && value !== null) {
+    return [value].concat(
+      Object.values(value).flatMap((v) => recursiveDescentOperator(v))
+    );
+  }
+  return [value];
 };
 
 const executeQuery = (value, [operator, parameter]) => {
@@ -157,6 +193,8 @@ const executeQuery = (value, [operator, parameter]) => {
     return childrenOperator(value, parameter);
   } else if (operator === "all") {
     return allOperator(value);
+  } else if (operator === "recursiveDescent") {
+    return recursiveDescentOperator(value);
   }
   throw new Error("Internal error, unknown operator");
 };
