@@ -19,13 +19,18 @@ has_consensus() {
     test -s "${consensus_dir}/${query}"
 }
 
+in_quotes() {
+    echo -n '"'
+    sed 's/\\/\\\\/g' | sed 's/"/\\"/g' | tr -d '\n'
+    echo -n '"'
+}
+
 query_entry() {
     local query="$1"
     local consensus
 
     echo "  - id: ${query}"
-    echo -n "    selector: "
-    cat "./queries/${query}/selector"
+    echo "    selector: $(in_quotes < "./queries/${query}/selector")"
     echo -n "    document: "
     ./src/oneliner_json.py < "./queries/${query}/document.json"
 
