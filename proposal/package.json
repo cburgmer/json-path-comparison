@@ -1,0 +1,15 @@
+{
+  "name": "jsonpath-proposal",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "prettier -c *.js && ./tests.js"
+  },
+  "author": "",
+  "license": "GPL-3.0-or-later",
+  "devDependencies": {
+    "prettier": "^2.0.2",
+    "yaml": "^1.8.3"
+  }
+}
