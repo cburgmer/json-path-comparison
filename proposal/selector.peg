@@ -1,0 +1,61 @@
+start
+  = "$" operators:operators* recursiveDescent:recursiveDescentWithoutChildren { return operators.reduce((os, o) => os.concat(o), []).concat(recursiveDescent); }
+  / "$" operators:operators* { return operators.reduce((os, o) => os.concat(o), []); }
+
+operators
+  = dotNotationWildcard
+  / bracketNotationWildcard
+  / children:children { return [['children', children]]; }
+  / recursiveDescentWithChildren
+
+children
+  = dotNotation
+  / union
+
+dotNotation
+  = "." path:identifier { return [path]; }
+
+// TODO
+identifier
+  = chars:[a-zA-Z0-9_\-]+ { return chars.join(""); }
+
+union
+  = "[" children:bracketElements "]" { return children; }
+
+bracketElements
+  = x:bracketElement "," xs:bracketElements { return [x].concat(xs); }
+  / x:bracketElement { return [x]; }
+
+bracketElement
+  = "'" element:singleQuotedString "'" { return element; }
+  / '"' element:doubleQuotedString '"' { return element; }
+  / number
+
+singleQuotedString
+  = x:"\\'" xs:singleQuotedString { return x + xs; }
+  / x:[^'] xs:singleQuotedString { return x + xs; }
+  / ''
+
+doubleQuotedString
+  = x:'\\"' xs:doubleQuotedString { return x + xs; }
+  / x:[^"] xs:doubleQuotedString { return x + xs; }
+  / ''
+
+number
+  = sign:"-"? digits:[0-9]+ { return sign !== null ? sign + digits.join("") : digits.join(""); }
+
+
+dotNotationWildcard
+  = ".*" { return [['all']]; }
+
+bracketNotationWildcard
+  = "[*]" { return [['all']]; }
+
+recursiveDescentWithChildren
+  = "..*" { return [['recursiveDescent'], ['all']]; }
+  / "..[*]" { return [['recursiveDescent'], ['all']]; }
+  / ".." path:identifier { return [['recursiveDescent'], ['children', [path]]]; }
+  / ".." children:union { return [['recursiveDescent'], ['children', children]]; }
+
+recursiveDescentWithoutChildren
+  = ".." { return [['recursiveDescent']]; }
