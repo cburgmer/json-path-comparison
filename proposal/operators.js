@@ -6,13 +6,13 @@ module.exports.childrenOperator = (value, children) => {
     if (isArray(value)) {
       const index = child - 0; // HACKY way to convert complete string to int
       const realIndex = index >= 0 ? index : value.length + index;
-      if (value[realIndex]) {
+      if (realIndex >= 0 && realIndex < value.length) {
         return [value[realIndex]];
-      } else {
-        return [];
       }
-    } else if (isObject(value) && value[child] !== undefined) {
-      return [value[child]];
+    } else if (isObject(value)) {
+      if (value[child] !== undefined) {
+        return [value[child]];
+      }
     }
     return [];
   });
