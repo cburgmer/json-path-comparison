@@ -40,10 +40,22 @@ const sliceValueOrDefault = (sliceValue, defaultValue) => {
   return parseInt(sliceValue, 10);
 };
 
+const range = (start, end, step) => {
+  const slice = [];
+  if (step > 0) {
+    for (let i = start; i < end; i += step) {
+      slice.push(i);
+    }
+  } else {
+    for (let i = start; i > end; i += step) {
+      slice.push(i);
+    }
+  }
+  return slice;
+};
+
 const childrenSliceOperator = (value, [start, end, step]) => {
   if (isArray(value)) {
-    const slice = [];
-
     const stepNumber = sliceValueOrDefault(step, 1);
 
     const realStart = realIndex(sliceValueOrDefault(start, 0), value.length);
@@ -52,12 +64,9 @@ const childrenSliceOperator = (value, [start, end, step]) => {
       value.length
     );
 
-    for (let i = realStart; i < realEnd; i += stepNumber) {
-      if (0 <= i && i < value.length) {
-        slice.push(value[i]);
-      }
-    }
-    return slice;
+    return range(realStart, realEnd, stepNumber)
+      .filter((i) => 0 <= i && i < value.length)
+      .map((i) => value[i]);
   }
 
   return [];
