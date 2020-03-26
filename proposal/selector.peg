@@ -3,23 +3,20 @@ start
   / "$" operators:operators* { return operators.reduce((os, o) => os.concat(o), []); }
 
 operators
-  = children:children { return [['children', children]]; }
-  / recursiveDescentWithChildren
-
-children
   = dotNotation
   / union
+  / recursiveDescentWithChildren
 
 dotNotation
-  = "." path:identifier { return [path]; }
+  = "." children:identifier { return children; }
 
 // TODO Unicode
 identifier
-  = chars:[a-zA-Z0-9_\-]+ { return ['index', chars.join("")]; }
-  / "*" { return ['all']; }
+  = chars:[a-zA-Z0-9_\-]+ { return [['children', [['index', chars.join("")]]]]; }
+  / "*" { return [['children', [['all']]]]; }
 
 union
-  = "[" " "* children:bracketElements " "* "]" { return children; }
+  = "[" " "* children:bracketElements " "* "]" { return [['children', children]]; }
 
 bracketElements
   = x:bracketElement " "* "," " "* xs:bracketElements { return [x].concat(xs); }
@@ -57,8 +54,8 @@ absoluteNumber
   = digits:[0-9]+ { return digits.join(""); }
 
 recursiveDescentWithChildren
-  = ".." path:identifier { return [['recursiveDescent'], ['children', [path]]]; }
-  / ".." children:union { return [['recursiveDescent'], ['children', children]]; }
+  = ".." children:identifier { return [['recursiveDescent']].concat(children); }
+  / ".." children:union { return [['recursiveDescent']].concat(children); }
 
 recursiveDescentWithoutChildren
   = ".." { return [['recursiveDescent']]; }
