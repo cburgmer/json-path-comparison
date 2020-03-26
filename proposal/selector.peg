@@ -19,10 +19,10 @@ identifier
   / "*" { return ['all']; }
 
 union
-  = "[" children:bracketElements "]" { return children; }
+  = "[" " "* children:bracketElements " "* "]" { return children; }
 
 bracketElements
-  = x:bracketElement "," xs:bracketElements { return [x].concat(xs); }
+  = x:bracketElement " "* "," " "* xs:bracketElements { return [x].concat(xs); }
   / x:bracketElement { return [x]; }
 
 bracketElement
