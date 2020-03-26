@@ -33,22 +33,6 @@ The following queries provide results that do not match those of other implement
   -----^
   ```
 
-- [ ] `$.屬性`
-  Input:
-  ```
-  {"\u5c6c\u6027": "value"}
-  ```
-  Expected output:
-  ```
-  ["value"]
-  ```
-  Error:
-  ```
-  Lexical error on line 1. Unrecognized text.
-  $.屬性
-  --^
-  ```
-
 - [ ] `$..*`
   Input:
   ```

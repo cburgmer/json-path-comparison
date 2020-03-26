@@ -10,8 +10,7 @@ queries:
     status: open
     result: []
   - id: array_slice_with_negative_step_only
-    status: open
-    result: []
+    status: error
   - id: array_slice_with_open_start_and_end_on_object
     status: open
     result: [42]
@@ -104,6 +103,9 @@ queries:
   - id: dot_notation_with_empty_path
     status: open
     result: [{"key": 42}]
+  - id: dot_notation_with_non_ASCII_key
+    status: open
+    result: ["value"]
   - id: dot_notation_with_number
     status: open
     result: ["third"]
@@ -244,8 +246,7 @@ queries:
     status: open
     result: ["value", "entry"]
   - id: union_with_keys_after_array_slice
-    status: open
-    result: ["cc1", "dd1", "cc2", "dd2"]
+    status: error
   - id: union_with_keys_after_dot_notation_with_wildcard
     status: open
     result: ["cc1", "dd1", "cc2", "dd2"]
