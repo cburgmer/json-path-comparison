@@ -29,6 +29,8 @@ bracketElement
   = "'" element:singleQuotedString "'" { return ['index', element]; }
   / '"' element:doubleQuotedString '"' { return ['index', element]; }
   / "*" { return ['all']; }
+  / start:number? ":" end:number? ":" step:nonZeroNumber? { return ['slice', start, end, step]; }
+  / start:number? ":" end:number? { return ['slice', start, end, null]; }
   / element:number { return ['index', element]; }
 
 singleQuotedString
@@ -42,7 +44,17 @@ doubleQuotedString
   / ''
 
 number
-  = sign:"-"? digits:[0-9]+ { return sign !== null ? sign + digits.join("") : digits.join(""); }
+  = "-" absoluteNumber:absoluteNumber { return "-" + absoluteNumber; }
+  / absoluteNumber
+
+nonZeroNumber
+  = "-" nonZeroDigit:[1-9] remainingDigits:absoluteNumber { return "-" + nonZeroDigit + remainingDigits; }
+  / nonZeroDigit:[1-9] remainingDigits:absoluteNumber { return nonZeroDigit + remainingDigits; }
+  / "-" nonZeroDigit:[1-9] { return "-" + nonZeroDigit; }
+  / nonZeroDigit:[1-9]
+
+absoluteNumber
+  = digits:[0-9]+ { return digits.join(""); }
 
 recursiveDescentWithChildren
   = ".." path:identifier { return [['recursiveDescent'], ['children', [path]]]; }
