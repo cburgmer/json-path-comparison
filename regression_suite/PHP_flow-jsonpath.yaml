@@ -63,6 +63,9 @@ queries:
   - id: bracket_notation_with_number_on_string
     status: open
     result: []
+  - id: bracket_notation_without_quotes
+    status: open
+    result: ["value"]
   - id: bracket_notation_with_quoted_closing_bracket_literal
     status: error
   - id: bracket_notation_with_quoted_escaped_backslash
@@ -88,9 +91,6 @@ queries:
   - id: bracket_notation_with_wildcard_after_array_slice
     status: fail
     result: [1, 2, "a", "b", 0, 0]
-  - id: bracket_notation_without_quotes
-    status: open
-    result: ["value"]
   - id: dot_bracket_notation
     status: open
     result: ["value"]
@@ -125,6 +125,9 @@ queries:
   - id: dot_notation_with_number_-1
     status: open
     result: ["fifth"]
+  - id: dot_notation_without_root
+    status: open
+    result: ["value"]
   - id: dot_notation_with_single_quotes
     status: open
     result: ["value"]
@@ -133,9 +136,6 @@ queries:
     result: ["russian dolls", "something", "top", "value", {"key": "russian dolls"}]
   - id: dot_notation_with_single_quotes_and_dot
     status: error
-  - id: dot_notation_without_root
-    status: open
-    result: ["value"]
   - id: filter_expression_after_dot_notation_with_wildcard_after_recursive_descent
     status: open
     result: [{"id": 3, "name": "another"}, {"id": 4, "name": "more"}, {"id": 5, "name": "next to last"}]
@@ -218,6 +218,8 @@ queries:
   - id: filter_expression_with_not_equals
     status: open
     result: [{"key": 0}, {"key": -1}, {"key": 1}, {"key": 41}, {"key": 43}, {"key": 42.0001}, {"key": 41.9999}, {"key": 100}, {"key": "some"}, {"key": null}, {"key": 420}, {"key": ""}, {"key": {}}, {"key": []}, {"key": [42]}, {"key": {"key": 42}}, {"key": {"some": 42}}]
+  - id: filter_expression_without_value
+    status: error
   - id: filter_expression_with_regular_expression
     status: open
     result: []
@@ -235,8 +237,6 @@ queries:
   - id: filter_expression_with_value_after_recursive_descent
     status: open
     result: [{"id": 2}, {"id": 2}, {"id": 2}, {"id": 2}, {"id": {"id": 2}}]
-  - id: filter_expression_without_value
-    status: error
   - id: parens_notation
     status: open
     result: null

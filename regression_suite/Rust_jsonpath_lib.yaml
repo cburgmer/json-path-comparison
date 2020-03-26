@@ -44,6 +44,8 @@ queries:
   - id: bracket_notation_with_number_on_string
     status: open
     result: []
+  - id: bracket_notation_without_quotes
+    status: error
   - id: bracket_notation_with_quoted_escaped_backslash
     status: error
   - id: bracket_notation_with_quoted_escaped_single_quote
@@ -60,8 +62,6 @@ queries:
   - id: bracket_notation_with_two_literals_separated_by_dot
     status: error
   - id: bracket_notation_with_two_literals_separated_by_dot_without_quotes
-    status: error
-  - id: bracket_notation_without_quotes
     status: error
   - id: dot_bracket_notation
     status: open
@@ -80,22 +80,19 @@ queries:
     status: error
   - id: dot_notation_with_empty_path
     status: error
-  - id: dot_notation_with_non_ASCII_key
-    status: open
-    result: ["value"]
   - id: dot_notation_with_number
     status: open
     result: []
   - id: dot_notation_with_number_-1
     status: open
     result: []
+  - id: dot_notation_without_root
+    status: error
   - id: dot_notation_with_single_quotes
     status: error
   - id: dot_notation_with_single_quotes_after_recursive_descent
     status: error
   - id: dot_notation_with_single_quotes_and_dot
-    status: error
-  - id: dot_notation_without_root
     status: error
   - id: filter_expression_after_dot_notation_with_wildcard_after_recursive_descent
     status: open
@@ -189,6 +186,8 @@ queries:
   - id: filter_expression_with_not_equals
     status: open
     result: [{"key": 0}, {"key": -1}, {"key": 1}, {"key": 41}, {"key": 43}, {"key": 42.0001}, {"key": 41.9999}, {"key": 100}, {"key": 420}]
+  - id: filter_expression_without_value
+    status: error
   - id: filter_expression_with_regular_expression
     status: error
   - id: filter_expression_with_single_equal
@@ -204,8 +203,6 @@ queries:
   - id: filter_expression_with_value_after_recursive_descent
     status: open
     result: [{"id": 2}, {"id": 2}, {"id": 2}, {"id": 2}, {"id": {"id": 2}}]
-  - id: filter_expression_without_value
-    status: error
   - id: parens_notation
     status: open
     result: [{"key": 1, "more": 3, "some": 2}]

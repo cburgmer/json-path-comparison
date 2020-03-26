@@ -122,6 +122,23 @@ The following queries provide results that do not match those of other implement
   {"init terminating in do_boot",{badmatch,{error,{1,ejsonpath_parse,["syntax error before: ","'-'"]}}}}
   ```
 
+- [ ] `$.屬性`
+  Input:
+  ```
+  {"\u5c6c\u6027": "value"}
+  ```
+  Expected output:
+  ```
+  ["value"]
+  ```
+  Error:
+  ```
+  init terminating in do_boot (Timeout)
+  
+  Crash dump is being written to: /dev/null...done
+  {"init terminating in do_boot","Timeout"}
+  ```
+
 - [ ] `$.2`
   Input:
   ```

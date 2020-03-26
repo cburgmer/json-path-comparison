@@ -268,6 +268,20 @@ The following queries provide results that do not match those of other implement
   	JSON::Path::values(...) called at main.pl line 11
   ```
 
+- [ ] `$.屬性`
+  Input:
+  ```
+  {"\u5c6c\u6027": "value"}
+  ```
+  Expected output:
+  ```
+  ["value"]
+  ```
+  Actual output:
+  ```
+  []
+  ```
+
 - [ ] `$..*`
   Input:
   ```

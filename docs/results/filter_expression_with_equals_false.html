@@ -84,8 +84,8 @@ Cpp (jsoncons)
 ]
 </code></pre>
 
-<h4 id="Elixir_warpath">
-Elixir (warpath)
+<h4 id="dotNET_Json.NET">
+dotNET (Json.NET)
 </h4>
 
 <pre><code>[
@@ -95,8 +95,39 @@ Elixir (warpath)
 ]
 </code></pre>
 
-<h4 id="Golang_github.com-PaesslerAG-jsonpath">
-Golang (github.com-PaesslerAG-jsonpath)
+<h4 id="dotNET_JsonPathLib">
+dotNET (JsonPathLib)
+</h4>
+
+<pre><code>[
+  {
+    "key": null
+  },
+  {
+    "key": ""
+  },
+  {
+    "key": 0
+  }
+]
+</code></pre>
+
+<h4 id="dotNET_Manatee.Json">
+dotNET (Manatee.Json)
+</h4>
+
+<pre><code>[
+  {
+    "some": "some value"
+  },
+  {
+    "key": false
+  }
+]
+</code></pre>
+
+<h4 id="Elixir_warpath">
+Elixir (warpath)
 </h4>
 
 <pre><code>[
@@ -111,6 +142,39 @@ Golang (github.com-oliveagle-jsonpath)
 </h4>
 
 <pre><code>[]
+</code></pre>
+
+<h4 id="Golang_github.com-PaesslerAG-jsonpath">
+Golang (github.com-PaesslerAG-jsonpath)
+</h4>
+
+<pre><code>[
+  {
+    "key": false
+  }
+]
+</code></pre>
+
+<h4 id="Java_com.github.jsurfer">
+Java (com.github.jsurfer)
+</h4>
+
+<pre><code>[
+  {
+    "key": false
+  }
+]
+</code></pre>
+
+<h4 id="Java_com.jayway.jsonpath">
+Java (com.jayway.jsonpath)
+</h4>
+
+<pre><code>[
+  {
+    "key": false
+  }
+]
 </code></pre>
 
 <h4 id="JavaScript_Goessner">
@@ -169,28 +233,6 @@ JavaScript (jsonpath-plus)
   },
   {
     "key": []
-  }
-]
-</code></pre>
-
-<h4 id="Java_com.github.jsurfer">
-Java (com.github.jsurfer)
-</h4>
-
-<pre><code>[
-  {
-    "key": false
-  }
-]
-</code></pre>
-
-<h4 id="Java_com.jayway.jsonpath">
-Java (com.jayway.jsonpath)
-</h4>
-
-<pre><code>[
-  {
-    "key": false
   }
 ]
 </code></pre>
@@ -273,48 +315,6 @@ Scala (jsonpath)
 ]
 </code></pre>
 
-<h4 id="dotNET_Json.NET">
-dotNET (Json.NET)
-</h4>
-
-<pre><code>[
-  {
-    "key": false
-  }
-]
-</code></pre>
-
-<h4 id="dotNET_JsonPathLib">
-dotNET (JsonPathLib)
-</h4>
-
-<pre><code>[
-  {
-    "key": null
-  },
-  {
-    "key": ""
-  },
-  {
-    "key": 0
-  }
-]
-</code></pre>
-
-<h4 id="dotNET_Manatee.Json">
-dotNET (Manatee.Json)
-</h4>
-
-<pre><code>[
-  {
-    "some": "some value"
-  },
-  {
-    "key": false
-  }
-]
-</code></pre>
-
 <h3>Errors</h3>
 
 <h4 id="C_json-glib">
@@ -368,18 +368,18 @@ Kotlin (com.nfeld.jsonpathlite)
 <pre><code>Unexpected char, char=?, index=2
 </code></pre>
 
-<h4 id="PHP_Goessner">
-PHP (Goessner)
-</h4>
-
-<pre><code>ArgumentCountError
-</code></pre>
-
 <h4 id="Perl_JSON-Path">
 Perl (JSON-Path)
 </h4>
 
 <pre><code>non-safe evaluation, died at main.pl line 11.
+</code></pre>
+
+<h4 id="PHP_Goessner">
+PHP (Goessner)
+</h4>
+
+<pre><code>ArgumentCountError
 </code></pre>
 
 <h4 id="Python_jsonpath">
@@ -389,19 +389,19 @@ Python (jsonpath)
 <pre><code>jsonpath returned false, this might indicate an error
 </code></pre>
 
-<h4 id="Python_jsonpath-rw">
-Python (jsonpath-rw)
-</h4>
-
-<pre><code>JsonPathLexerError('Error on line 1, col 2: Unexpected character: ? ')
-</code></pre>
-
 <h4 id="Python_jsonpath2">
 Python (jsonpath2)
 </h4>
 
 <pre><code>line 1:10 extraneous input '=' expecting {'@', '$', 'true', 'false', 'null', '{', '[', STRING, NUMBER}
 ValueError("line 1:10 extraneous input '=' expecting {'@', '$', 'true', 'false', 'null', '{', '[', STRING, NUMBER}")
+</code></pre>
+
+<h4 id="Python_jsonpath-rw">
+Python (jsonpath-rw)
+</h4>
+
+<pre><code>JsonPathLexerError('Error on line 1, col 2: Unexpected character: ? ')
 </code></pre>
 
 <h4 id="Rust_jsonpath">

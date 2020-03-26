@@ -43,6 +43,8 @@ queries:
   - id: bracket_notation_with_number_on_string
     status: open
     result: []
+  - id: bracket_notation_without_quotes
+    status: error
   - id: bracket_notation_with_quoted_escaped_backslash
     status: open
     result: []
@@ -69,8 +71,6 @@ queries:
   - id: bracket_notation_with_wildcard_on_object
     status: fail
     result: []
-  - id: bracket_notation_without_quotes
-    status: error
   - id: dot_bracket_notation
     status: error
   - id: dot_bracket_notation_with_double_quotes
@@ -90,15 +90,14 @@ queries:
     result: []
   - id: dot_notation_with_empty_path
     status: error
-  - id: dot_notation_with_non_ASCII_key
-    status: open
-    result: ["value"]
   - id: dot_notation_with_number
     status: open
     result: []
   - id: dot_notation_with_number_-1
     status: open
     result: []
+  - id: dot_notation_without_root
+    status: error
   - id: dot_notation_with_single_quotes
     status: open
     result: []
@@ -126,8 +125,6 @@ queries:
   - id: dot_notation_with_wildcard_on_array
     status: fail
     result: []
-  - id: dot_notation_without_root
-    status: error
   - id: filter_expression_after_dot_notation_with_wildcard_after_recursive_descent
     status: open
     result: [{"id": 3, "name": "another"}, {"id": 6, "name": "last"}, {"id": 4, "name": "more"}, {"id": 5, "name": "next to last"}]
@@ -211,6 +208,8 @@ queries:
   - id: filter_expression_with_not_equals
     status: open
     result: [{"key": 0}, {"key": -1}, {"key": 1}, {"key": 41}, {"key": 43}, {"key": 42.0001}, {"key": 41.9999}, {"key": 100}, {"key": "some"}, {"key": "42"}, {"key": null}, {"key": 420}, {"key": ""}, {"key": {}}, {"key": []}, {"key": [42]}, {"key": {"key": 42}}, {"key": {"some": 42}}]
+  - id: filter_expression_without_value
+    status: error
   - id: filter_expression_with_regular_expression
     status: error
   - id: filter_expression_with_single_equal
@@ -226,8 +225,6 @@ queries:
   - id: filter_expression_with_value_after_recursive_descent
     status: open
     result: [{"id": 2, "more": [{"id": 2}, {"more": {"id": 2}}, {"id": {"id": 2}}, [{"id": 2}]]}, {"id": 2}, {"id": 2}, {"id": 2}, {"id": 2}, {"id": {"id": 2}}]
-  - id: filter_expression_without_value
-    status: error
   - id: parens_notation
     status: error
   - id: recursive_descent

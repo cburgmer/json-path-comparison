@@ -53,6 +53,9 @@ queries:
   - id: bracket_notation_with_number_on_string
     status: open
     result: ["H"]
+  - id: bracket_notation_without_quotes
+    status: open
+    result: ["value"]
   - id: bracket_notation_with_quoted_escaped_backslash
     status: open
     result: ["value"]
@@ -83,9 +86,6 @@ queries:
   - id: bracket_notation_with_wildcard_on_object
     status: fail
     result: [{"array": [0, 1], "int": 42, "object": {"key": "value"}, "some": "string"}]
-  - id: bracket_notation_without_quotes
-    status: open
-    result: ["value"]
   - id: dot_bracket_notation
     status: open
     result: ["value"]
@@ -117,6 +117,9 @@ queries:
     status: error
   - id: dot_notation_with_number_on_object
     status: error
+  - id: dot_notation_without_root
+    status: open
+    result: ["value"]
   - id: dot_notation_with_single_quotes
     status: open
     result: ["value"]
@@ -141,9 +144,6 @@ queries:
   - id: dot_notation_with_wildcard_on_array
     status: fail
     result: []
-  - id: dot_notation_without_root
-    status: open
-    result: ["value"]
   - id: filter_expression_after_dot_notation_with_wildcard_after_recursive_descent
     status: error
   - id: filter_expression_after_recursive_descent
@@ -216,6 +216,8 @@ queries:
     status: error
   - id: filter_expression_with_not_equals
     status: error
+  - id: filter_expression_without_value
+    status: error
   - id: filter_expression_with_regular_expression
     status: error
   - id: filter_expression_with_single_equal
@@ -227,8 +229,6 @@ queries:
   - id: filter_expression_with_value
     status: error
   - id: filter_expression_with_value_after_recursive_descent
-    status: error
-  - id: filter_expression_without_value
     status: error
   - id: parens_notation
     status: error

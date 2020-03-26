@@ -44,6 +44,8 @@ queries:
   - id: bracket_notation_with_number_on_string
     status: open
     result: []
+  - id: bracket_notation_without_quotes
+    status: error
   - id: bracket_notation_with_quoted_escaped_backslash
     status: open
     result: ["value"]
@@ -65,8 +67,6 @@ queries:
   - id: bracket_notation_with_wildcard_after_recursive_descent
     status: fail
     result: []
-  - id: bracket_notation_without_quotes
-    status: error
   - id: dot_bracket_notation
     status: open
     result: ["value"]
@@ -90,13 +90,12 @@ queries:
     result: ["russian dolls", "something", "top", "value", {"key": "russian dolls"}]
   - id: dot_notation_with_empty_path
     status: error
-  - id: dot_notation_with_non_ASCII_key
-    status: open
-    result: ["value"]
   - id: dot_notation_with_number
     status: open
     result: []
   - id: dot_notation_with_number_-1
+    status: error
+  - id: dot_notation_without_root
     status: error
   - id: dot_notation_with_single_quotes
     status: open
@@ -107,8 +106,6 @@ queries:
   - id: dot_notation_with_single_quotes_and_dot
     status: open
     result: [42]
-  - id: dot_notation_without_root
-    status: error
   - id: filter_expression_after_dot_notation_with_wildcard_after_recursive_descent
     status: open
     result: [{"id": 3, "name": "another"}, {"id": 4, "name": "more"}, {"id": 5, "name": "next to last"}]
@@ -191,6 +188,9 @@ queries:
   - id: filter_expression_with_not_equals
     status: open
     result: [{"key": 0}, {"key": -1}, {"key": 1}, {"key": 41}, {"key": 43}, {"key": 42.0001}, {"key": 41.9999}, {"key": 100}, {"key": "some"}, {"key": "42"}, {"key": null}, {"key": 420}, {"key": ""}, {"key": {}}, {"key": []}, {"key": [42]}, {"key": {"key": 42}}, {"key": {"some": 42}}]
+  - id: filter_expression_without_value
+    status: open
+    result: [{"key": true}, {"key": null}, {"key": "value"}, {"key": ""}, {"key": 0}, {"key": 1}, {"key": -1}, {"key": 42}, {"key": {}}, {"key": []}]
   - id: filter_expression_with_regular_expression
     status: error
   - id: filter_expression_with_single_equal
@@ -204,9 +204,6 @@ queries:
     result: [{"key": true}, {"key": null}, {"key": "value"}, {"key": ""}, {"key": 0}, {"key": 1}, {"key": -1}, {"key": 42}, {"key": {}}, {"key": []}]
   - id: filter_expression_with_value_after_recursive_descent
     status: error
-  - id: filter_expression_without_value
-    status: open
-    result: [{"key": true}, {"key": null}, {"key": "value"}, {"key": ""}, {"key": 0}, {"key": 1}, {"key": -1}, {"key": 42}, {"key": {}}, {"key": []}]
   - id: parens_notation
     status: error
   - id: recursive_descent

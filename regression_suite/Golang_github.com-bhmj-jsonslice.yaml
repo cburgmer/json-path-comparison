@@ -38,6 +38,9 @@ queries:
     status: error
   - id: bracket_notation_with_number_on_string
     status: error
+  - id: bracket_notation_without_quotes
+    status: open
+    result: "value"
   - id: bracket_notation_with_quoted_escaped_backslash
     status: error
   - id: bracket_notation_with_quoted_escaped_single_quote
@@ -62,9 +65,6 @@ queries:
   - id: bracket_notation_with_wildcard_after_recursive_descent
     status: fail
     result: ["value"]
-  - id: bracket_notation_without_quotes
-    status: open
-    result: "value"
   - id: dot_bracket_notation
     status: open
     result: "value"
@@ -93,15 +93,14 @@ queries:
     result: ["russian dolls", "something", "top", "value", {"key": "russian dolls"}]
   - id: dot_notation_with_empty_path
     status: error
-  - id: dot_notation_with_non_ASCII_key
-    status: open
-    result: "value"
   - id: dot_notation_with_number
     status: open
     result: "third"
   - id: dot_notation_with_number_-1
     status: open
     result: "fifth"
+  - id: dot_notation_without_root
+    status: error
   - id: dot_notation_with_single_quotes
     status: open
     result: "value"
@@ -114,8 +113,6 @@ queries:
   - id: dot_notation_with_wildcard_after_dot_notation_after_dot_notation_with_wildcard
     status: fail
     result: [[42]]
-  - id: dot_notation_without_root
-    status: error
   - id: filter_expression_after_dot_notation_with_wildcard_after_recursive_descent
     status: open
     result: ["another", "first", "last", "more", "next to last", "next", 1, 2, 3, 4, 5, 6, [{"id": 1, "name": "first"}, {"id": 2, "name": "next"}, {"id": 3, "name": "another"}, {"id": 4, "name": "more"}], {"id": 5, "name": "next to last"}, {"more": {"id": 5, "name": "next to last"}, "one": [{"id": 1, "name": "first"}, {"id": 2, "name": "next"}, {"id": 3, "name": "another"}, {"id": 4, "name": "more"}]}]
@@ -191,6 +188,8 @@ queries:
     status: error
   - id: filter_expression_with_not_equals
     status: error
+  - id: filter_expression_without_value
+    status: error
   - id: filter_expression_with_regular_expression
     status: open
     result: [{"name": "hello world"}, {"name": "yes hello world"}]
@@ -207,8 +206,6 @@ queries:
   - id: filter_expression_with_value_after_recursive_descent
     status: open
     result: []
-  - id: filter_expression_without_value
-    status: error
   - id: parens_notation
     status: error
   - id: recursive_descent

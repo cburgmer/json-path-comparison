@@ -49,6 +49,9 @@ queries:
     result: ["value"]
   - id: bracket_notation_with_number_on_string
     status: error
+  - id: bracket_notation_without_quotes
+    status: open
+    result: ["value"]
   - id: bracket_notation_with_quoted_array_slice_literal
     status: error
   - id: bracket_notation_with_quoted_closing_bracket_literal
@@ -90,9 +93,6 @@ queries:
   - id: bracket_notation_with_wildcard_after_recursive_descent
     status: fail
     result: []
-  - id: bracket_notation_without_quotes
-    status: open
-    result: ["value"]
   - id: dot_bracket_notation
     status: open
     result: ["value"]
@@ -119,7 +119,7 @@ queries:
     status: open
     result: [""]
   - id: dot_notation_with_non_ASCII_key
-    status: open
+    status: fail
     result: []
   - id: dot_notation_with_number
     status: open
@@ -127,6 +127,9 @@ queries:
   - id: dot_notation_with_number_-1
     status: open
     result: ["fifth"]
+  - id: dot_notation_without_root
+    status: open
+    result: ["value"]
   - id: dot_notation_with_single_quotes
     status: open
     result: ["value"]
@@ -142,9 +145,6 @@ queries:
   - id: dot_notation_with_wildcard_after_recursive_descent_on_null_value_array
     status: fail
     result: []
-  - id: dot_notation_without_root
-    status: open
-    result: ["value"]
   - id: filter_expression_after_dot_notation_with_wildcard_after_recursive_descent
     status: error
   - id: filter_expression_after_recursive_descent
@@ -217,6 +217,8 @@ queries:
     status: error
   - id: filter_expression_with_not_equals
     status: error
+  - id: filter_expression_without_value
+    status: error
   - id: filter_expression_with_regular_expression
     status: error
   - id: filter_expression_with_single_equal
@@ -228,8 +230,6 @@ queries:
   - id: filter_expression_with_value
     status: error
   - id: filter_expression_with_value_after_recursive_descent
-    status: error
-  - id: filter_expression_without_value
     status: error
   - id: parens_notation
     status: open

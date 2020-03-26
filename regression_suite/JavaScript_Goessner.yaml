@@ -17,9 +17,9 @@ queries:
   - id: array_slice_with_open_start_and_end_on_object
     status: open
     result: [42]
-  - id: array_slice_with_range_of_-1
-    status: error
   - id: array_slice_with_range_of_0
+    status: error
+  - id: array_slice_with_range_of_-1
     status: error
   - id: array_slice_with_step_0
     status: error
@@ -48,6 +48,9 @@ queries:
   - id: bracket_notation_with_number_on_string
     status: open
     result: ["H"]
+  - id: bracket_notation_without_quotes
+    status: open
+    result: ["value"]
   - id: bracket_notation_with_quoted_escaped_backslash
     status: error
   - id: bracket_notation_with_quoted_escaped_single_quote
@@ -69,9 +72,6 @@ queries:
     status: error
   - id: bracket_notation_with_wildcard_on_empty_object
     status: error
-  - id: bracket_notation_without_quotes
-    status: open
-    result: ["value"]
   - id: dot_bracket_notation
     status: open
     result: ["value", [{"key": 42}], 42]
@@ -96,14 +96,14 @@ queries:
   - id: dot_notation_with_empty_path
     status: open
     result: [{"key": 42}]
-  - id: dot_notation_with_non_ASCII_key
-    status: open
-    result: ["value"]
   - id: dot_notation_with_number
     status: open
     result: ["third"]
   - id: dot_notation_with_number_-1
     status: error
+  - id: dot_notation_without_root
+    status: open
+    result: ["value"]
   - id: dot_notation_with_single_quotes
     status: open
     result: ["value"]
@@ -119,9 +119,6 @@ queries:
     status: error
   - id: dot_notation_with_wildcard_on_empty_object
     status: error
-  - id: dot_notation_without_root
-    status: open
-    result: ["value"]
   - id: filter_expression_after_dot_notation_with_wildcard_after_recursive_descent
     status: open
     result: ["another", "last", "more", "next to last", 3, 4, 5, 6, {"id": 3, "name": "another"}, {"id": 4, "name": "more"}]
@@ -209,6 +206,9 @@ queries:
   - id: filter_expression_with_not_equals
     status: open
     result: [{"key": 0}, {"key": -1}, {"key": 1}, {"key": 41}, {"key": 43}, {"key": 42.0001}, {"key": 41.9999}, {"key": 100}, {"key": "some"}, {"key": null}, {"key": 420}, {"key": ""}, {"key": {}}, {"key": []}, {"key": {"key": 42}}, {"key": {"some": 42}}, {"some": "value"}]
+  - id: filter_expression_without_value
+    status: open
+    result: [{"some": "some value"}, {"key": false}, {"key": null}, {"key": ""}, {"key": 0}]
   - id: filter_expression_with_regular_expression
     status: open
     result: [{"name": -1}, {"name": -1}, {"name": -1}, {"name": -1}, {"name": -1}]
@@ -226,9 +226,6 @@ queries:
   - id: filter_expression_with_value_after_recursive_descent
     status: open
     result: [2, 2, 2, 2, 2, [{"id": 2}, {"more": {"id": 2}}, {"id": {"id": 2}}, [{"id": 2}]], {"id": 2}, {"id": 2}, {"id": 2}, {"id": {"id": 2}}]
-  - id: filter_expression_without_value
-    status: open
-    result: [{"some": "some value"}, {"key": false}, {"key": null}, {"key": ""}, {"key": 0}]
   - id: parens_notation
     status: error
   - id: recursive_descent

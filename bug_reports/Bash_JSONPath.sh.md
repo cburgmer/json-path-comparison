@@ -35,6 +35,20 @@ The following queries provide results that do not match those of other implement
   
   ```
 
+- [ ] `$[0:0]`
+  Input:
+  ```
+  ["first", "second"]
+  ```
+  Expected output:
+  ```
+  []
+  ```
+  Actual output:
+  ```
+  ["first", "second"]
+  ```
+
 - [ ] `$[2:1]`
   Input:
   ```
@@ -50,20 +64,6 @@ The following queries provide results that do not match those of other implement
   Expecting value: line 3 column 1 (char 2)
   
   
-  ```
-
-- [ ] `$[0:0]`
-  Input:
-  ```
-  ["first", "second"]
-  ```
-  Expected output:
-  ```
-  []
-  ```
-  Actual output:
-  ```
-  ["first", "second"]
   ```
 
 - [ ] `$[-1:]`
@@ -711,6 +711,22 @@ The following queries provide results that do not match those of other implement
   Actual output:
   ```
   {"null": "value"}
+  ```
+
+- [ ] `$.屬性`
+  Input:
+  ```
+  {"\u5c6c\u6027": "value"}
+  ```
+  Expected output:
+  ```
+  ["value"]
+  ```
+  Error:
+  ```
+  Expecting value: line 3 column 1 (char 2)
+  
+  
   ```
 
 - [ ] `$.2`
