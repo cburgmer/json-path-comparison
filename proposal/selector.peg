@@ -1,6 +1,5 @@
 start
-  = "$" operators:operators* recursiveDescent:recursiveDescentWithoutChildren { return operators.reduce((os, o) => os.concat(o), []).concat(recursiveDescent); }
-  / "$" operators:operators* { return operators.reduce((os, o) => os.concat(o), []); }
+  = "$" operators:operators* { return operators.reduce((os, o) => os.concat(o), []); }
 
 operators
   = dotNotation
@@ -56,6 +55,3 @@ absoluteNumber
 recursiveDescentWithChildren
   = ".." children:identifier { return [['recursiveDescent']].concat(children); }
   / ".." children:union { return [['recursiveDescent']].concat(children); }
-
-recursiveDescentWithoutChildren
-  = ".." { return [['recursiveDescent']]; }
