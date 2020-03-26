@@ -1,5 +1,4 @@
-const isArray = (v) => Array.isArray(v);
-const isObject = (v) => !isArray(v) && typeof v === "object" && v !== null;
+const { isArray, isObject } = require("util");
 
 const realIndex = (sliceIndex, length) => {
   if (sliceIndex < 0) {
