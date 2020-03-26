@@ -3,9 +3,7 @@ start
   / "$" operators:operators* { return operators.reduce((os, o) => os.concat(o), []); }
 
 operators
-  = dotNotationWildcard
-  / bracketNotationWildcard
-  / children:children { return [['children', children]]; }
+  = children:children { return [['children', children]]; }
   / recursiveDescentWithChildren
 
 children
@@ -15,9 +13,10 @@ children
 dotNotation
   = "." path:identifier { return [path]; }
 
-// TODO
+// TODO Unicode
 identifier
-  = chars:[a-zA-Z0-9_\-]+ { return chars.join(""); }
+  = chars:[a-zA-Z0-9_\-]+ { return ['index', chars.join("")]; }
+  / "*" { return ['all']; }
 
 union
   = "[" children:bracketElements "]" { return children; }
@@ -27,9 +26,10 @@ bracketElements
   / x:bracketElement { return [x]; }
 
 bracketElement
-  = "'" element:singleQuotedString "'" { return element; }
-  / '"' element:doubleQuotedString '"' { return element; }
-  / number
+  = "'" element:singleQuotedString "'" { return ['index', element]; }
+  / '"' element:doubleQuotedString '"' { return ['index', element]; }
+  / "*" { return ['all']; }
+  / element:number { return ['index', element]; }
 
 singleQuotedString
   = x:"\\'" xs:singleQuotedString { return x + xs; }
@@ -44,17 +44,8 @@ doubleQuotedString
 number
   = sign:"-"? digits:[0-9]+ { return sign !== null ? sign + digits.join("") : digits.join(""); }
 
-
-dotNotationWildcard
-  = ".*" { return [['all']]; }
-
-bracketNotationWildcard
-  = "[*]" { return [['all']]; }
-
 recursiveDescentWithChildren
-  = "..*" { return [['recursiveDescent'], ['all']]; }
-  / "..[*]" { return [['recursiveDescent'], ['all']]; }
-  / ".." path:identifier { return [['recursiveDescent'], ['children', [path]]]; }
+  = ".." path:identifier { return [['recursiveDescent'], ['children', [path]]]; }
   / ".." children:union { return [['recursiveDescent'], ['children', children]]; }
 
 recursiveDescentWithoutChildren
