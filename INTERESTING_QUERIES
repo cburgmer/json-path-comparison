@@ -2,3 +2,7 @@
   selector: "$[?(@.key[*].id==2)]"
 - document: [[{"key": 42}], [{"key": 1}]]
   selector: "$[?(@[0].key==42)]"
+- document: {"some key": "value", "key": {"complex": "string", "primitives": [0, 1]}}
+  selector: $.key..
+- document: {"key": {"key": "string", "primitives": [{"key": 0}, 1]}}
+  selector: $...key
