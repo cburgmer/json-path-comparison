@@ -1,4 +1,4 @@
-const { parseFromRoot } = require("./parser");
+const { parse } = require("./selector");
 const { childrenOperator, recursiveDescentOperator } = require("./operators");
 
 const executeQuery = (value, [operator, parameter]) => {
@@ -11,7 +11,7 @@ const executeQuery = (value, [operator, parameter]) => {
 };
 
 const jsonpath = (selector, json) => {
-  const operators = parseFromRoot(selector);
+  const operators = parse(selector);
   return operators.reduce(
     (results, operator) => results.flatMap((r) => executeQuery(r, operator)),
     [json]
