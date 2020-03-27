@@ -58,7 +58,7 @@ implementation_rules() {
 testquery = '\\\\\$\$''[1]'
 
 rule test_compilation
-  command = bash -c "diff --ignore-space-change <(echo 42) <(\$in/run.sh '\$testquery' <<< '[0, 42]' | tr -d ' \n') || diff --ignore-space-change <(echo '[42]') <(\$in/run.sh '\$testquery' <<< '[0, 42]' | tr -d ' \n')" > \$out
+  command = LANG=en_US.UTF-8 LC_ALL= LC_COLLATE=C bash -c "diff --ignore-space-change <(echo 42) <(\$in/run.sh '\$testquery' <<< '[0, 42]' | tr -d ' \n') || diff --ignore-space-change <(echo '[42]') <(\$in/run.sh '\$testquery' <<< '[0, 42]' | tr -d ' \n')" > \$out
 EOF
     while IFS= read -r implementation; do
         if [[ -f "implementations/${implementation}/build.ninja" ]]; then # we are slowly migrating all implementation to build via ninja as well
@@ -83,7 +83,7 @@ query_rules() {
 
     cat <<EOF
 rule run
-  command = ./src/query_implementation.sh \$in > '\$out'
+  command = LANG=en_US.UTF-8 LC_ALL= LC_COLLATE=C ./src/query_implementation.sh \$in > '\$out'
 EOF
     echo
     while IFS= read -r query; do
@@ -124,7 +124,7 @@ consensus_rules() {
 
     cat <<EOF
 rule build_majority
-  command = ./src/build_majority.sh \$in > \$out
+  command = LANG=en_US.UTF-8 LC_ALL= LC_COLLATE=C ./src/build_majority.sh \$in > \$out
 EOF
     echo
     while IFS= read -r query; do
@@ -142,7 +142,7 @@ EOF
 
     cat <<EOF
 rule build_consensus
-  command = ./src/build_consensus.sh \$in > \$out
+  command = LANG=en_US.UTF-8 LC_ALL= LC_COLLATE=C ./src/build_consensus.sh \$in > \$out
 EOF
     echo
     while IFS= read -r query; do
@@ -163,7 +163,7 @@ bug_report_rules() {
 
     cat <<EOF
 rule compile_bug_reports
-  command = ./src/compile_bug_reports.sh \$in > \$out
+  command = LANG=en_US.UTF-8 LC_ALL= LC_COLLATE=C ./src/compile_bug_reports.sh \$in > \$out
 EOF
     echo
     while IFS= read -r implementation; do
@@ -177,7 +177,7 @@ final_report_rules() {
 
     cat <<EOF
 rule compile_table
-  command = ./src/compile_table.sh \$in > \$out
+  command = LANG=en_US.UTF-8 LC_ALL= LC_COLLATE=C ./src/compile_table.sh \$in > \$out
 EOF
     echo
     echo "build ${markdown_dir}/index.md: compile_table ${results_dir} ${majority_dir} ${consensus_dir} | src/compile_table.sh src/sort_queries.py queries/ implementations/"
@@ -185,7 +185,7 @@ EOF
 
     cat <<EOF
 rule results_report
-  command = ./src/results_report.sh \$in > \$out
+  command = LANG=en_US.UTF-8 LC_ALL= LC_COLLATE=C ./src/results_report.sh \$in > \$out
 EOF
     echo
     while IFS= read -r query; do
@@ -195,7 +195,7 @@ EOF
 
     cat <<EOF
 rule compile_html
-  command = ./src/compile_html.sh \$in > \$out
+  command = LANG=en_US.UTF-8 LC_ALL= LC_COLLATE=C ./src/compile_html.sh \$in > \$out
 EOF
     echo
     echo "build ${docs_dir}/index.html: compile_html ${markdown_dir}/index.md | src/compile_html.sh"
@@ -210,14 +210,14 @@ regression_suite_rules() {
 
     cat <<EOF
 rule compile_regression_suite
-  command = ./src/compile_regression_suite.sh \$in > \$out
+  command = LANG=en_US.UTF-8 LC_ALL= LC_COLLATE=C ./src/compile_regression_suite.sh \$in > \$out
 EOF
 
     echo "build ${regression_suite}/regression_suite.yaml: compile_regression_suite ${consensus_dir} | src/compile_regression_suite.sh queries/ implementations/"
 
     cat <<EOF
 rule compile_implementation_report
-  command = ./src/compile_implementation_report.sh \$in > \$out
+  command = LANG=en_US.UTF-8 LC_ALL= LC_COLLATE=C ./src/compile_implementation_report.sh \$in > \$out
 EOF
 
     echo
