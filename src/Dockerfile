@@ -3,7 +3,8 @@ FROM ubuntu:20.04
 ENV DEBIAN_FRONTEND=noninteractive
 
 RUN apt-get update \
-        && apt-get install -y --no-install-recommends bash ninja-build python3 markdown curl coreutils
+        && apt-get install -y --no-install-recommends bash ninja-build python3 markdown curl coreutils locales \
+        && locale-gen en_US.UTF-8
 
 # Golang
 RUN apt-get install -y --no-install-recommends golang-go git
