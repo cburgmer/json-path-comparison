@@ -56,7 +56,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  timeout: sending signal TERM to command 'build/main'
+  timeout: sending signal TERM to command ‘build/main’
   ```
 
 - [ ] `$[0:3:1]`
@@ -70,7 +70,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  timeout: sending signal TERM to command 'build/main'
+  timeout: sending signal TERM to command ‘build/main’
   ```
 
 - [ ] `$[0:4:2]`
@@ -84,7 +84,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  timeout: sending signal TERM to command 'build/main'
+  timeout: sending signal TERM to command ‘build/main’
   ```
 
 - [ ] `$[1:3:]`
