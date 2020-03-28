@@ -44,17 +44,13 @@ doubleQuotedString
   / ''
 
 number
-  = "-" absoluteNumber:absoluteNumber { return "-" + absoluteNumber; }
-  / absoluteNumber
+  = "-"? absoluteNumber { return text(); }
 
 nonZeroNumber
-  = "-" nonZeroDigit:[1-9] remainingDigits:absoluteNumber { return "-" + nonZeroDigit + remainingDigits; }
-  / nonZeroDigit:[1-9] remainingDigits:absoluteNumber { return nonZeroDigit + remainingDigits; }
-  / "-" nonZeroDigit:[1-9] { return "-" + nonZeroDigit; }
-  / nonZeroDigit:[1-9]
+  = "-"? [1-9] absoluteNumber? { return text(); }
 
 absoluteNumber
-  = digits:[0-9]+ { return digits.join(""); }
+  = [0-9]+ { return text(); }
 
 filterExpression
   = "@" operators:operators { return ["hasValue", operators]; }
