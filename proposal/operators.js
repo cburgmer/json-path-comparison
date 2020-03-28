@@ -22,7 +22,7 @@ const childrenIndexOperator = (value, [child]) => {
   return [];
 };
 
-const childrenAllOperator = (value) => {
+const allChildren = (value) => {
   if (isArray(value)) {
     return value;
   } else if (isObject(value)) {
@@ -30,6 +30,10 @@ const childrenAllOperator = (value) => {
   }
 
   return [];
+};
+
+const childrenAllOperator = (value) => {
+  return allChildren(value);
 };
 
 const sliceValueOrDefault = (sliceValue, defaultValue) => {
@@ -71,7 +75,16 @@ const childrenSliceOperator = (value, [start, end, step]) => {
   return [];
 };
 
-module.exports.childrenOperator = (value, children) => {
+const filterOperatorHasValue = (value, operators) => {
+  const results = execute(value, operators);
+  return results.length > 0;
+};
+
+const childrenFilterOperator = (value, [[filterOperator, operators]]) => {
+  return allChildren(value).filter((v) => filterOperatorHasValue(v, operators));
+};
+
+const childrenOperator = (value, children) => {
   return children.flatMap(([subOperator, ...parameters]) => {
     if (subOperator === "index") {
       return childrenIndexOperator(value, parameters);
@@ -79,6 +92,8 @@ module.exports.childrenOperator = (value, children) => {
       return childrenAllOperator(value);
     } else if (subOperator === "slice") {
       return childrenSliceOperator(value, parameters);
+    } else if (subOperator === "filter") {
+      return childrenFilterOperator(value, parameters);
     }
     throw new Error("Internal error, unknown operator");
   });
@@ -95,4 +110,20 @@ const recursiveDescentOperator = (value) => {
   return [value];
 };
 
-module.exports.recursiveDescentOperator = recursiveDescentOperator;
+const executeOperator = (value, [operator, parameter]) => {
+  if (operator === "children") {
+    return childrenOperator(value, parameter);
+  } else if (operator === "recursiveDescent") {
+    return recursiveDescentOperator(value);
+  }
+  throw new Error("Internal error, unknown operator");
+};
+
+const execute = (value, operators) => {
+  return operators.reduce(
+    (results, operator) => results.flatMap((r) => executeOperator(r, operator)),
+    [value]
+  );
+};
+
+module.exports = execute;

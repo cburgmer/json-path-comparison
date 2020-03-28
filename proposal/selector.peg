@@ -28,6 +28,7 @@ bracketElement
   / start:number? ":" end:number? ":" step:nonZeroNumber? { return ['slice', start, end, step]; }
   / start:number? ":" end:number? { return ['slice', start, end, null]; }
   / element:number { return ['index', element]; }
+  / "?(" filterExpression:filterExpression ")" { return ['filter', filterExpression]; }
 
 singleQuotedString
   = x:"\\'" xs:singleQuotedString { return x + xs; }
@@ -51,6 +52,10 @@ nonZeroNumber
 
 absoluteNumber
   = digits:[0-9]+ { return digits.join(""); }
+
+filterExpression
+  = "@" children:dotNotation { return ["hasValue", children]; }
+  / "@" { return ["hasValue", []]; }
 
 recursiveDescentWithChildren
   = ".." children:identifier { return [['recursiveDescent']].concat(children); }
