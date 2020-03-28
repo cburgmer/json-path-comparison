@@ -18,10 +18,10 @@ identifier
   / "*" { return [['children', [['all']]]]; }
 
 union
-  = "[" " "* children:bracketElements " "* "]" { return [['children', children]]; }
+  = "[" whitespace children:bracketElements whitespace "]" { return [['children', children]]; }
 
 bracketElements
-  = x:bracketElement " "* "," " "* xs:bracketElements { return [x].concat(xs); }
+  = x:bracketElement whitespace "," whitespace xs:bracketElements { return [x].concat(xs); }
   / x:bracketElement { return [x]; }
 
 bracketElement
@@ -53,7 +53,24 @@ absoluteNumber
   = [0-9]+ { return text(); }
 
 filterExpression
-  = "@" operators:operators { return ["hasValue", operators]; }
+  = partialA:filterPartial whitespace "==" whitespace partialB:filterPartial { return ["equals", partialA, partialB]; }
+  / partial:filterPartial { return ["hasValue", partial]; }
+
+filterPartial
+  = "@" operators:operators { return operators; }
+  / value:jsonValue { return [["value", value]]; }
+
+// TODO need full JSON spec here + exemption for single quoted strings
+jsonValue
+  = "null" { return null; }
+  / "true" { return true; }
+  / "false" { return false; }
+  / number:number { return parseInt(number); }
+  / "'" string:singleQuotedString "'" { return string; }
+  / '"' string:doubleQuotedString '"' { return string; }
+
+whitespace
+  = " "*
 
 recursiveDescentWithChildren
   = ".." children:identifier { return [['recursiveDescent']].concat(children); }

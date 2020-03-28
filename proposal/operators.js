@@ -75,13 +75,18 @@ const childrenSliceOperator = (value, [start, end, step]) => {
   return [];
 };
 
-const filterOperatorHasValue = (value, operators) => {
-  const results = execute(value, operators);
-  return results.length > 0;
+const filterOperators = {
+  hasValue: (results) => results.length > 0,
+  equals: (left, right) => JSON.stringify(left) === JSON.stringify(right),
 };
 
-const childrenFilterOperator = (value, [[filterOperator, operators]]) => {
-  return allChildren(value).filter((v) => filterOperatorHasValue(v, operators));
+const childrenFilterOperator = (value, [[filterOperator, ...argOperators]]) => {
+  const operator = filterOperators[filterOperator];
+
+  return allChildren(value).filter((v) => {
+    const arguments = argOperators.map((argOp) => execute(v, argOp));
+    return operator(...arguments);
+  });
 };
 
 const childrenOperator = (value, children) => {
@@ -115,6 +120,8 @@ const executeOperator = (value, [operator, parameter]) => {
     return childrenOperator(value, parameter);
   } else if (operator === "recursiveDescent") {
     return recursiveDescentOperator(value);
+  } else if (operator === "value") {
+    return parameter;
   }
   throw new Error("Internal error, unknown operator");
 };
