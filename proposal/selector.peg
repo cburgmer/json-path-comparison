@@ -34,12 +34,12 @@ bracketElement
   / "?(" filterExpression:filterExpression ")" { return ['filter', filterExpression]; }
 
 singleQuotedString
-  = x:"\\'" xs:singleQuotedString { return x + xs; }
+  = x:"\\'" xs:singleQuotedString { return x.replace('\\', '') + xs; }
   / x:[^'] xs:singleQuotedString { return x + xs; }
   / ''
 
 doubleQuotedString
-  = x:'\\"' xs:doubleQuotedString { return x + xs; }
+  = x:'\\"' xs:doubleQuotedString { return x.replace('\\', '') + xs; }
   / x:[^"] xs:doubleQuotedString { return x + xs; }
   / ''
 
