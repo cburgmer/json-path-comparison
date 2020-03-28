@@ -5,10 +5,6 @@ readonly script_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 cd "$script_dir"
 
-if [[ ! -d "node_modules" ]]; then
-    npm install
-fi
-
 readonly tmp_stdout="/tmp/node_jsonpath-plus.stdout.$$"
 readonly tmp_stderr="/tmp/node_jsonpath-plus.stderr.$$"
 
