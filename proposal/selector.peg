@@ -1,7 +1,10 @@
 start
-  = "$" operators:operators* { return operators.reduce((os, o) => os.concat(o), []); }
+  = "$" operators:operators { return operators; }
 
 operators
+  = operators:operator* { return operators.reduce((os, o) => os.concat(o), []); }
+
+operator
   = dotNotation
   / union
   / recursiveDescentWithChildren
@@ -54,8 +57,7 @@ absoluteNumber
   = digits:[0-9]+ { return digits.join(""); }
 
 filterExpression
-  = "@" children:dotNotation { return ["hasValue", children]; }
-  / "@" { return ["hasValue", []]; }
+  = "@" operators:operators { return ["hasValue", operators]; }
 
 recursiveDescentWithChildren
   = ".." children:identifier { return [['recursiveDescent']].concat(children); }
