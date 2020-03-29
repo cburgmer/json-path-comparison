@@ -227,6 +227,20 @@ The following queries provide results that do not match those of other implement
   jsonpath returned false, this might indicate an error
   ```
 
+- [ ] `$.屬性`
+  Input:
+  ```
+  {"\u5c6c\u6027": "value"}
+  ```
+  Expected output:
+  ```
+  ["value"]
+  ```
+  Error:
+  ```
+  Invalid JSONPath error: 'Error in JSONPath near '.屬性''
+  ```
+
 - [ ] `$.2`
   Input:
   ```

@@ -171,6 +171,20 @@ The following queries provide results that do not match those of other implement
   Error: 'Unable to parse token key-dash in expression: .key-dash'
   ```
 
+- [ ] `$.屬性`
+  Input:
+  ```
+  {"\u5c6c\u6027": "value"}
+  ```
+  Expected output:
+  ```
+  ["value"]
+  ```
+  Error:
+  ```
+  Error: 'Unable to parse token 屬性 in expression: .屬性'
+  ```
+
 - [ ] `$[0]['c','d']`
   Input:
   ```

@@ -346,6 +346,24 @@ The following queries provide results that do not match those of other implement
    Error: searchBeginningWithSlice: string
   ```
 
+- [ ] `$.屬性`
+  Input:
+  ```
+  {"\u5c6c\u6027": "value"}
+  ```
+  Expected output:
+  ```
+  "value"
+  ```
+  Error:
+  ```
+  json-path-comparison: searchBeginningWithSlice: string
+  CallStack (from HasCallStack):
+    error, called at app/Main.hs:36:7 in main:Main
+  Invalid JSONPath: $.屬性
+   Error: searchBeginningWithSlice: string
+  ```
+
 - [ ] `$..*`
   Input:
   ```

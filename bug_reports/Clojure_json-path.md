@@ -563,6 +563,20 @@ The following queries provide results that do not match those of other implement
   java.lang.Exception object must be an array.
   ```
 
+- [ ] `$.屬性`
+  Input:
+  ```
+  {"\u5c6c\u6027": "value"}
+  ```
+  Expected output:
+  ```
+  "value"
+  ```
+  Actual output:
+  ```
+  {"\u5c6c\u6027": "value"}
+  ```
+
 - [ ] `$..*`
   Input:
   ```

@@ -199,6 +199,20 @@ The following queries provide results that do not match those of other implement
   Exception('Parse error at 1:3 near token , (,)')
   ```
 
+- [ ] `$.屬性`
+  Input:
+  ```
+  {"\u5c6c\u6027": "value"}
+  ```
+  Expected output:
+  ```
+  ["value"]
+  ```
+  Error:
+  ```
+  JsonPathLexerError('Error on line 1, col 2: Unexpected character: 屬 ')
+  ```
+
 - [ ] `$.2`
   Input:
   ```

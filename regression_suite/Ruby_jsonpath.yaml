@@ -108,7 +108,7 @@ queries:
     status: open
     result: [{"key": 42}]
   - id: dot_notation_with_non_ASCII_key
-    status: open
+    status: fail
     result: []
   - id: dot_notation_with_number
     status: open

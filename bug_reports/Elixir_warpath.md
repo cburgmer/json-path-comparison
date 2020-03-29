@@ -218,6 +218,21 @@ The following queries provide results that do not match those of other implement
       lib/jsonpath.ex:9: Mix.Tasks.Execute.run/1
   ```
 
+- [ ] `$.屬性`
+  Input:
+  ```
+  {"\u5c6c\u6027": "value"}
+  ```
+  Expected output:
+  ```
+  "value"
+  ```
+  Error:
+  ```
+  ** (Warpath.ExpressionError) Invalid syntax on line 1, {:illegal, [23660]}
+      lib/jsonpath.ex:9: Mix.Tasks.Execute.run/1
+  ```
+
 - [ ] `$.2`
   Input:
   ```
