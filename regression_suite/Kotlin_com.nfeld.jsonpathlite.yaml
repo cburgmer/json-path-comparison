@@ -61,8 +61,6 @@ queries:
     result: null
   - id: bracket_notation_with_number_on_string
     status: error
-  - id: bracket_notation_without_quotes
-    status: error
   - id: bracket_notation_with_quoted_escaped_backslash
     status: error
   - id: bracket_notation_with_quoted_escaped_single_quote
@@ -95,6 +93,8 @@ queries:
   - id: bracket_notation_with_wildcard_on_null_value_array
     status: error
   - id: bracket_notation_with_wildcard_on_object
+    status: error
+  - id: bracket_notation_without_quotes
     status: error
   - id: dot_bracket_notation
     status: open
@@ -137,14 +137,14 @@ queries:
     result: []
   - id: dot_notation_with_empty_path
     status: error
+  - id: dot_notation_with_non_ASCII_key
+    status: error
   - id: dot_notation_with_number
     status: open
     result: null
   - id: dot_notation_with_number_-1
     status: open
     result: null
-  - id: dot_notation_without_root
-    status: error
   - id: dot_notation_with_single_quotes
     status: open
     result: null
@@ -180,6 +180,8 @@ queries:
   - id: dot_notation_with_wildcard_on_object
     status: fail
     result: null
+  - id: dot_notation_without_root
+    status: error
   - id: filter_expression_after_dot_notation_with_wildcard_after_recursive_descent
     status: error
   - id: filter_expression_after_recursive_descent
@@ -252,8 +254,6 @@ queries:
     status: error
   - id: filter_expression_with_not_equals
     status: error
-  - id: filter_expression_without_value
-    status: error
   - id: filter_expression_with_regular_expression
     status: error
   - id: filter_expression_with_single_equal
@@ -265,6 +265,8 @@ queries:
   - id: filter_expression_with_value
     status: error
   - id: filter_expression_with_value_after_recursive_descent
+    status: error
+  - id: filter_expression_without_value
     status: error
   - id: parens_notation
     status: open

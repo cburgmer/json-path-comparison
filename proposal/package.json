@@ -4,11 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "prettier -c *.js && ./tests.js"
+    "test": "pegjs -o selector.js selector.peg && prettier -c *.js --ignore-path selector.js && ./tests.js"
   },
   "author": "",
   "license": "GPL-3.0-or-later",
   "devDependencies": {
+    "pegjs": "^0.10.0",
     "prettier": "^2.0.2",
     "yaml": "^1.8.3"
   }

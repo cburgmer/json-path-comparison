@@ -60,48 +60,6 @@ Cpp (jsoncons)
 ]
 </code></pre>
 
-<h4 id="dotNET_Json.NET">
-dotNET (Json.NET)
-</h4>
-
-<pre><code>[
-  {
-    "a": true,
-    "b": true
-  }
-]
-</code></pre>
-
-<h4 id="dotNET_JsonPathLib">
-dotNET (JsonPathLib)
-</h4>
-
-<pre><code>[
-  {
-    "a": true,
-    "b": true
-  },
-  {
-    "c": true
-  }
-]
-</code></pre>
-
-<h4 id="dotNET_Manatee.Json">
-dotNET (Manatee.Json)
-</h4>
-
-<pre><code>[
-  {
-    "a": true,
-    "b": true
-  },
-  {
-    "c": true
-  }
-]
-</code></pre>
-
 <h4 id="Elixir_warpath">
 Elixir (warpath)
 </h4>
@@ -122,36 +80,6 @@ Golang (github.com-bhmj-jsonslice)
 </h4>
 
 <pre><code>[]
-</code></pre>
-
-<h4 id="Java_com.github.jsurfer">
-Java (com.github.jsurfer)
-</h4>
-
-<pre><code>[
-  {
-    "a": true,
-    "b": true
-  },
-  {
-    "c": true
-  }
-]
-</code></pre>
-
-<h4 id="Java_com.jayway.jsonpath">
-Java (com.jayway.jsonpath)
-</h4>
-
-<pre><code>[
-  {
-    "a": true,
-    "b": true
-  },
-  {
-    "c": true
-  }
-]
 </code></pre>
 
 <h4 id="JavaScript_Goessner">
@@ -186,6 +114,36 @@ JavaScript (jsonpath)
 
 <h4 id="JavaScript_jsonpath-plus">
 JavaScript (jsonpath-plus)
+</h4>
+
+<pre><code>[
+  {
+    "a": true,
+    "b": true
+  },
+  {
+    "c": true
+  }
+]
+</code></pre>
+
+<h4 id="Java_com.github.jsurfer">
+Java (com.github.jsurfer)
+</h4>
+
+<pre><code>[
+  {
+    "a": true,
+    "b": true
+  },
+  {
+    "c": true
+  }
+]
+</code></pre>
+
+<h4 id="Java_com.jayway.jsonpath">
+Java (com.jayway.jsonpath)
 </h4>
 
 <pre><code>[
@@ -268,6 +226,48 @@ Scala (jsonpath)
 ]
 </code></pre>
 
+<h4 id="dotNET_Json.NET">
+dotNET (Json.NET)
+</h4>
+
+<pre><code>[
+  {
+    "a": true,
+    "b": true
+  }
+]
+</code></pre>
+
+<h4 id="dotNET_JsonPathLib">
+dotNET (JsonPathLib)
+</h4>
+
+<pre><code>[
+  {
+    "a": true,
+    "b": true
+  },
+  {
+    "c": true
+  }
+]
+</code></pre>
+
+<h4 id="dotNET_Manatee.Json">
+dotNET (Manatee.Json)
+</h4>
+
+<pre><code>[
+  {
+    "a": true,
+    "b": true
+  },
+  {
+    "c": true
+  }
+]
+</code></pre>
+
 <h3>Errors</h3>
 
 <h4 id="C_json-glib">
@@ -296,18 +296,18 @@ Crash dump is being written to: /dev/null...done
 {"init terminating in do_boot","Timeout"}
 </code></pre>
 
-<h4 id="Golang_github.com-oliveagle-jsonpath">
-Golang (github.com-oliveagle-jsonpath)
-</h4>
-
-<pre><code>invalid char at 10: ` `
-</code></pre>
-
 <h4 id="Golang_github.com-PaesslerAG-jsonpath">
 Golang (github.com-PaesslerAG-jsonpath)
 </h4>
 
 <pre><code>parsing error: $[?(@.a &amp;&amp; @.b || @.c)]   - 1:11 unknown operator &amp;&amp;
+</code></pre>
+
+<h4 id="Golang_github.com-oliveagle-jsonpath">
+Golang (github.com-oliveagle-jsonpath)
+</h4>
+
+<pre><code>invalid char at 10: ` `
 </code></pre>
 
 <h4 id="Haskell_jsonpath">
@@ -328,11 +328,11 @@ Kotlin (com.nfeld.jsonpathlite)
 <pre><code>Unexpected char, char=?, index=2
 </code></pre>
 
-<h4 id="Perl_JSON-Path">
-Perl (JSON-Path)
+<h4 id="PHP_Goessner">
+PHP (Goessner)
 </h4>
 
-<pre><code>non-safe evaluation, died at main.pl line 11.
+<pre><code>ArgumentCountError
 </code></pre>
 
 <h4 id="PHP_flow-jsonpath">
@@ -349,11 +349,26 @@ PHP (galbar-jsonpath)
 <pre><code>Invalid JSONPath error: 'Error in JSONPath near ' &amp;&amp; @.b || @.c''
 </code></pre>
 
-<h4 id="PHP_Goessner">
-PHP (Goessner)
+<h4 id="Perl_JSON-Path">
+Perl (JSON-Path)
 </h4>
 
-<pre><code>ArgumentCountError
+<pre><code>perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+    LANGUAGE = (unset),
+    LC_ALL = "",
+    LC_COLLATE = "C",
+    LANG = "en_US.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to the standard locale ("C").
+non-safe evaluation, died at main.pl line 11.
+</code></pre>
+
+<h4 id="Python_jsonpath-rw">
+Python (jsonpath-rw)
+</h4>
+
+<pre><code>JsonPathLexerError('Error on line 1, col 2: Unexpected character: ? ')
 </code></pre>
 
 <h4 id="Python_jsonpath2">
@@ -362,13 +377,6 @@ Python (jsonpath2)
 
 <pre><code>line 1:8 token recognition error at: '&amp;'
 ValueError("line 1:8 token recognition error at: '&amp;'")
-</code></pre>
-
-<h4 id="Python_jsonpath-rw">
-Python (jsonpath-rw)
-</h4>
-
-<pre><code>JsonPathLexerError('Error on line 1, col 2: Unexpected character: ? ')
 </code></pre>
 
 <h4 id="Rust_jsonpath">

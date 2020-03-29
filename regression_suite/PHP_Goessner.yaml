@@ -17,11 +17,11 @@ queries:
   - id: array_slice_with_open_start_and_end_on_object
     status: open
     result: [42]
+  - id: array_slice_with_range_of_-1
+    status: error
   - id: array_slice_with_range_of_0
     status: fail
     result: ["first", "second"]
-  - id: array_slice_with_range_of_-1
-    status: error
   - id: array_slice_with_step_0
     status: open
     result: ["first", "second", "third"]
@@ -50,9 +50,6 @@ queries:
     status: error
   - id: bracket_notation_with_number_on_string
     status: error
-  - id: bracket_notation_without_quotes
-    status: open
-    result: ["value"]
   - id: bracket_notation_with_quoted_escaped_backslash
     status: error
   - id: bracket_notation_with_quoted_escaped_single_quote
@@ -76,6 +73,9 @@ queries:
   - id: bracket_notation_with_wildcard_on_empty_object
     status: fail
     result: null
+  - id: bracket_notation_without_quotes
+    status: open
+    result: ["value"]
   - id: dot_bracket_notation
     status: open
     result: ["value", [{"key": 42}], 42]
@@ -104,14 +104,14 @@ queries:
     status: error
   - id: dot_notation_with_empty_path
     status: error
+  - id: dot_notation_with_non_ASCII_key
+    status: open
+    result: ["value"]
   - id: dot_notation_with_number
     status: open
     result: ["third"]
   - id: dot_notation_with_number_-1
     status: error
-  - id: dot_notation_without_root
-    status: open
-    result: ["value"]
   - id: dot_notation_with_single_quotes
     status: open
     result: ["value"]
@@ -129,6 +129,9 @@ queries:
   - id: dot_notation_with_wildcard_on_empty_object
     status: fail
     result: null
+  - id: dot_notation_without_root
+    status: open
+    result: ["value"]
   - id: filter_expression_after_dot_notation_with_wildcard_after_recursive_descent
     status: error
   - id: filter_expression_after_recursive_descent
@@ -201,8 +204,6 @@ queries:
     status: error
   - id: filter_expression_with_not_equals
     status: error
-  - id: filter_expression_without_value
-    status: error
   - id: filter_expression_with_regular_expression
     status: error
   - id: filter_expression_with_single_equal
@@ -214,6 +215,8 @@ queries:
   - id: filter_expression_with_value
     status: error
   - id: filter_expression_with_value_after_recursive_descent
+    status: error
+  - id: filter_expression_without_value
     status: error
   - id: parens_notation
     status: error

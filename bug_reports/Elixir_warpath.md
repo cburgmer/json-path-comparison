@@ -103,20 +103,6 @@ The following queries provide results that do not match those of other implement
   ["third"]
   ```
 
-- [ ] `$[0]`
-  Input:
-  ```
-  ["first", "second", "third", "forth", "fifth"]
-  ```
-  Expected output:
-  ```
-  "first"
-  ```
-  Actual output:
-  ```
-  ["first"]
-  ```
-
 - [ ] `$[-1]`
   Input:
   ```
@@ -130,6 +116,20 @@ The following queries provide results that do not match those of other implement
   ```
   ** (Warpath.ExpressionError) Parser error: Invalid token on line 1, syntax error before: ']'
       lib/jsonpath.ex:9: Mix.Tasks.Execute.run/1
+  ```
+
+- [ ] `$[0]`
+  Input:
+  ```
+  ["first", "second", "third", "forth", "fifth"]
+  ```
+  Expected output:
+  ```
+  "first"
+  ```
+  Actual output:
+  ```
+  ["first"]
   ```
 
 - [ ] `$.*[1]`
@@ -215,21 +215,6 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   ** (Warpath.ExpressionError) Parser error: Invalid token on line 1, syntax error before: '-'
-      lib/jsonpath.ex:9: Mix.Tasks.Execute.run/1
-  ```
-
-- [ ] `$.屬性`
-  Input:
-  ```
-  {"\u5c6c\u6027": "value"}
-  ```
-  Expected output:
-  ```
-  "value"
-  ```
-  Error:
-  ```
-  ** (Warpath.ExpressionError) Invalid syntax on line 1, {:illegal, [23660]}
       lib/jsonpath.ex:9: Mix.Tasks.Execute.run/1
   ```
 

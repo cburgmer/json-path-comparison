@@ -31,10 +31,10 @@ The following queries provide results that do not match those of other implement
   jsonpath returned false, this might indicate an error
   ```
 
-- [ ] `$[0:0]`
+- [ ] `$[2:1]`
   Input:
   ```
-  ["first", "second"]
+  ["first", "second", "third", "forth"]
   ```
   Expected output:
   ```
@@ -45,10 +45,10 @@ The following queries provide results that do not match those of other implement
   jsonpath returned false, this might indicate an error
   ```
 
-- [ ] `$[2:1]`
+- [ ] `$[0:0]`
   Input:
   ```
-  ["first", "second", "third", "forth"]
+  ["first", "second"]
   ```
   Expected output:
   ```

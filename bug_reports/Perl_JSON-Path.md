@@ -14,6 +14,14 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
+  perl: warning: Setting locale failed.
+  perl: warning: Please check that your locale settings:
+  	LANGUAGE = (unset),
+  	LC_ALL = "",
+  	LC_COLLATE = "C",
+  	LANG = "en_US.UTF-8"
+      are supported and installed on your system.
+  perl: warning: Falling back to the standard locale ("C").
   Assertion (":" is not an operator) failed!
    at build/lib/perl5/Carp/Assert.pm line 282, <STDIN> line 4.
   	Carp::Assert::assert(...) called at build/lib/perl5/JSON/Path/Evaluator.pm line 217
@@ -76,6 +84,14 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
+  perl: warning: Setting locale failed.
+  perl: warning: Please check that your locale settings:
+  	LANGUAGE = (unset),
+  	LC_ALL = "",
+  	LC_COLLATE = "C",
+  	LANG = "en_US.UTF-8"
+      are supported and installed on your system.
+  perl: warning: Falling back to the standard locale ("C").
   Assertion (":" is not an operator) failed!
    at build/lib/perl5/Carp/Assert.pm line 282, <STDIN> line 4.
   	Carp::Assert::assert(...) called at build/lib/perl5/JSON/Path/Evaluator.pm line 217
@@ -96,6 +112,14 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
+  perl: warning: Setting locale failed.
+  perl: warning: Please check that your locale settings:
+  	LANGUAGE = (unset),
+  	LC_ALL = "",
+  	LC_COLLATE = "C",
+  	LANG = "en_US.UTF-8"
+      are supported and installed on your system.
+  perl: warning: Falling back to the standard locale ("C").
   Assertion ("]" is not an operator) failed!
    at build/lib/perl5/Carp/Assert.pm line 282, <STDIN> line 1.
   	Carp::Assert::assert(...) called at build/lib/perl5/JSON/Path/Evaluator.pm line 217
@@ -116,6 +140,14 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
+  perl: warning: Setting locale failed.
+  perl: warning: Please check that your locale settings:
+  	LANGUAGE = (unset),
+  	LC_ALL = "",
+  	LC_COLLATE = "C",
+  	LANG = "en_US.UTF-8"
+      are supported and installed on your system.
+  perl: warning: Falling back to the standard locale ("C").
   Assertion ("@" is not an operator) failed!
    at build/lib/perl5/Carp/Assert.pm line 282, <STDIN> line 4.
   	Carp::Assert::assert(...) called at build/lib/perl5/JSON/Path/Evaluator.pm line 217
@@ -136,6 +168,14 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
+  perl: warning: Setting locale failed.
+  perl: warning: Please check that your locale settings:
+  	LANGUAGE = (unset),
+  	LC_ALL = "",
+  	LC_COLLATE = "C",
+  	LANG = "en_US.UTF-8"
+      are supported and installed on your system.
+  perl: warning: Falling back to the standard locale ("C").
   Assertion ("." is not an operator) failed!
    at build/lib/perl5/Carp/Assert.pm line 282, <STDIN> line 4.
   	Carp::Assert::assert(...) called at build/lib/perl5/JSON/Path/Evaluator.pm line 217
@@ -156,6 +196,14 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
+  perl: warning: Setting locale failed.
+  perl: warning: Please check that your locale settings:
+  	LANGUAGE = (unset),
+  	LC_ALL = "",
+  	LC_COLLATE = "C",
+  	LANG = "en_US.UTF-8"
+      are supported and installed on your system.
+  perl: warning: Falling back to the standard locale ("C").
   Assertion ("]" is not an operator) failed!
    at build/lib/perl5/Carp/Assert.pm line 282, <STDIN> line 4.
   	Carp::Assert::assert(...) called at build/lib/perl5/JSON/Path/Evaluator.pm line 217
@@ -176,6 +224,14 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
+  perl: warning: Setting locale failed.
+  perl: warning: Please check that your locale settings:
+  	LANGUAGE = (unset),
+  	LC_ALL = "",
+  	LC_COLLATE = "C",
+  	LANG = "en_US.UTF-8"
+      are supported and installed on your system.
+  perl: warning: Falling back to the standard locale ("C").
   Assertion ("$" is not an operator) failed!
    at build/lib/perl5/Carp/Assert.pm line 282, <STDIN> line 4.
   	Carp::Assert::assert(...) called at build/lib/perl5/JSON/Path/Evaluator.pm line 217
@@ -196,6 +252,14 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
+  perl: warning: Setting locale failed.
+  perl: warning: Please check that your locale settings:
+  	LANGUAGE = (unset),
+  	LC_ALL = "",
+  	LC_COLLATE = "C",
+  	LANG = "en_US.UTF-8"
+      are supported and installed on your system.
+  perl: warning: Falling back to the standard locale ("C").
   Assertion ("," is not an operator) failed!
    at build/lib/perl5/Carp/Assert.pm line 282, <STDIN> line 4.
   	Carp::Assert::assert(...) called at build/lib/perl5/JSON/Path/Evaluator.pm line 217
@@ -244,6 +308,14 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
+  perl: warning: Setting locale failed.
+  perl: warning: Please check that your locale settings:
+  	LANGUAGE = (unset),
+  	LC_ALL = "",
+  	LC_COLLATE = "C",
+  	LANG = "en_US.UTF-8"
+      are supported and installed on your system.
+  perl: warning: Falling back to the standard locale ("C").
   non-safe evaluation, died at main.pl line 11.
   ```
 
@@ -258,6 +330,14 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
+  perl: warning: Setting locale failed.
+  perl: warning: Please check that your locale settings:
+  	LANGUAGE = (unset),
+  	LC_ALL = "",
+  	LC_COLLATE = "C",
+  	LANG = "en_US.UTF-8"
+      are supported and installed on your system.
+  perl: warning: Falling back to the standard locale ("C").
   Assertion ("]" is not an operator) failed!
    at build/lib/perl5/Carp/Assert.pm line 282, <STDIN> line 5.
   	Carp::Assert::assert(...) called at build/lib/perl5/JSON/Path/Evaluator.pm line 217
@@ -266,20 +346,6 @@ The following queries provide results that do not match those of other implement
   	JSON::Path::Evaluator::evaluate(...) called at build/lib/perl5/JSON/Path/Evaluator.pm line 97
   	JSON::Path::Evaluator::evaluate_jsonpath(...) called at build/lib/perl5/JSON/Path.pm line 107
   	JSON::Path::values(...) called at main.pl line 11
-  ```
-
-- [ ] `$.屬性`
-  Input:
-  ```
-  {"\u5c6c\u6027": "value"}
-  ```
-  Expected output:
-  ```
-  ["value"]
-  ```
-  Actual output:
-  ```
-  []
   ```
 
 - [ ] `$..*`
@@ -321,6 +387,14 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
+  perl: warning: Setting locale failed.
+  perl: warning: Please check that your locale settings:
+  	LANGUAGE = (unset),
+  	LC_ALL = "",
+  	LC_COLLATE = "C",
+  	LANG = "en_US.UTF-8"
+      are supported and installed on your system.
+  perl: warning: Falling back to the standard locale ("C").
   non-safe evaluation, died at main.pl line 11.
   ```
 
@@ -335,6 +409,14 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
+  perl: warning: Setting locale failed.
+  perl: warning: Please check that your locale settings:
+  	LANGUAGE = (unset),
+  	LC_ALL = "",
+  	LC_COLLATE = "C",
+  	LANG = "en_US.UTF-8"
+      are supported and installed on your system.
+  perl: warning: Falling back to the standard locale ("C").
   non-safe evaluation, died at main.pl line 11.
   ```
 
@@ -349,6 +431,14 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
+  perl: warning: Setting locale failed.
+  perl: warning: Please check that your locale settings:
+  	LANGUAGE = (unset),
+  	LC_ALL = "",
+  	LC_COLLATE = "C",
+  	LANG = "en_US.UTF-8"
+      are supported and installed on your system.
+  perl: warning: Falling back to the standard locale ("C").
   non-safe evaluation, died at main.pl line 11.
   ```
 
@@ -363,6 +453,14 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
+  perl: warning: Setting locale failed.
+  perl: warning: Please check that your locale settings:
+  	LANGUAGE = (unset),
+  	LC_ALL = "",
+  	LC_COLLATE = "C",
+  	LANG = "en_US.UTF-8"
+      are supported and installed on your system.
+  perl: warning: Falling back to the standard locale ("C").
   non-safe evaluation, died at main.pl line 11.
   ```
 
@@ -377,6 +475,14 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
+  perl: warning: Setting locale failed.
+  perl: warning: Please check that your locale settings:
+  	LANGUAGE = (unset),
+  	LC_ALL = "",
+  	LC_COLLATE = "C",
+  	LANG = "en_US.UTF-8"
+      are supported and installed on your system.
+  perl: warning: Falling back to the standard locale ("C").
   non-safe evaluation, died at main.pl line 11.
   ```
 
@@ -391,6 +497,14 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
+  perl: warning: Setting locale failed.
+  perl: warning: Please check that your locale settings:
+  	LANGUAGE = (unset),
+  	LC_ALL = "",
+  	LC_COLLATE = "C",
+  	LANG = "en_US.UTF-8"
+      are supported and installed on your system.
+  perl: warning: Falling back to the standard locale ("C").
   non-safe evaluation, died at main.pl line 11.
   ```
 
@@ -433,6 +547,14 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
+  perl: warning: Setting locale failed.
+  perl: warning: Please check that your locale settings:
+  	LANGUAGE = (unset),
+  	LC_ALL = "",
+  	LC_COLLATE = "C",
+  	LANG = "en_US.UTF-8"
+      are supported and installed on your system.
+  perl: warning: Falling back to the standard locale ("C").
   Missing required argument 'root' in constructor at build/lib/perl5/JSON/Path.pm line 107.
   ```
 

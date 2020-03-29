@@ -25,39 +25,6 @@ Bash (JSONPath.sh)
 }
 </code></pre>
 
-<h4 id="dotNET_Json.NET">
-dotNET (Json.NET)
-</h4>
-
-<pre><code>[
-  "value"
-]
-</code></pre>
-
-<h4 id="dotNET_JsonPathLib">
-dotNET (JsonPathLib)
-</h4>
-
-<pre><code>[
-  "value",
-  [
-    {
-      "key": 42
-    }
-  ],
-  42
-]
-</code></pre>
-
-<h4 id="dotNET_Manatee.Json">
-dotNET (Manatee.Json)
-</h4>
-
-<pre><code>[
-  "value"
-]
-</code></pre>
-
 <h4 id="Elixir_warpath">
 Elixir (warpath)
 </h4>
@@ -69,15 +36,6 @@ Elixir (warpath)
 
 <h4 id="Golang_github.com-bhmj-jsonslice">
 Golang (github.com-bhmj-jsonslice)
-</h4>
-
-<pre><code>[
-  "value"
-]
-</code></pre>
-
-<h4 id="Java_com.jayway.jsonpath">
-Java (com.jayway.jsonpath)
 </h4>
 
 <pre><code>[
@@ -115,26 +73,17 @@ JavaScript (jsonpath-plus)
 ]
 </code></pre>
 
+<h4 id="Java_com.jayway.jsonpath">
+Java (com.jayway.jsonpath)
+</h4>
+
+<pre><code>[
+  "value"
+]
+</code></pre>
+
 <h4 id="Kotlin_com.nfeld.jsonpathlite">
 Kotlin (com.nfeld.jsonpathlite)
-</h4>
-
-<pre><code>[
-  "value"
-]
-</code></pre>
-
-<h4 id="Perl_JSON-Path">
-Perl (JSON-Path)
-</h4>
-
-<pre><code>[
-  "value"
-]
-</code></pre>
-
-<h4 id="PHP_flow-jsonpath">
-PHP (flow-jsonpath)
 </h4>
 
 <pre><code>[
@@ -157,8 +106,26 @@ PHP (Goessner)
 ]
 </code></pre>
 
+<h4 id="PHP_flow-jsonpath">
+PHP (flow-jsonpath)
+</h4>
+
+<pre><code>[
+  "value"
+]
+</code></pre>
+
 <h4 id="PHP_remorhaz-jsonpath">
 PHP (remorhaz-jsonpath)
+</h4>
+
+<pre><code>[
+  "value"
+]
+</code></pre>
+
+<h4 id="Perl_JSON-Path">
+Perl (JSON-Path)
 </h4>
 
 <pre><code>[
@@ -208,6 +175,39 @@ Rust (jsonpath_lib)
 ]
 </code></pre>
 
+<h4 id="dotNET_Json.NET">
+dotNET (Json.NET)
+</h4>
+
+<pre><code>[
+  "value"
+]
+</code></pre>
+
+<h4 id="dotNET_JsonPathLib">
+dotNET (JsonPathLib)
+</h4>
+
+<pre><code>[
+  "value",
+  [
+    {
+      "key": 42
+    }
+  ],
+  42
+]
+</code></pre>
+
+<h4 id="dotNET_Manatee.Json">
+dotNET (Manatee.Json)
+</h4>
+
+<pre><code>[
+  "value"
+]
+</code></pre>
+
 <h3>Errors</h3>
 
 <h4 id="C_json-glib">
@@ -250,18 +250,18 @@ Crash dump is being written to: /dev/null...done
 {"init terminating in do_boot",{badmatch,{error,{1,ejsonpath_parse,["syntax error before: ","'['"]}}}}
 </code></pre>
 
-<h4 id="Golang_github.com-oliveagle-jsonpath">
-Golang (github.com-oliveagle-jsonpath)
-</h4>
-
-<pre><code>strconv.Atoi: parsing "'key'": invalid syntax
-</code></pre>
-
 <h4 id="Golang_github.com-PaesslerAG-jsonpath">
 Golang (github.com-PaesslerAG-jsonpath)
 </h4>
 
 <pre><code>parsing error: $.['key']    :1:3 - 1:4 unexpected "[" while scanning JSON select expected Ident, "." or "*"
+</code></pre>
+
+<h4 id="Golang_github.com-oliveagle-jsonpath">
+Golang (github.com-oliveagle-jsonpath)
+</h4>
+
+<pre><code>strconv.Atoi: parsing "'key'": invalid syntax
 </code></pre>
 
 <h4 id="Haskell_jsonpath">
@@ -273,6 +273,16 @@ CallStack (from HasCallStack):
   error, called at app/Main.hs:36:7 in main:Main
 Invalid JSONPath: $.['key']
  Error: searchBeginningWithSlice: string
+</code></pre>
+
+<h4 id="JavaScript_jsonpath">
+JavaScript (jsonpath)
+</h4>
+
+<pre><code>Parse error on line 1:
+$.['key']
+--^
+Expecting 'STAR', 'IDENTIFIER', 'SCRIPT_EXPRESSION', 'INTEGER', 'END', got '['
 </code></pre>
 
 <h4 id="Java_com.github.jsurfer">
@@ -292,16 +302,6 @@ Java (com.github.jsurfer)
 Caused by: org.antlr.v4.runtime.InputMismatchException
     at org.antlr.v4.runtime.BailErrorStrategy.recoverInline(BailErrorStrategy.java:61)
     ... 8 more
-</code></pre>
-
-<h4 id="JavaScript_jsonpath">
-JavaScript (jsonpath)
-</h4>
-
-<pre><code>Parse error on line 1:
-$.['key']
---^
-Expecting 'STAR', 'IDENTIFIER', 'SCRIPT_EXPRESSION', 'INTEGER', 'END', got '['
 </code></pre>
 
 <h4 id="PHP_galbar-jsonpath">

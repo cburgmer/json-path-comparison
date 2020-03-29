@@ -1,24 +1,28 @@
-const isArray = (v) => Array.isArray(v);
-const isObject = (v) => !isArray(v) && typeof v === "object" && v !== null;
+const { isArray, isObject } = require("util");
 
-module.exports.childrenOperator = (value, children) => {
-  return children.flatMap((child) => {
-    if (isArray(value)) {
-      const index = child - 0; // HACKY way to convert complete string to int
-      const realIndex = index >= 0 ? index : value.length + index;
-      if (value[realIndex]) {
-        return [value[realIndex]];
-      } else {
-        return [];
-      }
-    } else if (isObject(value) && value[child] !== undefined) {
-      return [value[child]];
-    }
-    return [];
-  });
+const realIndex = (sliceIndex, length) => {
+  if (sliceIndex < 0) {
+    return Math.max(0, length + sliceIndex);
+  }
+  return sliceIndex;
 };
 
-module.exports.allOperator = (value) => {
+const childrenIndexOperator = (value, [child]) => {
+  if (isArray(value)) {
+    const index = parseInt(child, 10);
+    const realIdx = realIndex(index, value.length);
+    if (realIdx >= 0 && realIdx < value.length) {
+      return [value[realIdx]];
+    }
+  } else if (isObject(value)) {
+    if (value[child] !== undefined) {
+      return [value[child]];
+    }
+  }
+  return [];
+};
+
+const childrenAllOperator = (value) => {
   if (isArray(value)) {
     return value;
   } else if (isObject(value)) {
@@ -26,6 +30,58 @@ module.exports.allOperator = (value) => {
   }
 
   return [];
+};
+
+const sliceValueOrDefault = (sliceValue, defaultValue) => {
+  if (sliceValue === null) {
+    return defaultValue;
+  }
+  return parseInt(sliceValue, 10);
+};
+
+const range = (start, end, step) => {
+  const slice = [];
+  if (step > 0) {
+    for (let i = start; i < end; i += step) {
+      slice.push(i);
+    }
+  } else {
+    for (let i = start; i > end; i += step) {
+      slice.push(i);
+    }
+  }
+  return slice;
+};
+
+const childrenSliceOperator = (value, [start, end, step]) => {
+  if (isArray(value)) {
+    const stepNumber = sliceValueOrDefault(step, 1);
+
+    const realStart = realIndex(sliceValueOrDefault(start, 0), value.length);
+    const realEnd = realIndex(
+      sliceValueOrDefault(end, value.length),
+      value.length
+    );
+
+    return range(realStart, realEnd, stepNumber)
+      .filter((i) => 0 <= i && i < value.length)
+      .map((i) => value[i]);
+  }
+
+  return [];
+};
+
+module.exports.childrenOperator = (value, children) => {
+  return children.flatMap(([subOperator, ...parameters]) => {
+    if (subOperator === "index") {
+      return childrenIndexOperator(value, parameters);
+    } else if (subOperator === "all") {
+      return childrenAllOperator(value);
+    } else if (subOperator === "slice") {
+      return childrenSliceOperator(value, parameters);
+    }
+    throw new Error("Internal error, unknown operator");
+  });
 };
 
 const recursiveDescentOperator = (value) => {

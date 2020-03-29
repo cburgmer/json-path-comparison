@@ -54,13 +54,13 @@ queries:
   - id: array_slice_with_open_start_and_end_on_object
     selector: "$[:]"
     document: {":": 42, "more": "string"}
-  - id: array_slice_with_range_of_0
-    selector: "$[0:0]"
-    document: ["first", "second"]
-    consensus: []
   - id: array_slice_with_range_of_-1
     selector: "$[2:1]"
     document: ["first", "second", "third", "forth"]
+    consensus: []
+  - id: array_slice_with_range_of_0
+    selector: "$[0:0]"
+    document: ["first", "second"]
     consensus: []
   - id: array_slice_with_range_of_1
     selector: "$[0:1]"
@@ -136,11 +136,6 @@ queries:
     document: ["first", "second", "third", "forth", "fifth"]
     consensus: ["third"]
     scalar-consensus: "third"
-  - id: bracket_notation_with_number_0
-    selector: "$[0]"
-    document: ["first", "second", "third", "forth", "fifth"]
-    consensus: ["first"]
-    scalar-consensus: "first"
   - id: bracket_notation_with_number_-1
     selector: "$[-1]"
     document: ["first", "second", "third"]
@@ -149,6 +144,11 @@ queries:
   - id: bracket_notation_with_number_-1_on_empty_array
     selector: "$[-1]"
     document: []
+  - id: bracket_notation_with_number_0
+    selector: "$[0]"
+    document: ["first", "second", "third", "forth", "fifth"]
+    consensus: ["first"]
+    scalar-consensus: "first"
   - id: bracket_notation_with_number_after_dot_notation_with_wildcard_on_nested_arrays_with_different_length
     selector: "$.*[1]"
     document: [[1], [2, 3]]
@@ -162,9 +162,6 @@ queries:
   - id: bracket_notation_with_number_on_string
     selector: "$[0]"
     document: "Hello World"
-  - id: bracket_notation_without_quotes
-    selector: "$[key]"
-    document: {"key": "value"}
   - id: bracket_notation_with_quoted_array_slice_literal
     selector: "$[':']"
     document: {":": "value", "another": "entry"}
@@ -275,6 +272,9 @@ queries:
     document: {"some": "string", "int": 42, "object": {"key": "value"}, "array": [0, 1]}
     ordered: false
     consensus: ["string", 42, [0, 1], {"key": "value"}]
+  - id: bracket_notation_without_quotes
+    selector: "$[key]"
+    document: {"key": "value"}
   - id: dot_bracket_notation
     selector: "$.['key']"
     document: {"key": "value", "other": {"key": [{"key": 42}]}}
@@ -374,8 +374,6 @@ queries:
   - id: dot_notation_with_non_ASCII_key
     selector: "$.屬性"
     document: {"\u5c6c\u6027": "value"}
-    consensus: ["value"]
-    scalar-consensus: "value"
   - id: dot_notation_with_number
     selector: "$.2"
     document: ["first", "second", "third", "forth", "fifth"]
@@ -387,9 +385,6 @@ queries:
     document: {"a": "first", "2": "second", "b": "third"}
     consensus: ["second"]
     scalar-consensus: "second"
-  - id: dot_notation_without_root
-    selector: "key"
-    document: {"key": "value"}
   - id: dot_notation_with_single_quotes
     selector: "$.'key'"
     document: {"key": "value"}
@@ -440,6 +435,9 @@ queries:
     document: {"some": "string", "int": 42, "object": {"key": "value"}, "array": [0, 1]}
     ordered: false
     consensus: ["string", 42, [0, 1], {"key": "value"}]
+  - id: dot_notation_without_root
+    selector: "key"
+    document: {"key": "value"}
   - id: filter_expression_after_dot_notation_with_wildcard_after_recursive_descent
     selector: "$..*[?(@.id>2)]"
     document: [{"complext": {"one": [{"name": "first", "id": 1}, {"name": "next", "id": 2}, {"name": "another", "id": 3}, {"name": "more", "id": 4}], "more": {"name": "next to last", "id": 5}}}, {"name": "last", "id": 6}]
@@ -556,9 +554,6 @@ queries:
   - id: filter_expression_with_not_equals
     selector: "$[?(@.key!=42)]"
     document: [{"key": 0}, {"key": 42}, {"key": -1}, {"key": 1}, {"key": 41}, {"key": 43}, {"key": 42.0001}, {"key": 41.9999}, {"key": 100}, {"key": "some"}, {"key": "42"}, {"key": null}, {"key": 420}, {"key": ""}, {"key": {}}, {"key": []}, {"key": [42]}, {"key": {"key": 42}}, {"key": {"some": 42}}, {"some": "value"}]
-  - id: filter_expression_without_value
-    selector: "$[?(!@.key)]"
-    document: [{"some": "some value"}, {"key": true}, {"key": false}, {"key": null}, {"key": "value"}, {"key": ""}, {"key": 0}, {"key": 1}, {"key": -1}, {"key": 42}, {"key": {}}, {"key": []}]
   - id: filter_expression_with_regular_expression
     selector: "$[?(@.name=~/hello.*/)]"
     document: [{"name": "hullo world"}, {"name": "hello world"}, {"name": "yes hello world"}, {"name": "HELLO WORLD"}, {"name": "good bye"}]
@@ -578,6 +573,9 @@ queries:
     selector: "$..[?(@.id)]"
     document: {"id": 2, "more": [{"id": 2}, {"more": {"id": 2}}, {"id": {"id": 2}}, [{"id": 2}]]}
     ordered: false
+  - id: filter_expression_without_value
+    selector: "$[?(!@.key)]"
+    document: [{"some": "some value"}, {"key": true}, {"key": false}, {"key": null}, {"key": "value"}, {"key": ""}, {"key": 0}, {"key": 1}, {"key": -1}, {"key": 42}, {"key": {}}, {"key": []}]
   - id: parens_notation
     selector: "$(key,more)"
     document: {"key": 1, "some": 2, "more": 3}

@@ -1,0 +1,57 @@
+start
+  = "$" operators:operators* { return operators.reduce((os, o) => os.concat(o), []); }
+
+operators
+  = dotNotation
+  / union
+  / recursiveDescentWithChildren
+
+dotNotation
+  = "." children:identifier { return children; }
+
+// TODO Unicode
+identifier
+  = chars:[a-zA-Z0-9_\-]+ { return [['children', [['index', chars.join("")]]]]; }
+  / "*" { return [['children', [['all']]]]; }
+
+union
+  = "[" " "* children:bracketElements " "* "]" { return [['children', children]]; }
+
+bracketElements
+  = x:bracketElement " "* "," " "* xs:bracketElements { return [x].concat(xs); }
+  / x:bracketElement { return [x]; }
+
+bracketElement
+  = "'" element:singleQuotedString "'" { return ['index', element]; }
+  / '"' element:doubleQuotedString '"' { return ['index', element]; }
+  / "*" { return ['all']; }
+  / start:number? ":" end:number? ":" step:nonZeroNumber? { return ['slice', start, end, step]; }
+  / start:number? ":" end:number? { return ['slice', start, end, null]; }
+  / element:number { return ['index', element]; }
+
+singleQuotedString
+  = x:"\\'" xs:singleQuotedString { return x + xs; }
+  / x:[^'] xs:singleQuotedString { return x + xs; }
+  / ''
+
+doubleQuotedString
+  = x:'\\"' xs:doubleQuotedString { return x + xs; }
+  / x:[^"] xs:doubleQuotedString { return x + xs; }
+  / ''
+
+number
+  = "-" absoluteNumber:absoluteNumber { return "-" + absoluteNumber; }
+  / absoluteNumber
+
+nonZeroNumber
+  = "-" nonZeroDigit:[1-9] remainingDigits:absoluteNumber { return "-" + nonZeroDigit + remainingDigits; }
+  / nonZeroDigit:[1-9] remainingDigits:absoluteNumber { return nonZeroDigit + remainingDigits; }
+  / "-" nonZeroDigit:[1-9] { return "-" + nonZeroDigit; }
+  / nonZeroDigit:[1-9]
+
+absoluteNumber
+  = digits:[0-9]+ { return digits.join(""); }
+
+recursiveDescentWithChildren
+  = ".." children:identifier { return [['recursiveDescent']].concat(children); }
+  / ".." children:union { return [['recursiveDescent']].concat(children); }

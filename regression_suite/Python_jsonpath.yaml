@@ -18,9 +18,9 @@ queries:
   - id: array_slice_with_open_start_and_end_on_object
     status: open
     result: [42]
-  - id: array_slice_with_range_of_0
-    status: error
   - id: array_slice_with_range_of_-1
+    status: error
+  - id: array_slice_with_range_of_0
     status: error
   - id: array_slice_with_step_0
     status: error
@@ -51,9 +51,6 @@ queries:
     status: error
   - id: bracket_notation_with_number_on_string
     status: error
-  - id: bracket_notation_without_quotes
-    status: open
-    result: ["value"]
   - id: bracket_notation_with_quoted_closing_bracket_literal
     status: fail
     result: [{"]": 42}]
@@ -89,6 +86,9 @@ queries:
     status: error
   - id: bracket_notation_with_wildcard_on_empty_object
     status: error
+  - id: bracket_notation_without_quotes
+    status: open
+    result: ["value"]
   - id: dot_bracket_notation
     status: open
     result: ["value", [{"key": 42}], 42]
@@ -112,14 +112,14 @@ queries:
     status: error
   - id: dot_notation_with_empty_path
     status: error
+  - id: dot_notation_with_non_ASCII_key
+    status: open
+    result: ["value"]
   - id: dot_notation_with_number
     status: open
     result: ["third"]
   - id: dot_notation_with_number_-1
     status: error
-  - id: dot_notation_without_root
-    status: open
-    result: ["value"]
   - id: dot_notation_with_single_quotes
     status: open
     result: ["value"]
@@ -135,6 +135,9 @@ queries:
     status: error
   - id: dot_notation_with_wildcard_on_empty_object
     status: error
+  - id: dot_notation_without_root
+    status: open
+    result: ["value"]
   - id: filter_expression_after_dot_notation_with_wildcard_after_recursive_descent
     status: open
     result: [{"id": 3, "name": "another"}, {"id": 4, "name": "more"}, {"id": 5, "name": "next to last"}]
@@ -218,9 +221,6 @@ queries:
   - id: filter_expression_with_not_equals
     status: open
     result: [{"key": 0}, {"key": -1}, {"key": 1}, {"key": 41}, {"key": 43}, {"key": 42.0001}, {"key": 41.9999}, {"key": 100}, {"key": "some"}, {"key": "42"}, {"key": null}, {"key": 420}, {"key": ""}, {"key": {}}, {"key": []}, {"key": [42]}, {"key": {"key": 42}}, {"key": {"some": 42}}]
-  - id: filter_expression_without_value
-    status: open
-    result: [{"some": "some value"}]
   - id: filter_expression_with_regular_expression
     status: error
   - id: filter_expression_with_single_equal
@@ -235,6 +235,9 @@ queries:
   - id: filter_expression_with_value_after_recursive_descent
     status: open
     result: [{"id": 2}, {"id": 2}, {"id": 2}, {"id": 2}, {"id": {"id": 2}}]
+  - id: filter_expression_without_value
+    status: open
+    result: [{"some": "some value"}]
   - id: parens_notation
     status: error
   - id: recursive_descent

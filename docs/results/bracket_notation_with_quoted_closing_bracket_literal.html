@@ -20,17 +20,6 @@
 
 <h3>Other responses</h3>
 
-<h4 id="dotNET_JsonPathLib">
-dotNET (JsonPathLib)
-</h4>
-
-<pre><code>[
-  {
-    "]": 42
-  }
-]
-</code></pre>
-
 <h4 id="JavaScript_jsonpath-plus">
 JavaScript (jsonpath-plus)
 </h4>
@@ -40,6 +29,17 @@ JavaScript (jsonpath-plus)
 
 <h4 id="Python_jsonpath">
 Python (jsonpath)
+</h4>
+
+<pre><code>[
+  {
+    "]": 42
+  }
+]
+</code></pre>
+
+<h4 id="dotNET_JsonPathLib">
+dotNET (JsonPathLib)
 </h4>
 
 <pre><code>[
@@ -92,19 +92,6 @@ Invalid JSONPath: $[']']
  Error: searchBeginningWithSlice: string
 </code></pre>
 
-<h4 id="Perl_JSON-Path">
-Perl (JSON-Path)
-</h4>
-
-<pre><code>Assertion ("]" is not an operator) failed!
- at build/lib/perl5/Carp/Assert.pm line 282, &lt;STDIN&gt; line 1.
-    Carp::Assert::assert(...) called at build/lib/perl5/JSON/Path/Evaluator.pm line 217
-    JSON::Path::Evaluator::_evaluate(...) called at build/lib/perl5/JSON/Path/Evaluator.pm line 122
-    JSON::Path::Evaluator::evaluate(...) called at build/lib/perl5/JSON/Path/Evaluator.pm line 97
-    JSON::Path::Evaluator::evaluate_jsonpath(...) called at build/lib/perl5/JSON/Path.pm line 107
-    JSON::Path::values(...) called at main.pl line 11
-</code></pre>
-
 <h4 id="PHP_flow-jsonpath">
 PHP (flow-jsonpath)
 </h4>
@@ -117,6 +104,27 @@ PHP (galbar-jsonpath)
 </h4>
 
 <pre><code>Invalid JSONPath error: 'Error in JSONPath near ''''
+</code></pre>
+
+<h4 id="Perl_JSON-Path">
+Perl (JSON-Path)
+</h4>
+
+<pre><code>perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+    LANGUAGE = (unset),
+    LC_ALL = "",
+    LC_COLLATE = "C",
+    LANG = "en_US.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to the standard locale ("C").
+Assertion ("]" is not an operator) failed!
+ at build/lib/perl5/Carp/Assert.pm line 282, &lt;STDIN&gt; line 1.
+    Carp::Assert::assert(...) called at build/lib/perl5/JSON/Path/Evaluator.pm line 217
+    JSON::Path::Evaluator::_evaluate(...) called at build/lib/perl5/JSON/Path/Evaluator.pm line 122
+    JSON::Path::Evaluator::evaluate(...) called at build/lib/perl5/JSON/Path/Evaluator.pm line 97
+    JSON::Path::Evaluator::evaluate_jsonpath(...) called at build/lib/perl5/JSON/Path.pm line 107
+    JSON::Path::values(...) called at main.pl line 11
 </code></pre>
 
 <h4 id="Python_jsonpath2">

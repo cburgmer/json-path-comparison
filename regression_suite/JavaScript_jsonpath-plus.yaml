@@ -48,9 +48,6 @@ queries:
   - id: bracket_notation_with_number_on_string
     status: open
     result: ["H"]
-  - id: bracket_notation_without_quotes
-    status: open
-    result: ["value"]
   - id: bracket_notation_with_quoted_array_slice_literal
     status: fail
     result: []
@@ -89,6 +86,9 @@ queries:
   - id: bracket_notation_with_two_literals_separated_by_dot_without_quotes
     status: open
     result: ["42"]
+  - id: bracket_notation_without_quotes
+    status: open
+    result: ["value"]
   - id: dot_bracket_notation
     status: open
     result: ["value", [{"key": 42}], 42]
@@ -113,15 +113,15 @@ queries:
   - id: dot_notation_with_empty_path
     status: open
     result: [{"key": 42}]
+  - id: dot_notation_with_non_ASCII_key
+    status: open
+    result: ["value"]
   - id: dot_notation_with_number
     status: open
     result: ["third"]
   - id: dot_notation_with_number_-1
     status: open
     result: []
-  - id: dot_notation_without_root
-    status: open
-    result: ["value"]
   - id: dot_notation_with_single_quotes
     status: open
     result: ["value"]
@@ -129,6 +129,9 @@ queries:
     status: open
     result: ["russian dolls", "something", "top", "value", {"key": "russian dolls"}]
   - id: dot_notation_with_single_quotes_and_dot
+    status: open
+    result: ["value"]
+  - id: dot_notation_without_root
     status: open
     result: ["value"]
   - id: filter_expression_after_dot_notation_with_wildcard_after_recursive_descent
@@ -218,9 +221,6 @@ queries:
   - id: filter_expression_with_not_equals
     status: open
     result: [{"key": 0}, {"key": -1}, {"key": 1}, {"key": 41}, {"key": 43}, {"key": 42.0001}, {"key": 41.9999}, {"key": 100}, {"key": "some"}, {"key": null}, {"key": 420}, {"key": ""}, {"key": {}}, {"key": []}, {"key": {"key": 42}}, {"key": {"some": 42}}, {"some": "value"}]
-  - id: filter_expression_without_value
-    status: open
-    result: [{"some": "some value"}, {"key": false}, {"key": null}, {"key": ""}, {"key": 0}]
   - id: filter_expression_with_regular_expression
     status: open
     result: [{"name": -1}, {"name": -1}, {"name": -1}, {"name": -1}, {"name": -1}]
@@ -238,6 +238,9 @@ queries:
   - id: filter_expression_with_value_after_recursive_descent
     status: open
     result: [{"id": 2}, {"id": 2}, {"id": 2}, {"id": 2}, {"id": {"id": 2}}]
+  - id: filter_expression_without_value
+    status: open
+    result: [{"some": "some value"}, {"key": false}, {"key": null}, {"key": ""}, {"key": 0}]
   - id: parens_notation
     status: open
     result: []

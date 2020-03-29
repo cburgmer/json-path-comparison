@@ -37,39 +37,6 @@ Cpp (jsoncons)
 <pre><code>[]
 </code></pre>
 
-<h4 id="dotNET_Json.NET">
-dotNET (Json.NET)
-</h4>
-
-<pre><code>[]
-</code></pre>
-
-<h4 id="dotNET_JsonPathLib">
-dotNET (JsonPathLib)
-</h4>
-
-<pre><code>[
-  42
-]
-</code></pre>
-
-<h4 id="dotNET_Manatee.Json">
-dotNET (Manatee.Json)
-</h4>
-
-<pre><code>[
-  42,
-  "string"
-]
-</code></pre>
-
-<h4 id="Golang_github.com-bhmj-jsonslice">
-Golang (github.com-bhmj-jsonslice)
-</h4>
-
-<pre><code>[]
-</code></pre>
-
 <h4 id="Golang_github.com-PaesslerAG-jsonpath">
 Golang (github.com-PaesslerAG-jsonpath)
 </h4>
@@ -77,8 +44,8 @@ Golang (github.com-PaesslerAG-jsonpath)
 <pre><code>[]
 </code></pre>
 
-<h4 id="Java_com.github.jsurfer">
-Java (com.github.jsurfer)
+<h4 id="Golang_github.com-bhmj-jsonslice">
+Golang (github.com-bhmj-jsonslice)
 </h4>
 
 <pre><code>[]
@@ -107,8 +74,8 @@ JavaScript (jsonpath-plus)
 <pre><code>[]
 </code></pre>
 
-<h4 id="PHP_flow-jsonpath">
-PHP (flow-jsonpath)
+<h4 id="Java_com.github.jsurfer">
+Java (com.github.jsurfer)
 </h4>
 
 <pre><code>[]
@@ -121,6 +88,13 @@ PHP (Goessner)
 <pre><code>[
   42
 ]
+</code></pre>
+
+<h4 id="PHP_flow-jsonpath">
+PHP (flow-jsonpath)
+</h4>
+
+<pre><code>[]
 </code></pre>
 
 <h4 id="PHP_remorhaz-jsonpath">
@@ -139,13 +113,6 @@ Python (jsonpath)
 ]
 </code></pre>
 
-<h4 id="Python_jsonpath2">
-Python (jsonpath2)
-</h4>
-
-<pre><code>[]
-</code></pre>
-
 <h4 id="Python_jsonpath-rw">
 Python (jsonpath-rw)
 </h4>
@@ -156,6 +123,13 @@ Python (jsonpath-rw)
     "more": "string"
   }
 ]
+</code></pre>
+
+<h4 id="Python_jsonpath2">
+Python (jsonpath2)
+</h4>
+
+<pre><code>[]
 </code></pre>
 
 <h4 id="Ruby_jsonpath">
@@ -180,6 +154,32 @@ Scala (jsonpath)
 </h4>
 
 <pre><code>[]
+</code></pre>
+
+<h4 id="dotNET_Json.NET">
+dotNET (Json.NET)
+</h4>
+
+<pre><code>[]
+</code></pre>
+
+<h4 id="dotNET_JsonPathLib">
+dotNET (JsonPathLib)
+</h4>
+
+<pre><code>[
+  42
+]
+</code></pre>
+
+<h4 id="dotNET_Manatee.Json">
+dotNET (Manatee.Json)
+</h4>
+
+<pre><code>[
+  42,
+  "string"
+]
 </code></pre>
 
 <h3>Errors</h3>
@@ -263,24 +263,32 @@ Kotlin (com.nfeld.jsonpathlite)
 <pre><code>Index 0 out of bounds for length 0
 </code></pre>
 
+<h4 id="PHP_galbar-jsonpath">
+PHP (galbar-jsonpath)
+</h4>
+
+<pre><code>jsonpath returned false, this might indicate an error
+</code></pre>
+
 <h4 id="Perl_JSON-Path">
 Perl (JSON-Path)
 </h4>
 
-<pre><code>Assertion (":" is not an operator) failed!
+<pre><code>perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+    LANGUAGE = (unset),
+    LC_ALL = "",
+    LC_COLLATE = "C",
+    LANG = "en_US.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to the standard locale ("C").
+Assertion (":" is not an operator) failed!
  at build/lib/perl5/Carp/Assert.pm line 282, &lt;STDIN&gt; line 1.
     Carp::Assert::assert(...) called at build/lib/perl5/JSON/Path/Evaluator.pm line 217
     JSON::Path::Evaluator::_evaluate(...) called at build/lib/perl5/JSON/Path/Evaluator.pm line 122
     JSON::Path::Evaluator::evaluate(...) called at build/lib/perl5/JSON/Path/Evaluator.pm line 97
     JSON::Path::Evaluator::evaluate_jsonpath(...) called at build/lib/perl5/JSON/Path.pm line 107
     JSON::Path::values(...) called at main.pl line 11
-</code></pre>
-
-<h4 id="PHP_galbar-jsonpath">
-PHP (galbar-jsonpath)
-</h4>
-
-<pre><code>jsonpath returned false, this might indicate an error
 </code></pre>
 
 <h4 id="Rust_jsonpath">

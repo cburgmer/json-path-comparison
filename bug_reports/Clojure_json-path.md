@@ -129,20 +129,6 @@ The following queries provide results that do not match those of other implement
   java.lang.NumberFormatException null
   ```
 
-- [ ] `$[0:0]`
-  Input:
-  ```
-  ["first", "second"]
-  ```
-  Expected output:
-  ```
-  []
-  ```
-  Actual output:
-  ```
-  "first"
-  ```
-
 - [ ] `$[2:1]`
   Input:
   ```
@@ -155,6 +141,20 @@ The following queries provide results that do not match those of other implement
   Actual output:
   ```
   "third"
+  ```
+
+- [ ] `$[0:0]`
+  Input:
+  ```
+  ["first", "second"]
+  ```
+  Expected output:
+  ```
+  []
+  ```
+  Actual output:
+  ```
+  "first"
   ```
 
 - [ ] `$[0:1]`
@@ -561,20 +561,6 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   java.lang.Exception object must be an array.
-  ```
-
-- [ ] `$.屬性`
-  Input:
-  ```
-  {"\u5c6c\u6027": "value"}
-  ```
-  Expected output:
-  ```
-  "value"
-  ```
-  Actual output:
-  ```
-  {"\u5c6c\u6027": "value"}
   ```
 
 - [ ] `$..*`
