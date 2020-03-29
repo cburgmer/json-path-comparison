@@ -10,7 +10,7 @@ of JSONPath, especially the consensus.
 This document tries to call out specific decisions where it deviates from
 either.
 
-The proposal is implemented in JavaScript:
+The proposal is also implemented in JavaScript:
 
 - [index.js](./index.js) Entry point
 - [selector.peg](./selector.peg) Selector grammar
@@ -51,10 +51,10 @@ To follow the execution results: `( [{"keyA": 1, "keyB": 2}, {"keyA": 3}] )`
 Operators are structured in a hierarchy:
 
 1. Children lookup, e.g. `$[1, 10]`
-  1. Index lookup, e.g. `$.key` or `$[1]`
-  2. All children, e.g. `$.*` or `$[*]`
-  3. Array slice, e.g. `$[3:5]`
-  4. Filter, e.g. `$[?(@.key>2)]`
+    1. Index lookup, e.g. `$.key` or `$[1]`
+    2. All children, e.g. `$.*` or `$[*]`
+    3. Array slice, e.g. `$[3:5]`
+    4. Filter, e.g. `$[?(@.key>2)]`
 2. Recursive descent, e.g. `$..key`
 
 Grouping most operators under a general operator "children lookup" allows for
