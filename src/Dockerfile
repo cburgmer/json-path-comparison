@@ -2,7 +2,7 @@ FROM ubuntu:20.04
 
 ENV DEBIAN_FRONTEND=noninteractive
 
-RUN apt-get update \
+RUN apt-get -y upgrade && apt-get -y update && apt-get -y dist-upgrade \
         && apt-get install -y --no-install-recommends bash ninja-build python3 markdown curl coreutils locales \
         && locale-gen en_US.UTF-8
 

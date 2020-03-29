@@ -8,10 +8,10 @@ implementation: PHP_remorhaz-jsonpath
 queries:
   - id: array_slice_with_negative_step
     status: open
-    result: ["second", "forth"]
+    result: ["forth", "second"]
   - id: array_slice_with_negative_step_only
     status: open
-    result: ["first", "third", "fifth"]
+    result: ["fifth", "third", "first"]
   - id: array_slice_with_open_start_and_end_on_object
     status: open
     result: []
@@ -74,8 +74,6 @@ queries:
   - id: dot_notation_after_bracket_notation_after_recursive_descent
     status: open
     result: [200, 42, 500]
-  - id: dot_notation_with_dash
-    status: error
   - id: dot_notation_with_double_quotes
     status: open
     result: ["value"]
@@ -104,10 +102,10 @@ queries:
     status: error
   - id: filter_expression_after_dot_notation_with_wildcard_after_recursive_descent
     status: open
-    result: [{"id": 3, "name": "another"}, {"id": 3, "name": "another"}, {"id": 6, "name": "last"}, {"id": 4, "name": "more"}, {"id": 4, "name": "more"}, {"id": 5, "name": "next to last"}]
+    result: [{"id": 3, "name": "another"}, {"id": 6, "name": "last"}, {"id": 4, "name": "more"}, {"id": 5, "name": "next to last"}]
   - id: filter_expression_after_recursive_descent
     status: open
-    result: [{"id": 2, "more": [{"id": 2}, {"more": {"id": 2}}, {"id": {"id": 2}}, [{"id": 2}]]}, {"id": 2}, {"id": 2}, {"id": 2}, {"id": 2}, {"id": 2}, {"id": 2}]
+    result: [{"id": 2, "more": [{"id": 2}, {"more": {"id": 2}}, {"id": {"id": 2}}, [{"id": 2}]]}, {"id": 2}, {"id": 2}, {"id": 2}, {"id": 2}]
   - id: filter_expression_on_object
     status: open
     result: [{"another": {"key": 1}, "key": 42}]
@@ -203,7 +201,7 @@ queries:
     result: [{"key": true}, {"key": false}, {"key": null}, {"key": "value"}, {"key": ""}, {"key": 0}, {"key": 1}, {"key": -1}, {"key": 42}, {"key": {}}, {"key": []}]
   - id: filter_expression_with_value_after_recursive_descent
     status: open
-    result: [{"id": 2, "more": [{"id": 2}, {"more": {"id": 2}}, {"id": {"id": 2}}, [{"id": 2}]]}, {"id": 2}, {"id": 2}, {"id": 2}, {"id": 2}, {"id": 2}, {"id": 2}, {"id": {"id": 2}}, {"id": {"id": 2}}]
+    result: [{"id": 2, "more": [{"id": 2}, {"more": {"id": 2}}, {"id": {"id": 2}}, [{"id": 2}]]}, {"id": 2}, {"id": 2}, {"id": 2}, {"id": 2}, {"id": {"id": 2}}]
   - id: filter_expression_without_value
     status: open
     result: [{"some": "some value"}]
@@ -227,9 +225,6 @@ queries:
   - id: union_with_keys_on_object_without_key
     status: open
     result: ["value"]
-  - id: union_with_numbers_in_decreasing_order
-    status: fail
-    result: [2, 5]
   - id: union_with_slice_and_number
     status: error
   - id: union_with_wildcard_and_number
