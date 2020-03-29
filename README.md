@@ -22,11 +22,12 @@ Done:
 - Cover as much implementations as possible [#10](https://github.com/cburgmer/json-path-comparison/issues/10)
 - Find and report issues in implementations
 - Make missing consensus visible
+- Go through (past) issues of implementations to find more corner cases to query for.
 
 Short term:
 
-- Go through (past) issues of implementations to find more corner cases to query for.
 - Guide implementations to tackle queries without consensus to create one
+  - Experiment: Come up with a concise interpretation, see [./proposal/PROPOSAL.md](./proposal/PROPOSAL.md).
   - Experiment: Report questionable responses to implementations where no consensus exists yet.
   - Experiment: Suggest solutions and try opening a discussion.
 
