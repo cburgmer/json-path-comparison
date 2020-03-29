@@ -12,3 +12,6 @@ fi
 
 cd "$script_dir"
 dotnet build -r "$runtime" -o "$target_dir"
+
+# Remove files clashing with other platform
+rm -r ./obj/
