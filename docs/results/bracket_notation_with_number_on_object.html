@@ -238,8 +238,10 @@ Clojure (json-path)
 Elixir (warpath)
 </h4>
 
-<pre><code>** (Warpath.UnsupportedOperationError) token={:index_access, 0}, path=[root: "$"]
-    lib/jsonpath.ex:9: Mix.Tasks.Execute.run/1
+<pre><code>** (Poison.EncodeError) unable to encode value: {"0", "value"}
+    lib/poison/encoder.ex:383: Poison.Encoder.Any.encode/2
+    lib/poison.ex:41: Poison.encode!/2
+    lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
 </code></pre>
 
 <h4 id="Golang_github.com-oliveagle-jsonpath">

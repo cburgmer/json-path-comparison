@@ -376,6 +376,21 @@ The following queries provide results that do not match those of other implement
   []
   ```
 
+- [ ] `$['key','another']`
+  Input:
+  ```
+  {"key": "value", "another": "entry"}
+  ```
+  Expected output:
+  ```
+  ["value", "entry"]
+  ```
+  Error:
+  ```
+  line 1:2 token recognition error at: '''
+  ValueError("line 1:2 token recognition error at: '''")
+  ```
+
 - [ ] `$[0]['c','d']`
   Input:
   ```
@@ -389,6 +404,21 @@ The following queries provide results that do not match those of other implement
   ```
   line 1:5 token recognition error at: '''
   ValueError("line 1:5 token recognition error at: '''")
+  ```
+
+- [ ] `$['missing','key']`
+  Input:
+  ```
+  {"key": "value", "another": "entry"}
+  ```
+  Expected output:
+  ```
+  ["value"]
+  ```
+  Error:
+  ```
+  line 1:2 token recognition error at: '''
+  ValueError("line 1:2 token recognition error at: '''")
   ```
 
 

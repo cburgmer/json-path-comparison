@@ -59,6 +59,20 @@ The following queries provide results that do not match those of other implement
   Unrecognized JSON Path element. Path up to error: '$.key'
   ```
 
+- [ ] `$['key','another']`
+  Input:
+  ```
+  {"key": "value", "another": "entry"}
+  ```
+  Expected output:
+  ```
+  ["value", "entry"]
+  ```
+  Error:
+  ```
+  Expected close bracket. Path up to error: '$'
+  ```
+
 - [ ] `$[0]['c','d']`
   Input:
   ```
@@ -71,6 +85,20 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   Expected close bracket. Path up to error: '$[0]'
+  ```
+
+- [ ] `$['missing','key']`
+  Input:
+  ```
+  {"key": "value", "another": "entry"}
+  ```
+  Expected output:
+  ```
+  ["value"]
+  ```
+  Error:
+  ```
+  Expected close bracket. Path up to error: '$'
   ```
 
 - [ ] `$[ 0 , 1 ]`

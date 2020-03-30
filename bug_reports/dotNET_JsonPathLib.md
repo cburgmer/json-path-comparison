@@ -17,6 +17,20 @@ The following queries provide results that do not match those of other implement
   ["more"]
   ```
 
+- [ ] `$["key"]`
+  Input:
+  ```
+  {"key": "value"}
+  ```
+  Expected output:
+  ```
+  ["value"]
+  ```
+  Actual output:
+  ```
+  []
+  ```
+
 - [ ] `$[-1]`
   Input:
   ```

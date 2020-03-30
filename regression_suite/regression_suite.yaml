@@ -122,6 +122,8 @@ queries:
   - id: bracket_notation_with_double_quotes
     selector: "$[\"key\"]"
     document: {"key": "value"}
+    consensus: ["value"]
+    scalar-consensus: "value"
   - id: bracket_notation_with_empty_path
     selector: "$[]"
     document: {"": 42, "''": 123, "\"\"": 222}
@@ -618,6 +620,7 @@ queries:
   - id: union_with_keys
     selector: "$['key','another']"
     document: {"key": "value", "another": "entry"}
+    consensus: ["value", "entry"]
   - id: union_with_keys_after_array_slice
     selector: "$[:]['c','d']"
     document: [{"c": "cc1", "d": "dd1", "e": "ee1"}, {"c": "cc2", "d": "dd2", "e": "ee2"}]
@@ -631,6 +634,7 @@ queries:
   - id: union_with_keys_on_object_without_key
     selector: "$['missing','key']"
     document: {"key": "value", "another": "entry"}
+    consensus: ["value"]
   - id: union_with_numbers_in_decreasing_order
     selector: "$[4,1]"
     document: [1, 2, 3, 4, 5]

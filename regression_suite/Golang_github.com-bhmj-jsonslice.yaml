@@ -20,9 +20,6 @@ queries:
     result: ["first", "second", "third"]
   - id: bracket_notation_on_object_without_key
     status: error
-  - id: bracket_notation_with_double_quotes
-    status: open
-    result: "value"
   - id: bracket_notation_with_empty_path
     status: error
   - id: bracket_notation_with_empty_string
@@ -214,18 +211,12 @@ queries:
     status: error
   - id: union_with_filter
     status: error
-  - id: union_with_keys
-    status: open
-    result: ["value", "entry"]
   - id: union_with_keys_after_array_slice
     status: open
     result: [["cc1", "dd1"], ["cc2", "dd2"]]
   - id: union_with_keys_after_dot_notation_with_wildcard
     status: open
     result: ["cc1", "dd1", "cc2", "dd2"]
-  - id: union_with_keys_on_object_without_key
-    status: open
-    result: ["value"]
   - id: union_with_numbers_in_decreasing_order
     status: fail
     result: [2, 5]

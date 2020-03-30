@@ -8,3 +8,5 @@ github.com/bhmj/jsonslice v0.0.0-20191215235309-da02ec77a406 h1:xJpgLW2DL+ZSGF+s
 github.com/bhmj/jsonslice v0.0.0-20191215235309-da02ec77a406/go.mod h1:blvNODZOz8uOvDJzGiXzoi8QlzcAhA57sMnKx1D18/k=
 github.com/bhmj/jsonslice v0.0.0-20191224143743-ee6d2730b10a h1:YFfKzXujgoTr4Z3yP2bpKomgahMOCWBlaijaNmPzS+A=
 github.com/bhmj/jsonslice v0.0.0-20191224143743-ee6d2730b10a/go.mod h1:blvNODZOz8uOvDJzGiXzoi8QlzcAhA57sMnKx1D18/k=
+github.com/bhmj/jsonslice v0.0.0-20200323023432-92c3edaad8e2 h1:11xwzvvHBTyUMCD7infJV2SXSaVyp9ZXK9QgfV6Jfss=
+github.com/bhmj/jsonslice v0.0.0-20200323023432-92c3edaad8e2/go.mod h1:blvNODZOz8uOvDJzGiXzoi8QlzcAhA57sMnKx1D18/k=

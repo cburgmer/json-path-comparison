@@ -17,6 +17,20 @@ The following queries provide results that do not match those of other implement
   ["first", "second"]
   ```
 
+- [ ] `$["key"]`
+  Input:
+  ```
+  {"key": "value"}
+  ```
+  Expected output:
+  ```
+  ["value"]
+  ```
+  Actual output:
+  ```
+  []
+  ```
+
 - [ ] `$[-1]`
   Input:
   ```
@@ -143,6 +157,20 @@ The following queries provide results that do not match those of other implement
   undefined
   ```
 
+- [ ] `$['key','another']`
+  Input:
+  ```
+  {"key": "value", "another": "entry"}
+  ```
+  Expected output:
+  ```
+  ["value", "entry"]
+  ```
+  Actual output:
+  ```
+  []
+  ```
+
 - [ ] `$[0]['c','d']`
   Input:
   ```
@@ -151,6 +179,20 @@ The following queries provide results that do not match those of other implement
   Expected output:
   ```
   ["cc1", "dd1"]
+  ```
+  Actual output:
+  ```
+  []
+  ```
+
+- [ ] `$['missing','key']`
+  Input:
+  ```
+  {"key": "value", "another": "entry"}
+  ```
+  Expected output:
+  ```
+  ["value"]
   ```
   Actual output:
   ```

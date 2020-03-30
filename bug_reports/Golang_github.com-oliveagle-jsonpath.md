@@ -255,6 +255,20 @@ The following queries provide results that do not match those of other implement
   strconv.Atoi: parsing "'two.some'": invalid syntax
   ```
 
+- [ ] `$["key"]`
+  Input:
+  ```
+  {"key": "value"}
+  ```
+  Expected output:
+  ```
+  "value"
+  ```
+  Error:
+  ```
+  strconv.Atoi: parsing "\"key\"": invalid syntax
+  ```
+
 - [ ] `$.*[1]`
   Input:
   ```
@@ -759,6 +773,20 @@ The following queries provide results that do not match those of other implement
   []
   ```
 
+- [ ] `$['key','another']`
+  Input:
+  ```
+  {"key": "value", "another": "entry"}
+  ```
+  Expected output:
+  ```
+  ["value", "entry"]
+  ```
+  Error:
+  ```
+  strconv.Atoi: parsing "'key'": invalid syntax
+  ```
+
 - [ ] `$[0]['c','d']`
   Input:
   ```
@@ -771,6 +799,20 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   strconv.Atoi: parsing "'c'": invalid syntax
+  ```
+
+- [ ] `$['missing','key']`
+  Input:
+  ```
+  {"key": "value", "another": "entry"}
+  ```
+  Expected output:
+  ```
+  ["value"]
+  ```
+  Error:
+  ```
+  strconv.Atoi: parsing "'missing'": invalid syntax
   ```
 
 

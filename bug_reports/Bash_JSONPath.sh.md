@@ -46,7 +46,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  grep: Invalid range end
+  ggrep: Invalid range end
   Expecting value: line 3 column 1 (char 2)
   
   
@@ -152,6 +152,20 @@ The following queries provide results that do not match those of other implement
   Actual output:
   ```
   {"two.some": "42"}
+  ```
+
+- [ ] `$["key"]`
+  Input:
+  ```
+  {"key": "value"}
+  ```
+  Expected output:
+  ```
+  ["value"]
+  ```
+  Actual output:
+  ```
+  {"key": "value"}
   ```
 
 - [ ] `$[-1]`
@@ -997,6 +1011,20 @@ The following queries provide results that do not match those of other implement
       [
   ```
 
+- [ ] `$['key','another']`
+  Input:
+  ```
+  {"key": "value", "another": "entry"}
+  ```
+  Expected output:
+  ```
+  ["value", "entry"]
+  ```
+  Actual output:
+  ```
+  {"another": "entry", "key": "value"}
+  ```
+
 - [ ] `$[0]['c','d']`
   Input:
   ```
@@ -1009,6 +1037,20 @@ The following queries provide results that do not match those of other implement
   Actual output:
   ```
   {"c": "cc1", "d": "dd1"}
+  ```
+
+- [ ] `$['missing','key']`
+  Input:
+  ```
+  {"key": "value", "another": "entry"}
+  ```
+  Expected output:
+  ```
+  ["value"]
+  ```
+  Actual output:
+  ```
+  {"key": "value"}
   ```
 
 - [ ] `$[4,1]`

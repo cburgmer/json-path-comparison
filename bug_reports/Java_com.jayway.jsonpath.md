@@ -165,6 +165,20 @@ The following queries provide results that do not match those of other implement
   	at query.App.main(App.java:25)
   ```
 
+- [ ] `$['key','another']`
+  Input:
+  ```
+  {"key": "value", "another": "entry"}
+  ```
+  Expected output:
+  ```
+  ["value", "entry"]
+  ```
+  Actual output:
+  ```
+  {"another": "entry", "key": "value"}
+  ```
+
 - [ ] `$[0]['c','d']`
   Input:
   ```
@@ -177,6 +191,20 @@ The following queries provide results that do not match those of other implement
   Actual output:
   ```
   {"c": "cc1", "d": "dd1"}
+  ```
+
+- [ ] `$['missing','key']`
+  Input:
+  ```
+  {"key": "value", "another": "entry"}
+  ```
+  Expected output:
+  ```
+  ["value"]
+  ```
+  Actual output:
+  ```
+  {"key": "value"}
   ```
 
 

@@ -88,6 +88,24 @@ The following queries provide results that do not match those of other implement
   
   ```
 
+- [ ] `$["key"]`
+  Input:
+  ```
+  {"key": "value"}
+  ```
+  Expected output:
+  ```
+  "value"
+  ```
+  Error:
+  ```
+  json-path-comparison: searchBeginningWithSlice: string
+  CallStack (from HasCallStack):
+    error, called at app/Main.hs:36:7 in main:Main
+  Invalid JSONPath: $["key"]
+   Error: searchBeginningWithSlice: string
+  ```
+
 - [ ] `$.*[1]`
   Input:
   ```
@@ -500,6 +518,24 @@ The following queries provide results that do not match those of other implement
    Error: searchBeginningWithSlice: not enough input
   ```
 
+- [ ] `$['key','another']`
+  Input:
+  ```
+  {"key": "value", "another": "entry"}
+  ```
+  Expected output:
+  ```
+  ["value", "entry"]
+  ```
+  Error:
+  ```
+  json-path-comparison: searchBeginningWithSlice: string
+  CallStack (from HasCallStack):
+    error, called at app/Main.hs:36:7 in main:Main
+  Invalid JSONPath: $['key','another']
+   Error: searchBeginningWithSlice: string
+  ```
+
 - [ ] `$[0]['c','d']`
   Input:
   ```
@@ -512,6 +548,24 @@ The following queries provide results that do not match those of other implement
   Actual output:
   ```
   {"c": "cc1", "d": "dd1", "e": "ee1"}
+  ```
+
+- [ ] `$['missing','key']`
+  Input:
+  ```
+  {"key": "value", "another": "entry"}
+  ```
+  Expected output:
+  ```
+  ["value"]
+  ```
+  Error:
+  ```
+  json-path-comparison: searchBeginningWithSlice: string
+  CallStack (from HasCallStack):
+    error, called at app/Main.hs:36:7 in main:Main
+  Invalid JSONPath: $['missing','key']
+   Error: searchBeginningWithSlice: string
   ```
 
 - [ ] `$[ 0 , 1 ]`

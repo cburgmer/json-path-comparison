@@ -283,7 +283,7 @@ queries:
   - id: union_with_filter
     status: error
   - id: union_with_keys
-    status: open
+    status: fail
     result: {"another": "entry", "key": "value"}
   - id: union_with_keys_after_array_slice
     status: error
@@ -294,7 +294,7 @@ queries:
     status: open
     result: null
   - id: union_with_keys_on_object_without_key
-    status: open
+    status: fail
     result: {"key": "value"}
   - id: union_with_slice_and_number
     status: open

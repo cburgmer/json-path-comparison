@@ -23,7 +23,7 @@ defmodule Jsonpath.MixProject do
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
-      {:jaxon, "~> 1.0.9"},
+      {:jaxon, ">= 1.0.9"},
       {:poison, "~> 3.1"}
     ]
   end

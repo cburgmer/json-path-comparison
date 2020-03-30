@@ -129,6 +129,20 @@ The following queries provide results that do not match those of other implement
   Unable to compile selector `$..[0]': Missing member name or wildcard after . character
   ```
 
+- [ ] `$["key"]`
+  Input:
+  ```
+  {"key": "value"}
+  ```
+  Expected output:
+  ```
+  ["value"]
+  ```
+  Error:
+  ```
+  Unable to compile selector `$["key"]': Invalid array index definition “"key"]”
+  ```
+
 - [ ] `$[-1]`
   Input:
   ```
@@ -423,6 +437,20 @@ The following queries provide results that do not match those of other implement
   Unable to compile selector `$[?(@.key<42)]': Invalid array index definition “?(@.key<42)]”
   ```
 
+- [ ] `$['key','another']`
+  Input:
+  ```
+  {"key": "value", "another": "entry"}
+  ```
+  Expected output:
+  ```
+  ["value", "entry"]
+  ```
+  Actual output:
+  ```
+  ["value"]
+  ```
+
 - [ ] `$[0]['c','d']`
   Input:
   ```
@@ -435,6 +463,20 @@ The following queries provide results that do not match those of other implement
   Actual output:
   ```
   ["cc1"]
+  ```
+
+- [ ] `$['missing','key']`
+  Input:
+  ```
+  {"key": "value", "another": "entry"}
+  ```
+  Expected output:
+  ```
+  ["value"]
+  ```
+  Actual output:
+  ```
+  []
   ```
 
 - [ ] `$[ 0 , 1 ]`

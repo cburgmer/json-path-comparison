@@ -151,7 +151,7 @@ Bash (JSONPath.sh)
 Elixir (warpath)
 </h4>
 
-<pre><code>** (Warpath.ExpressionError) Parser error: Invalid token on line 1, syntax error before: '-'
+<pre><code>** (Warpath.UnsupportedOperationError) You are trying to traverse a list using dot notation '$.-1', that it's not allowed for list type. You can use something like '$[*].-1' instead.
     lib/jsonpath.ex:9: Mix.Tasks.Execute.run/1
 </code></pre>
 

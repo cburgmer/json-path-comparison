@@ -17,6 +17,20 @@ The following queries provide results that do not match those of other implement
   ["first"]
   ```
 
+- [ ] `$["key"]`
+  Input:
+  ```
+  {"key": "value"}
+  ```
+  Expected output:
+  ```
+  ["value"]
+  ```
+  Error:
+  ```
+  Unexpected character while parsing path indexer: "
+  ```
+
 - [ ] `$[-1]`
   Input:
   ```

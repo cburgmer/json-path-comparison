@@ -220,7 +220,7 @@ Elixir (jaxon)
 Elixir (warpath)
 </h4>
 
-<pre><code>** (Warpath.ExpressionError) Parser error: Invalid token on line 1, syntax error before: '['
+<pre><code>** (Warpath.UnsupportedOperationError) You are try to access index '[1]' on '%{"1" =&gt; ["a", "b"], "2" =&gt; ["x", "y"]}' that is not support for this data type.
     lib/jsonpath.ex:9: Mix.Tasks.Execute.run/1
 </code></pre>
 

@@ -43,7 +43,7 @@ queries:
     status: fail
     result: {"two.some": "42"}
   - id: bracket_notation_with_double_quotes
-    status: open
+    status: fail
     result: {"key": "value"}
   - id: bracket_notation_with_empty_path
     status: error
@@ -334,7 +334,7 @@ queries:
   - id: union_with_filter
     status: error
   - id: union_with_keys
-    status: open
+    status: fail
     result: {"another": "entry", "key": "value"}
   - id: union_with_keys_after_array_slice
     status: open
@@ -346,7 +346,7 @@ queries:
     status: open
     result: [{"c": "cc1", "d": "dd1"}, {"c": "cc2", "d": "dd2"}]
   - id: union_with_keys_on_object_without_key
-    status: open
+    status: fail
     result: {"key": "value"}
   - id: union_with_numbers_in_decreasing_order
     status: fail
