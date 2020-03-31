@@ -585,8 +585,11 @@ queries:
     document: {"key": 1, "some": 2, "more": 3}
   - id: recursive_descent
     selector: "$.."
-    document: [{"a": {"b": "c"}}]
+    document: [{"a": {"b": "c"}}, [0, 1]]
     ordered: false
+  - id: recursive_descent_after_dot_notation
+    selector: "$.key.."
+    document: {"some key": "value", "key": {"complex": "string", "primitives": [0, 1]}}
   - id: root
     selector: "$"
     document: {"key": "value", "another key": {"complex": ["a", 1]}}

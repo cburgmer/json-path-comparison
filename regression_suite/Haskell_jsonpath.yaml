@@ -214,6 +214,9 @@ queries:
     status: error
   - id: recursive_descent
     status: error
+  - id: recursive_descent_after_dot_notation
+    status: open
+    result: {"complex": "string", "primitives": [0, 1]}
   - id: root
     status: error
   - id: root_on_scalar

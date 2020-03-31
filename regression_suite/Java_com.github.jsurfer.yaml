@@ -206,6 +206,8 @@ queries:
     status: error
   - id: recursive_descent
     status: error
+  - id: recursive_descent_after_dot_notation
+    status: error
   - id: root_on_scalar
     status: fail
     result: []

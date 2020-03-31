@@ -278,7 +278,10 @@ queries:
     result: []
   - id: recursive_descent
     status: open
-    result: [[{"a": {"b": "c"}}]]
+    result: [[{"a": {"b": "c"}}, [0, 1]]]
+  - id: recursive_descent_after_dot_notation
+    status: open
+    result: [{"complex": "string", "primitives": [0, 1]}]
   - id: script_expression
     status: error
   - id: union

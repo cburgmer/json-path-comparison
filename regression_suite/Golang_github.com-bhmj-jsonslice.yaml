@@ -207,6 +207,8 @@ queries:
     status: error
   - id: recursive_descent
     status: error
+  - id: recursive_descent_after_dot_notation
+    status: error
   - id: script_expression
     status: error
   - id: union_with_filter
