@@ -27,12 +27,9 @@ queries:
     result: []
   - id: bracket_notation_with_empty_path
     status: error
-  - id: bracket_notation_with_empty_string
-    status: open
-    result: []
   - id: bracket_notation_with_empty_string_doubled_quoted
     status: open
-    result: []
+    result: [42]
   - id: bracket_notation_with_number_-1_on_empty_array
     status: open
     result: []
@@ -222,9 +219,6 @@ queries:
   - id: union_with_slice_and_number
     status: open
     result: [2, 3, 5]
-  - id: union_with_spaces
-    status: fail
-    result: []
   - id: union_with_wildcard_and_number
     status: open
     result: ["first", "second", "third", "forth", "fifth"]

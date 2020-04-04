@@ -73,6 +73,20 @@ The following queries provide results that do not match those of other implement
   jsonpath returned false, this might indicate an error
   ```
 
+- [ ] `$['']`
+  Input:
+  ```
+  {"": 42, "''": 123, "\"\"": 222}
+  ```
+  Expected output:
+  ```
+  [42]
+  ```
+  Actual output:
+  ```
+  [{"": 42, "\"\"": 222, "''": 123}]
+  ```
+
 - [ ] `$[-1]`
   Input:
   ```

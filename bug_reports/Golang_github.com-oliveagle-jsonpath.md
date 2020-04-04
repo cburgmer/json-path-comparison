@@ -269,6 +269,20 @@ The following queries provide results that do not match those of other implement
   strconv.Atoi: parsing "\"key\"": invalid syntax
   ```
 
+- [ ] `$['']`
+  Input:
+  ```
+  {"": 42, "''": 123, "\"\"": 222}
+  ```
+  Expected output:
+  ```
+  42
+  ```
+  Error:
+  ```
+  strconv.Atoi: parsing "''": invalid syntax
+  ```
+
 - [ ] `$.*[1]`
   Input:
   ```

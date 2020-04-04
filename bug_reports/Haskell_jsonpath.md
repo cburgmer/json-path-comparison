@@ -106,6 +106,24 @@ The following queries provide results that do not match those of other implement
    Error: searchBeginningWithSlice: string
   ```
 
+- [ ] `$['']`
+  Input:
+  ```
+  {"": 42, "''": 123, "\"\"": 222}
+  ```
+  Expected output:
+  ```
+  42
+  ```
+  Error:
+  ```
+  json-path-comparison: searchBeginningWithSlice: string
+  CallStack (from HasCallStack):
+    error, called at app/Main.hs:36:7 in main:Main
+  Invalid JSONPath: $['']
+   Error: searchBeginningWithSlice: string
+  ```
+
 - [ ] `$.*[1]`
   Input:
   ```

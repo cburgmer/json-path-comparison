@@ -115,6 +115,20 @@ The following queries provide results that do not match those of other implement
   Unexpected char, char=", index=2
   ```
 
+- [ ] `$['']`
+  Input:
+  ```
+  {"": 42, "''": 123, "\"\"": 222}
+  ```
+  Expected output:
+  ```
+  42
+  ```
+  Error:
+  ```
+  Key is empty string
+  ```
+
 - [ ] `$.*[1]`
   Input:
   ```

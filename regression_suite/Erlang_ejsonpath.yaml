@@ -30,9 +30,6 @@ queries:
     result: []
   - id: bracket_notation_with_empty_path
     status: error
-  - id: bracket_notation_with_empty_string
-    status: open
-    result: [42]
   - id: bracket_notation_with_empty_string_doubled_quoted
     status: open
     result: [42]

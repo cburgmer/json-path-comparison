@@ -130,6 +130,8 @@ queries:
   - id: bracket_notation_with_empty_string
     selector: "$['']"
     document: {"": 42, "''": 123, "\"\"": 222}
+    consensus: [42]
+    scalar-consensus: 42
   - id: bracket_notation_with_empty_string_doubled_quoted
     selector: "$[\"\"]"
     document: {"": 42, "''": 123, "\"\"": 222}

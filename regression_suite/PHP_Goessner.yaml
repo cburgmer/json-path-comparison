@@ -33,7 +33,7 @@ queries:
     status: open
     result: [{"": 42, "\"\"": 222, "''": 123}]
   - id: bracket_notation_with_empty_string
-    status: open
+    status: fail
     result: [{"": 42, "\"\"": 222, "''": 123}]
   - id: bracket_notation_with_empty_string_doubled_quoted
     status: open

@@ -47,9 +47,6 @@ queries:
   - id: bracket_notation_with_empty_path
     status: open
     result: []
-  - id: bracket_notation_with_empty_string
-    status: open
-    result: [42]
   - id: bracket_notation_with_empty_string_doubled_quoted
     status: error
   - id: bracket_notation_with_number_-1

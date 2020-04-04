@@ -339,6 +339,20 @@ The following queries provide results that do not match those of other implement
   java.lang.Exception object must be an array.
   ```
 
+- [ ] `$['']`
+  Input:
+  ```
+  {"": 42, "''": 123, "\"\"": 222}
+  ```
+  Expected output:
+  ```
+  42
+  ```
+  Error:
+  ```
+  java.lang.Exception object must be an array.
+  ```
+
 - [ ] `$.*[1]`
   Input:
   ```

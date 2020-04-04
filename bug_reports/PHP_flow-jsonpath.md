@@ -115,6 +115,20 @@ The following queries provide results that do not match those of other implement
   ["second", "third", "forth"]
   ```
 
+- [ ] `$['']`
+  Input:
+  ```
+  {"": 42, "''": 123, "\"\"": 222}
+  ```
+  Expected output:
+  ```
+  [42]
+  ```
+  Error:
+  ```
+  Error: 'Unable to parse token '' in expression: ['']'
+  ```
+
 - [ ] `$[']']`
   Input:
   ```
