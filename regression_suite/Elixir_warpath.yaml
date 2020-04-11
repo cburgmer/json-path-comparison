@@ -78,6 +78,8 @@ queries:
     result: ["russian dolls", "something", "top", "value", {"key": "russian dolls"}]
   - id: dot_notation_with_empty_path
     status: error
+  - id: dot_notation_with_key_named_in
+    status: error
   - id: dot_notation_with_number
     status: error
   - id: dot_notation_with_number_-1

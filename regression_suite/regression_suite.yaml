@@ -370,6 +370,11 @@ queries:
   - id: dot_notation_with_empty_path
     selector: "$."
     document: {"key": 42}
+  - id: dot_notation_with_key_named_in
+    selector: "$.in"
+    document: {"in": "value"}
+    consensus: ["value"]
+    scalar-consensus: "value"
   - id: dot_notation_with_key_named_null
     selector: "$.null"
     document: {"null": "value"}

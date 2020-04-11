@@ -729,6 +729,20 @@ The following queries provide results that do not match those of other implement
   {"key-dash": "value"}
   ```
 
+- [ ] `$.in`
+  Input:
+  ```
+  {"in": "value"}
+  ```
+  Expected output:
+  ```
+  ["value"]
+  ```
+  Actual output:
+  ```
+  {"in": "value"}
+  ```
+
 - [ ] `$.null`
   Input:
   ```

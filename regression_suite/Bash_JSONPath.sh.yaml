@@ -181,6 +181,9 @@ queries:
     result: {"key": "top", "object": {"array": [{"key": "something"}, {"key": {"key": "russian dolls"}}], "key": "value"}}
   - id: dot_notation_with_empty_path
     status: error
+  - id: dot_notation_with_key_named_in
+    status: fail
+    result: {"in": "value"}
   - id: dot_notation_with_key_named_null
     status: fail
     result: {"null": "value"}
