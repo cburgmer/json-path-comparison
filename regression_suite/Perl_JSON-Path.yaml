@@ -112,6 +112,8 @@ queries:
   - id: dot_notation_with_empty_path
     status: open
     result: [""]
+  - id: dot_notation_with_key_root_literal
+    status: error
   - id: dot_notation_with_non_ASCII_key
     status: fail
     result: []

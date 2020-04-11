@@ -114,6 +114,8 @@ queries:
   - id: dot_notation_with_empty_path
     status: open
     result: [{"key": 42}]
+  - id: dot_notation_with_key_root_literal
+    status: error
   - id: dot_notation_with_non_ASCII_key
     status: error
   - id: dot_notation_with_number

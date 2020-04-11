@@ -178,6 +178,9 @@ queries:
   - id: dot_notation_with_empty_path
     status: open
     result: {"key": 42}
+  - id: dot_notation_with_key_root_literal
+    status: open
+    result: {"$": "value"}
   - id: dot_notation_with_non_ASCII_key
     status: fail
     result: {"\u5c6c\u6027": "value"}

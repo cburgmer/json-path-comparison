@@ -86,6 +86,9 @@ queries:
     result: []
   - id: dot_notation_with_empty_path
     status: error
+  - id: dot_notation_with_key_root_literal
+    status: open
+    result: ["value"]
   - id: dot_notation_with_number
     status: open
     result: []
