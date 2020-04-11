@@ -273,6 +273,21 @@ The following queries provide results that do not match those of other implement
   ValueError("line 1:2 mismatched input 'null' expecting {'*', ID}")
   ```
 
+- [ ] `$.true`
+  Input:
+  ```
+  {"true": "value"}
+  ```
+  Expected output:
+  ```
+  ["value"]
+  ```
+  Error:
+  ```
+  line 1:2 mismatched input 'true' expecting {'*', ID}
+  ValueError("line 1:2 mismatched input 'true' expecting {'*', ID}")
+  ```
+
 - [ ] `$.屬性`
   Input:
   ```

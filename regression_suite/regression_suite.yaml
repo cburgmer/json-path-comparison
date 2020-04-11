@@ -380,6 +380,11 @@ queries:
     document: {"null": "value"}
     consensus: ["value"]
     scalar-consensus: "value"
+  - id: dot_notation_with_key_named_true
+    selector: "$.true"
+    document: {"true": "value"}
+    consensus: ["value"]
+    scalar-consensus: "value"
   - id: dot_notation_with_non_ASCII_key
     selector: "$.屬性"
     document: {"\u5c6c\u6027": "value"}

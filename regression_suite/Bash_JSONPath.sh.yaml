@@ -187,6 +187,9 @@ queries:
   - id: dot_notation_with_key_named_null
     status: fail
     result: {"null": "value"}
+  - id: dot_notation_with_key_named_true
+    status: fail
+    result: {"true": "value"}
   - id: dot_notation_with_non_ASCII_key
     status: error
   - id: dot_notation_with_number

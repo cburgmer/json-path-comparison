@@ -757,6 +757,20 @@ The following queries provide results that do not match those of other implement
   {"null": "value"}
   ```
 
+- [ ] `$.true`
+  Input:
+  ```
+  {"true": "value"}
+  ```
+  Expected output:
+  ```
+  ["value"]
+  ```
+  Actual output:
+  ```
+  {"true": "value"}
+  ```
+
 - [ ] `$.屬性`
   Input:
   ```
