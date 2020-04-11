@@ -33,6 +33,9 @@ check_dependencies() {
         fi
     done
 
+    if ! pkg-config --cflags "$dep" > /dev/null; then
+        export PKG_CONFIG_PATH="/usr/local/opt/zlib/lib/pkgconfig"
+    fi
     for dep in glib-2.0 json-glib-1.0 gio-unix-2.0; do
         if ! pkg-config --cflags "$dep" > /dev/null; then
             exit 1
