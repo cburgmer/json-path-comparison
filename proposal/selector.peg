@@ -12,9 +12,8 @@ operator
 dotNotation
   = "." children:identifier { return children; }
 
-// TODO Unicode
 identifier
-  = [a-zA-Z0-9_\-]+ { return [['children', [['name', text()]]]]; }
+  = [^\.\*\[\]@\?\|& ,:=<>"'\\]+ { return [['children', [['name', text()]]]]; }
   / "*" { return [['children', [['all']]]]; }
 
 union
