@@ -14,7 +14,7 @@ dotNotation
 
 // TODO Unicode
 identifier
-  = chars:[a-zA-Z0-9_\-]+ { return [['children', [['index', chars.join("")]]]]; }
+  = chars:[a-zA-Z0-9_\-]+ { return [['children', [['name', chars.join("")]]]]; }
   / "*" { return [['children', [['all']]]]; }
 
 union
@@ -25,12 +25,12 @@ bracketElements
   / x:bracketElement { return [x]; }
 
 bracketElement
-  = "'" element:singleQuotedString "'" { return ['index', element]; }
-  / '"' element:doubleQuotedString '"' { return ['index', element]; }
+  = "'" element:singleQuotedString "'" { return ['name', element]; }
+  / '"' element:doubleQuotedString '"' { return ['name', element]; }
   / "*" { return ['all']; }
   / start:number? ":" end:number? ":" step:nonZeroNumber? { return ['slice', start, end, step]; }
   / start:number? ":" end:number? { return ['slice', start, end, null]; }
-  / element:number { return ['index', element]; }
+  / element:number { return ['index', parseInt(element, 10)]; }
   / "?(" filterExpression:filterExpression ")" { return ['filter', filterExpression]; }
 
 singleQuotedString
@@ -65,7 +65,7 @@ jsonValue
   = "null" { return null; }
   / "true" { return true; }
   / "false" { return false; }
-  / number:number { return parseInt(number); }
+  / number:number { return parseInt(number, 10); }
   / "'" string:singleQuotedString "'" { return string; }
   / '"' string:doubleQuotedString '"' { return string; }
 

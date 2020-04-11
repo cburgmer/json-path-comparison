@@ -7,17 +7,19 @@ const realIndex = (sliceIndex, length) => {
   return sliceIndex;
 };
 
-const childrenIndexOperator = (value, [child]) => {
+const childrenIndexOperator = (value, [index]) => {
   if (isArray(value)) {
-    const index = parseInt(child, 10);
     const realIdx = realIndex(index, value.length);
     if (realIdx >= 0 && realIdx < value.length) {
       return [value[realIdx]];
     }
-  } else if (isObject(value)) {
-    if (value[child] !== undefined) {
-      return [value[child]];
-    }
+  }
+  return [];
+};
+
+const childrenNameOperator = (value, [child]) => {
+  if (isObject(value) && value[child] !== undefined) {
+    return [value[child]];
   }
   return [];
 };
@@ -93,6 +95,8 @@ const childrenOperator = (value, children) => {
   return children.flatMap(([subOperator, ...parameters]) => {
     if (subOperator === "index") {
       return childrenIndexOperator(value, parameters);
+    } else if (subOperator === "name") {
+      return childrenNameOperator(value, parameters);
     } else if (subOperator === "all") {
       return childrenAllOperator(value);
     } else if (subOperator === "slice") {
