@@ -85,26 +85,33 @@ const filterOperators = {
 const childrenFilterOperator = (value, [[filterOperator, ...argOperators]]) => {
   const operator = filterOperators[filterOperator];
 
+  if (!operator) {
+    throw new Error("Internal error, unknown operator");
+  }
+
   return allChildren(value).filter((v) => {
     const arguments = argOperators.map((argOp) => execute(v, argOp));
     return operator(...arguments);
   });
 };
 
+const childrenSubOperators = {
+  index: childrenIndexOperator,
+  name: childrenNameOperator,
+  all: childrenAllOperator,
+  slice: childrenSliceOperator,
+  filter: childrenFilterOperator,
+};
+
 const childrenOperator = (value, children) => {
-  return children.flatMap(([subOperator, ...parameters]) => {
-    if (subOperator === "index") {
-      return childrenIndexOperator(value, parameters);
-    } else if (subOperator === "name") {
-      return childrenNameOperator(value, parameters);
-    } else if (subOperator === "all") {
-      return childrenAllOperator(value);
-    } else if (subOperator === "slice") {
-      return childrenSliceOperator(value, parameters);
-    } else if (subOperator === "filter") {
-      return childrenFilterOperator(value, parameters);
+  return children.flatMap(([subOperatorName, ...parameters]) => {
+    const subOperator = childrenSubOperators[subOperatorName];
+
+    if (!subOperator) {
+      throw new Error("Internal error, unknown operator");
     }
-    throw new Error("Internal error, unknown operator");
+
+    return subOperator(value, parameters);
   });
 };
 
