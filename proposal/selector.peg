@@ -14,7 +14,7 @@ dotNotation
 
 // TODO Unicode
 identifier
-  = chars:[a-zA-Z0-9_\-]+ { return [['children', [['name', chars.join("")]]]]; }
+  = [a-zA-Z0-9_\-]+ { return [['children', [['name', text()]]]]; }
   / "*" { return [['children', [['all']]]]; }
 
 union
@@ -25,12 +25,12 @@ bracketElements
   / x:bracketElement { return [x]; }
 
 bracketElement
-  = "'" element:singleQuotedString "'" { return ['name', element]; }
-  / '"' element:doubleQuotedString '"' { return ['name', element]; }
+  = "'" name:singleQuotedString "'" { return ['name', name]; }
+  / '"' name:doubleQuotedString '"' { return ['name', name]; }
   / "*" { return ['all']; }
   / start:number? ":" end:number? ":" step:nonZeroNumber? { return ['slice', start, end, step]; }
   / start:number? ":" end:number? { return ['slice', start, end, null]; }
-  / element:number { return ['index', element]; }
+  / index:number { return ['index', index]; }
   / "?(" filterExpression:filterExpression ")" { return ['filter', filterExpression]; }
 
 singleQuotedString
