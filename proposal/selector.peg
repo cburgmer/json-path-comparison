@@ -30,7 +30,7 @@ bracketElement
   / "*" { return ['all']; }
   / start:number? ":" end:number? ":" step:nonZeroNumber? { return ['slice', start, end, step]; }
   / start:number? ":" end:number? { return ['slice', start, end, null]; }
-  / element:number { return ['index', parseInt(element, 10)]; }
+  / element:number { return ['index', element]; }
   / "?(" filterExpression:filterExpression ")" { return ['filter', filterExpression]; }
 
 singleQuotedString
@@ -44,12 +44,12 @@ doubleQuotedString
   / ''
 
 number
-  = "-"? absoluteNumber { return text(); }
+  = "-"? absoluteNumberText { return parseInt(text(), 10); }
 
 nonZeroNumber
-  = "-"? [1-9] absoluteNumber? { return text(); }
+  = "-"? [1-9] absoluteNumberText? { return parseInt(text(), 10); }
 
-absoluteNumber
+absoluteNumberText
   = [0-9]+ { return text(); }
 
 filterExpression
@@ -65,7 +65,7 @@ jsonValue
   = "null" { return null; }
   / "true" { return true; }
   / "false" { return false; }
-  / number:number { return parseInt(number, 10); }
+  / number:number { return number; }
   / "'" string:singleQuotedString "'" { return string; }
   / '"' string:doubleQuotedString '"' { return string; }
 

@@ -42,7 +42,7 @@ const sliceValueOrDefault = (sliceValue, defaultValue) => {
   if (sliceValue === null) {
     return defaultValue;
   }
-  return parseInt(sliceValue, 10);
+  return sliceValue;
 };
 
 const range = (start, end, step) => {
