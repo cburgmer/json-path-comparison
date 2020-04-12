@@ -546,11 +546,10 @@ queries:
     document: {"value": 42, "items": [{"key": 10}, {"key": 42}, {"key": 50}]}
   - id: filter_expression_with_greater_than
     selector: "$[?(@.key>42)]"
-    document: [{"key": 0}, {"key": 42}, {"key": -1}, {"key": 41}, {"key": 43}, {"key": 42.0001}, {"key": 41.9999}, {"key": 100}]
-    consensus: [{"key": 43}, {"key": 42.0001}, {"key": 100}]
+    document: [{"key": 0}, {"key": 42}, {"key": -1}, {"key": 41}, {"key": 43}, {"key": 42.0001}, {"key": 41.9999}, {"key": 100}, {"key": "43"}, {"key": "42"}, {"key": "41"}, {"some": "value"}]
   - id: filter_expression_with_greater_than_or_equal
     selector: "$[?(@.key>=42)]"
-    document: [{"key": 0}, {"key": 42}, {"key": -1}, {"key": 41}, {"key": 43}, {"key": 42.0001}, {"key": 41.9999}, {"key": 100}, {"some": "value"}]
+    document: [{"key": 0}, {"key": 42}, {"key": -1}, {"key": 41}, {"key": 43}, {"key": 42.0001}, {"key": 41.9999}, {"key": 100}, {"key": "43"}, {"key": "42"}, {"key": "41"}, {"some": "value"}]
   - id: filter_expression_with_in_array_of_values
     selector: "$[?(@.d in [2, 3])]"
     document: [{"d": 1}, {"d": 2}, {"d": 1}, {"d": 3}, {"d": 4}]
@@ -559,14 +558,13 @@ queries:
     document: [{"d": [1, 2, 3]}, {"d": [2]}, {"d": [1]}, {"d": [3, 4]}, {"d": [4, 2]}]
   - id: filter_expression_with_less_than
     selector: "$[?(@.key<42)]"
-    document: [{"key": 0}, {"key": 42}, {"key": -1}, {"key": 41}, {"key": 43}, {"key": 42.0001}, {"key": 41.9999}, {"key": 100}, {"some": "value"}]
-    consensus: [{"key": 0}, {"key": -1}, {"key": 41}, {"key": 41.9999}]
+    document: [{"key": 0}, {"key": 42}, {"key": -1}, {"key": 41}, {"key": 43}, {"key": 42.0001}, {"key": 41.9999}, {"key": 100}, {"key": "43"}, {"key": "42"}, {"key": "41"}, {"some": "value"}]
   - id: filter_expression_with_less_than_number_on_string_value
     selector: "$[?(@.key<42)]"
     document: [{"key": 0}, {"key": "value"}]
   - id: filter_expression_with_less_than_or_equal
     selector: "$[?(@.key<=42)]"
-    document: [{"key": 0}, {"key": 42}, {"key": -1}, {"key": 41}, {"key": 43}, {"key": 42.0001}, {"key": 41.9999}, {"key": 100}, {"some": "value"}]
+    document: [{"key": 0}, {"key": 42}, {"key": -1}, {"key": 41}, {"key": 43}, {"key": 42.0001}, {"key": 41.9999}, {"key": 100}, {"key": "43"}, {"key": "42"}, {"key": "41"}, {"some": "value"}]
   - id: filter_expression_with_negation_and_equals
     selector: "$[?(!(@.key==42))]"
     document: [{"key": 0}, {"key": 42}, {"key": -1}, {"key": 41}, {"key": 43}, {"key": 42.0001}, {"key": 41.9999}, {"key": 100}, {"some": "value"}]

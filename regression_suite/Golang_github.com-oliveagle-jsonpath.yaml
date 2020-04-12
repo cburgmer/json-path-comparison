@@ -259,7 +259,7 @@ queries:
     status: open
     result: []
   - id: filter_expression_with_greater_than
-    status: fail
+    status: open
     result: []
   - id: filter_expression_with_greater_than_or_equal
     status: open
@@ -270,7 +270,7 @@ queries:
     status: open
     result: []
   - id: filter_expression_with_less_than
-    status: fail
+    status: open
     result: []
   - id: filter_expression_with_less_than_number_on_string_value
     status: open

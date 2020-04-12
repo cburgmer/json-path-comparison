@@ -279,6 +279,8 @@ queries:
   - id: filter_expression_with_equals_with_root_reference
     status: open
     result: [{"key": 42}]
+  - id: filter_expression_with_greater_than
+    status: error
   - id: filter_expression_with_greater_than_or_equal
     status: error
   - id: filter_expression_with_in_array_of_values

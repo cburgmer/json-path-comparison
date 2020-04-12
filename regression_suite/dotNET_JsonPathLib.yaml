@@ -193,9 +193,12 @@ queries:
     result: [{"key": "value"}]
   - id: filter_expression_with_equals_with_root_reference
     status: error
+  - id: filter_expression_with_greater_than
+    status: open
+    result: [{"key": 43}, {"key": 42.0001}, {"key": 100}, {"key": "43"}]
   - id: filter_expression_with_greater_than_or_equal
     status: open
-    result: [{"key": 42}, {"key": 43}, {"key": 42.0001}, {"key": 100}]
+    result: [{"key": 42}, {"key": 43}, {"key": 42.0001}, {"key": 100}, {"key": "43"}, {"key": "42"}]
   - id: filter_expression_with_in_array_of_values
     status: open
     result: [{"d": 1}, {"d": 1}]
@@ -203,14 +206,14 @@ queries:
     status: open
     result: [{"d": [1, 2, 3]}, {"d": [2]}, {"d": [1]}, {"d": [3, 4]}, {"d": [4, 2]}]
   - id: filter_expression_with_less_than
-    status: fail
-    result: [{"key": 0}, {"key": -1}, {"key": 41}, {"key": 41.9999}, {"some": "value"}]
+    status: open
+    result: [{"key": 0}, {"key": -1}, {"key": 41}, {"key": 41.9999}, {"key": "41"}, {"some": "value"}]
   - id: filter_expression_with_less_than_number_on_string_value
     status: open
     result: [{"key": 0}]
   - id: filter_expression_with_less_than_or_equal
     status: open
-    result: [{"key": 0}, {"key": 42}, {"key": -1}, {"key": 41}, {"key": 41.9999}, {"some": "value"}]
+    result: [{"key": 0}, {"key": 42}, {"key": -1}, {"key": 41}, {"key": 41.9999}, {"key": "42"}, {"key": "41"}, {"some": "value"}]
   - id: filter_expression_with_negation_and_equals
     status: open
     result: [{"key": 0}, {"key": -1}, {"key": 41}, {"key": 43}, {"key": 42.0001}, {"key": 41.9999}, {"key": 100}, {"some": "value"}]

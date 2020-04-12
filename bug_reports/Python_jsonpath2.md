@@ -378,34 +378,6 @@ The following queries provide results that do not match those of other implement
   ValueError("line 1:10 extraneous input '=' expecting {'@', '$', 'true', 'false', 'null', '{', '[', STRING, NUMBER}")
   ```
 
-- [ ] `$[?(@.key>42)]`
-  Input:
-  ```
-  [{"key": 0}, {"key": 42}, {"key": -1}, {"key": 41}, {"key": 43}, {"key": 42.0001}, {"key": 41.9999}, {"key": 100}]
-  ```
-  Expected output:
-  ```
-  [{"key": 43}, {"key": 42.0001}, {"key": 100}]
-  ```
-  Actual output:
-  ```
-  []
-  ```
-
-- [ ] `$[?(@.key<42)]`
-  Input:
-  ```
-  [{"key": 0}, {"key": 42}, {"key": -1}, {"key": 41}, {"key": 43}, {"key": 42.0001}, {"key": 41.9999}, {"key": 100}, {"some": "value"}]
-  ```
-  Expected output:
-  ```
-  [{"key": 0}, {"key": -1}, {"key": 41}, {"key": 41.9999}]
-  ```
-  Actual output:
-  ```
-  []
-  ```
-
 - [ ] `$['key','another']`
   Input:
   ```

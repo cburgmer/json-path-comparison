@@ -15,6 +15,9 @@
     {"key": 42.0001},
     {"key": 41.9999},
     {"key": 100},
+    {"key": "43"},
+    {"key": "42"},
+    {"key": "41"},
     {"some": "value"}
 ]
 </code></pre>
@@ -42,6 +45,15 @@ Bash (JSONPath.sh)
   },
   {
     "key": 41.9999
+  },
+  {
+    "key": "43"
+  },
+  {
+    "key": "42"
+  },
+  {
+    "key": "41"
   }
 ]
 </code></pre>
@@ -89,29 +101,6 @@ Elixir (warpath)
 ]
 </code></pre>
 
-<h4 id="Golang_github.com-bhmj-jsonslice">
-Golang (github.com-bhmj-jsonslice)
-</h4>
-
-<pre><code>[
-  {
-    "key": 0
-  },
-  {
-    "key": 42
-  },
-  {
-    "key": -1
-  },
-  {
-    "key": 41
-  },
-  {
-    "key": 41.9999
-  }
-]
-</code></pre>
-
 <h4 id="Golang_github.com-oliveagle-jsonpath">
 Golang (github.com-oliveagle-jsonpath)
 </h4>
@@ -138,6 +127,12 @@ JavaScript (Goessner)
   },
   {
     "key": 41.9999
+  },
+  {
+    "key": "42"
+  },
+  {
+    "key": "41"
   }
 ]
 </code></pre>
@@ -161,6 +156,12 @@ JavaScript (jsonpath)
   },
   {
     "key": 41.9999
+  },
+  {
+    "key": "42"
+  },
+  {
+    "key": "41"
   }
 ]
 </code></pre>
@@ -184,20 +185,12 @@ JavaScript (jsonpath-plus)
   },
   {
     "key": 41.9999
-  }
-]
-</code></pre>
-
-<h4 id="Java_com.github.jsurfer">
-Java (com.github.jsurfer)
-</h4>
-
-<pre><code>[
-  {
-    "key": 0
   },
   {
-    "key": -1
+    "key": "42"
+  },
+  {
+    "key": "41"
   }
 ]
 </code></pre>
@@ -232,6 +225,15 @@ PHP (flow-jsonpath)
 <pre><code>[
   {
     "key": -1
+  },
+  {
+    "key": "43"
+  },
+  {
+    "key": "42"
+  },
+  {
+    "key": "41"
   }
 ]
 </code></pre>
@@ -255,6 +257,12 @@ PHP (galbar-jsonpath)
   },
   {
     "key": 41.9999
+  },
+  {
+    "key": "42"
+  },
+  {
+    "key": "41"
   },
   {
     "some": "value"
@@ -281,6 +289,15 @@ PHP (remorhaz-jsonpath)
   },
   {
     "key": 41.9999
+  },
+  {
+    "key": "43"
+  },
+  {
+    "key": "42"
+  },
+  {
+    "key": "41"
   }
 ]
 </code></pre>
@@ -334,6 +351,12 @@ Ruby (jsonpath)
   },
   {
     "key": 41.9999
+  },
+  {
+    "key": "42"
+  },
+  {
+    "key": "41"
   }
 ]
 </code></pre>
@@ -403,6 +426,12 @@ dotNET (Json.NET)
   },
   {
     "key": 41.9999
+  },
+  {
+    "key": "42"
+  },
+  {
+    "key": "41"
   }
 ]
 </code></pre>
@@ -426,6 +455,12 @@ dotNET (JsonPathLib)
   },
   {
     "key": 41.9999
+  },
+  {
+    "key": "42"
+  },
+  {
+    "key": "41"
   },
   {
     "some": "value"
@@ -469,7 +504,7 @@ C (json-glib)
 Clojure (json-path)
 </h4>
 
-<pre><code>java.lang.NullPointerException nil
+<pre><code>java.lang.ClassCastException class java.lang.String cannot be cast to class java.lang.Number (java.lang.String and java.lang.Number are in module java.base of loader 'bootstrap')
 </code></pre>
 
 <h4 id="Elixir_jaxon">
@@ -498,6 +533,13 @@ Golang (github.com-PaesslerAG-jsonpath)
 <pre><code>parsing error: $[?(@.key&lt;=42)]   - 1:12 unknown operator &lt;=
 </code></pre>
 
+<h4 id="Golang_github.com-bhmj-jsonslice">
+Golang (github.com-bhmj-jsonslice)
+</h4>
+
+<pre><code>operand types do not match
+</code></pre>
+
 <h4 id="Haskell_jsonpath">
 Haskell (jsonpath)
 </h4>
@@ -507,6 +549,35 @@ CallStack (from HasCallStack):
   error, called at app/Main.hs:36:7 in main:Main
 Invalid JSONPath: $[?(@.key&lt;=42)]
  Error: searchBeginningWithSlice: string
+</code></pre>
+
+<h4 id="Java_com.github.jsurfer">
+Java (com.github.jsurfer)
+</h4>
+
+<pre><code>line 1:10 token recognition error at: '=4'
+Exception in thread "main" org.jsfr.json.exception.JsonSurfingException: Parser is stopped
+    at org.jsfr.json.DefaultErrorHandlingStrategy.handleParsingException(DefaultErrorHandlingStrategy.java:35)
+    at org.jsfr.json.JacksonParser$JacksonResumableParser.parse(JacksonParser.java:143)
+    at org.jsfr.json.JacksonParser.parse(JacksonParser.java:228)
+    at org.jsfr.json.JsonSurfer.surf(JsonSurfer.java:180)
+    at org.jsfr.json.JsonSurfer.collectAll(JsonSurfer.java:315)
+    at org.jsfr.json.JsonSurfer.collectAll(JsonSurfer.java:297)
+    at org.jsfr.json.JsonSurfer.collectAll(JsonSurfer.java:284)
+    at query.App.main(App.java:27)
+Caused by: java.lang.NumberFormatException: Character " is neither a decimal digit number, decimal point, nor "e" notation exponential mark.
+    at java.base/java.math.BigDecimal.&lt;init&gt;(BigDecimal.java:519)
+    at java.base/java.math.BigDecimal.&lt;init&gt;(BigDecimal.java:402)
+    at java.base/java.math.BigDecimal.&lt;init&gt;(BigDecimal.java:835)
+    at org.jsfr.json.filter.LessThanNumPredicate.apply(LessThanNumPredicate.java:49)
+    at org.jsfr.json.JsonFilterVerifier.primitive(JsonFilterVerifier.java:119)
+    at org.jsfr.json.ContentDispatcher.primitive(ContentDispatcher.java:147)
+    at org.jsfr.json.FilterVerifierDispatcher.primitive(FilterVerifierDispatcher.java:30)
+    at org.jsfr.json.ContentDispatcher.primitive(ContentDispatcher.java:147)
+    at org.jsfr.json.SurfingContext.primitive(SurfingContext.java:321)
+    at org.jsfr.json.JacksonParser$JacksonResumableParser.doPare(JacksonParser.java:176)
+    at org.jsfr.json.JacksonParser$JacksonResumableParser.parse(JacksonParser.java:141)
+    ... 6 more
 </code></pre>
 
 <h4 id="Kotlin_com.nfeld.jsonpathlite">

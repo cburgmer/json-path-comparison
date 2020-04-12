@@ -201,6 +201,9 @@ queries:
     result: [{"key": "value"}]
   - id: filter_expression_with_equals_with_root_reference
     status: error
+  - id: filter_expression_with_greater_than
+    status: open
+    result: [{"key": 43}, {"key": 42.0001}, {"key": 100}]
   - id: filter_expression_with_greater_than_or_equal
     status: open
     result: [{"key": 42}, {"key": 43}, {"key": 42.0001}, {"key": 100}]
@@ -210,6 +213,9 @@ queries:
   - id: filter_expression_with_in_current_object
     status: open
     result: [{"d": [1, 2, 3]}, {"d": [2]}, {"d": [4, 2]}]
+  - id: filter_expression_with_less_than
+    status: open
+    result: [{"key": 0}, {"key": -1}, {"key": 41}, {"key": 41.9999}]
   - id: filter_expression_with_less_than_number_on_string_value
     status: open
     result: [{"key": 0}]

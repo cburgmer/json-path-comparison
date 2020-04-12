@@ -434,36 +434,6 @@ The following queries provide results that do not match those of other implement
    Error: searchBeginningWithSlice: string
   ```
 
-- [ ] `$[?(@.key>42)]`
-  Input:
-  ```
-  [{"key": 0}, {"key": 42}, {"key": -1}, {"key": 41}, {"key": 43}, {"key": 42.0001}, {"key": 41.9999}, {"key": 100}]
-  ```
-  Expected output:
-  ```
-  [{"key": 43}, {"key": 42.0001}, {"key": 100}]
-  ```
-  Error:
-  ```
-  json-path-comparison: src/Data/JSONPath/Execute.hs:(71,1)-(72,60): Non-exhaustive patterns in function executeCondition
-  
-  ```
-
-- [ ] `$[?(@.key<42)]`
-  Input:
-  ```
-  [{"key": 0}, {"key": 42}, {"key": -1}, {"key": 41}, {"key": 43}, {"key": 42.0001}, {"key": 41.9999}, {"key": 100}, {"some": "value"}]
-  ```
-  Expected output:
-  ```
-  [{"key": 0}, {"key": -1}, {"key": 41}, {"key": 41.9999}]
-  ```
-  Error:
-  ```
-  json-path-comparison: src/Data/JSONPath/Execute.hs:(71,1)-(72,60): Non-exhaustive patterns in function executeCondition
-  
-  ```
-
 - [ ] `$`
   Input:
   ```
