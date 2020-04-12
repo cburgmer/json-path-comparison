@@ -140,6 +140,9 @@ queries:
   - id: filter_expression_with_bracket_notation_and_current_object_literal
     status: open
     result: []
+  - id: filter_expression_with_bracket_notation_with_-1
+    status: open
+    result: []
   - id: filter_expression_with_bracket_notation_with_number
     status: fail
     result: []

@@ -111,6 +111,9 @@ queries:
   - id: filter_expression_with_bracket_notation_and_current_object_literal
     status: open
     result: [{"@key": 42}]
+  - id: filter_expression_with_bracket_notation_with_-1
+    status: open
+    result: [[0, 2], [2]]
   - id: filter_expression_with_bracket_notation_with_number_on_object
     status: open
     result: []
