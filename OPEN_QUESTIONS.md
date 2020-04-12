@@ -4,11 +4,14 @@ The following questions are inspired by the comparison in
 [docs/index.html](docs/index.html). While the queries only probe small pieces
 of the implementation, from a broader look patterns are visible.
 
-- Should array index and key bracket notation have the same semantics?
+- Should pure numbers and quoted numbers have the same semantics in bracket
+  notation?
+
   I.e. $[2] and $['2'] find the third element in an array and the value for key
   "2" in an object.
 
-- Should dot notation and array index have the same semantics?
+- Should dot notation with numbers behave like bracket notation with numbers?
+
   I.e. $.2 finds the third element in an array and the value for key "2" in an
   object.
 
@@ -31,4 +34,11 @@ of the implementation, from a broader look patterns are visible.
 
 - Is `null` considered a value when filtering e.g. `[?(@.key)]`?
 
-- Is mising key and a key with value `null` equal when filtering for `[?(@.key==null)]`?
+- Does filtering for `[?(@.key==null)]` return then same whether a key exists
+  with value `null` or is missing altogether?
+
+- Do filter expressions allow the same complex JSONPath queries for the current
+  object?
+
+  E.g. Goessner allows @.key and @['key'] but not @.* and @.@ (although $.@ is
+  allowed outside).
