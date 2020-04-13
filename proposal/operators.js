@@ -82,6 +82,21 @@ const filterOperators = {
   equals: (left, right) => JSON.stringify(left) === JSON.stringify(right),
 };
 
+const executeFilterArgument = (value, argOp) => {
+  [[firstOperator, firstParameter]] = argOp;
+  if (firstOperator === "value") {
+    return firstParameter;
+  } else {
+    const results = execute(value, argOp);
+    if (results.length > 1) {
+      throw new Error(
+        "Internal error, selector for scalar value returned multiple results"
+      );
+    }
+    return results[0];
+  }
+};
+
 const childrenFilterOperator = (value, [[filterOperator, ...argOperators]]) => {
   const operator = filterOperators[filterOperator];
 
@@ -90,7 +105,9 @@ const childrenFilterOperator = (value, [[filterOperator, ...argOperators]]) => {
   }
 
   return allChildren(value).filter((v) => {
-    const arguments = argOperators.map((argOp) => execute(v, argOp));
+    const arguments = argOperators.map((argOp) =>
+      executeFilterArgument(v, argOp)
+    );
     return operator(...arguments);
   });
 };
@@ -126,15 +143,17 @@ const recursiveDescentOperator = (value) => {
   return [value];
 };
 
-const executeOperator = (value, [operator, parameter]) => {
-  if (operator === "children") {
-    return childrenOperator(value, parameter);
-  } else if (operator === "recursiveDescent") {
-    return recursiveDescentOperator(value);
-  } else if (operator === "value") {
-    return parameter;
+const operators = {
+  children: childrenOperator,
+  recursiveDescent: recursiveDescentOperator,
+};
+
+const executeOperator = (value, [operatorName, parameter]) => {
+  const operator = operators[operatorName];
+  if (!operator) {
+    throw new Error("Internal error, unknown operator");
   }
-  throw new Error("Internal error, unknown operator");
+  return operator(value, parameter);
 };
 
 const execute = (value, operators) => {
