@@ -180,15 +180,12 @@ queries:
   - id: filter_expression_with_less_than
     status: open
     result: [{"key": 0}, {"key": -1}, {"key": 41}, {"key": 41.9999}, {"key": "41"}]
-  - id: filter_expression_with_less_than_number_on_string_value
-    status: open
-    result: [{"key": 0}]
   - id: filter_expression_with_less_than_or_equal
     status: open
     result: [{"key": 0}, {"key": 42}, {"key": -1}, {"key": 41}, {"key": 41.9999}, {"key": "42"}, {"key": "41"}]
   - id: filter_expression_with_negation_and_equals
     status: open
-    result: [{"key": 0}, {"key": -1}, {"key": 41}, {"key": 43}, {"key": 42.0001}, {"key": 41.9999}, {"key": 100}, {"some": "value"}]
+    result: [{"key": 0}, {"key": -1}, {"key": 41}, {"key": 43}, {"key": 42.0001}, {"key": 41.9999}, {"key": 100}, {"key": "43"}, {"key": "41"}, {"key": "value"}, {"some": "value"}]
   - id: filter_expression_with_not_equals
     status: open
     result: [{"key": 0}, {"key": -1}, {"key": 1}, {"key": 41}, {"key": 43}, {"key": 42.0001}, {"key": 41.9999}, {"key": 100}, {"key": "some"}, {"key": null}, {"key": 420}, {"key": ""}, {"key": {}}, {"key": []}, {"key": {"key": 42}}, {"key": {"some": 42}}, {"some": "value"}]

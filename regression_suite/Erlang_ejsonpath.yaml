@@ -160,7 +160,7 @@ queries:
     result: [{"key": 42}]
   - id: filter_expression_with_greater_than
     status: open
-    result: [{"key": 43}, {"key": 42.0001}, {"key": 100}, {"key": "43"}, {"key": "42"}, {"key": "41"}, {"some": "value"}]
+    result: [{"key": 43}, {"key": 42.0001}, {"key": 100}, {"key": "43"}, {"key": "42"}, {"key": "41"}, {"key": "value"}, {"some": "value"}]
   - id: filter_expression_with_greater_than_or_equal
     status: error
   - id: filter_expression_with_in_array_of_values
@@ -170,9 +170,6 @@ queries:
   - id: filter_expression_with_less_than
     status: open
     result: [{"key": 0}, {"key": -1}, {"key": 41}, {"key": 41.9999}]
-  - id: filter_expression_with_less_than_number_on_string_value
-    status: open
-    result: [{"key": 0}]
   - id: filter_expression_with_less_than_or_equal
     status: error
   - id: filter_expression_with_negation_and_equals

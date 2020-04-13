@@ -274,9 +274,6 @@ queries:
   - id: filter_expression_with_less_than
     status: open
     result: []
-  - id: filter_expression_with_less_than_number_on_string_value
-    status: open
-    result: []
   - id: filter_expression_with_less_than_or_equal
     status: open
     result: []
