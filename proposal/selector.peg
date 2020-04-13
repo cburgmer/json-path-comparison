@@ -9,15 +9,20 @@ operator
   / union
   / recursiveDescentWithChildren
 
+
 dotNotation
   = "." children:dotNotationIdentifier { return children; }
 
 dotNotationIdentifier
-  = name:name { return [['children', [['name', name]]]]; }
-  / "*" { return [['children', [['all']]]]; }
+  = scalarDotNotationIdentifier
+  / listDotNotationIdentifier
 
-name
-  = [^\.\*\[\]@\?\|& ,:=<>"'\\]+ { return text(); }
+scalarDotNotationIdentifier
+  = [^\.\*\[\]@\?\|& ,:=<>"'\\]+ { return [['children', [['name', text()]]]]; }
+
+listDotNotationIdentifier
+  = "*" { return [['children', [['all']]]]; }
+
 
 union
   = "[" whitespace children:bracketElements whitespace "]" { return [['children', children]]; }
@@ -27,12 +32,18 @@ bracketElements
   / x:bracketElement { return [x]; }
 
 bracketElement
+  = listBracketElement
+  / scalarBracketElement
+
+scalarBracketElement
   = "'" name:singleQuotedString "'" { return ['name', name]; }
   / '"' name:doubleQuotedString '"' { return ['name', name]; }
-  / "*" { return ['all']; }
+  / index:number { return ['index', index]; }
+
+listBracketElement
+  = "*" { return ['all']; }
   / start:number? ":" end:number? ":" step:nonZeroNumber? { return ['slice', start, end, step]; }
   / start:number? ":" end:number? { return ['slice', start, end, null]; }
-  / index:number { return ['index', index]; }
   / "?(" filterExpression:filterExpression ")" { return ['filter', filterExpression]; }
 
 singleQuotedString
@@ -54,6 +65,7 @@ nonZeroNumber
 absoluteNumberText
   = [0-9]+ { return text(); }
 
+
 filterExpression
   = partialA:filterPartial whitespace "==" whitespace partialB:filterPartial { return ["equals", partialA, partialB]; }
   / partial:filterPartial { return ["hasValue", partial]; }
@@ -67,15 +79,10 @@ scalarOperators
   / scalarBracketNotation
 
 scalarDotNotation
-  = "." name:name { return [['children', [['name', name]]]]; }
+  = "." children:scalarDotNotationIdentifier { return children; }
 
 scalarBracketNotation
   = "[" whitespace child:scalarBracketElement whitespace "]" { return [['children', [child]]]; }
-
-scalarBracketElement
-  = "'" name:singleQuotedString "'" { return ['name', name]; }
-  / '"' name:doubleQuotedString '"' { return ['name', name]; }
-  / index:number { return ['index', index]; }
 
 // TODO need full JSON spec here + exemption for single quoted strings
 jsonValue
@@ -88,6 +95,7 @@ jsonValue
 
 whitespace
   = " "*
+
 
 recursiveDescentWithChildren
   = ".." children:dotNotationIdentifier { return [['recursiveDescent']].concat(children); }
