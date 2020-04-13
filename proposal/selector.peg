@@ -67,7 +67,9 @@ absoluteNumberText
 
 
 filterExpression
-  = partialA:filterPartial whitespace "==" whitespace partialB:filterPartial { return ["equals", partialA, partialB]; }
+  = left:filterPartial whitespace "==" whitespace right:filterPartial { return ["equals", left, right]; }
+  / left:filterPartial whitespace "<" whitespace right:filterPartial { return ["lessThan", left, right]; }
+  / left:filterPartial whitespace ">" whitespace right:filterPartial { return ["greaterThan", left, right]; }
   / partial:filterPartial { return ["hasValue", partial]; }
 
 filterPartial

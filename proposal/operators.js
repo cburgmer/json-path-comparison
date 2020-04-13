@@ -80,6 +80,8 @@ const childrenSliceOperator = (value, [start, end, step]) => {
 const filterOperators = {
   hasValue: (results) => results.length > 0,
   equals: (left, right) => JSON.stringify(left) === JSON.stringify(right),
+  lessThan: (left, right) => left < right,
+  greaterThan: (left, right) => left > right,
 };
 
 const executeFilterArgument = (value, argOp) => {
