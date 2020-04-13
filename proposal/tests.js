@@ -1,14 +1,13 @@
 #!/usr/bin/env node
 
+const testSuite = process.argv[2];
+
 const fs = require("fs");
 const assert = require("assert");
 const YAML = require("yaml");
 const jsonpath = require("./index.js");
 
-const regressionYaml = fs.readFileSync(
-  "../regression_suite/regression_suite.yaml",
-  "utf-8"
-);
+const regressionYaml = fs.readFileSync(testSuite, "utf-8");
 const queries = YAML.parse(regressionYaml).queries;
 
 const canonicalOrderForUnorderedResults = (array) => {
@@ -35,6 +34,7 @@ const deepEquals = (a, b) => {
   }
 };
 
+console.log(`Processing ${testSuite}...`);
 const failed = queries
   .filter((query) => query.consensus)
   .filter((query) => {

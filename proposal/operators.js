@@ -77,11 +77,20 @@ const childrenSliceOperator = (value, [start, end, step]) => {
   return [];
 };
 
+const typeSafeComparison = (comparison) => {
+  return (left, right) => {
+    if (typeof left !== typeof right) {
+      return false;
+    }
+    return comparison(left, right);
+  };
+};
+
 const filterOperators = {
   hasValue: (results) => results.length > 0,
   equals: (left, right) => JSON.stringify(left) === JSON.stringify(right),
-  lessThan: (left, right) => left < right,
-  greaterThan: (left, right) => left > right,
+  lessThan: typeSafeComparison((left, right) => left < right),
+  greaterThan: typeSafeComparison((left, right) => left > right),
 };
 
 const executeFilterArgument = (value, argOp) => {
