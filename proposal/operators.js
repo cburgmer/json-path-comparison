@@ -83,9 +83,9 @@ const filterOperators = {
 };
 
 const executeFilterArgument = (value, argOp) => {
-  [[firstOperator, firstParameter]] = argOp;
-  if (firstOperator === "value") {
-    return firstParameter;
+  if (argOp.length === 1 && argOp[0][0] === "value") {
+    const [[_, parameter]] = argOp;
+    return parameter;
   } else {
     const results = execute(value, argOp);
     if (results.length > 1) {
