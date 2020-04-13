@@ -10,11 +10,14 @@ operator
   / recursiveDescentWithChildren
 
 dotNotation
-  = "." children:identifier { return children; }
+  = "." children:dotNotationIdentifier { return children; }
 
-identifier
-  = [^\.\*\[\]@\?\|& ,:=<>"'\\]+ { return [['children', [['name', text()]]]]; }
+dotNotationIdentifier
+  = name:name { return [['children', [['name', name]]]]; }
   / "*" { return [['children', [['all']]]]; }
+
+name
+  = [^\.\*\[\]@\?\|& ,:=<>"'\\]+ { return text(); }
 
 union
   = "[" whitespace children:bracketElements whitespace "]" { return [['children', children]]; }
@@ -56,8 +59,23 @@ filterExpression
   / partial:filterPartial { return ["hasValue", partial]; }
 
 filterPartial
-  = "@" operators:operators { return operators; }
+  = "@" operators:scalarOperators { return operators; }
   / value:jsonValue { return [["value", value]]; }
+
+scalarOperators
+  = scalarDotNotation
+  / scalarBracketNotation
+
+scalarDotNotation
+  = "." name:name { return [['children', [['name', name]]]]; }
+
+scalarBracketNotation
+  = "[" whitespace child:scalarBracketElement whitespace "]" { return [['children', [child]]]; }
+
+scalarBracketElement
+  = "'" name:singleQuotedString "'" { return ['name', name]; }
+  / '"' name:doubleQuotedString '"' { return ['name', name]; }
+  / index:number { return ['index', index]; }
 
 // TODO need full JSON spec here + exemption for single quoted strings
 jsonValue
@@ -72,5 +90,5 @@ whitespace
   = " "*
 
 recursiveDescentWithChildren
-  = ".." children:identifier { return [['recursiveDescent']].concat(children); }
+  = ".." children:dotNotationIdentifier { return [['recursiveDescent']].concat(children); }
   / ".." children:union { return [['recursiveDescent']].concat(children); }
