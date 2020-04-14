@@ -92,6 +92,8 @@ const filterOperators = {
   equals: (left, right) => JSON.stringify(left) === JSON.stringify(right),
   lessThan: typeSafeComparison((left, right) => left < right),
   greaterThan: typeSafeComparison((left, right) => left > right),
+  lessThanOrEqual: typeSafeComparison((left, right) => left <= right),
+  greaterThanOrEqual: typeSafeComparison((left, right) => left >= right),
 };
 
 const executeFilterArgument = (value, argOp) => {

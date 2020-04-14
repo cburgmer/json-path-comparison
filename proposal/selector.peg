@@ -69,10 +69,15 @@ absoluteNumberText
 
 
 filterExpression
-  = left:filterPartial whitespace "==" whitespace right:filterPartial { return ["equals", left, right]; }
-  / left:filterPartial whitespace "<" whitespace right:filterPartial { return ["lessThan", left, right]; }
-  / left:filterPartial whitespace ">" whitespace right:filterPartial { return ["greaterThan", left, right]; }
+  = left:filterPartial whitespace op:binaryOperator whitespace right:filterPartial { return [op, left, right]; }
   / partial:filterPartial { return ["hasValue", partial]; }
+
+binaryOperator
+  = "==" { return "equals"; }
+  / "<=" { return "lessThanOrEqual"; }
+  / ">=" { return "greaterThanOrEqual"; }
+  / "<" { return "lessThan"; }
+  / ">" { return "greaterThan"; }
 
 filterPartial
   = "@" operators:scalarOperators { return operators; }
