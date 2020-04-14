@@ -117,6 +117,7 @@ queries:
   - id: bracket_notation_with_empty_path
     selector: "$[]"
     document: {"": 42, "''": 123, "\"\"": 222}
+    expectedError: SyntaxError
   - id: bracket_notation_with_empty_string
     selector: "$['']"
     document: {"": 42, "''": 123, "\"\"": 222}
@@ -204,6 +205,7 @@ queries:
   - id: bracket_notation_with_quoted_string_and_unescaped_single_quote
     selector: "$['single'quote']"
     document: {"single'quote": "value"}
+    expectedError: SyntaxError
   - id: bracket_notation_with_quoted_union_literal
     selector: "$[',']"
     document: {",": "value", "another": "entry"}
@@ -223,9 +225,11 @@ queries:
   - id: bracket_notation_with_two_literals_separated_by_dot
     selector: "$['two'.'some']"
     document: {"one": {"key": "value"}, "two": {"some": "more", "key": "other value"}, "two.some": "42"}
+    expectedError: SyntaxError
   - id: bracket_notation_with_two_literals_separated_by_dot_without_quotes
     selector: "$[two.some]"
     document: {"one": {"key": "value"}, "two": {"some": "more", "key": "other value"}, "two.some": "42"}
+    expectedError: SyntaxError
   - id: bracket_notation_with_wildcard_after_array_slice
     selector: "$[0:2][*]"
     document: [[1, 2], ["a", "b"], [0, 0]]
@@ -261,15 +265,19 @@ queries:
   - id: bracket_notation_without_quotes
     selector: "$[key]"
     document: {"key": "value"}
+    expectedError: SyntaxError
   - id: dot_bracket_notation
     selector: "$.['key']"
     document: {"key": "value", "other": {"key": [{"key": 42}]}}
+    expectedError: SyntaxError
   - id: dot_bracket_notation_with_double_quotes
     selector: "$.[\"key\"]"
     document: {"key": "value", "other": {"key": [{"key": 42}]}}
+    expectedError: SyntaxError
   - id: dot_bracket_notation_without_quotes
     selector: "$.[key]"
     document: {"key": "value", "other": {"key": [{"key": 42}]}}
+    expectedError: SyntaxError
   - id: dot_notation
     selector: "$.key"
     document: {"key": "value"}
@@ -341,12 +349,15 @@ queries:
   - id: dot_notation_with_double_quotes
     selector: "$.\"key\""
     document: {"key": "value"}
+    expectedError: SyntaxError
   - id: dot_notation_with_double_quotes_after_recursive_descent
     selector: "$..\"key\""
     document: {"object": {"key": "value", "array": [{"key": "something"}, {"key": {"key": "russian dolls"}}]}, "key": "top"}
+    expectedError: SyntaxError
   - id: dot_notation_with_empty_path
     selector: "$."
     document: {"key": 42}
+    expectedError: SyntaxError
   - id: dot_notation_with_key_named_in
     selector: "$.in"
     document: {"in": "value"}
@@ -382,12 +393,15 @@ queries:
   - id: dot_notation_with_single_quotes
     selector: "$.'key'"
     document: {"key": "value"}
+    expectedError: SyntaxError
   - id: dot_notation_with_single_quotes_after_recursive_descent
     selector: "$..'key'"
     document: {"object": {"key": "value", "array": [{"key": "something"}, {"key": {"key": "russian dolls"}}]}, "key": "top"}
+    expectedError: SyntaxError
   - id: dot_notation_with_single_quotes_and_dot
     selector: "$.'some.key'"
     document: {"some.key": 42, "some": {"key": "value"}}
+    expectedError: SyntaxError
   - id: dot_notation_with_wildcard_after_dot_notation_after_dot_notation_with_wildcard
     selector: "$.*.bar.*"
     document: [{"bar": [42]}]
@@ -427,6 +441,7 @@ queries:
   - id: dot_notation_without_root
     selector: "key"
     document: {"key": "value"}
+    expectedError: SyntaxError
   - id: filter_expression_after_dot_notation_with_wildcard_after_recursive_descent
     selector: "$..*[?(@.id>2)]"
     document: [{"complext": {"one": [{"name": "first", "id": 1}, {"name": "next", "id": 2}, {"name": "another", "id": 3}, {"name": "more", "id": 4}], "more": {"name": "next to last", "id": 5}}}, {"name": "last", "id": 6}]
@@ -475,6 +490,7 @@ queries:
   - id: filter_expression_with_empty_expression
     selector: "$[?()]"
     document: [1, {"key": 42}, "value", null]
+    expectedError: SyntaxError
   - id: filter_expression_with_equals
     selector: "$[?(@.key==42)]"
     document: [{"key": 0}, {"key": 42}, {"key": -1}, {"key": 1}, {"key": 41}, {"key": 43}, {"key": 42.0001}, {"key": 41.9999}, {"key": 100}, {"key": "some"}, {"key": "42"}, {"key": null}, {"key": 420}, {"key": ""}, {"key": {}}, {"key": []}, {"key": [42]}, {"key": {"key": 42}}, {"key": {"some": 42}}, {"some": "value"}]
@@ -587,12 +603,15 @@ queries:
   - id: parens_notation
     selector: "$(key,more)"
     document: {"key": 1, "some": 2, "more": 3}
+    expectedError: SyntaxError
   - id: recursive_descent
     selector: "$.."
     document: [{"a": {"b": "c"}}, [0, 1]]
+    expectedError: SyntaxError
   - id: recursive_descent_after_dot_notation
     selector: "$.key.."
     document: {"some key": "value", "key": {"complex": "string", "primitives": [0, 1]}}
+    expectedError: SyntaxError
   - id: root
     selector: "$"
     document: {"key": "value", "another key": {"complex": ["a", 1]}}
