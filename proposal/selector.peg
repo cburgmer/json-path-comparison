@@ -18,7 +18,7 @@ dotNotationIdentifier
   / listDotNotationIdentifier
 
 scalarDotNotationIdentifier
-  = [^\.\*\[\]@\?\|& ,:=<>"'\\]+ { return [['children', [['name', text()]]]]; }
+  = [^\.\*\[\]\(\)@\?\|& ,:=<>"'\\]+ { return [['children', [['name', text()]]]]; }
 
 listDotNotationIdentifier
   = "*" { return [['children', [['all']]]]; }
