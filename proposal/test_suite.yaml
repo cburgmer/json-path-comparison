@@ -22,6 +22,7 @@ queries:
   - id: array_slice_with_negative_step
     selector: "$[3:0:-2]"
     document: ["first", "second", "third", "forth", "fifth"]
+    consensus: ["forth", "second"]
   - id: array_slice_with_negative_step_only
     selector: "$[::-2]"
     document: ["first", "second", "third", "forth", "fifth"]
@@ -44,6 +45,7 @@ queries:
   - id: array_slice_with_open_start_and_end_on_object
     selector: "$[:]"
     document: {":": 42, "more": "string"}
+    consensus: []
   - id: array_slice_with_range_of_-1
     selector: "$[2:1]"
     document: ["first", "second", "third", "forth"]
@@ -95,7 +97,6 @@ queries:
     selector: "$['key']"
     document: {"key": "value"}
     consensus: ["value"]
-    scalar-consensus: "value"
   - id: bracket_notation_after_recursive_descent
     selector: "$..[0]"
     document: ["first", {"key": ["first nested", {"more": [{"nested": ["deepest", "second"]}, ["more", "values"]]}]}]
@@ -104,16 +105,15 @@ queries:
   - id: bracket_notation_on_object_without_key
     selector: "$['missing']"
     document: {"key": "value"}
+    consensus: []
   - id: bracket_notation_with_dot
     selector: "$['two.some']"
     document: {"one": {"key": "value"}, "two": {"some": "more", "key": "other value"}, "two.some": "42"}
     consensus: ["42"]
-    scalar-consensus: "42"
   - id: bracket_notation_with_double_quotes
     selector: "$[\"key\"]"
     document: {"key": "value"}
     consensus: ["value"]
-    scalar-consensus: "value"
   - id: bracket_notation_with_empty_path
     selector: "$[]"
     document: {"": 42, "''": 123, "\"\"": 222}
@@ -121,28 +121,26 @@ queries:
     selector: "$['']"
     document: {"": 42, "''": 123, "\"\"": 222}
     consensus: [42]
-    scalar-consensus: 42
   - id: bracket_notation_with_empty_string_doubled_quoted
     selector: "$[\"\"]"
     document: {"": 42, "''": 123, "\"\"": 222}
+    consensus: [42]
   - id: bracket_notation_with_number
     selector: "$[2]"
     document: ["first", "second", "third", "forth", "fifth"]
     consensus: ["third"]
-    scalar-consensus: "third"
   - id: bracket_notation_with_number_-1
     selector: "$[-1]"
     document: ["first", "second", "third"]
     consensus: ["third"]
-    scalar-consensus: "third"
   - id: bracket_notation_with_number_-1_on_empty_array
     selector: "$[-1]"
     document: []
+    consensus: []
   - id: bracket_notation_with_number_0
     selector: "$[0]"
     document: ["first", "second", "third", "forth", "fifth"]
     consensus: ["first"]
-    scalar-consensus: "first"
   - id: bracket_notation_with_number_after_dot_notation_with_wildcard_on_nested_arrays_with_different_length
     selector: "$.*[1]"
     document: [[1], [2, 3]]
@@ -150,42 +148,39 @@ queries:
   - id: bracket_notation_with_number_on_object
     selector: "$[0]"
     document: {"0": "value"}
+    consensus: []
   - id: bracket_notation_with_number_on_short_array
     selector: "$[1]"
     document: ["one element"]
+    consensus: []
   - id: bracket_notation_with_number_on_string
     selector: "$[0]"
     document: "Hello World"
+    consensus: []
   - id: bracket_notation_with_quoted_array_slice_literal
     selector: "$[':']"
     document: {":": "value", "another": "entry"}
     consensus: ["value"]
-    scalar-consensus: "value"
   - id: bracket_notation_with_quoted_closing_bracket_literal
     selector: "$[']']"
     document: {"]": 42}
     consensus: [42]
-    scalar-consensus: 42
   - id: bracket_notation_with_quoted_current_object_literal
     selector: "$['@']"
     document: {"@": "value", "another": "entry"}
     consensus: ["value"]
-    scalar-consensus: "value"
   - id: bracket_notation_with_quoted_dot_literal
     selector: "$['.']"
     document: {".": "value", "another": "entry"}
     consensus: ["value"]
-    scalar-consensus: "value"
   - id: bracket_notation_with_quoted_dot_wildcard
     selector: "$['.*']"
     document: {"key": 42, ".*": 1, "": 10}
     consensus: [1]
-    scalar-consensus: 1
   - id: bracket_notation_with_quoted_double_quote_literal
     selector: "$['\"']"
     document: {"\"": "value", "another": "entry"}
     consensus: ["value"]
-    scalar-consensus: "value"
   - id: bracket_notation_with_quoted_escaped_backslash
     selector: "$['\\\\']"
     document: {"\\": "value"}
@@ -193,19 +188,19 @@ queries:
   - id: bracket_notation_with_quoted_escaped_single_quote
     selector: "$['\\'']"
     document: {"'": "value"}
+    consensus: ["value"]
   - id: bracket_notation_with_quoted_number_on_object
     selector: "$['0']"
     document: {"0": "value"}
     consensus: ["value"]
-    scalar-consensus: "value"
   - id: bracket_notation_with_quoted_root_literal
     selector: "$['$']"
     document: {"$": "value", "another": "entry"}
     consensus: ["value"]
-    scalar-consensus: "value"
   - id: bracket_notation_with_quoted_special_characters_combined
     selector: "$[':@.\"$,*\\'\\\\']"
     document: {":@.\"$,*'\\": 42}
+    consensus: [42]
   - id: bracket_notation_with_quoted_string_and_unescaped_single_quote
     selector: "$['single'quote']"
     document: {"single'quote": "value"}
@@ -213,20 +208,18 @@ queries:
     selector: "$[',']"
     document: {",": "value", "another": "entry"}
     consensus: ["value"]
-    scalar-consensus: "value"
   - id: bracket_notation_with_quoted_wildcard_literal
     selector: "$['*']"
     document: {"*": "value", "another": "entry"}
     consensus: ["value"]
-    scalar-consensus: "value"
   - id: bracket_notation_with_quoted_wildcard_literal_on_object_without_key
     selector: "$['*']"
     document: {"another": "entry"}
+    consensus: []
   - id: bracket_notation_with_string_including_dot_wildcard
     selector: "$['ni.*']"
     document: {"nice": 42, "ni.*": 1, "mice": 100}
     consensus: [1]
-    scalar-consensus: 1
   - id: bracket_notation_with_two_literals_separated_by_dot
     selector: "$['two'.'some']"
     document: {"one": {"key": "value"}, "two": {"some": "more", "key": "other value"}, "two.some": "42"}
@@ -283,11 +276,10 @@ queries:
     selector: "$.key"
     document: {"key": "value"}
     consensus: ["value"]
-    scalar-consensus: "value"
   - id: dot_notation_after_bracket_notation_after_recursive_descent
     selector: "$..[1].key"
     document: {"k": [{"key": "some value"}, {"key": 42}], "kk": [[{"key": 100}, {"key": 200}, {"key": 300}], [{"key": 400}, {"key": 500}, {"key": 600}]], "key": [0, 1]}
-    ordered: false
+    consensus: [42, 200, 500]
   - id: dot_notation_after_bracket_notation_with_wildcard
     selector: "$[*].a"
     document: [{"a": 1}, {"a": 1}]
@@ -325,32 +317,31 @@ queries:
   - id: dot_notation_on_array
     selector: "$.key"
     document: [0, 1]
+    consensus: []
   - id: dot_notation_on_array_value
     selector: "$.key"
     document: {"key": ["first", "second"]}
     consensus: [["first", "second"]]
-    scalar-consensus: ["first", "second"]
   - id: dot_notation_on_array_with_containing_object_matching_key
     selector: "$.id"
     document: [{"id": 2}]
+    consensus: []
   - id: dot_notation_on_empty_object_value
     selector: "$.key"
     document: {"key": {}}
     consensus: [{}]
-    scalar-consensus: {}
   - id: dot_notation_on_null_value
     selector: "$.key"
     document: {"key": null}
     consensus: [null]
-    scalar-consensus: null
   - id: dot_notation_on_object_without_key
     selector: "$.missing"
     document: {"key": "value"}
+    consensus: []
   - id: dot_notation_with_dash
     selector: "$.key-dash"
     document: {"key-dash": "value"}
     consensus: ["value"]
-    scalar-consensus: "value"
   - id: dot_notation_with_double_quotes
     selector: "$.\"key\""
     document: {"key": "value"}
@@ -365,25 +356,22 @@ queries:
     selector: "$.in"
     document: {"in": "value"}
     consensus: ["value"]
-    scalar-consensus: "value"
   - id: dot_notation_with_key_named_null
     selector: "$.null"
     document: {"null": "value"}
     consensus: ["value"]
-    scalar-consensus: "value"
   - id: dot_notation_with_key_named_true
     selector: "$.true"
     document: {"true": "value"}
     consensus: ["value"]
-    scalar-consensus: "value"
   - id: dot_notation_with_key_root_literal
     selector: "$.$"
     document: {"$": "value"}
+    consensus: ["value"]
   - id: dot_notation_with_non_ASCII_key
     selector: "$.屬性"
     document: {"\u5c6c\u6027": "value"}
     consensus: ["value"]
-    scalar-consensus: "value"
   - id: dot_notation_with_number
     selector: "$.2"
     document: ["first", "second", "third", "forth", "fifth"]
@@ -394,7 +382,6 @@ queries:
     selector: "$.2"
     document: {"a": "first", "2": "second", "b": "third"}
     consensus: ["second"]
-    scalar-consensus: "second"
   - id: dot_notation_with_single_quotes
     selector: "$.'key'"
     document: {"key": "value"}
@@ -452,10 +439,11 @@ queries:
     selector: "$..*[?(@.id>2)]"
     document: [{"complext": {"one": [{"name": "first", "id": 1}, {"name": "next", "id": 2}, {"name": "another", "id": 3}, {"name": "more", "id": 4}], "more": {"name": "next to last", "id": 5}}}, {"name": "last", "id": 6}]
     ordered: false
+    consensus: [{"name": "another", "id": 3}, {"name": "more", "id": 4}, {"name": "next to last", "id": 5}]
   - id: filter_expression_after_recursive_descent
     selector: "$..[?(@.id==2)]"
     document: {"id": 2, "more": [{"id": 2}, {"more": {"id": 2}}, {"id": {"id": 2}}, [{"id": 2}]]}
-    ordered: false
+    consensus: [{"id": 2}, {"id": 2}, {"id": 2}, {"id": 2}]
   - id: filter_expression_on_object
     selector: "$[?(@.key)]"
     document: {"key": 42, "another": {"key": 1}}
@@ -470,9 +458,11 @@ queries:
   - id: filter_expression_with_bracket_notation_and_current_object_literal
     selector: "$[?(@['@key']==42)]"
     document: [{"@key": 0}, {"@key": 42}, {"key": 42}, {"@key": 43}, {"some": "value"}]
+    consensus: [{"@key": 42}]
   - id: filter_expression_with_bracket_notation_with_-1
     selector: "$[?(@[-1]==2)]"
     document: [[2, 3], ["a"], [0, 2], [2]]
+    consensus: [[0, 2], [2]]
   - id: filter_expression_with_bracket_notation_with_number
     selector: "$[?(@[1]=='b')]"
     document: [["a", "b"], ["x", "y"]]
@@ -480,9 +470,11 @@ queries:
   - id: filter_expression_with_bracket_notation_with_number_on_object
     selector: "$[?(@[1]=='b')]"
     document: {"1": ["a", "b"], "2": ["x", "y"]}
+    consensus: [["a", "b"]]
   - id: filter_expression_with_current_object
     selector: "$[?(@)]"
     document: ["some value", null, "value", 0, 1, -1, "", [], {}]
+    consensus: ["some value", null, "value", 0, 1, -1, "", [], {}]
   - id: filter_expression_with_different_grouped_operators
     selector: "$[?(@.a && (@.b || @.c))]"
     document: [{"a": true}, {"a": true, "b": true}, {"a": true, "b": true, "c": true}, {"b": true, "c": true}, {"a": true, "c": true}, {"c": true}, {"b": true}]
@@ -495,21 +487,25 @@ queries:
   - id: filter_expression_with_equals
     selector: "$[?(@.key==42)]"
     document: [{"key": 0}, {"key": 42}, {"key": -1}, {"key": 1}, {"key": 41}, {"key": 43}, {"key": 42.0001}, {"key": 41.9999}, {"key": 100}, {"key": "some"}, {"key": "42"}, {"key": null}, {"key": 420}, {"key": ""}, {"key": {}}, {"key": []}, {"key": [42]}, {"key": {"key": 42}}, {"key": {"some": 42}}, {"some": "value"}]
+    consensus: [{"key": 42}]
   - id: filter_expression_with_equals_array
     selector: "$[?(@.d==['v1','v2'])]"
     document: [{"d": ["v1", "v2"]}, {"d": ["a", "b"]}, {"d": "v1"}, {"d": "v2"}, {"d": {}}, {"d": []}, {"d": null}, {"d": -1}, {"d": 0}, {"d": 1}, {"d": "['v1','v2']"}, {"d": "['v1', 'v2']"}, {"d": "v1,v2"}, {"d": "[\"v1\", \"v2\"]"}, {"d": "[\"v1\",\"v2\"]"}]
   - id: filter_expression_with_equals_false
     selector: "$[?(@.key==false)]"
     document: [{"some": "some value"}, {"key": true}, {"key": false}, {"key": null}, {"key": "value"}, {"key": ""}, {"key": 0}, {"key": 1}, {"key": -1}, {"key": 42}, {"key": {}}, {"key": []}]
+    consensus: [{"key": false}]
   - id: filter_expression_with_equals_null
     selector: "$[?(@.key==null)]"
     document: [{"some": "some value"}, {"key": true}, {"key": false}, {"key": null}, {"key": "value"}, {"key": ""}, {"key": 0}, {"key": 1}, {"key": -1}, {"key": 42}, {"key": {}}, {"key": []}]
+    consensus: [{"key": null}]
   - id: filter_expression_with_equals_object
     selector: "$[?(@.d=={\"k\": \"v\"})]"
     document: [{"d": {"k": "v"}}, {"d": {"a": "b"}}, {"d": "k"}, {"d": "v"}, {"d": {}}, {"d": []}, {"d": null}, {"d": -1}, {"d": 0}, {"d": 1}, {"d": "[object Object]"}, {"d": "{\"k\": \"v\"}"}, {"d": "{\"k\":\"v\"}"}, "v"]
   - id: filter_expression_with_equals_on_array_of_numbers
     selector: "$[?(@==42)]"
     document: [0, 42, -1, 41, 43, 42.0001, 41.9999, null, 100]
+    consensus: [42]
   - id: filter_expression_with_equals_on_array_without_match
     selector: "$[?(@.key==43)]"
     document: [{"key": 42}]
@@ -517,12 +513,15 @@ queries:
   - id: filter_expression_with_equals_on_object
     selector: "$[?(@.key==42)]"
     document: {"a": {"key": 0}, "b": {"key": 42}, "c": {"key": -1}, "d": {"key": 41}, "e": {"key": 43}, "f": {"key": 42.0001}, "g": {"key": 41.9999}, "h": {"key": 100}, "i": {"some": "value"}}
+    consensus: [{"key": 42}]
   - id: filter_expression_with_equals_on_object_with_key_matching_query
     selector: "$[?(@.id==2)]"
     document: {"id": 2}
+    consensus: []
   - id: filter_expression_with_equals_on_string_with_current_object_literal
     selector: "$[?(@.key==\"hi@example.com\")]"
     document: [{"key": "some"}, {"key": "value"}, {"key": "hi@example.com"}]
+    consensus: [{"key": "hi@example.com"}]
   - id: filter_expression_with_equals_on_string_with_dot_literal
     selector: "$[?(@.key==\"some.value\")]"
     document: [{"key": "some"}, {"key": "value"}, {"key": "some.value"}]
@@ -530,12 +529,15 @@ queries:
   - id: filter_expression_with_equals_true
     selector: "$[?(@.key==true)]"
     document: [{"some": "some value"}, {"key": true}, {"key": false}, {"key": null}, {"key": "value"}, {"key": ""}, {"key": 0}, {"key": 1}, {"key": -1}, {"key": 42}, {"key": {}}, {"key": []}]
+    consensus: [{"key": true}]
   - id: filter_expression_with_equals_value_with_double_quotes
     selector: "$[?(@.key==\"value\")]"
     document: [{"key": "some"}, {"key": "value"}, {"key": null}, {"key": 0}, {"key": 1}, {"key": -1}, {"key": ""}, {"key": {}}, {"key": []}, {"key": "valuemore"}, {"key": "morevalue"}, {"key": ["value"]}, {"key": {"some": "value"}}, {"key": {"key": "value"}}, {"some": "value"}]
+    consensus: [{"key": "value"}]
   - id: filter_expression_with_equals_value_with_single_quotes
     selector: "$[?(@.key=='value')]"
     document: [{"key": "some"}, {"key": "value"}, {"key": null}, {"key": 0}, {"key": 1}, {"key": -1}, {"key": ""}, {"key": {}}, {"key": []}, {"key": "valuemore"}, {"key": "morevalue"}, {"key": ["value"]}, {"key": {"some": "value"}}, {"key": {"key": "value"}}, {"some": "value"}]
+    consensus: [{"key": "value"}]
   - id: filter_expression_with_equals_with_root_reference
     selector: "$.items[?(@.key==$.value)]"
     document: {"value": 42, "items": [{"key": 10}, {"key": 42}, {"key": 50}]}
@@ -580,10 +582,12 @@ queries:
   - id: filter_expression_with_value
     selector: "$[?(@.key)]"
     document: [{"some": "some value"}, {"key": true}, {"key": false}, {"key": null}, {"key": "value"}, {"key": ""}, {"key": 0}, {"key": 1}, {"key": -1}, {"key": 42}, {"key": {}}, {"key": []}]
+    consensus: [{"key": true}, {"key": false}, {"key": null}, {"key": "value"}, {"key": ""}, {"key": 0}, {"key": 1}, {"key": -1}, {"key": 42}, {"key": {}}, {"key": []}]
   - id: filter_expression_with_value_after_recursive_descent
     selector: "$..[?(@.id)]"
     document: {"id": 2, "more": [{"id": 2}, {"more": {"id": 2}}, {"id": {"id": 2}}, [{"id": 2}]]}
     ordered: false
+    consensus: [{"id": 2}, {"id": 2}, {"id": 2}, {"id": 2}, {"id": {"id": 2}}]
   - id: filter_expression_without_value
     selector: "$[?(!@.key)]"
     document: [{"some": "some value"}, {"key": true}, {"key": false}, {"key": null}, {"key": "value"}, {"key": ""}, {"key": 0}, {"key": 1}, {"key": -1}, {"key": 42}, {"key": {}}, {"key": []}]
@@ -593,7 +597,6 @@ queries:
   - id: recursive_descent
     selector: "$.."
     document: [{"a": {"b": "c"}}, [0, 1]]
-    ordered: false
   - id: recursive_descent_after_dot_notation
     selector: "$.key.."
     document: {"some key": "value", "key": {"complex": "string", "primitives": [0, 1]}}
@@ -601,22 +604,18 @@ queries:
     selector: "$"
     document: {"key": "value", "another key": {"complex": ["a", 1]}}
     consensus: [{"another key": {"complex": ["a", 1]}, "key": "value"}]
-    scalar-consensus: {"another key": {"complex": ["a", 1]}, "key": "value"}
   - id: root_on_scalar
     selector: "$"
     document: 42
     consensus: [42]
-    scalar-consensus: 42
   - id: root_on_scalar_false
     selector: "$"
     document: false
     consensus: [false]
-    scalar-consensus: false
   - id: root_on_scalar_true
     selector: "$"
     document: true
     consensus: [true]
-    scalar-consensus: true
   - id: script_expression
     selector: "$[(@.length-1)]"
     document: ["first", "second", "third", "forth", "fifth"]
@@ -627,6 +626,7 @@ queries:
   - id: union_with_filter
     selector: "$[?(@.key<3),?(@.key>6)]"
     document: [{"key": 1}, {"key": 8}, {"key": 3}, {"key": 10}, {"key": 7}, {"key": 2}, {"key": 6}, {"key": 4}]
+    consensus: [{"key": 1}, {"key": 2}, {"key": 8}, {"key": 10}, {"key": 7}]
   - id: union_with_keys
     selector: "$['key','another']"
     document: {"key": "value", "another": "entry"}
@@ -634,6 +634,7 @@ queries:
   - id: union_with_keys_after_array_slice
     selector: "$[:]['c','d']"
     document: [{"c": "cc1", "d": "dd1", "e": "ee1"}, {"c": "cc2", "d": "dd2", "e": "ee2"}]
+    consensus: ["cc1", "dd1", "cc2", "dd2"]
   - id: union_with_keys_after_bracket_notation
     selector: "$[0]['c','d']"
     document: [{"c": "cc1", "d": "dd1", "e": "ee1"}, {"c": "cc2", "d": "dd2", "e": "ee2"}]
@@ -641,6 +642,7 @@ queries:
   - id: union_with_keys_after_dot_notation_with_wildcard
     selector: "$.*['c','d']"
     document: [{"c": "cc1", "d": "dd1", "e": "ee1"}, {"c": "cc2", "d": "dd2", "e": "ee2"}]
+    consensus: ["cc1", "dd1", "cc2", "dd2"]
   - id: union_with_keys_on_object_without_key
     selector: "$['missing','key']"
     document: {"key": "value", "another": "entry"}
@@ -652,6 +654,7 @@ queries:
   - id: union_with_slice_and_number
     selector: "$[1:3,4]"
     document: [1, 2, 3, 4, 5]
+    consensus: [2, 3, 5]
   - id: union_with_spaces
     selector: "$[ 0 , 1 ]"
     document: ["first", "second", "third"]
@@ -659,3 +662,4 @@ queries:
   - id: union_with_wildcard_and_number
     selector: "$[*,1]"
     document: ["first", "second", "third", "forth", "fifth"]
+    consensus: ["first", "second", "third", "forth", "fifth", "second"]
