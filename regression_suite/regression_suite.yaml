@@ -603,6 +603,7 @@ queries:
   - id: recursive_descent_after_dot_notation
     selector: "$.key.."
     document: {"some key": "value", "key": {"complex": "string", "primitives": [0, 1]}}
+    ordered: false
   - id: root
     selector: "$"
     document: {"key": "value", "another key": {"complex": ["a", 1]}}

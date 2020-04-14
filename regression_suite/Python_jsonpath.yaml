@@ -251,7 +251,7 @@ queries:
     result: ["c", 0, 1, [0, 1], [{"a": {"b": "c"}}, [0, 1]], {"a": {"b": "c"}}, {"b": "c"}]
   - id: recursive_descent_after_dot_notation
     status: open
-    result: [{"complex": "string", "primitives": [0, 1]}, "string", [0, 1], 0, 1]
+    result: ["string", 0, 1, [0, 1], {"complex": "string", "primitives": [0, 1]}]
   - id: root
     status: error
   - id: root_on_scalar
