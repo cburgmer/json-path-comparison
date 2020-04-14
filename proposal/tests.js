@@ -46,6 +46,20 @@ const failed = queries
           ? canonicalOrderForUnorderedResults(result)
           : result;
 
+      if (query.expectedError) {
+        console.warn(
+          [
+            `Failed for ${query.id}, selector ${
+              query.selector
+            }, document ${JSON.stringify(query.document)}:`,
+            `Expected: ${query.expectedError}`,
+            `Received: ${JSON.stringify(canonicalResult)}`,
+            "",
+          ].join("\n")
+        );
+        return true;
+      }
+
       if (!deepEquals(canonicalResult, query.consensus)) {
         console.warn(
           [
