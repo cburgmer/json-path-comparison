@@ -90,6 +90,7 @@ const typeSafeComparison = (comparison) => {
 const filterOperators = {
   hasValue: (results) => results !== undefined,
   equals: (left, right) => JSON.stringify(left) === JSON.stringify(right),
+  notEquals: (left, right) => JSON.stringify(left) !== JSON.stringify(right),
   lessThan: typeSafeComparison((left, right) => left < right),
   greaterThan: typeSafeComparison((left, right) => left > right),
   lessThanOrEqual: typeSafeComparison((left, right) => left <= right),
