@@ -189,6 +189,7 @@ queries:
   - id: bracket_notation_with_quoted_escaped_backslash
     selector: "$['\\\\']"
     document: {"\\": "value"}
+    consensus: ["value"]
   - id: bracket_notation_with_quoted_escaped_single_quote
     selector: "$['\\'']"
     document: {"'": "value"}
