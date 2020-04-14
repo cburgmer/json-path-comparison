@@ -100,8 +100,7 @@ queries:
   - id: bracket_notation_after_recursive_descent
     selector: "$..[0]"
     document: ["first", {"key": ["first nested", {"more": [{"nested": ["deepest", "second"]}, ["more", "values"]]}]}]
-    ordered: false
-    consensus: ["deepest", "first nested", "first", "more", {"nested": ["deepest", "second"]}]
+    consensus: ["first", "first nested", {"nested": ["deepest", "second"]}, "deepest", "more"]
   - id: bracket_notation_on_object_without_key
     selector: "$['missing']"
     document: {"key": "value"}
@@ -237,8 +236,7 @@ queries:
   - id: bracket_notation_with_wildcard_after_recursive_descent
     selector: "$..[*]"
     document: {"key": "value", "another key": {"complex": "string", "primitives": [0, 1]}}
-    ordered: false
-    consensus: ["string", "value", 0, 1, [0, 1], {"complex": "string", "primitives": [0, 1]}]
+    consensus: ["value", {"complex": "string", "primitives": [0, 1]}, "string", [0, 1], 0, 1]
   - id: bracket_notation_with_wildcard_on_array
     selector: "$[*]"
     document: ["string", 42, {"key": "value"}, [0, 1]]
@@ -258,8 +256,7 @@ queries:
   - id: bracket_notation_with_wildcard_on_object
     selector: "$[*]"
     document: {"some": "string", "int": 42, "object": {"key": "value"}, "array": [0, 1]}
-    ordered: false
-    consensus: ["string", 42, [0, 1], {"key": "value"}]
+    consensus: ["string", 42, {"key": "value"}, [0, 1]]
   - id: bracket_notation_without_quotes
     selector: "$[key]"
     document: {"key": "value"}
@@ -299,13 +296,11 @@ queries:
   - id: dot_notation_after_recursive_descent
     selector: "$..key"
     document: {"object": {"key": "value", "array": [{"key": "something"}, {"key": {"key": "russian dolls"}}]}, "key": "top"}
-    ordered: false
-    consensus: ["russian dolls", "something", "top", "value", {"key": "russian dolls"}]
+    consensus: ["top", "value", "something", {"key": "russian dolls"}, "russian dolls"]
   - id: dot_notation_after_recursive_descent_after_dot_notation
     selector: "$.store..price"
     document: {"store": {"book": [{"category": "reference", "author": "Nigel Rees", "title": "Sayings of the Century", "price": 8.95}, {"category": "fiction", "author": "Evelyn Waugh", "title": "Sword of Honour", "price": 12.99}, {"category": "fiction", "author": "Herman Melville", "title": "Moby Dick", "isbn": "0-553-21311-3", "price": 8.99}, {"category": "fiction", "author": "J. R. R. Tolkien", "title": "The Lord of the Rings", "isbn": "0-395-19395-8", "price": 22.99}], "bicycle": {"color": "red", "price": 19.95}}}
-    ordered: false
-    consensus: [12.99, 19.95, 22.99, 8.95, 8.99]
+    consensus: [8.95, 12.99, 8.99, 22.99, 19.95]
   - id: dot_notation_after_union
     selector: "$[0,2].key"
     document: [{"key": "ey"}, {"key": "bee"}, {"key": "see"}]
@@ -348,7 +343,6 @@ queries:
   - id: dot_notation_with_double_quotes_after_recursive_descent
     selector: "$..\"key\""
     document: {"object": {"key": "value", "array": [{"key": "something"}, {"key": {"key": "russian dolls"}}]}, "key": "top"}
-    ordered: false
   - id: dot_notation_with_empty_path
     selector: "$."
     document: {"key": 42}
@@ -388,7 +382,6 @@ queries:
   - id: dot_notation_with_single_quotes_after_recursive_descent
     selector: "$..'key'"
     document: {"object": {"key": "value", "array": [{"key": "something"}, {"key": {"key": "russian dolls"}}]}, "key": "top"}
-    ordered: false
   - id: dot_notation_with_single_quotes_and_dot
     selector: "$.'some.key'"
     document: {"some.key": 42, "some": {"key": "value"}}
@@ -403,17 +396,14 @@ queries:
   - id: dot_notation_with_wildcard_after_recursive_descent
     selector: "$..*"
     document: {"key": "value", "another key": {"complex": "string", "primitives": [0, 1]}}
-    ordered: false
-    consensus: ["string", "value", 0, 1, [0, 1], {"complex": "string", "primitives": [0, 1]}]
+    consensus: ["value", {"complex": "string", "primitives": [0, 1]}, "string", [0, 1], 0, 1]
   - id: dot_notation_with_wildcard_after_recursive_descent_on_null_value_array
     selector: "$..*"
     document: [40, null, 42]
-    ordered: false
-    consensus: [40, 42, null]
+    consensus: [40, null, 42]
   - id: dot_notation_with_wildcard_after_recursive_descent_on_scalar
     selector: "$..*"
     document: 42
-    ordered: false
     consensus: []
   - id: dot_notation_with_wildcard_on_array
     selector: "$.*"
@@ -430,16 +420,14 @@ queries:
   - id: dot_notation_with_wildcard_on_object
     selector: "$.*"
     document: {"some": "string", "int": 42, "object": {"key": "value"}, "array": [0, 1]}
-    ordered: false
-    consensus: ["string", 42, [0, 1], {"key": "value"}]
+    consensus: ["string", 42, {"key": "value"}, [0, 1]]
   - id: dot_notation_without_root
     selector: "key"
     document: {"key": "value"}
   - id: filter_expression_after_dot_notation_with_wildcard_after_recursive_descent
     selector: "$..*[?(@.id>2)]"
     document: [{"complext": {"one": [{"name": "first", "id": 1}, {"name": "next", "id": 2}, {"name": "another", "id": 3}, {"name": "more", "id": 4}], "more": {"name": "next to last", "id": 5}}}, {"name": "last", "id": 6}]
-    ordered: false
-    consensus: [{"name": "another", "id": 3}, {"name": "more", "id": 4}, {"name": "next to last", "id": 5}]
+    consensus: [{"name": "next to last", "id": 5}, {"name": "another", "id": 3}, {"name": "more", "id": 4}]
   - id: filter_expression_after_recursive_descent
     selector: "$..[?(@.id==2)]"
     document: {"id": 2, "more": [{"id": 2}, {"more": {"id": 2}}, {"id": {"id": 2}}, [{"id": 2}]]}
@@ -586,8 +574,7 @@ queries:
   - id: filter_expression_with_value_after_recursive_descent
     selector: "$..[?(@.id)]"
     document: {"id": 2, "more": [{"id": 2}, {"more": {"id": 2}}, {"id": {"id": 2}}, [{"id": 2}]]}
-    ordered: false
-    consensus: [{"id": 2}, {"id": 2}, {"id": 2}, {"id": 2}, {"id": {"id": 2}}]
+    consensus: [{"id": 2}, {"id": {"id": 2}}, {"id": 2}, {"id": 2}, {"id": 2}]
   - id: filter_expression_without_value
     selector: "$[?(!@.key)]"
     document: [{"some": "some value"}, {"key": true}, {"key": false}, {"key": null}, {"key": "value"}, {"key": ""}, {"key": 0}, {"key": 1}, {"key": -1}, {"key": 42}, {"key": {}}, {"key": []}]
