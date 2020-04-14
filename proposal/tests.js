@@ -36,7 +36,7 @@ const deepEquals = (a, b) => {
 
 console.log(`Processing ${testSuite}...`);
 const failed = queries
-  .filter((query) => query.consensus)
+  .filter((query) => query.consensus || query.expectedError)
   .filter((query) => {
     try {
       const result = jsonpath(query.selector, query.document);
@@ -59,18 +59,36 @@ const failed = queries
         );
         return true;
       }
+
+      return false;
     } catch (e) {
-      console.warn(
-        [
-          `Error for ${query.id}, selector ${
-            query.selector
-          }, document ${JSON.stringify(query.document)}:`,
-          `Expected: ${JSON.stringify(query.consensus)}`,
-          `Received: ${e}`,
-          "",
-        ].join("\n")
-      );
-      return true;
+      if (!query.expectedError) {
+        console.warn(
+          [
+            `Error for ${query.id}, selector ${
+              query.selector
+            }, document ${JSON.stringify(query.document)}:`,
+            `Expected: ${JSON.stringify(query.consensus)}`,
+            `Received: ${e}`,
+            "",
+          ].join("\n")
+        );
+        return true;
+      }
+
+      if (!new RegExp(query.expectedError).test(e)) {
+        console.warn(
+          [
+            `Error for ${query.id}, selector ${
+              query.selector
+            }, document ${JSON.stringify(query.document)}:`,
+            `Expected: ${query.expectedError}`,
+            `Received: ${e}`,
+            "",
+          ].join("\n")
+        );
+      }
+      return false;
     }
   });
 
