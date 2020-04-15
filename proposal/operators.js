@@ -142,16 +142,10 @@ const childrenOperator = (current, root, children) => {
 };
 
 const recursiveDescentOperator = (current) => {
-  if (isArray(current)) {
-    return [current].concat(
-      current.flatMap((v) => recursiveDescentOperator(v))
-    );
-  } else if (isObject(current)) {
-    return [current].concat(
-      Object.values(current).flatMap((v) => recursiveDescentOperator(v))
-    );
-  }
-  return [current];
+  const descendants = allChildren(current).flatMap((v) =>
+    recursiveDescentOperator(v)
+  );
+  return [current].concat(descendants);
 };
 
 const operators = {
