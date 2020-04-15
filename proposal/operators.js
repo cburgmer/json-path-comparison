@@ -1,6 +1,8 @@
 const isArray = require("util").isArray;
 const isObject = (value) => require("util").isObject(value) && !isArray(value);
 
+const isSameType = (left, right) => typeof left === typeof right;
+
 const realIndex = (sliceIndex, length) => {
   if (sliceIndex < 0) {
     return Math.max(0, length + sliceIndex);
@@ -78,15 +80,6 @@ const childrenSliceOperator = (current, root, [start, end, step]) => {
   return [];
 };
 
-const typeSafeComparison = (comparison) => {
-  return (left, right) => {
-    if (typeof left !== typeof right) {
-      return false;
-    }
-    return comparison(left, right);
-  };
-};
-
 const executeScalar = (value, operators) => {
   const results = execute(value, operators);
   if (results.length > 1) {
@@ -121,10 +114,10 @@ const filterOperators = {
   hasValue: (results) => results !== undefined,
   equals: (left, right) => JSON.stringify(left) === JSON.stringify(right),
   notEquals: (left, right) => JSON.stringify(left) !== JSON.stringify(right),
-  lessThan: typeSafeComparison((left, right) => left < right),
-  greaterThan: typeSafeComparison((left, right) => left > right),
-  lessThanOrEqual: typeSafeComparison((left, right) => left <= right),
-  greaterThanOrEqual: typeSafeComparison((left, right) => left >= right),
+  lessThan: (left, right) => isSameType(left, right) && left < right,
+  greaterThan: (left, right) => isSameType(left, right) && left > right,
+  lessThanOrEqual: (left, right) => isSameType(left, right) && left <= right,
+  greaterThanOrEqual: (left, right) => isSameType(left, right) && left >= right,
 };
 
 const childrenFilterOperator = (
