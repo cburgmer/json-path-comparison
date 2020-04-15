@@ -1,5 +1,5 @@
 {
     "require": {
-        "galbar/jsonpath": "1.0"
+        "galbar/jsonpath": "*"
     }
 }

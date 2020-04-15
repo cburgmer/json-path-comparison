@@ -6,41 +6,20 @@
 
 implementation: PHP_flow-jsonpath
 queries:
-  - id: array_slice
-    status: fail
-    result: ["second", "third", "forth"]
   - id: array_slice_with_negative_step
     status: open
     result: []
   - id: array_slice_with_negative_step_only
     status: error
-  - id: array_slice_with_open_start
-    status: fail
-    result: ["first", "second", "third"]
   - id: array_slice_with_open_start_and_end_on_object
     status: open
     result: []
-  - id: array_slice_with_range_of_0
-    status: fail
-    result: ["first"]
-  - id: array_slice_with_range_of_1
-    status: fail
-    result: ["first", "second"]
   - id: array_slice_with_start_large_negative_number_and_open_end_on_short_array
     status: fail
-    result: [null, "first", "second", "third"]
+    result: ["third", "first", "second", "third"]
   - id: array_slice_with_step_0
     status: open
-    result: ["first", "second", "third", "forth"]
-  - id: array_slice_with_step_1
-    status: fail
-    result: ["first", "second", "third", "forth"]
-  - id: array_slice_with_step_but_end_not_aligned
-    status: fail
-    result: ["first", "third", "fifth"]
-  - id: array_slice_with_step_empty
-    status: fail
-    result: ["second", "third", "forth"]
+    result: ["first", "second", "third"]
   - id: bracket_notation_on_object_without_key
     status: open
     result: []
@@ -82,9 +61,6 @@ queries:
     result: []
   - id: bracket_notation_with_two_literals_separated_by_dot_without_quotes
     status: error
-  - id: bracket_notation_with_wildcard_after_array_slice
-    status: fail
-    result: [1, 2, "a", "b", 0, 0]
   - id: bracket_notation_without_quotes
     status: open
     result: ["value"]
@@ -103,8 +79,6 @@ queries:
   - id: dot_notation_after_union_with_keys
     status: fail
     result: []
-  - id: dot_notation_with_dash
-    status: error
   - id: dot_notation_with_double_quotes
     status: open
     result: ["value"]
@@ -115,8 +89,6 @@ queries:
     status: open
     result: [{"key": 42}]
   - id: dot_notation_with_key_root_literal
-    status: error
-  - id: dot_notation_with_non_ASCII_key
     status: error
   - id: dot_notation_with_number
     status: open
@@ -274,6 +246,6 @@ queries:
     result: []
   - id: union_with_slice_and_number
     status: open
-    result: [2, 3, 4]
+    result: [2, 3]
   - id: union_with_wildcard_and_number
     status: error

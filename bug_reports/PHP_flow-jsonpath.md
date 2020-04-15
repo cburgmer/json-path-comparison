@@ -3,62 +3,6 @@ Results do not match other implementations
 The following queries provide results that do not match those of other implementations of JSONPath
 (compare https://cburgmer.github.io/json-path-comparison/):
 
-- [ ] `$[1:3]`
-  Input:
-  ```
-  ["first", "second", "third", "forth", "fifth"]
-  ```
-  Expected output:
-  ```
-  ["second", "third"]
-  ```
-  Actual output:
-  ```
-  ["second", "third", "forth"]
-  ```
-
-- [ ] `$[:2]`
-  Input:
-  ```
-  ["first", "second", "third", "forth", "fifth"]
-  ```
-  Expected output:
-  ```
-  ["first", "second"]
-  ```
-  Actual output:
-  ```
-  ["first", "second", "third"]
-  ```
-
-- [ ] `$[0:0]`
-  Input:
-  ```
-  ["first", "second"]
-  ```
-  Expected output:
-  ```
-  []
-  ```
-  Actual output:
-  ```
-  ["first"]
-  ```
-
-- [ ] `$[0:1]`
-  Input:
-  ```
-  ["first", "second"]
-  ```
-  Expected output:
-  ```
-  ["first"]
-  ```
-  Actual output:
-  ```
-  ["first", "second"]
-  ```
-
 - [ ] `$[-4:]`
   Input:
   ```
@@ -70,49 +14,7 @@ The following queries provide results that do not match those of other implement
   ```
   Actual output:
   ```
-  [null, "first", "second", "third"]
-  ```
-
-- [ ] `$[0:3:1]`
-  Input:
-  ```
-  ["first", "second", "third", "forth", "fifth"]
-  ```
-  Expected output:
-  ```
-  ["first", "second", "third"]
-  ```
-  Actual output:
-  ```
-  ["first", "second", "third", "forth"]
-  ```
-
-- [ ] `$[0:4:2]`
-  Input:
-  ```
-  ["first", "second", "third", "forth", "fifth"]
-  ```
-  Expected output:
-  ```
-  ["first", "third"]
-  ```
-  Actual output:
-  ```
-  ["first", "third", "fifth"]
-  ```
-
-- [ ] `$[1:3:]`
-  Input:
-  ```
-  ["first", "second", "third", "forth", "fifth"]
-  ```
-  Expected output:
-  ```
-  ["second", "third"]
-  ```
-  Actual output:
-  ```
-  ["second", "third", "forth"]
+  ["third", "first", "second", "third"]
   ```
 
 - [ ] `$['']`
@@ -143,20 +45,6 @@ The following queries provide results that do not match those of other implement
   Error: 'Unable to parse token ' in expression: [']']'
   ```
 
-- [ ] `$[0:2][*]`
-  Input:
-  ```
-  [[1, 2], ["a", "b"], [0, 0]]
-  ```
-  Expected output:
-  ```
-  [1, 2, "a", "b"]
-  ```
-  Actual output:
-  ```
-  [1, 2, "a", "b", 0, 0]
-  ```
-
 - [ ] `$['one','three'].key`
   Input:
   ```
@@ -169,34 +57,6 @@ The following queries provide results that do not match those of other implement
   Actual output:
   ```
   []
-  ```
-
-- [ ] `$.key-dash`
-  Input:
-  ```
-  {"key-dash": "value"}
-  ```
-  Expected output:
-  ```
-  ["value"]
-  ```
-  Error:
-  ```
-  Error: 'Unable to parse token key-dash in expression: .key-dash'
-  ```
-
-- [ ] `$.屬性`
-  Input:
-  ```
-  {"\u5c6c\u6027": "value"}
-  ```
-  Expected output:
-  ```
-  ["value"]
-  ```
-  Error:
-  ```
-  Error: 'Unable to parse token 屬性 in expression: .屬性'
   ```
 
 - [ ] `$['key','another']`

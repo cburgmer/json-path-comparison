@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "fb96af69882f3a9572046c3e6f16537d",
+    "content-hash": "d28264a9bea2640a7f4a8ecb3636aa5d",
     "packages": [
         {
             "name": "galbar/jsonpath",
