@@ -59,7 +59,7 @@ const childrenSliceOperator = (current, root, [start, end, step]) => {
 
   return range(absoluteStart, absoluteEnd, stepNumber)
     .filter((idx) => 0 <= idx && idx < current.length)
-    .map((idx) => current[i]);
+    .map((idx) => current[idx]);
 };
 
 const executeScalar = (value, operators) => {
