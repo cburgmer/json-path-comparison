@@ -7,17 +7,17 @@ const {
   range,
 } = require("./utils");
 
-const childrenIndexOperator = (current, root, [index]) => {
+const childrenIndexOperator = (current, root, [relativeIndex]) => {
   if (!isArray(current)) {
     return [];
   }
 
-  const realIdx = absoluteArrayIndex(index, current.length);
-  if (realIdx < 0 || realIdx >= current.length) {
+  const absoluteIndex = absoluteArrayIndex(relativeIndex, current.length);
+  if (absoluteIndex < 0 || absoluteIndex >= current.length) {
     return [];
   }
 
-  return [current[realIdx]];
+  return [current[absoluteIndex]];
 };
 
 const childrenNameOperator = (current, root, [child]) => {
@@ -58,8 +58,8 @@ const childrenSliceOperator = (current, root, [start, end, step]) => {
   );
 
   return range(absoluteStart, absoluteEnd, stepNumber)
-    .filter((i) => 0 <= i && i < current.length)
-    .map((i) => current[i]);
+    .filter((idx) => 0 <= idx && idx < current.length)
+    .map((idx) => current[i]);
 };
 
 const executeScalar = (value, operators) => {
