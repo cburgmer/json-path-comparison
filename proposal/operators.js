@@ -8,20 +8,23 @@ const {
 } = require("./utils");
 
 const childrenIndexOperator = (current, root, [index]) => {
-  if (isArray(current)) {
-    const realIdx = absoluteArrayIndex(index, current.length);
-    if (realIdx >= 0 && realIdx < current.length) {
-      return [current[realIdx]];
-    }
+  if (!isArray(current)) {
+    return [];
   }
-  return [];
+
+  const realIdx = absoluteArrayIndex(index, current.length);
+  if (realIdx < 0 || realIdx >= current.length) {
+    return [];
+  }
+
+  return [current[realIdx]];
 };
 
 const childrenNameOperator = (current, root, [child]) => {
-  if (isObject(current) && current[child] !== undefined) {
-    return [current[child]];
+  if (!isObject(current) || current[child] === undefined) {
+    return [];
   }
-  return [];
+  return [current[child]];
 };
 
 const allChildren = (value) => {
@@ -39,24 +42,24 @@ const childrenAllOperator = (current) => {
 };
 
 const childrenSliceOperator = (current, root, [start, end, step]) => {
-  if (isArray(current)) {
-    const stepNumber = valueOrDefault(step, 1);
-
-    const absoluteStart = absoluteArrayIndex(
-      valueOrDefault(start, 0),
-      current.length
-    );
-    const absoluteEnd = absoluteArrayIndex(
-      valueOrDefault(end, current.length),
-      current.length
-    );
-
-    return range(absoluteStart, absoluteEnd, stepNumber)
-      .filter((i) => 0 <= i && i < current.length)
-      .map((i) => current[i]);
+  if (!isArray(current)) {
+    return [];
   }
 
-  return [];
+  const stepNumber = valueOrDefault(step, 1);
+
+  const absoluteStart = absoluteArrayIndex(
+    valueOrDefault(start, 0),
+    current.length
+  );
+  const absoluteEnd = absoluteArrayIndex(
+    valueOrDefault(end, current.length),
+    current.length
+  );
+
+  return range(absoluteStart, absoluteEnd, stepNumber)
+    .filter((i) => 0 <= i && i < current.length)
+    .map((i) => current[i]);
 };
 
 const executeScalar = (value, operators) => {
