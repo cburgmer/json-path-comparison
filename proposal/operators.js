@@ -8,7 +8,7 @@ const realIndex = (sliceIndex, length) => {
   return sliceIndex;
 };
 
-const childrenIndexOperator = (value, [index]) => {
+const childrenIndexOperator = (value, root, [index]) => {
   if (isArray(value)) {
     const realIdx = realIndex(index, value.length);
     if (realIdx >= 0 && realIdx < value.length) {
@@ -18,7 +18,7 @@ const childrenIndexOperator = (value, [index]) => {
   return [];
 };
 
-const childrenNameOperator = (value, [child]) => {
+const childrenNameOperator = (value, root, [child]) => {
   if (isObject(value) && value[child] !== undefined) {
     return [value[child]];
   }
@@ -60,7 +60,7 @@ const range = (start, end, step) => {
   return slice;
 };
 
-const childrenSliceOperator = (value, [start, end, step]) => {
+const childrenSliceOperator = (value, root, [start, end, step]) => {
   if (isArray(value)) {
     const stepNumber = sliceValueOrDefault(step, 1);
 
@@ -98,12 +98,14 @@ const executeScalar = (value, operators) => {
 };
 
 const filterArgumentOperators = {
-  value: (value, parameter) => parameter,
-  current: (value, parameter) => executeScalar(value, parameter),
+  value: (value, root, parameter) => parameter,
+  current: (value, root, parameter) => executeScalar(value, parameter),
+  root: (value, root, parameter) => executeScalar(root, parameter),
 };
 
 const executeFilterArgument = (
   value,
+  root,
   [argumentOperatorName, argumentParameters]
 ) => {
   const argumentOperator = filterArgumentOperators[argumentOperatorName];
@@ -112,7 +114,7 @@ const executeFilterArgument = (
     throw new Error("Internal error, unknown operator");
   }
 
-  return argumentOperator(value, argumentParameters);
+  return argumentOperator(value, root, argumentParameters);
 };
 
 const filterOperators = {
@@ -125,7 +127,11 @@ const filterOperators = {
   greaterThanOrEqual: typeSafeComparison((left, right) => left >= right),
 };
 
-const childrenFilterOperator = (value, [[filterOperator, ...argOperators]]) => {
+const childrenFilterOperator = (
+  value,
+  root,
+  [[filterOperator, ...argOperators]]
+) => {
   const operator = filterOperators[filterOperator];
 
   if (!operator) {
@@ -134,7 +140,7 @@ const childrenFilterOperator = (value, [[filterOperator, ...argOperators]]) => {
 
   return allChildren(value).filter((v) => {
     const arguments = argOperators.map((argOp) =>
-      executeFilterArgument(v, argOp)
+      executeFilterArgument(v, root, argOp)
     );
     return operator(...arguments);
   });
@@ -148,7 +154,7 @@ const childrenSubOperators = {
   filter: childrenFilterOperator,
 };
 
-const childrenOperator = (value, children) => {
+const childrenOperator = (value, root, children) => {
   return children.flatMap(([subOperatorName, ...parameters]) => {
     const subOperator = childrenSubOperators[subOperatorName];
 
@@ -156,11 +162,11 @@ const childrenOperator = (value, children) => {
       throw new Error("Internal error, unknown operator");
     }
 
-    return subOperator(value, parameters);
+    return subOperator(value, root, parameters);
   });
 };
 
-const recursiveDescentOperator = (value) => {
+const recursiveDescentOperator = (value, root) => {
   if (isArray(value)) {
     return [value].concat(value.flatMap((v) => recursiveDescentOperator(v)));
   } else if (isObject(value)) {
@@ -176,18 +182,19 @@ const operators = {
   recursiveDescent: recursiveDescentOperator,
 };
 
-const executeOperator = (value, [operatorName, parameter]) => {
+const executeOperator = (value, root, [operatorName, parameter]) => {
   const operator = operators[operatorName];
   if (!operator) {
     throw new Error("Internal error, unknown operator");
   }
-  return operator(value, parameter);
+  return operator(value, root, parameter);
 };
 
-const execute = (value, operators) => {
+const execute = (root, operators) => {
   return operators.reduce(
-    (results, operator) => results.flatMap((r) => executeOperator(r, operator)),
-    [value]
+    (results, operator) =>
+      results.flatMap((current) => executeOperator(current, root, operator)),
+    [root]
   );
 };
 
