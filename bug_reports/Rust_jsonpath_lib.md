@@ -3,48 +3,6 @@ Results do not match other implementations
 The following queries provide results that do not match those of other implementations of JSONPath
 (compare https://cburgmer.github.io/json-path-comparison/):
 
-- [ ] `$[-4:]`
-  Input:
-  ```
-  ["first", "second", "third"]
-  ```
-  Expected output:
-  ```
-  ["first", "second", "third"]
-  ```
-  Actual output:
-  ```
-  []
-  ```
-
-- [ ] `$..[0]`
-  Input:
-  ```
-  ["first", {"key": ["first nested", {"more": [{"nested": ["deepest", "second"]}, ["more", "values"]]}]}]
-  ```
-  Expected output (in any order as no consensus on ordering exists):
-  ```
-  ["deepest", "first nested", "first", "more", {"nested": ["deepest", "second"]}]
-  ```
-  Actual output:
-  ```
-  ["first"]
-  ```
-
-- [ ] `$[?(@['key']==42)]`
-  Input:
-  ```
-  [{"key": 0}, {"key": 42}, {"key": -1}, {"key": 41}, {"key": 43}, {"key": 42.0001}, {"key": 41.9999}, {"key": 100}, {"some": "value"}]
-  ```
-  Expected output:
-  ```
-  [{"key": 42}]
-  ```
-  Actual output:
-  ```
-  [null]
-  ```
-
 - [ ] `$[?(@[1]=='b')]`
   Input:
   ```
@@ -56,21 +14,7 @@ The following queries provide results that do not match those of other implement
   ```
   Actual output:
   ```
-  [null]
-  ```
-
-- [ ] `$[?(@.key==43)]`
-  Input:
-  ```
-  [{"key": 42}]
-  ```
-  Expected output:
-  ```
   []
-  ```
-  Actual output:
-  ```
-  [null]
   ```
 
 

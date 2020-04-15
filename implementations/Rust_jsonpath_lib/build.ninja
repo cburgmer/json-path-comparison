@@ -4,6 +4,6 @@ builddir = $root/build
 rule compile
   command = (cd $root && cargo build) && mv $root/target/debug/rust_jsonpath_lib $out && rm -r $root/target
 
-build $builddir/rust_jsonpath_lib: compile | $root/src/main.rs
+build $builddir/rust_jsonpath_lib: compile | $root/src/main.rs $root/Cargo.lock $root/Cargo.toml
 
 build $root/install: phony $builddir/rust_jsonpath_lib
