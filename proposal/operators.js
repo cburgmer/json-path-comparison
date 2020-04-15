@@ -87,6 +87,34 @@ const typeSafeComparison = (comparison) => {
   };
 };
 
+const executeScalar = (value, operators) => {
+  const results = execute(value, operators);
+  if (results.length > 1) {
+    throw new Error(
+      "Internal error, selector for scalar value returned multiple results"
+    );
+  }
+  return results[0];
+};
+
+const filterArgumentOperators = {
+  value: (value, parameter) => parameter,
+  current: (value, parameter) => executeScalar(value, parameter),
+};
+
+const executeFilterArgument = (
+  value,
+  [argumentOperatorName, argumentParameters]
+) => {
+  const argumentOperator = filterArgumentOperators[argumentOperatorName];
+
+  if (!argumentOperator) {
+    throw new Error("Internal error, unknown operator");
+  }
+
+  return argumentOperator(value, argumentParameters);
+};
+
 const filterOperators = {
   hasValue: (results) => results !== undefined,
   equals: (left, right) => JSON.stringify(left) === JSON.stringify(right),
@@ -95,21 +123,6 @@ const filterOperators = {
   greaterThan: typeSafeComparison((left, right) => left > right),
   lessThanOrEqual: typeSafeComparison((left, right) => left <= right),
   greaterThanOrEqual: typeSafeComparison((left, right) => left >= right),
-};
-
-const executeFilterArgument = (value, argOp) => {
-  if (argOp.length === 1 && argOp[0][0] === "value") {
-    const [[_, parameter]] = argOp;
-    return parameter;
-  } else {
-    const results = execute(value, argOp);
-    if (results.length > 1) {
-      throw new Error(
-        "Internal error, selector for scalar value returned multiple results"
-      );
-    }
-    return results[0];
-  }
 };
 
 const childrenFilterOperator = (value, [[filterOperator, ...argOperators]]) => {

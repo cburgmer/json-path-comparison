@@ -81,8 +81,8 @@ binaryOperator
   / ">" { return "greaterThan"; }
 
 filterPartial
-  = "@" operators:scalarOperators { return operators; }
-  / value:jsonValue { return [["value", value]]; }
+  = "@" operators:scalarOperators { return ["current", operators]; }
+  / value:jsonValue { return ["value", value]; }
 
 scalarOperators
   = operators:scalarOperator* { return operators.reduce((os, o) => os.concat(o), []); }
