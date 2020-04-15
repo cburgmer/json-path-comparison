@@ -3,7 +3,7 @@ const isObject = (value) => require("util").isObject(value) && !isArray(value);
 
 const isSameType = (left, right) => typeof left === typeof right;
 
-const realIndex = (sliceIndex, length) => {
+const absoluteArrayIndex = (sliceIndex, length) => {
   if (sliceIndex < 0) {
     return Math.max(0, length + sliceIndex);
   }
@@ -12,7 +12,7 @@ const realIndex = (sliceIndex, length) => {
 
 const childrenIndexOperator = (current, root, [index]) => {
   if (isArray(current)) {
-    const realIdx = realIndex(index, current.length);
+    const realIdx = absoluteArrayIndex(index, current.length);
     if (realIdx >= 0 && realIdx < current.length) {
       return [current[realIdx]];
     }
@@ -66,13 +66,16 @@ const childrenSliceOperator = (current, root, [start, end, step]) => {
   if (isArray(current)) {
     const stepNumber = sliceValueOrDefault(step, 1);
 
-    const realStart = realIndex(sliceValueOrDefault(start, 0), current.length);
-    const realEnd = realIndex(
+    const absoluteStart = absoluteArrayIndex(
+      sliceValueOrDefault(start, 0),
+      current.length
+    );
+    const absoluteEnd = absoluteArrayIndex(
       sliceValueOrDefault(end, current.length),
       current.length
     );
 
-    return range(realStart, realEnd, stepNumber)
+    return range(absoluteStart, absoluteEnd, stepNumber)
       .filter((i) => 0 <= i && i < current.length)
       .map((i) => current[i]);
   }
