@@ -83,7 +83,7 @@ binaryOperator
 filterPartial
   = "@" operators:scalarOperators { return ["current", operators]; }
   / "$" operators:scalarOperators { return ["root", operators]; }
-  / value:jsonValue { return ["value", value]; }
+  / constant:jsonValue { return ["constant", constant]; }
 
 scalarOperators
   = operators:scalarOperator* { return operators.reduce((os, o) => os.concat(o), []); }

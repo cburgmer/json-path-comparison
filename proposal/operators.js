@@ -73,7 +73,7 @@ const executeScalar = (value, operators) => {
 };
 
 const filterArgumentOperators = {
-  value: (current, root, parameter) => parameter,
+  constant: (current, root, parameter) => parameter,
   current: (current, root, parameter) => executeScalar(current, parameter),
   root: (current, root, parameter) => executeScalar(root, parameter),
 };
@@ -113,9 +113,9 @@ const childrenFilterOperator = (
     throw new Error("Internal error, unknown operator");
   }
 
-  return allChildren(current).filter((v) => {
+  return allChildren(current).filter((child) => {
     const arguments = argOperators.map((argOp) =>
-      executeFilterArgument(v, root, argOp)
+      executeFilterArgument(child, root, argOp)
     );
     return operator(...arguments);
   });
@@ -142,8 +142,8 @@ const childrenOperator = (current, root, children) => {
 };
 
 const recursiveDescentOperator = (current) => {
-  const descendants = allChildren(current).flatMap((v) =>
-    recursiveDescentOperator(v)
+  const descendants = allChildren(current).flatMap((child) =>
+    recursiveDescentOperator(child)
   );
   return [current].concat(descendants);
 };
