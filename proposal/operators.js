@@ -1,14 +1,11 @@
-const isArray = require("util").isArray;
-const isObject = (value) => require("util").isObject(value) && !isArray(value);
-
-const isSameType = (left, right) => typeof left === typeof right;
-
-const absoluteArrayIndex = (sliceIndex, length) => {
-  if (sliceIndex < 0) {
-    return Math.max(0, length + sliceIndex);
-  }
-  return sliceIndex;
-};
+const {
+  isArray,
+  isObject,
+  isSameType,
+  absoluteArrayIndex,
+  valueOrDefault,
+  range,
+} = require("./utils");
 
 const childrenIndexOperator = (current, root, [index]) => {
   if (isArray(current)) {
@@ -41,37 +38,16 @@ const childrenAllOperator = (current) => {
   return allChildren(current);
 };
 
-const sliceValueOrDefault = (sliceValue, defaultValue) => {
-  if (sliceValue === null) {
-    return defaultValue;
-  }
-  return sliceValue;
-};
-
-const range = (start, end, step) => {
-  const slice = [];
-  if (step > 0) {
-    for (let i = start; i < end; i += step) {
-      slice.push(i);
-    }
-  } else {
-    for (let i = start; i > end; i += step) {
-      slice.push(i);
-    }
-  }
-  return slice;
-};
-
 const childrenSliceOperator = (current, root, [start, end, step]) => {
   if (isArray(current)) {
-    const stepNumber = sliceValueOrDefault(step, 1);
+    const stepNumber = valueOrDefault(step, 1);
 
     const absoluteStart = absoluteArrayIndex(
-      sliceValueOrDefault(start, 0),
+      valueOrDefault(start, 0),
       current.length
     );
     const absoluteEnd = absoluteArrayIndex(
-      sliceValueOrDefault(end, current.length),
+      valueOrDefault(end, current.length),
       current.length
     );
 
