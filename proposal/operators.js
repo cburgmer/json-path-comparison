@@ -94,6 +94,7 @@ const executeFilterArgument = (
 
 const filterOperators = {
   hasValue: (results) => results !== undefined,
+  not: (result) => !result,
   equals: (left, right) => JSON.stringify(left) === JSON.stringify(right),
   notEquals: (left, right) => JSON.stringify(left) !== JSON.stringify(right),
   lessThan: (left, right) => isSameType(left, right) && left < right,
@@ -102,10 +103,10 @@ const filterOperators = {
   greaterThanOrEqual: (left, right) => isSameType(left, right) && left >= right,
 };
 
-const childrenFilterOperator = (
+const executeFilterExpression = (
   current,
   root,
-  [[filterOperator, ...argOperators]]
+  [filterOperator, ...argOperators]
 ) => {
   const operator = filterOperators[filterOperator];
 
@@ -113,12 +114,22 @@ const childrenFilterOperator = (
     throw new Error("Internal error, unknown operator");
   }
 
-  return allChildren(current).filter((child) => {
-    const arguments = argOperators.map((argOp) =>
-      executeFilterArgument(child, root, argOp)
-    );
-    return operator(...arguments);
+  const arguments = argOperators.map(([type, argOp]) => {
+    if (type === "argument") {
+      return executeFilterArgument(current, root, argOp);
+    }
+    if (type === "expression") {
+      return executeFilterExpression(current, root, argOp);
+    }
+    throw new Error("Internal error, unknown type");
   });
+  return operator(...arguments);
+};
+
+const childrenFilterOperator = (current, root, [filterExpression]) => {
+  return allChildren(current).filter((child) =>
+    executeFilterExpression(child, root, filterExpression)
+  );
 };
 
 const childrenSubOperators = {
