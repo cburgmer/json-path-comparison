@@ -72,24 +72,24 @@ const executeScalar = (value, operators) => {
   return results[0];
 };
 
-const filterArgumentOperators = {
+const filterValueOperators = {
   constant: (current, root, parameter) => parameter,
   current: (current, root, parameter) => executeScalar(current, parameter),
   root: (current, root, parameter) => executeScalar(root, parameter),
 };
 
-const executeFilterArgument = (
+const executeFilterValue = (
   current,
   root,
-  [argumentOperatorName, argumentParameters]
+  [valueOperatorName, valueParameters]
 ) => {
-  const argumentOperator = filterArgumentOperators[argumentOperatorName];
+  const valueOperator = filterValueOperators[valueOperatorName];
 
-  if (!argumentOperator) {
+  if (!valueOperator) {
     throw new Error("Internal error, unknown operator");
   }
 
-  return argumentOperator(current, root, argumentParameters);
+  return valueOperator(current, root, valueParameters);
 };
 
 const filterOperators = {
@@ -115,8 +115,8 @@ const executeFilterExpression = (
   }
 
   const arguments = argOperators.map(([type, argOp]) => {
-    if (type === "argument") {
-      return executeFilterArgument(current, root, argOp);
+    if (type === "value") {
+      return executeFilterValue(current, root, argOp);
     }
     if (type === "expression") {
       return executeFilterExpression(current, root, argOp);

@@ -69,9 +69,9 @@ absoluteNumberText
 
 
 filterExpression
-  = left:filterArgument whitespace op:binaryOperator whitespace right:filterArgument { return [op, ["argument", left], ["argument", right]]; }
+  = left:filterValue whitespace op:binaryOperator whitespace right:filterValue { return [op, ["value", left], ["value", right]]; }
   / "!" whitespace "(" whitespace expression:filterExpression whitespace ")" { return ["not", ["expression", expression]]; }
-  / argument:filterArgument { return ["hasValue", ["argument", argument]]; }
+  / value:filterValue { return ["hasValue", ["value", value]]; }
 
 binaryOperator
   = "==" { return "equals"; }
@@ -81,7 +81,7 @@ binaryOperator
   / "<" { return "lessThan"; }
   / ">" { return "greaterThan"; }
 
-filterArgument
+filterValue
   = "@" operators:scalarOperators { return ["current", operators]; }
   / "$" operators:scalarOperators { return ["root", operators]; }
   / constant:jsonValue { return ["constant", constant]; }
