@@ -70,9 +70,12 @@ absoluteNumberText
 
 filterExpression
   = left:filterValue whitespace op:binaryOperator whitespace right:filterValue { return [op, ["value", left], ["value", right]]; }
-  / "!" whitespace "(" whitespace expression:filterExpression whitespace ")" { return ["not", ["expression", expression]]; }
-  / "!" whitespace value:filterValue { return ["not", ["expression", ["hasValue", ["value", value]]]]; }
-  / value:filterValue { return ["hasValue", ["value", value]]; }
+  / unaryFilterExpression
+
+unaryFilterExpression
+  = value:filterValue { return ["hasValue", ["value", value]]; }
+  / "!" whitespace expression:unaryFilterExpression { return ["not", ["expression", expression]]; }
+  / "(" whitespace expression:filterExpression whitespace ")" { return expression; }
 
 binaryOperator
   = "==" { return "equals"; }
