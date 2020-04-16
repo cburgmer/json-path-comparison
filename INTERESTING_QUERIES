@@ -24,3 +24,19 @@
   selector: "$[?(@.*==[1,2])]"
 - document: [[1,2], [2,3]]
   selector: "$[?(@.*==2)]"
+- document: [[0], [1, 2], [{"key": 2}, 3], 2]
+  selector: "$[?(@[-1]==$[-1])]"
+- document: [[0], [1, 2], [{"key": 2}, 3], 2]
+  selector: "$[?($[42])]"
+- document: [null, [0], [1, 2], [{"key": 2}, 3], 2]
+  selector: "$[?(42)]"
+- document: [null, [0], [1, 2], [{"key": 2}, 3], 2]
+  selector: "$[?($[0]==null)]"
+- document: [null, [0], [1, 2], [{"key": 2}, 3], {"key": 2}]
+  selector: "$[?(!@.key)]"
+- document: [{"more": 1}, {"key": 2}]
+  selector: "$[?(!!@.key)]"
+- document: [{"more": 1}, {"key": 2}]
+  selector: "$[?(!(!@.key))]"
+- document: [{"more": 1}, {"key": 2}]
+  selector: "$[?((@.key))]"
