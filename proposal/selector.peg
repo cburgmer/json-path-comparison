@@ -70,6 +70,7 @@ absoluteNumberText
 
 filterExpression
   = x:higherPrecedenceFilterExpression whitespace "&&" whitespace xs:logicalAndRightHandSide { return ["and", ["expression", x], ...xs]; }
+  / x:higherPrecedenceFilterExpression whitespace "||" whitespace xs:logicalOrRightHandSide { return ["or", ["expression", x], ...xs]; }
   / higherPrecedenceFilterExpression
 
 higherPrecedenceFilterExpression
@@ -78,6 +79,10 @@ higherPrecedenceFilterExpression
 
 logicalAndRightHandSide
   = x:higherPrecedenceFilterExpression whitespace "&&" whitespace xs:logicalAndRightHandSide { return [["expression", x], ...xs]; }
+  / expression:higherPrecedenceFilterExpression { return [["expression", expression]]; }
+
+logicalOrRightHandSide
+  = x:higherPrecedenceFilterExpression whitespace "||" whitespace xs:logicalOrRightHandSide { return [["expression", x], ...xs]; }
   / expression:higherPrecedenceFilterExpression { return [["expression", expression]]; }
 
 unaryFilterExpression

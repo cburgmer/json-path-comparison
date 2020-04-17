@@ -485,6 +485,7 @@ queries:
   - id: filter_expression_with_different_grouped_operators
     selector: "$[?(@.a && (@.b || @.c))]"
     document: [{"a": true}, {"a": true, "b": true}, {"a": true, "b": true, "c": true}, {"b": true, "c": true}, {"a": true, "c": true}, {"c": true}, {"b": true}]
+    consensus: [{"a": true, "b": true}, {"a": true, "b": true, "c": true}, {"a": true, "c": true}]
   - id: filter_expression_with_different_ungrouped_operators
     selector: "$[?(@.a && @.b || @.c)]"
     document: [{"a": true, "b": true}, {"c": true}, {"d": true}]
