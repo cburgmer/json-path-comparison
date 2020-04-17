@@ -69,8 +69,13 @@ absoluteNumberText
 
 
 filterExpression
-  = left:filterValue whitespace op:binaryOperator whitespace right:filterValue { return [op, ["value", left], ["value", right]]; }
+  = x:unaryFilterExpression whitespace "&&" whitespace xs:logicalAndRightSide { return ["and", ...[["expression", x], ...xs]]; }
+  / left:filterValue whitespace op:binaryOperator whitespace right:filterValue { return [op, ["value", left], ["value", right]]; }
   / unaryFilterExpression
+
+logicalAndRightSide
+  = x:unaryFilterExpression whitespace "&&" whitespace xs:logicalAndRightSide { return [["expression", x]].concat(xs); }
+  / expression:unaryFilterExpression { return [["expression", expression]]; }
 
 unaryFilterExpression
   = value:filterValue { return ["hasValue", ["value", value]]; }
