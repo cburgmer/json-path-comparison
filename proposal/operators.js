@@ -95,8 +95,8 @@ const executeFilterValue = (
 const filterOperators = {
   hasValue: (result) => result !== undefined,
   not: (result) => !result,
-  and: (...results) => results.reduce((acc, r) => acc && r, true),
-  or: (...results) => results.reduce((acc, r) => acc || r, false),
+  and: (...results) => results.every((x) => x === true),
+  or: (...results) => results.some((x) => x === true),
   equals: (left, right) => JSON.stringify(left) === JSON.stringify(right),
   notEquals: (left, right) => JSON.stringify(left) !== JSON.stringify(right),
   lessThan: (left, right) => isSameType(left, right) && left < right,
