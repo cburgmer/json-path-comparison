@@ -198,6 +198,9 @@ queries:
     status: error
   - id: filter_expression_on_object
     status: error
+  - id: filter_expression_with_addition
+    status: open
+    result: []
   - id: filter_expression_with_boolean_and_operator
     status: open
     result: []
@@ -218,6 +221,9 @@ queries:
     status: error
   - id: filter_expression_with_different_ungrouped_operators
     status: error
+  - id: filter_expression_with_division
+    status: open
+    result: []
   - id: filter_expression_with_empty_expression
     status: open
     result: []
@@ -277,6 +283,9 @@ queries:
   - id: filter_expression_with_less_than_or_equal
     status: open
     result: []
+  - id: filter_expression_with_multiplication
+    status: open
+    result: []
   - id: filter_expression_with_negation_and_equals
     status: open
     result: []
@@ -290,6 +299,9 @@ queries:
     status: open
     result: []
   - id: filter_expression_with_subfilter
+    status: open
+    result: []
+  - id: filter_expression_with_substraction
     status: open
     result: []
   - id: filter_expression_with_triple_equal

@@ -115,6 +115,9 @@ queries:
   - id: filter_expression_on_object
     status: open
     result: [{"another": {"key": 1}, "key": 42}]
+  - id: filter_expression_with_addition
+    status: open
+    result: []
   - id: filter_expression_with_boolean_and_operator
     status: open
     result: [{"key": 43}]
@@ -136,6 +139,8 @@ queries:
   - id: filter_expression_with_different_ungrouped_operators
     status: open
     result: [{"a": true, "b": true}, {"c": true}]
+  - id: filter_expression_with_division
+    status: error
   - id: filter_expression_with_empty_expression
     status: error
   - id: filter_expression_with_equals
@@ -195,6 +200,9 @@ queries:
   - id: filter_expression_with_less_than_or_equal
     status: open
     result: [{"key": 0}, {"key": 42}, {"key": -1}, {"key": 41}, {"key": 41.9999}]
+  - id: filter_expression_with_multiplication
+    status: open
+    result: []
   - id: filter_expression_with_negation_and_equals
     status: open
     result: [{"key": 0}, {"key": -1}, {"key": 41}, {"key": 43}, {"key": 42.0001}, {"key": 41.9999}, {"key": 100}, {"key": "43"}, {"key": "41"}, {"key": "value"}, {"some": "value"}]
@@ -209,6 +217,9 @@ queries:
   - id: filter_expression_with_subfilter
     status: open
     result: [{"a": [{"price": 1}, {"price": 3}]}, {"a": [{"price": 11}]}, {"a": [{"price": 8}, {"price": 12}, {"price": 3}]}, {"a": []}]
+  - id: filter_expression_with_substraction
+    status: open
+    result: []
   - id: filter_expression_with_triple_equal
     status: open
     result: [{"key": 42}]
