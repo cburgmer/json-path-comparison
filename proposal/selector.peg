@@ -69,20 +69,23 @@ absoluteNumberText
 
 
 filterExpression
-  = x:unaryFilterExpression whitespace "&&" whitespace xs:logicalAndRightSide { return ["and", ...[["expression", x], ...xs]]; }
-  / left:filterValue whitespace op:binaryOperator whitespace right:filterValue { return [op, ["value", left], ["value", right]]; }
+  = x:higherPrecedenceFilterExpression whitespace "&&" whitespace xs:logicalAndRightHandSide { return ["and", ["expression", x], ...xs]; }
+  / higherPrecedenceFilterExpression
+
+higherPrecedenceFilterExpression
+  = left:filterValue whitespace op:comparisonOperator whitespace right:filterValue { return [op, ["value", left], ["value", right]]; }
   / unaryFilterExpression
 
-logicalAndRightSide
-  = x:unaryFilterExpression whitespace "&&" whitespace xs:logicalAndRightSide { return [["expression", x]].concat(xs); }
-  / expression:unaryFilterExpression { return [["expression", expression]]; }
+logicalAndRightHandSide
+  = x:higherPrecedenceFilterExpression whitespace "&&" whitespace xs:logicalAndRightHandSide { return [["expression", x], ...xs]; }
+  / expression:higherPrecedenceFilterExpression { return [["expression", expression]]; }
 
 unaryFilterExpression
   = value:filterValue { return ["hasValue", ["value", value]]; }
   / "!" whitespace expression:unaryFilterExpression { return ["not", ["expression", expression]]; }
   / "(" whitespace expression:filterExpression whitespace ")" { return expression; }
 
-binaryOperator
+comparisonOperator
   = "==" { return "equals"; }
   / "!=" { return "notEquals"; }
   / "<=" { return "lessThanOrEqual"; }
