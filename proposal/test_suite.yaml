@@ -489,6 +489,7 @@ queries:
   - id: filter_expression_with_different_ungrouped_operators
     selector: "$[?(@.a && @.b || @.c)]"
     document: [{"a": true, "b": true}, {"c": true}, {"d": true}]
+    expectedError: SyntaxError
   - id: filter_expression_with_empty_expression
     selector: "$[?()]"
     document: [1, {"key": 42}, "value", null]

@@ -93,7 +93,7 @@ const executeFilterValue = (
 };
 
 const filterOperators = {
-  hasValue: (results) => results !== undefined,
+  hasValue: (result) => result !== undefined,
   not: (result) => !result,
   and: (...results) => results.reduce((acc, r) => acc && r, true),
   or: (...results) => results.reduce((acc, r) => acc || r, false),
