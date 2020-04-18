@@ -4,12 +4,13 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "pegjs -o selector.js selector.peg && prettier -c *.js --ignore-path selector.js && ./tests.js test_suite.yaml && ./tests.js ../regression_suite/regression_suite.yaml"
+    "test": "pegjs --trace -o selector.js selector.peg && prettier -c *.js --ignore-path selector.js && ./tests.js test_suite.yaml && ./tests.js ../regression_suite/regression_suite.yaml"
   },
   "author": "",
   "license": "GPL-3.0-or-later",
   "devDependencies": {
     "pegjs": "^0.10.0",
+    "pegjs-backtrace": "^0.2.0",
     "prettier": "^2.0.2",
     "yaml": "^1.8.3"
   }
