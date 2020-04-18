@@ -34,8 +34,10 @@ of the implementation, from a broader look patterns are visible.
 
 - Is `null` considered a value when filtering e.g. `[?(@.key)]`?
 
-- Does filtering for `[?(@.key==null)]` return then same whether a key exists
+- Does filtering for `[?(@.key==null)]` return the same whether a key exists
   with value `null` or is missing altogether?
+
+- Do filter expressions inherit JavaScript's rules for e.g. operator precedence, or type conversions?
 
 - Do filter expressions allow the same complex JSONPath queries for the current
   object?
