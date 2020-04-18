@@ -4,7 +4,7 @@
 
 <h2>Setup</h2>
 
-<p>Selector: <code>$[?(@.d=={"k": "v"})]</code></p>
+<p>Selector: <code>$[?(@.d=={"k":"v"})]</code></p>
 
 <pre><code>[
   {
@@ -70,6 +70,19 @@ Clojure (json-path)
 ]
 </code></pre>
 
+<h4 id="Cpp_jsoncons">
+Cpp (jsoncons)
+</h4>
+
+<pre><code>[
+  {
+    "d": {
+      "k": "v"
+    }
+  }
+]
+</code></pre>
+
 <h4 id="Golang_github.com-oliveagle-jsonpath">
 Golang (github.com-oliveagle-jsonpath)
 </h4>
@@ -132,7 +145,7 @@ PHP (flow-jsonpath)
     "d": 0
   },
   {
-    "d": "{\"k\": \"v\"}"
+    "d": "{\"k\":\"v\"}"
   }
 ]
 </code></pre>
@@ -179,14 +192,7 @@ Bash (JSONPath.sh)
 C (json-glib)
 </h4>
 
-<pre><code>Unable to compile selector `$[?(@.d=={"k": "v"})]': Invalid array index definition “?(@.d=={"k": "v"})]”
-</code></pre>
-
-<h4 id="Cpp_jsoncons">
-Cpp (jsoncons)
-</h4>
-
-<pre><code>Could not parse JSON expression in a JSONPath filter at line 1 and column 15
+<pre><code>Unable to compile selector `$[?(@.d=={"k":"v"})]': Invalid array index definition “?(@.d=={"k":"v"})]”
 </code></pre>
 
 <h4 id="Elixir_jaxon">
@@ -220,7 +226,7 @@ Crash dump is being written to: /dev/null...done
 Golang (github.com-PaesslerAG-jsonpath)
 </h4>
 
-<pre><code>parsing error: $[?(@.d=={"k": "v"})]    :1:10 - 1:11 unexpected "{" while scanning extensions
+<pre><code>parsing error: $[?(@.d=={"k":"v"})] :1:10 - 1:11 unexpected "{" while scanning extensions
 </code></pre>
 
 <h4 id="Golang_github.com-bhmj-jsonslice">
@@ -237,7 +243,7 @@ Haskell (jsonpath)
 <pre><code>json-path-comparison: searchBeginningWithSlice: string
 CallStack (from HasCallStack):
   error, called at app/Main.hs:36:7 in main:Main
-Invalid JSONPath: $[?(@.d=={"k": "v"})]
+Invalid JSONPath: $[?(@.d=={"k":"v"})]
  Error: searchBeginningWithSlice: string
 </code></pre>
 
@@ -247,8 +253,8 @@ Java (com.github.jsurfer)
 
 <pre><code>line 1:10 token recognition error at: '"'
 line 1:12 token recognition error at: '"'
-line 1:15 token recognition error at: '"'
-line 1:17 token recognition error at: '"'
+line 1:14 token recognition error at: '"'
+line 1:16 token recognition error at: '"'
 line 1:9 no viable alternative at input '@.d=={'
 Exception in thread "main" org.antlr.v4.runtime.misc.ParseCancellationException
     at org.antlr.v4.runtime.BailErrorStrategy.recover(BailErrorStrategy.java:51)
@@ -286,7 +292,7 @@ PHP (Goessner)
 PHP (remorhaz-jsonpath)
 </h4>
 
-<pre><code>Error: 'Failed to build AST from JSONPath query: $[?(@.d=={"k": "v"})]'
+<pre><code>Error: 'Failed to build AST from JSONPath query: $[?(@.d=={"k":"v"})]'
 </code></pre>
 
 <h4 id="Perl_JSON-Path">
@@ -323,7 +329,7 @@ Rust (jsonpath_lib)
 </h4>
 
 <pre><code>path error: 
-$[?(@.d=={"k": "v"})]
+$[?(@.d=={"k":"v"})]
 ^^^^^^^^^^^^^
 </code></pre>
 

@@ -157,7 +157,7 @@ queries:
     result: [{"key": false}, {"key": null}, {"key": ""}, {"key": 0}]
   - id: filter_expression_with_equals_object
     status: open
-    result: [{"d": 0}, {"d": "{\"k\": \"v\"}"}]
+    result: [{"d": 0}, {"d": "{\"k\":\"v\"}"}]
   - id: filter_expression_with_equals_on_array_of_numbers
     status: error
   - id: filter_expression_with_equals_on_object
