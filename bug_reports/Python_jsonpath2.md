@@ -378,6 +378,21 @@ The following queries provide results that do not match those of other implement
   ValueError("line 1:10 extraneous input '=' expecting {'@', '$', 'true', 'false', 'null', '{', '[', STRING, NUMBER}")
   ```
 
+- [ ] `$[?(@.key=='value')]`
+  Input:
+  ```
+  [{"key": "some"}, {"key": "value"}]
+  ```
+  Expected output:
+  ```
+  [{"key": "value"}]
+  ```
+  Error:
+  ```
+  line 1:11 token recognition error at: '''
+  ValueError("line 1:11 token recognition error at: '''")
+  ```
+
 - [ ] `$['key','another']`
   Input:
   ```

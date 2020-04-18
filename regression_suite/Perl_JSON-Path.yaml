@@ -195,11 +195,11 @@ queries:
     status: error
   - id: filter_expression_with_equals_on_string_with_dot_literal
     status: error
+  - id: filter_expression_with_equals_string
+    status: error
+  - id: filter_expression_with_equals_string_with_single_quotes
+    status: error
   - id: filter_expression_with_equals_true
-    status: error
-  - id: filter_expression_with_equals_value_with_double_quotes
-    status: error
-  - id: filter_expression_with_equals_value_with_single_quotes
     status: error
   - id: filter_expression_with_equals_with_root_reference
     status: error

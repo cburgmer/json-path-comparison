@@ -278,15 +278,15 @@ queries:
   - id: filter_expression_with_equals_on_string_with_dot_literal
     status: fail
     result: []
+  - id: filter_expression_with_equals_string
+    status: open
+    result: [{"key": null}, {"some": "value"}]
+  - id: filter_expression_with_equals_string_with_single_quotes
+    status: fail
+    result: []
   - id: filter_expression_with_equals_true
     status: open
     result: [{"some": "some value"}, {"key": null}]
-  - id: filter_expression_with_equals_value_with_double_quotes
-    status: open
-    result: [{"key": null}, {"some": "value"}]
-  - id: filter_expression_with_equals_value_with_single_quotes
-    status: open
-    result: [{"key": null}, {"some": "value"}]
   - id: filter_expression_with_equals_with_root_reference
     status: open
     result: [{"key": 42}]

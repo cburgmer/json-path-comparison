@@ -759,6 +759,20 @@ The following queries provide results that do not match those of other implement
   []
   ```
 
+- [ ] `$[?(@.key=='value')]`
+  Input:
+  ```
+  [{"key": "some"}, {"key": "value"}]
+  ```
+  Expected output:
+  ```
+  [{"key": "value"}]
+  ```
+  Actual output:
+  ```
+  []
+  ```
+
 - [ ] `$['key','another']`
   Input:
   ```

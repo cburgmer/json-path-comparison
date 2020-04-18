@@ -173,15 +173,12 @@ queries:
   - id: filter_expression_with_equals_on_string_with_current_object_literal
     status: open
     result: [{"key": "hi@example.com"}]
+  - id: filter_expression_with_equals_string
+    status: open
+    result: [{"key": "value"}]
   - id: filter_expression_with_equals_true
     status: open
     result: [{"key": true}]
-  - id: filter_expression_with_equals_value_with_double_quotes
-    status: open
-    result: [{"key": "value"}]
-  - id: filter_expression_with_equals_value_with_single_quotes
-    status: open
-    result: [{"key": "value"}]
   - id: filter_expression_with_equals_with_root_reference
     status: open
     result: [{"key": 42}]

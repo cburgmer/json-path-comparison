@@ -544,15 +544,16 @@ queries:
     selector: "$[?(@.key==\"some.value\")]"
     document: [{"key": "some"}, {"key": "value"}, {"key": "some.value"}]
     consensus: [{"key": "some.value"}]
+  - id: filter_expression_with_equals_string
+    selector: "$[?(@.key==\"value\")]"
+    document: [{"key": "some"}, {"key": "value"}, {"key": null}, {"key": 0}, {"key": 1}, {"key": -1}, {"key": ""}, {"key": {}}, {"key": []}, {"key": "valuemore"}, {"key": "morevalue"}, {"key": ["value"]}, {"key": {"some": "value"}}, {"key": {"key": "value"}}, {"some": "value"}]
+  - id: filter_expression_with_equals_string_with_single_quotes
+    selector: "$[?(@.key=='value')]"
+    document: [{"key": "some"}, {"key": "value"}]
+    consensus: [{"key": "value"}]
   - id: filter_expression_with_equals_true
     selector: "$[?(@.key==true)]"
     document: [{"some": "some value"}, {"key": true}, {"key": false}, {"key": null}, {"key": "value"}, {"key": ""}, {"key": 0}, {"key": 1}, {"key": -1}, {"key": 42}, {"key": {}}, {"key": []}]
-  - id: filter_expression_with_equals_value_with_double_quotes
-    selector: "$[?(@.key==\"value\")]"
-    document: [{"key": "some"}, {"key": "value"}, {"key": null}, {"key": 0}, {"key": 1}, {"key": -1}, {"key": ""}, {"key": {}}, {"key": []}, {"key": "valuemore"}, {"key": "morevalue"}, {"key": ["value"]}, {"key": {"some": "value"}}, {"key": {"key": "value"}}, {"some": "value"}]
-  - id: filter_expression_with_equals_value_with_single_quotes
-    selector: "$[?(@.key=='value')]"
-    document: [{"key": "some"}, {"key": "value"}, {"key": null}, {"key": 0}, {"key": 1}, {"key": -1}, {"key": ""}, {"key": {}}, {"key": []}, {"key": "valuemore"}, {"key": "morevalue"}, {"key": ["value"]}, {"key": {"some": "value"}}, {"key": {"key": "value"}}, {"some": "value"}]
   - id: filter_expression_with_equals_with_root_reference
     selector: "$.items[?(@.key==$.value)]"
     document: {"value": 42, "items": [{"key": 10}, {"key": 42}, {"key": 50}]}

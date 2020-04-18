@@ -409,6 +409,20 @@ The following queries provide results that do not match those of other implement
   Unable to compile selector `$[?(@.key=="some.value")]': Invalid array index definition “?(@.key=="some.value")]”
   ```
 
+- [ ] `$[?(@.key=='value')]`
+  Input:
+  ```
+  [{"key": "some"}, {"key": "value"}]
+  ```
+  Expected output:
+  ```
+  [{"key": "value"}]
+  ```
+  Error:
+  ```
+  Unable to compile selector `$[?(@.key=='value')]': Invalid array index definition “?(@.key=='value')]”
+  ```
+
 - [ ] `$['key','another']`
   Input:
   ```

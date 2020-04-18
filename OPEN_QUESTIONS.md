@@ -39,6 +39,8 @@ of the implementation, from a broader look patterns are visible.
 
 - Do filter expressions inherit JavaScript's rules for e.g. operator precedence, or type conversions?
 
+- Do filter expressions support complex objects/arrays as values? If so, only in valid JSON, or e.g. include single quotes for strings?
+
 - Do filter expressions allow the same complex JSONPath queries for the current
   object?
 
