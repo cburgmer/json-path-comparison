@@ -1,19 +1,28 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/3.0.1/github-markdown.css">
 <article class="markdown-body">
-<h1>Filter expression with equals on string with current object literal</h1>
+<h1>Filter expression with equals string with dot literal</h1>
 
 <h2>Setup</h2>
 
-<p>Selector: <code>$[?(@.key=="hi@example.com")]</code></p>
+<p>Selector: <code>$[?(@.key=="some.value")]</code></p>
 
 <pre><code>[
     {"key": "some"},
     {"key": "value"},
-    {"key": "hi@example.com"}
+    {"key": "some.value"}
 ]
 </code></pre>
 
 <h2>Results</h2>
+
+<h3 id="consensus">Consensus</h3>
+
+<pre><code>[
+  {
+    "key": "some.value"
+  }
+]
+</code></pre>
 
 <h3>Other responses</h3>
 
@@ -22,7 +31,7 @@ Bash (JSONPath.sh)
 </h4>
 
 <pre><code>{
-  "key": "hi@example.com"
+  "key": "some.value"
 }
 </code></pre>
 
@@ -33,194 +42,11 @@ Clojure (json-path)
 <pre><code>[]
 </code></pre>
 
-<h4 id="Cpp_jsoncons">
-Cpp (jsoncons)
-</h4>
-
-<pre><code>[
-  {
-    "key": "hi@example.com"
-  }
-]
-</code></pre>
-
-<h4 id="Elixir_warpath">
-Elixir (warpath)
-</h4>
-
-<pre><code>[
-  {
-    "key": "hi@example.com"
-  }
-]
-</code></pre>
-
-<h4 id="Erlang_ejsonpath">
-Erlang (ejsonpath)
-</h4>
-
-<pre><code>[
-  {
-    "key": "hi@example.com"
-  }
-]
-</code></pre>
-
-<h4 id="Golang_github.com-PaesslerAG-jsonpath">
-Golang (github.com-PaesslerAG-jsonpath)
-</h4>
-
-<pre><code>[
-  {
-    "key": "hi@example.com"
-  }
-]
-</code></pre>
-
-<h4 id="Golang_github.com-bhmj-jsonslice">
-Golang (github.com-bhmj-jsonslice)
-</h4>
-
-<pre><code>[
-  {
-    "key": "hi@example.com"
-  }
-]
-</code></pre>
-
 <h4 id="Golang_github.com-oliveagle-jsonpath">
 Golang (github.com-oliveagle-jsonpath)
 </h4>
 
 <pre><code>[]
-</code></pre>
-
-<h4 id="Haskell_jsonpath">
-Haskell (jsonpath)
-</h4>
-
-<pre><code>[
-  {
-    "key": "hi@example.com"
-  }
-]
-</code></pre>
-
-<h4 id="JavaScript_jsonpath">
-JavaScript (jsonpath)
-</h4>
-
-<pre><code>[
-  {
-    "key": "hi@example.com"
-  }
-]
-</code></pre>
-
-<h4 id="JavaScript_jsonpath-plus">
-JavaScript (jsonpath-plus)
-</h4>
-
-<pre><code>[
-  {
-    "key": "hi@example.com"
-  }
-]
-</code></pre>
-
-<h4 id="Java_com.jayway.jsonpath">
-Java (com.jayway.jsonpath)
-</h4>
-
-<pre><code>[
-  {
-    "key": "hi@example.com"
-  }
-]
-</code></pre>
-
-<h4 id="PHP_flow-jsonpath">
-PHP (flow-jsonpath)
-</h4>
-
-<pre><code>[
-  {
-    "key": "hi@example.com"
-  }
-]
-</code></pre>
-
-<h4 id="PHP_galbar-jsonpath">
-PHP (galbar-jsonpath)
-</h4>
-
-<pre><code>[
-  {
-    "key": "hi@example.com"
-  }
-]
-</code></pre>
-
-<h4 id="PHP_remorhaz-jsonpath">
-PHP (remorhaz-jsonpath)
-</h4>
-
-<pre><code>[
-  {
-    "key": "hi@example.com"
-  }
-]
-</code></pre>
-
-<h4 id="Ruby_jsonpath">
-Ruby (jsonpath)
-</h4>
-
-<pre><code>[
-  {
-    "key": "hi@example.com"
-  }
-]
-</code></pre>
-
-<h4 id="Rust_jsonpath_lib">
-Rust (jsonpath_lib)
-</h4>
-
-<pre><code>[
-  {
-    "key": "hi@example.com"
-  }
-]
-</code></pre>
-
-<h4 id="Scala_jsonpath">
-Scala (jsonpath)
-</h4>
-
-<pre><code>[
-  {
-    "key": "hi@example.com"
-  }
-]
-</code></pre>
-
-<h4 id="dotNET_JsonPathLib">
-dotNET (JsonPathLib)
-</h4>
-
-<pre><code>[]
-</code></pre>
-
-<h4 id="dotNET_Manatee.Json">
-dotNET (Manatee.Json)
-</h4>
-
-<pre><code>[
-  {
-    "key": "hi@example.com"
-  }
-]
 </code></pre>
 
 <h3>Errors</h3>
@@ -229,7 +55,7 @@ dotNET (Manatee.Json)
 C (json-glib)
 </h4>
 
-<pre><code>Unable to compile selector `$[?(@.key=="hi@example.com")]': Invalid array index definition “?(@.key=="hi@example.com")]”
+<pre><code>Unable to compile selector `$[?(@.key=="some.value")]': Invalid array index definition “?(@.key=="some.value")]”
 </code></pre>
 
 <h4 id="Elixir_jaxon">
@@ -241,20 +67,13 @@ Elixir (jaxon)
     lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
 </code></pre>
 
-<h4 id="JavaScript_Goessner">
-JavaScript (Goessner)
-</h4>
-
-<pre><code>jsonpath returned false, this might indicate an error
-</code></pre>
-
 <h4 id="Java_com.github.jsurfer">
 Java (com.github.jsurfer)
 </h4>
 
 <pre><code>line 1:11 token recognition error at: '"'
-line 1:26 token recognition error at: '"'
-line 1:12 no viable alternative at input '@.key==hi'
+line 1:22 token recognition error at: '"'
+line 1:12 no viable alternative at input '@.key==some'
 Exception in thread "main" org.antlr.v4.runtime.misc.ParseCancellationException
     at org.antlr.v4.runtime.BailErrorStrategy.recover(BailErrorStrategy.java:51)
     at org.jsfr.json.compiler.JsonPathParser.filterExpr(JsonPathParser.java:947)
@@ -292,13 +111,6 @@ Perl (JSON-Path)
 </h4>
 
 <pre><code>non-safe evaluation, died at main.pl line 11.
-</code></pre>
-
-<h4 id="Python_jsonpath">
-Python (jsonpath)
-</h4>
-
-<pre><code>jsonpath returned false, this might indicate an error
 </code></pre>
 
 <h4 id="Python_jsonpath-rw">
