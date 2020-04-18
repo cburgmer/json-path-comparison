@@ -145,6 +145,9 @@ queries:
     result: [{"key": 42}, {"key": "42"}]
   - id: filter_expression_with_equals_array
     status: open
+    result: [{"d": 0}, {"d": "[\"v1\",\"v2\"]"}]
+  - id: filter_expression_with_equals_array_with_single_quotes
+    status: open
     result: [{"d": 0}, {"d": "['v1','v2']"}]
   - id: filter_expression_with_equals_false
     status: open

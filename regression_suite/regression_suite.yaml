@@ -510,6 +510,9 @@ queries:
     selector: "$[?(@.key==42)]"
     document: [{"key": 0}, {"key": 42}, {"key": -1}, {"key": 1}, {"key": 41}, {"key": 43}, {"key": 42.0001}, {"key": 41.9999}, {"key": 100}, {"key": "some"}, {"key": "42"}, {"key": null}, {"key": 420}, {"key": ""}, {"key": {}}, {"key": []}, {"key": [42]}, {"key": {"key": 42}}, {"key": {"some": 42}}, {"some": "value"}]
   - id: filter_expression_with_equals_array
+    selector: "$[?(@.d==[\"v1\",\"v2\"])]"
+    document: [{"d": ["v1", "v2"]}, {"d": ["a", "b"]}, {"d": "v1"}, {"d": "v2"}, {"d": {}}, {"d": []}, {"d": null}, {"d": -1}, {"d": 0}, {"d": 1}, {"d": "['v1','v2']"}, {"d": "['v1', 'v2']"}, {"d": "v1,v2"}, {"d": "[\"v1\", \"v2\"]"}, {"d": "[\"v1\",\"v2\"]"}]
+  - id: filter_expression_with_equals_array_with_single_quotes
     selector: "$[?(@.d==['v1','v2'])]"
     document: [{"d": ["v1", "v2"]}, {"d": ["a", "b"]}, {"d": "v1"}, {"d": "v2"}, {"d": {}}, {"d": []}, {"d": null}, {"d": -1}, {"d": 0}, {"d": 1}, {"d": "['v1','v2']"}, {"d": "['v1', 'v2']"}, {"d": "v1,v2"}, {"d": "[\"v1\", \"v2\"]"}, {"d": "[\"v1\",\"v2\"]"}]
   - id: filter_expression_with_equals_false

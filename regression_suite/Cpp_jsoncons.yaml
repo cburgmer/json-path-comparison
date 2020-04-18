@@ -140,6 +140,9 @@ queries:
     status: open
     result: [{"key": 42}]
   - id: filter_expression_with_equals_array
+    status: open
+    result: [{"d": ["v1", "v2"]}]
+  - id: filter_expression_with_equals_array_with_single_quotes
     status: error
   - id: filter_expression_with_equals_false
     status: open

@@ -1,10 +1,10 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/3.0.1/github-markdown.css">
 <article class="markdown-body">
-<h1>Filter expression with equals array</h1>
+<h1>Filter expression with equals array with single quotes</h1>
 
 <h2>Setup</h2>
 
-<p>Selector: <code>$[?(@.d==["v1","v2"])]</code></p>
+<p>Selector: <code>$[?(@.d==['v1','v2'])]</code></p>
 
 <pre><code>[
   {
@@ -65,20 +65,6 @@
 
 <h3>Other responses</h3>
 
-<h4 id="Cpp_jsoncons">
-Cpp (jsoncons)
-</h4>
-
-<pre><code>[
-  {
-    "d": [
-      "v1",
-      "v2"
-    ]
-  }
-]
-</code></pre>
-
 <h4 id="JavaScript_Goessner">
 JavaScript (Goessner)
 </h4>
@@ -135,7 +121,7 @@ PHP (flow-jsonpath)
     "d": 0
   },
   {
-    "d": "[\"v1\",\"v2\"]"
+    "d": "['v1','v2']"
   }
 ]
 </code></pre>
@@ -188,7 +174,7 @@ Bash (JSONPath.sh)
 C (json-glib)
 </h4>
 
-<pre><code>Unable to compile selector `$[?(@.d==["v1","v2"])]': Invalid array index definition “?(@.d==["v1","v2"])]”
+<pre><code>Unable to compile selector `$[?(@.d==['v1','v2'])]': Invalid array index definition “?(@.d==['v1','v2'])]”
 </code></pre>
 
 <h4 id="Clojure_json-path">
@@ -198,11 +184,18 @@ Clojure (json-path)
 <pre><code>java.lang.Exception object must be an array.
 </code></pre>
 
+<h4 id="Cpp_jsoncons">
+Cpp (jsoncons)
+</h4>
+
+<pre><code>Could not parse JSON expression in a JSONPath filter at line 1 and column 21
+</code></pre>
+
 <h4 id="Elixir_jaxon">
 Elixir (jaxon)
 </h4>
 
-<pre><code>** (Jaxon.ParseError) Expected an integer at `?(@.d==["v`
+<pre><code>** (Jaxon.ParseError) Expected an integer at `?(@.d==['v`
     lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
     lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
 </code></pre>
@@ -229,7 +222,7 @@ Crash dump is being written to: /dev/null...done
 Golang (github.com-PaesslerAG-jsonpath)
 </h4>
 
-<pre><code>parsing error: $[?(@.d==["v1","v2"])]   :1:10 - 1:11 unexpected "[" while scanning extensions
+<pre><code>parsing error: $[?(@.d==['v1','v2'])]   :1:10 - 1:11 unexpected "[" while scanning extensions
 </code></pre>
 
 <h4 id="Golang_github.com-bhmj-jsonslice">
@@ -253,7 +246,7 @@ Haskell (jsonpath)
 <pre><code>json-path-comparison: searchBeginningWithSlice: string
 CallStack (from HasCallStack):
   error, called at app/Main.hs:36:7 in main:Main
-Invalid JSONPath: $[?(@.d==["v1","v2"])]
+Invalid JSONPath: $[?(@.d==['v1','v2'])]
  Error: searchBeginningWithSlice: string
 </code></pre>
 
@@ -261,11 +254,7 @@ Invalid JSONPath: $[?(@.d==["v1","v2"])]
 Java (com.github.jsurfer)
 </h4>
 
-<pre><code>line 1:10 token recognition error at: '"'
-line 1:13 token recognition error at: '"'
-line 1:15 token recognition error at: '"'
-line 1:18 token recognition error at: '"'
-line 1:9 no viable alternative at input '@.d==['
+<pre><code>line 1:9 no viable alternative at input '@.d==['
 Exception in thread "main" org.antlr.v4.runtime.misc.ParseCancellationException
     at org.antlr.v4.runtime.BailErrorStrategy.recover(BailErrorStrategy.java:51)
     at org.jsfr.json.compiler.JsonPathParser.filterExpr(JsonPathParser.java:947)
@@ -339,7 +328,7 @@ Rust (jsonpath_lib)
 </h4>
 
 <pre><code>path error: 
-$[?(@.d==["v1","v2"])]
+$[?(@.d==['v1','v2'])]
 ^^^^^^^^^
 </code></pre>
 
