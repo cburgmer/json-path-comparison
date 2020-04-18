@@ -512,6 +512,7 @@ queries:
   - id: filter_expression_with_equals_object
     selector: "$[?(@.d=={\"k\": \"v\"})]"
     document: [{"d": {"k": "v"}}, {"d": {"a": "b"}}, {"d": "k"}, {"d": "v"}, {"d": {}}, {"d": []}, {"d": null}, {"d": -1}, {"d": 0}, {"d": 1}, {"d": "[object Object]"}, {"d": "{\"k\": \"v\"}"}, {"d": "{\"k\":\"v\"}"}, "v"]
+    consensus: [{"d": {"k": "v"}}]
   - id: filter_expression_with_equals_on_array_of_numbers
     selector: "$[?(@==42)]"
     document: [0, 42, -1, 41, 43, 42.0001, 41.9999, null, 100]

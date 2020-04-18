@@ -116,14 +116,9 @@ scalarDotNotation
 scalarBracketNotation
   = "[" whitespace child:scalarBracketElement whitespace "]" { return [['children', [child]]]; }
 
-// TODO need full JSON spec here + exemption for single quoted strings
 jsonValue
-  = "null" { return null; }
-  / "true" { return true; }
-  / "false" { return false; }
-  / number:number { return number; }
-  / "'" string:singleQuotedString "'" { return string; }
-  / '"' string:doubleQuotedString '"' { return string; }
+  = "'" string:singleQuotedString "'" { return string; }
+  / JSON_text
 
 whitespace
   = " "*
