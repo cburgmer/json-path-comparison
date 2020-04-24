@@ -143,6 +143,20 @@ The following queries provide results that do not match those of other implement
   parsing error
   ```
 
+- [ ] `$[00:03:02]`
+  Input:
+  ```
+  ["first", "second", "third", "forth", "fifth"]
+  ```
+  Expected output:
+  ```
+  ["first", "third"]
+  ```
+  Error:
+  ```
+  parsing error
+  ```
+
 - [ ] `$[0:4:2]`
   Input:
   ```

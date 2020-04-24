@@ -109,6 +109,34 @@ The following queries provide results that do not match those of other implement
   	... 8 more
   ```
 
+- [ ] `$[00:03:02]`
+  Input:
+  ```
+  ["first", "second", "third", "forth", "fifth"]
+  ```
+  Expected output:
+  ```
+  ["first", "third"]
+  ```
+  Error:
+  ```
+  line 1:2 no viable alternative at input '[00'
+  Exception in thread "main" org.antlr.v4.runtime.misc.ParseCancellationException
+  	at org.antlr.v4.runtime.BailErrorStrategy.recover(BailErrorStrategy.java:51)
+  	at org.jsfr.json.compiler.JsonPathParser.relativePath(JsonPathParser.java:315)
+  	at org.jsfr.json.compiler.JsonPathParser.path(JsonPathParser.java:159)
+  	at org.jsfr.json.compiler.JsonPathCompiler.compile(JsonPathCompiler.java:283)
+  	at org.jsfr.json.compiler.JsonPathCompiler.compile(JsonPathCompiler.java:273)
+  	at org.jsfr.json.JsonSurfer.collectAll(JsonSurfer.java:284)
+  	at query.App.main(App.java:27)
+  Caused by: org.antlr.v4.runtime.NoViableAltException
+  	at org.antlr.v4.runtime.atn.ParserATNSimulator.noViableAlt(ParserATNSimulator.java:2026)
+  	at org.antlr.v4.runtime.atn.ParserATNSimulator.execATN(ParserATNSimulator.java:467)
+  	at org.antlr.v4.runtime.atn.ParserATNSimulator.adaptivePredict(ParserATNSimulator.java:393)
+  	at org.jsfr.json.compiler.JsonPathParser.relativePath(JsonPathParser.java:232)
+  	... 5 more
+  ```
+
 - [ ] `$[0:4:2]`
   Input:
   ```

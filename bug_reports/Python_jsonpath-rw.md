@@ -45,6 +45,20 @@ The following queries provide results that do not match those of other implement
   Exception('Parse error at 1:5 near token : (:)')
   ```
 
+- [ ] `$[00:03:02]`
+  Input:
+  ```
+  ["first", "second", "third", "forth", "fifth"]
+  ```
+  Expected output:
+  ```
+  ["first", "third"]
+  ```
+  Error:
+  ```
+  Exception('Parse error at 1:7 near token : (:)')
+  ```
+
 - [ ] `$[0:4:2]`
   Input:
   ```

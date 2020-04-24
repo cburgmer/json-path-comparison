@@ -241,6 +241,20 @@ The following queries provide results that do not match those of other implement
   "first"
   ```
 
+- [ ] `$[00:03:02]`
+  Input:
+  ```
+  ["first", "second", "third", "forth", "fifth"]
+  ```
+  Expected output:
+  ```
+  ["first", "third"]
+  ```
+  Actual output:
+  ```
+  "first"
+  ```
+
 - [ ] `$[0:4:2]`
   Input:
   ```

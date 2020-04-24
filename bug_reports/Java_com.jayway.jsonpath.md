@@ -97,6 +97,20 @@ The following queries provide results that do not match those of other implement
   ["first", "second", "third"]
   ```
 
+- [ ] `$[00:03:02]`
+  Input:
+  ```
+  ["first", "second", "third", "forth", "fifth"]
+  ```
+  Expected output:
+  ```
+  ["first", "third"]
+  ```
+  Actual output:
+  ```
+  ["first", "second", "third"]
+  ```
+
 - [ ] `$[0:4:2]`
   Input:
   ```

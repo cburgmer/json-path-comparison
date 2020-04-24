@@ -89,6 +89,10 @@ queries:
     selector: "$[0:3:1]"
     document: ["first", "second", "third", "forth", "fifth"]
     consensus: ["first", "second", "third"]
+  - id: array_slice_with_step_and_leading_zeros
+    selector: "$[00:03:02]"
+    document: ["first", "second", "third", "forth", "fifth"]
+    consensus: ["first", "third"]
   - id: array_slice_with_step_but_end_not_aligned
     selector: "$[0:4:2]"
     document: ["first", "second", "third", "forth", "fifth"]

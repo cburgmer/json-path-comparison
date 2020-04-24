@@ -3,6 +3,21 @@ Results do not match other implementations
 The following queries provide results that do not match those of other implementations of JSONPath
 (compare https://cburgmer.github.io/json-path-comparison/):
 
+- [ ] `$[00:03:02]`
+  Input:
+  ```
+  ["first", "second", "third", "forth", "fifth"]
+  ```
+  Expected output:
+  ```
+  ["first", "third"]
+  ```
+  Error:
+  ```
+  line 1:3 mismatched input '0' expecting {']', ','}
+  ValueError("line 1:3 mismatched input '0' expecting {']', ','}")
+  ```
+
 - [ ] `$['key']`
   Input:
   ```
