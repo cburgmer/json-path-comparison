@@ -501,6 +501,7 @@ queries:
   - id: filter_expression_with_equals_array
     selector: "$[?(@.d==['v1','v2'])]"
     document: [{"d": ["v1", "v2"]}, {"d": ["a", "b"]}, {"d": "v1"}, {"d": "v2"}, {"d": {}}, {"d": []}, {"d": null}, {"d": -1}, {"d": 0}, {"d": 1}, {"d": "['v1','v2']"}, {"d": "['v1', 'v2']"}, {"d": "v1,v2"}, {"d": "[\"v1\", \"v2\"]"}, {"d": "[\"v1\",\"v2\"]"}]
+    expectedError: SyntaxError
   - id: filter_expression_with_equals_false
     selector: "$[?(@.key==false)]"
     document: [{"some": "some value"}, {"key": true}, {"key": false}, {"key": null}, {"key": "value"}, {"key": ""}, {"key": 0}, {"key": 1}, {"key": -1}, {"key": 42}, {"key": {}}, {"key": []}]
@@ -512,7 +513,7 @@ queries:
   - id: filter_expression_with_equals_object
     selector: "$[?(@.d=={\"k\": \"v\"})]"
     document: [{"d": {"k": "v"}}, {"d": {"a": "b"}}, {"d": "k"}, {"d": "v"}, {"d": {}}, {"d": []}, {"d": null}, {"d": -1}, {"d": 0}, {"d": 1}, {"d": "[object Object]"}, {"d": "{\"k\": \"v\"}"}, {"d": "{\"k\":\"v\"}"}, "v"]
-    consensus: [{"d": {"k": "v"}}]
+    expectedError: SyntaxError
   - id: filter_expression_with_equals_on_array_of_numbers
     selector: "$[?(@==42)]"
     document: [0, 42, -1, 41, 43, 42.0001, 41.9999, null, 100]

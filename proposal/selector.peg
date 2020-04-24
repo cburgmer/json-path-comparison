@@ -38,12 +38,12 @@ bracketElement
 scalarBracketElement
   = "'" name:singleQuotedString "'" { return ['name', name]; }
   / '"' name:doubleQuotedString '"' { return ['name', name]; }
-  / index:number { return ['index', index]; }
+  / index:integer { return ['index', index]; }
 
 listBracketElement
   = "*" { return ['all']; }
-  / start:number? ":" end:number? ":" step:nonZeroNumber? { return ['slice', start, end, step]; }
-  / start:number? ":" end:number? { return ['slice', start, end, null]; }
+  / start:integer? ":" end:integer? ":" step:nonZeroInteger? { return ['slice', start, end, step]; }
+  / start:integer? ":" end:integer? { return ['slice', start, end, null]; }
   / "?(" filterExpression:filterExpression ")" { return ['filter', filterExpression]; }
 
 singleQuotedString
@@ -58,14 +58,11 @@ doubleQuotedString
   / x:[^"] xs:doubleQuotedString { return x + xs; }
   / ''
 
-number
-  = "-"? absoluteNumberText { return parseInt(text(), 10); }
+integer
+  = "-"? [0-9]+ { return parseInt(text(), 10); }
 
-nonZeroNumber
-  = "-"? [1-9] absoluteNumberText? { return parseInt(text(), 10); }
-
-absoluteNumberText
-  = [0-9]+ { return text(); }
+nonZeroInteger
+  = "-"? [1-9] [0-9]* { return parseInt(text(), 10); }
 
 
 filterExpression
@@ -101,7 +98,7 @@ comparisonOperator
 filterValue
   = "@" operators:scalarOperators { return ["current", operators]; }
   / "$" operators:scalarOperators { return ["root", operators]; }
-  / constant:jsonValue { return ["constant", constant]; }
+  / constant:simpleValue { return ["constant", constant]; }
 
 scalarOperators
   = operators:scalarOperator* { return operators.reduce((os, o) => os.concat(o), []); }
@@ -116,9 +113,26 @@ scalarDotNotation
 scalarBracketNotation
   = "[" whitespace child:scalarBracketElement whitespace "]" { return [['children', [child]]]; }
 
-jsonValue
+simpleValue
   = "'" string:singleQuotedString "'" { return string; }
-  / JSON_text
+  / '"' string:doubleQuotedString '"' { return string; }
+  / "false" { return false; }
+  / "true" { return true; }
+  / "null" { return null; }
+  / number
+
+number
+  = "-"? integerPart fraction? exponent? { return parseFloat(text()); }
+
+exponent
+  = [eE] ("-" / "+")? [0-9]+
+
+fraction
+  = "." [0-9]+
+
+integerPart
+  = "0" / ([1-9] [0-9]*)
+
 
 whitespace
   = " "*
