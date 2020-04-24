@@ -177,7 +177,7 @@ queries:
     result: [{"key": -12.3}]
   - id: filter_expression_with_equals_number_with_leading_zeros
     status: open
-    result: [{"key": 7}]
+    result: [{"key": 10}]
   - id: filter_expression_with_equals_object
     status: open
     result: ["v"]

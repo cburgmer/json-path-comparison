@@ -4,9 +4,9 @@
 
 <h2>Setup</h2>
 
-<p>Selector: <code>$[?(@.key==007)]</code></p>
+<p>Selector: <code>$[?(@.key==010)]</code></p>
 
-<pre><code>[{"key": "007"}, {"key": "7"}, {"key": 7}, {"key": 0}]
+<pre><code>[{"key": "010"}, {"key": "10"}, {"key": 10}, {"key": 0}, {"key": 8}]
 </code></pre>
 
 <h2>Results</h2>
@@ -18,7 +18,7 @@ Bash (JSONPath.sh)
 </h4>
 
 <pre><code>{
-  "key": "007"
+  "key": "010"
 }
 </code></pre>
 
@@ -35,7 +35,7 @@ Elixir (warpath)
 
 <pre><code>[
   {
-    "key": 7
+    "key": 10
   }
 ]
 </code></pre>
@@ -46,7 +46,7 @@ Erlang (ejsonpath)
 
 <pre><code>[
   {
-    "key": 7
+    "key": 10
   }
 ]
 </code></pre>
@@ -57,7 +57,7 @@ Golang (github.com-PaesslerAG-jsonpath)
 
 <pre><code>[
   {
-    "key": 7
+    "key": 10
   }
 ]
 </code></pre>
@@ -75,13 +75,7 @@ JavaScript (Goessner)
 
 <pre><code>[
   {
-    "key": "007"
-  },
-  {
-    "key": "7"
-  },
-  {
-    "key": 7
+    "key": 8
   }
 ]
 </code></pre>
@@ -92,13 +86,7 @@ JavaScript (jsonpath)
 
 <pre><code>[
   {
-    "key": "007"
-  },
-  {
-    "key": "7"
-  },
-  {
-    "key": 7
+    "key": 8
   }
 ]
 </code></pre>
@@ -109,13 +97,7 @@ JavaScript (jsonpath-plus)
 
 <pre><code>[
   {
-    "key": "007"
-  },
-  {
-    "key": "7"
-  },
-  {
-    "key": 7
+    "key": 8
   }
 ]
 </code></pre>
@@ -126,10 +108,10 @@ Java (com.jayway.jsonpath)
 
 <pre><code>[
   {
-    "key": "7"
+    "key": "10"
   },
   {
-    "key": 7
+    "key": 10
   }
 ]
 </code></pre>
@@ -140,13 +122,13 @@ PHP (flow-jsonpath)
 
 <pre><code>[
   {
-    "key": "007"
+    "key": "010"
   },
   {
-    "key": "7"
+    "key": "10"
   },
   {
-    "key": 7
+    "key": 10
   }
 ]
 </code></pre>
@@ -157,7 +139,7 @@ PHP (galbar-jsonpath)
 
 <pre><code>[
   {
-    "key": 7
+    "key": 10
   }
 ]
 </code></pre>
@@ -168,13 +150,13 @@ Ruby (jsonpath)
 
 <pre><code>[
   {
-    "key": "007"
+    "key": "010"
   },
   {
-    "key": "7"
+    "key": "10"
   },
   {
-    "key": 7
+    "key": 10
   }
 ]
 </code></pre>
@@ -192,7 +174,7 @@ Rust (jsonpath_lib)
 
 <pre><code>[
   {
-    "key": 7
+    "key": 10
   }
 ]
 </code></pre>
@@ -203,7 +185,7 @@ Scala (jsonpath)
 
 <pre><code>[
   {
-    "key": 7
+    "key": 10
   }
 ]
 </code></pre>
@@ -214,7 +196,7 @@ dotNET (Json.NET)
 
 <pre><code>[
   {
-    "key": 7
+    "key": 10
   }
 ]
 </code></pre>
@@ -225,13 +207,7 @@ dotNET (JsonPathLib)
 
 <pre><code>[
   {
-    "key": "007"
-  },
-  {
-    "key": "7"
-  },
-  {
-    "key": 7
+    "key": 8
   }
 ]
 </code></pre>
@@ -242,7 +218,7 @@ dotNET (Manatee.Json)
 
 <pre><code>[
   {
-    "key": 7
+    "key": 10
   }
 ]
 </code></pre>
@@ -253,7 +229,7 @@ dotNET (Manatee.Json)
 C (json-glib)
 </h4>
 
-<pre><code>Unable to compile selector `$[?(@.key==007)]': Invalid array index definition “?(@.key==007)]”
+<pre><code>Unable to compile selector `$[?(@.key==010)]': Invalid array index definition “?(@.key==010)]”
 </code></pre>
 
 <h4 id="Cpp_jsoncons">
@@ -290,7 +266,7 @@ Haskell (jsonpath)
 Java (com.github.jsurfer)
 </h4>
 
-<pre><code>line 1:11 no viable alternative at input '@.key==007'
+<pre><code>line 1:11 no viable alternative at input '@.key==010'
 Exception in thread "main" org.antlr.v4.runtime.misc.ParseCancellationException
     at org.antlr.v4.runtime.BailErrorStrategy.recover(BailErrorStrategy.java:51)
     at org.jsfr.json.compiler.JsonPathParser.filterExpr(JsonPathParser.java:947)
@@ -327,7 +303,7 @@ PHP (Goessner)
 PHP (remorhaz-jsonpath)
 </h4>
 
-<pre><code>Error: 'Failed to build AST from JSONPath query: $[?(@.key==007)]'
+<pre><code>Error: 'Failed to build AST from JSONPath query: $[?(@.key==010)]'
 </code></pre>
 
 <h4 id="Perl_JSON-Path">

@@ -32,6 +32,9 @@ queries:
   - id: array_slice_with_step_0
     status: open
     result: ["first", "second", "third"]
+  - id: array_slice_with_step_and_leading_zeros
+    status: fail
+    result: [8, 16]
   - id: bracket_notation
     status: fail
     result: {"key": "value"}
@@ -279,7 +282,7 @@ queries:
     result: {"key": "-0.123e2"}
   - id: filter_expression_with_equals_number_with_leading_zeros
     status: open
-    result: {"key": "007"}
+    result: {"key": "010"}
   - id: filter_expression_with_equals_object
     status: error
   - id: filter_expression_with_equals_on_array_of_numbers

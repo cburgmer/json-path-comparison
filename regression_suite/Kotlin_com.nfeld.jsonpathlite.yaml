@@ -32,7 +32,7 @@ queries:
     result: ["first", "second", "third"]
   - id: array_slice_with_step_and_leading_zeros
     status: fail
-    result: ["first", "second", "third"]
+    result: [10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23]
   - id: array_slice_with_step_but_end_not_aligned
     status: fail
     result: ["first", "second", "third", "forth"]

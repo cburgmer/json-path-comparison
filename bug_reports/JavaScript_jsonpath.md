@@ -3,19 +3,19 @@ Results do not match other implementations
 The following queries provide results that do not match those of other implementations of JSONPath
 (compare https://cburgmer.github.io/json-path-comparison/):
 
-- [ ] `$[00:03:02]`
+- [ ] `$[010:024:010]`
   Input:
   ```
-  ["first", "second", "third", "forth", "fifth"]
+  [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25]
   ```
   Expected output:
   ```
-  ["first", "third"]
+  [10, 20]
   ```
   Error:
   ```
   Parse error on line 1:
-  $[00:03:02]
+  $[010:024:010]
   ---^
   Expecting ']', ',', got 'ARRAY_SLICE'
   ```

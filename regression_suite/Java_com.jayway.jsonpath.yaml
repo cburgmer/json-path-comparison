@@ -27,7 +27,7 @@ queries:
     result: ["first", "second", "third"]
   - id: array_slice_with_step_and_leading_zeros
     status: fail
-    result: ["first", "second", "third"]
+    result: [10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23]
   - id: array_slice_with_step_but_end_not_aligned
     status: fail
     result: ["first", "second", "third", "forth"]
@@ -165,7 +165,7 @@ queries:
     status: error
   - id: filter_expression_with_equals_number_with_leading_zeros
     status: open
-    result: [{"key": "7"}, {"key": 7}]
+    result: [{"key": "10"}, {"key": 10}]
   - id: filter_expression_with_equals_object
     status: open
     result: [{"d": {"k": "v"}}]

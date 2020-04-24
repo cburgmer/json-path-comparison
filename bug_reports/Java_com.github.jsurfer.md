@@ -109,18 +109,18 @@ The following queries provide results that do not match those of other implement
   	... 8 more
   ```
 
-- [ ] `$[00:03:02]`
+- [ ] `$[010:024:010]`
   Input:
   ```
-  ["first", "second", "third", "forth", "fifth"]
+  [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25]
   ```
   Expected output:
   ```
-  ["first", "third"]
+  [10, 20]
   ```
   Error:
   ```
-  line 1:2 no viable alternative at input '[00'
+  line 1:2 no viable alternative at input '[010'
   Exception in thread "main" org.antlr.v4.runtime.misc.ParseCancellationException
   	at org.antlr.v4.runtime.BailErrorStrategy.recover(BailErrorStrategy.java:51)
   	at org.jsfr.json.compiler.JsonPathParser.relativePath(JsonPathParser.java:315)

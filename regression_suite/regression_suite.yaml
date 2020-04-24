@@ -90,9 +90,9 @@ queries:
     document: ["first", "second", "third", "forth", "fifth"]
     consensus: ["first", "second", "third"]
   - id: array_slice_with_step_and_leading_zeros
-    selector: "$[00:03:02]"
-    document: ["first", "second", "third", "forth", "fifth"]
-    consensus: ["first", "third"]
+    selector: "$[010:024:010]"
+    document: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25]
+    consensus: [10, 20]
   - id: array_slice_with_step_but_end_not_aligned
     selector: "$[0:4:2]"
     document: ["first", "second", "third", "forth", "fifth"]
@@ -529,8 +529,8 @@ queries:
     selector: "$[?(@.key==-0.123e2)]"
     document: [{"key": -12.3}, {"key": -0.123}, {"key": -12}, {"key": 12.3}, {"key": 2}, {"key": "-0.123e2"}]
   - id: filter_expression_with_equals_number_with_leading_zeros
-    selector: "$[?(@.key==007)]"
-    document: [{"key": "007"}, {"key": "7"}, {"key": 7}, {"key": 0}]
+    selector: "$[?(@.key==010)]"
+    document: [{"key": "010"}, {"key": "10"}, {"key": 10}, {"key": 0}, {"key": 8}]
   - id: filter_expression_with_equals_object
     selector: "$[?(@.d=={\"k\":\"v\"})]"
     document: [{"d": {"k": "v"}}, {"d": {"a": "b"}}, {"d": "k"}, {"d": "v"}, {"d": {}}, {"d": []}, {"d": null}, {"d": -1}, {"d": 0}, {"d": 1}, {"d": "[object Object]"}, {"d": "{\"k\": \"v\"}"}, {"d": "{\"k\":\"v\"}"}, "v"]

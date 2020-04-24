@@ -65,7 +65,7 @@ queries:
     result: "first"
   - id: array_slice_with_step_and_leading_zeros
     status: fail
-    result: "first"
+    result: 10
   - id: array_slice_with_step_but_end_not_aligned
     status: fail
     result: "first"
