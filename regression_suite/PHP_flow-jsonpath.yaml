@@ -155,6 +155,9 @@ queries:
   - id: filter_expression_with_equals_null
     status: open
     result: [{"key": false}, {"key": null}, {"key": ""}, {"key": 0}]
+  - id: filter_expression_with_equals_number_with_fraction
+    status: open
+    result: [{"key": -12.3}, {"key": "-0.123e2"}]
   - id: filter_expression_with_equals_object
     status: open
     result: [{"d": 0}, {"d": "{\"k\":\"v\"}"}]

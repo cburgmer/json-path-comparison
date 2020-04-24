@@ -137,6 +137,9 @@ queries:
     result: [{"key": false}]
   - id: filter_expression_with_equals_null
     status: error
+  - id: filter_expression_with_equals_number_with_fraction
+    status: open
+    result: [{"key": -12.3}]
   - id: filter_expression_with_equals_object
     status: error
   - id: filter_expression_with_equals_on_array_of_numbers

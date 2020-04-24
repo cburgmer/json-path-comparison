@@ -207,6 +207,9 @@ queries:
   - id: filter_expression_with_equals_null
     status: open
     result: []
+  - id: filter_expression_with_equals_number_with_fraction
+    status: open
+    result: [{"key": -12.3}, {"key": -0.123}, {"key": -12}, {"key": 12.3}, {"key": 2}, {"key": "-0.123e2"}]
   - id: filter_expression_with_equals_object
     status: open
     result: []
