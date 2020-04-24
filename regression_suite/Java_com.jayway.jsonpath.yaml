@@ -160,6 +160,9 @@ queries:
     result: [{"key": null}]
   - id: filter_expression_with_equals_number_with_fraction
     status: error
+  - id: filter_expression_with_equals_number_with_leading_zeros
+    status: open
+    result: [{"key": "7"}, {"key": 7}]
   - id: filter_expression_with_equals_object
     status: open
     result: [{"d": {"k": "v"}}]

@@ -263,6 +263,9 @@ queries:
   - id: filter_expression_with_equals_number_with_fraction
     status: open
     result: []
+  - id: filter_expression_with_equals_number_with_leading_zeros
+    status: open
+    result: []
   - id: filter_expression_with_equals_object
     status: open
     result: [{"d": null}, "v"]
