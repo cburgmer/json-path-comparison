@@ -25,10 +25,10 @@ listDotNotationIdentifier
 
 
 union
-  = "[" whitespace children:bracketElements whitespace "]" { return [['children', children]]; }
+  = "[" ws children:bracketElements ws "]" { return [['children', children]]; }
 
 bracketElements
-  = x:bracketElement whitespace "," whitespace xs:bracketElements { return [x, ...xs]; }
+  = x:bracketElement ws "," ws xs:bracketElements { return [x, ...xs]; }
   / x:bracketElement { return [x]; }
 
 bracketElement
@@ -66,26 +66,26 @@ nonZeroInteger
 
 
 filterExpression
-  = x:higherPrecedenceFilterExpression whitespace "&&" whitespace xs:logicalAndRightHandSide { return ["and", ["expression", x], ...xs]; }
-  / x:higherPrecedenceFilterExpression whitespace "||" whitespace xs:logicalOrRightHandSide { return ["or", ["expression", x], ...xs]; }
+  = x:higherPrecedenceFilterExpression ws "&&" ws xs:logicalAndRightHandSide { return ["and", ["expression", x], ...xs]; }
+  / x:higherPrecedenceFilterExpression ws "||" ws xs:logicalOrRightHandSide { return ["or", ["expression", x], ...xs]; }
   / higherPrecedenceFilterExpression
 
 higherPrecedenceFilterExpression
-  = left:filterValue whitespace op:comparisonOperator whitespace right:filterValue { return [op, ["value", left], ["value", right]]; }
+  = left:filterValue ws op:comparisonOperator ws right:filterValue { return [op, ["value", left], ["value", right]]; }
   / unaryFilterExpression
 
 logicalAndRightHandSide
-  = x:higherPrecedenceFilterExpression whitespace "&&" whitespace xs:logicalAndRightHandSide { return [["expression", x], ...xs]; }
+  = x:higherPrecedenceFilterExpression ws "&&" ws xs:logicalAndRightHandSide { return [["expression", x], ...xs]; }
   / expression:higherPrecedenceFilterExpression { return [["expression", expression]]; }
 
 logicalOrRightHandSide
-  = x:higherPrecedenceFilterExpression whitespace "||" whitespace xs:logicalOrRightHandSide { return [["expression", x], ...xs]; }
+  = x:higherPrecedenceFilterExpression ws "||" ws xs:logicalOrRightHandSide { return [["expression", x], ...xs]; }
   / expression:higherPrecedenceFilterExpression { return [["expression", expression]]; }
 
 unaryFilterExpression
   = value:filterValue { return ["hasValue", ["value", value]]; }
-  / "!" whitespace expression:unaryFilterExpression { return ["not", ["expression", expression]]; }
-  / "(" whitespace expression:filterExpression whitespace ")" { return expression; }
+  / "!" ws expression:unaryFilterExpression { return ["not", ["expression", expression]]; }
+  / "(" ws expression:filterExpression ws ")" { return expression; }
 
 comparisonOperator
   = "==" { return "equals"; }
@@ -111,7 +111,7 @@ scalarDotNotation
   = "." children:scalarDotNotationIdentifier { return children; }
 
 scalarBracketNotation
-  = "[" whitespace child:scalarBracketElement whitespace "]" { return [['children', [child]]]; }
+  = "[" ws child:scalarBracketElement ws "]" { return [['children', [child]]]; }
 
 simpleValue
   = "'" string:singleQuotedString "'" { return string; }
@@ -134,7 +134,7 @@ integerPart
   = "0" / ([1-9] [0-9]*)
 
 
-whitespace
+ws
   = " "*
 
 
