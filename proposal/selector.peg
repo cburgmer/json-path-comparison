@@ -2,7 +2,7 @@ start
   = "$" operators:operators { return operators; }
 
 operators
-  = operators:operator* { return operators.reduce((os, o) => os.concat(o), []); }
+  = operators:operator* { return operators.reduce((os, o) => [...os, ...o], []); }
 
 operator
   = dotNotation
@@ -28,7 +28,7 @@ union
   = "[" whitespace children:bracketElements whitespace "]" { return [['children', children]]; }
 
 bracketElements
-  = x:bracketElement whitespace "," whitespace xs:bracketElements { return [x].concat(xs); }
+  = x:bracketElement whitespace "," whitespace xs:bracketElements { return [x, ...xs]; }
   / x:bracketElement { return [x]; }
 
 bracketElement
@@ -101,7 +101,7 @@ filterValue
   / constant:simpleValue { return ["constant", constant]; }
 
 scalarOperators
-  = operators:scalarOperator* { return operators.reduce((os, o) => os.concat(o), []); }
+  = operators:scalarOperator* { return operators.reduce((os, o) => [...os, ...o], []); }
 
 scalarOperator
   = scalarDotNotation
@@ -139,5 +139,5 @@ whitespace
 
 
 recursiveDescentWithChildren
-  = ".." children:dotNotationIdentifier { return [['recursiveDescent']].concat(children); }
-  / ".." children:union { return [['recursiveDescent']].concat(children); }
+  = ".." children:dotNotationIdentifier { return [['recursiveDescent'], ...children]; }
+  / ".." children:union { return [['recursiveDescent'], ...children]; }
