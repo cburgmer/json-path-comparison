@@ -115,20 +115,6 @@ The following queries provide results that do not match those of other implement
   JSON path parse error at position 1
   ```
 
-- [ ] `$[010:024:010]`
-  Input:
-  ```
-  [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25]
-  ```
-  Expected output:
-  ```
-  [10, 20]
-  ```
-  Error:
-  ```
-  JSON path parse error at position 1
-  ```
-
 - [ ] `$[0:4:2]`
   Input:
   ```
@@ -409,20 +395,6 @@ The following queries provide results that do not match those of other implement
   Evaluation of embedded Perl 6 code not allowed (construct with :allow-eval)
   ```
 
-- [ ] `$['key','another']`
-  Input:
-  ```
-  {"key": "value", "another": "entry"}
-  ```
-  Expected output:
-  ```
-  ["value", "entry"]
-  ```
-  Error:
-  ```
-  JSON path parse error at position 1
-  ```
-
 - [ ] `$[0]['c','d']`
   Input:
   ```
@@ -435,20 +407,6 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   JSON path parse error at position 4
-  ```
-
-- [ ] `$['missing','key']`
-  Input:
-  ```
-  {"key": "value", "another": "entry"}
-  ```
-  Expected output:
-  ```
-  ["value"]
-  ```
-  Error:
-  ```
-  JSON path parse error at position 1
   ```
 
 - [ ] `$[ 0 , 1 ]`

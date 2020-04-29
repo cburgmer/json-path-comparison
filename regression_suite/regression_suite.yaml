@@ -92,7 +92,6 @@ queries:
   - id: array_slice_with_step_and_leading_zeros
     selector: "$[010:024:010]"
     document: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25]
-    consensus: [10, 20]
   - id: array_slice_with_step_but_end_not_aligned
     selector: "$[0:4:2]"
     document: ["first", "second", "third", "forth", "fifth"]
@@ -662,7 +661,6 @@ queries:
   - id: union_with_keys
     selector: "$['key','another']"
     document: {"key": "value", "another": "entry"}
-    consensus: ["value", "entry"]
   - id: union_with_keys_after_array_slice
     selector: "$[:]['c','d']"
     document: [{"c": "cc1", "d": "dd1", "e": "ee1"}, {"c": "cc2", "d": "dd2", "e": "ee2"}]
@@ -676,7 +674,6 @@ queries:
   - id: union_with_keys_on_object_without_key
     selector: "$['missing','key']"
     document: {"key": "value", "another": "entry"}
-    consensus: ["value"]
   - id: union_with_numbers_in_decreasing_order
     selector: "$[4,1]"
     document: [1, 2, 3, 4, 5]

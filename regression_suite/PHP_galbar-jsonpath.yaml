@@ -24,6 +24,9 @@ queries:
     status: error
   - id: array_slice_with_step_0
     status: error
+  - id: array_slice_with_step_and_leading_zeros
+    status: open
+    result: [10, 20]
   - id: bracket_notation_after_recursive_descent
     status: error
   - id: bracket_notation_on_object_without_key
@@ -255,12 +258,18 @@ queries:
     status: error
   - id: union_with_filter
     status: error
+  - id: union_with_keys
+    status: open
+    result: ["value", "entry"]
   - id: union_with_keys_after_array_slice
     status: open
     result: ["cc1", "dd1", "cc2", "dd2"]
   - id: union_with_keys_after_dot_notation_with_wildcard
     status: open
     result: ["cc1", "dd1", "cc2", "dd2"]
+  - id: union_with_keys_on_object_without_key
+    status: open
+    result: ["value"]
   - id: union_with_slice_and_number
     status: error
   - id: union_with_spaces

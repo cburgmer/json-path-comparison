@@ -409,20 +409,6 @@ The following queries provide results that do not match those of other implement
   Unable to compile selector `$[?(@.key=='value')]': Invalid array index definition “?(@.key=='value')]”
   ```
 
-- [ ] `$['key','another']`
-  Input:
-  ```
-  {"key": "value", "another": "entry"}
-  ```
-  Expected output:
-  ```
-  ["value", "entry"]
-  ```
-  Actual output:
-  ```
-  ["value"]
-  ```
-
 - [ ] `$[0]['c','d']`
   Input:
   ```
@@ -435,20 +421,6 @@ The following queries provide results that do not match those of other implement
   Actual output:
   ```
   ["cc1"]
-  ```
-
-- [ ] `$['missing','key']`
-  Input:
-  ```
-  {"key": "value", "another": "entry"}
-  ```
-  Expected output:
-  ```
-  ["value"]
-  ```
-  Actual output:
-  ```
-  []
   ```
 
 - [ ] `$[ 0 , 1 ]`
