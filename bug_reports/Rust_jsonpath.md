@@ -143,20 +143,6 @@ The following queries provide results that do not match those of other implement
   parsing error
   ```
 
-- [ ] `$[010:024:010]`
-  Input:
-  ```
-  [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25]
-  ```
-  Expected output:
-  ```
-  [10, 20]
-  ```
-  Error:
-  ```
-  parsing error
-  ```
-
 - [ ] `$[0:4:2]`
   Input:
   ```
@@ -773,20 +759,6 @@ The following queries provide results that do not match those of other implement
   parsing error
   ```
 
-- [ ] `$['key','another']`
-  Input:
-  ```
-  {"key": "value", "another": "entry"}
-  ```
-  Expected output:
-  ```
-  ["value", "entry"]
-  ```
-  Error:
-  ```
-  parsing error
-  ```
-
 - [ ] `$[0]['c','d']`
   Input:
   ```
@@ -795,20 +767,6 @@ The following queries provide results that do not match those of other implement
   Expected output:
   ```
   ["cc1", "dd1"]
-  ```
-  Error:
-  ```
-  parsing error
-  ```
-
-- [ ] `$['missing','key']`
-  Input:
-  ```
-  {"key": "value", "another": "entry"}
-  ```
-  Expected output:
-  ```
-  ["value"]
   ```
   Error:
   ```

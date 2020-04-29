@@ -18,6 +18,9 @@ queries:
   - id: array_slice_with_step_0
     status: open
     result: ["first", "second", "third"]
+  - id: array_slice_with_step_and_leading_zeros
+    status: open
+    result: [10, 20]
   - id: bracket_notation
     status: error
   - id: bracket_notation_on_object_without_key

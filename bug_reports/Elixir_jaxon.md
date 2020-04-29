@@ -275,22 +275,6 @@ The following queries provide results that do not match those of other implement
       lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
   ```
 
-- [ ] `$[010:024:010]`
-  Input:
-  ```
-  [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25]
-  ```
-  Expected output:
-  ```
-  [10, 20]
-  ```
-  Error:
-  ```
-  ** (Jaxon.ParseError) Expected an integer at `010:024:01`
-      lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
-      lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
-  ```
-
 - [ ] `$[0:4:2]`
   Input:
   ```
@@ -899,22 +883,6 @@ The following queries provide results that do not match those of other implement
       lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
   ```
 
-- [ ] `$['key','another']`
-  Input:
-  ```
-  {"key": "value", "another": "entry"}
-  ```
-  Expected output:
-  ```
-  ["value", "entry"]
-  ```
-  Error:
-  ```
-  ** (Jaxon.ParseError) Expected an integer at `'key','ano`
-      lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
-      lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
-  ```
-
 - [ ] `$[0]['c','d']`
   Input:
   ```
@@ -927,22 +895,6 @@ The following queries provide results that do not match those of other implement
   Actual output:
   ```
   []
-  ```
-
-- [ ] `$['missing','key']`
-  Input:
-  ```
-  {"key": "value", "another": "entry"}
-  ```
-  Expected output:
-  ```
-  ["value"]
-  ```
-  Error:
-  ```
-  ** (Jaxon.ParseError) Expected an integer at `'missing',`
-      lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
-      lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
   ```
 
 - [ ] `$[4,1]`

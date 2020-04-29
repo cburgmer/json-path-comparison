@@ -171,20 +171,6 @@ The following queries provide results that do not match those of other implement
   only support one range(from, to): [0 3 1]
   ```
 
-- [ ] `$[010:024:010]`
-  Input:
-  ```
-  [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25]
-  ```
-  Expected output:
-  ```
-  [10, 20]
-  ```
-  Error:
-  ```
-  only support one range(from, to): [010 024 010]
-  ```
-
 - [ ] `$[0:4:2]`
   Input:
   ```
@@ -787,20 +773,6 @@ The following queries provide results that do not match those of other implement
   []
   ```
 
-- [ ] `$['key','another']`
-  Input:
-  ```
-  {"key": "value", "another": "entry"}
-  ```
-  Expected output:
-  ```
-  ["value", "entry"]
-  ```
-  Error:
-  ```
-  strconv.Atoi: parsing "'key'": invalid syntax
-  ```
-
 - [ ] `$[0]['c','d']`
   Input:
   ```
@@ -813,20 +785,6 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   strconv.Atoi: parsing "'c'": invalid syntax
-  ```
-
-- [ ] `$['missing','key']`
-  Input:
-  ```
-  {"key": "value", "another": "entry"}
-  ```
-  Expected output:
-  ```
-  ["value"]
-  ```
-  Error:
-  ```
-  strconv.Atoi: parsing "'missing'": invalid syntax
   ```
 
 

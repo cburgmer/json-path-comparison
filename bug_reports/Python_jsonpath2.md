@@ -3,21 +3,6 @@ Results do not match other implementations
 The following queries provide results that do not match those of other implementations of JSONPath
 (compare https://cburgmer.github.io/json-path-comparison/):
 
-- [ ] `$[010:024:010]`
-  Input:
-  ```
-  [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25]
-  ```
-  Expected output:
-  ```
-  [10, 20]
-  ```
-  Error:
-  ```
-  line 1:3 mismatched input '10' expecting {']', ','}
-  ValueError("line 1:3 mismatched input '10' expecting {']', ','}")
-  ```
-
 - [ ] `$['key']`
   Input:
   ```
@@ -408,21 +393,6 @@ The following queries provide results that do not match those of other implement
   ValueError("line 1:11 token recognition error at: '''")
   ```
 
-- [ ] `$['key','another']`
-  Input:
-  ```
-  {"key": "value", "another": "entry"}
-  ```
-  Expected output:
-  ```
-  ["value", "entry"]
-  ```
-  Error:
-  ```
-  line 1:2 token recognition error at: '''
-  ValueError("line 1:2 token recognition error at: '''")
-  ```
-
 - [ ] `$[0]['c','d']`
   Input:
   ```
@@ -436,21 +406,6 @@ The following queries provide results that do not match those of other implement
   ```
   line 1:5 token recognition error at: '''
   ValueError("line 1:5 token recognition error at: '''")
-  ```
-
-- [ ] `$['missing','key']`
-  Input:
-  ```
-  {"key": "value", "another": "entry"}
-  ```
-  Expected output:
-  ```
-  ["value"]
-  ```
-  Error:
-  ```
-  line 1:2 token recognition error at: '''
-  ValueError("line 1:2 token recognition error at: '''")
   ```
 
 

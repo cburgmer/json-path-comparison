@@ -46,7 +46,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  ggrep: Invalid range end
+  grep: Invalid range end
   Expecting value: line 3 column 1 (char 2)
   
   
@@ -92,20 +92,6 @@ The following queries provide results that do not match those of other implement
   Actual output:
   ```
   ["first", "second", "third"]
-  ```
-
-- [ ] `$[010:024:010]`
-  Input:
-  ```
-  [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25]
-  ```
-  Expected output:
-  ```
-  [10, 20]
-  ```
-  Actual output:
-  ```
-  [8, 16]
   ```
 
 - [ ] `$['key']`
@@ -1085,20 +1071,6 @@ The following queries provide results that do not match those of other implement
       [
   ```
 
-- [ ] `$['key','another']`
-  Input:
-  ```
-  {"key": "value", "another": "entry"}
-  ```
-  Expected output:
-  ```
-  ["value", "entry"]
-  ```
-  Actual output:
-  ```
-  {"another": "entry", "key": "value"}
-  ```
-
 - [ ] `$[0]['c','d']`
   Input:
   ```
@@ -1111,20 +1083,6 @@ The following queries provide results that do not match those of other implement
   Actual output:
   ```
   {"c": "cc1", "d": "dd1"}
-  ```
-
-- [ ] `$['missing','key']`
-  Input:
-  ```
-  {"key": "value", "another": "entry"}
-  ```
-  Expected output:
-  ```
-  ["value"]
-  ```
-  Actual output:
-  ```
-  {"key": "value"}
   ```
 
 - [ ] `$[4,1]`

@@ -33,7 +33,7 @@ queries:
     status: open
     result: ["first", "second", "third"]
   - id: array_slice_with_step_and_leading_zeros
-    status: fail
+    status: open
     result: [8, 16]
   - id: bracket_notation
     status: fail
@@ -368,7 +368,7 @@ queries:
   - id: union_with_filter
     status: error
   - id: union_with_keys
-    status: fail
+    status: open
     result: {"another": "entry", "key": "value"}
   - id: union_with_keys_after_array_slice
     status: open
@@ -380,7 +380,7 @@ queries:
     status: open
     result: [{"c": "cc1", "d": "dd1"}, {"c": "cc2", "d": "dd2"}]
   - id: union_with_keys_on_object_without_key
-    status: fail
+    status: open
     result: {"key": "value"}
   - id: union_with_numbers_in_decreasing_order
     status: fail
