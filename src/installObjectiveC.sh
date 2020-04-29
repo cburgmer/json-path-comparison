@@ -7,17 +7,6 @@ cd /tmp/objectiveC
 
 export CC=clang
 
-curl -LO https://github.com/apple/swift-corelibs-libdispatch/archive/swift-5.2.2-RELEASE.tar.gz
-tar -xzf swift-*.tar.gz
-rm swift-*.tar.gz
-pushd swift-*
-mkdir Build
-cd Build/
-cmake -G Ninja -DCMAKE_C_COMPILER=clang -DCMAKE_CXX_COMPILER=clang++ ..
-ninja
-ninja install
-popd
-
 curl -LO http://ftpmain.gnustep.org/pub/gnustep/core/gnustep-make-2.7.0.tar.gz
 tar -xzf gnustep-make-*.tar.gz
 rm gnustep-make-*.tar.gz
