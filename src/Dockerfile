@@ -56,7 +56,7 @@ RUN apt-get install -y --no-install-recommends elixir && mix local.hex --force
 RUN apt-get install -y --no-install-recommends sed grep gawk
 
 # Objective-C
-RUN apt-get install -y --no-install-recommends build-essential cmake clang libblocksruntime-dev libicu-dev systemtap-sdt-dev libbsd-dev linux-libc-dev
+RUN apt-get install -y --no-install-recommends build-essential cmake clang libblocksruntime-dev libicu-dev libdispatch-dev
 ADD installObjectiveC.sh /tmp/installObjectiveC.sh
 RUN chmod a+x /tmp/installObjectiveC.sh
 RUN /tmp/installObjectiveC.sh
