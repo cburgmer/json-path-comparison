@@ -131,20 +131,6 @@ The following queries provide results that do not match those of other implement
   implementations/Objective-C_SMJJSONPath/run.sh: line 6:  3163 Abort trap: 6           "$script_dir"/build/main "$@"
   ```
 
-- [ ] `$.屬性`
-  Input:
-  ```
-  {"\u5c6c\u6027": "value"}
-  ```
-  Expected output:
-  ```
-  "value"
-  ```
-  Error:
-  ```
-  No results for path: $['Â±¨ÊÄß']
-  ```
-
 - [ ] `$..*`
   Input:
   ```
