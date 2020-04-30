@@ -4,7 +4,7 @@
 #define NSLog(FORMAT, ...) fprintf(stderr, "%s\n", [[NSString stringWithFormat:FORMAT, ##__VA_ARGS__] UTF8String]);
 
 int main (int argc, const char * argv[]) {
-    NSString *selector = [NSString stringWithFormat:@"%s", argv[1]];
+    NSString *selector = [NSString stringWithUTF8String:argv[1]];
 
     NSError *error = nil;
 
