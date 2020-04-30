@@ -83,6 +83,8 @@ queries:
     status: error
   - id: dot_notation_on_array_with_containing_object_matching_key
     status: error
+  - id: dot_notation_on_null_value
+    status: error
   - id: dot_notation_on_object_without_key
     status: error
   - id: dot_notation_with_double_quotes
@@ -95,6 +97,8 @@ queries:
   - id: dot_notation_with_key_root_literal
     status: open
     result: "value"
+  - id: dot_notation_with_non_ASCII_key
+    status: error
   - id: dot_notation_with_number
     status: error
   - id: dot_notation_with_number_-1
@@ -106,15 +110,17 @@ queries:
     result: []
   - id: dot_notation_with_single_quotes_and_dot
     status: error
+  - id: dot_notation_with_wildcard_after_recursive_descent_on_scalar
+    status: error
   - id: dot_notation_without_root
     status: open
     result: "value"
   - id: filter_expression_after_dot_notation_with_wildcard_after_recursive_descent
     status: open
-    result: [{"id": 3, "name": "another"}, {"id": 3, "name": "another"}, {"id": 4, "name": "more"}, {"id": 4, "name": "more"}, {"id": 5, "name": "next to last"}, {"id": 6, "name": "last"}]
+    result: [{"id": 3, "name": "another"}, {"id": 3, "name": "another"}, {"id": 6, "name": "last"}, {"id": 4, "name": "more"}, {"id": 4, "name": "more"}, {"id": 5, "name": "next to last"}]
   - id: filter_expression_after_recursive_descent
     status: open
-    result: [{"id": 2}, {"id": 2}, {"id": 2}, {"id": 2}, {"id": 2, "more": [{"id": 2}, {"more": {"id": 2}}, {"id": {"id": 2}}, [{"id": 2}]]}]
+    result: [{"id": 2, "more": [{"id": 2}, {"more": {"id": 2}}, {"id": {"id": 2}}, [{"id": 2}]]}, {"id": 2}, {"id": 2}, {"id": 2}, {"id": 2}]
   - id: filter_expression_on_object
     status: open
     result: [{"another": {"key": 1}, "key": 42}]
@@ -153,7 +159,8 @@ queries:
     status: open
     result: [{"d": ["v1", "v2"]}]
   - id: filter_expression_with_equals_array_with_single_quotes
-    status: error
+    status: open
+    result: []
   - id: filter_expression_with_equals_false
     status: open
     result: [{"key": false}]
@@ -234,7 +241,7 @@ queries:
     result: [{"key": true}, {"key": false}, {"key": null}, {"key": "value"}, {"key": ""}, {"key": 0}, {"key": 1}, {"key": -1}, {"key": 42}, {"key": {}}, {"key": []}]
   - id: filter_expression_with_value_after_recursive_descent
     status: open
-    result: [{"id": 2}, {"id": 2}, {"id": 2}, {"id": 2}, {"id": {"id": 2}}, {"id": 2, "more": [{"id": 2}, {"more": {"id": 2}}, {"id": {"id": 2}}, [{"id": 2}]]}]
+    result: [{"id": 2, "more": [{"id": 2}, {"more": {"id": 2}}, {"id": {"id": 2}}, [{"id": 2}]]}, {"id": 2}, {"id": 2}, {"id": 2}, {"id": 2}, {"id": {"id": 2}}]
   - id: filter_expression_without_value
     status: open
     result: [{"some": "some value"}]
@@ -244,12 +251,12 @@ queries:
     status: error
   - id: recursive_descent_after_dot_notation
     status: error
+  - id: root_on_scalar
+    status: error
   - id: root_on_scalar_false
-    status: fail
-    result: 0
+    status: error
   - id: root_on_scalar_true
-    status: fail
-    result: 1
+    status: error
   - id: script_expression
     status: error
   - id: union_with_filter

@@ -46,7 +46,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  grep: Invalid range end
+  ggrep: Invalid range end
   Expecting value: line 3 column 1 (char 2)
   
   
