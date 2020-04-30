@@ -17,6 +17,20 @@ The following queries provide results that do not match those of other implement
   ["string", 1]
   ```
 
+- [ ] `$..[*]`
+  Input:
+  ```
+  {"key": "value", "another key": {"complex": "string", "primitives": [0, 1]}}
+  ```
+  Expected output (in any order as no consensus on ordering exists):
+  ```
+  ["string", "value", 0, 1, [0, 1], {"complex": "string", "primitives": [0, 1]}]
+  ```
+  Actual output:
+  ```
+  []
+  ```
+
 - [ ] `$['one','three'].key`
   Input:
   ```
@@ -45,6 +59,20 @@ The following queries provide results that do not match those of other implement
   Unrecognized JSON Path element. Path up to error: '$.key'
   ```
 
+- [ ] `$['key','another']`
+  Input:
+  ```
+  {"key": "value", "another": "entry"}
+  ```
+  Expected output:
+  ```
+  ["value", "entry"]
+  ```
+  Error:
+  ```
+  Expected close bracket. Path up to error: '$'
+  ```
+
 - [ ] `$[0]['c','d']`
   Input:
   ```
@@ -57,6 +85,20 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   Expected close bracket. Path up to error: '$[0]'
+  ```
+
+- [ ] `$['missing','key']`
+  Input:
+  ```
+  {"key": "value", "another": "entry"}
+  ```
+  Expected output:
+  ```
+  ["value"]
+  ```
+  Error:
+  ```
+  Expected close bracket. Path up to error: '$'
   ```
 
 - [ ] `$[ 0 , 1 ]`

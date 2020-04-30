@@ -77,9 +77,6 @@ queries:
     status: error
   - id: bracket_notation_with_two_literals_separated_by_dot_without_quotes
     status: error
-  - id: bracket_notation_with_wildcard_after_recursive_descent
-    status: open
-    result: ["string", "value", 0, 1, [0, 1], {"complex": "string", "primitives": [0, 1]}]
   - id: bracket_notation_without_quotes
     status: error
   - id: dot_bracket_notation

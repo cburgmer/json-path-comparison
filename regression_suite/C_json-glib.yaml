@@ -30,9 +30,6 @@ queries:
     status: error
   - id: array_slice_with_step_1
     status: error
-  - id: array_slice_with_step_and_leading_zeros
-    status: open
-    result: [10, 20]
   - id: array_slice_with_step_but_end_not_aligned
     status: error
   - id: array_slice_with_step_empty
@@ -273,7 +270,7 @@ queries:
   - id: union_with_filter
     status: error
   - id: union_with_keys
-    status: open
+    status: fail
     result: ["value"]
   - id: union_with_keys_after_array_slice
     status: open
@@ -285,7 +282,7 @@ queries:
     status: open
     result: [[{"c": "cc1", "d": "dd1", "e": "ee1"}, {"c": "cc2", "d": "dd2", "e": "ee2"}]]
   - id: union_with_keys_on_object_without_key
-    status: open
+    status: fail
     result: []
   - id: union_with_slice_and_number
     status: error

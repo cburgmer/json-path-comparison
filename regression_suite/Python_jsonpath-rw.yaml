@@ -71,7 +71,7 @@ queries:
   - id: bracket_notation_with_two_literals_separated_by_dot_without_quotes
     status: error
   - id: bracket_notation_with_wildcard_after_recursive_descent
-    status: open
+    status: fail
     result: ["string", "value", 0, 0, 1, 1, {"another key": {"complex": "string", "primitives": [0, 1]}, "key": "value"}, {"complex": "string", "primitives": [0, 1]}]
   - id: bracket_notation_with_wildcard_on_empty_object
     status: fail
@@ -255,18 +255,12 @@ queries:
     status: error
   - id: union_with_filter
     status: error
-  - id: union_with_keys
-    status: open
-    result: ["value", "entry"]
   - id: union_with_keys_after_array_slice
     status: open
     result: ["cc1", "dd1", "cc2", "dd2"]
   - id: union_with_keys_after_dot_notation_with_wildcard
     status: open
     result: []
-  - id: union_with_keys_on_object_without_key
-    status: open
-    result: ["value"]
   - id: union_with_numbers_in_decreasing_order
     status: error
   - id: union_with_slice_and_number

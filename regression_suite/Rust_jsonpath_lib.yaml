@@ -15,9 +15,6 @@ queries:
     result: []
   - id: array_slice_with_step_0
     status: error
-  - id: array_slice_with_step_and_leading_zeros
-    status: open
-    result: [10, 20]
   - id: bracket_notation_on_object_without_key
     status: open
     result: []
@@ -52,9 +49,6 @@ queries:
     status: error
   - id: bracket_notation_with_two_literals_separated_by_dot_without_quotes
     status: error
-  - id: bracket_notation_with_wildcard_after_recursive_descent
-    status: open
-    result: ["string", "value", 0, 1, [0, 1], {"complex": "string", "primitives": [0, 1]}]
   - id: bracket_notation_without_quotes
     status: error
   - id: dot_bracket_notation
@@ -226,18 +220,12 @@ queries:
     status: error
   - id: union_with_filter
     status: error
-  - id: union_with_keys
-    status: open
-    result: ["value", "entry"]
   - id: union_with_keys_after_array_slice
     status: open
     result: ["cc1", "dd1", "cc2", "dd2"]
   - id: union_with_keys_after_dot_notation_with_wildcard
     status: open
     result: ["cc1", "dd1", "cc2", "dd2"]
-  - id: union_with_keys_on_object_without_key
-    status: open
-    result: ["value"]
   - id: union_with_slice_and_number
     status: error
   - id: union_with_wildcard_and_number

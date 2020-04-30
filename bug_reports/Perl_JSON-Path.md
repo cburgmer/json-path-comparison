@@ -219,6 +219,20 @@ The following queries provide results that do not match those of other implement
   ["value", "entry"]
   ```
 
+- [ ] `$..[*]`
+  Input:
+  ```
+  {"key": "value", "another key": {"complex": "string", "primitives": [0, 1]}}
+  ```
+  Expected output (in any order as no consensus on ordering exists):
+  ```
+  ["string", "value", 0, 1, [0, 1], {"complex": "string", "primitives": [0, 1]}]
+  ```
+  Actual output:
+  ```
+  []
+  ```
+
 - [ ] `$[?(@.id==42)].name`
   Input:
   ```
@@ -422,6 +436,20 @@ The following queries provide results that do not match those of other implement
   [""]
   ```
 
+- [ ] `$['key','another']`
+  Input:
+  ```
+  {"key": "value", "another": "entry"}
+  ```
+  Expected output:
+  ```
+  ["value", "entry"]
+  ```
+  Actual output:
+  ```
+  []
+  ```
+
 - [ ] `$[0]['c','d']`
   Input:
   ```
@@ -430,6 +458,20 @@ The following queries provide results that do not match those of other implement
   Expected output:
   ```
   ["cc1", "dd1"]
+  ```
+  Actual output:
+  ```
+  []
+  ```
+
+- [ ] `$['missing','key']`
+  Input:
+  ```
+  {"key": "value", "another": "entry"}
+  ```
+  Expected output:
+  ```
+  ["value"]
   ```
   Actual output:
   ```

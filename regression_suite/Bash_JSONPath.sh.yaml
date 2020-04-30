@@ -33,7 +33,7 @@ queries:
     status: open
     result: ["first", "second", "third"]
   - id: array_slice_with_step_and_leading_zeros
-    status: open
+    status: fail
     result: [8, 16]
   - id: bracket_notation
     status: fail
@@ -107,7 +107,7 @@ queries:
   - id: bracket_notation_with_wildcard_after_array_slice
     status: error
   - id: bracket_notation_with_wildcard_after_recursive_descent
-    status: open
+    status: fail
     result: {"another key": {"complex": "string", "primitives": [0, 1]}, "key": "value"}
   - id: bracket_notation_with_wildcard_on_array
     status: error
@@ -368,7 +368,7 @@ queries:
   - id: union_with_filter
     status: error
   - id: union_with_keys
-    status: open
+    status: fail
     result: {"another": "entry", "key": "value"}
   - id: union_with_keys_after_array_slice
     status: open
@@ -380,7 +380,7 @@ queries:
     status: open
     result: [{"c": "cc1", "d": "dd1"}, {"c": "cc2", "d": "dd2"}]
   - id: union_with_keys_on_object_without_key
-    status: open
+    status: fail
     result: {"key": "value"}
   - id: union_with_numbers_in_decreasing_order
     status: fail

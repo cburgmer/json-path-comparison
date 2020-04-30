@@ -18,9 +18,6 @@ queries:
   - id: array_slice_with_step_0
     status: open
     result: ["first", "second", "third"]
-  - id: array_slice_with_step_and_leading_zeros
-    status: open
-    result: [10, 20]
   - id: bracket_notation_on_object_without_key
     status: error
   - id: bracket_notation_with_empty_path
@@ -60,7 +57,7 @@ queries:
     status: fail
     result: [[42]]
   - id: bracket_notation_with_wildcard_after_recursive_descent
-    status: open
+    status: fail
     result: ["value"]
   - id: bracket_notation_without_quotes
     status: open
@@ -237,18 +234,12 @@ queries:
     status: error
   - id: union_with_filter
     status: error
-  - id: union_with_keys
-    status: open
-    result: ["value", "entry"]
   - id: union_with_keys_after_array_slice
     status: open
     result: [["cc1", "dd1"], ["cc2", "dd2"]]
   - id: union_with_keys_after_dot_notation_with_wildcard
     status: open
     result: ["cc1", "dd1", "cc2", "dd2"]
-  - id: union_with_keys_on_object_without_key
-    status: open
-    result: ["value"]
   - id: union_with_numbers_in_decreasing_order
     status: fail
     result: [2, 5]

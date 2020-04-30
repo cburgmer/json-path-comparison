@@ -24,9 +24,6 @@ queries:
     result: ["first", "second", "third", "first", "second", "third"]
   - id: array_slice_with_step_0
     status: error
-  - id: array_slice_with_step_and_leading_zeros
-    status: open
-    result: [10, 20]
   - id: bracket_notation_after_recursive_descent
     status: fail
     result: []
@@ -85,7 +82,7 @@ queries:
     status: open
     result: []
   - id: bracket_notation_with_wildcard_after_recursive_descent
-    status: open
+    status: fail
     result: []
   - id: bracket_notation_without_quotes
     status: open
@@ -269,7 +266,7 @@ queries:
   - id: union_with_filter
     status: error
   - id: union_with_keys
-    status: open
+    status: fail
     result: []
   - id: union_with_keys_after_array_slice
     status: error
@@ -280,7 +277,7 @@ queries:
     status: open
     result: []
   - id: union_with_keys_on_object_without_key
-    status: open
+    status: fail
     result: []
   - id: union_with_slice_and_number
     status: open
