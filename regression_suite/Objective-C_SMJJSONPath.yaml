@@ -86,8 +86,6 @@ queries:
     status: error
   - id: dot_notation_on_array_with_containing_object_matching_key
     status: error
-  - id: dot_notation_on_null_value
-    status: error
   - id: dot_notation_on_object_without_key
     status: error
   - id: dot_notation_with_double_quotes
@@ -110,8 +108,6 @@ queries:
     status: open
     result: []
   - id: dot_notation_with_single_quotes_and_dot
-    status: error
-  - id: dot_notation_with_wildcard_after_recursive_descent_on_scalar
     status: error
   - id: dot_notation_without_root
     status: open
@@ -251,12 +247,6 @@ queries:
   - id: recursive_descent
     status: error
   - id: recursive_descent_after_dot_notation
-    status: error
-  - id: root_on_scalar
-    status: error
-  - id: root_on_scalar_false
-    status: error
-  - id: root_on_scalar_true
     status: error
   - id: script_expression
     status: error
