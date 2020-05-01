@@ -5,7 +5,7 @@ readonly script_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 tag="$(cat "${script_dir}/tag")"
 
-readonly source_url="https://github.com/cburgmer/SMJJSONPath/archive/${tag}.tar.gz"
+readonly source_url="https://github.com/javerous/SMJJSONPath/archive/${tag}.tar.gz"
 readonly target_dir="$1"
 
 readonly tmp_dir="/tmp/install_SMJJSONPath.$$"
