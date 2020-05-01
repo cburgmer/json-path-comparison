@@ -66,6 +66,9 @@ queries:
     status: error
   - id: bracket_notation_with_two_literals_separated_by_dot_without_quotes
     status: error
+  - id: bracket_notation_with_wildcard_after_recursive_descent
+    status: open
+    result: ["string", "value", 0, 1, [0, 1], {"complex": "string", "primitives": [0, 1]}]
   - id: bracket_notation_without_quotes
     status: error
   - id: dot_bracket_notation
@@ -111,7 +114,7 @@ queries:
     result: "value"
   - id: filter_expression_after_dot_notation_with_wildcard_after_recursive_descent
     status: open
-    result: [{"id": 3, "name": "another"}, {"id": 3, "name": "another"}, {"id": 6, "name": "last"}, {"id": 4, "name": "more"}, {"id": 4, "name": "more"}, {"id": 5, "name": "next to last"}]
+    result: [{"id": 3, "name": "another"}, {"id": 3, "name": "another"}, {"id": 4, "name": "more"}, {"id": 4, "name": "more"}, {"id": 5, "name": "next to last"}, {"id": 6, "name": "last"}]
   - id: filter_expression_after_recursive_descent
     status: open
     result: [{"id": 2, "more": [{"id": 2}, {"more": {"id": 2}}, {"id": {"id": 2}}, [{"id": 2}]]}, {"id": 2}, {"id": 2}, {"id": 2}, {"id": 2}]

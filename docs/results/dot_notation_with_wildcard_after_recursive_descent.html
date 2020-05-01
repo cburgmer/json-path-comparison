@@ -91,13 +91,6 @@ PHP (galbar-jsonpath)
     1
   ],
   {
-    "complex": "string",
-    "primitives": [
-      0,
-      1
-    ]
-  },
-  {
     "another key": {
       "complex": "string",
       "primitives": [
@@ -106,6 +99,13 @@ PHP (galbar-jsonpath)
       ]
     },
     "key": "value"
+  },
+  {
+    "complex": "string",
+    "primitives": [
+      0,
+      1
+    ]
   }
 ]
 </code></pre>
@@ -152,13 +152,6 @@ Ruby (jsonpath)
     1
   ],
   {
-    "complex": "string",
-    "primitives": [
-      0,
-      1
-    ]
-  },
-  {
     "another key": {
       "complex": "string",
       "primitives": [
@@ -167,6 +160,13 @@ Ruby (jsonpath)
       ]
     },
     "key": "value"
+  },
+  {
+    "complex": "string",
+    "primitives": [
+      0,
+      1
+    ]
   }
 ]
 </code></pre>
@@ -185,13 +185,6 @@ Scala (jsonpath)
     1
   ],
   {
-    "complex": "string",
-    "primitives": [
-      0,
-      1
-    ]
-  },
-  {
     "another key": {
       "complex": "string",
       "primitives": [
@@ -200,6 +193,13 @@ Scala (jsonpath)
       ]
     },
     "key": "value"
+  },
+  {
+    "complex": "string",
+    "primitives": [
+      0,
+      1
+    ]
   }
 ]
 </code></pre>
@@ -218,13 +218,6 @@ dotNET (Json.NET)
     1
   ],
   {
-    "complex": "string",
-    "primitives": [
-      0,
-      1
-    ]
-  },
-  {
     "another key": {
       "complex": "string",
       "primitives": [
@@ -233,11 +226,26 @@ dotNET (Json.NET)
       ]
     },
     "key": "value"
+  },
+  {
+    "complex": "string",
+    "primitives": [
+      0,
+      1
+    ]
   }
 ]
 </code></pre>
 
 <h3>Errors</h3>
+
+<h4 id="Elixir_ExJsonPath">
+Elixir (ExJsonPath)
+</h4>
+
+<pre><code>** (MatchError) no match of right hand side value: {:error, %ExJSONPath.ParsingError{message: "syntax error before: '*'"}}
+    lib/jsonpath.ex:7: Mix.Tasks.Execute.run/1
+</code></pre>
 
 <h4 id="Golang_github.com-oliveagle-jsonpath">
 Golang (github.com-oliveagle-jsonpath)

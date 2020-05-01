@@ -258,7 +258,6 @@ queries:
     selector: "$..[*]"
     document: {"key": "value", "another key": {"complex": "string", "primitives": [0, 1]}}
     ordered: false
-    consensus: ["string", "value", 0, 1, [0, 1], {"complex": "string", "primitives": [0, 1]}]
   - id: bracket_notation_with_wildcard_on_array
     selector: "$[*]"
     document: ["string", 42, {"key": "value"}, [0, 1]]

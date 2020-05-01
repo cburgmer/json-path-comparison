@@ -193,6 +193,32 @@ dotNET (Manatee.Json)
 
 <h3>Errors</h3>
 
+<h4 id="Elixir_ExJsonPath">
+Elixir (ExJsonPath)
+</h4>
+
+<pre><code>** (FunctionClauseError) no function clause matching in Enum.take_every/2    
+
+    The following arguments were given to Enum.take_every/2:
+
+        # 1
+        ["first", "second", "third", "forth", "fifth"]
+
+        # 2
+        -2
+
+    Attempted function clauses (showing 4 out of 4):
+
+        def take_every(+enumerable+, -1-)
+        def take_every(+_enumerable+, -0-)
+        def take_every(-[]-, +nth+) when +is_integer(nth)+ and -nth &gt; 1-
+        def take_every(+enumerable+, +nth+) when +is_integer(nth)+ and -nth &gt; 1-
+
+    lib/ex_json_path.ex:167: ExJSONPath.recurse/2
+    lib/ex_json_path.ex:65: ExJSONPath.eval/2
+    lib/jsonpath.ex:7: Mix.Tasks.Execute.run/1
+</code></pre>
+
 <h4 id="Elixir_jaxon">
 Elixir (jaxon)
 </h4>

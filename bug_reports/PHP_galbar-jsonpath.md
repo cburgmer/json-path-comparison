@@ -129,20 +129,6 @@ The following queries provide results that do not match those of other implement
   jsonpath returned false, this might indicate an error
   ```
 
-- [ ] `$..[*]`
-  Input:
-  ```
-  {"key": "value", "another key": {"complex": "string", "primitives": [0, 1]}}
-  ```
-  Expected output (in any order as no consensus on ordering exists):
-  ```
-  ["string", "value", 0, 1, [0, 1], {"complex": "string", "primitives": [0, 1]}]
-  ```
-  Error:
-  ```
-  Invalid JSONPath error: 'Error in JSONPath near '..[*]''
-  ```
-
 - [ ] `$[*]`
   Input:
   ```
@@ -266,7 +252,7 @@ The following queries provide results that do not match those of other implement
   ```
   Actual output:
   ```
-  ["string", "value", 0, 1, [0, 1], {"complex": "string", "primitives": [0, 1]}, {"another key": {"complex": "string", "primitives": [0, 1]}, "key": "value"}]
+  ["string", "value", 0, 1, [0, 1], {"another key": {"complex": "string", "primitives": [0, 1]}, "key": "value"}, {"complex": "string", "primitives": [0, 1]}]
   ```
 
 - [ ] `$..*`

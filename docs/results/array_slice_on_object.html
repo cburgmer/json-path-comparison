@@ -61,6 +61,19 @@ Clojure (json-path)
 <pre><code>java.lang.Exception object must be an array.
 </code></pre>
 
+<h4 id="Elixir_ExJsonPath">
+Elixir (ExJsonPath)
+</h4>
+
+<pre><code>** (Poison.EncodeError) unable to encode value: {"b", 2}
+    lib/poison/encoder.ex:383: Poison.Encoder.Any.encode/2
+    lib/poison/encoder.ex:259: anonymous fn/3 in Poison.Encoder.List.encode/3
+    lib/poison/encoder.ex:260: Poison.Encoder.List."-encode/3-lists^foldr/2-1-"/3
+    lib/poison/encoder.ex:260: Poison.Encoder.List.encode/3
+    lib/poison.ex:41: Poison.encode!/2
+    lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
+</code></pre>
+
 <h4 id="Elixir_jaxon">
 Elixir (jaxon)
 </h4>

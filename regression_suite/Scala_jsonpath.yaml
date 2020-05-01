@@ -113,7 +113,7 @@ queries:
     result: []
   - id: dot_notation_with_wildcard_after_recursive_descent
     status: fail
-    result: ["string", "value", 0, 1, [0, 1], {"complex": "string", "primitives": [0, 1]}, {"another key": {"complex": "string", "primitives": [0, 1]}, "key": "value"}]
+    result: ["string", "value", 0, 1, [0, 1], {"another key": {"complex": "string", "primitives": [0, 1]}, "key": "value"}, {"complex": "string", "primitives": [0, 1]}]
   - id: dot_notation_with_wildcard_after_recursive_descent_on_null_value_array
     status: fail
     result: [40, 42, [40, null, 42], null]
@@ -127,7 +127,7 @@ queries:
     status: error
   - id: filter_expression_after_dot_notation_with_wildcard_after_recursive_descent
     status: open
-    result: [{"id": 3, "name": "another"}, {"id": 6, "name": "last"}, {"id": 4, "name": "more"}, {"id": 5, "name": "next to last"}]
+    result: [{"id": 3, "name": "another"}, {"id": 4, "name": "more"}, {"id": 5, "name": "next to last"}, {"id": 6, "name": "last"}]
   - id: filter_expression_after_recursive_descent
     status: open
     result: [{"id": 2, "more": [{"id": 2}, {"more": {"id": 2}}, {"id": {"id": 2}}, [{"id": 2}]]}, {"id": 2}, {"id": 2}, {"id": 2}, {"id": 2}]

@@ -185,20 +185,6 @@ The following queries provide results that do not match those of other implement
   ["value", "entry"]
   ```
 
-- [ ] `$..[*]`
-  Input:
-  ```
-  {"key": "value", "another key": {"complex": "string", "primitives": [0, 1]}}
-  ```
-  Expected output (in any order as no consensus on ordering exists):
-  ```
-  ["string", "value", 0, 1, [0, 1], {"complex": "string", "primitives": [0, 1]}]
-  ```
-  Error:
-  ```
-  Unable to compile selector `$..[*]': Missing member name or wildcard after . character
-  ```
-
 - [ ] `$[*]`
   Input:
   ```

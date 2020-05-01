@@ -71,8 +71,8 @@ queries:
   - id: bracket_notation_with_two_literals_separated_by_dot_without_quotes
     status: error
   - id: bracket_notation_with_wildcard_after_recursive_descent
-    status: fail
-    result: ["string", "value", 0, 0, 1, 1, {"complex": "string", "primitives": [0, 1]}, {"another key": {"complex": "string", "primitives": [0, 1]}, "key": "value"}]
+    status: open
+    result: ["string", "value", 0, 0, 1, 1, {"another key": {"complex": "string", "primitives": [0, 1]}, "key": "value"}, {"complex": "string", "primitives": [0, 1]}]
   - id: bracket_notation_with_wildcard_on_empty_object
     status: fail
     result: [{}]

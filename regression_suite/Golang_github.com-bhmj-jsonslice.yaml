@@ -57,7 +57,7 @@ queries:
     status: fail
     result: [[42]]
   - id: bracket_notation_with_wildcard_after_recursive_descent
-    status: fail
+    status: open
     result: ["value"]
   - id: bracket_notation_without_quotes
     status: open
