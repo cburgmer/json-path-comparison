@@ -52,3 +52,5 @@
   selector: "$[?((@.key==42))"
 - document: [{"key": 42}, {"key": 43}, {"key": 44}]
   selector: "$[?(@.key<44==false)]"
+- document: {"1:3": 42}
+  selector: "$[1:3]"

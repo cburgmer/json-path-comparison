@@ -26,7 +26,7 @@ adjust_css() {
 <style>
 /* Make room for more columns */
 .markdown-body table td, .markdown-body table th {
-  padding: 6px 10px;
+  padding: 6px 9px;
 }
 </style>
 EOF
