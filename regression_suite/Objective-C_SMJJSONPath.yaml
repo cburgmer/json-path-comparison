@@ -114,7 +114,7 @@ queries:
     result: "value"
   - id: filter_expression_after_dot_notation_with_wildcard_after_recursive_descent
     status: open
-    result: [{"id": 3, "name": "another"}, {"id": 3, "name": "another"}, {"id": 6, "name": "last"}, {"id": 4, "name": "more"}, {"id": 4, "name": "more"}, {"id": 5, "name": "next to last"}]
+    result: [{"id": 3, "name": "another"}, {"id": 3, "name": "another"}, {"id": 4, "name": "more"}, {"id": 4, "name": "more"}, {"id": 5, "name": "next to last"}, {"id": 6, "name": "last"}]
   - id: filter_expression_after_recursive_descent
     status: open
     result: [{"id": 2, "more": [{"id": 2}, {"more": {"id": 2}}, {"id": {"id": 2}}, [{"id": 2}]]}, {"id": 2}, {"id": 2}, {"id": 2}, {"id": 2}]
@@ -160,9 +160,10 @@ queries:
     result: []
   - id: filter_expression_with_equals_false
     status: open
-    result: [{"key": false}]
+    result: [{"key": false}, {"key": 0}]
   - id: filter_expression_with_equals_null
-    status: error
+    status: open
+    result: [{"key": null}]
   - id: filter_expression_with_equals_number_with_fraction
     status: error
   - id: filter_expression_with_equals_number_with_leading_zeros
@@ -188,7 +189,7 @@ queries:
     result: [{"key": "hi@example.com"}]
   - id: filter_expression_with_equals_true
     status: open
-    result: [{"key": true}]
+    result: [{"key": true}, {"key": 1}]
   - id: filter_expression_with_equals_with_root_reference
     status: open
     result: [{"key": 42}]
