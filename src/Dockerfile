@@ -60,3 +60,9 @@ RUN apt-get install -y --no-install-recommends build-essential cmake clang libbl
 ADD installObjectiveC.sh /tmp/installObjectiveC.sh
 RUN chmod a+x /tmp/installObjectiveC.sh
 RUN /tmp/installObjectiveC.sh
+
+# Raku
+RUN curl -L https://rakudo.org/downloads/star/rakudo-star-2020.01.tar.gz -o rakudo-star.tar.gz \
+        && tar -xzf rakudo-star.tar.gz && rm rakudo-star.tar.gz && \
+        cd rakudo-star-* && perl Configure.pl --gen-moar --make-install --prefix ~/rakudo
+ENV PATH="/root/rakudo/share/perl6/site/bin:/root/rakudo/bin:${PATH}"
