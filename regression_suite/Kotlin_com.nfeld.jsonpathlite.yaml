@@ -40,7 +40,7 @@ queries:
     status: fail
     result: ["first", "second"]
   - id: bracket_notation_on_object_without_key
-    status: open
+    status: fail
     result: null
   - id: bracket_notation_with_double_quotes
     status: error

@@ -70,6 +70,19 @@ The following queries provide results that do not match those of other implement
   [20]
   ```
 
+- [ ] `$['missing']`
+  Input:
+  ```
+  {"key": "value"}
+  ```
+  Expected output:
+  ```
+  []
+  ```
+  Error:
+  ```
+  jsonpath returned false, this might indicate an error```
+
 - [ ] `$["key"]`
   Input:
   ```

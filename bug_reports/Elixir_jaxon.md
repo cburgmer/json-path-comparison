@@ -369,6 +369,22 @@ The following queries provide results that do not match those of other implement
   ["first"]
   ```
 
+- [ ] `$['missing']`
+  Input:
+  ```
+  {"key": "value"}
+  ```
+  Expected output:
+  ```
+  []
+  ```
+  Error:
+  ```
+  ** (Jaxon.ParseError) Expected an integer at `'missing']`
+      lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
+      lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
+  ```
+
 - [ ] `$['two.some']`
   Input:
   ```
