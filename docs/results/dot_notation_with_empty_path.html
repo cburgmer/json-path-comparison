@@ -6,7 +6,7 @@
 
 <p>Selector: <code>$.</code></p>
 
-<pre><code>{"key": 42}
+<pre><code>{"key": 42, "": 9001, "''": "nice"}
 </code></pre>
 
 <h2>Results</h2>
@@ -19,6 +19,8 @@ Clojure (json-path)
 
 <pre><code>[
   {
+    "": 9001,
+    "''": "nice",
     "key": 42
   }
 ]
@@ -30,6 +32,8 @@ Elixir (jaxon)
 
 <pre><code>[
   {
+    "": 9001,
+    "''": "nice",
     "key": 42
   }
 ]
@@ -41,8 +45,19 @@ Erlang (ejsonpath)
 
 <pre><code>[
   {
+    "": 9001,
+    "''": "nice",
     "key": 42
   }
+]
+</code></pre>
+
+<h4 id="Golang_github.com-oliveagle-jsonpath">
+Golang (github.com-oliveagle-jsonpath)
+</h4>
+
+<pre><code>[
+  9001
 ]
 </code></pre>
 
@@ -52,6 +67,8 @@ JavaScript (Goessner)
 
 <pre><code>[
   {
+    "": 9001,
+    "''": "nice",
     "key": 42
   }
 ]
@@ -63,6 +80,8 @@ JavaScript (jsonpath-plus)
 
 <pre><code>[
   {
+    "": 9001,
+    "''": "nice",
     "key": 42
   }
 ]
@@ -74,6 +93,8 @@ PHP (flow-jsonpath)
 
 <pre><code>[
   {
+    "": 9001,
+    "''": "nice",
     "key": 42
   }
 ]
@@ -94,6 +115,8 @@ Ruby (jsonpath)
 
 <pre><code>[
   {
+    "": 9001,
+    "''": "nice",
     "key": 42
   }
 ]
@@ -105,6 +128,8 @@ dotNET (JsonPathLib)
 
 <pre><code>[
   {
+    "": 9001,
+    "''": "nice",
     "key": 42
   }
 ]
@@ -161,13 +186,6 @@ Golang (github.com-bhmj-jsonslice)
 </h4>
 
 <pre><code>path: unexpected end of path at 2
-</code></pre>
-
-<h4 id="Golang_github.com-oliveagle-jsonpath">
-Golang (github.com-oliveagle-jsonpath)
-</h4>
-
-<pre><code>key error:  not found in object
 </code></pre>
 
 <h4 id="Haskell_jsonpath">

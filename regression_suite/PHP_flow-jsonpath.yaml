@@ -93,7 +93,7 @@ queries:
     result: ["russian dolls", "something", "top", "value", {"key": "russian dolls"}]
   - id: dot_notation_with_empty_path
     status: open
-    result: [{"key": 42}]
+    result: [{"": 9001, "''": "nice", "key": 42}]
   - id: dot_notation_with_key_root_literal
     status: error
   - id: dot_notation_with_number

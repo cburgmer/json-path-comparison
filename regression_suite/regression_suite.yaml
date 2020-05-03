@@ -371,7 +371,7 @@ queries:
     ordered: false
   - id: dot_notation_with_empty_path
     selector: "$."
-    document: {"key": 42}
+    document: {"key": 42, "": 9001, "''": "nice"}
   - id: dot_notation_with_key_named_in
     selector: "$.in"
     document: {"in": "value"}
