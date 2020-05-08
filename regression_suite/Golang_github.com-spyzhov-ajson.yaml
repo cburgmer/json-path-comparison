@@ -6,34 +6,19 @@
 
 implementation: Golang_github.com-spyzhov-ajson
 queries:
-  - id: array_slice_on_non_overlapping_array
-    status: fail
-    result: null
-  - id: array_slice_on_object
-    status: fail
-    result: null
   - id: array_slice_with_negative_step
     status: open
-    result: null
+    result: []
   - id: array_slice_with_negative_step_only
     status: error
   - id: array_slice_with_open_start_and_end_on_object
     status: open
-    result: null
-  - id: array_slice_with_range_of_-1
-    status: fail
-    result: null
-  - id: array_slice_with_range_of_0
-    status: fail
-    result: null
+    result: []
   - id: array_slice_with_step_0
     status: error
-  - id: bracket_notation_on_object_without_key
-    status: open
-    result: null
   - id: bracket_notation_with_double_quotes
     status: fail
-    result: null
+    result: []
   - id: bracket_notation_with_empty_path
     status: open
     result: [42]
@@ -42,42 +27,33 @@ queries:
     result: [222]
   - id: bracket_notation_with_number_-1_on_empty_array
     status: open
-    result: null
+    result: []
   - id: bracket_notation_with_number_on_object
     status: open
     result: ["value"]
-  - id: bracket_notation_with_number_on_short_array
-    status: fail
-    result: null
   - id: bracket_notation_with_number_on_string
     status: open
-    result: null
+    result: []
   - id: bracket_notation_with_quoted_escaped_backslash
     status: open
-    result: null
+    result: []
   - id: bracket_notation_with_quoted_escaped_single_quote
     status: open
-    result: null
+    result: []
   - id: bracket_notation_with_quoted_special_characters_combined
     status: open
-    result: null
+    result: []
   - id: bracket_notation_with_quoted_string_and_unescaped_single_quote
     status: error
   - id: bracket_notation_with_quoted_wildcard_literal_on_object_without_key
     status: open
-    result: null
+    result: []
   - id: bracket_notation_with_two_literals_separated_by_dot
     status: open
-    result: null
+    result: []
   - id: bracket_notation_with_two_literals_separated_by_dot_without_quotes
     status: open
     result: ["42"]
-  - id: bracket_notation_with_wildcard_on_empty_array
-    status: fail
-    result: null
-  - id: bracket_notation_with_wildcard_on_empty_object
-    status: fail
-    result: null
   - id: bracket_notation_without_quotes
     status: open
     result: ["value"]
@@ -86,28 +62,19 @@ queries:
     result: ["value"]
   - id: dot_bracket_notation_with_double_quotes
     status: open
-    result: null
+    result: []
   - id: dot_bracket_notation_without_quotes
     status: open
     result: ["value"]
   - id: dot_notation_after_bracket_notation_after_recursive_descent
     status: open
     result: [200, 42, 42, 500]
-  - id: dot_notation_on_array
-    status: fail
-    result: null
-  - id: dot_notation_on_array_with_containing_object_matching_key
-    status: fail
-    result: null
-  - id: dot_notation_on_object_without_key
-    status: fail
-    result: null
   - id: dot_notation_with_double_quotes
     status: open
-    result: null
+    result: []
   - id: dot_notation_with_double_quotes_after_recursive_descent
     status: open
-    result: null
+    result: []
   - id: dot_notation_with_empty_path
     status: open
     result: [{"": 9001, "''": "nice", "key": 42}]
@@ -128,15 +95,6 @@ queries:
     result: ["russian dolls", "something", "top", "value", {"key": "russian dolls"}]
   - id: dot_notation_with_single_quotes_and_dot
     status: error
-  - id: dot_notation_with_wildcard_after_recursive_descent_on_scalar
-    status: fail
-    result: null
-  - id: dot_notation_with_wildcard_on_empty_array
-    status: fail
-    result: null
-  - id: dot_notation_with_wildcard_on_empty_object
-    status: fail
-    result: null
   - id: dot_notation_without_root
     status: error
   - id: filter_expression_after_dot_notation_with_wildcard_after_recursive_descent
@@ -172,13 +130,13 @@ queries:
     result: [{"a": true, "b": true, "c": true}]
   - id: filter_expression_with_different_ungrouped_operators
     status: open
-    result: null
+    result: []
   - id: filter_expression_with_division
     status: open
     result: [{"key": 50}]
   - id: filter_expression_with_empty_expression
     status: open
-    result: null
+    result: []
   - id: filter_expression_with_equals
     status: open
     result: [{"key": 42}]
@@ -202,15 +160,12 @@ queries:
   - id: filter_expression_with_equals_on_array_of_numbers
     status: open
     result: [42]
-  - id: filter_expression_with_equals_on_array_without_match
-    status: fail
-    result: null
   - id: filter_expression_with_equals_on_object
     status: open
     result: [{"key": 42}]
   - id: filter_expression_with_equals_on_object_with_key_matching_query
     status: open
-    result: null
+    result: []
   - id: filter_expression_with_equals_string
     status: error
   - id: filter_expression_with_equals_string_with_current_object_literal
@@ -241,7 +196,7 @@ queries:
     result: [{"key": 0}, {"key": 42}, {"key": -1}, {"key": 41}, {"key": 41.9999}]
   - id: filter_expression_with_multiplication
     status: open
-    result: null
+    result: []
   - id: filter_expression_with_negation_and_equals
     status: error
   - id: filter_expression_with_not_equals

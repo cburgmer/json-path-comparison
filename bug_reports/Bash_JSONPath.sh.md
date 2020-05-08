@@ -154,6 +154,22 @@ The following queries provide results that do not match those of other implement
   ]
   ```
 
+- [ ] `$['missing']`
+  Input:
+  ```
+  {"key": "value"}
+  ```
+  Expected output:
+  ```
+  []
+  ```
+  Error:
+  ```
+  Expecting value: line 3 column 1 (char 2)
+  
+  
+  ```
+
 - [ ] `$['two.some']`
   Input:
   ```

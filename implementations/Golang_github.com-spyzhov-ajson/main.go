@@ -24,7 +24,7 @@ func main() {
 		os.Exit(1)
 	}
 
-	var results []interface{}
+	results := make([]interface{}, 0)
 
 	for _, node := range nodes {
 		value, err := node.Unpack()

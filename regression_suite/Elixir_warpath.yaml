@@ -17,7 +17,7 @@ queries:
   - id: array_slice_with_step_0
     status: error
   - id: bracket_notation_on_object_without_key
-    status: open
+    status: fail
     result: null
   - id: bracket_notation_with_empty_path
     status: error
