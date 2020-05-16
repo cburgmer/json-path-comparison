@@ -3,10 +3,52 @@ Results do not match other implementations
 The following queries provide results that do not match those of other implementations of JSONPath
 (compare https://cburgmer.github.io/json-path-comparison/):
 
-- [ ] `$["key"]`
+- [ ] `$[2:1]`
   Input:
   ```
-  {"key": "value"}
+  ["first", "second", "third", "forth"]
+  ```
+  Expected output:
+  ```
+  []
+  ```
+  Actual output:
+  ```
+  ["second"]
+  ```
+
+- [ ] `$[-4:]`
+  Input:
+  ```
+  ["first", "second", "third"]
+  ```
+  Expected output:
+  ```
+  ["first", "second", "third"]
+  ```
+  Actual output:
+  ```
+  ["third"]
+  ```
+
+- [ ] `$[']']`
+  Input:
+  ```
+  {"]": 42}
+  ```
+  Expected output:
+  ```
+  [42]
+  ```
+  Error:
+  ```
+  wrong symbol ''' at 4
+  ```
+
+- [ ] `$['"']`
+  Input:
+  ```
+  {"\"": "value", "another": "entry"}
   ```
   Expected output:
   ```
@@ -15,48 +57,6 @@ The following queries provide results that do not match those of other implement
   Actual output:
   ```
   []
-  ```
-
-- [ ] `$[?(@['key']==42)]`
-  Input:
-  ```
-  [{"key": 0}, {"key": 42}, {"key": -1}, {"key": 41}, {"key": 43}, {"key": 42.0001}, {"key": 41.9999}, {"key": 100}, {"some": "value"}]
-  ```
-  Expected output:
-  ```
-  [{"key": 42}]
-  ```
-  Error:
-  ```
-  wrong symbol '=' at 12
-  ```
-
-- [ ] `$[?(@[1]=='b')]`
-  Input:
-  ```
-  [["a", "b"], ["x", "y"]]
-  ```
-  Expected output:
-  ```
-  [["a", "b"]]
-  ```
-  Error:
-  ```
-  wrong symbol '=' at 8
-  ```
-
-- [ ] `$[?(@.key=="some.value")]`
-  Input:
-  ```
-  [{"key": "some"}, {"key": "value"}, {"key": "some.value"}]
-  ```
-  Expected output:
-  ```
-  [{"key": "some.value"}]
-  ```
-  Error:
-  ```
-  wrong request: wrong request: ?(@.key=="some.value")
   ```
 
 

@@ -241,6 +241,20 @@ The following queries provide results that do not match those of other implement
   jsonpath returned false, this might indicate an error
   ```
 
+- [ ] `$[?(@['@key']==42)]`
+  Input:
+  ```
+  [{"@key": 0}, {"@key": 42}, {"key": 42}, {"@key": 43}, {"some": "value"}]
+  ```
+  Expected output:
+  ```
+  [{"@key": 42}]
+  ```
+  Error:
+  ```
+  jsonpath returned false, this might indicate an error
+  ```
+
 - [ ] `$[?(@.key==43)]`
   Input:
   ```
@@ -249,6 +263,20 @@ The following queries provide results that do not match those of other implement
   Expected output:
   ```
   []
+  ```
+  Error:
+  ```
+  jsonpath returned false, this might indicate an error
+  ```
+
+- [ ] `$[?(@.key=="hi@example.com")]`
+  Input:
+  ```
+  [{"key": "some"}, {"key": "value"}, {"key": "hi@example.com"}]
+  ```
+  Expected output:
+  ```
+  [{"key": "hi@example.com"}]
   ```
   Error:
   ```

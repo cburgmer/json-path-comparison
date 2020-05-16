@@ -485,6 +485,7 @@ queries:
   - id: filter_expression_with_bracket_notation_and_current_object_literal
     selector: "$[?(@['@key']==42)]"
     document: [{"@key": 0}, {"@key": 42}, {"key": 42}, {"@key": 43}, {"some": "value"}]
+    consensus: [{"@key": 42}]
   - id: filter_expression_with_bracket_notation_with_-1
     selector: "$[?(@[-1]==2)]"
     document: [[2, 3], ["a"], [0, 2], [2]]
@@ -553,6 +554,7 @@ queries:
   - id: filter_expression_with_equals_string_with_current_object_literal
     selector: "$[?(@.key==\"hi@example.com\")]"
     document: [{"key": "some"}, {"key": "value"}, {"key": "hi@example.com"}]
+    consensus: [{"key": "hi@example.com"}]
   - id: filter_expression_with_equals_string_with_dot_literal
     selector: "$[?(@.key==\"some.value\")]"
     document: [{"key": "some"}, {"key": "value"}, {"key": "some.value"}]

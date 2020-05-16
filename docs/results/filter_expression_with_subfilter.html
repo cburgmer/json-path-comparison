@@ -102,6 +102,34 @@ Golang (github.com-oliveagle-jsonpath)
 <pre><code>[]
 </code></pre>
 
+<h4 id="Golang_github.com-spyzhov-ajson">
+Golang (github.com-spyzhov-ajson)
+</h4>
+
+<pre><code>[
+  {
+    "a": [
+      {
+        "price": 11
+      }
+    ]
+  },
+  {
+    "a": [
+      {
+        "price": 8
+      },
+      {
+        "price": 12
+      },
+      {
+        "price": 3
+      }
+    ]
+  }
+]
+</code></pre>
+
 <h4 id="Java_com.jayway.jsonpath">
 Java (com.jayway.jsonpath)
 </h4>
@@ -417,13 +445,6 @@ Golang (github.com-PaesslerAG-jsonpath)
 </h4>
 
 <pre><code>parsing error: $[?(@.a[?(@.price&gt;10)])] :1:18 - 1:19 unexpected "&gt;" while scanning parentheses expected ")"
-</code></pre>
-
-<h4 id="Golang_github.com-spyzhov-ajson">
-Golang (github.com-spyzhov-ajson)
-</h4>
-
-<pre><code>wrong symbol ')' at 22
 </code></pre>
 
 <h4 id="Haskell_jsonpath">

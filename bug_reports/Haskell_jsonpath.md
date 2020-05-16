@@ -416,6 +416,24 @@ The following queries provide results that do not match those of other implement
     error, called at app/Main.hs:18:22 in main:Main
   ```
 
+- [ ] `$[?(@['@key']==42)]`
+  Input:
+  ```
+  [{"@key": 0}, {"@key": 42}, {"key": 42}, {"@key": 43}, {"some": "value"}]
+  ```
+  Expected output:
+  ```
+  [{"@key": 42}]
+  ```
+  Error:
+  ```
+  json-path-comparison: searchBeginningWithSlice: string
+  CallStack (from HasCallStack):
+    error, called at app/Main.hs:36:7 in main:Main
+  Invalid JSONPath: $[?(@['@key']==42)]
+   Error: searchBeginningWithSlice: string
+  ```
+
 - [ ] `$[?(@[1]=='b')]`
   Input:
   ```

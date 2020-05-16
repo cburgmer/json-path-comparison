@@ -286,6 +286,20 @@ The following queries provide results that do not match those of other implement
   ArgumentCountError
   ```
 
+- [ ] `$[?(@['@key']==42)]`
+  Input:
+  ```
+  [{"@key": 0}, {"@key": 42}, {"key": 42}, {"@key": 43}, {"some": "value"}]
+  ```
+  Expected output:
+  ```
+  [{"@key": 42}]
+  ```
+  Error:
+  ```
+  ArgumentCountError
+  ```
+
 - [ ] `$[?(@[1]=='b')]`
   Input:
   ```
@@ -308,6 +322,20 @@ The following queries provide results that do not match those of other implement
   Expected output:
   ```
   []
+  ```
+  Error:
+  ```
+  ArgumentCountError
+  ```
+
+- [ ] `$[?(@.key=="hi@example.com")]`
+  Input:
+  ```
+  [{"key": "some"}, {"key": "value"}, {"key": "hi@example.com"}]
+  ```
+  Expected output:
+  ```
+  [{"key": "hi@example.com"}]
   ```
   Error:
   ```

@@ -745,6 +745,20 @@ The following queries provide results that do not match those of other implement
   parsing error
   ```
 
+- [ ] `$[?(@['@key']==42)]`
+  Input:
+  ```
+  [{"@key": 0}, {"@key": 42}, {"key": 42}, {"@key": 43}, {"some": "value"}]
+  ```
+  Expected output:
+  ```
+  [{"@key": 42}]
+  ```
+  Error:
+  ```
+  parsing error
+  ```
+
 - [ ] `$[?(@[1]=='b')]`
   Input:
   ```
@@ -757,6 +771,20 @@ The following queries provide results that do not match those of other implement
   Actual output:
   ```
   []
+  ```
+
+- [ ] `$[?(@.key=="hi@example.com")]`
+  Input:
+  ```
+  [{"key": "some"}, {"key": "value"}, {"key": "hi@example.com"}]
+  ```
+  Expected output:
+  ```
+  [{"key": "hi@example.com"}]
+  ```
+  Error:
+  ```
+  parsing error
   ```
 
 - [ ] `$[?(@.key=="some.value")]`

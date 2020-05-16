@@ -745,6 +745,20 @@ The following queries provide results that do not match those of other implement
   interface conversion: interface {} is nil, not string
   ```
 
+- [ ] `$[?(@['@key']==42)]`
+  Input:
+  ```
+  [{"@key": 0}, {"@key": 42}, {"key": 42}, {"@key": 43}, {"some": "value"}]
+  ```
+  Expected output:
+  ```
+  [{"@key": 42}]
+  ```
+  Error:
+  ```
+  interface conversion: interface {} is nil, not string
+  ```
+
 - [ ] `$[?(@[1]=='b')]`
   Input:
   ```
@@ -757,6 +771,20 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   interface conversion: interface {} is nil, not string
+  ```
+
+- [ ] `$[?(@.key=="hi@example.com")]`
+  Input:
+  ```
+  [{"key": "some"}, {"key": "value"}, {"key": "hi@example.com"}]
+  ```
+  Expected output:
+  ```
+  [{"key": "hi@example.com"}]
+  ```
+  Actual output:
+  ```
+  []
   ```
 
 - [ ] `$[?(@.key=="some.value")]`

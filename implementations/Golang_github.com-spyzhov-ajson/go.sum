@@ -3,3 +3,5 @@ github.com/PaesslerAG/jsonpath v0.1.0/go.mod h1:4BzmtoM/PI8fPO4aQGIusjGxGir2BzcV
 github.com/PaesslerAG/jsonpath v0.1.1/go.mod h1:lVboNxFGal/VwW6d9JzIy56bUsYAP6tH/x80vjnCseY=
 github.com/spyzhov/ajson v0.2.1 h1:Za4nWtiEcTp5w2R3+vJx/L/uCQMSAHpZhPNA4zlMAkc=
 github.com/spyzhov/ajson v0.2.1/go.mod h1:63V+CGM6f1Bu/p4nLIN8885ojBdt88TbLoSFzyqMuVA=
+github.com/spyzhov/ajson v0.2.2 h1:0XLE5/shvqJ4Q4mZ0+dAuquZld5+f1vci1DTDXiqcTU=
+github.com/spyzhov/ajson v0.2.2/go.mod h1:63V+CGM6f1Bu/p4nLIN8885ojBdt88TbLoSFzyqMuVA=

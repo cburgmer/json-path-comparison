@@ -367,6 +367,20 @@ The following queries provide results that do not match those of other implement
   Unable to compile selector `$[?(@['key']==42)]': Invalid array index definition “?(@['key']==42)]”
   ```
 
+- [ ] `$[?(@['@key']==42)]`
+  Input:
+  ```
+  [{"@key": 0}, {"@key": 42}, {"key": 42}, {"@key": 43}, {"some": "value"}]
+  ```
+  Expected output:
+  ```
+  [{"@key": 42}]
+  ```
+  Error:
+  ```
+  Unable to compile selector `$[?(@['@key']==42)]': Invalid array index definition “?(@['@key']==42)]”
+  ```
+
 - [ ] `$[?(@[1]=='b')]`
   Input:
   ```
@@ -393,6 +407,20 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   Unable to compile selector `$[?(@.key==43)]': Invalid array index definition “?(@.key==43)]”
+  ```
+
+- [ ] `$[?(@.key=="hi@example.com")]`
+  Input:
+  ```
+  [{"key": "some"}, {"key": "value"}, {"key": "hi@example.com"}]
+  ```
+  Expected output:
+  ```
+  [{"key": "hi@example.com"}]
+  ```
+  Error:
+  ```
+  Unable to compile selector `$[?(@.key=="hi@example.com")]': Invalid array index definition “?(@.key=="hi@example.com")]”
   ```
 
 - [ ] `$[?(@.key=="some.value")]`

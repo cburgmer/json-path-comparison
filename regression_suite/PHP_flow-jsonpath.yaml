@@ -118,9 +118,6 @@ queries:
   - id: filter_expression_with_boolean_and_operator
     status: open
     result: [{"key": 43}, {"key": 44}]
-  - id: filter_expression_with_bracket_notation_and_current_object_literal
-    status: open
-    result: [{"@key": 42}]
   - id: filter_expression_with_bracket_notation_with_-1
     status: open
     result: []
@@ -172,9 +169,6 @@ queries:
   - id: filter_expression_with_equals_string
     status: open
     result: [{"key": "value"}, {"key": 0}]
-  - id: filter_expression_with_equals_string_with_current_object_literal
-    status: open
-    result: [{"key": "hi@example.com"}]
   - id: filter_expression_with_equals_true
     status: open
     result: [{"key": true}, {"key": 1}]

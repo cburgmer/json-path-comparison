@@ -8,23 +8,27 @@ implementation: Golang_github.com-spyzhov-ajson
 queries:
   - id: array_slice_with_negative_step
     status: open
-    result: []
+    result: ["forth", "second"]
   - id: array_slice_with_negative_step_only
-    status: error
+    status: open
+    result: ["fifth", "third", "first"]
   - id: array_slice_with_open_start_and_end_on_object
     status: open
     result: []
+  - id: array_slice_with_range_of_-1
+    status: fail
+    result: ["second"]
+  - id: array_slice_with_start_large_negative_number_and_open_end_on_short_array
+    status: fail
+    result: ["third"]
   - id: array_slice_with_step_0
     status: error
-  - id: bracket_notation_with_double_quotes
-    status: fail
-    result: []
   - id: bracket_notation_with_empty_path
     status: open
     result: [42]
   - id: bracket_notation_with_empty_string_doubled_quoted
     status: open
-    result: [222]
+    result: [42]
   - id: bracket_notation_with_number_-1_on_empty_array
     status: open
     result: []
@@ -34,12 +38,17 @@ queries:
   - id: bracket_notation_with_number_on_string
     status: open
     result: []
+  - id: bracket_notation_with_quoted_closing_bracket_literal
+    status: error
+  - id: bracket_notation_with_quoted_double_quote_literal
+    status: fail
+    result: []
   - id: bracket_notation_with_quoted_escaped_backslash
     status: open
-    result: []
+    result: ["value"]
   - id: bracket_notation_with_quoted_escaped_single_quote
     status: open
-    result: []
+    result: ["value"]
   - id: bracket_notation_with_quoted_special_characters_combined
     status: open
     result: []
@@ -62,7 +71,7 @@ queries:
     result: ["value"]
   - id: dot_bracket_notation_with_double_quotes
     status: open
-    result: []
+    result: ["value"]
   - id: dot_bracket_notation_without_quotes
     status: open
     result: ["value"]
@@ -71,10 +80,10 @@ queries:
     result: [200, 42, 42, 500]
   - id: dot_notation_with_double_quotes
     status: open
-    result: []
+    result: ["value"]
   - id: dot_notation_with_double_quotes_after_recursive_descent
     status: open
-    result: []
+    result: ["russian dolls", "something", "top", "value", {"key": "russian dolls"}]
   - id: dot_notation_with_empty_path
     status: open
     result: [{"": 9001, "''": "nice", "key": 42}]
@@ -112,16 +121,12 @@ queries:
   - id: filter_expression_with_boolean_and_operator
     status: open
     result: [{"key": 43}]
-  - id: filter_expression_with_bracket_notation
-    status: error
-  - id: filter_expression_with_bracket_notation_and_current_object_literal
-    status: error
   - id: filter_expression_with_bracket_notation_with_-1
-    status: error
-  - id: filter_expression_with_bracket_notation_with_number
-    status: error
+    status: open
+    result: [[0, 2], [2]]
   - id: filter_expression_with_bracket_notation_with_number_on_object
-    status: error
+    status: open
+    result: [["a", "b"]]
   - id: filter_expression_with_current_object
     status: open
     result: ["some value", "value", 1, -1]
@@ -167,11 +172,8 @@ queries:
     status: open
     result: []
   - id: filter_expression_with_equals_string
-    status: error
-  - id: filter_expression_with_equals_string_with_current_object_literal
-    status: error
-  - id: filter_expression_with_equals_string_with_dot_literal
-    status: error
+    status: open
+    result: [{"key": "value"}]
   - id: filter_expression_with_equals_true
     status: open
     result: [{"key": true}]
@@ -207,7 +209,8 @@ queries:
   - id: filter_expression_with_single_equal
     status: error
   - id: filter_expression_with_subfilter
-    status: error
+    status: open
+    result: [{"a": [{"price": 11}]}, {"a": [{"price": 8}, {"price": 12}, {"price": 3}]}]
   - id: filter_expression_with_substraction
     status: open
     result: [{"key": -50}]

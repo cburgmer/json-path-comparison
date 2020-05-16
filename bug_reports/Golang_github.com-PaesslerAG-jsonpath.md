@@ -129,6 +129,20 @@ The following queries provide results that do not match those of other implement
   parsing error: $[?(@['key']==42)]	:1:7 - 1:12 could not parse string: invalid syntax
   ```
 
+- [ ] `$[?(@['@key']==42)]`
+  Input:
+  ```
+  [{"@key": 0}, {"@key": 42}, {"key": 42}, {"@key": 43}, {"some": "value"}]
+  ```
+  Expected output:
+  ```
+  [{"@key": 42}]
+  ```
+  Error:
+  ```
+  parsing error: $[?(@['@key']==42)]	:1:7 - 1:13 could not parse string: invalid syntax
+  ```
+
 - [ ] `$[?(@.key=='value')]`
   Input:
   ```
