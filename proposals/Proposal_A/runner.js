@@ -29,7 +29,8 @@ const main = async () => {
 
     console.log(JSON.stringify(results));
   } catch (e) {
-    console.error(e);
+    console.error(e.message);
+    process.exit(1);
   }
 };
 

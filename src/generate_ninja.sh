@@ -14,6 +14,10 @@ all_implementations() {
     find ./implementations -name run.sh -maxdepth 2 -print0 | xargs -0 -n1 dirname | xargs -n1 basename | sort
 }
 
+all_proposals() {
+    find ./proposals -name run.sh -maxdepth 2 -print0 | xargs -0 -n1 dirname | xargs -n1 basename | sort
+}
+
 all_queries() {
     if [[ -n "${ONLY_QUERIES:-}" ]]; then
         echo "$ONLY_QUERIES" | tr ' ' '\n'
@@ -70,10 +74,20 @@ EOF
     done <<< "$(all_implementations)"
     echo
 
+    while IFS= read -r proposal; do
+        echo "subninja proposals/${proposal}/build.ninja"
+        echo "build ${test_compilation_dir}/${proposal}: test_compilation proposals/${proposal} | proposals/${proposal}/install"
+        echo
+    done <<< "$(all_proposals)"
+    echo
+
     echo -n "build ${test_compilation_dir}: phony"
     while IFS= read -r implementation; do
         echo -n " ${test_compilation_dir}/${implementation}"
     done <<< "$(all_implementations)"
+    while IFS= read -r proposal; do
+        echo -n " ${test_compilation_dir}/${proposal}"
+    done <<< "$(all_proposals)"
     echo
     echo
 }
@@ -95,11 +109,17 @@ EOF
             if [[ -f "queries/${query}/SCALAR_RESULT" ]]; then
                 echo -n " queries/${query}/SCALAR_RESULT"
             fi
-            if [[ -f "implementations/${implementation}/build.ninja" ]]; then # we are slowly migrating all implementation to build via ninja as well
-                echo -n " ${test_compilation_dir}/${implementation}"
-            fi
+            echo -n " ${test_compilation_dir}/${implementation}"
             echo
         done <<< "$(all_implementations)"
+        echo
+
+        while IFS= read -r proposal; do
+            echo -n "build ${results_dir}/${query}/${proposal}: run queries/${query} proposals/${proposal}"
+            # implicit deps
+            echo -n " | src/query_implementation.sh queries/${query}/selector queries/${query}/document.json ${test_compilation_dir}/${proposal}"
+            echo
+        done <<< "$(all_proposals)"
         echo
 
         # aggregate query build
@@ -107,6 +127,9 @@ EOF
         while IFS= read -r implementation; do
             echo -n " ${results_dir}/${query}/${implementation}"
         done <<< "$(all_implementations)"
+        while IFS= read -r proposal; do
+            echo -n " ${results_dir}/${query}/${proposal}"
+        done <<< "$(all_proposals)"
         echo
         echo
     done <<< "$(all_queries)"
