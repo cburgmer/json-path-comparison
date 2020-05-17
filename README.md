@@ -27,8 +27,7 @@ Done:
 Short term:
 
 - Guide implementations to tackle queries without consensus to create one
-  - Experiment: Come up with a concise interpretation, see [./proposal/PROPOSAL.md](./proposal/PROPOSAL.md).
-  - Experiment: Report questionable responses to implementations where no consensus exists yet.
+  - Experiment: Come up with a concise interpretation, see [./proposals/Proposal_A/README.md](./proposals/Proposal_A/README.md).
   - Experiment: Suggest solutions and try opening a discussion.
 
 Mid term:
