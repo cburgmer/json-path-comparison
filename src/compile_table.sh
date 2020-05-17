@@ -11,6 +11,10 @@ all_implementations() {
     find ./implementations -name run.sh -maxdepth 2 -print0 | xargs -0 -n1 dirname | xargs -n1 basename | sort
 }
 
+all_proposals() {
+    find ./proposals -name run.sh -maxdepth 2 -print0 | xargs -0 -n1 dirname | xargs -n1 basename | sort
+}
+
 all_queries() {
     find ./queries -type d -maxdepth 1 -mindepth 1 -print0 | xargs -0 -n1 basename | ./src/sort_queries.py
 }
@@ -50,7 +54,17 @@ give_mark() {
             echo "<a href=\"results/${query}.md#${implementation}\">➘</a>"
         fi
     fi
+}
 
+give_mark_for_proposal() {
+    local query="$1"
+    local proposal="$2"
+
+    # Error?
+    if ! is_query_result_ok "${results_dir}/${query}/${proposal}"; then
+        echo "e"
+        return
+    fi
 }
 
 compile_row() {
@@ -60,6 +74,7 @@ compile_row() {
     local selector
     local query_name
     local implementation
+    local proposal
     local status
     selector="$(cat "${selector_file}")"
     query_name="$(pretty_query_name "$query")"
@@ -86,6 +101,12 @@ compile_row() {
         echo "</td>"
     done <<< "$(all_implementations)"
 
+    while IFS= read -r proposal; do
+        echo "<td>"
+        give_mark_for_proposal "$query" "$proposal"
+        echo "</td>"
+    done <<< "$(all_proposals)"
+
     echo "</tr>"
 }
 
@@ -104,6 +125,9 @@ implementation_language_header() {
         echo "</span>"
         echo "</th>"
     done <<< "$(all_implementations | sed "s/\([^_]*\)_.*/\1/" | uniq -c)"
+
+    count="$(all_proposals | wc -l)"
+    echo "<th style=\"position: sticky; top: 0; background: #ffffffaa;\" colspan=\"${count}\"></th>"
 }
 
 wrap_with_link() {
@@ -119,6 +143,7 @@ wrap_with_link() {
 
 header_row() {
     local implementation
+    local proposal
 
     echo "<tr style=\"background: none\">"
     echo "<th style=\"background: #ffffffaa;\"></th>"
@@ -139,6 +164,17 @@ header_row() {
         echo "</div>"
         echo "</th>"
     done <<< "$(all_implementations)"
+
+    while IFS= read -r proposal; do
+        echo "<th style=\"background: #fbfdffaa;\">"
+        echo "<div style=\"writing-mode: vertical-rl;\">"
+        echo "<a href=\"https://github.com/cburgmer/json-path-comparison/blob/master/proposals/${proposal}\">"
+        tr '_' ' ' <<< "$proposal"
+        echo "</a>"
+        echo "</div>"
+        echo "</th>"
+    done <<< "$(all_proposals)"
+
     echo "</tr>"
 }
 
