@@ -4,6 +4,7 @@ set -euo pipefail
 readonly results_dir="$1"
 readonly majority_dir="$2"
 readonly consensus_dir="$3"
+readonly proposal_majority_dir="$4"
 
 . src/shared.sh
 
@@ -23,6 +24,12 @@ is_in_majority() {
     local query="$1"
     local implementation="$2"
     grep "^${implementation}\$" < "${majority_dir}/${query}" > /dev/null
+}
+
+is_proposal_in_majority() {
+    local query="$1"
+    local proposal="$2"
+    grep "^${proposal}\$" < "${proposal_majority_dir}/${query}" > /dev/null
 }
 
 has_consensus() {
@@ -64,6 +71,21 @@ give_mark_for_proposal() {
     if ! is_query_result_ok "${results_dir}/${query}/${proposal}"; then
         echo "e"
         return
+    fi
+
+    if is_proposal_in_majority "$query" "$proposal"; then
+        if has_consensus "$query"; then
+            echo "<a href=\"results/${query}.md#consensus\">✓</a>"
+        else
+            echo "➚"
+        fi
+    else
+        # So we are an outlier, but is there actually any gold standard?
+        if has_consensus "$query"; then
+            echo "✗"
+        else
+            echo "➘"
+        fi
     fi
 }
 

@@ -5,6 +5,7 @@ readonly test_compilation_dir="build/test_compilation"
 readonly results_dir="build/results"
 readonly consensus_dir="build/consensus"
 readonly majority_dir="build/majority"
+readonly proposal_majority_dir="build/proposal_majority"
 readonly markdown_dir="build/markdown"
 readonly bug_reports_dir="bug_reports"
 readonly docs_dir="docs"
@@ -165,6 +166,24 @@ EOF
 
 
     cat <<EOF
+rule build_proposal_majority
+  command = LANG=en_US.UTF-8 LC_ALL= LC_COLLATE=C ./src/build_proposal_majority_match.sh \$in > \$out
+EOF
+    echo
+    while IFS= read -r query; do
+        echo "build ${proposal_majority_dir}/${query}: build_proposal_majority ${results_dir}/${query} ${majority_dir}/${query} | src/build_proposal_majority_match.sh"
+    done <<< "$(all_queries)"
+    echo
+    # Aggregate build
+    echo -n "build ${proposal_majority_dir}: phony"
+    while IFS= read -r query; do
+        echo -n " ${proposal_majority_dir}/${query}"
+    done <<< "$(all_queries)"
+    echo
+    echo
+
+
+    cat <<EOF
 rule build_consensus
   command = LANG=en_US.UTF-8 LC_ALL= LC_COLLATE=C ./src/build_consensus.sh \$in > \$out
 EOF
@@ -204,7 +223,7 @@ rule compile_table
   command = LANG=en_US.UTF-8 LC_ALL= LC_COLLATE=C ./src/compile_table.sh \$in > \$out
 EOF
     echo
-    echo "build ${markdown_dir}/index.md: compile_table ${results_dir} ${majority_dir} ${consensus_dir} | src/compile_table.sh src/sort_queries.py queries/ implementations/"
+    echo "build ${markdown_dir}/index.md: compile_table ${results_dir} ${majority_dir} ${consensus_dir} ${proposal_majority_dir} | src/compile_table.sh src/sort_queries.py queries/ implementations/"
     echo
 
     cat <<EOF
