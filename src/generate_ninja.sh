@@ -64,11 +64,9 @@ rule test_compilation
   command = LANG=en_US.UTF-8 LC_ALL= LC_COLLATE=C bash -c "diff --ignore-space-change <(echo 42) <(\$in/run.sh '\$testquery' <<< '[0, 42]' | tr -d ' \n') || diff --ignore-space-change <(echo '[42]') <(\$in/run.sh '\$testquery' <<< '[0, 42]' | tr -d ' \n')" > \$out
 EOF
     while IFS= read -r implementation; do
-        if [[ -f "implementations/${implementation}/build.ninja" ]]; then # we are slowly migrating all implementation to build via ninja as well
-            echo "subninja implementations/${implementation}/build.ninja"
-            echo "build ${test_compilation_dir}/${implementation}: test_compilation implementations/${implementation} | implementations/${implementation}/install"
-            echo
-        fi
+        echo "subninja implementations/${implementation}/build.ninja"
+        echo "build ${test_compilation_dir}/${implementation}: test_compilation implementations/${implementation} | implementations/${implementation}/install"
+        echo
     done <<< "$(all_implementations)"
     echo
 
