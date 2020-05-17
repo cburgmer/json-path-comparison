@@ -1,5 +1,7 @@
 # Proposal for JSONPath
 
+**This is work in progress!**
+
 This is a proposal for a unified implementation of JSONPath.
 
 This document is guided by the initial implementation from
