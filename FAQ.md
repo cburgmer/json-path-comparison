@@ -116,7 +116,12 @@ Here's a few good indicators that the query you are looking at should be added:
   implementations' responses.
 
 
-## Looks like you have it all figured out?
+## How will a standard emerge from the query examples?
 
-On the contrary, JSONPath is complex enough, many more edge cases exist and
-haven't been captured yet. Please help out!
+Most programming standards seem to describe in detail the underlying algorithms
+to reach a uniform interpretation. We, too, shall not leave it at examples but
+try to describe an abstract implementation that could become a future standard
+of JSONPath.
+
+You are welcome to join the existing proposal, or come up with your own. Either
+way do contribute here!
