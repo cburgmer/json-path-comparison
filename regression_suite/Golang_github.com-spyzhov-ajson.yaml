@@ -15,12 +15,6 @@ queries:
   - id: array_slice_with_open_start_and_end_on_object
     status: open
     result: []
-  - id: array_slice_with_range_of_-1
-    status: fail
-    result: ["second"]
-  - id: array_slice_with_start_large_negative_number_and_open_end_on_short_array
-    status: fail
-    result: ["third"]
   - id: array_slice_with_step_0
     status: error
   - id: bracket_notation_with_empty_path
@@ -38,11 +32,6 @@ queries:
   - id: bracket_notation_with_number_on_string
     status: open
     result: []
-  - id: bracket_notation_with_quoted_closing_bracket_literal
-    status: error
-  - id: bracket_notation_with_quoted_double_quote_literal
-    status: fail
-    result: []
   - id: bracket_notation_with_quoted_escaped_backslash
     status: open
     result: ["value"]
@@ -51,7 +40,7 @@ queries:
     result: ["value"]
   - id: bracket_notation_with_quoted_special_characters_combined
     status: open
-    result: []
+    result: [42]
   - id: bracket_notation_with_quoted_string_and_unescaped_single_quote
     status: error
   - id: bracket_notation_with_quoted_wildcard_literal_on_object_without_key
