@@ -68,22 +68,13 @@ ComparisonOperator
   / ">" { return "greaterThan"; }
 
 FilterValue
-  = "@" operators:ScalarOperators { return ["current", operators]; }
-  / "$" operators:ScalarOperators { return ["root", operators]; }
+  = "@" operators:ScalarOperator* { return ["current", operators]; }
+  / "$" operators:ScalarOperator* { return ["root", operators]; }
   / constant:SimpleValue { return ["constant", constant]; }
 
-ScalarOperators
-  = operators:ScalarOperator* { return operators.reduce((os, o) => [...os, ...o], []); }
-
 ScalarOperator
-  = ScalarDotNotation
-  / ScalarBracketNotation
-
-ScalarDotNotation
-  = "." childName:DotChildName { return [['children', [['name', childName]]]]; }
-
-ScalarBracketNotation
-  = "[" ws child:BracketChild ws "]" { return [['children', [child]]]; }
+  = "." childName:DotChildName { return ['children', [['name', childName]]]; }
+  / "[" ws child:BracketChild ws "]" { return ['children', [child]]; }
 
 SimpleValue
   = "'" string:SingleQuotedString "'" { return string; }

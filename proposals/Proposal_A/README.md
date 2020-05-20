@@ -167,22 +167,13 @@ To call out some decisions deviating from other implementations:
         | ">"
 
     FilterValue
-      ::= "@" ScalarOperators
-        | "$" ScalarOperators
+      ::= "@" ScalarOperator*
+        | "$" ScalarOperator*
         | SimpleValue
 
-    ScalarOperators
-      ::= ScalarOperator*
-
     ScalarOperator
-      ::= ScalarDotNotation
-        | ScalarBracketNotation
-
-    ScalarDotNotation
       ::= "." DotChildName
-
-    ScalarBracketNotation
-      ::= "[" ws BracketChild ws "]"
+        | "[" ws BracketChild ws "]"
 
     SimpleValue
       ::= "'" SingleQuotedString "'"
