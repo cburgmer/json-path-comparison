@@ -95,6 +95,112 @@ To call out some decisions deviating from other implementations:
 - Whitespace is allowed in key bracket notation, around the brackets and the comma
 - Bracket notation needs quotes when indexing, unless a number is given
 
+## Grammar
+
+    Start
+      ::= "$" Operator*
+
+    Operator
+      ::= DotChild
+        | BracketChild
+        | RecursiveDescentWithChildren
+
+    DotChild
+      ::= "." DotChildName
+
+    DotChildName
+      ::= ScalarDotChildName
+        | ListDotChildName
+
+    ScalarDotChildName
+      ::= [^\.\*\[\]\(\)@\?\|& ,:=<>!"'\\]+
+
+    ListDotChildName
+      ::= "*"
+
+    BracketChild
+      ::= "[" ws BracketElements ws "]"
+
+    BracketElements
+      ::= BracketElement ws "," ws BracketElements
+        | BracketElement
+
+    BracketElement
+      ::= ListBracketElement
+        | ScalarBracketElement
+
+    ScalarBracketElement
+      ::= "'" SingleQuotedString "'"
+        | '"' DoubleQuotedString '"'
+        | Integer
+
+    ListBracketElement
+      ::= "*"
+        | Integer? ":" Integer? ":" NonZeroInteger?
+        | Integer? ":" Integer?
+        | "?(" FilterExpression ")"
+
+    FilterExpression
+      ::= HigherPrecedenceFilterExpression ws "&&" ws LogicalAndRightHandSide
+        | HigherPrecedenceFilterExpression ws "||" ws LogicalOrRightHandSide
+        | HigherPrecedenceFilterExpression
+
+    HigherPrecedenceFilterExpression
+      ::= FilterValue ws ComparisonOperator ws FilterValue
+        | UnaryFilterExpression
+
+    LogicalAndRightHandSide
+      ::= HigherPrecedenceFilterExpression ws "&&" ws LogicalAndRightHandSide
+        | HigherPrecedenceFilterExpression
+
+    LogicalOrRightHandSide
+      ::= HigherPrecedenceFilterExpression ws "||" ws LogicalOrRightHandSide
+        | HigherPrecedenceFilterExpression
+
+    UnaryFilterExpression
+      ::= FilterValue
+        | "!" ws UnaryFilterExpression
+        | "(" ws FilterExpression ws ")"
+
+    ComparisonOperator
+      ::= "=="
+        | "!="
+        | "<="
+        | ">="
+        | "<"
+        | ">"
+
+    FilterValue
+      ::= "@" ScalarOperators
+        | "$" ScalarOperators
+        | SimpleValue
+
+    ScalarOperators
+      ::= ScalarOperator*
+
+    ScalarOperator
+      ::= ScalarDotNotation
+        | ScalarBracketNotation
+
+    ScalarDotNotation
+      ::= "." ScalarDotChildName
+
+    ScalarBracketNotation
+      ::= "[" ws ScalarBracketElement ws "]"
+
+    SimpleValue
+      ::= "'" SingleQuotedString "'"
+        | '"' DoubleQuotedString '"'
+        | "false"
+        | "true"
+        | "null"
+        | Number
+
+    RecursiveDescentWithChildren
+      ::= ".." DotChildName
+        | ".." BracketChild
+
+
 ## TODO
 
 - JSON in filter?
