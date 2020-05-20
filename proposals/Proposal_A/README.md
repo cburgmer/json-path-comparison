@@ -102,8 +102,8 @@ To call out some decisions deviating from other implementations:
 
     Operator
       ::= DotChild
-        | BracketChild
-        | RecursiveDescentWithChildren
+        | BracketChildren
+        | RecursiveDescentChildren
 
     DotChild
       ::= "." DotChildName
@@ -112,7 +112,7 @@ To call out some decisions deviating from other implementations:
     DotChildName
       ::= [^\.\*\[\]\(\)@\?\|& ,:=<>!"'\\]+
 
-    BracketChild
+    BracketChildren
       ::= "[" ws BracketElements ws "]"
 
     BracketElements
@@ -120,24 +120,21 @@ To call out some decisions deviating from other implementations:
         | BracketElement
 
     BracketElement
-      ::= ListBracketElement
-        | ScalarBracketElement
-
-    ScalarBracketElement
-      ::= "'" SingleQuotedString "'"
-        | '"' DoubleQuotedString '"'
-        | Integer
-
-    ListBracketElement
       ::= "*"
         | Integer? ":" Integer? ":" NonZeroInteger?
         | Integer? ":" Integer?
         | "?(" FilterExpression ")"
+        | BracketChild
 
-    RecursiveDescentWithChildren
+    BracketChild
+      ::= "'" SingleQuotedString "'"
+        | '"' DoubleQuotedString '"'
+        | Integer
+
+    RecursiveDescentChildren
       ::= ".." DotChildName
         | "..*"
-        | ".." BracketChild
+        | ".." BracketChildren
 
     FilterExpression
       ::= HigherPrecedenceFilterExpression ws "&&" ws LogicalAndRightHandSide
@@ -185,7 +182,7 @@ To call out some decisions deviating from other implementations:
       ::= "." DotChildName
 
     ScalarBracketNotation
-      ::= "[" ws ScalarBracketElement ws "]"
+      ::= "[" ws BracketChild ws "]"
 
     SimpleValue
       ::= "'" SingleQuotedString "'"

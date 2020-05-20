@@ -3,8 +3,8 @@ Start
 
 Operator
   = DotChild
-  / BracketChild
-  / RecursiveDescentWithChildren
+  / BracketChildren
+  / RecursiveDescentChildren
 
 DotChild
   = "." childName:DotChildName { return [['children', [['name', childName]]]]; }
@@ -13,7 +13,7 @@ DotChild
 DotChildName
   = [^\.\*\[\]\(\)@\?\|& ,:=<>!"'\\]+ { return text(); }
 
-BracketChild
+BracketChildren
   = "[" ws children:BracketElements ws "]" { return [['children', children]]; }
 
 BracketElements
@@ -21,24 +21,21 @@ BracketElements
   / x:BracketElement { return [x]; }
 
 BracketElement
-  = ListBracketElement
-  / ScalarBracketElement
-
-ScalarBracketElement
-  = "'" name:SingleQuotedString "'" { return ['name', name]; }
-  / '"' name:DoubleQuotedString '"' { return ['name', name]; }
-  / index:Integer { return ['index', index]; }
-
-ListBracketElement
   = "*" { return ['all']; }
   / start:Integer? ":" end:Integer? ":" step:NonZeroInteger? { return ['slice', start, end, step]; }
   / start:Integer? ":" end:Integer? { return ['slice', start, end, null]; }
   / "?(" filterExpression:FilterExpression ")" { return ['filter', filterExpression]; }
+  / BracketChild
 
-RecursiveDescentWithChildren
+BracketChild
+  = "'" name:SingleQuotedString "'" { return ['name', name]; }
+  / '"' name:DoubleQuotedString '"' { return ['name', name]; }
+  / index:Integer { return ['index', index]; }
+
+RecursiveDescentChildren
   = ".." childName:DotChildName { return [['recursiveDescent'], ['children', [['name', childName]]]]; }
   / "..*" { return [['recursiveDescent'], ['children', [['all']]]]; }
-  / ".." children:BracketChild { return [['recursiveDescent'], ...children]; }
+  / ".." children:BracketChildren { return [['recursiveDescent'], ...children]; }
 
 FilterExpression
   = x:HigherPrecedenceFilterExpression ws "&&" ws xs:LogicalAndRightHandSide { return ["and", ["expression", x], ...xs]; }
@@ -86,7 +83,7 @@ ScalarDotNotation
   = "." childName:DotChildName { return [['children', [['name', childName]]]]; }
 
 ScalarBracketNotation
-  = "[" ws child:ScalarBracketElement ws "]" { return [['children', [child]]]; }
+  = "[" ws child:BracketChild ws "]" { return [['children', [child]]]; }
 
 SimpleValue
   = "'" string:SingleQuotedString "'" { return string; }
