@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "pegjs --trace -o selector.js selector.peg && prettier -c *.js --ignore-path selector.js && ./tests.js test_suite.yaml",
-    "checkConsensus": "pegjs --trace -o selector.js selector.peg && ./tests.js ../regression_suite/regression_suite.yaml",
+    "checkConsensus": "pegjs --trace -o selector.js selector.peg && ./tests.js ../../regression_suite/regression_suite.yaml",
     "draw": "grammkit selector.peg -o selector.html"
   },
   "author": "",

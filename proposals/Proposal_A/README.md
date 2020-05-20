@@ -94,3 +94,8 @@ To call out some decisions deviating from other implementations:
 - Quotes inside strings for key bracket notation can be quoted with a backslash, e.g. `$['E\'lir']`
 - Whitespace is allowed in key bracket notation, around the brackets and the comma
 - Bracket notation needs quotes when indexing, unless a number is given
+
+## TODO
+
+- JSON in filter?
+- Arbitrary brackets in filter

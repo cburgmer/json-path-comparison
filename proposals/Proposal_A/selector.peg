@@ -1,8 +1,5 @@
 start
-  = "$" operators:operators { return operators; }
-
-operators
-  = operators:operator* { return operators.reduce((os, o) => [...os, ...o], []); }
+  = "$" operators:operator* { return operators.reduce((os, o) => [...os, ...o], []); }
 
 operator
   = dotNotation
