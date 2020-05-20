@@ -107,16 +107,10 @@ To call out some decisions deviating from other implementations:
 
     DotChild
       ::= "." DotChildName
+        | ".*"
 
     DotChildName
-      ::= ScalarDotChildName
-        | ListDotChildName
-
-    ScalarDotChildName
       ::= [^\.\*\[\]\(\)@\?\|& ,:=<>!"'\\]+
-
-    ListDotChildName
-      ::= "*"
 
     BracketChild
       ::= "[" ws BracketElements ws "]"
@@ -139,6 +133,11 @@ To call out some decisions deviating from other implementations:
         | Integer? ":" Integer? ":" NonZeroInteger?
         | Integer? ":" Integer?
         | "?(" FilterExpression ")"
+
+    RecursiveDescentWithChildren
+      ::= ".." DotChildName
+        | "..*"
+        | ".." BracketChild
 
     FilterExpression
       ::= HigherPrecedenceFilterExpression ws "&&" ws LogicalAndRightHandSide
@@ -183,7 +182,7 @@ To call out some decisions deviating from other implementations:
         | ScalarBracketNotation
 
     ScalarDotNotation
-      ::= "." ScalarDotChildName
+      ::= "." DotChildName
 
     ScalarBracketNotation
       ::= "[" ws ScalarBracketElement ws "]"
@@ -195,11 +194,6 @@ To call out some decisions deviating from other implementations:
         | "true"
         | "null"
         | Number
-
-    RecursiveDescentWithChildren
-      ::= ".." DotChildName
-        | ".." BracketChild
-
 
 ## TODO
 

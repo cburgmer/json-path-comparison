@@ -6,20 +6,12 @@ Operator
   / BracketChild
   / RecursiveDescentWithChildren
 
-
 DotChild
-  = "." children:DotChildName { return children; }
+  = "." childName:DotChildName { return [['children', [['name', childName]]]]; }
+  / ".*" { return [['children', [['all']]]]; }
 
 DotChildName
-  = ScalarDotChildName
-  / ListDotChildName
-
-ScalarDotChildName
-  = [^\.\*\[\]\(\)@\?\|& ,:=<>!"'\\]+ { return [['children', [['name', text()]]]]; }
-
-ListDotChildName
-  = "*" { return [['children', [['all']]]]; }
-
+  = [^\.\*\[\]\(\)@\?\|& ,:=<>!"'\\]+ { return text(); }
 
 BracketChild
   = "[" ws children:BracketElements ws "]" { return [['children', children]]; }
@@ -43,24 +35,10 @@ ListBracketElement
   / start:Integer? ":" end:Integer? { return ['slice', start, end, null]; }
   / "?(" filterExpression:FilterExpression ")" { return ['filter', filterExpression]; }
 
-SingleQuotedString
-  = x:"\\'" xs:SingleQuotedString { return "'" + xs; }
-  / x:"\\\\" xs:SingleQuotedString { return "\\" + xs; }
-  / x:[^'] xs:SingleQuotedString { return x + xs; }
-  / ''
-
-DoubleQuotedString
-  = x:'\\"' xs:DoubleQuotedString { return '"' + xs; }
-  / x:'\\\\' xs:DoubleQuotedString { return "\\" + xs; }
-  / x:[^"] xs:DoubleQuotedString { return x + xs; }
-  / ''
-
-Integer
-  = "-"? ( "0" / ([1-9] [0-9]*) ) { return parseInt(text(), 10); }
-
-NonZeroInteger
-  = "-"? [1-9] [0-9]* { return parseInt(text(), 10); }
-
+RecursiveDescentWithChildren
+  = ".." childName:DotChildName { return [['recursiveDescent'], ['children', [['name', childName]]]]; }
+  / "..*" { return [['recursiveDescent'], ['children', [['all']]]]; }
+  / ".." children:BracketChild { return [['recursiveDescent'], ...children]; }
 
 FilterExpression
   = x:HigherPrecedenceFilterExpression ws "&&" ws xs:LogicalAndRightHandSide { return ["and", ["expression", x], ...xs]; }
@@ -105,7 +83,7 @@ ScalarOperator
   / ScalarBracketNotation
 
 ScalarDotNotation
-  = "." children:ScalarDotChildName { return children; }
+  = "." childName:DotChildName { return [['children', [['name', childName]]]]; }
 
 ScalarBracketNotation
   = "[" ws child:ScalarBracketElement ws "]" { return [['children', [child]]]; }
@@ -117,6 +95,24 @@ SimpleValue
   / "true" { return true; }
   / "null" { return null; }
   / Number
+
+SingleQuotedString
+  = x:"\\'" xs:SingleQuotedString { return "'" + xs; }
+  / x:"\\\\" xs:SingleQuotedString { return "\\" + xs; }
+  / x:[^'] xs:SingleQuotedString { return x + xs; }
+  / ''
+
+DoubleQuotedString
+  = x:'\\"' xs:DoubleQuotedString { return '"' + xs; }
+  / x:'\\\\' xs:DoubleQuotedString { return "\\" + xs; }
+  / x:[^"] xs:DoubleQuotedString { return x + xs; }
+  / ''
+
+Integer
+  = "-"? ( "0" / ([1-9] [0-9]*) ) { return parseInt(text(), 10); }
+
+NonZeroInteger
+  = "-"? [1-9] [0-9]* { return parseInt(text(), 10); }
 
 Number
   = "-"? IntegerPart Fraction? Exponent? { return parseFloat(text()); }
@@ -130,11 +126,5 @@ Fraction
 IntegerPart
   = "0" / ([1-9] [0-9]*)
 
-
 ws
   = " "*
-
-
-RecursiveDescentWithChildren
-  = ".." children:DotChildName { return [['recursiveDescent'], ...children]; }
-  / ".." children:BracketChild { return [['recursiveDescent'], ...children]; }
