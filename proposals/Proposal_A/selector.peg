@@ -1,90 +1,90 @@
-start
-  = "$" operators:operator* { return operators.reduce((os, o) => [...os, ...o], []); }
+Start
+  = "$" operators:Operator* { return operators.reduce((os, o) => [...os, ...o], []); }
 
-operator
-  = dotNotation
-  / union
-  / recursiveDescentWithChildren
+Operator
+  = DotNotation
+  / Union
+  / RecursiveDescentWithChildren
 
 
-dotNotation
-  = "." children:dotNotationIdentifier { return children; }
+DotNotation
+  = "." children:DotNotationIdentifier { return children; }
 
-dotNotationIdentifier
-  = scalarDotNotationIdentifier
-  / listDotNotationIdentifier
+DotNotationIdentifier
+  = ScalarDotNotationIdentifier
+  / ListDotNotationIdentifier
 
-scalarDotNotationIdentifier
+ScalarDotNotationIdentifier
   = [^\.\*\[\]\(\)@\?\|& ,:=<>!"'\\]+ { return [['children', [['name', text()]]]]; }
 
-listDotNotationIdentifier
+ListDotNotationIdentifier
   = "*" { return [['children', [['all']]]]; }
 
 
-union
-  = "[" ws children:bracketElements ws "]" { return [['children', children]]; }
+Union
+  = "[" ws children:BracketElements ws "]" { return [['children', children]]; }
 
-bracketElements
-  = x:bracketElement ws "," ws xs:bracketElements { return [x, ...xs]; }
-  / x:bracketElement { return [x]; }
+BracketElements
+  = x:BracketElement ws "," ws xs:BracketElements { return [x, ...xs]; }
+  / x:BracketElement { return [x]; }
 
-bracketElement
-  = listBracketElement
-  / scalarBracketElement
+BracketElement
+  = ListBracketElement
+  / ScalarBracketElement
 
-scalarBracketElement
-  = "'" name:singleQuotedString "'" { return ['name', name]; }
-  / '"' name:doubleQuotedString '"' { return ['name', name]; }
-  / index:integer { return ['index', index]; }
+ScalarBracketElement
+  = "'" name:SingleQuotedString "'" { return ['name', name]; }
+  / '"' name:DoubleQuotedString '"' { return ['name', name]; }
+  / index:Integer { return ['index', index]; }
 
-listBracketElement
+ListBracketElement
   = "*" { return ['all']; }
-  / start:integer? ":" end:integer? ":" step:nonZeroInteger? { return ['slice', start, end, step]; }
-  / start:integer? ":" end:integer? { return ['slice', start, end, null]; }
-  / "?(" filterExpression:filterExpression ")" { return ['filter', filterExpression]; }
+  / start:Integer? ":" end:Integer? ":" step:NonZeroInteger? { return ['slice', start, end, step]; }
+  / start:Integer? ":" end:Integer? { return ['slice', start, end, null]; }
+  / "?(" filterExpression:FilterExpression ")" { return ['filter', filterExpression]; }
 
-singleQuotedString
-  = x:"\\'" xs:singleQuotedString { return "'" + xs; }
-  / x:"\\\\" xs:singleQuotedString { return "\\" + xs; }
-  / x:[^'] xs:singleQuotedString { return x + xs; }
+SingleQuotedString
+  = x:"\\'" xs:SingleQuotedString { return "'" + xs; }
+  / x:"\\\\" xs:SingleQuotedString { return "\\" + xs; }
+  / x:[^'] xs:SingleQuotedString { return x + xs; }
   / ''
 
-doubleQuotedString
-  = x:'\\"' xs:doubleQuotedString { return '"' + xs; }
-  / x:'\\\\' xs:doubleQuotedString { return "\\" + xs; }
-  / x:[^"] xs:doubleQuotedString { return x + xs; }
+DoubleQuotedString
+  = x:'\\"' xs:DoubleQuotedString { return '"' + xs; }
+  / x:'\\\\' xs:DoubleQuotedString { return "\\" + xs; }
+  / x:[^"] xs:DoubleQuotedString { return x + xs; }
   / ''
 
-integer
+Integer
   = "-"? ( "0" / ([1-9] [0-9]*) ) { return parseInt(text(), 10); }
 
-nonZeroInteger
+NonZeroInteger
   = "-"? [1-9] [0-9]* { return parseInt(text(), 10); }
 
 
-filterExpression
-  = x:higherPrecedenceFilterExpression ws "&&" ws xs:logicalAndRightHandSide { return ["and", ["expression", x], ...xs]; }
-  / x:higherPrecedenceFilterExpression ws "||" ws xs:logicalOrRightHandSide { return ["or", ["expression", x], ...xs]; }
-  / higherPrecedenceFilterExpression
+FilterExpression
+  = x:HigherPrecedenceFilterExpression ws "&&" ws xs:LogicalAndRightHandSide { return ["and", ["expression", x], ...xs]; }
+  / x:HigherPrecedenceFilterExpression ws "||" ws xs:LogicalOrRightHandSide { return ["or", ["expression", x], ...xs]; }
+  / HigherPrecedenceFilterExpression
 
-higherPrecedenceFilterExpression
-  = left:filterValue ws op:comparisonOperator ws right:filterValue { return [op, ["value", left], ["value", right]]; }
-  / unaryFilterExpression
+HigherPrecedenceFilterExpression
+  = left:FilterValue ws op:ComparisonOperator ws right:FilterValue { return [op, ["value", left], ["value", right]]; }
+  / UnaryFilterExpression
 
-logicalAndRightHandSide
-  = x:higherPrecedenceFilterExpression ws "&&" ws xs:logicalAndRightHandSide { return [["expression", x], ...xs]; }
-  / expression:higherPrecedenceFilterExpression { return [["expression", expression]]; }
+LogicalAndRightHandSide
+  = x:HigherPrecedenceFilterExpression ws "&&" ws xs:LogicalAndRightHandSide { return [["expression", x], ...xs]; }
+  / expression:HigherPrecedenceFilterExpression { return [["expression", expression]]; }
 
-logicalOrRightHandSide
-  = x:higherPrecedenceFilterExpression ws "||" ws xs:logicalOrRightHandSide { return [["expression", x], ...xs]; }
-  / expression:higherPrecedenceFilterExpression { return [["expression", expression]]; }
+LogicalOrRightHandSide
+  = x:HigherPrecedenceFilterExpression ws "||" ws xs:LogicalOrRightHandSide { return [["expression", x], ...xs]; }
+  / expression:HigherPrecedenceFilterExpression { return [["expression", expression]]; }
 
-unaryFilterExpression
-  = value:filterValue { return ["hasValue", ["value", value]]; }
-  / "!" ws expression:unaryFilterExpression { return ["not", ["expression", expression]]; }
-  / "(" ws expression:filterExpression ws ")" { return expression; }
+UnaryFilterExpression
+  = value:FilterValue { return ["hasValue", ["value", value]]; }
+  / "!" ws expression:UnaryFilterExpression { return ["not", ["expression", expression]]; }
+  / "(" ws expression:FilterExpression ws ")" { return expression; }
 
-comparisonOperator
+ComparisonOperator
   = "==" { return "equals"; }
   / "!=" { return "notEquals"; }
   / "<=" { return "lessThanOrEqual"; }
@@ -92,42 +92,42 @@ comparisonOperator
   / "<" { return "lessThan"; }
   / ">" { return "greaterThan"; }
 
-filterValue
-  = "@" operators:scalarOperators { return ["current", operators]; }
-  / "$" operators:scalarOperators { return ["root", operators]; }
-  / constant:simpleValue { return ["constant", constant]; }
+FilterValue
+  = "@" operators:ScalarOperators { return ["current", operators]; }
+  / "$" operators:ScalarOperators { return ["root", operators]; }
+  / constant:SimpleValue { return ["constant", constant]; }
 
-scalarOperators
-  = operators:scalarOperator* { return operators.reduce((os, o) => [...os, ...o], []); }
+ScalarOperators
+  = operators:ScalarOperator* { return operators.reduce((os, o) => [...os, ...o], []); }
 
-scalarOperator
-  = scalarDotNotation
-  / scalarBracketNotation
+ScalarOperator
+  = ScalarDotNotation
+  / ScalarBracketNotation
 
-scalarDotNotation
-  = "." children:scalarDotNotationIdentifier { return children; }
+ScalarDotNotation
+  = "." children:ScalarDotNotationIdentifier { return children; }
 
-scalarBracketNotation
-  = "[" ws child:scalarBracketElement ws "]" { return [['children', [child]]]; }
+ScalarBracketNotation
+  = "[" ws child:ScalarBracketElement ws "]" { return [['children', [child]]]; }
 
-simpleValue
-  = "'" string:singleQuotedString "'" { return string; }
-  / '"' string:doubleQuotedString '"' { return string; }
+SimpleValue
+  = "'" string:SingleQuotedString "'" { return string; }
+  / '"' string:DoubleQuotedString '"' { return string; }
   / "false" { return false; }
   / "true" { return true; }
   / "null" { return null; }
-  / number
+  / Number
 
-number
-  = "-"? integerPart fraction? exponent? { return parseFloat(text()); }
+Number
+  = "-"? IntegerPart Fraction? Exponent? { return parseFloat(text()); }
 
-exponent
+Exponent
   = [eE] ("-" / "+")? [0-9]+
 
-fraction
+Fraction
   = "." [0-9]+
 
-integerPart
+IntegerPart
   = "0" / ([1-9] [0-9]*)
 
 
@@ -135,6 +135,6 @@ ws
   = " "*
 
 
-recursiveDescentWithChildren
-  = ".." children:dotNotationIdentifier { return [['recursiveDescent'], ...children]; }
-  / ".." children:union { return [['recursiveDescent'], ...children]; }
+RecursiveDescentWithChildren
+  = ".." children:DotNotationIdentifier { return [['recursiveDescent'], ...children]; }
+  / ".." children:Union { return [['recursiveDescent'], ...children]; }
