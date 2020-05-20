@@ -2,26 +2,26 @@ Start
   = "$" operators:Operator* { return operators.reduce((os, o) => [...os, ...o], []); }
 
 Operator
-  = DotNotation
-  / Union
+  = DotChild
+  / BracketChild
   / RecursiveDescentWithChildren
 
 
-DotNotation
-  = "." children:DotNotationIdentifier { return children; }
+DotChild
+  = "." children:DotChildName { return children; }
 
-DotNotationIdentifier
-  = ScalarDotNotationIdentifier
-  / ListDotNotationIdentifier
+DotChildName
+  = ScalarDotChildName
+  / ListDotChildName
 
-ScalarDotNotationIdentifier
+ScalarDotChildName
   = [^\.\*\[\]\(\)@\?\|& ,:=<>!"'\\]+ { return [['children', [['name', text()]]]]; }
 
-ListDotNotationIdentifier
+ListDotChildName
   = "*" { return [['children', [['all']]]]; }
 
 
-Union
+BracketChild
   = "[" ws children:BracketElements ws "]" { return [['children', children]]; }
 
 BracketElements
@@ -105,7 +105,7 @@ ScalarOperator
   / ScalarBracketNotation
 
 ScalarDotNotation
-  = "." children:ScalarDotNotationIdentifier { return children; }
+  = "." children:ScalarDotChildName { return children; }
 
 ScalarBracketNotation
   = "[" ws child:ScalarBracketElement ws "]" { return [['children', [child]]]; }
@@ -136,5 +136,5 @@ ws
 
 
 RecursiveDescentWithChildren
-  = ".." children:DotNotationIdentifier { return [['recursiveDescent'], ...children]; }
-  / ".." children:Union { return [['recursiveDescent'], ...children]; }
+  = ".." children:DotChildName { return [['recursiveDescent'], ...children]; }
+  / ".." children:BracketChild { return [['recursiveDescent'], ...children]; }
