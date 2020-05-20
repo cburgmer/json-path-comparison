@@ -21,30 +21,26 @@ BracketElements
   / x:BracketElement { return [x]; }
 
 BracketElement
-  = "*" { return ['all']; }
-  / start:Integer? ":" end:Integer? ":" step:NonZeroInteger? { return ['slice', start, end, step]; }
+  = start:Integer? ":" end:Integer? ":" step:NonZeroInteger? { return ['slice', start, end, step]; }
   / start:Integer? ":" end:Integer? { return ['slice', start, end, null]; }
-  / "?(" filterExpression:FilterExpression ")" { return ['filter', filterExpression]; }
   / BracketChild
-
-BracketChild
-  = "'" name:SingleQuotedString "'" { return ['name', name]; }
-  / '"' name:DoubleQuotedString '"' { return ['name', name]; }
-  / index:Integer { return ['index', index]; }
+  / "*" { return ['all']; }
+  / "?(" filterExpression:FilterExpression ")" { return ['filter', filterExpression]; }
 
 RecursiveDescentChildren
   = ".." childName:DotChildName { return [['recursiveDescent'], ['children', [['name', childName]]]]; }
   / "..*" { return [['recursiveDescent'], ['children', [['all']]]]; }
   / ".." children:BracketChildren { return [['recursiveDescent'], ...children]; }
 
+BracketChild
+  = "'" name:SingleQuotedString "'" { return ['name', name]; }
+  / '"' name:DoubleQuotedString '"' { return ['name', name]; }
+  / index:Integer { return ['index', index]; }
+
 FilterExpression
   = xs:LogicalAnd { return ["and", ...xs]; }
   / xs:LogicalOr { return ["or", ...xs]; }
   / HigherPrecedenceFilterExpression
-
-HigherPrecedenceFilterExpression
-  = left:FilterValue ws op:ComparisonOperator ws right:FilterValue { return [op, ["value", left], ["value", right]]; }
-  / UnaryFilterExpression
 
 LogicalAnd
   = x:HigherPrecedenceFilterExpression ws "&&" ws xs:LogicalAnd { return [["expression", x], ...xs]; }
@@ -53,6 +49,10 @@ LogicalAnd
 LogicalOr
   = x:HigherPrecedenceFilterExpression ws "||" ws xs:LogicalOr { return [["expression", x], ...xs]; }
   / left:HigherPrecedenceFilterExpression ws "||" ws right:HigherPrecedenceFilterExpression { return [["expression", left], ["expression", right]]; }
+
+HigherPrecedenceFilterExpression
+  = left:FilterValue ws op:ComparisonOperator ws right:FilterValue { return [op, ["value", left], ["value", right]]; }
+  / UnaryFilterExpression
 
 UnaryFilterExpression
   = value:FilterValue { return ["hasValue", ["value", value]]; }

@@ -120,30 +120,26 @@ To call out some decisions deviating from other implementations:
         | BracketElement
 
     BracketElement
-      ::= "*"
-        | Integer? ":" Integer? ":" NonZeroInteger?
+      ::= Integer? ":" Integer? ":" NonZeroInteger?
         | Integer? ":" Integer?
-        | "?(" FilterExpression ")"
         | BracketChild
-
-    BracketChild
-      ::= "'" SingleQuotedString "'"
-        | '"' DoubleQuotedString '"'
-        | Integer
+        | "*"
+        | "?(" FilterExpression ")"
 
     RecursiveDescentChildren
       ::= ".." DotChildName
         | "..*"
         | ".." BracketChildren
 
+    BracketChild
+      ::= "'" SingleQuotedString "'"
+        | '"' DoubleQuotedString '"'
+        | Integer
+
     FilterExpression
       ::= LogicalAnd
         | LogicalOr
         | HigherPrecedenceFilterExpression
-
-    HigherPrecedenceFilterExpression
-      ::= FilterValue ws ComparisonOperator ws FilterValue
-        | UnaryFilterExpression
 
     LogicalAnd
       ::= HigherPrecedenceFilterExpression ws "&&" ws LogicalAnd
@@ -152,6 +148,10 @@ To call out some decisions deviating from other implementations:
     LogicalOr
       ::= HigherPrecedenceFilterExpression ws "||" ws LogicalOr
         | HigherPrecedenceFilterExpression ws "||" ws HigherPrecedenceFilterExpression
+
+    HigherPrecedenceFilterExpression
+      ::= FilterValue ws ComparisonOperator ws FilterValue
+        | UnaryFilterExpression
 
     UnaryFilterExpression
       ::= FilterValue
