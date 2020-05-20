@@ -38,21 +38,21 @@ RecursiveDescentChildren
   / ".." children:BracketChildren { return [['recursiveDescent'], ...children]; }
 
 FilterExpression
-  = x:HigherPrecedenceFilterExpression ws "&&" ws xs:LogicalAndRightHandSide { return ["and", ["expression", x], ...xs]; }
-  / x:HigherPrecedenceFilterExpression ws "||" ws xs:LogicalOrRightHandSide { return ["or", ["expression", x], ...xs]; }
+  = xs:LogicalAnd { return ["and", ...xs]; }
+  / xs:LogicalOr { return ["or", ...xs]; }
   / HigherPrecedenceFilterExpression
 
 HigherPrecedenceFilterExpression
   = left:FilterValue ws op:ComparisonOperator ws right:FilterValue { return [op, ["value", left], ["value", right]]; }
   / UnaryFilterExpression
 
-LogicalAndRightHandSide
-  = x:HigherPrecedenceFilterExpression ws "&&" ws xs:LogicalAndRightHandSide { return [["expression", x], ...xs]; }
-  / expression:HigherPrecedenceFilterExpression { return [["expression", expression]]; }
+LogicalAnd
+  = x:HigherPrecedenceFilterExpression ws "&&" ws xs:LogicalAnd { return [["expression", x], ...xs]; }
+  / left:HigherPrecedenceFilterExpression ws "&&" ws right:HigherPrecedenceFilterExpression { return [["expression", left], ["expression", right]]; }
 
-LogicalOrRightHandSide
-  = x:HigherPrecedenceFilterExpression ws "||" ws xs:LogicalOrRightHandSide { return [["expression", x], ...xs]; }
-  / expression:HigherPrecedenceFilterExpression { return [["expression", expression]]; }
+LogicalOr
+  = x:HigherPrecedenceFilterExpression ws "||" ws xs:LogicalOr { return [["expression", x], ...xs]; }
+  / left:HigherPrecedenceFilterExpression ws "||" ws right:HigherPrecedenceFilterExpression { return [["expression", left], ["expression", right]]; }
 
 UnaryFilterExpression
   = value:FilterValue { return ["hasValue", ["value", value]]; }

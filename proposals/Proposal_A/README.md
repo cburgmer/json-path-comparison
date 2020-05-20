@@ -137,21 +137,21 @@ To call out some decisions deviating from other implementations:
         | ".." BracketChildren
 
     FilterExpression
-      ::= HigherPrecedenceFilterExpression ws "&&" ws LogicalAndRightHandSide
-        | HigherPrecedenceFilterExpression ws "||" ws LogicalOrRightHandSide
+      ::= LogicalAnd
+        | LogicalOr
         | HigherPrecedenceFilterExpression
 
     HigherPrecedenceFilterExpression
       ::= FilterValue ws ComparisonOperator ws FilterValue
         | UnaryFilterExpression
 
-    LogicalAndRightHandSide
-      ::= HigherPrecedenceFilterExpression ws "&&" ws LogicalAndRightHandSide
-        | HigherPrecedenceFilterExpression
+    LogicalAnd
+      ::= HigherPrecedenceFilterExpression ws "&&" ws LogicalAnd
+        | HigherPrecedenceFilterExpression ws "&&" ws HigherPrecedenceFilterExpression
 
-    LogicalOrRightHandSide
-      ::= HigherPrecedenceFilterExpression ws "||" ws LogicalOrRightHandSide
-        | HigherPrecedenceFilterExpression
+    LogicalOr
+      ::= HigherPrecedenceFilterExpression ws "||" ws LogicalOr
+        | HigherPrecedenceFilterExpression ws "||" ws HigherPrecedenceFilterExpression
 
     UnaryFilterExpression
       ::= FilterValue
