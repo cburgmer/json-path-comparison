@@ -227,6 +227,20 @@ The following queries provide results that do not match those of other implement
   JSON path parse error at position 1
   ```
 
+- [ ] `$[-1]`
+  Input:
+  ```
+  []
+  ```
+  Expected output:
+  ```
+  []
+  ```
+  Error:
+  ```
+  JSON path parse error at position 1
+  ```
+
 - [ ] `$[0:2][*]`
   Input:
   ```

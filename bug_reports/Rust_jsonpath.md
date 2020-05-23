@@ -297,6 +297,20 @@ The following queries provide results that do not match those of other implement
   parsing error
   ```
 
+- [ ] `$[-1]`
+  Input:
+  ```
+  []
+  ```
+  Expected output:
+  ```
+  []
+  ```
+  Error:
+  ```
+  parsing error
+  ```
+
 - [ ] `$[':']`
   Input:
   ```

@@ -230,6 +230,22 @@ The following queries provide results that do not match those of other implement
   
   ```
 
+- [ ] `$[-1]`
+  Input:
+  ```
+  []
+  ```
+  Expected output:
+  ```
+  []
+  ```
+  Error:
+  ```
+  Expecting value: line 3 column 1 (char 2)
+  
+  
+  ```
+
 - [ ] `$[1]`
   Input:
   ```

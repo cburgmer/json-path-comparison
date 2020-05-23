@@ -39,9 +39,6 @@ queries:
   - id: array_slice_with_step_only
     status: fail
     result: ["first", "second"]
-  - id: bracket_notation_on_object_without_key
-    status: fail
-    result: null
   - id: bracket_notation_with_double_quotes
     status: error
   - id: bracket_notation_with_empty_path
@@ -50,17 +47,11 @@ queries:
     status: error
   - id: bracket_notation_with_empty_string_doubled_quoted
     status: error
-  - id: bracket_notation_with_number_-1_on_empty_array
-    status: open
-    result: null
   - id: bracket_notation_with_number_after_dot_notation_with_wildcard_on_nested_arrays_with_different_length
     status: fail
     result: null
   - id: bracket_notation_with_number_on_object
     status: open
-    result: null
-  - id: bracket_notation_with_number_on_short_array
-    status: fail
     result: null
   - id: bracket_notation_with_number_on_string
     status: error
@@ -121,15 +112,6 @@ queries:
     status: fail
     result: null
   - id: dot_notation_after_union_with_keys
-    status: fail
-    result: null
-  - id: dot_notation_on_array
-    status: fail
-    result: null
-  - id: dot_notation_on_array_with_containing_object_matching_key
-    status: fail
-    result: null
-  - id: dot_notation_on_object_without_key
     status: fail
     result: null
   - id: dot_notation_with_double_quotes

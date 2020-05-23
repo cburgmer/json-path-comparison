@@ -153,7 +153,7 @@ rule build_majority
 EOF
     echo
     while IFS= read -r query; do
-        echo "build ${majority_dir}/${query}: build_majority ${results_dir}/${query} | src/build_majority.sh src/majority_with_multiple_matches.py"
+        echo "build ${majority_dir}/${query}: build_majority ${results_dir}/${query} | src/build_majority.sh src/majority_with_multiple_matches.py src/majority_with_no_matches.py"
     done <<< "$(all_queries)"
     echo
     # Aggregate build

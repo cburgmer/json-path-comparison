@@ -25,9 +25,6 @@ queries:
     status: error
   - id: bracket_notation_with_empty_string_doubled_quoted
     status: error
-  - id: bracket_notation_with_number_-1_on_empty_array
-    status: open
-    result: []
   - id: bracket_notation_with_number_after_dot_notation_with_wildcard_on_nested_arrays_with_different_length
     status: fail
     result: []

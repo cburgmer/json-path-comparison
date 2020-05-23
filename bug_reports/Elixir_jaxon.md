@@ -447,6 +447,22 @@ The following queries provide results that do not match those of other implement
   []
   ```
 
+- [ ] `$[-1]`
+  Input:
+  ```
+  []
+  ```
+  Expected output:
+  ```
+  []
+  ```
+  Error:
+  ```
+  ** (Jaxon.ParseError) Unexpected a closing bracket, expected a string, number, object, array instead.
+      lib/jaxon/stream.ex:60: Jaxon.Stream.call_decode_fun/4
+      lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
+  ```
+
 - [ ] `$[':']`
   Input:
   ```

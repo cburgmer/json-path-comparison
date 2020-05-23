@@ -16,17 +16,11 @@ queries:
     result: []
   - id: array_slice_with_step_0
     status: error
-  - id: bracket_notation_on_object_without_key
-    status: fail
-    result: null
   - id: bracket_notation_with_empty_path
     status: error
   - id: bracket_notation_with_empty_string_doubled_quoted
     status: open
     result: 42
-  - id: bracket_notation_with_number_-1_on_empty_array
-    status: open
-    result: null
   - id: bracket_notation_with_number_on_object
     status: error
   - id: bracket_notation_with_number_on_short_array
@@ -67,9 +61,6 @@ queries:
     status: error
   - id: dot_notation_on_array_with_containing_object_matching_key
     status: error
-  - id: dot_notation_on_object_without_key
-    status: fail
-    result: null
   - id: dot_notation_with_double_quotes
     status: open
     result: "value"
