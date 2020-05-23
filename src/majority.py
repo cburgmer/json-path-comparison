@@ -54,19 +54,23 @@ def multiple_matches_majority(result_paths):
     return list(build_histogram(result_paths).values())
 
 
+def calculate_majority_candidates(result_paths):
+    majority_candidates = no_match_majority(result_paths) + multiple_matches_majority(result_paths)
+    unique_candidates = set([tuple(sorted(candidate)) for candidate in majority_candidates])
+    return unique_candidates
+
+def is_clear_majority(ranking):
+    return len(ranking) < 2 or len(ranking[-1]) != len(ranking[-2])
+
+
 def main():
     result_paths = [line.rstrip('\n') for line in sys.stdin]
 
-    majority_candidates = no_match_majority(result_paths) + multiple_matches_majority(result_paths)
-    majority_candidates_dedupped = set([tuple(sorted(candidate)) for candidate in majority_candidates])
+    majority_candidates = calculate_majority_candidates(result_paths)
 
-    ranking = sorted(majority_candidates_dedupped, key=len)
-    if len(ranking) > 1 and len(ranking[-1]) == len(ranking[-2]):
-        # No majority if 2 top results have same count
-        return
-
-    print("\n".join(ranking[-1]))
-
+    ranking = sorted(majority_candidates, key=len)
+    if is_clear_majority(ranking):
+        print("\n".join(ranking[-1]))
 
 if __name__ == '__main__':
     sys.exit(main())
