@@ -10,8 +10,9 @@ readonly query="$(basename "$query_dir")"
 
 . src/shared.sh
 
-all_implementations() {
+all_implementations_and_proposals() {
     find ./implementations -name run.sh -maxdepth 2 -print0 | xargs -0 -n1 dirname | xargs -n1 basename | sort
+    find ./proposals -name run.sh -maxdepth 2 -print0 | xargs -0 -n1 dirname | xargs -n1 basename | sort
 }
 
 is_in_majority() {
@@ -34,7 +35,7 @@ implementation_outliers() {
         if is_outlier "$implementation"; then
             echo "$implementation"
         fi
-    done <<< "$(all_implementations)"
+    done <<< "$(all_implementations_and_proposals)"
 }
 
 implementation_errors() {
@@ -43,7 +44,7 @@ implementation_errors() {
         if ! is_query_result_ok "${results_dir}/${query}/${implementation}"; then
             echo "$implementation"
         fi
-    done <<< "$(all_implementations)"
+    done <<< "$(all_implementations_and_proposals)"
 }
 
 output_setup() {

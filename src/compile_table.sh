@@ -69,7 +69,7 @@ give_mark_for_proposal() {
 
     # Error?
     if ! is_query_result_ok "${results_dir}/${query}/${proposal}"; then
-        echo "e"
+        echo "<a href=\"results/${query}.md#${proposal}\">e</a>"
         return
     fi
 
@@ -77,14 +77,14 @@ give_mark_for_proposal() {
         if has_consensus "$query"; then
             echo "<a href=\"results/${query}.md#consensus\">✓</a>"
         else
-            echo "➚"
+            echo "<a href=\"results/${query}.md#${proposal}\">➚</a>"
         fi
     else
         # So we are an outlier, but is there actually any gold standard?
         if has_consensus "$query"; then
-            echo "✗"
+            echo "<a href=\"results/${query}.md#${proposal}\">✗</a>"
         else
-            echo "➘"
+            echo "<a href=\"results/${query}.md#${proposal}\">➘</a>"
         fi
     fi
 }

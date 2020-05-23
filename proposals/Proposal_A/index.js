@@ -10,7 +10,7 @@ class SyntaxError extends Error {
 }
 const jsonpath = (selector, json) => {
   let operators;
-  const tracer = new Tracer(selector);
+  const tracer = new Tracer(selector, { useColor: false });
   try {
     operators = parse(selector, { tracer });
   } catch (e) {
