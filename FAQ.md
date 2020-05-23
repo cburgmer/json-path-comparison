@@ -125,3 +125,7 @@ of JSONPath.
 
 You are welcome to join the existing proposal, or come up with your own. Either
 way do contribute here!
+
+## Do the proposals' outcome contribute to the consensus?
+
+No, they don't.

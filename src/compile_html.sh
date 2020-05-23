@@ -64,8 +64,19 @@ tbody tr:hover {
 EOF
 }
 
+proposal() {
+    cat
+    cat <<EOF
+<style>
+.markdown-body tbody .proposal {
+  background-color: #fff8;
+}
+</style>
+EOF
+}
+
 main() {
-    markdown_into_beautiful_html < "$file" | resolve_links | adjust_css | table_consensus_colouring | highlight_effect
+    markdown_into_beautiful_html < "$file" | resolve_links | adjust_css | table_consensus_colouring | highlight_effect | proposal
 }
 
 main

@@ -124,7 +124,7 @@ compile_row() {
     done <<< "$(all_implementations)"
 
     while IFS= read -r proposal; do
-        echo "<td>"
+        echo "<td class=\"proposal\">"
         give_mark_for_proposal "$query" "$proposal"
         echo "</td>"
     done <<< "$(all_proposals)"
