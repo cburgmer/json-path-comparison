@@ -13,16 +13,6 @@ all_queries() {
     find ./queries -type d -maxdepth 1 -mindepth 1 -print0 | xargs -0 -n1 basename | sort
 }
 
-unwrap_scalar_if_needed() {
-    local query="$1"
-
-    if [[ -f "./implementations/${implementation}/SINGLE_POSSIBLE_MATCH_RETURNED_AS_SCALAR" && -f "./queries/${query}/SCALAR_RESULT" ]]; then
-        ./src/unwrap_scalar.py
-    else
-        cat
-    fi
-}
-
 is_implementation_in_majority_for() {
     local query="$1"
     grep "^${implementation}\$" < "${majority_dir}/${query}" > /dev/null
@@ -64,7 +54,7 @@ query_entry() {
         echo "    status: ${status}"
         if [[ "$status" != "error" ]]; then
             echo -n "    result: "
-            query_result_payload "${results_dir}/${query}/${implementation}" | unwrap_scalar_if_needed "$query" | ./src/oneliner_json.py
+            query_result_payload "${results_dir}/${query}/${implementation}" | ./src/oneliner_json.py
         fi
     fi
 }

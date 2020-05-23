@@ -89,7 +89,7 @@ failing_query() {
 
         if is_query_result_ok "${results_dir}/${query}/${implementation}"; then
             echo "Actual output:"
-            query_result_payload "${results_dir}/${query}/${implementation}" | unwrap_scalar_if_needed "$query" | ./src/oneliner_json.py | code_block
+            query_result_payload "${results_dir}/${query}/${implementation}" | ./src/oneliner_json.py | code_block
         else
             echo "Error:"
             query_result_payload "${results_dir}/${query}/${implementation}" | code_block

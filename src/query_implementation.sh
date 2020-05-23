@@ -1,17 +1,6 @@
 #!/bin/bash
 set -euo pipefail
 
-wrap_scalar_if_needed() {
-    local implementation="$1"
-    local query="$2"
-
-    if [[ -f "${implementation}/SINGLE_POSSIBLE_MATCH_RETURNED_AS_SCALAR" && -f "${query}/SCALAR_RESULT" ]]; then
-        ./src/wrap_scalar.py
-    else
-        cat
-    fi
-}
-
 canonical_order_if_needed() {
     local query="$1"
 
@@ -67,8 +56,7 @@ run_query() {
         return 1
     fi
 
-    wrap_scalar_if_needed "$implementation" "$query" < "$tmp_output" \
-        | canonical_order_if_needed "$query"
+    canonical_order_if_needed "$query" < "$tmp_output"
     rm "$tmp_output"
 }
 

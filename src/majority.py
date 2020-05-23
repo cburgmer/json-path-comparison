@@ -25,37 +25,55 @@ def is_from_list_implementation(result_path):
     return not is_from_scalar_implementation(result_path)
 
 
-def no_match(result_path):
+def is_no_match(result_path):
     result_type, payload = query_result_payload(result_path)
     if result_type != "OK":
         return False
 
-    return (payload == [None] and is_from_scalar_implementation(result_path) or
-            payload == [] and is_from_list_implementation(result_path))
+    return ((payload is None and is_from_scalar_implementation(result_path)) or
+            (payload == [] and is_from_list_implementation(result_path)))
 
 
 def no_match_majority(result_paths):
-    result_paths_with_no_match = [path for path in result_paths if no_match(path)]
+    result_paths_with_no_match = [path for path in result_paths if is_no_match(path)]
 
     return [result_paths_with_no_match]
 
 
-def build_histogram(result_paths):
+def build_histogram(pairs):
     histogram = defaultdict(lambda: [])
+    for key, value in pairs:
+        histogram[value].append(key)
+
+    return histogram
+
+def single_match_majority(result_paths):
+    result_payloads = []
     for result_path in result_paths:
         result_type, payload = query_result_payload(result_path)
         if result_type != "OK":
             continue
-        histogram[json.dumps(payload)].append(result_path)
+        canonical_payload = [payload] if is_from_scalar_implementation(result_path) else payload
+        result_payloads.append(tuple([result_path, json.dumps(canonical_payload)]))
 
-    return histogram
+    return list(build_histogram(result_payloads).values())
+
 
 def multiple_matches_majority(result_paths):
-    return list(build_histogram(result_paths).values())
+    result_payloads = []
+    for result_path in result_paths:
+        result_type, payload = query_result_payload(result_path)
+        if result_type != "OK":
+            continue
+        result_payloads.append(tuple([result_path, json.dumps(payload)]))
+
+    return list(build_histogram(result_payloads).values())
 
 
 def calculate_majority_candidates(result_paths):
-    majority_candidates = no_match_majority(result_paths) + multiple_matches_majority(result_paths)
+    majority_candidates = (no_match_majority(result_paths) +
+                           single_match_majority(result_paths) +
+                           multiple_matches_majority(result_paths))
     unique_candidates = set([tuple(sorted(candidate)) for candidate in majority_candidates])
     return unique_candidates
 
