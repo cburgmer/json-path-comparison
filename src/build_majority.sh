@@ -19,22 +19,7 @@ all_ok_implementation_results() {
 }
 
 majority_members() {
-    local all_results
-    local tmp_majority_with_multiple_matches_path="/tmp/majority_with_multiple_matches_path.$$"
-    local tmp_majority_with_no_matches_path="/tmp/majority_with_no_matches_path.$$"
-    all_results="$(all_ok_implementation_results)"
-
-    ./src/majority_with_multiple_matches.py <<< "$all_results" > "$tmp_majority_with_multiple_matches_path"
-    ./src/majority_with_no_matches.py <<< "$all_results" > "$tmp_majority_with_no_matches_path"
-
-    if [[ "$(wc -l < "$tmp_majority_with_multiple_matches_path")" -gt "$(wc -l < "$tmp_majority_with_no_matches_path")" ]]; then
-        cat "$tmp_majority_with_multiple_matches_path"
-    else
-        cat "$tmp_majority_with_no_matches_path"
-    fi
-
-    rm "$tmp_majority_with_multiple_matches_path"
-    rm "$tmp_majority_with_no_matches_path"
+    all_ok_implementation_results | ./src/majority.py
 }
 
 main() {
