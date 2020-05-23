@@ -187,3 +187,5 @@ To call out some decisions deviating from other implementations:
 
 - JSON in filter?
 - Arbitrary brackets in filter
+- $[::-2]
+- division/multiplication
