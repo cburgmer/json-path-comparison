@@ -106,7 +106,7 @@ EOF
         while IFS= read -r implementation; do
             echo -n "build ${results_dir}/${query}/${implementation}: run queries/${query} implementations/${implementation}"
             # implicit deps
-            echo -n " | src/query_implementation.sh queries/${query}/selector queries/${query}/document.json ${test_compilation_dir}/${implementation}"
+            echo -n " | src/query_implementation.sh src/canonical_json.py src/sort_json_array.py queries/${query}/selector queries/${query}/document.json ${test_compilation_dir}/${implementation}"
             echo
         done <<< "$(all_implementations)"
         echo
@@ -114,7 +114,7 @@ EOF
         while IFS= read -r proposal; do
             echo -n "build ${results_dir}/${query}/${proposal}: run queries/${query} proposals/${proposal}"
             # implicit deps
-            echo -n " | src/query_implementation.sh queries/${query}/selector queries/${query}/document.json ${test_compilation_dir}/${proposal}"
+            echo -n " | src/query_implementation.sh src/canonical_json.py src/sort_json_array.py queries/${query}/selector queries/${query}/document.json ${test_compilation_dir}/${proposal}"
             echo
         done <<< "$(all_proposals)"
         echo

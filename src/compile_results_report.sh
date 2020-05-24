@@ -62,7 +62,7 @@ output_setup() {
 consensus() {
     local line
 
-    grep '^consensus' < "${consensus_dir}/${query}" | cut -f2 | ./src/canonical_json.py | pre_block
+    grep '^consensus' < "${consensus_dir}/${query}" | cut -f2 | ./src/pretty_json.py | pre_block
 
     while IFS= read -r line; do
         if [[ -z "$line" ]]; then
@@ -109,7 +109,7 @@ main() {
             pretty_implementation_name "$implementation"
             echo "</h4>"
             echo
-            query_result_payload "${results_dir}/${query}/${implementation}" | pre_block
+            query_result_payload "${results_dir}/${query}/${implementation}" | ./src/pretty_json.py | pre_block
             echo
         done <<< "$outliers"
     fi

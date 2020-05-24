@@ -54,7 +54,7 @@ query_entry() {
         echo "    status: ${status}"
         if [[ "$status" != "error" ]]; then
             echo -n "    result: "
-            query_result_payload "${results_dir}/${query}/${implementation}" | ./src/oneliner_json.py
+            query_result_payload "${results_dir}/${query}/${implementation}"
         fi
     fi
 }

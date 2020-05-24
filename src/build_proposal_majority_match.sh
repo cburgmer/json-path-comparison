@@ -23,7 +23,7 @@ proposal_equals() {
         return 1
     fi
 
-    proposal_result_payload="$(query_result_payload "${query_results}/${proposal}" | ./src/oneliner_json.py)"
+    proposal_result_payload="$(query_result_payload "${query_results}/${proposal}")"
 
     if [[ "$proposal_result_payload" != "$majority_result_payload" ]]; then
         return 1;
