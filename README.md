@@ -108,10 +108,8 @@ Test a query against an implementation (Goessner's JavaScript as example):
 
 See above "One-off comparisons" to execute against all implementations.
 
-### Upgrade an implementation
+### Upgrade implementations
 
-Some implementations can be automatically upgraded
-(Golang_github.com-bhmj-jsonslice as an example):
+Some implementations can be automatically upgraded:
 
-    ./implementations/Golang_github.com-bhmj-jsonslice/upgrade.sh
-    ./src/wrap_in_docker.sh ninja
+    ./upgrade.sh
