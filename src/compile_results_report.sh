@@ -59,6 +59,24 @@ output_setup() {
     pre_block < "$document"
 }
 
+consensus() {
+    local line
+
+    grep '^consensus' < "${consensus_dir}/${query}" | cut -f2 | ./src/canonical_json.py | pre_block
+
+    while IFS= read -r line; do
+        if [[ -z "$line" ]]; then
+            break
+        fi
+
+        echo "<h4>"
+        cut -f1 <<< "$(capitalize "$line")" | tr '-' ' '
+        echo "</h4>"
+        echo
+        cut -f2 <<< "$line" | pre_block
+    done <<< "$(grep -v '^consensus' < "${consensus_dir}/${query}")"
+}
+
 main() {
     local implementation
     local outliers
@@ -76,7 +94,7 @@ main() {
     if has_consensus; then
         echo '<h3 id="consensus">Consensus</h3>'
         echo
-        grep '^consensus' < "${consensus_dir}/${query}" | cut -f2 | ./src/canonical_json.py | pre_block
+        consensus
         echo
     fi
 
