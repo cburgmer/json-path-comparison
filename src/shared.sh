@@ -34,6 +34,16 @@ is_query_result_ok() {
     test "$(query_result_status "$result")" = "OK"
 }
 
+is_query_result_not_found_error() {
+    local result="$1"
+    test "$(query_result_status "$result")" = "NOT_FOUND"
+}
+
+is_query_result_not_supported_error() {
+    local result="$1"
+    test "$(query_result_status "$result")" = "NOT_SUPPORTED"
+}
+
 query_result_payload() {
     local result="$1"
     tail -n +2 < "$result"
