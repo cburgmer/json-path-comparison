@@ -283,16 +283,7 @@ Java (com.jayway.jsonpath)
 <pre><code>SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
 SLF4J: Defaulting to no-operation (NOP) logger implementation
 SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
-Exception in thread "main" com.jayway.jsonpath.PathNotFoundException: Missing property in path $[''some']
-    at com.jayway.jsonpath.internal.path.PathToken.handleObjectProperty(PathToken.java:72)
-    at com.jayway.jsonpath.internal.path.PropertyPathToken.evaluate(PropertyPathToken.java:79)
-    at com.jayway.jsonpath.internal.path.RootPathToken.evaluate(RootPathToken.java:62)
-    at com.jayway.jsonpath.internal.path.CompiledPath.evaluate(CompiledPath.java:53)
-    at com.jayway.jsonpath.internal.path.CompiledPath.evaluate(CompiledPath.java:61)
-    at com.jayway.jsonpath.JsonPath.read(JsonPath.java:187)
-    at com.jayway.jsonpath.internal.JsonContext.read(JsonContext.java:102)
-    at com.jayway.jsonpath.internal.JsonContext.read(JsonContext.java:89)
-    at query.App.main(App.java:25)
+com.jayway.jsonpath.PathNotFoundException: Missing property in path $[''some']
 </code></pre>
 
 <h4 id="Objective-C_SMJJSONPath">

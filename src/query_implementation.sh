@@ -1,6 +1,9 @@
 #!/bin/bash
 set -euo pipefail
 
+readonly tmp_stdout="/tmp/query_implementation.stdout.$$"
+readonly tmp_stderr="/tmp/query_implementation.stderr.$$"
+
 canonical_order_if_needed() {
     local query="$1"
 
@@ -32,56 +35,66 @@ fail_on_absolute_paths_leaked() {
 run_query() {
     local query="$1"
     local implementation="$2"
-    local selector_file="$query"/selector
-    local document="$query"/document.json
-    local tmp_output="/tmp/query_implementation.tmp.$$"
-    local selector
-    selector="$(cat "${selector_file}")"
+    selector="$(cat "${query}/selector")"
 
-    if ! "$implementation"/run.sh "$selector" < "$document" > "$tmp_output"; then
-        cat "$tmp_output"
-        rm "$tmp_output"
-        return 1
-    fi
+    "$implementation"/run.sh "$selector" < "$query"/document.json
+}
 
-    if [[ ! -s "$tmp_output" ]]; then
-        echo "No JSON output received"
-        rm "$tmp_output"
-        return 1
-    fi
-
-    if ! check_json < "$tmp_output"; then
-        cat "$tmp_output"
-        rm "$tmp_output"
-        return 1
-    fi
-
-    canonical_order_if_needed "$query" < "$tmp_output"
-    rm "$tmp_output"
+clean_up() {
+    rm -f "$tmp_stdout"
+    rm -f "$tmp_stderr"
 }
 
 main() {
     local query="$1"
     local implementation="$2"
-    local tmp_stdout="/tmp/query_implementation.stdout.$$"
-    local tmp_stderr="/tmp/query_implementation.stderr.$$"
+    local implementation_return_code
 
-    if run_query "$query" "$implementation" > "$tmp_stdout" 2> "$tmp_stderr"; then
-        echo "OK"
+    set +e
+    run_query "$query" "$implementation" > "$tmp_stdout" 2> "$tmp_stderr"
+    implementation_return_code=$?
+    set -e
 
-        ./src/canonical_json.py < "$tmp_stdout"
-    else
-        echo "ERROR"
+    trap clean_up EXIT
+
+    if [[ $implementation_return_code -gt 0 ]]; then
+        if [[ $implementation_return_code -eq 2 ]]; then
+            echo "NOT_SUPPORTED"
+        else
+            if [[ $implementation_return_code -eq 3 ]]; then
+                echo "NOT_FOUND"
+            else
+                echo "ERROR"
+            fi
+        fi
 
         fail_on_absolute_paths_leaked "$tmp_stderr"
         fail_on_absolute_paths_leaked "$tmp_stdout"
         # Some implementations don't report errors on stderr
         cat "$tmp_stderr"
         cat "$tmp_stdout"
+        return
     fi
 
-    rm "$tmp_stdout"
-    rm "$tmp_stderr"
+    if [[ ! -s "$tmp_stdout" ]]; then
+        echo "ERROR"
+        echo "No JSON output received"
+        fail_on_absolute_paths_leaked "$tmp_stderr"
+        cat "$tmp_stderr"
+        return
+    fi
+
+    if ! check_json < "$tmp_stdout" 2>> "$tmp_stderr"; then
+        echo "ERROR"
+        fail_on_absolute_paths_leaked "$tmp_stderr"
+        fail_on_absolute_paths_leaked "$tmp_stdout"
+        cat "$tmp_stderr"
+        cat "$tmp_stdout"
+        return
+    fi
+
+    echo "OK"
+    canonical_order_if_needed "$query" < "$tmp_stdout" | ./src/canonical_json.py
 }
 
 main "$@"

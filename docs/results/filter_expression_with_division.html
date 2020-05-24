@@ -269,18 +269,7 @@ Java (com.jayway.jsonpath)
 <pre><code>SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
 SLF4J: Defaulting to no-operation (NOP) logger implementation
 SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
-Exception in thread "main" com.jayway.jsonpath.InvalidPathException: Could not find matching close for / when parsing regex in : $[?(@.key/10==5)]
-    at com.jayway.jsonpath.internal.CharacterIndex.indexOfMatchingCloseChar(CharacterIndex.java:108)
-    at com.jayway.jsonpath.internal.CharacterIndex.indexOfClosingBracket(CharacterIndex.java:128)
-    at com.jayway.jsonpath.internal.path.PathCompiler.readFilterToken(PathCompiler.java:449)
-    at com.jayway.jsonpath.internal.path.PathCompiler.readNextToken(PathCompiler.java:141)
-    at com.jayway.jsonpath.internal.path.PathCompiler.readContextToken(PathCompiler.java:124)
-    at com.jayway.jsonpath.internal.path.PathCompiler.compile(PathCompiler.java:58)
-    at com.jayway.jsonpath.internal.path.PathCompiler.compile(PathCompiler.java:75)
-    at com.jayway.jsonpath.JsonPath.&lt;init&gt;(JsonPath.java:101)
-    at com.jayway.jsonpath.JsonPath.compile(JsonPath.java:467)
-    at com.jayway.jsonpath.internal.JsonContext.read(JsonContext.java:87)
-    at query.App.main(App.java:25)
+com.jayway.jsonpath.InvalidPathException: Could not find matching close for / when parsing regex in : $[?(@.key/10==5)]
 </code></pre>
 
 <h4 id="Kotlin_com.nfeld.jsonpathlite">

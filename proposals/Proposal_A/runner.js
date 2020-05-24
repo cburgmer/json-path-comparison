@@ -30,7 +30,11 @@ const main = async () => {
     console.log(JSON.stringify(results));
   } catch (e) {
     console.error(e.message);
-    process.exit(1);
+    if (e instanceof jsonpath.SyntaxError) {
+      process.exit(2);
+    } else {
+      process.exit(1);
+    }
   }
 };
 

@@ -342,22 +342,7 @@ Java (com.jayway.jsonpath)
 <pre><code>SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
 SLF4J: Defaulting to no-operation (NOP) logger implementation
 SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
-Exception in thread "main" com.jayway.jsonpath.InvalidPathException: Expected character: )
-    at com.jayway.jsonpath.internal.CharacterIndex.readSignificantChar(CharacterIndex.java:218)
-    at com.jayway.jsonpath.internal.filter.FilterCompiler.readLogicalANDOperand(FilterCompiler.java:185)
-    at com.jayway.jsonpath.internal.filter.FilterCompiler.readLogicalAND(FilterCompiler.java:151)
-    at com.jayway.jsonpath.internal.filter.FilterCompiler.readLogicalOR(FilterCompiler.java:131)
-    at com.jayway.jsonpath.internal.filter.FilterCompiler.compile(FilterCompiler.java:77)
-    at com.jayway.jsonpath.internal.filter.FilterCompiler.compile(FilterCompiler.java:53)
-    at com.jayway.jsonpath.internal.path.PathCompiler.readFilterToken(PathCompiler.java:461)
-    at com.jayway.jsonpath.internal.path.PathCompiler.readNextToken(PathCompiler.java:141)
-    at com.jayway.jsonpath.internal.path.PathCompiler.readContextToken(PathCompiler.java:124)
-    at com.jayway.jsonpath.internal.path.PathCompiler.compile(PathCompiler.java:58)
-    at com.jayway.jsonpath.internal.path.PathCompiler.compile(PathCompiler.java:75)
-    at com.jayway.jsonpath.JsonPath.&lt;init&gt;(JsonPath.java:101)
-    at com.jayway.jsonpath.JsonPath.compile(JsonPath.java:467)
-    at com.jayway.jsonpath.internal.JsonContext.read(JsonContext.java:87)
-    at query.App.main(App.java:25)
+com.jayway.jsonpath.InvalidPathException: Expected character: )
 </code></pre>
 
 <h4 id="Kotlin_com.nfeld.jsonpathlite">

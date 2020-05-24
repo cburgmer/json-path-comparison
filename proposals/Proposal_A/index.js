@@ -21,3 +21,4 @@ const jsonpath = (selector, json) => {
 };
 
 module.exports = jsonpath;
+module.exports.SyntaxError = SyntaxError;
