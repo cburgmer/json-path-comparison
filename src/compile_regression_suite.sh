@@ -18,9 +18,20 @@ in_quotes() {
     echo -n '"'
 }
 
+consensus() {
+    local query="$1"
+    local line
+
+    while IFS= read -r line; do
+        echo -n "    "
+        cut -f1 <<< "$line" | tr -d '\n'
+        echo -n ": "
+        cut -f2 <<< "$line"
+    done < "${consensus_dir}/${query}"
+}
+
 query_entry() {
     local query="$1"
-    local consensus
 
     echo "  - id: ${query}"
     echo "    selector: $(in_quotes < "./queries/${query}/selector")"
@@ -33,14 +44,7 @@ query_entry() {
 
 
     if has_consensus "$query"; then
-        consensus="${consensus_dir}/${query}"
-        echo -n "    consensus: "
-        grep '^consensus' < "$consensus" | cut -f2
-
-        if [[ -f "./queries/${query}/SCALAR_RESULT" ]]; then
-            echo -n "    scalar-consensus: "
-            grep '^scalar-consensus' < "$consensus" | cut -f2
-        fi
+        consensus "$query"
     fi
 }
 

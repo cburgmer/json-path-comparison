@@ -106,11 +106,7 @@ EOF
         while IFS= read -r implementation; do
             echo -n "build ${results_dir}/${query}/${implementation}: run queries/${query} implementations/${implementation}"
             # implicit deps
-            echo -n " | src/query_implementation.sh queries/${query}/selector queries/${query}/document.json"
-            if [[ -f "queries/${query}/SCALAR_RESULT" ]]; then
-                echo -n " queries/${query}/SCALAR_RESULT"
-            fi
-            echo -n " ${test_compilation_dir}/${implementation}"
+            echo -n " | src/query_implementation.sh queries/${query}/selector queries/${query}/document.json ${test_compilation_dir}/${implementation}"
             echo
         done <<< "$(all_implementations)"
         echo

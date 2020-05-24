@@ -100,8 +100,7 @@ Test a query by running (again Clojure as example):
 ### Add a new query
 
 Add a new directory under [./queries](./queries) and give it a `selector` and
-`document.json`. Scalar queries have a specific handling, compare
-[./queries/array_index](./queries/array_index).
+`document.json`.
 
 Test a query against an implementation (Goessner's JavaScript as example):
 
