@@ -223,12 +223,12 @@ EOF
     echo
 
     cat <<EOF
-rule results_report
-  command = LANG=en_US.UTF-8 LC_ALL= LC_COLLATE=C ./src/results_report.sh \$in > \$out
+rule compile_results_report
+  command = LANG=en_US.UTF-8 LC_ALL= LC_COLLATE=C ./src/compile_results_report.sh \$in > \$out
 EOF
     echo
     while IFS= read -r query; do
-        echo "build ${markdown_dir}/results/${query}.md: results_report ${results_dir} ${majority_dir} ${consensus_dir} queries/${query} | src/results_report.sh"
+        echo "build ${markdown_dir}/results/${query}.md: compile_results_report ${results_dir} ${majority_dir} ${consensus_dir} queries/${query} | src/compile_results_report.sh"
     done <<< "$(all_queries)"
     echo
 
