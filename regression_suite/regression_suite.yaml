@@ -118,6 +118,8 @@ queries:
   - id: bracket_notation_on_object_without_key
     selector: "$['missing']"
     document: {"key": "value"}
+    consensus: []
+    scalar-consensus: null
   - id: bracket_notation_with_dot
     selector: "$['two.some']"
     document: {"one": {"key": "value"}, "two": {"some": "more", "key": "other value"}, "two.some": "42"}
@@ -152,6 +154,8 @@ queries:
   - id: bracket_notation_with_number_-1_on_empty_array
     selector: "$[-1]"
     document: []
+    consensus: []
+    scalar-consensus: null
   - id: bracket_notation_with_number_0
     selector: "$[0]"
     document: ["first", "second", "third", "forth", "fifth"]
@@ -167,6 +171,8 @@ queries:
   - id: bracket_notation_with_number_on_short_array
     selector: "$[1]"
     document: ["one element"]
+    consensus: []
+    scalar-consensus: null
   - id: bracket_notation_with_number_on_string
     selector: "$[0]"
     document: "Hello World"
@@ -338,6 +344,8 @@ queries:
   - id: dot_notation_on_array
     selector: "$.key"
     document: [0, 1]
+    consensus: []
+    scalar-consensus: null
   - id: dot_notation_on_array_value
     selector: "$.key"
     document: {"key": ["first", "second"]}
@@ -346,6 +354,8 @@ queries:
   - id: dot_notation_on_array_with_containing_object_matching_key
     selector: "$.id"
     document: [{"id": 2}]
+    consensus: []
+    scalar-consensus: null
   - id: dot_notation_on_empty_object_value
     selector: "$.key"
     document: {"key": {}}
@@ -359,6 +369,8 @@ queries:
   - id: dot_notation_on_object_without_key
     selector: "$.missing"
     document: {"key": "value"}
+    consensus: []
+    scalar-consensus: null
   - id: dot_notation_with_dash
     selector: "$.key-dash"
     document: {"key-dash": "value"}

@@ -17,6 +17,20 @@ The following queries provide results that do not match those of other implement
   parsing error: $['key']	:1:3 - 1:8 could not parse string: invalid syntax
   ```
 
+- [ ] `$['missing']`
+  Input:
+  ```
+  {"key": "value"}
+  ```
+  Expected output:
+  ```
+  null
+  ```
+  Error:
+  ```
+  parsing error: $['missing']	:1:3 - 1:12 could not parse string: invalid syntax
+  ```
+
 - [ ] `$['two.some']`
   Input:
   ```
@@ -43,6 +57,34 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   index -1 out of bounds
+  ```
+
+- [ ] `$[-1]`
+  Input:
+  ```
+  []
+  ```
+  Expected output:
+  ```
+  null
+  ```
+  Error:
+  ```
+  index -1 out of bounds
+  ```
+
+- [ ] `$[1]`
+  Input:
+  ```
+  ["one element"]
+  ```
+  Expected output:
+  ```
+  null
+  ```
+  Error:
+  ```
+  index 1 out of bounds
   ```
 
 - [ ] `$['.*']`
@@ -85,6 +127,48 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   parsing error: $['one','three'].key	:1:3 - 1:8 could not parse string: invalid syntax
+  ```
+
+- [ ] `$.key`
+  Input:
+  ```
+  [0, 1]
+  ```
+  Expected output:
+  ```
+  null
+  ```
+  Error:
+  ```
+  could not select value, invalid key: expected number but got key (string)
+  ```
+
+- [ ] `$.id`
+  Input:
+  ```
+  [{"id": 2}]
+  ```
+  Expected output:
+  ```
+  null
+  ```
+  Error:
+  ```
+  could not select value, invalid key: expected number but got id (string)
+  ```
+
+- [ ] `$.missing`
+  Input:
+  ```
+  {"key": "value"}
+  ```
+  Expected output:
+  ```
+  null
+  ```
+  Error:
+  ```
+  unknown key missing
   ```
 
 - [ ] `$.key-dash`

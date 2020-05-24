@@ -73,6 +73,22 @@ The following queries provide results that do not match those of other implement
    Error: searchBeginningWithSlice: string
   ```
 
+- [ ] `$['missing']`
+  Input:
+  ```
+  {"key": "value"}
+  ```
+  Expected output:
+  ```
+  null
+  ```
+  Error:
+  ```
+  json-path-comparison: expected key missing in object {"key":"value"}
+  CallStack (from HasCallStack):
+    error, called at app/Main.hs:18:22 in main:Main
+  ```
+
 - [ ] `$['two.some']`
   Input:
   ```
@@ -124,6 +140,22 @@ The following queries provide results that do not match those of other implement
    Error: searchBeginningWithSlice: string
   ```
 
+- [ ] `$[-1]`
+  Input:
+  ```
+  []
+  ```
+  Expected output:
+  ```
+  null
+  ```
+  Error:
+  ```
+  json-path-comparison: index -1 invalid for array []
+  CallStack (from HasCallStack):
+    error, called at app/Main.hs:18:22 in main:Main
+  ```
+
 - [ ] `$.*[1]`
   Input:
   ```
@@ -136,6 +168,22 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   json-path-comparison: index 1 invalid for array [1]
+  CallStack (from HasCallStack):
+    error, called at app/Main.hs:18:22 in main:Main
+  ```
+
+- [ ] `$[1]`
+  Input:
+  ```
+  ["one element"]
+  ```
+  Expected output:
+  ```
+  null
+  ```
+  Error:
+  ```
+  json-path-comparison: index 1 invalid for array ["one element"]
   CallStack (from HasCallStack):
     error, called at app/Main.hs:18:22 in main:Main
   ```
@@ -380,6 +428,54 @@ The following queries provide results that do not match those of other implement
     error, called at app/Main.hs:36:7 in main:Main
   Invalid JSONPath: $['one','three'].key
    Error: searchBeginningWithSlice: string
+  ```
+
+- [ ] `$.key`
+  Input:
+  ```
+  [0, 1]
+  ```
+  Expected output:
+  ```
+  null
+  ```
+  Error:
+  ```
+  json-path-comparison: expected object, found [0,1]
+  CallStack (from HasCallStack):
+    error, called at app/Main.hs:18:22 in main:Main
+  ```
+
+- [ ] `$.id`
+  Input:
+  ```
+  [{"id": 2}]
+  ```
+  Expected output:
+  ```
+  null
+  ```
+  Error:
+  ```
+  json-path-comparison: expected object, found [{"id":2}]
+  CallStack (from HasCallStack):
+    error, called at app/Main.hs:18:22 in main:Main
+  ```
+
+- [ ] `$.missing`
+  Input:
+  ```
+  {"key": "value"}
+  ```
+  Expected output:
+  ```
+  null
+  ```
+  Error:
+  ```
+  json-path-comparison: expected key missing in object {"key":"value"}
+  CallStack (from HasCallStack):
+    error, called at app/Main.hs:18:22 in main:Main
   ```
 
 - [ ] `$.屬性`

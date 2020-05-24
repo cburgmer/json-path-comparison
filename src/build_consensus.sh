@@ -1,17 +1,12 @@
 #!/bin/bash
 set -euo pipefail
 
-readonly query_results="$1"
-readonly majority_result="$2"
+readonly majority_result="$1"
 
 . src/shared.sh
 
 all_implementations() {
     find ./implementations -name run.sh -maxdepth 2 -print0 | xargs -0 -n1 dirname | xargs -n1 basename
-}
-
-gold_standard() {
-    head -2 < "$majority_result" | tail -1
 }
 
 consensus() {
@@ -21,7 +16,7 @@ consensus() {
     majority_size="$(tail -n +4 < "$majority_result" | wc -l)"
 
     if [[ "$majority_size" -ge $min_consensus ]]; then
-        gold_standard | ./src/canonical_json.py
+        ./src/consensus.py < "$majority_result"
     fi
 }
 

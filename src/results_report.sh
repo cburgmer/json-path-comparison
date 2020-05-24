@@ -76,7 +76,7 @@ main() {
     if has_consensus; then
         echo '<h3 id="consensus">Consensus</h3>'
         echo
-        pre_block < "${consensus_dir}/${query}"
+        grep '^consensus' < "${consensus_dir}/${query}" | cut -f2 | ./src/canonical_json.py | pre_block
         echo
     fi
 

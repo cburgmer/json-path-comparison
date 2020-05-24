@@ -255,6 +255,20 @@ The following queries provide results that do not match those of other implement
   expression don't support in filter
   ```
 
+- [ ] `$['missing']`
+  Input:
+  ```
+  {"key": "value"}
+  ```
+  Expected output:
+  ```
+  null
+  ```
+  Error:
+  ```
+  strconv.Atoi: parsing "'missing'": invalid syntax
+  ```
+
 - [ ] `$['two.some']`
   Input:
   ```
@@ -297,6 +311,20 @@ The following queries provide results that do not match those of other implement
   strconv.Atoi: parsing "''": invalid syntax
   ```
 
+- [ ] `$[-1]`
+  Input:
+  ```
+  []
+  ```
+  Expected output:
+  ```
+  null
+  ```
+  Error:
+  ```
+  index out of range: len: 0, idx: -1
+  ```
+
 - [ ] `$.*[1]`
   Input:
   ```
@@ -309,6 +337,20 @@ The following queries provide results that do not match those of other implement
   Actual output:
   ```
   []
+  ```
+
+- [ ] `$[1]`
+  Input:
+  ```
+  ["one element"]
+  ```
+  Expected output:
+  ```
+  null
+  ```
+  Error:
+  ```
+  index out of range: len: 1, idx: 1
   ```
 
 - [ ] `$[':']`
@@ -603,6 +645,48 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   strconv.Atoi: parsing "'one'": invalid syntax
+  ```
+
+- [ ] `$.key`
+  Input:
+  ```
+  [0, 1]
+  ```
+  Expected output:
+  ```
+  null
+  ```
+  Actual output:
+  ```
+  []
+  ```
+
+- [ ] `$.id`
+  Input:
+  ```
+  [{"id": 2}]
+  ```
+  Expected output:
+  ```
+  null
+  ```
+  Actual output:
+  ```
+  [2]
+  ```
+
+- [ ] `$.missing`
+  Input:
+  ```
+  {"key": "value"}
+  ```
+  Expected output:
+  ```
+  null
+  ```
+  Error:
+  ```
+  key error: missing not found in object
   ```
 
 - [ ] `$.*.bar.*`

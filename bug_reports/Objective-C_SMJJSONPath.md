@@ -107,6 +107,48 @@ The following queries provide results that do not match those of other implement
   Failed to parse SliceOperation: ::2
   ```
 
+- [ ] `$['missing']`
+  Input:
+  ```
+  {"key": "value"}
+  ```
+  Expected output:
+  ```
+  null
+  ```
+  Error:
+  ```
+  No results for path: $['missing']
+  ```
+
+- [ ] `$[-1]`
+  Input:
+  ```
+  []
+  ```
+  Expected output:
+  ```
+  null
+  ```
+  Error:
+  ```
+  No results for path: $[-1]
+  ```
+
+- [ ] `$[1]`
+  Input:
+  ```
+  ["one element"]
+  ```
+  Expected output:
+  ```
+  null
+  ```
+  Error:
+  ```
+  No results for path: $[1]
+  ```
+
 - [ ] `$[',']`
   Input:
   ```
@@ -119,6 +161,48 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   Found empty property at index 5
+  ```
+
+- [ ] `$.key`
+  Input:
+  ```
+  [0, 1]
+  ```
+  Expected output:
+  ```
+  null
+  ```
+  Error:
+  ```
+  Expected to find an object with property ['key'] in path $ but found '__NSArrayI'. This is not a json object.
+  ```
+
+- [ ] `$.id`
+  Input:
+  ```
+  [{"id": 2}]
+  ```
+  Expected output:
+  ```
+  null
+  ```
+  Error:
+  ```
+  Expected to find an object with property ['id'] in path $ but found '__NSSingleObjectArrayI'. This is not a json object.
+  ```
+
+- [ ] `$.missing`
+  Input:
+  ```
+  {"key": "value"}
+  ```
+  Expected output:
+  ```
+  null
+  ```
+  Error:
+  ```
+  No results for path: $['missing']
   ```
 
 - [ ] `$['key','another']`

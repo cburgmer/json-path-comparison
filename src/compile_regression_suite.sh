@@ -7,13 +7,6 @@ all_queries() {
     find ./queries -type d -maxdepth 1 -mindepth 1 -print0 | xargs -0 -n1 basename | sort
 }
 
-# https://github.com/cburgmer/json-path-comparison/issues/1
-needs_workaround_for_unknown_scalar_consensus() {
-    local query="$1"
-    local consensus="$2"
-    test -f "./queries/${query}/SCALAR_RESULT" && test "$(cat "$consensus")" == "[]"
-}
-
 has_consensus() {
     local query="$1"
     test -s "${consensus_dir}/${query}"
@@ -41,13 +34,12 @@ query_entry() {
 
     if has_consensus "$query"; then
         consensus="${consensus_dir}/${query}"
-        if ! needs_workaround_for_unknown_scalar_consensus "$query" "$consensus"; then
-            echo -n "    consensus: "
-            ./src/oneliner_json.py < "$consensus"
-            if [[ -f "./queries/${query}/SCALAR_RESULT" ]]; then
-                echo -n "    scalar-consensus: "
-                ./src/unwrap_scalar.py < "$consensus" | ./src/oneliner_json.py
-            fi
+        echo -n "    consensus: "
+        grep '^consensus' < "$consensus" | cut -f2
+
+        if [[ -f "./queries/${query}/SCALAR_RESULT" ]]; then
+            echo -n "    scalar-consensus: "
+            grep '^scalar-consensus' < "$consensus" | cut -f2
         fi
     fi
 }

@@ -3,6 +3,20 @@ Results do not match other implementations
 The following queries provide results that do not match those of other implementations of JSONPath
 (compare https://cburgmer.github.io/json-path-comparison/):
 
+- [ ] `$['missing']`
+  Input:
+  ```
+  {"key": "value"}
+  ```
+  Expected output:
+  ```
+  null
+  ```
+  Error:
+  ```
+  No JSON output received
+  ```
+
 - [ ] `$['']`
   Input:
   ```
@@ -11,6 +25,34 @@ The following queries provide results that do not match those of other implement
   Expected output:
   ```
   42
+  ```
+  Error:
+  ```
+  No JSON output received
+  ```
+
+- [ ] `$[-1]`
+  Input:
+  ```
+  []
+  ```
+  Expected output:
+  ```
+  null
+  ```
+  Error:
+  ```
+  No JSON output received
+  ```
+
+- [ ] `$[1]`
+  Input:
+  ```
+  ["one element"]
+  ```
+  Expected output:
+  ```
+  null
   ```
   Error:
   ```
@@ -57,6 +99,48 @@ The following queries provide results that do not match those of other implement
   Actual output:
   ```
   ["value"]
+  ```
+
+- [ ] `$.key`
+  Input:
+  ```
+  [0, 1]
+  ```
+  Expected output:
+  ```
+  null
+  ```
+  Error:
+  ```
+  No JSON output received
+  ```
+
+- [ ] `$.id`
+  Input:
+  ```
+  [{"id": 2}]
+  ```
+  Expected output:
+  ```
+  null
+  ```
+  Error:
+  ```
+  No JSON output received
+  ```
+
+- [ ] `$.missing`
+  Input:
+  ```
+  {"key": "value"}
+  ```
+  Expected output:
+  ```
+  null
+  ```
+  Error:
+  ```
+  No JSON output received
   ```
 
 - [ ] `$.key-dash`

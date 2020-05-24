@@ -3,6 +3,51 @@ Results do not match other implementations
 The following queries provide results that do not match those of other implementations of JSONPath
 (compare https://cburgmer.github.io/json-path-comparison/):
 
+- [ ] `$[1]`
+  Input:
+  ```
+  ["one element"]
+  ```
+  Expected output:
+  ```
+  null
+  ```
+  Error:
+  ```
+  ** (Enum.OutOfBoundsError) The query should be resolved to scalar value but the index 1 is out of bounds for emum ["one element"].
+      lib/jsonpath.ex:9: Mix.Tasks.Execute.run/1
+  ```
+
+- [ ] `$.key`
+  Input:
+  ```
+  [0, 1]
+  ```
+  Expected output:
+  ```
+  null
+  ```
+  Error:
+  ```
+  ** (Warpath.UnsupportedOperationError) You are trying to traverse a list using dot notation '$.key', that it's not allowed for list type. You can use something like '$[*].key' instead.
+      lib/jsonpath.ex:9: Mix.Tasks.Execute.run/1
+  ```
+
+- [ ] `$.id`
+  Input:
+  ```
+  [{"id": 2}]
+  ```
+  Expected output:
+  ```
+  null
+  ```
+  Error:
+  ```
+  ** (Warpath.UnsupportedOperationError) You are trying to traverse a list using dot notation '$.id', that it's not allowed for list type. You can use something like '$[*].id' instead.
+      lib/jsonpath.ex:9: Mix.Tasks.Execute.run/1
+  ```
+
 - [ ] `$.in`
   Input:
   ```

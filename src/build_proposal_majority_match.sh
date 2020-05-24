@@ -23,7 +23,7 @@ proposal_equals() {
         return 1
     fi
 
-    proposal_result_payload="$(query_result_payload "${query_results}/${proposal}")"
+    proposal_result_payload="$(query_result_payload "${query_results}/${proposal}" | ./src/oneliner_json.py)"
 
     if [[ "$proposal_result_payload" != "$majority_result_payload" ]]; then
         return 1;
@@ -40,7 +40,7 @@ main() {
         return
     fi
 
-    majority_result_payload="$(gold_standard | ./src/canonical_json.py)"
+    majority_result_payload="$(gold_standard)"
 
     while IFS= read -r proposal; do
         if proposal_equals "$proposal" "$majority_result_payload"; then
