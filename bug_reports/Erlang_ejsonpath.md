@@ -6,7 +6,13 @@ The following queries provide results that do not match those of other implement
 - [ ] `$[1:3]`
   Input:
   ```
-  {":": 42, "more": "string", "a": 1, "b": 2, "c": 3}
+  {
+    ":": 42,
+    "more": "string",
+    "a": 1,
+    "b": 2,
+    "c": 3
+  }
   ```
   Expected output:
   ```
@@ -23,7 +29,10 @@ The following queries provide results that do not match those of other implement
 - [ ] `$[::]`
   Input:
   ```
-  ["first", "second"]
+  [
+    "first",
+    "second"
+  ]
   ```
   Expected output:
   ```
@@ -40,7 +49,13 @@ The following queries provide results that do not match those of other implement
 - [ ] `$[1:3:]`
   Input:
   ```
-  ["first", "second", "third", "forth", "fifth"]
+  [
+    "first",
+    "second",
+    "third",
+    "forth",
+    "fifth"
+  ]
   ```
   Expected output:
   ```
@@ -57,7 +72,13 @@ The following queries provide results that do not match those of other implement
 - [ ] `$[::2]`
   Input:
   ```
-  ["first", "second", "third", "forth", "fifth"]
+  [
+    "first",
+    "second",
+    "third",
+    "forth",
+    "fifth"
+  ]
   ```
   Expected output:
   ```
@@ -74,7 +95,28 @@ The following queries provide results that do not match those of other implement
 - [ ] `$..[0]`
   Input:
   ```
-  ["first", {"key": ["first nested", {"more": [{"nested": ["deepest", "second"]}, ["more", "values"]]}]}]
+  [
+    "first",
+    {
+      "key": [
+        "first nested",
+        {
+          "more": [
+            {
+              "nested": [
+                "deepest",
+                "second"
+              ]
+            },
+            [
+              "more",
+              "values"
+            ]
+          ]
+        }
+      ]
+    }
+  ]
   ```
   Expected output (in any order as no consensus on ordering exists):
   ```
@@ -91,7 +133,16 @@ The following queries provide results that do not match those of other implement
 - [ ] `$..[*]`
   Input:
   ```
-  {"key": "value", "another key": {"complex": "string", "primitives": [0, 1]}}
+  {
+    "key": "value",
+    "another key": {
+      "complex": "string",
+      "primitives": [
+        0,
+        1
+      ]
+    }
+  }
   ```
   Expected output (in any order as no consensus on ordering exists):
   ```
@@ -108,7 +159,9 @@ The following queries provide results that do not match those of other implement
 - [ ] `$.key-dash`
   Input:
   ```
-  {"key-dash": "value"}
+  {
+    "key-dash": "value"
+  }
   ```
   Expected output:
   ```
@@ -125,7 +178,9 @@ The following queries provide results that do not match those of other implement
 - [ ] `$.屬性`
   Input:
   ```
-  {"\u5c6c\u6027": "value"}
+  {
+    "\u5c6c\u6027": "value"
+  }
   ```
   Expected output:
   ```
@@ -142,7 +197,11 @@ The following queries provide results that do not match those of other implement
 - [ ] `$.2`
   Input:
   ```
-  {"a": "first", "2": "second", "b": "third"}
+  {
+    "a": "first",
+    "2": "second",
+    "b": "third"
+  }
   ```
   Expected output:
   ```

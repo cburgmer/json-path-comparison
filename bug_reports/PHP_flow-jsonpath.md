@@ -6,7 +6,11 @@ The following queries provide results that do not match those of other implement
 - [ ] `$[-4:]`
   Input:
   ```
-  ["first", "second", "third"]
+  [
+    "first",
+    "second",
+    "third"
+  ]
   ```
   Expected output:
   ```
@@ -14,13 +18,22 @@ The following queries provide results that do not match those of other implement
   ```
   Actual output:
   ```
-  ["third", "first", "second", "third"]
+  [
+    "third",
+    "first",
+    "second",
+    "third"
+  ]
   ```
 
 - [ ] `$['']`
   Input:
   ```
-  {"": 42, "''": 123, "\"\"": 222}
+  {
+    "": 42,
+    "''": 123,
+    "\"\"": 222
+  }
   ```
   Expected output:
   ```
@@ -34,7 +47,9 @@ The following queries provide results that do not match those of other implement
 - [ ] `$[']']`
   Input:
   ```
-  {"]": 42}
+  {
+    "]": 42
+  }
   ```
   Expected output:
   ```
@@ -48,7 +63,18 @@ The following queries provide results that do not match those of other implement
 - [ ] `$['one','three'].key`
   Input:
   ```
-  {"one": {"key": "value"}, "two": {"k": "v"}, "three": {"some": "more", "key": "other value"}}
+  {
+    "one": {
+      "key": "value"
+    },
+    "two": {
+      "k": "v"
+    },
+    "three": {
+      "some": "more",
+      "key": "other value"
+    }
+  }
   ```
   Expected output:
   ```
@@ -62,7 +88,10 @@ The following queries provide results that do not match those of other implement
 - [ ] `$['key','another']`
   Input:
   ```
-  {"key": "value", "another": "entry"}
+  {
+    "key": "value",
+    "another": "entry"
+  }
   ```
   Expected output:
   ```
@@ -76,7 +105,18 @@ The following queries provide results that do not match those of other implement
 - [ ] `$[0]['c','d']`
   Input:
   ```
-  [{"c": "cc1", "d": "dd1", "e": "ee1"}, {"c": "cc2", "d": "dd2", "e": "ee2"}]
+  [
+    {
+      "c": "cc1",
+      "d": "dd1",
+      "e": "ee1"
+    },
+    {
+      "c": "cc2",
+      "d": "dd2",
+      "e": "ee2"
+    }
+  ]
   ```
   Expected output:
   ```
@@ -90,7 +130,10 @@ The following queries provide results that do not match those of other implement
 - [ ] `$['missing','key']`
   Input:
   ```
-  {"key": "value", "another": "entry"}
+  {
+    "key": "value",
+    "another": "entry"
+  }
   ```
   Expected output:
   ```

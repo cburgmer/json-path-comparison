@@ -6,7 +6,10 @@ The following queries provide results that do not match those of other implement
 - [ ] `$[:]`
   Input:
   ```
-  ["first", "second"]
+  [
+    "first",
+    "second"
+  ]
   ```
   Expected output:
   ```
@@ -26,7 +29,11 @@ The following queries provide results that do not match those of other implement
 - [ ] `$[-2:]`
   Input:
   ```
-  ["first", "second", "third"]
+  [
+    "first",
+    "second",
+    "third"
+  ]
   ```
   Expected output:
   ```
@@ -34,13 +41,23 @@ The following queries provide results that do not match those of other implement
   ```
   Actual output:
   ```
-  ["second", "third", "first", "second", "third"]
+  [
+    "second",
+    "third",
+    "first",
+    "second",
+    "third"
+  ]
   ```
 
 - [ ] `$[-4:]`
   Input:
   ```
-  ["first", "second", "third"]
+  [
+    "first",
+    "second",
+    "third"
+  ]
   ```
   Expected output:
   ```
@@ -48,13 +65,41 @@ The following queries provide results that do not match those of other implement
   ```
   Actual output:
   ```
-  ["first", "second", "third", "first", "second", "third"]
+  [
+    "first",
+    "second",
+    "third",
+    "first",
+    "second",
+    "third"
+  ]
   ```
 
 - [ ] `$..[0]`
   Input:
   ```
-  ["first", {"key": ["first nested", {"more": [{"nested": ["deepest", "second"]}, ["more", "values"]]}]}]
+  [
+    "first",
+    {
+      "key": [
+        "first nested",
+        {
+          "more": [
+            {
+              "nested": [
+                "deepest",
+                "second"
+              ]
+            },
+            [
+              "more",
+              "values"
+            ]
+          ]
+        }
+      ]
+    }
+  ]
   ```
   Expected output (in any order as no consensus on ordering exists):
   ```
@@ -68,7 +113,10 @@ The following queries provide results that do not match those of other implement
 - [ ] `$[':']`
   Input:
   ```
-  {":": "value", "another": "entry"}
+  {
+    ":": "value",
+    "another": "entry"
+  }
   ```
   Expected output:
   ```
@@ -88,7 +136,9 @@ The following queries provide results that do not match those of other implement
 - [ ] `$[']']`
   Input:
   ```
-  {"]": 42}
+  {
+    "]": 42
+  }
   ```
   Expected output:
   ```
@@ -108,7 +158,10 @@ The following queries provide results that do not match those of other implement
 - [ ] `$['@']`
   Input:
   ```
-  {"@": "value", "another": "entry"}
+  {
+    "@": "value",
+    "another": "entry"
+  }
   ```
   Expected output:
   ```
@@ -128,7 +181,10 @@ The following queries provide results that do not match those of other implement
 - [ ] `$['.']`
   Input:
   ```
-  {".": "value", "another": "entry"}
+  {
+    ".": "value",
+    "another": "entry"
+  }
   ```
   Expected output:
   ```
@@ -148,7 +204,10 @@ The following queries provide results that do not match those of other implement
 - [ ] `$['"']`
   Input:
   ```
-  {"\"": "value", "another": "entry"}
+  {
+    "\"": "value",
+    "another": "entry"
+  }
   ```
   Expected output:
   ```
@@ -168,7 +227,10 @@ The following queries provide results that do not match those of other implement
 - [ ] `$['$']`
   Input:
   ```
-  {"$": "value", "another": "entry"}
+  {
+    "$": "value",
+    "another": "entry"
+  }
   ```
   Expected output:
   ```
@@ -188,7 +250,10 @@ The following queries provide results that do not match those of other implement
 - [ ] `$[',']`
   Input:
   ```
-  {",": "value", "another": "entry"}
+  {
+    ",": "value",
+    "another": "entry"
+  }
   ```
   Expected output:
   ```
@@ -208,7 +273,10 @@ The following queries provide results that do not match those of other implement
 - [ ] `$['*']`
   Input:
   ```
-  {"*": "value", "another": "entry"}
+  {
+    "*": "value",
+    "another": "entry"
+  }
   ```
   Expected output:
   ```
@@ -216,13 +284,25 @@ The following queries provide results that do not match those of other implement
   ```
   Actual output:
   ```
-  ["entry", "value"]
+  [
+    "value",
+    "entry"
+  ]
   ```
 
 - [ ] `$..[*]`
   Input:
   ```
-  {"key": "value", "another key": {"complex": "string", "primitives": [0, 1]}}
+  {
+    "key": "value",
+    "another key": {
+      "complex": "string",
+      "primitives": [
+        0,
+        1
+      ]
+    }
+  }
   ```
   Expected output (in any order as no consensus on ordering exists):
   ```
@@ -236,7 +316,16 @@ The following queries provide results that do not match those of other implement
 - [ ] `$[?(@.id==42)].name`
   Input:
   ```
-  [{"id": 42, "name": "forty-two"}, {"id": 1, "name": "one"}]
+  [
+    {
+      "id": 42,
+      "name": "forty-two"
+    },
+    {
+      "id": 1,
+      "name": "one"
+    }
+  ]
   ```
   Expected output:
   ```
@@ -250,7 +339,18 @@ The following queries provide results that do not match those of other implement
 - [ ] `$['one','three'].key`
   Input:
   ```
-  {"one": {"key": "value"}, "two": {"k": "v"}, "three": {"some": "more", "key": "other value"}}
+  {
+    "one": {
+      "key": "value"
+    },
+    "two": {
+      "k": "v"
+    },
+    "three": {
+      "some": "more",
+      "key": "other value"
+    }
+  }
   ```
   Expected output:
   ```
@@ -271,7 +371,9 @@ The following queries provide results that do not match those of other implement
 - [ ] `$.屬性`
   Input:
   ```
-  {"\u5c6c\u6027": "value"}
+  {
+    "\u5c6c\u6027": "value"
+  }
   ```
   Expected output:
   ```
@@ -285,7 +387,16 @@ The following queries provide results that do not match those of other implement
 - [ ] `$..*`
   Input:
   ```
-  {"key": "value", "another key": {"complex": "string", "primitives": [0, 1]}}
+  {
+    "key": "value",
+    "another key": {
+      "complex": "string",
+      "primitives": [
+        0,
+        1
+      ]
+    }
+  }
   ```
   Expected output (in any order as no consensus on ordering exists):
   ```
@@ -299,7 +410,11 @@ The following queries provide results that do not match those of other implement
 - [ ] `$..*`
   Input:
   ```
-  [40, null, 42]
+  [
+    40,
+    null,
+    42
+  ]
   ```
   Expected output (in any order as no consensus on ordering exists):
   ```
@@ -313,7 +428,35 @@ The following queries provide results that do not match those of other implement
 - [ ] `$[?(@['key']==42)]`
   Input:
   ```
-  [{"key": 0}, {"key": 42}, {"key": -1}, {"key": 41}, {"key": 43}, {"key": 42.0001}, {"key": 41.9999}, {"key": 100}, {"some": "value"}]
+  [
+    {
+      "key": 0
+    },
+    {
+      "key": 42
+    },
+    {
+      "key": -1
+    },
+    {
+      "key": 41
+    },
+    {
+      "key": 43
+    },
+    {
+      "key": 42.0001
+    },
+    {
+      "key": 41.9999
+    },
+    {
+      "key": 100
+    },
+    {
+      "some": "value"
+    }
+  ]
   ```
   Expected output:
   ```
@@ -327,7 +470,23 @@ The following queries provide results that do not match those of other implement
 - [ ] `$[?(@['@key']==42)]`
   Input:
   ```
-  [{"@key": 0}, {"@key": 42}, {"key": 42}, {"@key": 43}, {"some": "value"}]
+  [
+    {
+      "@key": 0
+    },
+    {
+      "@key": 42
+    },
+    {
+      "key": 42
+    },
+    {
+      "@key": 43
+    },
+    {
+      "some": "value"
+    }
+  ]
   ```
   Expected output:
   ```
@@ -341,7 +500,16 @@ The following queries provide results that do not match those of other implement
 - [ ] `$[?(@[1]=='b')]`
   Input:
   ```
-  [["a", "b"], ["x", "y"]]
+  [
+    [
+      "a",
+      "b"
+    ],
+    [
+      "x",
+      "y"
+    ]
+  ]
   ```
   Expected output:
   ```
@@ -355,7 +523,11 @@ The following queries provide results that do not match those of other implement
 - [ ] `$[?(@.key==43)]`
   Input:
   ```
-  [{"key": 42}]
+  [
+    {
+      "key": 42
+    }
+  ]
   ```
   Expected output:
   ```
@@ -369,7 +541,17 @@ The following queries provide results that do not match those of other implement
 - [ ] `$[?(@.key=="hi@example.com")]`
   Input:
   ```
-  [{"key": "some"}, {"key": "value"}, {"key": "hi@example.com"}]
+  [
+    {
+      "key": "some"
+    },
+    {
+      "key": "value"
+    },
+    {
+      "key": "hi@example.com"
+    }
+  ]
   ```
   Expected output:
   ```
@@ -383,7 +565,17 @@ The following queries provide results that do not match those of other implement
 - [ ] `$[?(@.key=="some.value")]`
   Input:
   ```
-  [{"key": "some"}, {"key": "value"}, {"key": "some.value"}]
+  [
+    {
+      "key": "some"
+    },
+    {
+      "key": "value"
+    },
+    {
+      "key": "some.value"
+    }
+  ]
   ```
   Expected output:
   ```
@@ -397,7 +589,14 @@ The following queries provide results that do not match those of other implement
 - [ ] `$[?(@.key=='value')]`
   Input:
   ```
-  [{"key": "some"}, {"key": "value"}]
+  [
+    {
+      "key": "some"
+    },
+    {
+      "key": "value"
+    }
+  ]
   ```
   Expected output:
   ```
@@ -411,7 +610,15 @@ The following queries provide results that do not match those of other implement
 - [ ] `$`
   Input:
   ```
-  {"key": "value", "another key": {"complex": ["a", 1]}}
+  {
+    "key": "value",
+    "another key": {
+      "complex": [
+        "a",
+        1
+      ]
+    }
+  }
   ```
   Expected output:
   ```
@@ -419,7 +626,9 @@ The following queries provide results that do not match those of other implement
   ```
   Actual output:
   ```
-  [""]
+  [
+    ""
+  ]
   ```
 
 - [ ] `$`
@@ -461,13 +670,18 @@ The following queries provide results that do not match those of other implement
   ```
   Actual output:
   ```
-  [""]
+  [
+    ""
+  ]
   ```
 
 - [ ] `$['key','another']`
   Input:
   ```
-  {"key": "value", "another": "entry"}
+  {
+    "key": "value",
+    "another": "entry"
+  }
   ```
   Expected output:
   ```
@@ -481,7 +695,18 @@ The following queries provide results that do not match those of other implement
 - [ ] `$[0]['c','d']`
   Input:
   ```
-  [{"c": "cc1", "d": "dd1", "e": "ee1"}, {"c": "cc2", "d": "dd2", "e": "ee2"}]
+  [
+    {
+      "c": "cc1",
+      "d": "dd1",
+      "e": "ee1"
+    },
+    {
+      "c": "cc2",
+      "d": "dd2",
+      "e": "ee2"
+    }
+  ]
   ```
   Expected output:
   ```
@@ -495,7 +720,10 @@ The following queries provide results that do not match those of other implement
 - [ ] `$['missing','key']`
   Input:
   ```
-  {"key": "value", "another": "entry"}
+  {
+    "key": "value",
+    "another": "entry"
+  }
   ```
   Expected output:
   ```

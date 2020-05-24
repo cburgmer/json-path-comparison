@@ -6,7 +6,9 @@ The following queries provide results that do not match those of other implement
 - [ ] `$['key']`
   Input:
   ```
-  {"key": "value"}
+  {
+    "key": "value"
+  }
   ```
   Expected output:
   ```
@@ -20,7 +22,9 @@ The following queries provide results that do not match those of other implement
 - [ ] `$['missing']`
   Input:
   ```
-  {"key": "value"}
+  {
+    "key": "value"
+  }
   ```
   Expected output:
   ```
@@ -34,7 +38,16 @@ The following queries provide results that do not match those of other implement
 - [ ] `$['two.some']`
   Input:
   ```
-  {"one": {"key": "value"}, "two": {"some": "more", "key": "other value"}, "two.some": "42"}
+  {
+    "one": {
+      "key": "value"
+    },
+    "two": {
+      "some": "more",
+      "key": "other value"
+    },
+    "two.some": "42"
+  }
   ```
   Expected output:
   ```
@@ -48,7 +61,11 @@ The following queries provide results that do not match those of other implement
 - [ ] `$[-1]`
   Input:
   ```
-  ["first", "second", "third"]
+  [
+    "first",
+    "second",
+    "third"
+  ]
   ```
   Expected output:
   ```
@@ -76,7 +93,9 @@ The following queries provide results that do not match those of other implement
 - [ ] `$[1]`
   Input:
   ```
-  ["one element"]
+  [
+    "one element"
+  ]
   ```
   Expected output:
   ```
@@ -90,7 +109,11 @@ The following queries provide results that do not match those of other implement
 - [ ] `$['.*']`
   Input:
   ```
-  {"key": 42, ".*": 1, "": 10}
+  {
+    "key": 42,
+    ".*": 1,
+    "": 10
+  }
   ```
   Expected output:
   ```
@@ -104,7 +127,11 @@ The following queries provide results that do not match those of other implement
 - [ ] `$['ni.*']`
   Input:
   ```
-  {"nice": 42, "ni.*": 1, "mice": 100}
+  {
+    "nice": 42,
+    "ni.*": 1,
+    "mice": 100
+  }
   ```
   Expected output:
   ```
@@ -118,7 +145,18 @@ The following queries provide results that do not match those of other implement
 - [ ] `$['one','three'].key`
   Input:
   ```
-  {"one": {"key": "value"}, "two": {"k": "v"}, "three": {"some": "more", "key": "other value"}}
+  {
+    "one": {
+      "key": "value"
+    },
+    "two": {
+      "k": "v"
+    },
+    "three": {
+      "some": "more",
+      "key": "other value"
+    }
+  }
   ```
   Expected output:
   ```
@@ -132,7 +170,10 @@ The following queries provide results that do not match those of other implement
 - [ ] `$.key`
   Input:
   ```
-  [0, 1]
+  [
+    0,
+    1
+  ]
   ```
   Expected output:
   ```
@@ -146,7 +187,11 @@ The following queries provide results that do not match those of other implement
 - [ ] `$.id`
   Input:
   ```
-  [{"id": 2}]
+  [
+    {
+      "id": 2
+    }
+  ]
   ```
   Expected output:
   ```
@@ -160,7 +205,9 @@ The following queries provide results that do not match those of other implement
 - [ ] `$.missing`
   Input:
   ```
-  {"key": "value"}
+  {
+    "key": "value"
+  }
   ```
   Expected output:
   ```
@@ -174,7 +221,9 @@ The following queries provide results that do not match those of other implement
 - [ ] `$.key-dash`
   Input:
   ```
-  {"key-dash": "value"}
+  {
+    "key-dash": "value"
+  }
   ```
   Expected output:
   ```
@@ -188,7 +237,11 @@ The following queries provide results that do not match those of other implement
 - [ ] `$.2`
   Input:
   ```
-  {"a": "first", "2": "second", "b": "third"}
+  {
+    "a": "first",
+    "2": "second",
+    "b": "third"
+  }
   ```
   Expected output:
   ```
@@ -202,7 +255,35 @@ The following queries provide results that do not match those of other implement
 - [ ] `$[?(@['key']==42)]`
   Input:
   ```
-  [{"key": 0}, {"key": 42}, {"key": -1}, {"key": 41}, {"key": 43}, {"key": 42.0001}, {"key": 41.9999}, {"key": 100}, {"some": "value"}]
+  [
+    {
+      "key": 0
+    },
+    {
+      "key": 42
+    },
+    {
+      "key": -1
+    },
+    {
+      "key": 41
+    },
+    {
+      "key": 43
+    },
+    {
+      "key": 42.0001
+    },
+    {
+      "key": 41.9999
+    },
+    {
+      "key": 100
+    },
+    {
+      "some": "value"
+    }
+  ]
   ```
   Expected output:
   ```
@@ -216,7 +297,23 @@ The following queries provide results that do not match those of other implement
 - [ ] `$[?(@['@key']==42)]`
   Input:
   ```
-  [{"@key": 0}, {"@key": 42}, {"key": 42}, {"@key": 43}, {"some": "value"}]
+  [
+    {
+      "@key": 0
+    },
+    {
+      "@key": 42
+    },
+    {
+      "key": 42
+    },
+    {
+      "@key": 43
+    },
+    {
+      "some": "value"
+    }
+  ]
   ```
   Expected output:
   ```
@@ -230,7 +327,14 @@ The following queries provide results that do not match those of other implement
 - [ ] `$[?(@.key=='value')]`
   Input:
   ```
-  [{"key": "some"}, {"key": "value"}]
+  [
+    {
+      "key": "some"
+    },
+    {
+      "key": "value"
+    }
+  ]
   ```
   Expected output:
   ```
@@ -244,7 +348,10 @@ The following queries provide results that do not match those of other implement
 - [ ] `$['key','another']`
   Input:
   ```
-  {"key": "value", "another": "entry"}
+  {
+    "key": "value",
+    "another": "entry"
+  }
   ```
   Expected output:
   ```
@@ -258,7 +365,10 @@ The following queries provide results that do not match those of other implement
 - [ ] `$['missing','key']`
   Input:
   ```
-  {"key": "value", "another": "entry"}
+  {
+    "key": "value",
+    "another": "entry"
+  }
   ```
   Expected output:
   ```

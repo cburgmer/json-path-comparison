@@ -6,7 +6,34 @@ The following queries provide results that do not match those of other implement
 - [ ] `$[010:024:010]`
   Input:
   ```
-  [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25]
+  [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25
+  ]
   ```
   Expected output:
   ```
@@ -23,7 +50,11 @@ The following queries provide results that do not match those of other implement
 - [ ] `$[-1]`
   Input:
   ```
-  ["first", "second", "third"]
+  [
+    "first",
+    "second",
+    "third"
+  ]
   ```
   Expected output:
   ```
@@ -37,7 +68,9 @@ The following queries provide results that do not match those of other implement
 - [ ] `$.key-dash`
   Input:
   ```
-  {"key-dash": "value"}
+  {
+    "key-dash": "value"
+  }
   ```
   Expected output:
   ```
@@ -53,7 +86,9 @@ The following queries provide results that do not match those of other implement
 - [ ] `$.屬性`
   Input:
   ```
-  {"\u5c6c\u6027": "value"}
+  {
+    "\u5c6c\u6027": "value"
+  }
   ```
   Expected output:
   ```
@@ -125,7 +160,11 @@ The following queries provide results that do not match those of other implement
 - [ ] `$[ 0 , 1 ]`
   Input:
   ```
-  ["first", "second", "third"]
+  [
+    "first",
+    "second",
+    "third"
+  ]
   ```
   Expected output:
   ```

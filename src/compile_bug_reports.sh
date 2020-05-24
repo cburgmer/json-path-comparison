@@ -66,7 +66,7 @@ failing_query() {
     echo "- [ ] \`${selector}\`"
     {
         echo "Input:"
-        ./src/oneliner_json.py < "./queries/${query}/document.json" | code_block
+        ./src/pretty_json.py < "./queries/${query}/document.json" | code_block
         if [[ -f "./queries/${query}/ALLOW_UNORDERED" ]]; then
             echo "Expected output (in any order as no consensus on ordering exists):"
         else
@@ -76,7 +76,7 @@ failing_query() {
 
         if is_query_result_ok "${results_dir}/${query}/${implementation}"; then
             echo "Actual output:"
-            query_result_payload "${results_dir}/${query}/${implementation}" | code_block
+            query_result_payload "${results_dir}/${query}/${implementation}" | ./src/pretty_json.py | code_block
         else
             echo "Error:"
             query_result_payload "${results_dir}/${query}/${implementation}" | code_block

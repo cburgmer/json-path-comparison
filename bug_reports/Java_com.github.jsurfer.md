@@ -6,7 +6,10 @@ The following queries provide results that do not match those of other implement
 - [ ] `$[::]`
   Input:
   ```
-  ["first", "second"]
+  [
+    "first",
+    "second"
+  ]
   ```
   Expected output:
   ```
@@ -32,7 +35,11 @@ The following queries provide results that do not match those of other implement
 - [ ] `$[-1:]`
   Input:
   ```
-  ["first", "second", "third"]
+  [
+    "first",
+    "second",
+    "third"
+  ]
   ```
   Expected output:
   ```
@@ -40,13 +47,21 @@ The following queries provide results that do not match those of other implement
   ```
   Actual output:
   ```
-  ["first", "second", "third"]
+  [
+    "first",
+    "second",
+    "third"
+  ]
   ```
 
 - [ ] `$[-2:]`
   Input:
   ```
-  ["first", "second", "third"]
+  [
+    "first",
+    "second",
+    "third"
+  ]
   ```
   Expected output:
   ```
@@ -54,13 +69,23 @@ The following queries provide results that do not match those of other implement
   ```
   Actual output:
   ```
-  ["first", "second", "third"]
+  [
+    "first",
+    "second",
+    "third"
+  ]
   ```
 
 - [ ] `$[0:3:2]`
   Input:
   ```
-  ["first", "second", "third", "forth", "fifth"]
+  [
+    "first",
+    "second",
+    "third",
+    "forth",
+    "fifth"
+  ]
   ```
   Expected output:
   ```
@@ -86,7 +111,13 @@ The following queries provide results that do not match those of other implement
 - [ ] `$[0:3:1]`
   Input:
   ```
-  ["first", "second", "third", "forth", "fifth"]
+  [
+    "first",
+    "second",
+    "third",
+    "forth",
+    "fifth"
+  ]
   ```
   Expected output:
   ```
@@ -112,7 +143,34 @@ The following queries provide results that do not match those of other implement
 - [ ] `$[010:024:010]`
   Input:
   ```
-  [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25]
+  [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25
+  ]
   ```
   Expected output:
   ```
@@ -140,7 +198,13 @@ The following queries provide results that do not match those of other implement
 - [ ] `$[0:4:2]`
   Input:
   ```
-  ["first", "second", "third", "forth", "fifth"]
+  [
+    "first",
+    "second",
+    "third",
+    "forth",
+    "fifth"
+  ]
   ```
   Expected output:
   ```
@@ -166,7 +230,13 @@ The following queries provide results that do not match those of other implement
 - [ ] `$[1:3:]`
   Input:
   ```
-  ["first", "second", "third", "forth", "fifth"]
+  [
+    "first",
+    "second",
+    "third",
+    "forth",
+    "fifth"
+  ]
   ```
   Expected output:
   ```
@@ -192,7 +262,13 @@ The following queries provide results that do not match those of other implement
 - [ ] `$[::2]`
   Input:
   ```
-  ["first", "second", "third", "forth", "fifth"]
+  [
+    "first",
+    "second",
+    "third",
+    "forth",
+    "fifth"
+  ]
   ```
   Expected output:
   ```
@@ -218,7 +294,9 @@ The following queries provide results that do not match those of other implement
 - [ ] `$["key"]`
   Input:
   ```
-  {"key": "value"}
+  {
+    "key": "value"
+  }
   ```
   Expected output:
   ```
@@ -248,7 +326,11 @@ The following queries provide results that do not match those of other implement
 - [ ] `$[-1]`
   Input:
   ```
-  ["first", "second", "third"]
+  [
+    "first",
+    "second",
+    "third"
+  ]
   ```
   Expected output:
   ```
@@ -262,7 +344,9 @@ The following queries provide results that do not match those of other implement
 - [ ] `$.true`
   Input:
   ```
-  {"true": "value"}
+  {
+    "true": "value"
+  }
   ```
   Expected output:
   ```
@@ -288,7 +372,11 @@ The following queries provide results that do not match those of other implement
 - [ ] `$.2`
   Input:
   ```
-  {"a": "first", "2": "second", "b": "third"}
+  {
+    "a": "first",
+    "2": "second",
+    "b": "third"
+  }
   ```
   Expected output:
   ```
@@ -314,7 +402,17 @@ The following queries provide results that do not match those of other implement
 - [ ] `$[?(@.key=="hi@example.com")]`
   Input:
   ```
-  [{"key": "some"}, {"key": "value"}, {"key": "hi@example.com"}]
+  [
+    {
+      "key": "some"
+    },
+    {
+      "key": "value"
+    },
+    {
+      "key": "hi@example.com"
+    }
+  ]
   ```
   Expected output:
   ```
@@ -346,7 +444,17 @@ The following queries provide results that do not match those of other implement
 - [ ] `$[?(@.key=="some.value")]`
   Input:
   ```
-  [{"key": "some"}, {"key": "value"}, {"key": "some.value"}]
+  [
+    {
+      "key": "some"
+    },
+    {
+      "key": "value"
+    },
+    {
+      "key": "some.value"
+    }
+  ]
   ```
   Expected output:
   ```
@@ -420,7 +528,13 @@ The following queries provide results that do not match those of other implement
 - [ ] `$[4,1]`
   Input:
   ```
-  [1, 2, 3, 4, 5]
+  [
+    1,
+    2,
+    3,
+    4,
+    5
+  ]
   ```
   Expected output:
   ```
@@ -428,7 +542,10 @@ The following queries provide results that do not match those of other implement
   ```
   Actual output:
   ```
-  [2, 5]
+  [
+    2,
+    5
+  ]
   ```
 
 

@@ -6,7 +6,16 @@ The following queries provide results that do not match those of other implement
 - [ ] `$[?(@[1]=='b')]`
   Input:
   ```
-  [["a", "b"], ["x", "y"]]
+  [
+    [
+      "a",
+      "b"
+    ],
+    [
+      "x",
+      "y"
+    ]
+  ]
   ```
   Expected output:
   ```

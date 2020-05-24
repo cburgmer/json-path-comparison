@@ -6,7 +6,10 @@ The following queries provide results that do not match those of other implement
 - [ ] `$[0:0]`
   Input:
   ```
-  ["first", "second"]
+  [
+    "first",
+    "second"
+  ]
   ```
   Expected output:
   ```
@@ -14,13 +17,18 @@ The following queries provide results that do not match those of other implement
   ```
   Actual output:
   ```
-  ["first", "second"]
+  [
+    "first",
+    "second"
+  ]
   ```
 
 - [ ] `$["key"]`
   Input:
   ```
-  {"key": "value"}
+  {
+    "key": "value"
+  }
   ```
   Expected output:
   ```
@@ -34,7 +42,11 @@ The following queries provide results that do not match those of other implement
 - [ ] `$[-1]`
   Input:
   ```
-  ["first", "second", "third"]
+  [
+    "first",
+    "second",
+    "third"
+  ]
   ```
   Expected output:
   ```
@@ -48,7 +60,10 @@ The following queries provide results that do not match those of other implement
 - [ ] `$[':']`
   Input:
   ```
-  {":": "value", "another": "entry"}
+  {
+    ":": "value",
+    "another": "entry"
+  }
   ```
   Expected output:
   ```
@@ -62,7 +77,9 @@ The following queries provide results that do not match those of other implement
 - [ ] `$[']']`
   Input:
   ```
-  {"]": 42}
+  {
+    "]": 42
+  }
   ```
   Expected output:
   ```
@@ -76,7 +93,10 @@ The following queries provide results that do not match those of other implement
 - [ ] `$['@']`
   Input:
   ```
-  {"@": "value", "another": "entry"}
+  {
+    "@": "value",
+    "another": "entry"
+  }
   ```
   Expected output:
   ```
@@ -90,7 +110,10 @@ The following queries provide results that do not match those of other implement
 - [ ] `$['$']`
   Input:
   ```
-  {"$": "value", "another": "entry"}
+  {
+    "$": "value",
+    "another": "entry"
+  }
   ```
   Expected output:
   ```
@@ -98,13 +121,21 @@ The following queries provide results that do not match those of other implement
   ```
   Actual output:
   ```
-  [{"$": "value", "another": "entry"}]
+  [
+    {
+      "$": "value",
+      "another": "entry"
+    }
+  ]
   ```
 
 - [ ] `$[',']`
   Input:
   ```
-  {",": "value", "another": "entry"}
+  {
+    ",": "value",
+    "another": "entry"
+  }
   ```
   Expected output:
   ```
@@ -118,7 +149,10 @@ The following queries provide results that do not match those of other implement
 - [ ] `$['*']`
   Input:
   ```
-  {"*": "value", "another": "entry"}
+  {
+    "*": "value",
+    "another": "entry"
+  }
   ```
   Expected output:
   ```
@@ -126,13 +160,27 @@ The following queries provide results that do not match those of other implement
   ```
   Actual output:
   ```
-  ["value", "entry"]
+  [
+    "value",
+    "entry"
+  ]
   ```
 
 - [ ] `$['one','three'].key`
   Input:
   ```
-  {"one": {"key": "value"}, "two": {"k": "v"}, "three": {"some": "more", "key": "other value"}}
+  {
+    "one": {
+      "key": "value"
+    },
+    "two": {
+      "k": "v"
+    },
+    "three": {
+      "some": "more",
+      "key": "other value"
+    }
+  }
   ```
   Expected output:
   ```
@@ -160,7 +208,10 @@ The following queries provide results that do not match those of other implement
 - [ ] `$['key','another']`
   Input:
   ```
-  {"key": "value", "another": "entry"}
+  {
+    "key": "value",
+    "another": "entry"
+  }
   ```
   Expected output:
   ```
@@ -174,7 +225,18 @@ The following queries provide results that do not match those of other implement
 - [ ] `$[0]['c','d']`
   Input:
   ```
-  [{"c": "cc1", "d": "dd1", "e": "ee1"}, {"c": "cc2", "d": "dd2", "e": "ee2"}]
+  [
+    {
+      "c": "cc1",
+      "d": "dd1",
+      "e": "ee1"
+    },
+    {
+      "c": "cc2",
+      "d": "dd2",
+      "e": "ee2"
+    }
+  ]
   ```
   Expected output:
   ```
@@ -188,7 +250,10 @@ The following queries provide results that do not match those of other implement
 - [ ] `$['missing','key']`
   Input:
   ```
-  {"key": "value", "another": "entry"}
+  {
+    "key": "value",
+    "another": "entry"
+  }
   ```
   Expected output:
   ```
@@ -202,7 +267,11 @@ The following queries provide results that do not match those of other implement
 - [ ] `$[ 0 , 1 ]`
   Input:
   ```
-  ["first", "second", "third"]
+  [
+    "first",
+    "second",
+    "third"
+  ]
   ```
   Expected output:
   ```

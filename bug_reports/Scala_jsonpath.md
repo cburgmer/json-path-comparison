@@ -6,7 +6,28 @@ The following queries provide results that do not match those of other implement
 - [ ] `$..[0]`
   Input:
   ```
-  ["first", {"key": ["first nested", {"more": [{"nested": ["deepest", "second"]}, ["more", "values"]]}]}]
+  [
+    "first",
+    {
+      "key": [
+        "first nested",
+        {
+          "more": [
+            {
+              "nested": [
+                "deepest",
+                "second"
+              ]
+            },
+            [
+              "more",
+              "values"
+            ]
+          ]
+        }
+      ]
+    }
+  ]
   ```
   Expected output (in any order as no consensus on ordering exists):
   ```
@@ -20,7 +41,11 @@ The following queries provide results that do not match those of other implement
 - [ ] `$['']`
   Input:
   ```
-  {"": 42, "''": 123, "\"\"": 222}
+  {
+    "": 42,
+    "''": 123,
+    "\"\"": 222
+  }
   ```
   Expected output:
   ```
@@ -34,7 +59,15 @@ The following queries provide results that do not match those of other implement
 - [ ] `$.*[1]`
   Input:
   ```
-  [[1], [2, 3]]
+  [
+    [
+      1
+    ],
+    [
+      2,
+      3
+    ]
+  ]
   ```
   Expected output:
   ```
@@ -48,7 +81,10 @@ The following queries provide results that do not match those of other implement
 - [ ] `$['*']`
   Input:
   ```
-  {"*": "value", "another": "entry"}
+  {
+    "*": "value",
+    "another": "entry"
+  }
   ```
   Expected output:
   ```
@@ -56,13 +92,25 @@ The following queries provide results that do not match those of other implement
   ```
   Actual output:
   ```
-  ["value", "entry"]
+  [
+    "value",
+    "entry"
+  ]
   ```
 
 - [ ] `$..[*]`
   Input:
   ```
-  {"key": "value", "another key": {"complex": "string", "primitives": [0, 1]}}
+  {
+    "key": "value",
+    "another key": {
+      "complex": "string",
+      "primitives": [
+        0,
+        1
+      ]
+    }
+  }
   ```
   Expected output (in any order as no consensus on ordering exists):
   ```
@@ -76,7 +124,17 @@ The following queries provide results that do not match those of other implement
 - [ ] `$[*]`
   Input:
   ```
-  {"some": "string", "int": 42, "object": {"key": "value"}, "array": [0, 1]}
+  {
+    "some": "string",
+    "int": 42,
+    "object": {
+      "key": "value"
+    },
+    "array": [
+      0,
+      1
+    ]
+  }
   ```
   Expected output (in any order as no consensus on ordering exists):
   ```
@@ -90,7 +148,22 @@ The following queries provide results that do not match those of other implement
 - [ ] `$..key`
   Input:
   ```
-  {"object": {"key": "value", "array": [{"key": "something"}, {"key": {"key": "russian dolls"}}]}, "key": "top"}
+  {
+    "object": {
+      "key": "value",
+      "array": [
+        {
+          "key": "something"
+        },
+        {
+          "key": {
+            "key": "russian dolls"
+          }
+        }
+      ]
+    },
+    "key": "top"
+  }
   ```
   Expected output (in any order as no consensus on ordering exists):
   ```
@@ -98,13 +171,26 @@ The following queries provide results that do not match those of other implement
   ```
   Actual output:
   ```
-  ["something", "top", "value", {"key": "russian dolls"}]
+  [
+    "something",
+    "top",
+    "value",
+    {
+      "key": "russian dolls"
+    }
+  ]
   ```
 
 - [ ] `$.*.bar.*`
   Input:
   ```
-  [{"bar": [42]}]
+  [
+    {
+      "bar": [
+        42
+      ]
+    }
+  ]
   ```
   Expected output:
   ```
@@ -118,7 +204,18 @@ The following queries provide results that do not match those of other implement
 - [ ] `$.*.*`
   Input:
   ```
-  [[1, 2, 3], [4, 5, 6]]
+  [
+    [
+      1,
+      2,
+      3
+    ],
+    [
+      4,
+      5,
+      6
+    ]
+  ]
   ```
   Expected output:
   ```
@@ -132,7 +229,16 @@ The following queries provide results that do not match those of other implement
 - [ ] `$..*`
   Input:
   ```
-  {"key": "value", "another key": {"complex": "string", "primitives": [0, 1]}}
+  {
+    "key": "value",
+    "another key": {
+      "complex": "string",
+      "primitives": [
+        0,
+        1
+      ]
+    }
+  }
   ```
   Expected output (in any order as no consensus on ordering exists):
   ```
@@ -140,13 +246,43 @@ The following queries provide results that do not match those of other implement
   ```
   Actual output:
   ```
-  ["string", "value", 0, 1, [0, 1], {"another key": {"complex": "string", "primitives": [0, 1]}, "key": "value"}, {"complex": "string", "primitives": [0, 1]}]
+  [
+    "string",
+    "value",
+    0,
+    1,
+    [
+      0,
+      1
+    ],
+    {
+      "another key": {
+        "complex": "string",
+        "primitives": [
+          0,
+          1
+        ]
+      },
+      "key": "value"
+    },
+    {
+      "complex": "string",
+      "primitives": [
+        0,
+        1
+      ]
+    }
+  ]
   ```
 
 - [ ] `$..*`
   Input:
   ```
-  [40, null, 42]
+  [
+    40,
+    null,
+    42
+  ]
   ```
   Expected output (in any order as no consensus on ordering exists):
   ```
@@ -154,7 +290,16 @@ The following queries provide results that do not match those of other implement
   ```
   Actual output:
   ```
-  [40, 42, [40, null, 42], null]
+  [
+    40,
+    42,
+    [
+      40,
+      null,
+      42
+    ],
+    null
+  ]
   ```
 
 - [ ] `$..*`
@@ -168,13 +313,25 @@ The following queries provide results that do not match those of other implement
   ```
   Actual output:
   ```
-  [42]
+  [
+    42
+  ]
   ```
 
 - [ ] `$.*`
   Input:
   ```
-  ["string", 42, {"key": "value"}, [0, 1]]
+  [
+    "string",
+    42,
+    {
+      "key": "value"
+    },
+    [
+      0,
+      1
+    ]
+  ]
   ```
   Expected output:
   ```

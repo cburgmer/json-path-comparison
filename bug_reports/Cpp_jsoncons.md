@@ -6,7 +6,10 @@ The following queries provide results that do not match those of other implement
 - [ ] `$[::]`
   Input:
   ```
-  ["first", "second"]
+  [
+    "first",
+    "second"
+  ]
   ```
   Expected output:
   ```
@@ -20,7 +23,10 @@ The following queries provide results that do not match those of other implement
 - [ ] `$[0:0]`
   Input:
   ```
-  ["first", "second"]
+  [
+    "first",
+    "second"
+  ]
   ```
   Expected output:
   ```
@@ -34,7 +40,34 @@ The following queries provide results that do not match those of other implement
 - [ ] `$[010:024:010]`
   Input:
   ```
-  [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25]
+  [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25
+  ]
   ```
   Expected output:
   ```
@@ -42,13 +75,22 @@ The following queries provide results that do not match those of other implement
   ```
   Actual output:
   ```
-  [8, 16]
+  [
+    8,
+    16
+  ]
   ```
 
 - [ ] `$[1:3:]`
   Input:
   ```
-  ["first", "second", "third", "forth", "fifth"]
+  [
+    "first",
+    "second",
+    "third",
+    "forth",
+    "fifth"
+  ]
   ```
   Expected output:
   ```

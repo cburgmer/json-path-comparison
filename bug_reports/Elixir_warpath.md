@@ -6,7 +6,9 @@ The following queries provide results that do not match those of other implement
 - [ ] `$[1]`
   Input:
   ```
-  ["one element"]
+  [
+    "one element"
+  ]
   ```
   Expected output:
   ```
@@ -21,7 +23,10 @@ The following queries provide results that do not match those of other implement
 - [ ] `$.key`
   Input:
   ```
-  [0, 1]
+  [
+    0,
+    1
+  ]
   ```
   Expected output:
   ```
@@ -36,7 +41,11 @@ The following queries provide results that do not match those of other implement
 - [ ] `$.id`
   Input:
   ```
-  [{"id": 2}]
+  [
+    {
+      "id": 2
+    }
+  ]
   ```
   Expected output:
   ```
@@ -51,7 +60,9 @@ The following queries provide results that do not match those of other implement
 - [ ] `$.in`
   Input:
   ```
-  {"in": "value"}
+  {
+    "in": "value"
+  }
   ```
   Expected output:
   ```
@@ -66,7 +77,9 @@ The following queries provide results that do not match those of other implement
 - [ ] `$.true`
   Input:
   ```
-  {"true": "value"}
+  {
+    "true": "value"
+  }
   ```
   Expected output:
   ```
