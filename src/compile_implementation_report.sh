@@ -15,7 +15,7 @@ all_queries() {
 
 is_implementation_in_majority_for() {
     local query="$1"
-    grep "^${implementation}\$" < "${majority_dir}/${query}" > /dev/null
+    tail -n +4 < "${majority_dir}/${query}" | grep "^${implementation}\$" > /dev/null
 }
 
 has_consensus() {

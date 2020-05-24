@@ -101,7 +101,8 @@ def main():
         print(candidate_ranking[-1]["type"])
         print(candidate_ranking[-1]["consensus"])
         print()
-        print("\n".join(candidate_ranking[-1]["paths"]))
+        for path in candidate_ranking[-1]["paths"]:
+            print(implementation_name(path))
 
 if __name__ == '__main__':
     sys.exit(main())

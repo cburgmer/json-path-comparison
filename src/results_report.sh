@@ -17,7 +17,7 @@ all_implementations_and_proposals() {
 
 is_in_majority() {
     local implementation="$1"
-    grep "^${implementation}\$" < "${majority_dir}/${query}" > /dev/null
+    tail -n +4 < "${majority_dir}/${query}" | grep "^${implementation}\$" > /dev/null
 }
 
 has_consensus() {

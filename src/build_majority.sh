@@ -14,12 +14,8 @@ all_implementation_results() {
     done <<< "$(all_implementations)"
 }
 
-majority_members() {
-    all_implementation_results | ./src/majority.py | tail -n +4
-}
-
 main() {
-    majority_members | xargs -n1 basename
+    all_implementation_results | ./src/majority.py
 }
 
 main

@@ -23,7 +23,7 @@ all_queries() {
 is_in_majority() {
     local query="$1"
     local implementation="$2"
-    grep "^${implementation}\$" < "${majority_dir}/${query}" > /dev/null
+    tail -n +4 < "${majority_dir}/${query}" | grep "^${implementation}\$" > /dev/null
 }
 
 is_proposal_in_majority() {
