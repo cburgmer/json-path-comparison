@@ -33,13 +33,6 @@ def is_no_match(result_path):
     return ((payload is None and is_from_scalar_implementation(result_path)) or
             (payload == [] and is_from_list_implementation(result_path)))
 
-
-def no_match_majority(result_paths):
-    result_paths_with_no_match = [path for path in result_paths if is_no_match(path)]
-
-    return [result_paths_with_no_match]
-
-
 def build_histogram(pairs):
     histogram = defaultdict(lambda: [])
     for key, value in pairs:
@@ -47,17 +40,25 @@ def build_histogram(pairs):
 
     return histogram
 
+
+def no_match_majority(result_paths):
+    result_paths_with_no_match = [path for path in result_paths if is_no_match(path)]
+
+    canonical_consensus_candidate = []
+    return [("no_match", canonical_consensus_candidate, result_paths_with_no_match)]
+
 def single_match_majority(result_paths):
     result_payloads = []
     for result_path in result_paths:
         result_type, payload = query_result_payload(result_path)
         if result_type != "OK":
             continue
-        canonical_payload = [payload] if is_from_scalar_implementation(result_path) else payload
-        result_payloads.append(tuple([result_path, json.dumps(canonical_payload)]))
+        canonical_consensus_candidate = ([payload]
+                                         if is_from_scalar_implementation(result_path)
+                                         else payload)
+        result_payloads.append(tuple([result_path, json.dumps(canonical_consensus_candidate)]))
 
-    return list(build_histogram(result_payloads).values())
-
+    return [("single_match", canonical_payload, paths) for canonical_payload, paths in build_histogram(result_payloads).items()]
 
 def multiple_matches_majority(result_paths):
     result_payloads = []
@@ -67,18 +68,27 @@ def multiple_matches_majority(result_paths):
             continue
         result_payloads.append(tuple([result_path, json.dumps(payload)]))
 
-    return list(build_histogram(result_payloads).values())
+    return [("multiple_matches", payload, paths) for payload, paths in build_histogram(result_payloads).items()]
 
 
 def calculate_majority_candidates(result_paths):
-    majority_candidates = (no_match_majority(result_paths) +
+    majority_candidates = (multiple_matches_majority(result_paths) +
                            single_match_majority(result_paths) +
-                           multiple_matches_majority(result_paths))
-    unique_candidates = set([tuple(sorted(candidate)) for candidate in majority_candidates])
-    return unique_candidates
+                           no_match_majority(result_paths))
 
-def is_clear_majority(ranking):
-    return len(ranking) < 2 or len(ranking[-1]) != len(ranking[-2])
+    unique_candidates = defaultdict(lambda: None)
+    for match_type, canonical_consensus_candidate, paths in majority_candidates:
+        key = tuple(sorted(paths))
+        unique_candidates[key] = (unique_candidates[key] or
+                                  {"type": match_type,
+                                   "consensus": canonical_consensus_candidate,
+                                   "paths": paths})
+
+    return unique_candidates.values()
+
+def is_clear_majority(candidate_ranking):
+    return (len(candidate_ranking) < 2 or
+            len(candidate_ranking[-1]["paths"]) != len(candidate_ranking[-2]["paths"]))
 
 
 def main():
@@ -86,9 +96,12 @@ def main():
 
     majority_candidates = calculate_majority_candidates(result_paths)
 
-    ranking = sorted(majority_candidates, key=len)
-    if is_clear_majority(ranking):
-        print("\n".join(ranking[-1]))
+    candidate_ranking = sorted(majority_candidates, key=lambda candidate: len(candidate["paths"]))
+    if is_clear_majority(candidate_ranking):
+        print(candidate_ranking[-1]["type"])
+        print(candidate_ranking[-1]["consensus"])
+        print()
+        print("\n".join(candidate_ranking[-1]["paths"]))
 
 if __name__ == '__main__':
     sys.exit(main())

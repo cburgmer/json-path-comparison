@@ -15,7 +15,7 @@ all_implementation_results() {
 }
 
 majority_members() {
-    all_implementation_results | ./src/majority.py
+    all_implementation_results | ./src/majority.py | tail -n +4
 }
 
 main() {
