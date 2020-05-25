@@ -9,7 +9,7 @@ def main():
         query = parse(selector)
     except Exception as e:
         print(repr(e))
-        sys.exit(1)
+        sys.exit(2)
 
     j = json.loads(sys.stdin.read())
     try:

@@ -13,7 +13,7 @@ try {
     $r =  $obj->get($argv[1]);
 } catch (InvalidJsonPathException $e) {
     print "Invalid JSONPath error: '" . $e->getMessage() . "'\r\n";
-    die(1);
+    die(2);
 } catch (DivisionByZeroError $e) {
     print "Error: '" . $e->getMessage() . "'\r\n";
     die(1);

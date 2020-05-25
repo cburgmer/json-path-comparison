@@ -22,9 +22,18 @@ namespace Dotnet_Manatee.Json
             
             var o = JsonValue.Parse(jsonString);
             var selector = args[0];
+            JsonPath path = null;
             try
             {
-                var path = JsonPath.Parse(selector);
+                path = JsonPath.Parse(selector);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                Environment.Exit(2);
+            }
+            try
+            {
                 var results = path.Evaluate(o);
                 Console.WriteLine(results.ToString());
             }

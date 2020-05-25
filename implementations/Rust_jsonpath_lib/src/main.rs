@@ -14,11 +14,24 @@ fn main() {
     let query = env::args().nth(1).unwrap();
 
     let json = serde_json::from_reader(io::stdin()).unwrap();
-    let mut selector = jsonpath::selector(&json);
 
-    let result = selector(&query[..]).unwrap_or_else(|err| {
+
+    let mut selector = jsonpath::Selector::new();
+
+    let path = selector
+        .str_path(&query[..])
+        .unwrap_or_else(|err| {
+            println!("{}", err);
+            process::exit(2);
+        });
+
+    let result = path
+        .value(&json)
+        .select()
+        .unwrap_or_else(|err| {
         println!("{}", err);
         process::exit(1);
     });
+
     serde_json::to_writer(io::stdout(), &result).unwrap();
 }

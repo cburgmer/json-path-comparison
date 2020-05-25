@@ -29,6 +29,11 @@ namespace Dotnet_Json.NET
                 var results = o.SelectTokens(selector);
                 Console.WriteLine(JArray.FromObject(results).ToString());
             }
+            catch (JsonException e)
+            {
+                Console.WriteLine(e.Message);
+                Environment.Exit(2);
+            }
             catch (Exception e)
             {
                 Console.WriteLine(e.Message);

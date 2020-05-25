@@ -54,18 +54,18 @@ int main (int argc, const char * argv[]) {
     }
 
     SMJJSONPath *jsonPath = [[SMJJSONPath alloc] initWithJSONPathString:selector error:&error];
-    SMJConfiguration *configuration = [SMJConfiguration defaultConfiguration];
     if (error) {
         NSLog(@"%@", error.localizedDescription);
-        return 1;
+        return 2;
     }
 
+    SMJConfiguration *configuration = [SMJConfiguration defaultConfiguration];
     id result;
     @try  {
         result = [jsonPath resultForJSONObject:jsonObject configuration:configuration error:&error];
         if (error) {
             NSLog(@"%@", error.localizedDescription);
-            return 1;
+            return 3;
         }
     } @catch (NSException *exception) {
         NSLog(@"%@ %@ ", exception.name, exception.reason);

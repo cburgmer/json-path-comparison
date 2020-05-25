@@ -1,6 +1,7 @@
 package query
 
 import io.gatling.jsonpath.JsonPath
+import io.gatling.jsonpath.JPError
 
 import com.fasterxml.jackson.databind.{ JsonNode, ObjectMapper }
 import scala.collection.JavaConverters._
@@ -34,8 +35,16 @@ object App {
 
         mapper.writeValue(System.out, node);
       case Left(e) =>
-        println(e)
-        sys.exit(1)
+        e match {
+          case e: JPError => {
+            println(e)
+            sys.exit(2)
+          }
+          case _ => {
+            println(e)
+            sys.exit(1)
+          }
+        }
     }
   }
 }
