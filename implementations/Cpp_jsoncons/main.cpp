@@ -17,6 +17,9 @@ int main(int argc, char *argv[]) {
     try {
         json result = jsonpath::json_query(root, path);
         std::cout << result << "\n";
+    } catch (const jsonpath::jsonpath_error& e) {
+        std::cout << e.what() << "\n";
+        return 2;
     } catch (const std::exception& e) {
         std::cout << e.what() << "\n";
         return 1;

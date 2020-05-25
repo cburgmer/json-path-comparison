@@ -58,7 +58,7 @@ main (int argc, char *argv[])
       g_error_free (error);
       g_object_unref (path);
       g_object_unref (parser);
-      return EXIT_FAILURE;
+      return 2;
     }
 
   result = json_path_match (path, root);

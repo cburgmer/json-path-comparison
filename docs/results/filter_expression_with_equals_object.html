@@ -284,22 +284,7 @@ line 1:12 token recognition error at: '"'
 line 1:14 token recognition error at: '"'
 line 1:16 token recognition error at: '"'
 line 1:9 no viable alternative at input '@.d=={'
-Exception in thread "main" org.antlr.v4.runtime.misc.ParseCancellationException
-    at org.antlr.v4.runtime.BailErrorStrategy.recover(BailErrorStrategy.java:51)
-    at org.jsfr.json.compiler.JsonPathParser.filterExpr(JsonPathParser.java:947)
-    at org.jsfr.json.compiler.JsonPathParser.filter(JsonPathParser.java:768)
-    at org.jsfr.json.compiler.JsonPathParser.relativePath(JsonPathParser.java:307)
-    at org.jsfr.json.compiler.JsonPathParser.path(JsonPathParser.java:159)
-    at org.jsfr.json.compiler.JsonPathCompiler.compile(JsonPathCompiler.java:283)
-    at org.jsfr.json.compiler.JsonPathCompiler.compile(JsonPathCompiler.java:273)
-    at org.jsfr.json.JsonSurfer.collectAll(JsonSurfer.java:284)
-    at query.App.main(App.java:27)
-Caused by: org.antlr.v4.runtime.NoViableAltException
-    at org.antlr.v4.runtime.atn.ParserATNSimulator.noViableAlt(ParserATNSimulator.java:2026)
-    at org.antlr.v4.runtime.atn.ParserATNSimulator.execATN(ParserATNSimulator.java:467)
-    at org.antlr.v4.runtime.atn.ParserATNSimulator.adaptivePredict(ParserATNSimulator.java:393)
-    at org.jsfr.json.compiler.JsonPathParser.filterExpr(JsonPathParser.java:843)
-    ... 7 more
+org.antlr.v4.runtime.misc.ParseCancellationException
 </code></pre>
 
 <h4 id="Kotlin_com.nfeld.jsonpathlite">

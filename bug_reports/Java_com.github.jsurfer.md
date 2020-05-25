@@ -17,19 +17,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  Exception in thread "main" org.antlr.v4.runtime.misc.ParseCancellationException
-  	at org.antlr.v4.runtime.BailErrorStrategy.recoverInline(BailErrorStrategy.java:66)
-  	at org.antlr.v4.runtime.Parser.match(Parser.java:206)
-  	at org.jsfr.json.compiler.JsonPathParser.slicing(JsonPathParser.java:636)
-  	at org.jsfr.json.compiler.JsonPathParser.relativePath(JsonPathParser.java:265)
-  	at org.jsfr.json.compiler.JsonPathParser.path(JsonPathParser.java:159)
-  	at org.jsfr.json.compiler.JsonPathCompiler.compile(JsonPathCompiler.java:283)
-  	at org.jsfr.json.compiler.JsonPathCompiler.compile(JsonPathCompiler.java:273)
-  	at org.jsfr.json.JsonSurfer.collectAll(JsonSurfer.java:284)
-  	at query.App.main(App.java:27)
-  Caused by: org.antlr.v4.runtime.InputMismatchException
-  	at org.antlr.v4.runtime.BailErrorStrategy.recoverInline(BailErrorStrategy.java:61)
-  	... 8 more
+  org.antlr.v4.runtime.misc.ParseCancellationException
   ```
 
 - [ ] `$[-1:]`
@@ -93,19 +81,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  Exception in thread "main" org.antlr.v4.runtime.misc.ParseCancellationException
-  	at org.antlr.v4.runtime.BailErrorStrategy.recoverInline(BailErrorStrategy.java:66)
-  	at org.antlr.v4.runtime.Parser.match(Parser.java:206)
-  	at org.jsfr.json.compiler.JsonPathParser.slicing(JsonPathParser.java:636)
-  	at org.jsfr.json.compiler.JsonPathParser.relativePath(JsonPathParser.java:265)
-  	at org.jsfr.json.compiler.JsonPathParser.path(JsonPathParser.java:159)
-  	at org.jsfr.json.compiler.JsonPathCompiler.compile(JsonPathCompiler.java:283)
-  	at org.jsfr.json.compiler.JsonPathCompiler.compile(JsonPathCompiler.java:273)
-  	at org.jsfr.json.JsonSurfer.collectAll(JsonSurfer.java:284)
-  	at query.App.main(App.java:27)
-  Caused by: org.antlr.v4.runtime.InputMismatchException
-  	at org.antlr.v4.runtime.BailErrorStrategy.recoverInline(BailErrorStrategy.java:61)
-  	... 8 more
+  org.antlr.v4.runtime.misc.ParseCancellationException
   ```
 
 - [ ] `$[0:3:1]`
@@ -125,19 +101,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  Exception in thread "main" org.antlr.v4.runtime.misc.ParseCancellationException
-  	at org.antlr.v4.runtime.BailErrorStrategy.recoverInline(BailErrorStrategy.java:66)
-  	at org.antlr.v4.runtime.Parser.match(Parser.java:206)
-  	at org.jsfr.json.compiler.JsonPathParser.slicing(JsonPathParser.java:636)
-  	at org.jsfr.json.compiler.JsonPathParser.relativePath(JsonPathParser.java:265)
-  	at org.jsfr.json.compiler.JsonPathParser.path(JsonPathParser.java:159)
-  	at org.jsfr.json.compiler.JsonPathCompiler.compile(JsonPathCompiler.java:283)
-  	at org.jsfr.json.compiler.JsonPathCompiler.compile(JsonPathCompiler.java:273)
-  	at org.jsfr.json.JsonSurfer.collectAll(JsonSurfer.java:284)
-  	at query.App.main(App.java:27)
-  Caused by: org.antlr.v4.runtime.InputMismatchException
-  	at org.antlr.v4.runtime.BailErrorStrategy.recoverInline(BailErrorStrategy.java:61)
-  	... 8 more
+  org.antlr.v4.runtime.misc.ParseCancellationException
   ```
 
 - [ ] `$[010:024:010]`
@@ -179,20 +143,7 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   line 1:2 no viable alternative at input '[010'
-  Exception in thread "main" org.antlr.v4.runtime.misc.ParseCancellationException
-  	at org.antlr.v4.runtime.BailErrorStrategy.recover(BailErrorStrategy.java:51)
-  	at org.jsfr.json.compiler.JsonPathParser.relativePath(JsonPathParser.java:315)
-  	at org.jsfr.json.compiler.JsonPathParser.path(JsonPathParser.java:159)
-  	at org.jsfr.json.compiler.JsonPathCompiler.compile(JsonPathCompiler.java:283)
-  	at org.jsfr.json.compiler.JsonPathCompiler.compile(JsonPathCompiler.java:273)
-  	at org.jsfr.json.JsonSurfer.collectAll(JsonSurfer.java:284)
-  	at query.App.main(App.java:27)
-  Caused by: org.antlr.v4.runtime.NoViableAltException
-  	at org.antlr.v4.runtime.atn.ParserATNSimulator.noViableAlt(ParserATNSimulator.java:2026)
-  	at org.antlr.v4.runtime.atn.ParserATNSimulator.execATN(ParserATNSimulator.java:467)
-  	at org.antlr.v4.runtime.atn.ParserATNSimulator.adaptivePredict(ParserATNSimulator.java:393)
-  	at org.jsfr.json.compiler.JsonPathParser.relativePath(JsonPathParser.java:232)
-  	... 5 more
+  org.antlr.v4.runtime.misc.ParseCancellationException
   ```
 
 - [ ] `$[0:4:2]`
@@ -212,19 +163,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  Exception in thread "main" org.antlr.v4.runtime.misc.ParseCancellationException
-  	at org.antlr.v4.runtime.BailErrorStrategy.recoverInline(BailErrorStrategy.java:66)
-  	at org.antlr.v4.runtime.Parser.match(Parser.java:206)
-  	at org.jsfr.json.compiler.JsonPathParser.slicing(JsonPathParser.java:636)
-  	at org.jsfr.json.compiler.JsonPathParser.relativePath(JsonPathParser.java:265)
-  	at org.jsfr.json.compiler.JsonPathParser.path(JsonPathParser.java:159)
-  	at org.jsfr.json.compiler.JsonPathCompiler.compile(JsonPathCompiler.java:283)
-  	at org.jsfr.json.compiler.JsonPathCompiler.compile(JsonPathCompiler.java:273)
-  	at org.jsfr.json.JsonSurfer.collectAll(JsonSurfer.java:284)
-  	at query.App.main(App.java:27)
-  Caused by: org.antlr.v4.runtime.InputMismatchException
-  	at org.antlr.v4.runtime.BailErrorStrategy.recoverInline(BailErrorStrategy.java:61)
-  	... 8 more
+  org.antlr.v4.runtime.misc.ParseCancellationException
   ```
 
 - [ ] `$[1:3:]`
@@ -244,19 +183,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  Exception in thread "main" org.antlr.v4.runtime.misc.ParseCancellationException
-  	at org.antlr.v4.runtime.BailErrorStrategy.recoverInline(BailErrorStrategy.java:66)
-  	at org.antlr.v4.runtime.Parser.match(Parser.java:206)
-  	at org.jsfr.json.compiler.JsonPathParser.slicing(JsonPathParser.java:636)
-  	at org.jsfr.json.compiler.JsonPathParser.relativePath(JsonPathParser.java:265)
-  	at org.jsfr.json.compiler.JsonPathParser.path(JsonPathParser.java:159)
-  	at org.jsfr.json.compiler.JsonPathCompiler.compile(JsonPathCompiler.java:283)
-  	at org.jsfr.json.compiler.JsonPathCompiler.compile(JsonPathCompiler.java:273)
-  	at org.jsfr.json.JsonSurfer.collectAll(JsonSurfer.java:284)
-  	at query.App.main(App.java:27)
-  Caused by: org.antlr.v4.runtime.InputMismatchException
-  	at org.antlr.v4.runtime.BailErrorStrategy.recoverInline(BailErrorStrategy.java:61)
-  	... 8 more
+  org.antlr.v4.runtime.misc.ParseCancellationException
   ```
 
 - [ ] `$[::2]`
@@ -276,19 +203,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  Exception in thread "main" org.antlr.v4.runtime.misc.ParseCancellationException
-  	at org.antlr.v4.runtime.BailErrorStrategy.recoverInline(BailErrorStrategy.java:66)
-  	at org.antlr.v4.runtime.Parser.match(Parser.java:206)
-  	at org.jsfr.json.compiler.JsonPathParser.slicing(JsonPathParser.java:636)
-  	at org.jsfr.json.compiler.JsonPathParser.relativePath(JsonPathParser.java:265)
-  	at org.jsfr.json.compiler.JsonPathParser.path(JsonPathParser.java:159)
-  	at org.jsfr.json.compiler.JsonPathCompiler.compile(JsonPathCompiler.java:283)
-  	at org.jsfr.json.compiler.JsonPathCompiler.compile(JsonPathCompiler.java:273)
-  	at org.jsfr.json.JsonSurfer.collectAll(JsonSurfer.java:284)
-  	at query.App.main(App.java:27)
-  Caused by: org.antlr.v4.runtime.InputMismatchException
-  	at org.antlr.v4.runtime.BailErrorStrategy.recoverInline(BailErrorStrategy.java:61)
-  	... 8 more
+  org.antlr.v4.runtime.misc.ParseCancellationException
   ```
 
 - [ ] `$["key"]`
@@ -307,20 +222,7 @@ The following queries provide results that do not match those of other implement
   line 1:2 token recognition error at: '"'
   line 1:6 token recognition error at: '"'
   line 1:3 no viable alternative at input '[key'
-  Exception in thread "main" org.antlr.v4.runtime.misc.ParseCancellationException
-  	at org.antlr.v4.runtime.BailErrorStrategy.recover(BailErrorStrategy.java:51)
-  	at org.jsfr.json.compiler.JsonPathParser.relativePath(JsonPathParser.java:315)
-  	at org.jsfr.json.compiler.JsonPathParser.path(JsonPathParser.java:159)
-  	at org.jsfr.json.compiler.JsonPathCompiler.compile(JsonPathCompiler.java:283)
-  	at org.jsfr.json.compiler.JsonPathCompiler.compile(JsonPathCompiler.java:273)
-  	at org.jsfr.json.JsonSurfer.collectAll(JsonSurfer.java:284)
-  	at query.App.main(App.java:27)
-  Caused by: org.antlr.v4.runtime.NoViableAltException
-  	at org.antlr.v4.runtime.atn.ParserATNSimulator.noViableAlt(ParserATNSimulator.java:2026)
-  	at org.antlr.v4.runtime.atn.ParserATNSimulator.execATN(ParserATNSimulator.java:467)
-  	at org.antlr.v4.runtime.atn.ParserATNSimulator.adaptivePredict(ParserATNSimulator.java:393)
-  	at org.jsfr.json.compiler.JsonPathParser.relativePath(JsonPathParser.java:232)
-  	... 5 more
+  org.antlr.v4.runtime.misc.ParseCancellationException
   ```
 
 - [ ] `$[-1]`
@@ -354,19 +256,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  Exception in thread "main" org.antlr.v4.runtime.misc.ParseCancellationException
-  	at org.antlr.v4.runtime.BailErrorStrategy.recoverInline(BailErrorStrategy.java:66)
-  	at org.antlr.v4.runtime.Parser.match(Parser.java:206)
-  	at org.jsfr.json.compiler.JsonPathParser.childNode(JsonPathParser.java:672)
-  	at org.jsfr.json.compiler.JsonPathParser.relativePath(JsonPathParser.java:272)
-  	at org.jsfr.json.compiler.JsonPathParser.path(JsonPathParser.java:159)
-  	at org.jsfr.json.compiler.JsonPathCompiler.compile(JsonPathCompiler.java:283)
-  	at org.jsfr.json.compiler.JsonPathCompiler.compile(JsonPathCompiler.java:273)
-  	at org.jsfr.json.JsonSurfer.collectAll(JsonSurfer.java:284)
-  	at query.App.main(App.java:27)
-  Caused by: org.antlr.v4.runtime.InputMismatchException
-  	at org.antlr.v4.runtime.BailErrorStrategy.recoverInline(BailErrorStrategy.java:61)
-  	... 8 more
+  org.antlr.v4.runtime.misc.ParseCancellationException
   ```
 
 - [ ] `$.2`
@@ -384,19 +274,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  Exception in thread "main" org.antlr.v4.runtime.misc.ParseCancellationException
-  	at org.antlr.v4.runtime.BailErrorStrategy.recoverInline(BailErrorStrategy.java:66)
-  	at org.antlr.v4.runtime.Parser.match(Parser.java:206)
-  	at org.jsfr.json.compiler.JsonPathParser.childNode(JsonPathParser.java:672)
-  	at org.jsfr.json.compiler.JsonPathParser.relativePath(JsonPathParser.java:272)
-  	at org.jsfr.json.compiler.JsonPathParser.path(JsonPathParser.java:159)
-  	at org.jsfr.json.compiler.JsonPathCompiler.compile(JsonPathCompiler.java:283)
-  	at org.jsfr.json.compiler.JsonPathCompiler.compile(JsonPathCompiler.java:273)
-  	at org.jsfr.json.JsonSurfer.collectAll(JsonSurfer.java:284)
-  	at query.App.main(App.java:27)
-  Caused by: org.antlr.v4.runtime.InputMismatchException
-  	at org.antlr.v4.runtime.BailErrorStrategy.recoverInline(BailErrorStrategy.java:61)
-  	... 8 more
+  org.antlr.v4.runtime.misc.ParseCancellationException
   ```
 
 - [ ] `$[?(@.key=="hi@example.com")]`
@@ -423,22 +301,7 @@ The following queries provide results that do not match those of other implement
   line 1:11 token recognition error at: '"'
   line 1:26 token recognition error at: '"'
   line 1:12 no viable alternative at input '@.key==hi'
-  Exception in thread "main" org.antlr.v4.runtime.misc.ParseCancellationException
-  	at org.antlr.v4.runtime.BailErrorStrategy.recover(BailErrorStrategy.java:51)
-  	at org.jsfr.json.compiler.JsonPathParser.filterExpr(JsonPathParser.java:947)
-  	at org.jsfr.json.compiler.JsonPathParser.filter(JsonPathParser.java:768)
-  	at org.jsfr.json.compiler.JsonPathParser.relativePath(JsonPathParser.java:307)
-  	at org.jsfr.json.compiler.JsonPathParser.path(JsonPathParser.java:159)
-  	at org.jsfr.json.compiler.JsonPathCompiler.compile(JsonPathCompiler.java:283)
-  	at org.jsfr.json.compiler.JsonPathCompiler.compile(JsonPathCompiler.java:273)
-  	at org.jsfr.json.JsonSurfer.collectAll(JsonSurfer.java:284)
-  	at query.App.main(App.java:27)
-  Caused by: org.antlr.v4.runtime.NoViableAltException
-  	at org.antlr.v4.runtime.atn.ParserATNSimulator.noViableAlt(ParserATNSimulator.java:2026)
-  	at org.antlr.v4.runtime.atn.ParserATNSimulator.execATN(ParserATNSimulator.java:467)
-  	at org.antlr.v4.runtime.atn.ParserATNSimulator.adaptivePredict(ParserATNSimulator.java:393)
-  	at org.jsfr.json.compiler.JsonPathParser.filterExpr(JsonPathParser.java:843)
-  	... 7 more
+  org.antlr.v4.runtime.misc.ParseCancellationException
   ```
 
 - [ ] `$[?(@.key=="some.value")]`
@@ -465,22 +328,7 @@ The following queries provide results that do not match those of other implement
   line 1:11 token recognition error at: '"'
   line 1:22 token recognition error at: '"'
   line 1:12 no viable alternative at input '@.key==some'
-  Exception in thread "main" org.antlr.v4.runtime.misc.ParseCancellationException
-  	at org.antlr.v4.runtime.BailErrorStrategy.recover(BailErrorStrategy.java:51)
-  	at org.jsfr.json.compiler.JsonPathParser.filterExpr(JsonPathParser.java:947)
-  	at org.jsfr.json.compiler.JsonPathParser.filter(JsonPathParser.java:768)
-  	at org.jsfr.json.compiler.JsonPathParser.relativePath(JsonPathParser.java:307)
-  	at org.jsfr.json.compiler.JsonPathParser.path(JsonPathParser.java:159)
-  	at org.jsfr.json.compiler.JsonPathCompiler.compile(JsonPathCompiler.java:283)
-  	at org.jsfr.json.compiler.JsonPathCompiler.compile(JsonPathCompiler.java:273)
-  	at org.jsfr.json.JsonSurfer.collectAll(JsonSurfer.java:284)
-  	at query.App.main(App.java:27)
-  Caused by: org.antlr.v4.runtime.NoViableAltException
-  	at org.antlr.v4.runtime.atn.ParserATNSimulator.noViableAlt(ParserATNSimulator.java:2026)
-  	at org.antlr.v4.runtime.atn.ParserATNSimulator.execATN(ParserATNSimulator.java:467)
-  	at org.antlr.v4.runtime.atn.ParserATNSimulator.adaptivePredict(ParserATNSimulator.java:393)
-  	at org.jsfr.json.compiler.JsonPathParser.filterExpr(JsonPathParser.java:843)
-  	... 7 more
+  org.antlr.v4.runtime.misc.ParseCancellationException
   ```
 
 - [ ] `$`

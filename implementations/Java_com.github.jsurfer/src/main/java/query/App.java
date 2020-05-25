@@ -11,6 +11,7 @@ import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.jsfr.json.JsonSurferJackson;
 import org.jsfr.json.JsonSurfer;
+import org.antlr.v4.runtime.misc.ParseCancellationException;
 
 public class App {
     public static void main(String[] args) throws IOException, UnsupportedEncodingException {
@@ -24,9 +25,14 @@ public class App {
         String json = responseStrBuilder.toString();
 
         JsonSurfer surfer = JsonSurferJackson.INSTANCE;
-        Collection<Object> results = surfer.collectAll(json, args[0]);
+        try {
+            Collection<Object> results = surfer.collectAll(json, args[0]);
 
-        ObjectMapper mapper = new ObjectMapper();
-        mapper.writeValue(System.out, results);
+            ObjectMapper mapper = new ObjectMapper();
+            mapper.writeValue(System.out, results);
+        } catch (ParseCancellationException e) {
+            System.err.println(e);
+            System.exit(2);
+        }
     }
 }
