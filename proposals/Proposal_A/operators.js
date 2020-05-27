@@ -143,7 +143,7 @@ const childrenSubOperators = {
 };
 
 const childrenOperator = (current, root, children) => {
-  return children.flatMap(([subOperatorName, ...parameters]) => {
+  return flatMap(children, ([subOperatorName, ...parameters]) => {
     const subOperator = childrenSubOperators[subOperatorName];
 
     if (!subOperator) {
@@ -155,7 +155,7 @@ const childrenOperator = (current, root, children) => {
 };
 
 const recursiveDescentOperator = (current) => {
-  const descendants = allChildren(current).flatMap((child) =>
+  const descendants = flatMap(allChildren(current), (child) =>
     recursiveDescentOperator(child)
   );
   return [current].concat(descendants);
