@@ -3,4 +3,5 @@ set -euo pipefail
 
 readonly script_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
-rakudo "$script_dir"/main.p6 "$@"
+cd "$script_dir"
+rakudo -Iinst#./build/deps main.p6 "$@"
