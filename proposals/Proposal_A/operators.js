@@ -174,10 +174,14 @@ const executeOperator = (current, root, [operatorName, parameter]) => {
   return operator(current, root, parameter);
 };
 
+// flatMap not available in node 10 which sadly still ships in Ubuntu 20.
+const flatMap = (list, func) =>
+  list.map(func).reduce((a, e) => [...a, ...e], []);
+
 const execute = (root, operators) => {
   return operators.reduce(
     (results, operator) =>
-      results.flatMap((current) => executeOperator(current, root, operator)),
+      flatMap(results, (current) => executeOperator(current, root, operator)),
     [root]
   );
 };
