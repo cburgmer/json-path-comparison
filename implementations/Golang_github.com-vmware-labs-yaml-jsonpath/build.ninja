@@ -1,0 +1,10 @@
+root = implementations/Golang_github.com-vmware-labs-yaml-jsonpath
+builddir = $root/build
+
+# Hack target directory because golang is bad, again
+rule build
+  command = cd $root && go build -o build/main
+
+build $builddir/main: build | $root/main.go $root/go.mod $root/go.sum
+
+build $root/install: phony $builddir/main
