@@ -2,7 +2,7 @@ root = proposals/Proposal_A
 builddir = $root/build
 
 rule install
-  command = (cd $root && npm install) && echo > $out
+  command = (cd $root && npm install && npm run generateGrammar) && echo > $out
 
 build $builddir/node_modules_installed: install | $root/package.json $root/package-lock.json
 
