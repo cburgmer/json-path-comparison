@@ -100,9 +100,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  ** (MatchError) no match of right hand side value: {:error, %ExJSONPath.ParsingError{message: "syntax error before: '['"}}
-      lib/cli.ex:5: Jsonpath.CLI.main/1
-      lib/kernel/cli.ex:121: anonymous fn/3 in Kernel.CLI.exec_fun/2
+  syntax error before: '['
   ```
 
 - [ ] `$[0:2][*]`
@@ -129,9 +127,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  ** (MatchError) no match of right hand side value: {:error, %ExJSONPath.ParsingError{message: "syntax error before: '*'"}}
-      lib/cli.ex:5: Jsonpath.CLI.main/1
-      lib/kernel/cli.ex:121: anonymous fn/3 in Kernel.CLI.exec_fun/2
+  syntax error before: '*'
   ```
 
 - [ ] `$[*].bar[*]`
@@ -151,9 +147,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  ** (MatchError) no match of right hand side value: {:error, %ExJSONPath.ParsingError{message: "syntax error before: '*'"}}
-      lib/cli.ex:5: Jsonpath.CLI.main/1
-      lib/kernel/cli.ex:121: anonymous fn/3 in Kernel.CLI.exec_fun/2
+  syntax error before: '*'
   ```
 
 - [ ] `$..[*]`
@@ -176,9 +170,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  ** (MatchError) no match of right hand side value: {:error, %ExJSONPath.ParsingError{message: "syntax error before: '['"}}
-      lib/cli.ex:5: Jsonpath.CLI.main/1
-      lib/kernel/cli.ex:121: anonymous fn/3 in Kernel.CLI.exec_fun/2
+  syntax error before: '['
   ```
 
 - [ ] `$[*]`
@@ -202,9 +194,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  ** (MatchError) no match of right hand side value: {:error, %ExJSONPath.ParsingError{message: "syntax error before: '*'"}}
-      lib/cli.ex:5: Jsonpath.CLI.main/1
-      lib/kernel/cli.ex:121: anonymous fn/3 in Kernel.CLI.exec_fun/2
+  syntax error before: '*'
   ```
 
 - [ ] `$[*]`
@@ -218,9 +208,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  ** (MatchError) no match of right hand side value: {:error, %ExJSONPath.ParsingError{message: "syntax error before: '*'"}}
-      lib/cli.ex:5: Jsonpath.CLI.main/1
-      lib/kernel/cli.ex:121: anonymous fn/3 in Kernel.CLI.exec_fun/2
+  syntax error before: '*'
   ```
 
 - [ ] `$[*]`
@@ -234,9 +222,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  ** (MatchError) no match of right hand side value: {:error, %ExJSONPath.ParsingError{message: "syntax error before: '*'"}}
-      lib/cli.ex:5: Jsonpath.CLI.main/1
-      lib/kernel/cli.ex:121: anonymous fn/3 in Kernel.CLI.exec_fun/2
+  syntax error before: '*'
   ```
 
 - [ ] `$[*]`
@@ -254,9 +240,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  ** (MatchError) no match of right hand side value: {:error, %ExJSONPath.ParsingError{message: "syntax error before: '*'"}}
-      lib/cli.ex:5: Jsonpath.CLI.main/1
-      lib/kernel/cli.ex:121: anonymous fn/3 in Kernel.CLI.exec_fun/2
+  syntax error before: '*'
   ```
 
 - [ ] `$[*]`
@@ -280,9 +264,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  ** (MatchError) no match of right hand side value: {:error, %ExJSONPath.ParsingError{message: "syntax error before: '*'"}}
-      lib/cli.ex:5: Jsonpath.CLI.main/1
-      lib/kernel/cli.ex:121: anonymous fn/3 in Kernel.CLI.exec_fun/2
+  syntax error before: '*'
   ```
 
 - [ ] `$[*].a`
@@ -303,9 +285,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  ** (MatchError) no match of right hand side value: {:error, %ExJSONPath.ParsingError{message: "syntax error before: '*'"}}
-      lib/cli.ex:5: Jsonpath.CLI.main/1
-      lib/kernel/cli.ex:121: anonymous fn/3 in Kernel.CLI.exec_fun/2
+  syntax error before: '*'
   ```
 
 - [ ] `$[*].a`
@@ -323,9 +303,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  ** (MatchError) no match of right hand side value: {:error, %ExJSONPath.ParsingError{message: "syntax error before: '*'"}}
-      lib/cli.ex:5: Jsonpath.CLI.main/1
-      lib/kernel/cli.ex:121: anonymous fn/3 in Kernel.CLI.exec_fun/2
+  syntax error before: '*'
   ```
 
 - [ ] `$[*].a`
@@ -346,9 +324,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  ** (MatchError) no match of right hand side value: {:error, %ExJSONPath.ParsingError{message: "syntax error before: '*'"}}
-      lib/cli.ex:5: Jsonpath.CLI.main/1
-      lib/kernel/cli.ex:121: anonymous fn/3 in Kernel.CLI.exec_fun/2
+  syntax error before: '*'
   ```
 
 - [ ] `$.key-dash`
@@ -364,9 +340,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  ** (MatchError) no match of right hand side value: {:error, %ExJSONPath.ParsingError{message: "illegal characters \"-d\""}}
-      lib/cli.ex:5: Jsonpath.CLI.main/1
-      lib/kernel/cli.ex:121: anonymous fn/3 in Kernel.CLI.exec_fun/2
+  illegal characters "-d"
   ```
 
 - [ ] `$.屬性`
@@ -382,9 +356,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  ** (MatchError) no match of right hand side value: {:error, %ExJSONPath.ParsingError{message: "illegal characters \"屬\""}}
-      lib/cli.ex:5: Jsonpath.CLI.main/1
-      lib/kernel/cli.ex:121: anonymous fn/3 in Kernel.CLI.exec_fun/2
+  illegal characters "屬"
   ```
 
 - [ ] `$.2`
@@ -425,9 +397,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  ** (MatchError) no match of right hand side value: {:error, %ExJSONPath.ParsingError{message: "syntax error before: '*'"}}
-      lib/cli.ex:5: Jsonpath.CLI.main/1
-      lib/kernel/cli.ex:121: anonymous fn/3 in Kernel.CLI.exec_fun/2
+  syntax error before: '*'
   ```
 
 - [ ] `$..*`
@@ -445,9 +415,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  ** (MatchError) no match of right hand side value: {:error, %ExJSONPath.ParsingError{message: "syntax error before: '*'"}}
-      lib/cli.ex:5: Jsonpath.CLI.main/1
-      lib/kernel/cli.ex:121: anonymous fn/3 in Kernel.CLI.exec_fun/2
+  syntax error before: '*'
   ```
 
 - [ ] `$..*`
@@ -461,9 +429,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  ** (MatchError) no match of right hand side value: {:error, %ExJSONPath.ParsingError{message: "syntax error before: '*'"}}
-      lib/cli.ex:5: Jsonpath.CLI.main/1
-      lib/kernel/cli.ex:121: anonymous fn/3 in Kernel.CLI.exec_fun/2
+  syntax error before: '*'
   ```
 
 - [ ] `$`
@@ -485,9 +451,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  ** (MatchError) no match of right hand side value: {:error, %ExJSONPath.ParsingError{message: "syntax error before: "}}
-      lib/cli.ex:5: Jsonpath.CLI.main/1
-      lib/kernel/cli.ex:121: anonymous fn/3 in Kernel.CLI.exec_fun/2
+  syntax error before: 
   ```
 
 - [ ] `$`
@@ -501,9 +465,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  ** (MatchError) no match of right hand side value: {:error, %ExJSONPath.ParsingError{message: "syntax error before: "}}
-      lib/cli.ex:5: Jsonpath.CLI.main/1
-      lib/kernel/cli.ex:121: anonymous fn/3 in Kernel.CLI.exec_fun/2
+  syntax error before: 
   ```
 
 - [ ] `$`
@@ -517,9 +479,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  ** (MatchError) no match of right hand side value: {:error, %ExJSONPath.ParsingError{message: "syntax error before: "}}
-      lib/cli.ex:5: Jsonpath.CLI.main/1
-      lib/kernel/cli.ex:121: anonymous fn/3 in Kernel.CLI.exec_fun/2
+  syntax error before: 
   ```
 
 - [ ] `$`
@@ -533,9 +493,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  ** (MatchError) no match of right hand side value: {:error, %ExJSONPath.ParsingError{message: "syntax error before: "}}
-      lib/cli.ex:5: Jsonpath.CLI.main/1
-      lib/kernel/cli.ex:121: anonymous fn/3 in Kernel.CLI.exec_fun/2
+  syntax error before: 
   ```
 
 
