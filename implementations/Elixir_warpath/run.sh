@@ -4,12 +4,10 @@ set -euo pipefail
 readonly script_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 filter_versioned_stack_traces() {
-    # Let's avoid stack traces looking different across environments and versions of Elixir/mix
-    # It's a hack, but then we tried
-    #   1. Running Elixir as a standalone app, but how do we provide a argv?
-    #   2. Running as escript, but it doesn't play nicely with Jaxon's C binding (priv dependency)
-    grep -v '^    (mix\( .*\)*)' | grep -v '^    (elixir\( .*\)*)'
+    # Not sure how to catch all exceptions in Elixir and still return a non 0 status code
+    # So instead we beautify the stack traces so we don't leak version numbers into the output which are bound to change over time
+    # We also need to support strings without version numbers on Linux (maybe older Elixir?)
+    sed 's/^    ([a-z]* .*\..*\..*) /    /' | sed 's/^    ([a-z]*) /    /'
 }
 
-cd "$script_dir"
-mix execute "$@" 2>&1 | filter_versioned_stack_traces
+"$script_dir"/build/jsonpath "$@" 2>&1 | filter_versioned_stack_traces

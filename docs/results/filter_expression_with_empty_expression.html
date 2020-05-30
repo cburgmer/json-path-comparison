@@ -90,7 +90,8 @@ Elixir (ExJsonPath)
 </h4>
 
 <pre><code>** (MatchError) no match of right hand side value: {:error, %ExJSONPath.ParsingError{message: "syntax error before: ')'"}}
-    lib/jsonpath.ex:7: Mix.Tasks.Execute.run/1
+    lib/cli.ex:5: Jsonpath.CLI.main/1
+    lib/kernel/cli.ex:121: anonymous fn/3 in Kernel.CLI.exec_fun/2
 </code></pre>
 
 <h4 id="Elixir_jaxon">
@@ -107,7 +108,8 @@ Elixir (warpath)
 </h4>
 
 <pre><code>** (Warpath.ExpressionError) Parser error: Invalid token on line 1, syntax error before: ')'
-    lib/jsonpath.ex:9: Mix.Tasks.Execute.run/1
+    lib/cli.ex:7: Jsonpath.CLI.main/1
+    lib/kernel/cli.ex:121: anonymous fn/3 in Kernel.CLI.exec_fun/2
 </code></pre>
 
 <h4 id="Erlang_ejsonpath">

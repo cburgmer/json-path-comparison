@@ -17,7 +17,8 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   ** (Enum.OutOfBoundsError) The query should be resolved to scalar value but the index 1 is out of bounds for emum ["one element"].
-      lib/jsonpath.ex:9: Mix.Tasks.Execute.run/1
+      lib/cli.ex:7: Jsonpath.CLI.main/1
+      lib/kernel/cli.ex:121: anonymous fn/3 in Kernel.CLI.exec_fun/2
   ```
 
 - [ ] `$.key`
@@ -35,7 +36,8 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   ** (Warpath.UnsupportedOperationError) You are trying to traverse a list using dot notation '$.key', that it's not allowed for list type. You can use something like '$[*].key' instead.
-      lib/jsonpath.ex:9: Mix.Tasks.Execute.run/1
+      lib/cli.ex:7: Jsonpath.CLI.main/1
+      lib/kernel/cli.ex:121: anonymous fn/3 in Kernel.CLI.exec_fun/2
   ```
 
 - [ ] `$.id`
@@ -54,7 +56,8 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   ** (Warpath.UnsupportedOperationError) You are trying to traverse a list using dot notation '$.id', that it's not allowed for list type. You can use something like '$[*].id' instead.
-      lib/jsonpath.ex:9: Mix.Tasks.Execute.run/1
+      lib/cli.ex:7: Jsonpath.CLI.main/1
+      lib/kernel/cli.ex:121: anonymous fn/3 in Kernel.CLI.exec_fun/2
   ```
 
 - [ ] `$.in`
@@ -71,7 +74,8 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   ** (Warpath.ExpressionError) Parser error: Invalid token on line 1, syntax error before: in_op
-      lib/jsonpath.ex:9: Mix.Tasks.Execute.run/1
+      lib/cli.ex:7: Jsonpath.CLI.main/1
+      lib/kernel/cli.ex:121: anonymous fn/3 in Kernel.CLI.exec_fun/2
   ```
 
 - [ ] `$.true`
@@ -88,7 +92,8 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   ** (Warpath.ExpressionError) Parser error: Invalid token on line 1, syntax error before: true
-      lib/jsonpath.ex:9: Mix.Tasks.Execute.run/1
+      lib/cli.ex:7: Jsonpath.CLI.main/1
+      lib/kernel/cli.ex:121: anonymous fn/3 in Kernel.CLI.exec_fun/2
   ```
 
 

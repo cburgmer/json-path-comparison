@@ -186,7 +186,12 @@ Elixir (warpath)
 <pre><code>** (ArithmeticError) bad argument in arithmetic expression: rem(0, 0)
     :erlang.rem(0, 0)
     lib/warpath.ex:380: anonymous fn/2 in Warpath.transform/2
+    lib/stream.ex:622: anonymous fn/4 in Stream.reject/2
+    lib/enum.ex:3325: Enumerable.List.reduce/3
+    lib/stream.ex:1583: Enumerable.Stream.do_each/4
+    lib/enum.ex:3023: Enum.map/2
     lib/warpath.ex:256: anonymous fn/3 in Warpath.do_query/2
+    lib/enum.ex:3023: anonymous fn/3 in Enum.reduce/3
 </code></pre>
 
 <h4 id="Golang_github.com-oliveagle-jsonpath">

@@ -26,7 +26,8 @@ The following queries provide results that do not match those of other implement
       lib/poison/encoder.ex:260: Poison.Encoder.List."-encode/3-lists^foldr/2-1-"/3
       lib/poison/encoder.ex:260: Poison.Encoder.List.encode/3
       lib/poison.ex:41: Poison.encode!/2
-      lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
+      lib/cli.ex:6: Jsonpath.CLI.main/1
+      lib/kernel/cli.ex:121: anonymous fn/3 in Kernel.CLI.exec_fun/2
   ```
 
 - [ ] `$[0:0]`
@@ -100,7 +101,8 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   ** (MatchError) no match of right hand side value: {:error, %ExJSONPath.ParsingError{message: "syntax error before: '['"}}
-      lib/jsonpath.ex:7: Mix.Tasks.Execute.run/1
+      lib/cli.ex:5: Jsonpath.CLI.main/1
+      lib/kernel/cli.ex:121: anonymous fn/3 in Kernel.CLI.exec_fun/2
   ```
 
 - [ ] `$[0:2][*]`
@@ -128,7 +130,8 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   ** (MatchError) no match of right hand side value: {:error, %ExJSONPath.ParsingError{message: "syntax error before: '*'"}}
-      lib/jsonpath.ex:7: Mix.Tasks.Execute.run/1
+      lib/cli.ex:5: Jsonpath.CLI.main/1
+      lib/kernel/cli.ex:121: anonymous fn/3 in Kernel.CLI.exec_fun/2
   ```
 
 - [ ] `$[*].bar[*]`
@@ -149,7 +152,8 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   ** (MatchError) no match of right hand side value: {:error, %ExJSONPath.ParsingError{message: "syntax error before: '*'"}}
-      lib/jsonpath.ex:7: Mix.Tasks.Execute.run/1
+      lib/cli.ex:5: Jsonpath.CLI.main/1
+      lib/kernel/cli.ex:121: anonymous fn/3 in Kernel.CLI.exec_fun/2
   ```
 
 - [ ] `$..[*]`
@@ -173,7 +177,8 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   ** (MatchError) no match of right hand side value: {:error, %ExJSONPath.ParsingError{message: "syntax error before: '['"}}
-      lib/jsonpath.ex:7: Mix.Tasks.Execute.run/1
+      lib/cli.ex:5: Jsonpath.CLI.main/1
+      lib/kernel/cli.ex:121: anonymous fn/3 in Kernel.CLI.exec_fun/2
   ```
 
 - [ ] `$[*]`
@@ -198,7 +203,8 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   ** (MatchError) no match of right hand side value: {:error, %ExJSONPath.ParsingError{message: "syntax error before: '*'"}}
-      lib/jsonpath.ex:7: Mix.Tasks.Execute.run/1
+      lib/cli.ex:5: Jsonpath.CLI.main/1
+      lib/kernel/cli.ex:121: anonymous fn/3 in Kernel.CLI.exec_fun/2
   ```
 
 - [ ] `$[*]`
@@ -213,7 +219,8 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   ** (MatchError) no match of right hand side value: {:error, %ExJSONPath.ParsingError{message: "syntax error before: '*'"}}
-      lib/jsonpath.ex:7: Mix.Tasks.Execute.run/1
+      lib/cli.ex:5: Jsonpath.CLI.main/1
+      lib/kernel/cli.ex:121: anonymous fn/3 in Kernel.CLI.exec_fun/2
   ```
 
 - [ ] `$[*]`
@@ -228,7 +235,8 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   ** (MatchError) no match of right hand side value: {:error, %ExJSONPath.ParsingError{message: "syntax error before: '*'"}}
-      lib/jsonpath.ex:7: Mix.Tasks.Execute.run/1
+      lib/cli.ex:5: Jsonpath.CLI.main/1
+      lib/kernel/cli.ex:121: anonymous fn/3 in Kernel.CLI.exec_fun/2
   ```
 
 - [ ] `$[*]`
@@ -247,7 +255,8 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   ** (MatchError) no match of right hand side value: {:error, %ExJSONPath.ParsingError{message: "syntax error before: '*'"}}
-      lib/jsonpath.ex:7: Mix.Tasks.Execute.run/1
+      lib/cli.ex:5: Jsonpath.CLI.main/1
+      lib/kernel/cli.ex:121: anonymous fn/3 in Kernel.CLI.exec_fun/2
   ```
 
 - [ ] `$[*]`
@@ -272,7 +281,8 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   ** (MatchError) no match of right hand side value: {:error, %ExJSONPath.ParsingError{message: "syntax error before: '*'"}}
-      lib/jsonpath.ex:7: Mix.Tasks.Execute.run/1
+      lib/cli.ex:5: Jsonpath.CLI.main/1
+      lib/kernel/cli.ex:121: anonymous fn/3 in Kernel.CLI.exec_fun/2
   ```
 
 - [ ] `$[*].a`
@@ -294,7 +304,8 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   ** (MatchError) no match of right hand side value: {:error, %ExJSONPath.ParsingError{message: "syntax error before: '*'"}}
-      lib/jsonpath.ex:7: Mix.Tasks.Execute.run/1
+      lib/cli.ex:5: Jsonpath.CLI.main/1
+      lib/kernel/cli.ex:121: anonymous fn/3 in Kernel.CLI.exec_fun/2
   ```
 
 - [ ] `$[*].a`
@@ -313,7 +324,8 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   ** (MatchError) no match of right hand side value: {:error, %ExJSONPath.ParsingError{message: "syntax error before: '*'"}}
-      lib/jsonpath.ex:7: Mix.Tasks.Execute.run/1
+      lib/cli.ex:5: Jsonpath.CLI.main/1
+      lib/kernel/cli.ex:121: anonymous fn/3 in Kernel.CLI.exec_fun/2
   ```
 
 - [ ] `$[*].a`
@@ -335,7 +347,8 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   ** (MatchError) no match of right hand side value: {:error, %ExJSONPath.ParsingError{message: "syntax error before: '*'"}}
-      lib/jsonpath.ex:7: Mix.Tasks.Execute.run/1
+      lib/cli.ex:5: Jsonpath.CLI.main/1
+      lib/kernel/cli.ex:121: anonymous fn/3 in Kernel.CLI.exec_fun/2
   ```
 
 - [ ] `$.key-dash`
@@ -352,7 +365,8 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   ** (MatchError) no match of right hand side value: {:error, %ExJSONPath.ParsingError{message: "illegal characters \"-d\""}}
-      lib/jsonpath.ex:7: Mix.Tasks.Execute.run/1
+      lib/cli.ex:5: Jsonpath.CLI.main/1
+      lib/kernel/cli.ex:121: anonymous fn/3 in Kernel.CLI.exec_fun/2
   ```
 
 - [ ] `$.屬性`
@@ -369,7 +383,8 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   ** (MatchError) no match of right hand side value: {:error, %ExJSONPath.ParsingError{message: "illegal characters \"屬\""}}
-      lib/jsonpath.ex:7: Mix.Tasks.Execute.run/1
+      lib/cli.ex:5: Jsonpath.CLI.main/1
+      lib/kernel/cli.ex:121: anonymous fn/3 in Kernel.CLI.exec_fun/2
   ```
 
 - [ ] `$.2`
@@ -411,7 +426,8 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   ** (MatchError) no match of right hand side value: {:error, %ExJSONPath.ParsingError{message: "syntax error before: '*'"}}
-      lib/jsonpath.ex:7: Mix.Tasks.Execute.run/1
+      lib/cli.ex:5: Jsonpath.CLI.main/1
+      lib/kernel/cli.ex:121: anonymous fn/3 in Kernel.CLI.exec_fun/2
   ```
 
 - [ ] `$..*`
@@ -430,7 +446,8 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   ** (MatchError) no match of right hand side value: {:error, %ExJSONPath.ParsingError{message: "syntax error before: '*'"}}
-      lib/jsonpath.ex:7: Mix.Tasks.Execute.run/1
+      lib/cli.ex:5: Jsonpath.CLI.main/1
+      lib/kernel/cli.ex:121: anonymous fn/3 in Kernel.CLI.exec_fun/2
   ```
 
 - [ ] `$..*`
@@ -445,7 +462,8 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   ** (MatchError) no match of right hand side value: {:error, %ExJSONPath.ParsingError{message: "syntax error before: '*'"}}
-      lib/jsonpath.ex:7: Mix.Tasks.Execute.run/1
+      lib/cli.ex:5: Jsonpath.CLI.main/1
+      lib/kernel/cli.ex:121: anonymous fn/3 in Kernel.CLI.exec_fun/2
   ```
 
 - [ ] `$`
@@ -468,7 +486,8 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   ** (MatchError) no match of right hand side value: {:error, %ExJSONPath.ParsingError{message: "syntax error before: "}}
-      lib/jsonpath.ex:7: Mix.Tasks.Execute.run/1
+      lib/cli.ex:5: Jsonpath.CLI.main/1
+      lib/kernel/cli.ex:121: anonymous fn/3 in Kernel.CLI.exec_fun/2
   ```
 
 - [ ] `$`
@@ -483,7 +502,8 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   ** (MatchError) no match of right hand side value: {:error, %ExJSONPath.ParsingError{message: "syntax error before: "}}
-      lib/jsonpath.ex:7: Mix.Tasks.Execute.run/1
+      lib/cli.ex:5: Jsonpath.CLI.main/1
+      lib/kernel/cli.ex:121: anonymous fn/3 in Kernel.CLI.exec_fun/2
   ```
 
 - [ ] `$`
@@ -498,7 +518,8 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   ** (MatchError) no match of right hand side value: {:error, %ExJSONPath.ParsingError{message: "syntax error before: "}}
-      lib/jsonpath.ex:7: Mix.Tasks.Execute.run/1
+      lib/cli.ex:5: Jsonpath.CLI.main/1
+      lib/kernel/cli.ex:121: anonymous fn/3 in Kernel.CLI.exec_fun/2
   ```
 
 - [ ] `$`
@@ -513,7 +534,8 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   ** (MatchError) no match of right hand side value: {:error, %ExJSONPath.ParsingError{message: "syntax error before: "}}
-      lib/jsonpath.ex:7: Mix.Tasks.Execute.run/1
+      lib/cli.ex:5: Jsonpath.CLI.main/1
+      lib/kernel/cli.ex:121: anonymous fn/3 in Kernel.CLI.exec_fun/2
   ```
 
 

@@ -1,8 +1,8 @@
 root = implementations/Elixir_warpath
 
 rule compile
-  command = (cd $root && mix local.hex --if-missing --force && mix deps.get && mix compile)
+  command = (cd $root && mix local.hex --if-missing --force && mix deps.get && mix escript.build && cd - && mv $root/jsonpath $out)
 
-build $root/build/dev/dev/lib/jsonpath/ebin/jsonpath.app: compile | $root/lib/jsonpath.ex $root/mix.exs $root/mix.lock
+build $root/build/jsonpath: compile | $root/lib/cli.ex $root/mix.exs $root/mix.lock
 
-build $root/install: phony $root/build/dev/dev/lib/jsonpath/ebin/jsonpath.app
+build $root/install: phony $root/build/jsonpath
