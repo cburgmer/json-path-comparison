@@ -1,5 +1,6 @@
 {
     "one": {"key": "value"},
     "two": {"some": "more", "key": "other value"},
-    "two.some": "42"
+    "two.some": "42",
+    "two'.'some": "43"
 }

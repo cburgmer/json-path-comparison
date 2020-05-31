@@ -69,7 +69,7 @@ queries:
     result: []
   - id: bracket_notation_with_two_literals_separated_by_dot
     status: open
-    result: []
+    result: ["43"]
   - id: bracket_notation_with_two_literals_separated_by_dot_without_quotes
     status: error
   - id: bracket_notation_with_wildcard_after_recursive_descent

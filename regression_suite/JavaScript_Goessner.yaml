@@ -61,7 +61,8 @@ queries:
     status: open
     result: ["entry"]
   - id: bracket_notation_with_two_literals_separated_by_dot
-    status: error
+    status: open
+    result: ["43"]
   - id: bracket_notation_with_two_literals_separated_by_dot_without_quotes
     status: open
     result: ["more"]
