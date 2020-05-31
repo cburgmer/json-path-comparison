@@ -15,6 +15,9 @@ fun main(args : Array<String>) {
         } else {
             println(Gson().toJson(results))
         }
+    } catch (e: IllegalArgumentException) {
+        System.err.println(e.message);
+        exitProcess(2);
     } catch (e: Exception) {
         System.err.println(e.message);
         exitProcess(1);
