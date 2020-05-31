@@ -6,6 +6,7 @@ import (
 	"os"
 	"io/ioutil"
 	"fmt"
+	"context"
 )
 
 func main() {
@@ -20,7 +21,13 @@ func main() {
 	var json_data interface{}
 	json.Unmarshal([]byte(data), &json_data)
 
-	result, err := jsonpath.Get(selector, json_data)
+	eval, err := jsonpath.New(selector)
+	if err != nil {
+		fmt.Fprintln(os.Stderr, err)
+		os.Exit(2)
+	}
+
+	result, err := eval(context.Background(), json_data)
 	if err != nil {
 		fmt.Fprintln(os.Stderr, err)
 		os.Exit(1)
