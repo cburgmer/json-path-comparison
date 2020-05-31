@@ -1,6 +1,7 @@
 module Main where
 
 import System.Environment
+import System.Exit
 import Data.JSONPath
 import Data.Attoparsec.Text
 import qualified Data.Text as T
@@ -33,7 +34,7 @@ parseJSONPath pathStr =
     Right jsonpath -> return jsonpath
     Left e -> do
       putStrLn $ "Invalid JSONPath: " ++ pathStr ++ "\n Error: " ++ e
-      error e
+      exitWith (ExitFailure 2)
 
 readInput :: IO A.Value
 readInput = do

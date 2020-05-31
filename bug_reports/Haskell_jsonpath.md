@@ -22,7 +22,7 @@ The following queries provide results that do not match those of other implement
   ```
   json-path-comparison: expected array, found {":":42,"more":"string","a":1,"b":2,"c":3}
   CallStack (from HasCallStack):
-    error, called at app/Main.hs:18:22 in main:Main
+    error, called at app/Main.hs:19:22 in main:Main
   ```
 
 - [ ] `$[:]`
@@ -39,9 +39,6 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  json-path-comparison: searchBeginningWithSlice: string
-  CallStack (from HasCallStack):
-    error, called at app/Main.hs:36:7 in main:Main
   Invalid JSONPath: $[:]
    Error: searchBeginningWithSlice: string
   ```
@@ -60,9 +57,6 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  json-path-comparison: searchBeginningWithSlice: string
-  CallStack (from HasCallStack):
-    error, called at app/Main.hs:36:7 in main:Main
   Invalid JSONPath: $[::]
    Error: searchBeginningWithSlice: string
   ```
@@ -84,9 +78,6 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  json-path-comparison: searchBeginningWithSlice: string
-  CallStack (from HasCallStack):
-    error, called at app/Main.hs:36:7 in main:Main
   Invalid JSONPath: $[1:3:]
    Error: searchBeginningWithSlice: string
   ```
@@ -106,7 +97,7 @@ The following queries provide results that do not match those of other implement
   ```
   json-path-comparison: expected key missing in object {"key":"value"}
   CallStack (from HasCallStack):
-    error, called at app/Main.hs:18:22 in main:Main
+    error, called at app/Main.hs:19:22 in main:Main
   ```
 
 - [ ] `$['two.some']`
@@ -146,9 +137,6 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  json-path-comparison: searchBeginningWithSlice: string
-  CallStack (from HasCallStack):
-    error, called at app/Main.hs:36:7 in main:Main
   Invalid JSONPath: $["key"]
    Error: searchBeginningWithSlice: string
   ```
@@ -168,9 +156,6 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  json-path-comparison: searchBeginningWithSlice: string
-  CallStack (from HasCallStack):
-    error, called at app/Main.hs:36:7 in main:Main
   Invalid JSONPath: $['']
    Error: searchBeginningWithSlice: string
   ```
@@ -188,7 +173,7 @@ The following queries provide results that do not match those of other implement
   ```
   json-path-comparison: index -1 invalid for array []
   CallStack (from HasCallStack):
-    error, called at app/Main.hs:18:22 in main:Main
+    error, called at app/Main.hs:19:22 in main:Main
   ```
 
 - [ ] `$.*[1]`
@@ -212,7 +197,7 @@ The following queries provide results that do not match those of other implement
   ```
   json-path-comparison: index 1 invalid for array [1]
   CallStack (from HasCallStack):
-    error, called at app/Main.hs:18:22 in main:Main
+    error, called at app/Main.hs:19:22 in main:Main
   ```
 
 - [ ] `$[1]`
@@ -230,7 +215,7 @@ The following queries provide results that do not match those of other implement
   ```
   json-path-comparison: index 1 invalid for array ["one element"]
   CallStack (from HasCallStack):
-    error, called at app/Main.hs:18:22 in main:Main
+    error, called at app/Main.hs:19:22 in main:Main
   ```
 
 - [ ] `$[':']`
@@ -247,9 +232,6 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  json-path-comparison: searchBeginningWithSlice: string
-  CallStack (from HasCallStack):
-    error, called at app/Main.hs:36:7 in main:Main
   Invalid JSONPath: $[':']
    Error: searchBeginningWithSlice: string
   ```
@@ -267,9 +249,6 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  json-path-comparison: searchBeginningWithSlice: string
-  CallStack (from HasCallStack):
-    error, called at app/Main.hs:36:7 in main:Main
   Invalid JSONPath: $[']']
    Error: searchBeginningWithSlice: string
   ```
@@ -288,9 +267,6 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  json-path-comparison: searchBeginningWithSlice: string
-  CallStack (from HasCallStack):
-    error, called at app/Main.hs:36:7 in main:Main
   Invalid JSONPath: $['@']
    Error: searchBeginningWithSlice: string
   ```
@@ -309,9 +285,6 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  json-path-comparison: searchBeginningWithSlice: string
-  CallStack (from HasCallStack):
-    error, called at app/Main.hs:36:7 in main:Main
   Invalid JSONPath: $['.']
    Error: searchBeginningWithSlice: string
   ```
@@ -331,9 +304,6 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  json-path-comparison: searchBeginningWithSlice: string
-  CallStack (from HasCallStack):
-    error, called at app/Main.hs:36:7 in main:Main
   Invalid JSONPath: $['.*']
    Error: searchBeginningWithSlice: string
   ```
@@ -352,9 +322,6 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  json-path-comparison: searchBeginningWithSlice: string
-  CallStack (from HasCallStack):
-    error, called at app/Main.hs:36:7 in main:Main
   Invalid JSONPath: $['"']
    Error: searchBeginningWithSlice: string
   ```
@@ -373,9 +340,6 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  json-path-comparison: searchBeginningWithSlice: string
-  CallStack (from HasCallStack):
-    error, called at app/Main.hs:36:7 in main:Main
   Invalid JSONPath: $['$']
    Error: searchBeginningWithSlice: string
   ```
@@ -394,9 +358,6 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  json-path-comparison: searchBeginningWithSlice: string
-  CallStack (from HasCallStack):
-    error, called at app/Main.hs:36:7 in main:Main
   Invalid JSONPath: $[',']
    Error: searchBeginningWithSlice: string
   ```
@@ -415,9 +376,6 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  json-path-comparison: searchBeginningWithSlice: string
-  CallStack (from HasCallStack):
-    error, called at app/Main.hs:36:7 in main:Main
   Invalid JSONPath: $['*']
    Error: searchBeginningWithSlice: string
   ```
@@ -437,9 +395,6 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  json-path-comparison: searchBeginningWithSlice: string
-  CallStack (from HasCallStack):
-    error, called at app/Main.hs:36:7 in main:Main
   Invalid JSONPath: $['ni.*']
    Error: searchBeginningWithSlice: string
   ```
@@ -482,7 +437,7 @@ The following queries provide results that do not match those of other implement
   ```
   json-path-comparison: expected key a in object {"b":1}
   CallStack (from HasCallStack):
-    error, called at app/Main.hs:18:22 in main:Main
+    error, called at app/Main.hs:19:22 in main:Main
   ```
 
 - [ ] `$[?(@.id==42)].name`
@@ -530,9 +485,6 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  json-path-comparison: searchBeginningWithSlice: string
-  CallStack (from HasCallStack):
-    error, called at app/Main.hs:36:7 in main:Main
   Invalid JSONPath: $['one','three'].key
    Error: searchBeginningWithSlice: string
   ```
@@ -553,7 +505,7 @@ The following queries provide results that do not match those of other implement
   ```
   json-path-comparison: expected object, found [0,1]
   CallStack (from HasCallStack):
-    error, called at app/Main.hs:18:22 in main:Main
+    error, called at app/Main.hs:19:22 in main:Main
   ```
 
 - [ ] `$.id`
@@ -573,7 +525,7 @@ The following queries provide results that do not match those of other implement
   ```
   json-path-comparison: expected object, found [{"id":2}]
   CallStack (from HasCallStack):
-    error, called at app/Main.hs:18:22 in main:Main
+    error, called at app/Main.hs:19:22 in main:Main
   ```
 
 - [ ] `$.missing`
@@ -591,7 +543,7 @@ The following queries provide results that do not match those of other implement
   ```
   json-path-comparison: expected key missing in object {"key":"value"}
   CallStack (from HasCallStack):
-    error, called at app/Main.hs:18:22 in main:Main
+    error, called at app/Main.hs:19:22 in main:Main
   ```
 
 - [ ] `$.屬性`
@@ -607,9 +559,6 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  json-path-comparison: searchBeginningWithSlice: string
-  CallStack (from HasCallStack):
-    error, called at app/Main.hs:36:7 in main:Main
   Invalid JSONPath: $.屬性
    Error: searchBeginningWithSlice: string
   ```
@@ -627,7 +576,7 @@ The following queries provide results that do not match those of other implement
   ```
   json-path-comparison: Search failed
   CallStack (from HasCallStack):
-    error, called at app/Main.hs:18:22 in main:Main
+    error, called at app/Main.hs:19:22 in main:Main
   ```
 
 - [ ] `$[?(@['@key']==42)]`
@@ -657,9 +606,6 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  json-path-comparison: searchBeginningWithSlice: string
-  CallStack (from HasCallStack):
-    error, called at app/Main.hs:36:7 in main:Main
   Invalid JSONPath: $[?(@['@key']==42)]
    Error: searchBeginningWithSlice: string
   ```
@@ -684,9 +630,6 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  json-path-comparison: searchBeginningWithSlice: string
-  CallStack (from HasCallStack):
-    error, called at app/Main.hs:36:7 in main:Main
   Invalid JSONPath: $[?(@[1]=='b')]
    Error: searchBeginningWithSlice: string
   ```
@@ -709,9 +652,6 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  json-path-comparison: searchBeginningWithSlice: string
-  CallStack (from HasCallStack):
-    error, called at app/Main.hs:36:7 in main:Main
   Invalid JSONPath: $[?(@.key=='value')]
    Error: searchBeginningWithSlice: string
   ```
@@ -735,9 +675,6 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  json-path-comparison: searchBeginningWithSlice: not enough input
-  CallStack (from HasCallStack):
-    error, called at app/Main.hs:36:7 in main:Main
   Invalid JSONPath: $
    Error: searchBeginningWithSlice: not enough input
   ```
@@ -753,9 +690,6 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  json-path-comparison: searchBeginningWithSlice: not enough input
-  CallStack (from HasCallStack):
-    error, called at app/Main.hs:36:7 in main:Main
   Invalid JSONPath: $
    Error: searchBeginningWithSlice: not enough input
   ```
@@ -771,9 +705,6 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  json-path-comparison: searchBeginningWithSlice: not enough input
-  CallStack (from HasCallStack):
-    error, called at app/Main.hs:36:7 in main:Main
   Invalid JSONPath: $
    Error: searchBeginningWithSlice: not enough input
   ```
@@ -789,9 +720,6 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  json-path-comparison: searchBeginningWithSlice: not enough input
-  CallStack (from HasCallStack):
-    error, called at app/Main.hs:36:7 in main:Main
   Invalid JSONPath: $
    Error: searchBeginningWithSlice: not enough input
   ```
@@ -810,9 +738,6 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  json-path-comparison: searchBeginningWithSlice: string
-  CallStack (from HasCallStack):
-    error, called at app/Main.hs:36:7 in main:Main
   Invalid JSONPath: $['key','another']
    Error: searchBeginningWithSlice: string
   ```
@@ -860,9 +785,6 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  json-path-comparison: searchBeginningWithSlice: string
-  CallStack (from HasCallStack):
-    error, called at app/Main.hs:36:7 in main:Main
   Invalid JSONPath: $['missing','key']
    Error: searchBeginningWithSlice: string
   ```
@@ -882,9 +804,6 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  json-path-comparison: searchBeginningWithSlice: string
-  CallStack (from HasCallStack):
-    error, called at app/Main.hs:36:7 in main:Main
   Invalid JSONPath: $[ 0 , 1 ]
    Error: searchBeginningWithSlice: string
   ```
