@@ -17,6 +17,7 @@ The guiding principle of this proposal is to balance
 - adherence to the consensus (more alignment is better),
 - reduced room for user errors (less options are better).
 
+
 ## Implementation
 
 The proposal is also implemented in JavaScript for inspection:
@@ -27,6 +28,7 @@ The proposal is also implemented in JavaScript for inspection:
 
 For now, if this documentation and the implementation disagree, the
 implementation wins.
+
 
 ## Execution algorithm
 
@@ -57,6 +59,7 @@ The relationship between the underlying documents is lost for e.g.
 To follow the execution results: `( [{"keyA": 1, "keyB": 2}, {"keyA": 3}] )`
 => `( {"keyA": 1, "keyB": 2} , {"keyA": 3} )`
 => `( 1 , 2, 3 )`.
+
 
 ## Operators
 
@@ -89,6 +92,7 @@ Examples:
 - `$..[0]`, recursive descent and children lookup with index "0"
 - `$..key`, recursive descent and children lookup with name "key"
   (note the contraction of `..` and `.key`)
+
 
 ## Grammar
 
@@ -180,36 +184,45 @@ Examples:
 
 To call out some decisions deviating from other implementations:
 
-- Array slice with step 0 (`$[1:3:0]`) does not parse
+- Array slice with step 0 (`$[1:3:0]`) does not parse.
 
   *Motivation*: This follows how Python implements slicing. Step 0 is the only
   value that can be safely rejected at compile time, while the other values
   interact with the length of the array at runtime.
 
-- Dot bracket (`$.["key"]`) does not parse
+- Dot bracket (`$.["key"]`) does not parse.
 
   *Motivation*: Less is more. Use `$["key"]` instead.
 
-- Empty bracket notation (`$[]`) does not parse
-- Dot notation with quotes (`$.'a key'`) does not parse
+- Empty bracket notation (`$[]`) does not parse.
+
+- Dot notation with quotes (`$.'a key'`) does not parse.
 
   *Motivation*: Less is more. Use `$["a key"]` instead.
 
-- Dot notation inside bracket notation (`$[a.key]`) does not parse
+- Dot notation inside bracket notation (`$[a.key]`) does not parse.
 
   *Motivation*: There are potential use cases when combining sub-keys in a union
   (e.g. `$[key.sub,anotherKey]`, but this would need further investigation.
 
-- Quotes inside strings for key bracket notation can be quoted with a backslash, e.g. `$['E\'lir']`
-- Whitespace is allowed in key bracket notation, around the brackets and the comma
+- Dot notation with number will lookup an object by name, but not an array by
+  index.
+
+  *Motivation*: Follow clear split in children lookup by index or name.
+
+- Quotes inside strings for key bracket notation can be quoted with a backslash,
+  e.g. `$['E\'lir']`.
+
+- Whitespace is allowed in key bracket notation, around the brackets and the
+  comma.
 
   *Motivation*: Humans need whitespace to communicate structure.
 
-- Bracket notation needs quotes when indexing, unless a number is given
+- Bracket notation needs quotes when indexing, unless a number is given.
 
   *Motivation*: Find clear split between array index and object name lookup.
 
-- "Bald" recursive descent is not supported
+- "Bald" recursive descent is not supported.
 
   *Motivation*: No consensus, but more specifically would introduce more
   complexity into grammar without much gain to the user. (We would have to
@@ -222,7 +235,7 @@ To call out some decisions deviating from other implementations:
   grouping and avoids complex precedence tables. Maybe we can reduce user
   errors by making some of the groups explicit via enforcing brackets.
 
-- No support for integers with leading zeros
+- No support for integers with leading zeros.
 
   *Motivation*: No consistency in implementations on where octal numerals are
   (not) supported.
@@ -233,6 +246,34 @@ To call out some decisions deviating from other implementations:
   *Motivation*: Let's not follow JavaScript's more complex identifier syntax if
   we can keep it simple. To avoid "special characters" though to avoid conflict
   with JSONPath's own syntactic elements.
+
+- Force every selector to start with the root `$`.
+
+  *Motivation*: Less is more. The dollar is needed to distinguish queries inside
+  filter expressions from the current object.
+
+- Path queries inside filter expressions are scalar only.
+
+  *Motivation*: Unclear what operators mean on a list value: *all* match, or
+  *at least one* matches?
+
+- Script expressions are not supported.
+
+  *Motivation*: Eval is evil.
+
+- No notation to construct objects is supported.
+
+  *Motivation*: This might need a longer discussion. JSONPath allows the limited
+  construction of arrays using the union operator (albeit keys need to be on the
+  same level). No such thing exists for objects yet. One could argue that
+  JSONPath is a query language and not a JSON transformation language and thus
+  should not need such a feature.
+
+- Filters inside filters are not supported.
+
+  *Motivation*: I couldn't come up with an example where this could not be
+  solved without. Less is more.
+
 
 ## TODO
 
@@ -255,3 +296,8 @@ To call out some decisions deviating from other implementations:
   No consensus, but if we support $[::2] we should probably support this too.
   The current default values (start 0 and end "len(array)") do not work for
   negative steps as the start and end need to be switched.
+
+- Regexp!
+
+- Let's get more example queries from ../../INTERESTING_QUERIES as they include
+  some lessons from implementing the proposal.
