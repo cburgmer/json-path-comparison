@@ -6,7 +6,7 @@
 
 <p>Selector: <code>$[?(@.key+50==100)]</code></p>
 
-<pre><code>[{"key": 60}, {"key": 50}, {"key": 10}, {"key": -50}]
+<pre><code>[{"key": 60}, {"key": 50}, {"key": 10}, {"key": -50}, {"key+50": 100}]
 </code></pre>
 
 <h2>Results</h2>
@@ -29,6 +29,9 @@ Clojure (json-path)
   },
   {
     "key": -50
+  },
+  {
+    "key+50": 100
   }
 ]
 </code></pre>
@@ -48,16 +51,9 @@ Cpp (jsoncons)
 Elixir (warpath)
 </h4>
 
-<pre><code>[]
-</code></pre>
-
-<h4 id="Golang_github.com-bhmj-jsonslice">
-Golang (github.com-bhmj-jsonslice)
-</h4>
-
 <pre><code>[
   {
-    "key": 50
+    "key+50": 100
   }
 ]
 </code></pre>
@@ -84,7 +80,11 @@ Golang (github.com-spyzhov-ajson)
 Golang (github.com-vmware-labs-yaml-jsonpath)
 </h4>
 
-<pre><code>[]
+<pre><code>[
+  {
+    "key+50": 100
+  }
+]
 </code></pre>
 
 <h4 id="JavaScript_Goessner">
@@ -124,21 +124,33 @@ JavaScript (jsonpath-plus)
 Java (com.github.jsurfer)
 </h4>
 
-<pre><code>[]
+<pre><code>[
+  {
+    "key+50": 100
+  }
+]
 </code></pre>
 
 <h4 id="Java_com.jayway.jsonpath">
 Java (com.jayway.jsonpath)
 </h4>
 
-<pre><code>[]
+<pre><code>[
+  {
+    "key+50": 100
+  }
+]
 </code></pre>
 
 <h4 id="Objective-C_SMJJSONPath">
 Objective-C (SMJJSONPath)
 </h4>
 
-<pre><code>[]
+<pre><code>[
+  {
+    "key+50": 100
+  }
+]
 </code></pre>
 
 <h4 id="Python_jsonpath">
@@ -156,21 +168,33 @@ Python (jsonpath)
 Rust (jsonpath_lib)
 </h4>
 
-<pre><code>[]
+<pre><code>[
+  {
+    "key+50": 100
+  }
+]
 </code></pre>
 
 <h4 id="Scala_jsonpath">
 Scala (jsonpath)
 </h4>
 
-<pre><code>[]
+<pre><code>[
+  {
+    "key+50": 100
+  }
+]
 </code></pre>
 
 <h4 id="dotNET_Json.NET">
 dotNET (Json.NET)
 </h4>
 
-<pre><code>[]
+<pre><code>[
+  {
+    "key+50": 100
+  }
+]
 </code></pre>
 
 <h4 id="dotNET_JsonPathLib">
@@ -238,6 +262,13 @@ Golang (github.com-PaesslerAG-jsonpath)
 </h4>
 
 <pre><code>parsing error: $[?(@.key+50==100)]  :1:10 - 1:11 unexpected "+" while scanning parentheses expected ")"
+</code></pre>
+
+<h4 id="Golang_github.com-bhmj-jsonslice">
+Golang (github.com-bhmj-jsonslice)
+</h4>
+
+<pre><code>invalid operands for arithmetic operator
 </code></pre>
 
 <h4 id="Haskell_jsonpath">

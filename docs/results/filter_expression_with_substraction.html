@@ -6,12 +6,21 @@
 
 <p>Selector: <code>$[?(@.key-50==-100)]</code></p>
 
-<pre><code>[{"key": 60}, {"key": 50}, {"key": 10}, {"key": -50}]
+<pre><code>[{"key": 60}, {"key": 50}, {"key": 10}, {"key": -50}, {"key-50": -100}]
 </code></pre>
 
 <h2>Results</h2>
 
 <h3>Other responses</h3>
+
+<h4 id="Bash_JSONPath.sh">
+Bash (JSONPath.sh)
+</h4>
+
+<pre><code>{
+  "key-50": -100
+}
+</code></pre>
 
 <h4 id="Clojure_json-path">
 Clojure (json-path)
@@ -48,16 +57,9 @@ Cpp (jsoncons)
 Elixir (warpath)
 </h4>
 
-<pre><code>[]
-</code></pre>
-
-<h4 id="Golang_github.com-bhmj-jsonslice">
-Golang (github.com-bhmj-jsonslice)
-</h4>
-
 <pre><code>[
   {
-    "key": -50
+    "key-50": -100
   }
 ]
 </code></pre>
@@ -84,14 +86,22 @@ Golang (github.com-spyzhov-ajson)
 Golang (github.com-vmware-labs-yaml-jsonpath)
 </h4>
 
-<pre><code>[]
+<pre><code>[
+  {
+    "key-50": -100
+  }
+]
 </code></pre>
 
 <h4 id="Haskell_jsonpath">
 Haskell (jsonpath)
 </h4>
 
-<pre><code>[]
+<pre><code>[
+  {
+    "key-50": -100
+  }
+]
 </code></pre>
 
 <h4 id="JavaScript_Goessner">
@@ -131,28 +141,55 @@ JavaScript (jsonpath-plus)
 Java (com.github.jsurfer)
 </h4>
 
-<pre><code>[]
+<pre><code>[
+  {
+    "key-50": -100
+  }
+]
 </code></pre>
 
 <h4 id="Java_com.jayway.jsonpath">
 Java (com.jayway.jsonpath)
 </h4>
 
-<pre><code>[]
+<pre><code>[
+  {
+    "key-50": -100
+  }
+]
 </code></pre>
 
 <h4 id="Objective-C_SMJJSONPath">
 Objective-C (SMJJSONPath)
 </h4>
 
-<pre><code>[]
+<pre><code>[
+  {
+    "key-50": -100
+  }
+]
+</code></pre>
+
+<h4 id="PHP_galbar-jsonpath">
+PHP (galbar-jsonpath)
+</h4>
+
+<pre><code>[
+  {
+    "key-50": -100
+  }
+]
 </code></pre>
 
 <h4 id="PHP_remorhaz-jsonpath">
 PHP (remorhaz-jsonpath)
 </h4>
 
-<pre><code>[]
+<pre><code>[
+  {
+    "key-50": -100
+  }
+]
 </code></pre>
 
 <h4 id="Python_jsonpath">
@@ -170,21 +207,33 @@ Python (jsonpath)
 Rust (jsonpath_lib)
 </h4>
 
-<pre><code>[]
+<pre><code>[
+  {
+    "key-50": -100
+  }
+]
 </code></pre>
 
 <h4 id="Scala_jsonpath">
 Scala (jsonpath)
 </h4>
 
-<pre><code>[]
+<pre><code>[
+  {
+    "key-50": -100
+  }
+]
 </code></pre>
 
 <h4 id="dotNET_Json.NET">
 dotNET (Json.NET)
 </h4>
 
-<pre><code>[]
+<pre><code>[
+  {
+    "key-50": -100
+  }
+]
 </code></pre>
 
 <h4 id="dotNET_JsonPathLib">
@@ -213,17 +262,14 @@ dotNET (Manatee.Json)
 Proposal (A)
 </h4>
 
-<pre><code>[]
+<pre><code>[
+  {
+    "key-50": -100
+  }
+]
 </code></pre>
 
 <h3>Errors</h3>
-
-<h4 id="Bash_JSONPath.sh">
-Bash (JSONPath.sh)
-</h4>
-
-<pre><code>Expecting value: line 3 column 1 (char 2)
-</code></pre>
 
 <h4 id="C_json-glib">
 C (json-glib)
@@ -262,6 +308,13 @@ Golang (github.com-PaesslerAG-jsonpath)
 <pre><code>parsing error: $[?(@.key-50==-100)] :1:10 - 1:11 unexpected "-" while scanning parentheses expected ")"
 </code></pre>
 
+<h4 id="Golang_github.com-bhmj-jsonslice">
+Golang (github.com-bhmj-jsonslice)
+</h4>
+
+<pre><code>invalid operands for arithmetic operator
+</code></pre>
+
 <h4 id="Kotlin_com.nfeld.jsonpathlite">
 Kotlin (com.nfeld.jsonpathlite)
 </h4>
@@ -281,13 +334,6 @@ PHP (flow-jsonpath)
 </h4>
 
 <pre><code>Error: 'Malformed filter query'
-</code></pre>
-
-<h4 id="PHP_galbar-jsonpath">
-PHP (galbar-jsonpath)
-</h4>
-
-<pre><code>jsonpath returned false, this might indicate an error
 </code></pre>
 
 <h4 id="Perl_JSON-Path">

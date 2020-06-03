@@ -130,7 +130,7 @@ queries:
     result: [{"another": {"key": 1}, "key": 42}]
   - id: filter_expression_with_addition
     status: open
-    result: []
+    result: [{"key+50": 100}]
   - id: filter_expression_with_boolean_and_operator
     status: open
     result: [{"key": 43}]
@@ -150,7 +150,7 @@ queries:
     result: [{"a": true, "b": true}, {"c": true}]
   - id: filter_expression_with_division
     status: open
-    result: []
+    result: [{"key/10": 5}]
   - id: filter_expression_with_empty_expression
     status: error
   - id: filter_expression_with_equals
@@ -223,7 +223,7 @@ queries:
     result: [{"a": [{"price": 11}]}, {"a": [{"price": 8}, {"price": 12}, {"price": 3}]}]
   - id: filter_expression_with_substraction
     status: open
-    result: []
+    result: [{"key-50": -100}]
   - id: filter_expression_with_triple_equal
     status: error
   - id: filter_expression_with_value

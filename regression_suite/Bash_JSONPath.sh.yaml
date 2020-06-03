@@ -261,7 +261,8 @@ queries:
     status: open
     result: [{"a": true, "b": true}, {"c": true}, {"d": true}]
   - id: filter_expression_with_division
-    status: error
+    status: open
+    result: {"key/10": 5}
   - id: filter_expression_with_empty_expression
     status: error
   - id: filter_expression_with_equals
@@ -339,7 +340,8 @@ queries:
   - id: filter_expression_with_subfilter
     status: error
   - id: filter_expression_with_substraction
-    status: error
+    status: open
+    result: {"key-50": -100}
   - id: filter_expression_with_triple_equal
     status: error
   - id: filter_expression_with_value
