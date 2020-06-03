@@ -237,5 +237,21 @@ To call out some decisions deviating from other implementations:
 ## TODO
 
 - JSON in filter?
+
+  Users might want to check for complex values, i.e. arrays and objects. Some
+  implementations allow JSON notation to denote those values. Some even allow
+  single quotes which JSON does not. If we allow JSON, are we going to be
+  inconsistent if we continue to allow simple strings with single quotes? If
+  we disallow simple values in single quotes, are we keeping single quotes for
+  children name lookup?
+
 - Arbitrary brackets in filter
+
+  The current grammar does not allow for well formatted brackets in any place.
+  This isn't what I'd expect as a user.
+
 - $[::-2]
+
+  No consensus, but if we support $[::2] we should probably support this too.
+  The current default values (start 0 and end "len(array)") do not work for
+  negative steps as the start and end need to be switched.
