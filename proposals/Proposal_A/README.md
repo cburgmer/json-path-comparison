@@ -12,11 +12,21 @@ of JSONPath, especially the consensus.
 This document tries to call out specific decisions where it deviates from
 either.
 
-The proposal is also implemented in JavaScript:
+The guiding principle of this proposal is to balance
+- reduced complexity (less code is better),
+- adherence to the consensus (more alignment is better),
+- reduced room for user errors (less options are better).
+
+## Implementation
+
+The proposal is also implemented in JavaScript for inspection:
 
 - [index.js](./index.js) Entry point
 - [selector.peg](./selector.peg) Selector grammar
 - [operators.js](./operators.js) Operator definitions and execution algorithm
+
+For now, if this documentation and the implementation disagree, the
+implementation wins.
 
 ## Execution algorithm
 
@@ -50,50 +60,35 @@ To follow the execution results: `( [{"keyA": 1, "keyB": 2}, {"keyA": 3}] )`
 
 ## Operators
 
-Operators are structured in a hierarchy:
+Two main operators exist, "recursive descent" and "children lookup". The latter
+can be divided further:
 
 1. Children lookup, e.g. `$[1, 10]`
-    1. Index lookup, e.g. `$.key` or `$[1]`
+    1. Index lookup, e.g. `$[1]`
+    2. Name lookup, e.g. `$.key`
     2. All children, e.g. `$.*` or `$[*]`
     3. Array slice, e.g. `$[3:5]`
     4. Filter, e.g. `$[?(@.key>2)]`
 2. Recursive descent, e.g. `$..key`
 
+*Motivation*
+
 Grouping most operators under a general operator "children lookup" allows for
 the union of any particular query and thus a more powerful query mechanism.
 
-The recursive descent operator is specific as it is not allowed to exist by
-itself, i.e. without being followed by a children lookup. This simplifies
-the selector grammar somewhat, considering that we need special handling for
-the contraction in combination with dot notation, e.g. `$..key`. (The more
-logical notation would've been `$...key`, not the three dots.)
-
-## Notation
+### Notation
 
 All notations from Goessner's initial proposal are supported and mapped to the
 above operators.
 
 Examples:
 
-- `$`, the empty set
-- `$.key`, children lookup with index `key`
-- `$["key", "another"]`, children lookup wih index "key" and index "another"
+- `$`, the empty list of operators
+- `$.key`, children lookup with name `key`
+- `$["key", "another"]`, children lookup with name "key" and name "another"
 - `$..[0]`, recursive descent and children lookup with index "0"
-- `$..key`, recursive descent and children lookup with index "key"
+- `$..key`, recursive descent and children lookup with name "key"
   (note the contraction of `..` and `.key`)
-
-See the grammar [selector.peg](./selector.peg).
-
-To call out some decisions deviating from other implementations:
-
-- Array slice with step 0 (`$[1:3:0]`) does not parse
-- Dot bracket (`$.["key"]`) does not parse
-- Empty bracket notation (`$[]`) does not parse
-- Dot notation with quotes (`$.'a key'`) does not parse
-- Dot notation inside bracket notation (`$[a.key]`) does not parse
-- Quotes inside strings for key bracket notation can be quoted with a backslash, e.g. `$['E\'lir']`
-- Whitespace is allowed in key bracket notation, around the brackets and the comma
-- Bracket notation needs quotes when indexing, unless a number is given
 
 ## Grammar
 
@@ -110,7 +105,7 @@ To call out some decisions deviating from other implementations:
         | ".*"
 
     DotChildName
-      ::= [^\.\*\[\]\(\)@\?\|& ,:=<>!"'\\]+
+      ::= [^ -#%-,\.\/\:-\@\[-\`\{-\~]+
 
     BracketChildren
       ::= "[" ws BracketElements ws "]"
@@ -182,6 +177,62 @@ To call out some decisions deviating from other implementations:
         | "true"
         | "null"
         | Number
+
+To call out some decisions deviating from other implementations:
+
+- Array slice with step 0 (`$[1:3:0]`) does not parse
+
+  *Motivation*: This follows how Python implements slicing. Step 0 is the only
+  value that can be safely rejected at compile time, while the other values
+  interact with the length of the array at runtime.
+
+- Dot bracket (`$.["key"]`) does not parse
+
+  *Motivation*: Less is more. Use `$["key"]` instead.
+
+- Empty bracket notation (`$[]`) does not parse
+- Dot notation with quotes (`$.'a key'`) does not parse
+
+  *Motivation*: Less is more. Use `$["a key"]` instead.
+
+- Dot notation inside bracket notation (`$[a.key]`) does not parse
+
+  *Motivation*: There are potential use cases when combining sub-keys in a union
+  (e.g. `$[key.sub,anotherKey]`, but this would need further investigation.
+
+- Quotes inside strings for key bracket notation can be quoted with a backslash, e.g. `$['E\'lir']`
+- Whitespace is allowed in key bracket notation, around the brackets and the comma
+
+  *Motivation*: Humans need whitespace to communicate structure.
+
+- Bracket notation needs quotes when indexing, unless a number is given
+
+  *Motivation*: Find clear split between array index and object name lookup.
+
+- "Bald" recursive descent is not supported
+
+  *Motivation*: No consensus, but more specifically would introduce more
+  complexity into grammar without much gain to the user. (We would have to
+  introduce a specific terminating rule for the bald version, to avoid
+  `$...name` becoming valid.)
+
+- No complex operator precedence unless trivial. Force explicit brackets.
+
+  *Motivation*: The author loves Lisp which makes precedence explicit by
+  grouping and avoids complex precedence tables. Maybe we can reduce user
+  errors by making some of the groups explicit via enforcing brackets.
+
+- No support for integers with leading zeros
+
+  *Motivation*: No consistency in implementations on where octal numerals are
+  (not) supported.
+
+- Allow whole Unicode range in dot notation, with the exception of
+  non-alphanumeric ASCII characters and '$' and '-'.
+
+  *Motivation*: Let's not follow JavaScript's more complex identifier syntax if
+  we can keep it simple. To avoid "special characters" though to avoid conflict
+  with JSONPath's own syntactic elements.
 
 ## TODO
 
