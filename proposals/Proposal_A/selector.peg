@@ -11,7 +11,7 @@ DotChild
   / ".*" { return [['children', [['all']]]]; }
 
 DotChildName
-  = [^\.\*\[\]\(\)@\?\|& ,:=<>!"'\\]+ { return text(); }
+  = [^ -#%-,\.\/\:-\@\[-\`\{-\~]+ { return text(); }
 
 BracketChildren
   = "[" ws children:BracketElements ws "]" { return [['children', children]]; }
