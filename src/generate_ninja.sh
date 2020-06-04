@@ -5,7 +5,8 @@ readonly test_compilation_dir="build/test_compilation"
 readonly results_dir="build/results"
 readonly consensus_dir="build/consensus"
 readonly majority_dir="build/majority"
-readonly proposal_majority_dir="build/proposal_majority"
+readonly majority_results_dir="build/majority_results"
+readonly implementations_matching_majority_dir="build/implementations_matching_majority"
 readonly markdown_dir="build/markdown"
 readonly bug_reports_dir="bug_reports"
 readonly docs_dir="docs"
@@ -144,6 +145,35 @@ consensus_rules() {
     local query
 
     cat <<EOF
+rule build_majority_result
+  command = LANG=en_US.UTF-8 LC_ALL= LC_COLLATE=C ./src/build_majority_result.sh \$in > \$out
+EOF
+    echo
+    while IFS= read -r query; do
+        echo "build ${majority_results_dir}/${query}: build_majority_result ${results_dir}/${query} | src/build_majority_result.sh src/majority_result.py"
+    done <<< "$(all_queries)"
+    echo
+
+
+    cat <<EOF
+rule build_implementations_matching_majority
+  command = LANG=en_US.UTF-8 LC_ALL= LC_COLLATE=C ./src/build_implementations_matching_majority.sh \$in > \$out
+EOF
+    echo
+    while IFS= read -r query; do
+        echo "build ${implementations_matching_majority_dir}/${query}: build_implementations_matching_majority ${results_dir}/${query} ${majority_results_dir}/${query} | src/build_implementations_matching_majority.sh"
+    done <<< "$(all_queries)"
+    echo
+    # Aggregate build
+    echo -n "build ${implementations_matching_majority_dir}: phony"
+    while IFS= read -r query; do
+        echo -n " ${implementations_matching_majority_dir}/${query}"
+    done <<< "$(all_queries)"
+    echo
+    echo
+
+
+    cat <<EOF
 rule build_majority
   command = LANG=en_US.UTF-8 LC_ALL= LC_COLLATE=C ./src/build_majority.sh \$in > \$out
 EOF
@@ -156,24 +186,6 @@ EOF
     echo -n "build ${majority_dir}: phony"
     while IFS= read -r query; do
         echo -n " ${majority_dir}/${query}"
-    done <<< "$(all_queries)"
-    echo
-    echo
-
-
-    cat <<EOF
-rule build_proposal_majority
-  command = LANG=en_US.UTF-8 LC_ALL= LC_COLLATE=C ./src/build_proposal_majority_match.sh \$in > \$out
-EOF
-    echo
-    while IFS= read -r query; do
-        echo "build ${proposal_majority_dir}/${query}: build_proposal_majority ${results_dir}/${query} ${majority_dir}/${query} | src/build_proposal_majority_match.sh"
-    done <<< "$(all_queries)"
-    echo
-    # Aggregate build
-    echo -n "build ${proposal_majority_dir}: phony"
-    while IFS= read -r query; do
-        echo -n " ${proposal_majority_dir}/${query}"
     done <<< "$(all_queries)"
     echo
     echo
@@ -219,7 +231,7 @@ rule compile_table
   command = LANG=en_US.UTF-8 LC_ALL= LC_COLLATE=C ./src/compile_table.sh \$in > \$out
 EOF
     echo
-    echo "build ${markdown_dir}/index.md: compile_table ${results_dir} ${majority_dir} ${consensus_dir} ${proposal_majority_dir} | src/compile_table.sh src/sort_queries.py queries/ implementations/"
+    echo "build ${markdown_dir}/index.md: compile_table ${results_dir} ${consensus_dir} ${implementations_matching_majority_dir} | src/compile_table.sh src/sort_queries.py queries/ implementations/"
     echo
 
     cat <<EOF

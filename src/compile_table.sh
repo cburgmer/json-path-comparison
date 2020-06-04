@@ -2,9 +2,8 @@
 set -euo pipefail
 
 readonly results_dir="$1"
-readonly majority_dir="$2"
-readonly consensus_dir="$3"
-readonly proposal_majority_dir="$4"
+readonly consensus_dir="$2"
+readonly implementations_matching_majority_dir="$3"
 
 . src/shared.sh
 
@@ -23,13 +22,7 @@ all_queries() {
 is_in_majority() {
     local query="$1"
     local implementation="$2"
-    tail -n +4 < "${majority_dir}/${query}" | grep "^${implementation}\$" > /dev/null
-}
-
-is_proposal_in_majority() {
-    local query="$1"
-    local proposal="$2"
-    grep "^${proposal}\$" < "${proposal_majority_dir}/${query}" > /dev/null
+    grep "^${implementation}\$" < "${implementations_matching_majority_dir}/${query}"> /dev/null
 }
 
 has_consensus() {
@@ -72,41 +65,6 @@ give_mark() {
     fi
 }
 
-give_mark_for_proposal() {
-    local query="$1"
-    local proposal="$2"
-
-    # Error?
-    if ! is_query_result_ok "${results_dir}/${query}/${proposal}"; then
-        if is_query_result_not_found_error "${results_dir}/${query}/${proposal}"; then
-            echo "<a href=\"results/${query}.md#${proposal}\">f</a>"
-            return
-        fi
-        if is_query_result_not_supported_error "${results_dir}/${query}/${proposal}"; then
-            echo "<a href=\"results/${query}.md#${proposal}\">s</a>"
-            return
-        fi
-
-        echo "<a href=\"results/${query}.md#${proposal}\">e</a>"
-        return
-    fi
-
-    if is_proposal_in_majority "$query" "$proposal"; then
-        if has_consensus "$query"; then
-            echo "<a href=\"results/${query}.md#consensus\">✓</a>"
-        else
-            echo "<a href=\"results/${query}.md#${proposal}\">➚</a>"
-        fi
-    else
-        # So we are an outlier, but is there actually any gold standard?
-        if has_consensus "$query"; then
-            echo "<a href=\"results/${query}.md#${proposal}\">✗</a>"
-        else
-            echo "<a href=\"results/${query}.md#${proposal}\">➘</a>"
-        fi
-    fi
-}
-
 compile_row() {
     local query="$1"
     local query_dir="./queries/${query}"
@@ -143,7 +101,7 @@ compile_row() {
 
     while IFS= read -r proposal; do
         echo "<td class=\"proposal\">"
-        give_mark_for_proposal "$query" "$proposal"
+        give_mark "$query" "$proposal"
         echo "</td>"
     done <<< "$(all_proposals)"
 
