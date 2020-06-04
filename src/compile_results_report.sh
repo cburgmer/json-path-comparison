@@ -74,7 +74,7 @@ consensus() {
         echo "</h4>"
         echo
         cut -f2 <<< "$line" | pre_block
-    done <<< "$(grep -v '^consensus' < "${consensus_dir}/${query}")"
+    done <<< "$(grep -v '^consensus' < "${consensus_dir}/${query}" | grep consensus)"
 }
 
 main() {

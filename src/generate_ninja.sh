@@ -197,7 +197,7 @@ rule build_consensus
 EOF
     echo
     while IFS= read -r query; do
-        echo "build ${consensus_dir}/${query}: build_consensus ${majority_dir}/${query} | src/build_consensus.sh"
+        echo "build ${consensus_dir}/${query}: build_consensus ${majority_results_dir}/${query} | src/build_consensus.sh"
     done <<< "$(all_queries)"
     echo
     # Aggregate consensus build

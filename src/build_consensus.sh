@@ -13,10 +13,14 @@ consensus() {
     local min_consensus="$1"
     local majority_size
 
-    majority_size="$(tail -n +4 < "$majority_result" | wc -l)"
+    if [[ ! -s "$majority_result" ]]; then
+        return
+    fi
+
+    majority_size="$(grep "^count" < "$majority_result" | cut -f2)"
 
     if [[ "$majority_size" -ge $min_consensus ]]; then
-        ./src/consensus.py < "$majority_result"
+        cat "$majority_result"
     fi
 }
 

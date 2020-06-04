@@ -27,7 +27,7 @@ consensus() {
         cut -f1 <<< "$line" | tr -d '\n'
         echo -n ": "
         cut -f2 <<< "$line"
-    done < "${consensus_dir}/${query}"
+    done <<< "$(grep consensus < "${consensus_dir}/${query}")"
 }
 
 query_entry() {
