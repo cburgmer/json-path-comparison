@@ -391,6 +391,14 @@ queries:
     document: {"in": "value"}
     consensus: ["value"]
     scalar-consensus: "value"
+  - id: dot_notation_with_key_named_length
+    selector: "$.length"
+    document: {"length": "value"}
+    consensus: ["value"]
+    scalar-consensus: "value"
+  - id: dot_notation_with_key_named_length_on_array
+    selector: "$.length"
+    document: [4, 5, 6]
   - id: dot_notation_with_key_named_null
     selector: "$.null"
     document: {"null": "value"}

@@ -90,6 +90,22 @@ The following queries provide results that do not match those of other implement
   Unrecognized JSON Path element. Path up to error: '$.key'
   ```
 
+- [ ] `$.length`
+  Input:
+  ```
+  {
+    "length": "value"
+  }
+  ```
+  Expected output:
+  ```
+  ["value"]
+  ```
+  Actual output:
+  ```
+  []
+  ```
+
 - [ ] `$['key','another']`
   Input:
   ```

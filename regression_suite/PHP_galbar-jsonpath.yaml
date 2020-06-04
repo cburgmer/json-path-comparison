@@ -96,6 +96,8 @@ queries:
     status: error
   - id: dot_notation_with_empty_path
     status: error
+  - id: dot_notation_with_key_named_length_on_array
+    status: error
   - id: dot_notation_with_key_root_literal
     status: open
     result: ["value"]

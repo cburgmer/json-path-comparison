@@ -187,6 +187,11 @@ queries:
   - id: dot_notation_with_key_named_in
     status: fail
     result: {"in": "value"}
+  - id: dot_notation_with_key_named_length
+    status: fail
+    result: {"length": "value"}
+  - id: dot_notation_with_key_named_length_on_array
+    status: error
   - id: dot_notation_with_key_named_null
     status: fail
     result: {"null": "value"}

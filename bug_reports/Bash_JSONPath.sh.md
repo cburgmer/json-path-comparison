@@ -1198,6 +1198,24 @@ The following queries provide results that do not match those of other implement
   }
   ```
 
+- [ ] `$.length`
+  Input:
+  ```
+  {
+    "length": "value"
+  }
+  ```
+  Expected output:
+  ```
+  ["value"]
+  ```
+  Actual output:
+  ```
+  {
+    "length": "value"
+  }
+  ```
+
 - [ ] `$.null`
   Input:
   ```

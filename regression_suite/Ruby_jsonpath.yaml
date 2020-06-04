@@ -98,6 +98,8 @@ queries:
   - id: dot_notation_with_empty_path
     status: open
     result: [{"": 9001, "''": "nice", "key": 42}]
+  - id: dot_notation_with_key_named_length_on_array
+    status: error
   - id: dot_notation_with_key_root_literal
     status: open
     result: [{"$": "value"}]
