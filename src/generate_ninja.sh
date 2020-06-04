@@ -4,7 +4,6 @@ set -euo pipefail
 readonly test_compilation_dir="build/test_compilation"
 readonly results_dir="build/results"
 readonly consensus_dir="build/consensus"
-readonly majority_dir="build/majority"
 readonly majority_results_dir="build/majority_results"
 readonly implementations_matching_majority_dir="build/implementations_matching_majority"
 readonly markdown_dir="build/markdown"
@@ -174,24 +173,6 @@ EOF
 
 
     cat <<EOF
-rule build_majority
-  command = LANG=en_US.UTF-8 LC_ALL= LC_COLLATE=C ./src/build_majority.sh \$in > \$out
-EOF
-    echo
-    while IFS= read -r query; do
-        echo "build ${majority_dir}/${query}: build_majority ${results_dir}/${query} | src/build_majority.sh src/majority.py"
-    done <<< "$(all_queries)"
-    echo
-    # Aggregate build
-    echo -n "build ${majority_dir}: phony"
-    while IFS= read -r query; do
-        echo -n " ${majority_dir}/${query}"
-    done <<< "$(all_queries)"
-    echo
-    echo
-
-
-    cat <<EOF
 rule build_consensus
   command = LANG=en_US.UTF-8 LC_ALL= LC_COLLATE=C ./src/build_consensus.sh \$in > \$out
 EOF
@@ -218,7 +199,7 @@ rule compile_bug_reports
 EOF
     echo
     while IFS= read -r implementation; do
-        echo "build ${bug_reports_dir}/${implementation}.md: compile_bug_reports ${results_dir} ${majority_dir} ${consensus_dir} implementations/${implementation} | src/compile_bug_reports.sh"
+        echo "build ${bug_reports_dir}/${implementation}.md: compile_bug_reports ${results_dir} ${implementations_matching_majority_dir} ${consensus_dir} implementations/${implementation} | src/compile_bug_reports.sh"
     done <<< "$(all_implementations)"
     echo
 }
@@ -240,7 +221,7 @@ rule compile_results_report
 EOF
     echo
     while IFS= read -r query; do
-        echo "build ${markdown_dir}/results/${query}.md: compile_results_report ${results_dir} ${majority_dir} ${consensus_dir} queries/${query} | src/compile_results_report.sh"
+        echo "build ${markdown_dir}/results/${query}.md: compile_results_report ${results_dir} ${implementations_matching_majority_dir} ${consensus_dir} queries/${query} | src/compile_results_report.sh"
     done <<< "$(all_queries)"
     echo
 
@@ -273,7 +254,7 @@ EOF
 
     echo
     while IFS= read -r implementation; do
-        echo "build ${regression_suite}/${implementation}.yaml: compile_implementation_report ${results_dir} ${majority_dir} ${consensus_dir} implementations/${implementation} | src/compile_implementation_report.sh queries/ implementations/"
+        echo "build ${regression_suite}/${implementation}.yaml: compile_implementation_report ${results_dir} ${implementations_matching_majority_dir} ${consensus_dir} implementations/${implementation} | src/compile_implementation_report.sh queries/ implementations/"
     done <<< "$(all_implementations)"
 }
 

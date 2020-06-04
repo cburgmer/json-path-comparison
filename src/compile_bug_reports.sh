@@ -2,7 +2,7 @@
 set -euo pipefail
 
 readonly results_dir="$1"
-readonly majority_dir="$2"
+readonly implementations_matching_majority_dir="$2"
 readonly consensus_dir="$3"
 readonly implementation_dir="$4"
 
@@ -25,7 +25,7 @@ code_block() {
 is_in_majority() {
     local query="$1"
     local implementation="$2"
-    tail -n +4 < "${majority_dir}/${query}" | grep "^${implementation}\$" > /dev/null
+    grep "^${implementation}\$" < "${implementations_matching_majority_dir}/${query}" > /dev/null
 }
 
 has_consensus() {
