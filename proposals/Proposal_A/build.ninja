@@ -1,9 +1,13 @@
 root = proposals/Proposal_A
 builddir = $root/build
 
-rule install
-  command = (cd $root && npm install && npm run generateGrammar) && echo > $out
+rule generateGrammar
+  command = cd $root && npm run generateGrammar
 
+rule install
+  command = (cd $root && npm install) && echo > $out
+
+build $builddir/selector.js: generateGrammar | $root/selector.peg
 build $builddir/node_modules_installed: install | $root/package.json $root/package-lock.json
 
-build $root/install: phony $builddir/node_modules_installed
+build $root/install: phony $builddir/node_modules_installed $builddir/selector.js

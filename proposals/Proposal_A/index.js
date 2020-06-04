@@ -1,5 +1,5 @@
 const Tracer = require("pegjs-backtrace");
-const { parse } = require("./selector");
+const { parse } = require("./build/selector");
 const execute = require("./operators");
 
 class SyntaxError extends Error {

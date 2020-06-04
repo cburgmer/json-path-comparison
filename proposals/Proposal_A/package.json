@@ -6,14 +6,12 @@
   "scripts": {
     "test": "npm run generateGrammar && prettier -c *.js --ignore-path selector.js && ./tests.js test_suite.yaml",
     "checkConsensus": "pegjs --trace -o selector.js selector.peg && ./tests.js ../../regression_suite/regression_suite.yaml",
-    "draw": "grammkit selector.peg -o selector.html",
-    "generateGrammar": "pegjs --trace -o selector.js selector.peg",
+    "generateGrammar": "mkdir -p ./build && pegjs --trace -o ./build/selector.js selector.peg",
     "prettyGrammar": "pegjs-strip selector.peg | sed 's/^  =/  ::=/' | sed 's/^  \\//    |/' | sed 's/^/    /'"
   },
   "author": "",
   "license": "GPL-3.0-or-later",
   "devDependencies": {
-    "grammkit": "^0.7.1",
     "pegjs": "^0.10.0",
     "pegjs-backtrace": "^0.2.0",
     "prettier": "^2.0.2",
