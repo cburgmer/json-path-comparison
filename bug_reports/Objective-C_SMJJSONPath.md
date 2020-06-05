@@ -20,7 +20,13 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  Filter: [1:3] can only be applied to arrays. Current context is: {":" = 42; a = 1; b = 2; c = 3; more = string; }
+  Filter: [1:3] can only be applied to arrays. Current context is: {
+      ":" = 42;
+      a = 1;
+      b = 2;
+      c = 3;
+      more = string;
+  }
   ```
 
 - [ ] `$[:]`
@@ -259,7 +265,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  Expected to find an object with property ['key'] in path $ but found 'GSArray'. This is not a json object.
+  Expected to find an object with property ['key'] in path $ but found '__NSArrayI'. This is not a json object.
   ```
 
 - [ ] `$.id`
@@ -277,7 +283,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  Expected to find an object with property ['id'] in path $ but found 'GSArray'. This is not a json object.
+  Expected to find an object with property ['id'] in path $ but found '__NSSingleObjectArrayI'. This is not a json object.
   ```
 
 - [ ] `$.missing`
