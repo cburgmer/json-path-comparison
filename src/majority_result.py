@@ -44,7 +44,7 @@ def build_histogram(pairs):
 def no_match_majority(result_paths):
     result_paths_with_no_match = [path for path in result_paths if is_no_match(path)]
 
-    canonical_consensus_candidate = []
+    canonical_consensus_candidate = "[]"
     return [("no_match", canonical_consensus_candidate, result_paths_with_no_match)]
 
 def single_match_majority(result_paths):
@@ -92,30 +92,39 @@ def is_clear_majority(candidate_ranking):
 
 
 def multiple_matches_majority_result(canonical_consensus):
-    print("consensus" + "\t" + canonical_consensus)
+    return {
+        "consensus": canonical_consensus
+    }
 
 def single_match_majority_result(canonical_consensus):
     j = json.loads(canonical_consensus, object_pairs_hook=OrderedDict)
     assert type(j) == list
     assert len(j) == 1
 
-    print("consensus" + "\t" + canonical_consensus)
-
     scalar = j[0]
-    print("scalar-consensus" + "\t" + json.dumps(scalar))
+    return {
+        "consensus": canonical_consensus,
+        "scalar-consensus": json.dumps(scalar)
+    }
 
 def no_match_majority_result(canonical_consensus):
-    assert canonical_consensus == []
-    print("consensus" + "\t" + "[]")
-    print("scalar-consensus" + "\t" + "null")
+    assert canonical_consensus == "[]"
+    return {
+        "consensus": canonical_consensus,
+        "scalar-consensus": "null"
+    }
 
-def print_majority_result(majority_type, canonical_consensus):
+def majority_result(majority_type, canonical_consensus):
     consensus_mapper = {
         "multiple_matches": multiple_matches_majority_result,
         "single_match": single_match_majority_result,
         "no_match": no_match_majority_result
     }
-    consensus_mapper[majority_type](canonical_consensus)
+    return consensus_mapper[majority_type](canonical_consensus)
+
+def print_dict(d):
+    for key, value in d.items():
+        print(key + "\t" + value)
 
 
 def main():
@@ -125,9 +134,12 @@ def main():
 
     candidate_ranking = sorted(majority_candidates, key=lambda candidate: len(candidate["paths"]))
     if is_clear_majority(candidate_ranking):
-        print("count" + "\t" + str(len(candidate_ranking[-1]["paths"])))
-        print("type" + "\t" + candidate_ranking[-1]["type"])
-        print_majority_result(candidate_ranking[-1]["type"], candidate_ranking[-1]["consensus"])
+        majority = candidate_ranking[-1]
+        print_dict({
+            "count": str(len(majority["paths"])),
+            "type": majority["type"],
+            **majority_result(majority["type"], majority["consensus"])
+        })
 
 if __name__ == '__main__':
     sys.exit(main())
