@@ -448,6 +448,24 @@ The following queries provide results that do not match those of other implement
   strconv.Atoi: parsing "\"key\"": invalid syntax
   ```
 
+- [ ] `$[]`
+  Input:
+  ```
+  {
+    "": 42,
+    "''": 123,
+    "\"\"": 222
+  }
+  ```
+  Expected output:
+  ```
+  NOT_SUPPORTED
+  ```
+  Error:
+  ```
+  len(tail) should >=3, []
+  ```
+
 - [ ] `$['']`
   Input:
   ```
@@ -705,6 +723,29 @@ The following queries provide results that do not match those of other implement
   strconv.Atoi: parsing "'ni.*'": invalid syntax
   ```
 
+- [ ] `$[two.some]`
+  Input:
+  ```
+  {
+    "one": {
+      "key": "value"
+    },
+    "two": {
+      "some": "more",
+      "key": "other value"
+    },
+    "two.some": "42"
+  }
+  ```
+  Expected output:
+  ```
+  NOT_SUPPORTED
+  ```
+  Error:
+  ```
+  strconv.Atoi: parsing "two.some": invalid syntax
+  ```
+
 - [ ] `$[0:2][*]`
   Input:
   ```
@@ -842,6 +883,29 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   object is not Slice
+  ```
+
+- [ ] `$.[key]`
+  Input:
+  ```
+  {
+    "key": "value",
+    "other": {
+      "key": [
+        {
+          "key": 42
+        }
+      ]
+    }
+  }
+  ```
+  Expected output:
+  ```
+  NOT_SUPPORTED
+  ```
+  Error:
+  ```
+  strconv.Atoi: parsing "key": invalid syntax
   ```
 
 - [ ] `$[?(@.id==42)].name`
@@ -1021,6 +1085,24 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   key error: missing not found in object
+  ```
+
+- [ ] `$.`
+  Input:
+  ```
+  {
+    "key": 42,
+    "": 9001,
+    "''": "nice"
+  }
+  ```
+  Expected output:
+  ```
+  NOT_SUPPORTED
+  ```
+  Actual output:
+  ```
+  9001
   ```
 
 - [ ] `$.*.bar.*`
@@ -1294,6 +1376,27 @@ The following queries provide results that do not match those of other implement
   interface conversion: interface {} is nil, not string
   ```
 
+- [ ] `$[?()]`
+  Input:
+  ```
+  [
+    1,
+    {
+      "key": 42
+    },
+    "value",
+    null
+  ]
+  ```
+  Expected output:
+  ```
+  NOT_SUPPORTED
+  ```
+  Actual output:
+  ```
+  []
+  ```
+
 - [ ] `$[?(@.key=="hi@example.com")]`
   Input:
   ```
@@ -1363,6 +1466,105 @@ The following queries provide results that do not match those of other implement
   []
   ```
 
+- [ ] `$[?(@.key=42)]`
+  Input:
+  ```
+  [
+    {
+      "key": 0
+    },
+    {
+      "key": 42
+    },
+    {
+      "key": -1
+    },
+    {
+      "key": 1
+    },
+    {
+      "key": 41
+    },
+    {
+      "key": 43
+    },
+    {
+      "key": 42.0001
+    },
+    {
+      "key": 41.9999
+    },
+    {
+      "key": 100
+    },
+    {
+      "key": "some"
+    },
+    {
+      "key": "42"
+    },
+    {
+      "key": null
+    },
+    {
+      "key": 420
+    },
+    {
+      "key": ""
+    },
+    {
+      "key": {}
+    },
+    {
+      "key": []
+    },
+    {
+      "key": [
+        42
+      ]
+    },
+    {
+      "key": {
+        "key": 42
+      }
+    },
+    {
+      "key": {
+        "some": 42
+      }
+    },
+    {
+      "some": "value"
+    }
+  ]
+  ```
+  Expected output:
+  ```
+  NOT_SUPPORTED
+  ```
+  Actual output:
+  ```
+  []
+  ```
+
+- [ ] `$(key,more)`
+  Input:
+  ```
+  {
+    "key": 1,
+    "some": 2,
+    "more": 3
+  }
+  ```
+  Expected output:
+  ```
+  NOT_SUPPORTED
+  ```
+  Error:
+  ```
+  key error: (key,more) not found in object
+  ```
+
 - [ ] `$['key','another']`
   Input:
   ```
@@ -1420,6 +1622,26 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   strconv.Atoi: parsing "'missing'": invalid syntax
+  ```
+
+- [ ] `$[*,1]`
+  Input:
+  ```
+  [
+    "first",
+    "second",
+    "third",
+    "forth",
+    "fifth"
+  ]
+  ```
+  Expected output:
+  ```
+  NOT_SUPPORTED
+  ```
+  Error:
+  ```
+  strconv.Atoi: parsing "*": invalid syntax
   ```
 
 

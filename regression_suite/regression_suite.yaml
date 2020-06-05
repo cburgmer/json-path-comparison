@@ -133,6 +133,7 @@ queries:
   - id: bracket_notation_with_empty_path
     selector: "$[]"
     document: {"": 42, "''": 123, "\"\"": 222}
+    consensus: NOT_SUPPORTED
   - id: bracket_notation_with_empty_string
     selector: "$['']"
     document: {"": 42, "''": 123, "\"\"": 222}
@@ -252,6 +253,7 @@ queries:
   - id: bracket_notation_with_two_literals_separated_by_dot_without_quotes
     selector: "$[two.some]"
     document: {"one": {"key": "value"}, "two": {"some": "more", "key": "other value"}, "two.some": "42"}
+    consensus: NOT_SUPPORTED
   - id: bracket_notation_with_wildcard_after_array_slice
     selector: "$[0:2][*]"
     document: [[1, 2], ["a", "b"], [0, 0]]
@@ -298,6 +300,7 @@ queries:
   - id: dot_bracket_notation_without_quotes
     selector: "$.[key]"
     document: {"key": "value", "other": {"key": [{"key": 42}]}}
+    consensus: NOT_SUPPORTED
   - id: dot_notation
     selector: "$.key"
     document: {"key": "value"}
@@ -386,6 +389,7 @@ queries:
   - id: dot_notation_with_empty_path
     selector: "$."
     document: {"key": 42, "": 9001, "''": "nice"}
+    consensus: NOT_SUPPORTED
   - id: dot_notation_with_key_named_in
     selector: "$.in"
     document: {"in": "value"}
@@ -531,6 +535,7 @@ queries:
   - id: filter_expression_with_empty_expression
     selector: "$[?()]"
     document: [1, {"key": 42}, "value", null]
+    consensus: NOT_SUPPORTED
   - id: filter_expression_with_equals
     selector: "$[?(@.key==42)]"
     document: [{"key": 0}, {"key": 42}, {"key": -1}, {"key": 1}, {"key": 41}, {"key": 43}, {"key": 42.0001}, {"key": 41.9999}, {"key": 100}, {"key": "some"}, {"key": "42"}, {"key": null}, {"key": 420}, {"key": ""}, {"key": {}}, {"key": []}, {"key": [42]}, {"key": {"key": 42}}, {"key": {"some": 42}}, {"some": "value"}]
@@ -622,6 +627,7 @@ queries:
   - id: filter_expression_with_single_equal
     selector: "$[?(@.key=42)]"
     document: [{"key": 0}, {"key": 42}, {"key": -1}, {"key": 1}, {"key": 41}, {"key": 43}, {"key": 42.0001}, {"key": 41.9999}, {"key": 100}, {"key": "some"}, {"key": "42"}, {"key": null}, {"key": 420}, {"key": ""}, {"key": {}}, {"key": []}, {"key": [42]}, {"key": {"key": 42}}, {"key": {"some": 42}}, {"some": "value"}]
+    consensus: NOT_SUPPORTED
   - id: filter_expression_with_subfilter
     selector: "$[?(@.a[?(@.price>10)])]"
     document: [{"a": [{"price": 1}, {"price": 3}]}, {"a": [{"price": 11}]}, {"a": [{"price": 8}, {"price": 12}, {"price": 3}]}, {"a": []}]
@@ -644,6 +650,7 @@ queries:
   - id: parens_notation
     selector: "$(key,more)"
     document: {"key": 1, "some": 2, "more": 3}
+    consensus: NOT_SUPPORTED
   - id: recursive_descent
     selector: "$.."
     document: [{"a": {"b": "c"}}, [0, 1]]
@@ -714,3 +721,4 @@ queries:
   - id: union_with_wildcard_and_number
     selector: "$[*,1]"
     document: ["first", "second", "third", "forth", "fifth"]
+    consensus: NOT_SUPPORTED

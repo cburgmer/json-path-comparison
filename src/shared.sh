@@ -34,12 +34,12 @@ is_query_result_ok() {
     test "$(query_result_status "$result")" = "OK"
 }
 
-is_query_result_not_found_error() {
+is_query_error() {
     local result="$1"
-    test "$(query_result_status "$result")" = "NOT_FOUND"
+    test "$(query_result_status "$result")" = "ERROR"
 }
 
-is_query_result_not_supported_error() {
+is_query_not_supported() {
     local result="$1"
     test "$(query_result_status "$result")" = "NOT_SUPPORTED"
 }

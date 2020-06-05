@@ -142,6 +142,29 @@ The following queries provide results that do not match those of other implement
   parsing error: $['ni.*']	:1:3 - 1:9 could not parse string: invalid syntax
   ```
 
+- [ ] `$[two.some]`
+  Input:
+  ```
+  {
+    "one": {
+      "key": "value"
+    },
+    "two": {
+      "some": "more",
+      "key": "other value"
+    },
+    "two.some": "42"
+  }
+  ```
+  Expected output:
+  ```
+  NOT_SUPPORTED
+  ```
+  Error:
+  ```
+  unknown key more
+  ```
+
 - [ ] `$['one','three'].key`
   Input:
   ```

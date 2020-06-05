@@ -70,7 +70,7 @@ queries:
   - id: dot_notation_with_double_quotes_after_recursive_descent
     status: error
   - id: dot_notation_with_empty_path
-    status: open
+    status: fail
     result: [{"": 9001, "''": "nice", "key": 42}]
   - id: dot_notation_with_key_named_length_on_array
     status: open

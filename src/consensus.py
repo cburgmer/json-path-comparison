@@ -21,6 +21,10 @@ def no_match_majority(canonical_consensus):
     print("consensus" + "\t" + "[]")
     print("scalar-consensus" + "\t" + "null")
 
+def not_supported_majority(canonical_consensus):
+    assert canonical_consensus == ""
+    print("consensus" + "\t" + "NOT_SUPPORTED")
+
 def main():
     majority_type = sys.stdin.readline().rstrip('\n')
     canonical_consensus = sys.stdin.readline().rstrip('\n')
@@ -28,7 +32,8 @@ def main():
     consensus_mapper = {
         "multiple_matches": multiple_matches_majority,
         "single_match": single_match_majority,
-        "no_match": no_match_majority
+        "no_match": no_match_majority,
+        "not_supported": not_supported_majority
     }
     consensus_mapper[majority_type](canonical_consensus)
 

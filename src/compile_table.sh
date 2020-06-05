@@ -35,16 +35,7 @@ give_mark() {
     local implementation="$2"
 
     # Error?
-    if ! is_query_result_ok "${results_dir}/${query}/${implementation}"; then
-        if is_query_result_not_found_error "${results_dir}/${query}/${implementation}"; then
-            echo "<a href=\"results/${query}.md#${implementation}\">f</a>"
-            return
-        fi
-        if is_query_result_not_supported_error "${results_dir}/${query}/${implementation}"; then
-            echo "<a href=\"results/${query}.md#${implementation}\">s</a>"
-            return
-        fi
-
+    if is_query_error "${results_dir}/${query}/${implementation}"; then
         echo "<a href=\"results/${query}.md#${implementation}\">e</a>"
         return
     fi
@@ -203,8 +194,6 @@ See the [FAQ](https://github.com/cburgmer/json-path-comparison/blob/master/FAQ.m
 - ✓ The result of this implementation matches the consensus of results.
 - ✗ The result does not match the consensus.
 - ➚ and ➘: no clear consensus amongst the implementations (the results disagree and/or a lot of implementations error), but ➚ indicates a majority (and probable future consensus).
-- f The implementation returned a *not found* error.
-- s The implementation returned a *not supported* error.
 - e The implementation failed executing the query and probably does not support this type of query.
 - ¹ This implementation returns queries with only a single possible match as a scalar element (e.g. <code>\$[0] => 42</code>). For the sake of comparing to other implementations these results are converted and wrapped in an array here.
 - ² It is unclear whether results for this query have a defined order, and some implementations might apply different and even non-deterministic ordering. For comparison the results are sorted into a canonical order.

@@ -913,6 +913,24 @@ The following queries provide results that do not match those of other implement
   Unexpected char, char=?, index=2
   ```
 
+- [ ] `$(key,more)`
+  Input:
+  ```
+  {
+    "key": 1,
+    "some": 2,
+    "more": 3
+  }
+  ```
+  Expected output:
+  ```
+  NOT_SUPPORTED
+  ```
+  Actual output:
+  ```
+  null
+  ```
+
 - [ ] `$`
   Input:
   ```

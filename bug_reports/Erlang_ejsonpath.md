@@ -157,6 +157,30 @@ The following queries provide results that do not match those of other implement
   syntax error before: '-'
   ```
 
+- [ ] `$.`
+  Input:
+  ```
+  {
+    "key": 42,
+    "": 9001,
+    "''": "nice"
+  }
+  ```
+  Expected output:
+  ```
+  NOT_SUPPORTED
+  ```
+  Actual output:
+  ```
+  [
+    {
+      "": 9001,
+      "''": "nice",
+      "key": 42
+    }
+  ]
+  ```
+
 - [ ] `$.屬性`
   Input:
   ```
@@ -192,6 +216,90 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   syntax error before: 2
+  ```
+
+- [ ] `$[?(@.key=42)]`
+  Input:
+  ```
+  [
+    {
+      "key": 0
+    },
+    {
+      "key": 42
+    },
+    {
+      "key": -1
+    },
+    {
+      "key": 1
+    },
+    {
+      "key": 41
+    },
+    {
+      "key": 43
+    },
+    {
+      "key": 42.0001
+    },
+    {
+      "key": 41.9999
+    },
+    {
+      "key": 100
+    },
+    {
+      "key": "some"
+    },
+    {
+      "key": "42"
+    },
+    {
+      "key": null
+    },
+    {
+      "key": 420
+    },
+    {
+      "key": ""
+    },
+    {
+      "key": {}
+    },
+    {
+      "key": []
+    },
+    {
+      "key": [
+        42
+      ]
+    },
+    {
+      "key": {
+        "key": 42
+      }
+    },
+    {
+      "key": {
+        "some": 42
+      }
+    },
+    {
+      "some": "value"
+    }
+  ]
+  ```
+  Expected output:
+  ```
+  NOT_SUPPORTED
+  ```
+  Error:
+  ```
+  init terminating in do_boot (Timeout)
+  
+  Crash dump is being written to: /dev/null...done
+  {"init terminating in do_boot","Timeout"}
   ```
 
 

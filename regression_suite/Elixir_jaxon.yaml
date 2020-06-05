@@ -159,7 +159,7 @@ queries:
     status: open
     result: ["top"]
   - id: dot_notation_with_empty_path
-    status: open
+    status: fail
     result: [{"": 9001, "''": "nice", "key": 42}]
   - id: dot_notation_with_key_named_length_on_array
     status: open
@@ -296,7 +296,7 @@ queries:
   - id: filter_expression_without_value
     status: error
   - id: parens_notation
-    status: open
+    status: fail
     result: []
   - id: recursive_descent
     status: open

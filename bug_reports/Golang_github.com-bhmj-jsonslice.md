@@ -19,6 +19,24 @@ The following queries provide results that do not match those of other implement
   No JSON output received
   ```
 
+- [ ] `$[]`
+  Input:
+  ```
+  {
+    "": 42,
+    "''": 123,
+    "\"\"": 222
+  }
+  ```
+  Expected output:
+  ```
+  NOT_SUPPORTED
+  ```
+  Error:
+  ```
+  field not found
+  ```
+
 - [ ] `$['']`
   Input:
   ```
@@ -65,6 +83,29 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   No JSON output received
+  ```
+
+- [ ] `$[two.some]`
+  Input:
+  ```
+  {
+    "one": {
+      "key": "value"
+    },
+    "two": {
+      "some": "more",
+      "key": "other value"
+    },
+    "two.some": "42"
+  }
+  ```
+  Expected output:
+  ```
+  NOT_SUPPORTED
+  ```
+  Error:
+  ```
+  path: invalid character at 5
   ```
 
 - [ ] `$[0:2][*]`
@@ -152,6 +193,29 @@ The following queries provide results that do not match those of other implement
   ]
   ```
 
+- [ ] `$.[key]`
+  Input:
+  ```
+  {
+    "key": "value",
+    "other": {
+      "key": [
+        {
+          "key": 42
+        }
+      ]
+    }
+  }
+  ```
+  Expected output:
+  ```
+  NOT_SUPPORTED
+  ```
+  Actual output:
+  ```
+  "value"
+  ```
+
 - [ ] `$.key`
   Input:
   ```
@@ -219,6 +283,24 @@ The following queries provide results that do not match those of other implement
   No JSON output received
   ```
 
+- [ ] `$.`
+  Input:
+  ```
+  {
+    "key": 42,
+    "": 9001,
+    "''": "nice"
+  }
+  ```
+  Expected output:
+  ```
+  NOT_SUPPORTED
+  ```
+  Error:
+  ```
+  path: unexpected end of path at 2
+  ```
+
 - [ ] `$.*.bar.*`
   Input:
   ```
@@ -243,6 +325,126 @@ The following queries provide results that do not match those of other implement
   ]
   ```
 
+- [ ] `$[?()]`
+  Input:
+  ```
+  [
+    1,
+    {
+      "key": 42
+    },
+    "value",
+    null
+  ]
+  ```
+  Expected output:
+  ```
+  NOT_SUPPORTED
+  ```
+  Error:
+  ```
+  empty filter
+  ```
+
+- [ ] `$[?(@.key=42)]`
+  Input:
+  ```
+  [
+    {
+      "key": 0
+    },
+    {
+      "key": 42
+    },
+    {
+      "key": -1
+    },
+    {
+      "key": 1
+    },
+    {
+      "key": 41
+    },
+    {
+      "key": 43
+    },
+    {
+      "key": 42.0001
+    },
+    {
+      "key": 41.9999
+    },
+    {
+      "key": 100
+    },
+    {
+      "key": "some"
+    },
+    {
+      "key": "42"
+    },
+    {
+      "key": null
+    },
+    {
+      "key": 420
+    },
+    {
+      "key": ""
+    },
+    {
+      "key": {}
+    },
+    {
+      "key": []
+    },
+    {
+      "key": [
+        42
+      ]
+    },
+    {
+      "key": {
+        "key": 42
+      }
+    },
+    {
+      "key": {
+        "some": 42
+      }
+    },
+    {
+      "some": "value"
+    }
+  ]
+  ```
+  Expected output:
+  ```
+  NOT_SUPPORTED
+  ```
+  Error:
+  ```
+  unknown token at 9
+  ```
+
+- [ ] `$(key,more)`
+  Input:
+  ```
+  {
+    "key": 1,
+    "some": 2,
+    "more": 3
+  }
+  ```
+  Expected output:
+  ```
+  NOT_SUPPORTED
+  ```
+  Error:
+  ```
+  path: invalid character at 1
+  ```
+
 - [ ] `$[4,1]`
   Input:
   ```
@@ -263,6 +465,28 @@ The following queries provide results that do not match those of other implement
   [
     2,
     5
+  ]
+  ```
+
+- [ ] `$[*,1]`
+  Input:
+  ```
+  [
+    "first",
+    "second",
+    "third",
+    "forth",
+    "fifth"
+  ]
+  ```
+  Expected output:
+  ```
+  NOT_SUPPORTED
+  ```
+  Actual output:
+  ```
+  [
+    "second"
   ]
   ```
 

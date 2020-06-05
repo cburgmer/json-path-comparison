@@ -579,6 +579,26 @@ The following queries provide results that do not match those of other implement
       lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
   ```
 
+- [ ] `$[]`
+  Input:
+  ```
+  {
+    "": 42,
+    "''": 123,
+    "\"\"": 222
+  }
+  ```
+  Expected output:
+  ```
+  NOT_SUPPORTED
+  ```
+  Error:
+  ```
+  ** (Jaxon.ParseError) Expected an integer at `]`
+      lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
+      lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
+  ```
+
 - [ ] `$['']`
   Input:
   ```
@@ -842,6 +862,31 @@ The following queries provide results that do not match those of other implement
       lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
   ```
 
+- [ ] `$[two.some]`
+  Input:
+  ```
+  {
+    "one": {
+      "key": "value"
+    },
+    "two": {
+      "some": "more",
+      "key": "other value"
+    },
+    "two.some": "42"
+  }
+  ```
+  Expected output:
+  ```
+  NOT_SUPPORTED
+  ```
+  Error:
+  ```
+  ** (Jaxon.ParseError) Expected an integer at `two.some]`
+      lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
+      lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
+  ```
+
 - [ ] `$[0:2][*]`
   Input:
   ```
@@ -932,6 +977,31 @@ The following queries provide results that do not match those of other implement
   Actual output:
   ```
   []
+  ```
+
+- [ ] `$.[key]`
+  Input:
+  ```
+  {
+    "key": "value",
+    "other": {
+      "key": [
+        {
+          "key": 42
+        }
+      ]
+    }
+  }
+  ```
+  Expected output:
+  ```
+  NOT_SUPPORTED
+  ```
+  Error:
+  ```
+  ** (Jaxon.ParseError) Expected an integer at `key]`
+      lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
+      lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
   ```
 
 - [ ] `$[?(@.id==42)].name`
@@ -1090,6 +1160,30 @@ The following queries provide results that do not match those of other implement
   ** (Jaxon.ParseError) Expected an integer at `'one','thr`
       lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
       lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
+  ```
+
+- [ ] `$.`
+  Input:
+  ```
+  {
+    "key": 42,
+    "": 9001,
+    "''": "nice"
+  }
+  ```
+  Expected output:
+  ```
+  NOT_SUPPORTED
+  ```
+  Actual output:
+  ```
+  [
+    {
+      "": 9001,
+      "''": "nice",
+      "key": 42
+    }
+  ]
   ```
 
 - [ ] `$..*`
@@ -1272,6 +1366,29 @@ The following queries provide results that do not match those of other implement
       lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
   ```
 
+- [ ] `$[?()]`
+  Input:
+  ```
+  [
+    1,
+    {
+      "key": 42
+    },
+    "value",
+    null
+  ]
+  ```
+  Expected output:
+  ```
+  NOT_SUPPORTED
+  ```
+  Error:
+  ```
+  ** (Jaxon.ParseError) Expected an integer at `?()]`
+      lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
+      lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
+  ```
+
 - [ ] `$[?(@.key==43)]`
   Input:
   ```
@@ -1365,6 +1482,107 @@ The following queries provide results that do not match those of other implement
   ** (Jaxon.ParseError) Expected an integer at `?(@.key=='`
       lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
       lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
+  ```
+
+- [ ] `$[?(@.key=42)]`
+  Input:
+  ```
+  [
+    {
+      "key": 0
+    },
+    {
+      "key": 42
+    },
+    {
+      "key": -1
+    },
+    {
+      "key": 1
+    },
+    {
+      "key": 41
+    },
+    {
+      "key": 43
+    },
+    {
+      "key": 42.0001
+    },
+    {
+      "key": 41.9999
+    },
+    {
+      "key": 100
+    },
+    {
+      "key": "some"
+    },
+    {
+      "key": "42"
+    },
+    {
+      "key": null
+    },
+    {
+      "key": 420
+    },
+    {
+      "key": ""
+    },
+    {
+      "key": {}
+    },
+    {
+      "key": []
+    },
+    {
+      "key": [
+        42
+      ]
+    },
+    {
+      "key": {
+        "key": 42
+      }
+    },
+    {
+      "key": {
+        "some": 42
+      }
+    },
+    {
+      "some": "value"
+    }
+  ]
+  ```
+  Expected output:
+  ```
+  NOT_SUPPORTED
+  ```
+  Error:
+  ```
+  ** (Jaxon.ParseError) Expected an integer at `?(@.key=42`
+      lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
+      lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
+  ```
+
+- [ ] `$(key,more)`
+  Input:
+  ```
+  {
+    "key": 1,
+    "some": 2,
+    "more": 3
+  }
+  ```
+  Expected output:
+  ```
+  NOT_SUPPORTED
+  ```
+  Actual output:
+  ```
+  []
   ```
 
 - [ ] `$[0,1]`
@@ -1488,6 +1706,28 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   ** (Jaxon.ParseError) Expected an integer at ` 0 , 1 ]`
+      lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
+      lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
+  ```
+
+- [ ] `$[*,1]`
+  Input:
+  ```
+  [
+    "first",
+    "second",
+    "third",
+    "forth",
+    "fifth"
+  ]
+  ```
+  Expected output:
+  ```
+  NOT_SUPPORTED
+  ```
+  Error:
+  ```
+  ** (Jaxon.ParseError) Expected an integer at `*,1]`
       lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
       lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
   ```

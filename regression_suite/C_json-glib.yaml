@@ -42,7 +42,7 @@ queries:
   - id: bracket_notation_with_double_quotes
     status: error
   - id: bracket_notation_with_empty_path
-    status: open
+    status: fail
     result: []
   - id: bracket_notation_with_empty_string_doubled_quoted
     status: error

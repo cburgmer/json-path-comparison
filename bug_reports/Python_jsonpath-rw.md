@@ -351,6 +351,31 @@ The following queries provide results that do not match those of other implement
   ]
   ```
 
+- [ ] `$.[key]`
+  Input:
+  ```
+  {
+    "key": "value",
+    "other": {
+      "key": [
+        {
+          "key": 42
+        }
+      ]
+    }
+  }
+  ```
+  Expected output:
+  ```
+  NOT_SUPPORTED
+  ```
+  Actual output:
+  ```
+  [
+    "value"
+  ]
+  ```
+
 - [ ] `$[?(@.id==42)].name`
   Input:
   ```

@@ -170,7 +170,7 @@ queries:
     status: open
     result: []
   - id: dot_notation_with_empty_path
-    status: open
+    status: fail
     result: {"": 9001, "''": "nice", "key": 42}
   - id: dot_notation_with_key_named_length_on_array
     status: open
@@ -242,7 +242,7 @@ queries:
     status: open
     result: [{"key": 60}, {"key": 50}, {"key": 10}, {"key": -50}]
   - id: filter_expression_with_empty_expression
-    status: open
+    status: fail
     result: []
   - id: filter_expression_with_equals
     status: open
@@ -319,7 +319,7 @@ queries:
     status: open
     result: []
   - id: filter_expression_with_single_equal
-    status: open
+    status: fail
     result: [{"key": 42}]
   - id: filter_expression_with_subfilter
     status: error
@@ -339,7 +339,7 @@ queries:
     status: open
     result: [{"key": true}, {"key": false}, {"key": "value"}, {"key": ""}, {"key": 0}, {"key": 1}, {"key": -1}, {"key": 42}, {"key": {}}, {"key": []}]
   - id: parens_notation
-    status: open
+    status: fail
     result: null
   - id: recursive_descent
     status: open
@@ -375,5 +375,5 @@ queries:
     status: fail
     result: "first"
   - id: union_with_wildcard_and_number
-    status: open
+    status: fail
     result: ["first", "second", "third", "forth", "fifth"]

@@ -23,10 +23,14 @@ matching_majority_result() {
 
 equals_majority_result() {
     local implementation="$1"
-    local result
-    result="$(query_result_payload "${query_results}/${implementation}")"
+    local majority
 
-    test "$result" == "$(matching_majority_result "$implementation")"
+    majority="$(matching_majority_result "$implementation")"
+    if [[ "$majority" == "NOT_SUPPORTED" ]] && is_query_not_supported "${query_results}/${implementation}"; then
+        return 0;
+    fi
+
+    test "$(query_result_payload "${query_results}/${implementation}")" == "$majority"
 }
 
 main() {

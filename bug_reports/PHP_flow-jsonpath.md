@@ -26,6 +26,30 @@ The following queries provide results that do not match those of other implement
   ]
   ```
 
+- [ ] `$[]`
+  Input:
+  ```
+  {
+    "": 42,
+    "''": 123,
+    "\"\"": 222
+  }
+  ```
+  Expected output:
+  ```
+  NOT_SUPPORTED
+  ```
+  Actual output:
+  ```
+  [
+    {
+      "": 42,
+      "\"\"": 222,
+      "''": 123
+    }
+  ]
+  ```
+
 - [ ] `$['']`
   Input:
   ```
@@ -60,6 +84,31 @@ The following queries provide results that do not match those of other implement
   Error: 'Unable to parse token ' in expression: [']']'
   ```
 
+- [ ] `$.[key]`
+  Input:
+  ```
+  {
+    "key": "value",
+    "other": {
+      "key": [
+        {
+          "key": 42
+        }
+      ]
+    }
+  }
+  ```
+  Expected output:
+  ```
+  NOT_SUPPORTED
+  ```
+  Actual output:
+  ```
+  [
+    "value"
+  ]
+  ```
+
 - [ ] `$['one','three'].key`
   Input:
   ```
@@ -83,6 +132,136 @@ The following queries provide results that do not match those of other implement
   Actual output:
   ```
   []
+  ```
+
+- [ ] `$.`
+  Input:
+  ```
+  {
+    "key": 42,
+    "": 9001,
+    "''": "nice"
+  }
+  ```
+  Expected output:
+  ```
+  NOT_SUPPORTED
+  ```
+  Actual output:
+  ```
+  [
+    {
+      "": 9001,
+      "''": "nice",
+      "key": 42
+    }
+  ]
+  ```
+
+- [ ] `$[?(@.key=42)]`
+  Input:
+  ```
+  [
+    {
+      "key": 0
+    },
+    {
+      "key": 42
+    },
+    {
+      "key": -1
+    },
+    {
+      "key": 1
+    },
+    {
+      "key": 41
+    },
+    {
+      "key": 43
+    },
+    {
+      "key": 42.0001
+    },
+    {
+      "key": 41.9999
+    },
+    {
+      "key": 100
+    },
+    {
+      "key": "some"
+    },
+    {
+      "key": "42"
+    },
+    {
+      "key": null
+    },
+    {
+      "key": 420
+    },
+    {
+      "key": ""
+    },
+    {
+      "key": {}
+    },
+    {
+      "key": []
+    },
+    {
+      "key": [
+        42
+      ]
+    },
+    {
+      "key": {
+        "key": 42
+      }
+    },
+    {
+      "key": {
+        "some": 42
+      }
+    },
+    {
+      "some": "value"
+    }
+  ]
+  ```
+  Expected output:
+  ```
+  NOT_SUPPORTED
+  ```
+  Actual output:
+  ```
+  [
+    {
+      "key": 42
+    },
+    {
+      "key": "42"
+    }
+  ]
+  ```
+
+- [ ] `$(key,more)`
+  Input:
+  ```
+  {
+    "key": 1,
+    "some": 2,
+    "more": 3
+  }
+  ```
+  Expected output:
+  ```
+  NOT_SUPPORTED
+  ```
+  Actual output:
+  ```
+  null
   ```
 
 - [ ] `$['key','another']`

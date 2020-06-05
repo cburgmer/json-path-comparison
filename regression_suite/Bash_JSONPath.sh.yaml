@@ -102,7 +102,7 @@ queries:
     status: open
     result: {"some": "more"}
   - id: bracket_notation_with_two_literals_separated_by_dot_without_quotes
-    status: open
+    status: fail
     result: {"some": "more"}
   - id: bracket_notation_with_wildcard_after_array_slice
     status: error
@@ -128,7 +128,7 @@ queries:
     status: open
     result: {"key": "value"}
   - id: dot_bracket_notation_without_quotes
-    status: open
+    status: fail
     result: {"key": "value"}
   - id: dot_notation
     status: fail
@@ -340,7 +340,7 @@ queries:
   - id: filter_expression_with_regular_expression
     status: error
   - id: filter_expression_with_single_equal
-    status: open
+    status: fail
     result: [{"key": 42}, {"key": "42"}]
   - id: filter_expression_with_subfilter
     status: error

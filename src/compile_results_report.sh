@@ -61,8 +61,14 @@ output_setup() {
 
 consensus() {
     local line
+    local consensus_value
+    consensus_value="$(grep '^consensus' < "${consensus_dir}/${query}" | cut -f2)"
 
-    grep '^consensus' < "${consensus_dir}/${query}" | cut -f2 | ./src/pretty_json.py | pre_block
+    if [[ "$consensus_value" == "NOT_SUPPORTED" ]]; then
+        echo "Not supported"
+    else
+        ./src/pretty_json.py <<< "$consensus_value" | pre_block
+    fi
 
     while IFS= read -r line; do
         if [[ -z "$line" ]]; then

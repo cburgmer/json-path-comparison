@@ -109,6 +109,30 @@ The following queries provide results that do not match those of other implement
   jsonpath returned false, this might indicate an error
   ```
 
+- [ ] `$[]`
+  Input:
+  ```
+  {
+    "": 42,
+    "''": 123,
+    "\"\"": 222
+  }
+  ```
+  Expected output:
+  ```
+  NOT_SUPPORTED
+  ```
+  Actual output:
+  ```
+  [
+    {
+      "": 42,
+      "\"\"": 222,
+      "''": 123
+    }
+  ]
+  ```
+
 - [ ] `$['']`
   Input:
   ```
@@ -181,6 +205,31 @@ The following queries provide results that do not match those of other implement
   jsonpath returned false, this might indicate an error
   ```
 
+- [ ] `$[two.some]`
+  Input:
+  ```
+  {
+    "one": {
+      "key": "value"
+    },
+    "two": {
+      "some": "more",
+      "key": "other value"
+    },
+    "two.some": "42"
+  }
+  ```
+  Expected output:
+  ```
+  NOT_SUPPORTED
+  ```
+  Actual output:
+  ```
+  [
+    "more"
+  ]
+  ```
+
 - [ ] `$[*]`
   Input:
   ```
@@ -207,6 +256,37 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   jsonpath returned false, this might indicate an error
+  ```
+
+- [ ] `$.[key]`
+  Input:
+  ```
+  {
+    "key": "value",
+    "other": {
+      "key": [
+        {
+          "key": 42
+        }
+      ]
+    }
+  }
+  ```
+  Expected output:
+  ```
+  NOT_SUPPORTED
+  ```
+  Actual output:
+  ```
+  [
+    "value",
+    [
+      {
+        "key": 42
+      }
+    ],
+    42
+  ]
   ```
 
 - [ ] `$.key`
@@ -258,6 +338,30 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   jsonpath returned false, this might indicate an error
+  ```
+
+- [ ] `$.`
+  Input:
+  ```
+  {
+    "key": 42,
+    "": 9001,
+    "''": "nice"
+  }
+  ```
+  Expected output:
+  ```
+  NOT_SUPPORTED
+  ```
+  Actual output:
+  ```
+  [
+    {
+      "": 9001,
+      "''": "nice",
+      "key": 42
+    }
+  ]
   ```
 
 - [ ] `$..*`
@@ -332,6 +436,27 @@ The following queries provide results that do not match those of other implement
   jsonpath returned false, this might indicate an error
   ```
 
+- [ ] `$[?()]`
+  Input:
+  ```
+  [
+    1,
+    {
+      "key": 42
+    },
+    "value",
+    null
+  ]
+  ```
+  Expected output:
+  ```
+  NOT_SUPPORTED
+  ```
+  Error:
+  ```
+  jsonpath returned false, this might indicate an error
+  ```
+
 - [ ] `$[?(@.key==43)]`
   Input:
   ```
@@ -374,6 +499,167 @@ The following queries provide results that do not match those of other implement
   jsonpath returned false, this might indicate an error
   ```
 
+- [ ] `$[?(@.key=42)]`
+  Input:
+  ```
+  [
+    {
+      "key": 0
+    },
+    {
+      "key": 42
+    },
+    {
+      "key": -1
+    },
+    {
+      "key": 1
+    },
+    {
+      "key": 41
+    },
+    {
+      "key": 43
+    },
+    {
+      "key": 42.0001
+    },
+    {
+      "key": 41.9999
+    },
+    {
+      "key": 100
+    },
+    {
+      "key": "some"
+    },
+    {
+      "key": "42"
+    },
+    {
+      "key": null
+    },
+    {
+      "key": 420
+    },
+    {
+      "key": ""
+    },
+    {
+      "key": {}
+    },
+    {
+      "key": []
+    },
+    {
+      "key": [
+        42
+      ]
+    },
+    {
+      "key": {
+        "key": 42
+      }
+    },
+    {
+      "key": {
+        "some": 42
+      }
+    },
+    {
+      "some": "value"
+    }
+  ]
+  ```
+  Expected output:
+  ```
+  NOT_SUPPORTED
+  ```
+  Actual output:
+  ```
+  [
+    {
+      "key": 42
+    },
+    {
+      "key": 42
+    },
+    {
+      "key": 42
+    },
+    {
+      "key": 42
+    },
+    {
+      "key": 42
+    },
+    {
+      "key": 42
+    },
+    {
+      "key": 42
+    },
+    {
+      "key": 42
+    },
+    {
+      "key": 42
+    },
+    {
+      "key": 42
+    },
+    {
+      "key": 42
+    },
+    {
+      "key": 42
+    },
+    {
+      "key": 42
+    },
+    {
+      "key": 42
+    },
+    {
+      "key": 42
+    },
+    {
+      "key": 42
+    },
+    {
+      "key": 42
+    },
+    {
+      "key": 42
+    },
+    {
+      "key": 42
+    },
+    {
+      "key": 42,
+      "some": "value"
+    }
+  ]
+  ```
+
+- [ ] `$(key,more)`
+  Input:
+  ```
+  {
+    "key": 1,
+    "some": 2,
+    "more": 3
+  }
+  ```
+  Expected output:
+  ```
+  NOT_SUPPORTED
+  ```
+  Error:
+  ```
+  jsonPath: key is not defined: (key,more)
+  ```
+
 - [ ] `$`
   Input:
   ```
@@ -404,6 +690,33 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   jsonpath returned false, this might indicate an error
+  ```
+
+- [ ] `$[*,1]`
+  Input:
+  ```
+  [
+    "first",
+    "second",
+    "third",
+    "forth",
+    "fifth"
+  ]
+  ```
+  Expected output:
+  ```
+  NOT_SUPPORTED
+  ```
+  Actual output:
+  ```
+  [
+    "first",
+    "second",
+    "third",
+    "forth",
+    "fifth",
+    "second"
+  ]
   ```
 
 

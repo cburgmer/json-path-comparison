@@ -208,6 +208,24 @@ The following queries provide results that do not match those of other implement
   Unable to compile selector `$["key"]': Invalid array index definition “"key"]”
   ```
 
+- [ ] `$[]`
+  Input:
+  ```
+  {
+    "": 42,
+    "''": 123,
+    "\"\"": 222
+  }
+  ```
+  Expected output:
+  ```
+  NOT_SUPPORTED
+  ```
+  Actual output:
+  ```
+  []
+  ```
+
 - [ ] `$[-1]`
   Input:
   ```

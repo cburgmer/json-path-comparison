@@ -33,7 +33,7 @@ queries:
   - id: bracket_notation_with_double_quotes
     status: error
   - id: bracket_notation_with_empty_path
-    status: open
+    status: fail
     result: [{"": 42, "\"\"": 222, "''": 123}]
   - id: bracket_notation_with_empty_string
     status: fail
@@ -69,7 +69,7 @@ queries:
     status: open
     result: ["43"]
   - id: bracket_notation_with_two_literals_separated_by_dot_without_quotes
-    status: open
+    status: fail
     result: ["more"]
   - id: bracket_notation_with_wildcard_on_empty_array
     status: fail
@@ -86,7 +86,7 @@ queries:
   - id: dot_bracket_notation_with_double_quotes
     status: error
   - id: dot_bracket_notation_without_quotes
-    status: open
+    status: fail
     result: ["value", [{"key": 42}], 42]
   - id: dot_notation_after_bracket_notation_after_recursive_descent
     status: open
@@ -271,5 +271,5 @@ queries:
   - id: union_with_spaces
     status: error
   - id: union_with_wildcard_and_number
-    status: open
+    status: fail
     result: ["first", "second", "third", "forth", "fifth", "second"]

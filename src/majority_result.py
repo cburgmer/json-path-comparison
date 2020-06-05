@@ -41,6 +41,16 @@ def build_histogram(pairs):
     return histogram
 
 
+def not_supported_majority(result_paths):
+    result_paths_with_not_supported = []
+    for result_path in result_paths:
+        result_type, _ = query_result_payload(result_path)
+        if result_type != "NOT_SUPPORTED":
+            continue
+        result_paths_with_not_supported.append(result_path)
+
+    return [("not_supported", '', result_paths_with_not_supported)]
+
 def no_match_majority(result_paths):
     result_paths_with_no_match = [path for path in result_paths if is_no_match(path)]
 
@@ -70,11 +80,11 @@ def multiple_matches_majority(result_paths):
 
     return [("multiple_matches", payload, paths) for payload, paths in build_histogram(result_payloads).items()]
 
-
 def calculate_majority_candidates(result_paths):
     majority_candidates = (multiple_matches_majority(result_paths) +
                            single_match_majority(result_paths) +
-                           no_match_majority(result_paths))
+                           no_match_majority(result_paths) +
+                           not_supported_majority(result_paths))
 
     unique_candidates = defaultdict(lambda: None)
     for match_type, canonical_consensus_candidate, paths in majority_candidates:
@@ -114,11 +124,17 @@ def no_match_majority_result(canonical_consensus):
         "scalar-consensus": "null"
     }
 
+def not_supported_majority_result(canonical_consensus):
+    return {
+        "consensus": "NOT_SUPPORTED"
+    }
+
 def majority_result(majority_type, canonical_consensus):
     consensus_mapper = {
         "multiple_matches": multiple_matches_majority_result,
         "single_match": single_match_majority_result,
-        "no_match": no_match_majority_result
+        "no_match": no_match_majority_result,
+        "not_supported": not_supported_majority_result,
     }
     return consensus_mapper[majority_type](canonical_consensus)
 

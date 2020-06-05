@@ -73,7 +73,7 @@ queries:
     status: open
     result: []
   - id: bracket_notation_with_two_literals_separated_by_dot_without_quotes
-    status: open
+    status: fail
     result: []
   - id: bracket_notation_with_wildcard_after_recursive_descent
     status: fail
@@ -88,7 +88,7 @@ queries:
     status: open
     result: ["value"]
   - id: dot_bracket_notation_without_quotes
-    status: open
+    status: fail
     result: ["value"]
   - id: dot_notation_after_bracket_notation_after_recursive_descent
     status: open
@@ -104,7 +104,7 @@ queries:
     status: open
     result: ["russian dolls", "something", "top", "value", {"key": "russian dolls"}]
   - id: dot_notation_with_empty_path
-    status: open
+    status: fail
     result: [""]
   - id: dot_notation_with_key_named_length_on_array
     status: open
@@ -239,7 +239,7 @@ queries:
   - id: filter_expression_without_value
     status: error
   - id: parens_notation
-    status: open
+    status: fail
     result: []
   - id: recursive_descent
     status: open
@@ -280,5 +280,5 @@ queries:
     status: open
     result: [2, 3]
   - id: union_with_wildcard_and_number
-    status: open
+    status: fail
     result: ["second"]

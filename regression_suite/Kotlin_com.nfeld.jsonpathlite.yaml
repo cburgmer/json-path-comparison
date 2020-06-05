@@ -272,7 +272,7 @@ queries:
   - id: filter_expression_without_value
     status: error
   - id: parens_notation
-    status: open
+    status: fail
     result: null
   - id: recursive_descent
     status: open

@@ -201,7 +201,7 @@ queries:
   - id: filter_expression_without_value
     status: error
   - id: parens_notation
-    status: open
+    status: fail
     result: [{"key": 1, "more": 3, "some": 2}]
   - id: recursive_descent
     status: error

@@ -21,7 +21,7 @@ queries:
     status: open
     result: ["first", "second", "third"]
   - id: bracket_notation_with_empty_path
-    status: open
+    status: fail
     result: [{"": 42, "\"\"": 222, "''": 123}]
   - id: bracket_notation_with_empty_string
     status: error
@@ -65,7 +65,7 @@ queries:
     status: open
     result: ["value"]
   - id: dot_bracket_notation_without_quotes
-    status: open
+    status: fail
     result: ["value"]
   - id: dot_notation_after_bracket_notation_after_recursive_descent
     status: open
@@ -80,7 +80,7 @@ queries:
     status: open
     result: ["russian dolls", "something", "top", "value", {"key": "russian dolls"}]
   - id: dot_notation_with_empty_path
-    status: open
+    status: fail
     result: [{"": 9001, "''": "nice", "key": 42}]
   - id: dot_notation_with_key_named_length_on_array
     status: open
@@ -202,7 +202,7 @@ queries:
     status: open
     result: []
   - id: filter_expression_with_single_equal
-    status: open
+    status: fail
     result: [{"key": 42}, {"key": "42"}]
   - id: filter_expression_with_subfilter
     status: error
@@ -220,7 +220,7 @@ queries:
   - id: filter_expression_without_value
     status: error
   - id: parens_notation
-    status: open
+    status: fail
     result: null
   - id: recursive_descent
     status: open

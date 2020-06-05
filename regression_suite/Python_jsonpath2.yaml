@@ -217,7 +217,7 @@ queries:
   - id: filter_expression_with_regular_expression
     status: error
   - id: filter_expression_with_single_equal
-    status: open
+    status: fail
     result: []
   - id: filter_expression_with_subfilter
     status: open
@@ -259,5 +259,5 @@ queries:
     status: open
     result: [2, 3, 5]
   - id: union_with_wildcard_and_number
-    status: open
+    status: fail
     result: ["first", "second", "third", "forth", "fifth", "second"]
