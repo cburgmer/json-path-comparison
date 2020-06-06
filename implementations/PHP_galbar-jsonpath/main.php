@@ -24,7 +24,7 @@ try {
 
 if ($r === false) {
     print 'jsonpath returned false, this might indicate an error' . "\r\n";
-    die(1);
+    die(3);
 } else {
     print json_encode($r);
 }

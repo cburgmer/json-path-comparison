@@ -15,7 +15,7 @@ try {
 
 if ($result === false) {
     print 'jsonpath returned false, this might indicate an error';
-    die(1);
+    die(3);
 } else {
     echo json_encode($result);
 }

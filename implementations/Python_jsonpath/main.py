@@ -14,7 +14,7 @@ def main():
 
     if results is False:
         print('jsonpath returned false, this might indicate an error');
-        sys.exit(1)
+        sys.exit(3)
 
     print(json.dumps(results))
 
