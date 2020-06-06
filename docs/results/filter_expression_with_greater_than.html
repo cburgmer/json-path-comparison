@@ -44,6 +44,15 @@ Bash (JSONPath.sh)
 ]
 </code></pre>
 
+<h4 id="C_json-glib">
+C (json-glib)
+</h4>
+
+<p>Not supported</p>
+
+<pre><code>Unable to compile selector `$[?(@.key&gt;42)]': Invalid array index definition “?(@.key&gt;42)]”
+</code></pre>
+
 <h4 id="Cpp_jsoncons">
 Cpp (jsoncons)
 </h4>
@@ -164,6 +173,15 @@ Erlang (ejsonpath)
     "some": "value"
   }
 ]
+</code></pre>
+
+<h4 id="Golang_github.com-PaesslerAG-jsonpath">
+Golang (github.com-PaesslerAG-jsonpath)
+</h4>
+
+<p>Not supported</p>
+
+<pre><code>parsing error: $[?(@.key&gt;42)]   :1:10 - 1:11 unexpected "&gt;" while scanning parentheses expected ")"
 </code></pre>
 
 <h4 id="Golang_github.com-oliveagle-jsonpath">
@@ -287,6 +305,15 @@ Java (com.jayway.jsonpath)
 ]
 </code></pre>
 
+<h4 id="Kotlin_com.nfeld.jsonpathlite">
+Kotlin (com.nfeld.jsonpathlite)
+</h4>
+
+<p>Not supported</p>
+
+<pre><code>Unexpected char, char=?, index=2
+</code></pre>
+
 <h4 id="Objective-C_SMJJSONPath">
 Objective-C (SMJJSONPath)
 </h4>
@@ -387,11 +414,29 @@ Python (jsonpath)
 ]
 </code></pre>
 
+<h4 id="Python_jsonpath-rw">
+Python (jsonpath-rw)
+</h4>
+
+<p>Not supported</p>
+
+<pre><code>JsonPathLexerError('Error on line 1, col 2: Unexpected character: ? ')
+</code></pre>
+
 <h4 id="Python_jsonpath2">
 Python (jsonpath2)
 </h4>
 
 <pre><code>[]
+</code></pre>
+
+<h4 id="Raku_JSON-Path">
+Raku (JSON-Path)
+</h4>
+
+<p>Not supported</p>
+
+<pre><code>Evaluation of embedded Perl 6 code not allowed (construct with :allow-eval)
 </code></pre>
 
 <h4 id="Rust_jsonpath">
@@ -501,13 +546,6 @@ Proposal (A)
 
 <h3>Errors</h3>
 
-<h4 id="C_json-glib">
-C (json-glib)
-</h4>
-
-<pre><code>Unable to compile selector `$[?(@.key&gt;42)]': Invalid array index definition “?(@.key&gt;42)]”
-</code></pre>
-
 <h4 id="Clojure_json-path">
 Clojure (json-path)
 </h4>
@@ -522,13 +560,6 @@ Elixir (jaxon)
 <pre><code>** (Jaxon.ParseError) Expected an integer at `?(@.key&gt;42`
     lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
     lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
-</code></pre>
-
-<h4 id="Golang_github.com-PaesslerAG-jsonpath">
-Golang (github.com-PaesslerAG-jsonpath)
-</h4>
-
-<pre><code>parsing error: $[?(@.key&gt;42)]   :1:10 - 1:11 unexpected "&gt;" while scanning parentheses expected ")"
 </code></pre>
 
 <h4 id="Golang_github.com-bhmj-jsonslice">
@@ -573,13 +604,6 @@ Caused by: java.lang.NumberFormatException: Character " is neither a decimal dig
     ... 6 more
 </code></pre>
 
-<h4 id="Kotlin_com.nfeld.jsonpathlite">
-Kotlin (com.nfeld.jsonpathlite)
-</h4>
-
-<pre><code>Unexpected char, char=?, index=2
-</code></pre>
-
 <h4 id="PHP_Goessner">
 PHP (Goessner)
 </h4>
@@ -592,20 +616,6 @@ Perl (JSON-Path)
 </h4>
 
 <pre><code>non-safe evaluation, died at main.pl line 11.
-</code></pre>
-
-<h4 id="Python_jsonpath-rw">
-Python (jsonpath-rw)
-</h4>
-
-<pre><code>JsonPathLexerError('Error on line 1, col 2: Unexpected character: ? ')
-</code></pre>
-
-<h4 id="Raku_JSON-Path">
-Raku (JSON-Path)
-</h4>
-
-<pre><code>Evaluation of embedded Perl 6 code not allowed (construct with :allow-eval)
 </code></pre>
 
 <h4 id="Ruby_jsonpath">

@@ -50,6 +50,15 @@
 
 <h3>Other responses</h3>
 
+<h4 id="C_json-glib">
+C (json-glib)
+</h4>
+
+<p>Not supported</p>
+
+<pre><code>Unable to compile selector `$[?(@.key)]': Invalid array index definition “?(@.key)]”
+</code></pre>
+
 <h4 id="Clojure_json-path">
 Clojure (json-path)
 </h4>
@@ -127,6 +136,15 @@ Cpp (jsoncons)
     "key": []
   }
 ]
+</code></pre>
+
+<h4 id="Elixir_ExJsonPath">
+Elixir (ExJsonPath)
+</h4>
+
+<p>Not supported</p>
+
+<pre><code>syntax error before: ')'
 </code></pre>
 
 <h4 id="Elixir_warpath">
@@ -328,6 +346,16 @@ Golang (github.com-vmware-labs-yaml-jsonpath)
 ]
 </code></pre>
 
+<h4 id="Haskell_jsonpath">
+Haskell (jsonpath)
+</h4>
+
+<p>Not supported</p>
+
+<pre><code>Invalid JSONPath: $[?(@.key)]
+ Error: searchBeginningWithSlice: string
+</code></pre>
+
 <h4 id="JavaScript_Goessner">
 JavaScript (Goessner)
 </h4>
@@ -495,6 +523,15 @@ Java (com.jayway.jsonpath)
     "key": []
   }
 ]
+</code></pre>
+
+<h4 id="Kotlin_com.nfeld.jsonpathlite">
+Kotlin (com.nfeld.jsonpathlite)
+</h4>
+
+<p>Not supported</p>
+
+<pre><code>Unexpected char, char=?, index=2
 </code></pre>
 
 <h4 id="Objective-C_SMJJSONPath">
@@ -681,11 +718,29 @@ Python (jsonpath)
 ]
 </code></pre>
 
+<h4 id="Python_jsonpath-rw">
+Python (jsonpath-rw)
+</h4>
+
+<p>Not supported</p>
+
+<pre><code>JsonPathLexerError('Error on line 1, col 2: Unexpected character: ? ')
+</code></pre>
+
 <h4 id="Python_jsonpath2">
 Python (jsonpath2)
 </h4>
 
 <pre><code>[]
+</code></pre>
+
+<h4 id="Raku_JSON-Path">
+Raku (JSON-Path)
+</h4>
+
+<p>Not supported</p>
+
+<pre><code>Evaluation of embedded Perl 6 code not allowed (construct with :allow-eval)
 </code></pre>
 
 <h4 id="Ruby_jsonpath">
@@ -721,6 +776,15 @@ Ruby (jsonpath)
     "key": []
   }
 ]
+</code></pre>
+
+<h4 id="Rust_jsonpath">
+Rust (jsonpath)
+</h4>
+
+<p>Not supported</p>
+
+<pre><code>parsing error
 </code></pre>
 
 <h4 id="Rust_jsonpath_lib">
@@ -934,20 +998,6 @@ Bash (JSONPath.sh)
 <pre><code>Expecting value: line 3 column 1 (char 2)
 </code></pre>
 
-<h4 id="C_json-glib">
-C (json-glib)
-</h4>
-
-<pre><code>Unable to compile selector `$[?(@.key)]': Invalid array index definition “?(@.key)]”
-</code></pre>
-
-<h4 id="Elixir_ExJsonPath">
-Elixir (ExJsonPath)
-</h4>
-
-<pre><code>syntax error before: ')'
-</code></pre>
-
 <h4 id="Elixir_jaxon">
 Elixir (jaxon)
 </h4>
@@ -955,21 +1005,6 @@ Elixir (jaxon)
 <pre><code>** (Jaxon.ParseError) Expected an integer at `?(@.key)]`
     lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
     lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
-</code></pre>
-
-<h4 id="Haskell_jsonpath">
-Haskell (jsonpath)
-</h4>
-
-<pre><code>Invalid JSONPath: $[?(@.key)]
- Error: searchBeginningWithSlice: string
-</code></pre>
-
-<h4 id="Kotlin_com.nfeld.jsonpathlite">
-Kotlin (com.nfeld.jsonpathlite)
-</h4>
-
-<pre><code>Unexpected char, char=?, index=2
 </code></pre>
 
 <h4 id="PHP_Goessner">
@@ -984,27 +1019,6 @@ Perl (JSON-Path)
 </h4>
 
 <pre><code>non-safe evaluation, died at main.pl line 11.
-</code></pre>
-
-<h4 id="Python_jsonpath-rw">
-Python (jsonpath-rw)
-</h4>
-
-<pre><code>JsonPathLexerError('Error on line 1, col 2: Unexpected character: ? ')
-</code></pre>
-
-<h4 id="Raku_JSON-Path">
-Raku (JSON-Path)
-</h4>
-
-<pre><code>Evaluation of embedded Perl 6 code not allowed (construct with :allow-eval)
-</code></pre>
-
-<h4 id="Rust_jsonpath">
-Rust (jsonpath)
-</h4>
-
-<pre><code>parsing error
 </code></pre>
 
 <h4 id="dotNET_JsonPathLib">

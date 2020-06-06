@@ -26,7 +26,7 @@ has_consensus() {
 
 is_outlier() {
     local implementation="$1"
-    is_query_result_ok "${results_dir}/${query}/${implementation}" && (! has_consensus || ! is_in_majority "$implementation")
+    ! is_query_error "${results_dir}/${query}/${implementation}" && (! has_consensus || ! is_in_majority "$implementation")
 }
 
 implementation_outliers() {
@@ -41,7 +41,7 @@ implementation_outliers() {
 implementation_errors() {
     local implementation
     while IFS= read -r implementation; do
-        if ! is_query_result_ok "${results_dir}/${query}/${implementation}"; then
+        if is_query_error "${results_dir}/${query}/${implementation}"; then
             echo "$implementation"
         fi
     done <<< "$(all_implementations_and_proposals)"
@@ -59,16 +59,26 @@ output_setup() {
     pre_block < "$document"
 }
 
+pretty_result() {
+    local result="$1"
+
+    if [[ "$result" == "NOT_SUPPORTED" ]]; then
+        echo "Not supported"
+        return
+    fi
+
+    if [[ "$result" == "NOT_FOUND" ]]; then
+        echo "Not found"
+        return
+    fi
+
+    ./src/pretty_json.py <<< "$result" | pre_block
+}
+
 consensus() {
     local line
-    local consensus_value
-    consensus_value="$(grep '^consensus' < "${consensus_dir}/${query}" | cut -f2)"
 
-    if [[ "$consensus_value" == "NOT_SUPPORTED" ]]; then
-        echo "Not supported"
-    else
-        ./src/pretty_json.py <<< "$consensus_value" | pre_block
-    fi
+    pretty_result "$(grep '^consensus' < "${consensus_dir}/${query}" | cut -f2)"
 
     while IFS= read -r line; do
         if [[ -z "$line" ]]; then
@@ -115,7 +125,19 @@ main() {
             pretty_implementation_name "$implementation"
             echo "</h4>"
             echo
-            query_result_payload "${results_dir}/${query}/${implementation}" | ./src/pretty_json.py | pre_block
+            if is_query_not_supported "${results_dir}/${query}/${implementation}"; then
+                pretty_result "NOT_SUPPORTED"
+                echo
+                query_result_payload "${results_dir}/${query}/${implementation}" | pre_block
+            else
+                if is_query_result_not_found "${results_dir}/${query}/${implementation}"; then
+                    pretty_result "NOT_FOUND"
+                    echo
+                    query_result_payload "${results_dir}/${query}/${implementation}" | pre_block
+                else
+                    pretty_result "$(query_result_payload "${results_dir}/${query}/${implementation}")"
+                fi
+            fi
             echo
         done <<< "$outliers"
     fi
