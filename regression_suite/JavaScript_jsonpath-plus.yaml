@@ -6,6 +6,9 @@
 
 implementation: JavaScript_jsonpath-plus
 queries:
+  - id: array_slice_on_object
+    status: open
+    result: []
   - id: array_slice_with_negative_step
     status: open
     result: []
@@ -105,7 +108,7 @@ queries:
     status: fail
     result: [{"": 9001, "''": "nice", "key": 42}]
   - id: dot_notation_with_key_named_length_on_array
-    status: open
+    status: fail
     result: [3]
   - id: dot_notation_with_key_root_literal
     status: open

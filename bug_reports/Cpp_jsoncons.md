@@ -126,6 +126,26 @@ The following queries provide results that do not match those of other implement
   ]
   ```
 
+- [ ] `$.length`
+  Input:
+  ```
+  [
+    4,
+    5,
+    6
+  ]
+  ```
+  Expected output:
+  ```
+  []
+  ```
+  Actual output:
+  ```
+  [
+    3
+  ]
+  ```
+
 - [ ] `$[?()]`
   Input:
   ```

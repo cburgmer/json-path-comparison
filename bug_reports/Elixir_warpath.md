@@ -76,6 +76,26 @@ The following queries provide results that do not match those of other implement
   Parser error: Invalid token on line 1, syntax error before: in_op
   ```
 
+- [ ] `$.length`
+  Input:
+  ```
+  [
+    4,
+    5,
+    6
+  ]
+  ```
+  Expected output:
+  ```
+  null
+  ```
+  Error:
+  ```
+  ** (Warpath.UnsupportedOperationError) You are trying to traverse a list using dot notation '$.length', that it's not allowed for list type. You can use something like '$[*].length' instead.
+      lib/cli.ex:10: Jsonpath.CLI.main/1
+      lib/kernel/cli.ex:124: anonymous fn/3 in Kernel.CLI.exec_fun/2
+  ```
+
 - [ ] `$.true`
   Input:
   ```

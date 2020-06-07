@@ -3,80 +3,6 @@ Results do not match other implementations
 The following queries provide results that do not match those of other implementations of JSONPath
 (compare https://cburgmer.github.io/json-path-comparison/):
 
-- [ ] `$[7:10]`
-  Input:
-  ```
-  [
-    "first",
-    "second",
-    "third"
-  ]
-  ```
-  Expected output:
-  ```
-  []
-  ```
-  Error:
-  ```
-  jsonpath returned false, this might indicate an error
-  ```
-
-- [ ] `$[1:3]`
-  Input:
-  ```
-  {
-    ":": 42,
-    "more": "string",
-    "a": 1,
-    "b": 2,
-    "c": 3
-  }
-  ```
-  Expected output:
-  ```
-  []
-  ```
-  Error:
-  ```
-  jsonpath returned false, this might indicate an error
-  ```
-
-- [ ] `$[2:1]`
-  Input:
-  ```
-  [
-    "first",
-    "second",
-    "third",
-    "forth"
-  ]
-  ```
-  Expected output:
-  ```
-  []
-  ```
-  Error:
-  ```
-  jsonpath returned false, this might indicate an error
-  ```
-
-- [ ] `$[0:0]`
-  Input:
-  ```
-  [
-    "first",
-    "second"
-  ]
-  ```
-  Expected output:
-  ```
-  []
-  ```
-  Error:
-  ```
-  jsonpath returned false, this might indicate an error
-  ```
-
 - [ ] `$..[0]`
   Input:
   ```
@@ -112,22 +38,6 @@ The following queries provide results that do not match those of other implement
   Invalid JSONPath error: 'Error in JSONPath near '..[0]''
   ```
 
-- [ ] `$['missing']`
-  Input:
-  ```
-  {
-    "key": "value"
-  }
-  ```
-  Expected output:
-  ```
-  []
-  ```
-  Error:
-  ```
-  jsonpath returned false, this might indicate an error
-  ```
-
 - [ ] `$[-1]`
   Input:
   ```
@@ -140,22 +50,6 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   Error: 'Modulo by zero'
-  ```
-
-- [ ] `$[1]`
-  Input:
-  ```
-  [
-    "one element"
-  ]
-  ```
-  Expected output:
-  ```
-  []
-  ```
-  Error:
-  ```
-  jsonpath returned false, this might indicate an error
   ```
 
 - [ ] `$[']']`
@@ -231,69 +125,6 @@ The following queries provide results that do not match those of other implement
   Invalid JSONPath error: 'Error in JSONPath near '..[*]''
   ```
 
-- [ ] `$[*]`
-  Input:
-  ```
-  []
-  ```
-  Expected output:
-  ```
-  []
-  ```
-  Error:
-  ```
-  jsonpath returned false, this might indicate an error
-  ```
-
-- [ ] `$[*]`
-  Input:
-  ```
-  {}
-  ```
-  Expected output:
-  ```
-  []
-  ```
-  Error:
-  ```
-  jsonpath returned false, this might indicate an error
-  ```
-
-- [ ] `$.key`
-  Input:
-  ```
-  [
-    0,
-    1
-  ]
-  ```
-  Expected output:
-  ```
-  []
-  ```
-  Error:
-  ```
-  jsonpath returned false, this might indicate an error
-  ```
-
-- [ ] `$.id`
-  Input:
-  ```
-  [
-    {
-      "id": 2
-    }
-  ]
-  ```
-  Expected output:
-  ```
-  []
-  ```
-  Error:
-  ```
-  jsonpath returned false, this might indicate an error
-  ```
-
 - [ ] `$.key`
   Input:
   ```
@@ -310,22 +141,6 @@ The following queries provide results that do not match those of other implement
   [
     []
   ]
-  ```
-
-- [ ] `$.missing`
-  Input:
-  ```
-  {
-    "key": "value"
-  }
-  ```
-  Expected output:
-  ```
-  []
-  ```
-  Error:
-  ```
-  jsonpath returned false, this might indicate an error
   ```
 
 - [ ] `$.屬性`
@@ -454,34 +269,6 @@ The following queries provide results that do not match those of other implement
   ]
   ```
 
-- [ ] `$.*`
-  Input:
-  ```
-  []
-  ```
-  Expected output:
-  ```
-  []
-  ```
-  Error:
-  ```
-  jsonpath returned false, this might indicate an error
-  ```
-
-- [ ] `$.*`
-  Input:
-  ```
-  {}
-  ```
-  Expected output:
-  ```
-  []
-  ```
-  Error:
-  ```
-  jsonpath returned false, this might indicate an error
-  ```
-
 - [ ] `$[?()]`
   Input:
   ```
@@ -497,24 +284,6 @@ The following queries provide results that do not match those of other implement
   Expected output:
   ```
   NOT_SUPPORTED
-  ```
-  Error:
-  ```
-  jsonpath returned false, this might indicate an error
-  ```
-
-- [ ] `$[?(@.key==43)]`
-  Input:
-  ```
-  [
-    {
-      "key": 42
-    }
-  ]
-  ```
-  Expected output:
-  ```
-  []
   ```
   Error:
   ```

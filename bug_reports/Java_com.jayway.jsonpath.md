@@ -3,29 +3,6 @@ Results do not match other implementations
 The following queries provide results that do not match those of other implementations of JSONPath
 (compare https://cburgmer.github.io/json-path-comparison/):
 
-- [ ] `$[1:3]`
-  Input:
-  ```
-  {
-    ":": 42,
-    "more": "string",
-    "a": 1,
-    "b": 2,
-    "c": 3
-  }
-  ```
-  Expected output:
-  ```
-  []
-  ```
-  Error:
-  ```
-  SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
-  SLF4J: Defaulting to no-operation (NOP) logger implementation
-  SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
-  com.jayway.jsonpath.PathNotFoundException: Filter: [1:3] can only be applied to arrays. Current context is: {:=42, more=string, a=1, b=2, c=3}
-  ```
-
 - [ ] `$[:]`
   Input:
   ```
@@ -327,6 +304,27 @@ The following queries provide results that do not match those of other implement
   SLF4J: Defaulting to no-operation (NOP) logger implementation
   SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
   com.jayway.jsonpath.PathNotFoundException: No results for path: $['missing']
+  ```
+
+- [ ] `$.length`
+  Input:
+  ```
+  [
+    4,
+    5,
+    6
+  ]
+  ```
+  Expected output:
+  ```
+  null
+  ```
+  Error:
+  ```
+  SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+  SLF4J: Defaulting to no-operation (NOP) logger implementation
+  SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+  com.jayway.jsonpath.PathNotFoundException: Expected to find an object with property ['length'] in path $ but found 'net.minidev.json.JSONArray'. This is not a json object according to the JsonProvider: 'com.jayway.jsonpath.spi.json.JsonSmartJsonProvider'.
   ```
 
 - [ ] `$['key','another']`

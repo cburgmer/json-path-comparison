@@ -6,6 +6,9 @@
 
 implementation: Perl_JSON-Path
 queries:
+  - id: array_slice_on_object
+    status: open
+    result: []
   - id: array_slice_with_negative_step
     status: open
     result: []
@@ -106,9 +109,6 @@ queries:
   - id: dot_notation_with_empty_path
     status: fail
     result: [""]
-  - id: dot_notation_with_key_named_length_on_array
-    status: open
-    result: []
   - id: dot_notation_with_key_root_literal
     status: error
   - id: dot_notation_with_non_ASCII_key

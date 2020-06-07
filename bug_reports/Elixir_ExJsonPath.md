@@ -3,33 +3,6 @@ Results do not match other implementations
 The following queries provide results that do not match those of other implementations of JSONPath
 (compare https://cburgmer.github.io/json-path-comparison/):
 
-- [ ] `$[1:3]`
-  Input:
-  ```
-  {
-    ":": 42,
-    "more": "string",
-    "a": 1,
-    "b": 2,
-    "c": 3
-  }
-  ```
-  Expected output:
-  ```
-  []
-  ```
-  Error:
-  ```
-  ** (Poison.EncodeError) unable to encode value: {"b", 2}
-      lib/poison/encoder.ex:383: Poison.Encoder.Any.encode/2
-      lib/poison/encoder.ex:259: anonymous fn/3 in Poison.Encoder.List.encode/3
-      lib/poison/encoder.ex:260: Poison.Encoder.List."-encode/3-lists^foldr/2-1-"/3
-      lib/poison/encoder.ex:260: Poison.Encoder.List.encode/3
-      lib/poison.ex:41: Poison.encode!/2
-      lib/cli.ex:6: Jsonpath.CLI.main/1
-      lib/kernel/cli.ex:124: anonymous fn/3 in Kernel.CLI.exec_fun/2
-  ```
-
 - [ ] `$[0:0]`
   Input:
   ```

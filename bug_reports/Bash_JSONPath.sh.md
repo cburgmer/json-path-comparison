@@ -23,28 +23,6 @@ The following queries provide results that do not match those of other implement
   
   ```
 
-- [ ] `$[1:3]`
-  Input:
-  ```
-  {
-    ":": 42,
-    "more": "string",
-    "a": 1,
-    "b": 2,
-    "c": 3
-  }
-  ```
-  Expected output:
-  ```
-  []
-  ```
-  Error:
-  ```
-  Expecting value: line 3 column 1 (char 2)
-  
-  
-  ```
-
 - [ ] `$[2:1]`
   Input:
   ```
@@ -1304,6 +1282,26 @@ The following queries provide results that do not match those of other implement
   {
     "length": "value"
   }
+  ```
+
+- [ ] `$.length`
+  Input:
+  ```
+  [
+    4,
+    5,
+    6
+  ]
+  ```
+  Expected output:
+  ```
+  []
+  ```
+  Error:
+  ```
+  Expecting value: line 3 column 1 (char 2)
+  
+  
   ```
 
 - [ ] `$.null`

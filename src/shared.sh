@@ -58,3 +58,8 @@ is_scalar_implementation() {
     local implementation="$1"
     test -f "./implementations/${implementation}/SINGLE_POSSIBLE_MATCH_RETURNED_AS_SCALAR"
 }
+
+implementation_returns_not_found_as_error() {
+    local implementation="$1"
+    test -f "./implementations/${implementation}/NOT_FOUND_RETURNED_AS_ERROR"
+}

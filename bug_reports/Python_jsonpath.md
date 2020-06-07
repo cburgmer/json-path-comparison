@@ -3,96 +3,6 @@ Results do not match other implementations
 The following queries provide results that do not match those of other implementations of JSONPath
 (compare https://cburgmer.github.io/json-path-comparison/):
 
-- [ ] `$[7:10]`
-  Input:
-  ```
-  [
-    "first",
-    "second",
-    "third"
-  ]
-  ```
-  Expected output:
-  ```
-  []
-  ```
-  Error:
-  ```
-  jsonpath returned false, this might indicate an error
-  ```
-
-- [ ] `$[1:3]`
-  Input:
-  ```
-  {
-    ":": 42,
-    "more": "string",
-    "a": 1,
-    "b": 2,
-    "c": 3
-  }
-  ```
-  Expected output:
-  ```
-  []
-  ```
-  Error:
-  ```
-  jsonpath returned false, this might indicate an error
-  ```
-
-- [ ] `$[2:1]`
-  Input:
-  ```
-  [
-    "first",
-    "second",
-    "third",
-    "forth"
-  ]
-  ```
-  Expected output:
-  ```
-  []
-  ```
-  Error:
-  ```
-  jsonpath returned false, this might indicate an error
-  ```
-
-- [ ] `$[0:0]`
-  Input:
-  ```
-  [
-    "first",
-    "second"
-  ]
-  ```
-  Expected output:
-  ```
-  []
-  ```
-  Error:
-  ```
-  jsonpath returned false, this might indicate an error
-  ```
-
-- [ ] `$['missing']`
-  Input:
-  ```
-  {
-    "key": "value"
-  }
-  ```
-  Expected output:
-  ```
-  []
-  ```
-  Error:
-  ```
-  jsonpath returned false, this might indicate an error
-  ```
-
 - [ ] `$['two.some']`
   Input:
   ```
@@ -194,36 +104,6 @@ The following queries provide results that do not match those of other implement
   Expected output:
   ```
   ["third"]
-  ```
-  Error:
-  ```
-  jsonpath returned false, this might indicate an error
-  ```
-
-- [ ] `$[-1]`
-  Input:
-  ```
-  []
-  ```
-  Expected output:
-  ```
-  []
-  ```
-  Error:
-  ```
-  jsonpath returned false, this might indicate an error
-  ```
-
-- [ ] `$[1]`
-  Input:
-  ```
-  [
-    "one element"
-  ]
-  ```
-  Expected output:
-  ```
-  []
   ```
   Error:
   ```
@@ -356,34 +236,6 @@ The following queries provide results that do not match those of other implement
   ]
   ```
 
-- [ ] `$[*]`
-  Input:
-  ```
-  []
-  ```
-  Expected output:
-  ```
-  []
-  ```
-  Error:
-  ```
-  jsonpath returned false, this might indicate an error
-  ```
-
-- [ ] `$[*]`
-  Input:
-  ```
-  {}
-  ```
-  Expected output:
-  ```
-  []
-  ```
-  Error:
-  ```
-  jsonpath returned false, this might indicate an error
-  ```
-
 - [ ] `$.[key]`
   Input:
   ```
@@ -415,57 +267,6 @@ The following queries provide results that do not match those of other implement
   ]
   ```
 
-- [ ] `$.key`
-  Input:
-  ```
-  [
-    0,
-    1
-  ]
-  ```
-  Expected output:
-  ```
-  []
-  ```
-  Error:
-  ```
-  jsonpath returned false, this might indicate an error
-  ```
-
-- [ ] `$.id`
-  Input:
-  ```
-  [
-    {
-      "id": 2
-    }
-  ]
-  ```
-  Expected output:
-  ```
-  []
-  ```
-  Error:
-  ```
-  jsonpath returned false, this might indicate an error
-  ```
-
-- [ ] `$.missing`
-  Input:
-  ```
-  {
-    "key": "value"
-  }
-  ```
-  Expected output:
-  ```
-  []
-  ```
-  Error:
-  ```
-  jsonpath returned false, this might indicate an error
-  ```
-
 - [ ] `$.`
   Input:
   ```
@@ -478,48 +279,6 @@ The following queries provide results that do not match those of other implement
   Expected output:
   ```
   NOT_SUPPORTED
-  ```
-  Error:
-  ```
-  jsonpath returned false, this might indicate an error
-  ```
-
-- [ ] `$..*`
-  Input:
-  ```
-  42
-  ```
-  Expected output (in any order as no consensus on ordering exists):
-  ```
-  []
-  ```
-  Error:
-  ```
-  jsonpath returned false, this might indicate an error
-  ```
-
-- [ ] `$.*`
-  Input:
-  ```
-  []
-  ```
-  Expected output:
-  ```
-  []
-  ```
-  Error:
-  ```
-  jsonpath returned false, this might indicate an error
-  ```
-
-- [ ] `$.*`
-  Input:
-  ```
-  {}
-  ```
-  Expected output:
-  ```
-  []
   ```
   Error:
   ```
@@ -571,24 +330,6 @@ The following queries provide results that do not match those of other implement
   Expected output:
   ```
   NOT_SUPPORTED
-  ```
-  Error:
-  ```
-  jsonpath returned false, this might indicate an error
-  ```
-
-- [ ] `$[?(@.key==43)]`
-  Input:
-  ```
-  [
-    {
-      "key": 42
-    }
-  ]
-  ```
-  Expected output:
-  ```
-  []
   ```
   Error:
   ```

@@ -301,6 +301,24 @@ The following queries provide results that do not match those of other implement
   path: unexpected end of path at 2
   ```
 
+- [ ] `$.length`
+  Input:
+  ```
+  [
+    4,
+    5,
+    6
+  ]
+  ```
+  Expected output:
+  ```
+  null
+  ```
+  Error:
+  ```
+  No JSON output received
+  ```
+
 - [ ] `$.*.bar.*`
   Input:
   ```

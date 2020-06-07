@@ -65,26 +65,6 @@ The following queries provide results that do not match those of other implement
   index [from] out of range: len: 3, from: 7
   ```
 
-- [ ] `$[1:3]`
-  Input:
-  ```
-  {
-    ":": 42,
-    "more": "string",
-    "a": 1,
-    "b": 2,
-    "c": 3
-  }
-  ```
-  Expected output:
-  ```
-  []
-  ```
-  Error:
-  ```
-  object is not Slice
-  ```
-
 - [ ] `$[1:10]`
   Input:
   ```
@@ -1103,6 +1083,24 @@ The following queries provide results that do not match those of other implement
   Actual output:
   ```
   9001
+  ```
+
+- [ ] `$.length`
+  Input:
+  ```
+  [
+    4,
+    5,
+    6
+  ]
+  ```
+  Expected output:
+  ```
+  null
+  ```
+  Actual output:
+  ```
+  []
   ```
 
 - [ ] `$.*.bar.*`

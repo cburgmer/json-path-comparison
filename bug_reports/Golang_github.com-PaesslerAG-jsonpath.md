@@ -257,6 +257,24 @@ The following queries provide results that do not match those of other implement
   parsing error: $.key-dash	:1:6 - 1:7 unexpected "-" while scanning operator
   ```
 
+- [ ] `$.length`
+  Input:
+  ```
+  [
+    4,
+    5,
+    6
+  ]
+  ```
+  Expected output:
+  ```
+  null
+  ```
+  Error:
+  ```
+  could not select value, invalid key: expected number but got length (string)
+  ```
+
 - [ ] `$.2`
   Input:
   ```

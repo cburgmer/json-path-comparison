@@ -7,7 +7,7 @@
 implementation: dotNET_Manatee.Json
 queries:
   - id: array_slice_on_object
-    status: fail
+    status: open
     result: ["string", 1]
   - id: array_slice_with_negative_step
     status: open
@@ -82,7 +82,7 @@ queries:
     status: fail
     result: []
   - id: dot_notation_with_key_named_length_on_array
-    status: open
+    status: fail
     result: [3]
   - id: dot_notation_with_key_root_literal
     status: error

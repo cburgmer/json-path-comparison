@@ -7,7 +7,7 @@
 implementation: Ruby_jsonpath
 queries:
   - id: array_slice_on_object
-    status: fail
+    status: open
     result: [null, null]
   - id: array_slice_on_partially_overlapping_array
     status: fail

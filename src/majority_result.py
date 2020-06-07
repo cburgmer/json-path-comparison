@@ -16,22 +16,40 @@ def query_result_payload(result_path):
     else:
         return result_type, None
 
-def is_from_scalar_implementation(result_path):
+def implementation_returns_single_result_as_scalar(result_path):
     implementation = implementation_name(result_path)
     flag_path = os.path.join('implementations', implementation, 'SINGLE_POSSIBLE_MATCH_RETURNED_AS_SCALAR')
     return os.path.exists(flag_path)
 
-def is_from_list_implementation(result_path):
-    return not is_from_scalar_implementation(result_path)
+def implementation_returns_not_found_as_error(result_path):
+    implementation = implementation_name(result_path)
+    flag_path = os.path.join('implementations', implementation, 'NOT_FOUND_RETURNED_AS_ERROR')
+    return os.path.exists(flag_path)
+
+def implementation_returns_not_found_for_non_scalar_as_error(result_path):
+    implementation = implementation_name(result_path)
+    flag_path = os.path.join('implementations', implementation, 'NOT_FOUND_RETURNED_AS_ERROR_FOR_NON_SCALAR')
+    return os.path.exists(flag_path)
 
 
 def is_no_match(result_path):
     result_type, payload = query_result_payload(result_path)
-    if result_type != "OK":
-        return False
 
-    return ((payload is None and is_from_scalar_implementation(result_path)) or
-            (payload == [] and is_from_list_implementation(result_path)))
+    if implementation_returns_not_found_as_error(result_path) and not implementation_returns_not_found_for_non_scalar_as_error(result_path):
+        return result_type == "NOT_FOUND"
+
+    return result_type == "OK" and payload == []
+
+def is_no_scalar_match(result_path):
+    result_type, payload = query_result_payload(result_path)
+
+    if implementation_returns_not_found_as_error(result_path) or implementation_returns_not_found_for_non_scalar_as_error(result_path):
+        return result_type == "NOT_FOUND"
+
+    if implementation_returns_single_result_as_scalar(result_path):
+        return (result_type == "OK") and (payload is None)
+
+    return result_type == "OK" and payload == []
 
 def build_histogram(pairs):
     histogram = defaultdict(lambda: [])
@@ -57,6 +75,12 @@ def no_match_majority(result_paths):
     canonical_consensus_candidate = "[]"
     return [("no_match", canonical_consensus_candidate, result_paths_with_no_match)]
 
+def no_scalar_match_majority(result_paths):
+    result_paths_with_no_match = [path for path in result_paths if is_no_scalar_match(path)]
+
+    canonical_consensus_candidate = "[]"
+    return [("no_scalar_match", canonical_consensus_candidate, result_paths_with_no_match)]
+
 def single_match_majority(result_paths):
     result_payloads = []
     for result_path in result_paths:
@@ -64,7 +88,7 @@ def single_match_majority(result_paths):
         if result_type != "OK":
             continue
         canonical_consensus_candidate = ([payload]
-                                         if is_from_scalar_implementation(result_path)
+                                         if implementation_returns_single_result_as_scalar(result_path)
                                          else payload)
         result_payloads.append(tuple([result_path, json.dumps(canonical_consensus_candidate)]))
 
@@ -81,9 +105,11 @@ def multiple_matches_majority(result_paths):
     return [("multiple_matches", payload, paths) for payload, paths in build_histogram(result_payloads).items()]
 
 def calculate_majority_candidates(result_paths):
+    # ordered from generic to specific, so we prefer the generic ones
     majority_candidates = (multiple_matches_majority(result_paths) +
                            single_match_majority(result_paths) +
                            no_match_majority(result_paths) +
+                           no_scalar_match_majority(result_paths) +
                            not_supported_majority(result_paths))
 
     unique_candidates = defaultdict(lambda: None)
@@ -121,7 +147,15 @@ def no_match_majority_result(canonical_consensus):
     assert canonical_consensus == "[]"
     return {
         "consensus": canonical_consensus,
-        "scalar-consensus": "null"
+        "not-found-consensus": "NOT_FOUND"
+    }
+
+def no_scalar_match_majority_result(canonical_consensus):
+    assert canonical_consensus == "[]"
+    return {
+        "consensus": canonical_consensus,
+        "scalar-consensus": "null",
+        "not-found-consensus": "NOT_FOUND"
     }
 
 def not_supported_majority_result(canonical_consensus):
@@ -134,6 +168,7 @@ def majority_result(majority_type, canonical_consensus):
         "multiple_matches": multiple_matches_majority_result,
         "single_match": single_match_majority_result,
         "no_match": no_match_majority_result,
+        "no_scalar_match": no_scalar_match_majority_result,
         "not_supported": not_supported_majority_result,
     }
     return consensus_mapper[majority_type](canonical_consensus)

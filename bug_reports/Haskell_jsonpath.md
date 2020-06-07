@@ -3,28 +3,6 @@ Results do not match other implementations
 The following queries provide results that do not match those of other implementations of JSONPath
 (compare https://cburgmer.github.io/json-path-comparison/):
 
-- [ ] `$[1:3]`
-  Input:
-  ```
-  {
-    ":": 42,
-    "more": "string",
-    "a": 1,
-    "b": 2,
-    "c": 3
-  }
-  ```
-  Expected output:
-  ```
-  []
-  ```
-  Error:
-  ```
-  json-path-comparison: expected array, found {":":42,"more":"string","a":1,"b":2,"c":3}
-  CallStack (from HasCallStack):
-    error, called at app/Main.hs:19:22 in main:Main
-  ```
-
 - [ ] `$[:]`
   Input:
   ```
@@ -542,6 +520,26 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   json-path-comparison: expected key missing in object {"key":"value"}
+  CallStack (from HasCallStack):
+    error, called at app/Main.hs:19:22 in main:Main
+  ```
+
+- [ ] `$.length`
+  Input:
+  ```
+  [
+    4,
+    5,
+    6
+  ]
+  ```
+  Expected output:
+  ```
+  null
+  ```
+  Error:
+  ```
+  json-path-comparison: expected object, found [4,5,6]
   CallStack (from HasCallStack):
     error, called at app/Main.hs:19:22 in main:Main
   ```

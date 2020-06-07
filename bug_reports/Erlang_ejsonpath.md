@@ -3,29 +3,6 @@ Results do not match other implementations
 The following queries provide results that do not match those of other implementations of JSONPath
 (compare https://cburgmer.github.io/json-path-comparison/):
 
-- [ ] `$[1:3]`
-  Input:
-  ```
-  {
-    ":": 42,
-    "more": "string",
-    "a": 1,
-    "b": 2,
-    "c": 3
-  }
-  ```
-  Expected output:
-  ```
-  []
-  ```
-  Error:
-  ```
-  init terminating in do_boot (not_implemented)
-  
-  Crash dump is being written to: /dev/null...done
-  {"init terminating in do_boot",not_implemented}
-  ```
-
 - [ ] `$[::]`
   Input:
   ```

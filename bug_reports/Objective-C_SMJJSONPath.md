@@ -3,32 +3,6 @@ Results do not match other implementations
 The following queries provide results that do not match those of other implementations of JSONPath
 (compare https://cburgmer.github.io/json-path-comparison/):
 
-- [ ] `$[1:3]`
-  Input:
-  ```
-  {
-    ":": 42,
-    "more": "string",
-    "a": 1,
-    "b": 2,
-    "c": 3
-  }
-  ```
-  Expected output:
-  ```
-  []
-  ```
-  Error:
-  ```
-  Filter: [1:3] can only be applied to arrays. Current context is: {
-      ":" = 42;
-      a = 1;
-      b = 2;
-      c = 3;
-      more = string;
-  }
-  ```
-
 - [ ] `$[:]`
   Input:
   ```
@@ -300,6 +274,24 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   No results for path: $['missing']
+  ```
+
+- [ ] `$.length`
+  Input:
+  ```
+  [
+    4,
+    5,
+    6
+  ]
+  ```
+  Expected output:
+  ```
+  null
+  ```
+  Error:
+  ```
+  Expected to find an object with property ['length'] in path $ but found '__NSArrayI'. This is not a json object.
   ```
 
 - [ ] `$['key','another']`
