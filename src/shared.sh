@@ -63,3 +63,8 @@ implementation_returns_not_found_as_error() {
     local implementation="$1"
     test -f "./implementations/${implementation}/NOT_FOUND_RETURNED_AS_ERROR"
 }
+
+implementation_returns_not_found_for_scalar_queries_as_error() {
+    local implementation="$1"
+    test -f "./implementations/${implementation}/NOT_FOUND_RETURNED_AS_ERROR_FOR_NON_SCALAR"
+}

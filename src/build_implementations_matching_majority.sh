@@ -15,6 +15,9 @@ matching_majority_result() {
     if implementation_returns_not_found_as_error "$implementation" && grep '^not-found-consensus' < "${majority_result}"; then
         return
     fi
+    if implementation_returns_not_found_for_scalar_queries_as_error "$implementation" && grep '^scalar-not-found-consensus' < "${majority_result}"; then
+        return
+    fi
     if is_scalar_implementation "$implementation" && grep '^scalar-consensus' < "${majority_result}"; then
         return
     fi

@@ -155,7 +155,8 @@ def no_scalar_match_majority_result(canonical_consensus):
     return {
         "consensus": canonical_consensus,
         "scalar-consensus": "null",
-        "not-found-consensus": "NOT_FOUND"
+        "not-found-consensus": "NOT_FOUND",
+        "scalar-not-found-consensus": "NOT_FOUND"
     }
 
 def not_supported_majority_result(canonical_consensus):

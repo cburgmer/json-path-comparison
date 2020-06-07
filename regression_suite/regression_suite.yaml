@@ -123,6 +123,7 @@ queries:
     consensus: []
     scalar-consensus: null
     not-found-consensus: NOT_FOUND
+    scalar-not-found-consensus: NOT_FOUND
   - id: bracket_notation_with_dot
     selector: "$['two.some']"
     document: {"one": {"key": "value"}, "two": {"some": "more", "key": "other value"}, "two.some": "42"}
@@ -161,6 +162,7 @@ queries:
     consensus: []
     scalar-consensus: null
     not-found-consensus: NOT_FOUND
+    scalar-not-found-consensus: NOT_FOUND
   - id: bracket_notation_with_number_0
     selector: "$[0]"
     document: ["first", "second", "third", "forth", "fifth"]
@@ -179,6 +181,7 @@ queries:
     consensus: []
     scalar-consensus: null
     not-found-consensus: NOT_FOUND
+    scalar-not-found-consensus: NOT_FOUND
   - id: bracket_notation_with_number_on_string
     selector: "$[0]"
     document: "Hello World"
@@ -357,6 +360,7 @@ queries:
     consensus: []
     scalar-consensus: null
     not-found-consensus: NOT_FOUND
+    scalar-not-found-consensus: NOT_FOUND
   - id: dot_notation_on_array_value
     selector: "$.key"
     document: {"key": ["first", "second"]}
@@ -368,6 +372,7 @@ queries:
     consensus: []
     scalar-consensus: null
     not-found-consensus: NOT_FOUND
+    scalar-not-found-consensus: NOT_FOUND
   - id: dot_notation_on_empty_object_value
     selector: "$.key"
     document: {"key": {}}
@@ -384,6 +389,7 @@ queries:
     consensus: []
     scalar-consensus: null
     not-found-consensus: NOT_FOUND
+    scalar-not-found-consensus: NOT_FOUND
   - id: dot_notation_with_dash
     selector: "$.key-dash"
     document: {"key-dash": "value"}
@@ -416,6 +422,7 @@ queries:
     consensus: []
     scalar-consensus: null
     not-found-consensus: NOT_FOUND
+    scalar-not-found-consensus: NOT_FOUND
   - id: dot_notation_with_key_named_null
     selector: "$.null"
     document: {"null": "value"}
