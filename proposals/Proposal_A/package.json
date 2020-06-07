@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "npm run generateGrammar && prettier -c *.js --ignore-path selector.js && ./tests.js test_suite.yaml",
-    "checkConsensus": "pegjs --trace -o selector.js selector.peg && ./tests.js ../../regression_suite/regression_suite.yaml",
+    "checkConsensus": "pegjs --trace -o build/selector.js selector.peg && ./tests.js ../../regression_suite/regression_suite.yaml",
     "generateGrammar": "mkdir -p ./build && pegjs --trace -o ./build/selector.js selector.peg",
     "prettyGrammar": "pegjs-strip selector.peg | sed 's/^  =/  ::=/' | sed 's/^  \\//    |/' | sed 's/^/    /'"
   },

@@ -36,7 +36,7 @@ const deepEquals = (a, b) => {
 
 console.log(`Processing ${testSuite}...`);
 const failed = queries
-  .filter((query) => query.consensus || query.expectedError)
+  .filter((query) => query.consensus)
   .filter((query) => {
     try {
       const result = jsonpath(query.selector, query.document);
@@ -46,13 +46,13 @@ const failed = queries
           ? canonicalOrderForUnorderedResults(result)
           : result;
 
-      if (query.expectedError) {
+      if (query.consensus === "NOT_SUPPORTED") {
         console.warn(
           [
             `Failed for ${query.id}, selector ${
               query.selector
             }, document ${JSON.stringify(query.document)}:`,
-            `Expected: ${query.expectedError}`,
+            `Expected: ${query.consensus}`,
             `Received: ${JSON.stringify(canonicalResult)}`,
             "",
           ].join("\n")
@@ -76,7 +76,7 @@ const failed = queries
 
       return false;
     } catch (e) {
-      if (!query.expectedError) {
+      if (query.consensus !== "NOT_SUPPORTED") {
         console.warn(
           [
             `Error for ${query.id}, selector ${
@@ -90,13 +90,13 @@ const failed = queries
         return true;
       }
 
-      if (!new RegExp(query.expectedError).test(e)) {
+      if (!e instanceof jsonpath.SyntaxError) {
         console.warn(
           [
             `Error for ${query.id}, selector ${
               query.selector
             }, document ${JSON.stringify(query.document)}:`,
-            `Expected: ${query.expectedError}`,
+            `Expected: ${query.consensus}`,
             `Received: ${e}`,
             "",
           ].join("\n")
