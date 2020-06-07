@@ -8,7 +8,7 @@ implementation: dotNET_JsonPathLib
 queries:
   - id: array_slice_on_object
     status: open
-    result: []
+    result: ["nice"]
   - id: array_slice_with_negative_step
     status: open
     result: []
