@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 set -euo pipefail
 
@@ -78,6 +78,11 @@ pretty_result() {
 consensus() {
     local line
 
+    declare -A consensus_explanation
+    consensus_explanation["scalar-consensus"]="The scalar consensus applies for implementations which return a single value where only one match is possible (instead of an array of a single value)."
+    consensus_explanation["not-found-consensus"]="This consensus applies for implementations which return a specific *not found* value if no match exists."
+    consensus_explanation["scalar-not-found-consensus"]="This consensus applies for implementations which returns a specific *not found* value when a query that would regularly return a single match results in no match."
+
     pretty_result "$(grep '^consensus' < "${consensus_dir}/${query}" | cut -f2)"
 
     while IFS= read -r line; do
@@ -89,8 +94,27 @@ consensus() {
         cut -f1 <<< "$(capitalize "$line")" | tr '-' ' '
         echo "</h4>"
         echo
+        echo "${consensus_explanation[$(cut -f1 <<< "$line")]}"
+        echo
         cut -f2 <<< "$line" | pre_block
     done <<< "$(grep -v '^consensus' < "${consensus_dir}/${query}" | grep consensus)"
+}
+
+implementation_header() {
+    local implementation="$1"
+
+    echo "<h4 id=\"$implementation\">"
+    pretty_implementation_name "$implementation"
+    if is_scalar_implementation "$implementation"; then
+        echo "¹"
+    fi
+    if implementation_returns_not_found_as_error "$implementation"; then
+        echo "²"
+    fi
+    if implementation_returns_not_found_for_scalar_queries_as_error "$implementation"; then
+        echo "³"
+    fi
+    echo "</h4>"
 }
 
 main() {
@@ -121,9 +145,7 @@ main() {
         echo
 
         while IFS= read -r implementation; do
-            echo "<h4 id=\"$implementation\">"
-            pretty_implementation_name "$implementation"
-            echo "</h4>"
+            implementation_header "$implementation"
             echo
             if is_query_not_supported "${results_dir}/${query}/${implementation}"; then
                 pretty_result "NOT_SUPPORTED"
@@ -149,14 +171,20 @@ main() {
         echo
 
         while IFS= read -r implementation; do
-            echo "<h4 id=\"$implementation\">"
-            pretty_implementation_name "$implementation"
-            echo "</h4>"
+            implementation_header "$implementation"
             echo
             query_result_payload "${results_dir}/${query}/${implementation}" | pre_block
             echo
         done <<< "$errors"
     fi
+
+    echo "
+## Footnotes
+
+- ¹ This implementation returns a single value where only one match is possible (instead of an array of a single value).
+- ² This implementation returns a specific *not found* value if no match exists.
+- ³ This implementation returns a specific *not found* value if a query that would regularly return a single match results in no match.
+"
 }
 
 main

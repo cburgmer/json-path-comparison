@@ -79,7 +79,7 @@ compile_row() {
     echo "<a href=\"#${query}\" style=\"color: lightgrey;\">#</a>"
     echo "<a href=\"results/${query}.md\">${query_name}</a>"
     if [[ -f "${query_dir}/ALLOW_UNORDERED" ]]; then
-        echo "²"
+        echo "⁴"
     fi
     echo "</td>"
     echo "<td><code>${selector}</code></td>"
@@ -147,8 +147,14 @@ header_row() {
         echo "<th style=\"background: #f6f8faaa;\">"
         echo "<div style=\"writing-mode: vertical-rl;\">"
         sed "s/[^_]*_\(.*\)/\1/" <<< "$implementation" | wrap_with_link "$implementation"
-        if [[ -f "./implementations/${implementation}/SINGLE_POSSIBLE_MATCH_RETURNED_AS_SCALAR" ]]; then
+        if is_scalar_implementation "$implementation"; then
             echo "¹"
+        fi
+        if implementation_returns_not_found_as_error "$implementation"; then
+            echo "²"
+        fi
+        if implementation_returns_not_found_for_scalar_queries_as_error "$implementation"; then
+            echo "³"
         fi
         echo "</div>"
         echo "</th>"
@@ -195,8 +201,10 @@ See the [FAQ](https://github.com/cburgmer/json-path-comparison/blob/master/FAQ.m
 - ✗ The result does not match the consensus.
 - ➚ and ➘: no clear consensus amongst the implementations, but ➚ indicates a majority (and possible future consensus).
 - e The implementation failed executing the query.
-- ¹ This implementation returns queries with only a single possible match as a scalar element (e.g. <code>\$[0] => 42</code>). For the sake of comparing to other implementations these results are converted and wrapped in an array here.
-- ² It is unclear whether results for this query have a defined order, and some implementations might apply different and even non-deterministic ordering. For comparison the results are sorted into a canonical order.
+- ¹ This implementation returns a single value where only one match is possible (instead of an array of a single value).
+- ² This implementation returns a specific *not found* value if a query doesn't result in any matches.
+- ³ This implementation returns a specific *not found* value if a query that would regularly return a single match results in no match.
+- ⁴ It is unclear whether results for this query have a defined order, and some implementations might apply different and even non-deterministic ordering. For comparison the results are sorted into a canonical order.
 "
 }
 
