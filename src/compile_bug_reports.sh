@@ -74,7 +74,7 @@ failing_query() {
         fi
         consensus "$query" | code_block
 
-        if is_query_result_ok "${results_dir}/${query}/${implementation}"; then
+        if is_query_ok "${results_dir}/${query}/${implementation}"; then
             echo "Actual output:"
             query_result_payload "${results_dir}/${query}/${implementation}" | ./src/pretty_json.py | code_block
         else

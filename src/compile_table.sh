@@ -147,7 +147,7 @@ header_row() {
         echo "<th style=\"background: #f6f8faaa;\">"
         echo "<div style=\"writing-mode: vertical-rl;\">"
         sed "s/[^_]*_\(.*\)/\1/" <<< "$implementation" | wrap_with_link "$implementation"
-        if is_scalar_implementation "$implementation"; then
+        if implementation_returns_scalar_for_single_possible_match "$implementation"; then
             echo "¹"
         fi
         if implementation_returns_not_found_as_error "$implementation"; then

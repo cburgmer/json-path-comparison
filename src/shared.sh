@@ -29,7 +29,7 @@ query_result_status() {
     head -1 < "$result"
 }
 
-is_query_result_ok() {
+is_query_ok() {
     local result="$1"
     test "$(query_result_status "$result")" = "OK"
 }
@@ -69,8 +69,7 @@ all_query_result() {
     query_result_payload "$result"
 }
 
-
-is_scalar_implementation() {
+implementation_returns_scalar_for_single_possible_match() {
     local implementation="$1"
     test -f "./implementations/${implementation}/SINGLE_POSSIBLE_MATCH_RETURNED_AS_SCALAR"
 }

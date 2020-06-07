@@ -18,7 +18,7 @@ matching_majority_result() {
     if implementation_returns_not_found_for_scalar_queries_as_error "$implementation" && grep '^scalar-not-found-consensus' < "${majority_result}"; then
         return
     fi
-    if is_scalar_implementation "$implementation" && grep '^scalar-consensus' < "${majority_result}"; then
+    if implementation_returns_scalar_for_single_possible_match "$implementation" && grep '^scalar-consensus' < "${majority_result}"; then
         return
     fi
     grep '^consensus' < "${majority_result}"
@@ -26,18 +26,8 @@ matching_majority_result() {
 
 equals_majority_result() {
     local implementation="$1"
-    local majority
-    majority="$(matching_majority_result "$implementation" | cut -f2)"
 
-    if [[ "$majority" == "NOT_FOUND" ]] && is_query_result_not_found "${query_results}/${implementation}"; then
-        return 0;
-    fi
-
-    if [[ "$majority" == "NOT_SUPPORTED" ]] && is_query_not_supported "${query_results}/${implementation}"; then
-        return 0;
-    fi
-
-    test "$(query_result_payload "${query_results}/${implementation}")" == "$majority"
+    test "$(all_query_result "${query_results}/${implementation}")" == "$(matching_majority_result "$implementation" | cut -f2)"
 }
 
 main() {

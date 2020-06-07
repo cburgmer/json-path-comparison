@@ -105,7 +105,7 @@ implementation_header() {
 
     echo "<h4 id=\"$implementation\">"
     pretty_implementation_name "$implementation"
-    if is_scalar_implementation "$implementation"; then
+    if implementation_returns_scalar_for_single_possible_match "$implementation"; then
         echo "¹"
     fi
     if implementation_returns_not_found_as_error "$implementation"; then
