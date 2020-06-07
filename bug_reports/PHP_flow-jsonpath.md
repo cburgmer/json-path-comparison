@@ -3,6 +3,22 @@ Results do not match other implementations
 The following queries provide results that do not match those of other implementations of JSONPath
 (compare https://cburgmer.github.io/json-path-comparison/):
 
+- [ ] `$[::-2]`
+  Input:
+  ```
+  [
+    "first",
+    "second",
+    "third",
+    "forth",
+    "fifth"
+  ]
+  ```
+  Error:
+  ```
+  timeout: sending signal TERM to command ‘php’
+  ```
+
 - [ ] `$[-4:]`
   Input:
   ```
@@ -158,6 +174,298 @@ The following queries provide results that do not match those of other implement
   ]
   ```
 
+- [ ] `$[?(@.key+50==100)]`
+  Input:
+  ```
+  [
+    {
+      "key": 60
+    },
+    {
+      "key": 50
+    },
+    {
+      "key": 10
+    },
+    {
+      "key": -50
+    },
+    {
+      "key+50": 100
+    }
+  ]
+  ```
+  Error:
+  ```
+  Error: 'Malformed filter query'
+  ```
+
+- [ ] `$[?(@)]`
+  Input:
+  ```
+  [
+    "some value",
+    null,
+    "value",
+    0,
+    1,
+    -1,
+    "",
+    [],
+    {}
+  ]
+  ```
+  Error:
+  ```
+  Error: 'Malformed filter query'
+  ```
+
+- [ ] `$[?(@.a && (@.b || @.c))]`
+  Input:
+  ```
+  [
+    {
+      "a": true
+    },
+    {
+      "a": true,
+      "b": true
+    },
+    {
+      "a": true,
+      "b": true,
+      "c": true
+    },
+    {
+      "b": true,
+      "c": true
+    },
+    {
+      "a": true,
+      "c": true
+    },
+    {
+      "c": true
+    },
+    {
+      "b": true
+    }
+  ]
+  ```
+  Error:
+  ```
+  Error: 'Malformed filter query'
+  ```
+
+- [ ] `$[?(@.a && @.b || @.c)]`
+  Input:
+  ```
+  [
+    {
+      "a": true,
+      "b": true
+    },
+    {
+      "c": true
+    },
+    {
+      "d": true
+    }
+  ]
+  ```
+  Error:
+  ```
+  Error: 'Malformed filter query'
+  ```
+
+- [ ] `$[?(@.key/10==5)]`
+  Input:
+  ```
+  [
+    {
+      "key": 60
+    },
+    {
+      "key": 50
+    },
+    {
+      "key": 10
+    },
+    {
+      "key": -50
+    },
+    {
+      "key/10": 5
+    }
+  ]
+  ```
+  Error:
+  ```
+  Error: 'Malformed filter query'
+  ```
+
+- [ ] `$[?(@==42)]`
+  Input:
+  ```
+  [
+    0,
+    42,
+    -1,
+    41,
+    43,
+    42.0001,
+    41.9999,
+    null,
+    100
+  ]
+  ```
+  Error:
+  ```
+  Error: 'Malformed filter query'
+  ```
+
+- [ ] `$[?(@.d in [2, 3])]`
+  Input:
+  ```
+  [
+    {
+      "d": 1
+    },
+    {
+      "d": 2
+    },
+    {
+      "d": 1
+    },
+    {
+      "d": 3
+    },
+    {
+      "d": 4
+    }
+  ]
+  ```
+  Error:
+  ```
+  Error: 'Malformed filter query'
+  ```
+
+- [ ] `$[?(2 in @.d)]`
+  Input:
+  ```
+  [
+    {
+      "d": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "d": [
+        2
+      ]
+    },
+    {
+      "d": [
+        1
+      ]
+    },
+    {
+      "d": [
+        3,
+        4
+      ]
+    },
+    {
+      "d": [
+        4,
+        2
+      ]
+    }
+  ]
+  ```
+  Error:
+  ```
+  Error: 'Malformed filter query'
+  ```
+
+- [ ] `$[?(@.key*2==100)]`
+  Input:
+  ```
+  [
+    {
+      "key": 60
+    },
+    {
+      "key": 50
+    },
+    {
+      "key": 10
+    },
+    {
+      "key": -50
+    },
+    {
+      "key*2": 100
+    }
+  ]
+  ```
+  Error:
+  ```
+  Error: 'Malformed filter query'
+  ```
+
+- [ ] `$[?(!(@.key==42))]`
+  Input:
+  ```
+  [
+    {
+      "key": 0
+    },
+    {
+      "key": 42
+    },
+    {
+      "key": -1
+    },
+    {
+      "key": 41
+    },
+    {
+      "key": 43
+    },
+    {
+      "key": 42.0001
+    },
+    {
+      "key": 41.9999
+    },
+    {
+      "key": 100
+    },
+    {
+      "key": "43"
+    },
+    {
+      "key": "42"
+    },
+    {
+      "key": "41"
+    },
+    {
+      "key": "value"
+    },
+    {
+      "some": "value"
+    }
+  ]
+  ```
+  Error:
+  ```
+  Error: 'Malformed filter query'
+  ```
+
 - [ ] `$[?(@.key=42)]`
   Input:
   ```
@@ -244,6 +552,123 @@ The following queries provide results that do not match those of other implement
       "key": "42"
     }
   ]
+  ```
+
+- [ ] `$[?(@.a[?(@.price>10)])]`
+  Input:
+  ```
+  [
+    {
+      "a": [
+        {
+          "price": 1
+        },
+        {
+          "price": 3
+        }
+      ]
+    },
+    {
+      "a": [
+        {
+          "price": 11
+        }
+      ]
+    },
+    {
+      "a": [
+        {
+          "price": 8
+        },
+        {
+          "price": 12
+        },
+        {
+          "price": 3
+        }
+      ]
+    },
+    {
+      "a": []
+    }
+  ]
+  ```
+  Error:
+  ```
+  Error: 'Malformed filter query'
+  ```
+
+- [ ] `$[?(@.key-50==-100)]`
+  Input:
+  ```
+  [
+    {
+      "key": 60
+    },
+    {
+      "key": 50
+    },
+    {
+      "key": 10
+    },
+    {
+      "key": -50
+    },
+    {
+      "key-50": -100
+    }
+  ]
+  ```
+  Error:
+  ```
+  Error: 'Malformed filter query'
+  ```
+
+- [ ] `$[?(!@.key)]`
+  Input:
+  ```
+  [
+    {
+      "some": "some value"
+    },
+    {
+      "key": true
+    },
+    {
+      "key": false
+    },
+    {
+      "key": null
+    },
+    {
+      "key": "value"
+    },
+    {
+      "key": ""
+    },
+    {
+      "key": 0
+    },
+    {
+      "key": 1
+    },
+    {
+      "key": -1
+    },
+    {
+      "key": 42
+    },
+    {
+      "key": {}
+    },
+    {
+      "key": []
+    }
+  ]
+  ```
+  Error:
+  ```
+  Error: 'Malformed filter query'
   ```
 
 - [ ] `$(key,more)`

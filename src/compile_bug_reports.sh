@@ -12,6 +12,32 @@ all_queries() {
     find ./queries -type d -maxdepth 1 -mindepth 1 -print0 | xargs -0 -n1 basename | sort
 }
 
+is_query_response_correct() {
+    local implementation="$1"
+    local query="$2"
+
+    if has_consensus "$query" && ! is_in_majority "$query" "$implementation"; then
+       return 1
+    fi
+
+    if is_query_error "${results_dir}/${query}/${implementation}"; then
+        return 1
+    fi
+
+    return 0
+}
+
+all_incorrect_queries() {
+    local implementation="$1"
+    local query
+
+    while IFS= read -r query; do
+        if ! is_query_response_correct "$implementation" "$query"; then
+            echo "$query"
+        fi
+    done <<< "$(all_queries)"
+}
+
 indent_2() {
     sed 's/^/  /'
 }
@@ -67,12 +93,14 @@ failing_query() {
     {
         echo "Input:"
         ./src/pretty_json.py < "./queries/${query}/document.json" | code_block
-        if [[ -f "./queries/${query}/ALLOW_UNORDERED" ]]; then
-            echo "Expected output (in any order as no consensus on ordering exists):"
-        else
-            echo "Expected output:"
+        if has_consensus "$query"; then
+            if [[ -f "./queries/${query}/ALLOW_UNORDERED" ]]; then
+                echo "Expected output (in any order as no consensus on ordering exists):"
+            else
+                echo "Expected output:"
+            fi
+            consensus "$query" | code_block
         fi
-        consensus "$query" | code_block
 
         if is_query_ok "${results_dir}/${query}/${implementation}"; then
             echo "Actual output:"
@@ -93,10 +121,8 @@ process_implementation() {
     header
 
     while IFS= read -r query; do
-        if has_consensus "$query" && ! is_in_majority "$query" "$implementation"; then
-            failing_query "$query"
-        fi
-    done <<< "$(all_queries)"
+        failing_query "$query"
+    done <<< "$(all_incorrect_queries "$implementation")"
 
     footer "$implementation"
 }

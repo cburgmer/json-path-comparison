@@ -61,6 +61,23 @@ The following queries provide results that do not match those of other implement
   java.lang.IndexOutOfBoundsException nil
   ```
 
+- [ ] `$[1:3]`
+  Input:
+  ```
+  {
+    ":": 42,
+    "more": "string",
+    "a": 1,
+    "b": 2,
+    "c": 3,
+    "1:3": "nice"
+  }
+  ```
+  Error:
+  ```
+  java.lang.Exception object must be an array.
+  ```
+
 - [ ] `$[1:10]`
   Input:
   ```
@@ -151,6 +168,19 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   java.lang.NumberFormatException null
+  ```
+
+- [ ] `$[:]`
+  Input:
+  ```
+  {
+    ":": 42,
+    "more": "string"
+  }
+  ```
+  Error:
+  ```
+  java.lang.Exception object must be an array.
   ```
 
 - [ ] `$[2:1]`
@@ -543,6 +573,20 @@ The following queries provide results that do not match those of other implement
   java.lang.Exception object must be an array.
   ```
 
+- [ ] `$[""]`
+  Input:
+  ```
+  {
+    "": 42,
+    "''": 123,
+    "\"\"": 222
+  }
+  ```
+  Error:
+  ```
+  java.lang.Exception object must be an array.
+  ```
+
 - [ ] `$[-1]`
   Input:
   ```
@@ -579,6 +623,18 @@ The following queries provide results that do not match those of other implement
   java.lang.IndexOutOfBoundsException nil
   ```
 
+- [ ] `$[0]`
+  Input:
+  ```
+  {
+    "0": "value"
+  }
+  ```
+  Error:
+  ```
+  java.lang.Exception object must be an array.
+  ```
+
 - [ ] `$[1]`
   Input:
   ```
@@ -593,6 +649,16 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   java.lang.IndexOutOfBoundsException nil
+  ```
+
+- [ ] `$[0]`
+  Input:
+  ```
+  "Hello World"
+  ```
+  Error:
+  ```
+  java.lang.Exception object must be an array.
   ```
 
 - [ ] `$[':']`
@@ -697,6 +763,30 @@ The following queries provide results that do not match those of other implement
   java.lang.Exception object must be an array.
   ```
 
+- [ ] `$['\\']`
+  Input:
+  ```
+  {
+    "\\": "value"
+  }
+  ```
+  Error:
+  ```
+  java.lang.Exception object must be an array.
+  ```
+
+- [ ] `$['\'']`
+  Input:
+  ```
+  {
+    "'": "value"
+  }
+  ```
+  Error:
+  ```
+  java.lang.Exception object must be an array.
+  ```
+
 - [ ] `$['0']`
   Input:
   ```
@@ -724,6 +814,30 @@ The following queries provide results that do not match those of other implement
   Expected output:
   ```
   "value"
+  ```
+  Error:
+  ```
+  java.lang.Exception object must be an array.
+  ```
+
+- [ ] `$[':@."$,*\'\\']`
+  Input:
+  ```
+  {
+    ":@.\"$,*'\\": 42
+  }
+  ```
+  Error:
+  ```
+  java.lang.Exception object must be an array.
+  ```
+
+- [ ] `$['single'quote']`
+  Input:
+  ```
+  {
+    "single'quote": "value"
+  }
   ```
   Error:
   ```
@@ -785,6 +899,26 @@ The following queries provide results that do not match those of other implement
   java.lang.Exception object must be an array.
   ```
 
+- [ ] `$['two'.'some']`
+  Input:
+  ```
+  {
+    "one": {
+      "key": "value"
+    },
+    "two": {
+      "some": "more",
+      "key": "other value"
+    },
+    "two.some": "42",
+    "two'.'some": "43"
+  }
+  ```
+  Error:
+  ```
+  java.lang.Exception object must be an array.
+  ```
+
 - [ ] `$[two.some]`
   Input:
   ```
@@ -838,6 +972,56 @@ The following queries provide results that do not match those of other implement
   ]
   ```
 
+- [ ] `$[key]`
+  Input:
+  ```
+  {
+    "key": "value"
+  }
+  ```
+  Error:
+  ```
+  java.lang.Exception object must be an array.
+  ```
+
+- [ ] `$.['key']`
+  Input:
+  ```
+  {
+    "key": "value",
+    "other": {
+      "key": [
+        {
+          "key": 42
+        }
+      ]
+    }
+  }
+  ```
+  Error:
+  ```
+  java.lang.Exception object must be an array.
+  ```
+
+- [ ] `$.["key"]`
+  Input:
+  ```
+  {
+    "key": "value",
+    "other": {
+      "key": [
+        {
+          "key": 42
+        }
+      ]
+    }
+  }
+  ```
+  Error:
+  ```
+  java.lang.Exception object must be an array.
+  ```
+
 - [ ] `$.[key]`
   Input:
   ```
@@ -855,6 +1039,53 @@ The following queries provide results that do not match those of other implement
   Expected output:
   ```
   NOT_SUPPORTED
+  ```
+  Error:
+  ```
+  java.lang.Exception object must be an array.
+  ```
+
+- [ ] `$..[1].key`
+  Input:
+  ```
+  {
+    "k": [
+      {
+        "key": "some value"
+      },
+      {
+        "key": 42
+      }
+    ],
+    "kk": [
+      [
+        {
+          "key": 100
+        },
+        {
+          "key": 200
+        },
+        {
+          "key": 300
+        }
+      ],
+      [
+        {
+          "key": 400
+        },
+        {
+          "key": 500
+        },
+        {
+          "key": 600
+        }
+      ]
+    ],
+    "key": [
+      0,
+      1
+    ]
+  }
   ```
   Error:
   ```
@@ -1018,6 +1249,47 @@ The following queries provide results that do not match those of other implement
   ]
   ```
 
+- [ ] `$..*[?(@.id>2)]`
+  Input:
+  ```
+  [
+    {
+      "complext": {
+        "one": [
+          {
+            "name": "first",
+            "id": 1
+          },
+          {
+            "name": "next",
+            "id": 2
+          },
+          {
+            "name": "another",
+            "id": 3
+          },
+          {
+            "name": "more",
+            "id": 4
+          }
+        ],
+        "more": {
+          "name": "next to last",
+          "id": 5
+        }
+      }
+    },
+    {
+      "name": "last",
+      "id": 6
+    }
+  ]
+  ```
+  Error:
+  ```
+  java.lang.NullPointerException nil
+  ```
+
 - [ ] `$[?(@['key']==42)]`
   Input:
   ```
@@ -1137,6 +1409,130 @@ The following queries provide results that do not match those of other implement
   []
   ```
 
+- [ ] `$[?(@.d==["v1","v2"])]`
+  Input:
+  ```
+  [
+    {
+      "d": [
+        "v1",
+        "v2"
+      ]
+    },
+    {
+      "d": [
+        "a",
+        "b"
+      ]
+    },
+    {
+      "d": "v1"
+    },
+    {
+      "d": "v2"
+    },
+    {
+      "d": {}
+    },
+    {
+      "d": []
+    },
+    {
+      "d": null
+    },
+    {
+      "d": -1
+    },
+    {
+      "d": 0
+    },
+    {
+      "d": 1
+    },
+    {
+      "d": "['v1','v2']"
+    },
+    {
+      "d": "['v1', 'v2']"
+    },
+    {
+      "d": "v1,v2"
+    },
+    {
+      "d": "[\"v1\", \"v2\"]"
+    },
+    {
+      "d": "[\"v1\",\"v2\"]"
+    }
+  ]
+  ```
+  Error:
+  ```
+  java.lang.Exception object must be an array.
+  ```
+
+- [ ] `$[?(@.d==['v1','v2'])]`
+  Input:
+  ```
+  [
+    {
+      "d": [
+        "v1",
+        "v2"
+      ]
+    },
+    {
+      "d": [
+        "a",
+        "b"
+      ]
+    },
+    {
+      "d": "v1"
+    },
+    {
+      "d": "v2"
+    },
+    {
+      "d": {}
+    },
+    {
+      "d": []
+    },
+    {
+      "d": null
+    },
+    {
+      "d": -1
+    },
+    {
+      "d": 0
+    },
+    {
+      "d": 1
+    },
+    {
+      "d": "['v1','v2']"
+    },
+    {
+      "d": "['v1', 'v2']"
+    },
+    {
+      "d": "v1,v2"
+    },
+    {
+      "d": "[\"v1\", \"v2\"]"
+    },
+    {
+      "d": "[\"v1\",\"v2\"]"
+    }
+  ]
+  ```
+  Error:
+  ```
+  java.lang.Exception object must be an array.
+  ```
+
 - [ ] `$[?(@.key=="hi@example.com")]`
   Input:
   ```
@@ -1204,6 +1600,232 @@ The following queries provide results that do not match those of other implement
   Actual output:
   ```
   []
+  ```
+
+- [ ] `$[?(@.key>42)]`
+  Input:
+  ```
+  [
+    {
+      "key": 0
+    },
+    {
+      "key": 42
+    },
+    {
+      "key": -1
+    },
+    {
+      "key": 41
+    },
+    {
+      "key": 43
+    },
+    {
+      "key": 42.0001
+    },
+    {
+      "key": 41.9999
+    },
+    {
+      "key": 100
+    },
+    {
+      "key": "43"
+    },
+    {
+      "key": "42"
+    },
+    {
+      "key": "41"
+    },
+    {
+      "key": "value"
+    },
+    {
+      "some": "value"
+    }
+  ]
+  ```
+  Error:
+  ```
+  java.lang.ClassCastException class java.lang.String cannot be cast to class java.lang.Number (java.lang.String and java.lang.Number are in module java.base of loader 'bootstrap')
+  ```
+
+- [ ] `$[?(@.key>=42)]`
+  Input:
+  ```
+  [
+    {
+      "key": 0
+    },
+    {
+      "key": 42
+    },
+    {
+      "key": -1
+    },
+    {
+      "key": 41
+    },
+    {
+      "key": 43
+    },
+    {
+      "key": 42.0001
+    },
+    {
+      "key": 41.9999
+    },
+    {
+      "key": 100
+    },
+    {
+      "key": "43"
+    },
+    {
+      "key": "42"
+    },
+    {
+      "key": "41"
+    },
+    {
+      "key": "value"
+    },
+    {
+      "some": "value"
+    }
+  ]
+  ```
+  Error:
+  ```
+  java.lang.ClassCastException class java.lang.String cannot be cast to class java.lang.Number (java.lang.String and java.lang.Number are in module java.base of loader 'bootstrap')
+  ```
+
+- [ ] `$[?(@.d in [2, 3])]`
+  Input:
+  ```
+  [
+    {
+      "d": 1
+    },
+    {
+      "d": 2
+    },
+    {
+      "d": 1
+    },
+    {
+      "d": 3
+    },
+    {
+      "d": 4
+    }
+  ]
+  ```
+  Error:
+  ```
+  java.lang.Exception object must be an array.
+  ```
+
+- [ ] `$[?(@.key<42)]`
+  Input:
+  ```
+  [
+    {
+      "key": 0
+    },
+    {
+      "key": 42
+    },
+    {
+      "key": -1
+    },
+    {
+      "key": 41
+    },
+    {
+      "key": 43
+    },
+    {
+      "key": 42.0001
+    },
+    {
+      "key": 41.9999
+    },
+    {
+      "key": 100
+    },
+    {
+      "key": "43"
+    },
+    {
+      "key": "42"
+    },
+    {
+      "key": "41"
+    },
+    {
+      "key": "value"
+    },
+    {
+      "some": "value"
+    }
+  ]
+  ```
+  Error:
+  ```
+  java.lang.ClassCastException class java.lang.String cannot be cast to class java.lang.Number (java.lang.String and java.lang.Number are in module java.base of loader 'bootstrap')
+  ```
+
+- [ ] `$[?(@.key<=42)]`
+  Input:
+  ```
+  [
+    {
+      "key": 0
+    },
+    {
+      "key": 42
+    },
+    {
+      "key": -1
+    },
+    {
+      "key": 41
+    },
+    {
+      "key": 43
+    },
+    {
+      "key": 42.0001
+    },
+    {
+      "key": 41.9999
+    },
+    {
+      "key": 100
+    },
+    {
+      "key": "43"
+    },
+    {
+      "key": "42"
+    },
+    {
+      "key": "41"
+    },
+    {
+      "key": "value"
+    },
+    {
+      "some": "value"
+    }
+  ]
+  ```
+  Error:
+  ```
+  java.lang.ClassCastException class java.lang.String cannot be cast to class java.lang.Number (java.lang.String and java.lang.Number are in module java.base of loader 'bootstrap')
   ```
 
 - [ ] `$[?(@.key=42)]`
@@ -1291,6 +1913,50 @@ The following queries provide results that do not match those of other implement
   ]
   ```
 
+- [ ] `$[?(@.a[?(@.price>10)])]`
+  Input:
+  ```
+  [
+    {
+      "a": [
+        {
+          "price": 1
+        },
+        {
+          "price": 3
+        }
+      ]
+    },
+    {
+      "a": [
+        {
+          "price": 11
+        }
+      ]
+    },
+    {
+      "a": [
+        {
+          "price": 8
+        },
+        {
+          "price": 12
+        },
+        {
+          "price": 3
+        }
+      ]
+    },
+    {
+      "a": []
+    }
+  ]
+  ```
+  Error:
+  ```
+  java.lang.NullPointerException nil
+  ```
+
 - [ ] `$(key,more)`
   Input:
   ```
@@ -1307,6 +1973,22 @@ The following queries provide results that do not match those of other implement
   Actual output:
   ```
   null
+  ```
+
+- [ ] `$[(@.length-1)]`
+  Input:
+  ```
+  [
+    "first",
+    "second",
+    "third",
+    "forth",
+    "fifth"
+  ]
+  ```
+  Error:
+  ```
+  java.lang.NumberFormatException For input string: "("
   ```
 
 - [ ] `$[0,1]`
@@ -1344,6 +2026,27 @@ The following queries provide results that do not match those of other implement
   java.lang.Exception object must be an array.
   ```
 
+- [ ] `$[:]['c','d']`
+  Input:
+  ```
+  [
+    {
+      "c": "cc1",
+      "d": "dd1",
+      "e": "ee1"
+    },
+    {
+      "c": "cc2",
+      "d": "dd2",
+      "e": "ee2"
+    }
+  ]
+  ```
+  Error:
+  ```
+  java.lang.NumberFormatException null
+  ```
+
 - [ ] `$[0]['c','d']`
   Input:
   ```
@@ -1363,6 +2066,27 @@ The following queries provide results that do not match those of other implement
   Expected output:
   ```
   ["cc1", "dd1"]
+  ```
+  Error:
+  ```
+  java.lang.Exception object must be an array.
+  ```
+
+- [ ] `$.*['c','d']`
+  Input:
+  ```
+  [
+    {
+      "c": "cc1",
+      "d": "dd1",
+      "e": "ee1"
+    },
+    {
+      "c": "cc2",
+      "d": "dd2",
+      "e": "ee2"
+    }
+  ]
   ```
   Error:
   ```

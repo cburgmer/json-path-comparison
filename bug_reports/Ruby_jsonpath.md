@@ -21,6 +21,38 @@ The following queries provide results that do not match those of other implement
   []
   ```
 
+- [ ] `$[3:0:-2]`
+  Input:
+  ```
+  [
+    "first",
+    "second",
+    "third",
+    "forth",
+    "fifth"
+  ]
+  ```
+  Error:
+  ```
+  step can't be negative
+  ```
+
+- [ ] `$[::-2]`
+  Input:
+  ```
+  [
+    "first",
+    "second",
+    "third",
+    "forth",
+    "fifth"
+  ]
+  ```
+  Error:
+  ```
+  step can't be negative
+  ```
+
 - [ ] `$[0:0]`
   Input:
   ```
@@ -58,6 +90,22 @@ The following queries provide results that do not match those of other implement
   [
     "third"
   ]
+  ```
+
+- [ ] `$[0:3:0]`
+  Input:
+  ```
+  [
+    "first",
+    "second",
+    "third",
+    "forth",
+    "fifth"
+  ]
+  ```
+  Error:
+  ```
+  step can't be 0
   ```
 
 - [ ] `$[010:024:010]`
@@ -179,6 +227,16 @@ The following queries provide results that do not match those of other implement
   no implicit conversion of Integer into String
   ```
 
+- [ ] `$[0]`
+  Input:
+  ```
+  "Hello World"
+  ```
+  Error:
+  ```
+  unexpected token at 'Hello World'
+  ```
+
 - [ ] `$[']']`
   Input:
   ```
@@ -211,6 +269,18 @@ The following queries provide results that do not match those of other implement
   [
     null
   ]
+  ```
+
+- [ ] `$[':@."$,*\'\\']`
+  Input:
+  ```
+  {
+    ":@.\"$,*'\\": 42
+  }
+  ```
+  Error:
+  ```
+  invalid value for Integer(): "*\\'\\\\'"
   ```
 
 - [ ] `$[',']`
@@ -319,6 +389,18 @@ The following queries provide results that do not match those of other implement
   ]
   ```
 
+- [ ] `$[key]`
+  Input:
+  ```
+  {
+    "key": "value"
+  }
+  ```
+  Error:
+  ```
+  invalid value for Integer(): "key"
+  ```
+
 - [ ] `$.[key]`
   Input:
   ```
@@ -340,6 +422,53 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   invalid value for Integer(): "key"
+  ```
+
+- [ ] `$..[1].key`
+  Input:
+  ```
+  {
+    "k": [
+      {
+        "key": "some value"
+      },
+      {
+        "key": 42
+      }
+    ],
+    "kk": [
+      [
+        {
+          "key": 100
+        },
+        {
+          "key": 200
+        },
+        {
+          "key": 300
+        }
+      ],
+      [
+        {
+          "key": 400
+        },
+        {
+          "key": 500
+        },
+        {
+          "key": 600
+        }
+      ]
+    ],
+    "key": [
+      0,
+      1
+    ]
+  }
+  ```
+  Error:
+  ```
+  no implicit conversion of Integer into String
   ```
 
 - [ ] `$.`
@@ -694,6 +823,51 @@ The following queries provide results that do not match those of other implement
   ]
   ```
 
+- [ ] `$[?(@.key+50==100)]`
+  Input:
+  ```
+  [
+    {
+      "key": 60
+    },
+    {
+      "key": 50
+    },
+    {
+      "key": 10
+    },
+    {
+      "key": -50
+    },
+    {
+      "key+50": 100
+    }
+  ]
+  ```
+  Error:
+  ```
+  String can't be coerced into Float
+  ```
+
+- [ ] `$[?(@[1]=='b')]`
+  Input:
+  ```
+  {
+    "1": [
+      "a",
+      "b"
+    ],
+    "2": [
+      "x",
+      "y"
+    ]
+  }
+  ```
+  Error:
+  ```
+  Node does not appear to be an array.
+  ```
+
 - [ ] `$[?()]`
   Input:
   ```
@@ -719,6 +893,282 @@ The following queries provide results that do not match those of other implement
     },
     "value"
   ]
+  ```
+
+- [ ] `$[?(@.key>42)]`
+  Input:
+  ```
+  [
+    {
+      "key": 0
+    },
+    {
+      "key": 42
+    },
+    {
+      "key": -1
+    },
+    {
+      "key": 41
+    },
+    {
+      "key": 43
+    },
+    {
+      "key": 42.0001
+    },
+    {
+      "key": 41.9999
+    },
+    {
+      "key": 100
+    },
+    {
+      "key": "43"
+    },
+    {
+      "key": "42"
+    },
+    {
+      "key": "41"
+    },
+    {
+      "key": "value"
+    },
+    {
+      "some": "value"
+    }
+  ]
+  ```
+  Error:
+  ```
+  comparison of String with Float failed
+  ```
+
+- [ ] `$[?(@.key>=42)]`
+  Input:
+  ```
+  [
+    {
+      "key": 0
+    },
+    {
+      "key": 42
+    },
+    {
+      "key": -1
+    },
+    {
+      "key": 41
+    },
+    {
+      "key": 43
+    },
+    {
+      "key": 42.0001
+    },
+    {
+      "key": 41.9999
+    },
+    {
+      "key": 100
+    },
+    {
+      "key": "43"
+    },
+    {
+      "key": "42"
+    },
+    {
+      "key": "41"
+    },
+    {
+      "key": "value"
+    },
+    {
+      "some": "value"
+    }
+  ]
+  ```
+  Error:
+  ```
+  comparison of String with Float failed
+  ```
+
+- [ ] `$[?(@.d in [2, 3])]`
+  Input:
+  ```
+  [
+    {
+      "d": 1
+    },
+    {
+      "d": 2
+    },
+    {
+      "d": 1
+    },
+    {
+      "d": 3
+    },
+    {
+      "d": 4
+    }
+  ]
+  ```
+  Error:
+  ```
+  invalid value for Integer(): " 3])"
+  ```
+
+- [ ] `$[?(@.key<42)]`
+  Input:
+  ```
+  [
+    {
+      "key": 0
+    },
+    {
+      "key": 42
+    },
+    {
+      "key": -1
+    },
+    {
+      "key": 41
+    },
+    {
+      "key": 43
+    },
+    {
+      "key": 42.0001
+    },
+    {
+      "key": 41.9999
+    },
+    {
+      "key": 100
+    },
+    {
+      "key": "43"
+    },
+    {
+      "key": "42"
+    },
+    {
+      "key": "41"
+    },
+    {
+      "key": "value"
+    },
+    {
+      "some": "value"
+    }
+  ]
+  ```
+  Error:
+  ```
+  comparison of String with Float failed
+  ```
+
+- [ ] `$[?(@.key<=42)]`
+  Input:
+  ```
+  [
+    {
+      "key": 0
+    },
+    {
+      "key": 42
+    },
+    {
+      "key": -1
+    },
+    {
+      "key": 41
+    },
+    {
+      "key": 43
+    },
+    {
+      "key": 42.0001
+    },
+    {
+      "key": 41.9999
+    },
+    {
+      "key": 100
+    },
+    {
+      "key": "43"
+    },
+    {
+      "key": "42"
+    },
+    {
+      "key": "41"
+    },
+    {
+      "key": "value"
+    },
+    {
+      "some": "value"
+    }
+  ]
+  ```
+  Error:
+  ```
+  comparison of String with Float failed
+  ```
+
+- [ ] `$[?(!(@.key==42))]`
+  Input:
+  ```
+  [
+    {
+      "key": 0
+    },
+    {
+      "key": 42
+    },
+    {
+      "key": -1
+    },
+    {
+      "key": 41
+    },
+    {
+      "key": 43
+    },
+    {
+      "key": 42.0001
+    },
+    {
+      "key": 41.9999
+    },
+    {
+      "key": 100
+    },
+    {
+      "key": "43"
+    },
+    {
+      "key": "42"
+    },
+    {
+      "key": "41"
+    },
+    {
+      "key": "value"
+    },
+    {
+      "some": "value"
+    }
+  ]
+  ```
+  Error:
+  ```
+  wrong number of arguments calling `!` (given 1, expected 0)
   ```
 
 - [ ] `$[?(@.key=42)]`
@@ -802,6 +1252,158 @@ The following queries provide results that do not match those of other implement
   undefined method `=' for 0.0:Float
   Did you mean?  =~
                  ==
+  ```
+
+- [ ] `$[?(@.key-50==-100)]`
+  Input:
+  ```
+  [
+    {
+      "key": 60
+    },
+    {
+      "key": 50
+    },
+    {
+      "key": 10
+    },
+    {
+      "key": -50
+    },
+    {
+      "key-50": -100
+    }
+  ]
+  ```
+  Error:
+  ```
+  String can't be coerced into Float
+  ```
+
+- [ ] `$[?(@.key===42)]`
+  Input:
+  ```
+  [
+    {
+      "key": 0
+    },
+    {
+      "key": 42
+    },
+    {
+      "key": -1
+    },
+    {
+      "key": 1
+    },
+    {
+      "key": 41
+    },
+    {
+      "key": 43
+    },
+    {
+      "key": 42.0001
+    },
+    {
+      "key": 41.9999
+    },
+    {
+      "key": 100
+    },
+    {
+      "key": "some"
+    },
+    {
+      "key": "42"
+    },
+    {
+      "key": null
+    },
+    {
+      "key": 420
+    },
+    {
+      "key": ""
+    },
+    {
+      "key": {}
+    },
+    {
+      "key": []
+    },
+    {
+      "key": [
+        42
+      ]
+    },
+    {
+      "key": {
+        "key": 42
+      }
+    },
+    {
+      "key": {
+        "some": 42
+      }
+    },
+    {
+      "some": "value"
+    }
+  ]
+  ```
+  Error:
+  ```
+  undefined method `=' for 0.0:Float
+  Did you mean?  =~
+                 ==
+  ```
+
+- [ ] `$[?(!@.key)]`
+  Input:
+  ```
+  [
+    {
+      "some": "some value"
+    },
+    {
+      "key": true
+    },
+    {
+      "key": false
+    },
+    {
+      "key": null
+    },
+    {
+      "key": "value"
+    },
+    {
+      "key": ""
+    },
+    {
+      "key": 0
+    },
+    {
+      "key": 1
+    },
+    {
+      "key": -1
+    },
+    {
+      "key": 42
+    },
+    {
+      "key": {}
+    },
+    {
+      "key": []
+    }
+  ]
+  ```
+  Error:
+  ```
+  wrong number of arguments calling `!` (given 1, expected 0)
   ```
 
 - [ ] `$(key,more)`

@@ -3,6 +3,22 @@ Results do not match other implementations
 The following queries provide results that do not match those of other implementations of JSONPath
 (compare https://cburgmer.github.io/json-path-comparison/):
 
+- [ ] `$[0:3:0]`
+  Input:
+  ```
+  [
+    "first",
+    "second",
+    "third",
+    "forth",
+    "fifth"
+  ]
+  ```
+  Error:
+  ```
+  step cannot be zero
+  ```
+
 - [ ] `$[010:024:010]`
   Input:
   ```
@@ -63,6 +79,16 @@ The following queries provide results that do not match those of other implement
   Actual output:
   ```
   []
+  ```
+
+- [ ] `$[0]`
+  Input:
+  ```
+  "Hello World"
+  ```
+  Error:
+  ```
+  obj needs to be an object
   ```
 
 - [ ] `$.key-dash`
@@ -256,6 +282,41 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   obj needs to be an object
+  ```
+
+- [ ] `$[?(@.key<3),?(@.key>6)]`
+  Input:
+  ```
+  [
+    {
+      "key": 1
+    },
+    {
+      "key": 8
+    },
+    {
+      "key": 3
+    },
+    {
+      "key": 10
+    },
+    {
+      "key": 7
+    },
+    {
+      "key": 2
+    },
+    {
+      "key": 6
+    },
+    {
+      "key": 4
+    }
+  ]
+  ```
+  Error:
+  ```
+  Line 1: Unexpected token )
   ```
 
 - [ ] `$[ 0 , 1 ]`

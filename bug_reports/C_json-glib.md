@@ -77,6 +77,22 @@ The following queries provide results that do not match those of other implement
   timeout: sending signal TERM to command ‘build/main’
   ```
 
+- [ ] `$[0:3:0]`
+  Input:
+  ```
+  [
+    "first",
+    "second",
+    "third",
+    "forth",
+    "fifth"
+  ]
+  ```
+  Error:
+  ```
+  timeout: sending signal TERM to command ‘build/main’
+  ```
+
 - [ ] `$[0:3:1]`
   Input:
   ```

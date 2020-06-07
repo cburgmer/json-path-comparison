@@ -37,6 +37,19 @@ The following queries provide results that do not match those of other implement
   For input string: ""
   ```
 
+- [ ] `$[:]`
+  Input:
+  ```
+  {
+    ":": 42,
+    "more": "string"
+  }
+  ```
+  Error:
+  ```
+  Index 0 out of bounds for length 0
+  ```
+
 - [ ] `$[-4:]`
   Input:
   ```
@@ -237,6 +250,16 @@ The following queries provide results that do not match those of other implement
   Actual output:
   ```
   null
+  ```
+
+- [ ] `$[0]`
+  Input:
+  ```
+  "Hello World"
+  ```
+  Error:
+  ```
+  A JSONArray text must start with '[' at 1 [character 2 line 1]
   ```
 
 - [ ] `$[0:2][*]`
@@ -971,6 +994,27 @@ The following queries provide results that do not match those of other implement
     "another": "entry",
     "key": "value"
   }
+  ```
+
+- [ ] `$[:]['c','d']`
+  Input:
+  ```
+  [
+    {
+      "c": "cc1",
+      "d": "dd1",
+      "e": "ee1"
+    },
+    {
+      "c": "cc2",
+      "d": "dd2",
+      "e": "ee2"
+    }
+  ]
+  ```
+  Error:
+  ```
+  Index 0 out of bounds for length 0
   ```
 
 - [ ] `$[0]['c','d']`

@@ -23,6 +23,43 @@ The following queries provide results that do not match those of other implement
   
   ```
 
+- [ ] `$[1:3]`
+  Input:
+  ```
+  {
+    ":": 42,
+    "more": "string",
+    "a": 1,
+    "b": 2,
+    "c": 3,
+    "1:3": "nice"
+  }
+  ```
+  Error:
+  ```
+  Expecting value: line 3 column 1 (char 2)
+  
+  
+  ```
+
+- [ ] `$[3:0:-2]`
+  Input:
+  ```
+  [
+    "first",
+    "second",
+    "third",
+    "forth",
+    "fifth"
+  ]
+  ```
+  Error:
+  ```
+  Expecting value: line 3 column 1 (char 2)
+  
+  
+  ```
+
 - [ ] `$[2:1]`
   Input:
   ```
@@ -361,6 +398,20 @@ The following queries provide results that do not match those of other implement
   
   ```
 
+- [ ] `$[0]`
+  Input:
+  ```
+  {
+    "0": "value"
+  }
+  ```
+  Error:
+  ```
+  Expecting value: line 3 column 1 (char 2)
+  
+  
+  ```
+
 - [ ] `$[1]`
   Input:
   ```
@@ -371,6 +422,18 @@ The following queries provide results that do not match those of other implement
   Expected output:
   ```
   []
+  ```
+  Error:
+  ```
+  Expecting value: line 3 column 1 (char 2)
+  
+  
+  ```
+
+- [ ] `$[0]`
+  Input:
+  ```
+  "Hello World"
   ```
   Error:
   ```
@@ -493,6 +556,34 @@ The following queries provide results that do not match those of other implement
   
   ```
 
+- [ ] `$['\\']`
+  Input:
+  ```
+  {
+    "\\": "value"
+  }
+  ```
+  Error:
+  ```
+  Expecting value: line 3 column 1 (char 2)
+  
+  
+  ```
+
+- [ ] `$['\'']`
+  Input:
+  ```
+  {
+    "'": "value"
+  }
+  ```
+  Error:
+  ```
+  Expecting value: line 3 column 1 (char 2)
+  
+  
+  ```
+
 - [ ] `$['0']`
   Input:
   ```
@@ -522,6 +613,34 @@ The following queries provide results that do not match those of other implement
   Expected output:
   ```
   ["value"]
+  ```
+  Error:
+  ```
+  Expecting value: line 3 column 1 (char 2)
+  
+  
+  ```
+
+- [ ] `$[':@."$,*\'\\']`
+  Input:
+  ```
+  {
+    ":@.\"$,*'\\": 42
+  }
+  ```
+  Error:
+  ```
+  Expecting value: line 3 column 1 (char 2)
+  
+  
+  ```
+
+- [ ] `$['single'quote']`
+  Input:
+  ```
+  {
+    "single'quote": "value"
+  }
   ```
   Error:
   ```
@@ -560,6 +679,20 @@ The following queries provide results that do not match those of other implement
   Expected output:
   ```
   ["value"]
+  ```
+  Error:
+  ```
+  Expecting value: line 3 column 1 (char 2)
+  
+  
+  ```
+
+- [ ] `$['*']`
+  Input:
+  ```
+  {
+    "another": "entry"
+  }
   ```
   Error:
   ```
@@ -822,6 +955,73 @@ The following queries provide results that do not match those of other implement
   ```
   {
     "key": "value"
+  }
+  ```
+
+- [ ] `$..[1].key`
+  Input:
+  ```
+  {
+    "k": [
+      {
+        "key": "some value"
+      },
+      {
+        "key": 42
+      }
+    ],
+    "kk": [
+      [
+        {
+          "key": 100
+        },
+        {
+          "key": 200
+        },
+        {
+          "key": 300
+        }
+      ],
+      [
+        {
+          "key": 400
+        },
+        {
+          "key": 500
+        },
+        {
+          "key": 600
+        }
+      ]
+    ],
+    "key": [
+      0,
+      1
+    ]
+  }
+  ```
+  Error:
+  ```
+  Expecting ',' delimiter: line 14 column 9 (char 153)
+  {
+      "k":
+      [
+          {
+              "key":42
+          }
+      ],
+      "kk":
+      [
+          [
+              {
+                  "key":200
+              }
+          }        [
+              {
+                  "key":500
+              }
+          ]
+      ]
   }
   ```
 
@@ -1340,6 +1540,20 @@ The following queries provide results that do not match those of other implement
   }
   ```
 
+- [ ] `$.$`
+  Input:
+  ```
+  {
+    "$": "value"
+  }
+  ```
+  Error:
+  ```
+  Expecting value: line 3 column 1 (char 2)
+  
+  
+  ```
+
 - [ ] `$.屬性`
   Input:
   ```
@@ -1350,6 +1564,42 @@ The following queries provide results that do not match those of other implement
   Expected output:
   ```
   ["value"]
+  ```
+  Error:
+  ```
+  Expecting value: line 3 column 1 (char 2)
+  
+  
+  ```
+
+- [ ] `$.2`
+  Input:
+  ```
+  [
+    "first",
+    "second",
+    "third",
+    "forth",
+    "fifth"
+  ]
+  ```
+  Error:
+  ```
+  Expecting value: line 3 column 1 (char 2)
+  
+  
+  ```
+
+- [ ] `$.-1`
+  Input:
+  ```
+  [
+    "first",
+    "second",
+    "third",
+    "forth",
+    "fifth"
+  ]
   ```
   Error:
   ```
@@ -1562,6 +1812,114 @@ The following queries provide results that do not match those of other implement
   }
   ```
 
+- [ ] `$..[?(@.id==2)]`
+  Input:
+  ```
+  {
+    "id": 2,
+    "more": [
+      {
+        "id": 2
+      },
+      {
+        "more": {
+          "id": 2
+        }
+      },
+      {
+        "id": {
+          "id": 2
+        }
+      },
+      [
+        {
+          "id": 2
+        }
+      ]
+    ]
+  }
+  ```
+  Error:
+  ```
+  Expecting ',' delimiter: line 4 column 10 (char 32)
+  [
+      {
+          "id":2
+      }    [
+          {
+              "id":2
+          }
+      ]
+  ]
+  ```
+
+- [ ] `$[?(@.key)]`
+  Input:
+  ```
+  {
+    "key": 42,
+    "another": {
+      "key": 1
+    }
+  }
+  ```
+  Error:
+  ```
+  Expecting value: line 3 column 1 (char 2)
+  
+  
+  ```
+
+- [ ] `$[?(@.key+50==100)]`
+  Input:
+  ```
+  [
+    {
+      "key": 60
+    },
+    {
+      "key": 50
+    },
+    {
+      "key": 10
+    },
+    {
+      "key": -50
+    },
+    {
+      "key+50": 100
+    }
+  ]
+  ```
+  Error:
+  ```
+  Expecting value: line 3 column 1 (char 2)
+  
+  
+  ```
+
+- [ ] `$[?(@.key>42 && @.key<44)]`
+  Input:
+  ```
+  [
+    {
+      "key": 42
+    },
+    {
+      "key": 43
+    },
+    {
+      "key": 44
+    }
+  ]
+  ```
+  Error:
+  ```
+  Expecting value: line 3 column 1 (char 2)
+  
+  
+  ```
+
 - [ ] `$[?(@['key']==42)]`
   Input:
   ```
@@ -1638,6 +1996,33 @@ The following queries provide results that do not match those of other implement
   
   ```
 
+- [ ] `$[?(@[-1]==2)]`
+  Input:
+  ```
+  [
+    [
+      2,
+      3
+    ],
+    [
+      "a"
+    ],
+    [
+      0,
+      2
+    ],
+    [
+      2
+    ]
+  ]
+  ```
+  Error:
+  ```
+  Expecting value: line 3 column 1 (char 2)
+  
+  
+  ```
+
 - [ ] `$[?(@[1]=='b')]`
   Input:
   ```
@@ -1658,6 +2043,90 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
+  Expecting value: line 3 column 1 (char 2)
+  
+  
+  ```
+
+- [ ] `$[?(@[1]=='b')]`
+  Input:
+  ```
+  {
+    "1": [
+      "a",
+      "b"
+    ],
+    "2": [
+      "x",
+      "y"
+    ]
+  }
+  ```
+  Error:
+  ```
+  Expecting value: line 3 column 1 (char 2)
+  
+  
+  ```
+
+- [ ] `$[?(@)]`
+  Input:
+  ```
+  [
+    "some value",
+    null,
+    "value",
+    0,
+    1,
+    -1,
+    "",
+    [],
+    {}
+  ]
+  ```
+  Error:
+  ```
+  ggrep: Unmatched ( or \(
+  Expecting value: line 3 column 1 (char 2)
+  
+  
+  ```
+
+- [ ] `$[?(@.a && (@.b || @.c))]`
+  Input:
+  ```
+  [
+    {
+      "a": true
+    },
+    {
+      "a": true,
+      "b": true
+    },
+    {
+      "a": true,
+      "b": true,
+      "c": true
+    },
+    {
+      "b": true,
+      "c": true
+    },
+    {
+      "a": true,
+      "c": true
+    },
+    {
+      "c": true
+    },
+    {
+      "b": true
+    }
+  ]
+  ```
+  Error:
+  ```
+  ggrep: Unmatched ( or \(
   Expecting value: line 3 column 1 (char 2)
   
   
@@ -1687,6 +2156,214 @@ The following queries provide results that do not match those of other implement
   
   ```
 
+- [ ] `$[?(@.d==["v1","v2"])]`
+  Input:
+  ```
+  [
+    {
+      "d": [
+        "v1",
+        "v2"
+      ]
+    },
+    {
+      "d": [
+        "a",
+        "b"
+      ]
+    },
+    {
+      "d": "v1"
+    },
+    {
+      "d": "v2"
+    },
+    {
+      "d": {}
+    },
+    {
+      "d": []
+    },
+    {
+      "d": null
+    },
+    {
+      "d": -1
+    },
+    {
+      "d": 0
+    },
+    {
+      "d": 1
+    },
+    {
+      "d": "['v1','v2']"
+    },
+    {
+      "d": "['v1', 'v2']"
+    },
+    {
+      "d": "v1,v2"
+    },
+    {
+      "d": "[\"v1\", \"v2\"]"
+    },
+    {
+      "d": "[\"v1\",\"v2\"]"
+    }
+  ]
+  ```
+  Error:
+  ```
+  Expecting value: line 3 column 1 (char 2)
+  
+  
+  ```
+
+- [ ] `$[?(@.d==['v1','v2'])]`
+  Input:
+  ```
+  [
+    {
+      "d": [
+        "v1",
+        "v2"
+      ]
+    },
+    {
+      "d": [
+        "a",
+        "b"
+      ]
+    },
+    {
+      "d": "v1"
+    },
+    {
+      "d": "v2"
+    },
+    {
+      "d": {}
+    },
+    {
+      "d": []
+    },
+    {
+      "d": null
+    },
+    {
+      "d": -1
+    },
+    {
+      "d": 0
+    },
+    {
+      "d": 1
+    },
+    {
+      "d": "['v1','v2']"
+    },
+    {
+      "d": "['v1', 'v2']"
+    },
+    {
+      "d": "v1,v2"
+    },
+    {
+      "d": "[\"v1\", \"v2\"]"
+    },
+    {
+      "d": "[\"v1\",\"v2\"]"
+    }
+  ]
+  ```
+  Error:
+  ```
+  Expecting value: line 3 column 1 (char 2)
+  
+  
+  ```
+
+- [ ] `$[?(@.d=={"k":"v"})]`
+  Input:
+  ```
+  [
+    {
+      "d": {
+        "k": "v"
+      }
+    },
+    {
+      "d": {
+        "a": "b"
+      }
+    },
+    {
+      "d": "k"
+    },
+    {
+      "d": "v"
+    },
+    {
+      "d": {}
+    },
+    {
+      "d": []
+    },
+    {
+      "d": null
+    },
+    {
+      "d": -1
+    },
+    {
+      "d": 0
+    },
+    {
+      "d": 1
+    },
+    {
+      "d": "[object Object]"
+    },
+    {
+      "d": "{\"k\": \"v\"}"
+    },
+    {
+      "d": "{\"k\":\"v\"}"
+    },
+    "v"
+  ]
+  ```
+  Error:
+  ```
+  Expecting value: line 3 column 1 (char 2)
+  
+  
+  ```
+
+- [ ] `$[?(@==42)]`
+  Input:
+  ```
+  [
+    0,
+    42,
+    -1,
+    41,
+    43,
+    42.0001,
+    41.9999,
+    null,
+    100
+  ]
+  ```
+  Error:
+  ```
+  ggrep: Unmatched ( or \(
+  Expecting value: line 3 column 1 (char 2)
+  
+  
+  ```
+
 - [ ] `$[?(@.key==43)]`
   Input:
   ```
@@ -1699,6 +2376,60 @@ The following queries provide results that do not match those of other implement
   Expected output:
   ```
   []
+  ```
+  Error:
+  ```
+  Expecting value: line 3 column 1 (char 2)
+  
+  
+  ```
+
+- [ ] `$[?(@.key==42)]`
+  Input:
+  ```
+  {
+    "a": {
+      "key": 0
+    },
+    "b": {
+      "key": 42
+    },
+    "c": {
+      "key": -1
+    },
+    "d": {
+      "key": 41
+    },
+    "e": {
+      "key": 43
+    },
+    "f": {
+      "key": 42.0001
+    },
+    "g": {
+      "key": 41.9999
+    },
+    "h": {
+      "key": 100
+    },
+    "i": {
+      "some": "value"
+    }
+  }
+  ```
+  Error:
+  ```
+  Expecting value: line 3 column 1 (char 2)
+  
+  
+  ```
+
+- [ ] `$[?(@.id==2)]`
+  Input:
+  ```
+  {
+    "id": 2
+  }
   ```
   Error:
   ```
@@ -1774,6 +2505,290 @@ The following queries provide results that do not match those of other implement
   Expected output:
   ```
   [{"key": "value"}]
+  ```
+  Error:
+  ```
+  Expecting value: line 3 column 1 (char 2)
+  
+  
+  ```
+
+- [ ] `$.items[?(@.key==$.value)]`
+  Input:
+  ```
+  {
+    "value": 42,
+    "items": [
+      {
+        "key": 10
+      },
+      {
+        "key": 42
+      },
+      {
+        "key": 50
+      }
+    ]
+  }
+  ```
+  Error:
+  ```
+  Expecting value: line 3 column 1 (char 2)
+  
+  
+  ```
+
+- [ ] `$[?(@.d in [2, 3])]`
+  Input:
+  ```
+  [
+    {
+      "d": 1
+    },
+    {
+      "d": 2
+    },
+    {
+      "d": 1
+    },
+    {
+      "d": 3
+    },
+    {
+      "d": 4
+    }
+  ]
+  ```
+  Error:
+  ```
+  Expecting value: line 3 column 1 (char 2)
+  
+  
+  ```
+
+- [ ] `$[?(2 in @.d)]`
+  Input:
+  ```
+  [
+    {
+      "d": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "d": [
+        2
+      ]
+    },
+    {
+      "d": [
+        1
+      ]
+    },
+    {
+      "d": [
+        3,
+        4
+      ]
+    },
+    {
+      "d": [
+        4,
+        2
+      ]
+    }
+  ]
+  ```
+  Error:
+  ```
+  ggrep: Unmatched ( or \(
+  Expecting value: line 3 column 1 (char 2)
+  
+  
+  ```
+
+- [ ] `$[?(@.key*2==100)]`
+  Input:
+  ```
+  [
+    {
+      "key": 60
+    },
+    {
+      "key": 50
+    },
+    {
+      "key": 10
+    },
+    {
+      "key": -50
+    },
+    {
+      "key*2": 100
+    }
+  ]
+  ```
+  Error:
+  ```
+  Expecting value: line 3 column 1 (char 2)
+  
+  
+  ```
+
+- [ ] `$[?(!(@.key==42))]`
+  Input:
+  ```
+  [
+    {
+      "key": 0
+    },
+    {
+      "key": 42
+    },
+    {
+      "key": -1
+    },
+    {
+      "key": 41
+    },
+    {
+      "key": 43
+    },
+    {
+      "key": 42.0001
+    },
+    {
+      "key": 41.9999
+    },
+    {
+      "key": 100
+    },
+    {
+      "key": "43"
+    },
+    {
+      "key": "42"
+    },
+    {
+      "key": "41"
+    },
+    {
+      "key": "value"
+    },
+    {
+      "some": "value"
+    }
+  ]
+  ```
+  Error:
+  ```
+  ggrep: Unmatched ( or \(
+  Expecting value: line 3 column 1 (char 2)
+  
+  
+  ```
+
+- [ ] `$[?(@.key!=42)]`
+  Input:
+  ```
+  [
+    {
+      "key": 0
+    },
+    {
+      "key": 42
+    },
+    {
+      "key": -1
+    },
+    {
+      "key": 1
+    },
+    {
+      "key": 41
+    },
+    {
+      "key": 43
+    },
+    {
+      "key": 42.0001
+    },
+    {
+      "key": 41.9999
+    },
+    {
+      "key": 100
+    },
+    {
+      "key": "some"
+    },
+    {
+      "key": "42"
+    },
+    {
+      "key": null
+    },
+    {
+      "key": 420
+    },
+    {
+      "key": ""
+    },
+    {
+      "key": {}
+    },
+    {
+      "key": []
+    },
+    {
+      "key": [
+        42
+      ]
+    },
+    {
+      "key": {
+        "key": 42
+      }
+    },
+    {
+      "key": {
+        "some": 42
+      }
+    },
+    {
+      "some": "value"
+    }
+  ]
+  ```
+  Error:
+  ```
+  Expecting value: line 3 column 1 (char 2)
+  
+  
+  ```
+
+- [ ] `$[?(@.name=~/hello.*/)]`
+  Input:
+  ```
+  [
+    {
+      "name": "hullo world"
+    },
+    {
+      "name": "hello world"
+    },
+    {
+      "name": "yes hello world"
+    },
+    {
+      "name": "HELLO WORLD"
+    },
+    {
+      "name": "good bye"
+    }
+  ]
   ```
   Error:
   ```
@@ -1870,6 +2885,264 @@ The following queries provide results that do not match those of other implement
   ]
   ```
 
+- [ ] `$[?(@.a[?(@.price>10)])]`
+  Input:
+  ```
+  [
+    {
+      "a": [
+        {
+          "price": 1
+        },
+        {
+          "price": 3
+        }
+      ]
+    },
+    {
+      "a": [
+        {
+          "price": 11
+        }
+      ]
+    },
+    {
+      "a": [
+        {
+          "price": 8
+        },
+        {
+          "price": 12
+        },
+        {
+          "price": 3
+        }
+      ]
+    },
+    {
+      "a": []
+    }
+  ]
+  ```
+  Error:
+  ```
+  Expecting value: line 3 column 1 (char 2)
+  
+  
+  ```
+
+- [ ] `$[?(@.key===42)]`
+  Input:
+  ```
+  [
+    {
+      "key": 0
+    },
+    {
+      "key": 42
+    },
+    {
+      "key": -1
+    },
+    {
+      "key": 1
+    },
+    {
+      "key": 41
+    },
+    {
+      "key": 43
+    },
+    {
+      "key": 42.0001
+    },
+    {
+      "key": 41.9999
+    },
+    {
+      "key": 100
+    },
+    {
+      "key": "some"
+    },
+    {
+      "key": "42"
+    },
+    {
+      "key": null
+    },
+    {
+      "key": 420
+    },
+    {
+      "key": ""
+    },
+    {
+      "key": {}
+    },
+    {
+      "key": []
+    },
+    {
+      "key": [
+        42
+      ]
+    },
+    {
+      "key": {
+        "key": 42
+      }
+    },
+    {
+      "key": {
+        "some": 42
+      }
+    },
+    {
+      "some": "value"
+    }
+  ]
+  ```
+  Error:
+  ```
+  Expecting value: line 3 column 1 (char 2)
+  
+  
+  ```
+
+- [ ] `$[?(@.key)]`
+  Input:
+  ```
+  [
+    {
+      "some": "some value"
+    },
+    {
+      "key": true
+    },
+    {
+      "key": false
+    },
+    {
+      "key": null
+    },
+    {
+      "key": "value"
+    },
+    {
+      "key": ""
+    },
+    {
+      "key": 0
+    },
+    {
+      "key": 1
+    },
+    {
+      "key": -1
+    },
+    {
+      "key": 42
+    },
+    {
+      "key": {}
+    },
+    {
+      "key": []
+    }
+  ]
+  ```
+  Error:
+  ```
+  Expecting value: line 3 column 1 (char 2)
+  
+  
+  ```
+
+- [ ] `$..[?(@.id)]`
+  Input:
+  ```
+  {
+    "id": 2,
+    "more": [
+      {
+        "id": 2
+      },
+      {
+        "more": {
+          "id": 2
+        }
+      },
+      {
+        "id": {
+          "id": 2
+        }
+      },
+      [
+        {
+          "id": 2
+        }
+      ]
+    ]
+  }
+  ```
+  Error:
+  ```
+  Expecting value: line 3 column 1 (char 2)
+  
+  
+  ```
+
+- [ ] `$[?(!@.key)]`
+  Input:
+  ```
+  [
+    {
+      "some": "some value"
+    },
+    {
+      "key": true
+    },
+    {
+      "key": false
+    },
+    {
+      "key": null
+    },
+    {
+      "key": "value"
+    },
+    {
+      "key": ""
+    },
+    {
+      "key": 0
+    },
+    {
+      "key": 1
+    },
+    {
+      "key": -1
+    },
+    {
+      "key": 42
+    },
+    {
+      "key": {}
+    },
+    {
+      "key": []
+    }
+  ]
+  ```
+  Error:
+  ```
+  ggrep: Unmatched ( or \(
+  Expecting value: line 3 column 1 (char 2)
+  
+  
+  ```
+
 - [ ] `$(key,more)`
   Input:
   ```
@@ -1889,6 +3162,37 @@ The following queries provide results that do not match those of other implement
   Expecting value: line 3 column 1 (char 2)
   
   
+  ```
+
+- [ ] `$..`
+  Input:
+  ```
+  [
+    {
+      "a": {
+        "b": "c"
+      }
+    },
+    [
+      0,
+      1
+    ]
+  ]
+  ```
+  Error:
+  ```
+  Expecting ',' delimiter: line 10 column 5 (char 93)
+  [
+      {
+          "a":
+          {
+              "b":"c"
+          }
+      },
+          0,
+          1
+      }
+  ]
   ```
 
 - [ ] `$`
@@ -1964,6 +3268,62 @@ The following queries provide results that do not match those of other implement
   ./node_modules/jsonpath.sh/JSONPath.sh: line 778: closers[pathlen]: bad array subscript
   Expecting value: line 2 column 1 (char 6)
       [
+  ```
+
+- [ ] `$[(@.length-1)]`
+  Input:
+  ```
+  [
+    "first",
+    "second",
+    "third",
+    "forth",
+    "fifth"
+  ]
+  ```
+  Error:
+  ```
+  ggrep: Unmatched ( or \(
+  Expecting value: line 3 column 1 (char 2)
+  
+  
+  ```
+
+- [ ] `$[?(@.key<3),?(@.key>6)]`
+  Input:
+  ```
+  [
+    {
+      "key": 1
+    },
+    {
+      "key": 8
+    },
+    {
+      "key": 3
+    },
+    {
+      "key": 10
+    },
+    {
+      "key": 7
+    },
+    {
+      "key": 2
+    },
+    {
+      "key": 6
+    },
+    {
+      "key": 4
+    }
+  ]
+  ```
+  Error:
+  ```
+  Expecting value: line 3 column 1 (char 2)
+  
+  
   ```
 
 - [ ] `$['key','another']`
@@ -2054,6 +3414,24 @@ The following queries provide results that do not match those of other implement
     2,
     5
   ]
+  ```
+
+- [ ] `$[1:3,4]`
+  Input:
+  ```
+  [
+    1,
+    2,
+    3,
+    4,
+    5
+  ]
+  ```
+  Error:
+  ```
+  Expecting value: line 3 column 1 (char 2)
+  
+  
   ```
 
 - [ ] `$[ 0 , 1 ]`

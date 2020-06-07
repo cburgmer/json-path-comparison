@@ -3,6 +3,22 @@ Results do not match other implementations
 The following queries provide results that do not match those of other implementations of JSONPath
 (compare https://cburgmer.github.io/json-path-comparison/):
 
+- [ ] `$[0:3:0]`
+  Input:
+  ```
+  [
+    "first",
+    "second",
+    "third",
+    "forth",
+    "fifth"
+  ]
+  ```
+  Error:
+  ```
+  timeout: sending signal TERM to command ‘build/Dotnet_JsonPathLib’
+  ```
+
 - [ ] `$['two.some']`
   Input:
   ```
@@ -325,6 +341,26 @@ The following queries provide results that do not match those of other implement
   []
   ```
 
+- [ ] `$[?(@)]`
+  Input:
+  ```
+  [
+    "some value",
+    null,
+    "value",
+    0,
+    1,
+    -1,
+    "",
+    [],
+    {}
+  ]
+  ```
+  Error:
+  ```
+  Unable to cast object of type 'Newtonsoft.Json.Linq.JObject' to type 'System.IConvertible'.
+  ```
+
 - [ ] `$[?()]`
   Input:
   ```
@@ -344,6 +380,185 @@ The following queries provide results that do not match those of other implement
   Actual output:
   ```
   []
+  ```
+
+- [ ] `$[?(@.d==["v1","v2"])]`
+  Input:
+  ```
+  [
+    {
+      "d": [
+        "v1",
+        "v2"
+      ]
+    },
+    {
+      "d": [
+        "a",
+        "b"
+      ]
+    },
+    {
+      "d": "v1"
+    },
+    {
+      "d": "v2"
+    },
+    {
+      "d": {}
+    },
+    {
+      "d": []
+    },
+    {
+      "d": null
+    },
+    {
+      "d": -1
+    },
+    {
+      "d": 0
+    },
+    {
+      "d": 1
+    },
+    {
+      "d": "['v1','v2']"
+    },
+    {
+      "d": "['v1', 'v2']"
+    },
+    {
+      "d": "v1,v2"
+    },
+    {
+      "d": "[\"v1\", \"v2\"]"
+    },
+    {
+      "d": "[\"v1\",\"v2\"]"
+    }
+  ]
+  ```
+  Error:
+  ```
+  Object reference not set to an instance of an object.
+  ```
+
+- [ ] `$[?(@.d==['v1','v2'])]`
+  Input:
+  ```
+  [
+    {
+      "d": [
+        "v1",
+        "v2"
+      ]
+    },
+    {
+      "d": [
+        "a",
+        "b"
+      ]
+    },
+    {
+      "d": "v1"
+    },
+    {
+      "d": "v2"
+    },
+    {
+      "d": {}
+    },
+    {
+      "d": []
+    },
+    {
+      "d": null
+    },
+    {
+      "d": -1
+    },
+    {
+      "d": 0
+    },
+    {
+      "d": 1
+    },
+    {
+      "d": "['v1','v2']"
+    },
+    {
+      "d": "['v1', 'v2']"
+    },
+    {
+      "d": "v1,v2"
+    },
+    {
+      "d": "[\"v1\", \"v2\"]"
+    },
+    {
+      "d": "[\"v1\",\"v2\"]"
+    }
+  ]
+  ```
+  Error:
+  ```
+  Object reference not set to an instance of an object.
+  ```
+
+- [ ] `$[?(@.d=={"k":"v"})]`
+  Input:
+  ```
+  [
+    {
+      "d": {
+        "k": "v"
+      }
+    },
+    {
+      "d": {
+        "a": "b"
+      }
+    },
+    {
+      "d": "k"
+    },
+    {
+      "d": "v"
+    },
+    {
+      "d": {}
+    },
+    {
+      "d": []
+    },
+    {
+      "d": null
+    },
+    {
+      "d": -1
+    },
+    {
+      "d": 0
+    },
+    {
+      "d": 1
+    },
+    {
+      "d": "[object Object]"
+    },
+    {
+      "d": "{\"k\": \"v\"}"
+    },
+    {
+      "d": "{\"k\":\"v\"}"
+    },
+    "v"
+  ]
+  ```
+  Error:
+  ```
+  Object reference not set to an instance of an object.
   ```
 
 - [ ] `$[?(@.key=="hi@example.com")]`
@@ -368,6 +583,55 @@ The following queries provide results that do not match those of other implement
   Actual output:
   ```
   []
+  ```
+
+- [ ] `$.items[?(@.key==$.value)]`
+  Input:
+  ```
+  {
+    "value": 42,
+    "items": [
+      {
+        "key": 10
+      },
+      {
+        "key": 42
+      },
+      {
+        "key": 50
+      }
+    ]
+  }
+  ```
+  Error:
+  ```
+  $ is not defined
+  ```
+
+- [ ] `$[?(@.name=~/hello.*/)]`
+  Input:
+  ```
+  [
+    {
+      "name": "hullo world"
+    },
+    {
+      "name": "hello world"
+    },
+    {
+      "name": "yes hello world"
+    },
+    {
+      "name": "HELLO WORLD"
+    },
+    {
+      "name": "good bye"
+    }
+  ]
+  ```
+  Error:
+  ```
+  Object of type 'System.Double' cannot be converted to type 'Newtonsoft.Json.Linq.JToken'.
   ```
 
 - [ ] `$[?(@.key=42)]`
@@ -451,6 +715,129 @@ The following queries provide results that do not match those of other implement
   Object of type 'System.Double' cannot be converted to type 'Newtonsoft.Json.Linq.JToken'.
   ```
 
+- [ ] `$[?(@.a[?(@.price>10)])]`
+  Input:
+  ```
+  [
+    {
+      "a": [
+        {
+          "price": 1
+        },
+        {
+          "price": 3
+        }
+      ]
+    },
+    {
+      "a": [
+        {
+          "price": 11
+        }
+      ]
+    },
+    {
+      "a": [
+        {
+          "price": 8
+        },
+        {
+          "price": 12
+        },
+        {
+          "price": 3
+        }
+      ]
+    },
+    {
+      "a": []
+    }
+  ]
+  ```
+  Error:
+  ```
+  Line 1: Unexpected token ?
+  ```
+
+- [ ] `$[?(@.key)]`
+  Input:
+  ```
+  [
+    {
+      "some": "some value"
+    },
+    {
+      "key": true
+    },
+    {
+      "key": false
+    },
+    {
+      "key": null
+    },
+    {
+      "key": "value"
+    },
+    {
+      "key": ""
+    },
+    {
+      "key": 0
+    },
+    {
+      "key": 1
+    },
+    {
+      "key": -1
+    },
+    {
+      "key": 42
+    },
+    {
+      "key": {}
+    },
+    {
+      "key": []
+    }
+  ]
+  ```
+  Error:
+  ```
+  Unable to cast object of type 'Newtonsoft.Json.Linq.JArray' to type 'System.IConvertible'.
+  ```
+
+- [ ] `$..[?(@.id)]`
+  Input:
+  ```
+  {
+    "id": 2,
+    "more": [
+      {
+        "id": 2
+      },
+      {
+        "more": {
+          "id": 2
+        }
+      },
+      {
+        "id": {
+          "id": 2
+        }
+      },
+      [
+        {
+          "id": 2
+        }
+      ]
+    ]
+  }
+  ```
+  Error:
+  ```
+  Unable to cast object of type 'Newtonsoft.Json.Linq.JObject' to type 'System.IConvertible'.
+  ```
+
 - [ ] `$(key,more)`
   Input:
   ```
@@ -467,6 +854,41 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   key is not defined
+  ```
+
+- [ ] `$[?(@.key<3),?(@.key>6)]`
+  Input:
+  ```
+  [
+    {
+      "key": 1
+    },
+    {
+      "key": 8
+    },
+    {
+      "key": 3
+    },
+    {
+      "key": 10
+    },
+    {
+      "key": 7
+    },
+    {
+      "key": 2
+    },
+    {
+      "key": 6
+    },
+    {
+      "key": 4
+    }
+  ]
+  ```
+  Error:
+  ```
+  Line 1: Unexpected token )
   ```
 
 - [ ] `$[*,1]`

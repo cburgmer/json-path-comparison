@@ -3,6 +3,41 @@ Results do not match other implementations
 The following queries provide results that do not match those of other implementations of JSONPath
 (compare https://cburgmer.github.io/json-path-comparison/):
 
+- [ ] `$[1:3]`
+  Input:
+  ```
+  {
+    ":": 42,
+    "more": "string",
+    "a": 1,
+    "b": 2,
+    "c": 3,
+    "1:3": "nice"
+  }
+  ```
+  Error:
+  ```
+  json-path-comparison: expected array, found {":":42,"more":"string","a":1,"b":2,"1:3":"nice","c":3}
+  CallStack (from HasCallStack):
+    error, called at app/Main.hs:19:22 in main:Main
+  ```
+
+- [ ] `$[::-2]`
+  Input:
+  ```
+  [
+    "first",
+    "second",
+    "third",
+    "forth",
+    "fifth"
+  ]
+  ```
+  Error:
+  ```
+  timeout: sending signal TERM to command ‘./build/json-path-comparison’
+  ```
+
 - [ ] `$[:]`
   Input:
   ```
@@ -37,6 +72,22 @@ The following queries provide results that do not match those of other implement
   ```
   Invalid JSONPath: $[::]
    Error: searchBeginningWithSlice: string
+  ```
+
+- [ ] `$[0:3:0]`
+  Input:
+  ```
+  [
+    "first",
+    "second",
+    "third",
+    "forth",
+    "fifth"
+  ]
+  ```
+  Error:
+  ```
+  timeout: sending signal TERM to command ‘./build/json-path-comparison’
   ```
 
 - [ ] `$[1:3:]`
@@ -178,6 +229,20 @@ The following queries provide results that do not match those of other implement
     error, called at app/Main.hs:19:22 in main:Main
   ```
 
+- [ ] `$[0]`
+  Input:
+  ```
+  {
+    "0": "value"
+  }
+  ```
+  Error:
+  ```
+  json-path-comparison: expected array, found {"0":"value"}
+  CallStack (from HasCallStack):
+    error, called at app/Main.hs:19:22 in main:Main
+  ```
+
 - [ ] `$[1]`
   Input:
   ```
@@ -192,6 +257,18 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   json-path-comparison: index 1 invalid for array ["one element"]
+  CallStack (from HasCallStack):
+    error, called at app/Main.hs:19:22 in main:Main
+  ```
+
+- [ ] `$[0]`
+  Input:
+  ```
+  "Hello World"
+  ```
+  Error:
+  ```
+  json-path-comparison: expected array, found "Hello World"
   CallStack (from HasCallStack):
     error, called at app/Main.hs:19:22 in main:Main
   ```
@@ -561,6 +638,42 @@ The following queries provide results that do not match those of other implement
    Error: searchBeginningWithSlice: string
   ```
 
+- [ ] `$.2`
+  Input:
+  ```
+  [
+    "first",
+    "second",
+    "third",
+    "forth",
+    "fifth"
+  ]
+  ```
+  Error:
+  ```
+  json-path-comparison: expected object, found ["first","second","third","forth","fifth"]
+  CallStack (from HasCallStack):
+    error, called at app/Main.hs:19:22 in main:Main
+  ```
+
+- [ ] `$.-1`
+  Input:
+  ```
+  [
+    "first",
+    "second",
+    "third",
+    "forth",
+    "fifth"
+  ]
+  ```
+  Error:
+  ```
+  json-path-comparison: expected object, found ["first","second","third","forth","fifth"]
+  CallStack (from HasCallStack):
+    error, called at app/Main.hs:19:22 in main:Main
+  ```
+
 - [ ] `$..*`
   Input:
   ```
@@ -575,6 +688,82 @@ The following queries provide results that do not match those of other implement
   json-path-comparison: Search failed
   CallStack (from HasCallStack):
     error, called at app/Main.hs:19:22 in main:Main
+  ```
+
+- [ ] `$..*[?(@.id>2)]`
+  Input:
+  ```
+  [
+    {
+      "complext": {
+        "one": [
+          {
+            "name": "first",
+            "id": 1
+          },
+          {
+            "name": "next",
+            "id": 2
+          },
+          {
+            "name": "another",
+            "id": 3
+          },
+          {
+            "name": "more",
+            "id": 4
+          }
+        ],
+        "more": {
+          "name": "next to last",
+          "id": 5
+        }
+      }
+    },
+    {
+      "name": "last",
+      "id": 6
+    }
+  ]
+  ```
+  Error:
+  ```
+  json-path-comparison: Search failed
+  CallStack (from HasCallStack):
+    error, called at app/Main.hs:19:22 in main:Main
+  ```
+
+- [ ] `$..[?(@.id==2)]`
+  Input:
+  ```
+  {
+    "id": 2,
+    "more": [
+      {
+        "id": 2
+      },
+      {
+        "more": {
+          "id": 2
+        }
+      },
+      {
+        "id": {
+          "id": 2
+        }
+      },
+      [
+        {
+          "id": 2
+        }
+      ]
+    ]
+  }
+  ```
+  Error:
+  ```
+  json-path-comparison: src/Data/JSONPath/Execute.hs:(71,1)-(72,60): Non-exhaustive patterns in function executeCondition
+  
   ```
 
 - [ ] `$[?(@['@key']==42)]`
@@ -608,6 +797,32 @@ The following queries provide results that do not match those of other implement
    Error: searchBeginningWithSlice: string
   ```
 
+- [ ] `$[?(@[-1]==2)]`
+  Input:
+  ```
+  [
+    [
+      2,
+      3
+    ],
+    [
+      "a"
+    ],
+    [
+      0,
+      2
+    ],
+    [
+      2
+    ]
+  ]
+  ```
+  Error:
+  ```
+  json-path-comparison: src/Data/JSONPath/Execute.hs:(71,1)-(72,60): Non-exhaustive patterns in function executeCondition
+  
+  ```
+
 - [ ] `$[?(@[1]=='b')]`
   Input:
   ```
@@ -632,6 +847,228 @@ The following queries provide results that do not match those of other implement
    Error: searchBeginningWithSlice: string
   ```
 
+- [ ] `$[?(@.key==42)]`
+  Input:
+  ```
+  [
+    {
+      "key": 0
+    },
+    {
+      "key": 42
+    },
+    {
+      "key": -1
+    },
+    {
+      "key": 1
+    },
+    {
+      "key": 41
+    },
+    {
+      "key": 43
+    },
+    {
+      "key": 42.0001
+    },
+    {
+      "key": 41.9999
+    },
+    {
+      "key": 100
+    },
+    {
+      "key": "some"
+    },
+    {
+      "key": "42"
+    },
+    {
+      "key": null
+    },
+    {
+      "key": 420
+    },
+    {
+      "key": ""
+    },
+    {
+      "key": {}
+    },
+    {
+      "key": []
+    },
+    {
+      "key": [
+        42
+      ]
+    },
+    {
+      "key": {
+        "key": 42
+      }
+    },
+    {
+      "key": {
+        "some": 42
+      }
+    },
+    {
+      "some": "value"
+    }
+  ]
+  ```
+  Error:
+  ```
+  json-path-comparison: src/Data/JSONPath/Execute.hs:(71,1)-(72,60): Non-exhaustive patterns in function executeCondition
+  
+  ```
+
+- [ ] `$[?(@.key==010)]`
+  Input:
+  ```
+  [
+    {
+      "key": "010"
+    },
+    {
+      "key": "10"
+    },
+    {
+      "key": 10
+    },
+    {
+      "key": 0
+    },
+    {
+      "key": 8
+    }
+  ]
+  ```
+  Error:
+  ```
+  json-path-comparison: src/Data/JSONPath/Execute.hs:(71,1)-(72,60): Non-exhaustive patterns in function executeCondition
+  
+  ```
+
+- [ ] `$[?(@.key==42)]`
+  Input:
+  ```
+  {
+    "a": {
+      "key": 0
+    },
+    "b": {
+      "key": 42
+    },
+    "c": {
+      "key": -1
+    },
+    "d": {
+      "key": 41
+    },
+    "e": {
+      "key": 43
+    },
+    "f": {
+      "key": 42.0001
+    },
+    "g": {
+      "key": 41.9999
+    },
+    "h": {
+      "key": 100
+    },
+    "i": {
+      "some": "value"
+    }
+  }
+  ```
+  Error:
+  ```
+  json-path-comparison: expected array, found {"g":{"key":41.9999},"a":{"key":0},"d":{"key":41},"b":{"key":42},"e":{"key":43},"h":{"key":100},"c":{"key":-1},"f":{"key":42.0001},"i":{"some":"value"}}
+  CallStack (from HasCallStack):
+    error, called at app/Main.hs:19:22 in main:Main
+  ```
+
+- [ ] `$[?(@.id==2)]`
+  Input:
+  ```
+  {
+    "id": 2
+  }
+  ```
+  Error:
+  ```
+  json-path-comparison: expected array, found {"id":2}
+  CallStack (from HasCallStack):
+    error, called at app/Main.hs:19:22 in main:Main
+  ```
+
+- [ ] `$[?(@.key=="value")]`
+  Input:
+  ```
+  [
+    {
+      "key": "some"
+    },
+    {
+      "key": "value"
+    },
+    {
+      "key": null
+    },
+    {
+      "key": 0
+    },
+    {
+      "key": 1
+    },
+    {
+      "key": -1
+    },
+    {
+      "key": ""
+    },
+    {
+      "key": {}
+    },
+    {
+      "key": []
+    },
+    {
+      "key": "valuemore"
+    },
+    {
+      "key": "morevalue"
+    },
+    {
+      "key": [
+        "value"
+      ]
+    },
+    {
+      "key": {
+        "some": "value"
+      }
+    },
+    {
+      "key": {
+        "key": "value"
+      }
+    },
+    {
+      "some": "value"
+    }
+  ]
+  ```
+  Error:
+  ```
+  json-path-comparison: src/Data/JSONPath/Execute.hs:(71,1)-(72,60): Non-exhaustive patterns in function executeCondition
+  
+  ```
+
 - [ ] `$[?(@.key=='value')]`
   Input:
   ```
@@ -652,6 +1089,186 @@ The following queries provide results that do not match those of other implement
   ```
   Invalid JSONPath: $[?(@.key=='value')]
    Error: searchBeginningWithSlice: string
+  ```
+
+- [ ] `$[?(@.key>42)]`
+  Input:
+  ```
+  [
+    {
+      "key": 0
+    },
+    {
+      "key": 42
+    },
+    {
+      "key": -1
+    },
+    {
+      "key": 41
+    },
+    {
+      "key": 43
+    },
+    {
+      "key": 42.0001
+    },
+    {
+      "key": 41.9999
+    },
+    {
+      "key": 100
+    },
+    {
+      "key": "43"
+    },
+    {
+      "key": "42"
+    },
+    {
+      "key": "41"
+    },
+    {
+      "key": "value"
+    },
+    {
+      "some": "value"
+    }
+  ]
+  ```
+  Error:
+  ```
+  json-path-comparison: src/Data/JSONPath/Execute.hs:(71,1)-(72,60): Non-exhaustive patterns in function executeCondition
+  
+  ```
+
+- [ ] `$[?(@.key<42)]`
+  Input:
+  ```
+  [
+    {
+      "key": 0
+    },
+    {
+      "key": 42
+    },
+    {
+      "key": -1
+    },
+    {
+      "key": 41
+    },
+    {
+      "key": 43
+    },
+    {
+      "key": 42.0001
+    },
+    {
+      "key": 41.9999
+    },
+    {
+      "key": 100
+    },
+    {
+      "key": "43"
+    },
+    {
+      "key": "42"
+    },
+    {
+      "key": "41"
+    },
+    {
+      "key": "value"
+    },
+    {
+      "some": "value"
+    }
+  ]
+  ```
+  Error:
+  ```
+  json-path-comparison: src/Data/JSONPath/Execute.hs:(71,1)-(72,60): Non-exhaustive patterns in function executeCondition
+  
+  ```
+
+- [ ] `$[?(@.key!=42)]`
+  Input:
+  ```
+  [
+    {
+      "key": 0
+    },
+    {
+      "key": 42
+    },
+    {
+      "key": -1
+    },
+    {
+      "key": 1
+    },
+    {
+      "key": 41
+    },
+    {
+      "key": 43
+    },
+    {
+      "key": 42.0001
+    },
+    {
+      "key": 41.9999
+    },
+    {
+      "key": 100
+    },
+    {
+      "key": "some"
+    },
+    {
+      "key": "42"
+    },
+    {
+      "key": null
+    },
+    {
+      "key": 420
+    },
+    {
+      "key": ""
+    },
+    {
+      "key": {}
+    },
+    {
+      "key": []
+    },
+    {
+      "key": [
+        42
+      ]
+    },
+    {
+      "key": {
+        "key": 42
+      }
+    },
+    {
+      "key": {
+        "some": 42
+      }
+    },
+    {
+      "some": "value"
+    }
+  ]
+  ```
+  Error:
+  ```
+  json-path-comparison: src/Data/JSONPath/Execute.hs:(71,1)-(72,60): Non-exhaustive patterns in function executeCondition
+  
   ```
 
 - [ ] `$`

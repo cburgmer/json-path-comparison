@@ -3,6 +3,38 @@ Results do not match other implementations
 The following queries provide results that do not match those of other implementations of JSONPath
 (compare https://cburgmer.github.io/json-path-comparison/):
 
+- [ ] `$[3:0:-2]`
+  Input:
+  ```
+  [
+    "first",
+    "second",
+    "third",
+    "forth",
+    "fifth"
+  ]
+  ```
+  Error:
+  ```
+  timeout: sending signal TERM to command ‘php’
+  ```
+
+- [ ] `$[::-2]`
+  Input:
+  ```
+  [
+    "first",
+    "second",
+    "third",
+    "forth",
+    "fifth"
+  ]
+  ```
+  Error:
+  ```
+  timeout: sending signal TERM to command ‘php’
+  ```
+
 - [ ] `$[0:0]`
   Input:
   ```
@@ -330,6 +362,140 @@ The following queries provide results that do not match those of other implement
   null
   ```
 
+- [ ] `$..*[?(@.id>2)]`
+  Input:
+  ```
+  [
+    {
+      "complext": {
+        "one": [
+          {
+            "name": "first",
+            "id": 1
+          },
+          {
+            "name": "next",
+            "id": 2
+          },
+          {
+            "name": "another",
+            "id": 3
+          },
+          {
+            "name": "more",
+            "id": 4
+          }
+        ],
+        "more": {
+          "name": "next to last",
+          "id": 5
+        }
+      }
+    },
+    {
+      "name": "last",
+      "id": 6
+    }
+  ]
+  ```
+  Error:
+  ```
+  ArgumentCountError
+  ```
+
+- [ ] `$..[?(@.id==2)]`
+  Input:
+  ```
+  {
+    "id": 2,
+    "more": [
+      {
+        "id": 2
+      },
+      {
+        "more": {
+          "id": 2
+        }
+      },
+      {
+        "id": {
+          "id": 2
+        }
+      },
+      [
+        {
+          "id": 2
+        }
+      ]
+    ]
+  }
+  ```
+  Error:
+  ```
+  ArgumentCountError
+  ```
+
+- [ ] `$[?(@.key)]`
+  Input:
+  ```
+  {
+    "key": 42,
+    "another": {
+      "key": 1
+    }
+  }
+  ```
+  Error:
+  ```
+  ArgumentCountError
+  ```
+
+- [ ] `$[?(@.key+50==100)]`
+  Input:
+  ```
+  [
+    {
+      "key": 60
+    },
+    {
+      "key": 50
+    },
+    {
+      "key": 10
+    },
+    {
+      "key": -50
+    },
+    {
+      "key+50": 100
+    }
+  ]
+  ```
+  Error:
+  ```
+  ArgumentCountError
+  ```
+
+- [ ] `$[?(@.key>42 && @.key<44)]`
+  Input:
+  ```
+  [
+    {
+      "key": 42
+    },
+    {
+      "key": 43
+    },
+    {
+      "key": 44
+    }
+  ]
+  ```
+  Error:
+  ```
+  ArgumentCountError
+  ```
+
 - [ ] `$[?(@['key']==42)]`
   Input:
   ```
@@ -402,6 +568,31 @@ The following queries provide results that do not match those of other implement
   ArgumentCountError
   ```
 
+- [ ] `$[?(@[-1]==2)]`
+  Input:
+  ```
+  [
+    [
+      2,
+      3
+    ],
+    [
+      "a"
+    ],
+    [
+      0,
+      2
+    ],
+    [
+      2
+    ]
+  ]
+  ```
+  Error:
+  ```
+  ArgumentCountError
+  ```
+
 - [ ] `$[?(@[1]=='b')]`
   Input:
   ```
@@ -419,6 +610,129 @@ The following queries provide results that do not match those of other implement
   Expected output:
   ```
   [["a", "b"]]
+  ```
+  Error:
+  ```
+  ArgumentCountError
+  ```
+
+- [ ] `$[?(@[1]=='b')]`
+  Input:
+  ```
+  {
+    "1": [
+      "a",
+      "b"
+    ],
+    "2": [
+      "x",
+      "y"
+    ]
+  }
+  ```
+  Error:
+  ```
+  ArgumentCountError
+  ```
+
+- [ ] `$[?(@)]`
+  Input:
+  ```
+  [
+    "some value",
+    null,
+    "value",
+    0,
+    1,
+    -1,
+    "",
+    [],
+    {}
+  ]
+  ```
+  Error:
+  ```
+  ArgumentCountError
+  ```
+
+- [ ] `$[?(@.a && (@.b || @.c))]`
+  Input:
+  ```
+  [
+    {
+      "a": true
+    },
+    {
+      "a": true,
+      "b": true
+    },
+    {
+      "a": true,
+      "b": true,
+      "c": true
+    },
+    {
+      "b": true,
+      "c": true
+    },
+    {
+      "a": true,
+      "c": true
+    },
+    {
+      "c": true
+    },
+    {
+      "b": true
+    }
+  ]
+  ```
+  Error:
+  ```
+  ArgumentCountError
+  ```
+
+- [ ] `$[?(@.a && @.b || @.c)]`
+  Input:
+  ```
+  [
+    {
+      "a": true,
+      "b": true
+    },
+    {
+      "c": true
+    },
+    {
+      "d": true
+    }
+  ]
+  ```
+  Error:
+  ```
+  ArgumentCountError
+  ```
+
+- [ ] `$[?(@.key/10==5)]`
+  Input:
+  ```
+  [
+    {
+      "key": 60
+    },
+    {
+      "key": 50
+    },
+    {
+      "key": 10
+    },
+    {
+      "key": -50
+    },
+    {
+      "key/10": 5
+    }
+  ]
   ```
   Error:
   ```
@@ -446,6 +760,431 @@ The following queries provide results that do not match those of other implement
   ArgumentCountError
   ```
 
+- [ ] `$[?(@.key==42)]`
+  Input:
+  ```
+  [
+    {
+      "key": 0
+    },
+    {
+      "key": 42
+    },
+    {
+      "key": -1
+    },
+    {
+      "key": 1
+    },
+    {
+      "key": 41
+    },
+    {
+      "key": 43
+    },
+    {
+      "key": 42.0001
+    },
+    {
+      "key": 41.9999
+    },
+    {
+      "key": 100
+    },
+    {
+      "key": "some"
+    },
+    {
+      "key": "42"
+    },
+    {
+      "key": null
+    },
+    {
+      "key": 420
+    },
+    {
+      "key": ""
+    },
+    {
+      "key": {}
+    },
+    {
+      "key": []
+    },
+    {
+      "key": [
+        42
+      ]
+    },
+    {
+      "key": {
+        "key": 42
+      }
+    },
+    {
+      "key": {
+        "some": 42
+      }
+    },
+    {
+      "some": "value"
+    }
+  ]
+  ```
+  Error:
+  ```
+  ArgumentCountError
+  ```
+
+- [ ] `$[?(@.d==["v1","v2"])]`
+  Input:
+  ```
+  [
+    {
+      "d": [
+        "v1",
+        "v2"
+      ]
+    },
+    {
+      "d": [
+        "a",
+        "b"
+      ]
+    },
+    {
+      "d": "v1"
+    },
+    {
+      "d": "v2"
+    },
+    {
+      "d": {}
+    },
+    {
+      "d": []
+    },
+    {
+      "d": null
+    },
+    {
+      "d": -1
+    },
+    {
+      "d": 0
+    },
+    {
+      "d": 1
+    },
+    {
+      "d": "['v1','v2']"
+    },
+    {
+      "d": "['v1', 'v2']"
+    },
+    {
+      "d": "v1,v2"
+    },
+    {
+      "d": "[\"v1\", \"v2\"]"
+    },
+    {
+      "d": "[\"v1\",\"v2\"]"
+    }
+  ]
+  ```
+  Error:
+  ```
+  ArgumentCountError
+  ```
+
+- [ ] `$[?(@.d==['v1','v2'])]`
+  Input:
+  ```
+  [
+    {
+      "d": [
+        "v1",
+        "v2"
+      ]
+    },
+    {
+      "d": [
+        "a",
+        "b"
+      ]
+    },
+    {
+      "d": "v1"
+    },
+    {
+      "d": "v2"
+    },
+    {
+      "d": {}
+    },
+    {
+      "d": []
+    },
+    {
+      "d": null
+    },
+    {
+      "d": -1
+    },
+    {
+      "d": 0
+    },
+    {
+      "d": 1
+    },
+    {
+      "d": "['v1','v2']"
+    },
+    {
+      "d": "['v1', 'v2']"
+    },
+    {
+      "d": "v1,v2"
+    },
+    {
+      "d": "[\"v1\", \"v2\"]"
+    },
+    {
+      "d": "[\"v1\",\"v2\"]"
+    }
+  ]
+  ```
+  Error:
+  ```
+  ArgumentCountError
+  ```
+
+- [ ] `$[?(@.key==false)]`
+  Input:
+  ```
+  [
+    {
+      "some": "some value"
+    },
+    {
+      "key": true
+    },
+    {
+      "key": false
+    },
+    {
+      "key": null
+    },
+    {
+      "key": "value"
+    },
+    {
+      "key": ""
+    },
+    {
+      "key": 0
+    },
+    {
+      "key": 1
+    },
+    {
+      "key": -1
+    },
+    {
+      "key": 42
+    },
+    {
+      "key": {}
+    },
+    {
+      "key": []
+    }
+  ]
+  ```
+  Error:
+  ```
+  ArgumentCountError
+  ```
+
+- [ ] `$[?(@.key==null)]`
+  Input:
+  ```
+  [
+    {
+      "some": "some value"
+    },
+    {
+      "key": true
+    },
+    {
+      "key": false
+    },
+    {
+      "key": null
+    },
+    {
+      "key": "value"
+    },
+    {
+      "key": ""
+    },
+    {
+      "key": 0
+    },
+    {
+      "key": 1
+    },
+    {
+      "key": -1
+    },
+    {
+      "key": 42
+    },
+    {
+      "key": {}
+    },
+    {
+      "key": []
+    }
+  ]
+  ```
+  Error:
+  ```
+  ArgumentCountError
+  ```
+
+- [ ] `$[?(@.key==-0.123e2)]`
+  Input:
+  ```
+  [
+    {
+      "key": -12.3
+    },
+    {
+      "key": -0.123
+    },
+    {
+      "key": -12
+    },
+    {
+      "key": 12.3
+    },
+    {
+      "key": 2
+    },
+    {
+      "key": "-0.123e2"
+    }
+  ]
+  ```
+  Error:
+  ```
+  ArgumentCountError
+  ```
+
+- [ ] `$[?(@.key==010)]`
+  Input:
+  ```
+  [
+    {
+      "key": "010"
+    },
+    {
+      "key": "10"
+    },
+    {
+      "key": 10
+    },
+    {
+      "key": 0
+    },
+    {
+      "key": 8
+    }
+  ]
+  ```
+  Error:
+  ```
+  ArgumentCountError
+  ```
+
+- [ ] `$[?(@.d=={"k":"v"})]`
+  Input:
+  ```
+  [
+    {
+      "d": {
+        "k": "v"
+      }
+    },
+    {
+      "d": {
+        "a": "b"
+      }
+    },
+    {
+      "d": "k"
+    },
+    {
+      "d": "v"
+    },
+    {
+      "d": {}
+    },
+    {
+      "d": []
+    },
+    {
+      "d": null
+    },
+    {
+      "d": -1
+    },
+    {
+      "d": 0
+    },
+    {
+      "d": 1
+    },
+    {
+      "d": "[object Object]"
+    },
+    {
+      "d": "{\"k\": \"v\"}"
+    },
+    {
+      "d": "{\"k\":\"v\"}"
+    },
+    "v"
+  ]
+  ```
+  Error:
+  ```
+  ArgumentCountError
+  ```
+
+- [ ] `$[?(@==42)]`
+  Input:
+  ```
+  [
+    0,
+    42,
+    -1,
+    41,
+    43,
+    42.0001,
+    41.9999,
+    null,
+    100
+  ]
+  ```
+  Error:
+  ```
+  ArgumentCountError
+  ```
+
 - [ ] `$[?(@.key==43)]`
   Input:
   ```
@@ -458,6 +1197,118 @@ The following queries provide results that do not match those of other implement
   Expected output:
   ```
   []
+  ```
+  Error:
+  ```
+  ArgumentCountError
+  ```
+
+- [ ] `$[?(@.key==42)]`
+  Input:
+  ```
+  {
+    "a": {
+      "key": 0
+    },
+    "b": {
+      "key": 42
+    },
+    "c": {
+      "key": -1
+    },
+    "d": {
+      "key": 41
+    },
+    "e": {
+      "key": 43
+    },
+    "f": {
+      "key": 42.0001
+    },
+    "g": {
+      "key": 41.9999
+    },
+    "h": {
+      "key": 100
+    },
+    "i": {
+      "some": "value"
+    }
+  }
+  ```
+  Error:
+  ```
+  ArgumentCountError
+  ```
+
+- [ ] `$[?(@.id==2)]`
+  Input:
+  ```
+  {
+    "id": 2
+  }
+  ```
+  Error:
+  ```
+  ArgumentCountError
+  ```
+
+- [ ] `$[?(@.key=="value")]`
+  Input:
+  ```
+  [
+    {
+      "key": "some"
+    },
+    {
+      "key": "value"
+    },
+    {
+      "key": null
+    },
+    {
+      "key": 0
+    },
+    {
+      "key": 1
+    },
+    {
+      "key": -1
+    },
+    {
+      "key": ""
+    },
+    {
+      "key": {}
+    },
+    {
+      "key": []
+    },
+    {
+      "key": "valuemore"
+    },
+    {
+      "key": "morevalue"
+    },
+    {
+      "key": [
+        "value"
+      ]
+    },
+    {
+      "key": {
+        "some": "value"
+      }
+    },
+    {
+      "key": {
+        "key": "value"
+      }
+    },
+    {
+      "some": "value"
+    }
+  ]
   ```
   Error:
   ```
@@ -527,6 +1378,521 @@ The following queries provide results that do not match those of other implement
   Expected output:
   ```
   [{"key": "value"}]
+  ```
+  Error:
+  ```
+  ArgumentCountError
+  ```
+
+- [ ] `$[?(@.key==true)]`
+  Input:
+  ```
+  [
+    {
+      "some": "some value"
+    },
+    {
+      "key": true
+    },
+    {
+      "key": false
+    },
+    {
+      "key": null
+    },
+    {
+      "key": "value"
+    },
+    {
+      "key": ""
+    },
+    {
+      "key": 0
+    },
+    {
+      "key": 1
+    },
+    {
+      "key": -1
+    },
+    {
+      "key": 42
+    },
+    {
+      "key": {}
+    },
+    {
+      "key": []
+    }
+  ]
+  ```
+  Error:
+  ```
+  ArgumentCountError
+  ```
+
+- [ ] `$.items[?(@.key==$.value)]`
+  Input:
+  ```
+  {
+    "value": 42,
+    "items": [
+      {
+        "key": 10
+      },
+      {
+        "key": 42
+      },
+      {
+        "key": 50
+      }
+    ]
+  }
+  ```
+  Error:
+  ```
+  ArgumentCountError
+  ```
+
+- [ ] `$[?(@.key>42)]`
+  Input:
+  ```
+  [
+    {
+      "key": 0
+    },
+    {
+      "key": 42
+    },
+    {
+      "key": -1
+    },
+    {
+      "key": 41
+    },
+    {
+      "key": 43
+    },
+    {
+      "key": 42.0001
+    },
+    {
+      "key": 41.9999
+    },
+    {
+      "key": 100
+    },
+    {
+      "key": "43"
+    },
+    {
+      "key": "42"
+    },
+    {
+      "key": "41"
+    },
+    {
+      "key": "value"
+    },
+    {
+      "some": "value"
+    }
+  ]
+  ```
+  Error:
+  ```
+  ArgumentCountError
+  ```
+
+- [ ] `$[?(@.key>=42)]`
+  Input:
+  ```
+  [
+    {
+      "key": 0
+    },
+    {
+      "key": 42
+    },
+    {
+      "key": -1
+    },
+    {
+      "key": 41
+    },
+    {
+      "key": 43
+    },
+    {
+      "key": 42.0001
+    },
+    {
+      "key": 41.9999
+    },
+    {
+      "key": 100
+    },
+    {
+      "key": "43"
+    },
+    {
+      "key": "42"
+    },
+    {
+      "key": "41"
+    },
+    {
+      "key": "value"
+    },
+    {
+      "some": "value"
+    }
+  ]
+  ```
+  Error:
+  ```
+  ArgumentCountError
+  ```
+
+- [ ] `$[?(@.d in [2, 3])]`
+  Input:
+  ```
+  [
+    {
+      "d": 1
+    },
+    {
+      "d": 2
+    },
+    {
+      "d": 1
+    },
+    {
+      "d": 3
+    },
+    {
+      "d": 4
+    }
+  ]
+  ```
+  Error:
+  ```
+  ArgumentCountError
+  ```
+
+- [ ] `$[?(2 in @.d)]`
+  Input:
+  ```
+  [
+    {
+      "d": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "d": [
+        2
+      ]
+    },
+    {
+      "d": [
+        1
+      ]
+    },
+    {
+      "d": [
+        3,
+        4
+      ]
+    },
+    {
+      "d": [
+        4,
+        2
+      ]
+    }
+  ]
+  ```
+  Error:
+  ```
+  ArgumentCountError
+  ```
+
+- [ ] `$[?(@.key<42)]`
+  Input:
+  ```
+  [
+    {
+      "key": 0
+    },
+    {
+      "key": 42
+    },
+    {
+      "key": -1
+    },
+    {
+      "key": 41
+    },
+    {
+      "key": 43
+    },
+    {
+      "key": 42.0001
+    },
+    {
+      "key": 41.9999
+    },
+    {
+      "key": 100
+    },
+    {
+      "key": "43"
+    },
+    {
+      "key": "42"
+    },
+    {
+      "key": "41"
+    },
+    {
+      "key": "value"
+    },
+    {
+      "some": "value"
+    }
+  ]
+  ```
+  Error:
+  ```
+  ArgumentCountError
+  ```
+
+- [ ] `$[?(@.key<=42)]`
+  Input:
+  ```
+  [
+    {
+      "key": 0
+    },
+    {
+      "key": 42
+    },
+    {
+      "key": -1
+    },
+    {
+      "key": 41
+    },
+    {
+      "key": 43
+    },
+    {
+      "key": 42.0001
+    },
+    {
+      "key": 41.9999
+    },
+    {
+      "key": 100
+    },
+    {
+      "key": "43"
+    },
+    {
+      "key": "42"
+    },
+    {
+      "key": "41"
+    },
+    {
+      "key": "value"
+    },
+    {
+      "some": "value"
+    }
+  ]
+  ```
+  Error:
+  ```
+  ArgumentCountError
+  ```
+
+- [ ] `$[?(@.key*2==100)]`
+  Input:
+  ```
+  [
+    {
+      "key": 60
+    },
+    {
+      "key": 50
+    },
+    {
+      "key": 10
+    },
+    {
+      "key": -50
+    },
+    {
+      "key*2": 100
+    }
+  ]
+  ```
+  Error:
+  ```
+  ArgumentCountError
+  ```
+
+- [ ] `$[?(!(@.key==42))]`
+  Input:
+  ```
+  [
+    {
+      "key": 0
+    },
+    {
+      "key": 42
+    },
+    {
+      "key": -1
+    },
+    {
+      "key": 41
+    },
+    {
+      "key": 43
+    },
+    {
+      "key": 42.0001
+    },
+    {
+      "key": 41.9999
+    },
+    {
+      "key": 100
+    },
+    {
+      "key": "43"
+    },
+    {
+      "key": "42"
+    },
+    {
+      "key": "41"
+    },
+    {
+      "key": "value"
+    },
+    {
+      "some": "value"
+    }
+  ]
+  ```
+  Error:
+  ```
+  ArgumentCountError
+  ```
+
+- [ ] `$[?(@.key!=42)]`
+  Input:
+  ```
+  [
+    {
+      "key": 0
+    },
+    {
+      "key": 42
+    },
+    {
+      "key": -1
+    },
+    {
+      "key": 1
+    },
+    {
+      "key": 41
+    },
+    {
+      "key": 43
+    },
+    {
+      "key": 42.0001
+    },
+    {
+      "key": 41.9999
+    },
+    {
+      "key": 100
+    },
+    {
+      "key": "some"
+    },
+    {
+      "key": "42"
+    },
+    {
+      "key": null
+    },
+    {
+      "key": 420
+    },
+    {
+      "key": ""
+    },
+    {
+      "key": {}
+    },
+    {
+      "key": []
+    },
+    {
+      "key": [
+        42
+      ]
+    },
+    {
+      "key": {
+        "key": 42
+      }
+    },
+    {
+      "key": {
+        "some": 42
+      }
+    },
+    {
+      "some": "value"
+    }
+  ]
+  ```
+  Error:
+  ```
+  ArgumentCountError
+  ```
+
+- [ ] `$[?(@.name=~/hello.*/)]`
+  Input:
+  ```
+  [
+    {
+      "name": "hullo world"
+    },
+    {
+      "name": "hello world"
+    },
+    {
+      "name": "yes hello world"
+    },
+    {
+      "name": "HELLO WORLD"
+    },
+    {
+      "name": "good bye"
+    }
+  ]
   ```
   Error:
   ```
@@ -614,6 +1980,279 @@ The following queries provide results that do not match those of other implement
   ArgumentCountError
   ```
 
+- [ ] `$[?(@.a[?(@.price>10)])]`
+  Input:
+  ```
+  [
+    {
+      "a": [
+        {
+          "price": 1
+        },
+        {
+          "price": 3
+        }
+      ]
+    },
+    {
+      "a": [
+        {
+          "price": 11
+        }
+      ]
+    },
+    {
+      "a": [
+        {
+          "price": 8
+        },
+        {
+          "price": 12
+        },
+        {
+          "price": 3
+        }
+      ]
+    },
+    {
+      "a": []
+    }
+  ]
+  ```
+  Error:
+  ```
+  ArgumentCountError
+  ```
+
+- [ ] `$[?(@.key-50==-100)]`
+  Input:
+  ```
+  [
+    {
+      "key": 60
+    },
+    {
+      "key": 50
+    },
+    {
+      "key": 10
+    },
+    {
+      "key": -50
+    },
+    {
+      "key-50": -100
+    }
+  ]
+  ```
+  Error:
+  ```
+  ArgumentCountError
+  ```
+
+- [ ] `$[?(@.key===42)]`
+  Input:
+  ```
+  [
+    {
+      "key": 0
+    },
+    {
+      "key": 42
+    },
+    {
+      "key": -1
+    },
+    {
+      "key": 1
+    },
+    {
+      "key": 41
+    },
+    {
+      "key": 43
+    },
+    {
+      "key": 42.0001
+    },
+    {
+      "key": 41.9999
+    },
+    {
+      "key": 100
+    },
+    {
+      "key": "some"
+    },
+    {
+      "key": "42"
+    },
+    {
+      "key": null
+    },
+    {
+      "key": 420
+    },
+    {
+      "key": ""
+    },
+    {
+      "key": {}
+    },
+    {
+      "key": []
+    },
+    {
+      "key": [
+        42
+      ]
+    },
+    {
+      "key": {
+        "key": 42
+      }
+    },
+    {
+      "key": {
+        "some": 42
+      }
+    },
+    {
+      "some": "value"
+    }
+  ]
+  ```
+  Error:
+  ```
+  ArgumentCountError
+  ```
+
+- [ ] `$[?(@.key)]`
+  Input:
+  ```
+  [
+    {
+      "some": "some value"
+    },
+    {
+      "key": true
+    },
+    {
+      "key": false
+    },
+    {
+      "key": null
+    },
+    {
+      "key": "value"
+    },
+    {
+      "key": ""
+    },
+    {
+      "key": 0
+    },
+    {
+      "key": 1
+    },
+    {
+      "key": -1
+    },
+    {
+      "key": 42
+    },
+    {
+      "key": {}
+    },
+    {
+      "key": []
+    }
+  ]
+  ```
+  Error:
+  ```
+  ArgumentCountError
+  ```
+
+- [ ] `$..[?(@.id)]`
+  Input:
+  ```
+  {
+    "id": 2,
+    "more": [
+      {
+        "id": 2
+      },
+      {
+        "more": {
+          "id": 2
+        }
+      },
+      {
+        "id": {
+          "id": 2
+        }
+      },
+      [
+        {
+          "id": 2
+        }
+      ]
+    ]
+  }
+  ```
+  Error:
+  ```
+  ArgumentCountError
+  ```
+
+- [ ] `$[?(!@.key)]`
+  Input:
+  ```
+  [
+    {
+      "some": "some value"
+    },
+    {
+      "key": true
+    },
+    {
+      "key": false
+    },
+    {
+      "key": null
+    },
+    {
+      "key": "value"
+    },
+    {
+      "key": ""
+    },
+    {
+      "key": 0
+    },
+    {
+      "key": 1
+    },
+    {
+      "key": -1
+    },
+    {
+      "key": 42
+    },
+    {
+      "key": {}
+    },
+    {
+      "key": []
+    }
+  ]
+  ```
+  Error:
+  ```
+  ArgumentCountError
+  ```
+
 - [ ] `$(key,more)`
   Input:
   ```
@@ -691,6 +2330,41 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   jsonpath returned false, this might indicate an error```
+
+- [ ] `$[?(@.key<3),?(@.key>6)]`
+  Input:
+  ```
+  [
+    {
+      "key": 1
+    },
+    {
+      "key": 8
+    },
+    {
+      "key": 3
+    },
+    {
+      "key": 10
+    },
+    {
+      "key": 7
+    },
+    {
+      "key": 2
+    },
+    {
+      "key": 6
+    },
+    {
+      "key": 4
+    }
+  ]
+  ```
+  Error:
+  ```
+  ArgumentCountError
+  ```
 
 - [ ] `$[ 0 , 1 ]`
   Input:

@@ -65,6 +65,23 @@ The following queries provide results that do not match those of other implement
   index [from] out of range: len: 3, from: 7
   ```
 
+- [ ] `$[1:3]`
+  Input:
+  ```
+  {
+    ":": 42,
+    "more": "string",
+    "a": 1,
+    "b": 2,
+    "c": 3,
+    "1:3": "nice"
+  }
+  ```
+  Error:
+  ```
+  object is not Slice
+  ```
+
 - [ ] `$[1:10]`
   Input:
   ```
@@ -81,6 +98,38 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   index [to] out of range: len: 3, to: 10
+  ```
+
+- [ ] `$[3:0:-2]`
+  Input:
+  ```
+  [
+    "first",
+    "second",
+    "third",
+    "forth",
+    "fifth"
+  ]
+  ```
+  Error:
+  ```
+  only support one range(from, to): [3 0 -2]
+  ```
+
+- [ ] `$[::-2]`
+  Input:
+  ```
+  [
+    "first",
+    "second",
+    "third",
+    "forth",
+    "fifth"
+  ]
+  ```
+  Error:
+  ```
+  only support one range(from, to): [  -2]
   ```
 
 - [ ] `$[:2]`
@@ -122,6 +171,19 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   only support one range(from, to): [  ]
+  ```
+
+- [ ] `$[:]`
+  Input:
+  ```
+  {
+    ":": 42,
+    "more": "string"
+  }
+  ```
+  Error:
+  ```
+  object is not Slice
   ```
 
 - [ ] `$[0:0]`
@@ -199,6 +261,22 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   only support one range(from, to): [0 3 2]
+  ```
+
+- [ ] `$[0:3:0]`
+  Input:
+  ```
+  [
+    "first",
+    "second",
+    "third",
+    "forth",
+    "fifth"
+  ]
+  ```
+  Error:
+  ```
+  only support one range(from, to): [0 3 0]
   ```
 
 - [ ] `$[0:3:1]`
@@ -464,6 +542,20 @@ The following queries provide results that do not match those of other implement
   strconv.Atoi: parsing "''": invalid syntax
   ```
 
+- [ ] `$[""]`
+  Input:
+  ```
+  {
+    "": 42,
+    "''": 123,
+    "\"\"": 222
+  }
+  ```
+  Error:
+  ```
+  strconv.Atoi: parsing "\"\"": invalid syntax
+  ```
+
 - [ ] `$[-1]`
   Input:
   ```
@@ -500,6 +592,18 @@ The following queries provide results that do not match those of other implement
   []
   ```
 
+- [ ] `$[0]`
+  Input:
+  ```
+  {
+    "0": "value"
+  }
+  ```
+  Error:
+  ```
+  object is not Slice
+  ```
+
 - [ ] `$[1]`
   Input:
   ```
@@ -514,6 +618,16 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   index out of range: len: 1, idx: 1
+  ```
+
+- [ ] `$[0]`
+  Input:
+  ```
+  "Hello World"
+  ```
+  Error:
+  ```
+  object is not Slice
   ```
 
 - [ ] `$[':']`
@@ -618,6 +732,30 @@ The following queries provide results that do not match those of other implement
   strconv.Atoi: parsing "'\"'": invalid syntax
   ```
 
+- [ ] `$['\\']`
+  Input:
+  ```
+  {
+    "\\": "value"
+  }
+  ```
+  Error:
+  ```
+  strconv.Atoi: parsing "'\\\\'": invalid syntax
+  ```
+
+- [ ] `$['\'']`
+  Input:
+  ```
+  {
+    "'": "value"
+  }
+  ```
+  Error:
+  ```
+  strconv.Atoi: parsing "'\\''": invalid syntax
+  ```
+
 - [ ] `$['0']`
   Input:
   ```
@@ -649,6 +787,30 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   strconv.Atoi: parsing "'$'": invalid syntax
+  ```
+
+- [ ] `$[':@."$,*\'\\']`
+  Input:
+  ```
+  {
+    ":@.\"$,*'\\": 42
+  }
+  ```
+  Error:
+  ```
+  strconv.Atoi: parsing "@.\"$,*\\'\\\\'": invalid syntax
+  ```
+
+- [ ] `$['single'quote']`
+  Input:
+  ```
+  {
+    "single'quote": "value"
+  }
+  ```
+  Error:
+  ```
+  strconv.Atoi: parsing "'single'quote'": invalid syntax
   ```
 
 - [ ] `$[',']`
@@ -685,6 +847,18 @@ The following queries provide results that do not match those of other implement
   strconv.Atoi: parsing "'*'": invalid syntax
   ```
 
+- [ ] `$['*']`
+  Input:
+  ```
+  {
+    "another": "entry"
+  }
+  ```
+  Error:
+  ```
+  strconv.Atoi: parsing "'*'": invalid syntax
+  ```
+
 - [ ] `$['ni.*']`
   Input:
   ```
@@ -701,6 +875,26 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   strconv.Atoi: parsing "'ni.*'": invalid syntax
+  ```
+
+- [ ] `$['two'.'some']`
+  Input:
+  ```
+  {
+    "one": {
+      "key": "value"
+    },
+    "two": {
+      "some": "more",
+      "key": "other value"
+    },
+    "two.some": "42",
+    "two'.'some": "43"
+  }
+  ```
+  Error:
+  ```
+  strconv.Atoi: parsing "'two'.'some'": invalid syntax
   ```
 
 - [ ] `$[two.some]`
@@ -865,6 +1059,56 @@ The following queries provide results that do not match those of other implement
   object is not Slice
   ```
 
+- [ ] `$[key]`
+  Input:
+  ```
+  {
+    "key": "value"
+  }
+  ```
+  Error:
+  ```
+  strconv.Atoi: parsing "key": invalid syntax
+  ```
+
+- [ ] `$.['key']`
+  Input:
+  ```
+  {
+    "key": "value",
+    "other": {
+      "key": [
+        {
+          "key": 42
+        }
+      ]
+    }
+  }
+  ```
+  Error:
+  ```
+  strconv.Atoi: parsing "'key'": invalid syntax
+  ```
+
+- [ ] `$.["key"]`
+  Input:
+  ```
+  {
+    "key": "value",
+    "other": {
+      "key": [
+        {
+          "key": 42
+        }
+      ]
+    }
+  }
+  ```
+  Error:
+  ```
+  strconv.Atoi: parsing "\"key\"": invalid syntax
+  ```
+
 - [ ] `$.[key]`
   Input:
   ```
@@ -886,6 +1130,53 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   strconv.Atoi: parsing "key": invalid syntax
+  ```
+
+- [ ] `$..[1].key`
+  Input:
+  ```
+  {
+    "k": [
+      {
+        "key": "some value"
+      },
+      {
+        "key": 42
+      }
+    ],
+    "kk": [
+      [
+        {
+          "key": 100
+        },
+        {
+          "key": 200
+        },
+        {
+          "key": 300
+        }
+      ],
+      [
+        {
+          "key": 400
+        },
+        {
+          "key": 500
+        },
+        {
+          "key": 600
+        }
+      ]
+    ],
+    "key": [
+      0,
+      1
+    ]
+  }
+  ```
+  Error:
+  ```
+  expression don't support in filter
   ```
 
 - [ ] `$[?(@.id==42)].name`
@@ -1067,6 +1358,43 @@ The following queries provide results that do not match those of other implement
   key error: missing not found in object
   ```
 
+- [ ] `$."key"`
+  Input:
+  ```
+  {
+    "key": "value"
+  }
+  ```
+  Error:
+  ```
+  key error: "key" not found in object
+  ```
+
+- [ ] `$.."key"`
+  Input:
+  ```
+  {
+    "object": {
+      "key": "value",
+      "array": [
+        {
+          "key": "something"
+        },
+        {
+          "key": {
+            "key": "russian dolls"
+          }
+        }
+      ]
+    },
+    "key": "top"
+  }
+  ```
+  Error:
+  ```
+  expression don't support in filter
+  ```
+
 - [ ] `$.`
   Input:
   ```
@@ -1101,6 +1429,70 @@ The following queries provide results that do not match those of other implement
   Actual output:
   ```
   []
+  ```
+
+- [ ] `$.$`
+  Input:
+  ```
+  {
+    "$": "value"
+  }
+  ```
+  Error:
+  ```
+  expression don't support in filter
+  ```
+
+- [ ] `$.'key'`
+  Input:
+  ```
+  {
+    "key": "value"
+  }
+  ```
+  Error:
+  ```
+  key error: 'key' not found in object
+  ```
+
+- [ ] `$..'key'`
+  Input:
+  ```
+  {
+    "object": {
+      "key": "value",
+      "array": [
+        {
+          "key": "something"
+        },
+        {
+          "key": {
+            "key": "russian dolls"
+          }
+        }
+      ]
+    },
+    "key": "top"
+  }
+  ```
+  Error:
+  ```
+  expression don't support in filter
+  ```
+
+- [ ] `$.'some.key'`
+  Input:
+  ```
+  {
+    "some.key": 42,
+    "some": {
+      "key": "value"
+    }
+  }
+  ```
+  Error:
+  ```
+  key error: 'some not found in object
   ```
 
 - [ ] `$.*.bar.*`
@@ -1279,6 +1671,106 @@ The following queries provide results that do not match those of other implement
   expression don't support in filter
   ```
 
+- [ ] `key`
+  Input:
+  ```
+  {
+    "key": "value"
+  }
+  ```
+  Error:
+  ```
+  should start with '$'
+  ```
+
+- [ ] `$..*[?(@.id>2)]`
+  Input:
+  ```
+  [
+    {
+      "complext": {
+        "one": [
+          {
+            "name": "first",
+            "id": 1
+          },
+          {
+            "name": "next",
+            "id": 2
+          },
+          {
+            "name": "another",
+            "id": 3
+          },
+          {
+            "name": "more",
+            "id": 4
+          }
+        ],
+        "more": {
+          "name": "next to last",
+          "id": 5
+        }
+      }
+    },
+    {
+      "name": "last",
+      "id": 6
+    }
+  ]
+  ```
+  Error:
+  ```
+  expression don't support in filter
+  ```
+
+- [ ] `$..[?(@.id==2)]`
+  Input:
+  ```
+  {
+    "id": 2,
+    "more": [
+      {
+        "id": 2
+      },
+      {
+        "more": {
+          "id": 2
+        }
+      },
+      {
+        "id": {
+          "id": 2
+        }
+      },
+      [
+        {
+          "id": 2
+        }
+      ]
+    ]
+  }
+  ```
+  Error:
+  ```
+  expression don't support in filter
+  ```
+
+- [ ] `$[?(@.key)]`
+  Input:
+  ```
+  {
+    "key": 42,
+    "another": {
+      "key": 1
+    }
+  }
+  ```
+  Error:
+  ```
+  key error:  not found in object
+  ```
+
 - [ ] `$[?(@['key']==42)]`
   Input:
   ```
@@ -1351,6 +1843,31 @@ The following queries provide results that do not match those of other implement
   interface conversion: interface {} is nil, not string
   ```
 
+- [ ] `$[?(@[-1]==2)]`
+  Input:
+  ```
+  [
+    [
+      2,
+      3
+    ],
+    [
+      "a"
+    ],
+    [
+      0,
+      2
+    ],
+    [
+      2
+    ]
+  ]
+  ```
+  Error:
+  ```
+  interface conversion: interface {} is nil, not string
+  ```
+
 - [ ] `$[?(@[1]=='b')]`
   Input:
   ```
@@ -1374,6 +1891,83 @@ The following queries provide results that do not match those of other implement
   interface conversion: interface {} is nil, not string
   ```
 
+- [ ] `$[?(@[1]=='b')]`
+  Input:
+  ```
+  {
+    "1": [
+      "a",
+      "b"
+    ],
+    "2": [
+      "x",
+      "y"
+    ]
+  }
+  ```
+  Error:
+  ```
+  key error:  not found in object
+  ```
+
+- [ ] `$[?(@.a && (@.b || @.c))]`
+  Input:
+  ```
+  [
+    {
+      "a": true
+    },
+    {
+      "a": true,
+      "b": true
+    },
+    {
+      "a": true,
+      "b": true,
+      "c": true
+    },
+    {
+      "b": true,
+      "c": true
+    },
+    {
+      "a": true,
+      "c": true
+    },
+    {
+      "c": true
+    },
+    {
+      "b": true
+    }
+  ]
+  ```
+  Error:
+  ```
+  invalid char at 11: ` `
+  ```
+
+- [ ] `$[?(@.a && @.b || @.c)]`
+  Input:
+  ```
+  [
+    {
+      "a": true,
+      "b": true
+    },
+    {
+      "c": true
+    },
+    {
+      "d": true
+    }
+  ]
+  ```
+  Error:
+  ```
+  invalid char at 10: ` `
+  ```
+
 - [ ] `$[?()]`
   Input:
   ```
@@ -1393,6 +1987,180 @@ The following queries provide results that do not match those of other implement
   Actual output:
   ```
   []
+  ```
+
+- [ ] `$[?(@.d==["v1","v2"])]`
+  Input:
+  ```
+  [
+    {
+      "d": [
+        "v1",
+        "v2"
+      ]
+    },
+    {
+      "d": [
+        "a",
+        "b"
+      ]
+    },
+    {
+      "d": "v1"
+    },
+    {
+      "d": "v2"
+    },
+    {
+      "d": {}
+    },
+    {
+      "d": []
+    },
+    {
+      "d": null
+    },
+    {
+      "d": -1
+    },
+    {
+      "d": 0
+    },
+    {
+      "d": 1
+    },
+    {
+      "d": "['v1','v2']"
+    },
+    {
+      "d": "['v1', 'v2']"
+    },
+    {
+      "d": "v1,v2"
+    },
+    {
+      "d": "[\"v1\", \"v2\"]"
+    },
+    {
+      "d": "[\"v1\",\"v2\"]"
+    }
+  ]
+  ```
+  Error:
+  ```
+  interface conversion: interface {} is nil, not string
+  ```
+
+- [ ] `$[?(@.d==['v1','v2'])]`
+  Input:
+  ```
+  [
+    {
+      "d": [
+        "v1",
+        "v2"
+      ]
+    },
+    {
+      "d": [
+        "a",
+        "b"
+      ]
+    },
+    {
+      "d": "v1"
+    },
+    {
+      "d": "v2"
+    },
+    {
+      "d": {}
+    },
+    {
+      "d": []
+    },
+    {
+      "d": null
+    },
+    {
+      "d": -1
+    },
+    {
+      "d": 0
+    },
+    {
+      "d": 1
+    },
+    {
+      "d": "['v1','v2']"
+    },
+    {
+      "d": "['v1', 'v2']"
+    },
+    {
+      "d": "v1,v2"
+    },
+    {
+      "d": "[\"v1\", \"v2\"]"
+    },
+    {
+      "d": "[\"v1\",\"v2\"]"
+    }
+  ]
+  ```
+  Error:
+  ```
+  interface conversion: interface {} is nil, not string
+  ```
+
+- [ ] `$[?(@.key==42)]`
+  Input:
+  ```
+  {
+    "a": {
+      "key": 0
+    },
+    "b": {
+      "key": 42
+    },
+    "c": {
+      "key": -1
+    },
+    "d": {
+      "key": 41
+    },
+    "e": {
+      "key": 43
+    },
+    "f": {
+      "key": 42.0001
+    },
+    "g": {
+      "key": 41.9999
+    },
+    "h": {
+      "key": 100
+    },
+    "i": {
+      "some": "value"
+    }
+  }
+  ```
+  Error:
+  ```
+  key error:  not found in object
+  ```
+
+- [ ] `$[?(@.id==2)]`
+  Input:
+  ```
+  {
+    "id": 2
+  }
+  ```
+  Error:
+  ```
+  key error:  not found in object
   ```
 
 - [ ] `$[?(@.key=="hi@example.com")]`
@@ -1462,6 +2230,32 @@ The following queries provide results that do not match those of other implement
   Actual output:
   ```
   []
+  ```
+
+- [ ] `$[?(@.d in [2, 3])]`
+  Input:
+  ```
+  [
+    {
+      "d": 1
+    },
+    {
+      "d": 2
+    },
+    {
+      "d": 1
+    },
+    {
+      "d": 3
+    },
+    {
+      "d": 4
+    }
+  ]
+  ```
+  Error:
+  ```
+  interface conversion: interface {} is nil, not string
   ```
 
 - [ ] `$[?(@.key=42)]`
@@ -1545,6 +2339,38 @@ The following queries provide results that do not match those of other implement
   []
   ```
 
+- [ ] `$..[?(@.id)]`
+  Input:
+  ```
+  {
+    "id": 2,
+    "more": [
+      {
+        "id": 2
+      },
+      {
+        "more": {
+          "id": 2
+        }
+      },
+      {
+        "id": {
+          "id": 2
+        }
+      },
+      [
+        {
+          "id": 2
+        }
+      ]
+    ]
+  }
+  ```
+  Error:
+  ```
+  expression don't support in filter
+  ```
+
 - [ ] `$(key,more)`
   Input:
   ```
@@ -1563,6 +2389,61 @@ The following queries provide results that do not match those of other implement
   key error: (key,more) not found in object
   ```
 
+- [ ] `$..`
+  Input:
+  ```
+  [
+    {
+      "a": {
+        "b": "c"
+      }
+    },
+    [
+      0,
+      1
+    ]
+  ]
+  ```
+  Error:
+  ```
+  expression don't support in filter
+  ```
+
+- [ ] `$.key..`
+  Input:
+  ```
+  {
+    "some key": "value",
+    "key": {
+      "complex": "string",
+      "primitives": [
+        0,
+        1
+      ]
+    }
+  }
+  ```
+  Error:
+  ```
+  expression don't support in filter
+  ```
+
+- [ ] `$[(@.length-1)]`
+  Input:
+  ```
+  [
+    "first",
+    "second",
+    "third",
+    "forth",
+    "fifth"
+  ]
+  ```
+  Error:
+  ```
+  strconv.Atoi: parsing "(@.length-1)": invalid syntax
+  ```
+
 - [ ] `$['key','another']`
   Input:
   ```
@@ -1578,6 +2459,27 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   strconv.Atoi: parsing "'key'": invalid syntax
+  ```
+
+- [ ] `$[:]['c','d']`
+  Input:
+  ```
+  [
+    {
+      "c": "cc1",
+      "d": "dd1",
+      "e": "ee1"
+    },
+    {
+      "c": "cc2",
+      "d": "dd2",
+      "e": "ee2"
+    }
+  ]
+  ```
+  Error:
+  ```
+  strconv.Atoi: parsing "'c'": invalid syntax
   ```
 
 - [ ] `$[0]['c','d']`
@@ -1605,6 +2507,27 @@ The following queries provide results that do not match those of other implement
   strconv.Atoi: parsing "'c'": invalid syntax
   ```
 
+- [ ] `$.*['c','d']`
+  Input:
+  ```
+  [
+    {
+      "c": "cc1",
+      "d": "dd1",
+      "e": "ee1"
+    },
+    {
+      "c": "cc2",
+      "d": "dd2",
+      "e": "ee2"
+    }
+  ]
+  ```
+  Error:
+  ```
+  strconv.Atoi: parsing "'c'": invalid syntax
+  ```
+
 - [ ] `$['missing','key']`
   Input:
   ```
@@ -1620,6 +2543,22 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   strconv.Atoi: parsing "'missing'": invalid syntax
+  ```
+
+- [ ] `$[1:3,4]`
+  Input:
+  ```
+  [
+    1,
+    2,
+    3,
+    4,
+    5
+  ]
+  ```
+  Error:
+  ```
+  strconv.Atoi: parsing "3,4": invalid syntax
   ```
 
 - [ ] `$[*,1]`

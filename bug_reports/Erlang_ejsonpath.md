@@ -3,6 +3,26 @@ Results do not match other implementations
 The following queries provide results that do not match those of other implementations of JSONPath
 (compare https://cburgmer.github.io/json-path-comparison/):
 
+- [ ] `$[1:3]`
+  Input:
+  ```
+  {
+    ":": 42,
+    "more": "string",
+    "a": 1,
+    "b": 2,
+    "c": 3,
+    "1:3": "nice"
+  }
+  ```
+  Error:
+  ```
+  init terminating in do_boot (not_implemented)
+  
+  Crash dump is being written to: /dev/null...done
+  {"init terminating in do_boot",not_implemented}
+  ```
+
 - [ ] `$[::]`
   Input:
   ```
@@ -18,6 +38,22 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   syntax error before: ':'
+  ```
+
+- [ ] `$[:]`
+  Input:
+  ```
+  {
+    ":": 42,
+    "more": "string"
+  }
+  ```
+  Error:
+  ```
+  init terminating in do_boot (not_implemented)
+  
+  Crash dump is being written to: /dev/null...done
+  {"init terminating in do_boot",not_implemented}
   ```
 
 - [ ] `$[1:3:]`
@@ -95,6 +131,64 @@ The following queries provide results that do not match those of other implement
   syntax error before: '['
   ```
 
+- [ ] `$[0]`
+  Input:
+  ```
+  "Hello World"
+  ```
+  Error:
+  ```
+  init terminating in do_boot (not_implemented)
+  
+  Crash dump is being written to: /dev/null...done
+  {"init terminating in do_boot",not_implemented}
+  ```
+
+- [ ] `$['\'']`
+  Input:
+  ```
+  {
+    "'": "value"
+  }
+  ```
+  Error:
+  ```
+  init terminating in do_boot (Timeout)
+  
+  Crash dump is being written to: /dev/null...done
+  {"init terminating in do_boot","Timeout"}
+  ```
+
+- [ ] `$[':@."$,*\'\\']`
+  Input:
+  ```
+  {
+    ":@.\"$,*'\\": 42
+  }
+  ```
+  Error:
+  ```
+  init terminating in do_boot (Timeout)
+  
+  Crash dump is being written to: /dev/null...done
+  {"init terminating in do_boot","Timeout"}
+  ```
+
+- [ ] `$['single'quote']`
+  Input:
+  ```
+  {
+    "single'quote": "value"
+  }
+  ```
+  Error:
+  ```
+  init terminating in do_boot (Timeout)
+  
+  Crash dump is being written to: /dev/null...done
+  {"init terminating in do_boot","Timeout"}
+  ```
+
 - [ ] `$..[*]`
   Input:
   ```
@@ -132,6 +226,49 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   syntax error before: '-'
+  ```
+
+- [ ] `$."key"`
+  Input:
+  ```
+  {
+    "key": "value"
+  }
+  ```
+  Error:
+  ```
+  init terminating in do_boot (function_clause)
+  
+  Crash dump is being written to: /dev/null...done
+  {"init terminating in do_boot",function_clause}
+  ```
+
+- [ ] `$.."key"`
+  Input:
+  ```
+  {
+    "object": {
+      "key": "value",
+      "array": [
+        {
+          "key": "something"
+        },
+        {
+          "key": {
+            "key": "russian dolls"
+          }
+        }
+      ]
+    },
+    "key": "top"
+  }
+  ```
+  Error:
+  ```
+  init terminating in do_boot (function_clause)
+  
+  Crash dump is being written to: /dev/null...done
+  {"init terminating in do_boot",function_clause}
   ```
 
 - [ ] `$.`
@@ -193,6 +330,487 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   syntax error before: 2
+  ```
+
+- [ ] `$.'key'`
+  Input:
+  ```
+  {
+    "key": "value"
+  }
+  ```
+  Error:
+  ```
+  init terminating in do_boot (function_clause)
+  
+  Crash dump is being written to: /dev/null...done
+  {"init terminating in do_boot",function_clause}
+  ```
+
+- [ ] `$..'key'`
+  Input:
+  ```
+  {
+    "object": {
+      "key": "value",
+      "array": [
+        {
+          "key": "something"
+        },
+        {
+          "key": {
+            "key": "russian dolls"
+          }
+        }
+      ]
+    },
+    "key": "top"
+  }
+  ```
+  Error:
+  ```
+  init terminating in do_boot (function_clause)
+  
+  Crash dump is being written to: /dev/null...done
+  {"init terminating in do_boot",function_clause}
+  ```
+
+- [ ] `$.'some.key'`
+  Input:
+  ```
+  {
+    "some.key": 42,
+    "some": {
+      "key": "value"
+    }
+  }
+  ```
+  Error:
+  ```
+  init terminating in do_boot (function_clause)
+  
+  Crash dump is being written to: /dev/null...done
+  {"init terminating in do_boot",function_clause}
+  ```
+
+- [ ] `$[?(@.key+50==100)]`
+  Input:
+  ```
+  [
+    {
+      "key": 60
+    },
+    {
+      "key": 50
+    },
+    {
+      "key": 10
+    },
+    {
+      "key": -50
+    },
+    {
+      "key+50": 100
+    }
+  ]
+  ```
+  Error:
+  ```
+  init terminating in do_boot ({not_implemented,bin_op,+})
+  
+  Crash dump is being written to: /dev/null...done
+  {"init terminating in do_boot",{not_implemented,bin_op,'+'}}
+  ```
+
+- [ ] `$[?(@.key>42 && @.key<44)]`
+  Input:
+  ```
+  [
+    {
+      "key": 42
+    },
+    {
+      "key": 43
+    },
+    {
+      "key": 44
+    }
+  ]
+  ```
+  Error:
+  ```
+  init terminating in do_boot ({badarg,42})
+  
+  Crash dump is being written to: /dev/null...done
+  {"init terminating in do_boot",{badarg,42}}
+  ```
+
+- [ ] `$[?(@.a && (@.b || @.c))]`
+  Input:
+  ```
+  [
+    {
+      "a": true
+    },
+    {
+      "a": true,
+      "b": true
+    },
+    {
+      "a": true,
+      "b": true,
+      "c": true
+    },
+    {
+      "b": true,
+      "c": true
+    },
+    {
+      "a": true,
+      "c": true
+    },
+    {
+      "c": true
+    },
+    {
+      "b": true
+    }
+  ]
+  ```
+  Error:
+  ```
+  init terminating in do_boot (Timeout)
+  
+  Crash dump is being written to: /dev/null...done
+  {"init terminating in do_boot","Timeout"}
+  ```
+
+- [ ] `$[?(@.a && @.b || @.c)]`
+  Input:
+  ```
+  [
+    {
+      "a": true,
+      "b": true
+    },
+    {
+      "c": true
+    },
+    {
+      "d": true
+    }
+  ]
+  ```
+  Error:
+  ```
+  init terminating in do_boot (Timeout)
+  
+  Crash dump is being written to: /dev/null...done
+  {"init terminating in do_boot","Timeout"}
+  ```
+
+- [ ] `$[?(@.key/10==5)]`
+  Input:
+  ```
+  [
+    {
+      "key": 60
+    },
+    {
+      "key": 50
+    },
+    {
+      "key": 10
+    },
+    {
+      "key": -50
+    },
+    {
+      "key/10": 5
+    }
+  ]
+  ```
+  Error:
+  ```
+  init terminating in do_boot ({not_implemented,bin_op,/})
+  
+  Crash dump is being written to: /dev/null...done
+  {"init terminating in do_boot",{not_implemented,bin_op,'/'}}
+  ```
+
+- [ ] `$[?(@.d=={"k":"v"})]`
+  Input:
+  ```
+  [
+    {
+      "d": {
+        "k": "v"
+      }
+    },
+    {
+      "d": {
+        "a": "b"
+      }
+    },
+    {
+      "d": "k"
+    },
+    {
+      "d": "v"
+    },
+    {
+      "d": {}
+    },
+    {
+      "d": []
+    },
+    {
+      "d": null
+    },
+    {
+      "d": -1
+    },
+    {
+      "d": 0
+    },
+    {
+      "d": 1
+    },
+    {
+      "d": "[object Object]"
+    },
+    {
+      "d": "{\"k\": \"v\"}"
+    },
+    {
+      "d": "{\"k\":\"v\"}"
+    },
+    "v"
+  ]
+  ```
+  Error:
+  ```
+  init terminating in do_boot (Timeout)
+  
+  Crash dump is being written to: /dev/null...done
+  {"init terminating in do_boot","Timeout"}
+  ```
+
+- [ ] `$[?(@.key>=42)]`
+  Input:
+  ```
+  [
+    {
+      "key": 0
+    },
+    {
+      "key": 42
+    },
+    {
+      "key": -1
+    },
+    {
+      "key": 41
+    },
+    {
+      "key": 43
+    },
+    {
+      "key": 42.0001
+    },
+    {
+      "key": 41.9999
+    },
+    {
+      "key": 100
+    },
+    {
+      "key": "43"
+    },
+    {
+      "key": "42"
+    },
+    {
+      "key": "41"
+    },
+    {
+      "key": "value"
+    },
+    {
+      "some": "value"
+    }
+  ]
+  ```
+  Error:
+  ```
+  init terminating in do_boot (Timeout)
+  
+  Crash dump is being written to: /dev/null...done
+  {"init terminating in do_boot","Timeout"}
+  ```
+
+- [ ] `$[?(@.key<=42)]`
+  Input:
+  ```
+  [
+    {
+      "key": 0
+    },
+    {
+      "key": 42
+    },
+    {
+      "key": -1
+    },
+    {
+      "key": 41
+    },
+    {
+      "key": 43
+    },
+    {
+      "key": 42.0001
+    },
+    {
+      "key": 41.9999
+    },
+    {
+      "key": 100
+    },
+    {
+      "key": "43"
+    },
+    {
+      "key": "42"
+    },
+    {
+      "key": "41"
+    },
+    {
+      "key": "value"
+    },
+    {
+      "some": "value"
+    }
+  ]
+  ```
+  Error:
+  ```
+  init terminating in do_boot (Timeout)
+  
+  Crash dump is being written to: /dev/null...done
+  {"init terminating in do_boot","Timeout"}
+  ```
+
+- [ ] `$[?(@.key*2==100)]`
+  Input:
+  ```
+  [
+    {
+      "key": 60
+    },
+    {
+      "key": 50
+    },
+    {
+      "key": 10
+    },
+    {
+      "key": -50
+    },
+    {
+      "key*2": 100
+    }
+  ]
+  ```
+  Error:
+  ```
+  init terminating in do_boot ({not_implemented,bin_op,*})
+  
+  Crash dump is being written to: /dev/null...done
+  {"init terminating in do_boot",{not_implemented,bin_op,'*'}}
+  ```
+
+- [ ] `$[?(!(@.key==42))]`
+  Input:
+  ```
+  [
+    {
+      "key": 0
+    },
+    {
+      "key": 42
+    },
+    {
+      "key": -1
+    },
+    {
+      "key": 41
+    },
+    {
+      "key": 43
+    },
+    {
+      "key": 42.0001
+    },
+    {
+      "key": 41.9999
+    },
+    {
+      "key": 100
+    },
+    {
+      "key": "43"
+    },
+    {
+      "key": "42"
+    },
+    {
+      "key": "41"
+    },
+    {
+      "key": "value"
+    },
+    {
+      "some": "value"
+    }
+  ]
+  ```
+  Error:
+  ```
+  init terminating in do_boot (Timeout)
+  
+  Crash dump is being written to: /dev/null...done
+  {"init terminating in do_boot","Timeout"}
+  ```
+
+- [ ] `$[?(@.name=~/hello.*/)]`
+  Input:
+  ```
+  [
+    {
+      "name": "hullo world"
+    },
+    {
+      "name": "hello world"
+    },
+    {
+      "name": "yes hello world"
+    },
+    {
+      "name": "HELLO WORLD"
+    },
+    {
+      "name": "good bye"
+    }
+  ]
+  ```
+  Error:
+  ```
+  init terminating in do_boot (Timeout)
+  
+  Crash dump is being written to: /dev/null...done
+  {"init terminating in do_boot","Timeout"}
   ```
 
 - [ ] `$[?(@.key=42)]`
@@ -277,6 +895,155 @@ The following queries provide results that do not match those of other implement
   
   Crash dump is being written to: /dev/null...done
   {"init terminating in do_boot","Timeout"}
+  ```
+
+- [ ] `$[?(@.key===42)]`
+  Input:
+  ```
+  [
+    {
+      "key": 0
+    },
+    {
+      "key": 42
+    },
+    {
+      "key": -1
+    },
+    {
+      "key": 1
+    },
+    {
+      "key": 41
+    },
+    {
+      "key": 43
+    },
+    {
+      "key": 42.0001
+    },
+    {
+      "key": 41.9999
+    },
+    {
+      "key": 100
+    },
+    {
+      "key": "some"
+    },
+    {
+      "key": "42"
+    },
+    {
+      "key": null
+    },
+    {
+      "key": 420
+    },
+    {
+      "key": ""
+    },
+    {
+      "key": {}
+    },
+    {
+      "key": []
+    },
+    {
+      "key": [
+        42
+      ]
+    },
+    {
+      "key": {
+        "key": 42
+      }
+    },
+    {
+      "key": {
+        "some": 42
+      }
+    },
+    {
+      "some": "value"
+    }
+  ]
+  ```
+  Error:
+  ```
+  init terminating in do_boot (Timeout)
+  
+  Crash dump is being written to: /dev/null...done
+  {"init terminating in do_boot","Timeout"}
+  ```
+
+- [ ] `$[?(!@.key)]`
+  Input:
+  ```
+  [
+    {
+      "some": "some value"
+    },
+    {
+      "key": true
+    },
+    {
+      "key": false
+    },
+    {
+      "key": null
+    },
+    {
+      "key": "value"
+    },
+    {
+      "key": ""
+    },
+    {
+      "key": 0
+    },
+    {
+      "key": 1
+    },
+    {
+      "key": -1
+    },
+    {
+      "key": 42
+    },
+    {
+      "key": {}
+    },
+    {
+      "key": []
+    }
+  ]
+  ```
+  Error:
+  ```
+  init terminating in do_boot (Timeout)
+  
+  Crash dump is being written to: /dev/null...done
+  {"init terminating in do_boot","Timeout"}
+  ```
+
+- [ ] `$[(@.length-1)]`
+  Input:
+  ```
+  [
+    "first",
+    "second",
+    "third",
+    "forth",
+    "fifth"
+  ]
+  ```
+  Error:
+  ```
+  init terminating in do_boot ({not_implemented,bin_op,-})
+  
+  Crash dump is being written to: /dev/null...done
+  {"init terminating in do_boot",{not_implemented,bin_op,'-'}}
   ```
 
 

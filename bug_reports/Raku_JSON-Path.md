@@ -372,6 +372,16 @@ The following queries provide results that do not match those of other implement
   JSON path parse error at position 1
   ```
 
+- [ ] `$[0]`
+  Input:
+  ```
+  "Hello World"
+  ```
+  Error:
+  ```
+  at 1: expected a json object, but got H (context: "Hello Wo")
+  ```
+
 - [ ] `$[0:2][*]`
   Input:
   ```

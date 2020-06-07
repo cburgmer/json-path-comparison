@@ -311,6 +311,26 @@ The following queries provide results that do not match those of other implement
   ]
   ```
 
+- [ ] `$[?(@)]`
+  Input:
+  ```
+  [
+    "some value",
+    null,
+    "value",
+    0,
+    1,
+    -1,
+    "",
+    [],
+    {}
+  ]
+  ```
+  Error:
+  ```
+  evalmachine.<anonymous>:1
+  ```
+
 - [ ] `$[?()]`
   Input:
   ```
@@ -330,6 +350,50 @@ The following queries provide results that do not match those of other implement
   Actual output:
   ```
   []
+  ```
+
+- [ ] `$[?(@==42)]`
+  Input:
+  ```
+  [
+    0,
+    42,
+    -1,
+    41,
+    43,
+    42.0001,
+    41.9999,
+    null,
+    100
+  ]
+  ```
+  Error:
+  ```
+  evalmachine.<anonymous>:1
+  ```
+
+- [ ] `$.items[?(@.key==$.value)]`
+  Input:
+  ```
+  {
+    "value": 42,
+    "items": [
+      {
+        "key": 10
+      },
+      {
+        "key": 42
+      },
+      {
+        "key": 50
+      }
+    ]
+  }
+  ```
+  Error:
+  ```
+  evalmachine.<anonymous>:1
+      at evalmachine.<anonymous>:1:11
   ```
 
 - [ ] `$[?(@.key=42)]`
@@ -475,6 +539,50 @@ The following queries provide results that do not match those of other implement
   ]
   ```
 
+- [ ] `$[?(@.a[?(@.price>10)])]`
+  Input:
+  ```
+  [
+    {
+      "a": [
+        {
+          "price": 1
+        },
+        {
+          "price": 3
+        }
+      ]
+    },
+    {
+      "a": [
+        {
+          "price": 11
+        }
+      ]
+    },
+    {
+      "a": [
+        {
+          "price": 8
+        },
+        {
+          "price": 12
+        },
+        {
+          "price": 3
+        }
+      ]
+    },
+    {
+      "a": []
+    }
+  ]
+  ```
+  Error:
+  ```
+  evalmachine.<anonymous>:1
+  ```
+
 - [ ] `$(key,more)`
   Input:
   ```
@@ -505,6 +613,41 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   undefined
+  ```
+
+- [ ] `$[?(@.key<3),?(@.key>6)]`
+  Input:
+  ```
+  [
+    {
+      "key": 1
+    },
+    {
+      "key": 8
+    },
+    {
+      "key": 3
+    },
+    {
+      "key": 10
+    },
+    {
+      "key": 7
+    },
+    {
+      "key": 2
+    },
+    {
+      "key": 6
+    },
+    {
+      "key": 4
+    }
+  ]
+  ```
+  Error:
+  ```
+  evalmachine.<anonymous>:1
   ```
 
 - [ ] `$['key','another']`

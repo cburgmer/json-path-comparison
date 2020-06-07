@@ -3,6 +3,22 @@ Results do not match other implementations
 The following queries provide results that do not match those of other implementations of JSONPath
 (compare https://cburgmer.github.io/json-path-comparison/):
 
+- [ ] `$[0:3:0]`
+  Input:
+  ```
+  [
+    "first",
+    "second",
+    "third",
+    "forth",
+    "fifth"
+  ]
+  ```
+  Error:
+  ```
+  FATAL ERROR: CALL_AND_RETRY_LAST Allocation failed - JavaScript heap out of memory
+  ```
+
 - [ ] `$["key"]`
   Input:
   ```
@@ -403,6 +419,50 @@ The following queries provide results that do not match those of other implement
   ]
   ```
 
+- [ ] `$[?(@.a[?(@.price>10)])]`
+  Input:
+  ```
+  [
+    {
+      "a": [
+        {
+          "price": 1
+        },
+        {
+          "price": 3
+        }
+      ]
+    },
+    {
+      "a": [
+        {
+          "price": 11
+        }
+      ]
+    },
+    {
+      "a": [
+        {
+          "price": 8
+        },
+        {
+          "price": 12
+        },
+        {
+          "price": 3
+        }
+      ]
+    },
+    {
+      "a": []
+    }
+  ]
+  ```
+  Error:
+  ```
+  jsonPath: Unexpected token '?': _v.a[?(_v.price>10)
+  ```
+
 - [ ] `$(key,more)`
   Input:
   ```
@@ -433,6 +493,41 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   undefined
+  ```
+
+- [ ] `$[?(@.key<3),?(@.key>6)]`
+  Input:
+  ```
+  [
+    {
+      "key": 1
+    },
+    {
+      "key": 8
+    },
+    {
+      "key": 3
+    },
+    {
+      "key": 10
+    },
+    {
+      "key": 7
+    },
+    {
+      "key": 2
+    },
+    {
+      "key": 6
+    },
+    {
+      "key": 4
+    }
+  ]
+  ```
+  Error:
+  ```
+  jsonPath: Unexpected token ')': _v.key<3),?(_v.key>6
   ```
 
 - [ ] `$[ 0 , 1 ]`

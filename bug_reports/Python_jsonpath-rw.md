@@ -232,6 +232,18 @@ The following queries provide results that do not match those of other implement
   []
   ```
 
+- [ ] `$[0]`
+  Input:
+  ```
+  {
+    "0": "value"
+  }
+  ```
+  Error:
+  ```
+  KeyError(0)
+  ```
+
 - [ ] `$['*']`
   Input:
   ```
@@ -374,6 +386,53 @@ The following queries provide results that do not match those of other implement
   [
     "value"
   ]
+  ```
+
+- [ ] `$..[1].key`
+  Input:
+  ```
+  {
+    "k": [
+      {
+        "key": "some value"
+      },
+      {
+        "key": 42
+      }
+    ],
+    "kk": [
+      [
+        {
+          "key": 100
+        },
+        {
+          "key": 200
+        },
+        {
+          "key": 300
+        }
+      ],
+      [
+        {
+          "key": 400
+        },
+        {
+          "key": 500
+        },
+        {
+          "key": 600
+        }
+      ]
+    ],
+    "key": [
+      0,
+      1
+    ]
+  }
+  ```
+  Error:
+  ```
+  KeyError(1)
   ```
 
 - [ ] `$[?(@.id==42)].name`
