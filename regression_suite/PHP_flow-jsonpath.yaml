@@ -27,9 +27,11 @@ queries:
     status: fail
     result: [{"": 42, "\"\"": 222, "''": 123}]
   - id: bracket_notation_with_empty_string
-    status: error
+    status: fail
+    result: NOT_SUPPORTED
   - id: bracket_notation_with_empty_string_doubled_quoted
-    status: error
+    status: open
+    result: NOT_SUPPORTED
   - id: bracket_notation_with_number_on_object
     status: open
     result: ["value"]
@@ -37,7 +39,8 @@ queries:
     status: open
     result: []
   - id: bracket_notation_with_quoted_closing_bracket_literal
-    status: error
+    status: fail
+    result: NOT_SUPPORTED
   - id: bracket_notation_with_quoted_escaped_backslash
     status: open
     result: []
@@ -56,8 +59,6 @@ queries:
   - id: bracket_notation_with_two_literals_separated_by_dot
     status: open
     result: ["43"]
-  - id: bracket_notation_with_two_literals_separated_by_dot_without_quotes
-    status: error
   - id: bracket_notation_without_quotes
     status: open
     result: ["value"]
@@ -86,7 +87,8 @@ queries:
     status: fail
     result: [{"": 9001, "''": "nice", "key": 42}]
   - id: dot_notation_with_key_root_literal
-    status: error
+    status: open
+    result: NOT_SUPPORTED
   - id: dot_notation_with_number
     status: open
     result: ["third"]
@@ -100,7 +102,8 @@ queries:
     status: open
     result: ["russian dolls", "something", "top", "value", {"key": "russian dolls"}]
   - id: dot_notation_with_single_quotes_and_dot
-    status: error
+    status: open
+    result: NOT_SUPPORTED
   - id: dot_notation_without_root
     status: open
     result: ["value"]
@@ -131,8 +134,6 @@ queries:
   - id: filter_expression_with_different_ungrouped_operators
     status: error
   - id: filter_expression_with_division
-    status: error
-  - id: filter_expression_with_empty_expression
     status: error
   - id: filter_expression_with_equals
     status: open
@@ -252,5 +253,3 @@ queries:
   - id: union_with_slice_and_number
     status: open
     result: [2, 3]
-  - id: union_with_wildcard_and_number
-    status: error

@@ -54,6 +54,22 @@ query_result_payload() {
     tail -n +2 < "$result"
 }
 
+all_query_result() {
+    local result="$1"
+    if is_query_result_not_found "$result"; then
+        echo "NOT_FOUND"
+        return
+    fi
+
+    if is_query_not_supported "$result"; then
+        echo "NOT_SUPPORTED"
+        return
+    fi
+
+    query_result_payload "$result"
+}
+
+
 is_scalar_implementation() {
     local implementation="$1"
     test -f "./implementations/${implementation}/SINGLE_POSSIBLE_MATCH_RETURNED_AS_SCALAR"

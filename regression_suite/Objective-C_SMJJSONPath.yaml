@@ -7,18 +7,23 @@
 implementation: Objective-C_SMJJSONPath
 queries:
   - id: array_slice_on_object
-    status: error
+    status: open
+    result: NOT_FOUND
   - id: array_slice_with_negative_step
     status: open
     result: []
   - id: array_slice_with_negative_step_only
-    status: error
+    status: open
+    result: NOT_SUPPORTED
   - id: array_slice_with_open_start_and_end
-    status: error
+    status: fail
+    result: NOT_SUPPORTED
   - id: array_slice_with_open_start_and_end_and_step_empty
-    status: error
+    status: fail
+    result: NOT_SUPPORTED
   - id: array_slice_with_open_start_and_end_on_object
-    status: error
+    status: open
+    result: NOT_SUPPORTED
   - id: array_slice_with_step
     status: fail
     result: ["first", "second", "third"]
@@ -32,22 +37,17 @@ queries:
     status: fail
     result: ["first", "second", "third", "forth"]
   - id: array_slice_with_step_only
-    status: error
-  - id: bracket_notation_on_object_without_key
-    status: error
-  - id: bracket_notation_with_empty_path
-    status: error
+    status: fail
+    result: NOT_SUPPORTED
   - id: bracket_notation_with_empty_string_doubled_quoted
     status: open
     result: 42
-  - id: bracket_notation_with_number_-1_on_empty_array
-    status: error
   - id: bracket_notation_with_number_on_object
-    status: error
-  - id: bracket_notation_with_number_on_short_array
-    status: error
+    status: open
+    result: NOT_FOUND
   - id: bracket_notation_with_number_on_string
-    status: error
+    status: open
+    result: NOT_FOUND
   - id: bracket_notation_with_quoted_escaped_backslash
     status: open
     result: "value"
@@ -55,59 +55,56 @@ queries:
     status: open
     result: "value"
   - id: bracket_notation_with_quoted_special_characters_combined
-    status: error
+    status: open
+    result: NOT_SUPPORTED
   - id: bracket_notation_with_quoted_string_and_unescaped_single_quote
-    status: error
+    status: open
+    result: NOT_SUPPORTED
   - id: bracket_notation_with_quoted_union_literal
-    status: error
+    status: fail
+    result: NOT_SUPPORTED
   - id: bracket_notation_with_quoted_wildcard_literal_on_object_without_key
-    status: error
+    status: open
+    result: NOT_FOUND
   - id: bracket_notation_with_two_literals_separated_by_dot
-    status: error
-  - id: bracket_notation_with_two_literals_separated_by_dot_without_quotes
-    status: error
+    status: open
+    result: NOT_SUPPORTED
   - id: bracket_notation_without_quotes
-    status: error
+    status: open
+    result: NOT_SUPPORTED
   - id: dot_bracket_notation
     status: open
     result: "value"
   - id: dot_bracket_notation_with_double_quotes
     status: open
     result: "value"
-  - id: dot_bracket_notation_without_quotes
-    status: error
   - id: dot_notation_after_bracket_notation_after_recursive_descent
     status: open
     result: ["some value", 100, 200, 300, 400, 42, 500, 600]
-  - id: dot_notation_on_array
-    status: error
-  - id: dot_notation_on_array_with_containing_object_matching_key
-    status: error
-  - id: dot_notation_on_object_without_key
-    status: error
   - id: dot_notation_with_double_quotes
-    status: error
+    status: open
+    result: NOT_FOUND
   - id: dot_notation_with_double_quotes_after_recursive_descent
     status: open
     result: []
-  - id: dot_notation_with_empty_path
-    status: error
-  - id: dot_notation_with_key_named_length_on_array
-    status: error
   - id: dot_notation_with_key_root_literal
     status: open
     result: "value"
   - id: dot_notation_with_number
-    status: error
+    status: open
+    result: NOT_FOUND
   - id: dot_notation_with_number_-1
-    status: error
+    status: open
+    result: NOT_FOUND
   - id: dot_notation_with_single_quotes
-    status: error
+    status: open
+    result: NOT_FOUND
   - id: dot_notation_with_single_quotes_after_recursive_descent
     status: open
     result: []
   - id: dot_notation_with_single_quotes_and_dot
-    status: error
+    status: open
+    result: NOT_FOUND
   - id: dot_notation_without_root
     status: open
     result: "value"
@@ -142,9 +139,8 @@ queries:
     status: open
     result: [{"a": true, "b": true}, {"c": true}]
   - id: filter_expression_with_division
-    status: error
-  - id: filter_expression_with_empty_expression
-    status: error
+    status: open
+    result: NOT_SUPPORTED
   - id: filter_expression_with_equals
     status: open
     result: [{"key": 42}, {"key": "42"}]
@@ -161,7 +157,8 @@ queries:
     status: open
     result: [{"key": null}]
   - id: filter_expression_with_equals_number_with_fraction
-    status: error
+    status: open
+    result: NOT_SUPPORTED
   - id: filter_expression_with_equals_number_with_leading_zeros
     status: open
     result: [{"key": "010"}, {"key": "10"}, {"key": 10}]
@@ -216,8 +213,6 @@ queries:
   - id: filter_expression_with_regular_expression
     status: open
     result: [{"name": "hello world"}, {"name": "yes hello world"}]
-  - id: filter_expression_with_single_equal
-    status: error
   - id: filter_expression_with_subfilter
     status: open
     result: [{"a": [{"price": 1}, {"price": 3}]}, {"a": [{"price": 11}]}, {"a": [{"price": 8}, {"price": 12}, {"price": 3}]}, {"a": []}]
@@ -236,21 +231,24 @@ queries:
   - id: filter_expression_without_value
     status: open
     result: [{"some": "some value"}]
-  - id: parens_notation
-    status: error
   - id: recursive_descent
-    status: error
+    status: open
+    result: NOT_SUPPORTED
   - id: recursive_descent_after_dot_notation
-    status: error
+    status: open
+    result: NOT_SUPPORTED
   - id: script_expression
-    status: error
+    status: open
+    result: NOT_SUPPORTED
   - id: union_with_filter
-    status: error
+    status: open
+    result: NOT_SUPPORTED
   - id: union_with_keys
     status: fail
     result: {"another": "entry", "key": "value"}
   - id: union_with_keys_after_array_slice
-    status: error
+    status: open
+    result: NOT_SUPPORTED
   - id: union_with_keys_after_bracket_notation
     status: fail
     result: {"c": "cc1", "d": "dd1"}
@@ -261,6 +259,5 @@ queries:
     status: fail
     result: {"key": "value"}
   - id: union_with_slice_and_number
-    status: error
-  - id: union_with_wildcard_and_number
-    status: error
+    status: open
+    result: NOT_SUPPORTED

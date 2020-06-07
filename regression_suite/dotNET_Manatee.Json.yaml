@@ -21,8 +21,6 @@ queries:
   - id: array_slice_with_step_0
     status: open
     result: []
-  - id: bracket_notation_with_empty_path
-    status: error
   - id: bracket_notation_with_empty_string_doubled_quoted
     status: open
     result: [42]
@@ -42,42 +40,41 @@ queries:
     status: open
     result: [42]
   - id: bracket_notation_with_quoted_string_and_unescaped_single_quote
-    status: error
+    status: open
+    result: NOT_SUPPORTED
   - id: bracket_notation_with_quoted_wildcard_literal_on_object_without_key
     status: open
     result: []
   - id: bracket_notation_with_two_literals_separated_by_dot
-    status: error
-  - id: bracket_notation_with_two_literals_separated_by_dot_without_quotes
-    status: error
+    status: open
+    result: NOT_SUPPORTED
   - id: bracket_notation_with_wildcard_after_recursive_descent
     status: fail
     result: []
   - id: bracket_notation_without_quotes
-    status: error
+    status: open
+    result: NOT_SUPPORTED
   - id: dot_bracket_notation
     status: open
     result: ["value"]
   - id: dot_bracket_notation_with_double_quotes
     status: open
     result: ["value"]
-  - id: dot_bracket_notation_without_quotes
-    status: error
   - id: dot_notation_after_bracket_notation_after_recursive_descent
     status: open
     result: [200, 42, 500]
   - id: dot_notation_after_union_with_keys
-    status: error
+    status: fail
+    result: NOT_SUPPORTED
   - id: dot_notation_with_dash
-    status: error
+    status: fail
+    result: NOT_SUPPORTED
   - id: dot_notation_with_double_quotes
     status: open
     result: ["value"]
   - id: dot_notation_with_double_quotes_after_recursive_descent
     status: open
     result: ["russian dolls", "something", "top", "value", {"key": "russian dolls"}]
-  - id: dot_notation_with_empty_path
-    status: error
   - id: dot_notation_with_key_named_length
     status: fail
     result: []
@@ -85,12 +82,14 @@ queries:
     status: fail
     result: [3]
   - id: dot_notation_with_key_root_literal
-    status: error
+    status: open
+    result: NOT_SUPPORTED
   - id: dot_notation_with_number
     status: open
     result: []
   - id: dot_notation_with_number_-1
-    status: error
+    status: open
+    result: NOT_SUPPORTED
   - id: dot_notation_with_single_quotes
     status: open
     result: ["value"]
@@ -101,12 +100,14 @@ queries:
     status: open
     result: [42]
   - id: dot_notation_without_root
-    status: error
+    status: open
+    result: NOT_SUPPORTED
   - id: filter_expression_after_dot_notation_with_wildcard_after_recursive_descent
     status: open
     result: [{"id": 3, "name": "another"}, {"id": 4, "name": "more"}, {"id": 5, "name": "next to last"}]
   - id: filter_expression_after_recursive_descent
-    status: error
+    status: open
+    result: NOT_SUPPORTED
   - id: filter_expression_on_object
     status: open
     result: [{"key": 1}]
@@ -123,7 +124,8 @@ queries:
     status: open
     result: [["a", "b"]]
   - id: filter_expression_with_current_object
-    status: error
+    status: open
+    result: NOT_SUPPORTED
   - id: filter_expression_with_different_grouped_operators
     status: open
     result: [{"a": true, "b": true}, {"a": true, "b": true, "c": true}, {"a": true, "c": true}]
@@ -133,15 +135,15 @@ queries:
   - id: filter_expression_with_division
     status: open
     result: [{"key": 50}]
-  - id: filter_expression_with_empty_expression
-    status: error
   - id: filter_expression_with_equals
     status: open
     result: [{"key": 42}]
   - id: filter_expression_with_equals_array
-    status: error
+    status: open
+    result: NOT_SUPPORTED
   - id: filter_expression_with_equals_array_with_single_quotes
-    status: error
+    status: open
+    result: NOT_SUPPORTED
   - id: filter_expression_with_equals_false
     status: open
     result: [{"some": "some value"}, {"key": false}]
@@ -155,9 +157,11 @@ queries:
     status: open
     result: [{"key": 10}]
   - id: filter_expression_with_equals_object
-    status: error
+    status: open
+    result: NOT_SUPPORTED
   - id: filter_expression_with_equals_on_array_of_numbers
-    status: error
+    status: open
+    result: NOT_SUPPORTED
   - id: filter_expression_with_equals_on_object
     status: open
     result: [{"key": 42}]
@@ -180,9 +184,11 @@ queries:
     status: open
     result: [{"key": 42}, {"key": 43}, {"key": 42.0001}, {"key": 100}]
   - id: filter_expression_with_in_array_of_values
-    status: error
+    status: open
+    result: NOT_SUPPORTED
   - id: filter_expression_with_in_current_object
-    status: error
+    status: open
+    result: NOT_SUPPORTED
   - id: filter_expression_with_less_than
     status: open
     result: [{"key": 0}, {"key": -1}, {"key": 41}, {"key": 41.9999}]
@@ -199,49 +205,56 @@ queries:
     status: open
     result: [{"key": 0}, {"key": -1}, {"key": 1}, {"key": 41}, {"key": 43}, {"key": 42.0001}, {"key": 41.9999}, {"key": 100}, {"key": "some"}, {"key": "42"}, {"key": null}, {"key": 420}, {"key": ""}, {"key": {}}, {"key": []}, {"key": [42]}, {"key": {"key": 42}}, {"key": {"some": 42}}]
   - id: filter_expression_with_regular_expression
-    status: error
-  - id: filter_expression_with_single_equal
-    status: error
+    status: open
+    result: NOT_SUPPORTED
   - id: filter_expression_with_subfilter
-    status: error
+    status: open
+    result: NOT_SUPPORTED
   - id: filter_expression_with_substraction
     status: open
     result: [{"key": -50}]
   - id: filter_expression_with_triple_equal
-    status: error
+    status: open
+    result: NOT_SUPPORTED
   - id: filter_expression_with_value
     status: open
     result: [{"key": true}, {"key": null}, {"key": "value"}, {"key": ""}, {"key": 0}, {"key": 1}, {"key": -1}, {"key": 42}, {"key": {}}, {"key": []}]
   - id: filter_expression_with_value_after_recursive_descent
-    status: error
+    status: open
+    result: NOT_SUPPORTED
   - id: filter_expression_without_value
     status: open
     result: [{"key": true}, {"key": null}, {"key": "value"}, {"key": ""}, {"key": 0}, {"key": 1}, {"key": -1}, {"key": 42}, {"key": {}}, {"key": []}]
-  - id: parens_notation
-    status: error
   - id: recursive_descent
-    status: error
+    status: open
+    result: NOT_SUPPORTED
   - id: recursive_descent_after_dot_notation
-    status: error
+    status: open
+    result: NOT_SUPPORTED
   - id: script_expression
     status: open
     result: ["fifth"]
   - id: union_with_filter
-    status: error
+    status: open
+    result: NOT_SUPPORTED
   - id: union_with_keys
-    status: error
+    status: fail
+    result: NOT_SUPPORTED
   - id: union_with_keys_after_array_slice
-    status: error
+    status: open
+    result: NOT_SUPPORTED
   - id: union_with_keys_after_bracket_notation
-    status: error
+    status: fail
+    result: NOT_SUPPORTED
   - id: union_with_keys_after_dot_notation_with_wildcard
-    status: error
+    status: open
+    result: NOT_SUPPORTED
   - id: union_with_keys_on_object_without_key
-    status: error
+    status: fail
+    result: NOT_SUPPORTED
   - id: union_with_slice_and_number
     status: open
     result: [2, 3, 5]
   - id: union_with_spaces
-    status: error
-  - id: union_with_wildcard_and_number
-    status: error
+    status: fail
+    result: NOT_SUPPORTED

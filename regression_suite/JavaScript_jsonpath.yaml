@@ -21,9 +21,8 @@ queries:
   - id: array_slice_with_step_0
     status: error
   - id: array_slice_with_step_and_leading_zeros
-    status: error
-  - id: bracket_notation_with_empty_path
-    status: error
+    status: fail
+    result: NOT_SUPPORTED
   - id: bracket_notation_with_empty_string_doubled_quoted
     status: open
     result: [42]
@@ -45,40 +44,44 @@ queries:
     status: open
     result: []
   - id: bracket_notation_with_quoted_string_and_unescaped_single_quote
-    status: error
+    status: open
+    result: NOT_SUPPORTED
   - id: bracket_notation_with_quoted_wildcard_literal_on_object_without_key
     status: open
     result: []
   - id: bracket_notation_with_two_literals_separated_by_dot
-    status: error
-  - id: bracket_notation_with_two_literals_separated_by_dot_without_quotes
-    status: error
+    status: open
+    result: NOT_SUPPORTED
   - id: bracket_notation_without_quotes
-    status: error
+    status: open
+    result: NOT_SUPPORTED
   - id: dot_bracket_notation
-    status: error
+    status: open
+    result: NOT_SUPPORTED
   - id: dot_bracket_notation_with_double_quotes
-    status: error
-  - id: dot_bracket_notation_without_quotes
-    status: error
+    status: open
+    result: NOT_SUPPORTED
   - id: dot_notation_after_bracket_notation_after_recursive_descent
     status: open
     result: [200, 42, 500]
   - id: dot_notation_with_dash
-    status: error
+    status: fail
+    result: NOT_SUPPORTED
   - id: dot_notation_with_double_quotes
-    status: error
+    status: open
+    result: NOT_SUPPORTED
   - id: dot_notation_with_double_quotes_after_recursive_descent
-    status: error
-  - id: dot_notation_with_empty_path
-    status: error
+    status: open
+    result: NOT_SUPPORTED
   - id: dot_notation_with_key_named_length_on_array
     status: fail
     result: [3]
   - id: dot_notation_with_key_root_literal
-    status: error
+    status: open
+    result: NOT_SUPPORTED
   - id: dot_notation_with_non_ASCII_key
-    status: error
+    status: fail
+    result: NOT_SUPPORTED
   - id: dot_notation_with_number
     status: open
     result: ["third"]
@@ -86,11 +89,14 @@ queries:
     status: open
     result: []
   - id: dot_notation_with_single_quotes
-    status: error
+    status: open
+    result: NOT_SUPPORTED
   - id: dot_notation_with_single_quotes_after_recursive_descent
-    status: error
+    status: open
+    result: NOT_SUPPORTED
   - id: dot_notation_with_single_quotes_and_dot
-    status: error
+    status: open
+    result: NOT_SUPPORTED
   - id: dot_notation_with_wildcard_after_recursive_descent_on_scalar
     status: error
   - id: dot_notation_without_root
@@ -129,8 +135,6 @@ queries:
   - id: filter_expression_with_division
     status: open
     result: [{"key": 50}]
-  - id: filter_expression_with_empty_expression
-    status: error
   - id: filter_expression_with_equals
     status: open
     result: [{"key": 42}, {"key": "42"}, {"key": [42]}]
@@ -207,7 +211,8 @@ queries:
     status: fail
     result: []
   - id: filter_expression_with_subfilter
-    status: error
+    status: open
+    result: NOT_SUPPORTED
   - id: filter_expression_with_substraction
     status: open
     result: [{"key": -50}]
@@ -223,12 +228,12 @@ queries:
   - id: filter_expression_without_value
     status: open
     result: [{"some": "some value"}, {"key": false}, {"key": null}, {"key": ""}, {"key": 0}]
-  - id: parens_notation
-    status: error
   - id: recursive_descent
-    status: error
+    status: open
+    result: NOT_SUPPORTED
   - id: recursive_descent_after_dot_notation
-    status: error
+    status: open
+    result: NOT_SUPPORTED
   - id: root_on_scalar
     status: error
   - id: root_on_scalar_false
@@ -250,6 +255,5 @@ queries:
     status: open
     result: [2, 3, 5]
   - id: union_with_spaces
-    status: error
-  - id: union_with_wildcard_and_number
-    status: error
+    status: fail
+    result: NOT_SUPPORTED

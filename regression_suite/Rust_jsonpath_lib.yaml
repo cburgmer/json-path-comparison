@@ -10,15 +10,15 @@ queries:
     status: open
     result: []
   - id: array_slice_with_negative_step
-    status: error
+    status: open
+    result: NOT_SUPPORTED
   - id: array_slice_with_negative_step_only
-    status: error
+    status: open
+    result: NOT_SUPPORTED
   - id: array_slice_with_open_start_and_end_on_object
     status: open
     result: []
   - id: array_slice_with_step_0
-    status: error
-  - id: bracket_notation_with_empty_path
     status: error
   - id: bracket_notation_with_empty_string_doubled_quoted
     status: open
@@ -30,7 +30,8 @@ queries:
     status: open
     result: []
   - id: bracket_notation_with_quoted_escaped_backslash
-    status: error
+    status: open
+    result: NOT_SUPPORTED
   - id: bracket_notation_with_quoted_escaped_single_quote
     status: open
     result: ["value"]
@@ -38,35 +39,35 @@ queries:
     status: open
     result: []
   - id: bracket_notation_with_quoted_string_and_unescaped_single_quote
-    status: error
+    status: open
+    result: NOT_SUPPORTED
   - id: bracket_notation_with_quoted_wildcard_literal_on_object_without_key
     status: open
     result: []
   - id: bracket_notation_with_two_literals_separated_by_dot
-    status: error
-  - id: bracket_notation_with_two_literals_separated_by_dot_without_quotes
-    status: error
+    status: open
+    result: NOT_SUPPORTED
   - id: bracket_notation_without_quotes
-    status: error
+    status: open
+    result: NOT_SUPPORTED
   - id: dot_bracket_notation
     status: open
     result: ["value"]
   - id: dot_bracket_notation_with_double_quotes
     status: open
     result: ["value"]
-  - id: dot_bracket_notation_without_quotes
-    status: error
   - id: dot_notation_after_bracket_notation_after_recursive_descent
     status: open
     result: [200, 42, 500]
   - id: dot_notation_with_double_quotes
-    status: error
+    status: open
+    result: NOT_SUPPORTED
   - id: dot_notation_with_double_quotes_after_recursive_descent
-    status: error
-  - id: dot_notation_with_empty_path
-    status: error
+    status: open
+    result: NOT_SUPPORTED
   - id: dot_notation_with_key_root_literal
-    status: error
+    status: open
+    result: NOT_SUPPORTED
   - id: dot_notation_with_number
     status: open
     result: []
@@ -74,13 +75,17 @@ queries:
     status: open
     result: []
   - id: dot_notation_with_single_quotes
-    status: error
+    status: open
+    result: NOT_SUPPORTED
   - id: dot_notation_with_single_quotes_after_recursive_descent
-    status: error
+    status: open
+    result: NOT_SUPPORTED
   - id: dot_notation_with_single_quotes_and_dot
-    status: error
+    status: open
+    result: NOT_SUPPORTED
   - id: dot_notation_without_root
-    status: error
+    status: open
+    result: NOT_SUPPORTED
   - id: filter_expression_after_dot_notation_with_wildcard_after_recursive_descent
     status: open
     result: [{"id": 3, "name": "another"}, {"id": 4, "name": "more"}, {"id": 5, "name": "next to last"}, {"id": 6, "name": "last"}]
@@ -117,20 +122,21 @@ queries:
   - id: filter_expression_with_division
     status: open
     result: [{"key/10": 5}]
-  - id: filter_expression_with_empty_expression
-    status: error
   - id: filter_expression_with_equals
     status: open
     result: [{"key": 42}]
   - id: filter_expression_with_equals_array
-    status: error
+    status: open
+    result: NOT_SUPPORTED
   - id: filter_expression_with_equals_array_with_single_quotes
-    status: error
+    status: open
+    result: NOT_SUPPORTED
   - id: filter_expression_with_equals_false
     status: open
     result: [{"key": false}]
   - id: filter_expression_with_equals_null
-    status: error
+    status: open
+    result: NOT_SUPPORTED
   - id: filter_expression_with_equals_number_with_fraction
     status: open
     result: [{"key": -12.3}]
@@ -138,7 +144,8 @@ queries:
     status: open
     result: [{"key": 10}]
   - id: filter_expression_with_equals_object
-    status: error
+    status: open
+    result: NOT_SUPPORTED
   - id: filter_expression_with_equals_on_array_of_numbers
     status: open
     result: []
@@ -164,9 +171,11 @@ queries:
     status: open
     result: [{"key": 42}, {"key": 43}, {"key": 42.0001}, {"key": 100}]
   - id: filter_expression_with_in_array_of_values
-    status: error
+    status: open
+    result: NOT_SUPPORTED
   - id: filter_expression_with_in_current_object
-    status: error
+    status: open
+    result: NOT_SUPPORTED
   - id: filter_expression_with_less_than
     status: open
     result: [{"key": 0}, {"key": -1}, {"key": 41}, {"key": 41.9999}]
@@ -174,16 +183,17 @@ queries:
     status: open
     result: [{"key": 0}, {"key": 42}, {"key": -1}, {"key": 41}, {"key": 41.9999}]
   - id: filter_expression_with_multiplication
-    status: error
+    status: open
+    result: NOT_SUPPORTED
   - id: filter_expression_with_negation_and_equals
-    status: error
+    status: open
+    result: NOT_SUPPORTED
   - id: filter_expression_with_not_equals
     status: open
     result: [{"key": 0}, {"key": -1}, {"key": 1}, {"key": 41}, {"key": 43}, {"key": 42.0001}, {"key": 41.9999}, {"key": 100}, {"key": 420}]
   - id: filter_expression_with_regular_expression
-    status: error
-  - id: filter_expression_with_single_equal
-    status: error
+    status: open
+    result: NOT_SUPPORTED
   - id: filter_expression_with_subfilter
     status: open
     result: [{"a": [{"price": 1}, {"price": 3}]}, {"a": [{"price": 11}]}, {"a": [{"price": 8}, {"price": 12}, {"price": 3}]}, {"a": []}]
@@ -191,7 +201,8 @@ queries:
     status: open
     result: [{"key-50": -100}]
   - id: filter_expression_with_triple_equal
-    status: error
+    status: open
+    result: NOT_SUPPORTED
   - id: filter_expression_with_value
     status: open
     result: [{"key": true}, {"key": false}, {"key": null}, {"key": "value"}, {"key": ""}, {"key": 0}, {"key": 1}, {"key": -1}, {"key": 42}, {"key": {}}, {"key": []}]
@@ -199,18 +210,23 @@ queries:
     status: open
     result: [{"id": 2}, {"id": 2}, {"id": 2}, {"id": 2}, {"id": {"id": 2}}]
   - id: filter_expression_without_value
-    status: error
+    status: open
+    result: NOT_SUPPORTED
   - id: parens_notation
     status: fail
     result: [{"key": 1, "more": 3, "some": 2}]
   - id: recursive_descent
-    status: error
+    status: open
+    result: NOT_SUPPORTED
   - id: recursive_descent_after_dot_notation
-    status: error
+    status: open
+    result: NOT_SUPPORTED
   - id: script_expression
-    status: error
+    status: open
+    result: NOT_SUPPORTED
   - id: union_with_filter
-    status: error
+    status: open
+    result: NOT_SUPPORTED
   - id: union_with_keys_after_array_slice
     status: open
     result: ["cc1", "dd1", "cc2", "dd2"]
@@ -218,6 +234,5 @@ queries:
     status: open
     result: ["cc1", "dd1", "cc2", "dd2"]
   - id: union_with_slice_and_number
-    status: error
-  - id: union_with_wildcard_and_number
-    status: error
+    status: open
+    result: NOT_SUPPORTED

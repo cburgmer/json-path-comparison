@@ -6,28 +6,23 @@
 
 implementation: JavaScript_Goessner
 queries:
-  - id: array_slice_on_non_overlapping_array
-    status: error
   - id: array_slice_on_object
     status: open
     result: ["nice"]
   - id: array_slice_with_negative_step
-    status: error
+    status: open
+    result: NOT_FOUND
   - id: array_slice_with_negative_step_only
-    status: error
+    status: open
+    result: NOT_FOUND
   - id: array_slice_with_open_start_and_end_on_object
     status: open
     result: [42]
-  - id: array_slice_with_range_of_-1
-    status: error
-  - id: array_slice_with_range_of_0
-    status: error
   - id: array_slice_with_step_0
     status: error
-  - id: bracket_notation_on_object_without_key
-    status: error
   - id: bracket_notation_with_double_quotes
-    status: error
+    status: fail
+    result: NOT_FOUND
   - id: bracket_notation_with_empty_path
     status: fail
     result: [{"": 42, "\"\"": 222, "''": 123}]
@@ -38,23 +33,23 @@ queries:
     status: open
     result: [222]
   - id: bracket_notation_with_number_-1
-    status: error
-  - id: bracket_notation_with_number_-1_on_empty_array
-    status: error
+    status: fail
+    result: NOT_FOUND
   - id: bracket_notation_with_number_on_object
     status: open
     result: ["value"]
-  - id: bracket_notation_with_number_on_short_array
-    status: error
   - id: bracket_notation_with_number_on_string
     status: open
     result: ["H"]
   - id: bracket_notation_with_quoted_escaped_backslash
-    status: error
+    status: open
+    result: NOT_FOUND
   - id: bracket_notation_with_quoted_escaped_single_quote
-    status: error
+    status: open
+    result: NOT_FOUND
   - id: bracket_notation_with_quoted_special_characters_combined
-    status: error
+    status: open
+    result: NOT_FOUND
   - id: bracket_notation_with_quoted_string_and_unescaped_single_quote
     status: open
     result: ["value"]
@@ -67,10 +62,6 @@ queries:
   - id: bracket_notation_with_two_literals_separated_by_dot_without_quotes
     status: fail
     result: ["more"]
-  - id: bracket_notation_with_wildcard_on_empty_array
-    status: error
-  - id: bracket_notation_with_wildcard_on_empty_object
-    status: error
   - id: bracket_notation_without_quotes
     status: open
     result: ["value"]
@@ -78,23 +69,20 @@ queries:
     status: open
     result: ["value", [{"key": 42}], 42]
   - id: dot_bracket_notation_with_double_quotes
-    status: error
+    status: open
+    result: NOT_FOUND
   - id: dot_bracket_notation_without_quotes
     status: fail
     result: ["value", [{"key": 42}], 42]
   - id: dot_notation_after_bracket_notation_after_recursive_descent
     status: open
     result: [200, 42, 500]
-  - id: dot_notation_on_array
-    status: error
-  - id: dot_notation_on_array_with_containing_object_matching_key
-    status: error
-  - id: dot_notation_on_object_without_key
-    status: error
   - id: dot_notation_with_double_quotes
-    status: error
+    status: open
+    result: NOT_FOUND
   - id: dot_notation_with_double_quotes_after_recursive_descent
-    status: error
+    status: open
+    result: NOT_FOUND
   - id: dot_notation_with_empty_path
     status: fail
     result: [{"": 9001, "''": "nice", "key": 42}]
@@ -108,7 +96,8 @@ queries:
     status: open
     result: ["third"]
   - id: dot_notation_with_number_-1
-    status: error
+    status: open
+    result: NOT_FOUND
   - id: dot_notation_with_single_quotes
     status: open
     result: ["value"]
@@ -118,12 +107,6 @@ queries:
   - id: dot_notation_with_single_quotes_and_dot
     status: open
     result: ["value"]
-  - id: dot_notation_with_wildcard_after_recursive_descent_on_scalar
-    status: error
-  - id: dot_notation_with_wildcard_on_empty_array
-    status: error
-  - id: dot_notation_with_wildcard_on_empty_object
-    status: error
   - id: dot_notation_without_root
     status: open
     result: ["value"]
@@ -143,11 +126,14 @@ queries:
     status: open
     result: [{"key": 43}]
   - id: filter_expression_with_bracket_notation_and_current_object_literal
-    status: error
+    status: fail
+    result: NOT_FOUND
   - id: filter_expression_with_bracket_notation_with_-1
-    status: error
+    status: open
+    result: NOT_FOUND
   - id: filter_expression_with_bracket_notation_with_number_on_object
-    status: error
+    status: open
+    result: NOT_FOUND
   - id: filter_expression_with_current_object
     status: open
     result: ["some value", "value", 1, -1, [], {}]
@@ -161,7 +147,8 @@ queries:
     status: open
     result: [{"key": 50}]
   - id: filter_expression_with_empty_expression
-    status: error
+    status: fail
+    result: NOT_FOUND
   - id: filter_expression_with_equals
     status: open
     result: [{"key": 42}, {"key": "42"}, {"key": [42]}]
@@ -189,10 +176,9 @@ queries:
   - id: filter_expression_with_equals_on_array_of_numbers
     status: open
     result: [42]
-  - id: filter_expression_with_equals_on_array_without_match
-    status: error
   - id: filter_expression_with_equals_on_object
-    status: error
+    status: open
+    result: NOT_FOUND
   - id: filter_expression_with_equals_on_object_with_key_matching_query
     status: open
     result: [2]
@@ -200,7 +186,8 @@ queries:
     status: open
     result: [{"key": "value"}, {"key": ["value"]}]
   - id: filter_expression_with_equals_string_with_current_object_literal
-    status: error
+    status: fail
+    result: NOT_FOUND
   - id: filter_expression_with_equals_true
     status: open
     result: [{"key": true}, {"key": 1}]
@@ -282,7 +269,8 @@ queries:
     status: open
     result: [2, 3, 5]
   - id: union_with_spaces
-    status: error
+    status: fail
+    result: NOT_FOUND
   - id: union_with_wildcard_and_number
     status: fail
     result: ["first", "second", "third", "forth", "fifth", "second"]

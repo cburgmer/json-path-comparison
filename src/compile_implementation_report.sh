@@ -26,7 +26,7 @@ has_consensus() {
 implementation_status() {
     local query="$1"
 
-    if ! is_query_result_ok "${results_dir}/${query}/${implementation}"; then
+    if is_query_error "${results_dir}/${query}/${implementation}"; then
         echo "error"
         return
     fi
@@ -54,7 +54,7 @@ query_entry() {
         echo "    status: ${status}"
         if [[ "$status" != "error" ]]; then
             echo -n "    result: "
-            query_result_payload "${results_dir}/${query}/${implementation}"
+            all_query_result "${results_dir}/${query}/${implementation}"
         fi
     fi
 }
