@@ -19,6 +19,22 @@ The following queries provide results that do not match those of other implement
   No JSON output received
   ```
 
+- [ ] `$['ü']`
+  Input:
+  ```
+  {
+    "u\u0308": 42
+  }
+  ```
+  Expected output:
+  ```
+  null
+  ```
+  Error:
+  ```
+  No JSON output received
+  ```
+
 - [ ] `$[]`
   Input:
   ```

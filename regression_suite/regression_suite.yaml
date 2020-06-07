@@ -137,6 +137,13 @@ queries:
     scalar-consensus: null
     not-found-consensus: NOT_FOUND
     scalar-not-found-consensus: NOT_FOUND
+  - id: bracket_notation_with_NFC_path_on_NFD_key
+    selector: "$['ü']"
+    document: {"u\u0308": 42}
+    consensus: []
+    scalar-consensus: null
+    not-found-consensus: NOT_FOUND
+    scalar-not-found-consensus: NOT_FOUND
   - id: bracket_notation_with_dot
     selector: "$['two.some']"
     document: {"one": {"key": "value"}, "two": {"some": "more", "key": "other value"}, "two.some": "42"}

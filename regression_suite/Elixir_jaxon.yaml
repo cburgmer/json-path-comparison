@@ -63,6 +63,8 @@ queries:
     result: ["first"]
   - id: bracket_notation_on_object_without_key
     status: error
+  - id: bracket_notation_with_NFC_path_on_NFD_key
+    status: error
   - id: bracket_notation_with_dot
     status: error
   - id: bracket_notation_with_double_quotes

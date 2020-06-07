@@ -362,6 +362,22 @@ The following queries provide results that do not match those of other implement
   parsing error
   ```
 
+- [ ] `$['ü']`
+  Input:
+  ```
+  {
+    "u\u0308": 42
+  }
+  ```
+  Expected output:
+  ```
+  []
+  ```
+  Error:
+  ```
+  parsing error
+  ```
+
 - [ ] `$['two.some']`
   Input:
   ```

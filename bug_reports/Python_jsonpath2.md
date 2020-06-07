@@ -95,6 +95,23 @@ The following queries provide results that do not match those of other implement
   ValueError("line 1:2 token recognition error at: '''")
   ```
 
+- [ ] `$['ü']`
+  Input:
+  ```
+  {
+    "u\u0308": 42
+  }
+  ```
+  Expected output:
+  ```
+  []
+  ```
+  Error:
+  ```
+  line 1:2 token recognition error at: '''
+  ValueError("line 1:2 token recognition error at: '''")
+  ```
+
 - [ ] `$['two.some']`
   Input:
   ```

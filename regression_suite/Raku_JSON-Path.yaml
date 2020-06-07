@@ -60,6 +60,9 @@ queries:
   - id: bracket_notation_after_recursive_descent
     status: fail
     result: ["deepest", "first nested", "more", {"nested": ["deepest", "second"]}]
+  - id: bracket_notation_with_NFC_path_on_NFD_key
+    status: fail
+    result: [42]
   - id: bracket_notation_with_double_quotes
     status: fail
     result: NOT_SUPPORTED

@@ -129,6 +129,23 @@ The following queries provide results that do not match those of other implement
     error, called at app/Main.hs:19:22 in main:Main
   ```
 
+- [ ] `$['ü']`
+  Input:
+  ```
+  {
+    "u\u0308": 42
+  }
+  ```
+  Expected output:
+  ```
+  null
+  ```
+  Error:
+  ```
+  Invalid JSONPath: $['ü']
+   Error: searchBeginningWithSlice: string
+  ```
+
 - [ ] `$['two.some']`
   Input:
   ```

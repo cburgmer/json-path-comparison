@@ -467,6 +467,22 @@ The following queries provide results that do not match those of other implement
   strconv.Atoi: parsing "'missing'": invalid syntax
   ```
 
+- [ ] `$['ü']`
+  Input:
+  ```
+  {
+    "u\u0308": 42
+  }
+  ```
+  Expected output:
+  ```
+  null
+  ```
+  Error:
+  ```
+  strconv.Atoi: parsing "'ü'": invalid syntax
+  ```
+
 - [ ] `$['two.some']`
   Input:
   ```

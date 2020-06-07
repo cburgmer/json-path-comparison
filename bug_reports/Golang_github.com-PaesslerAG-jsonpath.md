@@ -35,6 +35,22 @@ The following queries provide results that do not match those of other implement
   parsing error: $['missing']	:1:3 - 1:12 could not parse string: invalid syntax
   ```
 
+- [ ] `$['ü']`
+  Input:
+  ```
+  {
+    "u\u0308": 42
+  }
+  ```
+  Expected output:
+  ```
+  null
+  ```
+  Error:
+  ```
+  unknown key ü
+  ```
+
 - [ ] `$['two.some']`
   Input:
   ```

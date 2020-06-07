@@ -29,6 +29,9 @@ queries:
   - id: bracket_notation_on_object_without_key
     status: fail
     result: NOT_SUPPORTED
+  - id: bracket_notation_with_NFC_path_on_NFD_key
+    status: fail
+    result: NOT_SUPPORTED
   - id: bracket_notation_with_dot
     status: fail
     result: NOT_SUPPORTED

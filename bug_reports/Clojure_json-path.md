@@ -498,6 +498,22 @@ The following queries provide results that do not match those of other implement
   java.lang.Exception object must be an array.
   ```
 
+- [ ] `$['ü']`
+  Input:
+  ```
+  {
+    "u\u0308": 42
+  }
+  ```
+  Expected output:
+  ```
+  null
+  ```
+  Error:
+  ```
+  java.lang.Exception object must be an array.
+  ```
+
 - [ ] `$['two.some']`
   Input:
   ```
