@@ -53,6 +53,10 @@ amongst the other implementations which goes against the result of his own
 implementations. Assuming the authors bothered to check with Goessner's own
 take, we must conclude they decided to have a better suggestion.
 
+See [bug_reports/JavaScript_Goessner.md](bug_reports/JavaScript_Goessner.md)
+for a potential bug report against Goessner's JavaScript implementation, if it
+was to be judged against the consensus.
+
 The consensus gives the community an opportunity to move away in cases that are
 doubtful or considered inconsistent and incorrect.
 
