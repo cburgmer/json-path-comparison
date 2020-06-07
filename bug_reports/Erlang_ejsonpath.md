@@ -232,7 +232,8 @@ The following queries provide results that do not match those of other implement
   Input:
   ```
   {
-    "key": "value"
+    "key": "value",
+    "\"key\"": 42
   }
   ```
   Error:
@@ -249,18 +250,24 @@ The following queries provide results that do not match those of other implement
   {
     "object": {
       "key": "value",
+      "\"key\"": 100,
       "array": [
         {
-          "key": "something"
+          "key": "something",
+          "\"key\"": 0
         },
         {
           "key": {
             "key": "russian dolls"
+          },
+          "\"key\"": {
+            "\"key\"": 99
           }
         }
       ]
     },
-    "key": "top"
+    "key": "top",
+    "\"key\"": 42
   }
   ```
   Error:

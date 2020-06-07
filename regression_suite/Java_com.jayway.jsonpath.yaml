@@ -83,10 +83,10 @@ queries:
     result: ["some value", 100, 200, 300, 400, 42, 500, 600]
   - id: dot_notation_with_double_quotes
     status: open
-    result: NOT_FOUND
+    result: 42
   - id: dot_notation_with_double_quotes_after_recursive_descent
     status: open
-    result: []
+    result: [0, 100, 42, 99, {"\"key\"": 99}]
   - id: dot_notation_with_key_root_literal
     status: open
     result: "value"

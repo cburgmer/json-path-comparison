@@ -7,14 +7,16 @@
 <p>Selector: <code>$.."key"</code></p>
 
 <pre><code>{
-    "object": {
-        "key": "value",
-        "array": [
-            {"key": "something"},
-            {"key": {"key": "russian dolls"}}
-        ]
-    },
-    "key": "top"
+  "object": {
+    "key": "value",
+    "\"key\"": 100,
+    "array": [
+      {"key": "something", "\"key\"": 0},
+      {"key": {"key": "russian dolls"}, "\"key\"": {"\"key\"": 99}}
+    ]
+  },
+  "key": "top",
+  "\"key\"": 42
 }
 </code></pre>
 
@@ -48,7 +50,14 @@ Bash (JSONPath.sh)
 C (json-glib)
 </h4>
 
-<pre><code>[]
+<pre><code>[
+  0,
+  100,
+  42,
+  {
+    "\"key\"": 99
+  }
+]
 </code></pre>
 
 <h4 id="Clojure_json-path">
@@ -144,7 +153,15 @@ Golang (github.com-spyzhov-ajson)
 Golang (github.com-vmware-labs-yaml-jsonpath)
 </h4>
 
-<pre><code>[]
+<pre><code>[
+  0,
+  100,
+  42,
+  99,
+  {
+    "\"key\"": 99
+  }
+]
 </code></pre>
 
 <h4 id="Haskell_jsonpath">
@@ -163,9 +180,15 @@ JavaScript (Goessner)
 ²
 </h4>
 
-<p>Not found</p>
-
-<pre><code>jsonpath returned false, this might indicate an error
+<pre><code>[
+  0,
+  100,
+  42,
+  99,
+  {
+    "\"key\"": 99
+  }
+]
 </code></pre>
 
 <h4 id="JavaScript_jsonpath">
@@ -184,7 +207,15 @@ Expecting 'STAR', 'IDENTIFIER', 'SCRIPT_EXPRESSION', 'INTEGER', 'END', '[', got 
 JavaScript (jsonpath-plus)
 </h4>
 
-<pre><code>[]
+<pre><code>[
+  0,
+  100,
+  42,
+  99,
+  {
+    "\"key\"": 99
+  }
+]
 </code></pre>
 
 <h4 id="Java_com.github.jsurfer">
@@ -208,7 +239,15 @@ Java (com.jayway.jsonpath)
 ³
 </h4>
 
-<pre><code>[]
+<pre><code>[
+  0,
+  100,
+  42,
+  99,
+  {
+    "\"key\"": 99
+  }
+]
 </code></pre>
 
 <h4 id="Kotlin_com.nfeld.jsonpathlite">
@@ -216,7 +255,15 @@ Kotlin (com.nfeld.jsonpathlite)
 ¹
 </h4>
 
-<pre><code>[]
+<pre><code>[
+  0,
+  100,
+  42,
+  99,
+  {
+    "\"key\"": 99
+  }
+]
 </code></pre>
 
 <h4 id="Objective-C_SMJJSONPath">
@@ -225,7 +272,15 @@ Objective-C (SMJJSONPath)
 ³
 </h4>
 
-<pre><code>[]
+<pre><code>[
+  0,
+  100,
+  42,
+  99,
+  {
+    "\"key\"": 99
+  }
+]
 </code></pre>
 
 <h4 id="PHP_Goessner">
@@ -233,9 +288,15 @@ PHP (Goessner)
 ²
 </h4>
 
-<p>Not found</p>
-
-<pre><code>jsonpath returned false, this might indicate an error
+<pre><code>[
+  0,
+  100,
+  42,
+  99,
+  {
+    "\"key\"": 99
+  }
+]
 </code></pre>
 
 <h4 id="PHP_flow-jsonpath">
@@ -298,9 +359,15 @@ Python (jsonpath)
 ²
 </h4>
 
-<p>Not found</p>
-
-<pre><code>jsonpath returned false, this might indicate an error
+<pre><code>[
+  0,
+  100,
+  42,
+  99,
+  {
+    "\"key\"": 99
+  }
+]
 </code></pre>
 
 <h4 id="Python_jsonpath-rw">
@@ -370,21 +437,44 @@ $.."key"
 Scala (jsonpath)
 </h4>
 
-<pre><code>[]
+<pre><code>[
+  0,
+  100,
+  42,
+  {
+    "\"key\"": 99
+  }
+]
 </code></pre>
 
 <h4 id="dotNET_Json.NET">
 dotNET (Json.NET)
 </h4>
 
-<pre><code>[]
+<pre><code>[
+  0,
+  100,
+  42,
+  99,
+  {
+    "\"key\"": 99
+  }
+]
 </code></pre>
 
 <h4 id="dotNET_JsonPathLib">
 dotNET (JsonPathLib)
 </h4>
 
-<pre><code>[]
+<pre><code>[
+  0,
+  100,
+  42,
+  99,
+  {
+    "\"key\"": 99
+  }
+]
 </code></pre>
 
 <h4 id="dotNET_Manatee.Json">

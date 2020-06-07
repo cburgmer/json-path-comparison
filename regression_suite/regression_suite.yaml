@@ -410,10 +410,10 @@ queries:
     scalar-consensus: "value"
   - id: dot_notation_with_double_quotes
     selector: "$.\"key\""
-    document: {"key": "value"}
+    document: {"key": "value", "\"key\"": 42}
   - id: dot_notation_with_double_quotes_after_recursive_descent
     selector: "$..\"key\""
-    document: {"object": {"key": "value", "array": [{"key": "something"}, {"key": {"key": "russian dolls"}}]}, "key": "top"}
+    document: {"object": {"key": "value", "\"key\"": 100, "array": [{"key": "something", "\"key\"": 0}, {"key": {"key": "russian dolls"}, "\"key\"": {"\"key\"": 99}}]}, "key": "top", "\"key\"": 42}
     ordered: false
   - id: dot_notation_with_empty_path
     selector: "$."

@@ -155,7 +155,8 @@ queries:
   - id: dot_notation_on_object_without_key
     status: error
   - id: dot_notation_with_double_quotes
-    status: error
+    status: open
+    result: 42
   - id: dot_notation_with_double_quotes_after_recursive_descent
     status: error
   - id: dot_notation_with_empty_path
