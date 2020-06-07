@@ -65,6 +65,35 @@ is deemed better, that eventually the majority of implementations will move
 towards the better solution.
 
 
+## How do you handle differences in implementations when calculating the consensus?
+
+As it turns out quite a few structural differences have come up across
+implementations:
+
+- Quite some implementations return a single element instead of an array with a
+  single element, contrary to Goessner's examples.
+- Many implementations have deviated from Goessner to return an empty array
+  if no match is returned. Goessner returns `false` in such cases.
+- A small number of implementations return an error if no match is found where
+  otherwise a single element would be returned.
+
+We still believe that we can derive a consensus in those cases. The intention
+of the responses are the same, only the representation changes. To compare those
+slightly different responses, we have implemented different rules to match
+results:
+
+1. "Multiple matches": this is the most basic rule which will compare all
+   results without further pre-processing. This will match queries which return
+   multiple results across all implementations, hence the name.
+2. "Single match": the rule to capture different response patterns for a single
+   match, e.g. `[42]` and `42`.
+3. "No match": this rule captures responses where no match was found, e.g.
+   `[]` and *not found* error.
+4. "No scalar match": this rule is similar to the previous "no match" rule, but
+   specifically handles responses where only one match is possible. This helps
+   capture the special `null` response, e.g. `[]`, `null` and *not found* error.
+
+
 ## Aren't some of the queries somewhat contrived?
 
 The queries in the table are meant to capture the different interpretations
@@ -125,6 +154,7 @@ of JSONPath.
 
 You are welcome to join the existing proposal, or come up with your own. Either
 way do contribute here!
+
 
 ## Do the proposals' outcome contribute to the consensus?
 
