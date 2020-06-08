@@ -286,6 +286,11 @@ To call out some decisions deviating from other implementations:
   conversion. Currently this proposal is just conservative and will not try any
   conversion.
 
+- Integers with leading zeros are not supported unless it's the number `0`.
+
+  *Motivation*: There is not clear consensus yet where octal notation is
+  supported.
+
 
 ## TODO
 
