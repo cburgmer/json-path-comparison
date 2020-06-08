@@ -68,7 +68,7 @@ queries:
     status: error
   - id: bracket_notation_with_quoted_wildcard_literal
     status: fail
-    result: ["entry", "value"]
+    result: ["value", "entry"]
   - id: bracket_notation_with_quoted_wildcard_literal_on_object_without_key
     status: open
     result: ["entry"]
@@ -230,7 +230,7 @@ queries:
     status: error
   - id: filter_expression_with_subfilter
     status: error
-  - id: filter_expression_with_substraction
+  - id: filter_expression_with_subtraction
     status: error
   - id: filter_expression_with_triple_equal
     status: error

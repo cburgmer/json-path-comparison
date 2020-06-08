@@ -678,7 +678,7 @@ queries:
   - id: filter_expression_with_subfilter
     selector: "$[?(@.a[?(@.price>10)])]"
     document: [{"a": [{"price": 1}, {"price": 3}]}, {"a": [{"price": 11}]}, {"a": [{"price": 8}, {"price": 12}, {"price": 3}]}, {"a": []}]
-  - id: filter_expression_with_substraction
+  - id: filter_expression_with_subtraction
     selector: "$[?(@.key-50==-100)]"
     document: [{"key": 60}, {"key": 50}, {"key": 10}, {"key": -50}, {"key-50": -100}]
   - id: filter_expression_with_triple_equal

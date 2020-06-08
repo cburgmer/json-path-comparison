@@ -264,7 +264,7 @@ queries:
   - id: filter_expression_with_subfilter
     status: open
     result: [{"a": [{"price": 1}, {"price": 3}]}, {"a": [{"price": 11}]}, {"a": [{"price": 8}, {"price": 12}, {"price": 3}]}, {"a": []}]
-  - id: filter_expression_with_substraction
+  - id: filter_expression_with_subtraction
     status: error
   - id: filter_expression_with_triple_equal
     status: error
