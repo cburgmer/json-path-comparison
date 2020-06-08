@@ -274,6 +274,18 @@ To call out some decisions deviating from other implementations:
   *Motivation*: I couldn't come up with an example where this could not be
   solved without. Less is more.
 
+- Filter expression operators like `==`, `<` and `>` don't attempt to apply type
+  conversion, e.g. `"42"` (string) to `42` (number). Comparing different types
+  will always result in a false result. Negating such a comparison using `!`
+  (or using short form `!=` for `!` and `=`) will then match all non-matching
+  types (in addition to the regular matches).
+  This however means that `!(@.key<10)` cannot be the same as `@.key>=10`.
+
+  *Motivation*: If we are to enforce a unified operator response pattern, we
+  will necessarily go against some programming language's understanding of type
+  conversion. Currently this proposal is just conservative and will not try any
+  conversion.
+
 
 ## TODO
 

@@ -307,6 +307,9 @@ queries:
   - id: filter_expression_with_negation_and_equals
     status: open
     result: []
+  - id: filter_expression_with_negation_and_less_than
+    status: open
+    result: []
   - id: filter_expression_with_not_equals
     status: open
     result: []
