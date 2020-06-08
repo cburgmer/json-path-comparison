@@ -1,10 +1,12 @@
 {
-    "object": {
-        "key": "value",
-        "array": [
-            {"key": "something"},
-            {"key": {"key": "russian dolls"}}
-        ]
-    },
-    "key": "top"
+  "object": {
+    "key": "value",
+    "'key'": 100,
+    "array": [
+      {"key": "something", "'key'": 0},
+      {"key": {"key": "russian dolls"}, "'key'": {"'key'": 99}}
+    ]
+  },
+  "key": "top",
+  "'key'": 42
 }

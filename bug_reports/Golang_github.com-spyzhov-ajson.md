@@ -150,7 +150,8 @@ The following queries provide results that do not match those of other implement
     "some.key": 42,
     "some": {
       "key": "value"
-    }
+    },
+    "'some.key'": 43
   }
   ```
   Error:

@@ -1,1 +1,1 @@
-{"some.key": 42, "some": {"key": "value"}}
+{"some.key": 42, "some": {"key": "value"}, "'some.key'": 43}

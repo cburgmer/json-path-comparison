@@ -474,14 +474,14 @@ queries:
     scalar-consensus: "second"
   - id: dot_notation_with_single_quotes
     selector: "$.'key'"
-    document: {"key": "value"}
+    document: {"key": "value", "'key'": 42}
   - id: dot_notation_with_single_quotes_after_recursive_descent
     selector: "$..'key'"
-    document: {"object": {"key": "value", "array": [{"key": "something"}, {"key": {"key": "russian dolls"}}]}, "key": "top"}
+    document: {"object": {"key": "value", "'key'": 100, "array": [{"key": "something", "'key'": 0}, {"key": {"key": "russian dolls"}, "'key'": {"'key'": 99}}]}, "key": "top", "'key'": 42}
     ordered: false
   - id: dot_notation_with_single_quotes_and_dot
     selector: "$.'some.key'"
-    document: {"some.key": 42, "some": {"key": "value"}}
+    document: {"some.key": 42, "some": {"key": "value"}, "'some.key'": 43}
   - id: dot_notation_with_wildcard_after_dot_notation_after_dot_notation_with_wildcard
     selector: "$.*.bar.*"
     document: [{"bar": [42]}]

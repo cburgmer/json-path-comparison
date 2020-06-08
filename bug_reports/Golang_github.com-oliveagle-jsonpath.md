@@ -1453,36 +1453,30 @@ The following queries provide results that do not match those of other implement
   expression don't support in filter
   ```
 
-- [ ] `$.'key'`
-  Input:
-  ```
-  {
-    "key": "value"
-  }
-  ```
-  Error:
-  ```
-  key error: 'key' not found in object
-  ```
-
 - [ ] `$..'key'`
   Input:
   ```
   {
     "object": {
       "key": "value",
+      "'key'": 100,
       "array": [
         {
-          "key": "something"
+          "key": "something",
+          "'key'": 0
         },
         {
           "key": {
             "key": "russian dolls"
+          },
+          "'key'": {
+            "'key'": 99
           }
         }
       ]
     },
-    "key": "top"
+    "key": "top",
+    "'key'": 42
   }
   ```
   Error:
@@ -1497,7 +1491,8 @@ The following queries provide results that do not match those of other implement
     "some.key": 42,
     "some": {
       "key": "value"
-    }
+    },
+    "'some.key'": 43
   }
   ```
   Error:

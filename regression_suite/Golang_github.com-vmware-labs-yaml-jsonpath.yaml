@@ -77,10 +77,10 @@ queries:
     result: []
   - id: dot_notation_with_single_quotes
     status: open
-    result: []
+    result: [42]
   - id: dot_notation_with_single_quotes_after_recursive_descent
     status: open
-    result: []
+    result: [0, 100, 42, 99, {"'key'": 99}]
   - id: dot_notation_with_single_quotes_and_dot
     status: open
     result: []

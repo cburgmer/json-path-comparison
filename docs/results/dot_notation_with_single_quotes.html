@@ -7,7 +7,8 @@
 <p>Selector: <code>$.'key'</code></p>
 
 <pre><code>{
-  "key": "value"
+  "key": "value",
+  "'key'": 42
 }
 </code></pre>
 
@@ -28,7 +29,9 @@ Bash (JSONPath.sh)
 C (json-glib)
 </h4>
 
-<pre><code>[]
+<pre><code>[
+  42
+]
 </code></pre>
 
 <h4 id="Clojure_json-path">
@@ -52,7 +55,9 @@ Cpp (jsoncons)
 Elixir (jaxon)
 </h4>
 
-<pre><code>[]
+<pre><code>[
+  42
+]
 </code></pre>
 
 <h4 id="Elixir_warpath">
@@ -81,6 +86,14 @@ Golang (github.com-bhmj-jsonslice)
 <pre><code>"value"
 </code></pre>
 
+<h4 id="Golang_github.com-oliveagle-jsonpath">
+Golang (github.com-oliveagle-jsonpath)
+¹
+</h4>
+
+<pre><code>42
+</code></pre>
+
 <h4 id="Golang_github.com-spyzhov-ajson">
 Golang (github.com-spyzhov-ajson)
 </h4>
@@ -94,7 +107,9 @@ Golang (github.com-spyzhov-ajson)
 Golang (github.com-vmware-labs-yaml-jsonpath)
 </h4>
 
-<pre><code>[]
+<pre><code>[
+  42
+]
 </code></pre>
 
 <h4 id="Haskell_jsonpath">
@@ -154,12 +169,7 @@ Java (com.jayway.jsonpath)
 ³
 </h4>
 
-<p>Not found</p>
-
-<pre><code>SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
-SLF4J: Defaulting to no-operation (NOP) logger implementation
-SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
-com.jayway.jsonpath.PathNotFoundException: No results for path: $[''key'']
+<pre><code>42
 </code></pre>
 
 <h4 id="Kotlin_com.nfeld.jsonpathlite">
@@ -167,7 +177,7 @@ Kotlin (com.nfeld.jsonpathlite)
 ¹
 </h4>
 
-<pre><code>null
+<pre><code>42
 </code></pre>
 
 <h4 id="Objective-C_SMJJSONPath">
@@ -176,9 +186,7 @@ Objective-C (SMJJSONPath)
 ³
 </h4>
 
-<p>Not found</p>
-
-<pre><code>No results for path: $[''key'']
+<pre><code>42
 </code></pre>
 
 <h4 id="PHP_Goessner">
@@ -299,14 +307,18 @@ $.'key'
 Scala (jsonpath)
 </h4>
 
-<pre><code>[]
+<pre><code>[
+  42
+]
 </code></pre>
 
 <h4 id="dotNET_Json.NET">
 dotNET (Json.NET)
 </h4>
 
-<pre><code>[]
+<pre><code>[
+  42
+]
 </code></pre>
 
 <h4 id="dotNET_JsonPathLib">
@@ -384,14 +396,6 @@ Erlang (ejsonpath)
 
 Crash dump is being written to: /dev/null...done
 {"init terminating in do_boot",function_clause}
-</code></pre>
-
-<h4 id="Golang_github.com-oliveagle-jsonpath">
-Golang (github.com-oliveagle-jsonpath)
-¹
-</h4>
-
-<pre><code>key error: 'key' not found in object
 </code></pre>
 
 <h2>Footnotes</h2>

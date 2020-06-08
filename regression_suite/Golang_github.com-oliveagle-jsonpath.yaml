@@ -176,7 +176,8 @@ queries:
     status: open
     result: []
   - id: dot_notation_with_single_quotes
-    status: error
+    status: open
+    result: 42
   - id: dot_notation_with_single_quotes_after_recursive_descent
     status: error
   - id: dot_notation_with_single_quotes_and_dot
