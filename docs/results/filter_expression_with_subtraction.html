@@ -1,31 +1,26 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/3.0.1/github-markdown.css">
 <article class="markdown-body">
-<h1>Filter expression with negation and equals</h1>
+<h1>Filter expression with subtraction</h1>
 
 <h2>Setup</h2>
 
-<p>Selector: <code>$[?(!(@.key==42))]</code></p>
+<p>Selector: <code>$[?(@.key-50==-100)]</code></p>
 
-<pre><code>[
-    {"key": 0},
-    {"key": 42},
-    {"key": -1},
-    {"key": 41},
-    {"key": 43},
-    {"key": 42.0001},
-    {"key": 41.9999},
-    {"key": 100},
-    {"key": "43"},
-    {"key": "42"},
-    {"key": "41"},
-    {"key": "value"},
-    {"some": "value"}
-]
+<pre><code>[{"key": 60}, {"key": 50}, {"key": 10}, {"key": -50}, {"key-50": -100}]
 </code></pre>
 
 <h2>Results</h2>
 
 <h3>Other responses</h3>
+
+<h4 id="Bash_JSONPath.sh">
+Bash (JSONPath.sh)
+</h4>
+
+<pre><code>{
+  "key-50": -100
+}
+</code></pre>
 
 <h4 id="C_json-glib">
 C (json-glib)
@@ -33,7 +28,7 @@ C (json-glib)
 
 <p>Not supported</p>
 
-<pre><code>Unable to compile selector `$[?(!(@.key==42))]': Invalid array index definition “?(!(@.key==42))]”
+<pre><code>Unable to compile selector `$[?(@.key-50==-100)]': Invalid array index definition “?(@.key-50==-100)]”
 </code></pre>
 
 <h4 id="Clojure_json-path">
@@ -43,43 +38,16 @@ Clojure (json-path)
 
 <pre><code>[
   {
-    "key": 0
+    "key": 60
   },
   {
-    "key": 42
+    "key": 50
   },
   {
-    "key": -1
+    "key": 10
   },
   {
-    "key": 41
-  },
-  {
-    "key": 43
-  },
-  {
-    "key": 42.0001
-  },
-  {
-    "key": 41.9999
-  },
-  {
-    "key": 100
-  },
-  {
-    "key": "43"
-  },
-  {
-    "key": "42"
-  },
-  {
-    "key": "41"
-  },
-  {
-    "key": "value"
-  },
-  {
-    "some": "value"
+    "key": -50
   }
 ]
 </code></pre>
@@ -90,40 +58,7 @@ Cpp (jsoncons)
 
 <pre><code>[
   {
-    "key": 0
-  },
-  {
-    "key": -1
-  },
-  {
-    "key": 41
-  },
-  {
-    "key": 43
-  },
-  {
-    "key": 42.0001
-  },
-  {
-    "key": 41.9999
-  },
-  {
-    "key": 100
-  },
-  {
-    "key": "43"
-  },
-  {
-    "key": "42"
-  },
-  {
-    "key": "41"
-  },
-  {
-    "key": "value"
-  },
-  {
-    "some": "value"
+    "key": -50
   }
 ]
 </code></pre>
@@ -134,7 +69,7 @@ Elixir (ExJsonPath)
 
 <p>Not supported</p>
 
-<pre><code>illegal characters "!("
+<pre><code>syntax error before: -50
 </code></pre>
 
 <h4 id="Elixir_warpath">
@@ -142,9 +77,20 @@ Elixir (warpath)
 ¹
 </h4>
 
+<pre><code>[
+  {
+    "key-50": -100
+  }
+]
+</code></pre>
+
+<h4 id="Erlang_ejsonpath">
+Erlang (ejsonpath)
+</h4>
+
 <p>Not supported</p>
 
-<pre><code>Invalid syntax on line 1, {:illegal, '!('}
+<pre><code>syntax error before: '-'
 </code></pre>
 
 <h4 id="Golang_github.com-PaesslerAG-jsonpath">
@@ -154,7 +100,7 @@ Golang (github.com-PaesslerAG-jsonpath)
 
 <p>Not supported</p>
 
-<pre><code>parsing error: $[?(!(@.key==42))]   :1:5 - 1:6 unexpected "!" while scanning extensions
+<pre><code>parsing error: $[?(@.key-50==-100)] :1:10 - 1:11 unexpected "-" while scanning parentheses expected ")"
 </code></pre>
 
 <h4 id="Golang_github.com-oliveagle-jsonpath">
@@ -165,43 +111,24 @@ Golang (github.com-oliveagle-jsonpath)
 <pre><code>[]
 </code></pre>
 
+<h4 id="Golang_github.com-spyzhov-ajson">
+Golang (github.com-spyzhov-ajson)
+</h4>
+
+<pre><code>[
+  {
+    "key": -50
+  }
+]
+</code></pre>
+
 <h4 id="Golang_github.com-vmware-labs-yaml-jsonpath">
 Golang (github.com-vmware-labs-yaml-jsonpath)
 </h4>
 
 <pre><code>[
   {
-    "key": 0
-  },
-  {
-    "key": -1
-  },
-  {
-    "key": 41
-  },
-  {
-    "key": 43
-  },
-  {
-    "key": 42.0001
-  },
-  {
-    "key": 41.9999
-  },
-  {
-    "key": 100
-  },
-  {
-    "key": "43"
-  },
-  {
-    "key": "41"
-  },
-  {
-    "key": "value"
-  },
-  {
-    "some": "value"
+    "key-50": -100
   }
 ]
 </code></pre>
@@ -211,10 +138,11 @@ Haskell (jsonpath)
 ¹
 </h4>
 
-<p>Not supported</p>
-
-<pre><code>Invalid JSONPath: $[?(!(@.key==42))]
- Error: searchBeginningWithSlice: string
+<pre><code>[
+  {
+    "key-50": -100
+  }
+]
 </code></pre>
 
 <h4 id="JavaScript_Goessner">
@@ -224,37 +152,7 @@ JavaScript (Goessner)
 
 <pre><code>[
   {
-    "key": 0
-  },
-  {
-    "key": -1
-  },
-  {
-    "key": 41
-  },
-  {
-    "key": 43
-  },
-  {
-    "key": 42.0001
-  },
-  {
-    "key": 41.9999
-  },
-  {
-    "key": 100
-  },
-  {
-    "key": "43"
-  },
-  {
-    "key": "41"
-  },
-  {
-    "key": "value"
-  },
-  {
-    "some": "value"
+    "key": -50
   }
 ]
 </code></pre>
@@ -265,37 +163,7 @@ JavaScript (jsonpath)
 
 <pre><code>[
   {
-    "key": 0
-  },
-  {
-    "key": -1
-  },
-  {
-    "key": 41
-  },
-  {
-    "key": 43
-  },
-  {
-    "key": 42.0001
-  },
-  {
-    "key": 41.9999
-  },
-  {
-    "key": 100
-  },
-  {
-    "key": "43"
-  },
-  {
-    "key": "41"
-  },
-  {
-    "key": "value"
-  },
-  {
-    "some": "value"
+    "key": -50
   }
 ]
 </code></pre>
@@ -306,37 +174,7 @@ JavaScript (jsonpath-plus)
 
 <pre><code>[
   {
-    "key": 0
-  },
-  {
-    "key": -1
-  },
-  {
-    "key": 41
-  },
-  {
-    "key": 43
-  },
-  {
-    "key": 42.0001
-  },
-  {
-    "key": 41.9999
-  },
-  {
-    "key": 100
-  },
-  {
-    "key": "43"
-  },
-  {
-    "key": "41"
-  },
-  {
-    "key": "value"
-  },
-  {
-    "some": "value"
+    "key": -50
   }
 ]
 </code></pre>
@@ -347,43 +185,7 @@ Java (com.github.jsurfer)
 
 <pre><code>[
   {
-    "key": 0
-  },
-  {
-    "key": 42
-  },
-  {
-    "key": -1
-  },
-  {
-    "key": 41
-  },
-  {
-    "key": 43
-  },
-  {
-    "key": 42.0001
-  },
-  {
-    "key": 41.9999
-  },
-  {
-    "key": 100
-  },
-  {
-    "key": "43"
-  },
-  {
-    "key": "42"
-  },
-  {
-    "key": "41"
-  },
-  {
-    "key": "value"
-  },
-  {
-    "some": "value"
+    "key-50": -100
   }
 ]
 </code></pre>
@@ -396,37 +198,7 @@ Java (com.jayway.jsonpath)
 
 <pre><code>[
   {
-    "key": 0
-  },
-  {
-    "key": -1
-  },
-  {
-    "key": 41
-  },
-  {
-    "key": 43
-  },
-  {
-    "key": 42.0001
-  },
-  {
-    "key": 41.9999
-  },
-  {
-    "key": 100
-  },
-  {
-    "key": "43"
-  },
-  {
-    "key": "41"
-  },
-  {
-    "key": "value"
-  },
-  {
-    "some": "value"
+    "key-50": -100
   }
 ]
 </code></pre>
@@ -449,34 +221,7 @@ Objective-C (SMJJSONPath)
 
 <pre><code>[
   {
-    "key": 0
-  },
-  {
-    "key": -1
-  },
-  {
-    "key": 41
-  },
-  {
-    "key": 43
-  },
-  {
-    "key": 42.0001
-  },
-  {
-    "key": 41.9999
-  },
-  {
-    "key": 100
-  },
-  {
-    "key": "43"
-  },
-  {
-    "key": "41"
-  },
-  {
-    "key": "value"
+    "key-50": -100
   }
 ]
 </code></pre>
@@ -488,43 +233,7 @@ PHP (galbar-jsonpath)
 
 <pre><code>[
   {
-    "key": 0
-  },
-  {
-    "key": 42
-  },
-  {
-    "key": -1
-  },
-  {
-    "key": 41
-  },
-  {
-    "key": 43
-  },
-  {
-    "key": 42.0001
-  },
-  {
-    "key": 41.9999
-  },
-  {
-    "key": 100
-  },
-  {
-    "key": "43"
-  },
-  {
-    "key": "42"
-  },
-  {
-    "key": "41"
-  },
-  {
-    "key": "value"
-  },
-  {
-    "some": "value"
+    "key-50": -100
   }
 ]
 </code></pre>
@@ -535,37 +244,7 @@ PHP (remorhaz-jsonpath)
 
 <pre><code>[
   {
-    "key": 0
-  },
-  {
-    "key": -1
-  },
-  {
-    "key": 41
-  },
-  {
-    "key": 43
-  },
-  {
-    "key": 42.0001
-  },
-  {
-    "key": 41.9999
-  },
-  {
-    "key": 100
-  },
-  {
-    "key": "43"
-  },
-  {
-    "key": "42"
-  },
-  {
-    "key": "41"
-  },
-  {
-    "key": "value"
+    "key-50": -100
   }
 ]
 </code></pre>
@@ -575,9 +254,11 @@ Python (jsonpath)
 ²
 </h4>
 
-<p>Not found</p>
-
-<pre><code>jsonpath returned false, this might indicate an error
+<pre><code>[
+  {
+    "key": -50
+  }
+]
 </code></pre>
 
 <h4 id="Python_jsonpath-rw">
@@ -595,8 +276,8 @@ Python (jsonpath2)
 
 <p>Not supported</p>
 
-<pre><code>line 1:4 token recognition error at: '!('
-ValueError("line 1:4 token recognition error at: '!('")
+<pre><code>line 1:9 mismatched input '-50' expecting ')'
+ValueError("line 1:9 mismatched input '-50' expecting ')'")
 </code></pre>
 
 <h4 id="Raku_JSON-Path">
@@ -621,29 +302,33 @@ Rust (jsonpath)
 Rust (jsonpath_lib)
 </h4>
 
-<p>Not supported</p>
-
-<pre><code>path error: 
-$[?(!(@.key==42))]
-^^^^
+<pre><code>[
+  {
+    "key-50": -100
+  }
+]
 </code></pre>
 
 <h4 id="Scala_jsonpath">
 Scala (jsonpath)
 </h4>
 
-<p>Not supported</p>
-
-<pre><code>JPError(end of input expected)
+<pre><code>[
+  {
+    "key-50": -100
+  }
+]
 </code></pre>
 
 <h4 id="dotNET_Json.NET">
 dotNET (Json.NET)
 </h4>
 
-<p>Not supported</p>
-
-<pre><code>Unexpected character while parsing path query: !
+<pre><code>[
+  {
+    "key-50": -100
+  }
+]
 </code></pre>
 
 <h4 id="dotNET_JsonPathLib">
@@ -652,37 +337,7 @@ dotNET (JsonPathLib)
 
 <pre><code>[
   {
-    "key": 0
-  },
-  {
-    "key": -1
-  },
-  {
-    "key": 41
-  },
-  {
-    "key": 43
-  },
-  {
-    "key": 42.0001
-  },
-  {
-    "key": 41.9999
-  },
-  {
-    "key": 100
-  },
-  {
-    "key": "43"
-  },
-  {
-    "key": "41"
-  },
-  {
-    "key": "value"
-  },
-  {
-    "some": "value"
+    "key": -50
   }
 ]
 </code></pre>
@@ -693,7 +348,7 @@ dotNET (Manatee.Json)
 
 <pre><code>[
   {
-    "key": 42
+    "key": -50
   }
 ]
 </code></pre>
@@ -704,71 +359,20 @@ Proposal (A)
 
 <pre><code>[
   {
-    "key": 0
-  },
-  {
-    "key": -1
-  },
-  {
-    "key": 41
-  },
-  {
-    "key": 43
-  },
-  {
-    "key": 42.0001
-  },
-  {
-    "key": 41.9999
-  },
-  {
-    "key": 100
-  },
-  {
-    "key": "43"
-  },
-  {
-    "key": "42"
-  },
-  {
-    "key": "41"
-  },
-  {
-    "key": "value"
-  },
-  {
-    "some": "value"
+    "key-50": -100
   }
 ]
 </code></pre>
 
 <h3>Errors</h3>
 
-<h4 id="Bash_JSONPath.sh">
-Bash (JSONPath.sh)
-</h4>
-
-<pre><code>grep: Unmatched ( or \(
-Expecting value: line 3 column 1 (char 2)
-</code></pre>
-
 <h4 id="Elixir_jaxon">
 Elixir (jaxon)
 </h4>
 
-<pre><code>** (Jaxon.ParseError) Expected an integer at `?(!(@.key=`
+<pre><code>** (Jaxon.ParseError) Expected an integer at `?(@.key-50`
     lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
     lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
-</code></pre>
-
-<h4 id="Erlang_ejsonpath">
-Erlang (ejsonpath)
-</h4>
-
-<pre><code>init terminating in do_boot (Timeout)
-
-Crash dump is being written to: /dev/null...done
-{"init terminating in do_boot","Timeout"}
 </code></pre>
 
 <h4 id="Golang_github.com-bhmj-jsonslice">
@@ -776,14 +380,7 @@ Golang (github.com-bhmj-jsonslice)
 ¹
 </h4>
 
-<pre><code>unknown token at 4
-</code></pre>
-
-<h4 id="Golang_github.com-spyzhov-ajson">
-Golang (github.com-spyzhov-ajson)
-</h4>
-
-<pre><code>wrong request: wrong request: ?(!(@.key==42))
+<pre><code>invalid operands for arithmetic operator
 </code></pre>
 
 <h4 id="PHP_Goessner">
@@ -812,7 +409,7 @@ Perl (JSON-Path)
 Ruby (jsonpath)
 </h4>
 
-<pre><code>wrong number of arguments calling `!` (given 1, expected 0)
+<pre><code>String can't be coerced into Float
 </code></pre>
 
 <h2>Footnotes</h2>

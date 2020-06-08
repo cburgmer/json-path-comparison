@@ -229,7 +229,7 @@ queries:
     result: [{"key": 42}, {"key": 42}, {"key": 42}, {"key": 42}, {"key": 42}, {"key": 42}, {"key": 42}, {"key": 42}, {"key": 42}, {"key": 42}, {"key": 42}, {"key": 42}, {"key": 42}, {"key": 42}, {"key": 42}, {"key": 42}, {"key": 42}, {"key": 42}, {"key": 42}, {"key": 42, "some": "value"}]
   - id: filter_expression_with_subfilter
     status: error
-  - id: filter_expression_with_substraction
+  - id: filter_expression_with_subtraction
     status: open
     result: [{"key": -50}]
   - id: filter_expression_with_triple_equal
