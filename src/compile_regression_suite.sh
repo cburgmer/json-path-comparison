@@ -72,7 +72,7 @@ main() {
 # implementation.
 #
 # The consensus is not always a valid JSON document. In the case that the
-# consensus is that a query is nut supported it will contain the string
+# consensus is that a query is not supported it will contain the string
 # "NOT_SUPPORTED".
 
 EOF
