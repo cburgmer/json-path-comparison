@@ -257,6 +257,7 @@ queries:
   - id: bracket_notation_with_quoted_string_and_unescaped_single_quote
     selector: "$['single'quote']"
     document: {"single'quote": "value"}
+    consensus: NOT_SUPPORTED
   - id: bracket_notation_with_quoted_union_literal
     selector: "$[',']"
     document: {",": "value", "another": "entry"}

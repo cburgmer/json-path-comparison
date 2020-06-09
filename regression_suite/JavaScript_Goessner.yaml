@@ -51,7 +51,7 @@ queries:
     status: open
     result: NOT_FOUND
   - id: bracket_notation_with_quoted_string_and_unescaped_single_quote
-    status: open
+    status: fail
     result: ["value"]
   - id: bracket_notation_with_quoted_wildcard_literal_on_object_without_key
     status: open

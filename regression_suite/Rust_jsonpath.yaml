@@ -132,9 +132,6 @@ queries:
   - id: bracket_notation_with_quoted_special_characters_combined
     status: open
     result: NOT_SUPPORTED
-  - id: bracket_notation_with_quoted_string_and_unescaped_single_quote
-    status: open
-    result: NOT_SUPPORTED
   - id: bracket_notation_with_quoted_union_literal
     status: fail
     result: NOT_SUPPORTED

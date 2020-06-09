@@ -3,6 +3,26 @@ Results do not match other implementations
 The following queries provide results that do not match those of other implementations of JSONPath
 (compare https://cburgmer.github.io/json-path-comparison/):
 
+- [ ] `$[:2]`
+  Input:
+  ```
+  [
+    "first",
+    "second",
+    "third",
+    "forth",
+    "fifth"
+  ]
+  ```
+  Expected output:
+  ```
+  ["first", "second"]
+  ```
+  Error:
+  ```
+  jsonpath returned false, this might indicate an error
+  ```
+
 - [ ] `$[0:3:0]`
   Input:
   ```
@@ -101,6 +121,24 @@ The following queries provide results that do not match those of other implement
   jsonpath returned false, this might indicate an error
   ```
 
+- [ ] `$['single'quote']`
+  Input:
+  ```
+  {
+    "single'quote": "value"
+  }
+  ```
+  Expected output:
+  ```
+  NOT_SUPPORTED
+  ```
+  Actual output:
+  ```
+  [
+    "value"
+  ]
+  ```
+
 - [ ] `$[',']`
   Input:
   ```
@@ -159,38 +197,22 @@ The following queries provide results that do not match those of other implement
   ]
   ```
 
-- [ ] `$.屬性`
+- [ ] `$.length`
   Input:
   ```
-  {
-    "\u5c6c\u6027": "value"
-  }
+  [
+    4,
+    5,
+    6
+  ]
   ```
   Expected output:
   ```
-  ["value"]
+  []
   ```
-  Error:
+  Actual output:
   ```
-  Invalid JSONPath error: 'Error in JSONPath near '.屬性''
-  ```
-
-- [ ] `$.2`
-  Input:
-  ```
-  {
-    "a": "first",
-    "2": "second",
-    "b": "third"
-  }
-  ```
-  Expected output:
-  ```
-  ["second"]
-  ```
-  Error:
-  ```
-  Invalid JSONPath error: 'Error in JSONPath near '.2''
+  3
   ```
 
 - [ ] `$..*`

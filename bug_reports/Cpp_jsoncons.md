@@ -73,12 +73,9 @@ The following queries provide results that do not match those of other implement
   ```
   [10, 20]
   ```
-  Actual output:
+  Error:
   ```
-  [
-    8,
-    16
-  ]
+  Expected slice start at line 1 and column 6
   ```
 
 - [ ] `$[1:3:]`

@@ -60,7 +60,7 @@ queries:
   - id: bracket_notation_with_quoted_special_characters_combined
     status: error
   - id: bracket_notation_with_quoted_string_and_unescaped_single_quote
-    status: open
+    status: fail
     result: ["value"]
   - id: bracket_notation_with_quoted_union_literal
     status: fail

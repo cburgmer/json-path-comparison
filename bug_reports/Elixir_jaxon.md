@@ -965,6 +965,10 @@ The following queries provide results that do not match those of other implement
     "single'quote": "value"
   }
   ```
+  Expected output:
+  ```
+  NOT_SUPPORTED
+  ```
   Error:
   ```
   ** (Jaxon.ParseError) Expected an integer at `'single'qu`

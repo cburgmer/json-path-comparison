@@ -855,6 +855,10 @@ The following queries provide results that do not match those of other implement
     "single'quote": "value"
   }
   ```
+  Expected output:
+  ```
+  NOT_SUPPORTED
+  ```
   Error:
   ```
   java.lang.Exception object must be an array.

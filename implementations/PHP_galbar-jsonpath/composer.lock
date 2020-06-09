@@ -8,16 +8,16 @@
     "packages": [
         {
             "name": "galbar/jsonpath",
-            "version": "1.0",
+            "version": "1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Galbar/JsonPath-PHP.git",
-                "reference": "d08d1efeadad3345257249e35e8cfd65f21256ae"
+                "reference": "36d3ac57b1a62ff507d7751d797a9e03ffbd1385"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Galbar/JsonPath-PHP/zipball/d08d1efeadad3345257249e35e8cfd65f21256ae",
-                "reference": "d08d1efeadad3345257249e35e8cfd65f21256ae",
+                "url": "https://api.github.com/repos/Galbar/JsonPath-PHP/zipball/36d3ac57b1a62ff507d7751d797a9e03ffbd1385",
+                "reference": "36d3ac57b1a62ff507d7751d797a9e03ffbd1385",
                 "shasum": ""
             },
             "require": {
@@ -31,18 +31,18 @@
             "type": "library",
             "autoload": {
                 "psr-0": {
-                    "JsonPath\\": "src/Skyscanner/",
-                    "Utilities\\": "src/Skyscanner/"
+                    "JsonPath\\": "src/Galbar/",
+                    "Utilities\\": "src/Galbar/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
-                "Apache 2.0"
+                "Apache-2.0"
             ],
             "authors": [
                 {
                     "name": "Alessio Linares",
-                    "email": "alessio.linares@skyscanner.net",
+                    "email": "alessio@alessio.cc",
                     "role": "Software Engineer"
                 }
             ],
@@ -52,7 +52,7 @@
                 "jsonpath",
                 "path"
             ],
-            "time": "2017-09-13T09:14:46+00:00"
+            "time": "2020-06-01T15:18:22+00:00"
         }
     ],
     "packages-dev": [],

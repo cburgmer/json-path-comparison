@@ -15,6 +15,9 @@ queries:
   - id: array_slice_with_negative_step_only
     status: open
     result: ["fifth", "third", "first"]
+  - id: array_slice_with_open_start
+    status: fail
+    result: NOT_FOUND
   - id: array_slice_with_open_start_and_end_on_object
     status: open
     result: NOT_FOUND
@@ -50,7 +53,7 @@ queries:
     status: open
     result: NOT_FOUND
   - id: bracket_notation_with_quoted_string_and_unescaped_single_quote
-    status: open
+    status: fail
     result: ["value"]
   - id: bracket_notation_with_quoted_union_literal
     status: fail
@@ -85,20 +88,17 @@ queries:
   - id: dot_notation_with_double_quotes_after_recursive_descent
     status: open
     result: NOT_SUPPORTED
+  - id: dot_notation_with_key_named_length_on_array
+    status: fail
+    result: 3
   - id: dot_notation_with_key_root_literal
     status: open
     result: ["value"]
-  - id: dot_notation_with_non_ASCII_key
-    status: fail
-    result: NOT_SUPPORTED
   - id: dot_notation_with_number
     status: open
-    result: NOT_SUPPORTED
+    result: ["third"]
   - id: dot_notation_with_number_-1
     status: open
-    result: NOT_SUPPORTED
-  - id: dot_notation_with_number_on_object
-    status: fail
     result: NOT_SUPPORTED
   - id: dot_notation_with_single_quotes
     status: open

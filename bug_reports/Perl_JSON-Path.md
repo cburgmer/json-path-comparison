@@ -317,6 +317,22 @@ The following queries provide results that do not match those of other implement
   	JSON::Path::values(...) called at main.pl line 11
   ```
 
+- [ ] `$['single'quote']`
+  Input:
+  ```
+  {
+    "single'quote": "value"
+  }
+  ```
+  Expected output:
+  ```
+  NOT_SUPPORTED
+  ```
+  Actual output:
+  ```
+  []
+  ```
+
 - [ ] `$[',']`
   Input:
   ```

@@ -660,6 +660,10 @@ The following queries provide results that do not match those of other implement
     "single'quote": "value"
   }
   ```
+  Expected output:
+  ```
+  NOT_SUPPORTED
+  ```
   Error:
   ```
   Expecting value: line 3 column 1 (char 2)
