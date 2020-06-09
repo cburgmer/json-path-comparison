@@ -222,6 +222,14 @@ To call out some decisions deviating from other implementations:
 
   *Motivation*: Find clear split between array index and object name lookup.
 
+- Bracket notation allows one or many elements ("union"), and allows mixing
+  anything that is also allowed in it's own within bracket notation, e.g.
+  filter expressions. So `$[*,-1,?(@>1),"key"]` is supported.
+
+  *Motivation*: This is simple, yet powerful and allows for a few sensible use
+  cases, e.g. combining multiple filter expressions. It does not require any
+  extension to the syntax, on the contrary, it feels like it fits right in.
+
 - "Bald" recursive descent is not supported.
 
   *Motivation*: No consensus, but more specifically would introduce more
