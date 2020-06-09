@@ -2041,7 +2041,9 @@ The following queries provide results that do not match those of other implement
     -1,
     "",
     [],
-    {}
+    {},
+    false,
+    true
   ]
   ```
   Error:
@@ -3568,6 +3570,30 @@ The following queries provide results that do not match those of other implement
       lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
   ```
 
+- [ ] `$[?(1==1)]`
+  Input:
+  ```
+  [
+    1,
+    3,
+    "nice",
+    true,
+    null,
+    false,
+    {},
+    [],
+    -1,
+    0,
+    ""
+  ]
+  ```
+  Error:
+  ```
+  ** (Jaxon.ParseError) Expected an integer at `?(1==1)]`
+      lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
+      lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
+  ```
+
 - [ ] `$[?(@.key===42)]`
   Input:
   ```
@@ -3726,6 +3752,78 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   ** (Jaxon.ParseError) Expected an integer at `?(@.id)]`
+      lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
+      lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
+  ```
+
+- [ ] `$[?(false)]`
+  Input:
+  ```
+  [
+    1,
+    3,
+    "nice",
+    true,
+    null,
+    false,
+    {},
+    [],
+    -1,
+    0,
+    ""
+  ]
+  ```
+  Error:
+  ```
+  ** (Jaxon.ParseError) Expected an integer at `?(false)]`
+      lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
+      lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
+  ```
+
+- [ ] `$[?(null)]`
+  Input:
+  ```
+  [
+    1,
+    3,
+    "nice",
+    true,
+    null,
+    false,
+    {},
+    [],
+    -1,
+    0,
+    ""
+  ]
+  ```
+  Error:
+  ```
+  ** (Jaxon.ParseError) Expected an integer at `?(null)]`
+      lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
+      lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
+  ```
+
+- [ ] `$[?(true)]`
+  Input:
+  ```
+  [
+    1,
+    3,
+    "nice",
+    true,
+    null,
+    false,
+    {},
+    [],
+    -1,
+    0,
+    ""
+  ]
+  ```
+  Error:
+  ```
+  ** (Jaxon.ParseError) Expected an integer at `?(true)]`
       lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
       lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
   ```

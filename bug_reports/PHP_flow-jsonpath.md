@@ -232,7 +232,9 @@ The following queries provide results that do not match those of other implement
     -1,
     "",
     [],
-    {}
+    {},
+    false,
+    true
   ]
   ```
   Error:
@@ -687,6 +689,94 @@ The following queries provide results that do not match those of other implement
     {
       "key-50": -100
     }
+  ]
+  ```
+  Error:
+  ```
+  Error: 'Malformed filter query'
+  ```
+
+- [ ] `$[?(1==1)]`
+  Input:
+  ```
+  [
+    1,
+    3,
+    "nice",
+    true,
+    null,
+    false,
+    {},
+    [],
+    -1,
+    0,
+    ""
+  ]
+  ```
+  Error:
+  ```
+  Error: 'Malformed filter query'
+  ```
+
+- [ ] `$[?(false)]`
+  Input:
+  ```
+  [
+    1,
+    3,
+    "nice",
+    true,
+    null,
+    false,
+    {},
+    [],
+    -1,
+    0,
+    ""
+  ]
+  ```
+  Error:
+  ```
+  Error: 'Malformed filter query'
+  ```
+
+- [ ] `$[?(null)]`
+  Input:
+  ```
+  [
+    1,
+    3,
+    "nice",
+    true,
+    null,
+    false,
+    {},
+    [],
+    -1,
+    0,
+    ""
+  ]
+  ```
+  Error:
+  ```
+  Error: 'Malformed filter query'
+  ```
+
+- [ ] `$[?(true)]`
+  Input:
+  ```
+  [
+    1,
+    3,
+    "nice",
+    true,
+    null,
+    false,
+    {},
+    [],
+    -1,
+    0,
+    ""
   ]
   ```
   Error:

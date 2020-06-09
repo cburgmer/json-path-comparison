@@ -299,6 +299,15 @@ To call out some decisions deviating from other implementations:
   *Motivation*: There is not clear consensus yet where octal notation is
   supported.
 
+- Filter expression checking for a value, i.e. `$[?(@.key)]` will check for the
+  existence of a key only, not its value. That is, if the key is present it
+  doesn't matter if the value is `null` or `false` (or any other `falsy` value),
+  the child matches.
+
+  *Motivation*: We might want an operator to filter for object with or without
+  keys. If we want to check for null values, we can make this explicit by
+  comparing to `null`.
+
 
 ## TODO
 

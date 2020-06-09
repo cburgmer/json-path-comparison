@@ -987,7 +987,9 @@ The following queries provide results that do not match those of other implement
     -1,
     "",
     [],
-    {}
+    {},
+    false,
+    true
   ]
   ```
   Error:
@@ -2440,6 +2442,28 @@ The following queries provide results that do not match those of other implement
   non-safe evaluation, died at main.pl line 11.
   ```
 
+- [ ] `$[?(1==1)]`
+  Input:
+  ```
+  [
+    1,
+    3,
+    "nice",
+    true,
+    null,
+    false,
+    {},
+    [],
+    -1,
+    0,
+    ""
+  ]
+  ```
+  Error:
+  ```
+  non-safe evaluation, died at main.pl line 11.
+  ```
+
 - [ ] `$[?(@.key===42)]`
   Input:
   ```
@@ -2590,6 +2614,72 @@ The following queries provide results that do not match those of other implement
       ]
     ]
   }
+  ```
+  Error:
+  ```
+  non-safe evaluation, died at main.pl line 11.
+  ```
+
+- [ ] `$[?(false)]`
+  Input:
+  ```
+  [
+    1,
+    3,
+    "nice",
+    true,
+    null,
+    false,
+    {},
+    [],
+    -1,
+    0,
+    ""
+  ]
+  ```
+  Error:
+  ```
+  non-safe evaluation, died at main.pl line 11.
+  ```
+
+- [ ] `$[?(null)]`
+  Input:
+  ```
+  [
+    1,
+    3,
+    "nice",
+    true,
+    null,
+    false,
+    {},
+    [],
+    -1,
+    0,
+    ""
+  ]
+  ```
+  Error:
+  ```
+  non-safe evaluation, died at main.pl line 11.
+  ```
+
+- [ ] `$[?(true)]`
+  Input:
+  ```
+  [
+    1,
+    3,
+    "nice",
+    true,
+    null,
+    false,
+    {},
+    [],
+    -1,
+    0,
+    ""
+  ]
   ```
   Error:
   ```

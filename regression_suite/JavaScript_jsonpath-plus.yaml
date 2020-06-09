@@ -247,6 +247,9 @@ queries:
   - id: filter_expression_with_subtraction
     status: open
     result: [{"key": -50}]
+  - id: filter_expression_with_tautological_comparison
+    status: open
+    result: [1, 3, "nice", true, {}, [], -1]
   - id: filter_expression_with_triple_equal
     status: open
     result: [{"key": 42}]
@@ -256,6 +259,15 @@ queries:
   - id: filter_expression_with_value_after_recursive_descent
     status: open
     result: [{"id": 2}, {"id": 2}, {"id": 2}, {"id": 2}, {"id": {"id": 2}}]
+  - id: filter_expression_with_value_false
+    status: open
+    result: []
+  - id: filter_expression_with_value_null
+    status: open
+    result: []
+  - id: filter_expression_with_value_true
+    status: open
+    result: [1, 3, "nice", true, {}, [], -1]
   - id: filter_expression_without_value
     status: open
     result: [{"some": "some value"}, {"key": false}, {"key": null}, {"key": ""}, {"key": 0}]

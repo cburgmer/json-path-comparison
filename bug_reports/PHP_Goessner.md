@@ -668,7 +668,9 @@ The following queries provide results that do not match those of other implement
     -1,
     "",
     [],
-    {}
+    {},
+    false,
+    true
   ]
   ```
   Error:
@@ -2121,6 +2123,28 @@ The following queries provide results that do not match those of other implement
   ArgumentCountError
   ```
 
+- [ ] `$[?(1==1)]`
+  Input:
+  ```
+  [
+    1,
+    3,
+    "nice",
+    true,
+    null,
+    false,
+    {},
+    [],
+    -1,
+    0,
+    ""
+  ]
+  ```
+  Error:
+  ```
+  ArgumentCountError
+  ```
+
 - [ ] `$[?(@.key===42)]`
   Input:
   ```
@@ -2271,6 +2295,72 @@ The following queries provide results that do not match those of other implement
       ]
     ]
   }
+  ```
+  Error:
+  ```
+  ArgumentCountError
+  ```
+
+- [ ] `$[?(false)]`
+  Input:
+  ```
+  [
+    1,
+    3,
+    "nice",
+    true,
+    null,
+    false,
+    {},
+    [],
+    -1,
+    0,
+    ""
+  ]
+  ```
+  Error:
+  ```
+  ArgumentCountError
+  ```
+
+- [ ] `$[?(null)]`
+  Input:
+  ```
+  [
+    1,
+    3,
+    "nice",
+    true,
+    null,
+    false,
+    {},
+    [],
+    -1,
+    0,
+    ""
+  ]
+  ```
+  Error:
+  ```
+  ArgumentCountError
+  ```
+
+- [ ] `$[?(true)]`
+  Input:
+  ```
+  [
+    1,
+    3,
+    "nice",
+    true,
+    null,
+    false,
+    {},
+    [],
+    -1,
+    0,
+    ""
+  ]
   ```
   Error:
   ```

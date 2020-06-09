@@ -120,7 +120,7 @@ queries:
     result: [["a", "b"]]
   - id: filter_expression_with_current_object
     status: open
-    result: ["some value", "value", 1, -1]
+    result: ["some value", "value", 1, -1, true]
   - id: filter_expression_with_different_grouped_operators
     status: open
     result: [{"a": true, "b": true, "c": true}]
@@ -207,6 +207,9 @@ queries:
   - id: filter_expression_with_subtraction
     status: open
     result: [{"key": -50}]
+  - id: filter_expression_with_tautological_comparison
+    status: open
+    result: [1, 3, "nice", true, null, false, {}, [], -1, 0, ""]
   - id: filter_expression_with_triple_equal
     status: error
   - id: filter_expression_with_value
@@ -215,6 +218,15 @@ queries:
   - id: filter_expression_with_value_after_recursive_descent
     status: open
     result: [{"id": 2}, {"id": 2}, {"id": 2}, {"id": 2}, {"id": {"id": 2}}]
+  - id: filter_expression_with_value_false
+    status: open
+    result: []
+  - id: filter_expression_with_value_null
+    status: open
+    result: []
+  - id: filter_expression_with_value_true
+    status: open
+    result: [1, 3, "nice", true, null, false, {}, [], -1, 0, ""]
   - id: filter_expression_without_value
     status: error
   - id: parens_notation

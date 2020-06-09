@@ -1,24 +1,12 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/3.0.1/github-markdown.css">
 <article class="markdown-body">
-<h1>Filter expression with current object</h1>
+<h1>Filter expression with value true</h1>
 
 <h2>Setup</h2>
 
-<p>Selector: <code>$[?(@)]</code></p>
+<p>Selector: <code>$[?(true)]</code></p>
 
-<pre><code>[
-  "some value",
-  null,
-  "value",
-  0,
-  1,
-  -1,
-  "",
-  [],
-  {},
-  false,
-  true
-]
+<pre><code>[1, 3, "nice", true, null, false, {}, [], -1, 0, ""]
 </code></pre>
 
 <h2>Results</h2>
@@ -31,7 +19,7 @@ C (json-glib)
 
 <p>Not supported</p>
 
-<pre><code>Unable to compile selector `$[?(@)]': Invalid array index definition “?(@)]”
+<pre><code>Unable to compile selector `$[?(true)]': Invalid array index definition “?(true)]”
 </code></pre>
 
 <h4 id="Clojure_json-path">
@@ -39,18 +27,7 @@ Clojure (json-path)
 ¹
 </h4>
 
-<pre><code>[
-  "some value",
-  "value",
-  0,
-  1,
-  -1,
-  "",
-  [],
-  {},
-  false,
-  true
-]
+<pre><code>[]
 </code></pre>
 
 <h4 id="Cpp_jsoncons">
@@ -58,17 +35,17 @@ Cpp (jsoncons)
 </h4>
 
 <pre><code>[
-  "some value",
-  null,
-  "value",
-  0,
   1,
-  -1,
-  "",
-  [],
-  {},
+  3,
+  "nice",
+  true,
+  null,
   false,
-  true
+  {},
+  [],
+  -1,
+  0,
+  ""
 ]
 </code></pre>
 
@@ -78,36 +55,16 @@ Elixir (ExJsonPath)
 
 <p>Not supported</p>
 
-<pre><code>syntax error before: ')'
-</code></pre>
-
-<h4 id="Elixir_warpath">
-Elixir (warpath)
-¹
-</h4>
-
-<p>Not supported</p>
-
-<pre><code>Parser error: Invalid token on line 1, syntax error before: &lt;&lt;")"&gt;&gt;
+<pre><code>syntax error before: &lt;&lt;"true"&gt;&gt;
 </code></pre>
 
 <h4 id="Erlang_ejsonpath">
 Erlang (ejsonpath)
 </h4>
 
-<pre><code>[
-  "some value",
-  null,
-  "value",
-  0,
-  1,
-  -1,
-  "",
-  [],
-  {},
-  false,
-  true
-]
+<p>Not supported</p>
+
+<pre><code>syntax error before: ')'
 </code></pre>
 
 <h4 id="Golang_github.com-PaesslerAG-jsonpath">
@@ -117,8 +74,16 @@ Golang (github.com-PaesslerAG-jsonpath)
 
 <pre><code>[
   1,
+  3,
+  "nice",
+  true,
+  null,
+  false,
+  {},
+  [],
   -1,
-  true
+  0,
+  ""
 ]
 </code></pre>
 
@@ -127,7 +92,19 @@ Golang (github.com-bhmj-jsonslice)
 ¹
 </h4>
 
-<pre><code>[]
+<pre><code>[
+  1,
+  3,
+  "nice",
+  true,
+  null,
+  false,
+  {},
+  [],
+  -1,
+  0,
+  ""
+]
 </code></pre>
 
 <h4 id="Golang_github.com-oliveagle-jsonpath">
@@ -145,11 +122,17 @@ Golang (github.com-spyzhov-ajson)
 </h4>
 
 <pre><code>[
-  "some value",
-  "value",
   1,
+  3,
+  "nice",
+  true,
+  null,
+  false,
+  {},
+  [],
   -1,
-  true
+  0,
+  ""
 ]
 </code></pre>
 
@@ -157,19 +140,9 @@ Golang (github.com-spyzhov-ajson)
 Golang (github.com-vmware-labs-yaml-jsonpath)
 </h4>
 
-<pre><code>[
-  "some value",
-  null,
-  "value",
-  0,
-  1,
-  -1,
-  "",
-  [],
-  {},
-  false,
-  true
-]
+<p>Not supported</p>
+
+<pre><code>missing end of filter
 </code></pre>
 
 <h4 id="Haskell_jsonpath">
@@ -179,7 +152,7 @@ Haskell (jsonpath)
 
 <p>Not supported</p>
 
-<pre><code>Invalid JSONPath: $[?(@)]
+<pre><code>Invalid JSONPath: $[?(true)]
  Error: searchBeginningWithSlice: string
 </code></pre>
 
@@ -189,13 +162,13 @@ JavaScript (Goessner)
 </h4>
 
 <pre><code>[
-  "some value",
-  "value",
   1,
-  -1,
-  [],
+  3,
+  "nice",
+  true,
   {},
-  true
+  [],
+  -1
 ]
 </code></pre>
 
@@ -204,13 +177,32 @@ JavaScript (jsonpath)
 </h4>
 
 <pre><code>[
-  "some value",
-  "value",
   1,
-  -1,
-  [],
+  3,
+  "nice",
+  true,
+  null,
+  false,
   {},
-  true
+  [],
+  -1,
+  0,
+  ""
+]
+</code></pre>
+
+<h4 id="JavaScript_jsonpath-plus">
+JavaScript (jsonpath-plus)
+</h4>
+
+<pre><code>[
+  1,
+  3,
+  "nice",
+  true,
+  {},
+  [],
+  -1
 ]
 </code></pre>
 
@@ -220,7 +212,7 @@ Java (com.github.jsurfer)
 
 <p>Not supported</p>
 
-<pre><code>line 1:5 no viable alternative at input '@)]'
+<pre><code>line 1:4 no viable alternative at input 'true'
 org.antlr.v4.runtime.misc.ParseCancellationException
 </code></pre>
 
@@ -230,19 +222,12 @@ Java (com.jayway.jsonpath)
 ³
 </h4>
 
-<pre><code>[
-  "some value",
-  null,
-  "value",
-  0,
-  1,
-  -1,
-  "",
-  [],
-  {},
-  false,
-  true
-]
+<p>Not supported</p>
+
+<pre><code>SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+com.jayway.jsonpath.InvalidPathException: Expected path node
 </code></pre>
 
 <h4 id="Kotlin_com.nfeld.jsonpathlite">
@@ -261,19 +246,9 @@ Objective-C (SMJJSONPath)
 ³
 </h4>
 
-<pre><code>[
-  "some value",
-  null,
-  "value",
-  0,
-  1,
-  -1,
-  "",
-  [],
-  {},
-  false,
-  true
-]
+<p>Not supported</p>
+
+<pre><code>path node expected
 </code></pre>
 
 <h4 id="PHP_galbar-jsonpath">
@@ -282,16 +257,17 @@ PHP (galbar-jsonpath)
 </h4>
 
 <pre><code>[
-  "some value",
-  null,
-  "value",
-  0,
   1,
+  3,
+  "nice",
+  true,
+  null,
+  false,
+  [],
+  [],
   -1,
-  "",
-  [],
-  [],
-  true
+  0,
+  ""
 ]
 </code></pre>
 
@@ -300,17 +276,17 @@ PHP (remorhaz-jsonpath)
 </h4>
 
 <pre><code>[
-  "some value",
-  null,
-  "value",
-  0,
   1,
-  -1,
-  "",
-  [],
-  {},
+  3,
+  "nice",
+  true,
+  null,
   false,
-  true
+  {},
+  [],
+  -1,
+  0,
+  ""
 ]
 </code></pre>
 
@@ -319,13 +295,9 @@ Python (jsonpath)
 ²
 </h4>
 
-<pre><code>[
-  "some value",
-  "value",
-  1,
-  -1,
-  true
-]
+<p>Not found</p>
+
+<pre><code>jsonpath returned false, this might indicate an error
 </code></pre>
 
 <h4 id="Python_jsonpath-rw">
@@ -343,17 +315,17 @@ Python (jsonpath2)
 
 <pre><code>[
   [
-    "some value",
-    null,
-    "value",
-    0,
     1,
-    -1,
-    "",
-    [],
-    {},
+    3,
+    "nice",
+    true,
+    null,
     false,
-    true
+    {},
+    [],
+    -1,
+    0,
+    ""
   ]
 ]
 </code></pre>
@@ -372,15 +344,15 @@ Ruby (jsonpath)
 </h4>
 
 <pre><code>[
-  "some value",
-  "value",
-  0,
   1,
-  -1,
-  "",
-  [],
+  3,
+  "nice",
+  true,
   {},
-  true
+  [],
+  -1,
+  0,
+  ""
 ]
 </code></pre>
 
@@ -397,40 +369,20 @@ Rust (jsonpath)
 Rust (jsonpath_lib)
 </h4>
 
-<pre><code>[
-  [
-    "some value",
-    null,
-    "value",
-    0,
-    1,
-    -1,
-    "",
-    [],
-    {},
-    false,
-    true
-  ]
-]
+<p>Not supported</p>
+
+<pre><code>path error: 
+$[?(true)]
+^^^^^^^^
 </code></pre>
 
 <h4 id="Scala_jsonpath">
 Scala (jsonpath)
 </h4>
 
-<pre><code>[
-  "some value",
-  null,
-  "value",
-  0,
-  1,
-  -1,
-  "",
-  [],
-  {},
-  false,
-  true
-]
+<p>Not supported</p>
+
+<pre><code>JPError(end of input expected)
 </code></pre>
 
 <h4 id="dotNET_Json.NET">
@@ -438,17 +390,36 @@ dotNET (Json.NET)
 </h4>
 
 <pre><code>[
-  "some value",
-  null,
-  "value",
-  0,
   1,
-  -1,
-  "",
-  [],
-  {},
+  3,
+  "nice",
+  true,
+  null,
   false,
-  true
+  {},
+  [],
+  -1,
+  0,
+  ""
+]
+</code></pre>
+
+<h4 id="dotNET_JsonPathLib">
+dotNET (JsonPathLib)
+</h4>
+
+<pre><code>[
+  1,
+  3,
+  "nice",
+  true,
+  null,
+  false,
+  {},
+  [],
+  -1,
+  0,
+  ""
 ]
 </code></pre>
 
@@ -456,9 +427,19 @@ dotNET (Json.NET)
 dotNET (Manatee.Json)
 </h4>
 
-<p>Not supported</p>
-
-<pre><code>Sequence contains no elements
+<pre><code>[
+  1,
+  3,
+  "nice",
+  true,
+  null,
+  false,
+  {},
+  [],
+  -1,
+  0,
+  ""
+]
 </code></pre>
 
 <h4 id="Proposal_A">
@@ -466,17 +447,17 @@ Proposal (A)
 </h4>
 
 <pre><code>[
-  "some value",
-  null,
-  "value",
-  0,
   1,
-  -1,
-  "",
-  [],
-  {},
+  3,
+  "nice",
+  true,
+  null,
   false,
-  true
+  {},
+  [],
+  -1,
+  0,
+  ""
 ]
 </code></pre>
 
@@ -494,16 +475,34 @@ Expecting value: line 3 column 1 (char 2)
 Elixir (jaxon)
 </h4>
 
-<pre><code>** (Jaxon.ParseError) Expected an integer at `?(@)]`
+<pre><code>** (Jaxon.ParseError) Expected an integer at `?(true)]`
     lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
     lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
 </code></pre>
 
-<h4 id="JavaScript_jsonpath-plus">
-JavaScript (jsonpath-plus)
+<h4 id="Elixir_warpath">
+Elixir (warpath)
+¹
 </h4>
 
-<pre><code>evalmachine.&lt;anonymous&gt;:1
+<pre><code>** (FunctionClauseError) no function clause matching in Warpath.Filter.Predicate.eval/2    
+
+    The following arguments were given to Warpath.Filter.Predicate.eval/2:
+
+        # 1
+        true
+
+        # 2
+        1
+
+    lib/warpath/filter/predicate.ex:32: Warpath.Filter.Predicate.eval/2
+    lib/enum.ex:3291: Enum.filter_list/2
+    lib/warpath.ex:264: Warpath.dispatch/2
+    lib/enum.ex:3686: Enumerable.List.reduce/3
+    lib/enum.ex:2161: Enum.reduce_while/3
+    lib/warpath.ex:232: Warpath.query/3
+    lib/cli.ex:5: Jsonpath.CLI.main/1
+    lib/kernel/cli.ex:124: anonymous fn/3 in Kernel.CLI.exec_fun/2
 </code></pre>
 
 <h4 id="PHP_Goessner">
@@ -526,13 +525,6 @@ Perl (JSON-Path)
 </h4>
 
 <pre><code>non-safe evaluation, died at main.pl line 11.
-</code></pre>
-
-<h4 id="dotNET_JsonPathLib">
-dotNET (JsonPathLib)
-</h4>
-
-<pre><code>Unable to cast object of type 'Newtonsoft.Json.Linq.JObject' to type 'System.IConvertible'.
 </code></pre>
 
 <h2>Footnotes</h2>

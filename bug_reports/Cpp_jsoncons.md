@@ -321,6 +321,28 @@ The following queries provide results that do not match those of other implement
   Invalid state
   ```
 
+- [ ] `$[?(null)]`
+  Input:
+  ```
+  [
+    1,
+    3,
+    "nice",
+    true,
+    null,
+    false,
+    {},
+    [],
+    -1,
+    0,
+    ""
+  ]
+  ```
+  Error:
+  ```
+  Not a bool
+  ```
+
 - [ ] `$[*,1]`
   Input:
   ```

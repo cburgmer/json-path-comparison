@@ -2322,7 +2322,9 @@ The following queries provide results that do not match those of other implement
     -1,
     "",
     [],
-    {}
+    {},
+    false,
+    true
   ]
   ```
   Error:
@@ -3225,6 +3227,31 @@ The following queries provide results that do not match those of other implement
   
   ```
 
+- [ ] `$[?(1==1)]`
+  Input:
+  ```
+  [
+    1,
+    3,
+    "nice",
+    true,
+    null,
+    false,
+    {},
+    [],
+    -1,
+    0,
+    ""
+  ]
+  ```
+  Error:
+  ```
+  ggrep: Unmatched ( or \(
+  Expecting value: line 3 column 1 (char 2)
+  
+  
+  ```
+
 - [ ] `$[?(@.key===42)]`
   Input:
   ```
@@ -3382,6 +3409,81 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
+  Expecting value: line 3 column 1 (char 2)
+  
+  
+  ```
+
+- [ ] `$[?(false)]`
+  Input:
+  ```
+  [
+    1,
+    3,
+    "nice",
+    true,
+    null,
+    false,
+    {},
+    [],
+    -1,
+    0,
+    ""
+  ]
+  ```
+  Error:
+  ```
+  ggrep: Unmatched ( or \(
+  Expecting value: line 3 column 1 (char 2)
+  
+  
+  ```
+
+- [ ] `$[?(null)]`
+  Input:
+  ```
+  [
+    1,
+    3,
+    "nice",
+    true,
+    null,
+    false,
+    {},
+    [],
+    -1,
+    0,
+    ""
+  ]
+  ```
+  Error:
+  ```
+  ggrep: Unmatched ( or \(
+  Expecting value: line 3 column 1 (char 2)
+  
+  
+  ```
+
+- [ ] `$[?(true)]`
+  Input:
+  ```
+  [
+    1,
+    3,
+    "nice",
+    true,
+    null,
+    false,
+    {},
+    [],
+    -1,
+    0,
+    ""
+  ]
+  ```
+  Error:
+  ```
+  ggrep: Unmatched ( or \(
   Expecting value: line 3 column 1 (char 2)
   
   

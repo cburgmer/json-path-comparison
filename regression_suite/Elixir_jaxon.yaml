@@ -306,11 +306,19 @@ queries:
     status: error
   - id: filter_expression_with_subtraction
     status: error
+  - id: filter_expression_with_tautological_comparison
+    status: error
   - id: filter_expression_with_triple_equal
     status: error
   - id: filter_expression_with_value
     status: error
   - id: filter_expression_with_value_after_recursive_descent
+    status: error
+  - id: filter_expression_with_value_false
+    status: error
+  - id: filter_expression_with_value_null
+    status: error
+  - id: filter_expression_with_value_true
     status: error
   - id: filter_expression_without_value
     status: error

@@ -1763,6 +1763,28 @@ The following queries provide results that do not match those of other implement
   unknown token at 11
   ```
 
+- [ ] `$[?(null)]`
+  Input:
+  ```
+  [
+    1,
+    3,
+    "nice",
+    true,
+    null,
+    false,
+    {},
+    [],
+    -1,
+    0,
+    ""
+  ]
+  ```
+  Error:
+  ```
+  unknown token at 4
+  ```
+
 - [ ] `$[?(!@.key)]`
   Input:
   ```
