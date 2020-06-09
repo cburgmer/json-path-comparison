@@ -15,7 +15,8 @@ The following queries provide results that do not match those of other implement
   ```
   ["first", "second"]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   Expected slice step at line 1 and column 5
   ```
@@ -32,7 +33,8 @@ The following queries provide results that do not match those of other implement
   ```
   []
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   Expected slice end at line 1 and column 6
   ```
@@ -73,7 +75,8 @@ The following queries provide results that do not match those of other implement
   ```
   [10, 20]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   Expected slice start at line 1 and column 6
   ```
@@ -93,7 +96,8 @@ The following queries provide results that do not match those of other implement
   ```
   ["second", "third"]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   Expected slice step at line 1 and column 7
   ```

@@ -55,7 +55,8 @@ The following queries provide results that do not match those of other implement
   ```
   ["value"]
   ```
-  Error:
+  Actual output:
+  NOT_FOUND
   ```
   jsonpath returned false, this might indicate an error
   ```
@@ -121,7 +122,8 @@ The following queries provide results that do not match those of other implement
   ```
   ["third"]
   ```
-  Error:
+  Actual output:
+  NOT_FOUND
   ```
   jsonpath returned false, this might indicate an error
   ```
@@ -240,7 +242,8 @@ The following queries provide results that do not match those of other implement
   ```
   [1]
   ```
-  Error:
+  Actual output:
+  NOT_FOUND
   ```
   jsonpath returned false, this might indicate an error
   ```
@@ -314,7 +317,8 @@ The following queries provide results that do not match those of other implement
   ```
   NOT_SUPPORTED
   ```
-  Error:
+  Actual output:
+  NOT_FOUND
   ```
   jsonpath returned false, this might indicate an error
   ```
@@ -344,7 +348,8 @@ The following queries provide results that do not match those of other implement
   ```
   [{"@key": 42}]
   ```
-  Error:
+  Actual output:
+  NOT_FOUND
   ```
   jsonpath returned false, this might indicate an error
   ```
@@ -365,7 +370,8 @@ The following queries provide results that do not match those of other implement
   ```
   NOT_SUPPORTED
   ```
-  Error:
+  Actual output:
+  NOT_FOUND
   ```
   jsonpath returned false, this might indicate an error
   ```
@@ -389,7 +395,8 @@ The following queries provide results that do not match those of other implement
   ```
   [{"key": "hi@example.com"}]
   ```
-  Error:
+  Actual output:
+  NOT_FOUND
   ```
   jsonpath returned false, this might indicate an error
   ```
@@ -470,7 +477,8 @@ The following queries provide results that do not match those of other implement
   ```
   NOT_SUPPORTED
   ```
-  Error:
+  Actual output:
+  NOT_FOUND
   ```
   jsonpath returned false, this might indicate an error
   ```
@@ -488,7 +496,8 @@ The following queries provide results that do not match those of other implement
   ```
   NOT_SUPPORTED
   ```
-  Error:
+  Actual output:
+  NOT_FOUND
   ```
   jsonpath returned false, this might indicate an error
   ```
@@ -510,7 +519,8 @@ The following queries provide results that do not match those of other implement
   ```
   [{"another key": {"complex": ["a", 1]}, "key": "value"}]
   ```
-  Error:
+  Actual output:
+  NOT_FOUND
   ```
   jsonpath returned false, this might indicate an error
   ```
@@ -524,7 +534,8 @@ The following queries provide results that do not match those of other implement
   ```
   [42]
   ```
-  Error:
+  Actual output:
+  NOT_FOUND
   ```
   jsonpath returned false, this might indicate an error
   ```
@@ -538,7 +549,8 @@ The following queries provide results that do not match those of other implement
   ```
   [false]
   ```
-  Error:
+  Actual output:
+  NOT_FOUND
   ```
   jsonpath returned false, this might indicate an error
   ```
@@ -552,7 +564,8 @@ The following queries provide results that do not match those of other implement
   ```
   [true]
   ```
-  Error:
+  Actual output:
+  NOT_FOUND
   ```
   jsonpath returned false, this might indicate an error
   ```
@@ -570,7 +583,8 @@ The following queries provide results that do not match those of other implement
   ```
   ["first", "second"]
   ```
-  Error:
+  Actual output:
+  NOT_FOUND
   ```
   jsonpath returned false, this might indicate an error
   ```

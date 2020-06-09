@@ -46,7 +46,8 @@ The following queries provide results that do not match those of other implement
   ```
   ["value", "other value"]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   Expected close bracket. Path up to error: '$'
   ```
@@ -62,7 +63,8 @@ The following queries provide results that do not match those of other implement
   ```
   ["value"]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   Unrecognized JSON Path element. Path up to error: '$.key'
   ```
@@ -115,7 +117,8 @@ The following queries provide results that do not match those of other implement
   ```
   ["value", "entry"]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   Expected close bracket. Path up to error: '$'
   ```
@@ -140,7 +143,8 @@ The following queries provide results that do not match those of other implement
   ```
   ["cc1", "dd1"]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   Expected close bracket. Path up to error: '$[0]'
   ```
@@ -157,7 +161,8 @@ The following queries provide results that do not match those of other implement
   ```
   ["value"]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   Expected close bracket. Path up to error: '$'
   ```
@@ -175,7 +180,8 @@ The following queries provide results that do not match those of other implement
   ```
   ["first", "second"]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   Unrecognized JSON Path element. Path up to error: '$'
   ```

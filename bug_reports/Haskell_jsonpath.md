@@ -50,7 +50,8 @@ The following queries provide results that do not match those of other implement
   ```
   ["first", "second"]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   Invalid JSONPath: $[:]
    Error: searchBeginningWithSlice: string
@@ -68,7 +69,8 @@ The following queries provide results that do not match those of other implement
   ```
   ["first", "second"]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   Invalid JSONPath: $[::]
    Error: searchBeginningWithSlice: string
@@ -105,7 +107,8 @@ The following queries provide results that do not match those of other implement
   ```
   ["second", "third"]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   Invalid JSONPath: $[1:3:]
    Error: searchBeginningWithSlice: string
@@ -140,7 +143,8 @@ The following queries provide results that do not match those of other implement
   ```
   null
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   Invalid JSONPath: $['ü']
    Error: searchBeginningWithSlice: string
@@ -181,7 +185,8 @@ The following queries provide results that do not match those of other implement
   ```
   "value"
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   Invalid JSONPath: $["key"]
    Error: searchBeginningWithSlice: string
@@ -200,7 +205,8 @@ The following queries provide results that do not match those of other implement
   ```
   42
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   Invalid JSONPath: $['']
    Error: searchBeginningWithSlice: string
@@ -302,7 +308,8 @@ The following queries provide results that do not match those of other implement
   ```
   "value"
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   Invalid JSONPath: $[':']
    Error: searchBeginningWithSlice: string
@@ -319,7 +326,8 @@ The following queries provide results that do not match those of other implement
   ```
   42
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   Invalid JSONPath: $[']']
    Error: searchBeginningWithSlice: string
@@ -337,7 +345,8 @@ The following queries provide results that do not match those of other implement
   ```
   "value"
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   Invalid JSONPath: $['@']
    Error: searchBeginningWithSlice: string
@@ -355,7 +364,8 @@ The following queries provide results that do not match those of other implement
   ```
   "value"
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   Invalid JSONPath: $['.']
    Error: searchBeginningWithSlice: string
@@ -374,7 +384,8 @@ The following queries provide results that do not match those of other implement
   ```
   1
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   Invalid JSONPath: $['.*']
    Error: searchBeginningWithSlice: string
@@ -392,7 +403,8 @@ The following queries provide results that do not match those of other implement
   ```
   "value"
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   Invalid JSONPath: $['"']
    Error: searchBeginningWithSlice: string
@@ -410,7 +422,8 @@ The following queries provide results that do not match those of other implement
   ```
   "value"
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   Invalid JSONPath: $['$']
    Error: searchBeginningWithSlice: string
@@ -428,7 +441,8 @@ The following queries provide results that do not match those of other implement
   ```
   "value"
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   Invalid JSONPath: $[',']
    Error: searchBeginningWithSlice: string
@@ -446,7 +460,8 @@ The following queries provide results that do not match those of other implement
   ```
   "value"
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   Invalid JSONPath: $['*']
    Error: searchBeginningWithSlice: string
@@ -465,7 +480,8 @@ The following queries provide results that do not match those of other implement
   ```
   1
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   Invalid JSONPath: $['ni.*']
    Error: searchBeginningWithSlice: string
@@ -555,7 +571,8 @@ The following queries provide results that do not match those of other implement
   ```
   ["value", "other value"]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   Invalid JSONPath: $['one','three'].key
    Error: searchBeginningWithSlice: string
@@ -649,7 +666,8 @@ The following queries provide results that do not match those of other implement
   ```
   "value"
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   Invalid JSONPath: $.屬性
    Error: searchBeginningWithSlice: string
@@ -808,7 +826,8 @@ The following queries provide results that do not match those of other implement
   ```
   [{"@key": 42}]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   Invalid JSONPath: $[?(@['@key']==42)]
    Error: searchBeginningWithSlice: string
@@ -858,7 +877,8 @@ The following queries provide results that do not match those of other implement
   ```
   [["a", "b"]]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   Invalid JSONPath: $[?(@[1]=='b')]
    Error: searchBeginningWithSlice: string
@@ -1102,7 +1122,8 @@ The following queries provide results that do not match those of other implement
   ```
   [{"key": "value"}]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   Invalid JSONPath: $[?(@.key=='value')]
    Error: searchBeginningWithSlice: string
@@ -1305,7 +1326,8 @@ The following queries provide results that do not match those of other implement
   ```
   {"another key": {"complex": ["a", 1]}, "key": "value"}
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   Invalid JSONPath: $
    Error: searchBeginningWithSlice: not enough input
@@ -1320,7 +1342,8 @@ The following queries provide results that do not match those of other implement
   ```
   42
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   Invalid JSONPath: $
    Error: searchBeginningWithSlice: not enough input
@@ -1335,7 +1358,8 @@ The following queries provide results that do not match those of other implement
   ```
   false
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   Invalid JSONPath: $
    Error: searchBeginningWithSlice: not enough input
@@ -1350,7 +1374,8 @@ The following queries provide results that do not match those of other implement
   ```
   true
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   Invalid JSONPath: $
    Error: searchBeginningWithSlice: not enough input
@@ -1368,7 +1393,8 @@ The following queries provide results that do not match those of other implement
   ```
   ["value", "entry"]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   Invalid JSONPath: $['key','another']
    Error: searchBeginningWithSlice: string
@@ -1415,7 +1441,8 @@ The following queries provide results that do not match those of other implement
   ```
   ["value"]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   Invalid JSONPath: $['missing','key']
    Error: searchBeginningWithSlice: string
@@ -1434,7 +1461,8 @@ The following queries provide results that do not match those of other implement
   ```
   ["first", "second"]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   Invalid JSONPath: $[ 0 , 1 ]
    Error: searchBeginningWithSlice: string

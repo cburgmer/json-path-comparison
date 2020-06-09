@@ -15,7 +15,8 @@ The following queries provide results that do not match those of other implement
   ```
   ["first", "second"]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   Failed to parse SliceOperation: :
   ```
@@ -32,7 +33,8 @@ The following queries provide results that do not match those of other implement
   ```
   ["first", "second"]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   Failed to parse SliceOperation: ::
   ```
@@ -157,7 +159,8 @@ The following queries provide results that do not match those of other implement
   ```
   ["first", "third", "fifth"]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   Failed to parse SliceOperation: ::2
   ```
@@ -174,7 +177,8 @@ The following queries provide results that do not match those of other implement
   ```
   "value"
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   Found empty property at index 5
   ```

@@ -14,7 +14,8 @@ The following queries provide results that do not match those of other implement
   ```
   "value"
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   parsing error: $['key']	:1:3 - 1:8 could not parse string: invalid syntax
   ```
@@ -30,7 +31,8 @@ The following queries provide results that do not match those of other implement
   ```
   null
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   parsing error: $['missing']	:1:3 - 1:12 could not parse string: invalid syntax
   ```
@@ -69,7 +71,8 @@ The following queries provide results that do not match those of other implement
   ```
   "42"
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   parsing error: $['two.some']	:1:3 - 1:13 could not parse string: invalid syntax
   ```
@@ -145,7 +148,8 @@ The following queries provide results that do not match those of other implement
   ```
   1
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   parsing error: $['.*']	:1:3 - 1:7 could not parse string: invalid syntax
   ```
@@ -175,7 +179,8 @@ The following queries provide results that do not match those of other implement
   ```
   1
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   parsing error: $['ni.*']	:1:3 - 1:9 could not parse string: invalid syntax
   ```
@@ -235,7 +240,8 @@ The following queries provide results that do not match those of other implement
   ```
   ["value", "other value"]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   parsing error: $['one','three'].key	:1:3 - 1:8 could not parse string: invalid syntax
   ```
@@ -302,7 +308,8 @@ The following queries provide results that do not match those of other implement
   ```
   "value"
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   parsing error: $.key-dash	:1:6 - 1:7 unexpected "-" while scanning operator
   ```
@@ -338,7 +345,8 @@ The following queries provide results that do not match those of other implement
   ```
   "second"
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   parsing error: $.2	:1:2 - 1:4 unexpected Float while scanning operator
   ```
@@ -380,7 +388,8 @@ The following queries provide results that do not match those of other implement
   ```
   [{"key": 42}]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   parsing error: $[?(@['key']==42)]	:1:7 - 1:12 could not parse string: invalid syntax
   ```
@@ -410,7 +419,8 @@ The following queries provide results that do not match those of other implement
   ```
   [{"@key": 42}]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   parsing error: $[?(@['@key']==42)]	:1:7 - 1:13 could not parse string: invalid syntax
   ```
@@ -431,7 +441,8 @@ The following queries provide results that do not match those of other implement
   ```
   [{"key": "value"}]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   parsing error: $[?(@.key=='value')]	:1:12 - 1:19 could not parse string: invalid syntax
   ```
@@ -448,7 +459,8 @@ The following queries provide results that do not match those of other implement
   ```
   ["value", "entry"]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   parsing error: $['key','another']	:1:3 - 1:8 could not parse string: invalid syntax
   ```
@@ -465,7 +477,8 @@ The following queries provide results that do not match those of other implement
   ```
   ["value"]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   parsing error: $['missing','key']	:1:3 - 1:12 could not parse string: invalid syntax
   ```

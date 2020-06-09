@@ -39,7 +39,8 @@ The following queries provide results that do not match those of other implement
   ```
   [10, 20]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   Error: 'Failed to build AST from JSONPath query: $[010:024:010]'
   ```

@@ -55,7 +55,8 @@ The following queries provide results that do not match those of other implement
   ```
   [10, 20]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   line 1:3 mismatched input '10' expecting {']', ','}
   ValueError("line 1:3 mismatched input '10' expecting {']', ','}")
@@ -72,7 +73,8 @@ The following queries provide results that do not match those of other implement
   ```
   ["value"]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   line 1:2 token recognition error at: '''
   ValueError("line 1:2 token recognition error at: '''")
@@ -89,7 +91,8 @@ The following queries provide results that do not match those of other implement
   ```
   []
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   line 1:2 token recognition error at: '''
   ValueError("line 1:2 token recognition error at: '''")
@@ -106,7 +109,8 @@ The following queries provide results that do not match those of other implement
   ```
   []
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   line 1:2 token recognition error at: '''
   ValueError("line 1:2 token recognition error at: '''")
@@ -130,7 +134,8 @@ The following queries provide results that do not match those of other implement
   ```
   ["42"]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   line 1:2 token recognition error at: '''
   ValueError("line 1:2 token recognition error at: '''")
@@ -149,7 +154,8 @@ The following queries provide results that do not match those of other implement
   ```
   [42]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   line 1:2 token recognition error at: '''
   ValueError("line 1:2 token recognition error at: '''")
@@ -167,7 +173,8 @@ The following queries provide results that do not match those of other implement
   ```
   ["value"]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   line 1:2 token recognition error at: '''
   ValueError("line 1:2 token recognition error at: '''")
@@ -184,7 +191,8 @@ The following queries provide results that do not match those of other implement
   ```
   [42]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   line 1:2 token recognition error at: '''
   ValueError("line 1:2 token recognition error at: '''")
@@ -202,7 +210,8 @@ The following queries provide results that do not match those of other implement
   ```
   ["value"]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   line 1:2 token recognition error at: '''
   ValueError("line 1:2 token recognition error at: '''")
@@ -220,7 +229,8 @@ The following queries provide results that do not match those of other implement
   ```
   ["value"]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   line 1:2 token recognition error at: '''
   ValueError("line 1:2 token recognition error at: '''")
@@ -239,7 +249,8 @@ The following queries provide results that do not match those of other implement
   ```
   [1]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   line 1:2 token recognition error at: '''
   ValueError("line 1:2 token recognition error at: '''")
@@ -257,7 +268,8 @@ The following queries provide results that do not match those of other implement
   ```
   ["value"]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   line 1:2 token recognition error at: '''
   ValueError("line 1:2 token recognition error at: '''")
@@ -274,7 +286,8 @@ The following queries provide results that do not match those of other implement
   ```
   ["value"]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   line 1:2 token recognition error at: '''
   ValueError("line 1:2 token recognition error at: '''")
@@ -292,7 +305,8 @@ The following queries provide results that do not match those of other implement
   ```
   ["value"]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   line 1:2 token recognition error at: '''
   ValueError("line 1:2 token recognition error at: '''")
@@ -310,7 +324,8 @@ The following queries provide results that do not match those of other implement
   ```
   ["value"]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   line 1:2 token recognition error at: '''
   ValueError("line 1:2 token recognition error at: '''")
@@ -328,7 +343,8 @@ The following queries provide results that do not match those of other implement
   ```
   ["value"]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   line 1:2 token recognition error at: '''
   ValueError("line 1:2 token recognition error at: '''")
@@ -347,7 +363,8 @@ The following queries provide results that do not match those of other implement
   ```
   [1]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   line 1:2 token recognition error at: '''
   ValueError("line 1:2 token recognition error at: '''")
@@ -371,7 +388,8 @@ The following queries provide results that do not match those of other implement
   ```
   ["forty-two"]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   line 1:9 extraneous input '=' expecting {'@', '$', 'true', 'false', 'null', '{', '[', STRING, NUMBER}
   ValueError("line 1:9 extraneous input '=' expecting {'@', '$', 'true', 'false', 'null', '{', '[', STRING, NUMBER}")
@@ -397,7 +415,8 @@ The following queries provide results that do not match those of other implement
   ```
   ["value", "other value"]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   line 1:2 token recognition error at: '''
   ValueError("line 1:2 token recognition error at: '''")
@@ -414,7 +433,8 @@ The following queries provide results that do not match those of other implement
   ```
   ["value"]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   line 1:5 token recognition error at: '-d'
   ValueError("line 1:5 token recognition error at: '-d'")
@@ -431,7 +451,8 @@ The following queries provide results that do not match those of other implement
   ```
   ["value"]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   line 1:2 mismatched input 'null' expecting {'*', ID}
   ValueError("line 1:2 mismatched input 'null' expecting {'*', ID}")
@@ -448,7 +469,8 @@ The following queries provide results that do not match those of other implement
   ```
   ["value"]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   line 1:2 mismatched input 'true' expecting {'*', ID}
   ValueError("line 1:2 mismatched input 'true' expecting {'*', ID}")
@@ -465,7 +487,8 @@ The following queries provide results that do not match those of other implement
   ```
   ["value"]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   line 1:2 token recognition error at: '屬'
   ValueError("line 1:2 token recognition error at: '屬'")
@@ -484,7 +507,8 @@ The following queries provide results that do not match those of other implement
   ```
   ["second"]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   line 1:2 mismatched input '2' expecting {'*', ID}
   ValueError("line 1:2 mismatched input '2' expecting {'*', ID}")
@@ -527,7 +551,8 @@ The following queries provide results that do not match those of other implement
   ```
   [{"key": 42}]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   line 1:6 token recognition error at: '''
   ValueError("line 1:6 token recognition error at: '''")
@@ -558,7 +583,8 @@ The following queries provide results that do not match those of other implement
   ```
   [{"@key": 42}]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   line 1:6 token recognition error at: '''
   ValueError("line 1:6 token recognition error at: '''")
@@ -582,7 +608,8 @@ The following queries provide results that do not match those of other implement
   ```
   [["a", "b"]]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   line 1:10 token recognition error at: '''
   ValueError("line 1:10 token recognition error at: '''")
@@ -601,7 +628,8 @@ The following queries provide results that do not match those of other implement
   ```
   []
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   line 1:10 extraneous input '=' expecting {'@', '$', 'true', 'false', 'null', '{', '[', STRING, NUMBER}
   ValueError("line 1:10 extraneous input '=' expecting {'@', '$', 'true', 'false', 'null', '{', '[', STRING, NUMBER}")
@@ -626,7 +654,8 @@ The following queries provide results that do not match those of other implement
   ```
   [{"key": "hi@example.com"}]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   line 1:10 extraneous input '=' expecting {'@', '$', 'true', 'false', 'null', '{', '[', STRING, NUMBER}
   ValueError("line 1:10 extraneous input '=' expecting {'@', '$', 'true', 'false', 'null', '{', '[', STRING, NUMBER}")
@@ -651,7 +680,8 @@ The following queries provide results that do not match those of other implement
   ```
   [{"key": "some.value"}]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   line 1:10 extraneous input '=' expecting {'@', '$', 'true', 'false', 'null', '{', '[', STRING, NUMBER}
   ValueError("line 1:10 extraneous input '=' expecting {'@', '$', 'true', 'false', 'null', '{', '[', STRING, NUMBER}")
@@ -673,7 +703,8 @@ The following queries provide results that do not match those of other implement
   ```
   [{"key": "value"}]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   line 1:11 token recognition error at: '''
   ValueError("line 1:11 token recognition error at: '''")
@@ -772,7 +803,8 @@ The following queries provide results that do not match those of other implement
   ```
   ["value", "entry"]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   line 1:2 token recognition error at: '''
   ValueError("line 1:2 token recognition error at: '''")
@@ -798,7 +830,8 @@ The following queries provide results that do not match those of other implement
   ```
   ["cc1", "dd1"]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   line 1:5 token recognition error at: '''
   ValueError("line 1:5 token recognition error at: '''")
@@ -816,7 +849,8 @@ The following queries provide results that do not match those of other implement
   ```
   ["value"]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   line 1:2 token recognition error at: '''
   ValueError("line 1:2 token recognition error at: '''")

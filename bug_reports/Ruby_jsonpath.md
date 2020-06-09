@@ -248,7 +248,8 @@ The following queries provide results that do not match those of other implement
   ```
   [42]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   unmatched closing bracket
   ```

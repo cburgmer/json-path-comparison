@@ -79,7 +79,8 @@ The following queries provide results that do not match those of other implement
   ```
   [42]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   Error: 'Unable to parse token '' in expression: ['']'
   ```
@@ -95,7 +96,8 @@ The following queries provide results that do not match those of other implement
   ```
   [42]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   Error: 'Unable to parse token ' in expression: [']']'
   ```

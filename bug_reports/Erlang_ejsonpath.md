@@ -35,7 +35,8 @@ The following queries provide results that do not match those of other implement
   ```
   ["first", "second"]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   syntax error before: ':'
   ```
@@ -71,7 +72,8 @@ The following queries provide results that do not match those of other implement
   ```
   ["second", "third"]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   syntax error before: ']'
   ```
@@ -91,7 +93,8 @@ The following queries provide results that do not match those of other implement
   ```
   ["first", "third", "fifth"]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   syntax error before: ':'
   ```
@@ -126,7 +129,8 @@ The following queries provide results that do not match those of other implement
   ```
   ["deepest", "first nested", "first", "more", {"nested": ["deepest", "second"]}]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   syntax error before: '['
   ```
@@ -211,7 +215,8 @@ The following queries provide results that do not match those of other implement
   ```
   ["string", "value", 0, 1, [0, 1], {"complex": "string", "primitives": [0, 1]}]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   syntax error before: '['
   ```
@@ -227,7 +232,8 @@ The following queries provide results that do not match those of other implement
   ```
   ["value"]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   syntax error before: '-'
   ```
@@ -338,7 +344,8 @@ The following queries provide results that do not match those of other implement
   ```
   ["second"]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   syntax error before: 2
   ```

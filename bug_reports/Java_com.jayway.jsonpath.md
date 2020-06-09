@@ -15,7 +15,8 @@ The following queries provide results that do not match those of other implement
   ```
   ["first", "second"]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
   SLF4J: Defaulting to no-operation (NOP) logger implementation
@@ -35,7 +36,8 @@ The following queries provide results that do not match those of other implement
   ```
   ["first", "second"]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
   SLF4J: Defaulting to no-operation (NOP) logger implementation
@@ -163,7 +165,8 @@ The following queries provide results that do not match those of other implement
   ```
   ["first", "third", "fifth"]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
   SLF4J: Defaulting to no-operation (NOP) logger implementation
@@ -183,7 +186,8 @@ The following queries provide results that do not match those of other implement
   ```
   "value"
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
   SLF4J: Defaulting to no-operation (NOP) logger implementation

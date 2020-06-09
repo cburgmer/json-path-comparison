@@ -39,7 +39,8 @@ The following queries provide results that do not match those of other implement
   ```
   ["first", "second"]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   parsing error
   ```
@@ -56,7 +57,8 @@ The following queries provide results that do not match those of other implement
   ```
   ["first", "second"]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   parsing error
   ```
@@ -113,7 +115,8 @@ The following queries provide results that do not match those of other implement
   ```
   ["third"]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   parsing error
   ```
@@ -131,7 +134,8 @@ The following queries provide results that do not match those of other implement
   ```
   ["second", "third"]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   parsing error
   ```
@@ -149,7 +153,8 @@ The following queries provide results that do not match those of other implement
   ```
   ["first", "second", "third"]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   parsing error
   ```
@@ -169,7 +174,8 @@ The following queries provide results that do not match those of other implement
   ```
   ["first", "third"]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   parsing error
   ```
@@ -189,7 +195,8 @@ The following queries provide results that do not match those of other implement
   ```
   ["first", "second", "third"]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   parsing error
   ```
@@ -230,7 +237,8 @@ The following queries provide results that do not match those of other implement
   ```
   [10, 20]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   parsing error
   ```
@@ -250,7 +258,8 @@ The following queries provide results that do not match those of other implement
   ```
   ["first", "third"]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   parsing error
   ```
@@ -270,7 +279,8 @@ The following queries provide results that do not match those of other implement
   ```
   ["second", "third"]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   parsing error
   ```
@@ -290,7 +300,8 @@ The following queries provide results that do not match those of other implement
   ```
   ["first", "third", "fifth"]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   parsing error
   ```
@@ -306,7 +317,8 @@ The following queries provide results that do not match those of other implement
   ```
   ["value"]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   parsing error
   ```
@@ -341,7 +353,8 @@ The following queries provide results that do not match those of other implement
   ```
   ["deepest", "first nested", "first", "more", {"nested": ["deepest", "second"]}]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   parsing error
   ```
@@ -357,7 +370,8 @@ The following queries provide results that do not match those of other implement
   ```
   []
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   parsing error
   ```
@@ -373,7 +387,8 @@ The following queries provide results that do not match those of other implement
   ```
   []
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   parsing error
   ```
@@ -396,7 +411,8 @@ The following queries provide results that do not match those of other implement
   ```
   ["42"]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   parsing error
   ```
@@ -412,7 +428,8 @@ The following queries provide results that do not match those of other implement
   ```
   ["value"]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   parsing error
   ```
@@ -430,7 +447,8 @@ The following queries provide results that do not match those of other implement
   ```
   [42]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   parsing error
   ```
@@ -448,7 +466,8 @@ The following queries provide results that do not match those of other implement
   ```
   ["third"]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   parsing error
   ```
@@ -462,7 +481,8 @@ The following queries provide results that do not match those of other implement
   ```
   []
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   parsing error
   ```
@@ -479,7 +499,8 @@ The following queries provide results that do not match those of other implement
   ```
   ["value"]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   parsing error
   ```
@@ -495,7 +516,8 @@ The following queries provide results that do not match those of other implement
   ```
   [42]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   parsing error
   ```
@@ -512,7 +534,8 @@ The following queries provide results that do not match those of other implement
   ```
   ["value"]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   parsing error
   ```
@@ -529,7 +552,8 @@ The following queries provide results that do not match those of other implement
   ```
   ["value"]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   parsing error
   ```
@@ -547,7 +571,8 @@ The following queries provide results that do not match those of other implement
   ```
   [1]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   parsing error
   ```
@@ -564,7 +589,8 @@ The following queries provide results that do not match those of other implement
   ```
   ["value"]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   parsing error
   ```
@@ -580,7 +606,8 @@ The following queries provide results that do not match those of other implement
   ```
   ["value"]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   parsing error
   ```
@@ -597,7 +624,8 @@ The following queries provide results that do not match those of other implement
   ```
   ["value"]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   parsing error
   ```
@@ -614,7 +642,8 @@ The following queries provide results that do not match those of other implement
   ```
   ["value"]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   parsing error
   ```
@@ -631,7 +660,8 @@ The following queries provide results that do not match those of other implement
   ```
   ["value"]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   parsing error
   ```
@@ -649,7 +679,8 @@ The following queries provide results that do not match those of other implement
   ```
   [1]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   parsing error
   ```
@@ -676,7 +707,8 @@ The following queries provide results that do not match those of other implement
   ```
   [1, 2, "a", "b"]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   parsing error
   ```
@@ -696,7 +728,8 @@ The following queries provide results that do not match those of other implement
   ```
   [42]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   parsing error
   ```
@@ -719,7 +752,8 @@ The following queries provide results that do not match those of other implement
   ```
   ["string", "value", 0, 1, [0, 1], {"complex": "string", "primitives": [0, 1]}]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   parsing error
   ```
@@ -743,7 +777,8 @@ The following queries provide results that do not match those of other implement
   ```
   ["string", 42, {"key": "value"}, [0, 1]]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   parsing error
   ```
@@ -757,7 +792,8 @@ The following queries provide results that do not match those of other implement
   ```
   []
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   parsing error
   ```
@@ -771,7 +807,8 @@ The following queries provide results that do not match those of other implement
   ```
   []
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   parsing error
   ```
@@ -789,7 +826,8 @@ The following queries provide results that do not match those of other implement
   ```
   [40, null, 42]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   parsing error
   ```
@@ -813,7 +851,8 @@ The following queries provide results that do not match those of other implement
   ```
   ["string", 42, [0, 1], {"key": "value"}]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   parsing error
   ```
@@ -834,7 +873,8 @@ The following queries provide results that do not match those of other implement
   ```
   [1, 1]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   parsing error
   ```
@@ -852,7 +892,8 @@ The following queries provide results that do not match those of other implement
   ```
   [1]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   parsing error
   ```
@@ -873,7 +914,8 @@ The following queries provide results that do not match those of other implement
   ```
   [1]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   parsing error
   ```
@@ -925,7 +967,8 @@ The following queries provide results that do not match those of other implement
   ```
   ["russian dolls", "something", "top", "value", {"key": "russian dolls"}]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   parsing error
   ```
@@ -974,7 +1017,8 @@ The following queries provide results that do not match those of other implement
   ```
   [12.99, 19.95, 22.99, 8.95, 8.99]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   parsing error
   ```
@@ -998,7 +1042,8 @@ The following queries provide results that do not match those of other implement
   ```
   ["ey", "see"]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   parsing error
   ```
@@ -1023,7 +1068,8 @@ The following queries provide results that do not match those of other implement
   ```
   ["value", "other value"]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   parsing error
   ```
@@ -1039,7 +1085,8 @@ The following queries provide results that do not match those of other implement
   ```
   ["value"]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   parsing error
   ```
@@ -1062,7 +1109,8 @@ The following queries provide results that do not match those of other implement
   ```
   ["string", "value", 0, 1, [0, 1], {"complex": "string", "primitives": [0, 1]}]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   parsing error
   ```
@@ -1080,7 +1128,8 @@ The following queries provide results that do not match those of other implement
   ```
   [40, 42, null]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   parsing error
   ```
@@ -1094,7 +1143,8 @@ The following queries provide results that do not match those of other implement
   ```
   []
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   parsing error
   ```
@@ -1136,7 +1186,8 @@ The following queries provide results that do not match those of other implement
   ```
   [{"key": 42}]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   parsing error
   ```
@@ -1166,7 +1217,8 @@ The following queries provide results that do not match those of other implement
   ```
   [{"@key": 42}]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   parsing error
   ```
@@ -1213,7 +1265,8 @@ The following queries provide results that do not match those of other implement
   ```
   [{"key": "hi@example.com"}]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   parsing error
   ```
@@ -1237,7 +1290,8 @@ The following queries provide results that do not match those of other implement
   ```
   [{"key": "some.value"}]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   parsing error
   ```
@@ -1255,7 +1309,8 @@ The following queries provide results that do not match those of other implement
   ```
   ["first", "second"]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   parsing error
   ```
@@ -1272,7 +1327,8 @@ The following queries provide results that do not match those of other implement
   ```
   ["value", "entry"]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   parsing error
   ```
@@ -1297,7 +1353,8 @@ The following queries provide results that do not match those of other implement
   ```
   ["cc1", "dd1"]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   parsing error
   ```
@@ -1314,7 +1371,8 @@ The following queries provide results that do not match those of other implement
   ```
   ["value"]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   parsing error
   ```
@@ -1334,7 +1392,8 @@ The following queries provide results that do not match those of other implement
   ```
   [5, 2]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   parsing error
   ```
@@ -1352,7 +1411,8 @@ The following queries provide results that do not match those of other implement
   ```
   ["first", "second"]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   parsing error
   ```

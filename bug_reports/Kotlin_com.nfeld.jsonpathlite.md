@@ -32,7 +32,8 @@ The following queries provide results that do not match those of other implement
   ```
   ["first", "second"]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   For input string: ""
   ```
@@ -207,7 +208,8 @@ The following queries provide results that do not match those of other implement
   ```
   "value"
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   Unexpected char, char=", index=2
   ```
@@ -225,7 +227,8 @@ The following queries provide results that do not match those of other implement
   ```
   42
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   Key is empty string
   ```
@@ -284,7 +287,8 @@ The following queries provide results that do not match those of other implement
   ```
   [1, 2, "a", "b"]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   Unexpected char, char=*, index=7
   ```
@@ -304,7 +308,8 @@ The following queries provide results that do not match those of other implement
   ```
   [42]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   Unexpected char, char=*, index=2
   ```
@@ -327,7 +332,8 @@ The following queries provide results that do not match those of other implement
   ```
   ["string", "value", 0, 1, [0, 1], {"complex": "string", "primitives": [0, 1]}]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   Unexpected char, char=*, index=4
   ```
@@ -351,7 +357,8 @@ The following queries provide results that do not match those of other implement
   ```
   ["string", 42, {"key": "value"}, [0, 1]]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   Unexpected char, char=*, index=2
   ```
@@ -365,7 +372,8 @@ The following queries provide results that do not match those of other implement
   ```
   []
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   Unexpected char, char=*, index=2
   ```
@@ -379,7 +387,8 @@ The following queries provide results that do not match those of other implement
   ```
   []
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   Unexpected char, char=*, index=2
   ```
@@ -397,7 +406,8 @@ The following queries provide results that do not match those of other implement
   ```
   [40, null, 42]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   Unexpected char, char=*, index=2
   ```
@@ -421,7 +431,8 @@ The following queries provide results that do not match those of other implement
   ```
   ["string", 42, [0, 1], {"key": "value"}]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   Unexpected char, char=*, index=2
   ```
@@ -442,7 +453,8 @@ The following queries provide results that do not match those of other implement
   ```
   [1, 1]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   Unexpected char, char=*, index=2
   ```
@@ -460,7 +472,8 @@ The following queries provide results that do not match those of other implement
   ```
   [1]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   Unexpected char, char=*, index=2
   ```
@@ -481,7 +494,8 @@ The following queries provide results that do not match those of other implement
   ```
   [1]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   Unexpected char, char=*, index=2
   ```
@@ -504,7 +518,8 @@ The following queries provide results that do not match those of other implement
   ```
   ["forty-two"]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   Unexpected char, char=?, index=2
   ```
@@ -771,7 +786,8 @@ The following queries provide results that do not match those of other implement
   ```
   [{"key": 42}]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   Unexpected char, char=?, index=2
   ```
@@ -801,7 +817,8 @@ The following queries provide results that do not match those of other implement
   ```
   [{"@key": 42}]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   Unexpected char, char=?, index=2
   ```
@@ -824,7 +841,8 @@ The following queries provide results that do not match those of other implement
   ```
   [["a", "b"]]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   Unexpected char, char=?, index=2
   ```
@@ -842,7 +860,8 @@ The following queries provide results that do not match those of other implement
   ```
   []
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   Unexpected char, char=?, index=2
   ```
@@ -866,7 +885,8 @@ The following queries provide results that do not match those of other implement
   ```
   [{"key": "hi@example.com"}]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   Unexpected char, char=?, index=2
   ```
@@ -890,7 +910,8 @@ The following queries provide results that do not match those of other implement
   ```
   [{"key": "some.value"}]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   Unexpected char, char=?, index=2
   ```
@@ -911,7 +932,8 @@ The following queries provide results that do not match those of other implement
   ```
   [{"key": "value"}]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   Unexpected char, char=?, index=2
   ```

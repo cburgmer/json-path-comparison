@@ -175,7 +175,8 @@ The following queries provide results that do not match those of other implement
   ```
   ["deepest", "first nested", "first", "more", {"nested": ["deepest", "second"]}]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   syntax error before: '['
   ```
@@ -202,7 +203,8 @@ The following queries provide results that do not match those of other implement
   ```
   [1, 2, "a", "b"]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   syntax error before: '*'
   ```
@@ -222,7 +224,8 @@ The following queries provide results that do not match those of other implement
   ```
   [42]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   syntax error before: '*'
   ```
@@ -245,7 +248,8 @@ The following queries provide results that do not match those of other implement
   ```
   ["string", "value", 0, 1, [0, 1], {"complex": "string", "primitives": [0, 1]}]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   syntax error before: '['
   ```
@@ -269,7 +273,8 @@ The following queries provide results that do not match those of other implement
   ```
   ["string", 42, {"key": "value"}, [0, 1]]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   syntax error before: '*'
   ```
@@ -283,7 +288,8 @@ The following queries provide results that do not match those of other implement
   ```
   []
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   syntax error before: '*'
   ```
@@ -297,7 +303,8 @@ The following queries provide results that do not match those of other implement
   ```
   []
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   syntax error before: '*'
   ```
@@ -315,7 +322,8 @@ The following queries provide results that do not match those of other implement
   ```
   [40, null, 42]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   syntax error before: '*'
   ```
@@ -339,7 +347,8 @@ The following queries provide results that do not match those of other implement
   ```
   ["string", 42, [0, 1], {"key": "value"}]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   syntax error before: '*'
   ```
@@ -360,7 +369,8 @@ The following queries provide results that do not match those of other implement
   ```
   [1, 1]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   syntax error before: '*'
   ```
@@ -378,7 +388,8 @@ The following queries provide results that do not match those of other implement
   ```
   [1]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   syntax error before: '*'
   ```
@@ -399,7 +410,8 @@ The following queries provide results that do not match those of other implement
   ```
   [1]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   syntax error before: '*'
   ```
@@ -415,7 +427,8 @@ The following queries provide results that do not match those of other implement
   ```
   ["value"]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   illegal characters "-d"
   ```
@@ -515,7 +528,8 @@ The following queries provide results that do not match those of other implement
   ```
   ["value"]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   illegal characters "屬"
   ```
@@ -676,7 +690,8 @@ The following queries provide results that do not match those of other implement
   ```
   ["string", "value", 0, 1, [0, 1], {"complex": "string", "primitives": [0, 1]}]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   syntax error before: '*'
   ```
@@ -694,7 +709,8 @@ The following queries provide results that do not match those of other implement
   ```
   [40, 42, null]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   syntax error before: '*'
   ```
@@ -708,7 +724,8 @@ The following queries provide results that do not match those of other implement
   ```
   []
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   syntax error before: '*'
   ```
@@ -730,7 +747,8 @@ The following queries provide results that do not match those of other implement
   ```
   [{"another key": {"complex": ["a", 1]}, "key": "value"}]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   syntax error before: 
   ```
@@ -744,7 +762,8 @@ The following queries provide results that do not match those of other implement
   ```
   [42]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   syntax error before: 
   ```
@@ -758,7 +777,8 @@ The following queries provide results that do not match those of other implement
   ```
   [false]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   syntax error before: 
   ```
@@ -772,7 +792,8 @@ The following queries provide results that do not match those of other implement
   ```
   [true]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   syntax error before: 
   ```

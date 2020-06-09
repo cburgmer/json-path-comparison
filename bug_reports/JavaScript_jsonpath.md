@@ -55,7 +55,8 @@ The following queries provide results that do not match those of other implement
   ```
   [10, 20]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   Parse error on line 1:
   $[010:024:010]
@@ -102,7 +103,8 @@ The following queries provide results that do not match those of other implement
   ```
   ["value"]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   Lexical error on line 1. Unrecognized text.
   $.key-dash
@@ -140,7 +142,8 @@ The following queries provide results that do not match those of other implement
   ```
   ["value"]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   Lexical error on line 1. Unrecognized text.
   $.屬性
@@ -332,7 +335,8 @@ The following queries provide results that do not match those of other implement
   ```
   ["first", "second"]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   Lexical error on line 1. Unrecognized text.
   $[ 0 , 1 ]

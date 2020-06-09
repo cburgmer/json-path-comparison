@@ -15,7 +15,8 @@ The following queries provide results that do not match those of other implement
   ```
   ["first", "second"]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   Exception('Parse error at 1:3 near token : (:)')
   ```
@@ -35,7 +36,8 @@ The following queries provide results that do not match those of other implement
   ```
   ["first", "third"]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   Exception('Parse error at 1:5 near token : (:)')
   ```
@@ -55,7 +57,8 @@ The following queries provide results that do not match those of other implement
   ```
   ["first", "second", "third"]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   Exception('Parse error at 1:5 near token : (:)')
   ```
@@ -96,7 +99,8 @@ The following queries provide results that do not match those of other implement
   ```
   [10, 20]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   Exception('Parse error at 1:9 near token : (:)')
   ```
@@ -116,7 +120,8 @@ The following queries provide results that do not match those of other implement
   ```
   ["first", "third"]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   Exception('Parse error at 1:5 near token : (:)')
   ```
@@ -136,7 +141,8 @@ The following queries provide results that do not match those of other implement
   ```
   ["second", "third"]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   Exception('Parse error at 1:5 near token : (:)')
   ```
@@ -156,7 +162,8 @@ The following queries provide results that do not match those of other implement
   ```
   ["first", "third", "fifth"]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   Exception('Parse error at 1:3 near token : (:)')
   ```
@@ -453,7 +460,8 @@ The following queries provide results that do not match those of other implement
   ```
   ["forty-two"]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   JsonPathLexerError('Error on line 1, col 2: Unexpected character: ? ')
   ```
@@ -477,7 +485,8 @@ The following queries provide results that do not match those of other implement
   ```
   ["ey", "see"]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   Exception('Parse error at 1:3 near token , (,)')
   ```
@@ -493,7 +502,8 @@ The following queries provide results that do not match those of other implement
   ```
   ["value"]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   JsonPathLexerError('Error on line 1, col 2: Unexpected character: 屬 ')
   ```
@@ -511,7 +521,8 @@ The following queries provide results that do not match those of other implement
   ```
   ["second"]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   Exception('Parse error at 1:2 near token 2 (NUMBER)')
   ```
@@ -677,7 +688,8 @@ The following queries provide results that do not match those of other implement
   ```
   [{"key": 42}]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   JsonPathLexerError('Error on line 1, col 2: Unexpected character: ? ')
   ```
@@ -707,7 +719,8 @@ The following queries provide results that do not match those of other implement
   ```
   [{"@key": 42}]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   JsonPathLexerError('Error on line 1, col 2: Unexpected character: ? ')
   ```
@@ -730,7 +743,8 @@ The following queries provide results that do not match those of other implement
   ```
   [["a", "b"]]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   JsonPathLexerError('Error on line 1, col 2: Unexpected character: ? ')
   ```
@@ -748,7 +762,8 @@ The following queries provide results that do not match those of other implement
   ```
   []
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   JsonPathLexerError('Error on line 1, col 2: Unexpected character: ? ')
   ```
@@ -772,7 +787,8 @@ The following queries provide results that do not match those of other implement
   ```
   [{"key": "hi@example.com"}]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   JsonPathLexerError('Error on line 1, col 2: Unexpected character: ? ')
   ```
@@ -796,7 +812,8 @@ The following queries provide results that do not match those of other implement
   ```
   [{"key": "some.value"}]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   JsonPathLexerError('Error on line 1, col 2: Unexpected character: ? ')
   ```
@@ -817,7 +834,8 @@ The following queries provide results that do not match those of other implement
   ```
   [{"key": "value"}]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   JsonPathLexerError('Error on line 1, col 2: Unexpected character: ? ')
   ```
@@ -835,7 +853,8 @@ The following queries provide results that do not match those of other implement
   ```
   ["first", "second"]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   Exception('Parse error at 1:3 near token , (,)')
   ```
@@ -855,7 +874,8 @@ The following queries provide results that do not match those of other implement
   ```
   [5, 2]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   Exception('Parse error at 1:3 near token , (,)')
   ```
@@ -873,7 +893,8 @@ The following queries provide results that do not match those of other implement
   ```
   ["first", "second"]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   Exception('Parse error at 1:5 near token , (,)')
   ```

@@ -42,7 +42,8 @@ The following queries provide results that do not match those of other implement
   ```
   ["first", "second"]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   JSON path parse error at position 1
   ```
@@ -59,7 +60,8 @@ The following queries provide results that do not match those of other implement
   ```
   ["first", "second"]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   JSON path parse error at position 1
   ```
@@ -76,7 +78,8 @@ The following queries provide results that do not match those of other implement
   ```
   ["first", "second"]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   JSON path parse error at position 1
   ```
@@ -135,7 +138,8 @@ The following queries provide results that do not match those of other implement
   ```
   ["first", "third"]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   JSON path parse error at position 1
   ```
@@ -155,7 +159,8 @@ The following queries provide results that do not match those of other implement
   ```
   ["first", "second", "third"]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   JSON path parse error at position 1
   ```
@@ -196,7 +201,8 @@ The following queries provide results that do not match those of other implement
   ```
   [10, 20]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   JSON path parse error at position 1
   ```
@@ -216,7 +222,8 @@ The following queries provide results that do not match those of other implement
   ```
   ["first", "third"]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   JSON path parse error at position 1
   ```
@@ -236,7 +243,8 @@ The following queries provide results that do not match those of other implement
   ```
   ["second", "third"]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   JSON path parse error at position 1
   ```
@@ -256,7 +264,8 @@ The following queries provide results that do not match those of other implement
   ```
   ["first", "third", "fifth"]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   JSON path parse error at position 1
   ```
@@ -335,7 +344,8 @@ The following queries provide results that do not match those of other implement
   ```
   ["value"]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   JSON path parse error at position 1
   ```
@@ -353,7 +363,8 @@ The following queries provide results that do not match those of other implement
   ```
   [42]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   JSON path parse error at position 1
   ```
@@ -371,7 +382,8 @@ The following queries provide results that do not match those of other implement
   ```
   ["third"]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   JSON path parse error at position 1
   ```
@@ -385,7 +397,8 @@ The following queries provide results that do not match those of other implement
   ```
   []
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   JSON path parse error at position 1
   ```
@@ -483,7 +496,8 @@ The following queries provide results that do not match those of other implement
   ```
   ["forty-two"]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   Evaluation of embedded Perl 6 code not allowed (construct with :allow-eval)
   ```
@@ -544,7 +558,8 @@ The following queries provide results that do not match those of other implement
   ```
   ["value", "other value"]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   JSON path parse error at position 1
   ```
@@ -560,7 +575,8 @@ The following queries provide results that do not match those of other implement
   ```
   ["value"]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   JSON path parse error at position 5
   ```
@@ -578,7 +594,8 @@ The following queries provide results that do not match those of other implement
   ```
   ["second"]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   JSON path parse error at position 1
   ```
@@ -669,7 +686,8 @@ The following queries provide results that do not match those of other implement
   ```
   [{"key": 42}]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   Evaluation of embedded Perl 6 code not allowed (construct with :allow-eval)
   ```
@@ -699,7 +717,8 @@ The following queries provide results that do not match those of other implement
   ```
   [{"@key": 42}]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   Evaluation of embedded Perl 6 code not allowed (construct with :allow-eval)
   ```
@@ -722,7 +741,8 @@ The following queries provide results that do not match those of other implement
   ```
   [["a", "b"]]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   Evaluation of embedded Perl 6 code not allowed (construct with :allow-eval)
   ```
@@ -740,7 +760,8 @@ The following queries provide results that do not match those of other implement
   ```
   []
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   Evaluation of embedded Perl 6 code not allowed (construct with :allow-eval)
   ```
@@ -764,7 +785,8 @@ The following queries provide results that do not match those of other implement
   ```
   [{"key": "hi@example.com"}]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   Evaluation of embedded Perl 6 code not allowed (construct with :allow-eval)
   ```
@@ -788,7 +810,8 @@ The following queries provide results that do not match those of other implement
   ```
   [{"key": "some.value"}]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   Evaluation of embedded Perl 6 code not allowed (construct with :allow-eval)
   ```
@@ -809,7 +832,8 @@ The following queries provide results that do not match those of other implement
   ```
   [{"key": "value"}]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   Evaluation of embedded Perl 6 code not allowed (construct with :allow-eval)
   ```
@@ -826,7 +850,8 @@ The following queries provide results that do not match those of other implement
   ```
   ["value", "entry"]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   JSON path parse error at position 1
   ```
@@ -851,7 +876,8 @@ The following queries provide results that do not match those of other implement
   ```
   ["cc1", "dd1"]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   JSON path parse error at position 4
   ```
@@ -868,7 +894,8 @@ The following queries provide results that do not match those of other implement
   ```
   ["value"]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   JSON path parse error at position 1
   ```
@@ -886,7 +913,8 @@ The following queries provide results that do not match those of other implement
   ```
   ["first", "second"]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   JSON path parse error at position 1
   ```

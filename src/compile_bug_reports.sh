@@ -83,8 +83,36 @@ consensus() {
     fi
 }
 
+actual_output() {
+    local implementation="$1"
+    local query="$2"
+
+    if is_query_error "${results_dir}/${query}/${implementation}"; then
+        echo "Error:"
+        query_result_payload "${results_dir}/${query}/${implementation}" | code_block
+        return
+    fi
+
+    echo "Actual output:"
+
+    if is_query_result_not_found "${results_dir}/${query}/${implementation}"; then
+        echo "NOT_FOUND"
+        query_result_payload "${results_dir}/${query}/${implementation}" | code_block
+        return
+    fi
+
+    if is_query_not_supported "${results_dir}/${query}/${implementation}"; then
+        echo "NOT_SUPPORTED"
+        query_result_payload "${results_dir}/${query}/${implementation}" | code_block
+        return
+    fi
+
+    query_result_payload "${results_dir}/${query}/${implementation}" | ./src/pretty_json.py | code_block
+}
+
 failing_query() {
-    local query="$1"
+    local implementation="$1"
+    local query="$2"
     local selector
 
     selector="$(cat "./queries/${query}/selector")"
@@ -102,13 +130,7 @@ failing_query() {
             consensus "$query" | code_block
         fi
 
-        if is_query_ok "${results_dir}/${query}/${implementation}"; then
-            echo "Actual output:"
-            query_result_payload "${results_dir}/${query}/${implementation}" | ./src/pretty_json.py | code_block
-        else
-            echo "Error:"
-            query_result_payload "${results_dir}/${query}/${implementation}" | code_block
-        fi
+        actual_output "$implementation" "$query"
     } | indent_2
 
     echo
@@ -121,7 +143,7 @@ process_implementation() {
     header
 
     while IFS= read -r query; do
-        failing_query "$query"
+        failing_query "$implementation" "$query"
     done <<< "$(all_incorrect_queries "$implementation")"
 
     footer "$implementation"

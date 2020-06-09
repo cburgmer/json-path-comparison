@@ -148,7 +148,8 @@ The following queries provide results that do not match those of other implement
   ```
   ["second", "third"]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   Unable to compile selector `$[1:3:]': Invalid slice definition “ 1:3:]”
   ```
@@ -203,7 +204,8 @@ The following queries provide results that do not match those of other implement
   ```
   ["deepest", "first nested", "first", "more", {"nested": ["deepest", "second"]}]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   Unable to compile selector `$..[0]': Missing member name or wildcard after . character
   ```
@@ -219,7 +221,8 @@ The following queries provide results that do not match those of other implement
   ```
   ["value"]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   Unable to compile selector `$["key"]': Invalid array index definition “"key"]”
   ```
@@ -346,7 +349,8 @@ The following queries provide results that do not match those of other implement
   ```
   ["string", "value", 0, 1, [0, 1], {"complex": "string", "primitives": [0, 1]}]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   Unable to compile selector `$..[*]': Missing member name or wildcard after . character
   ```
@@ -421,7 +425,8 @@ The following queries provide results that do not match those of other implement
   ```
   ["forty-two"]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   Unable to compile selector `$[?(@.id==42)].name': Invalid array index definition “?(@.id==42)].name”
   ```
@@ -685,7 +690,8 @@ The following queries provide results that do not match those of other implement
   ```
   [{"key": 42}]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   Unable to compile selector `$[?(@['key']==42)]': Invalid array index definition “?(@['key']==42)]”
   ```
@@ -715,7 +721,8 @@ The following queries provide results that do not match those of other implement
   ```
   [{"@key": 42}]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   Unable to compile selector `$[?(@['@key']==42)]': Invalid array index definition “?(@['@key']==42)]”
   ```
@@ -738,7 +745,8 @@ The following queries provide results that do not match those of other implement
   ```
   [["a", "b"]]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   Unable to compile selector `$[?(@[1]=='b')]': Invalid array index definition “?(@[1]=='b')]”
   ```
@@ -756,7 +764,8 @@ The following queries provide results that do not match those of other implement
   ```
   []
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   Unable to compile selector `$[?(@.key==43)]': Invalid array index definition “?(@.key==43)]”
   ```
@@ -780,7 +789,8 @@ The following queries provide results that do not match those of other implement
   ```
   [{"key": "hi@example.com"}]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   Unable to compile selector `$[?(@.key=="hi@example.com")]': Invalid array index definition “?(@.key=="hi@example.com")]”
   ```
@@ -804,7 +814,8 @@ The following queries provide results that do not match those of other implement
   ```
   [{"key": "some.value"}]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   Unable to compile selector `$[?(@.key=="some.value")]': Invalid array index definition “?(@.key=="some.value")]”
   ```
@@ -825,7 +836,8 @@ The following queries provide results that do not match those of other implement
   ```
   [{"key": "value"}]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   Unable to compile selector `$[?(@.key=='value')]': Invalid array index definition “?(@.key=='value')]”
   ```
@@ -906,7 +918,8 @@ The following queries provide results that do not match those of other implement
   ```
   ["first", "second"]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   Unable to compile selector `$[ 0 , 1 ]': Invalid array index definition “ 0 , 1 ]”
   ```

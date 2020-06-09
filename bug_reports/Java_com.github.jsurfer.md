@@ -15,7 +15,8 @@ The following queries provide results that do not match those of other implement
   ```
   ["first", "second"]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   org.antlr.v4.runtime.misc.ParseCancellationException
   ```
@@ -79,7 +80,8 @@ The following queries provide results that do not match those of other implement
   ```
   ["first", "third"]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   org.antlr.v4.runtime.misc.ParseCancellationException
   ```
@@ -99,7 +101,8 @@ The following queries provide results that do not match those of other implement
   ```
   ["first", "second", "third"]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   org.antlr.v4.runtime.misc.ParseCancellationException
   ```
@@ -140,7 +143,8 @@ The following queries provide results that do not match those of other implement
   ```
   [10, 20]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   line 1:2 no viable alternative at input '[010'
   org.antlr.v4.runtime.misc.ParseCancellationException
@@ -161,7 +165,8 @@ The following queries provide results that do not match those of other implement
   ```
   ["first", "third"]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   org.antlr.v4.runtime.misc.ParseCancellationException
   ```
@@ -181,7 +186,8 @@ The following queries provide results that do not match those of other implement
   ```
   ["second", "third"]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   org.antlr.v4.runtime.misc.ParseCancellationException
   ```
@@ -201,7 +207,8 @@ The following queries provide results that do not match those of other implement
   ```
   ["first", "third", "fifth"]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   org.antlr.v4.runtime.misc.ParseCancellationException
   ```
@@ -217,7 +224,8 @@ The following queries provide results that do not match those of other implement
   ```
   ["value"]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   line 1:2 token recognition error at: '"'
   line 1:6 token recognition error at: '"'
@@ -254,7 +262,8 @@ The following queries provide results that do not match those of other implement
   ```
   ["value"]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   org.antlr.v4.runtime.misc.ParseCancellationException
   ```
@@ -272,7 +281,8 @@ The following queries provide results that do not match those of other implement
   ```
   ["second"]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   org.antlr.v4.runtime.misc.ParseCancellationException
   ```
@@ -444,7 +454,8 @@ The following queries provide results that do not match those of other implement
   ```
   [{"key": "hi@example.com"}]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   line 1:11 token recognition error at: '"'
   line 1:26 token recognition error at: '"'
@@ -471,7 +482,8 @@ The following queries provide results that do not match those of other implement
   ```
   [{"key": "some.value"}]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   line 1:11 token recognition error at: '"'
   line 1:22 token recognition error at: '"'

@@ -74,7 +74,8 @@ The following queries provide results that do not match those of other implement
   ```
   ["deepest", "first nested", "first", "more", {"nested": ["deepest", "second"]}]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   JPError(end of input expected)
   ```
@@ -92,7 +93,8 @@ The following queries provide results that do not match those of other implement
   ```
   [42]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   JPError(end of input expected)
   ```
@@ -157,7 +159,8 @@ The following queries provide results that do not match those of other implement
   ```
   ["string", "value", 0, 1, [0, 1], {"complex": "string", "primitives": [0, 1]}]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
   JPError(end of input expected)
   ```
