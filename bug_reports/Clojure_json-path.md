@@ -96,6 +96,132 @@ The following queries provide results that do not match those of other implement
   "second"
   ```
 
+- [ ] `$[-4:-5]`
+  Input:
+  ```
+  [
+    2,
+    "a",
+    4,
+    5,
+    100,
+    "nice"
+  ]
+  ```
+  Expected output:
+  ```
+  []
+  ```
+  Actual output:
+  ```
+  4
+  ```
+
+- [ ] `$[-4:-4]`
+  Input:
+  ```
+  [
+    2,
+    "a",
+    4,
+    5,
+    100,
+    "nice"
+  ]
+  ```
+  Expected output:
+  ```
+  []
+  ```
+  Actual output:
+  ```
+  4
+  ```
+
+- [ ] `$[-4:-3]`
+  Input:
+  ```
+  [
+    2,
+    "a",
+    4,
+    5,
+    100,
+    "nice"
+  ]
+  ```
+  Expected output:
+  ```
+  [4]
+  ```
+  Actual output:
+  ```
+  4
+  ```
+
+- [ ] `$[-4:1]`
+  Input:
+  ```
+  [
+    2,
+    "a",
+    4,
+    5,
+    100,
+    "nice"
+  ]
+  ```
+  Expected output:
+  ```
+  []
+  ```
+  Actual output:
+  ```
+  4
+  ```
+
+- [ ] `$[-4:2]`
+  Input:
+  ```
+  [
+    2,
+    "a",
+    4,
+    5,
+    100,
+    "nice"
+  ]
+  ```
+  Expected output:
+  ```
+  []
+  ```
+  Actual output:
+  ```
+  4
+  ```
+
+- [ ] `$[-4:3]`
+  Input:
+  ```
+  [
+    2,
+    "a",
+    4,
+    5,
+    100,
+    "nice"
+  ]
+  ```
+  Expected output:
+  ```
+  [4]
+  ```
+  Actual output:
+  ```
+  4
+  ```
+
 - [ ] `$[1:]`
   Input:
   ```
@@ -181,6 +307,69 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   java.lang.Exception object must be an array.
+  ```
+
+- [ ] `$[3:-4]`
+  Input:
+  ```
+  [
+    2,
+    "a",
+    4,
+    5,
+    100,
+    "nice"
+  ]
+  ```
+  Expected output:
+  ```
+  []
+  ```
+  Actual output:
+  ```
+  5
+  ```
+
+- [ ] `$[3:-3]`
+  Input:
+  ```
+  [
+    2,
+    "a",
+    4,
+    5,
+    100,
+    "nice"
+  ]
+  ```
+  Expected output:
+  ```
+  []
+  ```
+  Actual output:
+  ```
+  5
+  ```
+
+- [ ] `$[3:-2]`
+  Input:
+  ```
+  [
+    2,
+    "a",
+    4,
+    5,
+    100,
+    "nice"
+  ]
+  ```
+  Expected output:
+  ```
+  [5]
+  ```
+  Actual output:
+  ```
+  5
   ```
 
 - [ ] `$[2:1]`

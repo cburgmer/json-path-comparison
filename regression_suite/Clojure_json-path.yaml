@@ -19,6 +19,24 @@ queries:
   - id: array_slice_on_partially_overlapping_array
     status: fail
     result: "second"
+  - id: array_slice_with_negative_start_and_end_and_range_of_-1
+    status: fail
+    result: 4
+  - id: array_slice_with_negative_start_and_end_and_range_of_0
+    status: fail
+    result: 4
+  - id: array_slice_with_negative_start_and_end_and_range_of_1
+    status: fail
+    result: 4
+  - id: array_slice_with_negative_start_and_positive_end_and_range_of_-1
+    status: fail
+    result: 4
+  - id: array_slice_with_negative_start_and_positive_end_and_range_of_0
+    status: fail
+    result: 4
+  - id: array_slice_with_negative_start_and_positive_end_and_range_of_1
+    status: fail
+    result: 4
   - id: array_slice_with_negative_step
     status: open
     result: "forth"
@@ -37,6 +55,15 @@ queries:
     status: error
   - id: array_slice_with_open_start_and_end_on_object
     status: error
+  - id: array_slice_with_positive_start_and_negative_end_and_range_of_-1
+    status: fail
+    result: 5
+  - id: array_slice_with_positive_start_and_negative_end_and_range_of_0
+    status: fail
+    result: 5
+  - id: array_slice_with_positive_start_and_negative_end_and_range_of_1
+    status: fail
+    result: 5
   - id: array_slice_with_range_of_-1
     status: fail
     result: "third"

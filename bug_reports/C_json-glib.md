@@ -3,6 +3,84 @@ Results do not match other implementations
 The following queries provide results that do not match those of other implementations of JSONPath
 (compare https://cburgmer.github.io/json-path-comparison/):
 
+- [ ] `$[-4:1]`
+  Input:
+  ```
+  [
+    2,
+    "a",
+    4,
+    5,
+    100,
+    "nice"
+  ]
+  ```
+  Expected output:
+  ```
+  []
+  ```
+  Actual output:
+  ```
+  [
+    4,
+    5,
+    100,
+    "nice"
+  ]
+  ```
+
+- [ ] `$[-4:2]`
+  Input:
+  ```
+  [
+    2,
+    "a",
+    4,
+    5,
+    100,
+    "nice"
+  ]
+  ```
+  Expected output:
+  ```
+  []
+  ```
+  Actual output:
+  ```
+  [
+    4,
+    5,
+    100,
+    "nice"
+  ]
+  ```
+
+- [ ] `$[-4:3]`
+  Input:
+  ```
+  [
+    2,
+    "a",
+    4,
+    5,
+    100,
+    "nice"
+  ]
+  ```
+  Expected output:
+  ```
+  [4]
+  ```
+  Actual output:
+  ```
+  [
+    4,
+    5,
+    100,
+    "nice"
+  ]
+  ```
+
 - [ ] `$[1:]`
   Input:
   ```
@@ -51,6 +129,27 @@ The following queries provide results that do not match those of other implement
   Expected output:
   ```
   ["first", "second"]
+  ```
+  Actual output:
+  ```
+  []
+  ```
+
+- [ ] `$[3:-2]`
+  Input:
+  ```
+  [
+    2,
+    "a",
+    4,
+    5,
+    100,
+    "nice"
+  ]
+  ```
+  Expected output:
+  ```
+  [5]
   ```
   Actual output:
   ```

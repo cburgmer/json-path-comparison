@@ -3,6 +3,27 @@ Results do not match other implementations
 The following queries provide results that do not match those of other implementations of JSONPath
 (compare https://cburgmer.github.io/json-path-comparison/):
 
+- [ ] `$[3:-2]`
+  Input:
+  ```
+  [
+    2,
+    "a",
+    4,
+    5,
+    100,
+    "nice"
+  ]
+  ```
+  Expected output:
+  ```
+  [5]
+  ```
+  Actual output:
+  ```
+  []
+  ```
+
 - [ ] `$['key']`
   Input:
   ```

@@ -100,6 +100,100 @@ The following queries provide results that do not match those of other implement
   index [to] out of range: len: 3, to: 10
   ```
 
+- [ ] `$[-4:-4]`
+  Input:
+  ```
+  [
+    2,
+    "a",
+    4,
+    5,
+    100,
+    "nice"
+  ]
+  ```
+  Expected output:
+  ```
+  []
+  ```
+  Actual output:
+  ```
+  [
+    4
+  ]
+  ```
+
+- [ ] `$[-4:-3]`
+  Input:
+  ```
+  [
+    2,
+    "a",
+    4,
+    5,
+    100,
+    "nice"
+  ]
+  ```
+  Expected output:
+  ```
+  [4]
+  ```
+  Actual output:
+  ```
+  [
+    4,
+    5
+  ]
+  ```
+
+- [ ] `$[-4:2]`
+  Input:
+  ```
+  [
+    2,
+    "a",
+    4,
+    5,
+    100,
+    "nice"
+  ]
+  ```
+  Expected output:
+  ```
+  []
+  ```
+  Actual output:
+  ```
+  [
+    4
+  ]
+  ```
+
+- [ ] `$[-4:3]`
+  Input:
+  ```
+  [
+    2,
+    "a",
+    4,
+    5,
+    100,
+    "nice"
+  ]
+  ```
+  Expected output:
+  ```
+  [4]
+  ```
+  Actual output:
+  ```
+  [
+    4,
+    5
+  ]
+  ```
+
 - [ ] `$[3:0:-2]`
   Input:
   ```
@@ -184,6 +278,53 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   object is not Slice
+  ```
+
+- [ ] `$[3:-3]`
+  Input:
+  ```
+  [
+    2,
+    "a",
+    4,
+    5,
+    100,
+    "nice"
+  ]
+  ```
+  Expected output:
+  ```
+  []
+  ```
+  Actual output:
+  ```
+  [
+    5
+  ]
+  ```
+
+- [ ] `$[3:-2]`
+  Input:
+  ```
+  [
+    2,
+    "a",
+    4,
+    5,
+    100,
+    "nice"
+  ]
+  ```
+  Expected output:
+  ```
+  [5]
+  ```
+  Actual output:
+  ```
+  [
+    5,
+    100
+  ]
   ```
 
 - [ ] `$[0:0]`

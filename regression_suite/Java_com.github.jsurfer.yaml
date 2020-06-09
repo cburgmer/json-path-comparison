@@ -9,6 +9,18 @@ queries:
   - id: array_slice_on_object
     status: open
     result: []
+  - id: array_slice_with_negative_start_and_end_and_range_of_1
+    status: fail
+    result: []
+  - id: array_slice_with_negative_start_and_positive_end_and_range_of_-1
+    status: fail
+    result: [2]
+  - id: array_slice_with_negative_start_and_positive_end_and_range_of_0
+    status: fail
+    result: [2, "a"]
+  - id: array_slice_with_negative_start_and_positive_end_and_range_of_1
+    status: fail
+    result: [2, "a", 4]
   - id: array_slice_with_negative_step
     status: open
     result: NOT_SUPPORTED
@@ -20,6 +32,9 @@ queries:
     result: NOT_SUPPORTED
   - id: array_slice_with_open_start_and_end_on_object
     status: open
+    result: []
+  - id: array_slice_with_positive_start_and_negative_end_and_range_of_1
+    status: fail
     result: []
   - id: array_slice_with_start_-1_and_open_end
     status: fail

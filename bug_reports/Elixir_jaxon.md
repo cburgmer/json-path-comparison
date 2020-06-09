@@ -106,6 +106,144 @@ The following queries provide results that do not match those of other implement
       lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
   ```
 
+- [ ] `$[-4:-5]`
+  Input:
+  ```
+  [
+    2,
+    "a",
+    4,
+    5,
+    100,
+    "nice"
+  ]
+  ```
+  Expected output:
+  ```
+  []
+  ```
+  Error:
+  ```
+  ** (Jaxon.ParseError) Expected an integer at `-4:-5]`
+      lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
+      lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
+  ```
+
+- [ ] `$[-4:-4]`
+  Input:
+  ```
+  [
+    2,
+    "a",
+    4,
+    5,
+    100,
+    "nice"
+  ]
+  ```
+  Expected output:
+  ```
+  []
+  ```
+  Error:
+  ```
+  ** (Jaxon.ParseError) Expected an integer at `-4:-4]`
+      lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
+      lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
+  ```
+
+- [ ] `$[-4:-3]`
+  Input:
+  ```
+  [
+    2,
+    "a",
+    4,
+    5,
+    100,
+    "nice"
+  ]
+  ```
+  Expected output:
+  ```
+  [4]
+  ```
+  Error:
+  ```
+  ** (Jaxon.ParseError) Expected an integer at `-4:-3]`
+      lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
+      lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
+  ```
+
+- [ ] `$[-4:1]`
+  Input:
+  ```
+  [
+    2,
+    "a",
+    4,
+    5,
+    100,
+    "nice"
+  ]
+  ```
+  Expected output:
+  ```
+  []
+  ```
+  Error:
+  ```
+  ** (Jaxon.ParseError) Expected an integer at `-4:1]`
+      lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
+      lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
+  ```
+
+- [ ] `$[-4:2]`
+  Input:
+  ```
+  [
+    2,
+    "a",
+    4,
+    5,
+    100,
+    "nice"
+  ]
+  ```
+  Expected output:
+  ```
+  []
+  ```
+  Error:
+  ```
+  ** (Jaxon.ParseError) Expected an integer at `-4:2]`
+      lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
+      lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
+  ```
+
+- [ ] `$[-4:3]`
+  Input:
+  ```
+  [
+    2,
+    "a",
+    4,
+    5,
+    100,
+    "nice"
+  ]
+  ```
+  Expected output:
+  ```
+  [4]
+  ```
+  Error:
+  ```
+  ** (Jaxon.ParseError) Expected an integer at `-4:3]`
+      lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
+      lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
+  ```
+
 - [ ] `$[3:0:-2]`
   Input:
   ```
@@ -235,6 +373,75 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   ** (Jaxon.ParseError) Expected an integer at `:]`
+      lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
+      lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
+  ```
+
+- [ ] `$[3:-4]`
+  Input:
+  ```
+  [
+    2,
+    "a",
+    4,
+    5,
+    100,
+    "nice"
+  ]
+  ```
+  Expected output:
+  ```
+  []
+  ```
+  Error:
+  ```
+  ** (Jaxon.ParseError) Expected an integer at `3:-4]`
+      lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
+      lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
+  ```
+
+- [ ] `$[3:-3]`
+  Input:
+  ```
+  [
+    2,
+    "a",
+    4,
+    5,
+    100,
+    "nice"
+  ]
+  ```
+  Expected output:
+  ```
+  []
+  ```
+  Error:
+  ```
+  ** (Jaxon.ParseError) Expected an integer at `3:-3]`
+      lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
+      lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
+  ```
+
+- [ ] `$[3:-2]`
+  Input:
+  ```
+  [
+    2,
+    "a",
+    4,
+    5,
+    100,
+    "nice"
+  ]
+  ```
+  Expected output:
+  ```
+  [5]
+  ```
+  Error:
+  ```
+  ** (Jaxon.ParseError) Expected an integer at `3:-2]`
       lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
       lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
   ```

@@ -27,6 +27,84 @@ The following queries provide results that do not match those of other implement
       lib/kernel/cli.ex:124: anonymous fn/3 in Kernel.CLI.exec_fun/2
   ```
 
+- [ ] `$[-4:1]`
+  Input:
+  ```
+  [
+    2,
+    "a",
+    4,
+    5,
+    100,
+    "nice"
+  ]
+  ```
+  Expected output:
+  ```
+  []
+  ```
+  Actual output:
+  ```
+  [
+    4,
+    5,
+    100,
+    "nice"
+  ]
+  ```
+
+- [ ] `$[-4:2]`
+  Input:
+  ```
+  [
+    2,
+    "a",
+    4,
+    5,
+    100,
+    "nice"
+  ]
+  ```
+  Expected output:
+  ```
+  []
+  ```
+  Actual output:
+  ```
+  [
+    4,
+    5,
+    100,
+    "nice"
+  ]
+  ```
+
+- [ ] `$[-4:3]`
+  Input:
+  ```
+  [
+    2,
+    "a",
+    4,
+    5,
+    100,
+    "nice"
+  ]
+  ```
+  Expected output:
+  ```
+  [4]
+  ```
+  Actual output:
+  ```
+  [
+    4,
+    5,
+    100,
+    "nice"
+  ]
+  ```
+
 - [ ] `$[3:0:-2]`
   Input:
   ```

@@ -27,6 +27,138 @@ The following queries provide results that do not match those of other implement
   ]
   ```
 
+- [ ] `$[-4:-5]`
+  Input:
+  ```
+  [
+    2,
+    "a",
+    4,
+    5,
+    100,
+    "nice"
+  ]
+  ```
+  Expected output:
+  ```
+  []
+  ```
+  Actual output:
+  NOT_SUPPORTED
+  ```
+  parsing error
+  ```
+
+- [ ] `$[-4:-4]`
+  Input:
+  ```
+  [
+    2,
+    "a",
+    4,
+    5,
+    100,
+    "nice"
+  ]
+  ```
+  Expected output:
+  ```
+  []
+  ```
+  Actual output:
+  NOT_SUPPORTED
+  ```
+  parsing error
+  ```
+
+- [ ] `$[-4:-3]`
+  Input:
+  ```
+  [
+    2,
+    "a",
+    4,
+    5,
+    100,
+    "nice"
+  ]
+  ```
+  Expected output:
+  ```
+  [4]
+  ```
+  Actual output:
+  NOT_SUPPORTED
+  ```
+  parsing error
+  ```
+
+- [ ] `$[-4:1]`
+  Input:
+  ```
+  [
+    2,
+    "a",
+    4,
+    5,
+    100,
+    "nice"
+  ]
+  ```
+  Expected output:
+  ```
+  []
+  ```
+  Actual output:
+  NOT_SUPPORTED
+  ```
+  parsing error
+  ```
+
+- [ ] `$[-4:2]`
+  Input:
+  ```
+  [
+    2,
+    "a",
+    4,
+    5,
+    100,
+    "nice"
+  ]
+  ```
+  Expected output:
+  ```
+  []
+  ```
+  Actual output:
+  NOT_SUPPORTED
+  ```
+  parsing error
+  ```
+
+- [ ] `$[-4:3]`
+  Input:
+  ```
+  [
+    2,
+    "a",
+    4,
+    5,
+    100,
+    "nice"
+  ]
+  ```
+  Expected output:
+  ```
+  [4]
+  ```
+  Actual output:
+  NOT_SUPPORTED
+  ```
+  parsing error
+  ```
+
 - [ ] `$[:]`
   Input:
   ```
@@ -56,6 +188,72 @@ The following queries provide results that do not match those of other implement
   Expected output:
   ```
   ["first", "second"]
+  ```
+  Actual output:
+  NOT_SUPPORTED
+  ```
+  parsing error
+  ```
+
+- [ ] `$[3:-4]`
+  Input:
+  ```
+  [
+    2,
+    "a",
+    4,
+    5,
+    100,
+    "nice"
+  ]
+  ```
+  Expected output:
+  ```
+  []
+  ```
+  Actual output:
+  NOT_SUPPORTED
+  ```
+  parsing error
+  ```
+
+- [ ] `$[3:-3]`
+  Input:
+  ```
+  [
+    2,
+    "a",
+    4,
+    5,
+    100,
+    "nice"
+  ]
+  ```
+  Expected output:
+  ```
+  []
+  ```
+  Actual output:
+  NOT_SUPPORTED
+  ```
+  parsing error
+  ```
+
+- [ ] `$[3:-2]`
+  Input:
+  ```
+  [
+    2,
+    "a",
+    4,
+    5,
+    100,
+    "nice"
+  ]
+  ```
+  Expected output:
+  ```
+  [5]
   ```
   Actual output:
   NOT_SUPPORTED

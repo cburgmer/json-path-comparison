@@ -9,6 +9,15 @@ queries:
   - id: array_slice_on_object
     status: open
     result: []
+  - id: array_slice_with_negative_start_and_positive_end_and_range_of_-1
+    status: fail
+    result: [4, 5, 100, "nice"]
+  - id: array_slice_with_negative_start_and_positive_end_and_range_of_0
+    status: fail
+    result: [4, 5, 100, "nice"]
+  - id: array_slice_with_negative_start_and_positive_end_and_range_of_1
+    status: fail
+    result: [4, 5, 100, "nice"]
   - id: array_slice_with_negative_step
     status: open
     result: []
@@ -26,6 +35,9 @@ queries:
     result: []
   - id: array_slice_with_open_start_and_end_on_object
     status: open
+    result: []
+  - id: array_slice_with_positive_start_and_negative_end_and_range_of_1
+    status: fail
     result: []
   - id: array_slice_with_step
     status: error

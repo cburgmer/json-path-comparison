@@ -27,6 +27,100 @@ The following queries provide results that do not match those of other implement
   ]
   ```
 
+- [ ] `$[-4:-4]`
+  Input:
+  ```
+  [
+    2,
+    "a",
+    4,
+    5,
+    100,
+    "nice"
+  ]
+  ```
+  Expected output:
+  ```
+  []
+  ```
+  Actual output:
+  ```
+  [
+    4
+  ]
+  ```
+
+- [ ] `$[-4:-3]`
+  Input:
+  ```
+  [
+    2,
+    "a",
+    4,
+    5,
+    100,
+    "nice"
+  ]
+  ```
+  Expected output:
+  ```
+  [4]
+  ```
+  Actual output:
+  ```
+  [
+    4,
+    5
+  ]
+  ```
+
+- [ ] `$[-4:2]`
+  Input:
+  ```
+  [
+    2,
+    "a",
+    4,
+    5,
+    100,
+    "nice"
+  ]
+  ```
+  Expected output:
+  ```
+  []
+  ```
+  Actual output:
+  ```
+  [
+    4
+  ]
+  ```
+
+- [ ] `$[-4:3]`
+  Input:
+  ```
+  [
+    2,
+    "a",
+    4,
+    5,
+    100,
+    "nice"
+  ]
+  ```
+  Expected output:
+  ```
+  [4]
+  ```
+  Actual output:
+  ```
+  [
+    4,
+    5
+  ]
+  ```
+
 - [ ] `$[:2]`
   Input:
   ```
@@ -82,6 +176,53 @@ The following queries provide results that do not match those of other implement
   NOT_SUPPORTED
   ```
   JSON path parse error at position 1
+  ```
+
+- [ ] `$[3:-3]`
+  Input:
+  ```
+  [
+    2,
+    "a",
+    4,
+    5,
+    100,
+    "nice"
+  ]
+  ```
+  Expected output:
+  ```
+  []
+  ```
+  Actual output:
+  ```
+  [
+    5
+  ]
+  ```
+
+- [ ] `$[3:-2]`
+  Input:
+  ```
+  [
+    2,
+    "a",
+    4,
+    5,
+    100,
+    "nice"
+  ]
+  ```
+  Expected output:
+  ```
+  [5]
+  ```
+  Actual output:
+  ```
+  [
+    5,
+    100
+  ]
   ```
 
 - [ ] `$[0:0]`

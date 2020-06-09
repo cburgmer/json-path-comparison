@@ -42,6 +42,34 @@ queries:
     selector: "$[1:10]"
     document: ["first", "second", "third"]
     consensus: ["second", "third"]
+  - id: array_slice_with_negative_start_and_end_and_range_of_-1
+    selector: "$[-4:-5]"
+    document: [2, "a", 4, 5, 100, "nice"]
+    consensus: []
+    not-found-consensus: NOT_FOUND
+  - id: array_slice_with_negative_start_and_end_and_range_of_0
+    selector: "$[-4:-4]"
+    document: [2, "a", 4, 5, 100, "nice"]
+    consensus: []
+    not-found-consensus: NOT_FOUND
+  - id: array_slice_with_negative_start_and_end_and_range_of_1
+    selector: "$[-4:-3]"
+    document: [2, "a", 4, 5, 100, "nice"]
+    consensus: [4]
+  - id: array_slice_with_negative_start_and_positive_end_and_range_of_-1
+    selector: "$[-4:1]"
+    document: [2, "a", 4, 5, 100, "nice"]
+    consensus: []
+    not-found-consensus: NOT_FOUND
+  - id: array_slice_with_negative_start_and_positive_end_and_range_of_0
+    selector: "$[-4:2]"
+    document: [2, "a", 4, 5, 100, "nice"]
+    consensus: []
+    not-found-consensus: NOT_FOUND
+  - id: array_slice_with_negative_start_and_positive_end_and_range_of_1
+    selector: "$[-4:3]"
+    document: [2, "a", 4, 5, 100, "nice"]
+    consensus: [4]
   - id: array_slice_with_negative_step
     selector: "$[3:0:-2]"
     document: ["first", "second", "third", "forth", "fifth"]
@@ -67,6 +95,20 @@ queries:
   - id: array_slice_with_open_start_and_end_on_object
     selector: "$[:]"
     document: {":": 42, "more": "string"}
+  - id: array_slice_with_positive_start_and_negative_end_and_range_of_-1
+    selector: "$[3:-4]"
+    document: [2, "a", 4, 5, 100, "nice"]
+    consensus: []
+    not-found-consensus: NOT_FOUND
+  - id: array_slice_with_positive_start_and_negative_end_and_range_of_0
+    selector: "$[3:-3]"
+    document: [2, "a", 4, 5, 100, "nice"]
+    consensus: []
+    not-found-consensus: NOT_FOUND
+  - id: array_slice_with_positive_start_and_negative_end_and_range_of_1
+    selector: "$[3:-2]"
+    document: [2, "a", 4, 5, 100, "nice"]
+    consensus: [5]
   - id: array_slice_with_range_of_-1
     selector: "$[2:1]"
     document: ["first", "second", "third", "forth"]
