@@ -23,9 +23,6 @@ Done:
 - Find and report issues in implementations
 - Make missing consensus visible
 - Go through (past) issues of implementations to find more corner cases to query for.
-
-Short term:
-
 - Guide implementations to tackle queries without consensus to create one
   - Experiment: Come up with a concise interpretation, see [./proposals/Proposal_A/README.md](./proposals/Proposal_A/README.md).
   - Experiment: Suggest solutions and try opening a discussion.
