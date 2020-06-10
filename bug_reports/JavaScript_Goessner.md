@@ -483,7 +483,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  jsonPath: Unexpected token '?': _v.a[?(_v.price>10)
+  jsonPath: Unexpected token ?: _v.a[?(_v.price>10)
   ```
 
 - [ ] `$(key,more)`
@@ -550,7 +550,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  jsonPath: Unexpected token ')': _v.key<3),?(_v.key>6
+  jsonPath: Unexpected token ): _v.key<3),?(_v.key>6
   ```
 
 - [ ] `$[ 0 , 1 ]`

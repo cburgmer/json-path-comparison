@@ -71,7 +71,8 @@ The following queries provide results that do not match those of other implement
     "second",
     "third",
     "forth",
-    "fifth"
+    "fifth",
+    "second"
   ]
   ```
 
