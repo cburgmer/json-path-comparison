@@ -81,6 +81,22 @@ The following queries provide results that do not match those of other implement
   ]
   ```
 
+- [ ] `$[0:3:-2]`
+  Input:
+  ```
+  [
+    "first",
+    "second",
+    "third",
+    "forth",
+    "fifth"
+  ]
+  ```
+  Error:
+  ```
+  timeout: sending signal TERM to command ‘build/main’
+  ```
+
 - [ ] `$[1:]`
   Input:
   ```

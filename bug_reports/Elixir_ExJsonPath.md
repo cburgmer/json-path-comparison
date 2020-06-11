@@ -135,6 +135,36 @@ The following queries provide results that do not match those of other implement
       lib/kernel/cli.ex:124: anonymous fn/3 in Kernel.CLI.exec_fun/2
   ```
 
+- [ ] `$[0:3:-2]`
+  Input:
+  ```
+  [
+    "first",
+    "second",
+    "third",
+    "forth",
+    "fifth"
+  ]
+  ```
+  Error:
+  ```
+  ** (FunctionClauseError) no function clause matching in Enum.take_every/2    
+      
+      The following arguments were given to Enum.take_every/2:
+      
+          # 1
+          ["first", "second", "third"]
+      
+          # 2
+          -2
+      
+      lib/enum.ex:2829: Enum.take_every/2
+      lib/ex_json_path.ex:167: ExJSONPath.recurse/2
+      lib/ex_json_path.ex:65: ExJSONPath.eval/2
+      lib/cli.ex:5: Jsonpath.CLI.main/1
+      lib/kernel/cli.ex:124: anonymous fn/3 in Kernel.CLI.exec_fun/2
+  ```
+
 - [ ] `$[::-2]`
   Input:
   ```

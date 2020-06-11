@@ -210,6 +210,22 @@ The following queries provide results that do not match those of other implement
   only support one range(from, to): [3 0 -2]
   ```
 
+- [ ] `$[0:3:-2]`
+  Input:
+  ```
+  [
+    "first",
+    "second",
+    "third",
+    "forth",
+    "fifth"
+  ]
+  ```
+  Error:
+  ```
+  only support one range(from, to): [0 3 -2]
+  ```
+
 - [ ] `$[::-2]`
   Input:
   ```

@@ -12,6 +12,9 @@ queries:
   - id: array_slice_with_negative_step
     status: open
     result: ["forth", "second"]
+  - id: array_slice_with_negative_step_and_start_greater_than_end
+    status: open
+    result: NOT_FOUND
   - id: array_slice_with_negative_step_only
     status: open
     result: ["fifth", "third", "first"]
