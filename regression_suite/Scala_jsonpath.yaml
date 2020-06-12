@@ -164,6 +164,9 @@ queries:
   - id: filter_expression_with_equals_array
     status: open
     result: NOT_SUPPORTED
+  - id: filter_expression_with_equals_array_for_dot_notation_with_star
+    status: open
+    result: NOT_SUPPORTED
   - id: filter_expression_with_equals_array_with_single_quotes
     status: open
     result: NOT_SUPPORTED
@@ -173,6 +176,9 @@ queries:
   - id: filter_expression_with_equals_null
     status: open
     result: [{"key": null}]
+  - id: filter_expression_with_equals_number_for_dot_notation_with_star
+    status: open
+    result: []
   - id: filter_expression_with_equals_number_with_fraction
     status: open
     result: NOT_SUPPORTED

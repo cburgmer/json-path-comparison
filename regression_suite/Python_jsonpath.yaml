@@ -172,6 +172,9 @@ queries:
   - id: filter_expression_with_equals_array
     status: open
     result: [{"d": ["v1", "v2"]}]
+  - id: filter_expression_with_equals_array_for_dot_notation_with_star
+    status: open
+    result: NOT_FOUND
   - id: filter_expression_with_equals_array_with_single_quotes
     status: open
     result: [{"d": ["v1", "v2"]}]
@@ -179,6 +182,9 @@ queries:
     status: open
     result: NOT_FOUND
   - id: filter_expression_with_equals_null
+    status: open
+    result: NOT_FOUND
+  - id: filter_expression_with_equals_number_for_dot_notation_with_star
     status: open
     result: NOT_FOUND
   - id: filter_expression_with_equals_number_with_fraction

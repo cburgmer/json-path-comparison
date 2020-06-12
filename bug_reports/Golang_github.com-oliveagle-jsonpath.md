@@ -2217,6 +2217,39 @@ The following queries provide results that do not match those of other implement
   interface conversion: interface {} is nil, not string
   ```
 
+- [ ] `$[?(@.*==[1,2])]`
+  Input:
+  ```
+  [
+    [
+      1,
+      2
+    ],
+    [
+      2,
+      3
+    ],
+    [
+      1
+    ],
+    [
+      2
+    ],
+    [
+      1,
+      2,
+      3
+    ],
+    1,
+    2,
+    3
+  ]
+  ```
+  Error:
+  ```
+  interface conversion: interface {} is nil, not string
+  ```
+
 - [ ] `$[?(@.d==['v1','v2'])]`
   Input:
   ```

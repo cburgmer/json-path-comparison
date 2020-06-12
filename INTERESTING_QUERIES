@@ -6,10 +6,6 @@
   selector: "$...key"
 - document: [2, "a", 4, 5, 100, "nice"]
   selector: "$[6:2:-1]"
-- document: [[1,2], [2,3]]
-  selector: "$[?(@.*==[1,2])]"
-- document: [[1,2], [2,3]]
-  selector: "$[?(@.*==2)]"
 - document: [[0], [1, 2], [{"key": 2}, 3], 2]
   selector: "$[?(@[-1]==$[-1])]"
 - document: [[0], [1, 2], [{"key": 2}, 3], 2]

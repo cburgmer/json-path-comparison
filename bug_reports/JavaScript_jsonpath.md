@@ -164,6 +164,72 @@ The following queries provide results that do not match those of other implement
   obj needs to be an object
   ```
 
+- [ ] `$[?(@.*==[1,2])]`
+  Input:
+  ```
+  [
+    [
+      1,
+      2
+    ],
+    [
+      2,
+      3
+    ],
+    [
+      1
+    ],
+    [
+      2
+    ],
+    [
+      1,
+      2,
+      3
+    ],
+    1,
+    2,
+    3
+  ]
+  ```
+  Error:
+  ```
+  Line 1: Unexpected token *=
+  ```
+
+- [ ] `$[?(@.*==2)]`
+  Input:
+  ```
+  [
+    [
+      1,
+      2
+    ],
+    [
+      2,
+      3
+    ],
+    [
+      1
+    ],
+    [
+      2
+    ],
+    [
+      1,
+      2,
+      3
+    ],
+    1,
+    2,
+    3
+  ]
+  ```
+  Error:
+  ```
+  Line 1: Unexpected token *=
+  ```
+
 - [ ] `$[?(@.key=42)]`
   Input:
   ```

@@ -1680,6 +1680,39 @@ The following queries provide results that do not match those of other implement
   java.lang.Exception object must be an array.
   ```
 
+- [ ] `$[?(@.*==[1,2])]`
+  Input:
+  ```
+  [
+    [
+      1,
+      2
+    ],
+    [
+      2,
+      3
+    ],
+    [
+      1
+    ],
+    [
+      2
+    ],
+    [
+      1,
+      2,
+      3
+    ],
+    1,
+    2,
+    3
+  ]
+  ```
+  Error:
+  ```
+  java.lang.Exception object must be an array.
+  ```
+
 - [ ] `$[?(@.d==['v1','v2'])]`
   Input:
   ```

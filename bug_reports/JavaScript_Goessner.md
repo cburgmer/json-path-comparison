@@ -274,6 +274,72 @@ The following queries provide results that do not match those of other implement
   jsonpath returned false, this might indicate an error
   ```
 
+- [ ] `$[?(@.*==[1,2])]`
+  Input:
+  ```
+  [
+    [
+      1,
+      2
+    ],
+    [
+      2,
+      3
+    ],
+    [
+      1
+    ],
+    [
+      2
+    ],
+    [
+      1,
+      2,
+      3
+    ],
+    1,
+    2,
+    3
+  ]
+  ```
+  Error:
+  ```
+  jsonPath: Unexpected token '*=': _v.*==[1,2]
+  ```
+
+- [ ] `$[?(@.*==2)]`
+  Input:
+  ```
+  [
+    [
+      1,
+      2
+    ],
+    [
+      2,
+      3
+    ],
+    [
+      1
+    ],
+    [
+      2
+    ],
+    [
+      1,
+      2,
+      3
+    ],
+    1,
+    2,
+    3
+  ]
+  ```
+  Error:
+  ```
+  jsonPath: Unexpected token '*=': _v.*==2
+  ```
+
 - [ ] `$[?(@.key=="hi@example.com")]`
   Input:
   ```

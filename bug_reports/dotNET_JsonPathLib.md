@@ -464,6 +464,39 @@ The following queries provide results that do not match those of other implement
   Object reference not set to an instance of an object.
   ```
 
+- [ ] `$[?(@.*==[1,2])]`
+  Input:
+  ```
+  [
+    [
+      1,
+      2
+    ],
+    [
+      2,
+      3
+    ],
+    [
+      1
+    ],
+    [
+      2
+    ],
+    [
+      1,
+      2,
+      3
+    ],
+    1,
+    2,
+    3
+  ]
+  ```
+  Error:
+  ```
+  Line 1: Unexpected token *=
+  ```
+
 - [ ] `$[?(@.d==['v1','v2'])]`
   Input:
   ```
@@ -524,6 +557,39 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   Object reference not set to an instance of an object.
+  ```
+
+- [ ] `$[?(@.*==2)]`
+  Input:
+  ```
+  [
+    [
+      1,
+      2
+    ],
+    [
+      2,
+      3
+    ],
+    [
+      1
+    ],
+    [
+      2
+    ],
+    [
+      1,
+      2,
+      3
+    ],
+    1,
+    2,
+    3
+  ]
+  ```
+  Error:
+  ```
+  Line 1: Unexpected token *=
   ```
 
 - [ ] `$[?(@.d=={"k":"v"})]`

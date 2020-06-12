@@ -1024,6 +1024,39 @@ The following queries provide results that do not match those of other implement
   ]
   ```
 
+- [ ] `$[?(@.*==[1,2])]`
+  Input:
+  ```
+  [
+    [
+      1,
+      2
+    ],
+    [
+      2,
+      3
+    ],
+    [
+      1
+    ],
+    [
+      2
+    ],
+    [
+      1,
+      2,
+      3
+    ],
+    1,
+    2,
+    3
+  ]
+  ```
+  Error:
+  ```
+  unmatched parenthesis in expression: (true
+  ```
+
 - [ ] `$[?(@.key>42)]`
   Input:
   ```

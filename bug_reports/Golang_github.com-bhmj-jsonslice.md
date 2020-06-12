@@ -741,6 +741,39 @@ The following queries provide results that do not match those of other implement
   unknown token at 9
   ```
 
+- [ ] `$[?(@.*==[1,2])]`
+  Input:
+  ```
+  [
+    [
+      1,
+      2
+    ],
+    [
+      2,
+      3
+    ],
+    [
+      1
+    ],
+    [
+      2
+    ],
+    [
+      1,
+      2,
+      3
+    ],
+    1,
+    2,
+    3
+  ]
+  ```
+  Error:
+  ```
+  unknown token at 9
+  ```
+
 - [ ] `$[?(@.d==['v1','v2'])]`
   Input:
   ```
@@ -895,6 +928,39 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   unknown token at 11
+  ```
+
+- [ ] `$[?(@.*==2)]`
+  Input:
+  ```
+  [
+    [
+      1,
+      2
+    ],
+    [
+      2,
+      3
+    ],
+    [
+      1
+    ],
+    [
+      2
+    ],
+    [
+      1,
+      2,
+      3
+    ],
+    1,
+    2,
+    3
+  ]
+  ```
+  Error:
+  ```
+  operand types do not match
   ```
 
 - [ ] `$[?(@.key==-0.123e2)]`

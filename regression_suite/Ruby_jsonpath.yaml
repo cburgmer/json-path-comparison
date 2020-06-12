@@ -211,6 +211,8 @@ queries:
   - id: filter_expression_with_equals_array
     status: open
     result: []
+  - id: filter_expression_with_equals_array_for_dot_notation_with_star
+    status: error
   - id: filter_expression_with_equals_array_with_single_quotes
     status: open
     result: []
@@ -220,6 +222,9 @@ queries:
   - id: filter_expression_with_equals_null
     status: open
     result: []
+  - id: filter_expression_with_equals_number_for_dot_notation_with_star
+    status: open
+    result: [[1, 2], [2, 3], [1], [2], [1, 2, 3], 1, 2, 3]
   - id: filter_expression_with_equals_number_with_fraction
     status: open
     result: [{"key": -12.3}, {"key": -0.123}, {"key": -12}, {"key": 12.3}, {"key": 2}, {"key": "-0.123e2"}]

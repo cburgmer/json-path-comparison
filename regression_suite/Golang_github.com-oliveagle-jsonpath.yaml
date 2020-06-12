@@ -262,6 +262,8 @@ queries:
     result: []
   - id: filter_expression_with_equals_array
     status: error
+  - id: filter_expression_with_equals_array_for_dot_notation_with_star
+    status: error
   - id: filter_expression_with_equals_array_with_single_quotes
     status: error
   - id: filter_expression_with_equals_false
@@ -270,6 +272,9 @@ queries:
   - id: filter_expression_with_equals_null
     status: open
     result: []
+  - id: filter_expression_with_equals_number_for_dot_notation_with_star
+    status: open
+    result: [[], [], [], [], []]
   - id: filter_expression_with_equals_number_with_fraction
     status: open
     result: []

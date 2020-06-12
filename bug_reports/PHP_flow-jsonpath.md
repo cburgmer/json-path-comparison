@@ -342,6 +342,72 @@ The following queries provide results that do not match those of other implement
   Error: 'Malformed filter query'
   ```
 
+- [ ] `$[?(@.*==[1,2])]`
+  Input:
+  ```
+  [
+    [
+      1,
+      2
+    ],
+    [
+      2,
+      3
+    ],
+    [
+      1
+    ],
+    [
+      2
+    ],
+    [
+      1,
+      2,
+      3
+    ],
+    1,
+    2,
+    3
+  ]
+  ```
+  Error:
+  ```
+  Error: 'Malformed filter query'
+  ```
+
+- [ ] `$[?(@.*==2)]`
+  Input:
+  ```
+  [
+    [
+      1,
+      2
+    ],
+    [
+      2,
+      3
+    ],
+    [
+      1
+    ],
+    [
+      2
+    ],
+    [
+      1,
+      2,
+      3
+    ],
+    1,
+    2,
+    3
+  ]
+  ```
+  Error:
+  ```
+  Error: 'Malformed filter query'
+  ```
+
 - [ ] `$[?(@==42)]`
   Input:
   ```
