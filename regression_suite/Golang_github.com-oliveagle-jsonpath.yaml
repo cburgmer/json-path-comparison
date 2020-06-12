@@ -374,6 +374,8 @@ queries:
   - id: filter_expression_with_value_true
     status: open
     result: [[]]
+  - id: filter_expression_without_parens
+    status: error
   - id: filter_expression_without_value
     status: open
     result: []

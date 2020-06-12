@@ -3970,6 +3970,89 @@ The following queries provide results that do not match those of other implement
       lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
   ```
 
+- [ ] `$[?@.key==42]`
+  Input:
+  ```
+  [
+    {
+      "key": 0
+    },
+    {
+      "key": 42
+    },
+    {
+      "key": -1
+    },
+    {
+      "key": 1
+    },
+    {
+      "key": 41
+    },
+    {
+      "key": 43
+    },
+    {
+      "key": 42.0001
+    },
+    {
+      "key": 41.9999
+    },
+    {
+      "key": 100
+    },
+    {
+      "key": "some"
+    },
+    {
+      "key": "42"
+    },
+    {
+      "key": null
+    },
+    {
+      "key": 420
+    },
+    {
+      "key": ""
+    },
+    {
+      "key": {}
+    },
+    {
+      "key": []
+    },
+    {
+      "key": [
+        42
+      ]
+    },
+    {
+      "key": {
+        "key": 42
+      }
+    },
+    {
+      "key": {
+        "some": 42
+      }
+    },
+    {
+      "some": "value"
+    }
+  ]
+  ```
+  Expected output:
+  ```
+  NOT_SUPPORTED
+  ```
+  Error:
+  ```
+  ** (Jaxon.ParseError) Expected an integer at `?@.key==42`
+      lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
+      lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
+  ```
+
 - [ ] `$[?(!@.key)]`
   Input:
   ```

@@ -267,6 +267,9 @@ queries:
   - id: filter_expression_with_value_true
     status: open
     result: [1, 3, "nice", true, {}, [], -1]
+  - id: filter_expression_without_parens
+    status: fail
+    result: NOT_FOUND
   - id: filter_expression_without_value
     status: open
     result: [{"some": "some value"}, {"key": false}, {"key": null}, {"key": ""}, {"key": 0}]

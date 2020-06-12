@@ -286,6 +286,9 @@ queries:
   - id: filter_expression_with_value_true
     status: open
     result: NOT_FOUND
+  - id: filter_expression_without_parens
+    status: fail
+    result: NOT_FOUND
   - id: filter_expression_without_value
     status: open
     result: [{"some": "some value"}]

@@ -761,6 +761,10 @@ queries:
   - id: filter_expression_with_value_true
     selector: "$[?(true)]"
     document: [1, 3, "nice", true, null, false, {}, [], -1, 0, ""]
+  - id: filter_expression_without_parens
+    selector: "$[?@.key==42]"
+    document: [{"key": 0}, {"key": 42}, {"key": -1}, {"key": 1}, {"key": 41}, {"key": 43}, {"key": 42.0001}, {"key": 41.9999}, {"key": 100}, {"key": "some"}, {"key": "42"}, {"key": null}, {"key": 420}, {"key": ""}, {"key": {}}, {"key": []}, {"key": [42]}, {"key": {"key": 42}}, {"key": {"some": 42}}, {"some": "value"}]
+    consensus: NOT_SUPPORTED
   - id: filter_expression_without_value
     selector: "$[?(!@.key)]"
     document: [{"some": "some value"}, {"key": true}, {"key": false}, {"key": null}, {"key": "value"}, {"key": ""}, {"key": 0}, {"key": 1}, {"key": -1}, {"key": 42}, {"key": {}}, {"key": []}]
