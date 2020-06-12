@@ -2327,6 +2327,33 @@ The following queries provide results that do not match those of other implement
       lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
   ```
 
+- [ ] `$[?(@[0:1]==[1])]`
+  Input:
+  ```
+  [
+    [
+      1,
+      2,
+      3
+    ],
+    [
+      1
+    ],
+    [
+      2,
+      3
+    ],
+    1,
+    2
+  ]
+  ```
+  Error:
+  ```
+  ** (Jaxon.ParseError) Expected an integer at `?(@[0:1]==`
+      lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
+      lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
+  ```
+
 - [ ] `$[?(@.*==[1,2])]`
   Input:
   ```
@@ -2520,6 +2547,33 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   ** (Jaxon.ParseError) Expected an integer at `?(@.key==n`
+      lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
+      lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
+  ```
+
+- [ ] `$[?(@[0:1]==1)]`
+  Input:
+  ```
+  [
+    [
+      1,
+      2,
+      3
+    ],
+    [
+      1
+    ],
+    [
+      2,
+      3
+    ],
+    1,
+    2
+  ]
+  ```
+  Error:
+  ```
+  ** (Jaxon.ParseError) Expected an integer at `?(@[0:1]==`
       lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
       lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
   ```

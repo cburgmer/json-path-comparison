@@ -258,6 +258,31 @@ The following queries provide results that do not match those of other implement
   wrong request: wrong request: ?(@.d==["v1","v2"])
   ```
 
+- [ ] `$[?(@[0:1]==[1])]`
+  Input:
+  ```
+  [
+    [
+      1,
+      2,
+      3
+    ],
+    [
+      1
+    ],
+    [
+      2,
+      3
+    ],
+    1,
+    2
+  ]
+  ```
+  Error:
+  ```
+  wrong request: wrong request: ?(@[0:1]==[1])
+  ```
+
 - [ ] `$[?(@.*==[1,2])]`
   Input:
   ```

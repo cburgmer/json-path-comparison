@@ -215,6 +215,9 @@ queries:
   - id: filter_expression_with_equals_array
     status: open
     result: NOT_SUPPORTED
+  - id: filter_expression_with_equals_array_for_array_slice_with_range_1
+    status: open
+    result: NOT_SUPPORTED
   - id: filter_expression_with_equals_array_for_dot_notation_with_star
     status: open
     result: NOT_SUPPORTED
@@ -227,6 +230,9 @@ queries:
   - id: filter_expression_with_equals_null
     status: open
     result: NOT_SUPPORTED
+  - id: filter_expression_with_equals_number_for_array_slice_with_range_1
+    status: open
+    result: [[1, 2, 3], [1]]
   - id: filter_expression_with_equals_number_for_dot_notation_with_star
     status: open
     result: [[2]]

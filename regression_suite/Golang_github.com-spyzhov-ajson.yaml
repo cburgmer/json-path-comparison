@@ -141,6 +141,8 @@ queries:
     result: [{"key": 42}]
   - id: filter_expression_with_equals_array
     status: error
+  - id: filter_expression_with_equals_array_for_array_slice_with_range_1
+    status: error
   - id: filter_expression_with_equals_array_for_dot_notation_with_star
     status: error
   - id: filter_expression_with_equals_array_with_single_quotes
@@ -151,6 +153,9 @@ queries:
   - id: filter_expression_with_equals_null
     status: open
     result: [{"key": null}]
+  - id: filter_expression_with_equals_number_for_array_slice_with_range_1
+    status: open
+    result: [[1, 2, 3], [1]]
   - id: filter_expression_with_equals_number_for_dot_notation_with_star
     status: open
     result: [[2]]

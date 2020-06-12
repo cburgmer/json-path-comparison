@@ -838,6 +838,39 @@ The following queries provide results that do not match those of other implement
   syntax error before: '*'
   ```
 
+- [ ] `$[?(@[0:1]==1)]`
+  Input:
+  ```
+  [
+    [
+      1,
+      2,
+      3
+    ],
+    [
+      1
+    ],
+    [
+      2,
+      3
+    ],
+    1,
+    2
+  ]
+  ```
+  Error:
+  ```
+  ** (Protocol.UndefinedError) protocol Enumerable not implemented for 1 of type Integer. This protocol is implemented for the following type(s): HashSet, Range, Map, Function, List, Stream, Date.Range, HashDict, GenEvent.Stream, MapSet, File.Stream, IO.Stream
+      lib/enum.ex:1: Enumerable.impl_for!/1
+      lib/enum.ex:193: Enumerable.slice/1
+      lib/enum.ex:3443: Enum.slice_any/3
+      lib/ex_json_path.ex:166: ExJSONPath.recurse/2
+      lib/ex_json_path.ex:111: anonymous fn/6 in ExJSONPath.recurse/2
+      lib/enum.ex:2111: Enum."-reduce/3-lists^foldl/2-0-"/3
+      lib/ex_json_path.ex:104: ExJSONPath.recurse/2
+      lib/ex_json_path.ex:65: ExJSONPath.eval/2
+  ```
+
 - [ ] `$[?(@.*==2)]`
   Input:
   ```

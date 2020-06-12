@@ -1241,6 +1241,31 @@ The following queries provide results that do not match those of other implement
   non-safe evaluation, died at main.pl line 11.
   ```
 
+- [ ] `$[?(@[0:1]==[1])]`
+  Input:
+  ```
+  [
+    [
+      1,
+      2,
+      3
+    ],
+    [
+      1
+    ],
+    [
+      2,
+      3
+    ],
+    1,
+    2
+  ]
+  ```
+  Error:
+  ```
+  non-safe evaluation, died at main.pl line 11.
+  ```
+
 - [ ] `$[?(@.*==[1,2])]`
   Input:
   ```
@@ -1423,6 +1448,31 @@ The following queries provide results that do not match those of other implement
     {
       "key": []
     }
+  ]
+  ```
+  Error:
+  ```
+  non-safe evaluation, died at main.pl line 11.
+  ```
+
+- [ ] `$[?(@[0:1]==1)]`
+  Input:
+  ```
+  [
+    [
+      1,
+      2,
+      3
+    ],
+    [
+      1
+    ],
+    [
+      2,
+      3
+    ],
+    1,
+    2
   ]
   ```
   Error:

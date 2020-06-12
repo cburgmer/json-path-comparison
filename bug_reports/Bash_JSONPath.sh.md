@@ -2463,6 +2463,33 @@ The following queries provide results that do not match those of other implement
   
   ```
 
+- [ ] `$[?(@[0:1]==[1])]`
+  Input:
+  ```
+  [
+    [
+      1,
+      2,
+      3
+    ],
+    [
+      1
+    ],
+    [
+      2,
+      3
+    ],
+    1,
+    2
+  ]
+  ```
+  Error:
+  ```
+  Expecting value: line 3 column 1 (char 2)
+  
+  
+  ```
+
 - [ ] `$[?(@.*==[1,2])]`
   Input:
   ```
@@ -2553,6 +2580,33 @@ The following queries provide results that do not match those of other implement
     {
       "d": "[\"v1\",\"v2\"]"
     }
+  ]
+  ```
+  Error:
+  ```
+  Expecting value: line 3 column 1 (char 2)
+  
+  
+  ```
+
+- [ ] `$[?(@[0:1]==1)]`
+  Input:
+  ```
+  [
+    [
+      1,
+      2,
+      3
+    ],
+    [
+      1
+    ],
+    [
+      2,
+      3
+    ],
+    1,
+    2
   ]
   ```
   Error:

@@ -741,6 +741,31 @@ The following queries provide results that do not match those of other implement
   unknown token at 9
   ```
 
+- [ ] `$[?(@[0:1]==[1])]`
+  Input:
+  ```
+  [
+    [
+      1,
+      2,
+      3
+    ],
+    [
+      1
+    ],
+    [
+      2,
+      3
+    ],
+    1,
+    2
+  ]
+  ```
+  Error:
+  ```
+  unknown token at 12
+  ```
+
 - [ ] `$[?(@.*==[1,2])]`
   Input:
   ```
@@ -928,6 +953,31 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   unknown token at 11
+  ```
+
+- [ ] `$[?(@[0:1]==1)]`
+  Input:
+  ```
+  [
+    [
+      1,
+      2,
+      3
+    ],
+    [
+      1
+    ],
+    [
+      2,
+      3
+    ],
+    1,
+    2
+  ]
+  ```
+  Error:
+  ```
+  operand types do not match
   ```
 
 - [ ] `$[?(@.*==2)]`

@@ -158,6 +158,8 @@ queries:
   - id: filter_expression_with_equals_array
     status: open
     result: [{"d": "v1,v2"}]
+  - id: filter_expression_with_equals_array_for_array_slice_with_range_1
+    status: error
   - id: filter_expression_with_equals_array_for_dot_notation_with_star
     status: error
   - id: filter_expression_with_equals_array_with_single_quotes
@@ -169,6 +171,8 @@ queries:
   - id: filter_expression_with_equals_null
     status: open
     result: [{"some": "some value"}, {"key": null}]
+  - id: filter_expression_with_equals_number_for_array_slice_with_range_1
+    status: error
   - id: filter_expression_with_equals_number_for_dot_notation_with_star
     status: error
   - id: filter_expression_with_equals_number_with_fraction
