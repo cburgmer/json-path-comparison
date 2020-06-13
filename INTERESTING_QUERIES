@@ -2,8 +2,6 @@
   selector: "$[?(@[0].key==42)]"
 - document: {"key": {"key": "string", "primitives": [{"key": 0}, 1]}}
   selector: "$...key"
-- document: [2, "a", 4, 5, 100, "nice"]
-  selector: "$[6:2:-1]"
 - document: [[0], [1, 2], [{"key": 2}, 3], 2]
   selector: "$[?(@[-1]==$[-1])]"
 - document: [[0], [1, 2], [{"key": 2}, 3], 2]

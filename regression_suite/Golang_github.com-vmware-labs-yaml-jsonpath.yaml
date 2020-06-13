@@ -21,6 +21,9 @@ queries:
   - id: array_slice_with_negative_step_and_start_greater_than_end
     status: open
     result: ["third", "first"]
+  - id: array_slice_with_negative_step_on_partially_overlapping_array
+    status: open
+    result: ["fifth"]
   - id: array_slice_with_negative_step_only
     status: open
     result: ["fifth", "third", "first"]

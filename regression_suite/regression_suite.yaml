@@ -76,6 +76,9 @@ queries:
   - id: array_slice_with_negative_step_and_start_greater_than_end
     selector: "$[0:3:-2]"
     document: ["first", "second", "third", "forth", "fifth"]
+  - id: array_slice_with_negative_step_on_partially_overlapping_array
+    selector: "$[7:3:-1]"
+    document: ["first", "second", "third", "forth", "fifth"]
   - id: array_slice_with_negative_step_only
     selector: "$[::-2]"
     document: ["first", "second", "third", "forth", "fifth"]

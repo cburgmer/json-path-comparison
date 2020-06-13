@@ -30,6 +30,8 @@ queries:
   - id: array_slice_with_negative_step_and_start_greater_than_end
     status: open
     result: ["first", "second", "third"]
+  - id: array_slice_with_negative_step_on_partially_overlapping_array
+    status: error
   - id: array_slice_with_negative_step_only
     status: open
     result: ["first", "second", "third", "forth", "fifth"]

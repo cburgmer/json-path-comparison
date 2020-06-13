@@ -222,6 +222,22 @@ The following queries provide results that do not match those of other implement
   4
   ```
 
+- [ ] `$[7:3:-1]`
+  Input:
+  ```
+  [
+    "first",
+    "second",
+    "third",
+    "forth",
+    "fifth"
+  ]
+  ```
+  Error:
+  ```
+  java.lang.IndexOutOfBoundsException nil
+  ```
+
 - [ ] `$[1:]`
   Input:
   ```

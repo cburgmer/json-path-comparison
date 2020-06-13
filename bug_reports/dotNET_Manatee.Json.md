@@ -3,6 +3,22 @@ Results do not match other implementations
 The following queries provide results that do not match those of other implementations of JSONPath
 (compare https://cburgmer.github.io/json-path-comparison/):
 
+- [ ] `$[7:3:-1]`
+  Input:
+  ```
+  [
+    "first",
+    "second",
+    "third",
+    "forth",
+    "fifth"
+  ]
+  ```
+  Error:
+  ```
+  Index was out of range. Must be non-negative and less than the size of the collection. (Parameter 'index')
+  ```
+
 - [ ] `$..[*]`
   Input:
   ```

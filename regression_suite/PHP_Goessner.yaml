@@ -13,6 +13,9 @@ queries:
     status: error
   - id: array_slice_with_negative_step_and_start_greater_than_end
     status: error
+  - id: array_slice_with_negative_step_on_partially_overlapping_array
+    status: open
+    result: NOT_FOUND
   - id: array_slice_with_negative_step_only
     status: error
   - id: array_slice_with_open_start_and_end_on_object

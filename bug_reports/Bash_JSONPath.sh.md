@@ -204,6 +204,24 @@ The following queries provide results that do not match those of other implement
   
   ```
 
+- [ ] `$[7:3:-1]`
+  Input:
+  ```
+  [
+    "first",
+    "second",
+    "third",
+    "forth",
+    "fifth"
+  ]
+  ```
+  Error:
+  ```
+  Expecting value: line 3 column 1 (char 2)
+  
+  
+  ```
+
 - [ ] `$[3:-4]`
   Input:
   ```
