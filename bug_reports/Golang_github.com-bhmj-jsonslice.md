@@ -980,6 +980,39 @@ The following queries provide results that do not match those of other implement
   operand types do not match
   ```
 
+- [ ] `$[?(@[*]==2)]`
+  Input:
+  ```
+  [
+    [
+      1,
+      2
+    ],
+    [
+      2,
+      3
+    ],
+    [
+      1
+    ],
+    [
+      2
+    ],
+    [
+      1,
+      2,
+      3
+    ],
+    1,
+    2,
+    3
+  ]
+  ```
+  Error:
+  ```
+  operand types do not match
+  ```
+
 - [ ] `$[?(@.*==2)]`
   Input:
   ```

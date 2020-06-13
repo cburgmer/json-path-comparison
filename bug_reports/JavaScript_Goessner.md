@@ -357,6 +357,39 @@ The following queries provide results that do not match those of other implement
   jsonPath: Unexpected token ':': _v[0:1]==1
   ```
 
+- [ ] `$[?(@[*]==2)]`
+  Input:
+  ```
+  [
+    [
+      1,
+      2
+    ],
+    [
+      2,
+      3
+    ],
+    [
+      1
+    ],
+    [
+      2
+    ],
+    [
+      1,
+      2,
+      3
+    ],
+    1,
+    2,
+    3
+  ]
+  ```
+  Error:
+  ```
+  jsonPath: Unexpected token '*': _v[*]==2
+  ```
+
 - [ ] `$[?(@.*==2)]`
   Input:
   ```

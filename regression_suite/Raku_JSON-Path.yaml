@@ -251,6 +251,9 @@ queries:
   - id: filter_expression_with_equals_number_for_array_slice_with_range_1
     status: open
     result: NOT_SUPPORTED
+  - id: filter_expression_with_equals_number_for_bracket_notation_with_star
+    status: open
+    result: NOT_SUPPORTED
   - id: filter_expression_with_equals_number_for_dot_notation_with_star
     status: open
     result: NOT_SUPPORTED

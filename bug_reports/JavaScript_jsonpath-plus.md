@@ -455,6 +455,39 @@ The following queries provide results that do not match those of other implement
   evalmachine.<anonymous>:1
   ```
 
+- [ ] `$[?(@[*]==2)]`
+  Input:
+  ```
+  [
+    [
+      1,
+      2
+    ],
+    [
+      2,
+      3
+    ],
+    [
+      1
+    ],
+    [
+      2
+    ],
+    [
+      1,
+      2,
+      3
+    ],
+    1,
+    2,
+    3
+  ]
+  ```
+  Error:
+  ```
+  evalmachine.<anonymous>:1
+  ```
+
 - [ ] `$[?(@.*==2)]`
   Input:
   ```
