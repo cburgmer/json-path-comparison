@@ -19,8 +19,6 @@
 - document: [{"more": 1}, {"key": 2}]
   selector: "$[?((@.key))]"
 - document: [{"key": 42}, {"key": 43}, {"key": 44}]
-  selector: "$[?(@.key>43 || @.key<43)]"
-- document: [{"key": 42}, {"key": 43}, {"key": 44}]
   selector: "$[?((@.key>42) && (@.key<44))]"
 - document: [{"key": 42}, {"key": 43}, {"key": 44}]
   selector: "$[?((@.key>42) && (@.key<44) && (@.key>0))]"

@@ -200,6 +200,9 @@ queries:
   - id: filter_expression_with_boolean_and_operator
     status: open
     result: NOT_SUPPORTED
+  - id: filter_expression_with_boolean_or_operator
+    status: open
+    result: NOT_SUPPORTED
   - id: filter_expression_with_bracket_notation
     status: fail
     result: NOT_SUPPORTED

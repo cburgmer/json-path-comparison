@@ -471,6 +471,29 @@ The following queries provide results that do not match those of other implement
   {"init terminating in do_boot",{badarg,42}}
   ```
 
+- [ ] `$[?(@.key>43 || @.key<43)]`
+  Input:
+  ```
+  [
+    {
+      "key": 42
+    },
+    {
+      "key": 43
+    },
+    {
+      "key": 44
+    }
+  ]
+  ```
+  Error:
+  ```
+  init terminating in do_boot (Timeout)
+  
+  Crash dump is being written to: /dev/null...done
+  {"init terminating in do_boot","Timeout"}
+  ```
+
 - [ ] `$[?(@.a && (@.b || @.c))]`
   Input:
   ```
