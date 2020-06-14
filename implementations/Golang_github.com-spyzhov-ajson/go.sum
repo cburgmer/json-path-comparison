@@ -7,3 +7,5 @@ github.com/spyzhov/ajson v0.2.2 h1:0XLE5/shvqJ4Q4mZ0+dAuquZld5+f1vci1DTDXiqcTU=
 github.com/spyzhov/ajson v0.2.2/go.mod h1:63V+CGM6f1Bu/p4nLIN8885ojBdt88TbLoSFzyqMuVA=
 github.com/spyzhov/ajson v0.2.3 h1:6V2jH45co73LWOlilkwJ0+YR9d2TViu5K8n35lE+nMU=
 github.com/spyzhov/ajson v0.2.3/go.mod h1:63V+CGM6f1Bu/p4nLIN8885ojBdt88TbLoSFzyqMuVA=
+github.com/spyzhov/ajson v0.2.4 h1:zxD2jqbEjgo+tnSac2AsDQzqmdEr+I9GEk7jpCaT+PU=
+github.com/spyzhov/ajson v0.2.4/go.mod h1:63V+CGM6f1Bu/p4nLIN8885ojBdt88TbLoSFzyqMuVA=
