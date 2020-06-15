@@ -24,7 +24,85 @@ The following queries provide results that do not match those of other implement
       lib/poison/encoder.ex:260: Poison.Encoder.List.encode/3
       lib/poison.ex:41: Poison.encode!/2
       lib/cli.ex:6: Jsonpath.CLI.main/1
-      lib/kernel/cli.ex:121: anonymous fn/3 in Kernel.CLI.exec_fun/2
+      lib/kernel/cli.ex:124: anonymous fn/3 in Kernel.CLI.exec_fun/2
+  ```
+
+- [ ] `$[-4:1]`
+  Input:
+  ```
+  [
+    2,
+    "a",
+    4,
+    5,
+    100,
+    "nice"
+  ]
+  ```
+  Expected output:
+  ```
+  []
+  ```
+  Actual output:
+  ```
+  [
+    4,
+    5,
+    100,
+    "nice"
+  ]
+  ```
+
+- [ ] `$[-4:2]`
+  Input:
+  ```
+  [
+    2,
+    "a",
+    4,
+    5,
+    100,
+    "nice"
+  ]
+  ```
+  Expected output:
+  ```
+  []
+  ```
+  Actual output:
+  ```
+  [
+    4,
+    5,
+    100,
+    "nice"
+  ]
+  ```
+
+- [ ] `$[-4:3]`
+  Input:
+  ```
+  [
+    2,
+    "a",
+    4,
+    5,
+    100,
+    "nice"
+  ]
+  ```
+  Expected output:
+  ```
+  [4]
+  ```
+  Actual output:
+  ```
+  [
+    4,
+    5,
+    100,
+    "nice"
+  ]
   ```
 
 - [ ] `$[3:0:-2]`
