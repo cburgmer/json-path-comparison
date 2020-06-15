@@ -314,6 +314,7 @@ queries:
   - id: bracket_notation_with_quoted_wildcard_literal
     selector: "$['*']"
     document: {"*": "value", "another": "entry"}
+    ordered: false
     consensus: ["value"]
     scalar-consensus: "value"
   - id: bracket_notation_with_quoted_wildcard_literal_on_object_without_key

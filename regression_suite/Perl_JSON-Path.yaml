@@ -86,7 +86,7 @@ queries:
     status: error
   - id: bracket_notation_with_quoted_wildcard_literal
     status: fail
-    result: ["value", "entry"]
+    result: ["entry", "value"]
   - id: bracket_notation_with_quoted_wildcard_literal_on_object_without_key
     status: open
     result: ["entry"]
