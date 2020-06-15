@@ -115,7 +115,7 @@ implementation_language_header() {
         echo "</th>"
     done <<< "$(all_implementations | sed "s/\([^_]*\)_.*/\1/" | uniq -c)"
 
-    count="$(all_proposals | wc -l)"
+    count="$(all_proposals | wc -l | tr -d ' ')"
     echo "<th style=\"position: sticky; top: 0; background: #ffffffaa;\" colspan=\"${count}\"></th>"
 }
 

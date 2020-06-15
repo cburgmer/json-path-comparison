@@ -12,11 +12,15 @@ cd "$build_dir"
 readonly tmp_stdout="/tmp/node_goessner_jsonpath.stdout.$$"
 readonly tmp_stderr="/tmp/node_goessner_jsonpath.stderr.$$"
 
+filter_osx_differences() {
+    sed "s/^jsonPath: Unexpected token '\(.*\)'/jsonPath: Unexpected token \1/"
+}
+
 output_and_cleanup() {
   local filter_out_of_memory="CALL_AND_RETRY_LAST Allocation failed"
   if ! grep "$filter_out_of_memory" < "$tmp_stderr"; then
     cat "$tmp_stdout"
-    >&2 cat "$tmp_stderr"
+    cat "$tmp_stderr" | >&2 filter_osx_differences
   fi
   rm "$tmp_stdout"
   rm "$tmp_stderr"

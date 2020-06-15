@@ -118,11 +118,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  ** (Jason.DecodeError) unexpected byte at position 0: 0x48 ('H')
-      lib/jason.ex:78: Jason.decode!/2
-      lib/warpath.ex:215: Warpath.query/3
-      lib/cli.ex:5: Jsonpath.CLI.main/1
-      lib/kernel/cli.ex:121: anonymous fn/3 in Kernel.CLI.exec_fun/2
+  Jason.DecodeError
   ```
 
 - [ ] `$.key`
@@ -139,9 +135,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  ** (ArgumentError) raise/1 and reraise/2 expect a module name, string or exception as the first argument, got: {:unsupported_operation, "You are trying to traverse a list using dot notation '$.key', that it's not allowed for list type. You can use something like '$[*].key' instead."}
-      lib/cli.ex:10: Jsonpath.CLI.main/1
-      lib/kernel/cli.ex:121: anonymous fn/3 in Kernel.CLI.exec_fun/2
+  You are trying to traverse a list using dot notation '$.key', that it's not allowed for list type. You can use something like '$[*].key' instead.
   ```
 
 - [ ] `$.id`
@@ -159,9 +153,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  ** (ArgumentError) raise/1 and reraise/2 expect a module name, string or exception as the first argument, got: {:unsupported_operation, "You are trying to traverse a list using dot notation '$.id', that it's not allowed for list type. You can use something like '$[*].id' instead."}
-      lib/cli.ex:10: Jsonpath.CLI.main/1
-      lib/kernel/cli.ex:121: anonymous fn/3 in Kernel.CLI.exec_fun/2
+  You are trying to traverse a list using dot notation '$.id', that it's not allowed for list type. You can use something like '$[*].id' instead.
   ```
 
 - [ ] `$.length`
@@ -179,9 +171,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  ** (ArgumentError) raise/1 and reraise/2 expect a module name, string or exception as the first argument, got: {:unsupported_operation, "You are trying to traverse a list using dot notation '$.length', that it's not allowed for list type. You can use something like '$[*].length' instead."}
-      lib/cli.ex:10: Jsonpath.CLI.main/1
-      lib/kernel/cli.ex:121: anonymous fn/3 in Kernel.CLI.exec_fun/2
+  You are trying to traverse a list using dot notation '$.length', that it's not allowed for list type. You can use something like '$[*].length' instead.
   ```
 
 - [ ] `$.2`
@@ -197,9 +187,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  ** (ArgumentError) raise/1 and reraise/2 expect a module name, string or exception as the first argument, got: {:unsupported_operation, "You are trying to traverse a list using dot notation '$.2', that it's not allowed for list type. You can use something like '$[*].2' instead."}
-      lib/cli.ex:10: Jsonpath.CLI.main/1
-      lib/kernel/cli.ex:121: anonymous fn/3 in Kernel.CLI.exec_fun/2
+  You are trying to traverse a list using dot notation '$.2', that it's not allowed for list type. You can use something like '$[*].2' instead.
   ```
 
 - [ ] `$.-1`
@@ -215,9 +203,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  ** (ArgumentError) raise/1 and reraise/2 expect a module name, string or exception as the first argument, got: {:unsupported_operation, "You are trying to traverse a list using dot notation '$.-1', that it's not allowed for list type. You can use something like '$[*].-1' instead."}
-      lib/cli.ex:10: Jsonpath.CLI.main/1
-      lib/kernel/cli.ex:121: anonymous fn/3 in Kernel.CLI.exec_fun/2
+  You are trying to traverse a list using dot notation '$.-1', that it's not allowed for list type. You can use something like '$[*].-1' instead.
   ```
 
 - [ ] `$[?(@.address.city=='Berlin')]`
@@ -265,24 +251,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  ** (FunctionClauseError) no function clause matching in Warpath.Filter.Predicate.eval/2    
-      
-      The following arguments were given to Warpath.Filter.Predicate.eval/2:
-      
-          # 1
-          false
-      
-          # 2
-          1
-      
-      lib/warpath/filter/predicate.ex:32: Warpath.Filter.Predicate.eval/2
-      lib/enum.ex:2942: Enum.filter_list/2
-      lib/warpath.ex:264: Warpath.dispatch/2
-      lib/enum.ex:3325: Enumerable.List.reduce/3
-      lib/enum.ex:1998: Enum.reduce_while/3
-      lib/warpath.ex:232: Warpath.query/3
-      lib/cli.ex:5: Jsonpath.CLI.main/1
-      lib/kernel/cli.ex:121: anonymous fn/3 in Kernel.CLI.exec_fun/2
+  FunctionClauseError
   ```
 
 - [ ] `$[?(true)]`
@@ -304,24 +273,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  ** (FunctionClauseError) no function clause matching in Warpath.Filter.Predicate.eval/2    
-      
-      The following arguments were given to Warpath.Filter.Predicate.eval/2:
-      
-          # 1
-          true
-      
-          # 2
-          1
-      
-      lib/warpath/filter/predicate.ex:32: Warpath.Filter.Predicate.eval/2
-      lib/enum.ex:2942: Enum.filter_list/2
-      lib/warpath.ex:264: Warpath.dispatch/2
-      lib/enum.ex:3325: Enumerable.List.reduce/3
-      lib/enum.ex:1998: Enum.reduce_while/3
-      lib/warpath.ex:232: Warpath.query/3
-      lib/cli.ex:5: Jsonpath.CLI.main/1
-      lib/kernel/cli.ex:121: anonymous fn/3 in Kernel.CLI.exec_fun/2
+  FunctionClauseError
   ```
 
 

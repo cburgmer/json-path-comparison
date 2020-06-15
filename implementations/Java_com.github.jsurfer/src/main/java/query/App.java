@@ -11,6 +11,7 @@ import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.jsfr.json.JsonSurferJackson;
 import org.jsfr.json.JsonSurfer;
+import org.jsfr.json.exception.JsonSurfingException;
 import org.antlr.v4.runtime.misc.ParseCancellationException;
 
 public class App {
@@ -33,6 +34,15 @@ public class App {
         } catch (ParseCancellationException e) {
             System.err.println(e);
             System.exit(2);
+        } catch (JsonSurfingException e) {
+            System.err.println(e.getCause());
+            System.exit(1);
+        } catch (IllegalStateException e) {
+            System.err.println(e);
+            System.exit(1);
+        } catch (NullPointerException e) {
+            System.err.println(e);
+            System.exit(1);
         }
     }
 }

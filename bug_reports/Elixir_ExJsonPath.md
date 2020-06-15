@@ -17,14 +17,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  ** (Poison.EncodeError) unable to encode value: {"a", 1}
-      lib/poison/encoder.ex:383: Poison.Encoder.Any.encode/2
-      lib/poison/encoder.ex:259: anonymous fn/3 in Poison.Encoder.List.encode/3
-      lib/poison/encoder.ex:260: Poison.Encoder.List."-encode/3-lists^foldr/2-1-"/3
-      lib/poison/encoder.ex:260: Poison.Encoder.List.encode/3
-      lib/poison.ex:41: Poison.encode!/2
-      lib/cli.ex:6: Jsonpath.CLI.main/1
-      lib/kernel/cli.ex:124: anonymous fn/3 in Kernel.CLI.exec_fun/2
+  Invalid object returned
   ```
 
 - [ ] `$[-4:1]`
@@ -118,21 +111,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  ** (FunctionClauseError) no function clause matching in Enum.take_every/2    
-      
-      The following arguments were given to Enum.take_every/2:
-      
-          # 1
-          ["forth", "fifth"]
-      
-          # 2
-          -2
-      
-      lib/enum.ex:2547: Enum.take_every/2
-      lib/ex_json_path.ex:167: ExJSONPath.recurse/2
-      lib/ex_json_path.ex:65: ExJSONPath.eval/2
-      lib/cli.ex:5: Jsonpath.CLI.main/1
-      lib/kernel/cli.ex:121: anonymous fn/3 in Kernel.CLI.exec_fun/2
+  FunctionClauseError
   ```
 
 - [ ] `$[0:3:-2]`
@@ -148,21 +127,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  ** (FunctionClauseError) no function clause matching in Enum.take_every/2    
-      
-      The following arguments were given to Enum.take_every/2:
-      
-          # 1
-          ["first", "second", "third"]
-      
-          # 2
-          -2
-      
-      lib/enum.ex:2547: Enum.take_every/2
-      lib/ex_json_path.ex:167: ExJSONPath.recurse/2
-      lib/ex_json_path.ex:65: ExJSONPath.eval/2
-      lib/cli.ex:5: Jsonpath.CLI.main/1
-      lib/kernel/cli.ex:121: anonymous fn/3 in Kernel.CLI.exec_fun/2
+  FunctionClauseError
   ```
 
 - [ ] `$[7:3:-1]`
@@ -178,21 +143,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  ** (FunctionClauseError) no function clause matching in Enum.take_every/2    
-      
-      The following arguments were given to Enum.take_every/2:
-      
-          # 1
-          []
-      
-          # 2
-          -1
-      
-      lib/enum.ex:2547: Enum.take_every/2
-      lib/ex_json_path.ex:167: ExJSONPath.recurse/2
-      lib/ex_json_path.ex:65: ExJSONPath.eval/2
-      lib/cli.ex:5: Jsonpath.CLI.main/1
-      lib/kernel/cli.ex:121: anonymous fn/3 in Kernel.CLI.exec_fun/2
+  FunctionClauseError
   ```
 
 - [ ] `$[::-2]`
@@ -208,21 +159,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  ** (FunctionClauseError) no function clause matching in Enum.take_every/2    
-      
-      The following arguments were given to Enum.take_every/2:
-      
-          # 1
-          ["first", "second", "third", "forth", "fifth"]
-      
-          # 2
-          -2
-      
-      lib/enum.ex:2547: Enum.take_every/2
-      lib/ex_json_path.ex:167: ExJSONPath.recurse/2
-      lib/ex_json_path.ex:65: ExJSONPath.eval/2
-      lib/cli.ex:5: Jsonpath.CLI.main/1
-      lib/kernel/cli.ex:121: anonymous fn/3 in Kernel.CLI.exec_fun/2
+  FunctionClauseError
   ```
 
 - [ ] `$[:]`
@@ -235,14 +172,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  ** (Poison.EncodeError) unable to encode value: {"more", "string"}
-      lib/poison/encoder.ex:383: Poison.Encoder.Any.encode/2
-      lib/poison/encoder.ex:259: anonymous fn/3 in Poison.Encoder.List.encode/3
-      lib/poison/encoder.ex:260: Poison.Encoder.List."-encode/3-lists^foldr/2-1-"/3
-      lib/poison/encoder.ex:260: Poison.Encoder.List.encode/3
-      lib/poison.ex:41: Poison.encode!/2
-      lib/cli.ex:6: Jsonpath.CLI.main/1
-      lib/kernel/cli.ex:121: anonymous fn/3 in Kernel.CLI.exec_fun/2
+  Invalid object returned
   ```
 
 - [ ] `$[0:0]`
@@ -581,27 +511,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  ** (FunctionClauseError) no function clause matching in :io_lib.write_string1/3    
-      
-      The following arguments were given to :io_lib.write_string1/3:
-      
-          # 1
-          :unicode_as_unicode
-      
-          # 2
-          "key"
-      
-          # 3
-          34
-      
-      io_lib.erl:581: :io_lib.write_string1/3
-      io_lib.erl:553: :io_lib.write_string/2
-      /usr/lib/erlang/lib/parsetools-2.1.8/include/yeccpre.hrl:135: :jsonpath_parser.yeccerror/1
-      /usr/lib/erlang/lib/parsetools-2.1.8/include/yeccpre.hrl:57: :jsonpath_parser.yeccpars0/5
-      lib/ex_json_path.ex:77: ExJSONPath.compile/1
-      lib/ex_json_path.ex:59: ExJSONPath.eval/2
-      lib/cli.ex:5: Jsonpath.CLI.main/1
-      lib/kernel/cli.ex:121: anonymous fn/3 in Kernel.CLI.exec_fun/2
+  FunctionClauseError
   ```
 
 - [ ] `$.."key"`
@@ -632,27 +542,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  ** (FunctionClauseError) no function clause matching in :io_lib.write_string1/3    
-      
-      The following arguments were given to :io_lib.write_string1/3:
-      
-          # 1
-          :unicode_as_unicode
-      
-          # 2
-          "key"
-      
-          # 3
-          34
-      
-      io_lib.erl:581: :io_lib.write_string1/3
-      io_lib.erl:553: :io_lib.write_string/2
-      /usr/lib/erlang/lib/parsetools-2.1.8/include/yeccpre.hrl:135: :jsonpath_parser.yeccerror/1
-      /usr/lib/erlang/lib/parsetools-2.1.8/include/yeccpre.hrl:57: :jsonpath_parser.yeccpars0/5
-      lib/ex_json_path.ex:77: ExJSONPath.compile/1
-      lib/ex_json_path.ex:59: ExJSONPath.eval/2
-      lib/cli.ex:5: Jsonpath.CLI.main/1
-      lib/kernel/cli.ex:121: anonymous fn/3 in Kernel.CLI.exec_fun/2
+  FunctionClauseError
   ```
 
 - [ ] `$.屬性`
@@ -700,27 +590,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  ** (FunctionClauseError) no function clause matching in :io_lib.write_string1/3    
-      
-      The following arguments were given to :io_lib.write_string1/3:
-      
-          # 1
-          :unicode_as_unicode
-      
-          # 2
-          "key"
-      
-          # 3
-          34
-      
-      io_lib.erl:581: :io_lib.write_string1/3
-      io_lib.erl:553: :io_lib.write_string/2
-      /usr/lib/erlang/lib/parsetools-2.1.8/include/yeccpre.hrl:135: :jsonpath_parser.yeccerror/1
-      /usr/lib/erlang/lib/parsetools-2.1.8/include/yeccpre.hrl:57: :jsonpath_parser.yeccpars0/5
-      lib/ex_json_path.ex:77: ExJSONPath.compile/1
-      lib/ex_json_path.ex:59: ExJSONPath.eval/2
-      lib/cli.ex:5: Jsonpath.CLI.main/1
-      lib/kernel/cli.ex:121: anonymous fn/3 in Kernel.CLI.exec_fun/2
+  FunctionClauseError
   ```
 
 - [ ] `$..'key'`
@@ -751,27 +621,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  ** (FunctionClauseError) no function clause matching in :io_lib.write_string1/3    
-      
-      The following arguments were given to :io_lib.write_string1/3:
-      
-          # 1
-          :unicode_as_unicode
-      
-          # 2
-          "key"
-      
-          # 3
-          34
-      
-      io_lib.erl:581: :io_lib.write_string1/3
-      io_lib.erl:553: :io_lib.write_string/2
-      /usr/lib/erlang/lib/parsetools-2.1.8/include/yeccpre.hrl:135: :jsonpath_parser.yeccerror/1
-      /usr/lib/erlang/lib/parsetools-2.1.8/include/yeccpre.hrl:57: :jsonpath_parser.yeccpars0/5
-      lib/ex_json_path.ex:77: ExJSONPath.compile/1
-      lib/ex_json_path.ex:59: ExJSONPath.eval/2
-      lib/cli.ex:5: Jsonpath.CLI.main/1
-      lib/kernel/cli.ex:121: anonymous fn/3 in Kernel.CLI.exec_fun/2
+  FunctionClauseError
   ```
 
 - [ ] `$.'some.key'`
@@ -787,27 +637,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  ** (FunctionClauseError) no function clause matching in :io_lib.write_string1/3    
-      
-      The following arguments were given to :io_lib.write_string1/3:
-      
-          # 1
-          :unicode_as_unicode
-      
-          # 2
-          "some.key"
-      
-          # 3
-          34
-      
-      io_lib.erl:581: :io_lib.write_string1/3
-      io_lib.erl:553: :io_lib.write_string/2
-      /usr/lib/erlang/lib/parsetools-2.1.8/include/yeccpre.hrl:135: :jsonpath_parser.yeccerror/1
-      /usr/lib/erlang/lib/parsetools-2.1.8/include/yeccpre.hrl:57: :jsonpath_parser.yeccpars0/5
-      lib/ex_json_path.ex:77: ExJSONPath.compile/1
-      lib/ex_json_path.ex:59: ExJSONPath.eval/2
-      lib/cli.ex:5: Jsonpath.CLI.main/1
-      lib/kernel/cli.ex:121: anonymous fn/3 in Kernel.CLI.exec_fun/2
+  FunctionClauseError
   ```
 
 - [ ] `$..*`
@@ -890,15 +720,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  ** (Protocol.UndefinedError) protocol Enumerable not implemented for 1 of type Integer. This protocol is implemented for the following type(s): HashDict, MapSet, List, IO.Stream, Map, File.Stream, GenEvent.Stream, HashSet, Function, Stream, Range, Date.Range
-      lib/enum.ex:1: Enumerable.impl_for!/1
-      lib/enum.ex:193: Enumerable.slice/1
-      lib/enum.ex:3116: Enum.slice_count_and_fun/1
-      lib/enum.ex:2200: Enum.slice/2
-      lib/ex_json_path.ex:166: ExJSONPath.recurse/2
-      lib/ex_json_path.ex:111: anonymous fn/6 in ExJSONPath.recurse/2
-      lib/enum.ex:1948: Enum."-reduce/3-lists^foldl/2-0-"/3
-      lib/ex_json_path.ex:104: ExJSONPath.recurse/2
+  Protocol.UndefinedError
   ```
 
 - [ ] `$[?(@.*==2)]`
@@ -931,13 +753,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  ** (WithClauseError) no with clause matching: [1, 2]
-      lib/ex_json_path.ex:111: anonymous fn/6 in ExJSONPath.recurse/2
-      lib/enum.ex:1948: Enum."-reduce/3-lists^foldl/2-0-"/3
-      lib/ex_json_path.ex:104: ExJSONPath.recurse/2
-      lib/ex_json_path.ex:65: ExJSONPath.eval/2
-      lib/cli.ex:5: Jsonpath.CLI.main/1
-      lib/kernel/cli.ex:121: anonymous fn/3 in Kernel.CLI.exec_fun/2
+  WithClauseError
   ```
 
 - [ ] `$`
