@@ -957,6 +957,32 @@ The following queries provide results that do not match those of other implement
   Unable to compile selector `$[?(@.key=='value')]': Invalid array index definition “?(@.key=='value')]”
   ```
 
+- [ ] `$[?(@.address.city=='Berlin')]`
+  Input:
+  ```
+  [
+    {
+      "address": {
+        "city": "Berlin"
+      }
+    },
+    {
+      "address": {
+        "city": "London"
+      }
+    }
+  ]
+  ```
+  Expected output:
+  ```
+  [{"address": {"city": "Berlin"}}]
+  ```
+  Actual output:
+  NOT_SUPPORTED
+  ```
+  Unable to compile selector `$[?(@.address.city=='Berlin')]': Invalid array index definition “?(@.address.city=='Berlin')]”
+  ```
+
 - [ ] `$['key','another']`
   Input:
   ```

@@ -2315,6 +2315,31 @@ The following queries provide results that do not match those of other implement
   java.lang.NullPointerException nil
   ```
 
+- [ ] `$[?(@.address.city=='Berlin')]`
+  Input:
+  ```
+  [
+    {
+      "address": {
+        "city": "Berlin"
+      }
+    },
+    {
+      "address": {
+        "city": "London"
+      }
+    }
+  ]
+  ```
+  Expected output:
+  ```
+  [{"address": {"city": "Berlin"}}]
+  ```
+  Actual output:
+  ```
+  []
+  ```
+
 - [ ] `$[?@.key==42]`
   Input:
   ```

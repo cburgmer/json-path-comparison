@@ -752,6 +752,31 @@ The following queries provide results that do not match those of other implement
   Error: 'Malformed filter query'
   ```
 
+- [ ] `$[?(@.address.city=='Berlin')]`
+  Input:
+  ```
+  [
+    {
+      "address": {
+        "city": "Berlin"
+      }
+    },
+    {
+      "address": {
+        "city": "London"
+      }
+    }
+  ]
+  ```
+  Expected output:
+  ```
+  [{"address": {"city": "Berlin"}}]
+  ```
+  Error:
+  ```
+  Error: 'Malformed filter query'
+  ```
+
 - [ ] `$[?(@.key-50==-100)]`
   Input:
   ```

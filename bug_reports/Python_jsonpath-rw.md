@@ -840,6 +840,32 @@ The following queries provide results that do not match those of other implement
   JsonPathLexerError('Error on line 1, col 2: Unexpected character: ? ')
   ```
 
+- [ ] `$[?(@.address.city=='Berlin')]`
+  Input:
+  ```
+  [
+    {
+      "address": {
+        "city": "Berlin"
+      }
+    },
+    {
+      "address": {
+        "city": "London"
+      }
+    }
+  ]
+  ```
+  Expected output:
+  ```
+  [{"address": {"city": "Berlin"}}]
+  ```
+  Actual output:
+  NOT_SUPPORTED
+  ```
+  JsonPathLexerError('Error on line 1, col 2: Unexpected character: ? ')
+  ```
+
 - [ ] `$[0,1]`
   Input:
   ```

@@ -938,6 +938,32 @@ The following queries provide results that do not match those of other implement
   Unexpected char, char=?, index=2
   ```
 
+- [ ] `$[?(@.address.city=='Berlin')]`
+  Input:
+  ```
+  [
+    {
+      "address": {
+        "city": "Berlin"
+      }
+    },
+    {
+      "address": {
+        "city": "London"
+      }
+    }
+  ]
+  ```
+  Expected output:
+  ```
+  [{"address": {"city": "Berlin"}}]
+  ```
+  Actual output:
+  NOT_SUPPORTED
+  ```
+  Unexpected char, char=?, index=2
+  ```
+
 - [ ] `$(key,more)`
   Input:
   ```

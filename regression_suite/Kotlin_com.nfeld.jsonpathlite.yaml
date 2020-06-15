@@ -335,6 +335,9 @@ queries:
   - id: filter_expression_with_subfilter
     status: open
     result: NOT_SUPPORTED
+  - id: filter_expression_with_subpaths
+    status: fail
+    result: NOT_SUPPORTED
   - id: filter_expression_with_subtraction
     status: open
     result: NOT_SUPPORTED

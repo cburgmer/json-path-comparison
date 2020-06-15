@@ -296,7 +296,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  jsonPath: Unexpected token ':': _v[0:1]==[1]
+  jsonPath: Unexpected token :: _v[0:1]==[1]
   ```
 
 - [ ] `$[?(@.*==[1,2])]`
@@ -329,7 +329,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  jsonPath: Unexpected token '*=': _v.*==[1,2]
+  jsonPath: Unexpected token *=: _v.*==[1,2]
   ```
 
 - [ ] `$[?(@[0:1]==1)]`
@@ -354,7 +354,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  jsonPath: Unexpected token ':': _v[0:1]==1
+  jsonPath: Unexpected token :: _v[0:1]==1
   ```
 
 - [ ] `$[?(@[*]==2)]`
@@ -387,7 +387,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  jsonPath: Unexpected token '*': _v[*]==2
+  jsonPath: Unexpected token *: _v[*]==2
   ```
 
 - [ ] `$[?(@.*==2)]`
@@ -420,7 +420,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  jsonPath: Unexpected token '*=': _v.*==2
+  jsonPath: Unexpected token *=: _v.*==2
   ```
 
 - [ ] `$[?(@.key=="hi@example.com")]`
@@ -632,7 +632,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  jsonPath: Unexpected token '?': _v.a[?(_v.price>10)
+  jsonPath: Unexpected token ?: _v.a[?(_v.price>10)
   ```
 
 - [ ] `$[?@.key==42]`
@@ -781,7 +781,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  jsonPath: Unexpected token ')': _v.key<3),?(_v.key>6
+  jsonPath: Unexpected token ): _v.key<3),?(_v.key>6
   ```
 
 - [ ] `$[ 0 , 1 ]`

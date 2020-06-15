@@ -3,84 +3,6 @@ Results do not match other implementations
 The following queries provide results that do not match those of other implementations of JSONPath
 (compare https://cburgmer.github.io/json-path-comparison/):
 
-- [ ] `$[-4:1]`
-  Input:
-  ```
-  [
-    2,
-    "a",
-    4,
-    5,
-    100,
-    "nice"
-  ]
-  ```
-  Expected output:
-  ```
-  []
-  ```
-  Actual output:
-  ```
-  [
-    4,
-    5,
-    100,
-    "nice"
-  ]
-  ```
-
-- [ ] `$[-4:2]`
-  Input:
-  ```
-  [
-    2,
-    "a",
-    4,
-    5,
-    100,
-    "nice"
-  ]
-  ```
-  Expected output:
-  ```
-  []
-  ```
-  Actual output:
-  ```
-  [
-    4,
-    5,
-    100,
-    "nice"
-  ]
-  ```
-
-- [ ] `$[-4:3]`
-  Input:
-  ```
-  [
-    2,
-    "a",
-    4,
-    5,
-    100,
-    "nice"
-  ]
-  ```
-  Expected output:
-  ```
-  [4]
-  ```
-  Actual output:
-  ```
-  [
-    4,
-    5,
-    100,
-    "nice"
-  ]
-  ```
-
 - [ ] `$[-1]`
   Input:
   ```
@@ -122,7 +44,7 @@ The following queries provide results that do not match those of other implement
       lib/jason.ex:78: Jason.decode!/2
       lib/warpath.ex:215: Warpath.query/3
       lib/cli.ex:5: Jsonpath.CLI.main/1
-      lib/kernel/cli.ex:124: anonymous fn/3 in Kernel.CLI.exec_fun/2
+      lib/kernel/cli.ex:121: anonymous fn/3 in Kernel.CLI.exec_fun/2
   ```
 
 - [ ] `$.key`
@@ -141,7 +63,7 @@ The following queries provide results that do not match those of other implement
   ```
   ** (ArgumentError) raise/1 and reraise/2 expect a module name, string or exception as the first argument, got: {:unsupported_operation, "You are trying to traverse a list using dot notation '$.key', that it's not allowed for list type. You can use something like '$[*].key' instead."}
       lib/cli.ex:10: Jsonpath.CLI.main/1
-      lib/kernel/cli.ex:124: anonymous fn/3 in Kernel.CLI.exec_fun/2
+      lib/kernel/cli.ex:121: anonymous fn/3 in Kernel.CLI.exec_fun/2
   ```
 
 - [ ] `$.id`
@@ -161,7 +83,7 @@ The following queries provide results that do not match those of other implement
   ```
   ** (ArgumentError) raise/1 and reraise/2 expect a module name, string or exception as the first argument, got: {:unsupported_operation, "You are trying to traverse a list using dot notation '$.id', that it's not allowed for list type. You can use something like '$[*].id' instead."}
       lib/cli.ex:10: Jsonpath.CLI.main/1
-      lib/kernel/cli.ex:124: anonymous fn/3 in Kernel.CLI.exec_fun/2
+      lib/kernel/cli.ex:121: anonymous fn/3 in Kernel.CLI.exec_fun/2
   ```
 
 - [ ] `$.length`
@@ -181,7 +103,7 @@ The following queries provide results that do not match those of other implement
   ```
   ** (ArgumentError) raise/1 and reraise/2 expect a module name, string or exception as the first argument, got: {:unsupported_operation, "You are trying to traverse a list using dot notation '$.length', that it's not allowed for list type. You can use something like '$[*].length' instead."}
       lib/cli.ex:10: Jsonpath.CLI.main/1
-      lib/kernel/cli.ex:124: anonymous fn/3 in Kernel.CLI.exec_fun/2
+      lib/kernel/cli.ex:121: anonymous fn/3 in Kernel.CLI.exec_fun/2
   ```
 
 - [ ] `$.2`
@@ -199,7 +121,7 @@ The following queries provide results that do not match those of other implement
   ```
   ** (ArgumentError) raise/1 and reraise/2 expect a module name, string or exception as the first argument, got: {:unsupported_operation, "You are trying to traverse a list using dot notation '$.2', that it's not allowed for list type. You can use something like '$[*].2' instead."}
       lib/cli.ex:10: Jsonpath.CLI.main/1
-      lib/kernel/cli.ex:124: anonymous fn/3 in Kernel.CLI.exec_fun/2
+      lib/kernel/cli.ex:121: anonymous fn/3 in Kernel.CLI.exec_fun/2
   ```
 
 - [ ] `$.-1`
@@ -217,7 +139,33 @@ The following queries provide results that do not match those of other implement
   ```
   ** (ArgumentError) raise/1 and reraise/2 expect a module name, string or exception as the first argument, got: {:unsupported_operation, "You are trying to traverse a list using dot notation '$.-1', that it's not allowed for list type. You can use something like '$[*].-1' instead."}
       lib/cli.ex:10: Jsonpath.CLI.main/1
-      lib/kernel/cli.ex:124: anonymous fn/3 in Kernel.CLI.exec_fun/2
+      lib/kernel/cli.ex:121: anonymous fn/3 in Kernel.CLI.exec_fun/2
+  ```
+
+- [ ] `$[?(@.address.city=='Berlin')]`
+  Input:
+  ```
+  [
+    {
+      "address": {
+        "city": "Berlin"
+      }
+    },
+    {
+      "address": {
+        "city": "London"
+      }
+    }
+  ]
+  ```
+  Expected output:
+  ```
+  [{"address": {"city": "Berlin"}}]
+  ```
+  Actual output:
+  NOT_SUPPORTED
+  ```
+  Parser error: Invalid token on line 1, syntax error before: <<".">>
   ```
 
 - [ ] `$[?(false)]`
@@ -250,13 +198,13 @@ The following queries provide results that do not match those of other implement
           1
       
       lib/warpath/filter/predicate.ex:32: Warpath.Filter.Predicate.eval/2
-      lib/enum.ex:3291: Enum.filter_list/2
+      lib/enum.ex:2942: Enum.filter_list/2
       lib/warpath.ex:264: Warpath.dispatch/2
-      lib/enum.ex:3686: Enumerable.List.reduce/3
-      lib/enum.ex:2161: Enum.reduce_while/3
+      lib/enum.ex:3325: Enumerable.List.reduce/3
+      lib/enum.ex:1998: Enum.reduce_while/3
       lib/warpath.ex:232: Warpath.query/3
       lib/cli.ex:5: Jsonpath.CLI.main/1
-      lib/kernel/cli.ex:124: anonymous fn/3 in Kernel.CLI.exec_fun/2
+      lib/kernel/cli.ex:121: anonymous fn/3 in Kernel.CLI.exec_fun/2
   ```
 
 - [ ] `$[?(true)]`
@@ -289,13 +237,13 @@ The following queries provide results that do not match those of other implement
           1
       
       lib/warpath/filter/predicate.ex:32: Warpath.Filter.Predicate.eval/2
-      lib/enum.ex:3291: Enum.filter_list/2
+      lib/enum.ex:2942: Enum.filter_list/2
       lib/warpath.ex:264: Warpath.dispatch/2
-      lib/enum.ex:3686: Enumerable.List.reduce/3
-      lib/enum.ex:2161: Enum.reduce_while/3
+      lib/enum.ex:3325: Enumerable.List.reduce/3
+      lib/enum.ex:1998: Enum.reduce_while/3
       lib/warpath.ex:232: Warpath.query/3
       lib/cli.ex:5: Jsonpath.CLI.main/1
-      lib/kernel/cli.ex:124: anonymous fn/3 in Kernel.CLI.exec_fun/2
+      lib/kernel/cli.ex:121: anonymous fn/3 in Kernel.CLI.exec_fun/2
   ```
 
 

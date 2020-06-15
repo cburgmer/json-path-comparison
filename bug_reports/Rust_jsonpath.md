@@ -1494,6 +1494,31 @@ The following queries provide results that do not match those of other implement
   parsing error
   ```
 
+- [ ] `$[?(@.address.city=='Berlin')]`
+  Input:
+  ```
+  [
+    {
+      "address": {
+        "city": "Berlin"
+      }
+    },
+    {
+      "address": {
+        "city": "London"
+      }
+    }
+  ]
+  ```
+  Expected output:
+  ```
+  [{"address": {"city": "Berlin"}}]
+  ```
+  Actual output:
+  ```
+  []
+  ```
+
 - [ ] `$[0,1]`
   Input:
   ```

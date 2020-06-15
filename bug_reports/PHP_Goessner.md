@@ -2282,6 +2282,31 @@ The following queries provide results that do not match those of other implement
   ArgumentCountError
   ```
 
+- [ ] `$[?(@.address.city=='Berlin')]`
+  Input:
+  ```
+  [
+    {
+      "address": {
+        "city": "Berlin"
+      }
+    },
+    {
+      "address": {
+        "city": "London"
+      }
+    }
+  ]
+  ```
+  Expected output:
+  ```
+  [{"address": {"city": "Berlin"}}]
+  ```
+  Error:
+  ```
+  ArgumentCountError
+  ```
+
 - [ ] `$[?(@.key-50==-100)]`
   Input:
   ```

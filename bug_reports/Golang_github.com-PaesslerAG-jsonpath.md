@@ -468,6 +468,32 @@ The following queries provide results that do not match those of other implement
   parsing error: $[?(@.key=='value')]	:1:12 - 1:19 could not parse string: invalid syntax
   ```
 
+- [ ] `$[?(@.address.city=='Berlin')]`
+  Input:
+  ```
+  [
+    {
+      "address": {
+        "city": "Berlin"
+      }
+    },
+    {
+      "address": {
+        "city": "London"
+      }
+    }
+  ]
+  ```
+  Expected output:
+  ```
+  [{"address": {"city": "Berlin"}}]
+  ```
+  Actual output:
+  NOT_SUPPORTED
+  ```
+  parsing error: $[?(@.address.city=='Berlin')]	:1:21 - 1:29 could not parse string: invalid syntax
+  ```
+
 - [ ] `$[?@.key==42]`
   Input:
   ```

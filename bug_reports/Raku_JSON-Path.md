@@ -979,6 +979,32 @@ The following queries provide results that do not match those of other implement
   Evaluation of embedded Perl 6 code not allowed (construct with :allow-eval)
   ```
 
+- [ ] `$[?(@.address.city=='Berlin')]`
+  Input:
+  ```
+  [
+    {
+      "address": {
+        "city": "Berlin"
+      }
+    },
+    {
+      "address": {
+        "city": "London"
+      }
+    }
+  ]
+  ```
+  Expected output:
+  ```
+  [{"address": {"city": "Berlin"}}]
+  ```
+  Actual output:
+  NOT_SUPPORTED
+  ```
+  Evaluation of embedded Perl 6 code not allowed (construct with :allow-eval)
+  ```
+
 - [ ] `$['key','another']`
   Input:
   ```

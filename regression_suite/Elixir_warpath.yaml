@@ -9,15 +9,6 @@ queries:
   - id: array_slice_on_object
     status: open
     result: []
-  - id: array_slice_with_negative_start_and_positive_end_and_range_of_-1
-    status: fail
-    result: [4, 5, 100, "nice"]
-  - id: array_slice_with_negative_start_and_positive_end_and_range_of_0
-    status: fail
-    result: [4, 5, 100, "nice"]
-  - id: array_slice_with_negative_start_and_positive_end_and_range_of_1
-    status: fail
-    result: [4, 5, 100, "nice"]
   - id: array_slice_with_negative_step
     status: open
     result: NOT_SUPPORTED
@@ -236,6 +227,9 @@ queries:
     result: NOT_SUPPORTED
   - id: filter_expression_with_subfilter
     status: open
+    result: NOT_SUPPORTED
+  - id: filter_expression_with_subpaths
+    status: fail
     result: NOT_SUPPORTED
   - id: filter_expression_with_subtraction
     status: open

@@ -241,6 +241,8 @@ queries:
     status: error
   - id: filter_expression_with_subfilter
     status: error
+  - id: filter_expression_with_subpaths
+    status: error
   - id: filter_expression_with_subtraction
     status: error
   - id: filter_expression_with_tautological_comparison

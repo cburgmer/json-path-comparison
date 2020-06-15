@@ -371,6 +371,9 @@ queries:
     result: [{"key": 42}]
   - id: filter_expression_with_subfilter
     status: error
+  - id: filter_expression_with_subpaths
+    status: fail
+    result: []
   - id: filter_expression_with_subtraction
     status: open
     result: [{"key": 60}, {"key": 50}, {"key": 10}, {"key": -50}]

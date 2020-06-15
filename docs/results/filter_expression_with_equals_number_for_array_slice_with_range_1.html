@@ -420,15 +420,15 @@ Clojure (json-path)
 Elixir (ExJsonPath)
 </h4>
 
-<pre><code>** (Protocol.UndefinedError) protocol Enumerable not implemented for 1 of type Integer. This protocol is implemented for the following type(s): HashSet, Range, Map, Function, List, Stream, Date.Range, HashDict, GenEvent.Stream, MapSet, File.Stream, IO.Stream
+<pre><code>** (Protocol.UndefinedError) protocol Enumerable not implemented for 1 of type Integer. This protocol is implemented for the following type(s): HashDict, MapSet, List, IO.Stream, Map, File.Stream, GenEvent.Stream, HashSet, Function, Stream, Range, Date.Range
     lib/enum.ex:1: Enumerable.impl_for!/1
     lib/enum.ex:193: Enumerable.slice/1
-    lib/enum.ex:3443: Enum.slice_any/3
+    lib/enum.ex:3116: Enum.slice_count_and_fun/1
+    lib/enum.ex:2200: Enum.slice/2
     lib/ex_json_path.ex:166: ExJSONPath.recurse/2
     lib/ex_json_path.ex:111: anonymous fn/6 in ExJSONPath.recurse/2
-    lib/enum.ex:2111: Enum."-reduce/3-lists^foldl/2-0-"/3
+    lib/enum.ex:1948: Enum."-reduce/3-lists^foldl/2-0-"/3
     lib/ex_json_path.ex:104: ExJSONPath.recurse/2
-    lib/ex_json_path.ex:65: ExJSONPath.eval/2
 </code></pre>
 
 <h4 id="Elixir_jaxon">
@@ -471,7 +471,7 @@ JavaScript (Goessner)
 ²
 </h4>
 
-<pre><code>jsonPath: Unexpected token ':': _v[0:1]==1
+<pre><code>jsonPath: Unexpected token :: _v[0:1]==1
 </code></pre>
 
 <h4 id="JavaScript_jsonpath">

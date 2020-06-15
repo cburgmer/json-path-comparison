@@ -476,8 +476,8 @@ The following queries provide results that do not match those of other implement
   Actual output:
   ```
   [
-    "entry",
-    "value"
+    "value",
+    "entry"
   ]
   ```
 
@@ -2579,6 +2579,31 @@ The following queries provide results that do not match those of other implement
       "a": []
     }
   ]
+  ```
+  Error:
+  ```
+  non-safe evaluation, died at main.pl line 11.
+  ```
+
+- [ ] `$[?(@.address.city=='Berlin')]`
+  Input:
+  ```
+  [
+    {
+      "address": {
+        "city": "Berlin"
+      }
+    },
+    {
+      "address": {
+        "city": "London"
+      }
+    }
+  ]
+  ```
+  Expected output:
+  ```
+  [{"address": {"city": "Berlin"}}]
   ```
   Error:
   ```

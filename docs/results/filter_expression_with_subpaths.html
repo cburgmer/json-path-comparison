@@ -1,28 +1,36 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/3.0.1/github-markdown.css">
 <article class="markdown-body">
-<h1>Array slice with negative start and positive end and range of 0</h1>
+<h1>Filter expression with subpaths</h1>
 
 <h2>Setup</h2>
 
-<p>Selector: <code>$[-4:2]</code></p>
+<p>Selector: <code>$[?(@.address.city=='Berlin')]</code></p>
 
-<pre><code>[2, "a", 4, 5, 100, "nice"]
+<pre><code>[
+  {
+    "address": {
+      "city": "Berlin"
+    }
+  },
+  {
+    "address": {
+      "city": "London"
+    }
+  }
+]
 </code></pre>
 
 <h2>Results</h2>
 
 <h3 id="consensus">Consensus</h3>
 
-<pre><code>[]
-</code></pre>
-
-<h4>
-Not found consensus
-</h4>
-
-<p>This consensus applies for implementations which return a specific <em>not found</em> value if no match exists.</p>
-
-<pre><code>NOT_FOUND
+<pre><code>[
+  {
+    "address": {
+      "city": "Berlin"
+    }
+  }
+]
 </code></pre>
 
 <h3>Other responses</h3>
@@ -31,12 +39,9 @@ Not found consensus
 C (json-glib)
 </h4>
 
-<pre><code>[
-  4,
-  5,
-  100,
-  "nice"
-]
+<p>Not supported</p>
+
+<pre><code>Unable to compile selector `$[?(@.address.city=='Berlin')]': Invalid array index definition “?(@.address.city=='Berlin')]”
 </code></pre>
 
 <h4 id="Clojure_json-path">
@@ -44,7 +49,27 @@ Clojure (json-path)
 ¹
 </h4>
 
-<pre><code>4
+<pre><code>[]
+</code></pre>
+
+<h4 id="Elixir_warpath">
+Elixir (warpath)
+¹
+</h4>
+
+<p>Not supported</p>
+
+<pre><code>Parser error: Invalid token on line 1, syntax error before: &lt;&lt;"."&gt;&gt;
+</code></pre>
+
+<h4 id="Golang_github.com-PaesslerAG-jsonpath">
+Golang (github.com-PaesslerAG-jsonpath)
+¹
+</h4>
+
+<p>Not supported</p>
+
+<pre><code>parsing error: $[?(@.address.city=='Berlin')]   :1:21 - 1:29 could not parse string: invalid syntax
 </code></pre>
 
 <h4 id="Golang_github.com-oliveagle-jsonpath">
@@ -52,83 +77,63 @@ Golang (github.com-oliveagle-jsonpath)
 ¹
 </h4>
 
-<pre><code>[
-  4
-]
+<pre><code>[]
 </code></pre>
 
-<h4 id="Java_com.github.jsurfer">
-Java (com.github.jsurfer)
-</h4>
-
-<pre><code>[
-  2,
-  "a"
-]
-</code></pre>
-
-<h4 id="Java_com.jayway.jsonpath">
-Java (com.jayway.jsonpath)
+<h4 id="Haskell_jsonpath">
+Haskell (jsonpath)
 ¹
-³
 </h4>
 
-<pre><code>[
-  4,
-  5,
-  100,
-  "nice",
-  2,
-  "a"
-]
+<p>Not supported</p>
+
+<pre><code>Invalid JSONPath: $[?(@.address.city=='Berlin')]
+ Error: searchBeginningWithSlice: string
 </code></pre>
 
-<h4 id="Objective-C_SMJJSONPath">
-Objective-C (SMJJSONPath)
+<h4 id="Kotlin_com.nfeld.jsonpathlite">
+Kotlin (com.nfeld.jsonpathlite)
 ¹
-³
 </h4>
 
-<pre><code>[
-  4,
-  5,
-  100,
-  "nice",
-  2,
-  "a"
-]
+<p>Not supported</p>
+
+<pre><code>Unexpected char, char=?, index=2
 </code></pre>
 
-<h4 id="Perl_JSON-Path">
-Perl (JSON-Path)
+<h4 id="Python_jsonpath-rw">
+Python (jsonpath-rw)
 </h4>
 
-<pre><code>[
-  4,
-  5,
-  100,
-  "nice",
-  2,
-  "a"
-]
+<p>Not supported</p>
+
+<pre><code>JsonPathLexerError('Error on line 1, col 2: Unexpected character: ? ')
+</code></pre>
+
+<h4 id="Python_jsonpath2">
+Python (jsonpath2)
+</h4>
+
+<p>Not supported</p>
+
+<pre><code>line 1:20 token recognition error at: '''
+ValueError("line 1:20 token recognition error at: '''")
 </code></pre>
 
 <h4 id="Raku_JSON-Path">
 Raku (JSON-Path)
 </h4>
 
-<pre><code>[
-  4
-]
+<p>Not supported</p>
+
+<pre><code>Evaluation of embedded Perl 6 code not allowed (construct with :allow-eval)
 </code></pre>
 
 <h4 id="Rust_jsonpath">
 Rust (jsonpath)
 </h4>
 
-<p>Not supported</p>
-
-<pre><code>parsing error
+<pre><code>[]
 </code></pre>
 
 <h3>Errors</h3>
@@ -137,17 +142,38 @@ Rust (jsonpath)
 Bash (JSONPath.sh)
 </h4>
 
-<pre><code>grep: Invalid range end
-Expecting value: line 3 column 1 (char 2)
+<pre><code>Expecting value: line 3 column 1 (char 2)
 </code></pre>
 
 <h4 id="Elixir_jaxon">
 Elixir (jaxon)
 </h4>
 
-<pre><code>** (Jaxon.ParseError) Expected an integer at `-4:2]`
+<pre><code>** (Jaxon.ParseError) Expected an integer at `?(@.addres`
     lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
     lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
+</code></pre>
+
+<h4 id="PHP_Goessner">
+PHP (Goessner)
+²
+</h4>
+
+<pre><code>ArgumentCountError
+</code></pre>
+
+<h4 id="PHP_flow-jsonpath">
+PHP (flow-jsonpath)
+</h4>
+
+<pre><code>Error: 'Malformed filter query'
+</code></pre>
+
+<h4 id="Perl_JSON-Path">
+Perl (JSON-Path)
+</h4>
+
+<pre><code>non-safe evaluation, died at main.pl line 11.
 </code></pre>
 
 <h2>Footnotes</h2>

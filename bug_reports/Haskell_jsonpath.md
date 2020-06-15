@@ -1403,6 +1403,33 @@ The following queries provide results that do not match those of other implement
   
   ```
 
+- [ ] `$[?(@.address.city=='Berlin')]`
+  Input:
+  ```
+  [
+    {
+      "address": {
+        "city": "Berlin"
+      }
+    },
+    {
+      "address": {
+        "city": "London"
+      }
+    }
+  ]
+  ```
+  Expected output:
+  ```
+  [{"address": {"city": "Berlin"}}]
+  ```
+  Actual output:
+  NOT_SUPPORTED
+  ```
+  Invalid JSONPath: $[?(@.address.city=='Berlin')]
+   Error: searchBeginningWithSlice: string
+  ```
+
 - [ ] `$`
   Input:
   ```

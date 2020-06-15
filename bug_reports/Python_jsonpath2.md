@@ -791,6 +791,33 @@ The following queries provide results that do not match those of other implement
   []
   ```
 
+- [ ] `$[?(@.address.city=='Berlin')]`
+  Input:
+  ```
+  [
+    {
+      "address": {
+        "city": "Berlin"
+      }
+    },
+    {
+      "address": {
+        "city": "London"
+      }
+    }
+  ]
+  ```
+  Expected output:
+  ```
+  [{"address": {"city": "Berlin"}}]
+  ```
+  Actual output:
+  NOT_SUPPORTED
+  ```
+  line 1:20 token recognition error at: '''
+  ValueError("line 1:20 token recognition error at: '''")
+  ```
+
 - [ ] `$['key','another']`
   Input:
   ```

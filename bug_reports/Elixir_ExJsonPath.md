@@ -24,85 +24,7 @@ The following queries provide results that do not match those of other implement
       lib/poison/encoder.ex:260: Poison.Encoder.List.encode/3
       lib/poison.ex:41: Poison.encode!/2
       lib/cli.ex:6: Jsonpath.CLI.main/1
-      lib/kernel/cli.ex:124: anonymous fn/3 in Kernel.CLI.exec_fun/2
-  ```
-
-- [ ] `$[-4:1]`
-  Input:
-  ```
-  [
-    2,
-    "a",
-    4,
-    5,
-    100,
-    "nice"
-  ]
-  ```
-  Expected output:
-  ```
-  []
-  ```
-  Actual output:
-  ```
-  [
-    4,
-    5,
-    100,
-    "nice"
-  ]
-  ```
-
-- [ ] `$[-4:2]`
-  Input:
-  ```
-  [
-    2,
-    "a",
-    4,
-    5,
-    100,
-    "nice"
-  ]
-  ```
-  Expected output:
-  ```
-  []
-  ```
-  Actual output:
-  ```
-  [
-    4,
-    5,
-    100,
-    "nice"
-  ]
-  ```
-
-- [ ] `$[-4:3]`
-  Input:
-  ```
-  [
-    2,
-    "a",
-    4,
-    5,
-    100,
-    "nice"
-  ]
-  ```
-  Expected output:
-  ```
-  [4]
-  ```
-  Actual output:
-  ```
-  [
-    4,
-    5,
-    100,
-    "nice"
-  ]
+      lib/kernel/cli.ex:121: anonymous fn/3 in Kernel.CLI.exec_fun/2
   ```
 
 - [ ] `$[3:0:-2]`
@@ -128,11 +50,11 @@ The following queries provide results that do not match those of other implement
           # 2
           -2
       
-      lib/enum.ex:2829: Enum.take_every/2
+      lib/enum.ex:2547: Enum.take_every/2
       lib/ex_json_path.ex:167: ExJSONPath.recurse/2
       lib/ex_json_path.ex:65: ExJSONPath.eval/2
       lib/cli.ex:5: Jsonpath.CLI.main/1
-      lib/kernel/cli.ex:124: anonymous fn/3 in Kernel.CLI.exec_fun/2
+      lib/kernel/cli.ex:121: anonymous fn/3 in Kernel.CLI.exec_fun/2
   ```
 
 - [ ] `$[0:3:-2]`
@@ -158,11 +80,11 @@ The following queries provide results that do not match those of other implement
           # 2
           -2
       
-      lib/enum.ex:2829: Enum.take_every/2
+      lib/enum.ex:2547: Enum.take_every/2
       lib/ex_json_path.ex:167: ExJSONPath.recurse/2
       lib/ex_json_path.ex:65: ExJSONPath.eval/2
       lib/cli.ex:5: Jsonpath.CLI.main/1
-      lib/kernel/cli.ex:124: anonymous fn/3 in Kernel.CLI.exec_fun/2
+      lib/kernel/cli.ex:121: anonymous fn/3 in Kernel.CLI.exec_fun/2
   ```
 
 - [ ] `$[7:3:-1]`
@@ -188,11 +110,11 @@ The following queries provide results that do not match those of other implement
           # 2
           -1
       
-      lib/enum.ex:2829: Enum.take_every/2
+      lib/enum.ex:2547: Enum.take_every/2
       lib/ex_json_path.ex:167: ExJSONPath.recurse/2
       lib/ex_json_path.ex:65: ExJSONPath.eval/2
       lib/cli.ex:5: Jsonpath.CLI.main/1
-      lib/kernel/cli.ex:124: anonymous fn/3 in Kernel.CLI.exec_fun/2
+      lib/kernel/cli.ex:121: anonymous fn/3 in Kernel.CLI.exec_fun/2
   ```
 
 - [ ] `$[::-2]`
@@ -218,11 +140,11 @@ The following queries provide results that do not match those of other implement
           # 2
           -2
       
-      lib/enum.ex:2829: Enum.take_every/2
+      lib/enum.ex:2547: Enum.take_every/2
       lib/ex_json_path.ex:167: ExJSONPath.recurse/2
       lib/ex_json_path.ex:65: ExJSONPath.eval/2
       lib/cli.ex:5: Jsonpath.CLI.main/1
-      lib/kernel/cli.ex:124: anonymous fn/3 in Kernel.CLI.exec_fun/2
+      lib/kernel/cli.ex:121: anonymous fn/3 in Kernel.CLI.exec_fun/2
   ```
 
 - [ ] `$[:]`
@@ -242,7 +164,7 @@ The following queries provide results that do not match those of other implement
       lib/poison/encoder.ex:260: Poison.Encoder.List.encode/3
       lib/poison.ex:41: Poison.encode!/2
       lib/cli.ex:6: Jsonpath.CLI.main/1
-      lib/kernel/cli.ex:124: anonymous fn/3 in Kernel.CLI.exec_fun/2
+      lib/kernel/cli.ex:121: anonymous fn/3 in Kernel.CLI.exec_fun/2
   ```
 
 - [ ] `$[0:0]`
@@ -596,12 +518,12 @@ The following queries provide results that do not match those of other implement
       
       io_lib.erl:581: :io_lib.write_string1/3
       io_lib.erl:553: :io_lib.write_string/2
-      /usr/local/Cellar/erlang/22.3.4/lib/erlang/lib/parsetools-2.1.8/include/yeccpre.hrl:135: :jsonpath_parser.yeccerror/1
-      /usr/local/Cellar/erlang/22.3.4/lib/erlang/lib/parsetools-2.1.8/include/yeccpre.hrl:57: :jsonpath_parser.yeccpars0/5
+      /usr/lib/erlang/lib/parsetools-2.1.8/include/yeccpre.hrl:135: :jsonpath_parser.yeccerror/1
+      /usr/lib/erlang/lib/parsetools-2.1.8/include/yeccpre.hrl:57: :jsonpath_parser.yeccpars0/5
       lib/ex_json_path.ex:77: ExJSONPath.compile/1
       lib/ex_json_path.ex:59: ExJSONPath.eval/2
       lib/cli.ex:5: Jsonpath.CLI.main/1
-      lib/kernel/cli.ex:124: anonymous fn/3 in Kernel.CLI.exec_fun/2
+      lib/kernel/cli.ex:121: anonymous fn/3 in Kernel.CLI.exec_fun/2
   ```
 
 - [ ] `$.."key"`
@@ -647,12 +569,12 @@ The following queries provide results that do not match those of other implement
       
       io_lib.erl:581: :io_lib.write_string1/3
       io_lib.erl:553: :io_lib.write_string/2
-      /usr/local/Cellar/erlang/22.3.4/lib/erlang/lib/parsetools-2.1.8/include/yeccpre.hrl:135: :jsonpath_parser.yeccerror/1
-      /usr/local/Cellar/erlang/22.3.4/lib/erlang/lib/parsetools-2.1.8/include/yeccpre.hrl:57: :jsonpath_parser.yeccpars0/5
+      /usr/lib/erlang/lib/parsetools-2.1.8/include/yeccpre.hrl:135: :jsonpath_parser.yeccerror/1
+      /usr/lib/erlang/lib/parsetools-2.1.8/include/yeccpre.hrl:57: :jsonpath_parser.yeccpars0/5
       lib/ex_json_path.ex:77: ExJSONPath.compile/1
       lib/ex_json_path.ex:59: ExJSONPath.eval/2
       lib/cli.ex:5: Jsonpath.CLI.main/1
-      lib/kernel/cli.ex:124: anonymous fn/3 in Kernel.CLI.exec_fun/2
+      lib/kernel/cli.ex:121: anonymous fn/3 in Kernel.CLI.exec_fun/2
   ```
 
 - [ ] `$.屬性`
@@ -715,12 +637,12 @@ The following queries provide results that do not match those of other implement
       
       io_lib.erl:581: :io_lib.write_string1/3
       io_lib.erl:553: :io_lib.write_string/2
-      /usr/local/Cellar/erlang/22.3.4/lib/erlang/lib/parsetools-2.1.8/include/yeccpre.hrl:135: :jsonpath_parser.yeccerror/1
-      /usr/local/Cellar/erlang/22.3.4/lib/erlang/lib/parsetools-2.1.8/include/yeccpre.hrl:57: :jsonpath_parser.yeccpars0/5
+      /usr/lib/erlang/lib/parsetools-2.1.8/include/yeccpre.hrl:135: :jsonpath_parser.yeccerror/1
+      /usr/lib/erlang/lib/parsetools-2.1.8/include/yeccpre.hrl:57: :jsonpath_parser.yeccpars0/5
       lib/ex_json_path.ex:77: ExJSONPath.compile/1
       lib/ex_json_path.ex:59: ExJSONPath.eval/2
       lib/cli.ex:5: Jsonpath.CLI.main/1
-      lib/kernel/cli.ex:124: anonymous fn/3 in Kernel.CLI.exec_fun/2
+      lib/kernel/cli.ex:121: anonymous fn/3 in Kernel.CLI.exec_fun/2
   ```
 
 - [ ] `$..'key'`
@@ -766,12 +688,12 @@ The following queries provide results that do not match those of other implement
       
       io_lib.erl:581: :io_lib.write_string1/3
       io_lib.erl:553: :io_lib.write_string/2
-      /usr/local/Cellar/erlang/22.3.4/lib/erlang/lib/parsetools-2.1.8/include/yeccpre.hrl:135: :jsonpath_parser.yeccerror/1
-      /usr/local/Cellar/erlang/22.3.4/lib/erlang/lib/parsetools-2.1.8/include/yeccpre.hrl:57: :jsonpath_parser.yeccpars0/5
+      /usr/lib/erlang/lib/parsetools-2.1.8/include/yeccpre.hrl:135: :jsonpath_parser.yeccerror/1
+      /usr/lib/erlang/lib/parsetools-2.1.8/include/yeccpre.hrl:57: :jsonpath_parser.yeccpars0/5
       lib/ex_json_path.ex:77: ExJSONPath.compile/1
       lib/ex_json_path.ex:59: ExJSONPath.eval/2
       lib/cli.ex:5: Jsonpath.CLI.main/1
-      lib/kernel/cli.ex:124: anonymous fn/3 in Kernel.CLI.exec_fun/2
+      lib/kernel/cli.ex:121: anonymous fn/3 in Kernel.CLI.exec_fun/2
   ```
 
 - [ ] `$.'some.key'`
@@ -802,12 +724,12 @@ The following queries provide results that do not match those of other implement
       
       io_lib.erl:581: :io_lib.write_string1/3
       io_lib.erl:553: :io_lib.write_string/2
-      /usr/local/Cellar/erlang/22.3.4/lib/erlang/lib/parsetools-2.1.8/include/yeccpre.hrl:135: :jsonpath_parser.yeccerror/1
-      /usr/local/Cellar/erlang/22.3.4/lib/erlang/lib/parsetools-2.1.8/include/yeccpre.hrl:57: :jsonpath_parser.yeccpars0/5
+      /usr/lib/erlang/lib/parsetools-2.1.8/include/yeccpre.hrl:135: :jsonpath_parser.yeccerror/1
+      /usr/lib/erlang/lib/parsetools-2.1.8/include/yeccpre.hrl:57: :jsonpath_parser.yeccpars0/5
       lib/ex_json_path.ex:77: ExJSONPath.compile/1
       lib/ex_json_path.ex:59: ExJSONPath.eval/2
       lib/cli.ex:5: Jsonpath.CLI.main/1
-      lib/kernel/cli.ex:124: anonymous fn/3 in Kernel.CLI.exec_fun/2
+      lib/kernel/cli.ex:121: anonymous fn/3 in Kernel.CLI.exec_fun/2
   ```
 
 - [ ] `$..*`
@@ -890,15 +812,15 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  ** (Protocol.UndefinedError) protocol Enumerable not implemented for 1 of type Integer. This protocol is implemented for the following type(s): HashSet, Range, Map, Function, List, Stream, Date.Range, HashDict, GenEvent.Stream, MapSet, File.Stream, IO.Stream
+  ** (Protocol.UndefinedError) protocol Enumerable not implemented for 1 of type Integer. This protocol is implemented for the following type(s): HashDict, MapSet, List, IO.Stream, Map, File.Stream, GenEvent.Stream, HashSet, Function, Stream, Range, Date.Range
       lib/enum.ex:1: Enumerable.impl_for!/1
       lib/enum.ex:193: Enumerable.slice/1
-      lib/enum.ex:3443: Enum.slice_any/3
+      lib/enum.ex:3116: Enum.slice_count_and_fun/1
+      lib/enum.ex:2200: Enum.slice/2
       lib/ex_json_path.ex:166: ExJSONPath.recurse/2
       lib/ex_json_path.ex:111: anonymous fn/6 in ExJSONPath.recurse/2
-      lib/enum.ex:2111: Enum."-reduce/3-lists^foldl/2-0-"/3
+      lib/enum.ex:1948: Enum."-reduce/3-lists^foldl/2-0-"/3
       lib/ex_json_path.ex:104: ExJSONPath.recurse/2
-      lib/ex_json_path.ex:65: ExJSONPath.eval/2
   ```
 
 - [ ] `$[?(@.*==2)]`
@@ -933,11 +855,11 @@ The following queries provide results that do not match those of other implement
   ```
   ** (WithClauseError) no with clause matching: [1, 2]
       lib/ex_json_path.ex:111: anonymous fn/6 in ExJSONPath.recurse/2
-      lib/enum.ex:2111: Enum."-reduce/3-lists^foldl/2-0-"/3
+      lib/enum.ex:1948: Enum."-reduce/3-lists^foldl/2-0-"/3
       lib/ex_json_path.ex:104: ExJSONPath.recurse/2
       lib/ex_json_path.ex:65: ExJSONPath.eval/2
       lib/cli.ex:5: Jsonpath.CLI.main/1
-      lib/kernel/cli.ex:124: anonymous fn/3 in Kernel.CLI.exec_fun/2
+      lib/kernel/cli.ex:121: anonymous fn/3 in Kernel.CLI.exec_fun/2
   ```
 
 - [ ] `$`
