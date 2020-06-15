@@ -149,7 +149,7 @@ rule build_majority_result
 EOF
     echo
     while IFS= read -r query; do
-        echo "build ${majority_results_dir}/${query}: build_majority_result ${results_dir}/${query} | src/build_majority_result.sh src/majority_result.py"
+        echo "build ${majority_results_dir}/${query}: build_majority_result ${results_dir}/${query} | src/build_majority_result.sh src/majority_result.py" implementations/
     done <<< "$(all_queries)"
     echo
 
