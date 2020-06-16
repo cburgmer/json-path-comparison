@@ -98,6 +98,22 @@ The following queries provide results that do not match those of other implement
   parsing error: $['two.some']	:1:3 - 1:13 could not parse string: invalid syntax
   ```
 
+- [ ] `$[-2]`
+  Input:
+  ```
+  [
+    "one element"
+  ]
+  ```
+  Expected output:
+  ```
+  null
+  ```
+  Error:
+  ```
+  index -2 out of bounds
+  ```
+
 - [ ] `$[-1]`
   Input:
   ```

@@ -19,6 +19,24 @@ The following queries provide results that do not match those of other implement
   panic occurred
   ```
 
+- [ ] `$[-2]`
+  Input:
+  ```
+  [
+    "one element"
+  ]
+  ```
+  Expected output:
+  ```
+  []
+  ```
+  Actual output:
+  ```
+  [
+    "one element"
+  ]
+  ```
+
 - [ ] `$[?(@[1]=='b')]`
   Input:
   ```

@@ -30,6 +30,9 @@ queries:
   - id: bracket_notation_with_empty_string_doubled_quoted
     status: open
     result: 42
+  - id: bracket_notation_with_negative_number_on_short_array
+    status: fail
+    result: []
   - id: bracket_notation_with_number_-1_on_empty_array
     status: fail
     result: []

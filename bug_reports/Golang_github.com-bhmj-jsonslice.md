@@ -85,6 +85,22 @@ The following queries provide results that do not match those of other implement
   No JSON output received
   ```
 
+- [ ] `$[-2]`
+  Input:
+  ```
+  [
+    "one element"
+  ]
+  ```
+  Expected output:
+  ```
+  null
+  ```
+  Error:
+  ```
+  No JSON output received
+  ```
+
 - [ ] `$[-1]`
   Input:
   ```

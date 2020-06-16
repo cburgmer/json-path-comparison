@@ -510,6 +510,23 @@ The following queries provide results that do not match those of other implement
   JSON path parse error at position 1
   ```
 
+- [ ] `$[-2]`
+  Input:
+  ```
+  [
+    "one element"
+  ]
+  ```
+  Expected output:
+  ```
+  []
+  ```
+  Actual output:
+  NOT_SUPPORTED
+  ```
+  JSON path parse error at position 1
+  ```
+
 - [ ] `$[-1]`
   Input:
   ```

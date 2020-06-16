@@ -745,6 +745,22 @@ The following queries provide results that do not match those of other implement
   strconv.Atoi: parsing "\"\"": invalid syntax
   ```
 
+- [ ] `$[-2]`
+  Input:
+  ```
+  [
+    "one element"
+  ]
+  ```
+  Expected output:
+  ```
+  null
+  ```
+  Error:
+  ```
+  index out of range: len: 1, idx: -2
+  ```
+
 - [ ] `$[-1]`
   Input:
   ```

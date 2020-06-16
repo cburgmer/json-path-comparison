@@ -214,6 +214,13 @@ queries:
   - id: bracket_notation_with_empty_string_doubled_quoted
     selector: "$[\"\"]"
     document: {"": 42, "''": 123, "\"\"": 222}
+  - id: bracket_notation_with_negative_number_on_short_array
+    selector: "$[-2]"
+    document: ["one element"]
+    consensus: []
+    scalar-consensus: null
+    not-found-consensus: NOT_FOUND
+    scalar-not-found-consensus: NOT_FOUND
   - id: bracket_notation_with_number
     selector: "$[2]"
     document: ["first", "second", "third", "forth", "fifth"]

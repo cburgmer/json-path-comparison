@@ -203,6 +203,22 @@ The following queries provide results that do not match those of other implement
   KeyError(0)
   ```
 
+- [ ] `$[-2]`
+  Input:
+  ```
+  [
+    "one element"
+  ]
+  ```
+  Expected output:
+  ```
+  []
+  ```
+  Error:
+  ```
+  IndexError('list index out of range')
+  ```
+
 - [ ] `$[-1]`
   Input:
   ```

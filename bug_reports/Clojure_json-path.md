@@ -808,6 +808,22 @@ The following queries provide results that do not match those of other implement
   java.lang.Exception object must be an array.
   ```
 
+- [ ] `$[-2]`
+  Input:
+  ```
+  [
+    "one element"
+  ]
+  ```
+  Expected output:
+  ```
+  null
+  ```
+  Error:
+  ```
+  java.lang.IndexOutOfBoundsException nil
+  ```
+
 - [ ] `$[-1]`
   Input:
   ```

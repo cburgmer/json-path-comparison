@@ -306,6 +306,24 @@ The following queries provide results that do not match those of other implement
    Error: searchBeginningWithSlice: string
   ```
 
+- [ ] `$[-2]`
+  Input:
+  ```
+  [
+    "one element"
+  ]
+  ```
+  Expected output:
+  ```
+  null
+  ```
+  Error:
+  ```
+  json-path-comparison: index -2 invalid for array ["one element"]
+  CallStack (from HasCallStack):
+    error, called at app/Main.hs:19:22 in main:Main
+  ```
+
 - [ ] `$[-1]`
   Input:
   ```

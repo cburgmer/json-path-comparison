@@ -57,6 +57,22 @@ The following queries provide results that do not match those of other implement
   Unexpected character while parsing path indexer: "
   ```
 
+- [ ] `$[-2]`
+  Input:
+  ```
+  [
+    "one element"
+  ]
+  ```
+  Expected output:
+  ```
+  []
+  ```
+  Error:
+  ```
+  Index was out of range. Must be non-negative and less than the size of the collection. (Parameter 'index')
+  ```
+
 - [ ] `$[-1]`
   Input:
   ```

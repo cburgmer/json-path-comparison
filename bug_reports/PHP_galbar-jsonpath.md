@@ -76,6 +76,24 @@ The following queries provide results that do not match those of other implement
   Invalid JSONPath error: 'Error in JSONPath near '..[0]''
   ```
 
+- [ ] `$[-2]`
+  Input:
+  ```
+  [
+    "one element"
+  ]
+  ```
+  Expected output:
+  ```
+  []
+  ```
+  Actual output:
+  ```
+  [
+    "one element"
+  ]
+  ```
+
 - [ ] `$[-1]`
   Input:
   ```

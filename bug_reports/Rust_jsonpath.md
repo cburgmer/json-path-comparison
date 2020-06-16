@@ -651,6 +651,23 @@ The following queries provide results that do not match those of other implement
   parsing error
   ```
 
+- [ ] `$[-2]`
+  Input:
+  ```
+  [
+    "one element"
+  ]
+  ```
+  Expected output:
+  ```
+  []
+  ```
+  Actual output:
+  NOT_SUPPORTED
+  ```
+  parsing error
+  ```
+
 - [ ] `$[-1]`
   Input:
   ```

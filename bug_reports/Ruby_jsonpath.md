@@ -331,6 +331,24 @@ The following queries provide results that do not match those of other implement
   []
   ```
 
+- [ ] `$[-2]`
+  Input:
+  ```
+  [
+    "one element"
+  ]
+  ```
+  Expected output:
+  ```
+  []
+  ```
+  Actual output:
+  ```
+  [
+    "one element"
+  ]
+  ```
+
 - [ ] `$.*[1]`
   Input:
   ```
