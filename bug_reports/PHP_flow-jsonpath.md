@@ -35,6 +35,22 @@ The following queries provide results that do not match those of other implement
   timeout: sending signal TERM to command ‘php’
   ```
 
+- [ ] `$[3::-1]`
+  Input:
+  ```
+  [
+    "first",
+    "second",
+    "third",
+    "forth",
+    "fifth"
+  ]
+  ```
+  Error:
+  ```
+  timeout: sending signal TERM to command ‘php’
+  ```
+
 - [ ] `$[-4:]`
   Input:
   ```

@@ -85,6 +85,22 @@ The following queries provide results that do not match those of other implement
   timeout: sending signal TERM to command ‘./build/json-path-comparison’
   ```
 
+- [ ] `$[3::-1]`
+  Input:
+  ```
+  [
+    "first",
+    "second",
+    "third",
+    "forth",
+    "fifth"
+  ]
+  ```
+  Error:
+  ```
+  timeout: sending signal TERM to command ‘./build/json-path-comparison’
+  ```
+
 - [ ] `$[:]`
   Input:
   ```

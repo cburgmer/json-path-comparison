@@ -51,6 +51,9 @@ queries:
   - id: array_slice_with_open_end
     status: fail
     result: "second"
+  - id: array_slice_with_open_end_and_negative_step
+    status: open
+    result: "forth"
   - id: array_slice_with_open_start
     status: fail
     result: "third"

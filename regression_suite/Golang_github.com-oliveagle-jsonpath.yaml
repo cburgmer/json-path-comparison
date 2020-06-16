@@ -37,6 +37,8 @@ queries:
     status: error
   - id: array_slice_with_negative_step_only
     status: error
+  - id: array_slice_with_open_end_and_negative_step
+    status: error
   - id: array_slice_with_open_start
     status: fail
     result: ["first", "second", "third"]

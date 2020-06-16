@@ -132,6 +132,22 @@ The following queries provide results that do not match those of other implement
   step can't be negative
   ```
 
+- [ ] `$[3::-1]`
+  Input:
+  ```
+  [
+    "first",
+    "second",
+    "third",
+    "forth",
+    "fifth"
+  ]
+  ```
+  Error:
+  ```
+  step can't be negative
+  ```
+
 - [ ] `$[3:-3]`
   Input:
   ```

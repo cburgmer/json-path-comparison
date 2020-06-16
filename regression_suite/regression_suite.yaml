@@ -86,6 +86,9 @@ queries:
     selector: "$[1:]"
     document: ["first", "second", "third", "forth", "fifth"]
     consensus: ["second", "third", "forth", "fifth"]
+  - id: array_slice_with_open_end_and_negative_step
+    selector: "$[3::-1]"
+    document: ["first", "second", "third", "forth", "fifth"]
   - id: array_slice_with_open_start
     selector: "$[:2]"
     document: ["first", "second", "third", "forth", "fifth"]

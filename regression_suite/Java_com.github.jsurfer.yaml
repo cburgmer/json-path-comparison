@@ -33,6 +33,9 @@ queries:
   - id: array_slice_with_negative_step_only
     status: open
     result: NOT_SUPPORTED
+  - id: array_slice_with_open_end_and_negative_step
+    status: open
+    result: NOT_SUPPORTED
   - id: array_slice_with_open_start_and_end_and_step_empty
     status: fail
     result: NOT_SUPPORTED
