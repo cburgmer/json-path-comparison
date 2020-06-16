@@ -7,7 +7,7 @@ readonly tmp_stdout="/tmp/Objective-C_SMJJSONPath.stdout.$$"
 readonly tmp_stderr="/tmp/Objective-C_SMJJSONPath.stderr.$$"
 
 multiline_maps() {
-    sed 's/ *//' | tr '\n' ' ' | sed 's/Current context is: { */Current context is: {/' | sed 's/ $//'
+    sed 's/ *//' | tr '\n' ' ' | sed 's/Current context is: { */Current context is: {/' | sed 's/ $//' | awk 1
 }
 
 gnustep_types() {
