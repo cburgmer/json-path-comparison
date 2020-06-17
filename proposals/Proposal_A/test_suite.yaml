@@ -19,6 +19,22 @@ queries:
     selector: "$[1:10]"
     document: ["first", "second", "third"]
     consensus: ["second", "third"]
+  - id: array_slice_with_large_number_for_end
+    selector: "$[2:113667776004]"
+    document: ["first", "second", "third", "forth", "fifth"]
+    consensus: ["third", "forth", "fifth"]
+  - id: array_slice_with_large_number_for_start
+    selector: "$[-113667776004:2]"
+    document: ["first", "second", "third", "forth", "fifth"]
+    consensus: ["first", "second"]
+  - id: array_slice_with_large_number_for_end_and_negative_step
+    selector: "$[2:-113667776004:-1]"
+    document: ["first", "second", "third", "forth", "fifth"]
+    consensus: ["third", "second", "first"]
+  - id: array_slice_with_large_number_for_start_end_negative_step
+    selector: "$[113667776004:2:-1]"
+    document: ["first", "second", "third", "forth", "fifth"]
+    consensus: ["fifth", "forth"]
   - id: array_slice_with_negative_step
     selector: "$[3:0:-2]"
     document: ["first", "second", "third", "forth", "fifth"]

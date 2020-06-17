@@ -4,6 +4,7 @@ const {
   isSameType,
   absoluteArrayIndex,
   valueOrDefault,
+  effectiveArrayBoundary,
   range,
 } = require("./utils");
 
@@ -57,7 +58,10 @@ const childrenSliceOperator = (current, root, [start, end, step]) => {
     current.length
   );
 
-  return range(absoluteStart, absoluteEnd, stepNumber)
+  const effectiveStart = effectiveArrayBoundary(absoluteStart, current.length);
+  const effectiveEnd = effectiveArrayBoundary(absoluteEnd, current.length);
+
+  return range(effectiveStart, effectiveEnd, stepNumber)
     .filter((idx) => 0 <= idx && idx < current.length)
     .map((idx) => current[idx]);
 };

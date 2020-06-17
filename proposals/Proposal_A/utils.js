@@ -23,6 +23,10 @@ const valueOrDefault = (value, defaultValue) => {
 };
 module.exports.valueOrDefault = valueOrDefault;
 
+const effectiveArrayBoundary = (boundary, length) =>
+  Math.min(Math.max(-1, boundary), length);
+module.exports.effectiveArrayBoundary = effectiveArrayBoundary;
+
 const range = (start, end, step) => {
   const slice = [];
   if (step > 0) {
