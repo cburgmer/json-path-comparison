@@ -9,7 +9,7 @@ module.exports.isSameType = isSameType;
 
 const absoluteArrayIndex = (sliceIndex, length) => {
   if (sliceIndex < 0) {
-    return Math.max(0, length + sliceIndex);
+    return length + sliceIndex;
   }
   return sliceIndex;
 };

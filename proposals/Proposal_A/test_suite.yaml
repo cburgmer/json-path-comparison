@@ -70,6 +70,10 @@ queries:
     selector: "$[-4:]"
     document: ["first", "second", "third"]
     consensus: ["first", "second", "third"]
+  - id: bracket_notation_with_negative_number_on_short_array
+    selector: "$[-2]"
+    document: ["one element"]
+    consensus: []
   - id: array_slice_with_step
     selector: "$[0:3:2]"
     document: ["first", "second", "third", "forth", "fifth"]
