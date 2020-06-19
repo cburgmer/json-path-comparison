@@ -16,6 +16,10 @@
 
 <h2>Results</h2>
 
+<h3 id="consensus">Consensus</h3>
+
+<p>Not supported</p>
+
 <h3>Other responses</h3>
 
 <h4 id="Bash_JSONPath.sh">
@@ -48,69 +52,11 @@ Cpp (jsoncons)
 ]
 </code></pre>
 
-<h4 id="Elixir_ExJsonPath">
-Elixir (ExJsonPath)
-</h4>
-
-<p>Not supported</p>
-
-<pre><code>syntax error before: '.'
-</code></pre>
-
-<h4 id="Elixir_warpath">
-Elixir (warpath)
-¹
-</h4>
-
-<p>Not supported</p>
-
-<pre><code>Parser error: Invalid token on line 1, syntax error before: &lt;&lt;"."&gt;&gt;
-</code></pre>
-
-<h4 id="Erlang_ejsonpath">
-Erlang (ejsonpath)
-</h4>
-
-<p>Not supported</p>
-
-<pre><code>syntax error before: '.'
-</code></pre>
-
-<h4 id="Golang_github.com-PaesslerAG-jsonpath">
-Golang (github.com-PaesslerAG-jsonpath)
-¹
-</h4>
-
-<p>Not supported</p>
-
-<pre><code>parsing error: $['two'.'some']  :1:3 - 1:8 could not parse string: invalid syntax
-</code></pre>
-
 <h4 id="Golang_github.com-spyzhov-ajson">
 Golang (github.com-spyzhov-ajson)
 </h4>
 
 <pre><code>[]
-</code></pre>
-
-<h4 id="Golang_github.com-vmware-labs-yaml-jsonpath">
-Golang (github.com-vmware-labs-yaml-jsonpath)
-</h4>
-
-<p>Not supported</p>
-
-<pre><code>missing "]" or "," at position 7, following "$['two'"
-</code></pre>
-
-<h4 id="Haskell_jsonpath">
-Haskell (jsonpath)
-¹
-</h4>
-
-<p>Not supported</p>
-
-<pre><code>Invalid JSONPath: $['two'.'some']
- Error: searchBeginningWithSlice: string
 </code></pre>
 
 <h4 id="JavaScript_Goessner">
@@ -123,18 +69,6 @@ JavaScript (Goessner)
 ]
 </code></pre>
 
-<h4 id="JavaScript_jsonpath">
-JavaScript (jsonpath)
-</h4>
-
-<p>Not supported</p>
-
-<pre><code>Parse error on line 1:
-$['two'.'some']
--------^
-Expecting ']', ',', got 'DOT'
-</code></pre>
-
 <h4 id="JavaScript_jsonpath-plus">
 JavaScript (jsonpath-plus)
 </h4>
@@ -142,53 +76,6 @@ JavaScript (jsonpath-plus)
 <pre><code>[
   "43"
 ]
-</code></pre>
-
-<h4 id="Java_com.github.jsurfer">
-Java (com.github.jsurfer)
-</h4>
-
-<p>Not supported</p>
-
-<pre><code>org.antlr.v4.runtime.misc.ParseCancellationException
-</code></pre>
-
-<h4 id="Java_com.jayway.jsonpath">
-Java (com.jayway.jsonpath)
-¹
-³
-</h4>
-
-<p>Not supported</p>
-
-<pre><code>SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
-SLF4J: Defaulting to no-operation (NOP) logger implementation
-SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
-com.jayway.jsonpath.InvalidPathException: Property must be separated by comma or Property must be terminated close square bracket at index 6
-</code></pre>
-
-<h4 id="Kotlin_com.nfeld.jsonpathkt">
-Kotlin (com.nfeld.jsonpathkt)
-¹
-</h4>
-
-<pre><code>{
-  "two": {
-    "key": "other value",
-    "some": "more"
-  }
-}
-</code></pre>
-
-<h4 id="Objective-C_SMJJSONPath">
-Objective-C (SMJJSONPath)
-¹
-³
-</h4>
-
-<p>Not supported</p>
-
-<pre><code>Property must be separated by comma or Property must be terminated close square bracket at index 6
 </code></pre>
 
 <h4 id="PHP_Goessner">
@@ -220,15 +107,6 @@ PHP (galbar-jsonpath)
 ]
 </code></pre>
 
-<h4 id="PHP_remorhaz-jsonpath">
-PHP (remorhaz-jsonpath)
-</h4>
-
-<p>Not supported</p>
-
-<pre><code>Error: 'Failed to build AST from JSONPath query: $['two'.'some']'
-</code></pre>
-
 <h4 id="Perl_JSON-Path">
 Perl (JSON-Path)
 </h4>
@@ -246,34 +124,6 @@ Python (jsonpath)
 ]
 </code></pre>
 
-<h4 id="Python_jsonpath-rw">
-Python (jsonpath-rw)
-</h4>
-
-<p>Not supported</p>
-
-<pre><code>Exception('Parse error at 1:7 near token . (.)')
-</code></pre>
-
-<h4 id="Python_jsonpath2">
-Python (jsonpath2)
-</h4>
-
-<p>Not supported</p>
-
-<pre><code>line 1:2 token recognition error at: '''
-ValueError("line 1:2 token recognition error at: '''")
-</code></pre>
-
-<h4 id="Raku_JSON-Path">
-Raku (JSON-Path)
-</h4>
-
-<p>Not supported</p>
-
-<pre><code>JSON path parse error at position 1
-</code></pre>
-
 <h4 id="Ruby_jsonpath">
 Ruby (jsonpath)
 </h4>
@@ -283,44 +133,6 @@ Ruby (jsonpath)
 ]
 </code></pre>
 
-<h4 id="Rust_jsonpath">
-Rust (jsonpath)
-</h4>
-
-<p>Not supported</p>
-
-<pre><code>parsing error
-</code></pre>
-
-<h4 id="Rust_jsonpath_lib">
-Rust (jsonpath_lib)
-</h4>
-
-<p>Not supported</p>
-
-<pre><code>path error: 
-$['two'.'some']
-^^^^^^^^
-</code></pre>
-
-<h4 id="Scala_jsonpath">
-Scala (jsonpath)
-</h4>
-
-<p>Not supported</p>
-
-<pre><code>JPError(end of input expected)
-</code></pre>
-
-<h4 id="dotNET_Json.NET">
-dotNET (Json.NET)
-</h4>
-
-<p>Not supported</p>
-
-<pre><code>Unexpected character while parsing path indexer: .
-</code></pre>
-
 <h4 id="dotNET_JsonPathLib">
 dotNET (JsonPathLib)
 </h4>
@@ -328,41 +140,6 @@ dotNET (JsonPathLib)
 <pre><code>[
   "more"
 ]
-</code></pre>
-
-<h4 id="dotNET_Manatee.Json">
-dotNET (Manatee.Json)
-</h4>
-
-<p>Not supported</p>
-
-<pre><code>Expected close bracket. Path up to error: '$'
-</code></pre>
-
-<h4 id="Proposal_A">
-Proposal (A)
-</h4>
-
-<p>Not supported</p>
-
-<pre><code>x 1:3-1:3 Integer
-| $['two'.'some']
-|   ^
-o 1:3-1:8 BracketElement
-| $['two'.'some']
-|   ^^^^^
-o 1:3-1:8 BracketElements
-| $['two'.'some']
-|   ^^^^^
-x 1:2-1:2 BracketChildren
-| $['two'.'some']
-|  ^
-x 1:2-1:2 Operator
-| $['two'.'some']
-|  ^
-o 1:1-1:2 Start
-  $['two'.'some']
-  ^
 </code></pre>
 
 <h3>Errors</h3>

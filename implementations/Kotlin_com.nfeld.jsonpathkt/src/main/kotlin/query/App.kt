@@ -10,8 +10,12 @@ import com.google.gson.JsonParser
 fun main(args : Array<String>) {
     val json = generateSequence(::readLine).joinToString("\n")
     try {
-        val results = JsonPath.parse(json)?.read<JsonNode>(args[0])?.toString()
-        println(Gson().toJson(JsonParser().parse(results)))
+        val results = JsonPath.parse(json)?.read<JsonNode>(args[0])
+        if (results != null) {
+            println(Gson().toJson(JsonParser().parse(results.toString())))
+        } else {
+            println(results)
+        }
     } catch (e: IllegalArgumentException) {
         System.err.println(e.message);
         exitProcess(2);

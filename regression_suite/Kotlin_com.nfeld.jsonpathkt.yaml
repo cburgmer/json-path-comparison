@@ -6,9 +6,6 @@
 
 implementation: Kotlin_com.nfeld.jsonpathkt
 queries:
-  - id: array_slice_on_object
-    status: open
-    result: null
   - id: array_slice_with_negative_step
     status: open
     result: []
@@ -24,15 +21,8 @@ queries:
   - id: array_slice_with_open_end_and_negative_step
     status: open
     result: ["forth"]
-  - id: array_slice_with_open_start_and_end
-    status: error
-  - id: array_slice_with_open_start_and_end_and_step_empty
-    status: fail
-    result: NOT_SUPPORTED
   - id: array_slice_with_open_start_and_end_on_object
-    status: error
-  - id: array_slice_with_start_large_negative_number_and_open_end_on_short_array
-    status: fail
+    status: open
     result: []
   - id: array_slice_with_step
     status: fail
@@ -49,62 +39,27 @@ queries:
   - id: array_slice_with_step_only
     status: fail
     result: ["first", "second"]
-  - id: bracket_notation_with_double_quotes
-    status: fail
-    result: NOT_SUPPORTED
-  - id: bracket_notation_with_empty_string
-    status: fail
-    result: NOT_SUPPORTED
   - id: bracket_notation_with_empty_string_doubled_quoted
     status: open
-    result: NOT_SUPPORTED
-  - id: bracket_notation_with_number_after_dot_notation_with_wildcard_on_nested_arrays_with_different_length
-    status: fail
-    result: null
+    result: 42
   - id: bracket_notation_with_number_on_object
     status: open
     result: null
   - id: bracket_notation_with_number_on_string
-    status: error
+    status: open
+    result: "H"
   - id: bracket_notation_with_quoted_escaped_backslash
     status: open
-    result: NOT_SUPPORTED
+    result: "value"
   - id: bracket_notation_with_quoted_escaped_single_quote
     status: open
-    result: null
+    result: "value"
   - id: bracket_notation_with_quoted_special_characters_combined
     status: open
-    result: NOT_SUPPORTED
+    result: 42
   - id: bracket_notation_with_quoted_wildcard_literal_on_object_without_key
     status: open
     result: null
-  - id: bracket_notation_with_two_literals_separated_by_dot
-    status: open
-    result: {"two": {"key": "other value", "some": "more"}}
-  - id: bracket_notation_with_wildcard_after_array_slice
-    status: fail
-    result: NOT_SUPPORTED
-  - id: bracket_notation_with_wildcard_after_dot_notation_after_bracket_notation_with_wildcard
-    status: fail
-    result: NOT_SUPPORTED
-  - id: bracket_notation_with_wildcard_after_recursive_descent
-    status: fail
-    result: NOT_SUPPORTED
-  - id: bracket_notation_with_wildcard_on_array
-    status: fail
-    result: NOT_SUPPORTED
-  - id: bracket_notation_with_wildcard_on_empty_array
-    status: fail
-    result: NOT_SUPPORTED
-  - id: bracket_notation_with_wildcard_on_empty_object
-    status: fail
-    result: NOT_SUPPORTED
-  - id: bracket_notation_with_wildcard_on_null_value_array
-    status: fail
-    result: NOT_SUPPORTED
-  - id: bracket_notation_with_wildcard_on_object
-    status: fail
-    result: NOT_SUPPORTED
   - id: bracket_notation_without_quotes
     status: open
     result: NOT_SUPPORTED
@@ -113,28 +68,13 @@ queries:
     result: "value"
   - id: dot_bracket_notation_with_double_quotes
     status: open
-    result: NOT_SUPPORTED
+    result: "value"
   - id: dot_notation_after_bracket_notation_after_recursive_descent
     status: open
-    result: null
-  - id: dot_notation_after_bracket_notation_with_wildcard
-    status: fail
-    result: NOT_SUPPORTED
-  - id: dot_notation_after_bracket_notation_with_wildcard_on_one_matching
-    status: fail
-    result: NOT_SUPPORTED
-  - id: dot_notation_after_bracket_notation_with_wildcard_on_some_matching
-    status: fail
-    result: NOT_SUPPORTED
+    result: [200, 42, 500]
   - id: dot_notation_after_filter_expression
     status: fail
     result: NOT_SUPPORTED
-  - id: dot_notation_after_union
-    status: fail
-    result: null
-  - id: dot_notation_after_union_with_keys
-    status: fail
-    result: null
   - id: dot_notation_with_double_quotes
     status: open
     result: 42
@@ -159,35 +99,12 @@ queries:
   - id: dot_notation_with_single_quotes_and_dot
     status: open
     result: null
-  - id: dot_notation_with_wildcard_after_dot_notation_after_dot_notation_with_wildcard
-    status: fail
-    result: null
-  - id: dot_notation_with_wildcard_after_dot_notation_with_wildcard_on_nested_arrays
-    status: fail
-    result: null
-  - id: dot_notation_with_wildcard_after_recursive_descent
-    status: fail
-    result: []
   - id: dot_notation_with_wildcard_after_recursive_descent_on_null_value_array
     status: fail
-    result: []
-  - id: dot_notation_with_wildcard_after_recursive_descent_on_scalar
-    status: error
-  - id: dot_notation_with_wildcard_on_array
-    status: fail
-    result: null
-  - id: dot_notation_with_wildcard_on_empty_array
-    status: fail
-    result: null
-  - id: dot_notation_with_wildcard_on_empty_object
-    status: fail
-    result: null
-  - id: dot_notation_with_wildcard_on_object
-    status: fail
-    result: null
+    result: [40, 42]
   - id: dot_notation_without_root
     status: open
-    result: NOT_SUPPORTED
+    result: "value"
   - id: filter_expression_after_dot_notation_with_wildcard_after_recursive_descent
     status: open
     result: NOT_SUPPORTED
@@ -377,32 +294,15 @@ queries:
   - id: recursive_descent_after_dot_notation
     status: open
     result: {"complex": "string", "primitives": [0, 1]}
-  - id: root_on_scalar
-    status: error
-  - id: root_on_scalar_false
-    status: error
-  - id: root_on_scalar_true
-    status: error
   - id: script_expression
     status: open
     result: NOT_SUPPORTED
   - id: union_with_filter
     status: open
     result: NOT_SUPPORTED
-  - id: union_with_keys
-    status: fail
-    result: {"another": "entry", "key": "value"}
-  - id: union_with_keys_after_array_slice
-    status: error
-  - id: union_with_keys_after_bracket_notation
-    status: fail
-    result: {"c": "cc1", "d": "dd1"}
   - id: union_with_keys_after_dot_notation_with_wildcard
     status: open
-    result: null
-  - id: union_with_keys_on_object_without_key
-    status: fail
-    result: {"key": "value"}
+    result: ["cc1", "dd1", "cc2", "dd2"]
   - id: union_with_slice_and_number
     status: open
     result: [2, 3]
