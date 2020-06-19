@@ -208,6 +208,10 @@ The following queries provide results that do not match those of other implement
     "two'.'some": "43"
   }
   ```
+  Expected output:
+  ```
+  NOT_SUPPORTED
+  ```
   Error:
   ```
   path: invalid character at 7
@@ -2184,6 +2188,40 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   path: invalid character at 12
+  ```
+
+- [ ] `$[:]['c','d']`
+  Input:
+  ```
+  [
+    {
+      "c": "cc1",
+      "d": "dd1",
+      "e": "ee1"
+    },
+    {
+      "c": "cc2",
+      "d": "dd2",
+      "e": "ee2"
+    }
+  ]
+  ```
+  Expected output:
+  ```
+  ["cc1", "dd1", "cc2", "dd2"]
+  ```
+  Actual output:
+  ```
+  [
+    [
+      "cc1",
+      "dd1"
+    ],
+    [
+      "cc2",
+      "dd2"
+    ]
+  ]
   ```
 
 - [ ] `$[4,1]`

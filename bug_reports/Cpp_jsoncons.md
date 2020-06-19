@@ -102,6 +102,32 @@ The following queries provide results that do not match those of other implement
   Expected slice step at line 1 and column 7
   ```
 
+- [ ] `$['two'.'some']`
+  Input:
+  ```
+  {
+    "one": {
+      "key": "value"
+    },
+    "two": {
+      "some": "more",
+      "key": "other value"
+    },
+    "two.some": "42",
+    "two'.'some": "43"
+  }
+  ```
+  Expected output:
+  ```
+  NOT_SUPPORTED
+  ```
+  Actual output:
+  ```
+  [
+    "more"
+  ]
+  ```
+
 - [ ] `$[two.some]`
   Input:
   ```

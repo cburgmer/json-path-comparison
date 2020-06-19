@@ -6,9 +6,6 @@
 
 implementation: Perl_JSON-Path
 queries:
-  - id: array_slice_on_object
-    status: open
-    result: []
   - id: array_slice_with_negative_start_and_positive_end_and_range_of_-1
     status: fail
     result: [4, 5, 100, "nice", 2]
@@ -94,7 +91,7 @@ queries:
     status: open
     result: ["entry"]
   - id: bracket_notation_with_two_literals_separated_by_dot
-    status: open
+    status: fail
     result: []
   - id: bracket_notation_with_two_literals_separated_by_dot_without_quotes
     status: fail

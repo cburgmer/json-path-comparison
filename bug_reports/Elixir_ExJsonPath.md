@@ -15,6 +15,10 @@ The following queries provide results that do not match those of other implement
     "1:3": "nice"
   }
   ```
+  Expected output:
+  ```
+  []
+  ```
   Error:
   ```
   Invalid object returned

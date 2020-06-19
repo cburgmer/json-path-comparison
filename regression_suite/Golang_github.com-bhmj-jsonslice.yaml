@@ -6,9 +6,6 @@
 
 implementation: Golang_github.com-bhmj-jsonslice
 queries:
-  - id: array_slice_on_object
-    status: open
-    result: []
   - id: array_slice_with_negative_step
     status: open
     result: ["forth", "second"]
@@ -271,7 +268,7 @@ queries:
   - id: union_with_filter
     status: error
   - id: union_with_keys_after_array_slice
-    status: open
+    status: fail
     result: [["cc1", "dd1"], ["cc2", "dd2"]]
   - id: union_with_keys_after_dot_notation_with_wildcard
     status: open

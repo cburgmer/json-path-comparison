@@ -6,9 +6,6 @@
 
 implementation: Rust_jsonpath_lib
 queries:
-  - id: array_slice_on_object
-    status: open
-    result: []
   - id: array_slice_with_negative_step
     status: open
     result: NOT_SUPPORTED
@@ -53,9 +50,6 @@ queries:
   - id: bracket_notation_with_quoted_wildcard_literal_on_object_without_key
     status: open
     result: []
-  - id: bracket_notation_with_two_literals_separated_by_dot
-    status: open
-    result: NOT_SUPPORTED
   - id: bracket_notation_without_quotes
     status: open
     result: NOT_SUPPORTED
@@ -267,9 +261,6 @@ queries:
   - id: union_with_filter
     status: open
     result: NOT_SUPPORTED
-  - id: union_with_keys_after_array_slice
-    status: open
-    result: ["cc1", "dd1", "cc2", "dd2"]
   - id: union_with_keys_after_dot_notation_with_wildcard
     status: open
     result: ["cc1", "dd1", "cc2", "dd2"]

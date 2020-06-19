@@ -481,6 +481,30 @@ The following queries provide results that do not match those of other implement
   ]
   ```
 
+- [ ] `$['two'.'some']`
+  Input:
+  ```
+  {
+    "one": {
+      "key": "value"
+    },
+    "two": {
+      "some": "more",
+      "key": "other value"
+    },
+    "two.some": "42",
+    "two'.'some": "43"
+  }
+  ```
+  Expected output:
+  ```
+  NOT_SUPPORTED
+  ```
+  Actual output:
+  ```
+  []
+  ```
+
 - [ ] `$[two.some]`
   Input:
   ```
@@ -3183,6 +3207,10 @@ The following queries provide results that do not match those of other implement
       "e": "ee2"
     }
   ]
+  ```
+  Expected output:
+  ```
+  ["cc1", "dd1", "cc2", "dd2"]
   ```
   Error:
   ```

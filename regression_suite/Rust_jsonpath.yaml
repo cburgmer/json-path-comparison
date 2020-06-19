@@ -9,9 +9,6 @@ queries:
   - id: array_slice
     status: fail
     result: ["second", "third", "forth"]
-  - id: array_slice_on_object
-    status: open
-    result: []
   - id: array_slice_with_negative_start_and_end_and_range_of_-1
     status: fail
     result: NOT_SUPPORTED
@@ -182,9 +179,6 @@ queries:
     result: NOT_SUPPORTED
   - id: bracket_notation_with_string_including_dot_wildcard
     status: fail
-    result: NOT_SUPPORTED
-  - id: bracket_notation_with_two_literals_separated_by_dot
-    status: open
     result: NOT_SUPPORTED
   - id: bracket_notation_with_wildcard_after_array_slice
     status: fail
@@ -478,7 +472,7 @@ queries:
     status: fail
     result: NOT_SUPPORTED
   - id: union_with_keys_after_array_slice
-    status: open
+    status: fail
     result: NOT_SUPPORTED
   - id: union_with_keys_after_bracket_notation
     status: fail

@@ -7,7 +7,7 @@
 implementation: Java_com.jayway.jsonpath
 queries:
   - id: array_slice_on_object
-    status: open
+    status: fail
     result: NOT_FOUND
   - id: array_slice_with_negative_start_and_positive_end_and_range_of_-1
     status: fail
@@ -84,9 +84,6 @@ queries:
   - id: bracket_notation_with_quoted_wildcard_literal_on_object_without_key
     status: open
     result: NOT_FOUND
-  - id: bracket_notation_with_two_literals_separated_by_dot
-    status: open
-    result: NOT_SUPPORTED
   - id: bracket_notation_without_quotes
     status: open
     result: NOT_SUPPORTED
@@ -298,7 +295,7 @@ queries:
     status: fail
     result: {"another": "entry", "key": "value"}
   - id: union_with_keys_after_array_slice
-    status: open
+    status: fail
     result: NOT_SUPPORTED
   - id: union_with_keys_after_bracket_notation
     status: fail

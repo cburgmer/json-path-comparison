@@ -15,6 +15,10 @@ The following queries provide results that do not match those of other implement
     "1:3": "nice"
   }
   ```
+  Expected output:
+  ```
+  []
+  ```
   Error:
   ```
   json-path-comparison: expected array, found {":":42,"more":"string","a":1,"b":2,"1:3":"nice","c":3}
@@ -1552,6 +1556,33 @@ The following queries provide results that do not match those of other implement
   NOT_SUPPORTED
   ```
   Invalid JSONPath: $['key','another']
+   Error: searchBeginningWithSlice: string
+  ```
+
+- [ ] `$[:]['c','d']`
+  Input:
+  ```
+  [
+    {
+      "c": "cc1",
+      "d": "dd1",
+      "e": "ee1"
+    },
+    {
+      "c": "cc2",
+      "d": "dd2",
+      "e": "ee2"
+    }
+  ]
+  ```
+  Expected output:
+  ```
+  ["cc1", "dd1", "cc2", "dd2"]
+  ```
+  Actual output:
+  NOT_SUPPORTED
+  ```
+  Invalid JSONPath: $[:]['c','d']
    Error: searchBeginningWithSlice: string
   ```
 

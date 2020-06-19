@@ -3,6 +3,28 @@ Results do not match other implementations
 The following queries provide results that do not match those of other implementations of JSONPath
 (compare https://cburgmer.github.io/json-path-comparison/):
 
+- [ ] `$[1:3]`
+  Input:
+  ```
+  {
+    ":": 42,
+    "more": "string",
+    "a": 1,
+    "b": 2,
+    "c": 3,
+    "1:3": "nice"
+  }
+  ```
+  Expected output:
+  ```
+  []
+  ```
+  Actual output:
+  NOT_FOUND
+  ```
+  Filter: [1:3] can only be applied to arrays. Current context is: {"1:3" = nice; ":" = 42; a = 1; b = 2; c = 3; more = string; }
+  ```
+
 - [ ] `$[-4:1]`
   Input:
   ```
@@ -306,6 +328,32 @@ The following queries provide results that do not match those of other implement
     "another": "entry",
     "key": "value"
   }
+  ```
+
+- [ ] `$[:]['c','d']`
+  Input:
+  ```
+  [
+    {
+      "c": "cc1",
+      "d": "dd1",
+      "e": "ee1"
+    },
+    {
+      "c": "cc2",
+      "d": "dd2",
+      "e": "ee2"
+    }
+  ]
+  ```
+  Expected output:
+  ```
+  ["cc1", "dd1", "cc2", "dd2"]
+  ```
+  Actual output:
+  NOT_SUPPORTED
+  ```
+  Failed to parse SliceOperation: :
   ```
 
 - [ ] `$[0]['c','d']`

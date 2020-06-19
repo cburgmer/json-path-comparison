@@ -35,6 +35,10 @@ The following queries provide results that do not match those of other implement
     "1:3": "nice"
   }
   ```
+  Expected output:
+  ```
+  []
+  ```
   Error:
   ```
   Expecting value: line 3 column 1 (char 2)
@@ -996,6 +1000,32 @@ The following queries provide results that do not match those of other implement
   {
     "ni.*": 1,
     "nice": 42
+  }
+  ```
+
+- [ ] `$['two'.'some']`
+  Input:
+  ```
+  {
+    "one": {
+      "key": "value"
+    },
+    "two": {
+      "some": "more",
+      "key": "other value"
+    },
+    "two.some": "42",
+    "two'.'some": "43"
+  }
+  ```
+  Expected output:
+  ```
+  NOT_SUPPORTED
+  ```
+  Actual output:
+  ```
+  {
+    "some": "more"
   }
   ```
 
@@ -4067,6 +4097,40 @@ The following queries provide results that do not match those of other implement
     "another": "entry",
     "key": "value"
   }
+  ```
+
+- [ ] `$[:]['c','d']`
+  Input:
+  ```
+  [
+    {
+      "c": "cc1",
+      "d": "dd1",
+      "e": "ee1"
+    },
+    {
+      "c": "cc2",
+      "d": "dd2",
+      "e": "ee2"
+    }
+  ]
+  ```
+  Expected output:
+  ```
+  ["cc1", "dd1", "cc2", "dd2"]
+  ```
+  Actual output:
+  ```
+  [
+    {
+      "c": "cc1",
+      "d": "dd1"
+    },
+    {
+      "c": "cc2",
+      "d": "dd2"
+    }
+  ]
   ```
 
 - [ ] `$[0]['c','d']`

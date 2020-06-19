@@ -117,9 +117,6 @@ queries:
   - id: bracket_notation_with_string_including_dot_wildcard
     status: fail
     result: NOT_SUPPORTED
-  - id: bracket_notation_with_two_literals_separated_by_dot
-    status: open
-    result: NOT_SUPPORTED
   - id: bracket_notation_without_quotes
     status: open
     result: NOT_SUPPORTED
@@ -366,7 +363,7 @@ queries:
     status: fail
     result: NOT_SUPPORTED
   - id: union_with_keys_after_array_slice
-    status: open
+    status: fail
     result: NOT_SUPPORTED
   - id: union_with_keys_after_bracket_notation
     status: fail

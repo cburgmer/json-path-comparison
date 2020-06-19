@@ -55,6 +55,30 @@ The following queries provide results that do not match those of other implement
   unexpected end of file
   ```
 
+- [ ] `$['two'.'some']`
+  Input:
+  ```
+  {
+    "one": {
+      "key": "value"
+    },
+    "two": {
+      "some": "more",
+      "key": "other value"
+    },
+    "two.some": "42",
+    "two'.'some": "43"
+  }
+  ```
+  Expected output:
+  ```
+  NOT_SUPPORTED
+  ```
+  Actual output:
+  ```
+  []
+  ```
+
 - [ ] `$[two.some]`
   Input:
   ```
@@ -988,6 +1012,36 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   wrong request: wrong request: ?(@.key<3),?(@.key>6)
+  ```
+
+- [ ] `$[:]['c','d']`
+  Input:
+  ```
+  [
+    {
+      "c": "cc1",
+      "d": "dd1",
+      "e": "ee1"
+    },
+    {
+      "c": "cc2",
+      "d": "dd2",
+      "e": "ee2"
+    }
+  ]
+  ```
+  Expected output:
+  ```
+  ["cc1", "dd1", "cc2", "dd2"]
+  ```
+  Actual output:
+  ```
+  [
+    "cc1",
+    "cc2",
+    "dd1",
+    "dd2"
+  ]
   ```
 
 - [ ] `$[1:3,4]`

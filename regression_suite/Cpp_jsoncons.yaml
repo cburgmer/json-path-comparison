@@ -6,9 +6,6 @@
 
 implementation: Cpp_jsoncons
 queries:
-  - id: array_slice_on_object
-    status: open
-    result: []
   - id: array_slice_with_negative_step
     status: open
     result: NOT_SUPPORTED
@@ -64,7 +61,7 @@ queries:
     status: open
     result: []
   - id: bracket_notation_with_two_literals_separated_by_dot
-    status: open
+    status: fail
     result: ["more"]
   - id: bracket_notation_with_two_literals_separated_by_dot_without_quotes
     status: fail
@@ -280,9 +277,6 @@ queries:
   - id: union_with_filter
     status: open
     result: [{"key": 1}, {"key": 2}, {"key": 8}, {"key": 10}, {"key": 7}]
-  - id: union_with_keys_after_array_slice
-    status: open
-    result: ["cc1", "dd1", "cc2", "dd2"]
   - id: union_with_keys_after_dot_notation_with_wildcard
     status: open
     result: ["cc1", "dd1", "cc2", "dd2"]

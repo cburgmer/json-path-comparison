@@ -6,9 +6,6 @@
 
 implementation: JavaScript_jsonpath-plus
 queries:
-  - id: array_slice_on_object
-    status: open
-    result: []
   - id: array_slice_with_negative_step
     status: open
     result: []
@@ -84,7 +81,7 @@ queries:
     status: open
     result: ["entry"]
   - id: bracket_notation_with_two_literals_separated_by_dot
-    status: open
+    status: fail
     result: ["43"]
   - id: bracket_notation_with_two_literals_separated_by_dot_without_quotes
     status: fail
@@ -316,7 +313,7 @@ queries:
     status: fail
     result: []
   - id: union_with_keys_after_array_slice
-    status: open
+    status: fail
     result: []
   - id: union_with_keys_after_bracket_notation
     status: fail

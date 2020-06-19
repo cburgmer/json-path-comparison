@@ -77,6 +77,10 @@ The following queries provide results that do not match those of other implement
     "1:3": "nice"
   }
   ```
+  Expected output:
+  ```
+  []
+  ```
   Error:
   ```
   object is not Slice
@@ -1116,6 +1120,10 @@ The following queries provide results that do not match those of other implement
     "two.some": "42",
     "two'.'some": "43"
   }
+  ```
+  Expected output:
+  ```
+  NOT_SUPPORTED
   ```
   Error:
   ```
@@ -2912,6 +2920,10 @@ The following queries provide results that do not match those of other implement
       "e": "ee2"
     }
   ]
+  ```
+  Expected output:
+  ```
+  ["cc1", "dd1", "cc2", "dd2"]
   ```
   Error:
   ```

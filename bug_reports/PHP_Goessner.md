@@ -3,6 +3,29 @@ Results do not match other implementations
 The following queries provide results that do not match those of other implementations of JSONPath
 (compare https://cburgmer.github.io/json-path-comparison/):
 
+- [ ] `$[1:3]`
+  Input:
+  ```
+  {
+    ":": 42,
+    "more": "string",
+    "a": 1,
+    "b": 2,
+    "c": 3,
+    "1:3": "nice"
+  }
+  ```
+  Expected output:
+  ```
+  []
+  ```
+  Actual output:
+  ```
+  [
+    "nice"
+  ]
+  ```
+
 - [ ] `$[3:0:-2]`
   Input:
   ```
@@ -241,6 +264,32 @@ The following queries provide results that do not match those of other implement
   ```
   [
     "value"
+  ]
+  ```
+
+- [ ] `$['two'.'some']`
+  Input:
+  ```
+  {
+    "one": {
+      "key": "value"
+    },
+    "two": {
+      "some": "more",
+      "key": "other value"
+    },
+    "two.some": "42",
+    "two'.'some": "43"
+  }
+  ```
+  Expected output:
+  ```
+  NOT_SUPPORTED
+  ```
+  Actual output:
+  ```
+  [
+    "43"
   ]
   ```
 

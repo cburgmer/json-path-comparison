@@ -3,6 +3,30 @@ Results do not match other implementations
 The following queries provide results that do not match those of other implementations of JSONPath
 (compare https://cburgmer.github.io/json-path-comparison/):
 
+- [ ] `$[1:3]`
+  Input:
+  ```
+  {
+    ":": 42,
+    "more": "string",
+    "a": 1,
+    "b": 2,
+    "c": 3,
+    "1:3": "nice"
+  }
+  ```
+  Expected output:
+  ```
+  []
+  ```
+  Actual output:
+  ```
+  [
+    "string",
+    1
+  ]
+  ```
+
 - [ ] `$[7:3:-1]`
   Input:
   ```
@@ -137,6 +161,32 @@ The following queries provide results that do not match those of other implement
   NOT_SUPPORTED
   ```
   Expected close bracket. Path up to error: '$'
+  ```
+
+- [ ] `$[:]['c','d']`
+  Input:
+  ```
+  [
+    {
+      "c": "cc1",
+      "d": "dd1",
+      "e": "ee1"
+    },
+    {
+      "c": "cc2",
+      "d": "dd2",
+      "e": "ee2"
+    }
+  ]
+  ```
+  Expected output:
+  ```
+  ["cc1", "dd1", "cc2", "dd2"]
+  ```
+  Actual output:
+  NOT_SUPPORTED
+  ```
+  Expected close bracket. Path up to error: '$[:]'
   ```
 
 - [ ] `$[0]['c','d']`

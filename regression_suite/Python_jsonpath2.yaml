@@ -6,9 +6,6 @@
 
 implementation: Python_jsonpath2
 queries:
-  - id: array_slice_on_object
-    status: open
-    result: []
   - id: array_slice_with_negative_step
     status: open
     result: ["forth", "second"]
@@ -100,9 +97,6 @@ queries:
     result: NOT_SUPPORTED
   - id: bracket_notation_with_string_including_dot_wildcard
     status: fail
-    result: NOT_SUPPORTED
-  - id: bracket_notation_with_two_literals_separated_by_dot
-    status: open
     result: NOT_SUPPORTED
   - id: bracket_notation_without_quotes
     status: open
@@ -363,7 +357,7 @@ queries:
     status: fail
     result: NOT_SUPPORTED
   - id: union_with_keys_after_array_slice
-    status: open
+    status: fail
     result: NOT_SUPPORTED
   - id: union_with_keys_after_bracket_notation
     status: fail

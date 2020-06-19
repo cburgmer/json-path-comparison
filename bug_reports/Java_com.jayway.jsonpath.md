@@ -3,6 +3,31 @@ Results do not match other implementations
 The following queries provide results that do not match those of other implementations of JSONPath
 (compare https://cburgmer.github.io/json-path-comparison/):
 
+- [ ] `$[1:3]`
+  Input:
+  ```
+  {
+    ":": 42,
+    "more": "string",
+    "a": 1,
+    "b": 2,
+    "c": 3,
+    "1:3": "nice"
+  }
+  ```
+  Expected output:
+  ```
+  []
+  ```
+  Actual output:
+  NOT_FOUND
+  ```
+  SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+  SLF4J: Defaulting to no-operation (NOP) logger implementation
+  SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+  com.jayway.jsonpath.PathNotFoundException: Filter: [1:3] can only be applied to arrays. Current context is: {:=42, more=string, a=1, b=2, c=3, 1:3=nice}
+  ```
+
 - [ ] `$[-4:1]`
   Input:
   ```
@@ -318,6 +343,35 @@ The following queries provide results that do not match those of other implement
     "another": "entry",
     "key": "value"
   }
+  ```
+
+- [ ] `$[:]['c','d']`
+  Input:
+  ```
+  [
+    {
+      "c": "cc1",
+      "d": "dd1",
+      "e": "ee1"
+    },
+    {
+      "c": "cc2",
+      "d": "dd2",
+      "e": "ee2"
+    }
+  ]
+  ```
+  Expected output:
+  ```
+  ["cc1", "dd1", "cc2", "dd2"]
+  ```
+  Actual output:
+  NOT_SUPPORTED
+  ```
+  SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+  SLF4J: Defaulting to no-operation (NOP) logger implementation
+  SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+  com.jayway.jsonpath.InvalidPathException: Failed to parse SliceOperation: :
   ```
 
 - [ ] `$[0]['c','d']`

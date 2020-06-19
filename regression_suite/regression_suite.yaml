@@ -38,6 +38,8 @@ queries:
   - id: array_slice_on_object
     selector: "$[1:3]"
     document: {":": 42, "more": "string", "a": 1, "b": 2, "c": 3, "1:3": "nice"}
+    consensus: []
+    not-found-consensus: NOT_FOUND
   - id: array_slice_on_partially_overlapping_array
     selector: "$[1:10]"
     document: ["first", "second", "third"]
@@ -338,6 +340,7 @@ queries:
   - id: bracket_notation_with_two_literals_separated_by_dot
     selector: "$['two'.'some']"
     document: {"one": {"key": "value"}, "two": {"some": "more", "key": "other value"}, "two.some": "42", "two'.'some": "43"}
+    consensus: NOT_SUPPORTED
   - id: bracket_notation_with_two_literals_separated_by_dot_without_quotes
     selector: "$[two.some]"
     document: {"one": {"key": "value"}, "two": {"some": "more", "key": "other value"}, "two.some": "42"}
@@ -841,6 +844,7 @@ queries:
   - id: union_with_keys_after_array_slice
     selector: "$[:]['c','d']"
     document: [{"c": "cc1", "d": "dd1", "e": "ee1"}, {"c": "cc2", "d": "dd2", "e": "ee2"}]
+    consensus: ["cc1", "dd1", "cc2", "dd2"]
   - id: union_with_keys_after_bracket_notation
     selector: "$[0]['c','d']"
     document: [{"c": "cc1", "d": "dd1", "e": "ee1"}, {"c": "cc2", "d": "dd2", "e": "ee2"}]
