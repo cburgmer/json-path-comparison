@@ -6,18 +6,12 @@
 
 implementation: Golang_github.com-vmware-labs-yaml-jsonpath
 queries:
-  - id: array_slice_with_negative_start_and_end_and_range_of_-1
-    status: fail
-    result: [4]
-  - id: array_slice_with_negative_start_and_positive_end_and_range_of_-1
-    status: fail
-    result: [4]
   - id: array_slice_with_negative_step
     status: open
     result: ["forth", "second"]
   - id: array_slice_with_negative_step_and_start_greater_than_end
     status: open
-    result: ["third", "first"]
+    result: []
   - id: array_slice_with_negative_step_on_partially_overlapping_array
     status: open
     result: ["fifth"]
@@ -26,13 +20,13 @@ queries:
     result: ["fifth", "third", "first"]
   - id: array_slice_with_open_end_and_negative_step
     status: open
-    result: ["fifth", "forth"]
+    result: ["forth", "third", "second", "first"]
   - id: array_slice_with_open_start_and_end_on_object
     status: open
     result: []
   - id: array_slice_with_step_0
     status: open
-    result: []
+    result: NOT_SUPPORTED
   - id: bracket_notation_with_empty_string_doubled_quoted
     status: open
     result: [42]
@@ -44,13 +38,13 @@ queries:
     result: []
   - id: bracket_notation_with_quoted_escaped_backslash
     status: open
-    result: []
+    result: ["value"]
   - id: bracket_notation_with_quoted_escaped_single_quote
     status: open
     result: ["value"]
   - id: bracket_notation_with_quoted_special_characters_combined
     status: open
-    result: []
+    result: [42]
   - id: bracket_notation_with_quoted_wildcard_literal_on_object_without_key
     status: open
     result: []

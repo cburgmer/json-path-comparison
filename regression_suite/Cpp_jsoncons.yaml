@@ -8,22 +8,19 @@ implementation: Cpp_jsoncons
 queries:
   - id: array_slice_with_negative_step
     status: open
-    result: NOT_SUPPORTED
+    result: ["forth", "second"]
   - id: array_slice_with_negative_step_and_start_greater_than_end
     status: open
-    result: ["third", "first"]
+    result: []
   - id: array_slice_with_negative_step_on_partially_overlapping_array
     status: open
-    result: []
+    result: ["fifth"]
   - id: array_slice_with_negative_step_only
     status: open
     result: ["fifth", "third", "first"]
   - id: array_slice_with_open_end_and_negative_step
     status: open
-    result: ["fifth", "forth"]
-  - id: array_slice_with_open_start_and_end_and_step_empty
-    status: fail
-    result: NOT_SUPPORTED
+    result: ["forth", "third", "second", "first"]
   - id: array_slice_with_open_start_and_end_on_object
     status: open
     result: []
@@ -34,9 +31,6 @@ queries:
     status: open
     result: NOT_SUPPORTED
   - id: array_slice_with_step_and_leading_zeros
-    status: fail
-    result: NOT_SUPPORTED
-  - id: array_slice_with_step_empty
     status: fail
     result: NOT_SUPPORTED
   - id: bracket_notation_with_empty_string_doubled_quoted
