@@ -1,0 +1,13 @@
+root = implementations/Kotlin_com.nfeld.jsonpathkt
+builddir = $root/build
+
+rule compile
+  command = (cd $root && MAVEN_OPTS="-Dmaven.repo.local=./build/deps" mvn clean package -q) && mv $root/target/query-1.0-SNAPSHOT.jar $out && rm -r $root/target
+
+rule classpath
+  command = (cd $root && MAVEN_OPTS="-Dmaven.repo.local=./build/deps" mvn -q dependency:build-classpath -Dmdep.outputFile=cp.txt) && mv $root/cp.txt $out
+
+build $builddir/json-path-comparison.jar: compile | $root/src/main/kotlin/query/App.kt $root/pom.xml
+build $builddir/cp.txt: classpath | $root/pom.xml
+
+build $root/install: phony $builddir/json-path-comparison.jar $builddir/cp.txt
