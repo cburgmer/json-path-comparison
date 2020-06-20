@@ -39,7 +39,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  timeout: sending signal TERM to command ‘php’
+  timeout: sending signal TERM to command ‘implementations/PHP_Goessner/run.sh’
   ```
 
 - [ ] `$[0:3:-2]`
@@ -55,7 +55,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  timeout: sending signal TERM to command ‘php’
+  timeout: sending signal TERM to command ‘implementations/PHP_Goessner/run.sh’
   ```
 
 - [ ] `$[::-2]`
@@ -71,7 +71,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  timeout: sending signal TERM to command ‘php’
+  timeout: sending signal TERM to command ‘implementations/PHP_Goessner/run.sh’
   ```
 
 - [ ] `$[3::-1]`
@@ -87,7 +87,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  timeout: sending signal TERM to command ‘php’
+  timeout: sending signal TERM to command ‘implementations/PHP_Goessner/run.sh’
   ```
 
 - [ ] `$[:2:-1]`
@@ -103,7 +103,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  timeout: sending signal TERM to command ‘php’
+  timeout: sending signal TERM to command ‘implementations/PHP_Goessner/run.sh’
   ```
 
 - [ ] `$[0:0]`

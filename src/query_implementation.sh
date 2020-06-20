@@ -41,7 +41,7 @@ run_query() {
     local implementation="$2"
     selector="$(cat "${query}/selector")"
 
-    "$implementation"/run.sh "$selector" < "$query"/document.json
+    timeout -v 20 "$implementation"/run.sh "$selector" < "$query"/document.json
 }
 
 clean_up() {
