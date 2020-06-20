@@ -32,6 +32,10 @@ fail_on_absolute_paths_leaked() {
     fi
 }
 
+cut_excessive_error_logs() {
+    head -150
+}
+
 run_query() {
     local query="$1"
     local implementation="$2"
@@ -71,7 +75,7 @@ main() {
         fail_on_absolute_paths_leaked "$tmp_stderr"
         fail_on_absolute_paths_leaked "$tmp_stdout"
         # Some implementations don't report errors on stderr
-        cat "$tmp_stderr"
+        cut_excessive_error_logs < "$tmp_stderr"
         cat "$tmp_stdout"
         return
     fi
@@ -80,7 +84,7 @@ main() {
         echo "ERROR"
         echo "No JSON output received"
         fail_on_absolute_paths_leaked "$tmp_stderr"
-        cat "$tmp_stderr"
+        cut_excessive_error_logs < "$tmp_stderr"
         return
     fi
 
@@ -88,7 +92,7 @@ main() {
         echo "ERROR"
         fail_on_absolute_paths_leaked "$tmp_stderr"
         fail_on_absolute_paths_leaked "$tmp_stdout"
-        cat "$tmp_stderr"
+        cut_excessive_error_logs < "$tmp_stderr"
         cat "$tmp_stdout"
         return
     fi
