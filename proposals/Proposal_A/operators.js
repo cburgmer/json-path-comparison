@@ -49,14 +49,13 @@ const childrenSliceOperator = (current, root, [start, end, step]) => {
 
   const stepNumber = valueOrDefault(step, 1);
 
-  const absoluteStart = absoluteArrayIndex(
-    valueOrDefault(start, 0),
-    current.length
-  );
-  const absoluteEnd = absoluteArrayIndex(
-    valueOrDefault(end, current.length),
-    current.length
-  );
+  const defaultStart = stepNumber > 0 ? 0 : current.length - 1;
+  const defaultEnd = stepNumber > 0 ? current.length : -current.length - 1;
+  const startOrDefault = valueOrDefault(start, defaultStart);
+  const endOrDefault = valueOrDefault(end, defaultEnd);
+
+  const absoluteStart = absoluteArrayIndex(startOrDefault, current.length);
+  const absoluteEnd = absoluteArrayIndex(endOrDefault, current.length);
 
   const effectiveStart = effectiveArrayBoundary(absoluteStart, current.length);
   const effectiveEnd = effectiveArrayBoundary(absoluteEnd, current.length);

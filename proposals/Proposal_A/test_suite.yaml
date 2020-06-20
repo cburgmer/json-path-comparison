@@ -39,13 +39,26 @@ queries:
     selector: "$[3:0:-2]"
     document: ["first", "second", "third", "forth", "fifth"]
     consensus: ["forth", "second"]
+  - id: array_slice_with_negative_step_and_start_greater_than_end
+    selector: "$[0:3:-2]"
+    document: ["first", "second", "third", "forth", "fifth"]
+    consensus: []
+  - id: array_slice_with_negative_step_on_partially_overlapping_array
+    selector: "$[7:3:-1]"
+    document: ["first", "second", "third", "forth", "fifth"]
+    consensus: ["fifth"]
   - id: array_slice_with_negative_step_only
     selector: "$[::-2]"
     document: ["first", "second", "third", "forth", "fifth"]
+    consensus: ["fifth", "third", "first"]
   - id: array_slice_with_open_end
     selector: "$[1:]"
     document: ["first", "second", "third", "forth", "fifth"]
     consensus: ["second", "third", "forth", "fifth"]
+  - id: array_slice_with_open_end_and_negative_step
+    selector: "$[3::-1]"
+    document: ["first", "second", "third", "forth", "fifth"]
+    consensus: ["forth", "third", "second", "first"]
   - id: array_slice_with_open_start
     selector: "$[:2]"
     document: ["first", "second", "third", "forth", "fifth"]
@@ -62,6 +75,22 @@ queries:
     selector: "$[:]"
     document: {":": 42, "more": "string"}
     consensus: []
+  - id: array_slice_with_open_start_and_negative_step
+    selector: "$[:2:-1]"
+    document: ["first", "second", "third", "forth", "fifth"]
+    consensus: ["fifth", "forth"]
+  - id: array_slice_with_positive_start_and_negative_end_and_range_of_-1
+    selector: "$[3:-4]"
+    document: [2, "a", 4, 5, 100, "nice"]
+    consensus: []
+  - id: array_slice_with_positive_start_and_negative_end_and_range_of_0
+    selector: "$[3:-3]"
+    document: [2, "a", 4, 5, 100, "nice"]
+    consensus: []
+  - id: array_slice_with_positive_start_and_negative_end_and_range_of_1
+    selector: "$[3:-2]"
+    document: [2, "a", 4, 5, 100, "nice"]
+    consensus: [5]
   - id: array_slice_with_range_of_-1
     selector: "$[2:1]"
     document: ["first", "second", "third", "forth"]
