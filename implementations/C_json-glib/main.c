@@ -11,12 +11,25 @@ g_print_no_convert(const gchar *buf)
   fputs(buf, stdout);
 }
 
+static void
+log_handler_cb (const gchar    *log_domain,
+                GLogLevelFlags  log_level,
+                const gchar    *message,
+                gpointer        user_data)
+{
+    g_printerr ("%s\n", message);
+}
+
 int
 main (int argc, char *argv[])
 {
   // https://stackoverflow.com/questions/43927373/force-utf-8-encoding-in-glibs-g-print
   // Otherwise OSX and Linux seem to diverge on the output of json-glib error messages
   g_set_print_handler(g_print_no_convert);
+
+  // Remove timestamp from errors
+  g_log_set_default_handler(log_handler_cb, NULL);
+
 
   JsonParser *parser;
   JsonNode *root;

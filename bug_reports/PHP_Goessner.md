@@ -90,6 +90,22 @@ The following queries provide results that do not match those of other implement
   timeout: sending signal TERM to command ‘php’
   ```
 
+- [ ] `$[:2:-1]`
+  Input:
+  ```
+  [
+    "first",
+    "second",
+    "third",
+    "forth",
+    "fifth"
+  ]
+  ```
+  Error:
+  ```
+  timeout: sending signal TERM to command ‘php’
+  ```
+
 - [ ] `$[0:0]`
   Input:
   ```

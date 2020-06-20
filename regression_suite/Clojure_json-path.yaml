@@ -63,6 +63,9 @@ queries:
     status: error
   - id: array_slice_with_open_start_and_end_on_object
     status: error
+  - id: array_slice_with_open_start_and_negative_step
+    status: open
+    result: "third"
   - id: array_slice_with_positive_start_and_negative_end_and_range_of_-1
     status: fail
     result: 5

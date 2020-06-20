@@ -106,6 +106,9 @@ queries:
   - id: array_slice_with_open_start_and_end_on_object
     selector: "$[:]"
     document: {":": 42, "more": "string"}
+  - id: array_slice_with_open_start_and_negative_step
+    selector: "$[:2:-1]"
+    document: ["first", "second", "third", "forth", "fifth"]
   - id: array_slice_with_positive_start_and_negative_end_and_range_of_-1
     selector: "$[3:-4]"
     document: [2, "a", 4, 5, 100, "nice"]

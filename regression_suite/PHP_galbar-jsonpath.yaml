@@ -27,6 +27,9 @@ queries:
   - id: array_slice_with_open_start_and_end_on_object
     status: open
     result: NOT_FOUND
+  - id: array_slice_with_open_start_and_negative_step
+    status: open
+    result: ["fifth", "forth"]
   - id: array_slice_with_step_0
     status: error
   - id: bracket_notation_after_recursive_descent

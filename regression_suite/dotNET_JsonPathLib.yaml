@@ -27,6 +27,9 @@ queries:
   - id: array_slice_with_open_start_and_end_on_object
     status: open
     result: [42]
+  - id: array_slice_with_open_start_and_negative_step
+    status: open
+    result: []
   - id: array_slice_with_step_0
     status: error
   - id: bracket_notation_with_dot

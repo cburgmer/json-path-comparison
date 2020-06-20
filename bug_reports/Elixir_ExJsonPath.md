@@ -195,6 +195,22 @@ The following queries provide results that do not match those of other implement
   Invalid object returned
   ```
 
+- [ ] `$[:2:-1]`
+  Input:
+  ```
+  [
+    "first",
+    "second",
+    "third",
+    "forth",
+    "fifth"
+  ]
+  ```
+  Error:
+  ```
+  FunctionClauseError
+  ```
+
 - [ ] `$[0:0]`
   Input:
   ```

@@ -21,6 +21,8 @@ queries:
   - id: array_slice_with_open_start_and_end_on_object
     status: open
     result: []
+  - id: array_slice_with_open_start_and_negative_step
+    status: error
   - id: array_slice_with_start_large_negative_number_and_open_end_on_short_array
     status: fail
     result: ["third", "first", "second", "third"]

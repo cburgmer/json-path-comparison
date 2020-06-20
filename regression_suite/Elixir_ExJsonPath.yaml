@@ -29,6 +29,8 @@ queries:
     status: error
   - id: array_slice_with_open_start_and_end_on_object
     status: error
+  - id: array_slice_with_open_start_and_negative_step
+    status: error
   - id: array_slice_with_range_of_0
     status: fail
     result: ["first", "second"]

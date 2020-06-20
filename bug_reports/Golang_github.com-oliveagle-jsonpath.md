@@ -332,6 +332,22 @@ The following queries provide results that do not match those of other implement
   object is not Slice
   ```
 
+- [ ] `$[:2:-1]`
+  Input:
+  ```
+  [
+    "first",
+    "second",
+    "third",
+    "forth",
+    "fifth"
+  ]
+  ```
+  Error:
+  ```
+  only support one range(from, to): [ 2 -1]
+  ```
+
 - [ ] `$[3:-3]`
   Input:
   ```
