@@ -8,6 +8,8 @@ implementation: Haskell_jsonpath
 queries:
   - id: array_slice_on_object
     status: error
+  - id: array_slice_with_large_number_for_end
+    status: error
   - id: array_slice_with_negative_start_and_end_and_range_of_0
     status: fail
     result: [4]

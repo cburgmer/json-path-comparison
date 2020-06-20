@@ -6,6 +6,8 @@
 
 implementation: Perl_JSON-Path
 queries:
+  - id: array_slice_with_large_number_for_end
+    status: error
   - id: array_slice_with_negative_start_and_positive_end_and_range_of_-1
     status: fail
     result: [4, 5, 100, "nice", 2]

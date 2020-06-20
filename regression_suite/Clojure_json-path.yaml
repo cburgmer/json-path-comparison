@@ -19,6 +19,9 @@ queries:
   - id: array_slice_on_partially_overlapping_array
     status: fail
     result: "second"
+  - id: array_slice_with_large_number_for_end
+    status: fail
+    result: "third"
   - id: array_slice_with_negative_start_and_end_and_range_of_-1
     status: fail
     result: 4

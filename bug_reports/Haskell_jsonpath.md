@@ -26,6 +26,26 @@ The following queries provide results that do not match those of other implement
     error, called at app/Main.hs:19:22 in main:Main
   ```
 
+- [ ] `$[2:113667776004]`
+  Input:
+  ```
+  [
+    "first",
+    "second",
+    "third",
+    "forth",
+    "fifth"
+  ]
+  ```
+  Expected output:
+  ```
+  ["third", "forth", "fifth"]
+  ```
+  Error:
+  ```
+  timeout: sending signal TERM to command ‘./build/json-path-comparison’
+  ```
+
 - [ ] `$[-4:-4]`
   Input:
   ```

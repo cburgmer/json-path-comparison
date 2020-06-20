@@ -3,6 +3,26 @@ Results do not match other implementations
 The following queries provide results that do not match those of other implementations of JSONPath
 (compare https://cburgmer.github.io/json-path-comparison/):
 
+- [ ] `$[2:113667776004]`
+  Input:
+  ```
+  [
+    "first",
+    "second",
+    "third",
+    "forth",
+    "fifth"
+  ]
+  ```
+  Expected output:
+  ```
+  ["third", "forth", "fifth"]
+  ```
+  Error:
+  ```
+  timeout: sending signal TERM to command ‘implementations/Python_jsonpath2/run.sh’
+  ```
+
 - [ ] `$[0:3:0]`
   Input:
   ```

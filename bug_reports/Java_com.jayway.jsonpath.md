@@ -28,6 +28,30 @@ The following queries provide results that do not match those of other implement
   com.jayway.jsonpath.PathNotFoundException: Filter: [1:3] can only be applied to arrays. Current context is: {:=42, more=string, a=1, b=2, c=3, 1:3=nice}
   ```
 
+- [ ] `$[2:113667776004]`
+  Input:
+  ```
+  [
+    "first",
+    "second",
+    "third",
+    "forth",
+    "fifth"
+  ]
+  ```
+  Expected output:
+  ```
+  ["third", "forth", "fifth"]
+  ```
+  Actual output:
+  NOT_SUPPORTED
+  ```
+  SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+  SLF4J: Defaulting to no-operation (NOP) logger implementation
+  SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+  com.jayway.jsonpath.InvalidPathException: java.lang.NumberFormatException: For input string: "113667776004"
+  ```
+
 - [ ] `$[-4:1]`
   Input:
   ```

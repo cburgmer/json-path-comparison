@@ -6,6 +6,8 @@
 
 implementation: Golang_github.com-spyzhov-ajson
 queries:
+  - id: array_slice_with_large_number_for_end
+    status: error
   - id: array_slice_with_negative_step
     status: open
     result: ["forth", "second"]

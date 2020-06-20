@@ -100,6 +100,26 @@ The following queries provide results that do not match those of other implement
   "second"
   ```
 
+- [ ] `$[2:113667776004]`
+  Input:
+  ```
+  [
+    "first",
+    "second",
+    "third",
+    "forth",
+    "fifth"
+  ]
+  ```
+  Expected output:
+  ```
+  ["third", "forth", "fifth"]
+  ```
+  Actual output:
+  ```
+  "third"
+  ```
+
 - [ ] `$[-4:-5]`
   Input:
   ```

@@ -3,6 +3,105 @@ Results do not match other implementations
 The following queries provide results that do not match those of other implementations of JSONPath
 (compare https://cburgmer.github.io/json-path-comparison/):
 
+- [ ] `$[2:113667776004]`
+  Input:
+  ```
+  [
+    "first",
+    "second",
+    "third",
+    "forth",
+    "fifth"
+  ]
+  ```
+  Expected output:
+  ```
+  ["third", "forth", "fifth"]
+  ```
+  Error:
+  ```
+  Exception in thread "main" java.lang.NumberFormatException: For input string: "113667776004"
+  	at java.base/java.lang.NumberFormatException.forInputString(NumberFormatException.java:68)
+  	at java.base/java.lang.Integer.parseInt(Integer.java:652)
+  	at java.base/java.lang.Integer.parseInt(Integer.java:770)
+  	at scala.collection.immutable.StringLike.toInt(StringLike.scala:301)
+  	at scala.collection.immutable.StringLike.toInt$(StringLike.scala:301)
+  	at scala.collection.immutable.StringOps.toInt(StringOps.scala:29)
+  	at io.gatling.jsonpath.Parser$.$anonfun$number$1(Parser.scala:67)
+  	at io.gatling.jsonpath.Parser$.$anonfun$number$1$adapted(Parser.scala:67)
+  	at scala.util.parsing.combinator.Parsers$Success.map(Parsers.scala:140)
+  	at scala.util.parsing.combinator.Parsers$Success.map(Parsers.scala:139)
+  	at scala.util.parsing.combinator.Parsers$Parser.$anonfun$map$1(Parsers.scala:235)
+  	at scala.util.parsing.combinator.Parsers$$anon$1.apply(Parsers.scala:215)
+  	at scala.util.parsing.combinator.Parsers$Parser.$anonfun$map$1(Parsers.scala:235)
+  	at scala.util.parsing.combinator.Parsers$$anon$1.apply(Parsers.scala:215)
+  	at scala.util.parsing.combinator.Parsers$Parser.$anonfun$append$1(Parsers.scala:247)
+  	at scala.util.parsing.combinator.Parsers$$anon$1.apply(Parsers.scala:215)
+  	at scala.util.parsing.combinator.Parsers$Parser.$anonfun$map$1(Parsers.scala:235)
+  	at scala.util.parsing.combinator.Parsers$$anon$1.apply(Parsers.scala:215)
+  	at scala.util.parsing.combinator.Parsers$$anon$1.apply(Parsers.scala:215)
+  	at scala.util.parsing.combinator.Parsers$Success.flatMapWithNext(Parsers.scala:146)
+  	at scala.util.parsing.combinator.Parsers$Parser.$anonfun$flatMap$1(Parsers.scala:232)
+  	at scala.util.parsing.combinator.Parsers$$anon$1.apply(Parsers.scala:215)
+  	at scala.util.parsing.combinator.Parsers$Parser.$anonfun$flatMap$1(Parsers.scala:232)
+  	at scala.util.parsing.combinator.Parsers$$anon$1.apply(Parsers.scala:215)
+  	at scala.util.parsing.combinator.Parsers$Parser.$anonfun$map$1(Parsers.scala:235)
+  	at scala.util.parsing.combinator.Parsers$$anon$1.apply(Parsers.scala:215)
+  	at scala.util.parsing.combinator.Parsers$Parser.$anonfun$map$1(Parsers.scala:235)
+  	at scala.util.parsing.combinator.Parsers$$anon$1.apply(Parsers.scala:215)
+  	at scala.util.parsing.combinator.Parsers$$anon$1.apply(Parsers.scala:215)
+  	at scala.util.parsing.combinator.Parsers$Success.flatMapWithNext(Parsers.scala:146)
+  	at scala.util.parsing.combinator.Parsers$Parser.$anonfun$flatMap$1(Parsers.scala:232)
+  	at scala.util.parsing.combinator.Parsers$$anon$1.apply(Parsers.scala:215)
+  	at scala.util.parsing.combinator.Parsers$Parser.$anonfun$map$1(Parsers.scala:235)
+  	at scala.util.parsing.combinator.Parsers$$anon$1.apply(Parsers.scala:215)
+  	at scala.util.parsing.combinator.Parsers$Parser.$anonfun$append$1(Parsers.scala:247)
+  	at scala.util.parsing.combinator.Parsers$$anon$1.apply(Parsers.scala:215)
+  	at scala.util.parsing.combinator.Parsers$Parser.$anonfun$append$2(Parsers.scala:247)
+  	at scala.util.parsing.combinator.Parsers$Failure.append(Parsers.scala:195)
+  	at scala.util.parsing.combinator.Parsers$Parser.$anonfun$append$1(Parsers.scala:247)
+  	at scala.util.parsing.combinator.Parsers$$anon$1.apply(Parsers.scala:215)
+  	at scala.util.parsing.combinator.Parsers$Parser.$anonfun$append$1(Parsers.scala:247)
+  	at scala.util.parsing.combinator.Parsers$$anon$1.apply(Parsers.scala:215)
+  	at scala.util.parsing.combinator.Parsers$Parser.$anonfun$map$1(Parsers.scala:235)
+  	at scala.util.parsing.combinator.Parsers$$anon$1.apply(Parsers.scala:215)
+  	at scala.util.parsing.combinator.Parsers$$anon$1.apply(Parsers.scala:215)
+  	at scala.util.parsing.combinator.Parsers$Success.flatMapWithNext(Parsers.scala:146)
+  	at scala.util.parsing.combinator.Parsers$Parser.$anonfun$flatMap$1(Parsers.scala:232)
+  	at scala.util.parsing.combinator.Parsers$$anon$1.apply(Parsers.scala:215)
+  	at scala.util.parsing.combinator.Parsers$Parser.$anonfun$flatMap$1(Parsers.scala:232)
+  	at scala.util.parsing.combinator.Parsers$$anon$1.apply(Parsers.scala:215)
+  	at scala.util.parsing.combinator.Parsers$Parser.$anonfun$append$2(Parsers.scala:247)
+  	at scala.util.parsing.combinator.Parsers$Failure.append(Parsers.scala:195)
+  	at scala.util.parsing.combinator.Parsers$Parser.$anonfun$append$1(Parsers.scala:247)
+  	at scala.util.parsing.combinator.Parsers$$anon$1.apply(Parsers.scala:215)
+  	at scala.util.parsing.combinator.Parsers$Parser.$anonfun$append$1(Parsers.scala:247)
+  	at scala.util.parsing.combinator.Parsers$$anon$1.apply(Parsers.scala:215)
+  	at scala.util.parsing.combinator.Parsers.$anonfun$rep1$1(Parsers.scala:765)
+  	at scala.util.parsing.combinator.Parsers$$anon$1.apply(Parsers.scala:215)
+  	at scala.util.parsing.combinator.Parsers$Parser.$anonfun$append$1(Parsers.scala:247)
+  	at scala.util.parsing.combinator.Parsers$$anon$1.apply(Parsers.scala:215)
+  	at scala.util.parsing.combinator.Parsers$Parser.$anonfun$map$1(Parsers.scala:235)
+  	at scala.util.parsing.combinator.Parsers$$anon$1.apply(Parsers.scala:215)
+  	at scala.util.parsing.combinator.Parsers$$anon$1.apply(Parsers.scala:215)
+  	at scala.util.parsing.combinator.Parsers$Success.flatMapWithNext(Parsers.scala:146)
+  	at scala.util.parsing.combinator.Parsers$Parser.$anonfun$flatMap$1(Parsers.scala:232)
+  	at scala.util.parsing.combinator.Parsers$$anon$1.apply(Parsers.scala:215)
+  	at scala.util.parsing.combinator.Parsers$Parser.$anonfun$flatMap$1(Parsers.scala:232)
+  	at scala.util.parsing.combinator.Parsers$$anon$1.apply(Parsers.scala:215)
+  	at scala.util.parsing.combinator.Parsers$$anon$5.apply(Parsers.scala:919)
+  	at scala.util.parsing.combinator.Parsers$Parser.$anonfun$map$1(Parsers.scala:235)
+  	at scala.util.parsing.combinator.Parsers$$anon$1.apply(Parsers.scala:215)
+  	at scala.util.parsing.combinator.RegexParsers.parse(RegexParsers.scala:161)
+  	at scala.util.parsing.combinator.RegexParsers.parse$(RegexParsers.scala:160)
+  	at io.gatling.jsonpath.Parser$.parse(Parser.scala:36)
+  	at io.gatling.jsonpath.Parser.compile(Parser.scala:212)
+  	at io.gatling.jsonpath.JsonPath$.compile(JsonPath.scala:31)
+  	at io.gatling.jsonpath.JsonPath$.query(JsonPath.scala:37)
+  	at query.App$.main(App.scala:28)
+  	at query.App.main(App.scala)
+  ```
+
 - [ ] `$[0:3:0]`
   Input:
   ```

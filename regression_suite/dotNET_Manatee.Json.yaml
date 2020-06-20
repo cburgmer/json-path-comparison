@@ -9,6 +9,9 @@ queries:
   - id: array_slice_on_object
     status: fail
     result: ["string", 1]
+  - id: array_slice_with_large_number_for_end
+    status: fail
+    result: NOT_SUPPORTED
   - id: array_slice_with_negative_step
     status: open
     result: ["forth", "second"]

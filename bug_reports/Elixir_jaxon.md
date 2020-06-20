@@ -110,6 +110,28 @@ The following queries provide results that do not match those of other implement
       lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
   ```
 
+- [ ] `$[2:113667776004]`
+  Input:
+  ```
+  [
+    "first",
+    "second",
+    "third",
+    "forth",
+    "fifth"
+  ]
+  ```
+  Expected output:
+  ```
+  ["third", "forth", "fifth"]
+  ```
+  Error:
+  ```
+  ** (Jaxon.ParseError) Expected an integer at `2:11366777`
+      lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
+      lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
+  ```
+
 - [ ] `$[-4:-5]`
   Input:
   ```

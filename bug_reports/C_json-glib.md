@@ -3,6 +3,175 @@ Results do not match other implementations
 The following queries provide results that do not match those of other implementations of JSONPath
 (compare https://cburgmer.github.io/json-path-comparison/):
 
+- [ ] `$[2:113667776004]`
+  Input:
+  ```
+  [
+    "first",
+    "second",
+    "third",
+    "forth",
+    "fifth"
+  ]
+  ```
+  Expected output:
+  ```
+  ["third", "forth", "fifth"]
+  ```
+  Error:
+  ```
+  json_array_get_element: assertion 'index_ < array->elements->len' failed
+  json_node_copy: assertion 'JSON_NODE_IS_VALID (node)' failed
+  json_array_add_element: assertion 'node != NULL' failed
+  json_array_get_element: assertion 'index_ < array->elements->len' failed
+  json_node_copy: assertion 'JSON_NODE_IS_VALID (node)' failed
+  json_array_add_element: assertion 'node != NULL' failed
+  json_array_get_element: assertion 'index_ < array->elements->len' failed
+  json_node_copy: assertion 'JSON_NODE_IS_VALID (node)' failed
+  json_array_add_element: assertion 'node != NULL' failed
+  json_array_get_element: assertion 'index_ < array->elements->len' failed
+  json_node_copy: assertion 'JSON_NODE_IS_VALID (node)' failed
+  json_array_add_element: assertion 'node != NULL' failed
+  json_array_get_element: assertion 'index_ < array->elements->len' failed
+  json_node_copy: assertion 'JSON_NODE_IS_VALID (node)' failed
+  json_array_add_element: assertion 'node != NULL' failed
+  json_array_get_element: assertion 'index_ < array->elements->len' failed
+  json_node_copy: assertion 'JSON_NODE_IS_VALID (node)' failed
+  json_array_add_element: assertion 'node != NULL' failed
+  json_array_get_element: assertion 'index_ < array->elements->len' failed
+  json_node_copy: assertion 'JSON_NODE_IS_VALID (node)' failed
+  json_array_add_element: assertion 'node != NULL' failed
+  json_array_get_element: assertion 'index_ < array->elements->len' failed
+  json_node_copy: assertion 'JSON_NODE_IS_VALID (node)' failed
+  json_array_add_element: assertion 'node != NULL' failed
+  json_array_get_element: assertion 'index_ < array->elements->len' failed
+  json_node_copy: assertion 'JSON_NODE_IS_VALID (node)' failed
+  json_array_add_element: assertion 'node != NULL' failed
+  json_array_get_element: assertion 'index_ < array->elements->len' failed
+  json_node_copy: assertion 'JSON_NODE_IS_VALID (node)' failed
+  json_array_add_element: assertion 'node != NULL' failed
+  json_array_get_element: assertion 'index_ < array->elements->len' failed
+  json_node_copy: assertion 'JSON_NODE_IS_VALID (node)' failed
+  json_array_add_element: assertion 'node != NULL' failed
+  json_array_get_element: assertion 'index_ < array->elements->len' failed
+  json_node_copy: assertion 'JSON_NODE_IS_VALID (node)' failed
+  json_array_add_element: assertion 'node != NULL' failed
+  json_array_get_element: assertion 'index_ < array->elements->len' failed
+  json_node_copy: assertion 'JSON_NODE_IS_VALID (node)' failed
+  json_array_add_element: assertion 'node != NULL' failed
+  json_array_get_element: assertion 'index_ < array->elements->len' failed
+  json_node_copy: assertion 'JSON_NODE_IS_VALID (node)' failed
+  json_array_add_element: assertion 'node != NULL' failed
+  json_array_get_element: assertion 'index_ < array->elements->len' failed
+  json_node_copy: assertion 'JSON_NODE_IS_VALID (node)' failed
+  json_array_add_element: assertion 'node != NULL' failed
+  json_array_get_element: assertion 'index_ < array->elements->len' failed
+  json_node_copy: assertion 'JSON_NODE_IS_VALID (node)' failed
+  json_array_add_element: assertion 'node != NULL' failed
+  json_array_get_element: assertion 'index_ < array->elements->len' failed
+  json_node_copy: assertion 'JSON_NODE_IS_VALID (node)' failed
+  json_array_add_element: assertion 'node != NULL' failed
+  json_array_get_element: assertion 'index_ < array->elements->len' failed
+  json_node_copy: assertion 'JSON_NODE_IS_VALID (node)' failed
+  json_array_add_element: assertion 'node != NULL' failed
+  json_array_get_element: assertion 'index_ < array->elements->len' failed
+  json_node_copy: assertion 'JSON_NODE_IS_VALID (node)' failed
+  json_array_add_element: assertion 'node != NULL' failed
+  json_array_get_element: assertion 'index_ < array->elements->len' failed
+  json_node_copy: assertion 'JSON_NODE_IS_VALID (node)' failed
+  json_array_add_element: assertion 'node != NULL' failed
+  json_array_get_element: assertion 'index_ < array->elements->len' failed
+  json_node_copy: assertion 'JSON_NODE_IS_VALID (node)' failed
+  json_array_add_element: assertion 'node != NULL' failed
+  json_array_get_element: assertion 'index_ < array->elements->len' failed
+  json_node_copy: assertion 'JSON_NODE_IS_VALID (node)' failed
+  json_array_add_element: assertion 'node != NULL' failed
+  json_array_get_element: assertion 'index_ < array->elements->len' failed
+  json_node_copy: assertion 'JSON_NODE_IS_VALID (node)' failed
+  json_array_add_element: assertion 'node != NULL' failed
+  json_array_get_element: assertion 'index_ < array->elements->len' failed
+  json_node_copy: assertion 'JSON_NODE_IS_VALID (node)' failed
+  json_array_add_element: assertion 'node != NULL' failed
+  json_array_get_element: assertion 'index_ < array->elements->len' failed
+  json_node_copy: assertion 'JSON_NODE_IS_VALID (node)' failed
+  json_array_add_element: assertion 'node != NULL' failed
+  json_array_get_element: assertion 'index_ < array->elements->len' failed
+  json_node_copy: assertion 'JSON_NODE_IS_VALID (node)' failed
+  json_array_add_element: assertion 'node != NULL' failed
+  json_array_get_element: assertion 'index_ < array->elements->len' failed
+  json_node_copy: assertion 'JSON_NODE_IS_VALID (node)' failed
+  json_array_add_element: assertion 'node != NULL' failed
+  json_array_get_element: assertion 'index_ < array->elements->len' failed
+  json_node_copy: assertion 'JSON_NODE_IS_VALID (node)' failed
+  json_array_add_element: assertion 'node != NULL' failed
+  json_array_get_element: assertion 'index_ < array->elements->len' failed
+  json_node_copy: assertion 'JSON_NODE_IS_VALID (node)' failed
+  json_array_add_element: assertion 'node != NULL' failed
+  json_array_get_element: assertion 'index_ < array->elements->len' failed
+  json_node_copy: assertion 'JSON_NODE_IS_VALID (node)' failed
+  json_array_add_element: assertion 'node != NULL' failed
+  json_array_get_element: assertion 'index_ < array->elements->len' failed
+  json_node_copy: assertion 'JSON_NODE_IS_VALID (node)' failed
+  json_array_add_element: assertion 'node != NULL' failed
+  json_array_get_element: assertion 'index_ < array->elements->len' failed
+  json_node_copy: assertion 'JSON_NODE_IS_VALID (node)' failed
+  json_array_add_element: assertion 'node != NULL' failed
+  json_array_get_element: assertion 'index_ < array->elements->len' failed
+  json_node_copy: assertion 'JSON_NODE_IS_VALID (node)' failed
+  json_array_add_element: assertion 'node != NULL' failed
+  json_array_get_element: assertion 'index_ < array->elements->len' failed
+  json_node_copy: assertion 'JSON_NODE_IS_VALID (node)' failed
+  json_array_add_element: assertion 'node != NULL' failed
+  json_array_get_element: assertion 'index_ < array->elements->len' failed
+  json_node_copy: assertion 'JSON_NODE_IS_VALID (node)' failed
+  json_array_add_element: assertion 'node != NULL' failed
+  json_array_get_element: assertion 'index_ < array->elements->len' failed
+  json_node_copy: assertion 'JSON_NODE_IS_VALID (node)' failed
+  json_array_add_element: assertion 'node != NULL' failed
+  json_array_get_element: assertion 'index_ < array->elements->len' failed
+  json_node_copy: assertion 'JSON_NODE_IS_VALID (node)' failed
+  json_array_add_element: assertion 'node != NULL' failed
+  json_array_get_element: assertion 'index_ < array->elements->len' failed
+  json_node_copy: assertion 'JSON_NODE_IS_VALID (node)' failed
+  json_array_add_element: assertion 'node != NULL' failed
+  json_array_get_element: assertion 'index_ < array->elements->len' failed
+  json_node_copy: assertion 'JSON_NODE_IS_VALID (node)' failed
+  json_array_add_element: assertion 'node != NULL' failed
+  json_array_get_element: assertion 'index_ < array->elements->len' failed
+  json_node_copy: assertion 'JSON_NODE_IS_VALID (node)' failed
+  json_array_add_element: assertion 'node != NULL' failed
+  json_array_get_element: assertion 'index_ < array->elements->len' failed
+  json_node_copy: assertion 'JSON_NODE_IS_VALID (node)' failed
+  json_array_add_element: assertion 'node != NULL' failed
+  json_array_get_element: assertion 'index_ < array->elements->len' failed
+  json_node_copy: assertion 'JSON_NODE_IS_VALID (node)' failed
+  json_array_add_element: assertion 'node != NULL' failed
+  json_array_get_element: assertion 'index_ < array->elements->len' failed
+  json_node_copy: assertion 'JSON_NODE_IS_VALID (node)' failed
+  json_array_add_element: assertion 'node != NULL' failed
+  json_array_get_element: assertion 'index_ < array->elements->len' failed
+  json_node_copy: assertion 'JSON_NODE_IS_VALID (node)' failed
+  json_array_add_element: assertion 'node != NULL' failed
+  json_array_get_element: assertion 'index_ < array->elements->len' failed
+  json_node_copy: assertion 'JSON_NODE_IS_VALID (node)' failed
+  json_array_add_element: assertion 'node != NULL' failed
+  json_array_get_element: assertion 'index_ < array->elements->len' failed
+  json_node_copy: assertion 'JSON_NODE_IS_VALID (node)' failed
+  json_array_add_element: assertion 'node != NULL' failed
+  json_array_get_element: assertion 'index_ < array->elements->len' failed
+  json_node_copy: assertion 'JSON_NODE_IS_VALID (node)' failed
+  json_array_add_element: assertion 'node != NULL' failed
+  json_array_get_element: assertion 'index_ < array->elements->len' failed
+  json_node_copy: assertion 'JSON_NODE_IS_VALID (node)' failed
+  json_array_add_element: assertion 'node != NULL' failed
+  json_array_get_element: assertion 'index_ < array->elements->len' failed
+  json_node_copy: assertion 'JSON_NODE_IS_VALID (node)' failed
+  json_array_add_element: assertion 'node != NULL' failed
+  json_array_get_element: assertion 'index_ < array->elements->len' failed
+  json_node_copy: assertion 'JSON_NODE_IS_VALID (node)' failed
+  json_array_add_element: assertion 'node != NULL' failed
+  ```
+
 - [ ] `$[-4:1]`
   Input:
   ```

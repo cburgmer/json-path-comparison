@@ -104,6 +104,26 @@ The following queries provide results that do not match those of other implement
   index [to] out of range: len: 3, to: 10
   ```
 
+- [ ] `$[2:113667776004]`
+  Input:
+  ```
+  [
+    "first",
+    "second",
+    "third",
+    "forth",
+    "fifth"
+  ]
+  ```
+  Expected output:
+  ```
+  ["third", "forth", "fifth"]
+  ```
+  Error:
+  ```
+  index [to] out of range: len: 5, to: 113667776004
+  ```
+
 - [ ] `$[-4:-4]`
   Input:
   ```
