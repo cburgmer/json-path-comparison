@@ -68,6 +68,38 @@ The following queries provide results that do not match those of other implement
   ]
   ```
 
+- [ ] `$[2:-113667776004:-1]`
+  Input:
+  ```
+  [
+    "first",
+    "second",
+    "third",
+    "forth",
+    "fifth"
+  ]
+  ```
+  Error:
+  ```
+  step can't be negative
+  ```
+
+- [ ] `$[113667776004:2:-1]`
+  Input:
+  ```
+  [
+    "first",
+    "second",
+    "third",
+    "forth",
+    "fifth"
+  ]
+  ```
+  Error:
+  ```
+  step can't be negative
+  ```
+
 - [ ] `$[-4:-4]`
   Input:
   ```

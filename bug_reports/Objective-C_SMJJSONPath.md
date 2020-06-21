@@ -25,6 +25,22 @@ The following queries provide results that do not match those of other implement
   Filter: [1:3] can only be applied to arrays. Current context is: {"1:3" = nice; ":" = 42; a = 1; b = 2; c = 3; more = string; }
   ```
 
+- [ ] `$[-113667776004:2]`
+  Input:
+  ```
+  [
+    "first",
+    "second",
+    "third",
+    "forth",
+    "fifth"
+  ]
+  ```
+  Error:
+  ```
+  timeout: sending signal TERM to command ‘implementations/Objective-C_SMJJSONPath/run.sh’
+  ```
+
 - [ ] `$[-4:1]`
   Input:
   ```

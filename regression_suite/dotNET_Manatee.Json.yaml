@@ -12,6 +12,15 @@ queries:
   - id: array_slice_with_large_number_for_end
     status: fail
     result: NOT_SUPPORTED
+  - id: array_slice_with_large_number_for_end_and_negative_step
+    status: open
+    result: NOT_SUPPORTED
+  - id: array_slice_with_large_number_for_start
+    status: open
+    result: NOT_SUPPORTED
+  - id: array_slice_with_large_number_for_start_end_negative_step
+    status: open
+    result: NOT_SUPPORTED
   - id: array_slice_with_negative_step
     status: open
     result: ["forth", "second"]

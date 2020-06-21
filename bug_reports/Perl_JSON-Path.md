@@ -23,6 +23,22 @@ The following queries provide results that do not match those of other implement
   timeout: sending signal TERM to command ‘implementations/Perl_JSON-Path/run.sh’
   ```
 
+- [ ] `$[-113667776004:2]`
+  Input:
+  ```
+  [
+    "first",
+    "second",
+    "third",
+    "forth",
+    "fifth"
+  ]
+  ```
+  Error:
+  ```
+  timeout: sending signal TERM to command ‘implementations/Perl_JSON-Path/run.sh’
+  ```
+
 - [ ] `$[-4:1]`
   Input:
   ```

@@ -23,6 +23,54 @@ The following queries provide results that do not match those of other implement
   Value was either too large or too small for an Int32.
   ```
 
+- [ ] `$[2:-113667776004:-1]`
+  Input:
+  ```
+  [
+    "first",
+    "second",
+    "third",
+    "forth",
+    "fifth"
+  ]
+  ```
+  Error:
+  ```
+  Value was either too large or too small for an Int32.
+  ```
+
+- [ ] `$[-113667776004:2]`
+  Input:
+  ```
+  [
+    "first",
+    "second",
+    "third",
+    "forth",
+    "fifth"
+  ]
+  ```
+  Error:
+  ```
+  Value was either too large or too small for an Int32.
+  ```
+
+- [ ] `$[113667776004:2:-1]`
+  Input:
+  ```
+  [
+    "first",
+    "second",
+    "third",
+    "forth",
+    "fifth"
+  ]
+  ```
+  Error:
+  ```
+  Value was either too large or too small for an Int32.
+  ```
+
 - [ ] `$..[0]`
   Input:
   ```

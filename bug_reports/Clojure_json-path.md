@@ -120,6 +120,38 @@ The following queries provide results that do not match those of other implement
   "third"
   ```
 
+- [ ] `$[-113667776004:2]`
+  Input:
+  ```
+  [
+    "first",
+    "second",
+    "third",
+    "forth",
+    "fifth"
+  ]
+  ```
+  Error:
+  ```
+  java.lang.NumberFormatException For input string: "-113667776004"
+  ```
+
+- [ ] `$[113667776004:2:-1]`
+  Input:
+  ```
+  [
+    "first",
+    "second",
+    "third",
+    "forth",
+    "fifth"
+  ]
+  ```
+  Error:
+  ```
+  java.lang.NumberFormatException For input string: "113667776004"
+  ```
+
 - [ ] `$[-4:-5]`
   Input:
   ```

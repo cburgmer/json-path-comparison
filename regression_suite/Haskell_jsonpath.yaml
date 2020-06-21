@@ -10,6 +10,14 @@ queries:
     status: error
   - id: array_slice_with_large_number_for_end
     status: error
+  - id: array_slice_with_large_number_for_end_and_negative_step
+    status: open
+    result: []
+  - id: array_slice_with_large_number_for_start
+    status: error
+  - id: array_slice_with_large_number_for_start_end_negative_step
+    status: open
+    result: []
   - id: array_slice_with_negative_start_and_end_and_range_of_0
     status: fail
     result: [4]

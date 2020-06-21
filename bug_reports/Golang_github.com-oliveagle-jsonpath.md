@@ -124,6 +124,54 @@ The following queries provide results that do not match those of other implement
   index [to] out of range: len: 5, to: 113667776004
   ```
 
+- [ ] `$[2:-113667776004:-1]`
+  Input:
+  ```
+  [
+    "first",
+    "second",
+    "third",
+    "forth",
+    "fifth"
+  ]
+  ```
+  Error:
+  ```
+  only support one range(from, to): [2 -113667776004 -1]
+  ```
+
+- [ ] `$[-113667776004:2]`
+  Input:
+  ```
+  [
+    "first",
+    "second",
+    "third",
+    "forth",
+    "fifth"
+  ]
+  ```
+  Error:
+  ```
+  index [from] out of range: len: 5, from: -113667776004
+  ```
+
+- [ ] `$[113667776004:2:-1]`
+  Input:
+  ```
+  [
+    "first",
+    "second",
+    "third",
+    "forth",
+    "fifth"
+  ]
+  ```
+  Error:
+  ```
+  only support one range(from, to): [113667776004 2 -1]
+  ```
+
 - [ ] `$[-4:-4]`
   Input:
   ```

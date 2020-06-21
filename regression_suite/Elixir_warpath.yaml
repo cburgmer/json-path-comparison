@@ -6,6 +6,15 @@
 
 implementation: Elixir_warpath
 queries:
+  - id: array_slice_with_large_number_for_end_and_negative_step
+    status: open
+    result: NOT_SUPPORTED
+  - id: array_slice_with_large_number_for_start
+    status: open
+    result: ["first", "second", "third", "forth", "fifth"]
+  - id: array_slice_with_large_number_for_start_end_negative_step
+    status: open
+    result: NOT_SUPPORTED
   - id: array_slice_with_negative_start_and_positive_end_and_range_of_-1
     status: fail
     result: [4, 5, 100, "nice"]

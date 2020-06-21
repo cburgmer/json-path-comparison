@@ -3,6 +3,22 @@ Results do not match other implementations
 The following queries provide results that do not match those of other implementations of JSONPath
 (compare https://cburgmer.github.io/json-path-comparison/):
 
+- [ ] `$[113667776004:2:-1]`
+  Input:
+  ```
+  [
+    "first",
+    "second",
+    "third",
+    "forth",
+    "fifth"
+  ]
+  ```
+  Error:
+  ```
+  Cannot read property 'value' of undefined
+  ```
+
 - [ ] `$[7:3:-1]`
   Input:
   ```

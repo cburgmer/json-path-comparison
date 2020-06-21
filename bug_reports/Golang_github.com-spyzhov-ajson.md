@@ -23,6 +23,54 @@ The following queries provide results that do not match those of other implement
   timeout: sending signal TERM to command ‘implementations/Golang_github.com-spyzhov-ajson/run.sh’
   ```
 
+- [ ] `$[2:-113667776004:-1]`
+  Input:
+  ```
+  [
+    "first",
+    "second",
+    "third",
+    "forth",
+    "fifth"
+  ]
+  ```
+  Error:
+  ```
+  timeout: sending signal TERM to command ‘implementations/Golang_github.com-spyzhov-ajson/run.sh’
+  ```
+
+- [ ] `$[-113667776004:2]`
+  Input:
+  ```
+  [
+    "first",
+    "second",
+    "third",
+    "forth",
+    "fifth"
+  ]
+  ```
+  Error:
+  ```
+  timeout: sending signal TERM to command ‘implementations/Golang_github.com-spyzhov-ajson/run.sh’
+  ```
+
+- [ ] `$[113667776004:2:-1]`
+  Input:
+  ```
+  [
+    "first",
+    "second",
+    "third",
+    "forth",
+    "fifth"
+  ]
+  ```
+  Error:
+  ```
+  timeout: sending signal TERM to command ‘implementations/Golang_github.com-spyzhov-ajson/run.sh’
+  ```
+
 - [ ] `$[0:3:0]`
   Input:
   ```

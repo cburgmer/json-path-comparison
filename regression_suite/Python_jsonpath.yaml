@@ -9,6 +9,15 @@ queries:
   - id: array_slice_on_object
     status: fail
     result: ["nice"]
+  - id: array_slice_with_large_number_for_end_and_negative_step
+    status: open
+    result: ["third", "second"]
+  - id: array_slice_with_large_number_for_start
+    status: open
+    result: ["first", "second"]
+  - id: array_slice_with_large_number_for_start_end_negative_step
+    status: open
+    result: ["fifth", "forth"]
   - id: array_slice_with_negative_step
     status: open
     result: ["forth", "second"]

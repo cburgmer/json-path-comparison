@@ -8,6 +8,14 @@ implementation: PHP_flow-jsonpath
 queries:
   - id: array_slice_with_large_number_for_end
     status: error
+  - id: array_slice_with_large_number_for_end_and_negative_step
+    status: open
+    result: []
+  - id: array_slice_with_large_number_for_start
+    status: error
+  - id: array_slice_with_large_number_for_start_end_negative_step
+    status: open
+    result: []
   - id: array_slice_with_negative_step
     status: open
     result: []

@@ -48,6 +48,15 @@ queries:
     selector: "$[2:113667776004]"
     document: ["first", "second", "third", "forth", "fifth"]
     consensus: ["third", "forth", "fifth"]
+  - id: array_slice_with_large_number_for_end_and_negative_step
+    selector: "$[2:-113667776004:-1]"
+    document: ["first", "second", "third", "forth", "fifth"]
+  - id: array_slice_with_large_number_for_start
+    selector: "$[-113667776004:2]"
+    document: ["first", "second", "third", "forth", "fifth"]
+  - id: array_slice_with_large_number_for_start_end_negative_step
+    selector: "$[113667776004:2:-1]"
+    document: ["first", "second", "third", "forth", "fifth"]
   - id: array_slice_with_negative_start_and_end_and_range_of_-1
     selector: "$[-4:-5]"
     document: [2, "a", 4, 5, 100, "nice"]
