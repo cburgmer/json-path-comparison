@@ -325,12 +325,6 @@ To call out some decisions deviating from other implementations:
   The current grammar does not allow for well formatted brackets in any place.
   This isn't what I'd expect as a user.
 
-- $[::-2]
-
-  No consensus, but if we support $[::2] we should probably support this too.
-  The current default values (start 0 and end "len(array)") do not work for
-  negative steps as the start and end need to be switched.
-
 - Regexp!
 
 - Let's get more example queries from ../../INTERESTING_QUERIES as they include
