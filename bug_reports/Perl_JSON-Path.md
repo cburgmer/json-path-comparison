@@ -20,7 +20,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  implementations/Perl_JSON-Path/run.sh: line 9: 41434 Killed                  perl -I ./build/lib/perl5/ main.pl "$@"
+  timeout: sending signal TERM to command ‘implementations/Perl_JSON-Path/run.sh’
   ```
 
 - [ ] `$[-113667776004:2]`
@@ -36,7 +36,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  implementations/Perl_JSON-Path/run.sh: line 9: 32109 Killed                  perl -I ./build/lib/perl5/ main.pl "$@"
+  timeout: sending signal TERM to command ‘implementations/Perl_JSON-Path/run.sh’
   ```
 
 - [ ] `$[-4:1]`

@@ -967,10 +967,10 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  init terminating in do_boot (Timeout)
+  init terminating in do_boot ({undef,[{jsonpath,start,$[?(@[*]>=4)],[]},{init,start_em,1,[]},{init,do_boot,3,[]}]})
   
   Crash dump is being written to: /dev/null...done
-  {"init terminating in do_boot","Timeout"}
+  {"init terminating in do_boot",{undef,[{jsonpath,start,[["$[?(@[*]>=4)]"]],[]},{init,start_em,1,[]},{init,do_boot,3,[]}]}}
   ```
 
 - [ ] `$.x[?(@[*]>=$.y[*])]`
@@ -1000,10 +1000,10 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  init terminating in do_boot (Timeout)
+  init terminating in do_boot ({undef,[{jsonpath,start,$.x[?(@[*]>=$.y[*])],[]},{init,start_em,1,[]},{init,do_boot,3,[]}]})
   
   Crash dump is being written to: /dev/null...done
-  {"init terminating in do_boot","Timeout"}
+  {"init terminating in do_boot",{undef,[{jsonpath,start,[["$.x[?(@[*]>=$.y[*])]"]],[]},{init,start_em,1,[]},{init,do_boot,3,[]}]}}
   ```
 
 - [ ] `$[?(@.key=42)]`

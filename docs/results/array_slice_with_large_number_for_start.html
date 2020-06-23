@@ -485,7 +485,7 @@ Java (com.github.jsurfer)
 </h4>
 
 <pre><code>Exception in thread "main" java.lang.NumberFormatException: For input string: "-113667776004"
-    at java.base/java.lang.NumberFormatException.forInputString(NumberFormatException.java:65)
+    at java.base/java.lang.NumberFormatException.forInputString(NumberFormatException.java:68)
     at java.base/java.lang.Integer.parseInt(Integer.java:652)
     at java.base/java.lang.Integer.parseInt(Integer.java:770)
     at org.jsfr.json.compiler.JsonPathCompiler.visitSlicing(JsonPathCompiler.java:123)
@@ -513,7 +513,6 @@ Objective-C (SMJJSONPath)
 </h4>
 
 <pre><code>timeout: sending signal TERM to command ‘implementations/Objective-C_SMJJSONPath/run.sh’
-Terminated
 </code></pre>
 
 <h4 id="PHP_flow-jsonpath">
@@ -527,7 +526,7 @@ PHP (flow-jsonpath)
 Perl (JSON-Path)
 </h4>
 
-<pre><code>implementations/Perl_JSON-Path/run.sh: line 9: 32109 Killed                  perl -I ./build/lib/perl5/ main.pl "$@"
+<pre><code>timeout: sending signal TERM to command ‘implementations/Perl_JSON-Path/run.sh’
 </code></pre>
 
 <h4 id="Scala_jsonpath">
@@ -535,7 +534,7 @@ Scala (jsonpath)
 </h4>
 
 <pre><code>Exception in thread "main" java.lang.NumberFormatException: For input string: "-113667776004"
-    at java.base/java.lang.NumberFormatException.forInputString(NumberFormatException.java:65)
+    at java.base/java.lang.NumberFormatException.forInputString(NumberFormatException.java:68)
     at java.base/java.lang.Integer.parseInt(Integer.java:652)
     at java.base/java.lang.Integer.parseInt(Integer.java:770)
     at scala.collection.immutable.StringLike.toInt(StringLike.scala:301)

@@ -21,7 +21,7 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   Exception in thread "main" java.lang.NumberFormatException: For input string: "113667776004"
-  	at java.base/java.lang.NumberFormatException.forInputString(NumberFormatException.java:65)
+  	at java.base/java.lang.NumberFormatException.forInputString(NumberFormatException.java:68)
   	at java.base/java.lang.Integer.parseInt(Integer.java:652)
   	at java.base/java.lang.Integer.parseInt(Integer.java:770)
   	at scala.collection.immutable.StringLike.toInt(StringLike.scala:301)
@@ -116,7 +116,7 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   Exception in thread "main" java.lang.NumberFormatException: For input string: "-113667776004"
-  	at java.base/java.lang.NumberFormatException.forInputString(NumberFormatException.java:65)
+  	at java.base/java.lang.NumberFormatException.forInputString(NumberFormatException.java:68)
   	at java.base/java.lang.Integer.parseInt(Integer.java:652)
   	at java.base/java.lang.Integer.parseInt(Integer.java:770)
   	at scala.collection.immutable.StringLike.toInt(StringLike.scala:301)
@@ -211,7 +211,7 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   Exception in thread "main" java.lang.NumberFormatException: For input string: "-113667776004"
-  	at java.base/java.lang.NumberFormatException.forInputString(NumberFormatException.java:65)
+  	at java.base/java.lang.NumberFormatException.forInputString(NumberFormatException.java:68)
   	at java.base/java.lang.Integer.parseInt(Integer.java:652)
   	at java.base/java.lang.Integer.parseInt(Integer.java:770)
   	at scala.collection.immutable.StringLike.toInt(StringLike.scala:301)
@@ -288,7 +288,7 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   Exception in thread "main" java.lang.NumberFormatException: For input string: "113667776004"
-  	at java.base/java.lang.NumberFormatException.forInputString(NumberFormatException.java:65)
+  	at java.base/java.lang.NumberFormatException.forInputString(NumberFormatException.java:68)
   	at java.base/java.lang.Integer.parseInt(Integer.java:652)
   	at java.base/java.lang.Integer.parseInt(Integer.java:770)
   	at scala.collection.immutable.StringLike.toInt(StringLike.scala:301)
