@@ -20,7 +20,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  timeout: sending signal TERM to command ‘implementations/Perl_JSON-Path/run.sh’
+  timeout: sending signal TERM to command ‘perl’
   ```
 
 - [ ] `$[-113667776004:2]`
@@ -36,7 +36,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  timeout: sending signal TERM to command ‘implementations/Perl_JSON-Path/run.sh’
+  timeout: sending signal TERM to command ‘perl’
   ```
 
 - [ ] `$[-4:1]`
