@@ -421,7 +421,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  no implicit conversion of Integer into String
+  0 is not a symbol nor a string
   ```
 
 - [ ] `$[]`
@@ -479,7 +479,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  no implicit conversion of Integer into String
+  1 is not a symbol nor a string
   ```
 
 - [ ] `$[0]`
@@ -489,7 +489,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  unexpected token at 'Hello World'
+  783: unexpected token at 'Hello World'
   ```
 
 - [ ] `$[']']`
@@ -643,7 +643,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  no implicit conversion of Integer into String
+  0 is not a symbol nor a string
   ```
 
 - [ ] `$[*]`
@@ -768,7 +768,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  no implicit conversion of Integer into String
+  1 is not a symbol nor a string
   ```
 
 - [ ] `$.`
@@ -1275,7 +1275,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  comparison of String with Float failed
+  comparison of String with 42.0 failed
   ```
 
 - [ ] `$[?(@.key>=42)]`
@@ -1325,7 +1325,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  comparison of String with Float failed
+  comparison of String with 42.0 failed
   ```
 
 - [ ] `$[?(@.d in [2, 3])]`
@@ -1401,7 +1401,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  comparison of String with Float failed
+  comparison of String with 42.0 failed
   ```
 
 - [ ] `$[?(@.key<=42)]`
@@ -1451,7 +1451,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  comparison of String with Float failed
+  comparison of String with 42.0 failed
   ```
 
 - [ ] `$[?(!(@.key==42))]`
@@ -1501,7 +1501,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  wrong number of arguments calling `!` (given 1, expected 0)
+  wrong number of arguments (given 1, expected 0)
   ```
 
 - [ ] `$[?(!(@.key<42))]`
@@ -1551,7 +1551,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  wrong number of arguments calling `!` (given 1, expected 0)
+  wrong number of arguments (given 1, expected 0)
   ```
 
 - [ ] `$[?(@.key=42)]`
@@ -1867,7 +1867,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  wrong number of arguments calling `!` (given 1, expected 0)
+  wrong number of arguments (given 1, expected 0)
   ```
 
 - [ ] `$(key,more)`
