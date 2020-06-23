@@ -20,7 +20,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  timeout: sending signal TERM to command ‘implementations/Perl_JSON-Path/run.sh’
+  implementations/Perl_JSON-Path/run.sh: line 9: 41434 Killed                  perl -I ./build/lib/perl5/ main.pl "$@"
   ```
 
 - [ ] `$[-113667776004:2]`
@@ -36,7 +36,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  timeout: sending signal TERM to command ‘implementations/Perl_JSON-Path/run.sh’
+  implementations/Perl_JSON-Path/run.sh: line 9: 32109 Killed                  perl -I ./build/lib/perl5/ main.pl "$@"
   ```
 
 - [ ] `$[-4:1]`
@@ -2514,6 +2514,59 @@ The following queries provide results that do not match those of other implement
       "name": "good bye"
     }
   ]
+  ```
+  Error:
+  ```
+  non-safe evaluation, died at main.pl line 11.
+  ```
+
+- [ ] `$[?(@[*]>=4)]`
+  Input:
+  ```
+  [
+    [
+      1,
+      2
+    ],
+    [
+      3,
+      4
+    ],
+    [
+      5,
+      6
+    ]
+  ]
+  ```
+  Error:
+  ```
+  non-safe evaluation, died at main.pl line 11.
+  ```
+
+- [ ] `$.x[?(@[*]>=$.y[*])]`
+  Input:
+  ```
+  {
+    "x": [
+      [
+        1,
+        2
+      ],
+      [
+        3,
+        4
+      ],
+      [
+        5,
+        6
+      ]
+    ],
+    "y": [
+      3,
+      4,
+      5
+    ]
+  }
   ```
   Error:
   ```

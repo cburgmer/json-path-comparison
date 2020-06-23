@@ -3750,6 +3750,63 @@ The following queries provide results that do not match those of other implement
       lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
   ```
 
+- [ ] `$[?(@[*]>=4)]`
+  Input:
+  ```
+  [
+    [
+      1,
+      2
+    ],
+    [
+      3,
+      4
+    ],
+    [
+      5,
+      6
+    ]
+  ]
+  ```
+  Error:
+  ```
+  ** (Jaxon.ParseError) Expected an integer at `?(@[*]>=4)`
+      lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
+      lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
+  ```
+
+- [ ] `$.x[?(@[*]>=$.y[*])]`
+  Input:
+  ```
+  {
+    "x": [
+      [
+        1,
+        2
+      ],
+      [
+        3,
+        4
+      ],
+      [
+        5,
+        6
+      ]
+    ],
+    "y": [
+      3,
+      4,
+      5
+    ]
+  }
+  ```
+  Error:
+  ```
+  ** (Jaxon.ParseError) Expected an integer at `?(@[*]>=$.`
+      lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
+      lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
+  ```
+
 - [ ] `$[?(@.key=42)]`
   Input:
   ```

@@ -225,6 +225,12 @@ queries:
   - id: filter_expression_with_regular_expression
     status: open
     result: [{"name": "hello world"}, {"name": "yes hello world"}]
+  - id: filter_expression_with_set_wise_comparison_to_scalar
+    status: open
+    result: [[5, 6]]
+  - id: filter_expression_with_set_wise_comparison_to_set
+    status: open
+    result: [[5, 6]]
   - id: filter_expression_with_subfilter
     status: open
     result: [{"a": [{"price": 11}]}, {"a": [{"price": 8}, {"price": 12}, {"price": 3}]}]

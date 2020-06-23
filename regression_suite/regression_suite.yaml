@@ -768,6 +768,12 @@ queries:
   - id: filter_expression_with_regular_expression
     selector: "$[?(@.name=~/hello.*/)]"
     document: [{"name": "hullo world"}, {"name": "hello world"}, {"name": "yes hello world"}, {"name": "HELLO WORLD"}, {"name": "good bye"}]
+  - id: filter_expression_with_set_wise_comparison_to_scalar
+    selector: "$[?(@[*]>=4)]"
+    document: [[1, 2], [3, 4], [5, 6]]
+  - id: filter_expression_with_set_wise_comparison_to_set
+    selector: "$.x[?(@[*]>=$.y[*])]"
+    document: {"x": [[1, 2], [3, 4], [5, 6]], "y": [3, 4, 5]}
   - id: filter_expression_with_single_equal
     selector: "$[?(@.key=42)]"
     document: [{"key": 0}, {"key": 42}, {"key": -1}, {"key": 1}, {"key": 41}, {"key": 43}, {"key": 42.0001}, {"key": 41.9999}, {"key": 100}, {"key": "some"}, {"key": "42"}, {"key": null}, {"key": 420}, {"key": ""}, {"key": {}}, {"key": []}, {"key": [42]}, {"key": {"key": 42}}, {"key": {"some": 42}}, {"some": "value"}]

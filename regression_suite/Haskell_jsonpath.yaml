@@ -315,6 +315,12 @@ queries:
   - id: filter_expression_with_regular_expression
     status: open
     result: NOT_SUPPORTED
+  - id: filter_expression_with_set_wise_comparison_to_scalar
+    status: open
+    result: NOT_SUPPORTED
+  - id: filter_expression_with_set_wise_comparison_to_set
+    status: open
+    result: [[1, 2], [3, 4], [5, 6]]
   - id: filter_expression_with_subfilter
     status: open
     result: NOT_SUPPORTED

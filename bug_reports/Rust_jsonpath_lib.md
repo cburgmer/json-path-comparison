@@ -118,6 +118,59 @@ The following queries provide results that do not match those of other implement
   panic occurred
   ```
 
+- [ ] `$[?(@[*]>=4)]`
+  Input:
+  ```
+  [
+    [
+      1,
+      2
+    ],
+    [
+      3,
+      4
+    ],
+    [
+      5,
+      6
+    ]
+  ]
+  ```
+  Error:
+  ```
+  panic occurred
+  ```
+
+- [ ] `$.x[?(@[*]>=$.y[*])]`
+  Input:
+  ```
+  {
+    "x": [
+      [
+        1,
+        2
+      ],
+      [
+        3,
+        4
+      ],
+      [
+        5,
+        6
+      ]
+    ],
+    "y": [
+      3,
+      4,
+      5
+    ]
+  }
+  ```
+  Error:
+  ```
+  panic occurred
+  ```
+
 - [ ] `$(key,more)`
   Input:
   ```

@@ -947,6 +947,65 @@ The following queries provide results that do not match those of other implement
   {"init terminating in do_boot","Timeout"}
   ```
 
+- [ ] `$[?(@[*]>=4)]`
+  Input:
+  ```
+  [
+    [
+      1,
+      2
+    ],
+    [
+      3,
+      4
+    ],
+    [
+      5,
+      6
+    ]
+  ]
+  ```
+  Error:
+  ```
+  init terminating in do_boot (Timeout)
+  
+  Crash dump is being written to: /dev/null...done
+  {"init terminating in do_boot","Timeout"}
+  ```
+
+- [ ] `$.x[?(@[*]>=$.y[*])]`
+  Input:
+  ```
+  {
+    "x": [
+      [
+        1,
+        2
+      ],
+      [
+        3,
+        4
+      ],
+      [
+        5,
+        6
+      ]
+    ],
+    "y": [
+      3,
+      4,
+      5
+    ]
+  }
+  ```
+  Error:
+  ```
+  init terminating in do_boot (Timeout)
+  
+  Crash dump is being written to: /dev/null...done
+  {"init terminating in do_boot","Timeout"}
+  ```
+
 - [ ] `$[?(@.key=42)]`
   Input:
   ```

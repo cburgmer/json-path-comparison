@@ -2680,6 +2680,59 @@ The following queries provide results that do not match those of other implement
   interface conversion: interface {} is nil, not string
   ```
 
+- [ ] `$[?(@[*]>=4)]`
+  Input:
+  ```
+  [
+    [
+      1,
+      2
+    ],
+    [
+      3,
+      4
+    ],
+    [
+      5,
+      6
+    ]
+  ]
+  ```
+  Error:
+  ```
+  interface conversion: interface {} is nil, not string
+  ```
+
+- [ ] `$.x[?(@[*]>=$.y[*])]`
+  Input:
+  ```
+  {
+    "x": [
+      [
+        1,
+        2
+      ],
+      [
+        3,
+        4
+      ],
+      [
+        5,
+        6
+      ]
+    ],
+    "y": [
+      3,
+      4,
+      5
+    ]
+  }
+  ```
+  Error:
+  ```
+  interface conversion: interface {} is nil, not string
+  ```
+
 - [ ] `$[?(@.key=42)]`
   Input:
   ```

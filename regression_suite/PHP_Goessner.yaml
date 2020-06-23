@@ -250,6 +250,10 @@ queries:
     status: error
   - id: filter_expression_with_regular_expression
     status: error
+  - id: filter_expression_with_set_wise_comparison_to_scalar
+    status: error
+  - id: filter_expression_with_set_wise_comparison_to_set
+    status: error
   - id: filter_expression_with_single_equal
     status: error
   - id: filter_expression_with_subfilter

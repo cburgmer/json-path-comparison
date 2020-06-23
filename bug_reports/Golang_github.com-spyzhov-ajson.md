@@ -743,6 +743,36 @@ The following queries provide results that do not match those of other implement
   wrong request: wrong request: ?(@.name=~/hello.*/)
   ```
 
+- [ ] `$.x[?(@[*]>=$.y[*])]`
+  Input:
+  ```
+  {
+    "x": [
+      [
+        1,
+        2
+      ],
+      [
+        3,
+        4
+      ],
+      [
+        5,
+        6
+      ]
+    ],
+    "y": [
+      3,
+      4,
+      5
+    ]
+  }
+  ```
+  Error:
+  ```
+  wrong request: wrong request: ?(@[*]>=$.y[*])
+  ```
+
 - [ ] `$[?(@.key=42)]`
   Input:
   ```

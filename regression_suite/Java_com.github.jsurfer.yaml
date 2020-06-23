@@ -280,6 +280,12 @@ queries:
   - id: filter_expression_with_regular_expression
     status: open
     result: [{"name": "hello world"}, {"name": "yes hello world"}]
+  - id: filter_expression_with_set_wise_comparison_to_scalar
+    status: open
+    result: NOT_SUPPORTED
+  - id: filter_expression_with_set_wise_comparison_to_set
+    status: open
+    result: NOT_SUPPORTED
   - id: filter_expression_with_subfilter
     status: error
   - id: filter_expression_with_subtraction

@@ -270,6 +270,10 @@ queries:
   - id: filter_expression_with_regular_expression
     status: open
     result: [{"name": -1}, {"name": -1}, {"name": -1}, {"name": -1}, {"name": -1}]
+  - id: filter_expression_with_set_wise_comparison_to_scalar
+    status: error
+  - id: filter_expression_with_set_wise_comparison_to_set
+    status: error
   - id: filter_expression_with_single_equal
     status: fail
     result: [{"key": 42}, {"key": 42}, {"key": 42}, {"key": 42}, {"key": 42}, {"key": 42}, {"key": 42}, {"key": 42}, {"key": 42}, {"key": 42}, {"key": 42}, {"key": 42}, {"key": 42}, {"key": 42}, {"key": 42}, {"key": 42}, {"key": 42}, {"key": 42}, {"key": 42}, {"key": 42, "some": "value"}]

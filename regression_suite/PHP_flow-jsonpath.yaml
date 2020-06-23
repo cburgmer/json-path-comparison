@@ -239,6 +239,12 @@ queries:
   - id: filter_expression_with_regular_expression
     status: open
     result: []
+  - id: filter_expression_with_set_wise_comparison_to_scalar
+    status: open
+    result: []
+  - id: filter_expression_with_set_wise_comparison_to_set
+    status: open
+    result: []
   - id: filter_expression_with_single_equal
     status: fail
     result: [{"key": 42}, {"key": "42"}]
