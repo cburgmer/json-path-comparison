@@ -25,26 +25,34 @@ object App {
     val data = responseStrBuilder.toString()
 
     val json = mapper.readValue(data, classOf[JsonNode])
-    val results = JsonPath.query(selector, json)
 
-    results match {
-      case Right(it) =>
-        val matches = it.toList
-        val node = mapper.createArrayNode();
-        node.addAll(matches.asJava)
+    try {
+      val results = JsonPath.query(selector, json)
 
-        mapper.writeValue(System.out, node);
-      case Left(e) =>
-        e match {
-          case e: JPError => {
-            println(e)
-            sys.exit(2)
+      results match {
+        case Right(it) =>
+          val matches = it.toList
+          val node = mapper.createArrayNode();
+          node.addAll(matches.asJava)
+
+          mapper.writeValue(System.out, node);
+        case Left(e) =>
+          e match {
+            case e: JPError => {
+              println(e)
+              sys.exit(2)
+            }
+            case _ => {
+              println(e)
+              sys.exit(1)
+            }
           }
-          case _ => {
-            println(e)
-            sys.exit(1)
-          }
-        }
+      }
+    } catch {
+      case e: Exception => {
+        System.err.println(e);
+        System.exit(1);
+      }
     }
   }
 }

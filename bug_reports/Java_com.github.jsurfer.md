@@ -20,26 +20,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  Exception in thread "main" java.lang.NumberFormatException: For input string: "113667776004"
-  	at java.base/java.lang.NumberFormatException.forInputString(NumberFormatException.java:68)
-  	at java.base/java.lang.Integer.parseInt(Integer.java:652)
-  	at java.base/java.lang.Integer.parseInt(Integer.java:770)
-  	at org.jsfr.json.compiler.JsonPathCompiler.visitSlicing(JsonPathCompiler.java:123)
-  	at org.jsfr.json.compiler.JsonPathCompiler.visitSlicing(JsonPathCompiler.java:42)
-  	at org.jsfr.json.compiler.JsonPathParser$SlicingContext.accept(JsonPathParser.java:599)
-  	at org.antlr.v4.runtime.tree.AbstractParseTreeVisitor.visitChildren(AbstractParseTreeVisitor.java:46)
-  	at org.jsfr.json.compiler.JsonPathBaseVisitor.visitRelativePath(JsonPathBaseVisitor.java:53)
-  	at org.jsfr.json.compiler.JsonPathParser$RelativePathContext.accept(JsonPathParser.java:221)
-  	at org.antlr.v4.runtime.tree.AbstractParseTreeVisitor.visitChildren(AbstractParseTreeVisitor.java:46)
-  	at org.jsfr.json.compiler.JsonPathBaseVisitor.visitPath(JsonPathBaseVisitor.java:46)
-  	at org.jsfr.json.compiler.JsonPathCompiler.visitPath(JsonPathCompiler.java:53)
-  	at org.jsfr.json.compiler.JsonPathCompiler.visitPath(JsonPathCompiler.java:42)
-  	at org.jsfr.json.compiler.JsonPathParser$PathContext.accept(JsonPathParser.java:138)
-  	at org.antlr.v4.runtime.tree.AbstractParseTreeVisitor.visit(AbstractParseTreeVisitor.java:18)
-  	at org.jsfr.json.compiler.JsonPathCompiler.compile(JsonPathCompiler.java:285)
-  	at org.jsfr.json.compiler.JsonPathCompiler.compile(JsonPathCompiler.java:273)
-  	at org.jsfr.json.JsonSurfer.collectAll(JsonSurfer.java:284)
-  	at query.App.main(App.java:30)
+  java.lang.NumberFormatException: For input string: "113667776004"
   ```
 
 - [ ] `$[-113667776004:2]`
@@ -55,26 +36,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  Exception in thread "main" java.lang.NumberFormatException: For input string: "-113667776004"
-  	at java.base/java.lang.NumberFormatException.forInputString(NumberFormatException.java:68)
-  	at java.base/java.lang.Integer.parseInt(Integer.java:652)
-  	at java.base/java.lang.Integer.parseInt(Integer.java:770)
-  	at org.jsfr.json.compiler.JsonPathCompiler.visitSlicing(JsonPathCompiler.java:123)
-  	at org.jsfr.json.compiler.JsonPathCompiler.visitSlicing(JsonPathCompiler.java:42)
-  	at org.jsfr.json.compiler.JsonPathParser$SlicingContext.accept(JsonPathParser.java:599)
-  	at org.antlr.v4.runtime.tree.AbstractParseTreeVisitor.visitChildren(AbstractParseTreeVisitor.java:46)
-  	at org.jsfr.json.compiler.JsonPathBaseVisitor.visitRelativePath(JsonPathBaseVisitor.java:53)
-  	at org.jsfr.json.compiler.JsonPathParser$RelativePathContext.accept(JsonPathParser.java:221)
-  	at org.antlr.v4.runtime.tree.AbstractParseTreeVisitor.visitChildren(AbstractParseTreeVisitor.java:46)
-  	at org.jsfr.json.compiler.JsonPathBaseVisitor.visitPath(JsonPathBaseVisitor.java:46)
-  	at org.jsfr.json.compiler.JsonPathCompiler.visitPath(JsonPathCompiler.java:53)
-  	at org.jsfr.json.compiler.JsonPathCompiler.visitPath(JsonPathCompiler.java:42)
-  	at org.jsfr.json.compiler.JsonPathParser$PathContext.accept(JsonPathParser.java:138)
-  	at org.antlr.v4.runtime.tree.AbstractParseTreeVisitor.visit(AbstractParseTreeVisitor.java:18)
-  	at org.jsfr.json.compiler.JsonPathCompiler.compile(JsonPathCompiler.java:285)
-  	at org.jsfr.json.compiler.JsonPathCompiler.compile(JsonPathCompiler.java:273)
-  	at org.jsfr.json.JsonSurfer.collectAll(JsonSurfer.java:284)
-  	at query.App.main(App.java:30)
+  java.lang.NumberFormatException: For input string: "-113667776004"
   ```
 
 - [ ] `$[-4:-3]`

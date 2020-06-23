@@ -43,6 +43,9 @@ public class App {
         } catch (NullPointerException e) {
             System.err.println(e);
             System.exit(1);
+        } catch (NumberFormatException e) {
+            System.err.println(e);
+            System.exit(1);
         }
     }
 }

@@ -359,32 +359,7 @@ Rust (jsonpath_lib)
 Scala (jsonpath)
 </h4>
 
-<pre><code>Exception in thread "main" java.lang.IllegalArgumentException: requirement failed: size=0 and step=0, but both must be positive
-    at scala.collection.Iterator$GroupedIterator.&lt;init&gt;(Iterator.scala:1109)
-    at scala.collection.Iterator.grouped(Iterator.scala:1246)
-    at scala.collection.Iterator.grouped$(Iterator.scala:1245)
-    at scala.collection.AbstractIterator.grouped(Iterator.scala:1432)
-    at io.gatling.jsonpath.JsonPathWalker.sliceArray(JsonPath.scala:187)
-    at io.gatling.jsonpath.JsonPathWalker.walk1(JsonPath.scala:98)
-    at io.gatling.jsonpath.JsonPathWalker.walk(JsonPath.scala:50)
-    at io.gatling.jsonpath.JsonPathWalker.$anonfun$walk$1(JsonPath.scala:50)
-    at scala.collection.Iterator$$anon$11.nextCur(Iterator.scala:482)
-    at scala.collection.Iterator$$anon$11.hasNext(Iterator.scala:488)
-    at scala.collection.Iterator.foreach(Iterator.scala:944)
-    at scala.collection.Iterator.foreach$(Iterator.scala:944)
-    at scala.collection.AbstractIterator.foreach(Iterator.scala:1432)
-    at scala.collection.generic.Growable.$plus$plus$eq(Growable.scala:59)
-    at scala.collection.generic.Growable.$plus$plus$eq$(Growable.scala:50)
-    at scala.collection.mutable.ListBuffer.$plus$plus$eq(ListBuffer.scala:186)
-    at scala.collection.mutable.ListBuffer.$plus$plus$eq(ListBuffer.scala:44)
-    at scala.collection.TraversableOnce.to(TraversableOnce.scala:310)
-    at scala.collection.TraversableOnce.to$(TraversableOnce.scala:308)
-    at scala.collection.AbstractIterator.to(Iterator.scala:1432)
-    at scala.collection.TraversableOnce.toList(TraversableOnce.scala:294)
-    at scala.collection.TraversableOnce.toList$(TraversableOnce.scala:294)
-    at scala.collection.AbstractIterator.toList(Iterator.scala:1432)
-    at query.App$.main(App.scala:32)
-    at query.App.main(App.scala)
+<pre><code>java.lang.IllegalArgumentException: requirement failed: size=0 and step=0, but both must be positive
 </code></pre>
 
 <h4 id="dotNET_JsonPathLib">
