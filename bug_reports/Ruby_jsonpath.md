@@ -6,26 +6,6 @@ The following queries provide results that do not match those of other implement
 - [ ] `$[1:3]`
   Input:
   ```
-  [
-    "first",
-    "second",
-    "third",
-    "forth",
-    "fifth"
-  ]
-  ```
-  Expected output:
-  ```
-  ["second", "third"]
-  ```
-  Error:
-  ```
-  timeout: sending signal TERM to command ‘implementations/Ruby_jsonpath/run.sh’
-  ```
-
-- [ ] `$[1:3]`
-  Input:
-  ```
   {
     ":": 42,
     "more": "string",
@@ -104,22 +84,6 @@ The following queries provide results that do not match those of other implement
   step can't be negative
   ```
 
-- [ ] `$[-113667776004:2]`
-  Input:
-  ```
-  [
-    "first",
-    "second",
-    "third",
-    "forth",
-    "fifth"
-  ]
-  ```
-  Error:
-  ```
-  timeout: sending signal TERM to command ‘implementations/Ruby_jsonpath/run.sh’
-  ```
-
 - [ ] `$[113667776004:2:-1]`
   Input:
   ```
@@ -133,7 +97,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  timeout: sending signal TERM to command ‘implementations/Ruby_jsonpath/run.sh’
+  step can't be negative
   ```
 
 - [ ] `$[-4:-4]`
@@ -260,7 +224,6 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  timeout: sending signal TERM to command ‘implementations/Ruby_jsonpath/run.sh’
   step can't be negative
   ```
 
@@ -346,24 +309,6 @@ The following queries provide results that do not match those of other implement
   ]
   ```
 
-- [ ] `$[-2:]`
-  Input:
-  ```
-  [
-    "first",
-    "second",
-    "third"
-  ]
-  ```
-  Expected output:
-  ```
-  ["second", "third"]
-  ```
-  Error:
-  ```
-  timeout: sending signal TERM to command ‘implementations/Ruby_jsonpath/run.sh’
-  ```
-
 - [ ] `$[-4:]`
   Input:
   ```
@@ -382,26 +327,6 @@ The following queries provide results that do not match those of other implement
   [
     "third"
   ]
-  ```
-
-- [ ] `$[0:3:2]`
-  Input:
-  ```
-  [
-    "first",
-    "second",
-    "third",
-    "forth",
-    "fifth"
-  ]
-  ```
-  Expected output:
-  ```
-  ["first", "third"]
-  ```
-  Error:
-  ```
-  timeout: sending signal TERM to command ‘implementations/Ruby_jsonpath/run.sh’
   ```
 
 - [ ] `$[0:3:0]`
@@ -557,22 +482,6 @@ The following queries provide results that do not match those of other implement
   no implicit conversion of Integer into String
   ```
 
-- [ ] `$[1]`
-  Input:
-  ```
-  [
-    "one element"
-  ]
-  ```
-  Expected output:
-  ```
-  []
-  ```
-  Error:
-  ```
-  timeout: sending signal TERM to command ‘implementations/Ruby_jsonpath/run.sh’
-  ```
-
 - [ ] `$[0]`
   Input:
   ```
@@ -580,26 +489,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  timeout: sending signal TERM to command ‘implementations/Ruby_jsonpath/run.sh’
   unexpected token at 'Hello World'
-  ```
-
-- [ ] `$[':']`
-  Input:
-  ```
-  {
-    ":": "value",
-    "another": "entry"
-  }
-  ```
-  Expected output:
-  ```
-  ["value"]
-  ```
-  Error:
-  ```
-  timeout: sending signal TERM to command ‘implementations/Ruby_jsonpath/run.sh’
-  ["value"]
   ```
 
 - [ ] `$[']']`
@@ -684,24 +574,6 @@ The following queries provide results that do not match those of other implement
   []
   ```
 
-- [ ] `$['ni.*']`
-  Input:
-  ```
-  {
-    "nice": 42,
-    "ni.*": 1,
-    "mice": 100
-  }
-  ```
-  Expected output:
-  ```
-  [1]
-  ```
-  Error:
-  ```
-  timeout: sending signal TERM to command ‘implementations/Ruby_jsonpath/run.sh’
-  ```
-
 - [ ] `$['two'.'some']`
   Input:
   ```
@@ -721,9 +593,11 @@ The following queries provide results that do not match those of other implement
   ```
   NOT_SUPPORTED
   ```
-  Error:
+  Actual output:
   ```
-  timeout: sending signal TERM to command ‘implementations/Ruby_jsonpath/run.sh’
+  [
+    "43"
+  ]
   ```
 
 - [ ] `$[two.some]`
@@ -769,33 +643,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  timeout: sending signal TERM to command ‘implementations/Ruby_jsonpath/run.sh’
   no implicit conversion of Integer into String
-  ```
-
-- [ ] `$[*]`
-  Input:
-  ```
-  [
-    "string",
-    42,
-    {
-      "key": "value"
-    },
-    [
-      0,
-      1
-    ]
-  ]
-  ```
-  Expected output:
-  ```
-  ["string", 42, {"key": "value"}, [0, 1]]
-  ```
-  Error:
-  ```
-  timeout: sending signal TERM to command ‘implementations/Ruby_jsonpath/run.sh’
-  ["string",42,{"key":"value"},[0,1]]
   ```
 
 - [ ] `$[*]`
@@ -853,25 +701,6 @@ The following queries provide results that do not match those of other implement
   invalid value for Integer(): "key"
   ```
 
-- [ ] `$.['key']`
-  Input:
-  ```
-  {
-    "key": "value",
-    "other": {
-      "key": [
-        {
-          "key": 42
-        }
-      ]
-    }
-  }
-  ```
-  Error:
-  ```
-  timeout: sending signal TERM to command ‘implementations/Ruby_jsonpath/run.sh’
-  ```
-
 - [ ] `$.[key]`
   Input:
   ```
@@ -893,22 +722,6 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   invalid value for Integer(): "key"
-  ```
-
-- [ ] `$.key`
-  Input:
-  ```
-  {
-    "key": "value"
-  }
-  ```
-  Expected output:
-  ```
-  ["value"]
-  ```
-  Error:
-  ```
-  timeout: sending signal TERM to command ‘implementations/Ruby_jsonpath/run.sh’
   ```
 
 - [ ] `$..[1].key`
@@ -956,22 +769,6 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   no implicit conversion of Integer into String
-  ```
-
-- [ ] `$.key-dash`
-  Input:
-  ```
-  {
-    "key-dash": "value"
-  }
-  ```
-  Expected output:
-  ```
-  ["value"]
-  ```
-  Error:
-  ```
-  timeout: sending signal TERM to command ‘implementations/Ruby_jsonpath/run.sh’
   ```
 
 - [ ] `$.`
@@ -1192,9 +989,18 @@ The following queries provide results that do not match those of other implement
   ```
   [40, 42, null]
   ```
-  Error:
+  Actual output:
   ```
-  timeout: sending signal TERM to command ‘implementations/Ruby_jsonpath/run.sh’
+  [
+    40,
+    42,
+    [
+      40,
+      null,
+      42
+    ],
+    null
+  ]
   ```
 
 - [ ] `$..*`
@@ -1317,21 +1123,6 @@ The following queries provide results that do not match those of other implement
   ]
   ```
 
-- [ ] `$[?(@.key)]`
-  Input:
-  ```
-  {
-    "key": 42,
-    "another": {
-      "key": 1
-    }
-  }
-  ```
-  Error:
-  ```
-  timeout: sending signal TERM to command ‘implementations/Ruby_jsonpath/run.sh’
-  ```
-
 - [ ] `$[?(@.key+50==100)]`
   Input:
   ```
@@ -1355,32 +1146,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  timeout: sending signal TERM to command ‘implementations/Ruby_jsonpath/run.sh’
-  ```
-
-- [ ] `$[?(@[-1]==2)]`
-  Input:
-  ```
-  [
-    [
-      2,
-      3
-    ],
-    [
-      "a"
-    ],
-    [
-      0,
-      2
-    ],
-    [
-      2
-    ]
-  ]
-  ```
-  Error:
-  ```
-  timeout: sending signal TERM to command ‘implementations/Ruby_jsonpath/run.sh’
+  String can't be coerced into Float
   ```
 
 - [ ] `$[?(@[1]=='b')]`
@@ -1427,84 +1193,6 @@ The following queries provide results that do not match those of other implement
     },
     "value"
   ]
-  ```
-
-- [ ] `$[?(@.key==42)]`
-  Input:
-  ```
-  [
-    {
-      "key": 0
-    },
-    {
-      "key": 42
-    },
-    {
-      "key": -1
-    },
-    {
-      "key": 1
-    },
-    {
-      "key": 41
-    },
-    {
-      "key": 43
-    },
-    {
-      "key": 42.0001
-    },
-    {
-      "key": 41.9999
-    },
-    {
-      "key": 100
-    },
-    {
-      "key": "some"
-    },
-    {
-      "key": "42"
-    },
-    {
-      "key": null
-    },
-    {
-      "key": 420
-    },
-    {
-      "key": ""
-    },
-    {
-      "key": {}
-    },
-    {
-      "key": []
-    },
-    {
-      "key": [
-        42
-      ]
-    },
-    {
-      "key": {
-        "key": 42
-      }
-    },
-    {
-      "key": {
-        "some": 42
-      }
-    },
-    {
-      "some": "value"
-    }
-  ]
-  ```
-  Error:
-  ```
-  timeout: sending signal TERM to command ‘implementations/Ruby_jsonpath/run.sh’
-  [{"key":42},{"key":"42"}]
   ```
 
 - [ ] `$[?(@.*==[1,2])]`
@@ -1713,7 +1401,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  timeout: sending signal TERM to command ‘implementations/Ruby_jsonpath/run.sh’
+  comparison of String with Float failed
   ```
 
 - [ ] `$[?(@.key<=42)]`
@@ -1766,32 +1454,6 @@ The following queries provide results that do not match those of other implement
   comparison of String with Float failed
   ```
 
-- [ ] `$[?(@.key*2==100)]`
-  Input:
-  ```
-  [
-    {
-      "key": 60
-    },
-    {
-      "key": 50
-    },
-    {
-      "key": 10
-    },
-    {
-      "key": -50
-    },
-    {
-      "key*2": 100
-    }
-  ]
-  ```
-  Error:
-  ```
-  timeout: sending signal TERM to command ‘implementations/Ruby_jsonpath/run.sh’
-  ```
-
 - [ ] `$[?(!(@.key==42))]`
   Input:
   ```
@@ -1839,7 +1501,6 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  timeout: sending signal TERM to command ‘implementations/Ruby_jsonpath/run.sh’
   wrong number of arguments calling `!` (given 1, expected 0)
   ```
 
@@ -1891,32 +1552,6 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   wrong number of arguments calling `!` (given 1, expected 0)
-  ```
-
-- [ ] `$[?(@.name=~/hello.*/)]`
-  Input:
-  ```
-  [
-    {
-      "name": "hullo world"
-    },
-    {
-      "name": "hello world"
-    },
-    {
-      "name": "yes hello world"
-    },
-    {
-      "name": "HELLO WORLD"
-    },
-    {
-      "name": "good bye"
-    }
-  ]
-  ```
-  Error:
-  ```
-  timeout: sending signal TERM to command ‘implementations/Ruby_jsonpath/run.sh’
   ```
 
 - [ ] `$[?(@.key=42)]`
@@ -2107,130 +1742,6 @@ The following queries provide results that do not match those of other implement
                  ==
   ```
 
-- [ ] `$[?(@.key)]`
-  Input:
-  ```
-  [
-    {
-      "some": "some value"
-    },
-    {
-      "key": true
-    },
-    {
-      "key": false
-    },
-    {
-      "key": null
-    },
-    {
-      "key": "value"
-    },
-    {
-      "key": ""
-    },
-    {
-      "key": 0
-    },
-    {
-      "key": 1
-    },
-    {
-      "key": -1
-    },
-    {
-      "key": 42
-    },
-    {
-      "key": {}
-    },
-    {
-      "key": []
-    }
-  ]
-  ```
-  Error:
-  ```
-  timeout: sending signal TERM to command ‘implementations/Ruby_jsonpath/run.sh’
-  ```
-
-- [ ] `$..[?(@.id)]`
-  Input:
-  ```
-  {
-    "id": 2,
-    "more": [
-      {
-        "id": 2
-      },
-      {
-        "more": {
-          "id": 2
-        }
-      },
-      {
-        "id": {
-          "id": 2
-        }
-      },
-      [
-        {
-          "id": 2
-        }
-      ]
-    ]
-  }
-  ```
-  Error:
-  ```
-  timeout: sending signal TERM to command ‘implementations/Ruby_jsonpath/run.sh’
-  [{"id":2,"more":[{"id":2},{"more":{"id":2}},{"id":{"id":2}},[{"id":2}]]},{"id":2},{"id":{"id":2}},{"id":2},{"id":2},{"id":{"id":2}},{"id":2},{"id":2},{"id":2}]
-  ```
-
-- [ ] `$[?(false)]`
-  Input:
-  ```
-  [
-    1,
-    3,
-    "nice",
-    true,
-    null,
-    false,
-    {},
-    [],
-    -1,
-    0,
-    ""
-  ]
-  ```
-  Error:
-  ```
-  timeout: sending signal TERM to command ‘implementations/Ruby_jsonpath/run.sh’
-  ```
-
-- [ ] `$[?(true)]`
-  Input:
-  ```
-  [
-    1,
-    3,
-    "nice",
-    true,
-    null,
-    false,
-    {},
-    [],
-    -1,
-    0,
-    ""
-  ]
-  ```
-  Error:
-  ```
-  timeout: sending signal TERM to command ‘implementations/Ruby_jsonpath/run.sh’
-  ```
-
 - [ ] `$[?@.key==42]`
   Input:
   ```
@@ -2309,7 +1820,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  timeout: sending signal TERM to command ‘implementations/Ruby_jsonpath/run.sh’
+  invalid value for Integer(): "@.key==42"
   ```
 
 - [ ] `$[?(!@.key)]`
@@ -2397,9 +1908,16 @@ The following queries provide results that do not match those of other implement
   ```
   NOT_SUPPORTED
   ```
-  Error:
+  Actual output:
   ```
-  timeout: sending signal TERM to command ‘implementations/Ruby_jsonpath/run.sh’
+  [
+    "first",
+    "second",
+    "third",
+    "forth",
+    "fifth",
+    "second"
+  ]
   ```
 
 
