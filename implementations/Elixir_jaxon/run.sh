@@ -11,5 +11,9 @@ filter_versioned_stack_traces() {
     grep -v '^    (mix\( .*\)*)' | grep -v '^    (elixir\( .*\)*)'
 }
 
+filter_absolute_path_in_warning() {
+    sed 's/[^ ]*implementations\/Elixir_jaxon\/build\/deps\/poison\/mix.exs/implementations\/Elixir_jaxon\/build\/deps\/poison\/mix.exs/'
+}
+
 cd "$script_dir"
-mix execute "$@" 2>&1 | filter_versioned_stack_traces
+mix execute "$@" 2>&1 | filter_versioned_stack_traces | filter_absolute_path_in_warning
