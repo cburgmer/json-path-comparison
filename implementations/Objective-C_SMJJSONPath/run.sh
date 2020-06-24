@@ -14,17 +14,22 @@ gnustep_types() {
     sed 's/__NSArrayI/GSArray/'
 }
 
-filter_osx_differences() {
-    multiline_maps | gnustep_types
+remove_terminated() {
+    grep -v '^Terminated$' || true
+}
+
+filter_runtime_differences() {
+    multiline_maps | gnustep_types | remove_terminated
 }
 
 output_and_cleanup() {
     cat "$tmp_stdout"
-    cat "$tmp_stderr" | >&2 filter_osx_differences
+    cat "$tmp_stderr" | >&2 filter_runtime_differences
     rm "$tmp_stdout"
     rm "$tmp_stderr"
 }
 
 trap output_and_cleanup EXIT
 
-"$script_dir"/build/main "$@" > "$tmp_stdout" 2> "$tmp_stderr"
+cd "$script_dir"
+timeout -v 10 build/main "$@" > "$tmp_stdout" 2> "$tmp_stderr"

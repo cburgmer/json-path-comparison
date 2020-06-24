@@ -38,7 +38,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  timeout: sending signal TERM to command ‘implementations/Objective-C_SMJJSONPath/run.sh’
+  timeout: sending signal TERM to command ‘build/main’
   ```
 
 - [ ] `$[-4:1]`
