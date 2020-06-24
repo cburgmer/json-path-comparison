@@ -161,10 +161,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  init terminating in do_boot (Timeout)
-  
-  Crash dump is being written to: /dev/null...done
-  {"init terminating in do_boot","Timeout"}
+  Timeout
   ```
 
 - [ ] `$[':@."$,*\'\\']`
@@ -176,10 +173,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  init terminating in do_boot (Timeout)
-  
-  Crash dump is being written to: /dev/null...done
-  {"init terminating in do_boot","Timeout"}
+  Timeout
   ```
 
 - [ ] `$['single'quote']`
@@ -195,10 +189,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  init terminating in do_boot (Timeout)
-  
-  Crash dump is being written to: /dev/null...done
-  {"init terminating in do_boot","Timeout"}
+  Timeout
   ```
 
 - [ ] `$..[*]`
@@ -329,10 +320,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  init terminating in do_boot (Timeout)
-  
-  Crash dump is being written to: /dev/null...done
-  {"init terminating in do_boot","Timeout"}
+  Timeout
   ```
 
 - [ ] `$.2`
@@ -492,10 +480,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  init terminating in do_boot (Timeout)
-  
-  Crash dump is being written to: /dev/null...done
-  {"init terminating in do_boot","Timeout"}
+  Timeout
   ```
 
 - [ ] `$[?(@.a && (@.b || @.c))]`
@@ -532,10 +517,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  init terminating in do_boot (Timeout)
-  
-  Crash dump is being written to: /dev/null...done
-  {"init terminating in do_boot","Timeout"}
+  Timeout
   ```
 
 - [ ] `$[?(@.a && @.b || @.c)]`
@@ -556,10 +538,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  init terminating in do_boot (Timeout)
-  
-  Crash dump is being written to: /dev/null...done
-  {"init terminating in do_boot","Timeout"}
+  Timeout
   ```
 
 - [ ] `$[?(@.key/10==5)]`
@@ -671,10 +650,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  init terminating in do_boot (Timeout)
-  
-  Crash dump is being written to: /dev/null...done
-  {"init terminating in do_boot","Timeout"}
+  Timeout
   ```
 
 - [ ] `$[?(@.key>=42)]`
@@ -724,10 +700,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  init terminating in do_boot (Timeout)
-  
-  Crash dump is being written to: /dev/null...done
-  {"init terminating in do_boot","Timeout"}
+  Timeout
   ```
 
 - [ ] `$[?(@.key<=42)]`
@@ -777,10 +750,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  init terminating in do_boot (Timeout)
-  
-  Crash dump is being written to: /dev/null...done
-  {"init terminating in do_boot","Timeout"}
+  Timeout
   ```
 
 - [ ] `$[?(@.key*2==100)]`
@@ -859,10 +829,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  init terminating in do_boot (Timeout)
-  
-  Crash dump is being written to: /dev/null...done
-  {"init terminating in do_boot","Timeout"}
+  Timeout
   ```
 
 - [ ] `$[?(!(@.key<42))]`
@@ -912,10 +879,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  init terminating in do_boot (Timeout)
-  
-  Crash dump is being written to: /dev/null...done
-  {"init terminating in do_boot","Timeout"}
+  Timeout
   ```
 
 - [ ] `$[?(@.name=~/hello.*/)]`
@@ -941,10 +905,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  init terminating in do_boot (Timeout)
-  
-  Crash dump is being written to: /dev/null...done
-  {"init terminating in do_boot","Timeout"}
+  Timeout
   ```
 
 - [ ] `$[?(@[*]>=4)]`
@@ -967,10 +928,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  init terminating in do_boot ({undef,[{jsonpath,start,$[?(@[*]>=4)],[]},{init,start_em,1,[]},{init,do_boot,3,[]}]})
-  
-  Crash dump is being written to: /dev/null...done
-  {"init terminating in do_boot",{undef,[{jsonpath,start,[["$[?(@[*]>=4)]"]],[]},{init,start_em,1,[]},{init,do_boot,3,[]}]}}
+  Timeout
   ```
 
 - [ ] `$.x[?(@[*]>=$.y[*])]`
@@ -1000,10 +958,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  init terminating in do_boot ({undef,[{jsonpath,start,$.x[?(@[*]>=$.y[*])],[]},{init,start_em,1,[]},{init,do_boot,3,[]}]})
-  
-  Crash dump is being written to: /dev/null...done
-  {"init terminating in do_boot",{undef,[{jsonpath,start,[["$.x[?(@[*]>=$.y[*])]"]],[]},{init,start_em,1,[]},{init,do_boot,3,[]}]}}
+  Timeout
   ```
 
 - [ ] `$[?(@.key=42)]`
@@ -1084,10 +1039,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  init terminating in do_boot (Timeout)
-  
-  Crash dump is being written to: /dev/null...done
-  {"init terminating in do_boot","Timeout"}
+  Timeout
   ```
 
 - [ ] `$[?(@.key===42)]`
@@ -1164,10 +1116,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  init terminating in do_boot (Timeout)
-  
-  Crash dump is being written to: /dev/null...done
-  {"init terminating in do_boot","Timeout"}
+  Timeout
   ```
 
 - [ ] `$[?(!@.key)]`
@@ -1214,10 +1163,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  init terminating in do_boot (Timeout)
-  
-  Crash dump is being written to: /dev/null...done
-  {"init terminating in do_boot","Timeout"}
+  Timeout
   ```
 
 - [ ] `$[(@.length-1)]`

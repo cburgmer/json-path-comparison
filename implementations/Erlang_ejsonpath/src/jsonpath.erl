@@ -28,26 +28,34 @@ execute(Selector, Doc) ->
                          end
                  end),
     receive
-        {_PidSpawned, ok, Result} -> Result;
-        {_PidSpawned, error, Reason} -> exit(Reason)
+        {_PidSpawned, ok, Result} -> {ok, Result};
+        {_PidSpawned, error, Reason} -> {error, Reason}
     after
-        TimeOut -> exit("Timeout")
+        TimeOut -> {error, "Timeout"}
     end.
+
+fail(Reason) ->
+    io:fwrite("~s~n", [Reason]),
+    init:stop(1).
 
 not_supported(Reason) ->
     io:fwrite("~s~n", [Reason]),
     init:stop(2).
 
-print_result(Selector, Doc) ->
-    try
-        Result = execute(Selector, Doc),
-        Json = jiffy:encode(Result),
-        io:fwrite("~s~n", [Json])
-    catch
-        _:{badmatch, {_, {_, ejsonpath_parse, Message}}} -> not_supported(Message)
+run(Selector, Doc) ->
+    case execute(Selector, Doc) of
+        {ok, Result} ->
+            Json = jiffy:encode(Result),
+            io:fwrite("~s~n", [Json]);
+        {error, {badmatch, {_, {_, ejsonpath_parse, Message}}}} ->
+            not_supported(Message);
+        {error, "Timeout"} ->
+            fail("Timeout");
+        {error, Reason} ->
+            exit(Reason)
     end.
 
 start([Selector]) ->
     Bin = read(),
     Doc = jiffy:decode(Bin, [return_maps]),
-    print_result(Selector, Doc).
+    run(Selector, Doc).
