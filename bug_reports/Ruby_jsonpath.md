@@ -489,7 +489,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  783: unexpected token at 'Hello World'
+  unexpected token at 'Hello World'
   ```
 
 - [ ] `$[']']`
