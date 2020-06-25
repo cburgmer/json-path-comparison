@@ -1892,6 +1892,26 @@ The following queries provide results that do not match those of other implement
   java.lang.Exception object must be an array.
   ```
 
+- [ ] `$[?((@.key<44)==false)]`
+  Input:
+  ```
+  [
+    {
+      "key": 42
+    },
+    {
+      "key": 43
+    },
+    {
+      "key": 44
+    }
+  ]
+  ```
+  Error:
+  ```
+  java.lang.NullPointerException nil
+  ```
+
 - [ ] `$[?(@[0:1]==1)]`
   Input:
   ```

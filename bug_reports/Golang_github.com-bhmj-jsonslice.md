@@ -881,6 +881,26 @@ The following queries provide results that do not match those of other implement
   unknown token at 9
   ```
 
+- [ ] `$[?((@.key<44)==false)]`
+  Input:
+  ```
+  [
+    {
+      "key": 42
+    },
+    {
+      "key": 43
+    },
+    {
+      "key": 44
+    }
+  ]
+  ```
+  Error:
+  ```
+  unknown token at 4
+  ```
+
 - [ ] `$[?(@.key==false)]`
   Input:
   ```

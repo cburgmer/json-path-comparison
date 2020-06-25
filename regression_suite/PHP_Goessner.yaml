@@ -192,6 +192,8 @@ queries:
     status: error
   - id: filter_expression_with_equals_array_with_single_quotes
     status: error
+  - id: filter_expression_with_equals_boolean_expression_value
+    status: error
   - id: filter_expression_with_equals_false
     status: error
   - id: filter_expression_with_equals_null

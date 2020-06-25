@@ -26,8 +26,6 @@
   selector: "$[?((@.key)==42)"
 - document: [{"key": 42}, {"key": 43}, {"key": 44}]
   selector: "$[?((@.key==42))"
-- document: [{"key": 42}, {"key": 43}, {"key": 44}]
-  selector: "$[?(@.key<44==false)]"
 - document: [1, 2, 3]
   selector: "$[?([1,2]<[3,4])]"
 - document: [{"key": [1, 2]}, {"key": [2]}, {"key": [3, 4]}, {"key": [1, 2, 5]}, {"key": [3, 3]}, {"key": [4, 3]}, {"key": [0, 0]}, {"key": 1}, {"key": 3}, {"key": 4}, {"key": 5}, {"key": [5, 6]}]

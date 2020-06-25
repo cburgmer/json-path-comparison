@@ -488,6 +488,26 @@ The following queries provide results that do not match those of other implement
   Error: 'Malformed filter query'
   ```
 
+- [ ] `$[?((@.key<44)==false)]`
+  Input:
+  ```
+  [
+    {
+      "key": 42
+    },
+    {
+      "key": 43
+    },
+    {
+      "key": 44
+    }
+  ]
+  ```
+  Error:
+  ```
+  Error: 'Malformed filter query'
+  ```
+
 - [ ] `$[?(@.*==2)]`
   Input:
   ```

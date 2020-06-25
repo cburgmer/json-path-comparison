@@ -1228,6 +1228,26 @@ The following queries provide results that do not match those of other implement
   unmatched parenthesis in expression: (true
   ```
 
+- [ ] `$[?((@.key<44)==false)]`
+  Input:
+  ```
+  [
+    {
+      "key": 42
+    },
+    {
+      "key": 43
+    },
+    {
+      "key": 44
+    }
+  ]
+  ```
+  Error:
+  ```
+  comparison of Float with String failed
+  ```
+
 - [ ] `$[?(@.key>42)]`
   Input:
   ```

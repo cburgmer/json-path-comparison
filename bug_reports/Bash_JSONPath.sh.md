@@ -2713,6 +2713,29 @@ The following queries provide results that do not match those of other implement
   
   ```
 
+- [ ] `$[?((@.key<44)==false)]`
+  Input:
+  ```
+  [
+    {
+      "key": 42
+    },
+    {
+      "key": 43
+    },
+    {
+      "key": 44
+    }
+  ]
+  ```
+  Error:
+  ```
+  grep: Unmatched ( or \(
+  Expecting value: line 3 column 1 (char 2)
+  
+  
+  ```
+
 - [ ] `$[?(@[0:1]==1)]`
   Input:
   ```
