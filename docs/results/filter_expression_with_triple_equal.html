@@ -326,24 +326,9 @@ Proposal (A)
 
 <p>Not supported</p>
 
-<pre><code>x 1:12-1:12 IntegerPart
+<pre><code>x 1:12-1:12 DocumentValue
 | $[?(@.key===42)]
 |            ^
-x 1:12-1:12 Number
-| $[?(@.key===42)]
-|            ^
-x 1:12-1:12 SimpleValue
-| $[?(@.key===42)]
-|            ^
-x 1:12-1:12 FilterValue
-| $[?(@.key===42)]
-|            ^
-o 1:5-1:10 HigherPrecedenceFilterExpression
-| $[?(@.key===42)]
-|     ^^^^^
-x 1:5-1:5 LogicalOr
-| $[?(@.key===42)]
-|     ^
 | x 1:12-1:12 IntegerPart
 | | $[?(@.key===42)]
 | |            ^
@@ -353,15 +338,20 @@ x 1:5-1:5 LogicalOr
 | x 1:12-1:12 SimpleValue
 | | $[?(@.key===42)]
 | |            ^
-| x 1:12-1:12 FilterValue
+| | 
+|/  
+x 1:12-1:12 FilterValue
+| $[?(@.key===42)]
+|            ^
+o 1:5-1:10 HigherPrecedenceFilterExpression
+| $[?(@.key===42)]
+|     ^^^^^
+x 1:5-1:5 LogicalOr
+| $[?(@.key===42)]
+|     ^
+| x 1:12-1:12 DocumentValue
 | | $[?(@.key===42)]
 | |            ^
-| o 1:5-1:10 HigherPrecedenceFilterExpression
-| | $[?(@.key===42)]
-| |     ^^^^^
-| x 1:5-1:5 LogicalAnd
-| | $[?(@.key===42)]
-| |     ^
 | | x 1:12-1:12 IntegerPart
 | | | $[?(@.key===42)]
 | | |            ^
@@ -371,6 +361,31 @@ x 1:5-1:5 LogicalOr
 | | x 1:12-1:12 SimpleValue
 | | | $[?(@.key===42)]
 | | |            ^
+| | | 
+| |/  
+| x 1:12-1:12 FilterValue
+| | $[?(@.key===42)]
+| |            ^
+| o 1:5-1:10 HigherPrecedenceFilterExpression
+| | $[?(@.key===42)]
+| |     ^^^^^
+| x 1:5-1:5 LogicalAnd
+| | $[?(@.key===42)]
+| |     ^
+| | x 1:12-1:12 DocumentValue
+| | | $[?(@.key===42)]
+| | |            ^
+| | | x 1:12-1:12 IntegerPart
+| | | | $[?(@.key===42)]
+| | | |            ^
+| | | x 1:12-1:12 Number
+| | | | $[?(@.key===42)]
+| | | |            ^
+| | | x 1:12-1:12 SimpleValue
+| | | | $[?(@.key===42)]
+| | | |            ^
+| | | | 
+| | |/  
 | | x 1:12-1:12 FilterValue
 | | | $[?(@.key===42)]
 | | |            ^

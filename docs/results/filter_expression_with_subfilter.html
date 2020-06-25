@@ -569,7 +569,7 @@ x 1:9-1:9 BracketChild
 x 1:8-1:8 ScalarOperator
 | $[?(@.a[?(@.price&gt;10)])]
 |        ^
-o 1:5-1:8 FilterValue
+o 1:5-1:8 DocumentValue
 | $[?(@.a[?(@.price&gt;10)])]
 |     ^^^
 o 1:5-1:8 UnaryFilterExpression
@@ -584,6 +584,9 @@ o 1:5-1:8 UnaryFilterExpression
 | x 1:8-1:8 ScalarOperator
 | | $[?(@.a[?(@.price&gt;10)])]
 | |        ^
+| o 1:5-1:8 DocumentValue
+| | $[?(@.a[?(@.price&gt;10)])]
+| |     ^^^
 | o 1:5-1:8 FilterValue
 | | $[?(@.a[?(@.price&gt;10)])]
 | |     ^^^
@@ -604,7 +607,7 @@ x 1:5-1:5 LogicalOr
 | x 1:8-1:8 ScalarOperator
 | | $[?(@.a[?(@.price&gt;10)])]
 | |        ^
-| o 1:5-1:8 FilterValue
+| o 1:5-1:8 DocumentValue
 | | $[?(@.a[?(@.price&gt;10)])]
 | |     ^^^
 | o 1:5-1:8 UnaryFilterExpression
@@ -619,6 +622,9 @@ x 1:5-1:5 LogicalOr
 | | x 1:8-1:8 ScalarOperator
 | | | $[?(@.a[?(@.price&gt;10)])]
 | | |        ^
+| | o 1:5-1:8 DocumentValue
+| | | $[?(@.a[?(@.price&gt;10)])]
+| | |     ^^^
 | | o 1:5-1:8 FilterValue
 | | | $[?(@.a[?(@.price&gt;10)])]
 | | |     ^^^
@@ -639,7 +645,7 @@ x 1:5-1:5 LogicalOr
 | | x 1:8-1:8 ScalarOperator
 | | | $[?(@.a[?(@.price&gt;10)])]
 | | |        ^
-| | o 1:5-1:8 FilterValue
+| | o 1:5-1:8 DocumentValue
 | | | $[?(@.a[?(@.price&gt;10)])]
 | | |     ^^^
 | | o 1:5-1:8 UnaryFilterExpression
@@ -654,6 +660,9 @@ x 1:5-1:5 LogicalOr
 | | | x 1:8-1:8 ScalarOperator
 | | | | $[?(@.a[?(@.price&gt;10)])]
 | | | |        ^
+| | | o 1:5-1:8 DocumentValue
+| | | | $[?(@.a[?(@.price&gt;10)])]
+| | | |     ^^^
 | | | o 1:5-1:8 FilterValue
 | | | | $[?(@.a[?(@.price&gt;10)])]
 | | | |     ^^^

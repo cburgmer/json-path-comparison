@@ -310,19 +310,54 @@ dotNET (Manatee.Json)
 Proposal (A)
 </h4>
 
-<pre><code>[
-  1,
-  3,
-  "nice",
-  true,
-  null,
-  false,
-  {},
-  [],
-  -1,
-  0,
-  ""
-]
+<p>Not supported</p>
+
+<pre><code>x 1:10-1:10 ComparisonOperator
+| $[?(false)]
+|          ^
+x 1:5-1:5 HigherPrecedenceFilterExpression
+| $[?(false)]
+|     ^
+| x 1:10-1:10 ComparisonOperator
+| | $[?(false)]
+| |          ^
+| x 1:5-1:5 HigherPrecedenceFilterExpression
+| | $[?(false)]
+| |     ^
+| x 1:5-1:5 LogicalOr
+| | $[?(false)]
+| |     ^
+| | x 1:10-1:10 ComparisonOperator
+| | | $[?(false)]
+| | |          ^
+| | x 1:5-1:5 HigherPrecedenceFilterExpression
+| | | $[?(false)]
+| | |     ^
+| | x 1:5-1:5 LogicalAnd
+| | | $[?(false)]
+| | |     ^
+| | | 
+|/ /  
+| | 
+|/  
+x 1:5-1:5 FilterExpression
+| $[?(false)]
+|     ^
+x 1:3-1:3 BracketElement
+| $[?(false)]
+|   ^
+x 1:3-1:3 BracketElements
+| $[?(false)]
+|   ^
+x 1:2-1:2 BracketChildren
+| $[?(false)]
+|  ^
+x 1:2-1:2 Operator
+| $[?(false)]
+|  ^
+o 1:1-1:2 Start
+  $[?(false)]
+  ^
 </code></pre>
 
 <h3>Errors</h3>

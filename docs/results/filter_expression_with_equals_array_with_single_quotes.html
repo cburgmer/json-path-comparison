@@ -361,24 +361,9 @@ Proposal (A)
 
 <p>Not supported</p>
 
-<pre><code>x 1:10-1:10 IntegerPart
+<pre><code>x 1:10-1:10 DocumentValue
 | $[?(@.d==['v1','v2'])]
 |          ^
-x 1:10-1:10 Number
-| $[?(@.d==['v1','v2'])]
-|          ^
-x 1:10-1:10 SimpleValue
-| $[?(@.d==['v1','v2'])]
-|          ^
-x 1:10-1:10 FilterValue
-| $[?(@.d==['v1','v2'])]
-|          ^
-o 1:5-1:8 HigherPrecedenceFilterExpression
-| $[?(@.d==['v1','v2'])]
-|     ^^^
-x 1:5-1:5 LogicalOr
-| $[?(@.d==['v1','v2'])]
-|     ^
 | x 1:10-1:10 IntegerPart
 | | $[?(@.d==['v1','v2'])]
 | |          ^
@@ -388,15 +373,20 @@ x 1:5-1:5 LogicalOr
 | x 1:10-1:10 SimpleValue
 | | $[?(@.d==['v1','v2'])]
 | |          ^
-| x 1:10-1:10 FilterValue
+| | 
+|/  
+x 1:10-1:10 FilterValue
+| $[?(@.d==['v1','v2'])]
+|          ^
+o 1:5-1:8 HigherPrecedenceFilterExpression
+| $[?(@.d==['v1','v2'])]
+|     ^^^
+x 1:5-1:5 LogicalOr
+| $[?(@.d==['v1','v2'])]
+|     ^
+| x 1:10-1:10 DocumentValue
 | | $[?(@.d==['v1','v2'])]
 | |          ^
-| o 1:5-1:8 HigherPrecedenceFilterExpression
-| | $[?(@.d==['v1','v2'])]
-| |     ^^^
-| x 1:5-1:5 LogicalAnd
-| | $[?(@.d==['v1','v2'])]
-| |     ^
 | | x 1:10-1:10 IntegerPart
 | | | $[?(@.d==['v1','v2'])]
 | | |          ^
@@ -406,6 +396,31 @@ x 1:5-1:5 LogicalOr
 | | x 1:10-1:10 SimpleValue
 | | | $[?(@.d==['v1','v2'])]
 | | |          ^
+| | | 
+| |/  
+| x 1:10-1:10 FilterValue
+| | $[?(@.d==['v1','v2'])]
+| |          ^
+| o 1:5-1:8 HigherPrecedenceFilterExpression
+| | $[?(@.d==['v1','v2'])]
+| |     ^^^
+| x 1:5-1:5 LogicalAnd
+| | $[?(@.d==['v1','v2'])]
+| |     ^
+| | x 1:10-1:10 DocumentValue
+| | | $[?(@.d==['v1','v2'])]
+| | |          ^
+| | | x 1:10-1:10 IntegerPart
+| | | | $[?(@.d==['v1','v2'])]
+| | | |          ^
+| | | x 1:10-1:10 Number
+| | | | $[?(@.d==['v1','v2'])]
+| | | |          ^
+| | | x 1:10-1:10 SimpleValue
+| | | | $[?(@.d==['v1','v2'])]
+| | | |          ^
+| | | | 
+| | |/  
 | | x 1:10-1:10 FilterValue
 | | | $[?(@.d==['v1','v2'])]
 | | |          ^

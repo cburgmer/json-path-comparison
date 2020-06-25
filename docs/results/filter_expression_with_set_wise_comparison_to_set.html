@@ -290,7 +290,7 @@ x 1:9-1:9 BracketChild
 x 1:8-1:8 ScalarOperator
 | $.x[?(@[*]&gt;=$.y[*])]
 |        ^
-o 1:7-1:8 FilterValue
+o 1:7-1:8 DocumentValue
 | $.x[?(@[*]&gt;=$.y[*])]
 |       ^
 o 1:7-1:8 UnaryFilterExpression
@@ -305,6 +305,9 @@ o 1:7-1:8 UnaryFilterExpression
 | x 1:8-1:8 ScalarOperator
 | | $.x[?(@[*]&gt;=$.y[*])]
 | |        ^
+| o 1:7-1:8 DocumentValue
+| | $.x[?(@[*]&gt;=$.y[*])]
+| |       ^
 | o 1:7-1:8 FilterValue
 | | $.x[?(@[*]&gt;=$.y[*])]
 | |       ^
@@ -325,7 +328,7 @@ x 1:7-1:7 LogicalOr
 | x 1:8-1:8 ScalarOperator
 | | $.x[?(@[*]&gt;=$.y[*])]
 | |        ^
-| o 1:7-1:8 FilterValue
+| o 1:7-1:8 DocumentValue
 | | $.x[?(@[*]&gt;=$.y[*])]
 | |       ^
 | o 1:7-1:8 UnaryFilterExpression
@@ -340,6 +343,9 @@ x 1:7-1:7 LogicalOr
 | | x 1:8-1:8 ScalarOperator
 | | | $.x[?(@[*]&gt;=$.y[*])]
 | | |        ^
+| | o 1:7-1:8 DocumentValue
+| | | $.x[?(@[*]&gt;=$.y[*])]
+| | |       ^
 | | o 1:7-1:8 FilterValue
 | | | $.x[?(@[*]&gt;=$.y[*])]
 | | |       ^
@@ -360,7 +366,7 @@ x 1:7-1:7 LogicalOr
 | | x 1:8-1:8 ScalarOperator
 | | | $.x[?(@[*]&gt;=$.y[*])]
 | | |        ^
-| | o 1:7-1:8 FilterValue
+| | o 1:7-1:8 DocumentValue
 | | | $.x[?(@[*]&gt;=$.y[*])]
 | | |       ^
 | | o 1:7-1:8 UnaryFilterExpression
@@ -375,6 +381,9 @@ x 1:7-1:7 LogicalOr
 | | | x 1:8-1:8 ScalarOperator
 | | | | $.x[?(@[*]&gt;=$.y[*])]
 | | | |        ^
+| | | o 1:7-1:8 DocumentValue
+| | | | $.x[?(@[*]&gt;=$.y[*])]
+| | | |       ^
 | | | o 1:7-1:8 FilterValue
 | | | | $.x[?(@[*]&gt;=$.y[*])]
 | | | |       ^

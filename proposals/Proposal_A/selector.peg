@@ -55,7 +55,7 @@ HigherPrecedenceFilterExpression
   / UnaryFilterExpression
 
 UnaryFilterExpression
-  = value:FilterValue { return ["hasValue", ["value", value]]; }
+  = value:DocumentValue { return ["hasValue", ["value", value]]; }
   / "!" ws expression:UnaryFilterExpression { return ["not", ["expression", expression]]; }
   / "(" ws expression:FilterExpression ws ")" { return expression; }
 
@@ -68,9 +68,12 @@ ComparisonOperator
   / ">" { return "greaterThan"; }
 
 FilterValue
+  = constant:SimpleValue { return ["constant", constant]; }
+  / DocumentValue
+
+DocumentValue
   = "@" operators:ScalarOperator* { return ["current", operators]; }
   / "$" operators:ScalarOperator* { return ["root", operators]; }
-  / constant:SimpleValue { return ["constant", constant]; }
 
 ScalarOperator
   = "." childName:DotChildName { return ['children', [['name', childName]]]; }

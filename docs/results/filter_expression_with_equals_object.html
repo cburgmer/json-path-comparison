@@ -373,24 +373,9 @@ Proposal (A)
 
 <p>Not supported</p>
 
-<pre><code>x 1:10-1:10 IntegerPart
+<pre><code>x 1:10-1:10 DocumentValue
 | $[?(@.d=={"k":"v"})]
 |          ^
-x 1:10-1:10 Number
-| $[?(@.d=={"k":"v"})]
-|          ^
-x 1:10-1:10 SimpleValue
-| $[?(@.d=={"k":"v"})]
-|          ^
-x 1:10-1:10 FilterValue
-| $[?(@.d=={"k":"v"})]
-|          ^
-o 1:5-1:8 HigherPrecedenceFilterExpression
-| $[?(@.d=={"k":"v"})]
-|     ^^^
-x 1:5-1:5 LogicalOr
-| $[?(@.d=={"k":"v"})]
-|     ^
 | x 1:10-1:10 IntegerPart
 | | $[?(@.d=={"k":"v"})]
 | |          ^
@@ -400,15 +385,20 @@ x 1:5-1:5 LogicalOr
 | x 1:10-1:10 SimpleValue
 | | $[?(@.d=={"k":"v"})]
 | |          ^
-| x 1:10-1:10 FilterValue
+| | 
+|/  
+x 1:10-1:10 FilterValue
+| $[?(@.d=={"k":"v"})]
+|          ^
+o 1:5-1:8 HigherPrecedenceFilterExpression
+| $[?(@.d=={"k":"v"})]
+|     ^^^
+x 1:5-1:5 LogicalOr
+| $[?(@.d=={"k":"v"})]
+|     ^
+| x 1:10-1:10 DocumentValue
 | | $[?(@.d=={"k":"v"})]
 | |          ^
-| o 1:5-1:8 HigherPrecedenceFilterExpression
-| | $[?(@.d=={"k":"v"})]
-| |     ^^^
-| x 1:5-1:5 LogicalAnd
-| | $[?(@.d=={"k":"v"})]
-| |     ^
 | | x 1:10-1:10 IntegerPart
 | | | $[?(@.d=={"k":"v"})]
 | | |          ^
@@ -418,6 +408,31 @@ x 1:5-1:5 LogicalOr
 | | x 1:10-1:10 SimpleValue
 | | | $[?(@.d=={"k":"v"})]
 | | |          ^
+| | | 
+| |/  
+| x 1:10-1:10 FilterValue
+| | $[?(@.d=={"k":"v"})]
+| |          ^
+| o 1:5-1:8 HigherPrecedenceFilterExpression
+| | $[?(@.d=={"k":"v"})]
+| |     ^^^
+| x 1:5-1:5 LogicalAnd
+| | $[?(@.d=={"k":"v"})]
+| |     ^
+| | x 1:10-1:10 DocumentValue
+| | | $[?(@.d=={"k":"v"})]
+| | |          ^
+| | | x 1:10-1:10 IntegerPart
+| | | | $[?(@.d=={"k":"v"})]
+| | | |          ^
+| | | x 1:10-1:10 Number
+| | | | $[?(@.d=={"k":"v"})]
+| | | |          ^
+| | | x 1:10-1:10 SimpleValue
+| | | | $[?(@.d=={"k":"v"})]
+| | | |          ^
+| | | | 
+| | |/  
 | | x 1:10-1:10 FilterValue
 | | | $[?(@.d=={"k":"v"})]
 | | |          ^

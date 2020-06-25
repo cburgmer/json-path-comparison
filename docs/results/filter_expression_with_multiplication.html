@@ -359,7 +359,7 @@ Proposal (A)
 | x 1:10-1:10 ScalarOperator
 | | $[?(@.key*2==100)]
 | |          ^
-| o 1:5-1:10 FilterValue
+| o 1:5-1:10 DocumentValue
 | | $[?(@.key*2==100)]
 | |     ^^^^^
 | o 1:5-1:10 UnaryFilterExpression
@@ -368,6 +368,9 @@ Proposal (A)
 | | x 1:10-1:10 ScalarOperator
 | | | $[?(@.key*2==100)]
 | | |          ^
+| | o 1:5-1:10 DocumentValue
+| | | $[?(@.key*2==100)]
+| | |     ^^^^^
 | | o 1:5-1:10 FilterValue
 | | | $[?(@.key*2==100)]
 | | |     ^^^^^
@@ -387,7 +390,7 @@ x 1:5-1:5 LogicalOr
 | | x 1:10-1:10 ScalarOperator
 | | | $[?(@.key*2==100)]
 | | |          ^
-| | o 1:5-1:10 FilterValue
+| | o 1:5-1:10 DocumentValue
 | | | $[?(@.key*2==100)]
 | | |     ^^^^^
 | | o 1:5-1:10 UnaryFilterExpression
@@ -396,6 +399,9 @@ x 1:5-1:5 LogicalOr
 | | | x 1:10-1:10 ScalarOperator
 | | | | $[?(@.key*2==100)]
 | | | |          ^
+| | | o 1:5-1:10 DocumentValue
+| | | | $[?(@.key*2==100)]
+| | | |     ^^^^^
 | | | o 1:5-1:10 FilterValue
 | | | | $[?(@.key*2==100)]
 | | | |     ^^^^^
@@ -415,7 +421,7 @@ x 1:5-1:5 LogicalOr
 | | | x 1:10-1:10 ScalarOperator
 | | | | $[?(@.key*2==100)]
 | | | |          ^
-| | | o 1:5-1:10 FilterValue
+| | | o 1:5-1:10 DocumentValue
 | | | | $[?(@.key*2==100)]
 | | | |     ^^^^^
 | | | o 1:5-1:10 UnaryFilterExpression
@@ -424,6 +430,9 @@ x 1:5-1:5 LogicalOr
 | | | | x 1:10-1:10 ScalarOperator
 | | | | | $[?(@.key*2==100)]
 | | | | |          ^
+| | | | o 1:5-1:10 DocumentValue
+| | | | | $[?(@.key*2==100)]
+| | | | |     ^^^^^
 | | | | o 1:5-1:10 FilterValue
 | | | | | $[?(@.key*2==100)]
 | | | | |     ^^^^^
