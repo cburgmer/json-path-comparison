@@ -152,7 +152,7 @@ queries:
     result: NOT_SUPPORTED
   - id: filter_expression_with_equals_boolean_expression_value
     status: open
-    result: NOT_SUPPORTED
+    result: [{"key": 42}, {"key": 43}]
   - id: filter_expression_with_equals_false
     status: open
     result: [{"key": false}]
