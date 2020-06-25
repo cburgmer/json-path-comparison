@@ -279,7 +279,7 @@ x 1:7-1:7 BracketChild
 x 1:6-1:6 ScalarOperator
 | $[?(@[*]&gt;=4)]
 |      ^
-o 1:5-1:6 FilterValue
+o 1:5-1:6 DocumentValue
 | $[?(@[*]&gt;=4)]
 |     ^
 o 1:5-1:6 UnaryFilterExpression
@@ -294,6 +294,9 @@ o 1:5-1:6 UnaryFilterExpression
 | x 1:6-1:6 ScalarOperator
 | | $[?(@[*]&gt;=4)]
 | |      ^
+| o 1:5-1:6 DocumentValue
+| | $[?(@[*]&gt;=4)]
+| |     ^
 | o 1:5-1:6 FilterValue
 | | $[?(@[*]&gt;=4)]
 | |     ^
@@ -314,7 +317,7 @@ x 1:5-1:5 LogicalOr
 | x 1:6-1:6 ScalarOperator
 | | $[?(@[*]&gt;=4)]
 | |      ^
-| o 1:5-1:6 FilterValue
+| o 1:5-1:6 DocumentValue
 | | $[?(@[*]&gt;=4)]
 | |     ^
 | o 1:5-1:6 UnaryFilterExpression
@@ -329,6 +332,9 @@ x 1:5-1:5 LogicalOr
 | | x 1:6-1:6 ScalarOperator
 | | | $[?(@[*]&gt;=4)]
 | | |      ^
+| | o 1:5-1:6 DocumentValue
+| | | $[?(@[*]&gt;=4)]
+| | |     ^
 | | o 1:5-1:6 FilterValue
 | | | $[?(@[*]&gt;=4)]
 | | |     ^
@@ -349,7 +355,7 @@ x 1:5-1:5 LogicalOr
 | | x 1:6-1:6 ScalarOperator
 | | | $[?(@[*]&gt;=4)]
 | | |      ^
-| | o 1:5-1:6 FilterValue
+| | o 1:5-1:6 DocumentValue
 | | | $[?(@[*]&gt;=4)]
 | | |     ^
 | | o 1:5-1:6 UnaryFilterExpression
@@ -364,6 +370,9 @@ x 1:5-1:5 LogicalOr
 | | | x 1:6-1:6 ScalarOperator
 | | | | $[?(@[*]&gt;=4)]
 | | | |      ^
+| | | o 1:5-1:6 DocumentValue
+| | | | $[?(@[*]&gt;=4)]
+| | | |     ^
 | | | o 1:5-1:6 FilterValue
 | | | | $[?(@[*]&gt;=4)]
 | | | |     ^

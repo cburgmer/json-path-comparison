@@ -294,7 +294,7 @@ Proposal (A)
 | x 1:6-1:6 ScalarOperator
 | | $[?(@[0:1]==[1])]
 | |      ^
-| o 1:5-1:6 FilterValue
+| o 1:5-1:6 DocumentValue
 | | $[?(@[0:1]==[1])]
 | |     ^
 | o 1:5-1:6 UnaryFilterExpression
@@ -303,6 +303,9 @@ Proposal (A)
 | | x 1:6-1:6 ScalarOperator
 | | | $[?(@[0:1]==[1])]
 | | |      ^
+| | o 1:5-1:6 DocumentValue
+| | | $[?(@[0:1]==[1])]
+| | |     ^
 | | o 1:5-1:6 FilterValue
 | | | $[?(@[0:1]==[1])]
 | | |     ^
@@ -322,7 +325,7 @@ x 1:5-1:5 LogicalOr
 | | x 1:6-1:6 ScalarOperator
 | | | $[?(@[0:1]==[1])]
 | | |      ^
-| | o 1:5-1:6 FilterValue
+| | o 1:5-1:6 DocumentValue
 | | | $[?(@[0:1]==[1])]
 | | |     ^
 | | o 1:5-1:6 UnaryFilterExpression
@@ -331,6 +334,9 @@ x 1:5-1:5 LogicalOr
 | | | x 1:6-1:6 ScalarOperator
 | | | | $[?(@[0:1]==[1])]
 | | | |      ^
+| | | o 1:5-1:6 DocumentValue
+| | | | $[?(@[0:1]==[1])]
+| | | |     ^
 | | | o 1:5-1:6 FilterValue
 | | | | $[?(@[0:1]==[1])]
 | | | |     ^
@@ -350,7 +356,7 @@ x 1:5-1:5 LogicalOr
 | | | x 1:6-1:6 ScalarOperator
 | | | | $[?(@[0:1]==[1])]
 | | | |      ^
-| | | o 1:5-1:6 FilterValue
+| | | o 1:5-1:6 DocumentValue
 | | | | $[?(@[0:1]==[1])]
 | | | |     ^
 | | | o 1:5-1:6 UnaryFilterExpression
@@ -359,6 +365,9 @@ x 1:5-1:5 LogicalOr
 | | | | x 1:6-1:6 ScalarOperator
 | | | | | $[?(@[0:1]==[1])]
 | | | | |      ^
+| | | | o 1:5-1:6 DocumentValue
+| | | | | $[?(@[0:1]==[1])]
+| | | | |     ^
 | | | | o 1:5-1:6 FilterValue
 | | | | | $[?(@[0:1]==[1])]
 | | | | |     ^

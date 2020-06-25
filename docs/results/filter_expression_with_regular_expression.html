@@ -386,7 +386,7 @@ Proposal (A)
 | x 1:11-1:11 ScalarOperator
 | | $[?(@.name=~/hello.*/)]
 | |           ^
-| o 1:5-1:11 FilterValue
+| o 1:5-1:11 DocumentValue
 | | $[?(@.name=~/hello.*/)]
 | |     ^^^^^^
 | o 1:5-1:11 UnaryFilterExpression
@@ -395,6 +395,9 @@ Proposal (A)
 | | x 1:11-1:11 ScalarOperator
 | | | $[?(@.name=~/hello.*/)]
 | | |           ^
+| | o 1:5-1:11 DocumentValue
+| | | $[?(@.name=~/hello.*/)]
+| | |     ^^^^^^
 | | o 1:5-1:11 FilterValue
 | | | $[?(@.name=~/hello.*/)]
 | | |     ^^^^^^
@@ -414,7 +417,7 @@ x 1:5-1:5 LogicalOr
 | | x 1:11-1:11 ScalarOperator
 | | | $[?(@.name=~/hello.*/)]
 | | |           ^
-| | o 1:5-1:11 FilterValue
+| | o 1:5-1:11 DocumentValue
 | | | $[?(@.name=~/hello.*/)]
 | | |     ^^^^^^
 | | o 1:5-1:11 UnaryFilterExpression
@@ -423,6 +426,9 @@ x 1:5-1:5 LogicalOr
 | | | x 1:11-1:11 ScalarOperator
 | | | | $[?(@.name=~/hello.*/)]
 | | | |           ^
+| | | o 1:5-1:11 DocumentValue
+| | | | $[?(@.name=~/hello.*/)]
+| | | |     ^^^^^^
 | | | o 1:5-1:11 FilterValue
 | | | | $[?(@.name=~/hello.*/)]
 | | | |     ^^^^^^
@@ -442,7 +448,7 @@ x 1:5-1:5 LogicalOr
 | | | x 1:11-1:11 ScalarOperator
 | | | | $[?(@.name=~/hello.*/)]
 | | | |           ^
-| | | o 1:5-1:11 FilterValue
+| | | o 1:5-1:11 DocumentValue
 | | | | $[?(@.name=~/hello.*/)]
 | | | |     ^^^^^^
 | | | o 1:5-1:11 UnaryFilterExpression
@@ -451,6 +457,9 @@ x 1:5-1:5 LogicalOr
 | | | | x 1:11-1:11 ScalarOperator
 | | | | | $[?(@.name=~/hello.*/)]
 | | | | |           ^
+| | | | o 1:5-1:11 DocumentValue
+| | | | | $[?(@.name=~/hello.*/)]
+| | | | |     ^^^^^^
 | | | | o 1:5-1:11 FilterValue
 | | | | | $[?(@.name=~/hello.*/)]
 | | | | |     ^^^^^^
