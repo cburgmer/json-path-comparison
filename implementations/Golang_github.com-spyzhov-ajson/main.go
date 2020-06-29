@@ -17,6 +17,12 @@ func main() {
 		os.Exit(1)
 	}
 
+	_, err = ajson.ParseJSONPath(selector)
+	if err != nil {
+		fmt.Fprintln(os.Stderr, err)
+		os.Exit(2)
+	}
+
 
 	nodes, err := ajson.JSONPath(data, selector)
 	if err != nil {

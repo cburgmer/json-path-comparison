@@ -59,8 +59,6 @@ queries:
   - id: bracket_notation_with_quoted_special_characters_combined
     status: open
     result: [42]
-  - id: bracket_notation_with_quoted_string_and_unescaped_single_quote
-    status: error
   - id: bracket_notation_with_quoted_wildcard_literal_on_object_without_key
     status: open
     result: []
@@ -115,7 +113,8 @@ queries:
   - id: dot_notation_with_single_quotes_and_dot
     status: error
   - id: dot_notation_without_root
-    status: error
+    status: open
+    result: NOT_SUPPORTED
   - id: filter_expression_after_dot_notation_with_wildcard_after_recursive_descent
     status: open
     result: [{"id": 3, "name": "another"}, {"id": 4, "name": "more"}, {"id": 5, "name": "next to last"}]
@@ -273,8 +272,6 @@ queries:
     status: fail
     result: []
   - id: filter_expression_without_value
-    status: error
-  - id: parens_notation
     status: error
   - id: recursive_descent
     status: open

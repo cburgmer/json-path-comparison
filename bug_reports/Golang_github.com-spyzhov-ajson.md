@@ -39,22 +39,6 @@ The following queries provide results that do not match those of other implement
   ]
   ```
 
-- [ ] `$['single'quote']`
-  Input:
-  ```
-  {
-    "single'quote": "value"
-  }
-  ```
-  Expected output:
-  ```
-  NOT_SUPPORTED
-  ```
-  Error:
-  ```
-  unexpected end of file
-  ```
-
 - [ ] `$['two'.'some']`
   Input:
   ```
@@ -187,18 +171,6 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   unexpected end of file
-  ```
-
-- [ ] `key`
-  Input:
-  ```
-  {
-    "key": "value"
-  }
-  ```
-  Error:
-  ```
-  wrong symbol 'k' at 0
   ```
 
 - [ ] `$[?()]`
@@ -991,24 +963,6 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   wrong request: wrong request: ?(!@.key)
-  ```
-
-- [ ] `$(key,more)`
-  Input:
-  ```
-  {
-    "key": 1,
-    "some": 2,
-    "more": 3
-  }
-  ```
-  Expected output:
-  ```
-  NOT_SUPPORTED
-  ```
-  Error:
-  ```
-  wrong symbol '(' at 1
   ```
 
 - [ ] `$[?(@.key<3),?(@.key>6)]`
