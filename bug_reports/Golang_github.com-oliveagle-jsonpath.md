@@ -2262,11 +2262,31 @@ The following queries provide results that do not match those of other implement
       "b": true
     },
     {
+      "a": true,
+      "b": true,
+      "c": true
+    },
+    {
+      "b": true,
+      "c": true
+    },
+    {
+      "a": true,
+      "c": true
+    },
+    {
+      "a": true
+    },
+    {
+      "b": true
+    },
+    {
       "c": true
     },
     {
       "d": true
-    }
+    },
+    {}
   ]
   ```
   Error:

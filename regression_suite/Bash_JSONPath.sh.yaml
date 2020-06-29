@@ -312,7 +312,7 @@ queries:
     status: error
   - id: filter_expression_with_different_ungrouped_operators
     status: open
-    result: [{"a": true, "b": true}, {"c": true}, {"d": true}]
+    result: [{"a": true, "b": true}, {"a": true, "b": true, "c": true}, {"b": true, "c": true}, {"a": true, "c": true}, {"a": true}, {"b": true}, {"c": true}, {"d": true}]
   - id: filter_expression_with_division
     status: open
     result: {"key/10": 5}

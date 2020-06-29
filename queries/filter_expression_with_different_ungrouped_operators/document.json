@@ -4,9 +4,29 @@
     "b": true
   },
   {
+    "a": true,
+    "b": true,
+    "c": true
+  },
+  {
+    "b": true,
+    "c": true
+  },
+  {
+    "a": true,
+    "c": true
+  },
+  {
+    "a": true
+  },
+  {
+    "b": true
+  },
+  {
     "c": true
   },
   {
     "d": true
-  }
+  },
+  {}
 ]
