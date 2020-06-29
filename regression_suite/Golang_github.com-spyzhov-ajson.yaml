@@ -6,14 +6,15 @@
 
 implementation: Golang_github.com-spyzhov-ajson
 queries:
-  - id: array_slice_with_large_number_for_end
-    status: error
   - id: array_slice_with_large_number_for_end_and_negative_step
-    status: error
+    status: open
+    result: ["third", "second", "first"]
   - id: array_slice_with_large_number_for_start
-    status: error
+    status: open
+    result: ["first", "second"]
   - id: array_slice_with_large_number_for_start_end_negative_step
-    status: error
+    status: open
+    result: ["fifth", "forth"]
   - id: array_slice_with_negative_step
     status: open
     result: ["forth", "second"]
@@ -94,7 +95,8 @@ queries:
     status: fail
     result: [{"": 9001, "''": "nice", "key": 42}]
   - id: dot_notation_with_key_named_length_on_array
-    status: error
+    status: fail
+    result: [3]
   - id: dot_notation_with_key_root_literal
     status: open
     result: [{"$": "value"}]
@@ -151,8 +153,7 @@ queries:
     status: open
     result: [{"key": 50}]
   - id: filter_expression_with_empty_expression
-    status: fail
-    result: []
+    status: error
   - id: filter_expression_with_equals
     status: open
     result: [{"key": 42}]
