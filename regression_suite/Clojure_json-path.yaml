@@ -265,9 +265,17 @@ queries:
   - id: filter_expression_with_boolean_and_operator
     status: open
     result: [{"key": 43}, {"key": 44}]
+  - id: filter_expression_with_boolean_and_operator_and_value_false
+    status: error
+  - id: filter_expression_with_boolean_and_operator_and_value_true
+    status: error
   - id: filter_expression_with_boolean_or_operator
     status: open
     result: [{"key": 44}]
+  - id: filter_expression_with_boolean_or_operator_and_value_false
+    status: error
+  - id: filter_expression_with_boolean_or_operator_and_value_true
+    status: error
   - id: filter_expression_with_bracket_notation
     status: error
   - id: filter_expression_with_bracket_notation_and_current_object_literal

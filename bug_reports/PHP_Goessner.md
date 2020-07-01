@@ -614,6 +614,94 @@ The following queries provide results that do not match those of other implement
   ArgumentCountError
   ```
 
+- [ ] `$[?(@.key>0 && false)]`
+  Input:
+  ```
+  [
+    {
+      "key": 1
+    },
+    {
+      "key": 3
+    },
+    {
+      "key": "nice"
+    },
+    {
+      "key": true
+    },
+    {
+      "key": null
+    },
+    {
+      "key": false
+    },
+    {
+      "key": {}
+    },
+    {
+      "key": []
+    },
+    {
+      "key": -1
+    },
+    {
+      "key": 0
+    },
+    {
+      "key": ""
+    }
+  ]
+  ```
+  Error:
+  ```
+  ArgumentCountError
+  ```
+
+- [ ] `$[?(@.key>0 && true)]`
+  Input:
+  ```
+  [
+    {
+      "key": 1
+    },
+    {
+      "key": 3
+    },
+    {
+      "key": "nice"
+    },
+    {
+      "key": true
+    },
+    {
+      "key": null
+    },
+    {
+      "key": false
+    },
+    {
+      "key": {}
+    },
+    {
+      "key": []
+    },
+    {
+      "key": -1
+    },
+    {
+      "key": 0
+    },
+    {
+      "key": ""
+    }
+  ]
+  ```
+  Error:
+  ```
+  ArgumentCountError
+  ```
+
 - [ ] `$[?(@.key>43 || @.key<43)]`
   Input:
   ```
@@ -626,6 +714,94 @@ The following queries provide results that do not match those of other implement
     },
     {
       "key": 44
+    }
+  ]
+  ```
+  Error:
+  ```
+  ArgumentCountError
+  ```
+
+- [ ] `$[?(@.key>0 || false)]`
+  Input:
+  ```
+  [
+    {
+      "key": 1
+    },
+    {
+      "key": 3
+    },
+    {
+      "key": "nice"
+    },
+    {
+      "key": true
+    },
+    {
+      "key": null
+    },
+    {
+      "key": false
+    },
+    {
+      "key": {}
+    },
+    {
+      "key": []
+    },
+    {
+      "key": -1
+    },
+    {
+      "key": 0
+    },
+    {
+      "key": ""
+    }
+  ]
+  ```
+  Error:
+  ```
+  ArgumentCountError
+  ```
+
+- [ ] `$[?(@.key>0 || true)]`
+  Input:
+  ```
+  [
+    {
+      "key": 1
+    },
+    {
+      "key": 3
+    },
+    {
+      "key": "nice"
+    },
+    {
+      "key": true
+    },
+    {
+      "key": null
+    },
+    {
+      "key": false
+    },
+    {
+      "key": {}
+    },
+    {
+      "key": []
+    },
+    {
+      "key": -1
+    },
+    {
+      "key": 0
+    },
+    {
+      "key": ""
     }
   ]
   ```

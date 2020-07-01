@@ -1149,6 +1149,182 @@ The following queries provide results that do not match those of other implement
   String can't be coerced into Float
   ```
 
+- [ ] `$[?(@.key>0 && false)]`
+  Input:
+  ```
+  [
+    {
+      "key": 1
+    },
+    {
+      "key": 3
+    },
+    {
+      "key": "nice"
+    },
+    {
+      "key": true
+    },
+    {
+      "key": null
+    },
+    {
+      "key": false
+    },
+    {
+      "key": {}
+    },
+    {
+      "key": []
+    },
+    {
+      "key": -1
+    },
+    {
+      "key": 0
+    },
+    {
+      "key": ""
+    }
+  ]
+  ```
+  Error:
+  ```
+  comparison of String with 0.0 failed
+  ```
+
+- [ ] `$[?(@.key>0 && true)]`
+  Input:
+  ```
+  [
+    {
+      "key": 1
+    },
+    {
+      "key": 3
+    },
+    {
+      "key": "nice"
+    },
+    {
+      "key": true
+    },
+    {
+      "key": null
+    },
+    {
+      "key": false
+    },
+    {
+      "key": {}
+    },
+    {
+      "key": []
+    },
+    {
+      "key": -1
+    },
+    {
+      "key": 0
+    },
+    {
+      "key": ""
+    }
+  ]
+  ```
+  Error:
+  ```
+  comparison of String with 0.0 failed
+  ```
+
+- [ ] `$[?(@.key>0 || false)]`
+  Input:
+  ```
+  [
+    {
+      "key": 1
+    },
+    {
+      "key": 3
+    },
+    {
+      "key": "nice"
+    },
+    {
+      "key": true
+    },
+    {
+      "key": null
+    },
+    {
+      "key": false
+    },
+    {
+      "key": {}
+    },
+    {
+      "key": []
+    },
+    {
+      "key": -1
+    },
+    {
+      "key": 0
+    },
+    {
+      "key": ""
+    }
+  ]
+  ```
+  Error:
+  ```
+  comparison of String with 0.0 failed
+  ```
+
+- [ ] `$[?(@.key>0 || true)]`
+  Input:
+  ```
+  [
+    {
+      "key": 1
+    },
+    {
+      "key": 3
+    },
+    {
+      "key": "nice"
+    },
+    {
+      "key": true
+    },
+    {
+      "key": null
+    },
+    {
+      "key": false
+    },
+    {
+      "key": {}
+    },
+    {
+      "key": []
+    },
+    {
+      "key": -1
+    },
+    {
+      "key": 0
+    },
+    {
+      "key": ""
+    }
+  ]
+  ```
+  Error:
+  ```
+  comparison of String with 0.0 failed
+  ```
+
 - [ ] `$[?(@[1]=='b')]`
   Input:
   ```

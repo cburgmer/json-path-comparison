@@ -146,9 +146,21 @@ queries:
   - id: filter_expression_with_boolean_and_operator
     status: open
     result: [{"key": 43}]
+  - id: filter_expression_with_boolean_and_operator_and_value_false
+    status: open
+    result: NOT_FOUND
+  - id: filter_expression_with_boolean_and_operator_and_value_true
+    status: open
+    result: [{"key": 1}, {"key": 3}, {"key": true}]
   - id: filter_expression_with_boolean_or_operator
     status: open
     result: [{"key": 42}, {"key": 44}]
+  - id: filter_expression_with_boolean_or_operator_and_value_false
+    status: open
+    result: [{"key": 1}, {"key": 3}, {"key": true}]
+  - id: filter_expression_with_boolean_or_operator_and_value_true
+    status: open
+    result: [{"key": 1}, {"key": 3}, {"key": "nice"}, {"key": true}, {"key": null}, {"key": false}, {"key": {}}, {"key": []}, {"key": -1}, {"key": 0}, {"key": ""}]
   - id: filter_expression_with_bracket_notation_and_current_object_literal
     status: fail
     result: NOT_FOUND

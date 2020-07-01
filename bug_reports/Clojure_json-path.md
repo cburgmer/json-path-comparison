@@ -1591,6 +1591,182 @@ The following queries provide results that do not match those of other implement
   java.lang.NullPointerException nil
   ```
 
+- [ ] `$[?(@.key>0 && false)]`
+  Input:
+  ```
+  [
+    {
+      "key": 1
+    },
+    {
+      "key": 3
+    },
+    {
+      "key": "nice"
+    },
+    {
+      "key": true
+    },
+    {
+      "key": null
+    },
+    {
+      "key": false
+    },
+    {
+      "key": {}
+    },
+    {
+      "key": []
+    },
+    {
+      "key": -1
+    },
+    {
+      "key": 0
+    },
+    {
+      "key": ""
+    }
+  ]
+  ```
+  Error:
+  ```
+  java.lang.ClassCastException class java.lang.String cannot be cast to class java.lang.Number (java.lang.String and java.lang.Number are in module java.base of loader 'bootstrap')
+  ```
+
+- [ ] `$[?(@.key>0 && true)]`
+  Input:
+  ```
+  [
+    {
+      "key": 1
+    },
+    {
+      "key": 3
+    },
+    {
+      "key": "nice"
+    },
+    {
+      "key": true
+    },
+    {
+      "key": null
+    },
+    {
+      "key": false
+    },
+    {
+      "key": {}
+    },
+    {
+      "key": []
+    },
+    {
+      "key": -1
+    },
+    {
+      "key": 0
+    },
+    {
+      "key": ""
+    }
+  ]
+  ```
+  Error:
+  ```
+  java.lang.ClassCastException class java.lang.String cannot be cast to class java.lang.Number (java.lang.String and java.lang.Number are in module java.base of loader 'bootstrap')
+  ```
+
+- [ ] `$[?(@.key>0 || false)]`
+  Input:
+  ```
+  [
+    {
+      "key": 1
+    },
+    {
+      "key": 3
+    },
+    {
+      "key": "nice"
+    },
+    {
+      "key": true
+    },
+    {
+      "key": null
+    },
+    {
+      "key": false
+    },
+    {
+      "key": {}
+    },
+    {
+      "key": []
+    },
+    {
+      "key": -1
+    },
+    {
+      "key": 0
+    },
+    {
+      "key": ""
+    }
+  ]
+  ```
+  Error:
+  ```
+  java.lang.ClassCastException class java.lang.String cannot be cast to class java.lang.Number (java.lang.String and java.lang.Number are in module java.base of loader 'bootstrap')
+  ```
+
+- [ ] `$[?(@.key>0 || true)]`
+  Input:
+  ```
+  [
+    {
+      "key": 1
+    },
+    {
+      "key": 3
+    },
+    {
+      "key": "nice"
+    },
+    {
+      "key": true
+    },
+    {
+      "key": null
+    },
+    {
+      "key": false
+    },
+    {
+      "key": {}
+    },
+    {
+      "key": []
+    },
+    {
+      "key": -1
+    },
+    {
+      "key": 0
+    },
+    {
+      "key": ""
+    }
+  ]
+  ```
+  Error:
+  ```
+  java.lang.ClassCastException class java.lang.String cannot be cast to class java.lang.Number (java.lang.String and java.lang.Number are in module java.base of loader 'bootstrap')
+  ```
+
 - [ ] `$[?(@['key']==42)]`
   Input:
   ```
