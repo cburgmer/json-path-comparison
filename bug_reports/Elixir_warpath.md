@@ -137,6 +137,30 @@ The following queries provide results that do not match those of other implement
   Jason.DecodeError
   ```
 
+- [ ] `$[0:2].key`
+  Input:
+  ```
+  [
+    {
+      "key": "ey"
+    },
+    {
+      "key": "bee"
+    },
+    {
+      "key": "see"
+    }
+  ]
+  ```
+  Expected output:
+  ```
+  ["ey", "bee"]
+  ```
+  Error:
+  ```
+  You are trying to traverse a list using dot notation '.key', that it's not allowed for list type. You can use something like '[*].key' instead.
+  ```
+
 - [ ] `$.key`
   Input:
   ```

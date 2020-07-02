@@ -202,6 +202,9 @@ queries:
     status: error
   - id: dot_bracket_notation_without_quotes
     status: error
+  - id: dot_notation_after_array_slice
+    status: fail
+    result: "ey"
   - id: dot_notation_after_bracket_notation_after_recursive_descent
     status: error
   - id: dot_notation_after_bracket_notation_with_wildcard_on_some_matching

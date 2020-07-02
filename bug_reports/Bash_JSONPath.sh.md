@@ -1301,6 +1301,37 @@ The following queries provide results that do not match those of other implement
   }
   ```
 
+- [ ] `$[0:2].key`
+  Input:
+  ```
+  [
+    {
+      "key": "ey"
+    },
+    {
+      "key": "bee"
+    },
+    {
+      "key": "see"
+    }
+  ]
+  ```
+  Expected output:
+  ```
+  ["ey", "bee"]
+  ```
+  Actual output:
+  ```
+  [
+    {
+      "key": "ey"
+    },
+    {
+      "key": "bee"
+    }
+  ]
+  ```
+
 - [ ] `$..[1].key`
   Input:
   ```
