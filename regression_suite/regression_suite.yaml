@@ -415,6 +415,10 @@ queries:
     document: {"key": "value"}
     consensus: ["value"]
     scalar-consensus: "value"
+  - id: dot_notation_after_array_slice
+    selector: "$[0:2].key"
+    document: [{"key": "ey"}, {"key": "bee"}, {"key": "see"}]
+    consensus: ["ey", "bee"]
   - id: dot_notation_after_bracket_notation_after_recursive_descent
     selector: "$..[1].key"
     document: {"k": [{"key": "some value"}, {"key": 42}], "kk": [[{"key": 100}, {"key": 200}, {"key": 300}], [{"key": 400}, {"key": 500}, {"key": 600}]], "key": [0, 1]}

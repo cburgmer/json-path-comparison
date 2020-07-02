@@ -179,6 +179,9 @@ queries:
   - id: dot_notation
     status: fail
     result: {"key": "value"}
+  - id: dot_notation_after_array_slice
+    status: fail
+    result: [{"key": "ey"}, {"key": "bee"}]
   - id: dot_notation_after_bracket_notation_after_recursive_descent
     status: error
   - id: dot_notation_after_bracket_notation_with_wildcard

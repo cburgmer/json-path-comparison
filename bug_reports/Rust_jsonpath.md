@@ -1072,6 +1072,34 @@ The following queries provide results that do not match those of other implement
   parsing error
   ```
 
+- [ ] `$[0:2].key`
+  Input:
+  ```
+  [
+    {
+      "key": "ey"
+    },
+    {
+      "key": "bee"
+    },
+    {
+      "key": "see"
+    }
+  ]
+  ```
+  Expected output:
+  ```
+  ["ey", "bee"]
+  ```
+  Actual output:
+  ```
+  [
+    "ey",
+    "bee",
+    "see"
+  ]
+  ```
+
 - [ ] `$[*].a`
   Input:
   ```

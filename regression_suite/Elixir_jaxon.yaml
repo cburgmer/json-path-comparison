@@ -173,6 +173,8 @@ queries:
     status: error
   - id: dot_bracket_notation_without_quotes
     status: error
+  - id: dot_notation_after_array_slice
+    status: error
   - id: dot_notation_after_bracket_notation_after_recursive_descent
     status: open
     result: []
