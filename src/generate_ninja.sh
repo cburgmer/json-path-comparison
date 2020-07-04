@@ -51,7 +51,7 @@ check_dependencies() {
 ninja_rules() {
     cat <<EOF
 rule configure
-  command = ./src/generate_ninja.sh
+  command = LANG=en_US.UTF-8 LC_ALL= LC_COLLATE=C ./src/generate_ninja.sh
   generator = 1
 build build.ninja: configure | ./src/generate_ninja.sh queries/ implementations/
 
