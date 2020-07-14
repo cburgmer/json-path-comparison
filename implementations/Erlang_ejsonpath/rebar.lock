@@ -1,8 +1,8 @@
 {"1.1.0",
 [{<<"ejsonpath">>,{pkg,<<"ejsonpath">>,<<"0.2.1">>},0},
- {<<"jiffy">>,{pkg,<<"jiffy">>,<<"1.0.4">>},0}]}.
+ {<<"jiffy">>,{pkg,<<"jiffy">>,<<"1.0.5">>},0}]}.
 [
 {pkg_hash,[
  {<<"ejsonpath">>, <<"E60F9FC3CA1D26407DB107DAAF40649BEE86AADDAE6004E7EAAE588752F318D7">>},
- {<<"jiffy">>, <<"72ADEFF75C52A2FF07DE738F0813768ABE7CE158026CC1115A170340259C0CAA">>}]}
+ {<<"jiffy">>, <<"A69B58FAF7123534C20E1B0B7AE97AC52079CA02ED4B6989B4B380179CD63A54">>}]}
 ].
