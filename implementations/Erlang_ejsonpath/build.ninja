@@ -2,7 +2,8 @@ root = implementations/Erlang_ejsonpath
 builddir = $root/build
 
 rule compile
-  command = (cd $root && rebar3 compile)
+  # Work around for https://github.com/cburgmer/json-path-comparison/issues/62
+  command = (cd $root && PATH="/usr/local/opt/erlang@22/bin:$$PATH" rebar3 compile)
 
 build $builddir/default/lib/jsonpath/ebin/jsonpath.beam: compile | $root/src/jsonpath.erl
 
