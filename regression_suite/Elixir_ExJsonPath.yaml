@@ -105,7 +105,7 @@ queries:
     status: open
     result: NOT_SUPPORTED
   - id: dot_notation_after_bracket_notation_after_recursive_descent
-    status: open
+    status: fail
     result: NOT_SUPPORTED
   - id: dot_notation_after_bracket_notation_with_wildcard
     status: fail

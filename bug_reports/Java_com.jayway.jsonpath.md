@@ -349,6 +349,66 @@ The following queries provide results that do not match those of other implement
   com.jayway.jsonpath.InvalidPathException: Found empty property at index 5
   ```
 
+- [ ] `$..[1].key`
+  Input:
+  ```
+  {
+    "k": [
+      {
+        "key": "some value"
+      },
+      {
+        "key": 42
+      }
+    ],
+    "kk": [
+      [
+        {
+          "key": 100
+        },
+        {
+          "key": 200
+        },
+        {
+          "key": 300
+        }
+      ],
+      [
+        {
+          "key": 400
+        },
+        {
+          "key": 500
+        },
+        {
+          "key": 600
+        }
+      ]
+    ],
+    "key": [
+      0,
+      1
+    ]
+  }
+  ```
+  Expected output (in any order as no consensus on ordering exists):
+  ```
+  [200, 42, 500]
+  ```
+  Actual output:
+  ```
+  [
+    "some value",
+    100,
+    200,
+    300,
+    400,
+    42,
+    500,
+    600
+  ]
+  ```
+
 - [ ] `$['key','another']`
   Input:
   ```
