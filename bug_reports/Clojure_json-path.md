@@ -2861,6 +2861,39 @@ The following queries provide results that do not match those of other implement
   java.lang.Exception object must be an array.
   ```
 
+- [ ] `$..['c','d']`
+  Input:
+  ```
+  [
+    {
+      "c": "cc1",
+      "d": "dd1",
+      "e": "ee1"
+    },
+    {
+      "c": "cc2",
+      "child": {
+        "d": "dd2"
+      }
+    },
+    {
+      "c": "cc3"
+    },
+    {
+      "d": "dd4"
+    },
+    {
+      "child": {
+        "c": "cc5"
+      }
+    }
+  ]
+  ```
+  Error:
+  ```
+  java.lang.NumberFormatException For input string: "c"
+  ```
+
 - [ ] `$['missing','key']`
   Input:
   ```

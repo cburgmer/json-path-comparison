@@ -897,6 +897,10 @@ queries:
   - id: union_with_keys_after_dot_notation_with_wildcard
     selector: "$.*['c','d']"
     document: [{"c": "cc1", "d": "dd1", "e": "ee1"}, {"c": "cc2", "d": "dd2", "e": "ee2"}]
+  - id: union_with_keys_after_recursive_descent
+    selector: "$..['c','d']"
+    document: [{"c": "cc1", "d": "dd1", "e": "ee1"}, {"c": "cc2", "child": {"d": "dd2"}}, {"c": "cc3"}, {"d": "dd4"}, {"child": {"c": "cc5"}}]
+    ordered: false
   - id: union_with_keys_on_object_without_key
     selector: "$['missing','key']"
     document: {"key": "value", "another": "entry"}

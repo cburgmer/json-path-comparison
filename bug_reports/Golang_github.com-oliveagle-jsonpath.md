@@ -3165,6 +3165,39 @@ The following queries provide results that do not match those of other implement
   strconv.Atoi: parsing "'c'": invalid syntax
   ```
 
+- [ ] `$..['c','d']`
+  Input:
+  ```
+  [
+    {
+      "c": "cc1",
+      "d": "dd1",
+      "e": "ee1"
+    },
+    {
+      "c": "cc2",
+      "child": {
+        "d": "dd2"
+      }
+    },
+    {
+      "c": "cc3"
+    },
+    {
+      "d": "dd4"
+    },
+    {
+      "child": {
+        "c": "cc5"
+      }
+    }
+  ]
+  ```
+  Error:
+  ```
+  strconv.Atoi: parsing "'c'": invalid syntax
+  ```
+
 - [ ] `$['missing','key']`
   Input:
   ```

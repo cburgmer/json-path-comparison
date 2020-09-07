@@ -396,6 +396,8 @@ queries:
     result: []
   - id: union_with_keys_after_dot_notation_with_wildcard
     status: error
+  - id: union_with_keys_after_recursive_descent
+    status: error
   - id: union_with_keys_on_object_without_key
     status: error
   - id: union_with_numbers_in_decreasing_order
