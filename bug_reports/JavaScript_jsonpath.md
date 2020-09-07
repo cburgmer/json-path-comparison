@@ -479,6 +479,47 @@ The following queries provide results that do not match those of other implement
   []
   ```
 
+- [ ] `$.*[?(@..child)]`
+  Input:
+  ```
+  [
+    {
+      "key": [
+        {
+          "child": 1
+        },
+        {
+          "child": 2
+        }
+      ]
+    },
+    {
+      "key": [
+        {
+          "child": 2
+        }
+      ]
+    },
+    {
+      "key": [
+        {}
+      ]
+    },
+    {
+      "key": [
+        {
+          "something": 42
+        }
+      ]
+    },
+    {}
+  ]
+  ```
+  Error:
+  ```
+  Line 1: Unexpected token .
+  ```
+
 - [ ] `$`
   Input:
   ```

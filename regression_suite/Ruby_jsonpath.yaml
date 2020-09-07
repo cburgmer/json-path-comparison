@@ -346,6 +346,9 @@ queries:
   - id: filter_expression_with_value_false
     status: open
     result: [1, 3, "nice", true, {}, [], -1, 0, ""]
+  - id: filter_expression_with_value_from_recursive_descent
+    status: open
+    result: [{"key": [{"child": 1}, {"child": 2}]}, {"key": [{"child": 2}]}, {"key": [{}]}, {"key": [{"something": 42}]}, {}, {"key": [{"child": 1}, {"child": 2}]}, {"child": 1}, {"child": 2}, {"child": 1}, 1, {"child": 2}, 2, {"key": [{"child": 2}]}, {"child": 2}, {"child": 2}, 2, {"key": [{}]}, {}, {}, {"key": [{"something": 42}]}, {"something": 42}, {"something": 42}, 42, {}]
   - id: filter_expression_with_value_null
     status: open
     result: [1, 3, "nice", true, {}, [], -1, 0, ""]

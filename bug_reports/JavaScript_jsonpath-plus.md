@@ -831,6 +831,47 @@ The following queries provide results that do not match those of other implement
   evalmachine.<anonymous>:1
   ```
 
+- [ ] `$.*[?(@..child)]`
+  Input:
+  ```
+  [
+    {
+      "key": [
+        {
+          "child": 1
+        },
+        {
+          "child": 2
+        }
+      ]
+    },
+    {
+      "key": [
+        {
+          "child": 2
+        }
+      ]
+    },
+    {
+      "key": [
+        {}
+      ]
+    },
+    {
+      "key": [
+        {
+          "something": 42
+        }
+      ]
+    },
+    {}
+  ]
+  ```
+  Error:
+  ```
+  evalmachine.<anonymous>:1
+  ```
+
 - [ ] `$[?@.key==42]`
   Input:
   ```

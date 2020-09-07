@@ -300,6 +300,8 @@ queries:
   - id: filter_expression_with_value_false
     status: open
     result: NOT_FOUND
+  - id: filter_expression_with_value_from_recursive_descent
+    status: error
   - id: filter_expression_with_value_null
     status: open
     result: NOT_FOUND

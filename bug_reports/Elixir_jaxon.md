@@ -4504,6 +4504,49 @@ The following queries provide results that do not match those of other implement
       lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
   ```
 
+- [ ] `$.*[?(@..child)]`
+  Input:
+  ```
+  [
+    {
+      "key": [
+        {
+          "child": 1
+        },
+        {
+          "child": 2
+        }
+      ]
+    },
+    {
+      "key": [
+        {
+          "child": 2
+        }
+      ]
+    },
+    {
+      "key": [
+        {}
+      ]
+    },
+    {
+      "key": [
+        {
+          "something": 42
+        }
+      ]
+    },
+    {}
+  ]
+  ```
+  Error:
+  ```
+  ** (Jaxon.ParseError) Expected an integer at `?(@..child`
+      lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
+      lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
+  ```
+
 - [ ] `$[?(null)]`
   Input:
   ```

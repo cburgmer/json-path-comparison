@@ -3864,6 +3864,49 @@ The following queries provide results that do not match those of other implement
   
   ```
 
+- [ ] `$.*[?(@..child)]`
+  Input:
+  ```
+  [
+    {
+      "key": [
+        {
+          "child": 1
+        },
+        {
+          "child": 2
+        }
+      ]
+    },
+    {
+      "key": [
+        {
+          "child": 2
+        }
+      ]
+    },
+    {
+      "key": [
+        {}
+      ]
+    },
+    {
+      "key": [
+        {
+          "something": 42
+        }
+      ]
+    },
+    {}
+  ]
+  ```
+  Error:
+  ```
+  Expecting value: line 3 column 1 (char 2)
+  
+  
+  ```
+
 - [ ] `$[?(null)]`
   Input:
   ```

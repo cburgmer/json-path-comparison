@@ -278,6 +278,8 @@ queries:
     result: [{"id": 2}, {"id": 2}, {"id": 2}, {"id": 2}, {"id": {"id": 2}}]
   - id: filter_expression_with_value_false
     status: error
+  - id: filter_expression_with_value_from_recursive_descent
+    status: error
   - id: filter_expression_with_value_null
     status: error
   - id: filter_expression_with_value_true

@@ -392,6 +392,9 @@ queries:
   - id: filter_expression_with_value_false
     status: open
     result: NOT_SUPPORTED
+  - id: filter_expression_with_value_from_recursive_descent
+    status: open
+    result: NOT_SUPPORTED
   - id: filter_expression_with_value_null
     status: open
     result: NOT_SUPPORTED
