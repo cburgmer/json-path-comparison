@@ -301,6 +301,9 @@ queries:
     result: []
   - id: filter_expression_with_value
     status: error
+  - id: filter_expression_with_value_after_dot_notation_with_wildcard_on_array_of_objects
+    status: open
+    result: []
   - id: filter_expression_with_value_after_recursive_descent
     status: error
   - id: filter_expression_with_value_false

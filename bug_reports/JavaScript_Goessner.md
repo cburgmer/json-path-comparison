@@ -737,7 +737,7 @@ The following queries provide results that do not match those of other implement
   jsonPath: Unexpected token ?: _v.a[?(_v.price>10)
   ```
 
-- [ ] `$.*[?(@..child)]`
+- [ ] `$[?(@..child)]`
   Input:
   ```
   [

@@ -1109,7 +1109,7 @@ The following queries provide results that do not match those of other implement
   Unable to cast object of type 'Newtonsoft.Json.Linq.JObject' to type 'System.IConvertible'.
   ```
 
-- [ ] `$.*[?(@..child)]`
+- [ ] `$[?(@..child)]`
   Input:
   ```
   [

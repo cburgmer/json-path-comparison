@@ -356,6 +356,9 @@ queries:
   - id: filter_expression_with_value
     status: open
     result: []
+  - id: filter_expression_with_value_after_dot_notation_with_wildcard_on_array_of_objects
+    status: open
+    result: [{"key": "value"}]
   - id: filter_expression_with_value_after_recursive_descent
     status: open
     result: [{"id": 2, "more": [{"id": 2}, {"more": {"id": 2}}, {"id": {"id": 2}}, [{"id": 2}]]}, {"id": 2}, {"id": 2}, {"id": 2}, {"id": 2}, {"id": {"id": 2}}]
@@ -364,7 +367,7 @@ queries:
     result: []
   - id: filter_expression_with_value_from_recursive_descent
     status: open
-    result: [{"key": [{"child": 1}, {"child": 2}]}, {"key": [{"child": 2}]}]
+    result: [[{"key": [{"child": 1}, {"child": 2}]}, {"key": [{"child": 2}]}, {"key": [{}]}, {"key": [{"something": 42}]}, {}]]
   - id: filter_expression_with_value_null
     status: open
     result: []

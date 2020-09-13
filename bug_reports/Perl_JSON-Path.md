@@ -3162,6 +3162,23 @@ The following queries provide results that do not match those of other implement
   non-safe evaluation, died at main.pl line 11.
   ```
 
+- [ ] `$.*[?(@.key)]`
+  Input:
+  ```
+  [
+    {
+      "some": "some value"
+    },
+    {
+      "key": "value"
+    }
+  ]
+  ```
+  Error:
+  ```
+  non-safe evaluation, died at main.pl line 11.
+  ```
+
 - [ ] `$..[?(@.id)]`
   Input:
   ```
@@ -3216,7 +3233,7 @@ The following queries provide results that do not match those of other implement
   non-safe evaluation, died at main.pl line 11.
   ```
 
-- [ ] `$.*[?(@..child)]`
+- [ ] `$[?(@..child)]`
   Input:
   ```
   [

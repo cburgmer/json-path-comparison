@@ -259,6 +259,9 @@ queries:
   - id: filter_expression_with_value
     status: open
     result: [{"key": true}, {"key": false}, {"key": null}, {"key": "value"}, {"key": ""}, {"key": 0}, {"key": 1}, {"key": -1}, {"key": 42}, {"key": {}}, {"key": []}]
+  - id: filter_expression_with_value_after_dot_notation_with_wildcard_on_array_of_objects
+    status: open
+    result: [{"key": "value"}]
   - id: filter_expression_with_value_after_recursive_descent
     status: open
     result: [{"id": 2}, {"id": 2}, {"id": 2}, {"id": 2}, {"id": {"id": 2}}]

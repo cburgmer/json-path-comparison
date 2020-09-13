@@ -1000,7 +1000,7 @@ The following queries provide results that do not match those of other implement
   Error: 'Malformed filter query'
   ```
 
-- [ ] `$.*[?(@..child)]`
+- [ ] `$[?(@..child)]`
   Input:
   ```
   [

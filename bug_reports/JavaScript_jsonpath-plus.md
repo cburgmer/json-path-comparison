@@ -831,7 +831,7 @@ The following queries provide results that do not match those of other implement
   evalmachine.<anonymous>:1
   ```
 
-- [ ] `$.*[?(@..child)]`
+- [ ] `$[?(@..child)]`
   Input:
   ```
   [
