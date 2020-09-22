@@ -142,7 +142,7 @@ queries:
     status: error
   - id: filter_expression_after_dot_notation_with_wildcard_after_recursive_descent
     status: open
-    result: ["another", "first", "last", "more", "next to last", "next", 1, 2, 3, 4, 5, 6, [{"id": 1, "name": "first"}, {"id": 2, "name": "next"}, {"id": 3, "name": "another"}, {"id": 4, "name": "more"}], {"id": 5, "name": "next to last"}, {"more": {"id": 5, "name": "next to last"}, "one": [{"id": 1, "name": "first"}, {"id": 2, "name": "next"}, {"id": 3, "name": "another"}, {"id": 4, "name": "more"}]}]
+    result: [{"id": 3, "name": "another"}, {"id": 4, "name": "more"}]
   - id: filter_expression_after_recursive_descent
     status: open
     result: []
