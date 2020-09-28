@@ -2093,6 +2093,27 @@ The following queries provide results that do not match those of other implement
   ]
   ```
 
+- [ ] `$.*[0,:5]`
+  Input:
+  ```
+  {
+    "a": [
+      "string",
+      null,
+      true
+    ],
+    "b": [
+      false,
+      "string",
+      5.4
+    ]
+  }
+  ```
+  Error:
+  ```
+  0 is not a symbol nor a string
+  ```
+
 - [ ] `$[*,1]`
   Input:
   ```

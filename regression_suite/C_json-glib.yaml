@@ -427,6 +427,9 @@ queries:
   - id: union_with_keys_on_object_without_key
     status: fail
     result: []
+  - id: union_with_repeated_matches_after_dot_notation_with_wildcard
+    status: open
+    result: NOT_SUPPORTED
   - id: union_with_slice_and_number
     status: open
     result: NOT_SUPPORTED

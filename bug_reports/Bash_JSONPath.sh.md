@@ -4416,6 +4416,29 @@ The following queries provide results that do not match those of other implement
   ]
   ```
 
+- [ ] `$.*[0,:5]`
+  Input:
+  ```
+  {
+    "a": [
+      "string",
+      null,
+      true
+    ],
+    "b": [
+      false,
+      "string",
+      5.4
+    ]
+  }
+  ```
+  Error:
+  ```
+  Expecting value: line 3 column 1 (char 2)
+  
+  
+  ```
+
 - [ ] `$[1:3,4]`
   Input:
   ```

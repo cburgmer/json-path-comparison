@@ -2549,6 +2549,27 @@ The following queries provide results that do not match those of other implement
   ]
   ```
 
+- [ ] `$.*[0,:5]`
+  Input:
+  ```
+  {
+    "a": [
+      "string",
+      null,
+      true
+    ],
+    "b": [
+      false,
+      "string",
+      5.4
+    ]
+  }
+  ```
+  Error:
+  ```
+  path: invalid character at 6
+  ```
+
 - [ ] `$[1:3,4]`
   Input:
   ```

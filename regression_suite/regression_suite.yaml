@@ -912,6 +912,9 @@ queries:
     selector: "$[4,1]"
     document: [1, 2, 3, 4, 5]
     consensus: [5, 2]
+  - id: union_with_repeated_matches_after_dot_notation_with_wildcard
+    selector: "$.*[0,:5]"
+    document: {"a": ["string", null, true], "b": [false, "string", 5.4]}
   - id: union_with_slice_and_number
     selector: "$[1:3,4]"
     document: [1, 2, 3, 4, 5]

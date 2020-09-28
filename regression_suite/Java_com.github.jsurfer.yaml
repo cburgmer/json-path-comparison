@@ -360,6 +360,9 @@ queries:
   - id: union_with_numbers_in_decreasing_order
     status: fail
     result: [2, 5]
+  - id: union_with_repeated_matches_after_dot_notation_with_wildcard
+    status: open
+    result: NOT_SUPPORTED
   - id: union_with_slice_and_number
     status: open
     result: NOT_SUPPORTED

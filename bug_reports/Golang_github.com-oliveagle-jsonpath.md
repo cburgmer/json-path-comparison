@@ -3215,6 +3215,27 @@ The following queries provide results that do not match those of other implement
   strconv.Atoi: parsing "'missing'": invalid syntax
   ```
 
+- [ ] `$.*[0,:5]`
+  Input:
+  ```
+  {
+    "a": [
+      "string",
+      null,
+      true
+    ],
+    "b": [
+      false,
+      "string",
+      5.4
+    ]
+  }
+  ```
+  Error:
+  ```
+  key error: * not found in object
+  ```
+
 - [ ] `$[1:3,4]`
   Input:
   ```

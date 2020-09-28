@@ -1,0 +1,12 @@
+{
+  "a": [
+    "string",
+    null,
+    true
+  ],
+  "b": [
+    false,
+    "string",
+    5.4
+  ]
+}
