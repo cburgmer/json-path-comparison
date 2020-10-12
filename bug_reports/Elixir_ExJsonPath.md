@@ -40,6 +40,26 @@ The following queries provide results that do not match those of other implement
   FunctionClauseError
   ```
 
+- [ ] `$[-113667776004:2]`
+  Input:
+  ```
+  [
+    "first",
+    "second",
+    "third",
+    "forth",
+    "fifth"
+  ]
+  ```
+  Expected output:
+  ```
+  ["first", "second"]
+  ```
+  Actual output:
+  ```
+  []
+  ```
+
 - [ ] `$[113667776004:2:-1]`
   Input:
   ```
@@ -816,6 +836,31 @@ The following queries provide results that do not match those of other implement
   NOT_SUPPORTED
   ```
   syntax error before: '*'
+  ```
+
+- [ ] `$[?(@.key>42 && @.key<44)]`
+  Input:
+  ```
+  [
+    {
+      "key": 42
+    },
+    {
+      "key": 43
+    },
+    {
+      "key": 44
+    }
+  ]
+  ```
+  Expected output:
+  ```
+  [{"key": 43}]
+  ```
+  Actual output:
+  NOT_SUPPORTED
+  ```
+  illegal characters "&"
   ```
 
 - [ ] `$[?(@[0:1]==1)]`

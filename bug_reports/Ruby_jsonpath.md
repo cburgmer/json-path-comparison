@@ -84,6 +84,28 @@ The following queries provide results that do not match those of other implement
   step can't be negative
   ```
 
+- [ ] `$[-113667776004:2]`
+  Input:
+  ```
+  [
+    "first",
+    "second",
+    "third",
+    "forth",
+    "fifth"
+  ]
+  ```
+  Expected output:
+  ```
+  ["first", "second"]
+  ```
+  Actual output:
+  ```
+  [
+    "second"
+  ]
+  ```
+
 - [ ] `$[113667776004:2:-1]`
   Input:
   ```

@@ -9,9 +9,6 @@ queries:
   - id: array_slice_with_large_number_for_end_and_negative_step
     status: open
     result: NOT_SUPPORTED
-  - id: array_slice_with_large_number_for_start
-    status: open
-    result: ["first", "second"]
   - id: array_slice_with_large_number_for_start_end_negative_step
     status: open
     result: NOT_SUPPORTED
@@ -38,9 +35,6 @@ queries:
     result: NOT_SUPPORTED
   - id: array_slice_with_step_0
     status: error
-  - id: bracket_notation_with_empty_string_doubled_quoted
-    status: open
-    result: [42]
   - id: bracket_notation_with_negative_number_on_short_array
     status: fail
     result: ["one element"]
@@ -110,9 +104,6 @@ queries:
   - id: filter_expression_with_addition
     status: open
     result: [{"key+50": 100}]
-  - id: filter_expression_with_boolean_and_operator
-    status: open
-    result: [{"key": 43}]
   - id: filter_expression_with_boolean_and_operator_and_value_false
     status: open
     result: NOT_SUPPORTED

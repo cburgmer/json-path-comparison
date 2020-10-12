@@ -12,9 +12,6 @@ queries:
   - id: array_slice_with_large_number_for_end_and_negative_step
     status: open
     result: ["third", "second"]
-  - id: array_slice_with_large_number_for_start
-    status: open
-    result: ["first", "second"]
   - id: array_slice_with_large_number_for_start_end_negative_step
     status: open
     result: ["fifth", "forth"]
@@ -54,7 +51,7 @@ queries:
     status: fail
     result: [{"": 42, "\"\"": 222, "''": 123}]
   - id: bracket_notation_with_empty_string_doubled_quoted
-    status: open
+    status: fail
     result: [222]
   - id: bracket_notation_with_number_-1
     status: fail
@@ -154,9 +151,6 @@ queries:
   - id: filter_expression_with_addition
     status: open
     result: [{"key": 50}]
-  - id: filter_expression_with_boolean_and_operator
-    status: open
-    result: [{"key": 43}]
   - id: filter_expression_with_boolean_and_operator_and_value_false
     status: open
     result: NOT_FOUND

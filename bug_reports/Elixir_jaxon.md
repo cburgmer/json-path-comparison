@@ -161,6 +161,10 @@ The following queries provide results that do not match those of other implement
     "fifth"
   ]
   ```
+  Expected output:
+  ```
+  ["first", "second"]
+  ```
   Error:
   ```
   ** (Jaxon.ParseError) Expected an integer at `-113667776`
@@ -1070,6 +1074,10 @@ The following queries provide results that do not match those of other implement
     "''": 123,
     "\"\"": 222
   }
+  ```
+  Expected output:
+  ```
+  [42]
   ```
   Error:
   ```
@@ -2105,6 +2113,10 @@ The following queries provide results that do not match those of other implement
       "key": 44
     }
   ]
+  ```
+  Expected output:
+  ```
+  [{"key": 43}]
   ```
   Error:
   ```

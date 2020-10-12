@@ -57,6 +57,10 @@ The following queries provide results that do not match those of other implement
     "fifth"
   ]
   ```
+  Expected output:
+  ```
+  ["first", "second"]
+  ```
   Error:
   ```
   timeout: sending signal TERM to command ‘./build/json-path-comparison’
@@ -359,6 +363,26 @@ The following queries provide results that do not match those of other implement
   NOT_SUPPORTED
   ```
   Invalid JSONPath: $['']
+   Error: searchBeginningWithSlice: string
+  ```
+
+- [ ] `$[""]`
+  Input:
+  ```
+  {
+    "": 42,
+    "''": 123,
+    "\"\"": 222
+  }
+  ```
+  Expected output:
+  ```
+  42
+  ```
+  Actual output:
+  NOT_SUPPORTED
+  ```
+  Invalid JSONPath: $[""]
    Error: searchBeginningWithSlice: string
   ```
 
@@ -967,6 +991,32 @@ The following queries provide results that do not match those of other implement
   ```
   json-path-comparison: src/Data/JSONPath/Execute.hs:(71,1)-(72,60): Non-exhaustive patterns in function executeCondition
   
+  ```
+
+- [ ] `$[?(@.key>42 && @.key<44)]`
+  Input:
+  ```
+  [
+    {
+      "key": 42
+    },
+    {
+      "key": 43
+    },
+    {
+      "key": 44
+    }
+  ]
+  ```
+  Expected output:
+  ```
+  [{"key": 43}]
+  ```
+  Actual output:
+  NOT_SUPPORTED
+  ```
+  Invalid JSONPath: $[?(@.key>42 && @.key<44)]
+   Error: searchBeginningWithSlice: string
   ```
 
 - [ ] `$[?(@['@key']==42)]`

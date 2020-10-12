@@ -34,6 +34,10 @@ The following queries provide results that do not match those of other implement
     "fifth"
   ]
   ```
+  Expected output:
+  ```
+  ["first", "second"]
+  ```
   Error:
   ```
   timeout: sending signal TERM to command ‘perl’
@@ -941,6 +945,10 @@ The following queries provide results that do not match those of other implement
       "key": 44
     }
   ]
+  ```
+  Expected output:
+  ```
+  [{"key": 43}]
   ```
   Error:
   ```

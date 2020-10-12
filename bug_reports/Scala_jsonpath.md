@@ -50,6 +50,10 @@ The following queries provide results that do not match those of other implement
     "fifth"
   ]
   ```
+  Expected output:
+  ```
+  ["first", "second"]
+  ```
   Error:
   ```
   java.lang.NumberFormatException: For input string: "-113667776004"
@@ -124,6 +128,25 @@ The following queries provide results that do not match those of other implement
   ```
 
 - [ ] `$['']`
+  Input:
+  ```
+  {
+    "": 42,
+    "''": 123,
+    "\"\"": 222
+  }
+  ```
+  Expected output:
+  ```
+  [42]
+  ```
+  Actual output:
+  NOT_SUPPORTED
+  ```
+  JPError(end of input expected)
+  ```
+
+- [ ] `$[""]`
   Input:
   ```
   {

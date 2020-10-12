@@ -183,6 +183,10 @@ The following queries provide results that do not match those of other implement
     "fifth"
   ]
   ```
+  Expected output:
+  ```
+  ["first", "second"]
+  ```
   Error:
   ```
   json_array_get_element: assertion 'index_ < array->elements->len' failed
@@ -859,6 +863,25 @@ The following queries provide results that do not match those of other implement
   []
   ```
 
+- [ ] `$[""]`
+  Input:
+  ```
+  {
+    "": 42,
+    "''": 123,
+    "\"\"": 222
+  }
+  ```
+  Expected output:
+  ```
+  [42]
+  ```
+  Actual output:
+  NOT_SUPPORTED
+  ```
+  Unable to compile selector `$[""]': Invalid array index definition “""]”
+  ```
+
 - [ ] `$[-1]`
   Input:
   ```
@@ -1346,6 +1369,31 @@ The following queries provide results that do not match those of other implement
   [
     []
   ]
+  ```
+
+- [ ] `$[?(@.key>42 && @.key<44)]`
+  Input:
+  ```
+  [
+    {
+      "key": 42
+    },
+    {
+      "key": 43
+    },
+    {
+      "key": 44
+    }
+  ]
+  ```
+  Expected output:
+  ```
+  [{"key": 43}]
+  ```
+  Actual output:
+  NOT_SUPPORTED
+  ```
+  Unable to compile selector `$[?(@.key>42 && @.key<44)]': Invalid array index definition “?(@.key>42 && @.key<44)]”
   ```
 
 - [ ] `$[?(@['key']==42)]`

@@ -80,6 +80,10 @@ The following queries provide results that do not match those of other implement
     "\"\"": 222
   }
   ```
+  Expected output:
+  ```
+  42
+  ```
   Error:
   ```
   No JSON output received

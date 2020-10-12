@@ -18,7 +18,7 @@ queries:
   - id: array_slice_with_large_number_for_end_and_negative_step
     status: error
   - id: array_slice_with_large_number_for_start
-    status: open
+    status: fail
     result: ["second"]
   - id: array_slice_with_large_number_for_start_end_negative_step
     status: error
@@ -65,9 +65,6 @@ queries:
   - id: bracket_notation_with_empty_path
     status: fail
     result: []
-  - id: bracket_notation_with_empty_string_doubled_quoted
-    status: open
-    result: [42]
   - id: bracket_notation_with_negative_number_on_short_array
     status: fail
     result: ["one element"]
@@ -201,9 +198,6 @@ queries:
     result: [{"another": {"key": 1}, "key": 42}]
   - id: filter_expression_with_addition
     status: error
-  - id: filter_expression_with_boolean_and_operator
-    status: open
-    result: [{"key": 43}]
   - id: filter_expression_with_boolean_and_operator_and_value_false
     status: error
   - id: filter_expression_with_boolean_and_operator_and_value_true

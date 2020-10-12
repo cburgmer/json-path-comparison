@@ -13,7 +13,7 @@ queries:
     status: open
     result: NOT_SUPPORTED
   - id: array_slice_with_large_number_for_start
-    status: open
+    status: fail
     result: ["first", "second", "third"]
   - id: array_slice_with_large_number_for_start_end_negative_step
     status: open
@@ -106,7 +106,7 @@ queries:
     status: fail
     result: NOT_SUPPORTED
   - id: bracket_notation_with_empty_string_doubled_quoted
-    status: open
+    status: fail
     result: NOT_SUPPORTED
   - id: bracket_notation_with_negative_number_on_short_array
     status: fail
@@ -213,7 +213,7 @@ queries:
     status: open
     result: NOT_SUPPORTED
   - id: filter_expression_with_boolean_and_operator
-    status: open
+    status: fail
     result: NOT_SUPPORTED
   - id: filter_expression_with_boolean_and_operator_and_value_false
     status: open

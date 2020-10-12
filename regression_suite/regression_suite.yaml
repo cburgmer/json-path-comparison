@@ -54,6 +54,7 @@ queries:
   - id: array_slice_with_large_number_for_start
     selector: "$[-113667776004:2]"
     document: ["first", "second", "third", "forth", "fifth"]
+    consensus: ["first", "second"]
   - id: array_slice_with_large_number_for_start_end_negative_step
     selector: "$[113667776004:2:-1]"
     document: ["first", "second", "third", "forth", "fifth"]
@@ -235,6 +236,8 @@ queries:
   - id: bracket_notation_with_empty_string_doubled_quoted
     selector: "$[\"\"]"
     document: {"": 42, "''": 123, "\"\"": 222}
+    consensus: [42]
+    scalar-consensus: 42
   - id: bracket_notation_with_negative_number_on_short_array
     selector: "$[-2]"
     document: ["one element"]
@@ -629,6 +632,7 @@ queries:
   - id: filter_expression_with_boolean_and_operator
     selector: "$[?(@.key>42 && @.key<44)]"
     document: [{"key": 42}, {"key": 43}, {"key": 44}]
+    consensus: [{"key": 43}]
   - id: filter_expression_with_boolean_and_operator_and_value_false
     selector: "$[?(@.key>0 && false)]"
     document: [{"key": 1}, {"key": 3}, {"key": "nice"}, {"key": true}, {"key": null}, {"key": false}, {"key": {}}, {"key": []}, {"key": -1}, {"key": 0}, {"key": ""}]

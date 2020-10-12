@@ -50,6 +50,10 @@ The following queries provide results that do not match those of other implement
     "fifth"
   ]
   ```
+  Expected output:
+  ```
+  ["first", "second"]
+  ```
   Error:
   ```
   Value was either too large or too small for an Int32.
@@ -118,6 +122,25 @@ The following queries provide results that do not match those of other implement
   Expected output:
   ```
   ["value"]
+  ```
+  Actual output:
+  NOT_SUPPORTED
+  ```
+  Unexpected character while parsing path indexer: "
+  ```
+
+- [ ] `$[""]`
+  Input:
+  ```
+  {
+    "": 42,
+    "''": 123,
+    "\"\"": 222
+  }
+  ```
+  Expected output:
+  ```
+  [42]
   ```
   Actual output:
   NOT_SUPPORTED

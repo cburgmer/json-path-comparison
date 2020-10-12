@@ -27,6 +27,30 @@ The following queries provide results that do not match those of other implement
   ]
   ```
 
+- [ ] `$[-113667776004:2]`
+  Input:
+  ```
+  [
+    "first",
+    "second",
+    "third",
+    "forth",
+    "fifth"
+  ]
+  ```
+  Expected output:
+  ```
+  ["first", "second"]
+  ```
+  Actual output:
+  ```
+  [
+    "first",
+    "second",
+    "third"
+  ]
+  ```
+
 - [ ] `$[-4:-4]`
   Input:
   ```
@@ -510,6 +534,25 @@ The following queries provide results that do not match those of other implement
   JSON path parse error at position 1
   ```
 
+- [ ] `$[""]`
+  Input:
+  ```
+  {
+    "": 42,
+    "''": 123,
+    "\"\"": 222
+  }
+  ```
+  Expected output:
+  ```
+  [42]
+  ```
+  Actual output:
+  NOT_SUPPORTED
+  ```
+  JSON path parse error at position 1
+  ```
+
 - [ ] `$[-2]`
   Input:
   ```
@@ -833,6 +876,31 @@ The following queries provide results that do not match those of other implement
   Actual output:
   ```
   []
+  ```
+
+- [ ] `$[?(@.key>42 && @.key<44)]`
+  Input:
+  ```
+  [
+    {
+      "key": 42
+    },
+    {
+      "key": 43
+    },
+    {
+      "key": 44
+    }
+  ]
+  ```
+  Expected output:
+  ```
+  [{"key": 43}]
+  ```
+  Actual output:
+  NOT_SUPPORTED
+  ```
+  Evaluation of embedded Perl 6 code not allowed (construct with :allow-eval)
   ```
 
 - [ ] `$[?(@['key']==42)]`

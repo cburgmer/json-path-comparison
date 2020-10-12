@@ -34,6 +34,10 @@ The following queries provide results that do not match those of other implement
     "fifth"
   ]
   ```
+  Expected output:
+  ```
+  ["first", "second"]
+  ```
   Error:
   ```
   timeout: sending signal TERM to command ‘php’
@@ -167,6 +171,25 @@ The following queries provide results that do not match those of other implement
   NOT_SUPPORTED
   ```
   Error: 'Unable to parse token '' in expression: ['']'
+  ```
+
+- [ ] `$[""]`
+  Input:
+  ```
+  {
+    "": 42,
+    "''": 123,
+    "\"\"": 222
+  }
+  ```
+  Expected output:
+  ```
+  [42]
+  ```
+  Actual output:
+  NOT_SUPPORTED
+  ```
+  Error: 'Unable to parse token "" in expression: [""]'
   ```
 
 - [ ] `$[-2]`
@@ -347,6 +370,37 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   Error: 'Malformed filter query'
+  ```
+
+- [ ] `$[?(@.key>42 && @.key<44)]`
+  Input:
+  ```
+  [
+    {
+      "key": 42
+    },
+    {
+      "key": 43
+    },
+    {
+      "key": 44
+    }
+  ]
+  ```
+  Expected output:
+  ```
+  [{"key": 43}]
+  ```
+  Actual output:
+  ```
+  [
+    {
+      "key": 43
+    },
+    {
+      "key": 44
+    }
+  ]
   ```
 
 - [ ] `$[?(@)]`

@@ -233,6 +233,26 @@ The following queries provide results that do not match those of other implement
   ]
   ```
 
+- [ ] `$[""]`
+  Input:
+  ```
+  {
+    "": 42,
+    "''": 123,
+    "\"\"": 222
+  }
+  ```
+  Expected output:
+  ```
+  [42]
+  ```
+  Actual output:
+  ```
+  [
+    222
+  ]
+  ```
+
 - [ ] `$[-1]`
   Input:
   ```
@@ -608,6 +628,10 @@ The following queries provide results that do not match those of other implement
       "key": 44
     }
   ]
+  ```
+  Expected output:
+  ```
+  [{"key": 43}]
   ```
   Error:
   ```

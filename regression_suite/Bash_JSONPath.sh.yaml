@@ -12,9 +12,6 @@ queries:
     status: error
   - id: array_slice_with_large_number_for_end_and_negative_step
     status: error
-  - id: array_slice_with_large_number_for_start
-    status: open
-    result: ["first", "second"]
   - id: array_slice_with_large_number_for_start_end_negative_step
     status: error
   - id: array_slice_with_negative_start_and_end_and_range_of_-1
@@ -97,7 +94,7 @@ queries:
   - id: bracket_notation_with_empty_string
     status: error
   - id: bracket_notation_with_empty_string_doubled_quoted
-    status: open
+    status: fail
     result: {"": 42}
   - id: bracket_notation_with_negative_number_on_short_array
     status: error

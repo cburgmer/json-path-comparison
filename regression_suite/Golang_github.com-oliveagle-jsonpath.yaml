@@ -251,7 +251,7 @@ queries:
     status: open
     result: []
   - id: filter_expression_with_boolean_and_operator
-    status: open
+    status: fail
     result: []
   - id: filter_expression_with_boolean_and_operator_and_value_false
     status: open

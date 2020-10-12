@@ -131,6 +131,10 @@ The following queries provide results that do not match those of other implement
     "fifth"
   ]
   ```
+  Expected output:
+  ```
+  ["first", "second"]
+  ```
   Error:
   ```
   java.lang.NumberFormatException For input string: "-113667776004"
@@ -858,6 +862,10 @@ The following queries provide results that do not match those of other implement
     "''": 123,
     "\"\"": 222
   }
+  ```
+  Expected output:
+  ```
+  42
   ```
   Error:
   ```
@@ -1617,6 +1625,37 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   java.lang.NullPointerException nil
+  ```
+
+- [ ] `$[?(@.key>42 && @.key<44)]`
+  Input:
+  ```
+  [
+    {
+      "key": 42
+    },
+    {
+      "key": 43
+    },
+    {
+      "key": 44
+    }
+  ]
+  ```
+  Expected output:
+  ```
+  [{"key": 43}]
+  ```
+  Actual output:
+  ```
+  [
+    {
+      "key": 43
+    },
+    {
+      "key": 44
+    }
+  ]
   ```
 
 - [ ] `$[?(@.key>0 && false)]`

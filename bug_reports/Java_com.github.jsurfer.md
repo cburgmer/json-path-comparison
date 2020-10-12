@@ -34,6 +34,10 @@ The following queries provide results that do not match those of other implement
     "fifth"
   ]
   ```
+  Expected output:
+  ```
+  ["first", "second"]
+  ```
   Error:
   ```
   java.lang.NumberFormatException: For input string: "-113667776004"
@@ -380,6 +384,28 @@ The following queries provide results that do not match those of other implement
   line 1:2 token recognition error at: '"'
   line 1:6 token recognition error at: '"'
   line 1:3 no viable alternative at input '[key'
+  org.antlr.v4.runtime.misc.ParseCancellationException
+  ```
+
+- [ ] `$[""]`
+  Input:
+  ```
+  {
+    "": 42,
+    "''": 123,
+    "\"\"": 222
+  }
+  ```
+  Expected output:
+  ```
+  [42]
+  ```
+  Actual output:
+  NOT_SUPPORTED
+  ```
+  line 1:2 token recognition error at: '"'
+  line 1:3 token recognition error at: '"'
+  line 1:4 no viable alternative at input '[]'
   org.antlr.v4.runtime.misc.ParseCancellationException
   ```
 

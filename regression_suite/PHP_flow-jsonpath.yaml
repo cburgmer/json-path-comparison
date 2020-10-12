@@ -46,7 +46,7 @@ queries:
     status: fail
     result: NOT_SUPPORTED
   - id: bracket_notation_with_empty_string_doubled_quoted
-    status: open
+    status: fail
     result: NOT_SUPPORTED
   - id: bracket_notation_with_negative_number_on_short_array
     status: fail
@@ -135,7 +135,7 @@ queries:
   - id: filter_expression_with_addition
     status: error
   - id: filter_expression_with_boolean_and_operator
-    status: open
+    status: fail
     result: [{"key": 43}, {"key": 44}]
   - id: filter_expression_with_boolean_and_operator_and_value_false
     status: open
