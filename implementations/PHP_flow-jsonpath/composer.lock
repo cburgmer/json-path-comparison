@@ -4,34 +4,36 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b611f89b8c106a39d949ed4b7e1636cb",
+    "content-hash": "04b76d3fb01566a2ecba856ea4115efa",
     "packages": [
         {
-            "name": "flow/jsonpath",
-            "version": "0.5.0",
+            "name": "softcreatr/jsonpath",
+            "version": "0.6.2",
             "source": {
                 "type": "git",
-                "url": "https://github.com/FlowCommunications/JSONPath.git",
-                "reference": "b9738858c75d008c1211612b973e9510f8b7f8ea"
+                "url": "https://github.com/SoftCreatR/JSONPath.git",
+                "reference": "47f1c8cdea312a79728fa55f0e391f3428b34625"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/FlowCommunications/JSONPath/zipball/b9738858c75d008c1211612b973e9510f8b7f8ea",
-                "reference": "b9738858c75d008c1211612b973e9510f8b7f8ea",
+                "url": "https://api.github.com/repos/SoftCreatR/JSONPath/zipball/47f1c8cdea312a79728fa55f0e391f3428b34625",
+                "reference": "47f1c8cdea312a79728fa55f0e391f3428b34625",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.4.0"
+                "ext-json": "*",
+                "php": ">=7.1 || <8.1"
+            },
+            "replace": {
+                "flow/jsonpath": "*"
             },
             "require-dev": {
-                "peekmo/jsonpath": "dev-master",
-                "phpunit/phpunit": "^7.0"
+                "phpunit/phpunit": "<7.0 || >= 10.0"
             },
             "type": "library",
             "autoload": {
-                "psr-0": {
-                    "Flow\\JSONPath": "src/",
-                    "Flow\\JSONPath\\Test": "tests/"
+                "psr-4": {
+                    "Flow\\JSONPath\\": "src/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -41,11 +43,25 @@
             "authors": [
                 {
                     "name": "Stephen Frank",
-                    "email": "stephen@flowsa.com"
+                    "email": "stephen@flowsa.com",
+                    "homepage": "https://prismaticbytes.com",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Sascha Greuel",
+                    "email": "hello@1-2.dev",
+                    "homepage": "http://1-2.dev",
+                    "role": "Developer"
                 }
             ],
             "description": "JSONPath implementation for parsing, searching and flattening arrays",
-            "time": "2019-07-15T17:23:22+00:00"
+            "funding": [
+                {
+                    "url": "https://github.com/softcreatr",
+                    "type": "github"
+                }
+            ],
+            "time": "2020-10-14T22:50:07+00:00"
         }
     ],
     "packages-dev": [],
