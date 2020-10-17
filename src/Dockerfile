@@ -62,7 +62,7 @@ RUN chmod a+x /tmp/installObjectiveC.sh
 RUN /tmp/installObjectiveC.sh
 
 # Raku
-RUN apt-get install -y --no-install-recommends rakudo
+RUN apt-get install -y --no-install-recommends rakudo perl6-zef
 
 # Ruby
 RUN apt-get install -y --no-install-recommends ruby
