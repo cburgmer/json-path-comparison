@@ -611,7 +611,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  at 1: expected a json object, but got H (context: "Hello Wo")
+  at 0: expected a json object, but got '"Hello Wo"'
   ```
 
 - [ ] `$[0:2][*]`
