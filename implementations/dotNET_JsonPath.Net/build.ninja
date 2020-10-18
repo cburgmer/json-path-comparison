@@ -1,4 +1,4 @@
-root = implementations/dotNET_Manatee.Json
+root = implementations/dotNET_JsonPath.Net
 builddir = $root/build
 
 rule build
