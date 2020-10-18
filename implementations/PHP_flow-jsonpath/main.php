@@ -11,7 +11,7 @@ $json = file_get_contents("php://stdin");
 $o = json_decode($json);
 
 try {
-    $r = (new JSONPath($o))->find($argv[1])->data();
+    $r = (new JSONPath($o))->find($argv[1])->getData();
 } catch (JSONPathException $e) {
     print "Error: '" . $e->getMessage() . "'\r\n";
     die(2);
