@@ -1,0 +1,9 @@
+root = implementations/dotNET_Manatee.Json
+builddir = $root/build
+
+rule build
+  command = $root/install.sh $$(basename $$(dirname $out))
+
+build $builddir/Dotnet_JsonPath.Net: build | $root/Dotnet_JsonPath.Net.csproj $root/Program.cs
+
+build $root/install: phony $builddir/Dotnet_JsonPath.Net
