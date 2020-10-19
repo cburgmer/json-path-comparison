@@ -27,27 +27,6 @@ The following queries provide results that do not match those of other implement
   ]
   ```
 
-- [ ] `$[-113667776004:2]`
-  Input:
-  ```
-  [
-    "first",
-    "second",
-    "third",
-    "forth",
-    "fifth"
-  ]
-  ```
-  Expected output:
-  ```
-  ["first", "second"]
-  ```
-  Actual output:
-  NOT_SUPPORTED
-  ```
-  parsing error
-  ```
-
 - [ ] `$[-4:-5]`
   Input:
   ```
@@ -1477,31 +1456,6 @@ The following queries provide results that do not match those of other implement
   Expected output (in any order as no consensus on ordering exists):
   ```
   []
-  ```
-  Actual output:
-  NOT_SUPPORTED
-  ```
-  parsing error
-  ```
-
-- [ ] `$[?(@.key>42 && @.key<44)]`
-  Input:
-  ```
-  [
-    {
-      "key": 42
-    },
-    {
-      "key": 43
-    },
-    {
-      "key": 44
-    }
-  ]
-  ```
-  Expected output:
-  ```
-  [{"key": 43}]
   ```
   Actual output:
   NOT_SUPPORTED

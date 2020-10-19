@@ -16,7 +16,7 @@ queries:
     status: open
     result: NOT_SUPPORTED
   - id: array_slice_with_large_number_for_start
-    status: fail
+    status: open
     result: NOT_SUPPORTED
   - id: array_slice_with_large_number_for_start_end_negative_step
     status: open
@@ -125,6 +125,9 @@ queries:
   - id: filter_expression_with_addition
     status: open
     result: [{"key": 50}]
+  - id: filter_expression_with_boolean_and_operator
+    status: open
+    result: [{"key": 43}]
   - id: filter_expression_with_boolean_and_operator_and_value_false
     status: open
     result: []

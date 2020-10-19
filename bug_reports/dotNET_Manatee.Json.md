@@ -48,27 +48,6 @@ The following queries provide results that do not match those of other implement
   Expected number. Path up to error: '$'
   ```
 
-- [ ] `$[-113667776004:2]`
-  Input:
-  ```
-  [
-    "first",
-    "second",
-    "third",
-    "forth",
-    "fifth"
-  ]
-  ```
-  Expected output:
-  ```
-  ["first", "second"]
-  ```
-  Actual output:
-  NOT_SUPPORTED
-  ```
-  Expected number. Path up to error: '$'
-  ```
-
 - [ ] `$[7:3:-1]`
   Input:
   ```

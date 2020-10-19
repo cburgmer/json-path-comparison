@@ -151,10 +151,6 @@ The following queries provide results that do not match those of other implement
     "fifth"
   ]
   ```
-  Expected output:
-  ```
-  ["first", "second"]
-  ```
   Error:
   ```
   index [from] out of range: len: 5, from: -113667776004
@@ -2115,30 +2111,6 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   key error:  not found in object
-  ```
-
-- [ ] `$[?(@.key>42 && @.key<44)]`
-  Input:
-  ```
-  [
-    {
-      "key": 42
-    },
-    {
-      "key": 43
-    },
-    {
-      "key": 44
-    }
-  ]
-  ```
-  Expected output:
-  ```
-  [{"key": 43}]
-  ```
-  Actual output:
-  ```
-  []
   ```
 
 - [ ] `$[?(@['key']==42)]`

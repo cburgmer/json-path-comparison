@@ -12,6 +12,9 @@ queries:
   - id: array_slice_with_large_number_for_end_and_negative_step
     status: open
     result: []
+  - id: array_slice_with_large_number_for_start
+    status: open
+    result: ["first", "second"]
   - id: array_slice_with_large_number_for_start_end_negative_step
     status: open
     result: []
@@ -149,6 +152,9 @@ queries:
   - id: filter_expression_with_addition
     status: open
     result: []
+  - id: filter_expression_with_boolean_and_operator
+    status: open
+    result: [{"key": 43}]
   - id: filter_expression_with_boolean_and_operator_and_value_false
     status: open
     result: []

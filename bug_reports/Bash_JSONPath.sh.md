@@ -2311,10 +2311,6 @@ The following queries provide results that do not match those of other implement
     }
   ]
   ```
-  Expected output:
-  ```
-  [{"key": 43}]
-  ```
   Error:
   ```
   Expecting value: line 3 column 1 (char 2)

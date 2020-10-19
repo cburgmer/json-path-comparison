@@ -36,10 +36,6 @@ The following queries provide results that do not match those of other implement
     "fifth"
   ]
   ```
-  Expected output:
-  ```
-  ["first", "second"]
-  ```
   Error:
   ```
   timeout: sending signal TERM to command ‘build/main’

@@ -507,10 +507,6 @@ The following queries provide results that do not match those of other implement
     }
   ]
   ```
-  Expected output:
-  ```
-  [{"key": 43}]
-  ```
   Error:
   ```
   init terminating in do_boot ({badarg,42})

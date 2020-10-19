@@ -24,27 +24,6 @@ The following queries provide results that do not match those of other implement
   For input string: "113667776004"
   ```
 
-- [ ] `$[-113667776004:2]`
-  Input:
-  ```
-  [
-    "first",
-    "second",
-    "third",
-    "forth",
-    "fifth"
-  ]
-  ```
-  Expected output:
-  ```
-  ["first", "second"]
-  ```
-  Actual output:
-  NOT_SUPPORTED
-  ```
-  For input string: "-113667776004"
-  ```
-
 - [ ] `$[0:3:2]`
   Input:
   ```
@@ -216,31 +195,6 @@ The following queries provide results that do not match those of other implement
     40,
     42
   ]
-  ```
-
-- [ ] `$[?(@.key>42 && @.key<44)]`
-  Input:
-  ```
-  [
-    {
-      "key": 42
-    },
-    {
-      "key": 43
-    },
-    {
-      "key": 44
-    }
-  ]
-  ```
-  Expected output:
-  ```
-  [{"key": 43}]
-  ```
-  Actual output:
-  NOT_SUPPORTED
-  ```
-  Unexpected char, char=?, index=2
   ```
 
 - [ ] `$[?(@['key']==42)]`
