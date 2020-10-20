@@ -342,32 +342,6 @@ The following queries provide results that do not match those of other implement
   ]
   ```
 
-- [ ] `$[?(@.key+50==100)]`
-  Input:
-  ```
-  [
-    {
-      "key": 60
-    },
-    {
-      "key": 50
-    },
-    {
-      "key": 10
-    },
-    {
-      "key": -50
-    },
-    {
-      "key+50": 100
-    }
-  ]
-  ```
-  Error:
-  ```
-  Error: 'Malformed filter query'
-  ```
-
 - [ ] `$[?(@)]`
   Input:
   ```
@@ -468,65 +442,6 @@ The following queries provide results that do not match those of other implement
   Error: 'Malformed filter query'
   ```
 
-- [ ] `$[?(@.key/10==5)]`
-  Input:
-  ```
-  [
-    {
-      "key": 60
-    },
-    {
-      "key": 50
-    },
-    {
-      "key": 10
-    },
-    {
-      "key": -50
-    },
-    {
-      "key/10": 5
-    }
-  ]
-  ```
-  Error:
-  ```
-  Error: 'Malformed filter query'
-  ```
-
-- [ ] `$[?(@.*==[1,2])]`
-  Input:
-  ```
-  [
-    [
-      1,
-      2
-    ],
-    [
-      2,
-      3
-    ],
-    [
-      1
-    ],
-    [
-      2
-    ],
-    [
-      1,
-      2,
-      3
-    ],
-    1,
-    2,
-    3
-  ]
-  ```
-  Error:
-  ```
-  Error: 'Malformed filter query'
-  ```
-
 - [ ] `$[?((@.key<44)==false)]`
   Input:
   ```
@@ -547,39 +462,6 @@ The following queries provide results that do not match those of other implement
   Error: 'Malformed filter query'
   ```
 
-- [ ] `$[?(@.*==2)]`
-  Input:
-  ```
-  [
-    [
-      1,
-      2
-    ],
-    [
-      2,
-      3
-    ],
-    [
-      1
-    ],
-    [
-      2
-    ],
-    [
-      1,
-      2,
-      3
-    ],
-    1,
-    2,
-    3
-  ]
-  ```
-  Error:
-  ```
-  Error: 'Malformed filter query'
-  ```
-
 - [ ] `$[?(@==42)]`
   Input:
   ```
@@ -593,32 +475,6 @@ The following queries provide results that do not match those of other implement
     41.9999,
     null,
     100
-  ]
-  ```
-  Error:
-  ```
-  Error: 'Malformed filter query'
-  ```
-
-- [ ] `$[?(@.d in [2, 3])]`
-  Input:
-  ```
-  [
-    {
-      "d": 1
-    },
-    {
-      "d": 2
-    },
-    {
-      "d": 1
-    },
-    {
-      "d": 3
-    },
-    {
-      "d": 4
-    }
   ]
   ```
   Error:
@@ -658,32 +514,6 @@ The following queries provide results that do not match those of other implement
         4,
         2
       ]
-    }
-  ]
-  ```
-  Error:
-  ```
-  Error: 'Malformed filter query'
-  ```
-
-- [ ] `$[?(@.key*2==100)]`
-  Input:
-  ```
-  [
-    {
-      "key": 60
-    },
-    {
-      "key": 50
-    },
-    {
-      "key": 10
-    },
-    {
-      "key": -50
-    },
-    {
-      "key*2": 100
     }
   ]
   ```
@@ -880,50 +710,6 @@ The following queries provide results that do not match those of other implement
   ]
   ```
 
-- [ ] `$[?(@.a[?(@.price>10)])]`
-  Input:
-  ```
-  [
-    {
-      "a": [
-        {
-          "price": 1
-        },
-        {
-          "price": 3
-        }
-      ]
-    },
-    {
-      "a": [
-        {
-          "price": 11
-        }
-      ]
-    },
-    {
-      "a": [
-        {
-          "price": 8
-        },
-        {
-          "price": 12
-        },
-        {
-          "price": 3
-        }
-      ]
-    },
-    {
-      "a": []
-    }
-  ]
-  ```
-  Error:
-  ```
-  Error: 'Malformed filter query'
-  ```
-
 - [ ] `$[?(@.address.city=='Berlin')]`
   Input:
   ```
@@ -944,35 +730,9 @@ The following queries provide results that do not match those of other implement
   ```
   [{"address": {"city": "Berlin"}}]
   ```
-  Error:
+  Actual output:
   ```
-  Error: 'Malformed filter query'
-  ```
-
-- [ ] `$[?(@.key-50==-100)]`
-  Input:
-  ```
-  [
-    {
-      "key": 60
-    },
-    {
-      "key": 50
-    },
-    {
-      "key": 10
-    },
-    {
-      "key": -50
-    },
-    {
-      "key-50": -100
-    }
-  ]
-  ```
-  Error:
-  ```
-  Error: 'Malformed filter query'
+  []
   ```
 
 - [ ] `$[?(1==1)]`
@@ -1012,47 +772,6 @@ The following queries provide results that do not match those of other implement
     -1,
     0,
     ""
-  ]
-  ```
-  Error:
-  ```
-  Error: 'Malformed filter query'
-  ```
-
-- [ ] `$[?(@..child)]`
-  Input:
-  ```
-  [
-    {
-      "key": [
-        {
-          "child": 1
-        },
-        {
-          "child": 2
-        }
-      ]
-    },
-    {
-      "key": [
-        {
-          "child": 2
-        }
-      ]
-    },
-    {
-      "key": [
-        {}
-      ]
-    },
-    {
-      "key": [
-        {
-          "something": 42
-        }
-      ]
-    },
-    {}
   ]
   ```
   Error:
@@ -1166,7 +885,7 @@ The following queries provide results that do not match those of other implement
   ```
   Actual output:
   ```
-  null
+  []
   ```
 
 - [ ] `$['key','another']`
