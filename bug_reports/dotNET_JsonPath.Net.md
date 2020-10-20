@@ -94,7 +94,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  implementations/dotNET_JsonPath.Net/run.sh: line 5:   100 Killed                  "$script_dir"/build/Dotnet_JsonPath.Net "$@"
+  timeout: sending signal TERM to command ‘build/Dotnet_JsonPath.Net’
   ```
 
 - [ ] `$[-113667776004:2]`
@@ -126,7 +126,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  implementations/dotNET_JsonPath.Net/run.sh: line 5:   239 Killed                  "$script_dir"/build/Dotnet_JsonPath.Net "$@"
+  timeout: sending signal TERM to command ‘build/Dotnet_JsonPath.Net’
   ```
 
 - [ ] `$[-4:-5]`
