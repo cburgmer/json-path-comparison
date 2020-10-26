@@ -1,4 +1,4 @@
-root = implementations/PHP_flow-jsonpath
+root = implementations/PHP_softcreatr-jsonpath
 builddir = $root/build
 
 rule install

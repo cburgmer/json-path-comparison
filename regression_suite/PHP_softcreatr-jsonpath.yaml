@@ -4,7 +4,7 @@
 # an existing consensus or where no consensus exists.
 # It can be used to track changes in the underlying implementation and complements the regression report.
 
-implementation: PHP_flow-jsonpath
+implementation: PHP_softcreatr-jsonpath
 queries:
   - id: array_slice_with_large_number_for_end
     status: error
