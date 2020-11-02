@@ -183,6 +183,10 @@ The following queries provide results that do not match those of other implement
     "fifth"
   ]
   ```
+  Expected output:
+  ```
+  ["first", "second"]
+  ```
   Error:
   ```
   json_array_get_element: assertion 'index_ < array->elements->len' failed

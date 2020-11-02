@@ -161,6 +161,10 @@ The following queries provide results that do not match those of other implement
     "fifth"
   ]
   ```
+  Expected output:
+  ```
+  ["first", "second"]
+  ```
   Error:
   ```
   ** (Jaxon.ParseError) Expected an integer at `-113667776`

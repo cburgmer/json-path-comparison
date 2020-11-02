@@ -54,6 +54,7 @@ queries:
   - id: array_slice_with_large_number_for_start
     selector: "$[-113667776004:2]"
     document: ["first", "second", "third", "forth", "fifth"]
+    consensus: ["first", "second"]
   - id: array_slice_with_large_number_for_start_end_negative_step
     selector: "$[113667776004:2:-1]"
     document: ["first", "second", "third", "forth", "fifth"]

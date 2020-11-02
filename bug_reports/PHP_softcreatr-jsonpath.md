@@ -23,22 +23,6 @@ The following queries provide results that do not match those of other implement
   timeout: sending signal TERM to command ‘php’
   ```
 
-- [ ] `$[-113667776004:2]`
-  Input:
-  ```
-  [
-    "first",
-    "second",
-    "third",
-    "forth",
-    "fifth"
-  ]
-  ```
-  Error:
-  ```
-  timeout: sending signal TERM to command ‘php’
-  ```
-
 - [ ] `$[0:3:-2]`
   Input:
   ```
@@ -103,29 +87,6 @@ The following queries provide results that do not match those of other implement
   timeout: sending signal TERM to command ‘php’
   ```
 
-- [ ] `$[-4:]`
-  Input:
-  ```
-  [
-    "first",
-    "second",
-    "third"
-  ]
-  ```
-  Expected output:
-  ```
-  ["first", "second", "third"]
-  ```
-  Actual output:
-  ```
-  [
-    "third",
-    "first",
-    "second",
-    "third"
-  ]
-  ```
-
 - [ ] `$[]`
   Input:
   ```
@@ -150,44 +111,6 @@ The following queries provide results that do not match those of other implement
   ]
   ```
 
-- [ ] `$['']`
-  Input:
-  ```
-  {
-    "": 42,
-    "''": 123,
-    "\"\"": 222
-  }
-  ```
-  Expected output:
-  ```
-  [42]
-  ```
-  Actual output:
-  NOT_SUPPORTED
-  ```
-  Error: 'Unable to parse token '' in expression: ['']'
-  ```
-
-- [ ] `$[""]`
-  Input:
-  ```
-  {
-    "": 42,
-    "''": 123,
-    "\"\"": 222
-  }
-  ```
-  Expected output:
-  ```
-  [42]
-  ```
-  Actual output:
-  NOT_SUPPORTED
-  ```
-  Error: 'Unable to parse token "" in expression: [""]'
-  ```
-
 - [ ] `$[-2]`
   Input:
   ```
@@ -202,7 +125,6 @@ The following queries provide results that do not match those of other implement
   Actual output:
   ```
   [
-    "one element",
     "one element"
   ]
   ```
@@ -291,31 +213,6 @@ The following queries provide results that do not match those of other implement
   [
     "value"
   ]
-  ```
-
-- [ ] `$['one','three'].key`
-  Input:
-  ```
-  {
-    "one": {
-      "key": "value"
-    },
-    "two": {
-      "k": "v"
-    },
-    "three": {
-      "some": "more",
-      "key": "other value"
-    }
-  }
-  ```
-  Expected output:
-  ```
-  ["value", "other value"]
-  ```
-  Actual output:
-  ```
-  []
   ```
 
 - [ ] `$.`
@@ -882,90 +779,6 @@ The following queries provide results that do not match those of other implement
   Expected output:
   ```
   NOT_SUPPORTED
-  ```
-  Actual output:
-  ```
-  []
-  ```
-
-- [ ] `$['key','another']`
-  Input:
-  ```
-  {
-    "key": "value",
-    "another": "entry"
-  }
-  ```
-  Expected output:
-  ```
-  ["value", "entry"]
-  ```
-  Actual output:
-  ```
-  []
-  ```
-
-- [ ] `$[:]['c','d']`
-  Input:
-  ```
-  [
-    {
-      "c": "cc1",
-      "d": "dd1",
-      "e": "ee1"
-    },
-    {
-      "c": "cc2",
-      "d": "dd2",
-      "e": "ee2"
-    }
-  ]
-  ```
-  Expected output:
-  ```
-  ["cc1", "dd1", "cc2", "dd2"]
-  ```
-  Actual output:
-  ```
-  []
-  ```
-
-- [ ] `$[0]['c','d']`
-  Input:
-  ```
-  [
-    {
-      "c": "cc1",
-      "d": "dd1",
-      "e": "ee1"
-    },
-    {
-      "c": "cc2",
-      "d": "dd2",
-      "e": "ee2"
-    }
-  ]
-  ```
-  Expected output:
-  ```
-  ["cc1", "dd1"]
-  ```
-  Actual output:
-  ```
-  []
-  ```
-
-- [ ] `$['missing','key']`
-  Input:
-  ```
-  {
-    "key": "value",
-    "another": "entry"
-  }
-  ```
-  Expected output:
-  ```
-  ["value"]
   ```
   Actual output:
   ```

@@ -27,6 +27,30 @@ The following queries provide results that do not match those of other implement
   ]
   ```
 
+- [ ] `$[-113667776004:2]`
+  Input:
+  ```
+  [
+    "first",
+    "second",
+    "third",
+    "forth",
+    "fifth"
+  ]
+  ```
+  Expected output:
+  ```
+  ["first", "second"]
+  ```
+  Actual output:
+  ```
+  [
+    "first",
+    "second",
+    "third"
+  ]
+  ```
+
 - [ ] `$[-4:-4]`
   Input:
   ```

@@ -11,8 +11,6 @@ queries:
   - id: array_slice_with_large_number_for_end_and_negative_step
     status: open
     result: []
-  - id: array_slice_with_large_number_for_start
-    status: error
   - id: array_slice_with_large_number_for_start_end_negative_step
     status: open
     result: []
@@ -33,24 +31,15 @@ queries:
     result: []
   - id: array_slice_with_open_start_and_negative_step
     status: error
-  - id: array_slice_with_start_large_negative_number_and_open_end_on_short_array
-    status: fail
-    result: ["third", "first", "second", "third"]
   - id: array_slice_with_step_0
     status: open
     result: ["first", "second", "third"]
   - id: bracket_notation_with_empty_path
     status: fail
     result: [{"": 42, "\"\"": 222, "''": 123}]
-  - id: bracket_notation_with_empty_string
-    status: fail
-    result: NOT_SUPPORTED
-  - id: bracket_notation_with_empty_string_doubled_quoted
-    status: fail
-    result: NOT_SUPPORTED
   - id: bracket_notation_with_negative_number_on_short_array
     status: fail
-    result: ["one element", "one element"]
+    result: ["one element"]
   - id: bracket_notation_with_number_on_object
     status: open
     result: ["value"]
@@ -90,9 +79,6 @@ queries:
   - id: dot_bracket_notation_without_quotes
     status: fail
     result: ["value"]
-  - id: dot_notation_after_union_with_keys
-    status: fail
-    result: []
   - id: dot_notation_with_double_quotes
     status: open
     result: ["value"]
@@ -314,24 +300,12 @@ queries:
   - id: union_with_filter
     status: open
     result: [{"key": 1}, {"key": 2}]
-  - id: union_with_keys
-    status: fail
-    result: []
-  - id: union_with_keys_after_array_slice
-    status: fail
-    result: []
-  - id: union_with_keys_after_bracket_notation
-    status: fail
-    result: []
   - id: union_with_keys_after_dot_notation_with_wildcard
     status: open
-    result: []
+    result: ["cc1", "dd1", "cc2", "dd2"]
   - id: union_with_keys_after_recursive_descent
     status: open
-    result: []
-  - id: union_with_keys_on_object_without_key
-    status: fail
-    result: []
+    result: ["cc1", "cc2", "cc3", "cc5", "dd1", "dd2", "dd4"]
   - id: union_with_repeated_matches_after_dot_notation_with_wildcard
     status: open
     result: ["string", null, true, false, "string", 5.4]

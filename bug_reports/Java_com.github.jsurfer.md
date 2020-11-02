@@ -34,6 +34,10 @@ The following queries provide results that do not match those of other implement
     "fifth"
   ]
   ```
+  Expected output:
+  ```
+  ["first", "second"]
+  ```
   Error:
   ```
   java.lang.NumberFormatException: For input string: "-113667776004"

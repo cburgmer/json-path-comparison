@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "eaafddba3d83e9c020df6467d558c43d",
+    "content-hash": "04b76d3fb01566a2ecba856ea4115efa",
     "packages": [
         {
             "name": "softcreatr/jsonpath",
-            "version": "dev-main",
+            "version": "0.7.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/SoftCreatR/JSONPath.git",
-                "reference": "a24ccc668c9f1acc6a48431f0b34b35fa057d0b9"
+                "reference": "46689608586a8081be399342755c36e179f3b5fc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/SoftCreatR/JSONPath/zipball/a24ccc668c9f1acc6a48431f0b34b35fa057d0b9",
-                "reference": "a24ccc668c9f1acc6a48431f0b34b35fa057d0b9",
+                "url": "https://api.github.com/repos/SoftCreatR/JSONPath/zipball/46689608586a8081be399342755c36e179f3b5fc",
+                "reference": "46689608586a8081be399342755c36e179f3b5fc",
                 "shasum": ""
             },
             "require": {
@@ -66,15 +66,13 @@
                     "type": "github"
                 }
             ],
-            "time": "2020-10-25T21:40:45+00:00"
+            "time": "2020-10-27T11:37:08+00:00"
         }
     ],
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {
-        "softcreatr/jsonpath": 20
-    },
+    "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": [],

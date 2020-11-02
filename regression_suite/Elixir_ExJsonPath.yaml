@@ -11,7 +11,7 @@ queries:
   - id: array_slice_with_large_number_for_end_and_negative_step
     status: error
   - id: array_slice_with_large_number_for_start
-    status: open
+    status: fail
     result: []
   - id: array_slice_with_large_number_for_start_end_negative_step
     status: error

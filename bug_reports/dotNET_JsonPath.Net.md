@@ -108,6 +108,10 @@ The following queries provide results that do not match those of other implement
     "fifth"
   ]
   ```
+  Expected output:
+  ```
+  ["first", "second"]
+  ```
   Error:
   ```
   'first,second]' is an invalid JSON literal. Expected the literal 'false'. LineNumber: 0 | BytePositionInLine: 2.
