@@ -128,9 +128,6 @@ queries:
     status: error
   - id: bracket_notation_with_quoted_wildcard_literal
     status: error
-  - id: bracket_notation_with_quoted_wildcard_literal_on_object_without_key
-    status: open
-    result: []
   - id: bracket_notation_with_wildcard_after_array_slice
     status: error
   - id: bracket_notation_with_wildcard_after_recursive_descent

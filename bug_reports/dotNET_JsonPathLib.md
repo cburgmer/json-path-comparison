@@ -251,6 +251,24 @@ The following queries provide results that do not match those of other implement
   ]
   ```
 
+- [ ] `$['*']`
+  Input:
+  ```
+  {
+    "another": "entry"
+  }
+  ```
+  Expected output:
+  ```
+  []
+  ```
+  Actual output:
+  ```
+  [
+    "entry"
+  ]
+  ```
+
 - [ ] `$['ni.*']`
   Input:
   ```

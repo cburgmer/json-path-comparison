@@ -63,9 +63,6 @@ queries:
     status: error
   - id: bracket_notation_with_quoted_string_and_unescaped_single_quote
     status: error
-  - id: bracket_notation_with_quoted_wildcard_literal_on_object_without_key
-    status: open
-    result: []
   - id: bracket_notation_with_wildcard_after_recursive_descent
     status: fail
     result: NOT_SUPPORTED

@@ -921,6 +921,23 @@ The following queries provide results that do not match those of other implement
   parsing error
   ```
 
+- [ ] `$['*']`
+  Input:
+  ```
+  {
+    "another": "entry"
+  }
+  ```
+  Expected output:
+  ```
+  []
+  ```
+  Actual output:
+  NOT_SUPPORTED
+  ```
+  parsing error
+  ```
+
 - [ ] `$['ni.*']`
   Input:
   ```

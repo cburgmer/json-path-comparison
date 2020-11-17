@@ -351,6 +351,10 @@ queries:
   - id: bracket_notation_with_quoted_wildcard_literal_on_object_without_key
     selector: "$['*']"
     document: {"another": "entry"}
+    consensus: []
+    scalar-consensus: null
+    not-found-consensus: NOT_FOUND
+    scalar-not-found-consensus: NOT_FOUND
   - id: bracket_notation_with_string_including_dot_wildcard
     selector: "$['ni.*']"
     document: {"nice": 42, "ni.*": 1, "mice": 100}

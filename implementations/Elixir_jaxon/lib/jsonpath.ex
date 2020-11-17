@@ -5,7 +5,7 @@ defmodule Mix.Tasks.Execute do
     json = IO.read(:stdio, :all)
     stream = [json]
     selector = hd(args)
-    result = stream |> Jaxon.Stream.query(Jaxon.Path.parse!(selector)) |> Enum.to_list()
+    result = stream |> Jaxon.Stream.from_enumerable() |> Jaxon.Stream.query(Jaxon.Path.parse!(selector)) |> Enum.to_list()
     IO.puts(Poison.encode!(result))
   end
 end

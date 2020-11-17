@@ -272,6 +272,24 @@ The following queries provide results that do not match those of other implement
   RecursionError('maximum recursion depth exceeded while calling a Python object')
   ```
 
+- [ ] `$['*']`
+  Input:
+  ```
+  {
+    "another": "entry"
+  }
+  ```
+  Expected output:
+  ```
+  []
+  ```
+  Actual output:
+  ```
+  [
+    "entry"
+  ]
+  ```
+
 - [ ] `$['ni.*']`
   Input:
   ```

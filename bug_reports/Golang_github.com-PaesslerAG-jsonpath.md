@@ -198,6 +198,10 @@ The following queries provide results that do not match those of other implement
     "another": "entry"
   }
   ```
+  Expected output:
+  ```
+  null
+  ```
   Error:
   ```
   unknown key *

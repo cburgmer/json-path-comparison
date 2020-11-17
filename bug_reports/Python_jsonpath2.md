@@ -402,6 +402,24 @@ The following queries provide results that do not match those of other implement
   ValueError("line 1:2 token recognition error at: '''")
   ```
 
+- [ ] `$['*']`
+  Input:
+  ```
+  {
+    "another": "entry"
+  }
+  ```
+  Expected output:
+  ```
+  []
+  ```
+  Actual output:
+  NOT_SUPPORTED
+  ```
+  line 1:2 token recognition error at: '''
+  ValueError("line 1:2 token recognition error at: '''")
+  ```
+
 - [ ] `$['ni.*']`
   Input:
   ```

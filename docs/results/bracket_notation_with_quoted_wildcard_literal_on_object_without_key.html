@@ -13,6 +13,38 @@
 
 <h2>Results</h2>
 
+<h3 id="consensus">Consensus</h3>
+
+<pre><code>[]
+</code></pre>
+
+<h4>
+Scalar consensus
+</h4>
+
+<p>The scalar consensus applies for implementations which return a single value where only one match is possible (instead of an array of a single value).</p>
+
+<pre><code>null
+</code></pre>
+
+<h4>
+Not found consensus
+</h4>
+
+<p>This consensus applies for implementations which return a specific <em>not found</em> value if no match exists.</p>
+
+<pre><code>NOT_FOUND
+</code></pre>
+
+<h4>
+Scalar not found consensus
+</h4>
+
+<p>This consensus applies for implementations which returns a specific <em>not found</em> value when a query that would regularly return a single match results in no match.</p>
+
+<pre><code>NOT_FOUND
+</code></pre>
+
 <h3>Other responses</h3>
 
 <h4 id="C_json-glib">
@@ -32,49 +64,6 @@ Clojure (json-path)
 <pre><code>[
   "entry"
 ]
-</code></pre>
-
-<h4 id="Cpp_jsoncons">
-Cpp (jsoncons)
-</h4>
-
-<pre><code>[]
-</code></pre>
-
-<h4 id="Elixir_ExJsonPath">
-Elixir (ExJsonPath)
-</h4>
-
-<pre><code>[]
-</code></pre>
-
-<h4 id="Elixir_warpath">
-Elixir (warpath)
-¹
-</h4>
-
-<pre><code>null
-</code></pre>
-
-<h4 id="Erlang_ejsonpath">
-Erlang (ejsonpath)
-</h4>
-
-<pre><code>[]
-</code></pre>
-
-<h4 id="Golang_github.com-spyzhov-ajson">
-Golang (github.com-spyzhov-ajson)
-</h4>
-
-<pre><code>[]
-</code></pre>
-
-<h4 id="Golang_github.com-vmware-labs-yaml-jsonpath">
-Golang (github.com-vmware-labs-yaml-jsonpath)
-</h4>
-
-<pre><code>[]
 </code></pre>
 
 <h4 id="Haskell_jsonpath">
@@ -98,20 +87,6 @@ JavaScript (Goessner)
 ]
 </code></pre>
 
-<h4 id="JavaScript_brunerd">
-JavaScript (brunerd)
-</h4>
-
-<pre><code>[]
-</code></pre>
-
-<h4 id="JavaScript_jsonpath">
-JavaScript (jsonpath)
-</h4>
-
-<pre><code>[]
-</code></pre>
-
 <h4 id="JavaScript_jsonpath-plus">
 JavaScript (jsonpath-plus)
 </h4>
@@ -119,46 +94,6 @@ JavaScript (jsonpath-plus)
 <pre><code>[
   "entry"
 ]
-</code></pre>
-
-<h4 id="Java_com.github.jsurfer">
-Java (com.github.jsurfer)
-</h4>
-
-<pre><code>[]
-</code></pre>
-
-<h4 id="Java_com.jayway.jsonpath">
-Java (com.jayway.jsonpath)
-¹
-³
-</h4>
-
-<p>Not found</p>
-
-<pre><code>SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
-SLF4J: Defaulting to no-operation (NOP) logger implementation
-SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
-com.jayway.jsonpath.PathNotFoundException: No results for path: $['*']
-</code></pre>
-
-<h4 id="Kotlin_com.nfeld.jsonpathkt">
-Kotlin (com.nfeld.jsonpathkt)
-¹
-</h4>
-
-<pre><code>null
-</code></pre>
-
-<h4 id="Objective-C_SMJJSONPath">
-Objective-C (SMJJSONPath)
-¹
-³
-</h4>
-
-<p>Not found</p>
-
-<pre><code>No results for path: $['*']
 </code></pre>
 
 <h4 id="PHP_Goessner">
@@ -169,23 +104,6 @@ PHP (Goessner)
 <pre><code>[
   "entry"
 ]
-</code></pre>
-
-<h4 id="PHP_galbar-jsonpath">
-PHP (galbar-jsonpath)
-²
-</h4>
-
-<p>Not found</p>
-
-<pre><code>jsonpath returned false, this might indicate an error
-</code></pre>
-
-<h4 id="PHP_remorhaz-jsonpath">
-PHP (remorhaz-jsonpath)
-</h4>
-
-<pre><code>[]
 </code></pre>
 
 <h4 id="PHP_softcreatr-jsonpath">
@@ -235,20 +153,6 @@ Python (jsonpath2)
 ValueError("line 1:2 token recognition error at: '''")
 </code></pre>
 
-<h4 id="Raku_JSON-Path">
-Raku (JSON-Path)
-</h4>
-
-<pre><code>[]
-</code></pre>
-
-<h4 id="Ruby_jsonpath">
-Ruby (jsonpath)
-</h4>
-
-<pre><code>[]
-</code></pre>
-
 <h4 id="Rust_jsonpath">
 Rust (jsonpath)
 </h4>
@@ -256,13 +160,6 @@ Rust (jsonpath)
 <p>Not supported</p>
 
 <pre><code>parsing error
-</code></pre>
-
-<h4 id="Rust_jsonpath_lib">
-Rust (jsonpath_lib)
-</h4>
-
-<pre><code>[]
 </code></pre>
 
 <h4 id="Scala_jsonpath">
@@ -274,20 +171,6 @@ Scala (jsonpath)
 ]
 </code></pre>
 
-<h4 id="dotNET_Json.NET">
-dotNET (Json.NET)
-</h4>
-
-<pre><code>[]
-</code></pre>
-
-<h4 id="dotNET_JsonPath.Net">
-dotNET (JsonPath.Net)
-</h4>
-
-<pre><code>[]
-</code></pre>
-
 <h4 id="dotNET_JsonPathLib">
 dotNET (JsonPathLib)
 </h4>
@@ -297,20 +180,6 @@ dotNET (JsonPathLib)
 ]
 </code></pre>
 
-<h4 id="dotNET_Manatee.Json">
-dotNET (Manatee.Json)
-</h4>
-
-<pre><code>[]
-</code></pre>
-
-<h4 id="Proposal_A">
-Proposal (A)
-</h4>
-
-<pre><code>[]
-</code></pre>
-
 <h3>Errors</h3>
 
 <h4 id="Bash_JSONPath.sh">
@@ -318,15 +187,6 @@ Bash (JSONPath.sh)
 </h4>
 
 <pre><code>Expecting value: line 3 column 1 (char 2)
-</code></pre>
-
-<h4 id="Elixir_jaxon">
-Elixir (jaxon)
-</h4>
-
-<pre><code>** (Jaxon.ParseError) Expected an integer at `'*']`
-    (jaxon 1.0.10) lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
-    (jsonpath 0.1.0) lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
 </code></pre>
 
 <h4 id="Golang_github.com-PaesslerAG-jsonpath">

@@ -659,6 +659,24 @@ The following queries provide results that do not match those of other implement
    Error: searchBeginningWithSlice: string
   ```
 
+- [ ] `$['*']`
+  Input:
+  ```
+  {
+    "another": "entry"
+  }
+  ```
+  Expected output:
+  ```
+  null
+  ```
+  Actual output:
+  NOT_SUPPORTED
+  ```
+  Invalid JSONPath: $['*']
+   Error: searchBeginningWithSlice: string
+  ```
+
 - [ ] `$['ni.*']`
   Input:
   ```

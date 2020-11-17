@@ -183,7 +183,7 @@ queries:
     status: fail
     result: ["entry", "value"]
   - id: bracket_notation_with_quoted_wildcard_literal_on_object_without_key
-    status: open
+    status: fail
     result: ["entry"]
   - id: bracket_notation_with_string_including_dot_wildcard
     status: error
