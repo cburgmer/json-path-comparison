@@ -21,8 +21,8 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   ** (Jaxon.ParseError) Expected an integer at `1:3]`
-      lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
-      lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
+      (jaxon 1.0.10) lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
+      (jsonpath 0.1.0) lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
   ```
 
 - [ ] `$[0:5]`
@@ -43,8 +43,8 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   ** (Jaxon.ParseError) Expected an integer at `0:5]`
-      lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
-      lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
+      (jaxon 1.0.10) lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
+      (jsonpath 0.1.0) lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
   ```
 
 - [ ] `$[7:10]`
@@ -63,8 +63,8 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   ** (Jaxon.ParseError) Expected an integer at `7:10]`
-      lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
-      lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
+      (jaxon 1.0.10) lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
+      (jsonpath 0.1.0) lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
   ```
 
 - [ ] `$[1:3]`
@@ -86,8 +86,8 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   ** (Jaxon.ParseError) Expected an integer at `1:3]`
-      lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
-      lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
+      (jaxon 1.0.10) lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
+      (jsonpath 0.1.0) lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
   ```
 
 - [ ] `$[1:10]`
@@ -106,8 +106,8 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   ** (Jaxon.ParseError) Expected an integer at `1:10]`
-      lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
-      lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
+      (jaxon 1.0.10) lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
+      (jsonpath 0.1.0) lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
   ```
 
 - [ ] `$[2:113667776004]`
@@ -128,8 +128,8 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   ** (Jaxon.ParseError) Expected an integer at `2:11366777`
-      lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
-      lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
+      (jaxon 1.0.10) lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
+      (jsonpath 0.1.0) lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
   ```
 
 - [ ] `$[2:-113667776004:-1]`
@@ -146,8 +146,8 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   ** (Jaxon.ParseError) Expected an integer at `2:-1136677`
-      lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
-      lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
+      (jaxon 1.0.10) lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
+      (jsonpath 0.1.0) lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
   ```
 
 - [ ] `$[-113667776004:2]`
@@ -168,8 +168,8 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   ** (Jaxon.ParseError) Expected an integer at `-113667776`
-      lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
-      lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
+      (jaxon 1.0.10) lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
+      (jsonpath 0.1.0) lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
   ```
 
 - [ ] `$[113667776004:2:-1]`
@@ -186,8 +186,8 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   ** (Jaxon.ParseError) Expected an integer at `1136677760`
-      lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
-      lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
+      (jaxon 1.0.10) lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
+      (jsonpath 0.1.0) lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
   ```
 
 - [ ] `$[-4:-5]`
@@ -209,8 +209,8 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   ** (Jaxon.ParseError) Expected an integer at `-4:-5]`
-      lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
-      lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
+      (jaxon 1.0.10) lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
+      (jsonpath 0.1.0) lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
   ```
 
 - [ ] `$[-4:-4]`
@@ -232,8 +232,8 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   ** (Jaxon.ParseError) Expected an integer at `-4:-4]`
-      lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
-      lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
+      (jaxon 1.0.10) lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
+      (jsonpath 0.1.0) lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
   ```
 
 - [ ] `$[-4:-3]`
@@ -255,8 +255,8 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   ** (Jaxon.ParseError) Expected an integer at `-4:-3]`
-      lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
-      lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
+      (jaxon 1.0.10) lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
+      (jsonpath 0.1.0) lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
   ```
 
 - [ ] `$[-4:1]`
@@ -278,8 +278,8 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   ** (Jaxon.ParseError) Expected an integer at `-4:1]`
-      lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
-      lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
+      (jaxon 1.0.10) lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
+      (jsonpath 0.1.0) lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
   ```
 
 - [ ] `$[-4:2]`
@@ -301,8 +301,8 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   ** (Jaxon.ParseError) Expected an integer at `-4:2]`
-      lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
-      lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
+      (jaxon 1.0.10) lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
+      (jsonpath 0.1.0) lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
   ```
 
 - [ ] `$[-4:3]`
@@ -324,8 +324,8 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   ** (Jaxon.ParseError) Expected an integer at `-4:3]`
-      lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
-      lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
+      (jaxon 1.0.10) lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
+      (jsonpath 0.1.0) lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
   ```
 
 - [ ] `$[3:0:-2]`
@@ -342,8 +342,8 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   ** (Jaxon.ParseError) Expected an integer at `3:0:-2]`
-      lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
-      lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
+      (jaxon 1.0.10) lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
+      (jsonpath 0.1.0) lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
   ```
 
 - [ ] `$[0:3:-2]`
@@ -360,8 +360,8 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   ** (Jaxon.ParseError) Expected an integer at `0:3:-2]`
-      lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
-      lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
+      (jaxon 1.0.10) lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
+      (jsonpath 0.1.0) lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
   ```
 
 - [ ] `$[7:3:-1]`
@@ -378,8 +378,8 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   ** (Jaxon.ParseError) Expected an integer at `7:3:-1]`
-      lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
-      lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
+      (jaxon 1.0.10) lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
+      (jsonpath 0.1.0) lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
   ```
 
 - [ ] `$[::-2]`
@@ -396,8 +396,8 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   ** (Jaxon.ParseError) Expected an integer at `::-2]`
-      lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
-      lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
+      (jaxon 1.0.10) lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
+      (jsonpath 0.1.0) lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
   ```
 
 - [ ] `$[1:]`
@@ -418,8 +418,8 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   ** (Jaxon.ParseError) Expected an integer at `1:]`
-      lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
-      lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
+      (jaxon 1.0.10) lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
+      (jsonpath 0.1.0) lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
   ```
 
 - [ ] `$[3::-1]`
@@ -436,8 +436,8 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   ** (Jaxon.ParseError) Expected an integer at `3::-1]`
-      lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
-      lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
+      (jaxon 1.0.10) lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
+      (jsonpath 0.1.0) lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
   ```
 
 - [ ] `$[:2]`
@@ -458,8 +458,8 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   ** (Jaxon.ParseError) Expected an integer at `:2]`
-      lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
-      lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
+      (jaxon 1.0.10) lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
+      (jsonpath 0.1.0) lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
   ```
 
 - [ ] `$[:]`
@@ -477,8 +477,8 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   ** (Jaxon.ParseError) Expected an integer at `:]`
-      lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
-      lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
+      (jaxon 1.0.10) lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
+      (jsonpath 0.1.0) lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
   ```
 
 - [ ] `$[::]`
@@ -496,8 +496,8 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   ** (Jaxon.ParseError) Expected an integer at `::]`
-      lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
-      lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
+      (jaxon 1.0.10) lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
+      (jsonpath 0.1.0) lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
   ```
 
 - [ ] `$[:]`
@@ -511,8 +511,8 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   ** (Jaxon.ParseError) Expected an integer at `:]`
-      lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
-      lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
+      (jaxon 1.0.10) lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
+      (jsonpath 0.1.0) lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
   ```
 
 - [ ] `$[:2:-1]`
@@ -529,8 +529,8 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   ** (Jaxon.ParseError) Expected an integer at `:2:-1]`
-      lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
-      lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
+      (jaxon 1.0.10) lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
+      (jsonpath 0.1.0) lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
   ```
 
 - [ ] `$[3:-4]`
@@ -552,8 +552,8 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   ** (Jaxon.ParseError) Expected an integer at `3:-4]`
-      lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
-      lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
+      (jaxon 1.0.10) lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
+      (jsonpath 0.1.0) lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
   ```
 
 - [ ] `$[3:-3]`
@@ -575,8 +575,8 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   ** (Jaxon.ParseError) Expected an integer at `3:-3]`
-      lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
-      lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
+      (jaxon 1.0.10) lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
+      (jsonpath 0.1.0) lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
   ```
 
 - [ ] `$[3:-2]`
@@ -598,8 +598,8 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   ** (Jaxon.ParseError) Expected an integer at `3:-2]`
-      lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
-      lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
+      (jaxon 1.0.10) lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
+      (jsonpath 0.1.0) lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
   ```
 
 - [ ] `$[2:1]`
@@ -619,8 +619,8 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   ** (Jaxon.ParseError) Expected an integer at `2:1]`
-      lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
-      lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
+      (jaxon 1.0.10) lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
+      (jsonpath 0.1.0) lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
   ```
 
 - [ ] `$[0:0]`
@@ -638,8 +638,8 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   ** (Jaxon.ParseError) Expected an integer at `0:0]`
-      lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
-      lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
+      (jaxon 1.0.10) lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
+      (jsonpath 0.1.0) lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
   ```
 
 - [ ] `$[0:1]`
@@ -657,8 +657,8 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   ** (Jaxon.ParseError) Expected an integer at `0:1]`
-      lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
-      lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
+      (jaxon 1.0.10) lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
+      (jsonpath 0.1.0) lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
   ```
 
 - [ ] `$[-1:]`
@@ -677,8 +677,8 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   ** (Jaxon.ParseError) Expected an integer at `-1:]`
-      lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
-      lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
+      (jaxon 1.0.10) lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
+      (jsonpath 0.1.0) lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
   ```
 
 - [ ] `$[-2:]`
@@ -697,8 +697,8 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   ** (Jaxon.ParseError) Expected an integer at `-2:]`
-      lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
-      lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
+      (jaxon 1.0.10) lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
+      (jsonpath 0.1.0) lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
   ```
 
 - [ ] `$[-4:]`
@@ -717,8 +717,8 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   ** (Jaxon.ParseError) Expected an integer at `-4:]`
-      lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
-      lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
+      (jaxon 1.0.10) lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
+      (jsonpath 0.1.0) lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
   ```
 
 - [ ] `$[0:3:2]`
@@ -739,8 +739,8 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   ** (Jaxon.ParseError) Expected an integer at `0:3:2]`
-      lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
-      lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
+      (jaxon 1.0.10) lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
+      (jsonpath 0.1.0) lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
   ```
 
 - [ ] `$[0:3:0]`
@@ -757,8 +757,8 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   ** (Jaxon.ParseError) Expected an integer at `0:3:0]`
-      lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
-      lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
+      (jaxon 1.0.10) lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
+      (jsonpath 0.1.0) lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
   ```
 
 - [ ] `$[0:3:1]`
@@ -779,8 +779,8 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   ** (Jaxon.ParseError) Expected an integer at `0:3:1]`
-      lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
-      lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
+      (jaxon 1.0.10) lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
+      (jsonpath 0.1.0) lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
   ```
 
 - [ ] `$[010:024:010]`
@@ -822,8 +822,8 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   ** (Jaxon.ParseError) Expected an integer at `010:024:01`
-      lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
-      lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
+      (jaxon 1.0.10) lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
+      (jsonpath 0.1.0) lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
   ```
 
 - [ ] `$[0:4:2]`
@@ -844,8 +844,8 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   ** (Jaxon.ParseError) Expected an integer at `0:4:2]`
-      lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
-      lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
+      (jaxon 1.0.10) lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
+      (jsonpath 0.1.0) lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
   ```
 
 - [ ] `$[1:3:]`
@@ -866,8 +866,8 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   ** (Jaxon.ParseError) Expected an integer at `1:3:]`
-      lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
-      lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
+      (jaxon 1.0.10) lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
+      (jsonpath 0.1.0) lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
   ```
 
 - [ ] `$[::2]`
@@ -888,8 +888,8 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   ** (Jaxon.ParseError) Expected an integer at `::2]`
-      lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
-      lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
+      (jaxon 1.0.10) lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
+      (jsonpath 0.1.0) lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
   ```
 
 - [ ] `$['key']`
@@ -906,8 +906,8 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   ** (Jaxon.ParseError) Expected an integer at `'key']`
-      lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
-      lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
+      (jaxon 1.0.10) lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
+      (jsonpath 0.1.0) lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
   ```
 
 - [ ] `$..[0]`
@@ -961,8 +961,8 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   ** (Jaxon.ParseError) Expected an integer at `'missing']`
-      lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
-      lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
+      (jaxon 1.0.10) lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
+      (jsonpath 0.1.0) lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
   ```
 
 - [ ] `$['ü']`
@@ -979,8 +979,8 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   ** (Jaxon.ParseError) Expected an integer at `'ü']`
-      lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
-      lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
+      (jaxon 1.0.10) lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
+      (jsonpath 0.1.0) lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
   ```
 
 - [ ] `$['two.some']`
@@ -1004,8 +1004,8 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   ** (Jaxon.ParseError) Expected an integer at `'two.some'`
-      lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
-      lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
+      (jaxon 1.0.10) lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
+      (jsonpath 0.1.0) lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
   ```
 
 - [ ] `$["key"]`
@@ -1022,8 +1022,8 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   ** (Jaxon.ParseError) Expected an integer at `"key"]`
-      lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
-      lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
+      (jaxon 1.0.10) lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
+      (jsonpath 0.1.0) lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
   ```
 
 - [ ] `$[]`
@@ -1042,8 +1042,8 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   ** (Jaxon.ParseError) Expected an integer at `]`
-      lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
-      lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
+      (jaxon 1.0.10) lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
+      (jsonpath 0.1.0) lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
   ```
 
 - [ ] `$['']`
@@ -1062,8 +1062,8 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   ** (Jaxon.ParseError) Expected an integer at `'']`
-      lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
-      lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
+      (jaxon 1.0.10) lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
+      (jsonpath 0.1.0) lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
   ```
 
 - [ ] `$[""]`
@@ -1082,8 +1082,8 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   ** (Jaxon.ParseError) Expected an integer at `""]`
-      lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
-      lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
+      (jaxon 1.0.10) lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
+      (jsonpath 0.1.0) lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
   ```
 
 - [ ] `$[-1]`
@@ -1116,8 +1116,8 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   ** (Jaxon.ParseError) Unexpected a closing bracket, expected a string, number, object, array instead.
-      lib/jaxon/stream.ex:60: Jaxon.Stream.call_decode_fun/4
-      lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
+      (jaxon 1.0.10) lib/jaxon/stream.ex:60: Jaxon.Stream.call_decode_fun/4
+      (jsonpath 0.1.0) lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
   ```
 
 - [ ] `$[0]`
@@ -1128,8 +1128,8 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   ** (Jaxon.ParseError) Unexpected string, expected a string, number, object, array instead.
-      lib/jaxon/stream.ex:60: Jaxon.Stream.call_decode_fun/4
-      lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
+      (jaxon 1.0.10) lib/jaxon/stream.ex:60: Jaxon.Stream.call_decode_fun/4
+      (jsonpath 0.1.0) lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
   ```
 
 - [ ] `$[':']`
@@ -1147,8 +1147,8 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   ** (Jaxon.ParseError) Expected an integer at `':']`
-      lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
-      lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
+      (jaxon 1.0.10) lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
+      (jsonpath 0.1.0) lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
   ```
 
 - [ ] `$[']']`
@@ -1165,8 +1165,8 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   ** (Jaxon.ParseError) Expected an integer at `']']`
-      lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
-      lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
+      (jaxon 1.0.10) lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
+      (jsonpath 0.1.0) lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
   ```
 
 - [ ] `$['@']`
@@ -1184,8 +1184,8 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   ** (Jaxon.ParseError) Expected an integer at `'@']`
-      lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
-      lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
+      (jaxon 1.0.10) lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
+      (jsonpath 0.1.0) lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
   ```
 
 - [ ] `$['.']`
@@ -1203,8 +1203,8 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   ** (Jaxon.ParseError) Expected an integer at `'.']`
-      lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
-      lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
+      (jaxon 1.0.10) lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
+      (jsonpath 0.1.0) lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
   ```
 
 - [ ] `$['.*']`
@@ -1223,8 +1223,8 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   ** (Jaxon.ParseError) Expected an integer at `'.*']`
-      lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
-      lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
+      (jaxon 1.0.10) lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
+      (jsonpath 0.1.0) lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
   ```
 
 - [ ] `$['"']`
@@ -1242,8 +1242,8 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   ** (Jaxon.ParseError) Expected an integer at `'"']`
-      lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
-      lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
+      (jaxon 1.0.10) lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
+      (jsonpath 0.1.0) lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
   ```
 
 - [ ] `$['\\']`
@@ -1256,8 +1256,8 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   ** (Jaxon.ParseError) Expected an integer at `'\\']`
-      lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
-      lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
+      (jaxon 1.0.10) lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
+      (jsonpath 0.1.0) lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
   ```
 
 - [ ] `$['\'']`
@@ -1270,8 +1270,8 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   ** (Jaxon.ParseError) Expected an integer at `'\'']`
-      lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
-      lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
+      (jaxon 1.0.10) lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
+      (jsonpath 0.1.0) lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
   ```
 
 - [ ] `$['0']`
@@ -1288,8 +1288,8 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   ** (Jaxon.ParseError) Expected an integer at `'0']`
-      lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
-      lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
+      (jaxon 1.0.10) lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
+      (jsonpath 0.1.0) lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
   ```
 
 - [ ] `$['$']`
@@ -1307,8 +1307,8 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   ** (Jaxon.ParseError) Expected an integer at `'$']`
-      lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
-      lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
+      (jaxon 1.0.10) lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
+      (jsonpath 0.1.0) lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
   ```
 
 - [ ] `$[':@."$,*\'\\']`
@@ -1321,8 +1321,8 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   ** (Jaxon.ParseError) Expected an integer at `':@."$,*\'`
-      lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
-      lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
+      (jaxon 1.0.10) lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
+      (jsonpath 0.1.0) lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
   ```
 
 - [ ] `$['single'quote']`
@@ -1339,8 +1339,8 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   ** (Jaxon.ParseError) Expected an integer at `'single'qu`
-      lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
-      lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
+      (jaxon 1.0.10) lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
+      (jsonpath 0.1.0) lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
   ```
 
 - [ ] `$[',']`
@@ -1358,8 +1358,8 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   ** (Jaxon.ParseError) Expected an integer at `',']`
-      lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
-      lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
+      (jaxon 1.0.10) lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
+      (jsonpath 0.1.0) lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
   ```
 
 - [ ] `$['*']`
@@ -1377,8 +1377,8 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   ** (Jaxon.ParseError) Expected an integer at `'*']`
-      lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
-      lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
+      (jaxon 1.0.10) lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
+      (jsonpath 0.1.0) lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
   ```
 
 - [ ] `$['*']`
@@ -1391,8 +1391,8 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   ** (Jaxon.ParseError) Expected an integer at `'*']`
-      lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
-      lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
+      (jaxon 1.0.10) lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
+      (jsonpath 0.1.0) lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
   ```
 
 - [ ] `$['ni.*']`
@@ -1411,8 +1411,8 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   ** (Jaxon.ParseError) Expected an integer at `'ni.*']`
-      lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
-      lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
+      (jaxon 1.0.10) lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
+      (jsonpath 0.1.0) lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
   ```
 
 - [ ] `$['two'.'some']`
@@ -1437,8 +1437,8 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   ** (Jaxon.ParseError) Expected an integer at `'two'.'som`
-      lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
-      lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
+      (jaxon 1.0.10) lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
+      (jsonpath 0.1.0) lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
   ```
 
 - [ ] `$[two.some]`
@@ -1462,8 +1462,8 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   ** (Jaxon.ParseError) Expected an integer at `two.some]`
-      lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
-      lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
+      (jaxon 1.0.10) lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
+      (jsonpath 0.1.0) lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
   ```
 
 - [ ] `$[0:2][*]`
@@ -1491,8 +1491,8 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   ** (Jaxon.ParseError) Expected an integer at `0:2][*]`
-      lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
-      lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
+      (jaxon 1.0.10) lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
+      (jsonpath 0.1.0) lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
   ```
 
 - [ ] `$..[*]`
@@ -1530,8 +1530,8 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   ** (Jaxon.ParseError) Unexpected a closing bracket, expected a string, number, object, array instead.
-      lib/jaxon/stream.ex:60: Jaxon.Stream.call_decode_fun/4
-      lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
+      (jaxon 1.0.10) lib/jaxon/stream.ex:60: Jaxon.Stream.call_decode_fun/4
+      (jsonpath 0.1.0) lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
   ```
 
 - [ ] `$[*]`
@@ -1568,8 +1568,8 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   ** (Jaxon.ParseError) Expected an integer at `key]`
-      lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
-      lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
+      (jaxon 1.0.10) lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
+      (jsonpath 0.1.0) lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
   ```
 
 - [ ] `$.['key']`
@@ -1589,8 +1589,8 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   ** (Jaxon.ParseError) Expected an integer at `'key']`
-      lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
-      lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
+      (jaxon 1.0.10) lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
+      (jsonpath 0.1.0) lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
   ```
 
 - [ ] `$.["key"]`
@@ -1610,8 +1610,8 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   ** (Jaxon.ParseError) Expected an integer at `"key"]`
-      lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
-      lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
+      (jaxon 1.0.10) lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
+      (jsonpath 0.1.0) lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
   ```
 
 - [ ] `$.[key]`
@@ -1635,8 +1635,8 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   ** (Jaxon.ParseError) Expected an integer at `key]`
-      lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
-      lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
+      (jaxon 1.0.10) lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
+      (jsonpath 0.1.0) lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
   ```
 
 - [ ] `$[0:2].key`
@@ -1661,8 +1661,8 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   ** (Jaxon.ParseError) Expected an integer at `0:2].key`
-      lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
-      lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
+      (jaxon 1.0.10) lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
+      (jsonpath 0.1.0) lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
   ```
 
 - [ ] `$..[1].key`
@@ -1737,8 +1737,8 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   ** (Jaxon.ParseError) Expected an integer at `?(@.id==42`
-      lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
-      lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
+      (jaxon 1.0.10) lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
+      (jsonpath 0.1.0) lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
   ```
 
 - [ ] `$..key`
@@ -1843,8 +1843,8 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   ** (Jaxon.ParseError) Expected an integer at `0,2].key`
-      lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
-      lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
+      (jaxon 1.0.10) lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
+      (jsonpath 0.1.0) lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
   ```
 
 - [ ] `$['one','three'].key`
@@ -1870,8 +1870,8 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   ** (Jaxon.ParseError) Expected an integer at `'one','thr`
-      lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
-      lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
+      (jaxon 1.0.10) lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
+      (jsonpath 0.1.0) lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
   ```
 
 - [ ] `$.`
@@ -1933,8 +1933,8 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   ** (Jaxon.ParseError) Unexpected number, expected a string, number, object, array instead.
-      lib/jaxon/stream.ex:60: Jaxon.Stream.call_decode_fun/4
-      lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
+      (jaxon 1.0.10) lib/jaxon/stream.ex:60: Jaxon.Stream.call_decode_fun/4
+      (jsonpath 0.1.0) lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
   ```
 
 - [ ] `$.*`
@@ -1949,8 +1949,8 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   ** (Jaxon.ParseError) Unexpected a closing bracket, expected a string, number, object, array instead.
-      lib/jaxon/stream.ex:60: Jaxon.Stream.call_decode_fun/4
-      lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
+      (jaxon 1.0.10) lib/jaxon/stream.ex:60: Jaxon.Stream.call_decode_fun/4
+      (jsonpath 0.1.0) lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
   ```
 
 - [ ] `$.*`
@@ -2016,8 +2016,8 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   ** (Jaxon.ParseError) Expected an integer at `?(@.id>2)]`
-      lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
-      lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
+      (jaxon 1.0.10) lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
+      (jsonpath 0.1.0) lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
   ```
 
 - [ ] `$..[?(@.id==2)]`
@@ -2050,8 +2050,8 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   ** (Jaxon.ParseError) Expected an integer at `?(@.id==2)`
-      lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
-      lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
+      (jaxon 1.0.10) lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
+      (jsonpath 0.1.0) lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
   ```
 
 - [ ] `$[?(@.key)]`
@@ -2067,8 +2067,8 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   ** (Jaxon.ParseError) Expected an integer at `?(@.key)]`
-      lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
-      lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
+      (jaxon 1.0.10) lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
+      (jsonpath 0.1.0) lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
   ```
 
 - [ ] `$[?(@.key+50==100)]`
@@ -2095,8 +2095,8 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   ** (Jaxon.ParseError) Expected an integer at `?(@.key+50`
-      lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
-      lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
+      (jaxon 1.0.10) lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
+      (jsonpath 0.1.0) lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
   ```
 
 - [ ] `$[?(@.key>42 && @.key<44)]`
@@ -2117,8 +2117,8 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   ** (Jaxon.ParseError) Expected an integer at `?(@.key>42`
-      lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
-      lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
+      (jaxon 1.0.10) lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
+      (jsonpath 0.1.0) lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
   ```
 
 - [ ] `$[?(@.key>0 && false)]`
@@ -2163,8 +2163,8 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   ** (Jaxon.ParseError) Expected an integer at `?(@.key>0 `
-      lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
-      lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
+      (jaxon 1.0.10) lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
+      (jsonpath 0.1.0) lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
   ```
 
 - [ ] `$[?(@.key>0 && true)]`
@@ -2209,8 +2209,8 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   ** (Jaxon.ParseError) Expected an integer at `?(@.key>0 `
-      lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
-      lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
+      (jaxon 1.0.10) lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
+      (jsonpath 0.1.0) lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
   ```
 
 - [ ] `$[?(@.key>43 || @.key<43)]`
@@ -2231,8 +2231,8 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   ** (Jaxon.ParseError) Expected an integer at `?(@.key>43`
-      lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
-      lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
+      (jaxon 1.0.10) lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
+      (jsonpath 0.1.0) lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
   ```
 
 - [ ] `$[?(@.key>0 || false)]`
@@ -2277,8 +2277,8 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   ** (Jaxon.ParseError) Expected an integer at `?(@.key>0 `
-      lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
-      lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
+      (jaxon 1.0.10) lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
+      (jsonpath 0.1.0) lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
   ```
 
 - [ ] `$[?(@.key>0 || true)]`
@@ -2323,8 +2323,8 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   ** (Jaxon.ParseError) Expected an integer at `?(@.key>0 `
-      lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
-      lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
+      (jaxon 1.0.10) lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
+      (jsonpath 0.1.0) lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
   ```
 
 - [ ] `$[?(@['key']==42)]`
@@ -2367,8 +2367,8 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   ** (Jaxon.ParseError) Expected an integer at `?(@['key']`
-      lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
-      lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
+      (jaxon 1.0.10) lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
+      (jsonpath 0.1.0) lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
   ```
 
 - [ ] `$[?(@['@key']==42)]`
@@ -2399,8 +2399,8 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   ** (Jaxon.ParseError) Expected an integer at `?(@['@key'`
-      lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
-      lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
+      (jaxon 1.0.10) lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
+      (jsonpath 0.1.0) lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
   ```
 
 - [ ] `$[?(@[-1]==2)]`
@@ -2426,8 +2426,8 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   ** (Jaxon.ParseError) Expected an integer at `?(@[-1]==2`
-      lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
-      lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
+      (jaxon 1.0.10) lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
+      (jsonpath 0.1.0) lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
   ```
 
 - [ ] `$[?(@[1]=='b')]`
@@ -2451,8 +2451,8 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   ** (Jaxon.ParseError) Expected an integer at `?(@[1]=='b`
-      lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
-      lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
+      (jaxon 1.0.10) lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
+      (jsonpath 0.1.0) lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
   ```
 
 - [ ] `$[?(@[1]=='b')]`
@@ -2472,8 +2472,8 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   ** (Jaxon.ParseError) Expected an integer at `?(@[1]=='b`
-      lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
-      lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
+      (jaxon 1.0.10) lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
+      (jsonpath 0.1.0) lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
   ```
 
 - [ ] `$[?(@)]`
@@ -2496,8 +2496,8 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   ** (Jaxon.ParseError) Expected an integer at `?(@)]`
-      lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
-      lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
+      (jaxon 1.0.10) lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
+      (jsonpath 0.1.0) lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
   ```
 
 - [ ] `$[?(@.a && (@.b || @.c))]`
@@ -2535,8 +2535,8 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   ** (Jaxon.ParseError) Expected an integer at `?(@.a && (`
-      lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
-      lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
+      (jaxon 1.0.10) lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
+      (jsonpath 0.1.0) lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
   ```
 
 - [ ] `$[?(@.a && @.b || @.c)]`
@@ -2578,8 +2578,8 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   ** (Jaxon.ParseError) Expected an integer at `?(@.a && @`
-      lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
-      lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
+      (jaxon 1.0.10) lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
+      (jsonpath 0.1.0) lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
   ```
 
 - [ ] `$[?(@.key/10==5)]`
@@ -2606,8 +2606,8 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   ** (Jaxon.ParseError) Expected an integer at `?(@.key/10`
-      lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
-      lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
+      (jaxon 1.0.10) lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
+      (jsonpath 0.1.0) lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
   ```
 
 - [ ] `$[?()]`
@@ -2629,8 +2629,8 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   ** (Jaxon.ParseError) Expected an integer at `?()]`
-      lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
-      lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
+      (jaxon 1.0.10) lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
+      (jsonpath 0.1.0) lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
   ```
 
 - [ ] `$[?(@.key==42)]`
@@ -2708,8 +2708,8 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   ** (Jaxon.ParseError) Expected an integer at `?(@.key==4`
-      lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
-      lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
+      (jaxon 1.0.10) lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
+      (jsonpath 0.1.0) lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
   ```
 
 - [ ] `$[?(@.d==["v1","v2"])]`
@@ -2772,8 +2772,8 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   ** (Jaxon.ParseError) Expected an integer at `?(@.d==["v`
-      lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
-      lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
+      (jaxon 1.0.10) lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
+      (jsonpath 0.1.0) lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
   ```
 
 - [ ] `$[?(@[0:1]==[1])]`
@@ -2799,8 +2799,8 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   ** (Jaxon.ParseError) Expected an integer at `?(@[0:1]==`
-      lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
-      lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
+      (jaxon 1.0.10) lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
+      (jsonpath 0.1.0) lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
   ```
 
 - [ ] `$[?(@.*==[1,2])]`
@@ -2834,8 +2834,8 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   ** (Jaxon.ParseError) Expected an integer at `?(@.*==[1,`
-      lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
-      lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
+      (jaxon 1.0.10) lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
+      (jsonpath 0.1.0) lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
   ```
 
 - [ ] `$[?(@.d==['v1','v2'])]`
@@ -2898,8 +2898,8 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   ** (Jaxon.ParseError) Expected an integer at `?(@.d==['v`
-      lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
-      lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
+      (jaxon 1.0.10) lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
+      (jsonpath 0.1.0) lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
   ```
 
 - [ ] `$[?((@.key<44)==false)]`
@@ -2920,8 +2920,8 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   ** (Jaxon.ParseError) Expected an integer at `?((@.key<4`
-      lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
-      lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
+      (jaxon 1.0.10) lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
+      (jsonpath 0.1.0) lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
   ```
 
 - [ ] `$[?(@.key==false)]`
@@ -2969,8 +2969,8 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   ** (Jaxon.ParseError) Expected an integer at `?(@.key==f`
-      lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
-      lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
+      (jaxon 1.0.10) lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
+      (jsonpath 0.1.0) lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
   ```
 
 - [ ] `$[?(@.key==null)]`
@@ -3018,8 +3018,8 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   ** (Jaxon.ParseError) Expected an integer at `?(@.key==n`
-      lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
-      lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
+      (jaxon 1.0.10) lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
+      (jsonpath 0.1.0) lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
   ```
 
 - [ ] `$[?(@[0:1]==1)]`
@@ -3045,8 +3045,8 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   ** (Jaxon.ParseError) Expected an integer at `?(@[0:1]==`
-      lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
-      lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
+      (jaxon 1.0.10) lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
+      (jsonpath 0.1.0) lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
   ```
 
 - [ ] `$[?(@[*]==2)]`
@@ -3080,8 +3080,8 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   ** (Jaxon.ParseError) Expected an integer at `?(@[*]==2)`
-      lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
-      lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
+      (jaxon 1.0.10) lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
+      (jsonpath 0.1.0) lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
   ```
 
 - [ ] `$[?(@.*==2)]`
@@ -3115,8 +3115,8 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   ** (Jaxon.ParseError) Expected an integer at `?(@.*==2)]`
-      lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
-      lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
+      (jaxon 1.0.10) lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
+      (jsonpath 0.1.0) lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
   ```
 
 - [ ] `$[?(@.key==-0.123e2)]`
@@ -3146,8 +3146,8 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   ** (Jaxon.ParseError) Expected an integer at `?(@.key==-`
-      lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
-      lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
+      (jaxon 1.0.10) lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
+      (jsonpath 0.1.0) lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
   ```
 
 - [ ] `$[?(@.key==010)]`
@@ -3174,8 +3174,8 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   ** (Jaxon.ParseError) Expected an integer at `?(@.key==0`
-      lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
-      lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
+      (jaxon 1.0.10) lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
+      (jsonpath 0.1.0) lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
   ```
 
 - [ ] `$[?(@.d=={"k":"v"})]`
@@ -3231,8 +3231,8 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   ** (Jaxon.ParseError) Expected an integer at `?(@.d=={"k`
-      lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
-      lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
+      (jaxon 1.0.10) lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
+      (jsonpath 0.1.0) lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
   ```
 
 - [ ] `$[?(@==42)]`
@@ -3253,8 +3253,8 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   ** (Jaxon.ParseError) Expected an integer at `?(@==42)]`
-      lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
-      lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
+      (jaxon 1.0.10) lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
+      (jsonpath 0.1.0) lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
   ```
 
 - [ ] `$[?(@.key==43)]`
@@ -3273,8 +3273,8 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   ** (Jaxon.ParseError) Expected an integer at `?(@.key==4`
-      lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
-      lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
+      (jaxon 1.0.10) lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
+      (jsonpath 0.1.0) lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
   ```
 
 - [ ] `$[?(@.key==42)]`
@@ -3313,8 +3313,8 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   ** (Jaxon.ParseError) Expected an integer at `?(@.key==4`
-      lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
-      lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
+      (jaxon 1.0.10) lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
+      (jsonpath 0.1.0) lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
   ```
 
 - [ ] `$[?(@.id==2)]`
@@ -3327,8 +3327,8 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   ** (Jaxon.ParseError) Expected an integer at `?(@.id==2)`
-      lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
-      lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
+      (jaxon 1.0.10) lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
+      (jsonpath 0.1.0) lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
   ```
 
 - [ ] `$[?(@.key=="value")]`
@@ -3391,8 +3391,8 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   ** (Jaxon.ParseError) Expected an integer at `?(@.key=="`
-      lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
-      lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
+      (jaxon 1.0.10) lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
+      (jsonpath 0.1.0) lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
   ```
 
 - [ ] `$[?(@.key=="hi@example.com")]`
@@ -3417,8 +3417,8 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   ** (Jaxon.ParseError) Expected an integer at `?(@.key=="`
-      lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
-      lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
+      (jaxon 1.0.10) lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
+      (jsonpath 0.1.0) lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
   ```
 
 - [ ] `$[?(@.key=="some.value")]`
@@ -3443,8 +3443,8 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   ** (Jaxon.ParseError) Expected an integer at `?(@.key=="`
-      lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
-      lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
+      (jaxon 1.0.10) lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
+      (jsonpath 0.1.0) lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
   ```
 
 - [ ] `$[?(@.key=='value')]`
@@ -3466,8 +3466,8 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   ** (Jaxon.ParseError) Expected an integer at `?(@.key=='`
-      lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
-      lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
+      (jaxon 1.0.10) lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
+      (jsonpath 0.1.0) lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
   ```
 
 - [ ] `$[?(@.key==true)]`
@@ -3515,8 +3515,8 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   ** (Jaxon.ParseError) Expected an integer at `?(@.key==t`
-      lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
-      lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
+      (jaxon 1.0.10) lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
+      (jsonpath 0.1.0) lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
   ```
 
 - [ ] `$.items[?(@.key==$.value)]`
@@ -3540,8 +3540,8 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   ** (Jaxon.ParseError) Expected an integer at `?(@.key==$`
-      lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
-      lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
+      (jaxon 1.0.10) lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
+      (jsonpath 0.1.0) lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
   ```
 
 - [ ] `$[?(@.key>42)]`
@@ -3592,8 +3592,8 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   ** (Jaxon.ParseError) Expected an integer at `?(@.key>42`
-      lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
-      lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
+      (jaxon 1.0.10) lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
+      (jsonpath 0.1.0) lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
   ```
 
 - [ ] `$[?(@.key>=42)]`
@@ -3644,8 +3644,8 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   ** (Jaxon.ParseError) Expected an integer at `?(@.key>=4`
-      lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
-      lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
+      (jaxon 1.0.10) lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
+      (jsonpath 0.1.0) lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
   ```
 
 - [ ] `$[?(@.d in [2, 3])]`
@@ -3672,8 +3672,8 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   ** (Jaxon.ParseError) Expected an integer at `?(@.d in [`
-      lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
-      lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
+      (jaxon 1.0.10) lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
+      (jsonpath 0.1.0) lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
   ```
 
 - [ ] `$[?(2 in @.d)]`
@@ -3714,8 +3714,8 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   ** (Jaxon.ParseError) Expected an integer at `?(2 in @.d`
-      lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
-      lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
+      (jaxon 1.0.10) lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
+      (jsonpath 0.1.0) lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
   ```
 
 - [ ] `$[?(@.key<42)]`
@@ -3766,8 +3766,8 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   ** (Jaxon.ParseError) Expected an integer at `?(@.key<42`
-      lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
-      lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
+      (jaxon 1.0.10) lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
+      (jsonpath 0.1.0) lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
   ```
 
 - [ ] `$[?(@.key<=42)]`
@@ -3818,8 +3818,8 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   ** (Jaxon.ParseError) Expected an integer at `?(@.key<=4`
-      lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
-      lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
+      (jaxon 1.0.10) lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
+      (jsonpath 0.1.0) lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
   ```
 
 - [ ] `$[?(@.key*2==100)]`
@@ -3846,8 +3846,8 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   ** (Jaxon.ParseError) Expected an integer at `?(@.key*2=`
-      lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
-      lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
+      (jaxon 1.0.10) lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
+      (jsonpath 0.1.0) lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
   ```
 
 - [ ] `$[?(!(@.key==42))]`
@@ -3898,8 +3898,8 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   ** (Jaxon.ParseError) Expected an integer at `?(!(@.key=`
-      lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
-      lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
+      (jaxon 1.0.10) lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
+      (jsonpath 0.1.0) lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
   ```
 
 - [ ] `$[?(!(@.key<42))]`
@@ -3950,8 +3950,8 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   ** (Jaxon.ParseError) Expected an integer at `?(!(@.key<`
-      lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
-      lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
+      (jaxon 1.0.10) lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
+      (jsonpath 0.1.0) lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
   ```
 
 - [ ] `$[?(@.key!=42)]`
@@ -4029,8 +4029,8 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   ** (Jaxon.ParseError) Expected an integer at `?(@.key!=4`
-      lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
-      lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
+      (jaxon 1.0.10) lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
+      (jsonpath 0.1.0) lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
   ```
 
 - [ ] `$[?(@.name=~/hello.*/)]`
@@ -4057,8 +4057,8 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   ** (Jaxon.ParseError) Expected an integer at `?(@.name=~`
-      lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
-      lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
+      (jaxon 1.0.10) lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
+      (jsonpath 0.1.0) lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
   ```
 
 - [ ] `$[?(@[*]>=4)]`
@@ -4082,8 +4082,8 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   ** (Jaxon.ParseError) Expected an integer at `?(@[*]>=4)`
-      lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
-      lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
+      (jaxon 1.0.10) lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
+      (jsonpath 0.1.0) lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
   ```
 
 - [ ] `$.x[?(@[*]>=$.y[*])]`
@@ -4114,8 +4114,8 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   ** (Jaxon.ParseError) Expected an integer at `?(@[*]>=$.`
-      lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
-      lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
+      (jaxon 1.0.10) lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
+      (jsonpath 0.1.0) lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
   ```
 
 - [ ] `$[?(@.key=42)]`
@@ -4197,8 +4197,8 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   ** (Jaxon.ParseError) Expected an integer at `?(@.key=42`
-      lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
-      lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
+      (jaxon 1.0.10) lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
+      (jsonpath 0.1.0) lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
   ```
 
 - [ ] `$[?(@.a[?(@.price>10)])]`
@@ -4243,8 +4243,8 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   ** (Jaxon.ParseError) Expected an integer at `?(@.a[?(@.`
-      lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
-      lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
+      (jaxon 1.0.10) lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
+      (jsonpath 0.1.0) lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
   ```
 
 - [ ] `$[?(@.address.city=='Berlin')]`
@@ -4270,8 +4270,8 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   ** (Jaxon.ParseError) Expected an integer at `?(@.addres`
-      lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
-      lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
+      (jaxon 1.0.10) lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
+      (jsonpath 0.1.0) lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
   ```
 
 - [ ] `$[?(@.key-50==-100)]`
@@ -4298,8 +4298,8 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   ** (Jaxon.ParseError) Expected an integer at `?(@.key-50`
-      lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
-      lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
+      (jaxon 1.0.10) lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
+      (jsonpath 0.1.0) lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
   ```
 
 - [ ] `$[?(1==1)]`
@@ -4322,8 +4322,8 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   ** (Jaxon.ParseError) Expected an integer at `?(1==1)]`
-      lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
-      lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
+      (jaxon 1.0.10) lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
+      (jsonpath 0.1.0) lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
   ```
 
 - [ ] `$[?(@.key===42)]`
@@ -4401,8 +4401,8 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   ** (Jaxon.ParseError) Expected an integer at `?(@.key===`
-      lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
-      lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
+      (jaxon 1.0.10) lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
+      (jsonpath 0.1.0) lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
   ```
 
 - [ ] `$[?(@.key)]`
@@ -4450,8 +4450,8 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   ** (Jaxon.ParseError) Expected an integer at `?(@.key)]`
-      lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
-      lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
+      (jaxon 1.0.10) lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
+      (jsonpath 0.1.0) lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
   ```
 
 - [ ] `$.*[?(@.key)]`
@@ -4469,8 +4469,8 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   ** (Jaxon.ParseError) Expected an integer at `?(@.key)]`
-      lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
-      lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
+      (jaxon 1.0.10) lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
+      (jsonpath 0.1.0) lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
   ```
 
 - [ ] `$..[?(@.id)]`
@@ -4503,8 +4503,8 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   ** (Jaxon.ParseError) Expected an integer at `?(@.id)]`
-      lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
-      lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
+      (jaxon 1.0.10) lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
+      (jsonpath 0.1.0) lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
   ```
 
 - [ ] `$[?(false)]`
@@ -4527,8 +4527,8 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   ** (Jaxon.ParseError) Expected an integer at `?(false)]`
-      lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
-      lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
+      (jaxon 1.0.10) lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
+      (jsonpath 0.1.0) lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
   ```
 
 - [ ] `$[?(@..child)]`
@@ -4570,8 +4570,8 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   ** (Jaxon.ParseError) Expected an integer at `?(@..child`
-      lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
-      lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
+      (jaxon 1.0.10) lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
+      (jsonpath 0.1.0) lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
   ```
 
 - [ ] `$[?(null)]`
@@ -4594,8 +4594,8 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   ** (Jaxon.ParseError) Expected an integer at `?(null)]`
-      lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
-      lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
+      (jaxon 1.0.10) lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
+      (jsonpath 0.1.0) lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
   ```
 
 - [ ] `$[?(true)]`
@@ -4618,8 +4618,8 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   ** (Jaxon.ParseError) Expected an integer at `?(true)]`
-      lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
-      lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
+      (jaxon 1.0.10) lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
+      (jsonpath 0.1.0) lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
   ```
 
 - [ ] `$[?@.key==42]`
@@ -4701,8 +4701,8 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   ** (Jaxon.ParseError) Expected an integer at `?@.key==42`
-      lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
-      lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
+      (jaxon 1.0.10) lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
+      (jsonpath 0.1.0) lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
   ```
 
 - [ ] `$[?(!@.key)]`
@@ -4750,8 +4750,8 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   ** (Jaxon.ParseError) Expected an integer at `?(!@.key)]`
-      lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
-      lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
+      (jaxon 1.0.10) lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
+      (jsonpath 0.1.0) lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
   ```
 
 - [ ] `$(key,more)`
@@ -4786,8 +4786,8 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   ** (Jaxon.ParseError) Expected an integer at `(@.length-`
-      lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
-      lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
+      (jaxon 1.0.10) lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
+      (jsonpath 0.1.0) lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
   ```
 
 - [ ] `$[0,1]`
@@ -4806,8 +4806,8 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   ** (Jaxon.ParseError) Expected an integer at `0,1]`
-      lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
-      lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
+      (jaxon 1.0.10) lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
+      (jsonpath 0.1.0) lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
   ```
 
 - [ ] `$[?(@.key<3),?(@.key>6)]`
@@ -4843,8 +4843,8 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   ** (Jaxon.ParseError) Expected an integer at `?(@.key<3)`
-      lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
-      lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
+      (jaxon 1.0.10) lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
+      (jsonpath 0.1.0) lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
   ```
 
 - [ ] `$['key','another']`
@@ -4862,8 +4862,8 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   ** (Jaxon.ParseError) Expected an integer at `'key','ano`
-      lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
-      lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
+      (jaxon 1.0.10) lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
+      (jsonpath 0.1.0) lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
   ```
 
 - [ ] `$[:]['c','d']`
@@ -4889,8 +4889,8 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   ** (Jaxon.ParseError) Expected an integer at `:]['c','d'`
-      lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
-      lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
+      (jaxon 1.0.10) lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
+      (jsonpath 0.1.0) lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
   ```
 
 - [ ] `$[0]['c','d']`
@@ -4937,8 +4937,8 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   ** (Jaxon.ParseError) Expected an integer at `'c','d']`
-      lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
-      lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
+      (jaxon 1.0.10) lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
+      (jsonpath 0.1.0) lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
   ```
 
 - [ ] `$..['c','d']`
@@ -4972,8 +4972,8 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   ** (Jaxon.ParseError) Expected an integer at `'c','d']`
-      lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
-      lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
+      (jaxon 1.0.10) lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
+      (jsonpath 0.1.0) lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
   ```
 
 - [ ] `$['missing','key']`
@@ -4991,8 +4991,8 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   ** (Jaxon.ParseError) Expected an integer at `'missing',`
-      lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
-      lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
+      (jaxon 1.0.10) lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
+      (jsonpath 0.1.0) lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
   ```
 
 - [ ] `$[4,1]`
@@ -5013,8 +5013,8 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   ** (Jaxon.ParseError) Expected an integer at `4,1]`
-      lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
-      lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
+      (jaxon 1.0.10) lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
+      (jsonpath 0.1.0) lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
   ```
 
 - [ ] `$.*[0,:5]`
@@ -5036,8 +5036,8 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   ** (Jaxon.ParseError) Expected an integer at `0,:5]`
-      lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
-      lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
+      (jaxon 1.0.10) lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
+      (jsonpath 0.1.0) lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
   ```
 
 - [ ] `$[1:3,4]`
@@ -5054,8 +5054,8 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   ** (Jaxon.ParseError) Expected an integer at `1:3,4]`
-      lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
-      lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
+      (jaxon 1.0.10) lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
+      (jsonpath 0.1.0) lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
   ```
 
 - [ ] `$[ 0 , 1 ]`
@@ -5074,8 +5074,8 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   ** (Jaxon.ParseError) Expected an integer at ` 0 , 1 ]`
-      lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
-      lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
+      (jaxon 1.0.10) lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
+      (jsonpath 0.1.0) lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
   ```
 
 - [ ] `$[*,1]`
@@ -5096,8 +5096,8 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   ** (Jaxon.ParseError) Expected an integer at `*,1]`
-      lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
-      lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
+      (jaxon 1.0.10) lib/jaxon/path.ex:79: Jaxon.Path.parse!/1
+      (jsonpath 0.1.0) lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
   ```
 
 

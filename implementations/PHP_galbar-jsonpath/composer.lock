@@ -52,6 +52,10 @@
                 "jsonpath",
                 "path"
             ],
+            "support": {
+                "issues": "https://github.com/Galbar/JsonPath-PHP/issues",
+                "source": "https://github.com/Galbar/JsonPath-PHP/tree/1.1"
+            },
             "time": "2020-06-01T15:18:22+00:00"
         }
     ],
@@ -63,5 +67,5 @@
     "prefer-lowest": false,
     "platform": [],
     "platform-dev": [],
-    "plugin-api-version": "1.1.0"
+    "plugin-api-version": "2.0.0"
 }
