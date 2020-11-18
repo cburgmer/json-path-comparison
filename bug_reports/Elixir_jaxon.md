@@ -647,9 +647,9 @@ The following queries provide results that do not match those of other implement
   ```
   [42]
   ```
-  Error:
+  Actual output:
   ```
-  timeout: sending signal TERM to command ‘implementations/Elixir_jaxon/run.sh’
+  []
   ```
 
 - [ ] `$['@']`
@@ -765,9 +765,9 @@ The following queries provide results that do not match those of other implement
   ```
   NOT_SUPPORTED
   ```
-  Error:
+  Actual output:
   ```
-  timeout: sending signal TERM to command ‘implementations/Elixir_jaxon/run.sh’
+  []
   ```
 
 - [ ] `$[',']`
@@ -1642,20 +1642,6 @@ The following queries provide results that do not match those of other implement
   Actual output:
   ```
   []
-  ```
-
-- [ ] `$`
-  Input:
-  ```
-  false
-  ```
-  Expected output:
-  ```
-  [false]
-  ```
-  Error:
-  ```
-  timeout: sending signal TERM to command ‘implementations/Elixir_jaxon/run.sh’
   ```
 
 - [ ] `$[0,1]`

@@ -132,7 +132,8 @@ queries:
     status: fail
     result: []
   - id: bracket_notation_with_quoted_closing_bracket_literal
-    status: error
+    status: fail
+    result: []
   - id: bracket_notation_with_quoted_current_object_literal
     status: fail
     result: []
@@ -161,7 +162,8 @@ queries:
     status: open
     result: []
   - id: bracket_notation_with_quoted_string_and_unescaped_single_quote
-    status: error
+    status: fail
+    result: []
   - id: bracket_notation_with_quoted_union_literal
     status: fail
     result: []
@@ -473,8 +475,6 @@ queries:
   - id: recursive_descent_after_dot_notation
     status: open
     result: [{"complex": "string", "primitives": [0, 1]}]
-  - id: root_on_scalar_false
-    status: error
   - id: script_expression
     status: open
     result: []
