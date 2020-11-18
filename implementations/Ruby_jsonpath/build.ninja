@@ -2,8 +2,8 @@ root = implementations/Ruby_jsonpath
 builddir = $root/build
 
 rule install_gems
-  command = gem install -i $root/gems jsonpath -v 1.0.5 && echo > $out
+  command = $root/install.sh && echo > $out
 
-build $builddir/gems_installed: install_gems
+build $builddir/gems_installed: install_gems | $root/install.sh $root/tag
 
 build $root/install: phony $builddir/gems_installed
