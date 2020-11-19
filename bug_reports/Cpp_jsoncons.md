@@ -177,6 +177,24 @@ The following queries provide results that do not match those of other implement
   Not a bool
   ```
 
+- [ ] `$[0,0]`
+  Input:
+  ```
+  [
+    "a"
+  ]
+  ```
+  Expected output:
+  ```
+  ["a", "a"]
+  ```
+  Actual output:
+  ```
+  [
+    "a"
+  ]
+  ```
+
 - [ ] `$[*,1]`
   Input:
   ```

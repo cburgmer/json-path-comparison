@@ -333,6 +333,9 @@ queries:
     result: [""]
   - id: script_expression
     status: error
+  - id: union_with_duplication_from_object
+    status: open
+    result: []
   - id: union_with_filter
     status: error
   - id: union_with_keys

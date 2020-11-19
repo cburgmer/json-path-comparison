@@ -413,6 +413,11 @@ queries:
     status: error
   - id: union
     status: error
+  - id: union_with_duplication_from_array
+    status: error
+  - id: union_with_duplication_from_object
+    status: open
+    result: [1]
   - id: union_with_filter
     status: open
     result: [{"key": 1}, {"key": 8}, {"key": 10}, {"key": 7}, {"key": 2}]

@@ -3089,6 +3089,18 @@ The following queries provide results that do not match those of other implement
   strconv.Atoi: parsing "(@.length-1)": invalid syntax
   ```
 
+- [ ] `$['a','a']`
+  Input:
+  ```
+  {
+    "a": 1
+  }
+  ```
+  Error:
+  ```
+  strconv.Atoi: parsing "'a'": invalid syntax
+  ```
+
 - [ ] `$['key','another']`
   Input:
   ```

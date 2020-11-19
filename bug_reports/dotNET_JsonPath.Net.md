@@ -1720,6 +1720,22 @@ The following queries provide results that do not match those of other implement
   'first,second]' is an invalid JSON literal. Expected the literal 'false'. LineNumber: 0 | BytePositionInLine: 2.
   ```
 
+- [ ] `$[0,0]`
+  Input:
+  ```
+  [
+    "a"
+  ]
+  ```
+  Expected output:
+  ```
+  ["a", "a"]
+  ```
+  Error:
+  ```
+  'a' is an invalid start of a value. LineNumber: 0 | BytePositionInLine: 1.
+  ```
+
 - [ ] `$['key','another']`
   Input:
   ```

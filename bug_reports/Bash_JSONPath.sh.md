@@ -4279,6 +4279,24 @@ The following queries provide results that do not match those of other implement
   
   ```
 
+- [ ] `$[0,0]`
+  Input:
+  ```
+  [
+    "a"
+  ]
+  ```
+  Expected output:
+  ```
+  ["a", "a"]
+  ```
+  Actual output:
+  ```
+  [
+    "a"
+  ]
+  ```
+
 - [ ] `$[?(@.key<3),?(@.key>6)]`
   Input:
   ```

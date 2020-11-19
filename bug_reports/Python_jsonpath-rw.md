@@ -923,6 +923,23 @@ The following queries provide results that do not match those of other implement
   Exception('Parse error at 1:3 near token , (,)')
   ```
 
+- [ ] `$[0,0]`
+  Input:
+  ```
+  [
+    "a"
+  ]
+  ```
+  Expected output:
+  ```
+  ["a", "a"]
+  ```
+  Actual output:
+  NOT_SUPPORTED
+  ```
+  Exception('Parse error at 1:3 near token , (,)')
+  ```
+
 - [ ] `$[4,1]`
   Input:
   ```

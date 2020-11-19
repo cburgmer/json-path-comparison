@@ -460,6 +460,11 @@ queries:
   - id: union
     status: fail
     result: "first"
+  - id: union_with_duplication_from_array
+    status: fail
+    result: "a"
+  - id: union_with_duplication_from_object
+    status: error
   - id: union_with_filter
     status: open
     result: [{"key": 1}, {"key": 2}]

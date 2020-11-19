@@ -2799,6 +2799,34 @@ The following queries provide results that do not match those of other implement
   "first"
   ```
 
+- [ ] `$[0,0]`
+  Input:
+  ```
+  [
+    "a"
+  ]
+  ```
+  Expected output:
+  ```
+  ["a", "a"]
+  ```
+  Actual output:
+  ```
+  "a"
+  ```
+
+- [ ] `$['a','a']`
+  Input:
+  ```
+  {
+    "a": 1
+  }
+  ```
+  Error:
+  ```
+  java.lang.Exception object must be an array.
+  ```
+
 - [ ] `$['key','another']`
   Input:
   ```
