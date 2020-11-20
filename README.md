@@ -77,6 +77,22 @@ e.g. [regression_suite/Clojure_json-path.yaml](./regression_suite/Clojure_json-p
 See for example the [Clojure json-path regression test](https://github.com/gga/json-path/blob/master/test/json_path/test/regression_test.clj)
 on how those files can be put to use.
 
+## Errors
+
+Some of the complexity sadly brings its own set of errors
+
+- Docker might fail building on re-runs due to an outdated package index.
+  Quickest fix is to run `docker rmi json-path-comparison` and start from scratch.
+- If Ninja fails, the failing step is unlikely to be the last (as it will let
+  parallel requests finish first). Search for `FAILED` to identify the failing
+  step. The error is most likely captured in the output file (the part behind
+  the `>`). Debug from there.
+- Some executions might run into timeouts (especially when the machine is under
+  high load). This is a necessary mechanism as not all implementations play nice.
+  Currently the best fix is to remove the output, e.g.
+  `rm -r build/results/bracket_notation_with_number_on_short_array` for a whole
+  query, and re-running Ninja to force a re-build.
+
 ## Contribute
 
 ### Add an implementation
