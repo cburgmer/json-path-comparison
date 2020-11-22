@@ -615,8 +615,8 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   ** (Jaxon.ParseError) Unexpected string "Hello World", expected a string, number, object, array instead.
-      (jaxon 2.0.0) lib/jaxon/decoders/query.ex:29: anonymous fn/2 in Jaxon.Decoders.Query.query/2
-      (jsonpath 0.1.0) lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
+      lib/jaxon/decoders/query.ex:29: anonymous fn/2 in Jaxon.Decoders.Query.query/2
+      lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
   ```
 
 - [ ] `$[':']`
@@ -1250,8 +1250,8 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   ** (Jaxon.ParseError) Unexpected number, expected a string, number, object, array instead.
-      (jaxon 2.0.0) lib/jaxon/decoders/query.ex:29: anonymous fn/2 in Jaxon.Decoders.Query.query/2
-      (jsonpath 0.1.0) lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
+      lib/jaxon/decoders/query.ex:29: anonymous fn/2 in Jaxon.Decoders.Query.query/2
+      lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
   ```
 
 - [ ] `$[?(@['key']==42)]`
