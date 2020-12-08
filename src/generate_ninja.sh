@@ -53,7 +53,7 @@ ninja_rules() {
 rule configure
   command = LANG=en_US.UTF-8 LC_ALL= LC_COLLATE=C ./src/generate_ninja.sh
   generator = 1
-build build.ninja: configure | ./src/generate_ninja.sh queries/ implementations/
+build build.ninja: configure | ./src/generate_ninja.sh queries/ implementations/ proposals/
 
 EOF
 }
@@ -212,7 +212,7 @@ rule compile_table
   command = LANG=en_US.UTF-8 LC_ALL= LC_COLLATE=C ./src/compile_table.sh \$in > \$out
 EOF
     echo
-    echo "build ${markdown_dir}/index.md: compile_table ${results_dir} ${consensus_dir} ${implementations_matching_majority_dir} | src/compile_table.sh src/sort_queries.py queries/ implementations/"
+    echo "build ${markdown_dir}/index.md: compile_table ${results_dir} ${consensus_dir} ${implementations_matching_majority_dir} | src/compile_table.sh src/sort_queries.py queries/ implementations/ proposals/"
     echo
 
     cat <<EOF
