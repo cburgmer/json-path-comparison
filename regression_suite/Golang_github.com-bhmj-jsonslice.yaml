@@ -305,9 +305,6 @@ queries:
   - id: union_with_keys_after_array_slice
     status: fail
     result: [["cc1", "dd1"], ["cc2", "dd2"]]
-  - id: union_with_keys_after_dot_notation_with_wildcard
-    status: open
-    result: ["cc1", "dd1", "cc2", "dd2"]
   - id: union_with_keys_after_recursive_descent
     status: open
     result: ["cc1", "cc2"]

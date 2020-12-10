@@ -297,7 +297,7 @@ queries:
     status: fail
     result: ["cc1", "cc2", "dd1", "dd2"]
   - id: union_with_keys_after_dot_notation_with_wildcard
-    status: open
+    status: fail
     result: ["cc1", "cc2", "dd1", "dd2"]
   - id: union_with_keys_after_recursive_descent
     status: open

@@ -275,6 +275,32 @@ The following queries provide results that do not match those of other implement
   Expected close bracket. Path up to error: '$[0]'
   ```
 
+- [ ] `$.*['c','d']`
+  Input:
+  ```
+  [
+    {
+      "c": "cc1",
+      "d": "dd1",
+      "e": "ee1"
+    },
+    {
+      "c": "cc2",
+      "d": "dd2",
+      "e": "ee2"
+    }
+  ]
+  ```
+  Expected output:
+  ```
+  ["cc1", "dd1", "cc2", "dd2"]
+  ```
+  Actual output:
+  NOT_SUPPORTED
+  ```
+  Expected close bracket. Path up to error: '$.*'
+  ```
+
 - [ ] `$['missing','key']`
   Input:
   ```

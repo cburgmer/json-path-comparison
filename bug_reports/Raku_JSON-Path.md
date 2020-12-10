@@ -1163,6 +1163,32 @@ The following queries provide results that do not match those of other implement
   JSON path parse error at position 4
   ```
 
+- [ ] `$.*['c','d']`
+  Input:
+  ```
+  [
+    {
+      "c": "cc1",
+      "d": "dd1",
+      "e": "ee1"
+    },
+    {
+      "c": "cc2",
+      "d": "dd2",
+      "e": "ee2"
+    }
+  ]
+  ```
+  Expected output:
+  ```
+  ["cc1", "dd1", "cc2", "dd2"]
+  ```
+  Actual output:
+  NOT_SUPPORTED
+  ```
+  JSON path parse error at position 3
+  ```
+
 - [ ] `$['missing','key']`
   Input:
   ```

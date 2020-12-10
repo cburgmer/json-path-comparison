@@ -484,7 +484,7 @@ queries:
     status: fail
     result: {"c": "cc1", "d": "dd1"}
   - id: union_with_keys_after_dot_notation_with_wildcard
-    status: open
+    status: fail
     result: [{"c": "cc1", "d": "dd1"}, {"c": "cc2", "d": "dd2"}]
   - id: union_with_keys_after_recursive_descent
     status: open
