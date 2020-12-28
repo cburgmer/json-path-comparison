@@ -108,6 +108,24 @@ The following queries provide results that do not match those of other implement
   Error: 'Modulo by zero'
   ```
 
+- [ ] `$[0]`
+  Input:
+  ```
+  {
+    "0": "value"
+  }
+  ```
+  Expected output:
+  ```
+  []
+  ```
+  Actual output:
+  ```
+  [
+    "value"
+  ]
+  ```
+
 - [ ] `$[']']`
   Input:
   ```
@@ -227,6 +245,24 @@ The following queries provide results that do not match those of other implement
   NOT_SUPPORTED
   ```
   Invalid JSONPath error: 'Error in JSONPath near '..[*]''
+  ```
+
+- [ ] `$[key]`
+  Input:
+  ```
+  {
+    "key": "value"
+  }
+  ```
+  Expected output:
+  ```
+  NOT_SUPPORTED
+  ```
+  Actual output:
+  ```
+  [
+    "value"
+  ]
   ```
 
 - [ ] `$..[1].key`
@@ -409,6 +445,31 @@ The following queries provide results that do not match those of other implement
   ]
   ```
 
+- [ ] `$[?(@.key>42 && @.key<44)]`
+  Input:
+  ```
+  [
+    {
+      "key": 42
+    },
+    {
+      "key": 43
+    },
+    {
+      "key": 44
+    }
+  ]
+  ```
+  Expected output:
+  ```
+  [{"key": 43}]
+  ```
+  Actual output:
+  NOT_SUPPORTED
+  ```
+  Invalid JSONPath error: 'Error in JSONPath near '>42 && @.key''
+  ```
+
 - [ ] `$[?()]`
   Input:
   ```
@@ -419,6 +480,51 @@ The following queries provide results that do not match those of other implement
     },
     "value",
     null
+  ]
+  ```
+  Expected output:
+  ```
+  NOT_SUPPORTED
+  ```
+  Actual output:
+  NOT_FOUND
+  ```
+  jsonpath returned false, this might indicate an error
+  ```
+
+- [ ] `$[?(2 in @.d)]`
+  Input:
+  ```
+  [
+    {
+      "d": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "d": [
+        2
+      ]
+    },
+    {
+      "d": [
+        1
+      ]
+    },
+    {
+      "d": [
+        3,
+        4
+      ]
+    },
+    {
+      "d": [
+        4,
+        2
+      ]
+    }
   ]
   ```
   Expected output:

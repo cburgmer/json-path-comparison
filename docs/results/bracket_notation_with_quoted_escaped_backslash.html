@@ -11,21 +11,39 @@
 
 <h2>Results</h2>
 
+<h3 id="consensus">Consensus</h3>
+
+<pre><code>[]
+</code></pre>
+
+<h4>
+Scalar consensus
+</h4>
+
+<p>The scalar consensus applies for implementations which return a single value where only one match is possible (instead of an array of a single value).</p>
+
+<pre><code>null
+</code></pre>
+
+<h4>
+Not found consensus
+</h4>
+
+<p>This consensus applies for implementations which return a specific <em>not found</em> value if no match exists.</p>
+
+<pre><code>NOT_FOUND
+</code></pre>
+
+<h4>
+Scalar not found consensus
+</h4>
+
+<p>This consensus applies for implementations which returns a specific <em>not found</em> value when a query that would regularly return a single match results in no match.</p>
+
+<pre><code>NOT_FOUND
+</code></pre>
+
 <h3>Other responses</h3>
-
-<h4 id="Bash_JSONPath.sh">
-Bash (JSONPath.sh)
-</h4>
-
-<pre><code>[]
-</code></pre>
-
-<h4 id="C_json-glib">
-C (json-glib)
-</h4>
-
-<pre><code>[]
-</code></pre>
 
 <h4 id="Cpp_jsoncons">
 Cpp (jsoncons)
@@ -34,35 +52,6 @@ Cpp (jsoncons)
 <pre><code>[
   "value"
 ]
-</code></pre>
-
-<h4 id="Elixir_ExJsonPath">
-Elixir (ExJsonPath)
-</h4>
-
-<pre><code>[]
-</code></pre>
-
-<h4 id="Elixir_jaxon">
-Elixir (jaxon)
-</h4>
-
-<pre><code>[]
-</code></pre>
-
-<h4 id="Elixir_warpath">
-Elixir (warpath)
-¹
-</h4>
-
-<pre><code>null
-</code></pre>
-
-<h4 id="Erlang_ejsonpath">
-Erlang (ejsonpath)
-</h4>
-
-<pre><code>[]
 </code></pre>
 
 <h4 id="Golang_github.com-PaesslerAG-jsonpath">
@@ -102,44 +91,6 @@ Haskell (jsonpath)
  Error: searchBeginningWithSlice: string
 </code></pre>
 
-<h4 id="JavaScript_Goessner">
-JavaScript (Goessner)
-²
-</h4>
-
-<p>Not found</p>
-
-<pre><code>jsonpath returned false, this might indicate an error
-</code></pre>
-
-<h4 id="JavaScript_brunerd">
-JavaScript (brunerd)
-</h4>
-
-<pre><code>[]
-</code></pre>
-
-<h4 id="JavaScript_jsonpath">
-JavaScript (jsonpath)
-</h4>
-
-<pre><code>[]
-</code></pre>
-
-<h4 id="JavaScript_jsonpath-plus">
-JavaScript (jsonpath-plus)
-</h4>
-
-<pre><code>[]
-</code></pre>
-
-<h4 id="Java_com.github.jsurfer">
-Java (com.github.jsurfer)
-</h4>
-
-<pre><code>[]
-</code></pre>
-
 <h4 id="Java_com.jayway.jsonpath">
 Java (com.jayway.jsonpath)
 ¹
@@ -166,26 +117,6 @@ Objective-C (SMJJSONPath)
 <pre><code>"value"
 </code></pre>
 
-<h4 id="PHP_Goessner">
-PHP (Goessner)
-²
-</h4>
-
-<p>Not found</p>
-
-<pre><code>jsonpath returned false, this might indicate an error
-</code></pre>
-
-<h4 id="PHP_galbar-jsonpath">
-PHP (galbar-jsonpath)
-²
-</h4>
-
-<p>Not found</p>
-
-<pre><code>jsonpath returned false, this might indicate an error
-</code></pre>
-
 <h4 id="PHP_remorhaz-jsonpath">
 PHP (remorhaz-jsonpath)
 </h4>
@@ -193,30 +124,6 @@ PHP (remorhaz-jsonpath)
 <pre><code>[
   "value"
 ]
-</code></pre>
-
-<h4 id="PHP_softcreatr-jsonpath">
-PHP (softcreatr-jsonpath)
-</h4>
-
-<pre><code>[]
-</code></pre>
-
-<h4 id="Perl_JSON-Path">
-Perl (JSON-Path)
-</h4>
-
-<pre><code>[]
-</code></pre>
-
-<h4 id="Python_jsonpath">
-Python (jsonpath)
-²
-</h4>
-
-<p>Not found</p>
-
-<pre><code>jsonpath returned false, this might indicate an error
 </code></pre>
 
 <h4 id="Python_jsonpath-rw">
@@ -236,20 +143,6 @@ Python (jsonpath2)
 
 <pre><code>line 1:2 token recognition error at: '''
 ValueError("line 1:2 token recognition error at: '''")
-</code></pre>
-
-<h4 id="Raku_JSON-Path">
-Raku (JSON-Path)
-</h4>
-
-<pre><code>[]
-</code></pre>
-
-<h4 id="Ruby_jsonpath">
-Ruby (jsonpath)
-</h4>
-
-<pre><code>[]
 </code></pre>
 
 <h4 id="Rust_jsonpath">
@@ -272,13 +165,6 @@ $['\\']
 ^^
 </code></pre>
 
-<h4 id="Scala_jsonpath">
-Scala (jsonpath)
-</h4>
-
-<pre><code>[]
-</code></pre>
-
 <h4 id="dotNET_Json.NET">
 dotNET (Json.NET)
 </h4>
@@ -295,13 +181,6 @@ dotNET (JsonPath.Net)
 <pre><code>[
   "value"
 ]
-</code></pre>
-
-<h4 id="dotNET_JsonPathLib">
-dotNET (JsonPathLib)
-</h4>
-
-<pre><code>[]
 </code></pre>
 
 <h4 id="dotNET_Manatee.Json">

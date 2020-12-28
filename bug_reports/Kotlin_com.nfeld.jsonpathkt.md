@@ -187,6 +187,22 @@ The following queries provide results that do not match those of other implement
   "H"
   ```
 
+- [ ] `$['\\']`
+  Input:
+  ```
+  {
+    "\\": "value"
+  }
+  ```
+  Expected output:
+  ```
+  null
+  ```
+  Actual output:
+  ```
+  "value"
+  ```
+
 - [ ] `$[?(@.id==42)].name`
   Input:
   ```
@@ -230,6 +246,31 @@ The following queries provide results that do not match those of other implement
     40,
     42
   ]
+  ```
+
+- [ ] `$[?(@.key>42 && @.key<44)]`
+  Input:
+  ```
+  [
+    {
+      "key": 42
+    },
+    {
+      "key": 43
+    },
+    {
+      "key": 44
+    }
+  ]
+  ```
+  Expected output:
+  ```
+  [{"key": 43}]
+  ```
+  Actual output:
+  NOT_SUPPORTED
+  ```
+  Unexpected char, char=?, index=2
   ```
 
 - [ ] `$[?(@['key']==42)]`

@@ -53,6 +53,10 @@ The following queries provide results that do not match those of other implement
     "more": "string"
   }
   ```
+  Expected output:
+  ```
+  []
+  ```
   Error:
   ```
   init terminating in do_boot (not_implemented)
@@ -510,6 +514,10 @@ The following queries provide results that do not match those of other implement
       "key": 44
     }
   ]
+  ```
+  Expected output:
+  ```
+  [{"key": 43}]
   ```
   Error:
   ```

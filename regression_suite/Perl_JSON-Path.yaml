@@ -64,7 +64,7 @@ queries:
   - id: bracket_notation_with_empty_path
     status: error
   - id: bracket_notation_with_number_on_object
-    status: open
+    status: fail
     result: ["value"]
   - id: bracket_notation_with_number_on_string
     status: error
@@ -78,9 +78,6 @@ queries:
     status: error
   - id: bracket_notation_with_quoted_double_quote_literal
     status: error
-  - id: bracket_notation_with_quoted_escaped_backslash
-    status: open
-    result: []
   - id: bracket_notation_with_quoted_escaped_single_quote
     status: open
     result: []
@@ -110,7 +107,7 @@ queries:
     status: fail
     result: []
   - id: bracket_notation_without_quotes
-    status: open
+    status: fail
     result: ["value"]
   - id: dot_bracket_notation
     status: open

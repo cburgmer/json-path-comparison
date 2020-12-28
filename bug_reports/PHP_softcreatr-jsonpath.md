@@ -129,6 +129,24 @@ The following queries provide results that do not match those of other implement
   ]
   ```
 
+- [ ] `$[0]`
+  Input:
+  ```
+  {
+    "0": "value"
+  }
+  ```
+  Expected output:
+  ```
+  []
+  ```
+  Actual output:
+  ```
+  [
+    "value"
+  ]
+  ```
+
 - [ ] `$[']']`
   Input:
   ```
@@ -208,6 +226,24 @@ The following queries provide results that do not match those of other implement
   ]
   ```
 
+- [ ] `$[key]`
+  Input:
+  ```
+  {
+    "key": "value"
+  }
+  ```
+  Expected output:
+  ```
+  NOT_SUPPORTED
+  ```
+  Actual output:
+  ```
+  [
+    "value"
+  ]
+  ```
+
 - [ ] `$.[key]`
   Input:
   ```
@@ -253,6 +289,37 @@ The following queries provide results that do not match those of other implement
       "": 9001,
       "''": "nice",
       "key": 42
+    }
+  ]
+  ```
+
+- [ ] `$[?(@.key>42 && @.key<44)]`
+  Input:
+  ```
+  [
+    {
+      "key": 42
+    },
+    {
+      "key": 43
+    },
+    {
+      "key": 44
+    }
+  ]
+  ```
+  Expected output:
+  ```
+  [{"key": 43}]
+  ```
+  Actual output:
+  ```
+  [
+    {
+      "key": 43
+    },
+    {
+      "key": 44
     }
   ]
   ```
@@ -397,6 +464,36 @@ The following queries provide results that do not match those of other implement
   Error: 'Malformed filter query'
   ```
 
+- [ ] `$[?(@.d in [2, 3])]`
+  Input:
+  ```
+  [
+    {
+      "d": 1
+    },
+    {
+      "d": 2
+    },
+    {
+      "d": 1
+    },
+    {
+      "d": 3
+    },
+    {
+      "d": 4
+    }
+  ]
+  ```
+  Expected output:
+  ```
+  NOT_SUPPORTED
+  ```
+  Actual output:
+  ```
+  []
+  ```
+
 - [ ] `$[?(2 in @.d)]`
   Input:
   ```
@@ -431,6 +528,10 @@ The following queries provide results that do not match those of other implement
       ]
     }
   ]
+  ```
+  Expected output:
+  ```
+  NOT_SUPPORTED
   ```
   Error:
   ```

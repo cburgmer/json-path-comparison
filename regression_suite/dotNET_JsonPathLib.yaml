@@ -31,7 +31,7 @@ queries:
     status: open
     result: []
   - id: array_slice_with_open_start_and_end_on_object
-    status: open
+    status: fail
     result: [42]
   - id: array_slice_with_open_start_and_negative_step
     status: open
@@ -57,7 +57,7 @@ queries:
     status: fail
     result: []
   - id: bracket_notation_with_number_on_object
-    status: open
+    status: fail
     result: ["value"]
   - id: bracket_notation_with_quoted_closing_bracket_literal
     status: fail
@@ -68,9 +68,6 @@ queries:
   - id: bracket_notation_with_quoted_dot_wildcard
     status: fail
     result: [42, 1, 10]
-  - id: bracket_notation_with_quoted_escaped_backslash
-    status: open
-    result: []
   - id: bracket_notation_with_quoted_escaped_single_quote
     status: open
     result: []
@@ -93,7 +90,7 @@ queries:
     status: fail
     result: ["more"]
   - id: bracket_notation_without_quotes
-    status: open
+    status: fail
     result: ["value"]
   - id: dot_bracket_notation
     status: open
@@ -146,9 +143,6 @@ queries:
   - id: filter_expression_with_addition
     status: open
     result: []
-  - id: filter_expression_with_boolean_and_operator
-    status: open
-    result: [{"key": 43}]
   - id: filter_expression_with_boolean_and_operator_and_value_false
     status: open
     result: []
@@ -251,10 +245,10 @@ queries:
     status: open
     result: [{"key": 42}, {"key": 43}, {"key": 42.0001}, {"key": 100}, {"key": "43"}, {"key": "42"}]
   - id: filter_expression_with_in_array_of_values
-    status: open
+    status: fail
     result: [{"d": 1}, {"d": 1}]
   - id: filter_expression_with_in_current_object
-    status: open
+    status: fail
     result: [{"d": [1, 2, 3]}, {"d": [2]}, {"d": [1]}, {"d": [3, 4]}, {"d": [4, 2]}]
   - id: filter_expression_with_less_than
     status: open

@@ -165,6 +165,24 @@ The following queries provide results that do not match those of other implement
   Failed to parse SliceOperation: ::
   ```
 
+- [ ] `$[:]`
+  Input:
+  ```
+  {
+    ":": 42,
+    "more": "string"
+  }
+  ```
+  Expected output:
+  ```
+  []
+  ```
+  Actual output:
+  NOT_SUPPORTED
+  ```
+  Failed to parse SliceOperation: :
+  ```
+
 - [ ] `$[3:-2]`
   Input:
   ```
@@ -312,6 +330,22 @@ The following queries provide results that do not match those of other implement
   Failed to parse SliceOperation: ::2
   ```
 
+- [ ] `$['\\']`
+  Input:
+  ```
+  {
+    "\\": "value"
+  }
+  ```
+  Expected output:
+  ```
+  null
+  ```
+  Actual output:
+  ```
+  "value"
+  ```
+
 - [ ] `$[',']`
   Input:
   ```
@@ -387,6 +421,106 @@ The following queries provide results that do not match those of other implement
     42,
     500,
     600
+  ]
+  ```
+
+- [ ] `$[?(@.d in [2, 3])]`
+  Input:
+  ```
+  [
+    {
+      "d": 1
+    },
+    {
+      "d": 2
+    },
+    {
+      "d": 1
+    },
+    {
+      "d": 3
+    },
+    {
+      "d": 4
+    }
+  ]
+  ```
+  Expected output:
+  ```
+  NOT_SUPPORTED
+  ```
+  Actual output:
+  ```
+  [
+    {
+      "d": 2
+    },
+    {
+      "d": 3
+    }
+  ]
+  ```
+
+- [ ] `$[?(2 in @.d)]`
+  Input:
+  ```
+  [
+    {
+      "d": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "d": [
+        2
+      ]
+    },
+    {
+      "d": [
+        1
+      ]
+    },
+    {
+      "d": [
+        3,
+        4
+      ]
+    },
+    {
+      "d": [
+        4,
+        2
+      ]
+    }
+  ]
+  ```
+  Expected output:
+  ```
+  NOT_SUPPORTED
+  ```
+  Actual output:
+  ```
+  [
+    {
+      "d": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "d": [
+        2
+      ]
+    },
+    {
+      "d": [
+        4,
+        2
+      ]
+    }
   ]
   ```
 

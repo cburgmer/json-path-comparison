@@ -266,7 +266,7 @@ queries:
     status: open
     result: [{"key": 60}, {"key": 50}, {"key": 10}, {"key": -50}, {"key+50": 100}]
   - id: filter_expression_with_boolean_and_operator
-    status: open
+    status: fail
     result: [{"key": 43}, {"key": 44}]
   - id: filter_expression_with_boolean_and_operator_and_value_false
     status: error
@@ -377,7 +377,7 @@ queries:
   - id: filter_expression_with_in_array_of_values
     status: error
   - id: filter_expression_with_in_current_object
-    status: open
+    status: fail
     result: []
   - id: filter_expression_with_less_than
     status: error

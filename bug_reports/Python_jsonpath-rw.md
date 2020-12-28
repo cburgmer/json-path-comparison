@@ -21,6 +21,28 @@ The following queries provide results that do not match those of other implement
   Exception('Parse error at 1:3 near token : (:)')
   ```
 
+- [ ] `$[:]`
+  Input:
+  ```
+  {
+    ":": 42,
+    "more": "string"
+  }
+  ```
+  Expected output:
+  ```
+  []
+  ```
+  Actual output:
+  ```
+  [
+    {
+      ":": 42,
+      "more": "string"
+    }
+  ]
+  ```
+
 - [ ] `$[0:3:2]`
   Input:
   ```
@@ -262,6 +284,10 @@ The following queries provide results that do not match those of other implement
     "0": "value"
   }
   ```
+  Expected output:
+  ```
+  []
+  ```
   Error:
   ```
   KeyError(0)
@@ -280,6 +306,24 @@ The following queries provide results that do not match those of other implement
   ```
   [
     "H"
+  ]
+  ```
+
+- [ ] `$['\\']`
+  Input:
+  ```
+  {
+    "\\": "value"
+  }
+  ```
+  Expected output:
+  ```
+  []
+  ```
+  Actual output:
+  ```
+  [
+    "value"
   ]
   ```
 
@@ -417,6 +461,24 @@ The following queries provide results that do not match those of other implement
       },
       "some": "string"
     }
+  ]
+  ```
+
+- [ ] `$[key]`
+  Input:
+  ```
+  {
+    "key": "value"
+  }
+  ```
+  Expected output:
+  ```
+  NOT_SUPPORTED
+  ```
+  Actual output:
+  ```
+  [
+    "value"
   ]
   ```
 
@@ -703,6 +765,31 @@ The following queries provide results that do not match those of other implement
   Actual output:
   ```
   []
+  ```
+
+- [ ] `$[?(@.key>42 && @.key<44)]`
+  Input:
+  ```
+  [
+    {
+      "key": 42
+    },
+    {
+      "key": 43
+    },
+    {
+      "key": 44
+    }
+  ]
+  ```
+  Expected output:
+  ```
+  [{"key": 43}]
+  ```
+  Actual output:
+  NOT_SUPPORTED
+  ```
+  JsonPathLexerError('Error on line 1, col 2: Unexpected character: ? ')
   ```
 
 - [ ] `$[?(@['key']==42)]`

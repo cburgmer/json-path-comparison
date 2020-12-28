@@ -27,9 +27,6 @@ queries:
   - id: array_slice_with_open_end_and_negative_step
     status: open
     result: []
-  - id: array_slice_with_open_start_and_end_on_object
-    status: open
-    result: []
   - id: array_slice_with_open_start_and_negative_step
     status: open
     result: []
@@ -53,9 +50,6 @@ queries:
   - id: bracket_notation_with_empty_string
     status: fail
     result: NOT_SUPPORTED
-  - id: bracket_notation_with_number_on_object
-    status: open
-    result: []
   - id: bracket_notation_with_quoted_array_slice_literal
     status: fail
     result: NOT_SUPPORTED
@@ -75,7 +69,7 @@ queries:
     status: fail
     result: NOT_SUPPORTED
   - id: bracket_notation_with_quoted_escaped_backslash
-    status: open
+    status: fail
     result: NOT_SUPPORTED
   - id: bracket_notation_with_quoted_escaped_single_quote
     status: open
@@ -100,9 +94,6 @@ queries:
     result: NOT_SUPPORTED
   - id: bracket_notation_with_string_including_dot_wildcard
     status: fail
-    result: NOT_SUPPORTED
-  - id: bracket_notation_without_quotes
-    status: open
     result: NOT_SUPPORTED
   - id: dot_bracket_notation
     status: open
@@ -171,7 +162,7 @@ queries:
     status: open
     result: NOT_SUPPORTED
   - id: filter_expression_with_boolean_and_operator
-    status: open
+    status: fail
     result: NOT_SUPPORTED
   - id: filter_expression_with_boolean_and_operator_and_value_false
     status: open
@@ -293,12 +284,6 @@ queries:
   - id: filter_expression_with_greater_than_or_equal
     status: open
     result: []
-  - id: filter_expression_with_in_array_of_values
-    status: open
-    result: NOT_SUPPORTED
-  - id: filter_expression_with_in_current_object
-    status: open
-    result: NOT_SUPPORTED
   - id: filter_expression_with_less_than
     status: open
     result: []

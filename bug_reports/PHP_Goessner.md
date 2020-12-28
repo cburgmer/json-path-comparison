@@ -90,6 +90,25 @@ The following queries provide results that do not match those of other implement
   timeout: sending signal TERM to command ‘implementations/PHP_Goessner/run.sh’
   ```
 
+- [ ] `$[:]`
+  Input:
+  ```
+  {
+    ":": 42,
+    "more": "string"
+  }
+  ```
+  Expected output:
+  ```
+  []
+  ```
+  Actual output:
+  ```
+  [
+    42
+  ]
+  ```
+
 - [ ] `$[:2:-1]`
   Input:
   ```
@@ -285,6 +304,24 @@ The following queries provide results that do not match those of other implement
   null
   ```
 
+- [ ] `$[0]`
+  Input:
+  ```
+  {
+    "0": "value"
+  }
+  ```
+  Expected output:
+  ```
+  []
+  ```
+  Actual output:
+  ```
+  [
+    "value"
+  ]
+  ```
+
 - [ ] `$['single'quote']`
   Input:
   ```
@@ -398,6 +435,24 @@ The following queries provide results that do not match those of other implement
   Actual output:
   ```
   null
+  ```
+
+- [ ] `$[key]`
+  Input:
+  ```
+  {
+    "key": "value"
+  }
+  ```
+  Expected output:
+  ```
+  NOT_SUPPORTED
+  ```
+  Actual output:
+  ```
+  [
+    "value"
+  ]
   ```
 
 - [ ] `$.[key]`
@@ -646,6 +701,10 @@ The following queries provide results that do not match those of other implement
       "key": 44
     }
   ]
+  ```
+  Expected output:
+  ```
+  [{"key": 43}]
   ```
   Error:
   ```
@@ -2118,6 +2177,10 @@ The following queries provide results that do not match those of other implement
     }
   ]
   ```
+  Expected output:
+  ```
+  NOT_SUPPORTED
+  ```
   Error:
   ```
   ArgumentCountError
@@ -2157,6 +2220,10 @@ The following queries provide results that do not match those of other implement
       ]
     }
   ]
+  ```
+  Expected output:
+  ```
+  NOT_SUPPORTED
   ```
   Error:
   ```

@@ -29,9 +29,6 @@ queries:
   - id: array_slice_with_open_end_and_negative_step
     status: open
     result: ["forth", "third", "second", "first"]
-  - id: array_slice_with_open_start_and_end_on_object
-    status: open
-    result: []
   - id: array_slice_with_open_start_and_negative_step
     status: open
     result: ["fifth", "forth"]
@@ -48,12 +45,6 @@ queries:
     result: NOT_SUPPORTED
   - id: bracket_notation_with_number_after_dot_notation_with_wildcard_on_nested_arrays_with_different_length
     status: fail
-    result: []
-  - id: bracket_notation_with_number_on_object
-    status: open
-    result: []
-  - id: bracket_notation_with_quoted_escaped_backslash
-    status: open
     result: []
   - id: bracket_notation_with_quoted_escaped_single_quote
     status: open
@@ -73,9 +64,6 @@ queries:
   - id: bracket_notation_with_wildcard_on_object
     status: fail
     result: []
-  - id: bracket_notation_without_quotes
-    status: open
-    result: NOT_SUPPORTED
   - id: dot_bracket_notation
     status: open
     result: NOT_SUPPORTED
@@ -145,9 +133,6 @@ queries:
   - id: filter_expression_with_addition
     status: open
     result: [{"key+50": 100}]
-  - id: filter_expression_with_boolean_and_operator
-    status: open
-    result: [{"key": 43}]
   - id: filter_expression_with_boolean_and_operator_and_value_false
     status: open
     result: NOT_SUPPORTED
@@ -247,12 +232,6 @@ queries:
   - id: filter_expression_with_greater_than_or_equal
     status: open
     result: [{"key": 42}, {"key": 43}, {"key": 42.0001}, {"key": 100}]
-  - id: filter_expression_with_in_array_of_values
-    status: open
-    result: NOT_SUPPORTED
-  - id: filter_expression_with_in_current_object
-    status: open
-    result: NOT_SUPPORTED
   - id: filter_expression_with_less_than
     status: open
     result: [{"key": 0}, {"key": -1}, {"key": 41}, {"key": 41.9999}]

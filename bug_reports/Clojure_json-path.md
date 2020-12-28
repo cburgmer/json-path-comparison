@@ -380,6 +380,10 @@ The following queries provide results that do not match those of other implement
     "more": "string"
   }
   ```
+  Expected output:
+  ```
+  []
+  ```
   Error:
   ```
   java.lang.Exception object must be an array.
@@ -931,6 +935,10 @@ The following queries provide results that do not match those of other implement
     "0": "value"
   }
   ```
+  Expected output:
+  ```
+  null
+  ```
   Error:
   ```
   java.lang.Exception object must be an array.
@@ -1074,6 +1082,10 @@ The following queries provide results that do not match those of other implement
   {
     "\\": "value"
   }
+  ```
+  Expected output:
+  ```
+  null
   ```
   Error:
   ```
@@ -1309,6 +1321,10 @@ The following queries provide results that do not match those of other implement
   {
     "key": "value"
   }
+  ```
+  Expected output:
+  ```
+  NOT_SUPPORTED
   ```
   Error:
   ```
@@ -1647,6 +1663,37 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   java.lang.NullPointerException nil
+  ```
+
+- [ ] `$[?(@.key>42 && @.key<44)]`
+  Input:
+  ```
+  [
+    {
+      "key": 42
+    },
+    {
+      "key": 43
+    },
+    {
+      "key": 44
+    }
+  ]
+  ```
+  Expected output:
+  ```
+  [{"key": 43}]
+  ```
+  Actual output:
+  ```
+  [
+    {
+      "key": 43
+    },
+    {
+      "key": 44
+    }
+  ]
   ```
 
 - [ ] `$[?(@.key>0 && false)]`
@@ -2361,9 +2408,57 @@ The following queries provide results that do not match those of other implement
     }
   ]
   ```
+  Expected output:
+  ```
+  NOT_SUPPORTED
+  ```
   Error:
   ```
   java.lang.Exception object must be an array.
+  ```
+
+- [ ] `$[?(2 in @.d)]`
+  Input:
+  ```
+  [
+    {
+      "d": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "d": [
+        2
+      ]
+    },
+    {
+      "d": [
+        1
+      ]
+    },
+    {
+      "d": [
+        3,
+        4
+      ]
+    },
+    {
+      "d": [
+        4,
+        2
+      ]
+    }
+  ]
+  ```
+  Expected output:
+  ```
+  NOT_SUPPORTED
+  ```
+  Actual output:
+  ```
+  []
   ```
 
 - [ ] `$[?(@.key<42)]`

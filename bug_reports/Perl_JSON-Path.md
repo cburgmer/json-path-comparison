@@ -158,6 +158,10 @@ The following queries provide results that do not match those of other implement
     "more": "string"
   }
   ```
+  Expected output:
+  ```
+  []
+  ```
   Error:
   ```
   Assertion (":" is not an operator) failed!
@@ -312,6 +316,24 @@ The following queries provide results that do not match those of other implement
   	JSON::Path::Evaluator::evaluate(...) called at build/lib/perl5/JSON/Path/Evaluator.pm line 97
   	JSON::Path::Evaluator::evaluate_jsonpath(...) called at build/lib/perl5/JSON/Path.pm line 107
   	JSON::Path::values(...) called at main.pl line 11
+  ```
+
+- [ ] `$[0]`
+  Input:
+  ```
+  {
+    "0": "value"
+  }
+  ```
+  Expected output:
+  ```
+  []
+  ```
+  Actual output:
+  ```
+  [
+    "value"
+  ]
   ```
 
 - [ ] `$[0]`
@@ -611,6 +633,24 @@ The following queries provide results that do not match those of other implement
   Actual output:
   ```
   []
+  ```
+
+- [ ] `$[key]`
+  Input:
+  ```
+  {
+    "key": "value"
+  }
+  ```
+  Expected output:
+  ```
+  NOT_SUPPORTED
+  ```
+  Actual output:
+  ```
+  [
+    "value"
+  ]
   ```
 
 - [ ] `$.[key]`
@@ -967,6 +1007,10 @@ The following queries provide results that do not match those of other implement
       "key": 44
     }
   ]
+  ```
+  Expected output:
+  ```
+  [{"key": 43}]
   ```
   Error:
   ```
@@ -2439,6 +2483,10 @@ The following queries provide results that do not match those of other implement
     }
   ]
   ```
+  Expected output:
+  ```
+  NOT_SUPPORTED
+  ```
   Error:
   ```
   non-safe evaluation, died at main.pl line 11.
@@ -2478,6 +2526,10 @@ The following queries provide results that do not match those of other implement
       ]
     }
   ]
+  ```
+  Expected output:
+  ```
+  NOT_SUPPORTED
   ```
   Error:
   ```

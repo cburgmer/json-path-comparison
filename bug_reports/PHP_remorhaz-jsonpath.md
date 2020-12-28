@@ -63,6 +63,42 @@ The following queries provide results that do not match those of other implement
   ]
   ```
 
+- [ ] `$['\\']`
+  Input:
+  ```
+  {
+    "\\": "value"
+  }
+  ```
+  Expected output:
+  ```
+  []
+  ```
+  Actual output:
+  ```
+  [
+    "value"
+  ]
+  ```
+
+- [ ] `$[key]`
+  Input:
+  ```
+  {
+    "key": "value"
+  }
+  ```
+  Expected output:
+  ```
+  NOT_SUPPORTED
+  ```
+  Actual output:
+  ```
+  [
+    "value"
+  ]
+  ```
+
 - [ ] `$.[key]`
   Input:
   ```

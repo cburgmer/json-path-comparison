@@ -216,6 +216,24 @@ The following queries provide results that do not match those of other implement
   parsing error
   ```
 
+- [ ] `$[:]`
+  Input:
+  ```
+  {
+    ":": 42,
+    "more": "string"
+  }
+  ```
+  Expected output:
+  ```
+  []
+  ```
+  Actual output:
+  NOT_SUPPORTED
+  ```
+  parsing error
+  ```
+
 - [ ] `$[3:-4]`
   Input:
   ```
@@ -843,6 +861,23 @@ The following queries provide results that do not match those of other implement
   Expected output:
   ```
   ["value"]
+  ```
+  Actual output:
+  NOT_SUPPORTED
+  ```
+  parsing error
+  ```
+
+- [ ] `$['\\']`
+  Input:
+  ```
+  {
+    "\\": "value"
+  }
+  ```
+  Expected output:
+  ```
+  []
   ```
   Actual output:
   NOT_SUPPORTED
@@ -1494,6 +1529,31 @@ The following queries provide results that do not match those of other implement
   Expected output (in any order as no consensus on ordering exists):
   ```
   []
+  ```
+  Actual output:
+  NOT_SUPPORTED
+  ```
+  parsing error
+  ```
+
+- [ ] `$[?(@.key>42 && @.key<44)]`
+  Input:
+  ```
+  [
+    {
+      "key": 42
+    },
+    {
+      "key": 43
+    },
+    {
+      "key": 44
+    }
+  ]
+  ```
+  Expected output:
+  ```
+  [{"key": 43}]
   ```
   Actual output:
   NOT_SUPPORTED

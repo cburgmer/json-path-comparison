@@ -13,21 +13,39 @@
 
 <h2>Results</h2>
 
+<h3 id="consensus">Consensus</h3>
+
+<pre><code>[]
+</code></pre>
+
+<h4>
+Scalar consensus
+</h4>
+
+<p>The scalar consensus applies for implementations which return a single value where only one match is possible (instead of an array of a single value).</p>
+
+<pre><code>null
+</code></pre>
+
+<h4>
+Not found consensus
+</h4>
+
+<p>This consensus applies for implementations which return a specific <em>not found</em> value if no match exists.</p>
+
+<pre><code>NOT_FOUND
+</code></pre>
+
+<h4>
+Scalar not found consensus
+</h4>
+
+<p>This consensus applies for implementations which returns a specific <em>not found</em> value when a query that would regularly return a single match results in no match.</p>
+
+<pre><code>NOT_FOUND
+</code></pre>
+
 <h3>Other responses</h3>
-
-<h4 id="Bash_JSONPath.sh">
-Bash (JSONPath.sh)
-</h4>
-
-<pre><code>[]
-</code></pre>
-
-<h4 id="C_json-glib">
-C (json-glib)
-</h4>
-
-<pre><code>[]
-</code></pre>
 
 <h4 id="Cpp_jsoncons">
 Cpp (jsoncons)
@@ -36,35 +54,6 @@ Cpp (jsoncons)
 <pre><code>[
   "value"
 ]
-</code></pre>
-
-<h4 id="Elixir_ExJsonPath">
-Elixir (ExJsonPath)
-</h4>
-
-<pre><code>[]
-</code></pre>
-
-<h4 id="Elixir_jaxon">
-Elixir (jaxon)
-</h4>
-
-<pre><code>[]
-</code></pre>
-
-<h4 id="Elixir_warpath">
-Elixir (warpath)
-¹
-</h4>
-
-<pre><code>null
-</code></pre>
-
-<h4 id="Erlang_ejsonpath">
-Erlang (ejsonpath)
-</h4>
-
-<pre><code>[]
 </code></pre>
 
 <h4 id="Golang_github.com-PaesslerAG-jsonpath">
@@ -92,13 +81,6 @@ Golang (github.com-spyzhov-ajson)
 ]
 </code></pre>
 
-<h4 id="Golang_github.com-vmware-labs-yaml-jsonpath">
-Golang (github.com-vmware-labs-yaml-jsonpath)
-</h4>
-
-<pre><code>[]
-</code></pre>
-
 <h4 id="JavaScript_Goessner">
 JavaScript (Goessner)
 ²
@@ -109,13 +91,6 @@ JavaScript (Goessner)
 ]
 </code></pre>
 
-<h4 id="JavaScript_jsonpath">
-JavaScript (jsonpath)
-</h4>
-
-<pre><code>[]
-</code></pre>
-
 <h4 id="JavaScript_jsonpath-plus">
 JavaScript (jsonpath-plus)
 </h4>
@@ -123,46 +98,6 @@ JavaScript (jsonpath-plus)
 <pre><code>[
   "value"
 ]
-</code></pre>
-
-<h4 id="Java_com.github.jsurfer">
-Java (com.github.jsurfer)
-</h4>
-
-<pre><code>[]
-</code></pre>
-
-<h4 id="Java_com.jayway.jsonpath">
-Java (com.jayway.jsonpath)
-¹
-³
-</h4>
-
-<p>Not found</p>
-
-<pre><code>SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
-SLF4J: Defaulting to no-operation (NOP) logger implementation
-SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
-com.jayway.jsonpath.PathNotFoundException: Filter: [0] can only be applied to arrays. Current context is: {0=value}
-</code></pre>
-
-<h4 id="Kotlin_com.nfeld.jsonpathkt">
-Kotlin (com.nfeld.jsonpathkt)
-¹
-</h4>
-
-<pre><code>null
-</code></pre>
-
-<h4 id="Objective-C_SMJJSONPath">
-Objective-C (SMJJSONPath)
-¹
-³
-</h4>
-
-<p>Not found</p>
-
-<pre><code>Filter: [0] can only be applied to arrays. Current context is: {0 = value; }
 </code></pre>
 
 <h4 id="PHP_Goessner">
@@ -183,13 +118,6 @@ PHP (galbar-jsonpath)
 <pre><code>[
   "value"
 ]
-</code></pre>
-
-<h4 id="PHP_remorhaz-jsonpath">
-PHP (remorhaz-jsonpath)
-</h4>
-
-<pre><code>[]
 </code></pre>
 
 <h4 id="PHP_softcreatr-jsonpath">
@@ -220,20 +148,6 @@ Python (jsonpath)
 ]
 </code></pre>
 
-<h4 id="Python_jsonpath2">
-Python (jsonpath2)
-</h4>
-
-<pre><code>[]
-</code></pre>
-
-<h4 id="Raku_JSON-Path">
-Raku (JSON-Path)
-</h4>
-
-<pre><code>[]
-</code></pre>
-
 <h4 id="Ruby_jsonpath">
 Ruby (jsonpath)
 </h4>
@@ -241,41 +155,6 @@ Ruby (jsonpath)
 <pre><code>[
   null
 ]
-</code></pre>
-
-<h4 id="Rust_jsonpath">
-Rust (jsonpath)
-</h4>
-
-<pre><code>[]
-</code></pre>
-
-<h4 id="Rust_jsonpath_lib">
-Rust (jsonpath_lib)
-</h4>
-
-<pre><code>[]
-</code></pre>
-
-<h4 id="Scala_jsonpath">
-Scala (jsonpath)
-</h4>
-
-<pre><code>[]
-</code></pre>
-
-<h4 id="dotNET_Json.NET">
-dotNET (Json.NET)
-</h4>
-
-<pre><code>[]
-</code></pre>
-
-<h4 id="dotNET_JsonPath.Net">
-dotNET (JsonPath.Net)
-</h4>
-
-<pre><code>[]
 </code></pre>
 
 <h4 id="dotNET_JsonPathLib">
@@ -294,20 +173,6 @@ dotNET (Manatee.Json)
 <pre><code>[
   "value"
 ]
-</code></pre>
-
-<h4 id="JSON_Path_Reference_Implementation">
-JSON (Path_Reference_Implementation)
-</h4>
-
-<pre><code>[]
-</code></pre>
-
-<h4 id="Proposal_A">
-Proposal (A)
-</h4>
-
-<pre><code>[]
 </code></pre>
 
 <h3>Errors</h3>

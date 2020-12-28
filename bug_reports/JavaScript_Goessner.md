@@ -26,6 +26,25 @@ The following queries provide results that do not match those of other implement
   ]
   ```
 
+- [ ] `$[:]`
+  Input:
+  ```
+  {
+    ":": 42,
+    "more": "string"
+  }
+  ```
+  Expected output:
+  ```
+  []
+  ```
+  Actual output:
+  ```
+  [
+    42
+  ]
+  ```
+
 - [ ] `$[0:3:0]`
   Input:
   ```
@@ -149,6 +168,24 @@ The following queries provide results that do not match those of other implement
 - [ ] `$[0]`
   Input:
   ```
+  {
+    "0": "value"
+  }
+  ```
+  Expected output:
+  ```
+  []
+  ```
+  Actual output:
+  ```
+  [
+    "value"
+  ]
+  ```
+
+- [ ] `$[0]`
+  Input:
+  ```
   "Hello World"
   ```
   Expected output:
@@ -246,6 +283,24 @@ The following queries provide results that do not match those of other implement
   ```
   [
     "more"
+  ]
+  ```
+
+- [ ] `$[key]`
+  Input:
+  ```
+  {
+    "key": "value"
+  }
+  ```
+  Expected output:
+  ```
+  NOT_SUPPORTED
+  ```
+  Actual output:
+  ```
+  [
+    "value"
   ]
   ```
 
@@ -549,6 +604,95 @@ The following queries provide results that do not match those of other implement
   NOT_FOUND
   ```
   jsonpath returned false, this might indicate an error
+  ```
+
+- [ ] `$[?(@.d in [2, 3])]`
+  Input:
+  ```
+  [
+    {
+      "d": 1
+    },
+    {
+      "d": 2
+    },
+    {
+      "d": 1
+    },
+    {
+      "d": 3
+    },
+    {
+      "d": 4
+    }
+  ]
+  ```
+  Expected output:
+  ```
+  NOT_SUPPORTED
+  ```
+  Actual output:
+  ```
+  [
+    {
+      "d": 1
+    },
+    {
+      "d": 1
+    }
+  ]
+  ```
+
+- [ ] `$[?(2 in @.d)]`
+  Input:
+  ```
+  [
+    {
+      "d": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "d": [
+        2
+      ]
+    },
+    {
+      "d": [
+        1
+      ]
+    },
+    {
+      "d": [
+        3,
+        4
+      ]
+    },
+    {
+      "d": [
+        4,
+        2
+      ]
+    }
+  ]
+  ```
+  Expected output:
+  ```
+  NOT_SUPPORTED
+  ```
+  Actual output:
+  ```
+  [
+    {
+      "d": [
+        1,
+        2,
+        3
+      ]
+    }
+  ]
   ```
 
 - [ ] `$[?(@[*]>=4)]`

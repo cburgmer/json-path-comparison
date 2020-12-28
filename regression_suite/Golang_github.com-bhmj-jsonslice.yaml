@@ -27,9 +27,6 @@ queries:
   - id: array_slice_with_open_end_and_negative_step
     status: open
     result: ["forth", "third", "second", "first"]
-  - id: array_slice_with_open_start_and_end_on_object
-    status: open
-    result: []
   - id: array_slice_with_open_start_and_negative_step
     status: open
     result: ["fifth", "forth"]
@@ -51,7 +48,7 @@ queries:
   - id: bracket_notation_with_number_-1_on_empty_array
     status: error
   - id: bracket_notation_with_number_on_object
-    status: open
+    status: fail
     result: "value"
   - id: bracket_notation_with_number_on_short_array
     status: error
@@ -82,7 +79,7 @@ queries:
     status: fail
     result: ["value"]
   - id: bracket_notation_without_quotes
-    status: open
+    status: fail
     result: "value"
   - id: dot_bracket_notation
     status: open
@@ -148,9 +145,6 @@ queries:
     result: []
   - id: filter_expression_with_addition
     status: error
-  - id: filter_expression_with_boolean_and_operator
-    status: open
-    result: [{"key": 43}]
   - id: filter_expression_with_boolean_and_operator_and_value_false
     status: error
   - id: filter_expression_with_boolean_and_operator_and_value_true
@@ -227,7 +221,7 @@ queries:
   - id: filter_expression_with_greater_than_or_equal
     status: error
   - id: filter_expression_with_in_array_of_values
-    status: open
+    status: fail
     result: []
   - id: filter_expression_with_in_current_object
     status: error

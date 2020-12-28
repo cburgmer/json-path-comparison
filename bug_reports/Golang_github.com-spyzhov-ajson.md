@@ -39,6 +39,42 @@ The following queries provide results that do not match those of other implement
   ]
   ```
 
+- [ ] `$[0]`
+  Input:
+  ```
+  {
+    "0": "value"
+  }
+  ```
+  Expected output:
+  ```
+  []
+  ```
+  Actual output:
+  ```
+  [
+    "value"
+  ]
+  ```
+
+- [ ] `$['\\']`
+  Input:
+  ```
+  {
+    "\\": "value"
+  }
+  ```
+  Expected output:
+  ```
+  []
+  ```
+  Actual output:
+  ```
+  [
+    "value"
+  ]
+  ```
+
 - [ ] `$['two'.'some']`
   Input:
   ```
@@ -85,6 +121,24 @@ The following queries provide results that do not match those of other implement
   ```
   [
     "42"
+  ]
+  ```
+
+- [ ] `$[key]`
+  Input:
+  ```
+  {
+    "key": "value"
+  }
+  ```
+  Expected output:
+  ```
+  NOT_SUPPORTED
+  ```
+  Actual output:
+  ```
+  [
+    "value"
   ]
   ```
 
@@ -478,6 +532,10 @@ The following queries provide results that do not match those of other implement
     }
   ]
   ```
+  Expected output:
+  ```
+  NOT_SUPPORTED
+  ```
   Error:
   ```
   wrong request: wrong request: ?(@.d in [2, 3])
@@ -517,6 +575,10 @@ The following queries provide results that do not match those of other implement
       ]
     }
   ]
+  ```
+  Expected output:
+  ```
+  NOT_SUPPORTED
   ```
   Error:
   ```

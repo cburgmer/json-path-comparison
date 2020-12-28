@@ -96,6 +96,26 @@ The following queries provide results that do not match those of other implement
   []
   ```
 
+- [ ] `$[:]`
+  Input:
+  ```
+  {
+    ":": 42,
+    "more": "string"
+  }
+  ```
+  Expected output:
+  ```
+  []
+  ```
+  Actual output:
+  ```
+  [
+    42,
+    "string"
+  ]
+  ```
+
 - [ ] `$[3:-4]`
   Input:
   ```
@@ -718,6 +738,24 @@ The following queries provide results that do not match those of other implement
   ]
   ```
 
+- [ ] `$[key]`
+  Input:
+  ```
+  {
+    "key": "value"
+  }
+  ```
+  Expected output:
+  ```
+  NOT_SUPPORTED
+  ```
+  Actual output:
+  ```
+  [
+    "value"
+  ]
+  ```
+
 - [ ] `$.[key]`
   Input:
   ```
@@ -937,6 +975,30 @@ The following queries provide results that do not match those of other implement
   ]
   ```
 
+- [ ] `$[?(@.key>42 && @.key<44)]`
+  Input:
+  ```
+  [
+    {
+      "key": 42
+    },
+    {
+      "key": 43
+    },
+    {
+      "key": 44
+    }
+  ]
+  ```
+  Expected output:
+  ```
+  [{"key": 43}]
+  ```
+  Actual output:
+  ```
+  []
+  ```
+
 - [ ] `$[?(@['key']==42)]`
   Input:
   ```
@@ -1120,6 +1182,80 @@ The following queries provide results that do not match those of other implement
   Expected output:
   ```
   [{"key": "value"}]
+  ```
+  Actual output:
+  ```
+  []
+  ```
+
+- [ ] `$[?(@.d in [2, 3])]`
+  Input:
+  ```
+  [
+    {
+      "d": 1
+    },
+    {
+      "d": 2
+    },
+    {
+      "d": 1
+    },
+    {
+      "d": 3
+    },
+    {
+      "d": 4
+    }
+  ]
+  ```
+  Expected output:
+  ```
+  NOT_SUPPORTED
+  ```
+  Actual output:
+  ```
+  []
+  ```
+
+- [ ] `$[?(2 in @.d)]`
+  Input:
+  ```
+  [
+    {
+      "d": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "d": [
+        2
+      ]
+    },
+    {
+      "d": [
+        1
+      ]
+    },
+    {
+      "d": [
+        3,
+        4
+      ]
+    },
+    {
+      "d": [
+        4,
+        2
+      ]
+    }
+  ]
+  ```
+  Expected output:
+  ```
+  NOT_SUPPORTED
   ```
   Actual output:
   ```

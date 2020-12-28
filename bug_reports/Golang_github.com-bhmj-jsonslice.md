@@ -119,6 +119,22 @@ The following queries provide results that do not match those of other implement
   No JSON output received
   ```
 
+- [ ] `$[0]`
+  Input:
+  ```
+  {
+    "0": "value"
+  }
+  ```
+  Expected output:
+  ```
+  null
+  ```
+  Actual output:
+  ```
+  "value"
+  ```
+
 - [ ] `$[1]`
   Input:
   ```
@@ -155,6 +171,10 @@ The following queries provide results that do not match those of other implement
   {
     "\\": "value"
   }
+  ```
+  Expected output:
+  ```
+  null
   ```
   Error:
   ```
@@ -335,6 +355,22 @@ The following queries provide results that do not match those of other implement
   [
     "value"
   ]
+  ```
+
+- [ ] `$[key]`
+  Input:
+  ```
+  {
+    "key": "value"
+  }
+  ```
+  Expected output:
+  ```
+  NOT_SUPPORTED
+  ```
+  Actual output:
+  ```
+  "value"
   ```
 
 - [ ] `$.[key]`
@@ -1666,6 +1702,36 @@ The following queries provide results that do not match those of other implement
   operand types do not match
   ```
 
+- [ ] `$[?(@.d in [2, 3])]`
+  Input:
+  ```
+  [
+    {
+      "d": 1
+    },
+    {
+      "d": 2
+    },
+    {
+      "d": 1
+    },
+    {
+      "d": 3
+    },
+    {
+      "d": 4
+    }
+  ]
+  ```
+  Expected output:
+  ```
+  NOT_SUPPORTED
+  ```
+  Actual output:
+  ```
+  []
+  ```
+
 - [ ] `$[?(2 in @.d)]`
   Input:
   ```
@@ -1700,6 +1766,10 @@ The following queries provide results that do not match those of other implement
       ]
     }
   ]
+  ```
+  Expected output:
+  ```
+  NOT_SUPPORTED
   ```
   Error:
   ```
