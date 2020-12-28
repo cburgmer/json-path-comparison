@@ -609,6 +609,10 @@ The following queries provide results that do not match those of other implement
   ```
   "Hello World"
   ```
+  Expected output:
+  ```
+  []
+  ```
   Error:
   ```
   at 0: expected a json object, but got '"Hello Wo"'

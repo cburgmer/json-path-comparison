@@ -8,6 +8,10 @@ The following queries provide results that do not match those of other implement
   ```
   "Hello World"
   ```
+  Expected output:
+  ```
+  null
+  ```
   Error:
   ```
   Warpath.JsonDecodeError

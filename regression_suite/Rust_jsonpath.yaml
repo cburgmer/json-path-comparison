@@ -144,9 +144,6 @@ queries:
   - id: bracket_notation_with_number_on_object
     status: open
     result: []
-  - id: bracket_notation_with_number_on_string
-    status: open
-    result: []
   - id: bracket_notation_with_quoted_array_slice_literal
     status: fail
     result: NOT_SUPPORTED
@@ -229,7 +226,7 @@ queries:
     status: fail
     result: ["ey", "bee", "see"]
   - id: dot_notation_after_bracket_notation_after_recursive_descent
-    status: open
+    status: fail
     result: NOT_SUPPORTED
   - id: dot_notation_after_bracket_notation_with_wildcard
     status: fail

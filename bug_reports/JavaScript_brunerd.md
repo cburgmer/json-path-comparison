@@ -107,6 +107,22 @@ The following queries provide results that do not match those of other implement
   Property '0' is a number and target is an object!
   ```
 
+- [ ] `$[0]`
+  Input:
+  ```
+  "Hello World"
+  ```
+  Expected output:
+  ```
+  []
+  ```
+  Actual output:
+  ```
+  [
+    "H"
+  ]
+  ```
+
 - [ ] `$..[1].key`
   Input:
   ```
@@ -148,6 +164,10 @@ The following queries provide results that do not match those of other implement
       1
     ]
   }
+  ```
+  Expected output (in any order as no consensus on ordering exists):
+  ```
+  [200, 42, 500]
   ```
   Error:
   ```

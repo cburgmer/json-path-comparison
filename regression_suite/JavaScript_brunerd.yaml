@@ -42,7 +42,7 @@ queries:
   - id: bracket_notation_with_number_on_object
     status: error
   - id: bracket_notation_with_number_on_string
-    status: open
+    status: fail
     result: ["H"]
   - id: bracket_notation_with_quoted_escaped_backslash
     status: open

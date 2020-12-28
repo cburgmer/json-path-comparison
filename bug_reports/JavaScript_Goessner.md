@@ -146,6 +146,22 @@ The following queries provide results that do not match those of other implement
   jsonpath returned false, this might indicate an error
   ```
 
+- [ ] `$[0]`
+  Input:
+  ```
+  "Hello World"
+  ```
+  Expected output:
+  ```
+  []
+  ```
+  Actual output:
+  ```
+  [
+    "H"
+  ]
+  ```
+
 - [ ] `$['single'quote']`
   Input:
   ```

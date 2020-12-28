@@ -43,9 +43,6 @@ queries:
   - id: bracket_notation_with_number_on_object
     status: open
     result: ["value"]
-  - id: bracket_notation_with_number_on_string
-    status: open
-    result: []
   - id: bracket_notation_with_quoted_closing_bracket_literal
     status: fail
     result: NOT_SUPPORTED
@@ -79,9 +76,6 @@ queries:
   - id: dot_bracket_notation_without_quotes
     status: fail
     result: ["value"]
-  - id: dot_notation_after_bracket_notation_after_recursive_descent
-    status: open
-    result: [200, 42, 500]
   - id: dot_notation_with_double_quotes
     status: open
     result: ["value"]

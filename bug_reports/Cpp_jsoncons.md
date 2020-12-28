@@ -63,6 +63,22 @@ The following queries provide results that do not match those of other implement
   Expected slice start at line 1 and column 6
   ```
 
+- [ ] `$[0]`
+  Input:
+  ```
+  "Hello World"
+  ```
+  Expected output:
+  ```
+  []
+  ```
+  Actual output:
+  ```
+  [
+    "H"
+  ]
+  ```
+
 - [ ] `$['two'.'some']`
   Input:
   ```

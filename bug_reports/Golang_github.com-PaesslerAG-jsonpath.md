@@ -167,6 +167,10 @@ The following queries provide results that do not match those of other implement
   ```
   "Hello World"
   ```
+  Expected output:
+  ```
+  null
+  ```
   Error:
   ```
   unsupported value type string for select, expected map[string]interface{} or []interface{}

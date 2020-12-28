@@ -319,6 +319,10 @@ The following queries provide results that do not match those of other implement
   ```
   "Hello World"
   ```
+  Expected output:
+  ```
+  []
+  ```
   Error:
   ```
   Unable to decode Hello World as JSON: malformed JSON string, neither array, object, number, string or atom, at character offset 0 (before "Hello World") at build/lib/perl5/JSON/Path/Evaluator.pm line 81.
@@ -632,6 +636,57 @@ The following queries provide results that do not match those of other implement
   [
     "value"
   ]
+  ```
+
+- [ ] `$..[1].key`
+  Input:
+  ```
+  {
+    "k": [
+      {
+        "key": "some value"
+      },
+      {
+        "key": 42
+      }
+    ],
+    "kk": [
+      [
+        {
+          "key": 100
+        },
+        {
+          "key": 200
+        },
+        {
+          "key": 300
+        }
+      ],
+      [
+        {
+          "key": 400
+        },
+        {
+          "key": 500
+        },
+        {
+          "key": 600
+        }
+      ]
+    ],
+    "key": [
+      0,
+      1
+    ]
+  }
+  ```
+  Expected output (in any order as no consensus on ordering exists):
+  ```
+  [200, 42, 500]
+  ```
+  Actual output:
+  ```
+  []
   ```
 
 - [ ] `$[?(@.id==42)].name`

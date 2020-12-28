@@ -144,6 +144,10 @@ The following queries provide results that do not match those of other implement
   ```
   "Hello World"
   ```
+  Expected output:
+  ```
+  []
+  ```
   Error:
   ```
   init terminating in do_boot (not_implemented)
@@ -209,6 +213,58 @@ The following queries provide results that do not match those of other implement
   Expected output (in any order as no consensus on ordering exists):
   ```
   ["string", "value", 0, 1, [0, 1], {"complex": "string", "primitives": [0, 1]}]
+  ```
+  Actual output:
+  NOT_SUPPORTED
+  ```
+  syntax error before: '['
+  ```
+
+- [ ] `$..[1].key`
+  Input:
+  ```
+  {
+    "k": [
+      {
+        "key": "some value"
+      },
+      {
+        "key": 42
+      }
+    ],
+    "kk": [
+      [
+        {
+          "key": 100
+        },
+        {
+          "key": 200
+        },
+        {
+          "key": 300
+        }
+      ],
+      [
+        {
+          "key": 400
+        },
+        {
+          "key": 500
+        },
+        {
+          "key": 600
+        }
+      ]
+    ],
+    "key": [
+      0,
+      1
+    ]
+  }
+  ```
+  Expected output (in any order as no consensus on ordering exists):
+  ```
+  [200, 42, 500]
   ```
   Actual output:
   NOT_SUPPORTED

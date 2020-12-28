@@ -612,6 +612,10 @@ The following queries provide results that do not match those of other implement
   ```
   "Hello World"
   ```
+  Expected output:
+  ```
+  []
+  ```
   Error:
   ```
   ** (Jaxon.ParseError) Unexpected string "Hello World", expected a string, number, object, array instead.
@@ -973,6 +977,57 @@ The following queries provide results that do not match those of other implement
   Expected output:
   ```
   ["ey", "bee"]
+  ```
+  Actual output:
+  ```
+  []
+  ```
+
+- [ ] `$..[1].key`
+  Input:
+  ```
+  {
+    "k": [
+      {
+        "key": "some value"
+      },
+      {
+        "key": 42
+      }
+    ],
+    "kk": [
+      [
+        {
+          "key": 100
+        },
+        {
+          "key": 200
+        },
+        {
+          "key": 300
+        }
+      ],
+      [
+        {
+          "key": 400
+        },
+        {
+          "key": 500
+        },
+        {
+          "key": 600
+        }
+      ]
+    ],
+    "key": [
+      0,
+      1
+    ]
+  }
+  ```
+  Expected output (in any order as no consensus on ordering exists):
+  ```
+  [200, 42, 500]
   ```
   Actual output:
   ```

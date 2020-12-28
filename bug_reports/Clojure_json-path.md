@@ -957,6 +957,10 @@ The following queries provide results that do not match those of other implement
   ```
   "Hello World"
   ```
+  Expected output:
+  ```
+  null
+  ```
   Error:
   ```
   java.lang.Exception object must be an array.
@@ -1437,6 +1441,10 @@ The following queries provide results that do not match those of other implement
       1
     ]
   }
+  ```
+  Expected output (in any order as no consensus on ordering exists):
+  ```
+  [200, 42, 500]
   ```
   Error:
   ```

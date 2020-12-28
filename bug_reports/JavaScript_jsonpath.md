@@ -119,6 +119,10 @@ The following queries provide results that do not match those of other implement
   ```
   "Hello World"
   ```
+  Expected output:
+  ```
+  []
+  ```
   Error:
   ```
   obj needs to be an object

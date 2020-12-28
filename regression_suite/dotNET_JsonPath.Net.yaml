@@ -64,9 +64,6 @@ queries:
   - id: bracket_notation_with_number_on_object
     status: open
     result: []
-  - id: bracket_notation_with_number_on_string
-    status: open
-    result: []
   - id: bracket_notation_with_quoted_escaped_backslash
     status: open
     result: ["value"]
@@ -89,7 +86,7 @@ queries:
     status: open
     result: ["value", [{"key": 42}], 42]
   - id: dot_notation_after_bracket_notation_after_recursive_descent
-    status: open
+    status: fail
     result: [200, 200, 200, 42, 42, 500, 500, 500]
   - id: dot_notation_with_dash
     status: fail
