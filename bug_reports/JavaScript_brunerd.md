@@ -19,6 +19,82 @@ The following queries provide results that do not match those of other implement
   Slice step cannot be zero: [0:3:0]
   ```
 
+- [ ] `$[010:024:010]`
+  Input:
+  ```
+  [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25
+  ]
+  ```
+  Expected output:
+  ```
+  [10, 20]
+  ```
+  Error:
+  ```
+  Octal indices are disallowed: 010
+  ```
+
+- [ ] `$..[0]`
+  Input:
+  ```
+  [
+    "first",
+    {
+      "key": [
+        "first nested",
+        {
+          "more": [
+            {
+              "nested": [
+                "deepest",
+                "second"
+              ]
+            },
+            [
+              "more",
+              "values"
+            ]
+          ]
+        }
+      ]
+    }
+  ]
+  ```
+  Expected output (in any order as no consensus on ordering exists):
+  ```
+  ["deepest", "first nested", "first", "more", {"nested": ["deepest", "second"]}]
+  ```
+  Error:
+  ```
+  Property '0' is a number and target is an object!
+  ```
+
 - [ ] `$[]`
   Input:
   ```
@@ -35,6 +111,18 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   Malformed path expression: $[]
+  ```
+
+- [ ] `$[0]`
+  Input:
+  ```
+  {
+    "0": "value"
+  }
+  ```
+  Error:
+  ```
+  Property '0' is a number and target is an object!
   ```
 
 - [ ] `$['single'quote']`
@@ -171,6 +259,53 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   Malformed path expression : $.[key]
+  ```
+
+- [ ] `$..[1].key`
+  Input:
+  ```
+  {
+    "k": [
+      {
+        "key": "some value"
+      },
+      {
+        "key": 42
+      }
+    ],
+    "kk": [
+      [
+        {
+          "key": 100
+        },
+        {
+          "key": 200
+        },
+        {
+          "key": 300
+        }
+      ],
+      [
+        {
+          "key": 400
+        },
+        {
+          "key": 500
+        },
+        {
+          "key": 600
+        }
+      ]
+    ],
+    "key": [
+      0,
+      1
+    ]
+  }
+  ```
+  Error:
+  ```
+  Property '1' is a number and target is an object!
   ```
 
 - [ ] `$.key-dash`

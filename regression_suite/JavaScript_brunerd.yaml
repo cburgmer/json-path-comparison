@@ -35,11 +35,14 @@ queries:
     result: ["fifth", "forth"]
   - id: array_slice_with_step_0
     status: error
+  - id: array_slice_with_step_and_leading_zeros
+    status: error
+  - id: bracket_notation_after_recursive_descent
+    status: error
   - id: bracket_notation_with_empty_path
     status: error
   - id: bracket_notation_with_number_on_object
-    status: open
-    result: ["value"]
+    status: error
   - id: bracket_notation_with_number_on_string
     status: open
     result: ["H"]
@@ -65,6 +68,8 @@ queries:
   - id: dot_bracket_notation_with_double_quotes
     status: error
   - id: dot_bracket_notation_without_quotes
+    status: error
+  - id: dot_notation_after_bracket_notation_after_recursive_descent
     status: error
   - id: dot_notation_with_dash
     status: error

@@ -94,7 +94,7 @@ queries:
     status: fail
     result: "value"
   - id: dot_notation_after_bracket_notation_after_recursive_descent
-    status: fail
+    status: open
     result: [42]
   - id: dot_notation_on_array
     status: error
