@@ -33,7 +33,11 @@ stdin.on("end", function () {
 
     stdout.write(JSON.stringify(result));
   } catch (e) {
-    console.error(e.message);
-    process.exit(1);
+    if (e instanceof SyntaxError) {
+      process.exit(2);
+    } else {
+      console.error(e.message);
+      process.exit(1);
+    }
   }
 });
