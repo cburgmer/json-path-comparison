@@ -84,9 +84,6 @@ queries:
   - id: bracket_notation_with_quoted_escaped_single_quote
     status: open
     result: []
-  - id: bracket_notation_with_quoted_number_on_object
-    status: fail
-    result: [null]
   - id: bracket_notation_with_quoted_special_characters_combined
     status: error
   - id: bracket_notation_with_quoted_string_and_unescaped_single_quote
@@ -128,8 +125,6 @@ queries:
   - id: dot_notation_with_empty_path
     status: fail
     result: [{"": 9001, "''": "nice", "key": 42}]
-  - id: dot_notation_with_key_named_length_on_array
-    status: error
   - id: dot_notation_with_key_root_literal
     status: open
     result: [{"$": "value"}]
@@ -142,9 +137,6 @@ queries:
   - id: dot_notation_with_number_-1
     status: open
     result: []
-  - id: dot_notation_with_number_on_object
-    status: fail
-    result: [null]
   - id: dot_notation_with_single_quotes
     status: open
     result: ["value"]

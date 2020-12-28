@@ -531,24 +531,6 @@ The following queries provide results that do not match those of other implement
   unmatched closing bracket
   ```
 
-- [ ] `$['0']`
-  Input:
-  ```
-  {
-    "0": "value"
-  }
-  ```
-  Expected output:
-  ```
-  ["value"]
-  ```
-  Actual output:
-  ```
-  [
-    null
-  ]
-  ```
-
 - [ ] `$[':@."$,*\'\\']`
   Input:
   ```
@@ -821,24 +803,6 @@ The following queries provide results that do not match those of other implement
   ]
   ```
 
-- [ ] `$.length`
-  Input:
-  ```
-  [
-    4,
-    5,
-    6
-  ]
-  ```
-  Expected output:
-  ```
-  []
-  ```
-  Error:
-  ```
-  no implicit conversion of String into Integer
-  ```
-
 - [ ] `$.屬性`
   Input:
   ```
@@ -853,26 +817,6 @@ The following queries provide results that do not match those of other implement
   Actual output:
   ```
   []
-  ```
-
-- [ ] `$.2`
-  Input:
-  ```
-  {
-    "a": "first",
-    "2": "second",
-    "b": "third"
-  }
-  ```
-  Expected output:
-  ```
-  ["second"]
-  ```
-  Actual output:
-  ```
-  [
-    null
-  ]
   ```
 
 - [ ] `$.*.bar.*`
