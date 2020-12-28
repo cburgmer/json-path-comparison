@@ -5,4 +5,7 @@ readonly script_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 cd "$script_dir"
 
-cabal new-freeze --upgrade-dependencies
+rm -r build
+rm cabal.project.freeze
+./install.sh build
+cabal new-freeze
