@@ -1,9 +1,0 @@
-root = proposals/JSON_Path_Reference_Implementation
-builddir = $root/build
-
-rule compile
-  command = (cd $root && cargo build) && mv $root/target/debug/JSON_Path_Reference_Implementation $out && rm -r $root/target
-
-build $builddir/JSON_Path_Reference_Implementation: compile | $root/src/main.rs $root/Cargo.lock $root/Cargo.toml
-
-build $root/install: phony $builddir/JSON_Path_Reference_Implementation

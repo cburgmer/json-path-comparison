@@ -319,20 +319,6 @@ dotNET (Manatee.Json)
 <pre><code>JSON Path expression indexers only support single constant values. Path up to error: '$.x'
 </code></pre>
 
-<h4 id="JSON_Path_Reference_Implementation">
-JSON (Path_Reference_Implementation)
-</h4>
-
-<p>Not supported</p>
-
-<pre><code> --&gt; 1:5
-  |
-1 | $.x[?(@[*]&gt;=$.y[*])]
-  |     ^---
-  |
-  = expected unionChild, unionArrayIndex, or sliceStart
-</code></pre>
-
 <h4 id="Proposal_A">
 Proposal (A)
 </h4>

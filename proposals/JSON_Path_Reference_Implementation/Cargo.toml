@@ -1,9 +1,0 @@
-[package]
-name = "JSON_Path_Reference_Implementation"
-version = "0.1.0"
-authors = ["Christoph Burgmer <christoph.burgmer@gmail.com>"]
-edition = "2018"
-
-[dependencies]
-serde_json = "1.0.39"
-jsonpath_reference_implementation = { git = "https://github.com/jsonpath-standard/jsonpath-reference-implementation.git", branch = "main" }
