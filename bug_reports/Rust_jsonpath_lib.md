@@ -37,26 +37,6 @@ The following queries provide results that do not match those of other implement
   ]
   ```
 
-- [ ] `$['\\']`
-  Input:
-  ```
-  {
-    "\\": "value"
-  }
-  ```
-  Expected output:
-  ```
-  []
-  ```
-  Actual output:
-  NOT_SUPPORTED
-  ```
-  path error: 
-  $['\\']
-  ^^
-  
-  ```
-
 - [ ] `$[?(@[1]=='b')]`
   Input:
   ```

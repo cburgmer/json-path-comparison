@@ -399,10 +399,6 @@ The following queries provide results that do not match those of other implement
     "more": "string"
   }
   ```
-  Expected output:
-  ```
-  []
-  ```
   Error:
   ```
   object is not Slice
@@ -920,10 +916,6 @@ The following queries provide results that do not match those of other implement
     "0": "value"
   }
   ```
-  Expected output:
-  ```
-  null
-  ```
   Error:
   ```
   object is not Slice
@@ -1067,10 +1059,6 @@ The following queries provide results that do not match those of other implement
   {
     "\\": "value"
   }
-  ```
-  Expected output:
-  ```
-  null
   ```
   Error:
   ```
@@ -1550,10 +1538,6 @@ The following queries provide results that do not match those of other implement
       1
     ]
   }
-  ```
-  Expected output (in any order as no consensus on ordering exists):
-  ```
-  [200, 42, 500]
   ```
   Error:
   ```
@@ -2139,30 +2123,6 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   key error:  not found in object
-  ```
-
-- [ ] `$[?(@.key>42 && @.key<44)]`
-  Input:
-  ```
-  [
-    {
-      "key": 42
-    },
-    {
-      "key": 43
-    },
-    {
-      "key": 44
-    }
-  ]
-  ```
-  Expected output:
-  ```
-  [{"key": 43}]
-  ```
-  Actual output:
-  ```
-  []
   ```
 
 - [ ] `$[?(@['key']==42)]`

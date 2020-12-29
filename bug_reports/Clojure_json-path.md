@@ -380,10 +380,6 @@ The following queries provide results that do not match those of other implement
     "more": "string"
   }
   ```
-  Expected output:
-  ```
-  []
-  ```
   Error:
   ```
   java.lang.Exception object must be an array.
@@ -935,10 +931,6 @@ The following queries provide results that do not match those of other implement
     "0": "value"
   }
   ```
-  Expected output:
-  ```
-  null
-  ```
   Error:
   ```
   java.lang.Exception object must be an array.
@@ -1082,10 +1074,6 @@ The following queries provide results that do not match those of other implement
   {
     "\\": "value"
   }
-  ```
-  Expected output:
-  ```
-  null
   ```
   Error:
   ```
@@ -1458,10 +1446,6 @@ The following queries provide results that do not match those of other implement
     ]
   }
   ```
-  Expected output (in any order as no consensus on ordering exists):
-  ```
-  [200, 42, 500]
-  ```
   Error:
   ```
   java.lang.Exception object must be an array.
@@ -1663,37 +1647,6 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   java.lang.NullPointerException nil
-  ```
-
-- [ ] `$[?(@.key>42 && @.key<44)]`
-  Input:
-  ```
-  [
-    {
-      "key": 42
-    },
-    {
-      "key": 43
-    },
-    {
-      "key": 44
-    }
-  ]
-  ```
-  Expected output:
-  ```
-  [{"key": 43}]
-  ```
-  Actual output:
-  ```
-  [
-    {
-      "key": 43
-    },
-    {
-      "key": 44
-    }
-  ]
   ```
 
 - [ ] `$[?(@.key>0 && false)]`

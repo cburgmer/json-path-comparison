@@ -48,7 +48,7 @@ queries:
     status: fail
     result: NOT_SUPPORTED
   - id: array_slice_with_open_start_and_end_on_object
-    status: fail
+    status: open
     result: NOT_SUPPORTED
   - id: array_slice_with_open_start_and_negative_step
     status: open
@@ -71,8 +71,11 @@ queries:
   - id: array_slice_with_step_only
     status: fail
     result: NOT_SUPPORTED
+  - id: bracket_notation_with_number_on_object
+    status: open
+    result: NOT_FOUND
   - id: bracket_notation_with_quoted_escaped_backslash
-    status: fail
+    status: open
     result: "value"
   - id: bracket_notation_with_quoted_escaped_single_quote
     status: open
@@ -90,7 +93,7 @@ queries:
     status: open
     result: "value"
   - id: dot_notation_after_bracket_notation_after_recursive_descent
-    status: fail
+    status: open
     result: ["some value", 100, 200, 300, 400, 42, 500, 600]
   - id: dot_notation_with_double_quotes
     status: open
@@ -131,6 +134,9 @@ queries:
   - id: filter_expression_with_addition
     status: open
     result: [{"key+50": 100}]
+  - id: filter_expression_with_boolean_and_operator
+    status: open
+    result: [{"key": 43}]
   - id: filter_expression_with_boolean_and_operator_and_value_false
     status: open
     result: NOT_SUPPORTED

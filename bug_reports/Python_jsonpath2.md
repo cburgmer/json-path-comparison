@@ -327,24 +327,6 @@ The following queries provide results that do not match those of other implement
   ValueError("line 1:2 token recognition error at: '''")
   ```
 
-- [ ] `$['\\']`
-  Input:
-  ```
-  {
-    "\\": "value"
-  }
-  ```
-  Expected output:
-  ```
-  []
-  ```
-  Actual output:
-  NOT_SUPPORTED
-  ```
-  line 1:2 token recognition error at: '''
-  ValueError("line 1:2 token recognition error at: '''")
-  ```
-
 - [ ] `$['0']`
   Input:
   ```
@@ -600,32 +582,6 @@ The following queries provide results that do not match those of other implement
   ```
   line 1:2 mismatched input '2' expecting {'*', ID}
   ValueError("line 1:2 mismatched input '2' expecting {'*', ID}")
-  ```
-
-- [ ] `$[?(@.key>42 && @.key<44)]`
-  Input:
-  ```
-  [
-    {
-      "key": 42
-    },
-    {
-      "key": 43
-    },
-    {
-      "key": 44
-    }
-  ]
-  ```
-  Expected output:
-  ```
-  [{"key": 43}]
-  ```
-  Actual output:
-  NOT_SUPPORTED
-  ```
-  line 1:13 token recognition error at: '&'
-  ValueError("line 1:13 token recognition error at: '&'")
   ```
 
 - [ ] `$[?(@['key']==42)]`

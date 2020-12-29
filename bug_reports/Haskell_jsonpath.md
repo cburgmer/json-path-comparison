@@ -183,25 +183,6 @@ The following queries provide results that do not match those of other implement
    Error: searchBeginningWithSlice: string
   ```
 
-- [ ] `$[:]`
-  Input:
-  ```
-  {
-    ":": 42,
-    "more": "string"
-  }
-  ```
-  Expected output:
-  ```
-  []
-  ```
-  Actual output:
-  NOT_SUPPORTED
-  ```
-  Invalid JSONPath: $[:]
-   Error: searchBeginningWithSlice: string
-  ```
-
 - [ ] `$[3:-3]`
   Input:
   ```
@@ -470,10 +451,6 @@ The following queries provide results that do not match those of other implement
     "0": "value"
   }
   ```
-  Expected output:
-  ```
-  null
-  ```
   Error:
   ```
   json-path-comparison: expected array, found {"0":"value"}
@@ -626,24 +603,6 @@ The following queries provide results that do not match those of other implement
   NOT_SUPPORTED
   ```
   Invalid JSONPath: $['"']
-   Error: searchBeginningWithSlice: string
-  ```
-
-- [ ] `$['\\']`
-  Input:
-  ```
-  {
-    "\\": "value"
-  }
-  ```
-  Expected output:
-  ```
-  null
-  ```
-  Actual output:
-  NOT_SUPPORTED
-  ```
-  Invalid JSONPath: $['\\']
    Error: searchBeginningWithSlice: string
   ```
 
@@ -1054,32 +1013,6 @@ The following queries provide results that do not match those of other implement
   ```
   json-path-comparison: src/Data/JSONPath/Execute.hs:(71,1)-(72,60): Non-exhaustive patterns in function executeCondition
   
-  ```
-
-- [ ] `$[?(@.key>42 && @.key<44)]`
-  Input:
-  ```
-  [
-    {
-      "key": 42
-    },
-    {
-      "key": 43
-    },
-    {
-      "key": 44
-    }
-  ]
-  ```
-  Expected output:
-  ```
-  [{"key": 43}]
-  ```
-  Actual output:
-  NOT_SUPPORTED
-  ```
-  Invalid JSONPath: $[?(@.key>42 && @.key<44)]
-   Error: searchBeginningWithSlice: string
   ```
 
 - [ ] `$[?(@['@key']==42)]`

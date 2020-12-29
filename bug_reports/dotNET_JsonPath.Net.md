@@ -296,24 +296,6 @@ The following queries provide results that do not match those of other implement
   ]
   ```
 
-- [ ] `$['\\']`
-  Input:
-  ```
-  {
-    "\\": "value"
-  }
-  ```
-  Expected output:
-  ```
-  []
-  ```
-  Actual output:
-  ```
-  [
-    "value"
-  ]
-  ```
-
 - [ ] `$..[*]`
   Input:
   ```
@@ -359,66 +341,6 @@ The following queries provide results that do not match those of other implement
         1
       ]
     }
-  ]
-  ```
-
-- [ ] `$..[1].key`
-  Input:
-  ```
-  {
-    "k": [
-      {
-        "key": "some value"
-      },
-      {
-        "key": 42
-      }
-    ],
-    "kk": [
-      [
-        {
-          "key": 100
-        },
-        {
-          "key": 200
-        },
-        {
-          "key": 300
-        }
-      ],
-      [
-        {
-          "key": 400
-        },
-        {
-          "key": 500
-        },
-        {
-          "key": 600
-        }
-      ]
-    ],
-    "key": [
-      0,
-      1
-    ]
-  }
-  ```
-  Expected output (in any order as no consensus on ordering exists):
-  ```
-  [200, 42, 500]
-  ```
-  Actual output:
-  ```
-  [
-    200,
-    200,
-    200,
-    42,
-    42,
-    500,
-    500,
-    500
   ]
   ```
 
@@ -495,31 +417,6 @@ The following queries provide results that do not match those of other implement
   [
     3
   ]
-  ```
-
-- [ ] `$[?(@.key>42 && @.key<44)]`
-  Input:
-  ```
-  [
-    {
-      "key": 42
-    },
-    {
-      "key": 43
-    },
-    {
-      "key": 44
-    }
-  ]
-  ```
-  Expected output:
-  ```
-  [{"key": 43}]
-  ```
-  Actual output:
-  NOT_SUPPORTED
-  ```
-  Could not identify selector
   ```
 
 - [ ] `$[0,0]`

@@ -146,22 +146,6 @@ The following queries provide results that do not match those of other implement
   index -1 out of bounds
   ```
 
-- [ ] `$[0]`
-  Input:
-  ```
-  {
-    "0": "value"
-  }
-  ```
-  Expected output:
-  ```
-  null
-  ```
-  Actual output:
-  ```
-  "value"
-  ```
-
 - [ ] `$[1]`
   Input:
   ```
@@ -209,22 +193,6 @@ The following queries provide results that do not match those of other implement
   NOT_SUPPORTED
   ```
   parsing error: $['.*']	:1:3 - 1:7 could not parse string: invalid syntax
-  ```
-
-- [ ] `$['\\']`
-  Input:
-  ```
-  {
-    "\\": "value"
-  }
-  ```
-  Expected output:
-  ```
-  null
-  ```
-  Actual output:
-  ```
-  "value"
   ```
 
 - [ ] `$['*']`
@@ -430,31 +398,6 @@ The following queries provide results that do not match those of other implement
   NOT_SUPPORTED
   ```
   parsing error: $.2	:1:2 - 1:4 unexpected Float while scanning operator
-  ```
-
-- [ ] `$[?(@.key>42 && @.key<44)]`
-  Input:
-  ```
-  [
-    {
-      "key": 42
-    },
-    {
-      "key": 43
-    },
-    {
-      "key": 44
-    }
-  ]
-  ```
-  Expected output:
-  ```
-  [{"key": 43}]
-  ```
-  Actual output:
-  NOT_SUPPORTED
-  ```
-  parsing error: $[?(@.key>42 && @.key<44)]	:1:10 - 1:11 unexpected ">" while scanning parentheses expected ")"
   ```
 
 - [ ] `$[?(@['key']==42)]`

@@ -60,6 +60,9 @@ queries:
   - id: array_slice_with_open_start_and_end_and_step_empty
     status: fail
     result: NOT_SUPPORTED
+  - id: array_slice_with_open_start_and_end_on_object
+    status: open
+    result: NOT_FOUND
   - id: array_slice_with_open_start_and_negative_step
     status: open
     result: NOT_FOUND
@@ -96,6 +99,12 @@ queries:
   - id: bracket_notation_with_empty_path
     status: fail
     result: [{"": 42, "\"\"": 222, "''": 123}]
+  - id: bracket_notation_with_number_on_object
+    status: open
+    result: NOT_FOUND
+  - id: bracket_notation_with_quoted_escaped_backslash
+    status: open
+    result: NOT_FOUND
   - id: bracket_notation_with_quoted_escaped_single_quote
     status: open
     result: NOT_FOUND
@@ -115,7 +124,7 @@ queries:
     status: fail
     result: ["ey", "bee", "see"]
   - id: dot_notation_after_bracket_notation_after_recursive_descent
-    status: fail
+    status: open
     result: [42]
   - id: dot_notation_after_recursive_descent
     status: fail
@@ -165,6 +174,9 @@ queries:
   - id: filter_expression_with_addition
     status: open
     result: [{"key": 50}]
+  - id: filter_expression_with_boolean_and_operator
+    status: open
+    result: [{"key": 43}]
   - id: filter_expression_with_boolean_and_operator_and_value_false
     status: open
     result: NOT_FOUND

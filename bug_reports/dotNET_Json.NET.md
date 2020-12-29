@@ -218,24 +218,6 @@ The following queries provide results that do not match those of other implement
   []
   ```
 
-- [ ] `$['\\']`
-  Input:
-  ```
-  {
-    "\\": "value"
-  }
-  ```
-  Expected output:
-  ```
-  []
-  ```
-  Actual output:
-  ```
-  [
-    "value"
-  ]
-  ```
-
 - [ ] `$..[*]`
   Input:
   ```
@@ -277,57 +259,6 @@ The following queries provide results that do not match those of other implement
   Expected output (in any order as no consensus on ordering exists):
   ```
   ["string", 42, [0, 1], {"key": "value"}]
-  ```
-  Actual output:
-  ```
-  []
-  ```
-
-- [ ] `$..[1].key`
-  Input:
-  ```
-  {
-    "k": [
-      {
-        "key": "some value"
-      },
-      {
-        "key": 42
-      }
-    ],
-    "kk": [
-      [
-        {
-          "key": 100
-        },
-        {
-          "key": 200
-        },
-        {
-          "key": 300
-        }
-      ],
-      [
-        {
-          "key": 400
-        },
-        {
-          "key": 500
-        },
-        {
-          "key": 600
-        }
-      ]
-    ],
-    "key": [
-      0,
-      1
-    ]
-  }
-  ```
-  Expected output (in any order as no consensus on ordering exists):
-  ```
-  [200, 42, 500]
   ```
   Actual output:
   ```

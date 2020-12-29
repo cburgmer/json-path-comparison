@@ -55,7 +55,7 @@ queries:
     status: fail
     result: NOT_SUPPORTED
   - id: array_slice_with_open_start_and_end_on_object
-    status: fail
+    status: open
     result: NOT_SUPPORTED
   - id: array_slice_with_open_start_and_negative_step
     status: open
@@ -117,8 +117,14 @@ queries:
   - id: bracket_notation_with_number_-1_on_empty_array
     status: fail
     result: NOT_SUPPORTED
+  - id: bracket_notation_with_number_on_object
+    status: open
+    result: []
   - id: bracket_notation_with_number_on_string
     status: error
+  - id: bracket_notation_with_quoted_escaped_backslash
+    status: open
+    result: []
   - id: bracket_notation_with_quoted_escaped_single_quote
     status: open
     result: NOT_SUPPORTED
@@ -140,6 +146,9 @@ queries:
   - id: dot_notation_after_array_slice
     status: fail
     result: ["ey", "bee", "see"]
+  - id: dot_notation_after_bracket_notation_after_recursive_descent
+    status: open
+    result: [200, 42, 500]
   - id: dot_notation_after_filter_expression
     status: fail
     result: NOT_SUPPORTED
@@ -201,7 +210,7 @@ queries:
     status: open
     result: NOT_SUPPORTED
   - id: filter_expression_with_boolean_and_operator
-    status: fail
+    status: open
     result: NOT_SUPPORTED
   - id: filter_expression_with_boolean_and_operator_and_value_false
     status: open

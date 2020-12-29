@@ -31,7 +31,7 @@ queries:
     status: fail
     result: NOT_SUPPORTED
   - id: array_slice_with_open_start_and_end_on_object
-    status: fail
+    status: open
     result: [{":": 42, "more": "string"}]
   - id: array_slice_with_open_start_and_negative_step
     status: open
@@ -72,7 +72,7 @@ queries:
     status: fail
     result: ["H"]
   - id: bracket_notation_with_quoted_escaped_backslash
-    status: fail
+    status: open
     result: ["value"]
   - id: bracket_notation_with_quoted_escaped_single_quote
     status: open
@@ -176,7 +176,7 @@ queries:
     status: open
     result: NOT_SUPPORTED
   - id: filter_expression_with_boolean_and_operator
-    status: fail
+    status: open
     result: NOT_SUPPORTED
   - id: filter_expression_with_boolean_and_operator_and_value_false
     status: open

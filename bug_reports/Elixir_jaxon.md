@@ -240,25 +240,6 @@ The following queries provide results that do not match those of other implement
   []
   ```
 
-- [ ] `$[:]`
-  Input:
-  ```
-  {
-    ":": 42,
-    "more": "string"
-  }
-  ```
-  Expected output:
-  ```
-  []
-  ```
-  Actual output:
-  ```
-  [
-    42
-  ]
-  ```
-
 - [ ] `$[3:-2]`
   Input:
   ```
@@ -1020,57 +1001,6 @@ The following queries provide results that do not match those of other implement
   []
   ```
 
-- [ ] `$..[1].key`
-  Input:
-  ```
-  {
-    "k": [
-      {
-        "key": "some value"
-      },
-      {
-        "key": 42
-      }
-    ],
-    "kk": [
-      [
-        {
-          "key": 100
-        },
-        {
-          "key": 200
-        },
-        {
-          "key": 300
-        }
-      ],
-      [
-        {
-          "key": 400
-        },
-        {
-          "key": 500
-        },
-        {
-          "key": 600
-        }
-      ]
-    ],
-    "key": [
-      0,
-      1
-    ]
-  }
-  ```
-  Expected output (in any order as no consensus on ordering exists):
-  ```
-  [200, 42, 500]
-  ```
-  Actual output:
-  ```
-  []
-  ```
-
 - [ ] `$[?(@.id==42)].name`
   Input:
   ```
@@ -1293,30 +1223,6 @@ The following queries provide results that do not match those of other implement
   ** (Jaxon.ParseError) Unexpected number, expected a string, number, object, array instead.
       lib/jaxon/decoders/query.ex:29: anonymous fn/2 in Jaxon.Decoders.Query.query/2
       lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
-  ```
-
-- [ ] `$[?(@.key>42 && @.key<44)]`
-  Input:
-  ```
-  [
-    {
-      "key": 42
-    },
-    {
-      "key": 43
-    },
-    {
-      "key": 44
-    }
-  ]
-  ```
-  Expected output:
-  ```
-  [{"key": 43}]
-  ```
-  Actual output:
-  ```
-  []
   ```
 
 - [ ] `$[?(@['key']==42)]`

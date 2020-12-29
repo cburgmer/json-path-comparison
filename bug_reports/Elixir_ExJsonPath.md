@@ -242,10 +242,6 @@ The following queries provide results that do not match those of other implement
     "more": "string"
   }
   ```
-  Expected output:
-  ```
-  []
-  ```
   Error:
   ```
   Invalid object returned
@@ -511,58 +507,6 @@ The following queries provide results that do not match those of other implement
   NOT_SUPPORTED
   ```
   syntax error before: '*'
-  ```
-
-- [ ] `$..[1].key`
-  Input:
-  ```
-  {
-    "k": [
-      {
-        "key": "some value"
-      },
-      {
-        "key": 42
-      }
-    ],
-    "kk": [
-      [
-        {
-          "key": 100
-        },
-        {
-          "key": 200
-        },
-        {
-          "key": 300
-        }
-      ],
-      [
-        {
-          "key": 400
-        },
-        {
-          "key": 500
-        },
-        {
-          "key": 600
-        }
-      ]
-    ],
-    "key": [
-      0,
-      1
-    ]
-  }
-  ```
-  Expected output (in any order as no consensus on ordering exists):
-  ```
-  [200, 42, 500]
-  ```
-  Actual output:
-  NOT_SUPPORTED
-  ```
-  syntax error before: '['
   ```
 
 - [ ] `$[*].a`
@@ -840,31 +784,6 @@ The following queries provide results that do not match those of other implement
   NOT_SUPPORTED
   ```
   syntax error before: '*'
-  ```
-
-- [ ] `$[?(@.key>42 && @.key<44)]`
-  Input:
-  ```
-  [
-    {
-      "key": 42
-    },
-    {
-      "key": 43
-    },
-    {
-      "key": 44
-    }
-  ]
-  ```
-  Expected output:
-  ```
-  [{"key": 43}]
-  ```
-  Actual output:
-  NOT_SUPPORTED
-  ```
-  illegal characters "&"
   ```
 
 - [ ] `$[?(@[0:1]==1)]`

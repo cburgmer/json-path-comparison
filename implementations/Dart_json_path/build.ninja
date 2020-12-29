@@ -1,0 +1,9 @@
+root = implementations/Dart_json_path
+builddir = $root/build
+
+rule install
+  command = (cd $root && dart pub get) && echo > $out
+
+build $builddir/deps_installed: install | $root/pubspec.yaml $root/pubspec.lock
+
+build $root/install: phony $builddir/deps_installed

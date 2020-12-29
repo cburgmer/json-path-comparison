@@ -96,26 +96,6 @@ The following queries provide results that do not match those of other implement
   []
   ```
 
-- [ ] `$[:]`
-  Input:
-  ```
-  {
-    ":": 42,
-    "more": "string"
-  }
-  ```
-  Expected output:
-  ```
-  []
-  ```
-  Actual output:
-  ```
-  [
-    42,
-    "string"
-  ]
-  ```
-
 - [ ] `$[3:-4]`
   Input:
   ```
@@ -973,30 +953,6 @@ The following queries provide results that do not match those of other implement
     1,
     42
   ]
-  ```
-
-- [ ] `$[?(@.key>42 && @.key<44)]`
-  Input:
-  ```
-  [
-    {
-      "key": 42
-    },
-    {
-      "key": 43
-    },
-    {
-      "key": 44
-    }
-  ]
-  ```
-  Expected output:
-  ```
-  [{"key": 43}]
-  ```
-  Actual output:
-  ```
-  []
   ```
 
 - [ ] `$[?(@['key']==42)]`

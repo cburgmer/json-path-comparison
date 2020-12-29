@@ -90,25 +90,6 @@ The following queries provide results that do not match those of other implement
   timeout: sending signal TERM to command ‘implementations/PHP_Goessner/run.sh’
   ```
 
-- [ ] `$[:]`
-  Input:
-  ```
-  {
-    ":": 42,
-    "more": "string"
-  }
-  ```
-  Expected output:
-  ```
-  []
-  ```
-  Actual output:
-  ```
-  [
-    42
-  ]
-  ```
-
 - [ ] `$[:2:-1]`
   Input:
   ```
@@ -302,24 +283,6 @@ The following queries provide results that do not match those of other implement
   Actual output:
   ```
   null
-  ```
-
-- [ ] `$[0]`
-  Input:
-  ```
-  {
-    "0": "value"
-  }
-  ```
-  Expected output:
-  ```
-  []
-  ```
-  Actual output:
-  ```
-  [
-    "value"
-  ]
   ```
 
 - [ ] `$['single'quote']`
@@ -701,10 +664,6 @@ The following queries provide results that do not match those of other implement
       "key": 44
     }
   ]
-  ```
-  Expected output:
-  ```
-  [{"key": 43}]
   ```
   Error:
   ```

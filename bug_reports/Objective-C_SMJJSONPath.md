@@ -165,24 +165,6 @@ The following queries provide results that do not match those of other implement
   Failed to parse SliceOperation: ::
   ```
 
-- [ ] `$[:]`
-  Input:
-  ```
-  {
-    ":": 42,
-    "more": "string"
-  }
-  ```
-  Expected output:
-  ```
-  []
-  ```
-  Actual output:
-  NOT_SUPPORTED
-  ```
-  Failed to parse SliceOperation: :
-  ```
-
 - [ ] `$[3:-2]`
   Input:
   ```
@@ -330,22 +312,6 @@ The following queries provide results that do not match those of other implement
   Failed to parse SliceOperation: ::2
   ```
 
-- [ ] `$['\\']`
-  Input:
-  ```
-  {
-    "\\": "value"
-  }
-  ```
-  Expected output:
-  ```
-  null
-  ```
-  Actual output:
-  ```
-  "value"
-  ```
-
 - [ ] `$[',']`
   Input:
   ```
@@ -362,66 +328,6 @@ The following queries provide results that do not match those of other implement
   NOT_SUPPORTED
   ```
   Found empty property at index 5
-  ```
-
-- [ ] `$..[1].key`
-  Input:
-  ```
-  {
-    "k": [
-      {
-        "key": "some value"
-      },
-      {
-        "key": 42
-      }
-    ],
-    "kk": [
-      [
-        {
-          "key": 100
-        },
-        {
-          "key": 200
-        },
-        {
-          "key": 300
-        }
-      ],
-      [
-        {
-          "key": 400
-        },
-        {
-          "key": 500
-        },
-        {
-          "key": 600
-        }
-      ]
-    ],
-    "key": [
-      0,
-      1
-    ]
-  }
-  ```
-  Expected output (in any order as no consensus on ordering exists):
-  ```
-  [200, 42, 500]
-  ```
-  Actual output:
-  ```
-  [
-    "some value",
-    100,
-    200,
-    300,
-    400,
-    42,
-    500,
-    600
-  ]
   ```
 
 - [ ] `$[?(@.d in [2, 3])]`

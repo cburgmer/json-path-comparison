@@ -49,8 +49,14 @@ queries:
   - id: bracket_notation_after_recursive_descent
     status: fail
     result: NOT_SUPPORTED
+  - id: bracket_notation_with_number_on_object
+    status: open
+    result: []
   - id: bracket_notation_with_number_on_string
     status: error
+  - id: bracket_notation_with_quoted_escaped_backslash
+    status: open
+    result: []
   - id: bracket_notation_with_quoted_escaped_single_quote
     status: error
   - id: bracket_notation_with_quoted_special_characters_combined
@@ -67,7 +73,7 @@ queries:
     status: open
     result: NOT_SUPPORTED
   - id: dot_notation_after_bracket_notation_after_recursive_descent
-    status: fail
+    status: open
     result: NOT_SUPPORTED
   - id: dot_notation_with_dash
     status: fail
