@@ -145,7 +145,7 @@ header_row() {
     echo "<th style=\"background: #f6f8faaa;\"></th>"
     while IFS= read -r implementation; do
         echo "<th style=\"background: #f6f8faaa;\">"
-        echo "<div style=\"writing-mode: vertical-rl;\">"
+        echo "<div style=\"writing-mode: vertical-rl; white-space: nowrap;\">"
         sed "s/[^_]*_\(.*\)/\1/" <<< "$implementation" | wrap_with_link "$implementation"
         if implementation_returns_scalar_for_single_possible_match "$implementation"; then
             echo "¹"
@@ -162,7 +162,7 @@ header_row() {
 
     while IFS= read -r proposal; do
         echo "<th style=\"background: #fbfdffaa;\">"
-        echo "<div style=\"writing-mode: vertical-rl;\">"
+        echo "<div style=\"writing-mode: vertical-rl; white-space: nowrap;\">"
         echo "<a href=\"https://github.com/cburgmer/json-path-comparison/blob/master/proposals/${proposal}\">"
         tr '_' ' ' <<< "$proposal"
         echo "</a>"

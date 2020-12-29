@@ -9,6 +9,7 @@ resolve_links() {
 }
 
 markdown_into_beautiful_html() {
+    echo '<meta charset="utf-8" />'
     echo '<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/3.0.1/github-markdown.css">'
     echo '<article class="markdown-body">'
     markdown
