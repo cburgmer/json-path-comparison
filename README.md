@@ -92,6 +92,8 @@ Some of the complexity sadly brings its own set of errors
   Currently the best fix is to remove the output, e.g.
   `rm -r build/results/bracket_notation_with_number_on_short_array` for a whole
   query, and re-running Ninja to force a re-build.
+- Out of memory: Some compile steps (looking at you, Haskell) seem to need a lot
+  of memory. Increasing the available memory for Docker should help.
 
 ## Contribute
 
