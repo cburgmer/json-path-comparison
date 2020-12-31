@@ -151,14 +151,11 @@ Here's a few good indicators that the query you are looking at should be added:
 
 ## How will a standard emerge from the query examples?
 
-Most programming standards seem to describe in detail the underlying algorithms
-to reach a uniform interpretation. We, too, shall not leave it at examples but
-try to describe an abstract implementation that could become a future standard
-of JSONPath.
+There is now an undertaking to develop an Internet Draft for JSONPath:
+https://github.com/ietf-wg-jsonpath/draft-ietf-jsonpath-jsonpath .
 
-You are welcome to join the existing proposal, or come up with your own. Either
-way do contribute here!
-
+Outcomes here help to inform the draft process with insights into what is
+being currently used and accepted as "correct" in the wild.
 
 ## Do the proposals' outcome contribute to the consensus?
 

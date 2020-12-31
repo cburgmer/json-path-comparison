@@ -1,1 +1,12 @@
-Elixir_jaxon
+- More tests
+  - Operators
+  - Precedence of operators (see https://github.com/danielaparker/jsoncons/issues/110)
+  - Open queries documented in [INTERESTING_QUERIES](./INTERESTING_QUERIES).
+- Provide a forum to clarify different interpretations.
+  See [OPEN_QUESTIONS.md](./OPEN_QUESTIONS.md) for a rough start on visible
+  disagreements.
+
+Future:
+
+- Compare custom features/syntax across implementations
+- Investigate output path feature across implementations [#29](https://github.com/cburgmer/json-path-comparison/issues/29)

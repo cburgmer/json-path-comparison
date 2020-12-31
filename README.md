@@ -8,39 +8,18 @@ and support library authors to align on differences in their implementations.
 See https://cburgmer.github.io/json-path-comparison/ for the table generated
 from the queries in [./queries](./queries).
 
+## Goals
+
+- Show implementation status of well established implementations.
+- Inform emerging specification on existing de facto standard.
+- Support implementers with test cases.
+
 ## Features
 - Comparison of queries against supported implementations
 - Consensus-based decision on correctness
 - Output and error report for failures
 - Automatically generated bug reports
 - A [regression test suite](./regression_suite/regression_suite.yaml) for upstream implementations
-
-## Roadmap
-
-Done:
-
-- Cover as much implementations as possible [#10](https://github.com/cburgmer/json-path-comparison/issues/10)
-- Find and report issues in implementations
-- Make missing consensus visible
-- Go through (past) issues of implementations to find more corner cases to query for.
-- Guide implementations to tackle queries without consensus to create one
-  - Experiment: Come up with a concise interpretation, see [./proposals/Proposal_A/README.md](./proposals/Proposal_A/README.md).
-  - Experiment: Suggest solutions and try opening a discussion.
-
-Mid term:
-
-- More tests
-  - Operators
-  - Precedence of operators (see https://github.com/danielaparker/jsoncons/issues/110)
-  - Open queries documented in [INTERESTING_QUERIES](./INTERESTING_QUERIES).
-- Provide a forum to clarify different interpretations.
-  See [OPEN_QUESTIONS.md](./OPEN_QUESTIONS.md) for a rough start on visible
-  disagreements.
-
-Long term:
-
-- Compare custom features/syntax across implementations
-- Investigate output path feature across implementations [#29](https://github.com/cburgmer/json-path-comparison/issues/29)
 
 ## How to
 
