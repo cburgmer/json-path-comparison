@@ -11,43 +11,43 @@ queries:
     result: ["third", "second", "first"]
   - id: array_slice_with_large_number_for_start_end_negative_step
     status: open
-    result: NOT_FOUND
+    result: []
   - id: array_slice_with_negative_step
     status: open
     result: ["forth", "second"]
   - id: array_slice_with_negative_step_and_start_greater_than_end
     status: open
-    result: NOT_FOUND
+    result: []
   - id: array_slice_with_negative_step_on_partially_overlapping_array
     status: open
-    result: NOT_FOUND
+    result: []
   - id: array_slice_with_negative_step_only
     status: open
-    result: NOT_FOUND
+    result: []
   - id: array_slice_with_open_end_and_negative_step
     status: open
-    result: NOT_FOUND
+    result: []
   - id: array_slice_with_open_start_and_end_on_object
     status: open
-    result: NOT_FOUND
+    result: []
   - id: array_slice_with_open_start_and_negative_step
     status: open
-    result: NOT_FOUND
+    result: []
   - id: array_slice_with_step_0
     status: open
-    result: NOT_FOUND
+    result: []
   - id: bracket_notation_with_number_on_object
     status: open
-    result: NOT_FOUND
+    result: []
   - id: bracket_notation_with_quoted_escaped_backslash
     status: open
-    result: NOT_FOUND
+    result: []
   - id: bracket_notation_with_quoted_escaped_single_quote
     status: open
-    result: NOT_FOUND
+    result: []
   - id: bracket_notation_with_quoted_special_characters_combined
     status: open
-    result: NOT_FOUND
+    result: []
   - id: dot_bracket_notation
     status: open
     result: NOT_SUPPORTED
@@ -68,7 +68,7 @@ queries:
     result: NOT_SUPPORTED
   - id: dot_notation_with_number
     status: open
-    result: NOT_FOUND
+    result: []
   - id: dot_notation_with_number_-1
     status: open
     result: NOT_SUPPORTED
@@ -101,7 +101,7 @@ queries:
     result: [{"key": 43}]
   - id: filter_expression_with_boolean_and_operator_and_value_false
     status: open
-    result: NOT_FOUND
+    result: []
   - id: filter_expression_with_boolean_and_operator_and_value_true
     status: open
     result: [{"key": 1}, {"key": 3}]
@@ -182,7 +182,7 @@ queries:
     result: [{"key": 42}]
   - id: filter_expression_with_equals_on_object_with_key_matching_query
     status: open
-    result: NOT_FOUND
+    result: []
   - id: filter_expression_with_equals_string
     status: open
     result: [{"key": "value"}]
@@ -191,7 +191,7 @@ queries:
     result: [{"key": true}]
   - id: filter_expression_with_equals_with_root_reference
     status: open
-    result: NOT_FOUND
+    result: []
   - id: filter_expression_with_greater_than
     status: open
     result: [{"key": 43}, {"key": 42.0001}, {"key": 100}]
@@ -224,7 +224,7 @@ queries:
     result: [[5, 6]]
   - id: filter_expression_with_set_wise_comparison_to_set
     status: open
-    result: NOT_FOUND
+    result: []
   - id: filter_expression_with_subfilter
     status: open
     result: NOT_SUPPORTED
