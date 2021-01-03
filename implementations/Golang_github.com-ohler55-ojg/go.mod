@@ -1,7 +1,5 @@
 module example.com/main
 
-go 1.13
+go 1.15
 
-require (
-	github.com/ohler55/ojg v1.3.0
-)
+require github.com/ohler55/ojg v1.4.0

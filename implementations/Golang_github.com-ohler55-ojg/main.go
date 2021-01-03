@@ -7,7 +7,6 @@ import (
 	"fmt"
 	"io/ioutil"
 	"os"
-	"encoding/json"
 
 	"github.com/ohler55/ojg/jp"
 	"github.com/ohler55/ojg/oj"
@@ -27,22 +26,17 @@ func main() {
 		os.Exit(2) // not supported
 	}
 
-	obj, err := oj.ParseString(string(data[:]))
+	obj, err := oj.Parse(data[:])
 	if err != nil {
 		fmt.Fprintln(os.Stderr, err)
 		os.Exit(1)
 	}
 
+	// A slice of []interface{} is always returned even if the slice is
+	// nil. Treat it like a slice and all will be fine. For example
+	// len(results) even if nil returns 0.
 	results := x.Get(obj)
 
-	if results == nil {
-		os.Exit(3) // not found
-	}
-
-	json_result, err := json.Marshal(results)
-	if err != nil {
-		fmt.Fprintln(os.Stderr, err)
-		os.Exit(1)
-	}
+	json_result := oj.JSON(results)
 	fmt.Println(string(json_result))
 }
