@@ -1,9 +1,7 @@
 # json-path-comparison
-Comparison of the different implementations of JSONPath and language agnostic test suite.
-
-Our goal is to show features of
-[JSONPath](https://goessner.net/articles/JsonPath/) in available libraries,
-and support library authors to align on differences in their implementations.
+Comparison of the different implementations of
+[JSONPath](https://goessner.net/articles/JsonPath/) and language agnostic test
+suite.
 
 See https://cburgmer.github.io/json-path-comparison/ for the table generated
 from the queries in [./queries](./queries).
@@ -14,14 +12,20 @@ from the queries in [./queries](./queries).
 - Inform emerging specification on existing de facto standard.
 - Support implementers with test cases.
 
-## Features
-- Comparison of queries against supported implementations
-- Consensus-based decision on correctness
-- Output and error report for failures
-- Automatically generated bug reports
-- A [regression test suite](./regression_suite/regression_suite.yaml) for upstream implementations
-
 ## How to
+
+### Regression test suite
+
+If you are an author of an upstream implementation, you can use the report
+generated here to test for regressions in your logic. The
+[regression_suite/regression_suite.yaml](./regression_suite/regression_suite.yaml) holds
+all queries and includes a consensus where one exists. Additionally
+a report is generated for every implementation which contains current results
+for queries where the consensus isn't matched or no consensus exists (see
+e.g. [regression_suite/Clojure_json-path.yaml](./regression_suite/Clojure_json-path.yaml)).
+
+See for example the [Clojure json-path regression test](https://github.com/gga/json-path/blob/master/test/json_path/test/regression_test.clj)
+on how those files can be put to use.
 
 ### (Re-)Run the comparison locally
 
@@ -43,20 +47,7 @@ You can quickly execute a query against all implementations by running:
 
 (Skip ./src/wrap_in_docker.sh if you don't want to run against Docker.)
 
-### Regression test suite
-
-If you are an author of an upstream implementation, you can use the report
-generated here to test for regressions in your logic. The
-[regression_suite/regression_suite.yaml](./regression_suite/regression_suite.yaml) holds
-all queries and includes a consensus where one exists. Additionally
-a report is generated for every implementation which contains current results
-for queries where the consensus isn't matched or no consensus exists (see
-e.g. [regression_suite/Clojure_json-path.yaml](./regression_suite/Clojure_json-path.yaml)).
-
-See for example the [Clojure json-path regression test](https://github.com/gga/json-path/blob/master/test/json_path/test/regression_test.clj)
-on how those files can be put to use.
-
-## Errors
+### Errors
 
 Some of the complexity sadly brings its own set of errors
 
@@ -73,37 +64,3 @@ Some of the complexity sadly brings its own set of errors
   query, and re-running Ninja to force a re-build.
 - Out of memory: Some compile steps (looking at you, Haskell) seem to need a lot
   of memory. Increasing the available memory for Docker should help.
-
-## Contribute
-
-### Add an implementation
-
-Copy a comparable setup in [./implementations](./implementations) and adapt.
-Be aware that some implementations decide to return queries for single values as
-scalars, compare
-[./implementations/Clojure_json-path](./implementations/Clojure_json-path).
-
-Test the implementation's ninja build script via (using Clojure as an example):
-
-    ninja -f implementations/Clojure_json-path/build.ninja
-
-Test a query by running (again Clojure as example):
-
-    ./src/query_implementation.sh queries/array_index implementations/Clojure_json-path
-
-### Add a new query
-
-Add a new directory under [./queries](./queries) and give it a `selector` and
-`document.json`.
-
-Test a query against an implementation (Goessner's JavaScript as example):
-
-    ./src/query_implementation.sh queries/THE_NEW_QUERY implementations/JavaScript_Goessner
-
-See above "One-off comparisons" to execute against all implementations.
-
-### Upgrade implementations
-
-Some implementations can be automatically upgraded:
-
-    ./upgrade.sh
