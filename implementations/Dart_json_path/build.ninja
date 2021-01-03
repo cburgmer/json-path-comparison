@@ -2,8 +2,8 @@ root = implementations/Dart_json_path
 builddir = $root/build
 
 rule install
-  command = (cd $root && PUB_CACHE=build/pub-cache dart pub get)
+  command = (cd $root && PUB_CACHE=build/pub-cache dart pub get) > $out
 
-build $builddir/pub-cache: install | $root/pubspec.yaml $root/pubspec.lock
+build $builddir/deps_installed: install | $root/pubspec.yaml $root/pubspec.lock
 
-build $root/install: phony $builddir/pub-cache
+build $root/install: phony $builddir/deps_installed
