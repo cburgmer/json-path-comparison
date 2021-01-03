@@ -24,10 +24,17 @@ Test a query against an implementation (Goessner's JavaScript as example):
 
     ./src/query_implementation.sh queries/THE_NEW_QUERY implementations/JavaScript_Goessner
 
-See above "One-off comparisons" to execute against all implementations.
+See "One-off comparisons" in the [README.md](./README.md) to execute against all implementations.
+
+[QUERY_NAMING_PATTERN.md](./QUERY_NAMING_PATTERN.md) explains what is a good query
+name.
 
 ### Upgrade implementations
 
 Some implementations can be automatically upgraded:
 
-    ./upgrade.sh
+    ./src/upgrade.sh
+
+### Clean the build to re-run from scratch
+
+    ./src/clean.sh
