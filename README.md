@@ -36,7 +36,7 @@ To update the reports checked into Git under ./docs and others, run:
 
 Alternatively, you can use Docker to provide the dependencies via
 
-    ./src/wrap_in_docker.sh ninja
+    ./src/with_docker.sh ninja
 
 This will take a while and some network bandwidth but has the benefit that you
 won't have to install anything locally.
@@ -47,7 +47,7 @@ You can quickly execute a query against all implementations by running:
 
     echo '{"a": 1}' | ./src/with_native.sh ./src/one_off.sh '$.a'
 
-(Or use ./src/wrap_in_docker.sh if you prefer Docker.)
+(Or use ./src/with_docker.sh if you prefer Docker.)
 
 ### Errors
 
