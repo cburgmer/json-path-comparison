@@ -53,16 +53,19 @@ You can quickly execute a query against all implementations by running:
 
 Some of the complexity sadly brings its own set of errors
 
-- Docker might fail building on re-runs due to an outdated package index.
-  Quickest fix is to run `docker rmi json-path-comparison` and start from scratch.
 - If Ninja fails, the failing step is unlikely to be the last (as it will let
   parallel requests finish first). Search for `FAILED` to identify the failing
   step. The error is most likely captured in the output file (the part behind
   the `>`). Debug from there.
-- Some executions might run into timeouts (especially when the machine is under
-  high load). This is a necessary mechanism as not all implementations play nice.
-  Currently the best fix is to remove the output, e.g.
+- Some executions might run into timeouts rather randomly (especially when the
+  machine is under high load). The timeout mechanism is necessary as not all
+  implementations play nice, however will sometimes skew the results.
+  Currently the best fix is to remove the output of the query that ran into a
+  timeout, e.g.
   `rm -r build/results/bracket_notation_with_number_on_short_array` for a whole
   query, and re-running Ninja to force a re-build.
-- Out of memory: Some compile steps (looking at you, Haskell) seem to need a lot
-  of memory. Increasing the available memory for Docker should help.
+- Docker might fail building on re-runs due to an outdated package index.
+  Quickest fix is to run `docker rmi json-path-comparison` and start from
+  scratch.
+- Out of memory on Docker: Some compile steps (looking at you, Haskell) seem to
+  need a lot of memory. Increasing the available memory for Docker should help.
