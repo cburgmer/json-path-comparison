@@ -33,7 +33,9 @@ name.
 
 Some implementations can be automatically upgraded:
 
-    ./src/upgrade.sh
+    ./src/with_native.sh ./src/upgrade.sh
+
+(Or use ./src/with_docker.sh if you prefer Docker.)
 
 ### Clean the build to re-run from scratch
 
