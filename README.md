@@ -31,21 +31,23 @@ on how those files can be put to use.
 
 To update the reports checked into Git under ./docs and others, run:
 
-    ./src/wrap_in_docker.sh ninja
+    ./src/with_native.sh ninja
     open docs/index.html
 
-This will take a while and some network bandwidth to install all Docker
-dependencies and build all implementations.
-Skip ./src/wrap_in_docker.sh if you don't want to run against Docker, so the
-command becomes `ninja`.
+Alternatively, you can use Docker to provide the dependencies via
+
+    ./src/wrap_in_docker.sh ninja
+
+This will take a while and some network bandwidth but has the benefit that you
+won't have to install anything locally.
 
 ### One-off comparisons
 
 You can quickly execute a query against all implementations by running:
 
-    echo '{"a": 1}' | ./src/wrap_in_docker.sh ./src/one_off.sh '$.a'
+    echo '{"a": 1}' | ./src/with_native.sh ./src/one_off.sh '$.a'
 
-(Skip ./src/wrap_in_docker.sh if you don't want to run against Docker.)
+(Or use ./src/wrap_in_docker.sh if you prefer Docker.)
 
 ### Errors
 
