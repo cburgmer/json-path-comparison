@@ -1446,6 +1446,10 @@ The following queries provide results that do not match those of other implement
     ]
   }
   ```
+  Expected output (in any order as no consensus on ordering exists):
+  ```
+  [200, 42, 500]
+  ```
   Error:
   ```
   java.lang.Exception object must be an array.

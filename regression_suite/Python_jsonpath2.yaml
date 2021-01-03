@@ -107,9 +107,6 @@ queries:
   - id: dot_bracket_notation_with_double_quotes
     status: open
     result: NOT_SUPPORTED
-  - id: dot_notation_after_bracket_notation_after_recursive_descent
-    status: open
-    result: [200, 42, 500]
   - id: dot_notation_after_filter_expression
     status: fail
     result: NOT_SUPPORTED

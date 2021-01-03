@@ -354,6 +354,10 @@ The following queries provide results that do not match those of other implement
     ]
   }
   ```
+  Expected output (in any order as no consensus on ordering exists):
+  ```
+  [200, 42, 500]
+  ```
   Error:
   ```
   type 'List<dynamic>' is not a subtype of type 'Iterable<JsonPathMatch<dynamic>>'

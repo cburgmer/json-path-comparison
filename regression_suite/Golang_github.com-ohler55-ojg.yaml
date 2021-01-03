@@ -6,39 +6,12 @@
 
 implementation: Golang_github.com-ohler55-ojg
 queries:
-  - id: array_slice
-    status: fail
-    result: ["second", "third", "forth"]
-  - id: array_slice_on_exact_match
-    status: fail
-    result: NOT_FOUND
-  - id: array_slice_on_partially_overlapping_array
-    status: fail
-    result: NOT_FOUND
-  - id: array_slice_with_large_number_for_end
-    status: fail
-    result: NOT_FOUND
   - id: array_slice_with_large_number_for_end_and_negative_step
     status: open
-    result: NOT_FOUND
-  - id: array_slice_with_large_number_for_start
-    status: fail
-    result: NOT_FOUND
+    result: ["third", "second", "first"]
   - id: array_slice_with_large_number_for_start_end_negative_step
     status: open
     result: NOT_FOUND
-  - id: array_slice_with_negative_start_and_end_and_range_of_0
-    status: fail
-    result: [4]
-  - id: array_slice_with_negative_start_and_end_and_range_of_1
-    status: fail
-    result: [4, 5]
-  - id: array_slice_with_negative_start_and_positive_end_and_range_of_0
-    status: fail
-    result: [4]
-  - id: array_slice_with_negative_start_and_positive_end_and_range_of_1
-    status: fail
-    result: [4, 5]
   - id: array_slice_with_negative_step
     status: open
     result: ["forth", "second"]
@@ -54,51 +27,15 @@ queries:
   - id: array_slice_with_open_end_and_negative_step
     status: open
     result: NOT_FOUND
-  - id: array_slice_with_open_start
-    status: fail
-    result: ["first", "second", "third"]
-  - id: array_slice_with_open_start_and_end_and_step_empty
-    status: fail
-    result: NOT_SUPPORTED
   - id: array_slice_with_open_start_and_end_on_object
     status: open
     result: NOT_FOUND
   - id: array_slice_with_open_start_and_negative_step
     status: open
     result: NOT_FOUND
-  - id: array_slice_with_positive_start_and_negative_end_and_range_of_0
-    status: fail
-    result: [5]
-  - id: array_slice_with_positive_start_and_negative_end_and_range_of_1
-    status: fail
-    result: [5, 100]
-  - id: array_slice_with_range_of_0
-    status: fail
-    result: ["first"]
-  - id: array_slice_with_range_of_1
-    status: fail
-    result: ["first", "second"]
-  - id: array_slice_with_start_large_negative_number_and_open_end_on_short_array
-    status: fail
-    result: NOT_FOUND
   - id: array_slice_with_step_0
     status: open
     result: NOT_FOUND
-  - id: array_slice_with_step_1
-    status: fail
-    result: ["first", "second", "third", "forth"]
-  - id: array_slice_with_step_and_leading_zeros
-    status: fail
-    result: NOT_SUPPORTED
-  - id: array_slice_with_step_but_end_not_aligned
-    status: fail
-    result: ["first", "third", "fifth"]
-  - id: array_slice_with_step_empty
-    status: fail
-    result: NOT_SUPPORTED
-  - id: bracket_notation_with_empty_path
-    status: fail
-    result: [{"": 42, "\"\"": 222, "''": 123}]
   - id: bracket_notation_with_number_on_object
     status: open
     result: NOT_FOUND
@@ -111,27 +48,12 @@ queries:
   - id: bracket_notation_with_quoted_special_characters_combined
     status: open
     result: NOT_FOUND
-  - id: bracket_notation_with_wildcard_after_array_slice
-    status: fail
-    result: [1, 2, "a", "b", 0, 0]
   - id: dot_bracket_notation
     status: open
     result: NOT_SUPPORTED
   - id: dot_bracket_notation_with_double_quotes
     status: open
     result: NOT_SUPPORTED
-  - id: dot_notation_after_array_slice
-    status: fail
-    result: ["ey", "bee", "see"]
-  - id: dot_notation_after_bracket_notation_after_recursive_descent
-    status: open
-    result: [42]
-  - id: dot_notation_after_recursive_descent
-    status: fail
-    result: ["something", "top", "value", {"key": "russian dolls"}]
-  - id: dot_notation_after_recursive_descent_after_dot_notation
-    status: fail
-    result: [19.95]
   - id: dot_notation_with_dash
     status: fail
     result: NOT_SUPPORTED
@@ -310,7 +232,8 @@ queries:
     status: open
     result: NOT_SUPPORTED
   - id: filter_expression_with_tautological_comparison
-    status: error
+    status: open
+    result: [1, 3, "nice", true, null, false, {}, [], -1, 0, ""]
   - id: filter_expression_with_triple_equal
     status: open
     result: NOT_SUPPORTED
@@ -340,7 +263,7 @@ queries:
     result: [{"some": "some value"}, {"key": false}, {"key": null}, {"key": "value"}, {"key": ""}, {"key": 0}, {"key": 1}, {"key": -1}, {"key": 42}, {"key": {}}, {"key": []}]
   - id: recursive_descent
     status: open
-    result: ["c", [0, 1], [{"a": {"b": "c"}}, [0, 1]], {"a": {"b": "c"}}, {"b": "c"}]
+    result: ["c", 0, 1, [0, 1], [{"a": {"b": "c"}}, [0, 1]], {"a": {"b": "c"}}, {"b": "c"}]
   - id: recursive_descent_after_dot_notation
     status: open
     result: ["string", 0, 1, [0, 1], {"complex": "string", "primitives": [0, 1]}]
@@ -353,12 +276,9 @@ queries:
   - id: union_with_filter
     status: open
     result: NOT_SUPPORTED
-  - id: union_with_keys_after_array_slice
-    status: fail
-    result: NOT_SUPPORTED
   - id: union_with_keys_after_recursive_descent
     status: open
-    result: ["cc1", "cc2", "cc3", "dd1", "dd4"]
+    result: ["cc1", "cc2", "cc3", "cc5", "dd1", "dd2", "dd4"]
   - id: union_with_repeated_matches_after_dot_notation_with_wildcard
     status: open
     result: NOT_SUPPORTED

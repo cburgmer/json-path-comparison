@@ -93,7 +93,7 @@ queries:
     status: open
     result: "value"
   - id: dot_notation_after_bracket_notation_after_recursive_descent
-    status: open
+    status: fail
     result: ["some value", 100, 200, 300, 400, 42, 500, 600]
   - id: dot_notation_with_double_quotes
     status: open
