@@ -9,7 +9,8 @@ from the queries in [./queries](./queries).
 ## Goals
 
 - Show implementation status of well established implementations.
-- Inform emerging specification on existing de facto standard.
+- Inform [emerging specification](https://github.com/ietf-wg-jsonpath/draft-ietf-jsonpath-jsonpath)
+  on existing de facto standard.
 - Support implementers with test cases.
 
 ## How to
