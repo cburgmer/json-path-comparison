@@ -584,6 +584,9 @@ queries:
   - id: dot_notation_with_single_quotes_and_dot
     selector: "$.'some.key'"
     document: {"some.key": 42, "some": {"key": "value"}, "'some.key'": 43}
+  - id: dot_notation_with_space_padded_key
+    selector: "$. a "
+    document: {" a": 1, "a": 2, " a ": 3, "": 4}
   - id: dot_notation_with_wildcard_after_dot_notation_after_dot_notation_with_wildcard
     selector: "$.*.bar.*"
     document: [{"bar": [42]}]

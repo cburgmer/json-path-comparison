@@ -157,6 +157,9 @@ queries:
   - id: dot_notation_with_single_quotes_and_dot
     status: open
     result: []
+  - id: dot_notation_with_space_padded_key
+    status: open
+    result: [3]
   - id: dot_notation_with_wildcard_after_dot_notation_after_dot_notation_with_wildcard
     status: fail
     result: [[{"bar": [42]}]]

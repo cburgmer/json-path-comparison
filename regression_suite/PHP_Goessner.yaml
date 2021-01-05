@@ -132,6 +132,9 @@ queries:
   - id: dot_notation_with_single_quotes_and_dot
     status: open
     result: ["value"]
+  - id: dot_notation_with_space_padded_key
+    status: open
+    result: [3]
   - id: dot_notation_with_wildcard_on_empty_array
     status: fail
     result: null

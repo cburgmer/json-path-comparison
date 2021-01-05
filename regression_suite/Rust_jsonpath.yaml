@@ -273,6 +273,9 @@ queries:
   - id: dot_notation_with_single_quotes_and_dot
     status: open
     result: NOT_SUPPORTED
+  - id: dot_notation_with_space_padded_key
+    status: open
+    result: NOT_SUPPORTED
   - id: dot_notation_with_wildcard_after_recursive_descent
     status: fail
     result: NOT_SUPPORTED

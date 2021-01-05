@@ -133,6 +133,9 @@ queries:
   - id: dot_notation_with_single_quotes_and_dot
     status: open
     result: NOT_SUPPORTED
+  - id: dot_notation_with_space_padded_key
+    status: open
+    result: [2]
   - id: dot_notation_without_root
     status: open
     result: NOT_SUPPORTED
