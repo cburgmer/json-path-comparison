@@ -2049,6 +2049,19 @@ The following queries provide results that do not match those of other implement
   should start with '$'
   ```
 
+- [ ] ``
+  Input:
+  ```
+  {
+    "a": 42,
+    "": 21
+  }
+  ```
+  Error:
+  ```
+  runtime error: index out of range [0] with length 0
+  ```
+
 - [ ] `$..*[?(@.id>2)]`
   Input:
   ```

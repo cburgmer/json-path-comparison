@@ -200,6 +200,19 @@ The following queries provide results that do not match those of other implement
   obj needs to be an object
   ```
 
+- [ ] ``
+  Input:
+  ```
+  {
+    "a": 42,
+    "": 21
+  }
+  ```
+  Error:
+  ```
+  we need a path
+  ```
+
 - [ ] `$[?(@[0:1]==[1])]`
   Input:
   ```

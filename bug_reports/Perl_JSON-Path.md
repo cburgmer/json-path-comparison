@@ -879,6 +879,19 @@ The following queries provide results that do not match those of other implement
   []
   ```
 
+- [ ] ``
+  Input:
+  ```
+  {
+    "a": 42,
+    "": 21
+  }
+  ```
+  Error:
+  ```
+  Missing required argument 'expression' in constructor at build/lib/perl5/JSON/Path.pm line 107.
+  ```
+
 - [ ] `$..*[?(@.id>2)]`
   Input:
   ```

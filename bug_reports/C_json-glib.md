@@ -1389,6 +1389,21 @@ The following queries provide results that do not match those of other implement
   ]
   ```
 
+- [ ] ``
+  Input:
+  ```
+  {
+    "a": 42,
+    "": 21
+  }
+  ```
+  Error:
+  ```
+  json_path_match: assertion 'path->is_compiled' failed
+  Expecting value: line 2 column 1 (char 1)
+  
+  ```
+
 - [ ] `$[?(@['key']==42)]`
   Input:
   ```

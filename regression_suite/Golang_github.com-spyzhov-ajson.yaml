@@ -100,6 +100,9 @@ queries:
   - id: dot_notation_without_root
     status: open
     result: NOT_SUPPORTED
+  - id: empty
+    status: open
+    result: NOT_SUPPORTED
   - id: filter_expression_after_dot_notation_with_wildcard_after_recursive_descent
     status: open
     result: [{"id": 3, "name": "another"}, {"id": 4, "name": "more"}, {"id": 5, "name": "next to last"}]

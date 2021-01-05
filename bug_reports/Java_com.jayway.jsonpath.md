@@ -454,6 +454,25 @@ The following queries provide results that do not match those of other implement
   ]
   ```
 
+- [ ] ``
+  Input:
+  ```
+  {
+    "a": 42,
+    "": 21
+  }
+  ```
+  Error:
+  ```
+  SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+  SLF4J: Defaulting to no-operation (NOP) logger implementation
+  SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+  Exception in thread "main" java.lang.IllegalArgumentException: path can not be null or empty
+  	at com.jayway.jsonpath.internal.Utils.notEmpty(Utils.java:383)
+  	at com.jayway.jsonpath.internal.JsonContext.read(JsonContext.java:77)
+  	at query.App.main(App.java:28)
+  ```
+
 - [ ] `$[?(@.d in [2, 3])]`
   Input:
   ```

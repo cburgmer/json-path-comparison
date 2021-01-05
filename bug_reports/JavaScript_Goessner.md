@@ -379,6 +379,19 @@ The following queries provide results that do not match those of other implement
   ]
   ```
 
+- [ ] ``
+  Input:
+  ```
+  {
+    "a": 42,
+    "": 21
+  }
+  ```
+  Error:
+  ```
+  undefined
+  ```
+
 - [ ] `$[?(@['@key']==42)]`
   Input:
   ```

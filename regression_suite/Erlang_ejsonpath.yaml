@@ -108,6 +108,9 @@ queries:
   - id: dot_notation_without_root
     status: open
     result: NOT_SUPPORTED
+  - id: empty
+    status: open
+    result: NOT_SUPPORTED
   - id: filter_expression_after_dot_notation_with_wildcard_after_recursive_descent
     status: open
     result: ["another", "another", "first", "first", "last", "last", "more", "more", "next to last", "next to last", "next", "next", 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, [{"id": 1, "name": "first"}, {"id": 2, "name": "next"}, {"id": 3, "name": "another"}, {"id": 4, "name": "more"}], {"id": 3, "name": "another"}, {"id": 4, "name": "more"}, {"id": 5, "name": "next to last"}, {"more": {"id": 5, "name": "next to last"}, "one": [{"id": 1, "name": "first"}, {"id": 2, "name": "next"}, {"id": 3, "name": "another"}, {"id": 4, "name": "more"}]}]

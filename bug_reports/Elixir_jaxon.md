@@ -1295,6 +1295,21 @@ The following queries provide results that do not match those of other implement
       lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
   ```
 
+- [ ] ``
+  Input:
+  ```
+  {
+    "a": 42,
+    "": 21
+  }
+  ```
+  Error:
+  ```
+  ** (ArgumentError) Empty query given
+      lib/jaxon/decoders/query.ex:16: Jaxon.Decoders.Query.query/2
+      lib/jsonpath.ex:8: Mix.Tasks.Execute.run/1
+  ```
+
 - [ ] `$[?(@['key']==42)]`
   Input:
   ```

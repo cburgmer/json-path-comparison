@@ -115,6 +115,9 @@ queries:
   - id: dot_notation_without_root
     status: open
     result: ["value"]
+  - id: empty
+    status: open
+    result: NOT_SUPPORTED
   - id: filter_expression_after_dot_notation_with_wildcard_after_recursive_descent
     status: open
     result: NOT_SUPPORTED

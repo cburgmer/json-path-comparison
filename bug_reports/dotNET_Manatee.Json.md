@@ -225,6 +225,19 @@ The following queries provide results that do not match those of other implement
   ]
   ```
 
+- [ ] ``
+  Input:
+  ```
+  {
+    "a": 42,
+    "": 21
+  }
+  ```
+  Error:
+  ```
+  Object reference not set to an instance of an object.
+  ```
+
 - [ ] `$[0,0]`
   Input:
   ```

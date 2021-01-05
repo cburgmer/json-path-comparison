@@ -584,6 +584,19 @@ The following queries provide results that do not match those of other implement
   path: $ expected
   ```
 
+- [ ] ``
+  Input:
+  ```
+  {
+    "a": 42,
+    "": 21
+  }
+  ```
+  Error:
+  ```
+  path: empty
+  ```
+
 - [ ] `$[?(@.key+50==100)]`
   Input:
   ```

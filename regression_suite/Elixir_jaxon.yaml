@@ -253,6 +253,8 @@ queries:
   - id: dot_notation_without_root
     status: open
     result: []
+  - id: empty
+    status: error
   - id: filter_expression_after_dot_notation_with_wildcard_after_recursive_descent
     status: open
     result: []
