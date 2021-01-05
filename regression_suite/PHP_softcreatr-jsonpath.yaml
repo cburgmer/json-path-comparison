@@ -26,9 +26,6 @@ queries:
     status: error
   - id: array_slice_with_open_end_and_negative_step
     status: error
-  - id: array_slice_with_open_start_and_end_on_object
-    status: open
-    result: []
   - id: array_slice_with_open_start_and_negative_step
     status: error
   - id: array_slice_with_step_0
@@ -41,7 +38,7 @@ queries:
     status: fail
     result: ["one element"]
   - id: bracket_notation_with_number_on_object
-    status: open
+    status: fail
     result: ["value"]
   - id: bracket_notation_with_quoted_closing_bracket_literal
     status: fail

@@ -3,59 +3,6 @@ Results do not match other implementations
 The following queries provide results that do not match those of other implementations of JSONPath
 (compare https://cburgmer.github.io/json-path-comparison/):
 
-- [ ] `$[:]`
-  Input:
-  ```
-  [
-    "first",
-    "second"
-  ]
-  ```
-  Expected output:
-  ```
-  ["first", "second"]
-  ```
-  Actual output:
-  NOT_SUPPORTED
-  ```
-  FormatException: Unexpected bracket expression
-  ```
-
-- [ ] `$..[0]`
-  Input:
-  ```
-  [
-    "first",
-    {
-      "key": [
-        "first nested",
-        {
-          "more": [
-            {
-              "nested": [
-                "deepest",
-                "second"
-              ]
-            },
-            [
-              "more",
-              "values"
-            ]
-          ]
-        }
-      ]
-    }
-  ]
-  ```
-  Expected output (in any order as no consensus on ordering exists):
-  ```
-  ["deepest", "first nested", "first", "more", {"nested": ["deepest", "second"]}]
-  ```
-  Error:
-  ```
-  type 'List<dynamic>' is not a subtype of type 'Iterable<JsonPathMatch<dynamic>>'
-  ```
-
 - [ ] `$["key"]`
   Input:
   ```
@@ -105,25 +52,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  RangeError (index): Invalid value: Only valid value is 0: -2
-  ```
-
-- [ ] `$[-1]`
-  Input:
-  ```
-  [
-    "first",
-    "second",
-    "third"
-  ]
-  ```
-  Expected output:
-  ```
-  ["third"]
-  ```
-  Error:
-  ```
-  RangeError (index): Invalid value: Not in inclusive range 0..2: -1
+  RangeError (index): Invalid value: Only valid value is 0: -1
   ```
 
 - [ ] `$[-1]`
@@ -138,32 +67,6 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   RangeError (index): Invalid value: Valid value range is empty: -1
-  ```
-
-- [ ] `$[0]`
-  Input:
-  ```
-  {
-    "0": "value"
-  }
-  ```
-  Error:
-  ```
-  type 'List<dynamic>' is not a subtype of type 'Iterable<JsonPathMatch<dynamic>>'
-  ```
-
-- [ ] `$[0]`
-  Input:
-  ```
-  "Hello World"
-  ```
-  Expected output:
-  ```
-  []
-  ```
-  Error:
-  ```
-  type 'List<dynamic>' is not a subtype of type 'Iterable<JsonPathMatch<dynamic>>'
   ```
 
 - [ ] `$['single'quote']`
@@ -310,57 +213,6 @@ The following queries provide results that do not match those of other implement
   Actual output:
   ```
   []
-  ```
-
-- [ ] `$..[1].key`
-  Input:
-  ```
-  {
-    "k": [
-      {
-        "key": "some value"
-      },
-      {
-        "key": 42
-      }
-    ],
-    "kk": [
-      [
-        {
-          "key": 100
-        },
-        {
-          "key": 200
-        },
-        {
-          "key": 300
-        }
-      ],
-      [
-        {
-          "key": 400
-        },
-        {
-          "key": 500
-        },
-        {
-          "key": 600
-        }
-      ]
-    ],
-    "key": [
-      0,
-      1
-    ]
-  }
-  ```
-  Expected output (in any order as no consensus on ordering exists):
-  ```
-  [200, 42, 500]
-  ```
-  Error:
-  ```
-  type 'List<dynamic>' is not a subtype of type 'Iterable<JsonPathMatch<dynamic>>'
   ```
 
 - [ ] `$[?(@.id==42)].name`
@@ -680,32 +532,6 @@ The following queries provide results that do not match those of other implement
   [
     "a"
   ]
-  ```
-
-- [ ] `$[:]['c','d']`
-  Input:
-  ```
-  [
-    {
-      "c": "cc1",
-      "d": "dd1",
-      "e": "ee1"
-    },
-    {
-      "c": "cc2",
-      "d": "dd2",
-      "e": "ee2"
-    }
-  ]
-  ```
-  Expected output:
-  ```
-  ["cc1", "dd1", "cc2", "dd2"]
-  ```
-  Actual output:
-  NOT_SUPPORTED
-  ```
-  FormatException: Unexpected bracket expression
   ```
 
 - [ ] `$[4,1]`

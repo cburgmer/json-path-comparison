@@ -119,6 +119,22 @@ The following queries provide results that do not match those of other implement
   No JSON output received
   ```
 
+- [ ] `$[0]`
+  Input:
+  ```
+  {
+    "0": "value"
+  }
+  ```
+  Expected output:
+  ```
+  null
+  ```
+  Actual output:
+  ```
+  "value"
+  ```
+
 - [ ] `$[1]`
   Input:
   ```

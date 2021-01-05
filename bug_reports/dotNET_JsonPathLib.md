@@ -26,6 +26,25 @@ The following queries provide results that do not match those of other implement
   ]
   ```
 
+- [ ] `$[:]`
+  Input:
+  ```
+  {
+    ":": 42,
+    "more": "string"
+  }
+  ```
+  Expected output:
+  ```
+  []
+  ```
+  Actual output:
+  ```
+  [
+    42
+  ]
+  ```
+
 - [ ] `$[0:3:0]`
   Input:
   ```
@@ -167,6 +186,24 @@ The following queries provide results that do not match those of other implement
   Actual output:
   ```
   []
+  ```
+
+- [ ] `$[0]`
+  Input:
+  ```
+  {
+    "0": "value"
+  }
+  ```
+  Expected output:
+  ```
+  []
+  ```
+  Actual output:
+  ```
+  [
+    "value"
+  ]
   ```
 
 - [ ] `$[']']`

@@ -202,6 +202,27 @@ The following queries provide results that do not match those of other implement
   com.jayway.jsonpath.InvalidPathException: Failed to parse SliceOperation: ::
   ```
 
+- [ ] `$[:]`
+  Input:
+  ```
+  {
+    ":": 42,
+    "more": "string"
+  }
+  ```
+  Expected output:
+  ```
+  []
+  ```
+  Actual output:
+  NOT_SUPPORTED
+  ```
+  SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+  SLF4J: Defaulting to no-operation (NOP) logger implementation
+  SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+  com.jayway.jsonpath.InvalidPathException: Failed to parse SliceOperation: :
+  ```
+
 - [ ] `$[3:-2]`
   Input:
   ```

@@ -120,6 +120,8 @@ queries:
   - id: array_slice_with_open_start_and_end_on_object
     selector: "$[:]"
     document: {":": 42, "more": "string"}
+    consensus: []
+    not-found-consensus: NOT_FOUND
   - id: array_slice_with_open_start_and_negative_step
     selector: "$[:2:-1]"
     document: ["first", "second", "third", "forth", "fifth"]
@@ -274,6 +276,10 @@ queries:
   - id: bracket_notation_with_number_on_object
     selector: "$[0]"
     document: {"0": "value"}
+    consensus: []
+    scalar-consensus: null
+    not-found-consensus: NOT_FOUND
+    scalar-not-found-consensus: NOT_FOUND
   - id: bracket_notation_with_number_on_short_array
     selector: "$[1]"
     document: ["one element"]

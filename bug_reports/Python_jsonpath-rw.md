@@ -21,6 +21,28 @@ The following queries provide results that do not match those of other implement
   Exception('Parse error at 1:3 near token : (:)')
   ```
 
+- [ ] `$[:]`
+  Input:
+  ```
+  {
+    ":": 42,
+    "more": "string"
+  }
+  ```
+  Expected output:
+  ```
+  []
+  ```
+  Actual output:
+  ```
+  [
+    {
+      ":": 42,
+      "more": "string"
+    }
+  ]
+  ```
+
 - [ ] `$[0:3:2]`
   Input:
   ```
@@ -261,6 +283,10 @@ The following queries provide results that do not match those of other implement
   {
     "0": "value"
   }
+  ```
+  Expected output:
+  ```
+  []
   ```
   Error:
   ```

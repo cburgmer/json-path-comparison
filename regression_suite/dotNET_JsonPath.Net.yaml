@@ -37,9 +37,6 @@ queries:
   - id: array_slice_with_open_end_and_negative_step
     status: open
     result: ["forth", "fifth"]
-  - id: array_slice_with_open_start_and_end_on_object
-    status: open
-    result: []
   - id: array_slice_with_open_start_and_negative_step
     status: open
     result: ["first", "second"]
@@ -61,9 +58,6 @@ queries:
   - id: bracket_notation_after_recursive_descent
     status: fail
     result: ["deepest", "deepest", "deepest", "deepest", "deepest", "deepest", "deepest", "first nested", "first nested", "first nested", "first", "more", "more", "more", "more", "more", "more", {"nested": ["deepest", "second"]}, {"nested": ["deepest", "second"]}, {"nested": ["deepest", "second"]}, {"nested": ["deepest", "second"]}, {"nested": ["deepest", "second"]}]
-  - id: bracket_notation_with_number_on_object
-    status: open
-    result: []
   - id: bracket_notation_with_quoted_escaped_backslash
     status: open
     result: ["value"]

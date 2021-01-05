@@ -102,6 +102,10 @@ The following queries provide results that do not match those of other implement
     "0": "value"
   }
   ```
+  Expected output:
+  ```
+  []
+  ```
   Error:
   ```
   Property '0' is a number and target is an object!

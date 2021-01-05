@@ -58,7 +58,7 @@ queries:
     status: fail
     result: NOT_SUPPORTED
   - id: array_slice_with_open_start_and_end_on_object
-    status: open
+    status: fail
     result: NOT_SUPPORTED
   - id: array_slice_with_open_start_and_negative_step
     status: open
@@ -141,9 +141,6 @@ queries:
   - id: bracket_notation_with_number_-1_on_empty_array
     status: fail
     result: NOT_SUPPORTED
-  - id: bracket_notation_with_number_on_object
-    status: open
-    result: []
   - id: bracket_notation_with_quoted_array_slice_literal
     status: fail
     result: NOT_SUPPORTED

@@ -165,6 +165,24 @@ The following queries provide results that do not match those of other implement
   Failed to parse SliceOperation: ::
   ```
 
+- [ ] `$[:]`
+  Input:
+  ```
+  {
+    ":": 42,
+    "more": "string"
+  }
+  ```
+  Expected output:
+  ```
+  []
+  ```
+  Actual output:
+  NOT_SUPPORTED
+  ```
+  Failed to parse SliceOperation: :
+  ```
+
 - [ ] `$[3:-2]`
   Input:
   ```

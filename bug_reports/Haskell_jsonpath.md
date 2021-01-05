@@ -183,6 +183,25 @@ The following queries provide results that do not match those of other implement
    Error: searchBeginningWithSlice: string
   ```
 
+- [ ] `$[:]`
+  Input:
+  ```
+  {
+    ":": 42,
+    "more": "string"
+  }
+  ```
+  Expected output:
+  ```
+  []
+  ```
+  Actual output:
+  NOT_SUPPORTED
+  ```
+  Invalid JSONPath: $[:]
+   Error: searchBeginningWithSlice: string
+  ```
+
 - [ ] `$[3:-3]`
   Input:
   ```
@@ -450,6 +469,10 @@ The following queries provide results that do not match those of other implement
   {
     "0": "value"
   }
+  ```
+  Expected output:
+  ```
+  null
   ```
   Error:
   ```

@@ -399,6 +399,10 @@ The following queries provide results that do not match those of other implement
     "more": "string"
   }
   ```
+  Expected output:
+  ```
+  []
+  ```
   Error:
   ```
   object is not Slice
@@ -915,6 +919,10 @@ The following queries provide results that do not match those of other implement
   {
     "0": "value"
   }
+  ```
+  Expected output:
+  ```
+  null
   ```
   Error:
   ```

@@ -64,7 +64,7 @@ queries:
   - id: bracket_notation_with_empty_path
     status: error
   - id: bracket_notation_with_number_on_object
-    status: open
+    status: fail
     result: ["value"]
   - id: bracket_notation_with_number_on_string
     status: error

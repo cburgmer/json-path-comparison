@@ -380,6 +380,10 @@ The following queries provide results that do not match those of other implement
     "more": "string"
   }
   ```
+  Expected output:
+  ```
+  []
+  ```
   Error:
   ```
   java.lang.Exception object must be an array.
@@ -930,6 +934,10 @@ The following queries provide results that do not match those of other implement
   {
     "0": "value"
   }
+  ```
+  Expected output:
+  ```
+  null
   ```
   Error:
   ```

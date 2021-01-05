@@ -40,7 +40,7 @@ queries:
     status: open
     result: ["forth", "fifth"]
   - id: array_slice_with_open_start_and_end_on_object
-    status: open
+    status: fail
     result: [42, "string"]
   - id: array_slice_with_open_start_and_negative_step
     status: open
@@ -80,9 +80,6 @@ queries:
     result: []
   - id: bracket_notation_with_number_-1
     status: fail
-    result: []
-  - id: bracket_notation_with_number_on_object
-    status: open
     result: []
   - id: bracket_notation_with_quoted_array_slice_literal
     status: fail

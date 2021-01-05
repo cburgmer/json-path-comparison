@@ -12,6 +12,20 @@
 
 <h2>Results</h2>
 
+<h3 id="consensus">Consensus</h3>
+
+<pre><code>[]
+</code></pre>
+
+<h4>
+Not found consensus
+</h4>
+
+<p>This consensus applies for implementations which return a specific <em>not found</em> value if no match exists.</p>
+
+<pre><code>NOT_FOUND
+</code></pre>
+
 <h3>Other responses</h3>
 
 <h4 id="Bash_JSONPath.sh">
@@ -24,29 +38,6 @@ Bash (JSONPath.sh)
 ]
 </code></pre>
 
-<h4 id="C_json-glib">
-C (json-glib)
-</h4>
-
-<pre><code>[]
-</code></pre>
-
-<h4 id="Cpp_jsoncons">
-Cpp (jsoncons)
-</h4>
-
-<pre><code>[]
-</code></pre>
-
-<h4 id="Dart_json_path">
-Dart (json_path)
-</h4>
-
-<p>Not supported</p>
-
-<pre><code>FormatException: Unexpected bracket expression
-</code></pre>
-
 <h4 id="Elixir_jaxon">
 Elixir (jaxon)
 </h4>
@@ -54,51 +45,6 @@ Elixir (jaxon)
 <pre><code>[
   42
 ]
-</code></pre>
-
-<h4 id="Elixir_warpath">
-Elixir (warpath)
-¹
-</h4>
-
-<pre><code>[]
-</code></pre>
-
-<h4 id="Golang_github.com-PaesslerAG-jsonpath">
-Golang (github.com-PaesslerAG-jsonpath)
-¹
-</h4>
-
-<pre><code>[]
-</code></pre>
-
-<h4 id="Golang_github.com-bhmj-jsonslice">
-Golang (github.com-bhmj-jsonslice)
-¹
-</h4>
-
-<pre><code>[]
-</code></pre>
-
-<h4 id="Golang_github.com-ohler55-ojg">
-Golang (github.com-ohler55-ojg)
-</h4>
-
-<pre><code>[]
-</code></pre>
-
-<h4 id="Golang_github.com-spyzhov-ajson">
-Golang (github.com-spyzhov-ajson)
-</h4>
-
-<pre><code>[]
-</code></pre>
-
-<h4 id="Golang_github.com-vmware-labs-yaml-jsonpath">
-Golang (github.com-vmware-labs-yaml-jsonpath)
-</h4>
-
-<pre><code>[]
 </code></pre>
 
 <h4 id="Haskell_jsonpath">
@@ -122,34 +68,6 @@ JavaScript (Goessner)
 ]
 </code></pre>
 
-<h4 id="JavaScript_brunerd">
-JavaScript (brunerd)
-</h4>
-
-<pre><code>[]
-</code></pre>
-
-<h4 id="JavaScript_jsonpath">
-JavaScript (jsonpath)
-</h4>
-
-<pre><code>[]
-</code></pre>
-
-<h4 id="JavaScript_jsonpath-plus">
-JavaScript (jsonpath-plus)
-</h4>
-
-<pre><code>[]
-</code></pre>
-
-<h4 id="Java_com.github.jsurfer">
-Java (com.github.jsurfer)
-</h4>
-
-<pre><code>[]
-</code></pre>
-
 <h4 id="Java_com.jayway.jsonpath">
 Java (com.jayway.jsonpath)
 ¹
@@ -162,14 +80,6 @@ Java (com.jayway.jsonpath)
 SLF4J: Defaulting to no-operation (NOP) logger implementation
 SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
 com.jayway.jsonpath.InvalidPathException: Failed to parse SliceOperation: :
-</code></pre>
-
-<h4 id="Kotlin_com.nfeld.jsonpathkt">
-Kotlin (com.nfeld.jsonpathkt)
-¹
-</h4>
-
-<pre><code>[]
 </code></pre>
 
 <h4 id="Objective-C_SMJJSONPath">
@@ -193,30 +103,6 @@ PHP (Goessner)
 ]
 </code></pre>
 
-<h4 id="PHP_galbar-jsonpath">
-PHP (galbar-jsonpath)
-²
-</h4>
-
-<p>Not found</p>
-
-<pre><code>jsonpath returned false, this might indicate an error
-</code></pre>
-
-<h4 id="PHP_remorhaz-jsonpath">
-PHP (remorhaz-jsonpath)
-</h4>
-
-<pre><code>[]
-</code></pre>
-
-<h4 id="PHP_softcreatr-jsonpath">
-PHP (softcreatr-jsonpath)
-</h4>
-
-<pre><code>[]
-</code></pre>
-
 <h4 id="Python_jsonpath">
 Python (jsonpath)
 ²
@@ -237,13 +123,6 @@ Python (jsonpath-rw)
     "more": "string"
   }
 ]
-</code></pre>
-
-<h4 id="Python_jsonpath2">
-Python (jsonpath2)
-</h4>
-
-<pre><code>[]
 </code></pre>
 
 <h4 id="Raku_JSON-Path">
@@ -274,34 +153,6 @@ Rust (jsonpath)
 <pre><code>parsing error
 </code></pre>
 
-<h4 id="Rust_jsonpath_lib">
-Rust (jsonpath_lib)
-</h4>
-
-<pre><code>[]
-</code></pre>
-
-<h4 id="Scala_jsonpath">
-Scala (jsonpath)
-</h4>
-
-<pre><code>[]
-</code></pre>
-
-<h4 id="dotNET_Json.NET">
-dotNET (Json.NET)
-</h4>
-
-<pre><code>[]
-</code></pre>
-
-<h4 id="dotNET_JsonPath.Net">
-dotNET (JsonPath.Net)
-</h4>
-
-<pre><code>[]
-</code></pre>
-
 <h4 id="dotNET_JsonPathLib">
 dotNET (JsonPathLib)
 </h4>
@@ -319,13 +170,6 @@ dotNET (Manatee.Json)
   42,
   "string"
 ]
-</code></pre>
-
-<h4 id="Proposal_A">
-Proposal (A)
-</h4>
-
-<pre><code>[]
 </code></pre>
 
 <h3>Errors</h3>

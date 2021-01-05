@@ -29,9 +29,6 @@ queries:
   - id: array_slice_with_open_end_and_negative_step
     status: open
     result: ["forth", "third", "second", "first"]
-  - id: array_slice_with_open_start_and_end_on_object
-    status: open
-    result: []
   - id: array_slice_with_open_start_and_negative_step
     status: open
     result: ["fifth", "forth"]
@@ -48,9 +45,6 @@ queries:
     result: NOT_SUPPORTED
   - id: bracket_notation_with_number_after_dot_notation_with_wildcard_on_nested_arrays_with_different_length
     status: fail
-    result: []
-  - id: bracket_notation_with_number_on_object
-    status: open
     result: []
   - id: bracket_notation_with_quoted_escaped_backslash
     status: open

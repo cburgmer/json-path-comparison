@@ -44,7 +44,7 @@ queries:
     status: fail
     result: NOT_SUPPORTED
   - id: array_slice_with_open_start_and_end_on_object
-    status: open
+    status: fail
     result: NOT_SUPPORTED
   - id: array_slice_with_open_start_and_negative_step
     status: open

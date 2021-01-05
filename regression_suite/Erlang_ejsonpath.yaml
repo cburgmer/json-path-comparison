@@ -49,9 +49,6 @@ queries:
   - id: bracket_notation_after_recursive_descent
     status: fail
     result: NOT_SUPPORTED
-  - id: bracket_notation_with_number_on_object
-    status: open
-    result: []
   - id: bracket_notation_with_number_on_string
     status: error
   - id: bracket_notation_with_quoted_escaped_backslash

@@ -36,7 +36,7 @@ queries:
     status: open
     result: []
   - id: array_slice_with_open_start_and_end_on_object
-    status: open
+    status: fail
     result: [42, "string"]
   - id: array_slice_with_open_start_and_negative_step
     status: open
@@ -45,7 +45,7 @@ queries:
     status: open
     result: []
   - id: bracket_notation_with_number_on_object
-    status: open
+    status: fail
     result: ["value"]
   - id: bracket_notation_with_quoted_escaped_backslash
     status: open

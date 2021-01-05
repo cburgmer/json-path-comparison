@@ -27,16 +27,10 @@ queries:
   - id: array_slice_with_open_end_and_negative_step
     status: open
     result: []
-  - id: array_slice_with_open_start_and_end_on_object
-    status: open
-    result: []
   - id: array_slice_with_open_start_and_negative_step
     status: open
     result: []
   - id: array_slice_with_step_0
-    status: open
-    result: []
-  - id: bracket_notation_with_number_on_object
     status: open
     result: []
   - id: bracket_notation_with_quoted_escaped_backslash

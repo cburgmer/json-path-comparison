@@ -146,6 +146,22 @@ The following queries provide results that do not match those of other implement
   index -1 out of bounds
   ```
 
+- [ ] `$[0]`
+  Input:
+  ```
+  {
+    "0": "value"
+  }
+  ```
+  Expected output:
+  ```
+  null
+  ```
+  Actual output:
+  ```
+  "value"
+  ```
+
 - [ ] `$[1]`
   Input:
   ```

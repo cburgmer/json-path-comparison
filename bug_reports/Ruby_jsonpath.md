@@ -249,6 +249,26 @@ The following queries provide results that do not match those of other implement
   step can't be negative
   ```
 
+- [ ] `$[:]`
+  Input:
+  ```
+  {
+    ":": 42,
+    "more": "string"
+  }
+  ```
+  Expected output:
+  ```
+  []
+  ```
+  Actual output:
+  ```
+  [
+    null,
+    null
+  ]
+  ```
+
 - [ ] `$[:2:-1]`
   Input:
   ```
@@ -502,6 +522,24 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   1 is not a symbol nor a string
+  ```
+
+- [ ] `$[0]`
+  Input:
+  ```
+  {
+    "0": "value"
+  }
+  ```
+  Expected output:
+  ```
+  []
+  ```
+  Actual output:
+  ```
+  [
+    null
+  ]
   ```
 
 - [ ] `$[0]`

@@ -108,6 +108,24 @@ The following queries provide results that do not match those of other implement
   Error: 'Modulo by zero'
   ```
 
+- [ ] `$[0]`
+  Input:
+  ```
+  {
+    "0": "value"
+  }
+  ```
+  Expected output:
+  ```
+  []
+  ```
+  Actual output:
+  ```
+  [
+    "value"
+  ]
+  ```
+
 - [ ] `$[']']`
   Input:
   ```

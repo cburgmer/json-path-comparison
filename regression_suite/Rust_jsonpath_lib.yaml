@@ -27,9 +27,6 @@ queries:
   - id: array_slice_with_open_end_and_negative_step
     status: open
     result: NOT_SUPPORTED
-  - id: array_slice_with_open_start_and_end_on_object
-    status: open
-    result: []
   - id: array_slice_with_open_start_and_negative_step
     status: open
     result: NOT_SUPPORTED
@@ -38,9 +35,6 @@ queries:
   - id: bracket_notation_with_negative_number_on_short_array
     status: fail
     result: ["one element"]
-  - id: bracket_notation_with_number_on_object
-    status: open
-    result: []
   - id: bracket_notation_with_quoted_escaped_backslash
     status: open
     result: NOT_SUPPORTED
