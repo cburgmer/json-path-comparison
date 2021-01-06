@@ -244,6 +244,8 @@ queries:
     status: error
   - id: dot_notation_without_root
     status: error
+  - id: dot_notation_without_root_and_dot
+    status: error
   - id: empty
     status: error
   - id: filter_expression_after_dot_notation_with_wildcard_after_recursive_descent

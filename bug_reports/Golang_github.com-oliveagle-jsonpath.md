@@ -2037,6 +2037,18 @@ The following queries provide results that do not match those of other implement
   expression don't support in filter
   ```
 
+- [ ] `.key`
+  Input:
+  ```
+  {
+    "key": "value"
+  }
+  ```
+  Error:
+  ```
+  should start with '$'
+  ```
+
 - [ ] `key`
   Input:
   ```

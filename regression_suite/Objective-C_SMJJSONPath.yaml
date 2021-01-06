@@ -121,6 +121,9 @@ queries:
     result: NOT_SUPPORTED
   - id: dot_notation_without_root
     status: open
+    result: ["value"]
+  - id: dot_notation_without_root_and_dot
+    status: open
     result: "value"
   - id: empty
     status: open

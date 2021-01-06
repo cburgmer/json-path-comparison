@@ -257,6 +257,9 @@ queries:
   - id: dot_notation_without_root
     status: open
     result: null
+  - id: dot_notation_without_root_and_dot
+    status: open
+    result: null
   - id: empty
     status: open
     result: null

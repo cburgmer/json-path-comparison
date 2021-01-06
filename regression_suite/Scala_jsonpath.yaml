@@ -127,6 +127,9 @@ queries:
   - id: dot_notation_without_root
     status: open
     result: NOT_SUPPORTED
+  - id: dot_notation_without_root_and_dot
+    status: open
+    result: NOT_SUPPORTED
   - id: empty
     status: open
     result: NOT_SUPPORTED

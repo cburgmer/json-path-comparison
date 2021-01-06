@@ -187,6 +187,9 @@ queries:
     status: error
   - id: dot_notation_without_root
     status: open
+    result: "value"
+  - id: dot_notation_without_root_and_dot
+    status: open
     result: NOT_SUPPORTED
   - id: empty
     status: open

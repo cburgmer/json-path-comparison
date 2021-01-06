@@ -127,6 +127,9 @@ queries:
     result: [3]
   - id: dot_notation_without_root
     status: open
+    result: NOT_FOUND
+  - id: dot_notation_without_root_and_dot
+    status: open
     result: ["value"]
   - id: empty
     status: error

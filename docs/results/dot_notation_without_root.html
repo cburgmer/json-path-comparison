@@ -5,7 +5,7 @@
 
 <h2>Setup</h2>
 
-<p>Selector: <code>key</code></p>
+<p>Selector: <code>.key</code></p>
 
 <pre><code>{
   "key": "value"
@@ -29,9 +29,9 @@ Bash (JSONPath.sh)
 C (json-glib)
 </h4>
 
-<p>Not supported</p>
-
-<pre><code>Unable to compile selector `key': Invalid first character “k”
+<pre><code>[
+  "value"
+]
 </code></pre>
 
 <h4 id="Clojure_json-path">
@@ -48,7 +48,7 @@ Cpp (jsoncons)
 
 <p>Not supported</p>
 
-<pre><code>Unexpected end of jsonpath input at line 1 and column 4
+<pre><code>Expected $ at line 1 and column 1
 </code></pre>
 
 <h4 id="Dart_json_path">
@@ -83,7 +83,7 @@ Elixir (warpath)
 
 <p>Not supported</p>
 
-<pre><code>Parser error: Invalid token on line 1, syntax error before: &lt;&lt;"key"&gt;&gt;
+<pre><code>Parser error: Invalid token on line 1, syntax error before: &lt;&lt;"."&gt;&gt;
 </code></pre>
 
 <h4 id="Erlang_ejsonpath">
@@ -92,7 +92,7 @@ Erlang (ejsonpath)
 
 <p>Not supported</p>
 
-<pre><code>syntax error before: &lt;&lt;"key"&gt;&gt;
+<pre><code>syntax error before: '.'
 </code></pre>
 
 <h4 id="Golang_github.com-PaesslerAG-jsonpath">
@@ -100,7 +100,9 @@ Golang (github.com-PaesslerAG-jsonpath)
 ¹
 </h4>
 
-<pre><code>"value"
+<p>Not supported</p>
+
+<pre><code>parsing error: .key :1:1 - 1:2 unexpected "." while scanning extensions
 </code></pre>
 
 <h4 id="Golang_github.com-ohler55-ojg">
@@ -116,9 +118,7 @@ Golang (github.com-ohler55-ojg)
 Golang (github.com-spyzhov-ajson)
 </h4>
 
-<p>Not supported</p>
-
-<pre><code>wrong symbol 'k' at 0
+<pre><code>[]
 </code></pre>
 
 <h4 id="Golang_github.com-vmware-labs-yaml-jsonpath">
@@ -135,10 +135,7 @@ Haskell (jsonpath)
 ¹
 </h4>
 
-<p>Not supported</p>
-
-<pre><code>Invalid JSONPath: key
- Error: searchBeginningWithSlice: string
+<pre><code>"value"
 </code></pre>
 
 <h4 id="JavaScript_Goessner">
@@ -146,9 +143,9 @@ JavaScript (Goessner)
 ²
 </h4>
 
-<pre><code>[
-  "value"
-]
+<p>Not found</p>
+
+<pre><code>jsonpath returned false, this might indicate an error
 </code></pre>
 
 <h4 id="JavaScript_brunerd">
@@ -161,18 +158,19 @@ JavaScript (brunerd)
 JavaScript (jsonpath)
 </h4>
 
-<pre><code>[
-  "value"
-]
+<p>Not supported</p>
+
+<pre><code>Parse error on line 1:
+.key
+^
+Expecting 'DOLLAR', 'STAR', 'IDENTIFIER', 'SCRIPT_EXPRESSION', 'INTEGER', 'END', got 'DOT'
 </code></pre>
 
 <h4 id="JavaScript_jsonpath-plus">
 JavaScript (jsonpath-plus)
 </h4>
 
-<pre><code>[
-  "value"
-]
+<pre><code>[]
 </code></pre>
 
 <h4 id="Java_com.github.jsurfer">
@@ -190,7 +188,9 @@ Java (com.jayway.jsonpath)
 ³
 </h4>
 
-<pre><code>"value"
+<pre><code>[
+  "value"
+]
 </code></pre>
 
 <h4 id="Kotlin_com.nfeld.jsonpathkt">
@@ -207,7 +207,9 @@ Objective-C (SMJJSONPath)
 ³
 </h4>
 
-<pre><code>"value"
+<pre><code>[
+  "value"
+]
 </code></pre>
 
 <h4 id="PHP_Goessner">
@@ -215,9 +217,9 @@ PHP (Goessner)
 ²
 </h4>
 
-<pre><code>[
-  "value"
-]
+<p>Not found</p>
+
+<pre><code>jsonpath returned false, this might indicate an error
 </code></pre>
 
 <h4 id="PHP_galbar-jsonpath">
@@ -227,7 +229,7 @@ PHP (galbar-jsonpath)
 
 <p>Not supported</p>
 
-<pre><code>Invalid JSONPath error: 'Error in JSONPath near 'key''
+<pre><code>Invalid JSONPath error: 'Error in JSONPath near '.key''
 </code></pre>
 
 <h4 id="PHP_remorhaz-jsonpath">
@@ -236,7 +238,7 @@ PHP (remorhaz-jsonpath)
 
 <p>Not supported</p>
 
-<pre><code>Error: 'Failed to build AST from JSONPath query: key'
+<pre><code>Error: 'Failed to build AST from JSONPath query: .key'
 </code></pre>
 
 <h4 id="PHP_softcreatr-jsonpath">
@@ -262,18 +264,18 @@ Python (jsonpath)
 ²
 </h4>
 
-<pre><code>[
-  "value"
-]
+<p>Not found</p>
+
+<pre><code>jsonpath returned false, this might indicate an error
 </code></pre>
 
 <h4 id="Python_jsonpath-rw">
 Python (jsonpath-rw)
 </h4>
 
-<pre><code>[
-  "value"
-]
+<p>Not supported</p>
+
+<pre><code>Exception('Parse error at 1:0 near token . (.)')
 </code></pre>
 
 <h4 id="Python_jsonpath2">
@@ -282,8 +284,8 @@ Python (jsonpath2)
 
 <p>Not supported</p>
 
-<pre><code>line 1:0 mismatched input 'key' expecting '$'
-ValueError("line 1:0 mismatched input 'key' expecting '$'")
+<pre><code>line 1:0 missing '$' at '.'
+ValueError("line 1:0 missing '$' at '.'")
 </code></pre>
 
 <h4 id="Raku_JSON-Path">
@@ -320,8 +322,8 @@ Rust (jsonpath_lib)
 <p>Not supported</p>
 
 <pre><code>path error: 
-key
-^^^
+.key
+^
 </code></pre>
 
 <h4 id="Scala_jsonpath">
@@ -330,7 +332,7 @@ Scala (jsonpath)
 
 <p>Not supported</p>
 
-<pre><code>JPError('$' expected but 'k' found)
+<pre><code>JPError('$' expected but '.' found)
 </code></pre>
 
 <h4 id="dotNET_Json.NET">
@@ -346,18 +348,16 @@ dotNET (Json.NET)
 dotNET (JsonPath.Net)
 </h4>
 
-<p>Not supported</p>
-
-<pre><code>Could not identify selector
+<pre><code>[
+  "value"
+]
 </code></pre>
 
 <h4 id="dotNET_JsonPathLib">
 dotNET (JsonPathLib)
 </h4>
 
-<pre><code>[
-  "value"
-]
+<pre><code>[]
 </code></pre>
 
 <h4 id="dotNET_Manatee.Json">
@@ -366,7 +366,7 @@ dotNET (Manatee.Json)
 
 <p>Not supported</p>
 
-<pre><code>Unrecognized JSON Path element. Path up to error: ''
+<pre><code>Start token not found. Path up to error: ''
 </code></pre>
 
 <h4 id="Proposal_A">
@@ -376,7 +376,7 @@ Proposal (A)
 <p>Not supported</p>
 
 <pre><code>x 1:1-1:1 Start
-| key
+| .key
 | ^
 </code></pre>
 

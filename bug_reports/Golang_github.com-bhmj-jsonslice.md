@@ -572,6 +572,18 @@ The following queries provide results that do not match those of other implement
   ]
   ```
 
+- [ ] `.key`
+  Input:
+  ```
+  {
+    "key": "value"
+  }
+  ```
+  Error:
+  ```
+  path: $ expected
+  ```
+
 - [ ] `key`
   Input:
   ```
