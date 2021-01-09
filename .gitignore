@@ -2,3 +2,4 @@
 .ninja_deps
 .ninja_log
 /implementations/*/build/
+/proposals/*/build/
