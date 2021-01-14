@@ -25,7 +25,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 dependencies = [
  "addr2line 0.14.1 (registry+https://github.com/rust-lang/crates.io-index)",
  "cfg-if 1.0.0 (registry+https://github.com/rust-lang/crates.io-index)",
- "libc 0.2.81 (registry+https://github.com/rust-lang/crates.io-index)",
+ "libc 0.2.82 (registry+https://github.com/rust-lang/crates.io-index)",
  "miniz_oxide 0.4.3 (registry+https://github.com/rust-lang/crates.io-index)",
  "object 0.22.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "rustc-demangle 0.1.18 (registry+https://github.com/rust-lang/crates.io-index)",
@@ -62,13 +62,13 @@ dependencies = [
  "error-chain 0.11.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "pest 1.0.6 (registry+https://github.com/rust-lang/crates.io-index)",
  "pest_derive 1.0.8 (registry+https://github.com/rust-lang/crates.io-index)",
- "serde 1.0.118 (registry+https://github.com/rust-lang/crates.io-index)",
+ "serde 1.0.119 (registry+https://github.com/rust-lang/crates.io-index)",
  "serde_json 1.0.61 (registry+https://github.com/rust-lang/crates.io-index)",
 ]
 
 [[package]]
 name = "libc"
-version = "0.2.81"
+version = "0.2.82"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 
 [[package]]
@@ -125,7 +125,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 
 [[package]]
 name = "serde"
-version = "1.0.118"
+version = "1.0.119"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 
 [[package]]
@@ -135,7 +135,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 dependencies = [
  "itoa 0.4.7 (registry+https://github.com/rust-lang/crates.io-index)",
  "ryu 1.0.5 (registry+https://github.com/rust-lang/crates.io-index)",
- "serde 1.0.118 (registry+https://github.com/rust-lang/crates.io-index)",
+ "serde 1.0.119 (registry+https://github.com/rust-lang/crates.io-index)",
 ]
 
 [[package]]
@@ -171,7 +171,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 "checksum gimli 0.23.0 (registry+https://github.com/rust-lang/crates.io-index)" = "f6503fe142514ca4799d4c26297c4248239fe8838d827db6bd6065c6ed29a6ce"
 "checksum itoa 0.4.7 (registry+https://github.com/rust-lang/crates.io-index)" = "dd25036021b0de88a0aff6b850051563c6516d0bf53f8638938edbb9de732736"
 "checksum jsonpath 0.1.1 (registry+https://github.com/rust-lang/crates.io-index)" = "8061db09019f1879ba586685694fe18279f597b1b3a9dd308f35e596be6cdf7d"
-"checksum libc 0.2.81 (registry+https://github.com/rust-lang/crates.io-index)" = "1482821306169ec4d07f6aca392a4681f66c75c9918aa49641a2595db64053cb"
+"checksum libc 0.2.82 (registry+https://github.com/rust-lang/crates.io-index)" = "89203f3fba0a3795506acaad8ebce3c80c0af93f994d5a1d7a0b1eeb23271929"
 "checksum miniz_oxide 0.4.3 (registry+https://github.com/rust-lang/crates.io-index)" = "0f2d26ec3309788e423cfbf68ad1800f061638098d76a83681af979dc4eda19d"
 "checksum object 0.22.0 (registry+https://github.com/rust-lang/crates.io-index)" = "8d3b63360ec3cb337817c2dbd47ab4a0f170d285d8e5a2064600f3def1402397"
 "checksum pest 1.0.6 (registry+https://github.com/rust-lang/crates.io-index)" = "0fce5d8b5cc33983fc74f78ad552b5522ab41442c4ca91606e4236eb4b5ceefc"
@@ -179,7 +179,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 "checksum quote 0.3.15 (registry+https://github.com/rust-lang/crates.io-index)" = "7a6e920b65c65f10b2ae65c831a81a073a89edd28c7cce89475bff467ab4167a"
 "checksum rustc-demangle 0.1.18 (registry+https://github.com/rust-lang/crates.io-index)" = "6e3bad0ee36814ca07d7968269dd4b7ec89ec2da10c4bb613928d3077083c232"
 "checksum ryu 1.0.5 (registry+https://github.com/rust-lang/crates.io-index)" = "71d301d4193d031abdd79ff7e3dd721168a9572ef3fe51a1517aba235bd8f86e"
-"checksum serde 1.0.118 (registry+https://github.com/rust-lang/crates.io-index)" = "06c64263859d87aa2eb554587e2d23183398d617427327cf2b3d0ed8c69e4800"
+"checksum serde 1.0.119 (registry+https://github.com/rust-lang/crates.io-index)" = "9bdd36f49e35b61d49efd8aa7fc068fd295961fd2286d0b2ee9a4c7a14e99cc3"
 "checksum serde_json 1.0.61 (registry+https://github.com/rust-lang/crates.io-index)" = "4fceb2595057b6891a4ee808f70054bd2d12f0e97f1cbb78689b59f676df325a"
 "checksum syn 0.11.11 (registry+https://github.com/rust-lang/crates.io-index)" = "d3b891b9015c88c576343b9b3e41c2c11a51c219ef067b264bd9c8aa9b441dad"
 "checksum synom 0.11.3 (registry+https://github.com/rust-lang/crates.io-index)" = "a393066ed9010ebaed60b9eafa373d4b1baac186dd7e008555b0f702b51945b6"

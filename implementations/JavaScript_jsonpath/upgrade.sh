@@ -5,4 +5,4 @@ readonly script_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 cd "$script_dir"
 
-npm update --no-save
+npm i jsonpath@latest
