@@ -254,6 +254,50 @@
             "time": "2017-02-14T16:28:37+00:00"
         },
         {
+            "name": "remorhaz/int-rangesets",
+            "version": "v0.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/remorhaz/php-int-rangesets.git",
+                "reference": "fe1cb976bc10738e9066714bf3e861ddb9effe4d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/remorhaz/php-int-rangesets/zipball/fe1cb976bc10738e9066714bf3e861ddb9effe4d",
+                "reference": "fe1cb976bc10738e9066714bf3e861ddb9effe4d",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.3 | ^8"
+            },
+            "require-dev": {
+                "infection/infection": "^0.18.2",
+                "phpunit/phpunit": "^9.5",
+                "squizlabs/php_codesniffer": "^3.5",
+                "vimeo/psalm": "^4.4"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Remorhaz\\IntRangeSets\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Edward Surov",
+                    "email": "zoohie@gmail.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Integer range sets manipulation",
+            "homepage": "https://github.com/remorhaz/php-int-rangesets",
+            "time": "2021-01-14T09:25:15+00:00"
+        },
+        {
             "name": "remorhaz/php-json-data",
             "version": "v0.5.3",
             "source": {
@@ -303,30 +347,30 @@
         },
         {
             "name": "remorhaz/php-json-path",
-            "version": "v0.7.3",
+            "version": "v0.7.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/remorhaz/php-json-path.git",
-                "reference": "4ec600c803da2966e4f27911f660921409c09230"
+                "reference": "31ab18e7c51e1b8f992d14473f12d346c92c16a2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/remorhaz/php-json-path/zipball/4ec600c803da2966e4f27911f660921409c09230",
-                "reference": "4ec600c803da2966e4f27911f660921409c09230",
+                "url": "https://api.github.com/repos/remorhaz/php-json-path/zipball/31ab18e7c51e1b8f992d14473f12d346c92c16a2",
+                "reference": "31ab18e7c51e1b8f992d14473f12d346c92c16a2",
                 "shasum": ""
             },
             "require": {
                 "ext-intl": "*",
                 "ext-json": "*",
-                "nikic/php-parser": "^4.3.0",
-                "php": "^7.3",
-                "remorhaz/php-json-data": "^0.5.2",
-                "remorhaz/php-unilex": "^0.3.1"
+                "nikic/php-parser": "^4.10",
+                "php": "^7.3 | ^8",
+                "remorhaz/php-json-data": "^0.5.3",
+                "remorhaz/php-unilex": "^0.4"
             },
             "require-dev": {
-                "infection/infection": "^0.16",
-                "phpunit/phpunit": "^9.1",
-                "squizlabs/php_codesniffer": "^3.5.4"
+                "infection/infection": "^0.18",
+                "phpunit/phpunit": "^9.5",
+                "squizlabs/php_codesniffer": "^3.5"
             },
             "type": "library",
             "autoload": {
@@ -355,34 +399,36 @@
                 "json path",
                 "jsonpath"
             ],
-            "time": "2020-04-12T16:58:51+00:00"
+            "time": "2021-01-15T14:24:47+00:00"
         },
         {
             "name": "remorhaz/php-unilex",
-            "version": "v0.3.1",
+            "version": "v0.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/remorhaz/php-unilex.git",
-                "reference": "95398f0e2d6970655f4d6393247c4e977c7cd314"
+                "reference": "41c6c822b4042a01054f03682e39d585644da953"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/remorhaz/php-unilex/zipball/95398f0e2d6970655f4d6393247c4e977c7cd314",
-                "reference": "95398f0e2d6970655f4d6393247c4e977c7cd314",
+                "url": "https://api.github.com/repos/remorhaz/php-unilex/zipball/41c6c822b4042a01054f03682e39d585644da953",
+                "reference": "41c6c822b4042a01054f03682e39d585644da953",
                 "shasum": ""
             },
             "require": {
-                "nikic/php-parser": "^4.2",
-                "php": "^7.3",
+                "nikic/php-parser": "^4.10",
+                "php": "^7.3 | ^8",
                 "phpdocumentor/reflection-docblock": "^4.3 | ^5",
+                "remorhaz/int-rangesets": "^0.1.1",
+                "remorhaz/ucd": "^0.1.1",
                 "symfony/console": "^5",
                 "thecodingmachine/safe": "^1.1"
             },
             "require-dev": {
-                "infection/infection": "^0.16",
-                "phpunit/phpunit": "^9.1",
-                "squizlabs/php_codesniffer": "^3.5.4",
-                "symplify/coding-standard": "^7.2"
+                "infection/infection": "^0.17 | ^0.18",
+                "phpunit/phpunit": "^9.5",
+                "squizlabs/php_codesniffer": "^3.5",
+                "symplify/coding-standard": "^9"
             },
             "bin": [
                 "bin/unilex"
@@ -413,7 +459,53 @@
                 "tokenizer",
                 "tokenizer generator"
             ],
-            "time": "2020-04-12T16:51:12+00:00"
+            "time": "2021-01-14T16:09:08+00:00"
+        },
+        {
+            "name": "remorhaz/ucd",
+            "version": "v0.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/remorhaz/php-ucd.git",
+                "reference": "d868c68b88ae9e120c667f61ea37fffd87c1d0b4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/remorhaz/php-ucd/zipball/d868c68b88ae9e120c667f61ea37fffd87c1d0b4",
+                "reference": "d868c68b88ae9e120c667f61ea37fffd87c1d0b4",
+                "shasum": ""
+            },
+            "require": {
+                "nikic/php-parser": "^4.10",
+                "php": "^7.3 | ^8",
+                "remorhaz/int-rangesets": "^0.1.1"
+            },
+            "require-dev": {
+                "infection/infection": "^0.18.2",
+                "phpunit/phpunit": "^9.5",
+                "squizlabs/php_codesniffer": "^3.5",
+                "vimeo/psalm": "^4.4"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Remorhaz\\UCD\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Edward Surov",
+                    "email": "zoohie@gmail.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "PHP access to Unicode Character Database (UCD)",
+            "homepage": "https://github.com/remorhaz/php-ucd",
+            "time": "2021-01-14T12:37:38+00:00"
         },
         {
             "name": "symfony/console",
