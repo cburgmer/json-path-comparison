@@ -85,6 +85,9 @@ queries:
   - id: bracket_notation_with_quoted_wildcard_literal_on_object_without_key
     status: fail
     result: ["entry"]
+  - id: bracket_notation_with_spaces
+    status: fail
+    result: [5]
   - id: bracket_notation_with_string_including_dot_wildcard
     status: fail
     result: NOT_FOUND

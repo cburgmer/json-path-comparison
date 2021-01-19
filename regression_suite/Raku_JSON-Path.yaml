@@ -128,6 +128,9 @@ queries:
   - id: bracket_notation_with_quoted_special_characters_combined
     status: open
     result: NOT_SUPPORTED
+  - id: bracket_notation_with_spaces
+    status: fail
+    result: NOT_SUPPORTED
   - id: bracket_notation_with_wildcard_after_array_slice
     status: fail
     result: [1, 2, "a", "b", 0, 0]

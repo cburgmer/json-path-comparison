@@ -92,6 +92,8 @@ queries:
   - id: bracket_notation_with_quoted_union_literal
     status: fail
     result: []
+  - id: bracket_notation_with_spaces
+    status: error
   - id: bracket_notation_with_two_literals_separated_by_dot
     status: fail
     result: ["43"]

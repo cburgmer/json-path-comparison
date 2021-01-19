@@ -56,6 +56,9 @@ queries:
   - id: bracket_notation_with_quoted_special_characters_combined
     status: open
     result: [42]
+  - id: bracket_notation_with_spaces
+    status: fail
+    result: NOT_SUPPORTED
   - id: bracket_notation_with_wildcard_after_recursive_descent
     status: fail
     result: []

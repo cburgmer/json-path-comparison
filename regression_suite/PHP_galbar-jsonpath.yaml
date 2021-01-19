@@ -67,6 +67,9 @@ queries:
   - id: bracket_notation_with_quoted_union_literal
     status: fail
     result: NOT_FOUND
+  - id: bracket_notation_with_spaces
+    status: fail
+    result: NOT_SUPPORTED
   - id: bracket_notation_with_two_literals_separated_by_dot
     status: fail
     result: ["43"]

@@ -704,6 +704,32 @@ The following queries provide results that do not match those of other implement
    Error: searchBeginningWithSlice: string
   ```
 
+- [ ] `$[ 'a' ]`
+  Input:
+  ```
+  {
+    " a": 1,
+    "a": 2,
+    " a ": 3,
+    "a ": 4,
+    " 'a' ": 5,
+    " 'a": 6,
+    "a' ": 7,
+    " \"a\" ": 8,
+    "\"a\"": 9
+  }
+  ```
+  Expected output:
+  ```
+  2
+  ```
+  Actual output:
+  NOT_SUPPORTED
+  ```
+  Invalid JSONPath: $[ 'a' ]
+   Error: searchBeginningWithSlice: string
+  ```
+
 - [ ] `$['ni.*']`
   Input:
   ```

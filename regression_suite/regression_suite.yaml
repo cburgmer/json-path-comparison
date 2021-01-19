@@ -365,6 +365,11 @@ queries:
     scalar-consensus: null
     not-found-consensus: NOT_FOUND
     scalar-not-found-consensus: NOT_FOUND
+  - id: bracket_notation_with_spaces
+    selector: "$[ 'a' ]"
+    document: {" a": 1, "a": 2, " a ": 3, "a ": 4, " 'a' ": 5, " 'a": 6, "a' ": 7, " \"a\" ": 8, "\"a\"": 9}
+    consensus: [2]
+    scalar-consensus: 2
   - id: bracket_notation_with_string_including_dot_wildcard
     selector: "$['ni.*']"
     document: {"nice": 42, "ni.*": 1, "mice": 100}

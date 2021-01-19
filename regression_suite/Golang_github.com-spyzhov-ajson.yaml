@@ -47,6 +47,9 @@ queries:
   - id: bracket_notation_with_quoted_special_characters_combined
     status: open
     result: [42]
+  - id: bracket_notation_with_spaces
+    status: fail
+    result: [5]
   - id: bracket_notation_with_two_literals_separated_by_dot
     status: fail
     result: []
