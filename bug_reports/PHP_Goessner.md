@@ -1194,6 +1194,36 @@ The following queries provide results that do not match those of other implement
   ArgumentCountError
   ```
 
+- [ ] `$[*][?(@.key-dash == 'value')]`
+  Input:
+  ```
+  [
+    {
+      "key-dash": "value"
+    }
+  ]
+  ```
+  Error:
+  ```
+  ArgumentCountError
+  ```
+
+- [ ] `$[?(@.2 == 'second')]`
+  Input:
+  ```
+  [
+    {
+      "a": "first",
+      "2": "second",
+      "b": "third"
+    }
+  ]
+  ```
+  Error:
+  ```
+  ArgumentCountError
+  ```
+
 - [ ] `$[?()]`
   Input:
   ```

@@ -235,6 +235,20 @@ The following queries provide results that do not match those of other implement
   unexpected end of file
   ```
 
+- [ ] `$[*][?(@.key-dash == 'value')]`
+  Input:
+  ```
+  [
+    {
+      "key-dash": "value"
+    }
+  ]
+  ```
+  Error:
+  ```
+  wrong request: wrong request: ?(@.key-dash == 'value')
+  ```
+
 - [ ] `$[?()]`
   Input:
   ```

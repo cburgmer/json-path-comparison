@@ -899,6 +899,20 @@ The following queries provide results that do not match those of other implement
   invalid operands for arithmetic operator
   ```
 
+- [ ] `$[*][?(@.key-dash == 'value')]`
+  Input:
+  ```
+  [
+    {
+      "key-dash": "value"
+    }
+  ]
+  ```
+  Error:
+  ```
+  unknown token at 13
+  ```
+
 - [ ] `$[?()]`
   Input:
   ```

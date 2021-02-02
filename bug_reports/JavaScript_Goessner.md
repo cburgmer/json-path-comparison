@@ -449,6 +449,36 @@ The following queries provide results that do not match those of other implement
   jsonpath returned false, this might indicate an error
   ```
 
+- [ ] `$[*][?(@.key-dash == 'value')]`
+  Input:
+  ```
+  [
+    {
+      "key-dash": "value"
+    }
+  ]
+  ```
+  Error:
+  ```
+  jsonPath: dash is not defined: _v.key-dash == 'value'
+  ```
+
+- [ ] `$[?(@.2 == 'second')]`
+  Input:
+  ```
+  [
+    {
+      "a": "first",
+      "2": "second",
+      "b": "third"
+    }
+  ]
+  ```
+  Error:
+  ```
+  jsonPath: Unexpected number: _v.2 == 'second'
+  ```
+
 - [ ] `$[?()]`
   Input:
   ```

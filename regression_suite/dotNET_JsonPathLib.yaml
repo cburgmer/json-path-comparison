@@ -199,6 +199,10 @@ queries:
   - id: filter_expression_with_division
     status: open
     result: [{"key": 50}]
+  - id: filter_expression_with_dot_notation_with_dash
+    status: error
+  - id: filter_expression_with_dot_notation_with_number
+    status: error
   - id: filter_expression_with_empty_expression
     status: fail
     result: []

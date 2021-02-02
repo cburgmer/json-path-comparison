@@ -493,6 +493,37 @@ The following queries provide results that do not match those of other implement
   evalmachine.<anonymous>:1
   ```
 
+- [ ] `$[*][?(@.key-dash == 'value')]`
+  Input:
+  ```
+  [
+    {
+      "key-dash": "value"
+    }
+  ]
+  ```
+  Error:
+  ```
+  evalmachine.<anonymous>:1
+      at evalmachine.<anonymous>:1:10
+  ```
+
+- [ ] `$[?(@.2 == 'second')]`
+  Input:
+  ```
+  [
+    {
+      "a": "first",
+      "2": "second",
+      "b": "third"
+    }
+  ]
+  ```
+  Error:
+  ```
+  evalmachine.<anonymous>:1
+  ```
+
 - [ ] `$[?()]`
   Input:
   ```

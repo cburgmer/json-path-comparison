@@ -549,6 +549,36 @@ The following queries provide results that do not match those of other implement
   Unable to cast object of type 'Newtonsoft.Json.Linq.JObject' to type 'System.IConvertible'.
   ```
 
+- [ ] `$[*][?(@.key-dash == 'value')]`
+  Input:
+  ```
+  [
+    {
+      "key-dash": "value"
+    }
+  ]
+  ```
+  Error:
+  ```
+  dash is not defined
+  ```
+
+- [ ] `$[?(@.2 == 'second')]`
+  Input:
+  ```
+  [
+    {
+      "a": "first",
+      "2": "second",
+      "b": "third"
+    }
+  ]
+  ```
+  Error:
+  ```
+  Line 1: Unexpected number
+  ```
+
 - [ ] `$[?()]`
   Input:
   ```

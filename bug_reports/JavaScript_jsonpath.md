@@ -240,6 +240,22 @@ The following queries provide results that do not match those of other implement
   we need a path
   ```
 
+- [ ] `$[?(@.2 == 'second')]`
+  Input:
+  ```
+  [
+    {
+      "a": "first",
+      "2": "second",
+      "b": "third"
+    }
+  ]
+  ```
+  Error:
+  ```
+  Line 1: Unexpected number
+  ```
+
 - [ ] `$[?(@[0:1]==[1])]`
   Input:
   ```

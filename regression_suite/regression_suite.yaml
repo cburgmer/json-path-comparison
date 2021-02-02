@@ -706,6 +706,12 @@ queries:
   - id: filter_expression_with_division
     selector: "$[?(@.key/10==5)]"
     document: [{"key": 60}, {"key": 50}, {"key": 10}, {"key": -50}, {"key/10": 5}]
+  - id: filter_expression_with_dot_notation_with_dash
+    selector: "$[*][?(@.key-dash == 'value')]"
+    document: [{"key-dash": "value"}]
+  - id: filter_expression_with_dot_notation_with_number
+    selector: "$[?(@.2 == 'second')]"
+    document: [{"a": "first", "2": "second", "b": "third"}]
   - id: filter_expression_with_empty_expression
     selector: "$[?()]"
     document: [1, {"key": 42}, "value", null]

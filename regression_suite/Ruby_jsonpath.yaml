@@ -229,6 +229,12 @@ queries:
   - id: filter_expression_with_division
     status: open
     result: [{"key": 60}, {"key": 50}, {"key": 10}, {"key": -50}]
+  - id: filter_expression_with_dot_notation_with_dash
+    status: open
+    result: []
+  - id: filter_expression_with_dot_notation_with_number
+    status: open
+    result: [{"2": "second", "a": "first", "b": "third"}]
   - id: filter_expression_with_empty_expression
     status: fail
     result: [1, {"key": 42}, "value"]

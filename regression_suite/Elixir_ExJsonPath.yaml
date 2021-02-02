@@ -198,6 +198,12 @@ queries:
   - id: filter_expression_with_division
     status: open
     result: NOT_SUPPORTED
+  - id: filter_expression_with_dot_notation_with_dash
+    status: open
+    result: NOT_SUPPORTED
+  - id: filter_expression_with_dot_notation_with_number
+    status: open
+    result: []
   - id: filter_expression_with_equals
     status: open
     result: [{"key": 42}]
