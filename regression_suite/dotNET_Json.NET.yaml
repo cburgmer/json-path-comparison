@@ -122,6 +122,9 @@ queries:
   - id: dot_notation_with_wildcard_on_array
     status: fail
     result: []
+  - id: dot_notation_without_dot
+    status: fail
+    result: [2]
   - id: dot_notation_without_root
     status: open
     result: ["value"]

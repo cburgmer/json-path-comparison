@@ -244,6 +244,9 @@ queries:
     status: error
   - id: dot_notation_with_wildcard_on_object
     status: error
+  - id: dot_notation_without_dot
+    status: fail
+    result: 1
   - id: dot_notation_without_root
     status: error
   - id: dot_notation_without_root_and_dot

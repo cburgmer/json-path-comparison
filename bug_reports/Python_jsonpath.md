@@ -491,6 +491,25 @@ The following queries provide results that do not match those of other implement
   jsonpath returned false, this might indicate an error
   ```
 
+- [ ] `$a`
+  Input:
+  ```
+  {
+    "a": 1,
+    "$a": 2
+  }
+  ```
+  Expected output:
+  ```
+  NOT_SUPPORTED
+  ```
+  Actual output:
+  ```
+  [
+    2
+  ]
+  ```
+
 - [ ] `$[?(@['@key']==42)]`
   Input:
   ```

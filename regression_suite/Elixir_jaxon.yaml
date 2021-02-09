@@ -253,6 +253,9 @@ queries:
     result: ["value", {"complex": "string", "primitives": [0, 1]}]
   - id: dot_notation_with_wildcard_after_recursive_descent_on_scalar
     status: error
+  - id: dot_notation_without_dot
+    status: fail
+    result: []
   - id: dot_notation_without_root
     status: open
     result: []

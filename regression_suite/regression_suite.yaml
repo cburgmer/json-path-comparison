@@ -635,6 +635,10 @@ queries:
     document: {"some": "string", "int": 42, "object": {"key": "value"}, "array": [0, 1]}
     ordered: false
     consensus: ["string", 42, [0, 1], {"key": "value"}]
+  - id: dot_notation_without_dot
+    selector: "$a"
+    document: {"a": 1, "$a": 2}
+    consensus: NOT_SUPPORTED
   - id: dot_notation_without_root
     selector: ".key"
     document: {"key": "value"}

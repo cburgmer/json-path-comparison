@@ -572,6 +572,23 @@ The following queries provide results that do not match those of other implement
   ]
   ```
 
+- [ ] `$a`
+  Input:
+  ```
+  {
+    "a": 1,
+    "$a": 2
+  }
+  ```
+  Expected output:
+  ```
+  NOT_SUPPORTED
+  ```
+  Error:
+  ```
+  path: invalid character at 1
+  ```
+
 - [ ] `.key`
   Input:
   ```

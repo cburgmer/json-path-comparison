@@ -135,6 +135,8 @@ queries:
   - id: dot_notation_with_wildcard_after_dot_notation_after_dot_notation_with_wildcard
     status: fail
     result: [[42]]
+  - id: dot_notation_without_dot
+    status: error
   - id: dot_notation_without_root
     status: error
   - id: dot_notation_without_root_and_dot

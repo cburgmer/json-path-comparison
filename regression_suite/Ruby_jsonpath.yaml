@@ -178,6 +178,9 @@ queries:
   - id: dot_notation_with_wildcard_on_object
     status: fail
     result: [{"array": [0, 1], "int": 42, "object": {"key": "value"}, "some": "string"}]
+  - id: dot_notation_without_dot
+    status: fail
+    result: [2]
   - id: dot_notation_without_root
     status: open
     result: ["value"]

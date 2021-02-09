@@ -194,6 +194,9 @@ queries:
   - id: dot_notation_with_wildcard_after_recursive_descent_on_null_value_array
     status: fail
     result: []
+  - id: dot_notation_without_dot
+    status: fail
+    result: [1]
   - id: dot_notation_without_root
     status: open
     result: ["value"]

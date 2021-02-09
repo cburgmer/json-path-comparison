@@ -599,6 +599,25 @@ The following queries provide results that do not match those of other implement
   null
   ```
 
+- [ ] `$a`
+  Input:
+  ```
+  {
+    "a": 1,
+    "$a": 2
+  }
+  ```
+  Expected output:
+  ```
+  NOT_SUPPORTED
+  ```
+  Actual output:
+  ```
+  [
+    2
+  ]
+  ```
+
 - [ ] `$..*[?(@.id>2)]`
   Input:
   ```
