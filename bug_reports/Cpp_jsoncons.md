@@ -3,24 +3,6 @@ Results do not match other implementations
 The following queries provide results that do not match those of other implementations of JSONPath
 (compare https://cburgmer.github.io/json-path-comparison/):
 
-- [ ] `$[0:0]`
-  Input:
-  ```
-  [
-    "first",
-    "second"
-  ]
-  ```
-  Expected output:
-  ```
-  []
-  ```
-  Actual output:
-  NOT_SUPPORTED
-  ```
-  Expected slice end at line 1 and column 6
-  ```
-
 - [ ] `$[010:024:010]`
   Input:
   ```
@@ -58,42 +40,10 @@ The following queries provide results that do not match those of other implement
   [10, 20]
   ```
   Actual output:
-  NOT_SUPPORTED
-  ```
-  Expected slice start at line 1 and column 6
-  ```
-
-- [ ] `$[0]`
-  Input:
-  ```
-  {
-    "0": "value"
-  }
-  ```
-  Expected output:
-  ```
-  []
-  ```
-  Actual output:
   ```
   [
-    "value"
-  ]
-  ```
-
-- [ ] `$[0]`
-  Input:
-  ```
-  "Hello World"
-  ```
-  Expected output:
-  ```
-  []
-  ```
-  Actual output:
-  ```
-  [
-    "H"
+    8,
+    16
   ]
   ```
 
@@ -166,6 +116,23 @@ The following queries provide results that do not match those of other implement
   ]
   ```
 
+- [ ] `$.key-dash`
+  Input:
+  ```
+  {
+    "key-dash": "value"
+  }
+  ```
+  Expected output:
+  ```
+  ["value"]
+  ```
+  Actual output:
+  NOT_SUPPORTED
+  ```
+  Expected dot or left bracket separator at line 1 and column 6
+  ```
+
 - [ ] `$.length`
   Input:
   ```
@@ -186,64 +153,88 @@ The following queries provide results that do not match those of other implement
   ]
   ```
 
-- [ ] `$[?()]`
+- [ ] `$[?@.key==42]`
   Input:
   ```
   [
-    1,
+    {
+      "key": 0
+    },
     {
       "key": 42
     },
-    "value",
-    null
+    {
+      "key": -1
+    },
+    {
+      "key": 1
+    },
+    {
+      "key": 41
+    },
+    {
+      "key": 43
+    },
+    {
+      "key": 42.0001
+    },
+    {
+      "key": 41.9999
+    },
+    {
+      "key": 100
+    },
+    {
+      "key": "some"
+    },
+    {
+      "key": "42"
+    },
+    {
+      "key": null
+    },
+    {
+      "key": 420
+    },
+    {
+      "key": ""
+    },
+    {
+      "key": {}
+    },
+    {
+      "key": []
+    },
+    {
+      "key": [
+        42
+      ]
+    },
+    {
+      "key": {
+        "key": 42
+      }
+    },
+    {
+      "key": {
+        "some": 42
+      }
+    },
+    {
+      "some": "value"
+    }
   ]
   ```
   Expected output:
   ```
   NOT_SUPPORTED
   ```
-  Error:
-  ```
-  Invalid state
-  ```
-
-- [ ] `$[?(null)]`
-  Input:
-  ```
-  [
-    1,
-    3,
-    "nice",
-    true,
-    null,
-    false,
-    {},
-    [],
-    -1,
-    0,
-    ""
-  ]
-  ```
-  Error:
-  ```
-  Not a bool
-  ```
-
-- [ ] `$[0,0]`
-  Input:
-  ```
-  [
-    "a"
-  ]
-  ```
-  Expected output:
-  ```
-  ["a", "a"]
-  ```
   Actual output:
   ```
   [
-    "a"
+    {
+      "key": 42
+    }
   ]
   ```
 
@@ -269,7 +260,8 @@ The following queries provide results that do not match those of other implement
     "second",
     "third",
     "forth",
-    "fifth"
+    "fifth",
+    "second"
   ]
   ```
 
