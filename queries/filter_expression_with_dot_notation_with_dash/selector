@@ -1,1 +1,1 @@
-$[*][?(@.key-dash == 'value')]
+$[?(@.key-dash == 'value')]
