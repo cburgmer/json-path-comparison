@@ -270,6 +270,8 @@ queries:
     status: error
   - id: filter_expression_with_regular_expression
     status: error
+  - id: filter_expression_with_regular_expression_from_member
+    status: error
   - id: filter_expression_with_set_wise_comparison_to_scalar
     status: error
   - id: filter_expression_with_set_wise_comparison_to_set

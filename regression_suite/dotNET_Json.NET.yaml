@@ -179,7 +179,7 @@ queries:
     result: [{"key/10": 5}]
   - id: filter_expression_with_dot_notation_with_dash
     status: open
-    result: []
+    result: [{"key-dash": "value"}]
   - id: filter_expression_with_dot_notation_with_number
     status: open
     result: [{"2": "second", "a": "first", "b": "third"}]
@@ -272,6 +272,9 @@ queries:
   - id: filter_expression_with_regular_expression
     status: open
     result: [{"name": "hello world"}, {"name": "yes hello world"}]
+  - id: filter_expression_with_regular_expression_from_member
+    status: open
+    result: []
   - id: filter_expression_with_set_wise_comparison_to_scalar
     status: open
     result: [[3, 4], [5, 6]]

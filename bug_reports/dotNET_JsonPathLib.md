@@ -568,7 +568,7 @@ The following queries provide results that do not match those of other implement
   Unable to cast object of type 'Newtonsoft.Json.Linq.JObject' to type 'System.IConvertible'.
   ```
 
-- [ ] `$[*][?(@.key-dash == 'value')]`
+- [ ] `$[?(@.key-dash == 'value')]`
   Input:
   ```
   [
@@ -1129,6 +1129,35 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   Object of type 'System.Double' cannot be converted to type 'Newtonsoft.Json.Linq.JToken'.
+  ```
+
+- [ ] `$[?(@.name=~/@.pattern/)]`
+  Input:
+  ```
+  [
+    {
+      "name": "hullo world"
+    },
+    {
+      "name": "hello world"
+    },
+    {
+      "name": "yes hello world"
+    },
+    {
+      "name": "HELLO WORLD"
+    },
+    {
+      "name": "good bye"
+    },
+    {
+      "pattern": "hello.*"
+    }
+  ]
+  ```
+  Error:
+  ```
+  timeout: sending signal TERM to command ‘build/Dotnet_JsonPathLib’
   ```
 
 - [ ] `$[?(@[*]>=4)]`

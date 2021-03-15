@@ -5,7 +5,7 @@
 
 <h2>Setup</h2>
 
-<p>Selector: <code>$[*][?(@.key-dash == 'value')]</code></p>
+<p>Selector: <code>$[?(@.key-dash == 'value')]</code></p>
 
 <pre><code>[
    {
@@ -31,7 +31,7 @@ C (json-glib)
 
 <p>Not supported</p>
 
-<pre><code>Unable to compile selector `$[*][?(@.key-dash == 'value')]': Invalid array index definition “?(@.key-dash == 'value')]”
+<pre><code>Unable to compile selector `$[?(@.key-dash == 'value')]': Invalid array index definition “?(@.key-dash == 'value')]”
 </code></pre>
 
 <h4 id="Clojure_json-path">
@@ -39,9 +39,7 @@ Clojure (json-path)
 ¹
 </h4>
 
-<pre><code>[
-  "value"
-]
+<pre><code>[]
 </code></pre>
 
 <h4 id="Cpp_jsoncons">
@@ -50,7 +48,7 @@ Cpp (jsoncons)
 
 <p>Not supported</p>
 
-<pre><code>JSON syntax_error at line 1 and column 18
+<pre><code>JSON syntax_error at line 1 and column 15
 </code></pre>
 
 <h4 id="Dart_json_path">
@@ -106,7 +104,7 @@ Golang (github.com-PaesslerAG-jsonpath)
 
 <p>Not supported</p>
 
-<pre><code>parsing error: $[*][?(@.key-dash == 'value')]   :1:13 - 1:14 unexpected "-" while scanning parentheses expected ")"
+<pre><code>parsing error: $[?(@.key-dash == 'value')]  :1:10 - 1:11 unexpected "-" while scanning parentheses expected ")"
 </code></pre>
 
 <h4 id="Golang_github.com-ohler55-ojg">
@@ -127,7 +125,11 @@ Golang (github.com-oliveagle-jsonpath)
 Golang (github.com-vmware-labs-yaml-jsonpath)
 </h4>
 
-<pre><code>[]
+<pre><code>[
+  {
+    "key-dash": "value"
+  }
+]
 </code></pre>
 
 <h4 id="Haskell_jsonpath">
@@ -135,11 +137,10 @@ Haskell (jsonpath)
 ¹
 </h4>
 
-<pre><code>[
-  {
-    "key-dash": "value"
-  }
-]
+<p>Not supported</p>
+
+<pre><code>Invalid JSONPath: $[?(@.key-dash == 'value')]
+ Error: searchBeginningWithSlice: string
 </code></pre>
 
 <h4 id="JavaScript_brunerd">
@@ -159,7 +160,11 @@ JavaScript (jsonpath)
 Java (com.github.jsurfer)
 </h4>
 
-<pre><code>[]
+<pre><code>[
+  {
+    "key-dash": "value"
+  }
+]
 </code></pre>
 
 <h4 id="Java_com.jayway.jsonpath">
@@ -182,7 +187,7 @@ Kotlin (com.nfeld.jsonpathkt)
 
 <p>Not supported</p>
 
-<pre><code>Unexpected char, char=?, index=5
+<pre><code>Unexpected char, char=?, index=2
 </code></pre>
 
 <h4 id="Objective-C_SMJJSONPath">
@@ -203,9 +208,11 @@ PHP (galbar-jsonpath)
 ²
 </h4>
 
-<p>Not found</p>
-
-<pre><code>jsonpath returned false, this might indicate an error
+<pre><code>[
+  {
+    "key-dash": "value"
+  }
+]
 </code></pre>
 
 <h4 id="PHP_remorhaz-jsonpath">
@@ -223,7 +230,11 @@ PHP (remorhaz-jsonpath)
 PHP (softcreatr-jsonpath)
 </h4>
 
-<pre><code>[]
+<pre><code>[
+  {
+    "key-dash": "value"
+  }
+]
 </code></pre>
 
 <h4 id="Python_jsonpath">
@@ -242,7 +253,7 @@ Python (jsonpath-rw)
 
 <p>Not supported</p>
 
-<pre><code>JsonPathLexerError('Error on line 1, col 5: Unexpected character: ? ')
+<pre><code>JsonPathLexerError('Error on line 1, col 2: Unexpected character: ? ')
 </code></pre>
 
 <h4 id="Python_jsonpath2">
@@ -251,8 +262,8 @@ Python (jsonpath2)
 
 <p>Not supported</p>
 
-<pre><code>line 1:12 token recognition error at: '-d'
-ValueError("line 1:12 token recognition error at: '-d'")
+<pre><code>line 1:9 token recognition error at: '-d'
+ValueError("line 1:9 token recognition error at: '-d'")
 </code></pre>
 
 <h4 id="Raku_JSON-Path">
@@ -275,9 +286,11 @@ Ruby (jsonpath)
 Rust (jsonpath)
 </h4>
 
-<p>Not supported</p>
-
-<pre><code>parsing error
+<pre><code>[
+  {
+    "key-dash": "value"
+  }
+]
 </code></pre>
 
 <h4 id="Rust_jsonpath_lib">
@@ -306,7 +319,11 @@ Scala (jsonpath)
 dotNET (Json.NET)
 </h4>
 
-<pre><code>[]
+<pre><code>[
+  {
+    "key-dash": "value"
+  }
+]
 </code></pre>
 
 <h4 id="dotNET_JsonPath.Net">
@@ -324,7 +341,7 @@ dotNET (Manatee.Json)
 
 <p>Not supported</p>
 
-<pre><code>Unrecognized JSON Path Expression element. Path up to error: '$[*]'
+<pre><code>Unrecognized JSON Path Expression element. Path up to error: '$'
 </code></pre>
 
 <h4 id="JSON_Path_Reference_Implementation">
@@ -335,7 +352,7 @@ JSON (Path_Reference_Implementation)
 
 <pre><code> --&gt; 1:3
   |
-1 | $[*][?(@.key-dash == 'value')]
+1 | $[?(@.key-dash == 'value')]
   |   ^---
   |
   = expected unionChild, unionArrayIndex, or sliceStart
@@ -345,7 +362,11 @@ JSON (Path_Reference_Implementation)
 Proposal (A)
 </h4>
 
-<pre><code>[]
+<pre><code>[
+  {
+    "key-dash": "value"
+  }
+]
 </code></pre>
 
 <h3>Errors</h3>
@@ -355,7 +376,7 @@ Golang (github.com-bhmj-jsonslice)
 ¹
 </h4>
 
-<pre><code>unknown token at 13
+<pre><code>unknown token at 10
 </code></pre>
 
 <h4 id="Golang_github.com-spyzhov-ajson">

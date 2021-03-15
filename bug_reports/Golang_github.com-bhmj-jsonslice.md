@@ -916,7 +916,7 @@ The following queries provide results that do not match those of other implement
   invalid operands for arithmetic operator
   ```
 
-- [ ] `$[*][?(@.key-dash == 'value')]`
+- [ ] `$[?(@.key-dash == 'value')]`
   Input:
   ```
   [
@@ -927,7 +927,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  unknown token at 13
+  unknown token at 10
   ```
 
 - [ ] `$[?()]`

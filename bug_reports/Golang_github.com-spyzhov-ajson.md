@@ -235,7 +235,7 @@ The following queries provide results that do not match those of other implement
   unexpected end of file
   ```
 
-- [ ] `$[*][?(@.key-dash == 'value')]`
+- [ ] `$[?(@.key-dash == 'value')]`
   Input:
   ```
   [
@@ -731,6 +731,35 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   wrong request: wrong request: ?(@.name=~/hello.*/)
+  ```
+
+- [ ] `$[?(@.name=~/@.pattern/)]`
+  Input:
+  ```
+  [
+    {
+      "name": "hullo world"
+    },
+    {
+      "name": "hello world"
+    },
+    {
+      "name": "yes hello world"
+    },
+    {
+      "name": "HELLO WORLD"
+    },
+    {
+      "name": "good bye"
+    },
+    {
+      "pattern": "hello.*"
+    }
+  ]
+  ```
+  Error:
+  ```
+  wrong request: wrong request: ?(@.name=~/@.pattern/)
   ```
 
 - [ ] `$.x[?(@[*]>=$.y[*])]`

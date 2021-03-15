@@ -1530,7 +1530,7 @@ The following queries provide results that do not match those of other implement
   non-safe evaluation, died at main.pl line 11.
   ```
 
-- [ ] `$[*][?(@.key-dash == 'value')]`
+- [ ] `$[?(@.key-dash == 'value')]`
   Input:
   ```
   [
@@ -2945,6 +2945,35 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   non-safe evaluation, died at main.pl line 11.
+  ```
+
+- [ ] `$[?(@.name=~/@.pattern/)]`
+  Input:
+  ```
+  [
+    {
+      "name": "hullo world"
+    },
+    {
+      "name": "hello world"
+    },
+    {
+      "name": "yes hello world"
+    },
+    {
+      "name": "HELLO WORLD"
+    },
+    {
+      "name": "good bye"
+    },
+    {
+      "pattern": "hello.*"
+    }
+  ]
+  ```
+  Error:
+  ```
+  timeout: sending signal TERM to command ‘perl’
   ```
 
 - [ ] `$[?(@[*]>=4)]`

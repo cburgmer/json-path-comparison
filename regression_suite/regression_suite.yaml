@@ -711,7 +711,7 @@ queries:
     selector: "$[?(@.key/10==5)]"
     document: [{"key": 60}, {"key": 50}, {"key": 10}, {"key": -50}, {"key/10": 5}]
   - id: filter_expression_with_dot_notation_with_dash
-    selector: "$[*][?(@.key-dash == 'value')]"
+    selector: "$[?(@.key-dash == 'value')]"
     document: [{"key-dash": "value"}]
   - id: filter_expression_with_dot_notation_with_number
     selector: "$[?(@.2 == 'second')]"
@@ -832,6 +832,9 @@ queries:
   - id: filter_expression_with_regular_expression
     selector: "$[?(@.name=~/hello.*/)]"
     document: [{"name": "hullo world"}, {"name": "hello world"}, {"name": "yes hello world"}, {"name": "HELLO WORLD"}, {"name": "good bye"}]
+  - id: filter_expression_with_regular_expression_from_member
+    selector: "$[?(@.name=~/@.pattern/)]"
+    document: [{"name": "hullo world"}, {"name": "hello world"}, {"name": "yes hello world"}, {"name": "HELLO WORLD"}, {"name": "good bye"}, {"pattern": "hello.*"}]
   - id: filter_expression_with_set_wise_comparison_to_scalar
     selector: "$[?(@[*]>=4)]"
     document: [[1, 2], [3, 4], [5, 6]]

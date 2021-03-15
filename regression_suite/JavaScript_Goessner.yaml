@@ -288,6 +288,9 @@ queries:
   - id: filter_expression_with_regular_expression
     status: open
     result: [{"name": -1}, {"name": -1}, {"name": -1}, {"name": -1}, {"name": -1}]
+  - id: filter_expression_with_regular_expression_from_member
+    status: open
+    result: [{"name": -1}, {"name": -1}, {"name": -1}, {"name": -1}, {"name": -1}, {"name": -1, "pattern": "hello.*"}]
   - id: filter_expression_with_set_wise_comparison_to_scalar
     status: error
   - id: filter_expression_with_set_wise_comparison_to_set

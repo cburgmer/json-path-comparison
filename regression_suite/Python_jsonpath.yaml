@@ -307,6 +307,9 @@ queries:
   - id: filter_expression_with_regular_expression
     status: open
     result: NOT_FOUND
+  - id: filter_expression_with_regular_expression_from_member
+    status: open
+    result: NOT_FOUND
   - id: filter_expression_with_set_wise_comparison_to_scalar
     status: open
     result: NOT_FOUND

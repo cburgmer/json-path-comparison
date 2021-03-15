@@ -479,6 +479,35 @@ The following queries provide results that do not match those of other implement
   ]
   ```
 
+- [ ] `$[?(@.name=~/@.pattern/)]`
+  Input:
+  ```
+  [
+    {
+      "name": "hullo world"
+    },
+    {
+      "name": "hello world"
+    },
+    {
+      "name": "yes hello world"
+    },
+    {
+      "name": "HELLO WORLD"
+    },
+    {
+      "name": "good bye"
+    },
+    {
+      "pattern": "hello.*"
+    }
+  ]
+  ```
+  Error:
+  ```
+  timeout: sending signal TERM to command ‘build/Dotnet_JsonPath.Net’
+  ```
+
 - [ ] `$[0,0]`
   Input:
   ```
