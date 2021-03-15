@@ -269,7 +269,8 @@ queries:
     status: open
     result: NOT_SUPPORTED
   - id: filter_expression_with_regular_expression_from_member
-    status: error
+    status: open
+    result: NOT_SUPPORTED
   - id: filter_expression_with_set_wise_comparison_to_scalar
     status: open
     result: []
