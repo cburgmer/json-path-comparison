@@ -201,9 +201,6 @@ queries:
     result: [{"another": {"key": 1}, "key": 42}]
   - id: filter_expression_with_addition
     status: error
-  - id: filter_expression_with_boolean_and_operator
-    status: open
-    result: [{"key": 43}]
   - id: filter_expression_with_boolean_and_operator_and_value_false
     status: error
   - id: filter_expression_with_boolean_and_operator_and_value_true

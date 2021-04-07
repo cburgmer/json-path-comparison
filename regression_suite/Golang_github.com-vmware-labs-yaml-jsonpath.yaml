@@ -96,9 +96,6 @@ queries:
   - id: filter_expression_with_addition
     status: open
     result: [{"key+50": 100}]
-  - id: filter_expression_with_boolean_and_operator
-    status: open
-    result: [{"key": 43}]
   - id: filter_expression_with_boolean_and_operator_and_value_false
     status: open
     result: []

@@ -747,6 +747,10 @@ The following queries provide results that do not match those of other implement
     }
   ]
   ```
+  Expected output:
+  ```
+  [{"key": 43}]
+  ```
   Error:
   ```
   ArgumentCountError

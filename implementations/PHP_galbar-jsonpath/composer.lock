@@ -8,16 +8,16 @@
     "packages": [
         {
             "name": "galbar/jsonpath",
-            "version": "1.1",
+            "version": "1.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Galbar/JsonPath-PHP.git",
-                "reference": "36d3ac57b1a62ff507d7751d797a9e03ffbd1385"
+                "reference": "2d166b0293f82f6bf3f96afa6729e317016ce3c1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Galbar/JsonPath-PHP/zipball/36d3ac57b1a62ff507d7751d797a9e03ffbd1385",
-                "reference": "36d3ac57b1a62ff507d7751d797a9e03ffbd1385",
+                "url": "https://api.github.com/repos/Galbar/JsonPath-PHP/zipball/2d166b0293f82f6bf3f96afa6729e317016ce3c1",
+                "reference": "2d166b0293f82f6bf3f96afa6729e317016ce3c1",
                 "shasum": ""
             },
             "require": {
@@ -54,9 +54,9 @@
             ],
             "support": {
                 "issues": "https://github.com/Galbar/JsonPath-PHP/issues",
-                "source": "https://github.com/Galbar/JsonPath-PHP/tree/1.1"
+                "source": "https://github.com/Galbar/JsonPath-PHP/tree/1.2"
             },
-            "time": "2020-06-01T15:18:22+00:00"
+            "time": "2021-04-07T17:10:18+00:00"
         }
     ],
     "packages-dev": [],

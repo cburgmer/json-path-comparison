@@ -1544,6 +1544,31 @@ The following queries provide results that do not match those of other implement
   parsing error
   ```
 
+- [ ] `$[?(@.key>42 && @.key<44)]`
+  Input:
+  ```
+  [
+    {
+      "key": 42
+    },
+    {
+      "key": 43
+    },
+    {
+      "key": 44
+    }
+  ]
+  ```
+  Expected output:
+  ```
+  [{"key": 43}]
+  ```
+  Actual output:
+  NOT_SUPPORTED
+  ```
+  parsing error
+  ```
+
 - [ ] `$[?(@['key']==42)]`
   Input:
   ```

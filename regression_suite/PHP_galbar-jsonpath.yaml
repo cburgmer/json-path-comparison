@@ -151,24 +151,21 @@ queries:
   - id: filter_expression_with_addition
     status: open
     result: NOT_SUPPORTED
-  - id: filter_expression_with_boolean_and_operator
-    status: open
-    result: NOT_SUPPORTED
   - id: filter_expression_with_boolean_and_operator_and_value_false
     status: open
-    result: [{"key": 1}, {"key": 3}, {"key": "nice"}, {"key": true}, {"key": -1}]
+    result: NOT_FOUND
   - id: filter_expression_with_boolean_and_operator_and_value_true
     status: open
-    result: [{"key": 1}, {"key": 3}, {"key": "nice"}, {"key": true}, {"key": -1}]
+    result: [{"key": 1}, {"key": 3}, {"key": true}, {"key": []}, {"key": []}]
   - id: filter_expression_with_boolean_or_operator
     status: open
-    result: NOT_SUPPORTED
+    result: [{"key": 42}, {"key": 44}]
   - id: filter_expression_with_boolean_or_operator_and_value_false
     status: open
-    result: [{"key": 1}, {"key": 3}, {"key": "nice"}, {"key": true}, {"key": -1}]
+    result: [{"key": 1}, {"key": 3}, {"key": true}, {"key": []}, {"key": []}]
   - id: filter_expression_with_boolean_or_operator_and_value_true
     status: open
-    result: [{"key": 1}, {"key": 3}, {"key": "nice"}, {"key": true}, {"key": -1}]
+    result: [{"key": 1}, {"key": 3}, {"key": "nice"}, {"key": true}, {"key": null}, {"key": false}, {"key": []}, {"key": []}, {"key": -1}, {"key": 0}, {"key": ""}]
   - id: filter_expression_with_bracket_notation_with_-1
     status: open
     result: [[0, 2], [2]]
@@ -183,7 +180,7 @@ queries:
     result: NOT_SUPPORTED
   - id: filter_expression_with_different_ungrouped_operators
     status: open
-    result: NOT_SUPPORTED
+    result: [{"a": true, "b": true}, {"a": true, "b": true, "c": true}, {"b": true, "c": true}, {"a": true, "c": true}, {"c": true}]
   - id: filter_expression_with_division
     status: open
     result: NOT_SUPPORTED

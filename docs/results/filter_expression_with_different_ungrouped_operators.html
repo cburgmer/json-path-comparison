@@ -485,9 +485,28 @@ PHP (galbar-jsonpath)
 ²
 </h4>
 
-<p>Not supported</p>
-
-<pre><code>Invalid JSONPath error: 'Error in JSONPath near ' &amp;&amp; @.b || @.c''
+<pre><code>[
+  {
+    "a": true,
+    "b": true
+  },
+  {
+    "a": true,
+    "b": true,
+    "c": true
+  },
+  {
+    "b": true,
+    "c": true
+  },
+  {
+    "a": true,
+    "c": true
+  },
+  {
+    "c": true
+  }
+]
 </code></pre>
 
 <h4 id="PHP_remorhaz-jsonpath">
