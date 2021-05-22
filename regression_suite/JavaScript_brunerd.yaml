@@ -50,6 +50,9 @@ queries:
   - id: bracket_notation_with_quoted_special_characters_combined
     status: open
     result: []
+  - id: current_with_dot_notation
+    status: open
+    result: NOT_SUPPORTED
   - id: dot_bracket_notation
     status: open
     result: NOT_SUPPORTED
@@ -297,6 +300,9 @@ queries:
   - id: filter_expression_without_value
     status: open
     result: [{"some": "some value"}, {"key": false}, {"key": null}, {"key": ""}, {"key": 0}]
+  - id: function_sum
+    status: open
+    result: NOT_SUPPORTED
   - id: recursive_descent
     status: open
     result: NOT_SUPPORTED

@@ -70,6 +70,9 @@ queries:
   - id: bracket_notation_with_wildcard_after_recursive_descent
     status: fail
     result: ["string", "string", "value", 0, 0, 0, 1, 1, 1, [0, 1], [0, 1], {"complex": "string", "primitives": [0, 1]}]
+  - id: current_with_dot_notation
+    status: open
+    result: [1]
   - id: dot_bracket_notation
     status: open
     result: ["value", [{"key": 42}], 42]
@@ -311,6 +314,9 @@ queries:
     status: open
     result: [1, 3, "nice", true, null, false, {}, [], -1, 0, ""]
   - id: filter_expression_without_value
+    status: open
+    result: NOT_SUPPORTED
+  - id: function_sum
     status: open
     result: NOT_SUPPORTED
   - id: recursive_descent

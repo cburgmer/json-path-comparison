@@ -188,6 +188,9 @@ queries:
   - id: bracket_notation_without_quotes
     status: fail
     result: ["value"]
+  - id: current_with_dot_notation
+    status: open
+    result: []
   - id: dot_bracket_notation
     status: open
     result: []
@@ -396,6 +399,9 @@ queries:
   - id: filter_expression_with_equals_true
     status: open
     result: []
+  - id: filter_expression_with_equals_with_path_and_path
+    status: fail
+    result: []
   - id: filter_expression_with_equals_with_root_reference
     status: open
     result: []
@@ -486,6 +492,8 @@ queries:
   - id: filter_expression_without_value
     status: open
     result: []
+  - id: function_sum
+    status: error
   - id: parens_notation
     status: fail
     result: []

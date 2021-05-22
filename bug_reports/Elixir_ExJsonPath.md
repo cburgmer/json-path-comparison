@@ -925,6 +925,32 @@ The following queries provide results that do not match those of other implement
   WithClauseError
   ```
 
+- [ ] `$.items[?(@.key1==@.key2)]`
+  Input:
+  ```
+  {
+    "items": [
+      {
+        "key1": 10,
+        "key2": 10
+      },
+      {
+        "key1": 42,
+        "key2": 50
+      }
+    ]
+  }
+  ```
+  Expected output:
+  ```
+  [{"key1": 10, "key2": 10}]
+  ```
+  Actual output:
+  NOT_SUPPORTED
+  ```
+  syntax error before: '@'
+  ```
+
 - [ ] `$`
   Input:
   ```

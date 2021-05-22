@@ -198,6 +198,8 @@ queries:
     result: [1, 2]
   - id: bracket_notation_without_quotes
     status: error
+  - id: current_with_dot_notation
+    status: error
   - id: dot_bracket_notation
     status: error
   - id: dot_bracket_notation_with_double_quotes
@@ -387,6 +389,9 @@ queries:
   - id: filter_expression_with_equals_true
     status: open
     result: [{"some": "some value"}, {"key": null}]
+  - id: filter_expression_with_equals_with_path_and_path
+    status: fail
+    result: []
   - id: filter_expression_with_equals_with_root_reference
     status: open
     result: [{"key": 42}]
@@ -469,6 +474,8 @@ queries:
   - id: filter_expression_without_value
     status: open
     result: [{"key": true}, {"key": false}, {"key": "value"}, {"key": ""}, {"key": 0}, {"key": 1}, {"key": -1}, {"key": 42}, {"key": {}}, {"key": []}]
+  - id: function_sum
+    status: error
   - id: parens_notation
     status: fail
     result: null

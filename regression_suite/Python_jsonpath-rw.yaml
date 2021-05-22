@@ -98,6 +98,9 @@ queries:
   - id: bracket_notation_without_quotes
     status: fail
     result: ["value"]
+  - id: current_with_dot_notation
+    status: open
+    result: []
   - id: dot_bracket_notation
     status: open
     result: ["value"]
@@ -304,6 +307,9 @@ queries:
   - id: filter_expression_with_equals_true
     status: open
     result: NOT_SUPPORTED
+  - id: filter_expression_with_equals_with_path_and_path
+    status: fail
+    result: NOT_SUPPORTED
   - id: filter_expression_with_equals_with_root_reference
     status: open
     result: NOT_SUPPORTED
@@ -380,6 +386,9 @@ queries:
     status: open
     result: NOT_SUPPORTED
   - id: filter_expression_without_value
+    status: open
+    result: NOT_SUPPORTED
+  - id: function_sum
     status: open
     result: NOT_SUPPORTED
   - id: recursive_descent

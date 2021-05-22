@@ -44,6 +44,9 @@ queries:
   - id: bracket_notation_with_quoted_special_characters_combined
     status: open
     result: null
+  - id: current_with_dot_notation
+    status: open
+    result: NOT_SUPPORTED
   - id: dot_bracket_notation
     status: open
     result: "value"
@@ -270,6 +273,9 @@ queries:
     status: open
     result: [1, 3, "nice", true, null, false, {}, [], -1, 0, ""]
   - id: filter_expression_without_value
+    status: open
+    result: NOT_SUPPORTED
+  - id: function_sum
     status: open
     result: NOT_SUPPORTED
   - id: recursive_descent

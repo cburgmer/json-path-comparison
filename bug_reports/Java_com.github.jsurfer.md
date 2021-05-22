@@ -427,6 +427,18 @@ The following queries provide results that do not match those of other implement
   []
   ```
 
+- [ ] `@.a`
+  Input:
+  ```
+  {
+    "a": 1
+  }
+  ```
+  Error:
+  ```
+  timeout: sending signal TERM to command ‘implementations/Java_com.github.jsurfer/run.sh’
+  ```
+
 - [ ] `$.true`
   Input:
   ```
@@ -622,6 +634,33 @@ The following queries provide results that do not match those of other implement
   line 1:11 token recognition error at: '"'
   line 1:22 token recognition error at: '"'
   line 1:12 no viable alternative at input '@.key==some'
+  org.antlr.v4.runtime.misc.ParseCancellationException
+  ```
+
+- [ ] `$.items[?(@.key1==@.key2)]`
+  Input:
+  ```
+  {
+    "items": [
+      {
+        "key1": 10,
+        "key2": 10
+      },
+      {
+        "key1": 42,
+        "key2": 50
+      }
+    ]
+  }
+  ```
+  Expected output:
+  ```
+  [{"key1": 10, "key2": 10}]
+  ```
+  Actual output:
+  NOT_SUPPORTED
+  ```
+  line 1:18 no viable alternative at input '@.key1==@'
   org.antlr.v4.runtime.misc.ParseCancellationException
   ```
 

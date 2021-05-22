@@ -94,6 +94,9 @@ queries:
   - id: bracket_notation_without_quotes
     status: fail
     result: ["value"]
+  - id: current_with_dot_notation
+    status: open
+    result: NOT_FOUND
   - id: dot_bracket_notation
     status: open
     result: ["value", [{"key": 42}], 42]
@@ -246,6 +249,8 @@ queries:
     status: error
   - id: filter_expression_with_equals_true
     status: error
+  - id: filter_expression_with_equals_with_path_and_path
+    status: error
   - id: filter_expression_with_equals_with_root_reference
     status: error
   - id: filter_expression_with_greater_than
@@ -307,6 +312,9 @@ queries:
     result: NOT_FOUND
   - id: filter_expression_without_value
     status: error
+  - id: function_sum
+    status: open
+    result: NOT_FOUND
   - id: parens_notation
     status: fail
     result: NOT_FOUND

@@ -44,6 +44,9 @@ queries:
   - id: bracket_notation_with_quoted_special_characters_combined
     status: open
     result: []
+  - id: current_with_dot_notation
+    status: open
+    result: NOT_SUPPORTED
   - id: dot_bracket_notation
     status: open
     result: ["value"]
@@ -195,6 +198,9 @@ queries:
   - id: filter_expression_with_equals_true
     status: open
     result: [{"key": true}]
+  - id: filter_expression_with_equals_with_path_and_path
+    status: fail
+    result: [{"key1": 10, "key2": 10}, {"key1": 42, "key2": 50}]
   - id: filter_expression_with_equals_with_root_reference
     status: open
     result: [{"key": 42}]
@@ -268,6 +274,9 @@ queries:
   - id: filter_expression_without_value
     status: open
     result: NOT_SUPPORTED
+  - id: function_sum
+    status: open
+    result: []
   - id: parens_notation
     status: fail
     result: [{"key": 1, "more": 3, "some": 2}]

@@ -138,6 +138,30 @@ The following queries provide results that do not match those of other implement
   };'
   ```
 
+- [ ] `$.data.sum()`
+  Input:
+  ```
+  {
+    "data": [
+      1,
+      2,
+      3,
+      4
+    ]
+  }
+  ```
+  Error:
+  ```
+  Error: 'Failed to execute JSONPath query: $.data.sum()
+  
+  return function (Remorhaz\JSON\Path\Value\NodeValueListInterface $input, Remorhaz\JSON\Path\Runtime\ValueListFetcherInterface $valueListFetcher, Remorhaz\JSON\Path\Runtime\EvaluatorInterface $evaluator, Remorhaz\JSON\Path\Runtime\LiteralFactoryInterface $literalFactory, Remorhaz\JSON\Path\Runtime\Matcher\MatcherFactoryInterface $matcherFactory) : Remorhaz\JSON\Path\Value\ValueListInterface {
+      $var2 = $matcherFactory->matchPropertyStrictly('data');
+      $var3 = $valueListFetcher->fetchChildren($input, $var2);
+      $var4 = $evaluator->aggregate('sum', $var3);
+      return $var4;
+  };'
+  ```
+
 - [ ] `$[0,0]`
   Input:
   ```

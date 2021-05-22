@@ -371,6 +371,18 @@ The following queries provide results that do not match those of other implement
   ]
   ```
 
+- [ ] `@.a`
+  Input:
+  ```
+  {
+    "a": 1
+  }
+  ```
+  Error:
+  ```
+  Unknown value type 
+  ```
+
 - [ ] `$.[key]`
   Input:
   ```

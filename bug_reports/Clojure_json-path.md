@@ -1351,6 +1351,18 @@ The following queries provide results that do not match those of other implement
   java.lang.Exception object must be an array.
   ```
 
+- [ ] `@.a`
+  Input:
+  ```
+  {
+    "a": 1
+  }
+  ```
+  Error:
+  ```
+  timeout: sending signal TERM to command ‘implementations/Clojure_json-path/run.sh’
+  ```
+
 - [ ] `$.['key']`
   Input:
   ```
@@ -2324,6 +2336,31 @@ The following queries provide results that do not match those of other implement
   []
   ```
 
+- [ ] `$.items[?(@.key1==@.key2)]`
+  Input:
+  ```
+  {
+    "items": [
+      {
+        "key1": 10,
+        "key2": 10
+      },
+      {
+        "key1": 42,
+        "key2": 50
+      }
+    ]
+  }
+  ```
+  Expected output:
+  ```
+  [{"key1": 10, "key2": 10}]
+  ```
+  Actual output:
+  ```
+  []
+  ```
+
 - [ ] `$[?(@.key>42)]`
   Input:
   ```
@@ -2881,6 +2918,23 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   java.lang.NumberFormatException For input string: "@"
+  ```
+
+- [ ] `$.data.sum()`
+  Input:
+  ```
+  {
+    "data": [
+      1,
+      2,
+      3,
+      4
+    ]
+  }
+  ```
+  Error:
+  ```
+  timeout: sending signal TERM to command ‘implementations/Clojure_json-path/run.sh’
   ```
 
 - [ ] `$(key,more)`

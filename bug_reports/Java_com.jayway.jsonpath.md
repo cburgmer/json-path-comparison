@@ -394,6 +394,18 @@ The following queries provide results that do not match those of other implement
   com.jayway.jsonpath.InvalidPathException: Found empty property at index 5
   ```
 
+- [ ] `@.a`
+  Input:
+  ```
+  {
+    "a": 1
+  }
+  ```
+  Error:
+  ```
+  timeout: sending signal TERM to command ‘implementations/Java_com.jayway.jsonpath/run.sh’
+  ```
+
 - [ ] `$..[1].key`
   Input:
   ```

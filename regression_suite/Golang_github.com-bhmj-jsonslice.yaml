@@ -81,6 +81,8 @@ queries:
   - id: bracket_notation_without_quotes
     status: fail
     result: "value"
+  - id: current_with_dot_notation
+    status: error
   - id: dot_bracket_notation
     status: open
     result: "value"
@@ -296,6 +298,8 @@ queries:
   - id: filter_expression_without_parens
     status: error
   - id: filter_expression_without_value
+    status: error
+  - id: function_sum
     status: error
   - id: parens_notation
     status: error

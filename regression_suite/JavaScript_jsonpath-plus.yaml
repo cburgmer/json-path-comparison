@@ -98,6 +98,8 @@ queries:
   - id: bracket_notation_without_quotes
     status: fail
     result: ["value"]
+  - id: current_with_dot_notation
+    status: error
   - id: dot_bracket_notation
     status: open
     result: ["value", [{"key": 42}], 42]
@@ -339,6 +341,9 @@ queries:
   - id: filter_expression_without_value
     status: open
     result: [{"some": "some value"}, {"key": false}, {"key": null}, {"key": ""}, {"key": 0}]
+  - id: function_sum
+    status: open
+    result: []
   - id: parens_notation
     status: fail
     result: []

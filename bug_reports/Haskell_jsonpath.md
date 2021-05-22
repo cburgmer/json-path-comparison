@@ -1418,6 +1418,40 @@ The following queries provide results that do not match those of other implement
    Error: searchBeginningWithSlice: string
   ```
 
+- [ ] `$.items[?(@.key1==@.key2)]`
+  Input:
+  ```
+  {
+    "items": [
+      {
+        "key1": 10,
+        "key2": 10
+      },
+      {
+        "key1": 42,
+        "key2": 50
+      }
+    ]
+  }
+  ```
+  Expected output:
+  ```
+  [{"key1": 10, "key2": 10}]
+  ```
+  Actual output:
+  ```
+  [
+    {
+      "key1": 10,
+      "key2": 10
+    },
+    {
+      "key1": 42,
+      "key2": 50
+    }
+  ]
+  ```
+
 - [ ] `$[?(@.key>42)]`
   Input:
   ```
@@ -1623,6 +1657,25 @@ The following queries provide results that do not match those of other implement
   ```
   Invalid JSONPath: $[?(@.address.city=='Berlin')]
    Error: searchBeginningWithSlice: string
+  ```
+
+- [ ] `$.data.sum()`
+  Input:
+  ```
+  {
+    "data": [
+      1,
+      2,
+      3,
+      4
+    ]
+  }
+  ```
+  Error:
+  ```
+  json-path-comparison: expected object, found [1,2,3,4]
+  CallStack (from HasCallStack):
+    error, called at app/Main.hs:19:22 in main:Main
   ```
 
 - [ ] `$`

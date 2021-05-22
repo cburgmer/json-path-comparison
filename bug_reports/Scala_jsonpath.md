@@ -273,6 +273,18 @@ The following queries provide results that do not match those of other implement
   []
   ```
 
+- [ ] `@.a`
+  Input:
+  ```
+  {
+    "a": 1
+  }
+  ```
+  Error:
+  ```
+  timeout: sending signal TERM to command ‘implementations/Scala_jsonpath/run.sh’
+  ```
+
 - [ ] `$..[1].key`
   Input:
   ```

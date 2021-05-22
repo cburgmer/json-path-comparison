@@ -1562,6 +1562,31 @@ The following queries provide results that do not match those of other implement
   []
   ```
 
+- [ ] `$.items[?(@.key1==@.key2)]`
+  Input:
+  ```
+  {
+    "items": [
+      {
+        "key1": 10,
+        "key2": 10
+      },
+      {
+        "key1": 42,
+        "key2": 50
+      }
+    ]
+  }
+  ```
+  Expected output:
+  ```
+  [{"key1": 10, "key2": 10}]
+  ```
+  Actual output:
+  ```
+  []
+  ```
+
 - [ ] `$[?(@.d in [2, 3])]`
   Input:
   ```
@@ -1820,6 +1845,43 @@ The following queries provide results that do not match those of other implement
   ```
   Actual output:
   ```
+  []
+  ```
+
+- [ ] `$.data.sum()`
+  Input:
+  ```
+  {
+    "data": [
+      1,
+      2,
+      3,
+      4
+    ]
+  }
+  ```
+  Error:
+  ```
+  Expecting value: line 1 column 1 (char 0)
+  warning: String.strip/1 is deprecated. Use String.trim/1 instead
+    implementations/Elixir_jaxon/build/deps/poison/mix.exs:4: Poison.Mixfile
+  
+  ==> poison
+  Compiling 4 files (.ex)
+  warning: Integer.to_char_list/2 is deprecated. Use Integer.to_charlist/2 instead
+    lib/poison/encoder.ex:173: Poison.Encoder.BitString.seq/1
+  
+  Generated poison app
+  ==> elixir_make
+  Compiling 1 file (.ex)
+  Generated elixir_make app
+  ==> jaxon
+  make: Nothing to be done for `all'.
+  Compiling 11 files (.ex)
+  Generated jaxon app
+  ==> jsonpath
+  Compiling 1 file (.ex)
+  Generated jsonpath app
   []
   ```
 

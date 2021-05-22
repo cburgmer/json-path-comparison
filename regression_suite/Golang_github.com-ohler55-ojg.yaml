@@ -42,6 +42,9 @@ queries:
   - id: bracket_notation_with_quoted_special_characters_combined
     status: open
     result: []
+  - id: current_with_dot_notation
+    status: open
+    result: [1]
   - id: dot_bracket_notation
     status: open
     result: NOT_SUPPORTED
@@ -270,6 +273,9 @@ queries:
   - id: filter_expression_without_value
     status: open
     result: [{"some": "some value"}, {"key": false}, {"key": null}, {"key": "value"}, {"key": ""}, {"key": 0}, {"key": 1}, {"key": -1}, {"key": 42}, {"key": {}}, {"key": []}]
+  - id: function_sum
+    status: open
+    result: NOT_SUPPORTED
   - id: recursive_descent
     status: open
     result: ["c", 0, 1, [0, 1], [{"a": {"b": "c"}}, [0, 1]], {"a": {"b": "c"}}, {"b": "c"}]

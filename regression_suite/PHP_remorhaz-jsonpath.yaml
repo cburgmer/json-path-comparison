@@ -51,6 +51,9 @@ queries:
   - id: bracket_notation_without_quotes
     status: fail
     result: ["value"]
+  - id: current_with_dot_notation
+    status: open
+    result: NOT_SUPPORTED
   - id: dot_bracket_notation
     status: open
     result: ["value"]
@@ -278,6 +281,8 @@ queries:
   - id: filter_expression_without_value
     status: open
     result: [{"some": "some value"}]
+  - id: function_sum
+    status: error
   - id: recursive_descent
     status: open
     result: NOT_SUPPORTED

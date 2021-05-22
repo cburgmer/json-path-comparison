@@ -115,6 +115,9 @@ queries:
   - id: bracket_notation_without_quotes
     status: fail
     result: ["value"]
+  - id: current_with_dot_notation
+    status: open
+    result: [1]
   - id: dot_bracket_notation
     status: open
     result: ["value"]
@@ -270,6 +273,8 @@ queries:
     status: error
   - id: filter_expression_with_equals_true
     status: error
+  - id: filter_expression_with_equals_with_path_and_path
+    status: error
   - id: filter_expression_with_equals_with_root_reference
     status: error
   - id: filter_expression_with_greater_than
@@ -331,6 +336,9 @@ queries:
     result: []
   - id: filter_expression_without_value
     status: error
+  - id: function_sum
+    status: open
+    result: []
   - id: parens_notation
     status: fail
     result: []

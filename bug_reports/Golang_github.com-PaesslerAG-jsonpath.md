@@ -285,6 +285,18 @@ The following queries provide results that do not match those of other implement
   unknown key value
   ```
 
+- [ ] `@.a`
+  Input:
+  ```
+  {
+    "a": 1
+  }
+  ```
+  Error:
+  ```
+  unsupported value type <nil> for select, expected map[string]interface{} or []interface{}
+  ```
+
 - [ ] `$['one','three'].key`
   Input:
   ```

@@ -369,6 +369,18 @@ The following queries provide results that do not match those of other implement
   "value"
   ```
 
+- [ ] `@.a`
+  Input:
+  ```
+  {
+    "a": 1
+  }
+  ```
+  Error:
+  ```
+  path: $ expected
+  ```
+
 - [ ] `$.[key]`
   Input:
   ```
@@ -2516,6 +2528,23 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   unknown token at 4
+  ```
+
+- [ ] `$.data.sum()`
+  Input:
+  ```
+  {
+    "data": [
+      1,
+      2,
+      3,
+      4
+    ]
+  }
+  ```
+  Error:
+  ```
+  path: unknown function at 10
   ```
 
 - [ ] `$(key,more)`

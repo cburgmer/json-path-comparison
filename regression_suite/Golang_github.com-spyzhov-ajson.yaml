@@ -59,6 +59,9 @@ queries:
   - id: bracket_notation_without_quotes
     status: fail
     result: ["value"]
+  - id: current_with_dot_notation
+    status: open
+    result: [1]
   - id: dot_bracket_notation
     status: open
     result: ["value"]
@@ -289,6 +292,9 @@ queries:
     result: []
   - id: filter_expression_without_value
     status: error
+  - id: function_sum
+    status: open
+    result: []
   - id: recursive_descent
     status: open
     result: [[0, 1], [{"a": {"b": "c"}}, [0, 1]], {"a": {"b": "c"}}, {"b": "c"}]

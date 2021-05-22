@@ -169,6 +169,9 @@ queries:
     status: error
   - id: bracket_notation_without_quotes
     status: error
+  - id: current_with_dot_notation
+    status: open
+    result: 1
   - id: dot_bracket_notation
     status: error
   - id: dot_bracket_notation_with_double_quotes
@@ -367,6 +370,9 @@ queries:
   - id: filter_expression_with_equals_true
     status: open
     result: []
+  - id: filter_expression_with_equals_with_path_and_path
+    status: fail
+    result: []
   - id: filter_expression_with_equals_with_root_reference
     status: open
     result: []
@@ -450,6 +456,9 @@ queries:
   - id: filter_expression_without_parens
     status: error
   - id: filter_expression_without_value
+    status: open
+    result: []
+  - id: function_sum
     status: open
     result: []
   - id: parens_notation

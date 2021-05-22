@@ -63,6 +63,9 @@ queries:
   - id: bracket_notation_with_wildcard_after_recursive_descent
     status: fail
     result: NOT_SUPPORTED
+  - id: current_with_dot_notation
+    status: open
+    result: NOT_SUPPORTED
   - id: dot_bracket_notation
     status: open
     result: NOT_SUPPORTED
@@ -281,6 +284,9 @@ queries:
     result: NOT_SUPPORTED
   - id: filter_expression_without_value
     status: error
+  - id: function_sum
+    status: open
+    result: NOT_SUPPORTED
   - id: recursive_descent
     status: open
     result: ["c", 0, 1, [0, 1], [{"a": {"b": "c"}}, [0, 1]], {"a": {"b": "c"}}, {"b": "c"}]

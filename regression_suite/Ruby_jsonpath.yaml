@@ -108,6 +108,9 @@ queries:
     result: [null, null, null, null]
   - id: bracket_notation_without_quotes
     status: error
+  - id: current_with_dot_notation
+    status: open
+    result: [1]
   - id: dot_bracket_notation
     status: open
     result: ["value"]
@@ -293,6 +296,9 @@ queries:
   - id: filter_expression_with_equals_true
     status: open
     result: [{"key": true}]
+  - id: filter_expression_with_equals_with_path_and_path
+    status: fail
+    result: [{"key1": 10, "key2": 10}, {"key1": 42, "key2": 50}]
   - id: filter_expression_with_equals_with_root_reference
     status: open
     result: []
@@ -368,6 +374,9 @@ queries:
     status: error
   - id: filter_expression_without_value
     status: error
+  - id: function_sum
+    status: open
+    result: []
   - id: parens_notation
     status: fail
     result: [{"key": 1, "more": 3}]

@@ -423,6 +423,9 @@ queries:
     selector: "$[key]"
     document: {"key": "value"}
     consensus: NOT_SUPPORTED
+  - id: current_with_dot_notation
+    selector: "@.a"
+    document: {"a": 1}
   - id: dot_bracket_notation
     selector: "$.['key']"
     document: {"key": "value", "other": {"key": [{"key": 42}]}}
@@ -795,6 +798,10 @@ queries:
   - id: filter_expression_with_equals_true
     selector: "$[?(@.key==true)]"
     document: [{"some": "some value"}, {"key": true}, {"key": false}, {"key": null}, {"key": "value"}, {"key": ""}, {"key": 0}, {"key": 1}, {"key": -1}, {"key": 42}, {"key": {}}, {"key": []}]
+  - id: filter_expression_with_equals_with_path_and_path
+    selector: "$.items[?(@.key1==@.key2)]"
+    document: {"items": [{"key1": 10, "key2": 10}, {"key1": 42, "key2": 50}]}
+    consensus: [{"key1": 10, "key2": 10}]
   - id: filter_expression_with_equals_with_root_reference
     selector: "$.items[?(@.key==$.value)]"
     document: {"value": 42, "items": [{"key": 10}, {"key": 42}, {"key": 50}]}
@@ -891,6 +898,9 @@ queries:
   - id: filter_expression_without_value
     selector: "$[?(!@.key)]"
     document: [{"some": "some value"}, {"key": true}, {"key": false}, {"key": null}, {"key": "value"}, {"key": ""}, {"key": 0}, {"key": 1}, {"key": -1}, {"key": 42}, {"key": {}}, {"key": []}]
+  - id: function_sum
+    selector: "$.data.sum()"
+    document: {"data": [1, 2, 3, 4]}
   - id: parens_notation
     selector: "$(key,more)"
     document: {"key": 1, "some": 2, "more": 3}
