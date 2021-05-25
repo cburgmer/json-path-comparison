@@ -493,7 +493,8 @@ queries:
     status: open
     result: []
   - id: function_sum
-    status: error
+    status: open
+    result: []
   - id: parens_notation
     status: fail
     result: []

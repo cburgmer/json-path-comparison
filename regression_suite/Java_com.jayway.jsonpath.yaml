@@ -88,7 +88,8 @@ queries:
     status: fail
     result: NOT_SUPPORTED
   - id: current_with_dot_notation
-    status: error
+    status: open
+    result: 1
   - id: dot_bracket_notation
     status: open
     result: "value"

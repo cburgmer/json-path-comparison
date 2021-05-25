@@ -427,18 +427,6 @@ The following queries provide results that do not match those of other implement
   []
   ```
 
-- [ ] `@.a`
-  Input:
-  ```
-  {
-    "a": 1
-  }
-  ```
-  Error:
-  ```
-  timeout: sending signal TERM to command ‘implementations/Java_com.github.jsurfer/run.sh’
-  ```
-
 - [ ] `$.true`
   Input:
   ```

@@ -187,18 +187,6 @@ The following queries provide results that do not match those of other implement
   "H"
   ```
 
-- [ ] `@.a`
-  Input:
-  ```
-  {
-    "a": 1
-  }
-  ```
-  Error:
-  ```
-  timeout: sending signal TERM to command ‘implementations/Kotlin_com.nfeld.jsonpathkt/run.sh’
-  ```
-
 - [ ] `$[?(@.id==42)].name`
   Input:
   ```

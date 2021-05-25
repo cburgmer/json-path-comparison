@@ -68,7 +68,8 @@ queries:
     status: fail
     result: []
   - id: current_with_dot_notation
-    status: error
+    status: open
+    result: NOT_SUPPORTED
   - id: dot_bracket_notation
     status: open
     result: NOT_SUPPORTED

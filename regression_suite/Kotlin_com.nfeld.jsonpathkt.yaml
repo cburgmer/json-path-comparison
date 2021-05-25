@@ -64,7 +64,8 @@ queries:
     status: open
     result: 42
   - id: current_with_dot_notation
-    status: error
+    status: open
+    result: null
   - id: dot_bracket_notation
     status: open
     result: "value"

@@ -199,7 +199,8 @@ queries:
   - id: bracket_notation_without_quotes
     status: error
   - id: current_with_dot_notation
-    status: error
+    status: open
+    result: null
   - id: dot_bracket_notation
     status: error
   - id: dot_bracket_notation_with_double_quotes
@@ -475,7 +476,8 @@ queries:
     status: open
     result: [{"key": true}, {"key": false}, {"key": "value"}, {"key": ""}, {"key": 0}, {"key": 1}, {"key": -1}, {"key": 42}, {"key": {}}, {"key": []}]
   - id: function_sum
-    status: error
+    status: open
+    result: null
   - id: parens_notation
     status: fail
     result: null
