@@ -1,44 +1,29 @@
 [
     {
-      "category": "reference",
-      "author": "Nigel Rees",
       "title": "Sayings of the Century",
-      "price": 8.95,
       "bookmarks": [{
-          "page": 40,
-          "owner": "bob"
+          "page": 40
       }]
     },
     {
-      "category": "fiction",
-      "author": "Evelyn Waugh",
       "title": "Sword of Honour",
-      "price": 12.99,
       "bookmarks": [
         {
-            "page": 35,
-            "owner": "bob"
+            "page": 35
         },
         {
-            "page": 45,
-            "owner": "alice"
+            "page": 45
         }
       ]
     },
     {
-      "category": "fiction",
-      "author": "Herman Melville",
       "title": "Moby Dick",
-      "isbn": "0-553-21311-3",
-      "price": 8.99,
       "bookmarks": [
         {
-            "page": 3035,
-            "owner": "chuck"
+            "page": 3035
         },
         {
-            "page": 45,
-            "owner": "dennis"
+            "page": 45
         }
       ]
     }
