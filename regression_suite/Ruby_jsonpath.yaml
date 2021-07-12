@@ -325,6 +325,9 @@ queries:
   - id: filter_expression_with_not_equals
     status: open
     result: []
+  - id: filter_expression_with_parent_axis_operator
+    status: fail
+    result: [null, null, null]
   - id: filter_expression_with_regular_expression
     status: open
     result: [{"name": "hello world"}, {"name": "yes hello world"}]

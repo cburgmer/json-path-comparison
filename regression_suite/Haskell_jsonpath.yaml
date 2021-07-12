@@ -339,6 +339,9 @@ queries:
     result: NOT_SUPPORTED
   - id: filter_expression_with_not_equals
     status: error
+  - id: filter_expression_with_parent_axis_operator
+    status: fail
+    result: [{"page": 45}, {"page": 45}]
   - id: filter_expression_with_regular_expression
     status: open
     result: NOT_SUPPORTED

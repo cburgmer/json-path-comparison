@@ -435,6 +435,9 @@ queries:
   - id: filter_expression_with_not_equals
     status: open
     result: []
+  - id: filter_expression_with_parent_axis_operator
+    status: fail
+    result: []
   - id: filter_expression_with_regular_expression
     status: open
     result: []

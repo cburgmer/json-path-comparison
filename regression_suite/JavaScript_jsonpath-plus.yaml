@@ -291,6 +291,9 @@ queries:
   - id: filter_expression_with_not_equals
     status: open
     result: [{"key": 0}, {"key": -1}, {"key": 1}, {"key": 41}, {"key": 43}, {"key": 42.0001}, {"key": 41.9999}, {"key": 100}, {"key": "some"}, {"key": null}, {"key": 420}, {"key": ""}, {"key": {}}, {"key": []}, {"key": {"key": 42}}, {"key": {"some": 42}}, {"some": "value"}]
+  - id: filter_expression_with_parent_axis_operator
+    status: fail
+    result: [{"bookmarks": [{"page": 35}, {"page": 45}], "title": "Sword of Honour"}, {"bookmarks": [{"page": 3035}, {"page": 45}], "title": "Moby Dick"}]
   - id: filter_expression_with_regular_expression
     status: open
     result: [{"name": -1}, {"name": -1}, {"name": -1}, {"name": -1}, {"name": -1}]

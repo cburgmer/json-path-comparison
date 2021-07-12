@@ -253,6 +253,8 @@ queries:
     status: error
   - id: filter_expression_with_not_equals
     status: error
+  - id: filter_expression_with_parent_axis_operator
+    status: error
   - id: filter_expression_with_regular_expression
     status: open
     result: [{"name": "hello world"}, {"name": "yes hello world"}]

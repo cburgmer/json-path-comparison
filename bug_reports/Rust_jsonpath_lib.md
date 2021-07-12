@@ -152,6 +152,58 @@ The following queries provide results that do not match those of other implement
   ]
   ```
 
+- [ ] `$[*].bookmarks[?(@.page == 45)]^^^`
+  Input:
+  ```
+  [
+    {
+      "title": "Sayings of the Century",
+      "bookmarks": [
+        {
+          "page": 40
+        }
+      ]
+    },
+    {
+      "title": "Sword of Honour",
+      "bookmarks": [
+        {
+          "page": 35
+        },
+        {
+          "page": 45
+        }
+      ]
+    },
+    {
+      "title": "Moby Dick",
+      "bookmarks": [
+        {
+          "page": 3035
+        },
+        {
+          "page": 45
+        }
+      ]
+    }
+  ]
+  ```
+  Expected output:
+  ```
+  NOT_SUPPORTED
+  ```
+  Actual output:
+  ```
+  [
+    {
+      "page": 45
+    },
+    {
+      "page": 45
+    }
+  ]
+  ```
+
 - [ ] `$[?(@[*]>=4)]`
   Input:
   ```

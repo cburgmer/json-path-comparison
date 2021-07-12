@@ -2143,6 +2143,51 @@ The following queries provide results that do not match those of other implement
   operand types do not match
   ```
 
+- [ ] `$[*].bookmarks[?(@.page == 45)]^^^`
+  Input:
+  ```
+  [
+    {
+      "title": "Sayings of the Century",
+      "bookmarks": [
+        {
+          "page": 40
+        }
+      ]
+    },
+    {
+      "title": "Sword of Honour",
+      "bookmarks": [
+        {
+          "page": 35
+        },
+        {
+          "page": 45
+        }
+      ]
+    },
+    {
+      "title": "Moby Dick",
+      "bookmarks": [
+        {
+          "page": 3035
+        },
+        {
+          "page": 45
+        }
+      ]
+    }
+  ]
+  ```
+  Expected output:
+  ```
+  NOT_SUPPORTED
+  ```
+  Error:
+  ```
+  path: invalid character at 29
+  ```
+
 - [ ] `$[?(@[*]>=4)]`
   Input:
   ```
