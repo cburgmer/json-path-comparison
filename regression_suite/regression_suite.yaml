@@ -678,6 +678,7 @@ queries:
   - id: filter_expression_with_boolean_or_operator
     selector: "$[?(@.key>43 || @.key<43)]"
     document: [{"key": 42}, {"key": 43}, {"key": 44}]
+    consensus: [{"key": 42}, {"key": 44}]
   - id: filter_expression_with_boolean_or_operator_and_value_false
     selector: "$[?(@.key>0 || false)]"
     document: [{"key": 1}, {"key": 3}, {"key": "nice"}, {"key": true}, {"key": null}, {"key": false}, {"key": {}}, {"key": []}, {"key": -1}, {"key": 0}, {"key": ""}]

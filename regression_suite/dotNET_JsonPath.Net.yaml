@@ -7,54 +7,32 @@
 implementation: dotNET_JsonPath.Net
 queries:
   - id: array_slice_with_large_number_for_end_and_negative_step
-    status: error
+    status: open
+    result: ["third", "second", "first"]
   - id: array_slice_with_large_number_for_start_end_negative_step
-    status: error
-  - id: array_slice_with_negative_start_and_end_and_range_of_-1
-    status: fail
-    result: ["a"]
-  - id: array_slice_with_negative_start_and_end_and_range_of_0
-    status: fail
-    result: [4]
-  - id: array_slice_with_negative_start_and_positive_end_and_range_of_-1
-    status: fail
-    result: ["a"]
-  - id: array_slice_with_negative_start_and_positive_end_and_range_of_0
-    status: fail
-    result: [4]
+    status: open
+    result: ["fifth", "forth"]
   - id: array_slice_with_negative_step
     status: open
-    result: ["first", "third"]
+    result: ["forth", "second"]
   - id: array_slice_with_negative_step_and_start_greater_than_end
     status: open
-    result: ["first", "third"]
+    result: []
   - id: array_slice_with_negative_step_on_partially_overlapping_array
     status: open
-    result: ["forth", "fifth"]
+    result: ["fifth"]
   - id: array_slice_with_negative_step_only
     status: open
-    result: ["first", "third", "fifth"]
+    result: ["fifth", "third", "first"]
   - id: array_slice_with_open_end_and_negative_step
     status: open
-    result: ["forth", "fifth"]
+    result: ["forth", "third", "second", "first"]
   - id: array_slice_with_open_start_and_negative_step
     status: open
-    result: ["first", "second"]
-  - id: array_slice_with_positive_start_and_negative_end_and_range_of_-1
-    status: fail
-    result: [4]
-  - id: array_slice_with_positive_start_and_negative_end_and_range_of_0
-    status: fail
-    result: [5]
-  - id: array_slice_with_range_of_-1
-    status: fail
-    result: ["second"]
-  - id: array_slice_with_range_of_0
-    status: fail
-    result: ["first"]
+    result: ["fifth", "forth"]
   - id: array_slice_with_step_0
     status: open
-    result: NOT_SUPPORTED
+    result: []
   - id: bracket_notation_after_recursive_descent
     status: fail
     result: ["deepest", "deepest", "deepest", "deepest", "deepest", "deepest", "deepest", "first nested", "first nested", "first nested", "first", "more", "more", "more", "more", "more", "more", {"nested": ["deepest", "second"]}, {"nested": ["deepest", "second"]}, {"nested": ["deepest", "second"]}, {"nested": ["deepest", "second"]}, {"nested": ["deepest", "second"]}]
@@ -142,24 +120,18 @@ queries:
   - id: filter_expression_with_addition
     status: open
     result: []
-  - id: filter_expression_with_boolean_and_operator
-    status: fail
-    result: NOT_SUPPORTED
   - id: filter_expression_with_boolean_and_operator_and_value_false
     status: open
-    result: NOT_SUPPORTED
+    result: []
   - id: filter_expression_with_boolean_and_operator_and_value_true
     status: open
-    result: NOT_SUPPORTED
-  - id: filter_expression_with_boolean_or_operator
-    status: open
-    result: NOT_SUPPORTED
+    result: [{"key": 1}, {"key": 3}]
   - id: filter_expression_with_boolean_or_operator_and_value_false
     status: open
-    result: NOT_SUPPORTED
+    result: [{"key": 1}, {"key": 3}]
   - id: filter_expression_with_boolean_or_operator_and_value_true
     status: open
-    result: NOT_SUPPORTED
+    result: [{"key": 1}, {"key": 3}, {"key": -1}, {"key": 0}]
   - id: filter_expression_with_bracket_notation_with_-1
     status: open
     result: [[0, 2], [2]]
@@ -174,7 +146,7 @@ queries:
     result: NOT_SUPPORTED
   - id: filter_expression_with_different_ungrouped_operators
     status: open
-    result: NOT_SUPPORTED
+    result: [{"a": true, "b": true, "c": true}]
   - id: filter_expression_with_division
     status: open
     result: [{"key": 50}]
@@ -183,7 +155,7 @@ queries:
     result: NOT_SUPPORTED
   - id: filter_expression_with_dot_notation_with_number
     status: open
-    result: NOT_SUPPORTED
+    result: [{"2": "second", "a": "first", "b": "third"}]
   - id: filter_expression_with_equals
     status: open
     result: [{"key": 42}]
@@ -336,13 +308,10 @@ queries:
     result: [1]
   - id: union_with_filter
     status: open
-    result: [{"key": 1}, {"key": 8}, {"key": 10}, {"key": 7}, {"key": 2}]
+    result: [{"key": 1}, {"key": 2}, {"key": 8}, {"key": 10}, {"key": 7}]
   - id: union_with_keys_after_recursive_descent
     status: open
     result: ["cc1", "cc1", "cc2", "cc2", "cc3", "cc3", "cc5", "cc5", "cc5", "dd1", "dd1", "dd2", "dd2", "dd2", "dd4", "dd4"]
-  - id: union_with_numbers_in_decreasing_order
-    status: fail
-    result: [2, 5]
   - id: union_with_repeated_matches_after_dot_notation_with_wildcard
     status: open
     result: ["string", null, true, false, "string", 5.4]

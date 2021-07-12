@@ -40,6 +40,8 @@ github.com/vmware-labs/yaml-jsonpath v0.0.0-20200624151422-ed2c9c62177a h1:Nyxs+
 github.com/vmware-labs/yaml-jsonpath v0.0.0-20200624151422-ed2c9c62177a/go.mod h1:U6whw1z03QyqgWdgXxvVnQ90zN1BWz5V+51Ewf8k+rQ=
 github.com/vmware-labs/yaml-jsonpath v0.0.0-20200625154356-ea62dcd51756 h1:G9Y0reUwaixrNC4saVRSBahIPlCa/D76C/1Co7CS240=
 github.com/vmware-labs/yaml-jsonpath v0.0.0-20200625154356-ea62dcd51756/go.mod h1:U6whw1z03QyqgWdgXxvVnQ90zN1BWz5V+51Ewf8k+rQ=
+github.com/vmware-labs/yaml-jsonpath v0.3.2 h1:/5QKeCBGdsInyDCyVNLbXyilb61MXGi9NP674f9Hobk=
+github.com/vmware-labs/yaml-jsonpath v0.3.2/go.mod h1:U6whw1z03QyqgWdgXxvVnQ90zN1BWz5V+51Ewf8k+rQ=
 golang.org/x/net v0.0.0-20180906233101-161cd47e91fd h1:nTDtHvHSdCn1m6ITfMRqtOd/9+7a3s8RBNOZ3eYZzJA=
 golang.org/x/net v0.0.0-20180906233101-161cd47e91fd/go.mod h1:mL1N/T3taQHkDXs73rZJwtUhF3w3ftmwwsq0BUmARs4=
 golang.org/x/sync v0.0.0-20180314180146-1d60e4601c6f h1:wMNYb4v58l5UBM7MYRLPG6ZhfOqbKu7X5eyFl8ZhKvA=

@@ -127,15 +127,13 @@ The following queries provide results that do not match those of other implement
   ```
   Error: 'Failed to execute JSONPath query: $[?(null)]
   
-  return function (Remorhaz\JSON\Path\Value\NodeValueListInterface $input, Remorhaz\JSON\Path\Runtime\ValueListFetcherInterface $valueListFetcher, Remorhaz\JSON\Path\Runtime\EvaluatorInterface $evaluator, Remorhaz\JSON\Path\Runtime\LiteralFactoryInterface $literalFactory, Remorhaz\JSON\Path\Runtime\Matcher\MatcherFactoryInterface $matcherFactory) : Remorhaz\JSON\Path\Value\ValueListInterface {
-      $var2 = $valueListFetcher->fetchFilterContext($input);
-      $var3 = $valueListFetcher->splitFilterContext($var2);
-      $var4 = $literalFactory->createScalar($var3, null);
-      $var5 = $evaluator->evaluate($var3, $var4);
-      $var6 = $valueListFetcher->joinFilterResults($var5, $var2);
-      $var7 = $valueListFetcher->fetchFilteredValues($var2, $var6);
-      return $var7;
-  };'
+  $var2 = $valueListFetcher->fetchFilterContext($input);
+  $var3 = $valueListFetcher->splitFilterContext($var2);
+  $var4 = $literalFactory->createScalar($var3, null);
+  $var5 = $evaluator->evaluate($var3, $var4);
+  $var6 = $valueListFetcher->joinFilterResults($var5, $var2);
+  $var7 = $valueListFetcher->fetchFilteredValues($var2, $var6);
+  return $var7;'
   ```
 
 - [ ] `$.data.sum()`
@@ -154,12 +152,10 @@ The following queries provide results that do not match those of other implement
   ```
   Error: 'Failed to execute JSONPath query: $.data.sum()
   
-  return function (Remorhaz\JSON\Path\Value\NodeValueListInterface $input, Remorhaz\JSON\Path\Runtime\ValueListFetcherInterface $valueListFetcher, Remorhaz\JSON\Path\Runtime\EvaluatorInterface $evaluator, Remorhaz\JSON\Path\Runtime\LiteralFactoryInterface $literalFactory, Remorhaz\JSON\Path\Runtime\Matcher\MatcherFactoryInterface $matcherFactory) : Remorhaz\JSON\Path\Value\ValueListInterface {
-      $var2 = $matcherFactory->matchPropertyStrictly('data');
-      $var3 = $valueListFetcher->fetchChildren($input, $var2);
-      $var4 = $evaluator->aggregate('sum', $var3);
-      return $var4;
-  };'
+  $var2 = $matcherFactory->matchPropertyStrictly('data');
+  $var3 = $valueListFetcher->fetchChildren($input, $var2);
+  $var4 = $evaluator->aggregate('sum', $var3);
+  return $var4;'
   ```
 
 - [ ] `$[0,0]`

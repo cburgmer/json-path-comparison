@@ -2227,6 +2227,30 @@ The following queries provide results that do not match those of other implement
   []
   ```
 
+- [ ] `$[?(@.key>43 || @.key<43)]`
+  Input:
+  ```
+  [
+    {
+      "key": 42
+    },
+    {
+      "key": 43
+    },
+    {
+      "key": 44
+    }
+  ]
+  ```
+  Expected output:
+  ```
+  [{"key": 42}, {"key": 44}]
+  ```
+  Actual output:
+  ```
+  []
+  ```
+
 - [ ] `$[?(@['key']==42)]`
   Input:
   ```

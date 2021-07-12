@@ -166,9 +166,6 @@ queries:
   - id: filter_expression_with_boolean_and_operator_and_value_true
     status: open
     result: NOT_SUPPORTED
-  - id: filter_expression_with_boolean_or_operator
-    status: open
-    result: [{"key": 42}, {"key": 44}]
   - id: filter_expression_with_boolean_or_operator_and_value_false
     status: open
     result: NOT_SUPPORTED

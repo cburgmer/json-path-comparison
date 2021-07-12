@@ -61,7 +61,7 @@ The following queries provide results that do not match those of other implement
   Actual output:
   NOT_SUPPORTED
   ```
-  Expected dot or left bracket separator at line 1 and column 6
+  Expected '$' or function expression at line 1 and column 6
   ```
 
 - [ ] `$.length`
@@ -81,6 +81,116 @@ The following queries provide results that do not match those of other implement
   ```
   [
     3
+  ]
+  ```
+
+- [ ] `$[*].bookmarks[?(@.page == 45)]^^^`
+  Input:
+  ```
+  [
+    {
+      "title": "Sayings of the Century",
+      "bookmarks": [
+        {
+          "page": 40
+        }
+      ]
+    },
+    {
+      "title": "Sword of Honour",
+      "bookmarks": [
+        {
+          "page": 35
+        },
+        {
+          "page": 45
+        }
+      ]
+    },
+    {
+      "title": "Moby Dick",
+      "bookmarks": [
+        {
+          "page": 3035
+        },
+        {
+          "page": 45
+        }
+      ]
+    }
+  ]
+  ```
+  Expected output:
+  ```
+  NOT_SUPPORTED
+  ```
+  Actual output:
+  ```
+  [
+    [
+      {
+        "bookmarks": [
+          {
+            "page": 40
+          }
+        ],
+        "title": "Sayings of the Century"
+      },
+      {
+        "bookmarks": [
+          {
+            "page": 35
+          },
+          {
+            "page": 45
+          }
+        ],
+        "title": "Sword of Honour"
+      },
+      {
+        "bookmarks": [
+          {
+            "page": 3035
+          },
+          {
+            "page": 45
+          }
+        ],
+        "title": "Moby Dick"
+      }
+    ],
+    [
+      {
+        "bookmarks": [
+          {
+            "page": 40
+          }
+        ],
+        "title": "Sayings of the Century"
+      },
+      {
+        "bookmarks": [
+          {
+            "page": 35
+          },
+          {
+            "page": 45
+          }
+        ],
+        "title": "Sword of Honour"
+      },
+      {
+        "bookmarks": [
+          {
+            "page": 3035
+          },
+          {
+            "page": 45
+          }
+        ],
+        "title": "Moby Dick"
+      }
+    ]
   ]
   ```
 

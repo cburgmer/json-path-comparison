@@ -47,13 +47,13 @@ queries:
     result: [42]
   - id: current_with_dot_notation
     status: open
-    result: NOT_SUPPORTED
+    result: [1]
   - id: dot_bracket_notation
     status: open
-    result: NOT_SUPPORTED
+    result: ["value"]
   - id: dot_bracket_notation_with_double_quotes
     status: open
-    result: NOT_SUPPORTED
+    result: ["value"]
   - id: dot_notation_with_dash
     status: fail
     result: NOT_SUPPORTED
@@ -68,7 +68,7 @@ queries:
     result: [3]
   - id: dot_notation_with_key_root_literal
     status: open
-    result: [{"$": "value"}, {"$": "value"}]
+    result: [{"$": "value"}]
   - id: dot_notation_with_number
     status: open
     result: ["third"]
@@ -86,7 +86,7 @@ queries:
     result: [42]
   - id: dot_notation_with_space_padded_key
     status: open
-    result: NOT_SUPPORTED
+    result: [2]
   - id: dot_notation_without_root
     status: open
     result: NOT_SUPPORTED
@@ -114,9 +114,6 @@ queries:
   - id: filter_expression_with_boolean_and_operator_and_value_true
     status: open
     result: [{"key": 1}, {"key": 3}]
-  - id: filter_expression_with_boolean_or_operator
-    status: open
-    result: [{"key": 42}, {"key": 44}]
   - id: filter_expression_with_boolean_or_operator_and_value_false
     status: open
     result: [{"key": 1}, {"key": 3}]
@@ -231,6 +228,9 @@ queries:
   - id: filter_expression_with_not_equals
     status: open
     result: [{"key": 0}, {"key": -1}, {"key": 1}, {"key": 41}, {"key": 43}, {"key": 42.0001}, {"key": 41.9999}, {"key": 100}, {"key": "some"}, {"key": "42"}, {"key": null}, {"key": 420}, {"key": ""}, {"key": {}}, {"key": []}, {"key": [42]}, {"key": {"key": 42}}, {"key": {"some": 42}}, {"some": "value"}]
+  - id: filter_expression_with_parent_axis_operator
+    status: fail
+    result: [[{"bookmarks": [{"page": 40}], "title": "Sayings of the Century"}, {"bookmarks": [{"page": 35}, {"page": 45}], "title": "Sword of Honour"}, {"bookmarks": [{"page": 3035}, {"page": 45}], "title": "Moby Dick"}], [{"bookmarks": [{"page": 40}], "title": "Sayings of the Century"}, {"bookmarks": [{"page": 35}, {"page": 45}], "title": "Sword of Honour"}, {"bookmarks": [{"page": 3035}, {"page": 45}], "title": "Moby Dick"}]]
   - id: filter_expression_with_regular_expression
     status: open
     result: [{"name": "hello world"}, {"name": "yes hello world"}]
@@ -287,10 +287,10 @@ queries:
     result: NOT_SUPPORTED
   - id: recursive_descent
     status: open
-    result: NOT_SUPPORTED
+    result: [[0, 1], [{"a": {"b": "c"}}, [0, 1]], {"a": {"b": "c"}}, {"b": "c"}]
   - id: recursive_descent_after_dot_notation
     status: open
-    result: NOT_SUPPORTED
+    result: [[0, 1], {"complex": "string", "primitives": [0, 1]}]
   - id: script_expression
     status: open
     result: ["fifth"]

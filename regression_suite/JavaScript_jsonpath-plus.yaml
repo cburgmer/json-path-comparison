@@ -36,15 +36,9 @@ queries:
   - id: array_slice_with_step_0
     status: open
     result: ["first", "second", "third"]
-  - id: bracket_notation_with_double_quotes
-    status: fail
-    result: []
   - id: bracket_notation_with_empty_path
     status: fail
     result: [42]
-  - id: bracket_notation_with_empty_string_doubled_quoted
-    status: fail
-    result: [222]
   - id: bracket_notation_with_number_-1
     status: fail
     result: []
@@ -105,7 +99,7 @@ queries:
     result: ["value", [{"key": 42}], 42]
   - id: dot_bracket_notation_with_double_quotes
     status: open
-    result: []
+    result: ["value", [{"key": 42}], 42]
   - id: dot_bracket_notation_without_quotes
     status: fail
     result: ["value", [{"key": 42}], 42]
@@ -114,10 +108,10 @@ queries:
     result: []
   - id: dot_notation_with_double_quotes
     status: open
-    result: [42]
+    result: []
   - id: dot_notation_with_double_quotes_after_recursive_descent
     status: open
-    result: [0, 100, 42, 99, {"\"key\"": 99}]
+    result: []
   - id: dot_notation_with_empty_path
     status: fail
     result: [{"": 9001, "''": "nice", "key": 42}]
@@ -175,9 +169,6 @@ queries:
   - id: filter_expression_with_boolean_and_operator_and_value_true
     status: open
     result: [{"key": 1}, {"key": 3}, {"key": true}]
-  - id: filter_expression_with_boolean_or_operator
-    status: open
-    result: [{"key": 42}, {"key": 44}]
   - id: filter_expression_with_boolean_or_operator_and_value_false
     status: open
     result: [{"key": 1}, {"key": 3}, {"key": true}]

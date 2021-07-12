@@ -402,12 +402,10 @@ PHP (remorhaz-jsonpath)
 
 <pre><code>Error: 'Failed to execute JSONPath query: $.data.sum()
 
-return function (Remorhaz\JSON\Path\Value\NodeValueListInterface $input, Remorhaz\JSON\Path\Runtime\ValueListFetcherInterface $valueListFetcher, Remorhaz\JSON\Path\Runtime\EvaluatorInterface $evaluator, Remorhaz\JSON\Path\Runtime\LiteralFactoryInterface $literalFactory, Remorhaz\JSON\Path\Runtime\Matcher\MatcherFactoryInterface $matcherFactory) : Remorhaz\JSON\Path\Value\ValueListInterface {
-    $var2 = $matcherFactory-&gt;matchPropertyStrictly('data');
-    $var3 = $valueListFetcher-&gt;fetchChildren($input, $var2);
-    $var4 = $evaluator-&gt;aggregate('sum', $var3);
-    return $var4;
-};'
+$var2 = $matcherFactory-&gt;matchPropertyStrictly('data');
+$var3 = $valueListFetcher-&gt;fetchChildren($input, $var2);
+$var4 = $evaluator-&gt;aggregate('sum', $var3);
+return $var4;'
 </code></pre>
 
 <h2>Footnotes</h2>

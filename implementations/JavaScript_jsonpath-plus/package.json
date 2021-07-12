@@ -9,6 +9,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "jsonpath-plus": "^5.0.4"
+    "jsonpath-plus": "^6.0.1"
   }
 }

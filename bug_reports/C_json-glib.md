@@ -1454,6 +1454,31 @@ The following queries provide results that do not match those of other implement
   Unable to compile selector `$[?(@.key>42 && @.key<44)]': Invalid array index definition “?(@.key>42 && @.key<44)]”
   ```
 
+- [ ] `$[?(@.key>43 || @.key<43)]`
+  Input:
+  ```
+  [
+    {
+      "key": 42
+    },
+    {
+      "key": 43
+    },
+    {
+      "key": 44
+    }
+  ]
+  ```
+  Expected output:
+  ```
+  [{"key": 42}, {"key": 44}]
+  ```
+  Actual output:
+  NOT_SUPPORTED
+  ```
+  Unable to compile selector `$[?(@.key>43 || @.key<43)]': Invalid array index definition “?(@.key>43 || @.key<43)]”
+  ```
+
 - [ ] `$[?(@['key']==42)]`
   Input:
   ```

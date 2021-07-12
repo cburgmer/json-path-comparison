@@ -453,6 +453,31 @@ The following queries provide results that do not match those of other implement
   parsing error: $[?(@.key>42 && @.key<44)]	:1:10 - 1:11 unexpected ">" while scanning parentheses expected ")"
   ```
 
+- [ ] `$[?(@.key>43 || @.key<43)]`
+  Input:
+  ```
+  [
+    {
+      "key": 42
+    },
+    {
+      "key": 43
+    },
+    {
+      "key": 44
+    }
+  ]
+  ```
+  Expected output:
+  ```
+  [{"key": 42}, {"key": 44}]
+  ```
+  Actual output:
+  NOT_SUPPORTED
+  ```
+  parsing error: $[?(@.key>43 || @.key<43)]	:1:10 - 1:11 unexpected ">" while scanning parentheses expected ")"
+  ```
+
 - [ ] `$[?(@['key']==42)]`
   Input:
   ```

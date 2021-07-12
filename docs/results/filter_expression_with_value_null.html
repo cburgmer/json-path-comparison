@@ -461,15 +461,13 @@ PHP (remorhaz-jsonpath)
 
 <pre><code>Error: 'Failed to execute JSONPath query: $[?(null)]
 
-return function (Remorhaz\JSON\Path\Value\NodeValueListInterface $input, Remorhaz\JSON\Path\Runtime\ValueListFetcherInterface $valueListFetcher, Remorhaz\JSON\Path\Runtime\EvaluatorInterface $evaluator, Remorhaz\JSON\Path\Runtime\LiteralFactoryInterface $literalFactory, Remorhaz\JSON\Path\Runtime\Matcher\MatcherFactoryInterface $matcherFactory) : Remorhaz\JSON\Path\Value\ValueListInterface {
-    $var2 = $valueListFetcher-&gt;fetchFilterContext($input);
-    $var3 = $valueListFetcher-&gt;splitFilterContext($var2);
-    $var4 = $literalFactory-&gt;createScalar($var3, null);
-    $var5 = $evaluator-&gt;evaluate($var3, $var4);
-    $var6 = $valueListFetcher-&gt;joinFilterResults($var5, $var2);
-    $var7 = $valueListFetcher-&gt;fetchFilteredValues($var2, $var6);
-    return $var7;
-};'
+$var2 = $valueListFetcher-&gt;fetchFilterContext($input);
+$var3 = $valueListFetcher-&gt;splitFilterContext($var2);
+$var4 = $literalFactory-&gt;createScalar($var3, null);
+$var5 = $evaluator-&gt;evaluate($var3, $var4);
+$var6 = $valueListFetcher-&gt;joinFilterResults($var5, $var2);
+$var7 = $valueListFetcher-&gt;fetchFilteredValues($var2, $var6);
+return $var7;'
 </code></pre>
 
 <h4 id="PHP_softcreatr-jsonpath">

@@ -197,7 +197,7 @@ queries:
     status: open
     result: NOT_SUPPORTED
   - id: filter_expression_with_boolean_or_operator
-    status: open
+    status: fail
     result: NOT_SUPPORTED
   - id: filter_expression_with_boolean_or_operator_and_value_false
     status: open

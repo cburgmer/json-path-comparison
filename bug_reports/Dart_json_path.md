@@ -327,6 +327,31 @@ The following queries provide results that do not match those of other implement
   FormatException: Filter not found: "."
   ```
 
+- [ ] `$[?(@.key>43 || @.key<43)]`
+  Input:
+  ```
+  [
+    {
+      "key": 42
+    },
+    {
+      "key": 43
+    },
+    {
+      "key": 44
+    }
+  ]
+  ```
+  Expected output:
+  ```
+  [{"key": 42}, {"key": 44}]
+  ```
+  Actual output:
+  NOT_SUPPORTED
+  ```
+  FormatException: Filter not found: "."
+  ```
+
 - [ ] `$[?(@['key']==42)]`
   Input:
   ```

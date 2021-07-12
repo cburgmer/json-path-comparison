@@ -152,9 +152,6 @@ queries:
   - id: filter_expression_with_boolean_and_operator_and_value_true
     status: open
     result: NOT_SUPPORTED
-  - id: filter_expression_with_boolean_or_operator
-    status: open
-    result: [{"key": 42}, {"key": 44}]
   - id: filter_expression_with_boolean_or_operator_and_value_false
     status: open
     result: NOT_SUPPORTED
@@ -220,7 +217,7 @@ queries:
     result: []
   - id: filter_expression_with_equals_number_with_fraction
     status: open
-    result: NOT_SUPPORTED
+    result: [{"key": -12.3}]
   - id: filter_expression_with_equals_number_with_leading_zeros
     status: open
     result: [{"key": "10"}, {"key": 10}]

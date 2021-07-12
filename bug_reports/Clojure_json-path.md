@@ -1821,6 +1821,34 @@ The following queries provide results that do not match those of other implement
   java.lang.ClassCastException class java.lang.String cannot be cast to class java.lang.Number (java.lang.String and java.lang.Number are in module java.base of loader 'bootstrap')
   ```
 
+- [ ] `$[?(@.key>43 || @.key<43)]`
+  Input:
+  ```
+  [
+    {
+      "key": 42
+    },
+    {
+      "key": 43
+    },
+    {
+      "key": 44
+    }
+  ]
+  ```
+  Expected output:
+  ```
+  [{"key": 42}, {"key": 44}]
+  ```
+  Actual output:
+  ```
+  [
+    {
+      "key": 44
+    }
+  ]
+  ```
+
 - [ ] `$[?(@.key>0 || false)]`
   Input:
   ```
