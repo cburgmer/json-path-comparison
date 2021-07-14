@@ -82,7 +82,13 @@ compile_row() {
         echo "⁴"
     fi
     echo "</td>"
-    echo "<td><code>${selector}</code></td>"
+    echo "<td>"
+    if [[ -z "$selector" ]]; then
+        echo "<em>n/a</em>"
+    else
+        echo "\`${selector}\`"
+    fi
+    echo "</td>"
 
     while IFS= read -r implementation; do
         echo "<td>"
