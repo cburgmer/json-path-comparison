@@ -256,7 +256,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  Illegal modulus zero at build/lib/perl5/JSON/Path/Evaluator.pm line 411, <STDIN> line 1.
+  Illegal modulus zero at build/lib/perl5/JSON/Path/Evaluator.pm line 414, <STDIN> line 1.
   ```
 
 - [ ] `$..[0]`
@@ -3051,7 +3051,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  timeout: sending signal TERM to command ‘perl’
+  non-safe evaluation, died at main.pl line 11.
   ```
 
 - [ ] `$[?(@[*]>=4)]`
