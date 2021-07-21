@@ -3,7 +3,7 @@ FROM ubuntu:20.10
 ENV DEBIAN_FRONTEND=noninteractive
 
 RUN apt-get -y upgrade && apt-get -y update && apt-get -y dist-upgrade \
-        && apt-get install -y --no-install-recommends bash ninja-build python3 markdown curl coreutils locales \
+        && apt-get install -y --no-install-recommends bash ninja-build python3 curl coreutils locales \
         && locale-gen en_US.UTF-8
 
 # Golang

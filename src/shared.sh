@@ -1,5 +1,10 @@
 #!/bin/bash
 
+html_escape() {
+    # https://stackoverflow.com/questions/12873682/short-way-to-escape-html-in-bash
+    sed 's/&/\&amp;/g; s/</\&lt;/g; s/>/\&gt;/g'
+}
+
 pretty_implementation_name() {
     local implementation="$1"
     local language
@@ -18,10 +23,6 @@ pretty_query_name() {
     local q="$1"
 
     capitalize "$q" | tr '_' ' '
-}
-
-pre_block() {
-    sed 's/^/    /'
 }
 
 query_result_status() {

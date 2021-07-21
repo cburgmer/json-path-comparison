@@ -21,7 +21,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  json-path-comparison: expected array, found {":":42,"more":"string","a":1,"b":2,"1:3":"nice","c":3}
+  json-path-comparison: expected array, found {"c":3,"1:3":"nice","b":2,"a":1,"more":"string",":":42}
   CallStack (from HasCallStack):
     error, called at app/Main.hs:19:22 in main:Main
   ```
@@ -1339,7 +1339,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  json-path-comparison: expected array, found {"g":{"key":41.9999},"a":{"key":0},"d":{"key":41},"b":{"key":42},"e":{"key":43},"h":{"key":100},"c":{"key":-1},"f":{"key":42.0001},"i":{"some":"value"}}
+  json-path-comparison: expected array, found {"d":{"key":41},"i":{"some":"value"},"c":{"key":-1},"h":{"key":100},"b":{"key":42},"g":{"key":41.9999},"a":{"key":0},"f":{"key":42.0001},"e":{"key":43}}
   CallStack (from HasCallStack):
     error, called at app/Main.hs:19:22 in main:Main
   ```

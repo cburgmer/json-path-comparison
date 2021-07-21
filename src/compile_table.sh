@@ -56,6 +56,10 @@ give_mark() {
     fi
 }
 
+fix_line_break_on_osx() {
+    tr -d '\n'
+}
+
 compile_row() {
     local query="$1"
     local query_dir="./queries/${query}"
@@ -86,7 +90,9 @@ compile_row() {
     if [[ -z "$selector" ]]; then
         echo "<em>n/a</em>"
     else
-        echo "\`${selector}\`"
+        echo -n "<code>"
+        echo -n "$selector" | html_escape | fix_line_break_on_osx
+        echo "</code>"
     fi
     echo "</td>"
 
@@ -178,10 +184,10 @@ header_row() {
 }
 
 main() {
-    echo "# JSONPath Comparison
+    echo "<h1>JSONPath Comparison</h1>
 
-See how [JSONPath](https://goessner.net/articles/JsonPath/) is implemented across different languages.
-See the [FAQ](https://github.com/cburgmer/json-path-comparison/blob/master/FAQ.md) for why we are doing this and where the results come from.
+<p>See how <a href=\"https://goessner.net/articles/JsonPath/\">JSONPath</a> is implemented across different languages.
+See the <a href=\"https://github.com/cburgmer/json-path-comparison/blob/master/FAQ.md\">FAQ</a> for why we are doing this and where the results come from.</p>
 "
     echo
     echo "<table style=\"overflow: unset;\">" # Need to reset style for sticky headers
@@ -199,16 +205,18 @@ See the [FAQ](https://github.com/cburgmer/json-path-comparison/blob/master/FAQ.m
     echo "</tbody>"
     echo "</table>"
     echo "
-## Explanation
+<h2>Explanation</h2>
 
-- ✓ The result of this implementation matches the consensus of results.
-- ✗ The result does not match the consensus.
-- ➚ and ➘: no clear consensus amongst the implementations, but ➚ indicates a majority (and possible future consensus).
-- e The implementation failed executing the query.
-- ¹ This implementation returns a single value where only one match is possible (instead of an array of a single value).
-- ² This implementation returns a specific *not found* value if a query doesn't result in any matches.
-- ³ This implementation returns a specific *not found* value if a query that would regularly return a single match results in no match.
-- ⁴ It is unclear whether results for this query have a defined order, and some implementations might apply different and even non-deterministic ordering. For comparison the results are sorted into a canonical order.
+<ul>
+<li>✓ The result of this implementation matches the consensus of results.</li>
+<li>✗ The result does not match the consensus.</li>
+<li>➚ and ➘: no clear consensus amongst the implementations, but ➚ indicates a majority (and possible future consensus).</li>
+<li>e The implementation failed executing the query.</li>
+<li>¹ This implementation returns a single value where only one match is possible (instead of an array of a single value).</li>
+<li>² This implementation returns a specific <em>not found</em> value if a query doesn't result in any matches.</li>
+<li>³ This implementation returns a specific <em>not found</em> value if a query that would regularly return a single match results in no match.</li>
+<li>⁴ It is unclear whether results for this query have a defined order, and some implementations might apply different and even non-deterministic ordering. For comparison the results are sorted into a canonical order.</li>
+</ul>
 "
 }
 

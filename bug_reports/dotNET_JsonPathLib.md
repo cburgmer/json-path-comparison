@@ -1202,7 +1202,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  timeout: sending signal TERM to command ‘build/Dotnet_JsonPathLib’
+  Object of type 'System.Double' cannot be converted to type 'Newtonsoft.Json.Linq.JToken'.
   ```
 
 - [ ] `$[?(@[*]>=4)]`

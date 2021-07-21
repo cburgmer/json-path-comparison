@@ -79,7 +79,7 @@ Golang (github.com-PaesslerAG-jsonpath)
 
 <p>Not supported</p>
 
-<pre><code>parsing error: $[(@.length-1)]  :1:12 - 1:13 unexpected "-" while scanning parentheses expected ")"
+<pre><code>parsing error: $[(@.length-1)]	:1:12 - 1:13 unexpected "-" while scanning parentheses expected ")"
 </code></pre>
 
 <h4 id="Golang_github.com-ohler55-ojg">
@@ -87,6 +87,8 @@ Golang (github.com-ohler55-ojg)
 </h4>
 
 <p>Not supported</p>
+
+<pre><code></code></pre>
 
 <h4 id="Golang_github.com-spyzhov-ajson">
 Golang (github.com-spyzhov-ajson)
@@ -175,7 +177,7 @@ Java (com.jayway.jsonpath)
 <pre><code>SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
 SLF4J: Defaulting to no-operation (NOP) logger implementation
 SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
-com.jayway.jsonpath.InvalidPathException: Could not parse token starting at position 1. Expected ?, ', 0-9, *
+com.jayway.jsonpath.InvalidPathException: Could not parse token starting at position 1. Expected ?, ', 0-9, * 
 </code></pre>
 
 <h4 id="Kotlin_com.nfeld.jsonpathkt">
@@ -196,7 +198,7 @@ Objective-C (SMJJSONPath)
 
 <p>Not supported</p>
 
-<pre><code>Could not parse token starting at position 1 . Expected ?, ', 0-9, *
+<pre><code>Could not parse token starting at position 1 . Expected ?, ', 0-9, * 
 </code></pre>
 
 <h4 id="PHP_Goessner">
@@ -302,6 +304,7 @@ Rust (jsonpath_lib)
 <pre><code>path error: 
 $[(@.length-1)]
 ^^^
+
 </code></pre>
 
 <h4 id="Scala_jsonpath">
@@ -367,7 +370,8 @@ Proposal (A)
 
 <p>Not supported</p>
 
-<pre><code>x 1:3-1:3 Integer
+<pre><code>
+x 1:3-1:3 Integer
 | $[(@.length-1)]
 |   ^
 x 1:3-1:3 BracketChild
@@ -437,11 +441,11 @@ Perl (JSON-Path)
 
 <pre><code>Assertion ("[(" is not an operator) failed!
  at build/lib/perl5/Carp/Assert.pm line 282, &lt;STDIN&gt; line 1.
-    Carp::Assert::assert(...) called at build/lib/perl5/JSON/Path/Evaluator.pm line 217
-    JSON::Path::Evaluator::_evaluate(...) called at build/lib/perl5/JSON/Path/Evaluator.pm line 122
-    JSON::Path::Evaluator::evaluate(...) called at build/lib/perl5/JSON/Path/Evaluator.pm line 97
-    JSON::Path::Evaluator::evaluate_jsonpath(...) called at build/lib/perl5/JSON/Path.pm line 107
-    JSON::Path::values(...) called at main.pl line 11
+	Carp::Assert::assert(...) called at build/lib/perl5/JSON/Path/Evaluator.pm line 217
+	JSON::Path::Evaluator::_evaluate(...) called at build/lib/perl5/JSON/Path/Evaluator.pm line 122
+	JSON::Path::Evaluator::evaluate(...) called at build/lib/perl5/JSON/Path/Evaluator.pm line 97
+	JSON::Path::Evaluator::evaluate_jsonpath(...) called at build/lib/perl5/JSON/Path.pm line 107
+	JSON::Path::values(...) called at main.pl line 11
 </code></pre>
 
 <h2>Footnotes</h2>

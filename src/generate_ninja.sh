@@ -25,7 +25,7 @@ all_queries() {
         return
     fi
 
-    find ./queries -type d -maxdepth 1 -mindepth 1 -print0 | xargs -0 -n1 basename
+    find ./queries -type d -maxdepth 1 -mindepth 1 -print0 | xargs -0 -n1 basename | sort
 }
 
 ninja_rules() {
@@ -192,7 +192,7 @@ rule compile_table
   command = LANG=en_US.UTF-8 LC_ALL= LC_COLLATE=C ./src/compile_table.sh \$in > \$out
 EOF
     echo
-    echo "build ${markdown_dir}/index.md: compile_table ${results_dir} ${consensus_dir} ${implementations_matching_majority_dir} | src/compile_table.sh src/sort_queries.py queries/ implementations/ proposals/"
+    echo "build ${markdown_dir}/index.html: compile_table ${results_dir} ${consensus_dir} ${implementations_matching_majority_dir} | src/compile_table.sh src/sort_queries.py queries/ implementations/ proposals/"
     echo
 
     cat <<EOF
@@ -201,18 +201,18 @@ rule compile_results_report
 EOF
     echo
     while IFS= read -r query; do
-        echo "build ${markdown_dir}/results/${query}.md: compile_results_report ${results_dir} ${implementations_matching_majority_dir} ${consensus_dir} queries/${query} | src/compile_results_report.sh"
+        echo "build ${markdown_dir}/results/${query}.html: compile_results_report ${results_dir} ${implementations_matching_majority_dir} ${consensus_dir} queries/${query} | src/compile_results_report.sh"
     done <<< "$(all_queries)"
     echo
 
     cat <<EOF
-rule compile_html
-  command = LANG=en_US.UTF-8 LC_ALL= LC_COLLATE=C ./src/compile_html.sh \$in > \$out
+rule beautify_html
+  command = LANG=en_US.UTF-8 LC_ALL= LC_COLLATE=C ./src/beautify_html.sh \$in > \$out
 EOF
     echo
-    echo "build ${docs_dir}/index.html: compile_html ${markdown_dir}/index.md | src/compile_html.sh"
+    echo "build ${docs_dir}/index.html: beautify_html ${markdown_dir}/index.html | src/beautify_html.sh"
     while IFS= read -r query; do
-        echo "build ${docs_dir}/results/${query}.html: compile_html ${markdown_dir}/results/${query}.md | src/compile_html.sh"
+        echo "build ${docs_dir}/results/${query}.html: beautify_html ${markdown_dir}/results/${query}.html | src/beautify_html.sh"
     done <<< "$(all_queries)"
     echo
 }

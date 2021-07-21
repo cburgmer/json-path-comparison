@@ -163,7 +163,7 @@ Golang (github.com-PaesslerAG-jsonpath)
 
 <p>Not supported</p>
 
-<pre><code>parsing error: $[?(@.key&gt;0 || true)]    :1:10 - 1:11 unexpected "&gt;" while scanning parentheses expected ")"
+<pre><code>parsing error: $[?(@.key&gt;0 || true)]	:1:10 - 1:11 unexpected "&gt;" while scanning parentheses expected ")"
 </code></pre>
 
 <h4 id="Golang_github.com-ohler55-ojg">
@@ -688,6 +688,7 @@ Rust (jsonpath_lib)
 <pre><code>path error: 
 $[?(@.key&gt;0 || true)]
 ^^^^^^^^^^^^^^^^^^^
+
 </code></pre>
 
 <h4 id="Scala_jsonpath">
@@ -821,7 +822,8 @@ Proposal (A)
 
 <p>Not supported</p>
 
-<pre><code>x 1:20-1:20 ComparisonOperator
+<pre><code>
+x 1:20-1:20 ComparisonOperator
 | $[?(@.key&gt;0 || true)]
 |                    ^
 x 1:16-1:16 HigherPrecedenceFilterExpression

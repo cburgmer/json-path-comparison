@@ -58,7 +58,30 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  FATAL ERROR: CALL_AND_RETRY_LAST Allocation failed - JavaScript heap out of memory
+  
+  <--- Last few GCs --->
+  
+  [36972:0x7f84b8100000]     2073 ms: Mark-sweep 24.8 (42.0) -> 9.1 (42.0) MB, 36.2 / 0.0 ms  (average mu = 0.903, current mu = 0.878) allocation failure scavenge might not succeed
+  [36972:0x7f84b8100000]     2331 ms: Mark-sweep 34.8 (52.0) -> 12.4 (45.3) MB, 36.3 / 0.0 ms  (average mu = 0.882, current mu = 0.860) allocation failure scavenge might not succeed
+  
+  
+  <--- JS stacktrace --->
+  
+  FATAL ERROR: Reached heap limit Allocation failed - JavaScript heap out of memory
+   1: 0x10be74fe4 node::Abort() [/usr/local/bin/node]
+   2: 0x10be7515a node::OnFatalError(char const*, char const*) [/usr/local/bin/node]
+   3: 0x10bfb26a9 v8::Utils::ReportOOMFailure(v8::internal::Isolate*, char const*, bool) [/usr/local/bin/node]
+   4: 0x10bfb2653 v8::internal::V8::FatalProcessOutOfMemory(v8::internal::Isolate*, char const*, bool) [/usr/local/bin/node]
+   5: 0x10c10b6a5 v8::internal::Heap::FatalProcessOutOfMemory(char const*) [/usr/local/bin/node]
+   6: 0x10c109d2d v8::internal::Heap::CollectGarbage(v8::internal::AllocationSpace, v8::internal::GarbageCollectionReason, v8::GCCallbackFlags) [/usr/local/bin/node]
+   7: 0x10c112544 v8::internal::Heap::AllocateRawWithLightRetrySlowPath(int, v8::internal::AllocationType, v8::internal::AllocationOrigin, v8::internal::AllocationAlignment) [/usr/local/bin/node]
+   8: 0x10c11259a v8::internal::Heap::AllocateRawWithRetryOrFailSlowPath(int, v8::internal::AllocationType, v8::internal::AllocationOrigin, v8::internal::AllocationAlignment) [/usr/local/bin/node]
+   9: 0x10c0eff66 v8::internal::Factory::NewFillerObject(int, bool, v8::internal::AllocationType, v8::internal::AllocationOrigin) [/usr/local/bin/node]
+  10: 0x10c3866b9 v8::internal::Runtime_AllocateInYoungGeneration(int, unsigned long*, v8::internal::Isolate*) [/usr/local/bin/node]
+  11: 0x10c62e639 Builtins_CEntry_Return1_DontSaveFPRegs_ArgvOnStack_NoBuiltinExit [/usr/local/bin/node]
+  12: 0x10c62f5fb Builtins_StringAdd_CheckNone [/usr/local/bin/node]
+  13: 0x10c65b4dc Builtins_StringAddConvertLeft [/usr/local/bin/node]
+  14: 0x26b9cb706878 
   ```
 
 - [ ] `$["key"]`

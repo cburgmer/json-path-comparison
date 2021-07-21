@@ -10,6 +10,17 @@ readonly query="$(basename "$query_dir")"
 
 . src/shared.sh
 
+pre_block() {
+    echo -n "<pre><code>"
+    html_escape
+    echo "</code></pre>"
+}
+
+clean_verbatim_response() {
+    # Clean Windows newlines
+    tr -d '\r'
+}
+
 all_implementations_and_proposals() {
     find ./implementations -name run.sh -maxdepth 2 -print0 | xargs -0 -n1 dirname | xargs -n1 basename | sort
     find ./proposals -name run.sh -maxdepth 2 -print0 | xargs -0 -n1 dirname | xargs -n1 basename | sort
@@ -47,13 +58,20 @@ implementation_errors() {
     done <<< "$(all_implementations_and_proposals)"
 }
 
+fix_line_break_on_osx() {
+    tr -d '\n'
+}
+
 output_setup() {
     local selector_file="$query_dir"/selector
     local document="$query_dir"/document.json
     local selector
     selector="$(cat "${selector_file}")"
 
-    echo "Selector: \`${selector}\`"
+    echo -n "<p>Selector: "
+    echo -n "<code>"
+    echo -n "$selector" | html_escape | fix_line_break_on_osx
+    echo "</code></p>"
     echo
 
     pre_block < "$document"
@@ -63,12 +81,12 @@ pretty_result() {
     local result="$1"
 
     if [[ "$result" == "NOT_SUPPORTED" ]]; then
-        echo "Not supported"
+        echo "<p>Not supported</p>"
         return
     fi
 
     if [[ "$result" == "NOT_FOUND" ]]; then
-        echo "Not found"
+        echo "<p>Not found</p>"
         return
     fi
 
@@ -80,8 +98,8 @@ consensus() {
 
     declare -A consensus_explanation
     consensus_explanation["scalar-consensus"]="The scalar consensus applies for implementations which return a single value where only one match is possible (instead of an array of a single value)."
-    consensus_explanation["not-found-consensus"]="This consensus applies for implementations which return a specific *not found* value if no match exists."
-    consensus_explanation["scalar-not-found-consensus"]="This consensus applies for implementations which returns a specific *not found* value when a query that would regularly return a single match results in no match."
+    consensus_explanation["not-found-consensus"]="This consensus applies for implementations which return a specific <em>not found</em> value if no match exists."
+    consensus_explanation["scalar-not-found-consensus"]="This consensus applies for implementations which returns a specific <em>not found</em> value when a query that would regularly return a single match results in no match."
 
     pretty_result "$(grep '^consensus' < "${consensus_dir}/${query}" | cut -f2)"
 
@@ -90,11 +108,12 @@ consensus() {
             break
         fi
 
+        echo
         echo "<h4>"
         cut -f1 <<< "$(capitalize "$line")" | tr '-' ' '
         echo "</h4>"
         echo
-        echo "${consensus_explanation[$(cut -f1 <<< "$line")]}"
+        echo "<p>${consensus_explanation[$(cut -f1 <<< "$line")]}</p>"
         echo
         cut -f2 <<< "$line" | pre_block
     done <<< "$(grep -v '^consensus' < "${consensus_dir}/${query}" | grep consensus)"
@@ -122,14 +141,18 @@ main() {
     local outliers
     local errors
 
-    echo "# $(pretty_query_name "$query")"
+    echo -n "<h1>"
+    echo -n "$(pretty_query_name "$query")"
+    echo "</h1>"
     echo
 
-    echo "## Setup"
+    echo "<h2>Setup</h2>"
+    echo
     output_setup
     echo
 
-    echo "## Results"
+    echo "<h2>Results</h2>"
+    echo
 
     if has_consensus; then
         echo '<h3 id="consensus">Consensus</h3>'
@@ -141,7 +164,7 @@ main() {
     outliers="$(implementation_outliers)"
 
     if [[ -n "$outliers" ]]; then
-        echo "### Other responses"
+        echo "<h3>Other responses</h3>"
         echo
 
         while IFS= read -r implementation; do
@@ -150,12 +173,12 @@ main() {
             if is_query_not_supported "${results_dir}/${query}/${implementation}"; then
                 pretty_result "NOT_SUPPORTED"
                 echo
-                query_result_payload "${results_dir}/${query}/${implementation}" | pre_block
+                query_result_payload "${results_dir}/${query}/${implementation}" | clean_verbatim_response | pre_block
             else
                 if is_query_result_not_found "${results_dir}/${query}/${implementation}"; then
                     pretty_result "NOT_FOUND"
                     echo
-                    query_result_payload "${results_dir}/${query}/${implementation}" | pre_block
+                    query_result_payload "${results_dir}/${query}/${implementation}" | clean_verbatim_response | pre_block
                 else
                     pretty_result "$(query_result_payload "${results_dir}/${query}/${implementation}")"
                 fi
@@ -167,24 +190,24 @@ main() {
     errors="$(implementation_errors)"
 
     if [[ -n "$errors" ]]; then
-        echo "### Errors"
+        echo "<h3>Errors</h3>"
         echo
 
         while IFS= read -r implementation; do
             implementation_header "$implementation"
             echo
-            query_result_payload "${results_dir}/${query}/${implementation}" | pre_block
+            query_result_payload "${results_dir}/${query}/${implementation}" | clean_verbatim_response | pre_block
             echo
         done <<< "$errors"
     fi
 
-    echo "
-## Footnotes
+    echo "<h2>Footnotes</h2>
 
-- ¹ This implementation returns a single value where only one match is possible (instead of an array of a single value).
-- ² This implementation returns a specific *not found* value if no match exists.
-- ³ This implementation returns a specific *not found* value if a query that would regularly return a single match results in no match.
-"
+<ul>
+<li>¹ This implementation returns a single value where only one match is possible (instead of an array of a single value).</li>
+<li>² This implementation returns a specific <em>not found</em> value if no match exists.</li>
+<li>³ This implementation returns a specific <em>not found</em> value if a query that would regularly return a single match results in no match.</li>
+</ul>"
 }
 
 main

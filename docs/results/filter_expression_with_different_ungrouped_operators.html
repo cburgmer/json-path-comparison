@@ -172,7 +172,7 @@ Golang (github.com-PaesslerAG-jsonpath)
 
 <p>Not supported</p>
 
-<pre><code>parsing error: $[?(@.a &amp;&amp; @.b || @.c)]   - 1:11 unknown operator &amp;&amp;
+<pre><code>parsing error: $[?(@.a &amp;&amp; @.b || @.c)]	 - 1:11 unknown operator &amp;&amp;
 </code></pre>
 
 <h4 id="Golang_github.com-bhmj-jsonslice">
@@ -775,7 +775,8 @@ Proposal (A)
 
 <p>Not supported</p>
 
-<pre><code>x 1:16-1:16 ComparisonOperator
+<pre><code>
+x 1:16-1:16 ComparisonOperator
 | $[?(@.a &amp;&amp; @.b || @.c)]
 |                ^
 o 1:12-1:15 HigherPrecedenceFilterExpression

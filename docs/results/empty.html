@@ -5,7 +5,7 @@
 
 <h2>Setup</h2>
 
-<p>Selector: ``</p>
+<p>Selector: <code></code></p>
 
 <pre><code>{"a": 42, "": 21}
 </code></pre>
@@ -56,7 +56,7 @@ Elixir (ExJsonPath)
 
 <p>Not supported</p>
 
-<pre><code>syntax error before:
+<pre><code>syntax error before: 
 </code></pre>
 
 <h4 id="Elixir_warpath">
@@ -66,7 +66,7 @@ Elixir (warpath)
 
 <p>Not supported</p>
 
-<pre><code>Parser error: Invalid token on line 999999, syntax error before:
+<pre><code>Parser error: Invalid token on line 999999, syntax error before: 
 </code></pre>
 
 <h4 id="Erlang_ejsonpath">
@@ -75,7 +75,7 @@ Erlang (ejsonpath)
 
 <p>Not supported</p>
 
-<pre><code>syntax error before:
+<pre><code>syntax error before: 
 </code></pre>
 
 <h4 id="Golang_github.com-PaesslerAG-jsonpath">
@@ -85,7 +85,7 @@ Golang (github.com-PaesslerAG-jsonpath)
 
 <p>Not supported</p>
 
-<pre><code>parsing error:   - 1:1 unexpected EOF while scanning extensions
+<pre><code>parsing error: 	 - 1:1 unexpected EOF while scanning extensions
 </code></pre>
 
 <h4 id="Golang_github.com-ohler55-ojg">
@@ -270,7 +270,10 @@ Rust (jsonpath_lib)
 
 <p>Not supported</p>
 
-<pre><code>path error:
+<pre><code>path error: 
+
+
+
 </code></pre>
 
 <h4 id="Scala_jsonpath">
@@ -335,7 +338,8 @@ Proposal (A)
 
 <p>Not supported</p>
 
-<pre><code>x 1:1-1:1 Start
+<pre><code>
+x 1:1-1:1 Start
 | 
 | ^
 </code></pre>
@@ -348,6 +352,7 @@ C (json-glib)
 
 <pre><code>json_path_match: assertion 'path-&gt;is_compiled' failed
 Expecting value: line 2 column 1 (char 1)
+
 </code></pre>
 
 <h4 id="Elixir_jaxon">
@@ -407,9 +412,9 @@ Java (com.jayway.jsonpath)
 SLF4J: Defaulting to no-operation (NOP) logger implementation
 SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
 Exception in thread "main" java.lang.IllegalArgumentException: path can not be null or empty
-    at com.jayway.jsonpath.internal.Utils.notEmpty(Utils.java:383)
-    at com.jayway.jsonpath.internal.JsonContext.read(JsonContext.java:77)
-    at query.App.main(App.java:28)
+	at com.jayway.jsonpath.internal.Utils.notEmpty(Utils.java:383)
+	at com.jayway.jsonpath.internal.JsonContext.read(JsonContext.java:77)
+	at query.App.main(App.java:28)
 </code></pre>
 
 <h4 id="Perl_JSON-Path">
