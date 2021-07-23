@@ -183,7 +183,7 @@ header_row() {
     echo "</tr>"
 }
 
-main() {
+table() {
     echo "<h1>JSONPath Comparison</h1>
 
 <p>See how <a href=\"https://goessner.net/articles/JsonPath/\">JSONPath</a> is implemented across different languages.
@@ -218,6 +218,65 @@ See the <a href=\"https://github.com/cburgmer/json-path-comparison/blob/master/F
 <li>⁴ It is unclear whether results for this query have a defined order, and some implementations might apply different and even non-deterministic ordering. For comparison the results are sorted into a canonical order.</li>
 </ul>
 "
+}
+
+adjust_css() {
+    cat
+    cat <<EOF
+<style>
+/* Make room for more columns */
+.markdown-body table td, .markdown-body table th {
+  padding: 6px 9px;
+}
+</style>
+EOF
+}
+
+table_consensus_colouring() {
+    cat
+    # Make sure the selector is more specific than the markdown CSS
+    cat <<EOF
+<style>
+.markdown-body tbody tr.consensus:nth-child(2n+1) {
+  background: #eff;
+}
+.markdown-body tbody tr.consensus:nth-child(2n) {
+  background: #e9f8fa;
+}
+.markdown-body tbody tr.no_consensus {
+  background: #fff;
+}
+</style>
+EOF
+}
+
+highlight_effect() {
+    cat
+    cat <<EOF
+<style>
+h3:target,
+h4:target,
+tbody tr:target,
+tbody tr:hover {
+  background-color: #ffa !important;
+}
+</style>
+EOF
+}
+
+proposal() {
+    cat
+    cat <<EOF
+<style>
+.markdown-body tbody .proposal {
+  background-color: #fff8;
+}
+</style>
+EOF
+}
+
+main() {
+    table | beautiful_html | adjust_css | table_consensus_colouring | highlight_effect | proposal
 }
 
 main

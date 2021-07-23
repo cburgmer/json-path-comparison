@@ -6,7 +6,6 @@ readonly results_dir="build/results"
 readonly consensus_dir="build/consensus"
 readonly majority_results_dir="build/majority_results"
 readonly implementations_matching_majority_dir="build/implementations_matching_majority"
-readonly markdown_dir="build/markdown"
 readonly bug_reports_dir="bug_reports"
 readonly docs_dir="docs"
 readonly regression_suite="regression_suite"
@@ -192,7 +191,7 @@ rule compile_table
   command = LANG=en_US.UTF-8 LC_ALL= LC_COLLATE=C ./src/compile_table.sh \$in > \$out
 EOF
     echo
-    echo "build ${markdown_dir}/index.html: compile_table ${results_dir} ${consensus_dir} ${implementations_matching_majority_dir} | src/compile_table.sh src/sort_queries.py queries/ implementations/ proposals/"
+    echo "build ${docs_dir}/index.html: compile_table ${results_dir} ${consensus_dir} ${implementations_matching_majority_dir} | src/compile_table.sh src/shared.sh src/sort_queries.py queries/ implementations/ proposals/"
     echo
 
     cat <<EOF
@@ -201,18 +200,7 @@ rule compile_results_report
 EOF
     echo
     while IFS= read -r query; do
-        echo "build ${markdown_dir}/results/${query}.html: compile_results_report ${results_dir} ${implementations_matching_majority_dir} ${consensus_dir} queries/${query} | src/compile_results_report.sh"
-    done <<< "$(all_queries)"
-    echo
-
-    cat <<EOF
-rule beautify_html
-  command = LANG=en_US.UTF-8 LC_ALL= LC_COLLATE=C ./src/beautify_html.sh \$in > \$out
-EOF
-    echo
-    echo "build ${docs_dir}/index.html: beautify_html ${markdown_dir}/index.html | src/beautify_html.sh"
-    while IFS= read -r query; do
-        echo "build ${docs_dir}/results/${query}.html: beautify_html ${markdown_dir}/results/${query}.html | src/beautify_html.sh"
+        echo "build ${docs_dir}/results/${query}.html: compile_results_report ${results_dir} ${implementations_matching_majority_dir} ${consensus_dir} queries/${query} | src/compile_results_report.sh src/shared.sh"
     done <<< "$(all_queries)"
     echo
 }

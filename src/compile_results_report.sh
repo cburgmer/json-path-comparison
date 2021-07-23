@@ -136,7 +136,7 @@ implementation_header() {
     echo "</h4>"
 }
 
-main() {
+report() {
     local implementation
     local outliers
     local errors
@@ -208,6 +208,10 @@ main() {
 <li>² This implementation returns a specific <em>not found</em> value if no match exists.</li>
 <li>³ This implementation returns a specific <em>not found</em> value if a query that would regularly return a single match results in no match.</li>
 </ul>"
+}
+
+main() {
+    report | beautiful_html
 }
 
 main
