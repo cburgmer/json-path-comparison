@@ -36,22 +36,22 @@ give_mark() {
 
     # Error?
     if is_query_error "${results_dir}/${query}/${implementation}"; then
-        echo "<a href=\"results/${query}.md#${implementation}\">e</a>"
+        echo "<a href=\"results/${query}.html#${implementation}\">e</a>"
         return
     fi
 
     if is_in_majority "$query" "$implementation"; then
         if has_consensus "$query"; then
-            echo "<a href=\"results/${query}.md#consensus\">✓</a>"
+            echo "<a href=\"results/${query}.html#consensus\">✓</a>"
         else
-            echo "<a href=\"results/${query}.md#${implementation}\">➚</a>"
+            echo "<a href=\"results/${query}.html#${implementation}\">➚</a>"
         fi
     else
         # So we are an outlier, but is there actually any gold standard?
         if has_consensus "$query"; then
-            echo "<a href=\"results/${query}.md#${implementation}\">✗</a>"
+            echo "<a href=\"results/${query}.html#${implementation}\">✗</a>"
         else
-            echo "<a href=\"results/${query}.md#${implementation}\">➘</a>"
+            echo "<a href=\"results/${query}.html#${implementation}\">➘</a>"
         fi
     fi
 }
@@ -81,7 +81,7 @@ compile_row() {
     echo "<tr id=\"${query}\" class=\"${status}\">"
     echo "<td>"
     echo "<a href=\"#${query}\" style=\"color: lightgrey;\">#</a>"
-    echo "<a href=\"results/${query}.md\">${query_name}</a>"
+    echo "<a href=\"results/${query}.html\">${query_name}</a>"
     if [[ -f "${query_dir}/ALLOW_UNORDERED" ]]; then
         echo "⁴"
     fi

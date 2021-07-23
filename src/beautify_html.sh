@@ -3,11 +3,6 @@ set -euo pipefail
 
 readonly file="$1"
 
-resolve_links() {
-    # Convert relative URLs from md to html
-    perl -ne 's/<a href="(?!https?:\/\/)([^"]*).md(#[^"]*)?">/<a href="\1.html\2">/; print;'
-}
-
 beautiful_html() {
     echo '<meta charset="utf-8" />'
     echo '<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/3.0.1/github-markdown.css">'
@@ -77,7 +72,7 @@ EOF
 }
 
 main() {
-    beautiful_html < "$file" | resolve_links | adjust_css | table_consensus_colouring | highlight_effect | proposal
+    beautiful_html < "$file" | adjust_css | table_consensus_colouring | highlight_effect | proposal
 }
 
 main
