@@ -75,6 +75,9 @@ queries:
   - id: dot_notation_after_bracket_notation_after_recursive_descent
     status: fail
     result: NOT_SUPPORTED
+  - id: dot_notation_after_recursive_descent_with_extra_dot
+    status: open
+    result: NOT_SUPPORTED
   - id: dot_notation_with_dash
     status: fail
     result: NOT_SUPPORTED

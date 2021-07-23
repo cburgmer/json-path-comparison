@@ -95,6 +95,9 @@ queries:
   - id: dot_notation_after_bracket_notation_after_recursive_descent
     status: fail
     result: ["some value", 100, 200, 300, 400, 42, 500, 600]
+  - id: dot_notation_after_recursive_descent_with_extra_dot
+    status: open
+    result: NOT_SUPPORTED
   - id: dot_notation_with_double_quotes
     status: open
     result: 42

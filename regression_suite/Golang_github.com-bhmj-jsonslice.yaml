@@ -95,6 +95,9 @@ queries:
   - id: dot_notation_after_bracket_notation_after_recursive_descent
     status: fail
     result: [42]
+  - id: dot_notation_after_recursive_descent_with_extra_dot
+    status: open
+    result: []
   - id: dot_notation_on_array
     status: error
   - id: dot_notation_on_array_with_containing_object_matching_key

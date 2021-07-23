@@ -476,6 +476,10 @@ queries:
     document: {"store": {"book": [{"category": "reference", "author": "Nigel Rees", "title": "Sayings of the Century", "price": 8.95}, {"category": "fiction", "author": "Evelyn Waugh", "title": "Sword of Honour", "price": 12.99}, {"category": "fiction", "author": "Herman Melville", "title": "Moby Dick", "isbn": "0-553-21311-3", "price": 8.99}, {"category": "fiction", "author": "J. R. R. Tolkien", "title": "The Lord of the Rings", "isbn": "0-395-19395-8", "price": 22.99}], "bicycle": {"color": "red", "price": 19.95}}}
     ordered: false
     consensus: [12.99, 19.95, 22.99, 8.95, 8.99]
+  - id: dot_notation_after_recursive_descent_with_extra_dot
+    selector: "$...key"
+    document: {"object": {"key": "value", "array": [{"key": "something"}, {"key": {"key": "russian dolls"}}]}, "key": "top"}
+    ordered: false
   - id: dot_notation_after_union
     selector: "$[0,2].key"
     document: [{"key": "ey"}, {"key": "bee"}, {"key": "see"}]

@@ -80,6 +80,9 @@ queries:
   - id: dot_notation_after_bracket_notation_after_recursive_descent
     status: fail
     result: []
+  - id: dot_notation_after_recursive_descent_with_extra_dot
+    status: open
+    result: ["russian dolls", "something", "top", "value", {"key": "russian dolls"}]
   - id: dot_notation_with_double_quotes
     status: open
     result: [42]

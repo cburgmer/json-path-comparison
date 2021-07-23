@@ -110,6 +110,9 @@ queries:
   - id: dot_notation_after_filter_expression
     status: fail
     result: NOT_SUPPORTED
+  - id: dot_notation_after_recursive_descent_with_extra_dot
+    status: open
+    result: NOT_SUPPORTED
   - id: dot_notation_after_union_with_keys
     status: fail
     result: NOT_SUPPORTED

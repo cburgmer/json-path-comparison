@@ -159,6 +159,9 @@ queries:
   - id: dot_notation_after_recursive_descent
     status: fail
     result: ["russian dolls", "something", "top", "value"]
+  - id: dot_notation_after_recursive_descent_with_extra_dot
+    status: open
+    result: ["russian dolls", "something", "top", "value"]
   - id: dot_notation_on_array_value
     status: fail
     result: ["first", "second"]

@@ -1681,6 +1681,31 @@ The following queries provide results that do not match those of other implement
   expression don't support in filter
   ```
 
+- [ ] `$...key`
+  Input:
+  ```
+  {
+    "object": {
+      "key": "value",
+      "array": [
+        {
+          "key": "something"
+        },
+        {
+          "key": {
+            "key": "russian dolls"
+          }
+        }
+      ]
+    },
+    "key": "top"
+  }
+  ```
+  Error:
+  ```
+  expression don't support in filter
+  ```
+
 - [ ] `$['one','three'].key`
   Input:
   ```

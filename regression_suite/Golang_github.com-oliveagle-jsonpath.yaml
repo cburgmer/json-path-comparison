@@ -190,6 +190,8 @@ queries:
     status: error
   - id: dot_notation_after_recursive_descent_after_dot_notation
     status: error
+  - id: dot_notation_after_recursive_descent_with_extra_dot
+    status: error
   - id: dot_notation_after_union_with_keys
     status: error
   - id: dot_notation_on_array

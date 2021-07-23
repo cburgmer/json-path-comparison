@@ -82,6 +82,9 @@ queries:
   - id: dot_notation_after_filter_expression
     status: fail
     result: NOT_SUPPORTED
+  - id: dot_notation_after_recursive_descent_with_extra_dot
+    status: open
+    result: ["russian dolls", "something", "top", "value", {"key": "russian dolls"}]
   - id: dot_notation_with_double_quotes
     status: open
     result: ["value"]

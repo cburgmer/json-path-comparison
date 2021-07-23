@@ -108,6 +108,9 @@ queries:
     result: ["value", [{"key": 42}], 42]
   - id: dot_notation_after_filter_expression
     status: error
+  - id: dot_notation_after_recursive_descent_with_extra_dot
+    status: open
+    result: ["russian dolls", "something", "top", "value", {"key": "russian dolls"}]
   - id: dot_notation_on_empty_object_value
     status: fail
     result: [[]]

@@ -215,6 +215,9 @@ queries:
   - id: dot_notation_after_recursive_descent_after_dot_notation
     status: fail
     result: []
+  - id: dot_notation_after_recursive_descent_with_extra_dot
+    status: open
+    result: ["top"]
   - id: dot_notation_after_union
     status: fail
     result: []

@@ -136,6 +136,9 @@ queries:
   - id: dot_notation_after_recursive_descent
     status: fail
     result: ["something", "top", "value", {"key": "russian dolls"}]
+  - id: dot_notation_after_recursive_descent_with_extra_dot
+    status: open
+    result: []
   - id: dot_notation_after_union_with_keys
     status: fail
     result: ["value"]
