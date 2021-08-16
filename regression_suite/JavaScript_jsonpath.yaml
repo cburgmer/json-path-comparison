@@ -155,6 +155,8 @@ queries:
     result: []
   - id: filter_expression_with_dot_notation_with_number
     status: error
+  - id: filter_expression_with_dot_notation_with_number_on_array
+    status: error
   - id: filter_expression_with_equals
     status: open
     result: [{"key": 42}, {"key": "42"}, {"key": [42]}]

@@ -1251,6 +1251,24 @@ The following queries provide results that do not match those of other implement
   ArgumentCountError
   ```
 
+- [ ] `$[?(@.2 == 'third')]`
+  Input:
+  ```
+  [
+    [
+      "first",
+      "second",
+      "third",
+      "forth",
+      "fifth"
+    ]
+  ]
+  ```
+  Error:
+  ```
+  ArgumentCountError
+  ```
+
 - [ ] `$[?()]`
   Input:
   ```

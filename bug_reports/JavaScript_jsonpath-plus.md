@@ -519,6 +519,24 @@ The following queries provide results that do not match those of other implement
   evalmachine.<anonymous>:1
   ```
 
+- [ ] `$[?(@.2 == 'third')]`
+  Input:
+  ```
+  [
+    [
+      "first",
+      "second",
+      "third",
+      "forth",
+      "fifth"
+    ]
+  ]
+  ```
+  Error:
+  ```
+  evalmachine.<anonymous>:1
+  ```
+
 - [ ] `$[?()]`
   Input:
   ```

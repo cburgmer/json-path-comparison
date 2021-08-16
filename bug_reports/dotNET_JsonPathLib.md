@@ -598,6 +598,24 @@ The following queries provide results that do not match those of other implement
   Line 1: Unexpected number
   ```
 
+- [ ] `$[?(@.2 == 'third')]`
+  Input:
+  ```
+  [
+    [
+      "first",
+      "second",
+      "third",
+      "forth",
+      "fifth"
+    ]
+  ]
+  ```
+  Error:
+  ```
+  Line 1: Unexpected number
+  ```
+
 - [ ] `$[?()]`
   Input:
   ```

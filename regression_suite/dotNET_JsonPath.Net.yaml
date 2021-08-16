@@ -159,6 +159,9 @@ queries:
   - id: filter_expression_with_dot_notation_with_number
     status: open
     result: [{"2": "second", "a": "first", "b": "third"}]
+  - id: filter_expression_with_dot_notation_with_number_on_array
+    status: open
+    result: []
   - id: filter_expression_with_equals
     status: open
     result: [{"key": 42}]

@@ -1403,6 +1403,24 @@ The following queries provide results that do not match those of other implement
   Node does not appear to be an array.
   ```
 
+- [ ] `$[?(@.2 == 'third')]`
+  Input:
+  ```
+  [
+    [
+      "first",
+      "second",
+      "third",
+      "forth",
+      "fifth"
+    ]
+  ]
+  ```
+  Error:
+  ```
+  undefined method `2' for ["first", "second", "third", "forth", "fifth"]:Array
+  ```
+
 - [ ] `$[?()]`
   Input:
   ```

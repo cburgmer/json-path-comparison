@@ -238,6 +238,8 @@ queries:
   - id: filter_expression_with_dot_notation_with_number
     status: open
     result: [{"2": "second", "a": "first", "b": "third"}]
+  - id: filter_expression_with_dot_notation_with_number_on_array
+    status: error
   - id: filter_expression_with_empty_expression
     status: fail
     result: [1, {"key": 42}, "value"]

@@ -521,6 +521,24 @@ The following queries provide results that do not match those of other implement
   jsonPath: Unexpected number: _v.2 == 'second'
   ```
 
+- [ ] `$[?(@.2 == 'third')]`
+  Input:
+  ```
+  [
+    [
+      "first",
+      "second",
+      "third",
+      "forth",
+      "fifth"
+    ]
+  ]
+  ```
+  Error:
+  ```
+  jsonPath: Unexpected number: _v.2 == 'third'
+  ```
+
 - [ ] `$[?()]`
   Input:
   ```

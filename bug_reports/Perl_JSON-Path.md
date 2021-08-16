@@ -1568,6 +1568,24 @@ The following queries provide results that do not match those of other implement
   non-safe evaluation, died at main.pl line 11.
   ```
 
+- [ ] `$[?(@.2 == 'third')]`
+  Input:
+  ```
+  [
+    [
+      "first",
+      "second",
+      "third",
+      "forth",
+      "fifth"
+    ]
+  ]
+  ```
+  Error:
+  ```
+  non-safe evaluation, died at main.pl line 11.
+  ```
+
 - [ ] `$[?()]`
   Input:
   ```
