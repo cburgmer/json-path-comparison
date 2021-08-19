@@ -50,10 +50,10 @@ queries:
     result: [1]
   - id: dot_bracket_notation
     status: open
-    result: ["value"]
+    result: NOT_SUPPORTED
   - id: dot_bracket_notation_with_double_quotes
     status: open
-    result: ["value"]
+    result: NOT_SUPPORTED
   - id: dot_notation_after_recursive_descent_with_extra_dot
     status: open
     result: NOT_SUPPORTED
@@ -71,12 +71,12 @@ queries:
     result: [3]
   - id: dot_notation_with_key_root_literal
     status: open
-    result: [{"$": "value"}]
+    result: []
   - id: dot_notation_with_number
     status: open
     result: ["third"]
   - id: dot_notation_with_number_-1
-    status: open
+    status: fail
     result: NOT_SUPPORTED
   - id: dot_notation_with_single_quotes
     status: open
@@ -131,7 +131,7 @@ queries:
     result: [["a", "b"]]
   - id: filter_expression_with_current_object
     status: open
-    result: ["some value", "value", 1, -1, true]
+    result: ["some value", "value", 0, 1, -1, true]
   - id: filter_expression_with_different_grouped_operators
     status: open
     result: [{"a": true, "b": true}, {"a": true, "b": true, "c": true}, {"a": true, "c": true}]
@@ -263,7 +263,7 @@ queries:
     result: NOT_SUPPORTED
   - id: filter_expression_with_value
     status: open
-    result: [{"key": true}, {"key": "value"}, {"key": 1}, {"key": -1}, {"key": 42}]
+    result: [{"key": true}, {"key": "value"}, {"key": 0}, {"key": 1}, {"key": -1}, {"key": 42}]
   - id: filter_expression_with_value_after_dot_notation_with_wildcard_on_array_of_objects
     status: open
     result: []
@@ -287,7 +287,7 @@ queries:
     result: [{"key": 42}]
   - id: filter_expression_without_value
     status: open
-    result: [{"some": "some value"}, {"key": false}, {"key": null}, {"key": ""}, {"key": 0}, {"key": {}}, {"key": []}]
+    result: [{"some": "some value"}, {"key": false}, {"key": null}, {"key": ""}, {"key": {}}, {"key": []}]
   - id: function_sum
     status: open
     result: NOT_SUPPORTED

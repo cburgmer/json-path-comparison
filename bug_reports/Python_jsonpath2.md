@@ -590,6 +590,28 @@ The following queries provide results that do not match those of other implement
   ValueError("line 1:2 token recognition error at: '屬'")
   ```
 
+- [ ] `$.-1`
+  Input:
+  ```
+  [
+    "first",
+    "second",
+    "third",
+    "forth",
+    "fifth"
+  ]
+  ```
+  Expected output:
+  ```
+  []
+  ```
+  Actual output:
+  NOT_SUPPORTED
+  ```
+  line 1:2 mismatched input '-1' expecting {'*', ID}
+  ValueError("line 1:2 mismatched input '-1' expecting {'*', ID}")
+  ```
+
 - [ ] `$.2`
   Input:
   ```

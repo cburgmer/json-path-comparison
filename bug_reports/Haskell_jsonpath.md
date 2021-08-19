@@ -965,6 +965,10 @@ The following queries provide results that do not match those of other implement
     "fifth"
   ]
   ```
+  Expected output:
+  ```
+  null
+  ```
   Error:
   ```
   json-path-comparison: expected object, found ["first","second","third","forth","fifth"]

@@ -375,99 +375,30 @@ The following queries provide results that do not match those of other implement
   ```
   Actual output:
   ```
-  3
-  ```
-
-- [ ] `$..*`
-  Input:
-  ```
-  {
-    "key": "value",
-    "another key": {
-      "complex": "string",
-      "primitives": [
-        0,
-        1
-      ]
-    }
-  }
-  ```
-  Expected output (in any order as no consensus on ordering exists):
-  ```
-  ["string", "value", 0, 1, [0, 1], {"complex": "string", "primitives": [0, 1]}]
-  ```
-  Actual output:
-  ```
   [
-    "string",
-    "value",
-    0,
-    1,
-    [
-      0,
-      1
-    ],
-    {
-      "another key": {
-        "complex": "string",
-        "primitives": [
-          0,
-          1
-        ]
-      },
-      "key": "value"
-    },
-    {
-      "complex": "string",
-      "primitives": [
-        0,
-        1
-      ]
-    }
+    3
   ]
   ```
 
-- [ ] `$..*`
+- [ ] `$.-1`
   Input:
   ```
   [
-    40,
-    null,
-    42
+    "first",
+    "second",
+    "third",
+    "forth",
+    "fifth"
   ]
   ```
-  Expected output (in any order as no consensus on ordering exists):
-  ```
-  [40, 42, null]
-  ```
-  Actual output:
-  ```
-  [
-    40,
-    42,
-    [
-      40,
-      null,
-      42
-    ],
-    null
-  ]
-  ```
-
-- [ ] `$..*`
-  Input:
-  ```
-  42
-  ```
-  Expected output (in any order as no consensus on ordering exists):
+  Expected output:
   ```
   []
   ```
   Actual output:
+  NOT_SUPPORTED
   ```
-  [
-    42
-  ]
+  Invalid JSONPath error: 'Error in JSONPath near '.-1''
   ```
 
 - [ ] `$[?()]`

@@ -1863,6 +1863,26 @@ The following queries provide results that do not match those of other implement
   expression don't support in filter
   ```
 
+- [ ] `$.-1`
+  Input:
+  ```
+  [
+    "first",
+    "second",
+    "third",
+    "forth",
+    "fifth"
+  ]
+  ```
+  Expected output:
+  ```
+  null
+  ```
+  Actual output:
+  ```
+  []
+  ```
+
 - [ ] `$..'key'`
   Input:
   ```

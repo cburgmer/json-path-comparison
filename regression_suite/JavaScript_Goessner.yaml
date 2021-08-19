@@ -119,9 +119,6 @@ queries:
   - id: dot_notation_with_number
     status: open
     result: ["third"]
-  - id: dot_notation_with_number_-1
-    status: open
-    result: NOT_FOUND
   - id: dot_notation_with_single_quotes
     status: open
     result: ["value"]

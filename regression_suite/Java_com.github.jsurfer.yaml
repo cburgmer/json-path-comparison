@@ -79,12 +79,6 @@ queries:
   - id: array_slice_with_step_only
     status: fail
     result: NOT_SUPPORTED
-  - id: bracket_notation_with_double_quotes
-    status: fail
-    result: NOT_SUPPORTED
-  - id: bracket_notation_with_empty_string_doubled_quoted
-    status: fail
-    result: NOT_SUPPORTED
   - id: bracket_notation_with_number_-1
     status: fail
     result: []
@@ -111,10 +105,10 @@ queries:
     result: ["russian dolls", "something", "top", "value", {"key": "russian dolls"}]
   - id: dot_notation_with_double_quotes
     status: open
-    result: ["value"]
+    result: NOT_SUPPORTED
   - id: dot_notation_with_double_quotes_after_recursive_descent
     status: open
-    result: ["russian dolls", "something", "top", "value", {"key": "russian dolls"}]
+    result: NOT_SUPPORTED
   - id: dot_notation_with_key_named_true
     status: fail
     result: NOT_SUPPORTED
@@ -123,13 +117,10 @@ queries:
     result: NOT_SUPPORTED
   - id: dot_notation_with_number
     status: open
-    result: NOT_SUPPORTED
-  - id: dot_notation_with_number_-1
-    status: open
-    result: NOT_SUPPORTED
+    result: ["third"]
   - id: dot_notation_with_number_on_object
     status: fail
-    result: NOT_SUPPORTED
+    result: []
   - id: dot_notation_with_single_quotes
     status: open
     result: NOT_SUPPORTED
@@ -198,10 +189,10 @@ queries:
     result: [{"key-dash": "value"}]
   - id: filter_expression_with_dot_notation_with_number
     status: open
-    result: NOT_SUPPORTED
+    result: []
   - id: filter_expression_with_dot_notation_with_number_on_array
     status: open
-    result: NOT_SUPPORTED
+    result: [["first", "second", "third", "forth", "fifth"]]
   - id: filter_expression_with_equals
     status: error
   - id: filter_expression_with_equals_array
@@ -253,13 +244,7 @@ queries:
     result: []
   - id: filter_expression_with_equals_string
     status: open
-    result: NOT_SUPPORTED
-  - id: filter_expression_with_equals_string_with_current_object_literal
-    status: fail
-    result: NOT_SUPPORTED
-  - id: filter_expression_with_equals_string_with_dot_literal
-    status: fail
-    result: NOT_SUPPORTED
+    result: [{"key": "value"}, {"key": {"key": "value"}}]
   - id: filter_expression_with_equals_true
     status: open
     result: [{"key": true}]

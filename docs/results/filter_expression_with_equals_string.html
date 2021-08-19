@@ -241,12 +241,16 @@ JavaScript (jsonpath-plus)
 Java (com.github.jsurfer)
 </h4>
 
-<p>Not supported</p>
-
-<pre><code>line 1:11 token recognition error at: '"'
-line 1:17 token recognition error at: '"'
-line 1:12 no viable alternative at input '@.key==value'
-org.antlr.v4.runtime.misc.ParseCancellationException
+<pre><code>[
+  {
+    "key": "value"
+  },
+  {
+    "key": {
+      "key": "value"
+    }
+  }
+]
 </code></pre>
 
 <h4 id="Java_com.jayway.jsonpath">

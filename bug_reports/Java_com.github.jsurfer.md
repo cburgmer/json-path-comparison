@@ -367,48 +367,6 @@ The following queries provide results that do not match those of other implement
   org.antlr.v4.runtime.misc.ParseCancellationException
   ```
 
-- [ ] `$["key"]`
-  Input:
-  ```
-  {
-    "key": "value"
-  }
-  ```
-  Expected output:
-  ```
-  ["value"]
-  ```
-  Actual output:
-  NOT_SUPPORTED
-  ```
-  line 1:2 token recognition error at: '"'
-  line 1:6 token recognition error at: '"'
-  line 1:3 no viable alternative at input '[key'
-  org.antlr.v4.runtime.misc.ParseCancellationException
-  ```
-
-- [ ] `$[""]`
-  Input:
-  ```
-  {
-    "": 42,
-    "''": 123,
-    "\"\"": 222
-  }
-  ```
-  Expected output:
-  ```
-  [42]
-  ```
-  Actual output:
-  NOT_SUPPORTED
-  ```
-  line 1:2 token recognition error at: '"'
-  line 1:3 token recognition error at: '"'
-  line 1:4 no viable alternative at input '[]'
-  org.antlr.v4.runtime.misc.ParseCancellationException
-  ```
-
 - [ ] `$[-1]`
   Input:
   ```
@@ -441,6 +399,7 @@ The following queries provide results that do not match those of other implement
   Actual output:
   NOT_SUPPORTED
   ```
+  line 1:2 no viable alternative at input '.true'
   org.antlr.v4.runtime.misc.ParseCancellationException
   ```
 
@@ -458,9 +417,8 @@ The following queries provide results that do not match those of other implement
   ["second"]
   ```
   Actual output:
-  NOT_SUPPORTED
   ```
-  org.antlr.v4.runtime.misc.ParseCancellationException
+  []
   ```
 
 - [ ] `$[?(@.key==42)]`
@@ -567,62 +525,6 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   java.lang.NumberFormatException: Character " is neither a decimal digit number, decimal point, nor "e" notation exponential mark.
-  ```
-
-- [ ] `$[?(@.key=="hi@example.com")]`
-  Input:
-  ```
-  [
-    {
-      "key": "some"
-    },
-    {
-      "key": "value"
-    },
-    {
-      "key": "hi@example.com"
-    }
-  ]
-  ```
-  Expected output:
-  ```
-  [{"key": "hi@example.com"}]
-  ```
-  Actual output:
-  NOT_SUPPORTED
-  ```
-  line 1:11 token recognition error at: '"'
-  line 1:26 token recognition error at: '"'
-  line 1:12 no viable alternative at input '@.key==hi'
-  org.antlr.v4.runtime.misc.ParseCancellationException
-  ```
-
-- [ ] `$[?(@.key=="some.value")]`
-  Input:
-  ```
-  [
-    {
-      "key": "some"
-    },
-    {
-      "key": "value"
-    },
-    {
-      "key": "some.value"
-    }
-  ]
-  ```
-  Expected output:
-  ```
-  [{"key": "some.value"}]
-  ```
-  Actual output:
-  NOT_SUPPORTED
-  ```
-  line 1:11 token recognition error at: '"'
-  line 1:22 token recognition error at: '"'
-  line 1:12 no viable alternative at input '@.key==some'
-  org.antlr.v4.runtime.misc.ParseCancellationException
   ```
 
 - [ ] `$.items[?(@.key1==@.key2)]`

@@ -119,7 +119,7 @@ queries:
     status: open
     result: NOT_SUPPORTED
   - id: dot_notation_with_number_-1
-    status: open
+    status: fail
     result: NOT_SUPPORTED
   - id: dot_notation_with_number_on_object
     status: fail

@@ -706,6 +706,28 @@ The following queries provide results that do not match those of other implement
   illegal characters "屬"
   ```
 
+- [ ] `$.-1`
+  Input:
+  ```
+  [
+    "first",
+    "second",
+    "third",
+    "forth",
+    "fifth"
+  ]
+  ```
+  Expected output:
+  ```
+  []
+  ```
+  Actual output:
+  ```
+  [
+    "fifth"
+  ]
+  ```
+
 - [ ] `$.2`
   Input:
   ```

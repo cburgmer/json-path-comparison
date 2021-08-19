@@ -3,5 +3,5 @@
   "jason": {:hex, :jason, "1.2.2", "ba43e3f2709fd1aa1dce90aaabfd039d000469c05c56f0b8e31978e03fa39052", [:mix], [{:decimal, "~> 1.0 or ~> 2.0", [hex: :decimal, repo: "hexpm", optional: true]}], "hexpm", "18a228f5f0058ee183f29f9eae0805c6e59d61c3b006760668d8d18ff0d12179"},
   "jaxon": {:hex, :jaxon, "1.0.10", "bedd7e3a8ed6325fdfef15aff0063faeab633d4b5ddbe8011051b35092a22f15", [:make, :mix], [{:elixir_make, "~> 0.4", [hex: :elixir_make, repo: "hexpm", optional: false]}], "hexpm", "a65e99fa43320700ac8000e82c5061ff5a898ab2dd97c689376e35575554b7f6"},
   "poison": {:hex, :poison, "3.1.0", "d9eb636610e096f86f25d9a46f35a9facac35609a7591b3be3326e99a0484665", [:mix], [], "hexpm", "fec8660eb7733ee4117b85f55799fd3833eb769a6df71ccf8903e8dc5447cfce"},
-  "warpath": {:hex, :warpath, "0.6.1", "f429920fa6621d277ad51af31055a1684ce2519860e246da0140792cfbb29aef", [:mix], [{:jason, "~> 1.2", [hex: :jason, repo: "hexpm", optional: false]}], "hexpm", "6f00d7d8c3f250aed068fd41b9801b202b69c86c0f146db1036fa56911ae191f"},
+  "warpath": {:hex, :warpath, "0.6.2", "b8732d447378c8b353db7cdc9e2674b0f2276eab0aa489af19161834d0a10706", [:mix], [{:jason, "~> 1.2", [hex: :jason, repo: "hexpm", optional: false]}], "hexpm", "ab4c579b26383e026087c587dd1d28991e6cb74c4dd0ed23bb81a190344eb004"},
 }

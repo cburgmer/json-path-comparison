@@ -12,3 +12,5 @@ github.com/ohler55/ojg v1.9.5 h1:V795EbRunB0RWgX4f3We2PfkKtetCquiGRp0NeJDPRE=
 github.com/ohler55/ojg v1.9.5/go.mod h1:DipxaGtQkxd8U67rc3s5ugRGmaHQW7YfJlN7xAaXu5U=
 github.com/ohler55/ojg v1.12.0 h1:mvqbmI7DB2jnH5AXiQ7PFgY1arLuThyy5a8DDMCryR8=
 github.com/ohler55/ojg v1.12.0/go.mod h1:DipxaGtQkxd8U67rc3s5ugRGmaHQW7YfJlN7xAaXu5U=
+github.com/ohler55/ojg v1.12.5 h1:7NmIMFs4v6PTyqY8X6MuiJEqLHwceESqpNBdF2ghujA=
+github.com/ohler55/ojg v1.12.5/go.mod h1:LBbIVRAgoFbYBXQhRhuEpaJIqq+goSO63/FQ+nyJU88=
