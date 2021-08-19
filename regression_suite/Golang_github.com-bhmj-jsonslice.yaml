@@ -105,7 +105,8 @@ queries:
   - id: dot_notation_on_object_without_key
     status: error
   - id: dot_notation_with_dash
-    status: error
+    status: fail
+    result: 42
   - id: dot_notation_with_double_quotes
     status: open
     result: "value"

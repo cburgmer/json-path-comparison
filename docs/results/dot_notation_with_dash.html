@@ -8,7 +8,14 @@
 <p>Selector: <code>$.key-dash</code></p>
 
 <pre><code>{
-  "key-dash": "value"
+  "key": 42,
+  "key-": 43,
+  "-": 44,
+  "dash": 45,
+  "-dash": 46,
+  "": 47,
+  "key-dash": "value",
+  "something": "else"
 }
 </code></pre>
 
@@ -67,6 +74,14 @@ Golang (github.com-PaesslerAG-jsonpath)
 <p>Not supported</p>
 
 <pre><code>parsing error: $.key-dash	:1:6 - 1:7 unexpected "-" while scanning operator
+</code></pre>
+
+<h4 id="Golang_github.com-bhmj-jsonslice">
+Golang (github.com-bhmj-jsonslice)
+¹
+</h4>
+
+<pre><code>42
 </code></pre>
 
 <h4 id="Golang_github.com-ohler55-ojg">
@@ -131,16 +146,6 @@ dotNET (Manatee.Json)
 <p>Not supported</p>
 
 <pre><code>Unrecognized JSON Path element. Path up to error: '$.key'
-</code></pre>
-
-<h3>Errors</h3>
-
-<h4 id="Golang_github.com-bhmj-jsonslice">
-Golang (github.com-bhmj-jsonslice)
-¹
-</h4>
-
-<pre><code>No JSON output received
 </code></pre>
 
 <h2>Footnotes</h2>

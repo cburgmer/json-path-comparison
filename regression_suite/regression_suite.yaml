@@ -526,7 +526,7 @@ queries:
     scalar-not-found-consensus: NOT_FOUND
   - id: dot_notation_with_dash
     selector: "$.key-dash"
-    document: {"key-dash": "value"}
+    document: {"key": 42, "key-": 43, "-": 44, "dash": 45, "-dash": 46, "": 47, "key-dash": "value", "something": "else"}
     consensus: ["value"]
     scalar-consensus: "value"
   - id: dot_notation_with_double_quotes

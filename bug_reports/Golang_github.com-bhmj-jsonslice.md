@@ -512,16 +512,23 @@ The following queries provide results that do not match those of other implement
   Input:
   ```
   {
-    "key-dash": "value"
+    "key": 42,
+    "key-": 43,
+    "-": 44,
+    "dash": 45,
+    "-dash": 46,
+    "": 47,
+    "key-dash": "value",
+    "something": "else"
   }
   ```
   Expected output:
   ```
   "value"
   ```
-  Error:
+  Actual output:
   ```
-  No JSON output received
+  42
   ```
 
 - [ ] `$.`
