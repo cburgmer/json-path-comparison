@@ -13,7 +13,7 @@ Test the implementation's ninja build script via (using Clojure as an example):
 
 Test a query by running (again Clojure as example):
 
-    ./src/query_implementation.sh queries/array_index implementations/Clojure_json-path
+    ./src/query_implementation.sh queries/array_slice implementations/Clojure_json-path
 
 ### Add a new query
 
