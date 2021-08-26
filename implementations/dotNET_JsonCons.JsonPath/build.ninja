@@ -1,0 +1,9 @@
+root = implementations/dotNET_JsonCons.JsonPath
+builddir = $root/build
+
+rule build
+  command = $root/install.sh $$(basename $$(dirname $out))
+
+build $builddir/Dotnet_JsonCons.JsonPath: build | $root/Dotnet_JsonCons.JsonPath.csproj $root/Program.cs
+
+build $root/install: phony $builddir/Dotnet_JsonCons.JsonPath
