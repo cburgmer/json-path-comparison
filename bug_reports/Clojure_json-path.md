@@ -3056,6 +3056,10 @@ The following queries provide results that do not match those of other implement
     "a": 1
   }
   ```
+  Expected output:
+  ```
+  [1, 1]
+  ```
   Error:
   ```
   java.lang.Exception object must be an array.

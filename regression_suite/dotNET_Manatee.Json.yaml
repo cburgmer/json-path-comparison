@@ -320,7 +320,7 @@ queries:
     status: fail
     result: ["a"]
   - id: union_with_duplication_from_object
-    status: open
+    status: fail
     result: NOT_SUPPORTED
   - id: union_with_filter
     status: open

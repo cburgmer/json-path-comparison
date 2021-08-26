@@ -963,6 +963,7 @@ queries:
   - id: union_with_duplication_from_object
     selector: "$['a','a']"
     document: {"a": 1}
+    consensus: [1, 1]
   - id: union_with_filter
     selector: "$[?(@.key<3),?(@.key>6)]"
     document: [{"key": 1}, {"key": 8}, {"key": 3}, {"key": 10}, {"key": 7}, {"key": 2}, {"key": 6}, {"key": 4}]

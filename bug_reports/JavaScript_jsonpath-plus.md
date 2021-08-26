@@ -1302,6 +1302,22 @@ The following queries provide results that do not match those of other implement
   undefined
   ```
 
+- [ ] `$['a','a']`
+  Input:
+  ```
+  {
+    "a": 1
+  }
+  ```
+  Expected output:
+  ```
+  [1, 1]
+  ```
+  Actual output:
+  ```
+  []
+  ```
+
 - [ ] `$[?(@.key<3),?(@.key>6)]`
   Input:
   ```

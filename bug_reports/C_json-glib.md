@@ -1720,6 +1720,24 @@ The following queries provide results that do not match those of other implement
   Unable to compile selector `$[?(@.address.city=='Berlin')]': Invalid array index definition “?(@.address.city=='Berlin')]”
   ```
 
+- [ ] `$['a','a']`
+  Input:
+  ```
+  {
+    "a": 1
+  }
+  ```
+  Expected output:
+  ```
+  [1, 1]
+  ```
+  Actual output:
+  ```
+  [
+    1
+  ]
+  ```
+
 - [ ] `$['key','another']`
   Input:
   ```

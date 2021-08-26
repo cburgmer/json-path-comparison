@@ -3389,6 +3389,10 @@ The following queries provide results that do not match those of other implement
     "a": 1
   }
   ```
+  Expected output:
+  ```
+  [1, 1]
+  ```
   Error:
   ```
   strconv.Atoi: parsing "'a'": invalid syntax

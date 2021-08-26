@@ -1832,6 +1832,24 @@ The following queries provide results that do not match those of other implement
    Error: searchBeginningWithSlice: not enough input
   ```
 
+- [ ] `$['a','a']`
+  Input:
+  ```
+  {
+    "a": 1
+  }
+  ```
+  Expected output:
+  ```
+  [1, 1]
+  ```
+  Actual output:
+  NOT_SUPPORTED
+  ```
+  Invalid JSONPath: $['a','a']
+   Error: searchBeginningWithSlice: string
+  ```
+
 - [ ] `$['key','another']`
   Input:
   ```

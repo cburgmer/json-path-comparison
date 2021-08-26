@@ -1263,6 +1263,23 @@ The following queries provide results that do not match those of other implement
   Evaluation of embedded Perl 6 code not allowed (construct with :allow-eval)
   ```
 
+- [ ] `$['a','a']`
+  Input:
+  ```
+  {
+    "a": 1
+  }
+  ```
+  Expected output:
+  ```
+  [1, 1]
+  ```
+  Actual output:
+  NOT_SUPPORTED
+  ```
+  JSON path parse error at position 1
+  ```
+
 - [ ] `$['key','another']`
   Input:
   ```

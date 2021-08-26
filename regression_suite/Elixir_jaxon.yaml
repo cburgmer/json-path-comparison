@@ -520,7 +520,7 @@ queries:
     status: fail
     result: []
   - id: union_with_duplication_from_object
-    status: open
+    status: fail
     result: []
   - id: union_with_filter
     status: open

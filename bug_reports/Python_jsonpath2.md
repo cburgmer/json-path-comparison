@@ -1022,6 +1022,24 @@ The following queries provide results that do not match those of other implement
   ValueError("line 1:20 token recognition error at: '''")
   ```
 
+- [ ] `$['a','a']`
+  Input:
+  ```
+  {
+    "a": 1
+  }
+  ```
+  Expected output:
+  ```
+  [1, 1]
+  ```
+  Actual output:
+  NOT_SUPPORTED
+  ```
+  line 1:2 token recognition error at: '''
+  ValueError("line 1:2 token recognition error at: '''")
+  ```
+
 - [ ] `$['key','another']`
   Input:
   ```

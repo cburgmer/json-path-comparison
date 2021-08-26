@@ -307,9 +307,6 @@ queries:
   - id: script_expression
     status: open
     result: ["fifth"]
-  - id: union_with_duplication_from_object
-    status: open
-    result: [1, 1]
   - id: union_with_filter
     status: error
   - id: union_with_keys_after_array_slice

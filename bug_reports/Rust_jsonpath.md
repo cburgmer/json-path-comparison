@@ -1828,6 +1828,23 @@ The following queries provide results that do not match those of other implement
   parsing error
   ```
 
+- [ ] `$['a','a']`
+  Input:
+  ```
+  {
+    "a": 1
+  }
+  ```
+  Expected output:
+  ```
+  [1, 1]
+  ```
+  Actual output:
+  NOT_SUPPORTED
+  ```
+  parsing error
+  ```
+
 - [ ] `$['key','another']`
   Input:
   ```

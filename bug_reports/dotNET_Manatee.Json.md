@@ -309,6 +309,23 @@ The following queries provide results that do not match those of other implement
   ]
   ```
 
+- [ ] `$['a','a']`
+  Input:
+  ```
+  {
+    "a": 1
+  }
+  ```
+  Expected output:
+  ```
+  [1, 1]
+  ```
+  Actual output:
+  NOT_SUPPORTED
+  ```
+  Expected close bracket. Path up to error: '$'
+  ```
+
 - [ ] `$['key','another']`
   Input:
   ```
