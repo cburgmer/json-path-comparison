@@ -1,8 +1,8 @@
 [
   {"key": "something"},
-  {"key": "Motörhead"},
-  {"key": "motörhead"},
+  {"key": "Mot\u00f6rhead"},
+  {"key": "mot\u00f6rhead"},
   {"key": "Motorhead"},
-  {"key": "Motörhead"},
-  {"key": "motörhead"}
+  {"key": "Motoo\u0308rhead"},
+  {"key": "motoo\u0308rhead"}
 ]

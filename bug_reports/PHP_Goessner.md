@@ -2031,10 +2031,10 @@ The following queries provide results that do not match those of other implement
       "key": "Motorhead"
     },
     {
-      "key": "Moto\u0308rhead"
+      "key": "Motoo\u0308rhead"
     },
     {
-      "key": "moto\u0308rhead"
+      "key": "motoo\u0308rhead"
     }
   ]
   ```
@@ -2110,6 +2110,35 @@ The following queries provide results that do not match those of other implement
   Expected output:
   ```
   [{"key": "value"}]
+  ```
+  Error:
+  ```
+  ArgumentCountError
+  ```
+
+- [ ] `$[?(@.key=="Mot\u00f6rhead")]`
+  Input:
+  ```
+  [
+    {
+      "key": "something"
+    },
+    {
+      "key": "Mot\u00f6rhead"
+    },
+    {
+      "key": "mot\u00f6rhead"
+    },
+    {
+      "key": "Motorhead"
+    },
+    {
+      "key": "Motoo\u0308rhead"
+    },
+    {
+      "key": "motoo\u0308rhead"
+    }
+  ]
   ```
   Error:
   ```

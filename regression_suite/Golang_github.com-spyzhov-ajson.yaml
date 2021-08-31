@@ -215,6 +215,9 @@ queries:
   - id: filter_expression_with_equals_string
     status: open
     result: [{"key": "value"}]
+  - id: filter_expression_with_equals_string_with_unicode_character_escape
+    status: open
+    result: [{"key": "Mot\u00f6rhead"}]
   - id: filter_expression_with_equals_true
     status: open
     result: [{"key": true}]

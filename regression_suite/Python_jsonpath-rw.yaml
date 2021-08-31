@@ -313,6 +313,9 @@ queries:
   - id: filter_expression_with_equals_string_with_single_quotes
     status: fail
     result: NOT_SUPPORTED
+  - id: filter_expression_with_equals_string_with_unicode_character_escape
+    status: open
+    result: NOT_SUPPORTED
   - id: filter_expression_with_equals_true
     status: open
     result: NOT_SUPPORTED

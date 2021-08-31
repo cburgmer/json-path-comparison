@@ -1175,10 +1175,10 @@ The following queries provide results that do not match those of other implement
       "key": "Motorhead"
     },
     {
-      "key": "Moto\u0308rhead"
+      "key": "Motoo\u0308rhead"
     },
     {
-      "key": "moto\u0308rhead"
+      "key": "motoo\u0308rhead"
     }
   ]
   ```
@@ -1188,9 +1188,7 @@ The following queries provide results that do not match those of other implement
   ```
   Actual output:
   ```
-  [
-    "Mot\u00f6rhead"
-  ]
+  []
   ```
 
 - [ ] `$[?(@.key=="hi@example.com")]`

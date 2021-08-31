@@ -408,46 +408,6 @@ The following queries provide results that do not match those of other implement
   ]
   ```
 
-- [ ] `$[?(@.key=="Motörhead")]`
-  Input:
-  ```
-  [
-    {
-      "key": "something"
-    },
-    {
-      "key": "Mot\u00f6rhead"
-    },
-    {
-      "key": "mot\u00f6rhead"
-    },
-    {
-      "key": "Motorhead"
-    },
-    {
-      "key": "Moto\u0308rhead"
-    },
-    {
-      "key": "moto\u0308rhead"
-    }
-  ]
-  ```
-  Expected output:
-  ```
-  [{"key": "Mot\u00f6rhead"}]
-  ```
-  Actual output:
-  ```
-  [
-    {
-      "key": "Mot\u00f6rhead"
-    },
-    {
-      "key": "Moto\u0308rhead"
-    }
-  ]
-  ```
-
 - [ ] `$[?(@.d in [2, 3])]`
   Input:
   ```

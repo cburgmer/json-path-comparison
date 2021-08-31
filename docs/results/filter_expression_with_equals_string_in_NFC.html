@@ -9,11 +9,11 @@
 
 <pre><code>[
   {"key": "something"},
-  {"key": "Motörhead"},
-  {"key": "motörhead"},
+  {"key": "Mot\u00f6rhead"},
+  {"key": "mot\u00f6rhead"},
   {"key": "Motorhead"},
-  {"key": "Motörhead"},
-  {"key": "motörhead"}
+  {"key": "Motoo\u0308rhead"},
+  {"key": "motoo\u0308rhead"}
 ]
 </code></pre>
 
@@ -34,9 +34,7 @@
 Bash (JSONPath.sh)
 </h4>
 
-<pre><code>[
-  "Mot\u00f6rhead"
-]
+<pre><code>[]
 </code></pre>
 
 <h4 id="C_json-glib">
@@ -86,6 +84,14 @@ Erlang (ejsonpath)
 <pre><code>[]
 </code></pre>
 
+<h4 id="Golang_github.com-bhmj-jsonslice">
+Golang (github.com-bhmj-jsonslice)
+¹
+</h4>
+
+<pre><code>[]
+</code></pre>
+
 <h4 id="Golang_github.com-oliveagle-jsonpath">
 Golang (github.com-oliveagle-jsonpath)
 ¹
@@ -102,36 +108,6 @@ Kotlin (com.nfeld.jsonpathkt)
 <p>Not supported</p>
 
 <pre><code>Unexpected char, char=?, index=2
-</code></pre>
-
-<h4 id="Objective-C_SMJJSONPath">
-Objective-C (SMJJSONPath)
-¹
-³
-</h4>
-
-<pre><code>[
-  {
-    "key": "Mot\u00f6rhead"
-  },
-  {
-    "key": "Moto\u0308rhead"
-  }
-]
-</code></pre>
-
-<h4 id="PHP_remorhaz-jsonpath">
-PHP (remorhaz-jsonpath)
-</h4>
-
-<pre><code>[
-  {
-    "key": "Mot\u00f6rhead"
-  },
-  {
-    "key": "Moto\u0308rhead"
-  }
-]
 </code></pre>
 
 <h4 id="Python_jsonpath-rw">

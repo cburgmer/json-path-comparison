@@ -230,6 +230,9 @@ queries:
   - id: filter_expression_with_equals_string
     status: open
     result: [{"key": "value"}, {"key": 0}]
+  - id: filter_expression_with_equals_string_with_unicode_character_escape
+    status: open
+    result: []
   - id: filter_expression_with_equals_true
     status: open
     result: [{"key": true}, {"key": "value"}, {"key": 1}, {"key": -1}, {"key": 42}, {"key": {}}]
