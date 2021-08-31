@@ -40,7 +40,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  implementations/Perl_JSON-Path/run.sh: line 9: 20951 Killed                  timeout -v 5 perl -I ./build/lib/perl5/ main.pl "$@"
+  timeout: sending signal TERM to command ‘perl’
   ```
 
 - [ ] `$[-4:1]`

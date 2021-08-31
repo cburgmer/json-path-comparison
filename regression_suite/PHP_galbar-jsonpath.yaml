@@ -27,9 +27,6 @@ queries:
   - id: array_slice_with_open_end_and_negative_step
     status: open
     result: ["forth", "third", "second", "first"]
-  - id: array_slice_with_open_start
-    status: fail
-    result: NOT_FOUND
   - id: array_slice_with_open_start_and_negative_step
     status: open
     result: ["fifth", "forth"]
