@@ -937,6 +937,40 @@ The following queries provide results that do not match those of other implement
   JsonPathLexerError('Error on line 1, col 2: Unexpected character: ? ')
   ```
 
+- [ ] `$[?(@.key=="Motörhead")]`
+  Input:
+  ```
+  [
+    {
+      "key": "something"
+    },
+    {
+      "key": "Mot\u00f6rhead"
+    },
+    {
+      "key": "mot\u00f6rhead"
+    },
+    {
+      "key": "Motorhead"
+    },
+    {
+      "key": "Moto\u0308rhead"
+    },
+    {
+      "key": "moto\u0308rhead"
+    }
+  ]
+  ```
+  Expected output:
+  ```
+  [{"key": "Mot\u00f6rhead"}]
+  ```
+  Actual output:
+  NOT_SUPPORTED
+  ```
+  JsonPathLexerError('Error on line 1, col 2: Unexpected character: ? ')
+  ```
+
 - [ ] `$[?(@.key=="hi@example.com")]`
   Input:
   ```

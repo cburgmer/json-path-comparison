@@ -1596,6 +1596,40 @@ The following queries provide results that do not match those of other implement
   Unable to compile selector `$[?(@.key==43)]': Invalid array index definition “?(@.key==43)]”
   ```
 
+- [ ] `$[?(@.key=="Motörhead")]`
+  Input:
+  ```
+  [
+    {
+      "key": "something"
+    },
+    {
+      "key": "Mot\u00f6rhead"
+    },
+    {
+      "key": "mot\u00f6rhead"
+    },
+    {
+      "key": "Motorhead"
+    },
+    {
+      "key": "Moto\u0308rhead"
+    },
+    {
+      "key": "moto\u0308rhead"
+    }
+  ]
+  ```
+  Expected output:
+  ```
+  [{"key": "Mot\u00f6rhead"}]
+  ```
+  Actual output:
+  NOT_SUPPORTED
+  ```
+  Unable to compile selector `$[?(@.key=="Motörhead")]': Invalid array index definition “?(@.key=="Motörhead")]”
+  ```
+
 - [ ] `$[?(@.key=="hi@example.com")]`
   Input:
   ```

@@ -416,6 +416,40 @@ The following queries provide results that do not match those of other implement
   Unexpected char, char=?, index=2
   ```
 
+- [ ] `$[?(@.key=="Motörhead")]`
+  Input:
+  ```
+  [
+    {
+      "key": "something"
+    },
+    {
+      "key": "Mot\u00f6rhead"
+    },
+    {
+      "key": "mot\u00f6rhead"
+    },
+    {
+      "key": "Motorhead"
+    },
+    {
+      "key": "Moto\u0308rhead"
+    },
+    {
+      "key": "moto\u0308rhead"
+    }
+  ]
+  ```
+  Expected output:
+  ```
+  [{"key": "Mot\u00f6rhead"}]
+  ```
+  Actual output:
+  NOT_SUPPORTED
+  ```
+  Unexpected char, char=?, index=2
+  ```
+
 - [ ] `$[?(@.key=="hi@example.com")]`
   Input:
   ```

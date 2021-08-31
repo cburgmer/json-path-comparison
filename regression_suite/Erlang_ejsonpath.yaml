@@ -221,6 +221,9 @@ queries:
   - id: filter_expression_with_equals_string
     status: open
     result: [{"key": "value"}]
+  - id: filter_expression_with_equals_string_in_NFC
+    status: fail
+    result: []
   - id: filter_expression_with_equals_true
     status: open
     result: NOT_SUPPORTED
