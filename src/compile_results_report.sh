@@ -210,8 +210,22 @@ report() {
 </ul>"
 }
 
+highlight_effect() {
+    cat
+    cat <<EOF
+<style>
+h3:target,
+h4:target,
+tbody tr:target,
+tbody tr:hover {
+  background-color: #ffa !important;
+}
+</style>
+EOF
+}
+
 main() {
-    report | beautiful_html
+    report | beautiful_html | highlight_effect
 }
 
 main
