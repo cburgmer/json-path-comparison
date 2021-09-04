@@ -416,27 +416,6 @@ The following queries provide results that do not match those of other implement
   could not select value, invalid key: expected number but got length (string)
   ```
 
-- [ ] `$.-1`
-  Input:
-  ```
-  [
-    "first",
-    "second",
-    "third",
-    "forth",
-    "fifth"
-  ]
-  ```
-  Expected output:
-  ```
-  null
-  ```
-  Actual output:
-  NOT_SUPPORTED
-  ```
-  parsing error: $.-1	:1:3 - 1:4 unexpected "-" while scanning JSON select expected Ident, "." or "*"
-  ```
-
 - [ ] `$.2`
   Input:
   ```

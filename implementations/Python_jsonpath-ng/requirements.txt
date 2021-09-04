@@ -1,0 +1,2 @@
+jsonpath-ng==v1.5.2
+pur==5.4.2

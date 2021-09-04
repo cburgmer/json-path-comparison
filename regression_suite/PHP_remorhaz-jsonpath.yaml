@@ -79,7 +79,7 @@ queries:
     status: open
     result: []
   - id: dot_notation_with_number_-1
-    status: fail
+    status: open
     result: NOT_SUPPORTED
   - id: dot_notation_with_single_quotes
     status: open

@@ -581,10 +581,6 @@ queries:
   - id: dot_notation_with_number_-1
     selector: "$.-1"
     document: ["first", "second", "third", "forth", "fifth"]
-    consensus: []
-    scalar-consensus: null
-    not-found-consensus: NOT_FOUND
-    scalar-not-found-consensus: NOT_FOUND
   - id: dot_notation_with_number_on_object
     selector: "$.2"
     document: {"a": "first", "2": "second", "b": "third"}

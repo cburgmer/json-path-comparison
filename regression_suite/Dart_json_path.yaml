@@ -103,6 +103,9 @@ queries:
   - id: dot_notation_with_number
     status: open
     result: []
+  - id: dot_notation_with_number_-1
+    status: open
+    result: []
   - id: dot_notation_with_single_quotes
     status: open
     result: [42]

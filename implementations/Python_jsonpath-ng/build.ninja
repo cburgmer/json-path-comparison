@@ -1,0 +1,9 @@
+root = implementations/Python_jsonpath-ng
+builddir = $root/build
+
+rule install
+  command = pip3 install -r $root/requirements.txt --prefix $builddir/deps && echo > $out
+
+build $builddir/pip_installed: install | $root/requirements.txt
+
+build $root/install: phony $builddir/pip_installed
