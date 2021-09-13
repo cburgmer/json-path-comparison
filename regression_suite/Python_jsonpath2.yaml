@@ -335,6 +335,9 @@ queries:
   - id: filter_expression_with_negation_and_less_than
     status: open
     result: NOT_SUPPORTED
+  - id: filter_expression_with_negation_and_without_value
+    status: open
+    result: NOT_SUPPORTED
   - id: filter_expression_with_not_equals
     status: open
     result: []
@@ -391,7 +394,7 @@ queries:
     result: [[1, 3, "nice", true, null, false, {}, [], -1, 0, ""]]
   - id: filter_expression_without_value
     status: open
-    result: NOT_SUPPORTED
+    result: []
   - id: function_sum
     status: open
     result: NOT_SUPPORTED

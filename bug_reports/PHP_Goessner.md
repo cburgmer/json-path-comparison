@@ -2640,6 +2640,53 @@ The following queries provide results that do not match those of other implement
   ArgumentCountError
   ```
 
+- [ ] `$[?(!@.key)]`
+  Input:
+  ```
+  [
+    {
+      "some": "some value"
+    },
+    {
+      "key": true
+    },
+    {
+      "key": false
+    },
+    {
+      "key": null
+    },
+    {
+      "key": "value"
+    },
+    {
+      "key": ""
+    },
+    {
+      "key": 0
+    },
+    {
+      "key": 1
+    },
+    {
+      "key": -1
+    },
+    {
+      "key": 42
+    },
+    {
+      "key": {}
+    },
+    {
+      "key": []
+    }
+  ]
+  ```
+  Error:
+  ```
+  ArgumentCountError
+  ```
+
 - [ ] `$[?(@.key!=42)]`
   Input:
   ```
@@ -3429,7 +3476,7 @@ The following queries provide results that do not match those of other implement
   ```
   jsonpath returned false, this might indicate an error```
 
-- [ ] `$[?(!@.key)]`
+- [ ] `$[?(@.key)]`
   Input:
   ```
   [

@@ -280,6 +280,8 @@ queries:
     status: error
   - id: filter_expression_with_negation_and_less_than
     status: error
+  - id: filter_expression_with_negation_and_without_value
+    status: error
   - id: filter_expression_with_not_equals
     status: error
   - id: filter_expression_with_parent_axis_operator

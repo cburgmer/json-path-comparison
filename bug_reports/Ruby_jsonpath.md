@@ -1939,6 +1939,53 @@ The following queries provide results that do not match those of other implement
   wrong number of arguments (given 1, expected 0)
   ```
 
+- [ ] `$[?(!@.key)]`
+  Input:
+  ```
+  [
+    {
+      "some": "some value"
+    },
+    {
+      "key": true
+    },
+    {
+      "key": false
+    },
+    {
+      "key": null
+    },
+    {
+      "key": "value"
+    },
+    {
+      "key": ""
+    },
+    {
+      "key": 0
+    },
+    {
+      "key": 1
+    },
+    {
+      "key": -1
+    },
+    {
+      "key": 42
+    },
+    {
+      "key": {}
+    },
+    {
+      "key": []
+    }
+  ]
+  ```
+  Error:
+  ```
+  wrong number of arguments (given 1, expected 0)
+  ```
+
 - [ ] `$[*].bookmarks[?(@.page == 45)]^^^`
   Input:
   ```
@@ -2255,53 +2302,6 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   invalid value for Integer(): "@.key==42"
-  ```
-
-- [ ] `$[?(!@.key)]`
-  Input:
-  ```
-  [
-    {
-      "some": "some value"
-    },
-    {
-      "key": true
-    },
-    {
-      "key": false
-    },
-    {
-      "key": null
-    },
-    {
-      "key": "value"
-    },
-    {
-      "key": ""
-    },
-    {
-      "key": 0
-    },
-    {
-      "key": 1
-    },
-    {
-      "key": -1
-    },
-    {
-      "key": 42
-    },
-    {
-      "key": {}
-    },
-    {
-      "key": []
-    }
-  ]
-  ```
-  Error:
-  ```
-  wrong number of arguments (given 1, expected 0)
   ```
 
 - [ ] `$(key,more)`

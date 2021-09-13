@@ -5,7 +5,7 @@
 
 <h2>Setup</h2>
 
-<p>Selector: <code>$[?(!@.key)]</code></p>
+<p>Selector: <code>$[?(@.key)]</code></p>
 
 <pre><code>[
   {
@@ -64,7 +64,7 @@ C (json-glib)
 
 <p>Not supported</p>
 
-<pre><code>Unable to compile selector `$[?(!@.key)]': Invalid array index definition “?(!@.key)]”
+<pre><code>Unable to compile selector `$[?(@.key)]': Invalid array index definition “?(@.key)]”
 </code></pre>
 
 <h4 id="Clojure_json-path">
@@ -112,22 +112,22 @@ Cpp (jsoncons)
 
 <pre><code>[
   {
-    "some": "some value"
+    "key": true
   },
   {
-    "key": false
+    "key": "value"
   },
   {
-    "key": null
+    "key": 0
   },
   {
-    "key": ""
+    "key": 1
   },
   {
-    "key": {}
+    "key": -1
   },
   {
-    "key": []
+    "key": 42
   }
 ]
 </code></pre>
@@ -147,7 +147,7 @@ Elixir (ExJsonPath)
 
 <p>Not supported</p>
 
-<pre><code>illegal characters "!@"
+<pre><code>syntax error before: ')'
 </code></pre>
 
 <h4 id="Elixir_jaxon">
@@ -162,28 +162,9 @@ Elixir (warpath)
 ¹
 </h4>
 
-<p>Not supported</p>
-
-<pre><code>Invalid syntax on line 1, {:illegal, '!@'}
-</code></pre>
-
-<h4 id="Golang_github.com-PaesslerAG-jsonpath">
-Golang (github.com-PaesslerAG-jsonpath)
-¹
-</h4>
-
-<p>Not supported</p>
-
-<pre><code>parsing error: $[?(!@.key)]	:1:5 - 1:6 unexpected "!" while scanning extensions
-</code></pre>
-
-<h4 id="Golang_github.com-ohler55-ojg">
-Golang (github.com-ohler55-ojg)
-</h4>
-
 <pre><code>[
   {
-    "some": "some value"
+    "key": true
   },
   {
     "key": false
@@ -218,6 +199,103 @@ Golang (github.com-ohler55-ojg)
 ]
 </code></pre>
 
+<h4 id="Erlang_ejsonpath">
+Erlang (ejsonpath)
+</h4>
+
+<pre><code>[
+  {
+    "key": true
+  },
+  {
+    "key": false
+  },
+  {
+    "key": null
+  },
+  {
+    "key": "value"
+  },
+  {
+    "key": ""
+  },
+  {
+    "key": 0
+  },
+  {
+    "key": 1
+  },
+  {
+    "key": -1
+  },
+  {
+    "key": 42
+  },
+  {
+    "key": {}
+  },
+  {
+    "key": []
+  }
+]
+</code></pre>
+
+<h4 id="Golang_github.com-PaesslerAG-jsonpath">
+Golang (github.com-PaesslerAG-jsonpath)
+¹
+</h4>
+
+<pre><code>[
+  {
+    "key": true
+  },
+  {
+    "key": 1
+  },
+  {
+    "key": -1
+  },
+  {
+    "key": 42
+  }
+]
+</code></pre>
+
+<h4 id="Golang_github.com-bhmj-jsonslice">
+Golang (github.com-bhmj-jsonslice)
+¹
+</h4>
+
+<pre><code>[
+  {
+    "key": true
+  },
+  {
+    "key": "value"
+  },
+  {
+    "key": 1
+  },
+  {
+    "key": 42
+  },
+  {
+    "key": {}
+  },
+  {
+    "key": []
+  }
+]
+</code></pre>
+
+<h4 id="Golang_github.com-ohler55-ojg">
+Golang (github.com-ohler55-ojg)
+</h4>
+
+<p>Not supported</p>
+
+<pre><code></code></pre>
+
 <h4 id="Golang_github.com-oliveagle-jsonpath">
 Golang (github.com-oliveagle-jsonpath)
 ¹
@@ -226,13 +304,66 @@ Golang (github.com-oliveagle-jsonpath)
 <pre><code>[]
 </code></pre>
 
+<h4 id="Golang_github.com-spyzhov-ajson">
+Golang (github.com-spyzhov-ajson)
+</h4>
+
+<pre><code>[
+  {
+    "key": true
+  },
+  {
+    "key": "value"
+  },
+  {
+    "key": 1
+  },
+  {
+    "key": -1
+  },
+  {
+    "key": 42
+  }
+]
+</code></pre>
+
 <h4 id="Golang_github.com-vmware-labs-yaml-jsonpath">
 Golang (github.com-vmware-labs-yaml-jsonpath)
 </h4>
 
 <pre><code>[
   {
-    "some": "some value"
+    "key": true
+  },
+  {
+    "key": false
+  },
+  {
+    "key": null
+  },
+  {
+    "key": "value"
+  },
+  {
+    "key": ""
+  },
+  {
+    "key": 0
+  },
+  {
+    "key": 1
+  },
+  {
+    "key": -1
+  },
+  {
+    "key": 42
+  },
+  {
+    "key": {}
+  },
+  {
+    "key": []
   }
 ]
 </code></pre>
@@ -244,7 +375,7 @@ Haskell (jsonpath)
 
 <p>Not supported</p>
 
-<pre><code>Invalid JSONPath: $[?(!@.key)]
+<pre><code>Invalid JSONPath: $[?(@.key)]
  Error: searchBeginningWithSlice: string
 </code></pre>
 
@@ -255,19 +386,25 @@ JavaScript (Goessner)
 
 <pre><code>[
   {
-    "some": "some value"
+    "key": true
   },
   {
-    "key": false
+    "key": "value"
   },
   {
-    "key": null
+    "key": 1
   },
   {
-    "key": ""
+    "key": -1
   },
   {
-    "key": 0
+    "key": 42
+  },
+  {
+    "key": {}
+  },
+  {
+    "key": []
   }
 ]
 </code></pre>
@@ -278,19 +415,22 @@ JavaScript (brunerd)
 
 <pre><code>[
   {
-    "some": "some value"
+    "key": true
   },
   {
-    "key": false
+    "key": "value"
   },
   {
-    "key": null
+    "key": 1
   },
   {
-    "key": ""
+    "key": 42
   },
   {
-    "key": 0
+    "key": {}
+  },
+  {
+    "key": []
   }
 ]
 </code></pre>
@@ -301,19 +441,25 @@ JavaScript (jsonpath)
 
 <pre><code>[
   {
-    "some": "some value"
+    "key": true
   },
   {
-    "key": false
+    "key": "value"
   },
   {
-    "key": null
+    "key": 1
   },
   {
-    "key": ""
+    "key": -1
   },
   {
-    "key": 0
+    "key": 42
+  },
+  {
+    "key": {}
+  },
+  {
+    "key": []
   }
 ]
 </code></pre>
@@ -324,19 +470,25 @@ JavaScript (jsonpath-plus)
 
 <pre><code>[
   {
-    "some": "some value"
+    "key": true
   },
   {
-    "key": false
+    "key": "value"
   },
   {
-    "key": null
+    "key": 1
   },
   {
-    "key": ""
+    "key": -1
   },
   {
-    "key": 0
+    "key": 42
+  },
+  {
+    "key": {}
+  },
+  {
+    "key": []
   }
 ]
 </code></pre>
@@ -345,9 +497,41 @@ JavaScript (jsonpath-plus)
 Java (com.github.jsurfer)
 </h4>
 
-<p>Not supported</p>
-
-<pre><code>org.antlr.v4.runtime.misc.ParseCancellationException
+<pre><code>[
+  {
+    "key": true
+  },
+  {
+    "key": false
+  },
+  {
+    "key": null
+  },
+  {
+    "key": "value"
+  },
+  {
+    "key": ""
+  },
+  {
+    "key": 0
+  },
+  {
+    "key": 1
+  },
+  {
+    "key": -1
+  },
+  {
+    "key": 42
+  },
+  {
+    "key": {}
+  },
+  {
+    "key": []
+  }
+]
 </code></pre>
 
 <h4 id="Java_com.jayway.jsonpath">
@@ -358,7 +542,37 @@ Java (com.jayway.jsonpath)
 
 <pre><code>[
   {
-    "some": "some value"
+    "key": true
+  },
+  {
+    "key": false
+  },
+  {
+    "key": null
+  },
+  {
+    "key": "value"
+  },
+  {
+    "key": ""
+  },
+  {
+    "key": 0
+  },
+  {
+    "key": 1
+  },
+  {
+    "key": -1
+  },
+  {
+    "key": 42
+  },
+  {
+    "key": {}
+  },
+  {
+    "key": []
   }
 ]
 </code></pre>
@@ -381,7 +595,37 @@ Objective-C (SMJJSONPath)
 
 <pre><code>[
   {
-    "some": "some value"
+    "key": true
+  },
+  {
+    "key": false
+  },
+  {
+    "key": null
+  },
+  {
+    "key": "value"
+  },
+  {
+    "key": ""
+  },
+  {
+    "key": 0
+  },
+  {
+    "key": 1
+  },
+  {
+    "key": -1
+  },
+  {
+    "key": 42
+  },
+  {
+    "key": {}
+  },
+  {
+    "key": []
   }
 ]
 </code></pre>
@@ -391,9 +635,38 @@ PHP (galbar-jsonpath)
 ²
 </h4>
 
-<p>Not found</p>
-
-<pre><code>jsonpath returned false, this might indicate an error
+<pre><code>[
+  {
+    "key": true
+  },
+  {
+    "key": null
+  },
+  {
+    "key": "value"
+  },
+  {
+    "key": ""
+  },
+  {
+    "key": 0
+  },
+  {
+    "key": 1
+  },
+  {
+    "key": -1
+  },
+  {
+    "key": 42
+  },
+  {
+    "key": []
+  },
+  {
+    "key": []
+  }
+]
 </code></pre>
 
 <h4 id="PHP_remorhaz-jsonpath">
@@ -402,7 +675,63 @@ PHP (remorhaz-jsonpath)
 
 <pre><code>[
   {
-    "some": "some value"
+    "key": true
+  },
+  {
+    "key": false
+  },
+  {
+    "key": null
+  },
+  {
+    "key": "value"
+  },
+  {
+    "key": ""
+  },
+  {
+    "key": 0
+  },
+  {
+    "key": 1
+  },
+  {
+    "key": -1
+  },
+  {
+    "key": 42
+  },
+  {
+    "key": {}
+  },
+  {
+    "key": []
+  }
+]
+</code></pre>
+
+<h4 id="PHP_softcreatr-jsonpath">
+PHP (softcreatr-jsonpath)
+</h4>
+
+<pre><code>[
+  {
+    "key": true
+  },
+  {
+    "key": "value"
+  },
+  {
+    "key": 1
+  },
+  {
+    "key": -1
+  },
+  {
+    "key": 42
+  },
+  {
+    "key": {}
   }
 ]
 </code></pre>
@@ -414,7 +743,19 @@ Python (jsonpath)
 
 <pre><code>[
   {
-    "some": "some value"
+    "key": true
+  },
+  {
+    "key": "value"
+  },
+  {
+    "key": 1
+  },
+  {
+    "key": -1
+  },
+  {
+    "key": 42
   }
 ]
 </code></pre>
@@ -441,10 +782,7 @@ Python (jsonpath-rw)
 Python (jsonpath2)
 </h4>
 
-<p>Not supported</p>
-
-<pre><code>line 1:4 token recognition error at: '!@'
-ValueError("line 1:4 token recognition error at: '!@'")
+<pre><code>[]
 </code></pre>
 
 <h4 id="Raku_JSON-Path">
@@ -454,6 +792,41 @@ Raku (JSON-Path)
 <p>Not supported</p>
 
 <pre><code>Evaluation of embedded Perl 6 code not allowed (construct with :allow-eval)
+</code></pre>
+
+<h4 id="Ruby_jsonpath">
+Ruby (jsonpath)
+</h4>
+
+<pre><code>[
+  {
+    "key": true
+  },
+  {
+    "key": "value"
+  },
+  {
+    "key": ""
+  },
+  {
+    "key": 0
+  },
+  {
+    "key": 1
+  },
+  {
+    "key": -1
+  },
+  {
+    "key": 42
+  },
+  {
+    "key": {}
+  },
+  {
+    "key": []
+  }
+]
 </code></pre>
 
 <h4 id="Rust_jsonpath">
@@ -469,39 +842,9 @@ Rust (jsonpath)
 Rust (jsonpath_lib)
 </h4>
 
-<p>Not supported</p>
-
-<pre><code>path error: 
-$[?(!@.key)]
-^^^^
-
-</code></pre>
-
-<h4 id="Scala_jsonpath">
-Scala (jsonpath)
-</h4>
-
-<p>Not supported</p>
-
-<pre><code>JPError(end of input expected)
-</code></pre>
-
-<h4 id="dotNET_Json.NET">
-dotNET (Json.NET)
-</h4>
-
-<p>Not supported</p>
-
-<pre><code>Unexpected character while parsing path query: !
-</code></pre>
-
-<h4 id="dotNET_JsonCons.JsonPath">
-dotNET (JsonCons.JsonPath)
-</h4>
-
 <pre><code>[
   {
-    "some": "some value"
+    "key": true
   },
   {
     "key": false
@@ -510,7 +853,22 @@ dotNET (JsonCons.JsonPath)
     "key": null
   },
   {
+    "key": "value"
+  },
+  {
     "key": ""
+  },
+  {
+    "key": 0
+  },
+  {
+    "key": 1
+  },
+  {
+    "key": -1
+  },
+  {
+    "key": 42
   },
   {
     "key": {}
@@ -521,22 +879,151 @@ dotNET (JsonCons.JsonPath)
 ]
 </code></pre>
 
-<h4 id="dotNET_JsonPath.Net">
-dotNET (JsonPath.Net)
-</h4>
-
-<p>Not supported</p>
-
-<pre><code>Could not identify selector
-</code></pre>
-
-<h4 id="dotNET_JsonPathLib">
-dotNET (JsonPathLib)
+<h4 id="Scala_jsonpath">
+Scala (jsonpath)
 </h4>
 
 <pre><code>[
   {
-    "some": "some value"
+    "key": true
+  },
+  {
+    "key": false
+  },
+  {
+    "key": null
+  },
+  {
+    "key": "value"
+  },
+  {
+    "key": ""
+  },
+  {
+    "key": 0
+  },
+  {
+    "key": 1
+  },
+  {
+    "key": -1
+  },
+  {
+    "key": 42
+  },
+  {
+    "key": {}
+  },
+  {
+    "key": []
+  }
+]
+</code></pre>
+
+<h4 id="dotNET_Json.NET">
+dotNET (Json.NET)
+</h4>
+
+<pre><code>[
+  {
+    "key": true
+  },
+  {
+    "key": false
+  },
+  {
+    "key": null
+  },
+  {
+    "key": "value"
+  },
+  {
+    "key": ""
+  },
+  {
+    "key": 0
+  },
+  {
+    "key": 1
+  },
+  {
+    "key": -1
+  },
+  {
+    "key": 42
+  },
+  {
+    "key": {}
+  },
+  {
+    "key": []
+  }
+]
+</code></pre>
+
+<h4 id="dotNET_JsonCons.JsonPath">
+dotNET (JsonCons.JsonPath)
+</h4>
+
+<pre><code>[
+  {
+    "key": true
+  },
+  {
+    "key": "value"
+  },
+  {
+    "key": 0
+  },
+  {
+    "key": 1
+  },
+  {
+    "key": -1
+  },
+  {
+    "key": 42
+  }
+]
+</code></pre>
+
+<h4 id="dotNET_JsonPath.Net">
+dotNET (JsonPath.Net)
+</h4>
+
+<pre><code>[
+  {
+    "key": true
+  },
+  {
+    "key": false
+  },
+  {
+    "key": null
+  },
+  {
+    "key": "value"
+  },
+  {
+    "key": ""
+  },
+  {
+    "key": 0
+  },
+  {
+    "key": 1
+  },
+  {
+    "key": -1
+  },
+  {
+    "key": 42
+  },
+  {
+    "key": {}
+  },
+  {
+    "key": []
   }
 ]
 </code></pre>
@@ -587,7 +1074,7 @@ JSON (Path_Reference_Implementation)
 
 <pre><code> --&gt; 1:3
   |
-1 | $[?(!@.key)]
+1 | $[?(@.key)]
   |   ^---
   |
   = expected unionChild, unionArrayIndex, or sliceStart
@@ -599,34 +1086,42 @@ Proposal (A)
 
 <pre><code>[
   {
-    "some": "some value"
+    "key": true
+  },
+  {
+    "key": false
+  },
+  {
+    "key": null
+  },
+  {
+    "key": "value"
+  },
+  {
+    "key": ""
+  },
+  {
+    "key": 0
+  },
+  {
+    "key": 1
+  },
+  {
+    "key": -1
+  },
+  {
+    "key": 42
+  },
+  {
+    "key": {}
+  },
+  {
+    "key": []
   }
 ]
 </code></pre>
 
 <h3>Errors</h3>
-
-<h4 id="Erlang_ejsonpath">
-Erlang (ejsonpath)
-</h4>
-
-<pre><code>Timeout
-</code></pre>
-
-<h4 id="Golang_github.com-bhmj-jsonslice">
-Golang (github.com-bhmj-jsonslice)
-¹
-</h4>
-
-<pre><code>unknown token at 4
-</code></pre>
-
-<h4 id="Golang_github.com-spyzhov-ajson">
-Golang (github.com-spyzhov-ajson)
-</h4>
-
-<pre><code>wrong request: wrong request: ?(!@.key)
-</code></pre>
 
 <h4 id="PHP_Goessner">
 PHP (Goessner)
@@ -636,13 +1131,6 @@ PHP (Goessner)
 <pre><code>ArgumentCountError
 </code></pre>
 
-<h4 id="PHP_softcreatr-jsonpath">
-PHP (softcreatr-jsonpath)
-</h4>
-
-<pre><code>Error: 'Malformed filter query'
-</code></pre>
-
 <h4 id="Perl_JSON-Path">
 Perl (JSON-Path)
 </h4>
@@ -650,11 +1138,11 @@ Perl (JSON-Path)
 <pre><code>non-safe evaluation, died at main.pl line 11.
 </code></pre>
 
-<h4 id="Ruby_jsonpath">
-Ruby (jsonpath)
+<h4 id="dotNET_JsonPathLib">
+dotNET (JsonPathLib)
 </h4>
 
-<pre><code>wrong number of arguments (given 1, expected 0)
+<pre><code>Unable to cast object of type 'Newtonsoft.Json.Linq.JArray' to type 'System.IConvertible'.
 </code></pre>
 
 <h2>Footnotes</h2>

@@ -2106,6 +2106,53 @@ The following queries provide results that do not match those of other implement
   unknown token at 4
   ```
 
+- [ ] `$[?(!@.key)]`
+  Input:
+  ```
+  [
+    {
+      "some": "some value"
+    },
+    {
+      "key": true
+    },
+    {
+      "key": false
+    },
+    {
+      "key": null
+    },
+    {
+      "key": "value"
+    },
+    {
+      "key": ""
+    },
+    {
+      "key": 0
+    },
+    {
+      "key": 1
+    },
+    {
+      "key": -1
+    },
+    {
+      "key": 42
+    },
+    {
+      "key": {}
+    },
+    {
+      "key": []
+    }
+  ]
+  ```
+  Error:
+  ```
+  unknown token at 4
+  ```
+
 - [ ] `$[?(@.key!=42)]`
   Input:
   ```
@@ -2566,53 +2613,6 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   path: invalid character at 4
-  ```
-
-- [ ] `$[?(!@.key)]`
-  Input:
-  ```
-  [
-    {
-      "some": "some value"
-    },
-    {
-      "key": true
-    },
-    {
-      "key": false
-    },
-    {
-      "key": null
-    },
-    {
-      "key": "value"
-    },
-    {
-      "key": ""
-    },
-    {
-      "key": 0
-    },
-    {
-      "key": 1
-    },
-    {
-      "key": -1
-    },
-    {
-      "key": 42
-    },
-    {
-      "key": {}
-    },
-    {
-      "key": []
-    }
-  ]
-  ```
-  Error:
-  ```
-  unknown token at 4
   ```
 
 - [ ] `$.data.sum()`

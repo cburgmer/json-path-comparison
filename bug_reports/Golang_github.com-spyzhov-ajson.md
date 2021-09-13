@@ -707,6 +707,53 @@ The following queries provide results that do not match those of other implement
   wrong request: wrong request: ?(!(@.key<42))
   ```
 
+- [ ] `$[?(!@.key)]`
+  Input:
+  ```
+  [
+    {
+      "some": "some value"
+    },
+    {
+      "key": true
+    },
+    {
+      "key": false
+    },
+    {
+      "key": null
+    },
+    {
+      "key": "value"
+    },
+    {
+      "key": ""
+    },
+    {
+      "key": 0
+    },
+    {
+      "key": 1
+    },
+    {
+      "key": -1
+    },
+    {
+      "key": 42
+    },
+    {
+      "key": {}
+    },
+    {
+      "key": []
+    }
+  ]
+  ```
+  Error:
+  ```
+  wrong request: wrong request: ?(!@.key)
+  ```
+
 - [ ] `$[?(@.name=~/hello.*/)]`
   Input:
   ```
@@ -1029,53 +1076,6 @@ The following queries provide results that do not match those of other implement
   Actual output:
   ```
   []
-  ```
-
-- [ ] `$[?(!@.key)]`
-  Input:
-  ```
-  [
-    {
-      "some": "some value"
-    },
-    {
-      "key": true
-    },
-    {
-      "key": false
-    },
-    {
-      "key": null
-    },
-    {
-      "key": "value"
-    },
-    {
-      "key": ""
-    },
-    {
-      "key": 0
-    },
-    {
-      "key": 1
-    },
-    {
-      "key": -1
-    },
-    {
-      "key": 42
-    },
-    {
-      "key": {}
-    },
-    {
-      "key": []
-    }
-  ]
-  ```
-  Error:
-  ```
-  wrong request: wrong request: ?(!@.key)
   ```
 
 - [ ] `$[?(@.key<3),?(@.key>6)]`

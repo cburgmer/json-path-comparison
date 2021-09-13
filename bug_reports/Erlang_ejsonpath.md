@@ -1098,6 +1098,53 @@ The following queries provide results that do not match those of other implement
   Timeout
   ```
 
+- [ ] `$[?(!@.key)]`
+  Input:
+  ```
+  [
+    {
+      "some": "some value"
+    },
+    {
+      "key": true
+    },
+    {
+      "key": false
+    },
+    {
+      "key": null
+    },
+    {
+      "key": "value"
+    },
+    {
+      "key": ""
+    },
+    {
+      "key": 0
+    },
+    {
+      "key": 1
+    },
+    {
+      "key": -1
+    },
+    {
+      "key": 42
+    },
+    {
+      "key": {}
+    },
+    {
+      "key": []
+    }
+  ]
+  ```
+  Error:
+  ```
+  Timeout
+  ```
+
 - [ ] `$[*].bookmarks[?(@.page == 45)]^^^`
   Input:
   ```
@@ -1401,53 +1448,6 @@ The following queries provide results that do not match those of other implement
     },
     {
       "some": "value"
-    }
-  ]
-  ```
-  Error:
-  ```
-  Timeout
-  ```
-
-- [ ] `$[?(!@.key)]`
-  Input:
-  ```
-  [
-    {
-      "some": "some value"
-    },
-    {
-      "key": true
-    },
-    {
-      "key": false
-    },
-    {
-      "key": null
-    },
-    {
-      "key": "value"
-    },
-    {
-      "key": ""
-    },
-    {
-      "key": 0
-    },
-    {
-      "key": 1
-    },
-    {
-      "key": -1
-    },
-    {
-      "key": 42
-    },
-    {
-      "key": {}
-    },
-    {
-      "key": []
     }
   ]
   ```
