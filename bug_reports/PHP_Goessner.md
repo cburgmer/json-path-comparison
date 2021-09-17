@@ -2192,28 +2192,26 @@ The following queries provide results that do not match those of other implement
   ArgumentCountError
   ```
 
-- [ ] `$.items[?(@.key1==@.key2)]`
+- [ ] `$[?(@.key1==@.key2)]`
   Input:
   ```
-  {
-    "items": [
-      {
-        "key1": 10,
-        "key2": 10
-      },
-      {
-        "key1": 42,
-        "key2": 50
-      },
-      {
-        "key1": 10
-      },
-      {
-        "key2": 10
-      },
-      {}
-    ]
-  }
+  [
+    {
+      "key1": 10,
+      "key2": 10
+    },
+    {
+      "key1": 42,
+      "key2": 50
+    },
+    {
+      "key1": 10
+    },
+    {
+      "key2": 10
+    },
+    {}
+  ]
   ```
   Error:
   ```
