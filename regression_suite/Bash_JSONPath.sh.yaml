@@ -364,7 +364,7 @@ queries:
     status: open
     result: [true]
   - id: filter_expression_with_equals_with_path_and_path
-    status: fail
+    status: open
     result: []
   - id: filter_expression_with_equals_with_root_reference
     status: open

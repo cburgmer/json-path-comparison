@@ -322,8 +322,8 @@ queries:
     status: open
     result: NOT_SUPPORTED
   - id: filter_expression_with_equals_with_path_and_path
-    status: fail
-    result: [{"key1": 10, "key2": 10}, {"key1": 42, "key2": 50}]
+    status: open
+    result: [{"key1": 10, "key2": 10}, {"key1": 42, "key2": 50}, {"key1": 10}, {"key2": 10}, {}]
   - id: filter_expression_with_equals_with_root_reference
     status: open
     result: [{"key": 10}, {"key": 42}, {"key": 50}]

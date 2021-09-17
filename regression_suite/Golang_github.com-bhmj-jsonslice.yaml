@@ -239,6 +239,9 @@ queries:
     result: [{"key": "Mot\u00f6rhead"}]
   - id: filter_expression_with_equals_true
     status: error
+  - id: filter_expression_with_equals_with_path_and_path
+    status: open
+    result: [{"key1": 10, "key2": 10}]
   - id: filter_expression_with_equals_with_root_reference
     status: open
     result: [{"key": 42}]

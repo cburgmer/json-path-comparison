@@ -2204,13 +2204,16 @@ The following queries provide results that do not match those of other implement
       {
         "key1": 42,
         "key2": 50
-      }
+      },
+      {
+        "key1": 10
+      },
+      {
+        "key2": 10
+      },
+      {}
     ]
   }
-  ```
-  Expected output:
-  ```
-  [{"key1": 10, "key2": 10}]
   ```
   Error:
   ```

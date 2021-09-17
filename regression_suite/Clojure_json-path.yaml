@@ -403,8 +403,8 @@ queries:
     status: open
     result: [{"some": "some value"}, {"key": null}]
   - id: filter_expression_with_equals_with_path_and_path
-    status: fail
-    result: []
+    status: open
+    result: [{"key2": 10}, {}]
   - id: filter_expression_with_equals_with_root_reference
     status: open
     result: [{"key": 42}]
