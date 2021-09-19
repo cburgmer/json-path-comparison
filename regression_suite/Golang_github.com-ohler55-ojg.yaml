@@ -205,8 +205,7 @@ queries:
     status: open
     result: [{"key": true}]
   - id: filter_expression_with_equals_with_path_and_path
-    status: open
-    result: [{"key1": 10, "key2": 10}, {}]
+    status: error
   - id: filter_expression_with_equals_with_root_reference
     status: open
     result: []

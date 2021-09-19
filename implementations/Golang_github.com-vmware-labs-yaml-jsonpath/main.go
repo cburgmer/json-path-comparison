@@ -12,6 +12,13 @@ import (
 )
 
 func main() {
+	defer func() {
+		if err := recover(); err != nil {
+			fmt.Fprintf(os.Stderr, "Exception: %v\n", err)
+			os.Exit(1)
+		}
+	}()
+
 	selector := os.Args[1]
 
 	data, err := ioutil.ReadAll(os.Stdin)

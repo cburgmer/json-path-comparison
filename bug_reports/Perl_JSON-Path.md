@@ -2527,7 +2527,51 @@ The following queries provide results that do not match those of other implement
     {
       "key2": 10
     },
-    {}
+    {},
+    {
+      "key1": null,
+      "key2": null
+    },
+    {
+      "key1": null
+    },
+    {
+      "key2": null
+    },
+    {
+      "key1": 0,
+      "key2": 0
+    },
+    {
+      "key1": 0
+    },
+    {
+      "key2": 0
+    },
+    {
+      "key1": -1,
+      "key2": -1
+    },
+    {
+      "key1": "",
+      "key2": ""
+    },
+    {
+      "key1": false,
+      "key2": false
+    },
+    {
+      "key1": true,
+      "key2": true
+    },
+    {
+      "key1": [],
+      "key2": []
+    },
+    {
+      "key1": {},
+      "key2": {}
+    }
   ]
   ```
   Error:

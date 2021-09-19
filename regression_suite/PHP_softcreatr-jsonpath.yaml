@@ -238,7 +238,7 @@ queries:
     result: [{"key": true}, {"key": "value"}, {"key": 1}, {"key": -1}, {"key": 42}, {"key": {}}]
   - id: filter_expression_with_equals_with_path_and_path
     status: open
-    result: []
+    result: [{"key1": 0, "key2": 0}, {"key1": 0}, {"key1": true, "key2": true}]
   - id: filter_expression_with_equals_with_root_reference
     status: open
     result: []

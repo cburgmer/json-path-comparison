@@ -234,7 +234,7 @@ queries:
     result: [{"key": true}, {"key": null}, {"key": "value"}, {"key": ""}, {"key": 0}, {"key": 1}, {"key": -1}, {"key": 42}, {"key": {}}, {"key": []}]
   - id: filter_expression_with_equals_with_path_and_path
     status: open
-    result: [{"key1": 10, "key2": 10}, {}]
+    result: [{"key1": 10, "key2": 10}, {}, {"key1": null, "key2": null}, {"key1": 0, "key2": 0}, {"key1": -1, "key2": -1}, {"key1": "", "key2": ""}, {"key1": false, "key2": false}, {"key1": true, "key2": true}]
   - id: filter_expression_with_equals_with_root_reference
     status: open
     result: [{"key": 42}]

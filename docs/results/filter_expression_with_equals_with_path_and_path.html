@@ -7,7 +7,25 @@
 
 <p>Selector: <code>$[?(@.key1==@.key2)]</code></p>
 
-<pre><code>[{"key1": 10, "key2": 10}, {"key1": 42, "key2": 50}, {"key1": 10}, {"key2": 10}, {}]
+<pre><code>[
+  {"key1": 10, "key2": 10},
+  {"key1": 42, "key2": 50},
+  {"key1": 10},
+  {"key2": 10},
+  {},
+  {"key1": null, "key2": null},
+  {"key1": null},
+  {"key2": null},
+  {"key1": 0, "key2": 0},
+  {"key1": 0},
+  {"key2": 0},
+  {"key1": -1, "key2": -1},
+  {"key1": "", "key2": ""},
+  {"key1": false, "key2": false},
+  {"key1": true, "key2": true},
+  {"key1": [], "key2": []},
+  {"key1": {}, "key2": {}}
+]
 </code></pre>
 
 <h2>Results</h2>
@@ -39,7 +57,20 @@ Clojure (json-path)
   {
     "key2": 10
   },
-  {}
+  {},
+  {
+    "key1": null,
+    "key2": null
+  },
+  {
+    "key1": null
+  },
+  {
+    "key2": null
+  },
+  {
+    "key2": 0
+  }
 ]
 </code></pre>
 
@@ -52,7 +83,45 @@ Cpp (jsoncons)
     "key1": 10,
     "key2": 10
   },
-  {}
+  {},
+  {
+    "key1": null,
+    "key2": null
+  },
+  {
+    "key1": null
+  },
+  {
+    "key2": null
+  },
+  {
+    "key1": 0,
+    "key2": 0
+  },
+  {
+    "key1": -1,
+    "key2": -1
+  },
+  {
+    "key1": "",
+    "key2": ""
+  },
+  {
+    "key1": false,
+    "key2": false
+  },
+  {
+    "key1": true,
+    "key2": true
+  },
+  {
+    "key1": [],
+    "key2": []
+  },
+  {
+    "key1": {},
+    "key2": {}
+  }
 ]
 </code></pre>
 
@@ -91,7 +160,45 @@ Elixir (warpath)
     "key1": 10,
     "key2": 10
   },
-  {}
+  {},
+  {
+    "key1": null,
+    "key2": null
+  },
+  {
+    "key1": null
+  },
+  {
+    "key2": null
+  },
+  {
+    "key1": 0,
+    "key2": 0
+  },
+  {
+    "key1": -1,
+    "key2": -1
+  },
+  {
+    "key1": "",
+    "key2": ""
+  },
+  {
+    "key1": false,
+    "key2": false
+  },
+  {
+    "key1": true,
+    "key2": true
+  },
+  {
+    "key1": [],
+    "key2": []
+  },
+  {
+    "key1": {},
+    "key2": {}
+  }
 ]
 </code></pre>
 
@@ -104,7 +211,39 @@ Erlang (ejsonpath)
     "key1": 10,
     "key2": 10
   },
-  {}
+  {},
+  {
+    "key1": null,
+    "key2": null
+  },
+  {
+    "key1": 0,
+    "key2": 0
+  },
+  {
+    "key1": -1,
+    "key2": -1
+  },
+  {
+    "key1": "",
+    "key2": ""
+  },
+  {
+    "key1": false,
+    "key2": false
+  },
+  {
+    "key1": true,
+    "key2": true
+  },
+  {
+    "key1": [],
+    "key2": []
+  },
+  {
+    "key1": {},
+    "key2": {}
+  }
 ]
 </code></pre>
 
@@ -117,6 +256,38 @@ Golang (github.com-PaesslerAG-jsonpath)
   {
     "key1": 10,
     "key2": 10
+  },
+  {
+    "key1": null,
+    "key2": null
+  },
+  {
+    "key1": 0,
+    "key2": 0
+  },
+  {
+    "key1": -1,
+    "key2": -1
+  },
+  {
+    "key1": "",
+    "key2": ""
+  },
+  {
+    "key1": false,
+    "key2": false
+  },
+  {
+    "key1": true,
+    "key2": true
+  },
+  {
+    "key1": [],
+    "key2": []
+  },
+  {
+    "key1": {},
+    "key2": {}
   }
 ]
 </code></pre>
@@ -130,20 +301,35 @@ Golang (github.com-bhmj-jsonslice)
   {
     "key1": 10,
     "key2": 10
-  }
-]
-</code></pre>
-
-<h4 id="Golang_github.com-ohler55-ojg">
-Golang (github.com-ohler55-ojg)
-</h4>
-
-<pre><code>[
-  {
-    "key1": 10,
-    "key2": 10
   },
-  {}
+  {
+    "key1": 0,
+    "key2": 0
+  },
+  {
+    "key1": -1,
+    "key2": -1
+  },
+  {
+    "key1": "",
+    "key2": ""
+  },
+  {
+    "key1": false,
+    "key2": false
+  },
+  {
+    "key1": true,
+    "key2": true
+  },
+  {
+    "key1": [],
+    "key2": []
+  },
+  {
+    "key1": {},
+    "key2": {}
+  }
 ]
 </code></pre>
 
@@ -163,18 +349,38 @@ Golang (github.com-spyzhov-ajson)
   {
     "key1": 10,
     "key2": 10
-  }
-]
-</code></pre>
-
-<h4 id="Golang_github.com-vmware-labs-yaml-jsonpath">
-Golang (github.com-vmware-labs-yaml-jsonpath)
-</h4>
-
-<pre><code>[
+  },
   {
-    "key1": 10,
-    "key2": 10
+    "key1": null,
+    "key2": null
+  },
+  {
+    "key1": 0,
+    "key2": 0
+  },
+  {
+    "key1": -1,
+    "key2": -1
+  },
+  {
+    "key1": "",
+    "key2": ""
+  },
+  {
+    "key1": false,
+    "key2": false
+  },
+  {
+    "key1": true,
+    "key2": true
+  },
+  {
+    "key1": [],
+    "key2": []
+  },
+  {
+    "key1": {},
+    "key2": {}
   }
 ]
 </code></pre>
@@ -200,7 +406,37 @@ JavaScript (Goessner)
     "key1": 10,
     "key2": 10
   },
-  {}
+  {},
+  {
+    "key1": null,
+    "key2": null
+  },
+  {
+    "key1": null
+  },
+  {
+    "key2": null
+  },
+  {
+    "key1": 0,
+    "key2": 0
+  },
+  {
+    "key1": -1,
+    "key2": -1
+  },
+  {
+    "key1": "",
+    "key2": ""
+  },
+  {
+    "key1": false,
+    "key2": false
+  },
+  {
+    "key1": true,
+    "key2": true
+  }
 ]
 </code></pre>
 
@@ -213,7 +449,31 @@ JavaScript (brunerd)
     "key1": 10,
     "key2": 10
   },
-  {}
+  {},
+  {
+    "key1": null,
+    "key2": null
+  },
+  {
+    "key1": 0,
+    "key2": 0
+  },
+  {
+    "key1": -1,
+    "key2": -1
+  },
+  {
+    "key1": "",
+    "key2": ""
+  },
+  {
+    "key1": false,
+    "key2": false
+  },
+  {
+    "key1": true,
+    "key2": true
+  }
 ]
 </code></pre>
 
@@ -226,7 +486,37 @@ JavaScript (jsonpath)
     "key1": 10,
     "key2": 10
   },
-  {}
+  {},
+  {
+    "key1": null,
+    "key2": null
+  },
+  {
+    "key1": null
+  },
+  {
+    "key2": null
+  },
+  {
+    "key1": 0,
+    "key2": 0
+  },
+  {
+    "key1": -1,
+    "key2": -1
+  },
+  {
+    "key1": "",
+    "key2": ""
+  },
+  {
+    "key1": false,
+    "key2": false
+  },
+  {
+    "key1": true,
+    "key2": true
+  }
 ]
 </code></pre>
 
@@ -239,7 +529,37 @@ JavaScript (jsonpath-plus)
     "key1": 10,
     "key2": 10
   },
-  {}
+  {},
+  {
+    "key1": null,
+    "key2": null
+  },
+  {
+    "key1": null
+  },
+  {
+    "key2": null
+  },
+  {
+    "key1": 0,
+    "key2": 0
+  },
+  {
+    "key1": -1,
+    "key2": -1
+  },
+  {
+    "key1": "",
+    "key2": ""
+  },
+  {
+    "key1": false,
+    "key2": false
+  },
+  {
+    "key1": true,
+    "key2": true
+  }
 ]
 </code></pre>
 
@@ -263,6 +583,38 @@ Java (com.jayway.jsonpath)
   {
     "key1": 10,
     "key2": 10
+  },
+  {
+    "key1": null,
+    "key2": null
+  },
+  {
+    "key1": 0,
+    "key2": 0
+  },
+  {
+    "key1": -1,
+    "key2": -1
+  },
+  {
+    "key1": "",
+    "key2": ""
+  },
+  {
+    "key1": false,
+    "key2": false
+  },
+  {
+    "key1": true,
+    "key2": true
+  },
+  {
+    "key1": [],
+    "key2": []
+  },
+  {
+    "key1": {},
+    "key2": {}
   }
 ]
 </code></pre>
@@ -287,6 +639,38 @@ Objective-C (SMJJSONPath)
   {
     "key1": 10,
     "key2": 10
+  },
+  {
+    "key1": null,
+    "key2": null
+  },
+  {
+    "key1": 0,
+    "key2": 0
+  },
+  {
+    "key1": -1,
+    "key2": -1
+  },
+  {
+    "key1": "",
+    "key2": ""
+  },
+  {
+    "key1": false,
+    "key2": false
+  },
+  {
+    "key1": true,
+    "key2": true
+  },
+  {
+    "key1": [],
+    "key2": []
+  },
+  {
+    "key1": {},
+    "key2": {}
   }
 ]
 </code></pre>
@@ -301,7 +685,39 @@ PHP (galbar-jsonpath)
     "key1": 10,
     "key2": 10
   },
-  []
+  [],
+  {
+    "key1": null,
+    "key2": null
+  },
+  {
+    "key1": 0,
+    "key2": 0
+  },
+  {
+    "key1": -1,
+    "key2": -1
+  },
+  {
+    "key1": "",
+    "key2": ""
+  },
+  {
+    "key1": false,
+    "key2": false
+  },
+  {
+    "key1": true,
+    "key2": true
+  },
+  {
+    "key1": [],
+    "key2": []
+  },
+  {
+    "key1": [],
+    "key2": []
+  }
 ]
 </code></pre>
 
@@ -313,6 +729,38 @@ PHP (remorhaz-jsonpath)
   {
     "key1": 10,
     "key2": 10
+  },
+  {
+    "key1": null,
+    "key2": null
+  },
+  {
+    "key1": 0,
+    "key2": 0
+  },
+  {
+    "key1": -1,
+    "key2": -1
+  },
+  {
+    "key1": "",
+    "key2": ""
+  },
+  {
+    "key1": false,
+    "key2": false
+  },
+  {
+    "key1": true,
+    "key2": true
+  },
+  {
+    "key1": [],
+    "key2": []
+  },
+  {
+    "key1": {},
+    "key2": {}
   }
 ]
 </code></pre>
@@ -321,7 +769,19 @@ PHP (remorhaz-jsonpath)
 PHP (softcreatr-jsonpath)
 </h4>
 
-<pre><code>[]
+<pre><code>[
+  {
+    "key1": 0,
+    "key2": 0
+  },
+  {
+    "key1": 0
+  },
+  {
+    "key1": true,
+    "key2": true
+  }
+]
 </code></pre>
 
 <h4 id="Python_jsonpath">
@@ -333,6 +793,38 @@ Python (jsonpath)
   {
     "key1": 10,
     "key2": 10
+  },
+  {
+    "key1": null,
+    "key2": null
+  },
+  {
+    "key1": 0,
+    "key2": 0
+  },
+  {
+    "key1": -1,
+    "key2": -1
+  },
+  {
+    "key1": "",
+    "key2": ""
+  },
+  {
+    "key1": false,
+    "key2": false
+  },
+  {
+    "key1": true,
+    "key2": true
+  },
+  {
+    "key1": [],
+    "key2": []
+  },
+  {
+    "key1": {},
+    "key2": {}
   }
 ]
 </code></pre>
@@ -393,7 +885,51 @@ Ruby (jsonpath)
   {
     "key2": 10
   },
-  {}
+  {},
+  {
+    "key1": null,
+    "key2": null
+  },
+  {
+    "key1": null
+  },
+  {
+    "key2": null
+  },
+  {
+    "key1": 0,
+    "key2": 0
+  },
+  {
+    "key1": 0
+  },
+  {
+    "key2": 0
+  },
+  {
+    "key1": -1,
+    "key2": -1
+  },
+  {
+    "key1": "",
+    "key2": ""
+  },
+  {
+    "key1": false,
+    "key2": false
+  },
+  {
+    "key1": true,
+    "key2": true
+  },
+  {
+    "key1": [],
+    "key2": []
+  },
+  {
+    "key1": {},
+    "key2": {}
+  }
 ]
 </code></pre>
 
@@ -418,6 +954,38 @@ Rust (jsonpath_lib)
   {
     "key1": 42,
     "key2": 50
+  },
+  {
+    "key1": null,
+    "key2": null
+  },
+  {
+    "key1": 0,
+    "key2": 0
+  },
+  {
+    "key1": -1,
+    "key2": -1
+  },
+  {
+    "key1": "",
+    "key2": ""
+  },
+  {
+    "key1": false,
+    "key2": false
+  },
+  {
+    "key1": true,
+    "key2": true
+  },
+  {
+    "key1": [],
+    "key2": []
+  },
+  {
+    "key1": {},
+    "key2": {}
   }
 ]
 </code></pre>
@@ -430,6 +998,30 @@ Scala (jsonpath)
   {
     "key1": 10,
     "key2": 10
+  },
+  {
+    "key1": null,
+    "key2": null
+  },
+  {
+    "key1": 0,
+    "key2": 0
+  },
+  {
+    "key1": -1,
+    "key2": -1
+  },
+  {
+    "key1": "",
+    "key2": ""
+  },
+  {
+    "key1": false,
+    "key2": false
+  },
+  {
+    "key1": true,
+    "key2": true
   }
 ]
 </code></pre>
@@ -442,6 +1034,30 @@ dotNET (Json.NET)
   {
     "key1": 10,
     "key2": 10
+  },
+  {
+    "key1": null,
+    "key2": null
+  },
+  {
+    "key1": 0,
+    "key2": 0
+  },
+  {
+    "key1": -1,
+    "key2": -1
+  },
+  {
+    "key1": "",
+    "key2": ""
+  },
+  {
+    "key1": false,
+    "key2": false
+  },
+  {
+    "key1": true,
+    "key2": true
   }
 ]
 </code></pre>
@@ -455,7 +1071,45 @@ dotNET (JsonCons.JsonPath)
     "key1": 10,
     "key2": 10
   },
-  {}
+  {},
+  {
+    "key1": null,
+    "key2": null
+  },
+  {
+    "key1": null
+  },
+  {
+    "key2": null
+  },
+  {
+    "key1": 0,
+    "key2": 0
+  },
+  {
+    "key1": -1,
+    "key2": -1
+  },
+  {
+    "key1": "",
+    "key2": ""
+  },
+  {
+    "key1": false,
+    "key2": false
+  },
+  {
+    "key1": true,
+    "key2": true
+  },
+  {
+    "key1": [],
+    "key2": []
+  },
+  {
+    "key1": {},
+    "key2": {}
+  }
 ]
 </code></pre>
 
@@ -467,6 +1121,38 @@ dotNET (JsonPath.Net)
   {
     "key1": 10,
     "key2": 10
+  },
+  {
+    "key1": null,
+    "key2": null
+  },
+  {
+    "key1": 0,
+    "key2": 0
+  },
+  {
+    "key1": -1,
+    "key2": -1
+  },
+  {
+    "key1": "",
+    "key2": ""
+  },
+  {
+    "key1": false,
+    "key2": false
+  },
+  {
+    "key1": true,
+    "key2": true
+  },
+  {
+    "key1": [],
+    "key2": []
+  },
+  {
+    "key1": {},
+    "key2": {}
   }
 ]
 </code></pre>
@@ -480,7 +1166,31 @@ dotNET (JsonPathLib)
     "key1": 10,
     "key2": 10
   },
-  {}
+  {},
+  {
+    "key1": null,
+    "key2": null
+  },
+  {
+    "key1": 0,
+    "key2": 0
+  },
+  {
+    "key1": -1,
+    "key2": -1
+  },
+  {
+    "key1": "",
+    "key2": ""
+  },
+  {
+    "key1": false,
+    "key2": false
+  },
+  {
+    "key1": true,
+    "key2": true
+  }
 ]
 </code></pre>
 
@@ -493,7 +1203,31 @@ dotNET (Manatee.Json)
     "key1": 10,
     "key2": 10
   },
-  {}
+  {},
+  {
+    "key1": null,
+    "key2": null
+  },
+  {
+    "key1": 0,
+    "key2": 0
+  },
+  {
+    "key1": -1,
+    "key2": -1
+  },
+  {
+    "key1": "",
+    "key2": ""
+  },
+  {
+    "key1": false,
+    "key2": false
+  },
+  {
+    "key1": true,
+    "key2": true
+  }
 ]
 </code></pre>
 
@@ -520,11 +1254,57 @@ Proposal (A)
     "key1": 10,
     "key2": 10
   },
-  {}
+  {},
+  {
+    "key1": null,
+    "key2": null
+  },
+  {
+    "key1": 0,
+    "key2": 0
+  },
+  {
+    "key1": -1,
+    "key2": -1
+  },
+  {
+    "key1": "",
+    "key2": ""
+  },
+  {
+    "key1": false,
+    "key2": false
+  },
+  {
+    "key1": true,
+    "key2": true
+  },
+  {
+    "key1": [],
+    "key2": []
+  },
+  {
+    "key1": {},
+    "key2": {}
+  }
 ]
 </code></pre>
 
 <h3>Errors</h3>
+
+<h4 id="Golang_github.com-ohler55-ojg">
+Golang (github.com-ohler55-ojg)
+</h4>
+
+<pre><code>Exception: runtime error: comparing uncomparable type []interface {}
+</code></pre>
+
+<h4 id="Golang_github.com-vmware-labs-yaml-jsonpath">
+Golang (github.com-vmware-labs-yaml-jsonpath)
+</h4>
+
+<pre><code>Exception: invalid type of value passed to compareNodeValues
+</code></pre>
 
 <h4 id="PHP_Goessner">
 PHP (Goessner)
