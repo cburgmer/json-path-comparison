@@ -65,6 +65,16 @@ The following queries provide results that do not match those of other implement
     {
       "key1": {},
       "key2": {}
+    },
+    {
+      "key1": {
+        "a": 1,
+        "b": 2
+      },
+      "key2": {
+        "b": 2,
+        "a": 1
+      }
     }
   ]
   ```

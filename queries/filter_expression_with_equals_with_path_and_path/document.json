@@ -15,5 +15,6 @@
   {"key1": false, "key2": false},
   {"key1": true, "key2": true},
   {"key1": [], "key2": []},
-  {"key1": {}, "key2": {}}
+  {"key1": {}, "key2": {}},
+  {"key1": {"a": 1, "b": 2}, "key2": {"b": 2, "a": 1}}
 ]
