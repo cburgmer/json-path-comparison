@@ -404,7 +404,7 @@ queries:
     result: [{"some": "some value"}, {"key": null}]
   - id: filter_expression_with_equals_with_path_and_path
     status: open
-    result: [{"key2": 10}, {}, {"key1": null, "key2": null}, {"key1": null}, {"key2": null}, {"key2": 0}]
+    result: [{"key2": 10}, {}, {"key1": null, "key2": null}, {"key1": null}, {"key2": null}, {"key2": 0}, {"key2": false}]
   - id: filter_expression_with_equals_with_root_reference
     status: open
     result: [{"key": 42}]
