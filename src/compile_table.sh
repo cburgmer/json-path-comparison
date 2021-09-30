@@ -189,6 +189,21 @@ table() {
 <p>See how <a href=\"https://goessner.net/articles/JsonPath/\">JSONPath</a> is implemented across different languages.
 See the <a href=\"https://github.com/cburgmer/json-path-comparison/blob/master/FAQ.md\">FAQ</a> for why we are doing this and where the results come from.</p>
 "
+    echo "
+<h2>Explanation</h2>
+
+<ul>
+<li>✓ The result of this implementation matches the consensus of results.</li>
+<li>✗ The result does not match the consensus.</li>
+<li>➚ and ➘: no clear consensus amongst the implementations, but ➚ indicates a majority (and possible future consensus).</li>
+<li>e The implementation failed executing the query.</li>
+<li>¹ This implementation returns a single value where only one match is possible (instead of an array of a single value).</li>
+<li>² This implementation returns a specific <em>not found</em> value if a query doesn't result in any matches.</li>
+<li>³ This implementation returns a specific <em>not found</em> value if a query that would regularly return a single match results in no match.</li>
+<li>⁴ It is unclear whether results for this query have a defined order, and some implementations might apply different and even non-deterministic ordering. For comparison the results are sorted into a canonical order.</li>
+</ul>
+"
+
     echo
     echo "<table style=\"overflow: unset;\">" # Need to reset style for sticky headers
 
@@ -204,20 +219,6 @@ See the <a href=\"https://github.com/cburgmer/json-path-comparison/blob/master/F
 
     echo "</tbody>"
     echo "</table>"
-    echo "
-<h2>Explanation</h2>
-
-<ul>
-<li>✓ The result of this implementation matches the consensus of results.</li>
-<li>✗ The result does not match the consensus.</li>
-<li>➚ and ➘: no clear consensus amongst the implementations, but ➚ indicates a majority (and possible future consensus).</li>
-<li>e The implementation failed executing the query.</li>
-<li>¹ This implementation returns a single value where only one match is possible (instead of an array of a single value).</li>
-<li>² This implementation returns a specific <em>not found</em> value if a query doesn't result in any matches.</li>
-<li>³ This implementation returns a specific <em>not found</em> value if a query that would regularly return a single match results in no match.</li>
-<li>⁴ It is unclear whether results for this query have a defined order, and some implementations might apply different and even non-deterministic ordering. For comparison the results are sorted into a canonical order.</li>
-</ul>
-"
 }
 
 adjust_css() {
