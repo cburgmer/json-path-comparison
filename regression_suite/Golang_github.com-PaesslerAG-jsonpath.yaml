@@ -231,7 +231,7 @@ queries:
     result: [{"key": false}]
   - id: filter_expression_with_equals_null
     status: open
-    result: NOT_SUPPORTED
+    result: []
   - id: filter_expression_with_equals_number_for_array_slice_with_range_1
     status: open
     result: []
@@ -243,7 +243,7 @@ queries:
     result: []
   - id: filter_expression_with_equals_number_with_fraction
     status: open
-    result: NOT_SUPPORTED
+    result: [{"key": -12.3}]
   - id: filter_expression_with_equals_number_with_leading_zeros
     status: open
     result: [{"key": 10}]
