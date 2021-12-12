@@ -18,3 +18,7 @@ github.com/bhmj/jsonslice v1.0.5 h1:Sq5aqXdQ3PZYiTqqRnqpmvTDZfDkUBrqEhQ75HhqP8c=
 github.com/bhmj/jsonslice v1.0.5/go.mod h1:blvNODZOz8uOvDJzGiXzoi8QlzcAhA57sMnKx1D18/k=
 github.com/bhmj/jsonslice v1.0.6 h1:OXjo7iJjdLoH+4cyvyyaLhYds/S64go5TanUp8jVYZo=
 github.com/bhmj/jsonslice v1.0.6/go.mod h1:blvNODZOz8uOvDJzGiXzoi8QlzcAhA57sMnKx1D18/k=
+github.com/bhmj/jsonslice v1.1.1 h1:ePHvvTnhVDsliw648sYSmAfN7qP19DIk795hjATt43Y=
+github.com/bhmj/jsonslice v1.1.1/go.mod h1:ybnCtZe26BZTlWDqmwjIAGRuh0MqoB3e4lO+ED+eWK8=
+github.com/bhmj/xpression v0.9.0 h1:fptQyWeYLUybLW3BnSGBnBvjZPdR0/j/SwFVrfenZLo=
+github.com/bhmj/xpression v0.9.0/go.mod h1:j9oYmEXJjeL9mrgW1+ZDBKJXnbupsCPGhlO9J5YhS1Q=

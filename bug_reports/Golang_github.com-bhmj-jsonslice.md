@@ -645,30 +645,29 @@ The following queries provide results that do not match those of other implement
   path: empty
   ```
 
-- [ ] `$[?(@.key+50==100)]`
+- [ ] `$[?(@[-1]==2)]`
   Input:
   ```
   [
-    {
-      "key": 60
-    },
-    {
-      "key": 50
-    },
-    {
-      "key": 10
-    },
-    {
-      "key": -50
-    },
-    {
-      "key+50": 100
-    }
+    [
+      2,
+      3
+    ],
+    [
+      "a"
+    ],
+    [
+      0,
+      2
+    ],
+    [
+      2
+    ]
   ]
   ```
   Error:
   ```
-  invalid operands for arithmetic operator
+  unknown token at 4: ]==2 at 4
   ```
 
 - [ ] `$[?(@.a && (@.b || @.c))]`
@@ -705,47 +704,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  unknown token at 9
-  ```
-
-- [ ] `$[?(@.key/10==5)]`
-  Input:
-  ```
-  [
-    {
-      "key": 60
-    },
-    {
-      "key": 50
-    },
-    {
-      "key": 10
-    },
-    {
-      "key": -50
-    },
-    {
-      "key/10": 5
-    }
-  ]
-  ```
-  Error:
-  ```
-  invalid operands for arithmetic operator
-  ```
-
-- [ ] `$[?(@.key-dash == 'value')]`
-  Input:
-  ```
-  [
-    {
-      "key-dash": "value"
-    }
-  ]
-  ```
-  Error:
-  ```
-  unknown token at 10
+  mismatched parentheses at 4
   ```
 
 - [ ] `$[?()]`
@@ -766,7 +725,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  empty filter
+  not enough arguments
   ```
 
 - [ ] `$[?(@.d==["v1","v2"])]`
@@ -828,7 +787,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  unknown token at 9
+  unknown token at 5: ["v1","v2"] at 4
   ```
 
 - [ ] `$[?(@[0:1]==[1])]`
@@ -853,7 +812,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  unknown token at 12
+  unknown token at 8: [1] at 4
   ```
 
 - [ ] `$[?(@.*==[1,2])]`
@@ -886,7 +845,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  unknown token at 9
+  unknown token at 5: [1,2] at 4
   ```
 
 - [ ] `$[?(@.d==['v1','v2'])]`
@@ -948,74 +907,73 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  unknown token at 9
+  unknown token at 5: ['v1','v2'] at 4
   ```
 
-- [ ] `$[?((@.key<44)==false)]`
+- [ ] `$[?(@[*]==2)]`
   Input:
   ```
   [
-    {
-      "key": 42
-    },
-    {
-      "key": 43
-    },
-    {
-      "key": 44
-    }
+    [
+      1,
+      2
+    ],
+    [
+      2,
+      3
+    ],
+    [
+      1
+    ],
+    [
+      2
+    ],
+    [
+      1,
+      2,
+      3
+    ],
+    1,
+    2,
+    3
   ]
   ```
   Error:
   ```
-  unknown token at 4
+  unknown token at 3: ]==2 at 4
   ```
 
-- [ ] `$[?(@.key==null)]`
+- [ ] `$[?(@.*==2)]`
   Input:
   ```
   [
-    {
-      "some": "some value"
-    },
-    {
-      "key": true
-    },
-    {
-      "key": false
-    },
-    {
-      "key": null
-    },
-    {
-      "key": "value"
-    },
-    {
-      "key": ""
-    },
-    {
-      "key": 0
-    },
-    {
-      "key": 1
-    },
-    {
-      "key": -1
-    },
-    {
-      "key": 42
-    },
-    {
-      "key": {}
-    },
-    {
-      "key": []
-    }
+    [
+      1,
+      2
+    ],
+    [
+      2,
+      3
+    ],
+    [
+      1
+    ],
+    [
+      2
+    ],
+    [
+      1,
+      2,
+      3
+    ],
+    1,
+    2,
+    3
   ]
   ```
   Error:
   ```
-  unknown token at 11
+  path: unexpected end of path at 2
   ```
 
 - [ ] `$[?(@.d=={"k":"v"})]`
@@ -1070,7 +1028,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  unknown token at 9
+  unknown token at 5: {"k":"v"} at 4
   ```
 
 - [ ] `$[?(@.key=="Motörhead")]`
@@ -1177,180 +1135,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  unknown token at 5
-  ```
-
-- [ ] `$[?(@.key*2==100)]`
-  Input:
-  ```
-  [
-    {
-      "key": 60
-    },
-    {
-      "key": 50
-    },
-    {
-      "key": 10
-    },
-    {
-      "key": -50
-    },
-    {
-      "key*2": 100
-    }
-  ]
-  ```
-  Error:
-  ```
-  invalid operands for arithmetic operator
-  ```
-
-- [ ] `$[?(!(@.key==42))]`
-  Input:
-  ```
-  [
-    {
-      "key": 0
-    },
-    {
-      "key": 42
-    },
-    {
-      "key": -1
-    },
-    {
-      "key": 41
-    },
-    {
-      "key": 43
-    },
-    {
-      "key": 42.0001
-    },
-    {
-      "key": 41.9999
-    },
-    {
-      "key": 100
-    },
-    {
-      "key": "43"
-    },
-    {
-      "key": "42"
-    },
-    {
-      "key": "41"
-    },
-    {
-      "key": "value"
-    },
-    {
-      "some": "value"
-    }
-  ]
-  ```
-  Error:
-  ```
-  unknown token at 4
-  ```
-
-- [ ] `$[?(!(@.key<42))]`
-  Input:
-  ```
-  [
-    {
-      "key": 0
-    },
-    {
-      "key": 42
-    },
-    {
-      "key": -1
-    },
-    {
-      "key": 41
-    },
-    {
-      "key": 43
-    },
-    {
-      "key": 42.0001
-    },
-    {
-      "key": 41.9999
-    },
-    {
-      "key": 100
-    },
-    {
-      "key": "43"
-    },
-    {
-      "key": "42"
-    },
-    {
-      "key": "41"
-    },
-    {
-      "key": "value"
-    },
-    {
-      "some": "value"
-    }
-  ]
-  ```
-  Error:
-  ```
-  unknown token at 4
-  ```
-
-- [ ] `$[?(!@.key)]`
-  Input:
-  ```
-  [
-    {
-      "some": "some value"
-    },
-    {
-      "key": true
-    },
-    {
-      "key": false
-    },
-    {
-      "key": null
-    },
-    {
-      "key": "value"
-    },
-    {
-      "key": ""
-    },
-    {
-      "key": 0
-    },
-    {
-      "key": 1
-    },
-    {
-      "key": -1
-    },
-    {
-      "key": 42
-    },
-    {
-      "key": {}
-    },
-    {
-      "key": []
-    }
-  ]
-  ```
-  Error:
-  ```
-  unknown token at 4
+  not enough arguments
   ```
 
 - [ ] `$[*].bookmarks[?(@.page == 45)]^^^`
@@ -1396,6 +1181,59 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   path: invalid character at 29
+  ```
+
+- [ ] `$[?(@[*]>=4)]`
+  Input:
+  ```
+  [
+    [
+      1,
+      2
+    ],
+    [
+      3,
+      4
+    ],
+    [
+      5,
+      6
+    ]
+  ]
+  ```
+  Error:
+  ```
+  unknown token at 3: ]>=4 at 4
+  ```
+
+- [ ] `$.x[?(@[*]>=$.y[*])]`
+  Input:
+  ```
+  {
+    "x": [
+      [
+        1,
+        2
+      ],
+      [
+        3,
+        4
+      ],
+      [
+        5,
+        6
+      ]
+    ],
+    "y": [
+      3,
+      4,
+      5
+    ]
+  }
+  ```
+  Error:
+  ```
+  unknown token at 3: ]>=$.y[*] at 6
   ```
 
 - [ ] `$[?(@.key=42)]`
@@ -1476,55 +1314,51 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  unknown token at 9
+  unknown token at 5: =42 at 4
   ```
 
-- [ ] `$[?(@.key-50==-100)]`
+- [ ] `$[?(@.a[?(@.price>10)])]`
   Input:
   ```
   [
     {
-      "key": 60
+      "a": [
+        {
+          "price": 1
+        },
+        {
+          "price": 3
+        }
+      ]
     },
     {
-      "key": 50
+      "a": [
+        {
+          "price": 11
+        }
+      ]
     },
     {
-      "key": 10
+      "a": [
+        {
+          "price": 8
+        },
+        {
+          "price": 12
+        },
+        {
+          "price": 3
+        }
+      ]
     },
     {
-      "key": -50
-    },
-    {
-      "key-50": -100
+      "a": []
     }
   ]
   ```
   Error:
   ```
-  invalid operands for arithmetic operator
-  ```
-
-- [ ] `$[?(null)]`
-  Input:
-  ```
-  [
-    1,
-    3,
-    "nice",
-    true,
-    null,
-    false,
-    {},
-    [],
-    -1,
-    0,
-    ""
-  ]
-  ```
-  Error:
-  ```
-  unknown token at 4
+  unknown token at 17: ] at 4
   ```
 
 - [ ] `$[?@.key==42]`

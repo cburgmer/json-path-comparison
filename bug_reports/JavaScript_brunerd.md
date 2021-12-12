@@ -60,41 +60,6 @@ The following queries provide results that do not match those of other implement
   Octal indices are disallowed: 010
   ```
 
-- [ ] `$..[0]`
-  Input:
-  ```
-  [
-    "first",
-    {
-      "key": [
-        "first nested",
-        {
-          "more": [
-            {
-              "nested": [
-                "deepest",
-                "second"
-              ]
-            },
-            [
-              "more",
-              "values"
-            ]
-          ]
-        }
-      ]
-    }
-  ]
-  ```
-  Expected output (in any order as no consensus on ordering exists):
-  ```
-  ["deepest", "first nested", "first", "more", {"nested": ["deepest", "second"]}]
-  ```
-  Error:
-  ```
-  Property '0' is a number and target is an object!
-  ```
-
 - [ ] `$[0]`
   Input:
   ```
@@ -106,9 +71,11 @@ The following queries provide results that do not match those of other implement
   ```
   []
   ```
-  Error:
+  Actual output:
   ```
-  Property '0' is a number and target is an object!
+  [
+    "value"
+  ]
   ```
 
 - [ ] `$[0]`
@@ -125,57 +92,6 @@ The following queries provide results that do not match those of other implement
   [
     "H"
   ]
-  ```
-
-- [ ] `$..[1].key`
-  Input:
-  ```
-  {
-    "k": [
-      {
-        "key": "some value"
-      },
-      {
-        "key": 42
-      }
-    ],
-    "kk": [
-      [
-        {
-          "key": 100
-        },
-        {
-          "key": 200
-        },
-        {
-          "key": 300
-        }
-      ],
-      [
-        {
-          "key": 400
-        },
-        {
-          "key": 500
-        },
-        {
-          "key": 600
-        }
-      ]
-    ],
-    "key": [
-      0,
-      1
-    ]
-  }
-  ```
-  Expected output (in any order as no consensus on ordering exists):
-  ```
-  [200, 42, 500]
-  ```
-  Error:
-  ```
-  Property '1' is a number and target is an object!
   ```
 
 - [ ] `$.key-dash`
