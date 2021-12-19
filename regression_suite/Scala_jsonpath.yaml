@@ -241,9 +241,6 @@ queries:
   - id: filter_expression_with_equals_on_object_with_key_matching_query
     status: open
     result: [{"id": 2}]
-  - id: filter_expression_with_equals_string
-    status: open
-    result: [{"key": "value"}]
   - id: filter_expression_with_equals_string_with_unicode_character_escape
     status: open
     result: []
@@ -338,9 +335,6 @@ queries:
     status: open
     result: NOT_SUPPORTED
   - id: recursive_descent_after_dot_notation
-    status: open
-    result: NOT_SUPPORTED
-  - id: script_expression
     status: open
     result: NOT_SUPPORTED
   - id: union_with_filter

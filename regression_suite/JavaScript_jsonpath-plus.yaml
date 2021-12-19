@@ -250,7 +250,7 @@ queries:
     status: open
     result: []
   - id: filter_expression_with_equals_string
-    status: open
+    status: fail
     result: [{"key": "value"}, {"key": ["value"]}]
   - id: filter_expression_with_equals_string_with_unicode_character_escape
     status: open
@@ -364,7 +364,7 @@ queries:
   - id: root_on_scalar_false
     status: error
   - id: script_expression
-    status: open
+    status: fail
     result: ["fifth"]
   - id: union_with_duplication_from_object
     status: fail

@@ -195,9 +195,6 @@ queries:
   - id: filter_expression_with_equals_on_object_with_key_matching_query
     status: open
     result: []
-  - id: filter_expression_with_equals_string
-    status: open
-    result: [{"key": "value"}]
   - id: filter_expression_with_equals_string_with_unicode_character_escape
     status: open
     result: []
@@ -293,9 +290,6 @@ queries:
   - id: recursive_descent_after_dot_notation
     status: open
     result: ["string", 0, 1, [0, 1], {"complex": "string", "primitives": [0, 1]}]
-  - id: script_expression
-    status: open
-    result: NOT_SUPPORTED
   - id: union_with_filter
     status: open
     result: NOT_SUPPORTED

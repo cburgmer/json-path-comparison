@@ -2326,6 +2326,10 @@ The following queries provide results that do not match those of other implement
     }
   ]
   ```
+  Expected output:
+  ```
+  [{"key": "value"}]
+  ```
   Error:
   ```
   non-safe evaluation, died at main.pl line 11.
@@ -3997,6 +4001,10 @@ The following queries provide results that do not match those of other implement
     "forth",
     "fifth"
   ]
+  ```
+  Expected output:
+  ```
+  NOT_SUPPORTED
   ```
   Error:
   ```

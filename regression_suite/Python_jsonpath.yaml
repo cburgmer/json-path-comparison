@@ -265,9 +265,6 @@ queries:
   - id: filter_expression_with_equals_on_object_with_key_matching_query
     status: open
     result: NOT_FOUND
-  - id: filter_expression_with_equals_string
-    status: open
-    result: [{"key": "value"}]
   - id: filter_expression_with_equals_string_with_current_object_literal
     status: fail
     result: NOT_FOUND
@@ -398,7 +395,7 @@ queries:
     status: fail
     result: NOT_FOUND
   - id: script_expression
-    status: open
+    status: fail
     result: ["fifth"]
   - id: union_with_filter
     status: open

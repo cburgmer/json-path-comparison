@@ -316,7 +316,7 @@ queries:
     status: open
     result: NOT_SUPPORTED
   - id: filter_expression_with_equals_string
-    status: open
+    status: fail
     result: NOT_SUPPORTED
   - id: filter_expression_with_equals_string_in_NFC
     status: fail
@@ -427,9 +427,6 @@ queries:
     status: open
     result: NOT_SUPPORTED
   - id: recursive_descent_after_dot_notation
-    status: open
-    result: NOT_SUPPORTED
-  - id: script_expression
     status: open
     result: NOT_SUPPORTED
   - id: union_with_duplication_from_object

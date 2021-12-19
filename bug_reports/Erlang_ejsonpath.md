@@ -1467,6 +1467,10 @@ The following queries provide results that do not match those of other implement
     "fifth"
   ]
   ```
+  Expected output:
+  ```
+  NOT_SUPPORTED
+  ```
   Error:
   ```
   init terminating in do_boot ({not_implemented,bin_op,-})

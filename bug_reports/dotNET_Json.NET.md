@@ -697,6 +697,73 @@ The following queries provide results that do not match those of other implement
   Index was out of range. Must be non-negative and less than the size of the collection. (Parameter 'index')
   ```
 
+- [ ] `$[?(@.key=="value")]`
+  Input:
+  ```
+  [
+    {
+      "key": "some"
+    },
+    {
+      "key": "value"
+    },
+    {
+      "key": null
+    },
+    {
+      "key": 0
+    },
+    {
+      "key": 1
+    },
+    {
+      "key": -1
+    },
+    {
+      "key": ""
+    },
+    {
+      "key": {}
+    },
+    {
+      "key": []
+    },
+    {
+      "key": "valuemore"
+    },
+    {
+      "key": "morevalue"
+    },
+    {
+      "key": [
+        "value"
+      ]
+    },
+    {
+      "key": {
+        "some": "value"
+      }
+    },
+    {
+      "key": {
+        "key": "value"
+      }
+    },
+    {
+      "some": "value"
+    }
+  ]
+  ```
+  Expected output:
+  ```
+  [{"key": "value"}]
+  ```
+  Actual output:
+  NOT_SUPPORTED
+  ```
+  Unexpected character while parsing path query: "
+  ```
+
 - [ ] `$[?(@.key=="Motörhead")]`
   Input:
   ```

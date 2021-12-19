@@ -2804,6 +2804,72 @@ The following queries provide results that do not match those of other implement
   key error:  not found in object
   ```
 
+- [ ] `$[?(@.key=="value")]`
+  Input:
+  ```
+  [
+    {
+      "key": "some"
+    },
+    {
+      "key": "value"
+    },
+    {
+      "key": null
+    },
+    {
+      "key": 0
+    },
+    {
+      "key": 1
+    },
+    {
+      "key": -1
+    },
+    {
+      "key": ""
+    },
+    {
+      "key": {}
+    },
+    {
+      "key": []
+    },
+    {
+      "key": "valuemore"
+    },
+    {
+      "key": "morevalue"
+    },
+    {
+      "key": [
+        "value"
+      ]
+    },
+    {
+      "key": {
+        "some": "value"
+      }
+    },
+    {
+      "key": {
+        "key": "value"
+      }
+    },
+    {
+      "some": "value"
+    }
+  ]
+  ```
+  Expected output:
+  ```
+  [{"key": "value"}]
+  ```
+  Actual output:
+  ```
+  []
+  ```
+
 - [ ] `$[?(@.key=="Motörhead")]`
   Input:
   ```
@@ -3364,6 +3430,10 @@ The following queries provide results that do not match those of other implement
     "forth",
     "fifth"
   ]
+  ```
+  Expected output:
+  ```
+  NOT_SUPPORTED
   ```
   Error:
   ```

@@ -241,7 +241,7 @@ queries:
     status: open
     result: NOT_SUPPORTED
   - id: filter_expression_with_equals_string
-    status: open
+    status: fail
     result: NOT_SUPPORTED
   - id: filter_expression_with_equals_string_in_NFC
     status: fail
@@ -357,9 +357,6 @@ queries:
   - id: recursive_descent_after_dot_notation
     status: open
     result: {"complex": "string", "primitives": [0, 1]}
-  - id: script_expression
-    status: open
-    result: NOT_SUPPORTED
   - id: union_with_filter
     status: open
     result: NOT_SUPPORTED

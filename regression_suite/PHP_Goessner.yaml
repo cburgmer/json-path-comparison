@@ -351,7 +351,7 @@ queries:
     status: fail
     result: NOT_FOUND
   - id: script_expression
-    status: open
+    status: fail
     result: NOT_FOUND
   - id: union_with_filter
     status: error

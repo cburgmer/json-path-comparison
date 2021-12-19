@@ -1078,6 +1078,28 @@ The following queries provide results that do not match those of other implement
   []
   ```
 
+- [ ] `$[(@.length-1)]`
+  Input:
+  ```
+  [
+    "first",
+    "second",
+    "third",
+    "forth",
+    "fifth"
+  ]
+  ```
+  Expected output:
+  ```
+  NOT_SUPPORTED
+  ```
+  Actual output:
+  ```
+  [
+    "fifth"
+  ]
+  ```
+
 - [ ] `$[?(@.key<3),?(@.key>6)]`
   Input:
   ```

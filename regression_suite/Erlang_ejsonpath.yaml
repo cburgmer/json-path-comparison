@@ -218,9 +218,6 @@ queries:
   - id: filter_expression_with_equals_on_object_with_key_matching_query
     status: open
     result: []
-  - id: filter_expression_with_equals_string
-    status: open
-    result: [{"key": "value"}]
   - id: filter_expression_with_equals_string_in_NFC
     status: fail
     result: []

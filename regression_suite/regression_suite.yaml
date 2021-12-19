@@ -791,6 +791,7 @@ queries:
   - id: filter_expression_with_equals_string
     selector: "$[?(@.key==\"value\")]"
     document: [{"key": "some"}, {"key": "value"}, {"key": null}, {"key": 0}, {"key": 1}, {"key": -1}, {"key": ""}, {"key": {}}, {"key": []}, {"key": "valuemore"}, {"key": "morevalue"}, {"key": ["value"]}, {"key": {"some": "value"}}, {"key": {"key": "value"}}, {"some": "value"}]
+    consensus: [{"key": "value"}]
   - id: filter_expression_with_equals_string_in_NFC
     selector: "$[?(@.key==\"Motörhead\")]"
     document: [{"key": "something"}, {"key": "Mot\u00f6rhead"}, {"key": "mot\u00f6rhead"}, {"key": "Motorhead"}, {"key": "Motoo\u0308rhead"}, {"key": "motoo\u0308rhead"}]
@@ -957,6 +958,7 @@ queries:
   - id: script_expression
     selector: "$[(@.length-1)]"
     document: ["first", "second", "third", "forth", "fifth"]
+    consensus: NOT_SUPPORTED
   - id: union
     selector: "$[0,1]"
     document: ["first", "second", "third"]

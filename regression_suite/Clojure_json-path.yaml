@@ -382,7 +382,7 @@ queries:
     status: open
     result: [2]
   - id: filter_expression_with_equals_string
-    status: open
+    status: fail
     result: [{"key": null}, {"some": "value"}]
   - id: filter_expression_with_equals_string_in_NFC
     status: fail
