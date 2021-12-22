@@ -1,0 +1,25 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "Hitch",
+        "repositoryURL": "https://github.com/KittyMac/Hitch.git",
+        "state": {
+          "branch": "main",
+          "revision": "aaece8ade93357a90a7c98cd5b0deec5b4389619",
+          "version": null
+        }
+      },
+      {
+        "package": "Sextant",
+        "repositoryURL": "https://github.com/KittyMac/Sextant.git",
+        "state": {
+          "branch": "main",
+          "revision": "9fa82b5979fa6b75f32a16c0a85a64e2aae8f4c3",
+          "version": null
+        }
+      }
+    ]
+  },
+  "version": 1
+}
