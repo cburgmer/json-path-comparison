@@ -2,7 +2,7 @@ root = implementations/Swift_Sextant
 builddir = $root/build
 
 rule build
-  command = cd $root && swift build && cd - && cp $root/.build/*/debug/Swift_Sextant $out && rm -r $root/.build
+  command = cd $root && swift package update && swift build && cd - && cp $root/.build/*/debug/Swift_Sextant $out && rm -r $root/.build
 
 build $builddir/Swift_Sextant: build | $root/Package.swift $root/Sources/Swift_Sextant/main.swift
 
