@@ -510,6 +510,24 @@ The following queries provide results that do not match those of other implement
   ]
   ```
 
+- [ ] ``
+  Input:
+  ```
+  {
+    "a": 42,
+    "": 21
+  }
+  ```
+  Expected output:
+  ```
+  NOT_SUPPORTED
+  ```
+  Actual output:
+  NOT_FOUND
+  ```
+  jsonpath returned false, this might indicate an error
+  ```
+
 - [ ] `$[?(@['@key']==42)]`
   Input:
   ```

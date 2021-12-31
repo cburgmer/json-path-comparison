@@ -493,6 +493,28 @@ The following queries provide results that do not match those of other implement
   ]
   ```
 
+- [ ] ``
+  Input:
+  ```
+  {
+    "a": 42,
+    "": 21
+  }
+  ```
+  Expected output:
+  ```
+  NOT_SUPPORTED
+  ```
+  Actual output:
+  ```
+  [
+    {
+      "": 21,
+      "a": 42
+    }
+  ]
+  ```
+
 - [ ] `$[?(@['@key']==42)]`
   Input:
   ```

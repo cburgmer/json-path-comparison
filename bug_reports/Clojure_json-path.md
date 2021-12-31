@@ -1661,6 +1661,23 @@ The following queries provide results that do not match those of other implement
   1
   ```
 
+- [ ] ``
+  Input:
+  ```
+  {
+    "a": 42,
+    "": 21
+  }
+  ```
+  Expected output:
+  ```
+  NOT_SUPPORTED
+  ```
+  Actual output:
+  ```
+  null
+  ```
+
 - [ ] `$..*[?(@.id>2)]`
   Input:
   ```
@@ -2281,6 +2298,32 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   java.lang.Exception object must be an array.
+  ```
+
+- [ ] `$[?(@==42)]`
+  Input:
+  ```
+  [
+    0,
+    42,
+    -1,
+    41,
+    43,
+    42.0001,
+    41.9999,
+    null,
+    100
+  ]
+  ```
+  Expected output:
+  ```
+  [42]
+  ```
+  Actual output:
+  ```
+  [
+    null
+  ]
   ```
 
 - [ ] `$[?(@.key=="value")]`

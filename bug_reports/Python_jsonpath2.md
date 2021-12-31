@@ -597,6 +597,28 @@ The following queries provide results that do not match those of other implement
   ValueError("line 1:2 token recognition error at: '屬'")
   ```
 
+- [ ] `$.-1`
+  Input:
+  ```
+  [
+    "first",
+    "second",
+    "third",
+    "forth",
+    "fifth"
+  ]
+  ```
+  Expected output:
+  ```
+  []
+  ```
+  Actual output:
+  NOT_SUPPORTED
+  ```
+  line 1:2 mismatched input '-1' expecting {'*', ID}
+  ValueError("line 1:2 mismatched input '-1' expecting {'*', ID}")
+  ```
+
 - [ ] `$.2`
   Input:
   ```
@@ -768,6 +790,32 @@ The following queries provide results that do not match those of other implement
   ```
   line 1:10 token recognition error at: '''
   ValueError("line 1:10 token recognition error at: '''")
+  ```
+
+- [ ] `$[?(@==42)]`
+  Input:
+  ```
+  [
+    0,
+    42,
+    -1,
+    41,
+    43,
+    42.0001,
+    41.9999,
+    null,
+    100
+  ]
+  ```
+  Expected output:
+  ```
+  [42]
+  ```
+  Actual output:
+  NOT_SUPPORTED
+  ```
+  line 1:6 extraneous input '=' expecting {'@', '$', 'true', 'false', 'null', '{', '[', STRING, NUMBER}
+  ValueError("line 1:6 extraneous input '=' expecting {'@', '$', 'true', 'false', 'null', '{', '[', STRING, NUMBER}")
   ```
 
 - [ ] `$[?(@.key==43)]`

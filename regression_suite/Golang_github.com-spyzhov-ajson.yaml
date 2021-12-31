@@ -93,7 +93,7 @@ queries:
     status: open
     result: ["third"]
   - id: dot_notation_with_number_-1
-    status: open
+    status: fail
     result: ["fifth"]
   - id: dot_notation_with_single_quotes
     status: open
@@ -110,9 +110,6 @@ queries:
     status: open
     result: []
   - id: dot_notation_without_root_and_dot
-    status: open
-    result: NOT_SUPPORTED
-  - id: empty
     status: open
     result: NOT_SUPPORTED
   - id: filter_expression_after_dot_notation_with_wildcard_after_recursive_descent
@@ -203,9 +200,6 @@ queries:
     status: error
   - id: filter_expression_with_equals_object
     status: error
-  - id: filter_expression_with_equals_on_array_of_numbers
-    status: open
-    result: [42]
   - id: filter_expression_with_equals_on_object
     status: open
     result: [{"key": 42}]

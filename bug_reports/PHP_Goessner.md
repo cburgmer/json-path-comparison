@@ -618,6 +618,23 @@ The following queries provide results that do not match those of other implement
   ]
   ```
 
+- [ ] ``
+  Input:
+  ```
+  {
+    "a": 42,
+    "": 21
+  }
+  ```
+  Expected output:
+  ```
+  NOT_SUPPORTED
+  ```
+  Actual output:
+  ```
+  null
+  ```
+
 - [ ] `$..*[?(@.id>2)]`
   Input:
   ```
@@ -1878,6 +1895,10 @@ The following queries provide results that do not match those of other implement
     null,
     100
   ]
+  ```
+  Expected output:
+  ```
+  [42]
   ```
   Error:
   ```

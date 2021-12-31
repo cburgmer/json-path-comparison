@@ -66,9 +66,6 @@ queries:
   - id: dot_notation_with_number
     status: open
     result: []
-  - id: dot_notation_with_number_-1
-    status: open
-    result: []
   - id: dot_notation_with_single_quotes
     status: open
     result: NOT_SUPPORTED
@@ -85,9 +82,6 @@ queries:
     status: open
     result: NOT_SUPPORTED
   - id: dot_notation_without_root_and_dot
-    status: open
-    result: NOT_SUPPORTED
-  - id: empty
     status: open
     result: NOT_SUPPORTED
   - id: filter_expression_after_dot_notation_with_wildcard_after_recursive_descent
@@ -189,9 +183,6 @@ queries:
   - id: filter_expression_with_equals_object
     status: open
     result: NOT_SUPPORTED
-  - id: filter_expression_with_equals_on_array_of_numbers
-    status: open
-    result: [42]
   - id: filter_expression_with_equals_on_object
     status: open
     result: [{"key": 42}]

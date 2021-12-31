@@ -142,9 +142,6 @@ queries:
   - id: dot_notation_with_number
     status: open
     result: []
-  - id: dot_notation_with_number_-1
-    status: open
-    result: []
   - id: dot_notation_with_single_quotes
     status: open
     result: ["value"]
@@ -194,7 +191,7 @@ queries:
     status: open
     result: ["value"]
   - id: empty
-    status: open
+    status: fail
     result: [{"": 21, "a": 42}]
   - id: filter_expression_after_dot_notation_with_wildcard_after_recursive_descent
     status: open
@@ -283,9 +280,6 @@ queries:
   - id: filter_expression_with_equals_object
     status: open
     result: []
-  - id: filter_expression_with_equals_on_array_of_numbers
-    status: open
-    result: [42]
   - id: filter_expression_with_equals_on_object
     status: open
     result: []

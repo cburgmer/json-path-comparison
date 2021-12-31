@@ -462,6 +462,10 @@ The following queries provide results that do not match those of other implement
     "": 21
   }
   ```
+  Expected output:
+  ```
+  NOT_SUPPORTED
+  ```
   Error:
   ```
   SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".

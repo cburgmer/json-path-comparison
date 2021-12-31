@@ -606,6 +606,27 @@ The following queries provide results that do not match those of other implement
   JsonPathLexerError('Error on line 1, col 2: Unexpected character: 屬 ')
   ```
 
+- [ ] `$.-1`
+  Input:
+  ```
+  [
+    "first",
+    "second",
+    "third",
+    "forth",
+    "fifth"
+  ]
+  ```
+  Expected output:
+  ```
+  []
+  ```
+  Actual output:
+  NOT_SUPPORTED
+  ```
+  Exception('Parse error at 1:2 near token -1 (NUMBER)')
+  ```
+
 - [ ] `$.2`
   Input:
   ```
@@ -890,6 +911,31 @@ The following queries provide results that do not match those of other implement
   Expected output:
   ```
   [["a", "b"]]
+  ```
+  Actual output:
+  NOT_SUPPORTED
+  ```
+  JsonPathLexerError('Error on line 1, col 2: Unexpected character: ? ')
+  ```
+
+- [ ] `$[?(@==42)]`
+  Input:
+  ```
+  [
+    0,
+    42,
+    -1,
+    41,
+    43,
+    42.0001,
+    41.9999,
+    null,
+    100
+  ]
+  ```
+  Expected output:
+  ```
+  [42]
   ```
   Actual output:
   NOT_SUPPORTED

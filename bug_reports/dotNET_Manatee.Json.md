@@ -257,6 +257,27 @@ The following queries provide results that do not match those of other implement
   ]
   ```
 
+- [ ] `$.-1`
+  Input:
+  ```
+  [
+    "first",
+    "second",
+    "third",
+    "forth",
+    "fifth"
+  ]
+  ```
+  Expected output:
+  ```
+  []
+  ```
+  Actual output:
+  NOT_SUPPORTED
+  ```
+  Unrecognized JSON Path element. Path up to error: '$'
+  ```
+
 - [ ] ``
   Input:
   ```
@@ -265,9 +286,38 @@ The following queries provide results that do not match those of other implement
     "": 21
   }
   ```
+  Expected output:
+  ```
+  NOT_SUPPORTED
+  ```
   Error:
   ```
   Object reference not set to an instance of an object.
+  ```
+
+- [ ] `$[?(@==42)]`
+  Input:
+  ```
+  [
+    0,
+    42,
+    -1,
+    41,
+    43,
+    42.0001,
+    41.9999,
+    null,
+    100
+  ]
+  ```
+  Expected output:
+  ```
+  [42]
+  ```
+  Actual output:
+  NOT_SUPPORTED
+  ```
+  Sequence contains no elements
   ```
 
 - [ ] `$[(@.length-1)]`

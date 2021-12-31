@@ -1863,6 +1863,26 @@ The following queries provide results that do not match those of other implement
   expression don't support in filter
   ```
 
+- [ ] `$.-1`
+  Input:
+  ```
+  [
+    "first",
+    "second",
+    "third",
+    "forth",
+    "fifth"
+  ]
+  ```
+  Expected output:
+  ```
+  null
+  ```
+  Actual output:
+  ```
+  []
+  ```
+
 - [ ] `$..'key'`
   Input:
   ```
@@ -2134,6 +2154,10 @@ The following queries provide results that do not match those of other implement
     "a": 42,
     "": 21
   }
+  ```
+  Expected output:
+  ```
+  NOT_SUPPORTED
   ```
   Error:
   ```
@@ -2752,6 +2776,30 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   interface conversion: interface {} is nil, not string
+  ```
+
+- [ ] `$[?(@==42)]`
+  Input:
+  ```
+  [
+    0,
+    42,
+    -1,
+    41,
+    43,
+    42.0001,
+    41.9999,
+    null,
+    100
+  ]
+  ```
+  Expected output:
+  ```
+  [42]
+  ```
+  Actual output:
+  ```
+  []
   ```
 
 - [ ] `$[?(@.key==42)]`

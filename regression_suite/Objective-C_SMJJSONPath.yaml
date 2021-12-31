@@ -110,9 +110,6 @@ queries:
   - id: dot_notation_with_number
     status: open
     result: NOT_FOUND
-  - id: dot_notation_with_number_-1
-    status: open
-    result: NOT_FOUND
   - id: dot_notation_with_single_quotes
     status: open
     result: 42
@@ -131,9 +128,6 @@ queries:
   - id: dot_notation_without_root_and_dot
     status: open
     result: "value"
-  - id: empty
-    status: open
-    result: NOT_SUPPORTED
   - id: filter_expression_after_dot_notation_with_wildcard_after_recursive_descent
     status: open
     result: [{"id": 3, "name": "another"}, {"id": 3, "name": "another"}, {"id": 4, "name": "more"}, {"id": 4, "name": "more"}, {"id": 5, "name": "next to last"}, {"id": 6, "name": "last"}]
@@ -227,9 +221,6 @@ queries:
   - id: filter_expression_with_equals_object
     status: open
     result: [{"d": {"k": "v"}}]
-  - id: filter_expression_with_equals_on_array_of_numbers
-    status: open
-    result: [42]
   - id: filter_expression_with_equals_on_object
     status: open
     result: []

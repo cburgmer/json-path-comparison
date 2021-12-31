@@ -581,6 +581,10 @@ queries:
   - id: dot_notation_with_number_-1
     selector: "$.-1"
     document: ["first", "second", "third", "forth", "fifth"]
+    consensus: []
+    scalar-consensus: null
+    not-found-consensus: NOT_FOUND
+    scalar-not-found-consensus: NOT_FOUND
   - id: dot_notation_with_number_on_object
     selector: "$.2"
     document: {"a": "first", "2": "second", "b": "third"}
@@ -655,6 +659,7 @@ queries:
   - id: empty
     selector: ""
     document: {"a": 42, "": 21}
+    consensus: NOT_SUPPORTED
   - id: filter_expression_after_dot_notation_with_wildcard_after_recursive_descent
     selector: "$..*[?(@.id>2)]"
     document: [{"complext": {"one": [{"name": "first", "id": 1}, {"name": "next", "id": 2}, {"name": "another", "id": 3}, {"name": "more", "id": 4}], "more": {"name": "next to last", "id": 5}}}, {"name": "last", "id": 6}]
@@ -777,6 +782,7 @@ queries:
   - id: filter_expression_with_equals_on_array_of_numbers
     selector: "$[?(@==42)]"
     document: [0, 42, -1, 41, 43, 42.0001, 41.9999, null, 100]
+    consensus: [42]
   - id: filter_expression_with_equals_on_array_without_match
     selector: "$[?(@.key==43)]"
     document: [{"key": 42}]

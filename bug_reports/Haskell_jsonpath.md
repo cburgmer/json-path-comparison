@@ -965,6 +965,10 @@ The following queries provide results that do not match those of other implement
     "fifth"
   ]
   ```
+  Expected output:
+  ```
+  null
+  ```
   Error:
   ```
   json-path-comparison: expected object, found ["first","second","third","forth","fifth"]
@@ -1302,6 +1306,32 @@ The following queries provide results that do not match those of other implement
   ```
   json-path-comparison: src/Data/JSONPath/Execute.hs:(71,1)-(72,60): Non-exhaustive patterns in function executeCondition
   
+  ```
+
+- [ ] `$[?(@==42)]`
+  Input:
+  ```
+  [
+    0,
+    42,
+    -1,
+    41,
+    43,
+    42.0001,
+    41.9999,
+    null,
+    100
+  ]
+  ```
+  Expected output:
+  ```
+  [42]
+  ```
+  Actual output:
+  NOT_SUPPORTED
+  ```
+  Invalid JSONPath: $[?(@==42)]
+   Error: searchBeginningWithSlice: string
   ```
 
 - [ ] `$[?(@.key==42)]`

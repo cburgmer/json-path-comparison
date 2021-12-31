@@ -1691,6 +1691,30 @@ The following queries provide results that do not match those of other implement
   []
   ```
 
+- [ ] `$[?(@==42)]`
+  Input:
+  ```
+  [
+    0,
+    42,
+    -1,
+    41,
+    43,
+    42.0001,
+    41.9999,
+    null,
+    100
+  ]
+  ```
+  Expected output:
+  ```
+  [42]
+  ```
+  Actual output:
+  ```
+  []
+  ```
+
 - [ ] `$[?(@.key=="value")]`
   Input:
   ```

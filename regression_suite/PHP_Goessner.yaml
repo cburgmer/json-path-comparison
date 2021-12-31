@@ -129,9 +129,6 @@ queries:
   - id: dot_notation_with_number
     status: open
     result: ["third"]
-  - id: dot_notation_with_number_-1
-    status: open
-    result: NOT_FOUND
   - id: dot_notation_with_single_quotes
     status: open
     result: ["value"]
@@ -160,7 +157,7 @@ queries:
     status: open
     result: ["value"]
   - id: empty
-    status: open
+    status: fail
     result: null
   - id: filter_expression_after_dot_notation_with_wildcard_after_recursive_descent
     status: error

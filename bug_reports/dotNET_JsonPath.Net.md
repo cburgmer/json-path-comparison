@@ -276,6 +276,27 @@ The following queries provide results that do not match those of other implement
   ]
   ```
 
+- [ ] `$.-1`
+  Input:
+  ```
+  [
+    "first",
+    "second",
+    "third",
+    "forth",
+    "fifth"
+  ]
+  ```
+  Expected output:
+  ```
+  []
+  ```
+  Actual output:
+  NOT_SUPPORTED
+  ```
+  Could not identify selector
+  ```
+
 - [ ] `$[(@.length-1)]`
   Input:
   ```

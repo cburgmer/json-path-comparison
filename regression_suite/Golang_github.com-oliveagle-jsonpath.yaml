@@ -219,7 +219,7 @@ queries:
     status: open
     result: []
   - id: dot_notation_with_number_-1
-    status: open
+    status: fail
     result: []
   - id: dot_notation_with_single_quotes
     status: open
@@ -354,7 +354,7 @@ queries:
     status: open
     result: []
   - id: filter_expression_with_equals_on_array_of_numbers
-    status: open
+    status: fail
     result: []
   - id: filter_expression_with_equals_on_object
     status: error

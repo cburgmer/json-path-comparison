@@ -713,6 +713,28 @@ The following queries provide results that do not match those of other implement
   illegal characters "屬"
   ```
 
+- [ ] `$.-1`
+  Input:
+  ```
+  [
+    "first",
+    "second",
+    "third",
+    "forth",
+    "fifth"
+  ]
+  ```
+  Expected output:
+  ```
+  []
+  ```
+  Actual output:
+  ```
+  [
+    "fifth"
+  ]
+  ```
+
 - [ ] `$.2`
   Input:
   ```
@@ -955,6 +977,31 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   WithClauseError
+  ```
+
+- [ ] `$[?(@==42)]`
+  Input:
+  ```
+  [
+    0,
+    42,
+    -1,
+    41,
+    43,
+    42.0001,
+    41.9999,
+    null,
+    100
+  ]
+  ```
+  Expected output:
+  ```
+  [42]
+  ```
+  Actual output:
+  NOT_SUPPORTED
+  ```
+  syntax error before: '=='
   ```
 
 - [ ] `$[?(@.key=="Motörhead")]`

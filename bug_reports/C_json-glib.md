@@ -1422,6 +1422,10 @@ The following queries provide results that do not match those of other implement
     "": 21
   }
   ```
+  Expected output:
+  ```
+  NOT_SUPPORTED
+  ```
   Error:
   ```
   json_path_match: assertion 'path->is_compiled' failed
@@ -1575,6 +1579,31 @@ The following queries provide results that do not match those of other implement
   NOT_SUPPORTED
   ```
   Unable to compile selector `$[?(@[1]=='b')]': Invalid array index definition “?(@[1]=='b')]”
+  ```
+
+- [ ] `$[?(@==42)]`
+  Input:
+  ```
+  [
+    0,
+    42,
+    -1,
+    41,
+    43,
+    42.0001,
+    41.9999,
+    null,
+    100
+  ]
+  ```
+  Expected output:
+  ```
+  [42]
+  ```
+  Actual output:
+  NOT_SUPPORTED
+  ```
+  Unable to compile selector `$[?(@==42)]': Invalid array index definition “?(@==42)]”
   ```
 
 - [ ] `$[?(@.key==43)]`
