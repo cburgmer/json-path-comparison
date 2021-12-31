@@ -352,7 +352,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  java.lang.NumberFormatException null
+  java.lang.NumberFormatException Cannot parse null string
   ```
 
 - [ ] `$[::]`
@@ -369,7 +369,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  java.lang.NumberFormatException null
+  java.lang.NumberFormatException Cannot parse null string
   ```
 
 - [ ] `$[:]`
@@ -1716,7 +1716,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  java.lang.NullPointerException nil
+  java.lang.NullPointerException Cannot invoke "Object.getClass()" because "x" is null
   ```
 
 - [ ] `$[?(@.key>42 && @.key<44)]`
@@ -2272,7 +2272,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  java.lang.NullPointerException nil
+  java.lang.NullPointerException Cannot invoke "Object.getClass()" because "x" is null
   ```
 
 - [ ] `$[?(@[0:1]==1)]`
@@ -2822,7 +2822,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  java.lang.NullPointerException nil
+  java.lang.NullPointerException Cannot invoke "Object.getClass()" because "x" is null
   ```
 
 - [ ] `$[*].bookmarks[?(@.page == 45)]^^^`
@@ -2996,7 +2996,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  java.lang.NullPointerException nil
+  java.lang.NullPointerException Cannot invoke "Object.getClass()" because "x" is null
   ```
 
 - [ ] `$[?(@.address.city=='Berlin')]`
@@ -3232,7 +3232,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  java.lang.NumberFormatException null
+  java.lang.NumberFormatException Cannot parse null string
   ```
 
 - [ ] `$[0]['c','d']`

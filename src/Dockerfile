@@ -29,7 +29,6 @@ RUN apt-get install -y --no-install-recommends perl make wget
 RUN apt-get install -y --no-install-recommends gcc libjson-glib-dev
 
 # Erlang
-# rebar3 as pkg only found in alpine:edge
 RUN apt-get install -y --no-install-recommends erlang erlang-crypto erlang-asn1 erlang-public-key erlang-ssl erlang-dev g++ \
         && curl -L https://s3.amazonaws.com/rebar3/rebar3 -o /usr/local/bin/rebar3 && chmod +x /usr/local/bin/rebar3
 
@@ -66,8 +65,8 @@ RUN sh -c 'wget -qO- https://dl-ssl.google.com/linux/linux_signing_key.pub | apt
 RUN sh -c 'wget -qO- https://storage.googleapis.com/download.dartlang.org/linux/debian/dart_stable.list > /etc/apt/sources.list.d/dart_stable.list'
 RUN apt-get update && apt-get install dart
 
-# Java + Clojure + Kotlin
-RUN apt-get install -y --no-install-recommends openjdk-11-jdk maven
+# Java + Clojure + Kotlin + Scala
+RUN apt-get install -y --no-install-recommends openjdk-17-jdk maven
 
 # Swift
 RUN apt-get install -y --no-install-recommends clang libicu-dev libtinfo5 libncurses5 \

@@ -871,7 +871,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  java.lang.NullPointerException
+  java.lang.NullPointerException: Cannot invoke "org.jsfr.json.path.JsonPath$Builder.build()" because "this.filterPathBuilder" is null
   ```
 
 - [ ] `$[?(@.key===42)]`
