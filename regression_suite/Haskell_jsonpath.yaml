@@ -448,7 +448,7 @@ queries:
     result: NOT_SUPPORTED
   - id: union_with_repeated_matches_after_dot_notation_with_wildcard
     status: open
-    result: [false, false, "string", 5.4, "string", "string", null, true]
+    result: ["string", "string", null, true, false, false, "string", 5.4]
   - id: union_with_slice_and_number
     status: open
     result: [5, 2, 3]

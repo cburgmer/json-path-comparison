@@ -20,7 +20,7 @@ executable json-path-comparison
       app
   ghc-options: -threaded -rtsopts -with-rtsopts=-N
   build-depends:
-      aeson
+      aeson >=1.1 && <2
     , attoparsec
     , base >=4.7 && <5
     , bytestring
