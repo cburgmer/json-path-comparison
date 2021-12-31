@@ -33,9 +33,6 @@ queries:
   - id: array_slice_with_step_0
     status: open
     result: ["first", "second", "third"]
-  - id: bracket_notation_with_NFC_path_on_NFD_key
-    status: fail
-    result: [42]
   - id: bracket_notation_with_quoted_escaped_backslash
     status: open
     result: ["value"]
@@ -62,7 +59,7 @@ queries:
     result: [42]
   - id: dot_notation_with_double_quotes_after_recursive_descent
     status: open
-    result: [0, 100, 42, 99, {"\"key\"": 99}]
+    result: [0, 100, 42, 99]
   - id: dot_notation_with_key_root_literal
     status: open
     result: ["value"]
@@ -161,7 +158,7 @@ queries:
     result: NOT_SUPPORTED
   - id: filter_expression_with_equals_false
     status: open
-    result: [{"some": "some value"}, {"key": false}, {"key": 0}]
+    result: [{"key": false}, {"key": 0}]
   - id: filter_expression_with_equals_null
     status: open
     result: [{"key": null}]
@@ -197,7 +194,7 @@ queries:
     result: [{"key": true}, {"key": 1}]
   - id: filter_expression_with_equals_with_path_and_path
     status: open
-    result: [{"key1": 10, "key2": 10}, {}, {"key1": null, "key2": null}, {"key1": 0, "key2": 0}, {"key1": 0}, {"key2": 0}, {"key1": -1, "key2": -1}, {"key1": "", "key2": ""}, {"key1": false, "key2": false}, {"key1": false}, {"key2": false}, {"key1": true, "key2": true}, {"key1": [], "key2": []}, {"key1": {}, "key2": {}}, {"key1": {"a": 1, "b": 2}, "key2": {"a": 1, "b": 2}}]
+    result: [{"key1": 10, "key2": 10}, {"key1": null, "key2": null}, {"key1": 0, "key2": 0}, {"key1": -1, "key2": -1}, {"key1": "", "key2": ""}, {"key1": false, "key2": false}, {"key1": true, "key2": true}, {"key1": [], "key2": []}, {"key1": {}, "key2": {}}, {"key1": {"a": 1, "b": 2}, "key2": {"a": 1, "b": 2}}]
   - id: filter_expression_with_equals_with_root_reference
     status: open
     result: [{"key": 42}]
@@ -215,16 +212,16 @@ queries:
     result: [{"d": [1, 2, 3]}, {"d": [2]}, {"d": [4, 2]}]
   - id: filter_expression_with_less_than
     status: open
-    result: [{"key": 0}, {"key": -1}, {"key": 41}, {"key": 41.9999}, {"key": "41"}, {"some": "value"}]
+    result: [{"key": 0}, {"key": -1}, {"key": 41}, {"key": 41.9999}, {"key": "41"}]
   - id: filter_expression_with_less_than_or_equal
     status: open
-    result: [{"key": 0}, {"key": 42}, {"key": -1}, {"key": 41}, {"key": 41.9999}, {"key": "42"}, {"key": "41"}, {"some": "value"}]
+    result: [{"key": 0}, {"key": 42}, {"key": -1}, {"key": 41}, {"key": 41.9999}, {"key": "42"}, {"key": "41"}]
   - id: filter_expression_with_multiplication
     status: open
     result: [{"key*2": 100}]
   - id: filter_expression_with_negation_and_equals
     status: open
-    result: [{"key": 0}, {"key": -1}, {"key": 41}, {"key": 43}, {"key": 42.0001}, {"key": 41.9999}, {"key": 100}, {"key": "43"}, {"key": "41"}, {"key": "value"}, {"some": "value"}]
+    result: [{"key": 0}, {"key": -1}, {"key": 41}, {"key": 43}, {"key": 42.0001}, {"key": 41.9999}, {"key": 100}, {"key": "43"}, {"key": "41"}, {"key": "value"}]
   - id: filter_expression_with_negation_and_less_than
     status: open
     result: [{"key": 42}, {"key": 43}, {"key": 42.0001}, {"key": 100}, {"key": "43"}, {"key": "42"}, {"key": "value"}]
@@ -233,7 +230,7 @@ queries:
     result: [{"some": "some value"}]
   - id: filter_expression_with_not_equals
     status: open
-    result: [{"key": 0}, {"key": -1}, {"key": 1}, {"key": 41}, {"key": 43}, {"key": 42.0001}, {"key": 41.9999}, {"key": 100}, {"key": "some"}, {"key": null}, {"key": 420}, {"key": ""}, {"key": {}}, {"key": []}, {"key": [42]}, {"key": {"key": 42}}, {"key": {"some": 42}}, {"some": "value"}]
+    result: [{"key": 0}, {"key": -1}, {"key": 1}, {"key": 41}, {"key": 43}, {"key": 42.0001}, {"key": 41.9999}, {"key": 100}, {"key": "some"}, {"key": null}, {"key": 420}, {"key": ""}, {"key": {}}, {"key": []}, {"key": [42]}, {"key": {"key": 42}}, {"key": {"some": 42}}]
   - id: filter_expression_with_parent_axis_operator
     status: fail
     result: []

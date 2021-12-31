@@ -5,18 +5,27 @@
         "package": "Hitch",
         "repositoryURL": "https://github.com/KittyMac/Hitch.git",
         "state": {
-          "branch": "main",
-          "revision": "aaece8ade93357a90a7c98cd5b0deec5b4389619",
-          "version": null
+          "branch": null,
+          "revision": "eb1b9474d60464171f2443952a01f70074b41f5d",
+          "version": "0.1.0"
         }
       },
       {
         "package": "Sextant",
         "repositoryURL": "https://github.com/KittyMac/Sextant.git",
         "state": {
-          "branch": "main",
-          "revision": "9424d00164e279fefad7238d9b2c7ff61941449a",
-          "version": null
+          "branch": null,
+          "revision": "1b4aa2487401932e087abd8e90eb2a28d251e2b1",
+          "version": "0.3.0"
+        }
+      },
+      {
+        "package": "Spanker",
+        "repositoryURL": "https://github.com/KittyMac/Spanker.git",
+        "state": {
+          "branch": null,
+          "revision": "9e46589e379c261294f7b1b03cc335dfcb853bbc",
+          "version": "0.1.0"
         }
       }
     ]

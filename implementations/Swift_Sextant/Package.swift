@@ -9,7 +9,7 @@ let package = Package(
         .macOS(.v10_13), .iOS(.v11)
     ],
     dependencies: [
-        .package(url: "https://github.com/KittyMac/Sextant.git", .branch("main")),
+        .package(url: "https://github.com/KittyMac/Sextant.git", .upToNextMinor(from: "0.3.0")),
     ],
     targets: [
     // Targets are the basic building blocks of a package. A target can define a module or a test suite.

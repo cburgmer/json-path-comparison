@@ -3,24 +3,6 @@ Results do not match other implementations
 The following queries provide results that do not match those of other implementations of JSONPath
 (compare https://cburgmer.github.io/json-path-comparison/):
 
-- [ ] `$['ü']`
-  Input:
-  ```
-  {
-    "u\u0308": 42
-  }
-  ```
-  Expected output:
-  ```
-  []
-  ```
-  Actual output:
-  ```
-  [
-    42
-  ]
-  ```
-
 - [ ] `$[?(@.d in [2, 3])]`
   Input:
   ```
