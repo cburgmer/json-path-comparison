@@ -79,7 +79,7 @@ ENV PATH="/swift/usr/bin:${PATH}"
 # Haskell
 # Get newest cabal outside of Ubuntu channel
 RUN apt-get install -y --no-install-recommends ghc xz-utils \
-        && curl -L https://downloads.haskell.org/~cabal/cabal-install-3.4.0.0/cabal-install-3.4.0.0-x86_64-ubuntu-16.04.tar.xz -o cabal-install.tar.xz \
+        && curl -L https://downloads.haskell.org/~cabal/cabal-install-3.6.2.0/cabal-install-3.6.2.0-x86_64-linux-deb10.tar.xz -o cabal-install.tar.xz \
         && tar -xf cabal-install.tar.xz \
         && mv cabal /usr/local/bin/ \
         && rm cabal-install.tar.xz
