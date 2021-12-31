@@ -57,9 +57,9 @@ RUN apt-get install -y --no-install-recommends sed grep gawk
 
 # Swift
 RUN apt-get install -y --no-install-recommends clang libicu-dev libtinfo5 libncurses5 \
-        && curl -LO https://download.swift.org/swift-5.5.2-release/ubuntu1804/swift-5.5.2-RELEASE/swift-5.5.2-RELEASE-ubuntu18.04.tar.gz \
-        && tar -xzf swift-5.5.2-RELEASE-ubuntu18.04.tar.gz \
-        && mv swift-5.5.2-RELEASE-ubuntu18.04 /swift
+        && curl -LO https://download.swift.org/swift-5.5.2-release/ubuntu2004/swift-5.5.2-RELEASE/swift-5.5.2-RELEASE-ubuntu20.04.tar.gz \
+        && tar -xzf swift-5.5.2-RELEASE-ubuntu20.04.tar.gz \
+        && mv swift-5.5.2-RELEASE-ubuntu20.04 /swift
 ENV PATH="/swift/usr/bin:${PATH}"
 
 # Objective-C
