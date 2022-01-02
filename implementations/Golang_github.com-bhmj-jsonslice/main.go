@@ -13,13 +13,16 @@ func main() {
 	data, err := ioutil.ReadAll(os.Stdin)
 	if err != nil {
 		fmt.Fprintln(os.Stderr, err)
-		os.Exit(1)
+		os.Exit(1) // general error
 	}
 
 	result, err := jsonslice.Get(data, selector)
 	if err != nil {
 		fmt.Fprintln(os.Stderr, err)
-		os.Exit(1)
+		os.Exit(1) // general error
+	}
+	if result == nil {
+		os.Exit(3) // not found
 	}
 	fmt.Print(string(result))
 }

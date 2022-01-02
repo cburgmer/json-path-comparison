@@ -33,27 +33,17 @@ queries:
   - id: array_slice_with_step_0
     status: open
     result: ["first", "second", "third"]
-  - id: bracket_notation_on_object_without_key
-    status: error
-  - id: bracket_notation_with_NFC_path_on_NFD_key
-    status: error
   - id: bracket_notation_with_empty_path
     status: error
   - id: bracket_notation_with_empty_string
-    status: error
+    status: fail
+    result: NOT_FOUND
   - id: bracket_notation_with_empty_string_doubled_quoted
-    status: error
-  - id: bracket_notation_with_negative_number_on_short_array
-    status: error
-  - id: bracket_notation_with_number_-1_on_empty_array
-    status: error
+    status: fail
+    result: NOT_FOUND
   - id: bracket_notation_with_number_on_object
     status: fail
     result: "value"
-  - id: bracket_notation_with_number_on_short_array
-    status: error
-  - id: bracket_notation_with_number_on_string
-    status: error
   - id: bracket_notation_with_quoted_escaped_backslash
     status: open
     result: "value"
@@ -61,10 +51,9 @@ queries:
     status: open
     result: "value"
   - id: bracket_notation_with_quoted_special_characters_combined
-    status: error
+    status: open
+    result: NOT_FOUND
   - id: bracket_notation_with_quoted_string_and_unescaped_single_quote
-    status: error
-  - id: bracket_notation_with_quoted_wildcard_literal_on_object_without_key
     status: error
   - id: bracket_notation_with_two_literals_separated_by_dot
     status: error
@@ -99,12 +88,6 @@ queries:
   - id: dot_notation_after_recursive_descent_with_extra_dot
     status: open
     result: []
-  - id: dot_notation_on_array
-    status: error
-  - id: dot_notation_on_array_with_containing_object_matching_key
-    status: error
-  - id: dot_notation_on_object_without_key
-    status: error
   - id: dot_notation_with_dash
     status: fail
     result: 42
@@ -115,8 +98,6 @@ queries:
     status: open
     result: ["russian dolls", "something", "top", "value", {"key": "russian dolls"}]
   - id: dot_notation_with_empty_path
-    status: error
-  - id: dot_notation_with_key_named_length_on_array
     status: error
   - id: dot_notation_with_key_root_literal
     status: open

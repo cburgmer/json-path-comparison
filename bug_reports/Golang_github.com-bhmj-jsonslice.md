@@ -3,38 +3,6 @@ Results do not match other implementations
 The following queries provide results that do not match those of other implementations of JSONPath
 (compare https://cburgmer.github.io/json-path-comparison/):
 
-- [ ] `$['missing']`
-  Input:
-  ```
-  {
-    "key": "value"
-  }
-  ```
-  Expected output:
-  ```
-  null
-  ```
-  Error:
-  ```
-  No JSON output received
-  ```
-
-- [ ] `$['ü']`
-  Input:
-  ```
-  {
-    "u\u0308": 42
-  }
-  ```
-  Expected output:
-  ```
-  null
-  ```
-  Error:
-  ```
-  No JSON output received
-  ```
-
 - [ ] `$[]`
   Input:
   ```
@@ -66,9 +34,9 @@ The following queries provide results that do not match those of other implement
   ```
   42
   ```
-  Error:
+  Actual output:
+  NOT_FOUND
   ```
-  No JSON output received
   ```
 
 - [ ] `$[""]`
@@ -84,39 +52,9 @@ The following queries provide results that do not match those of other implement
   ```
   42
   ```
-  Error:
+  Actual output:
+  NOT_FOUND
   ```
-  No JSON output received
-  ```
-
-- [ ] `$[-2]`
-  Input:
-  ```
-  [
-    "one element"
-  ]
-  ```
-  Expected output:
-  ```
-  null
-  ```
-  Error:
-  ```
-  No JSON output received
-  ```
-
-- [ ] `$[-1]`
-  Input:
-  ```
-  []
-  ```
-  Expected output:
-  ```
-  null
-  ```
-  Error:
-  ```
-  No JSON output received
   ```
 
 - [ ] `$[0]`
@@ -135,48 +73,6 @@ The following queries provide results that do not match those of other implement
   "value"
   ```
 
-- [ ] `$[1]`
-  Input:
-  ```
-  [
-    "one element"
-  ]
-  ```
-  Expected output:
-  ```
-  null
-  ```
-  Error:
-  ```
-  No JSON output received
-  ```
-
-- [ ] `$[0]`
-  Input:
-  ```
-  "Hello World"
-  ```
-  Expected output:
-  ```
-  null
-  ```
-  Error:
-  ```
-  No JSON output received
-  ```
-
-- [ ] `$[':@."$,*\'\\']`
-  Input:
-  ```
-  {
-    ":@.\"$,*'\\": 42
-  }
-  ```
-  Error:
-  ```
-  No JSON output received
-  ```
-
 - [ ] `$['single'quote']`
   Input:
   ```
@@ -191,22 +87,6 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   path: invalid character at 10
-  ```
-
-- [ ] `$['*']`
-  Input:
-  ```
-  {
-    "another": "entry"
-  }
-  ```
-  Expected output:
-  ```
-  null
-  ```
-  Error:
-  ```
-  No JSON output received
   ```
 
 - [ ] `$['two'.'some']`
@@ -445,57 +325,6 @@ The following queries provide results that do not match those of other implement
   ]
   ```
 
-- [ ] `$.key`
-  Input:
-  ```
-  [
-    0,
-    1
-  ]
-  ```
-  Expected output:
-  ```
-  null
-  ```
-  Error:
-  ```
-  No JSON output received
-  ```
-
-- [ ] `$.id`
-  Input:
-  ```
-  [
-    {
-      "id": 2
-    }
-  ]
-  ```
-  Expected output:
-  ```
-  null
-  ```
-  Error:
-  ```
-  No JSON output received
-  ```
-
-- [ ] `$.missing`
-  Input:
-  ```
-  {
-    "key": "value"
-  }
-  ```
-  Expected output:
-  ```
-  null
-  ```
-  Error:
-  ```
-  No JSON output received
-  ```
-
 - [ ] `$.key-dash`
   Input:
   ```
@@ -535,24 +364,6 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   path: unexpected end of path at 2
-  ```
-
-- [ ] `$.length`
-  Input:
-  ```
-  [
-    4,
-    5,
-    6
-  ]
-  ```
-  Expected output:
-  ```
-  null
-  ```
-  Error:
-  ```
-  No JSON output received
   ```
 
 - [ ] `$.-1`
