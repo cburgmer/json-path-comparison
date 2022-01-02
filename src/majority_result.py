@@ -1,4 +1,8 @@
 #!/usr/bin/env python3
+
+# See FAQ.md#how-do-you-handle-differences-in-implementations-when-calculating-the-consensus
+# for more context on different result formats.
+
 import sys
 import os
 import json
@@ -28,7 +32,7 @@ def implementation_returns_not_found_as_error(result_path):
 
 def implementation_returns_not_found_for_non_scalar_as_error(result_path):
     implementation = implementation_name(result_path)
-    flag_path = os.path.join('implementations', implementation, 'NOT_FOUND_RETURNED_AS_ERROR_FOR_NON_SCALAR')
+    flag_path = os.path.join('implementations', implementation, 'NOT_FOUND_RETURNED_AS_ERROR_FOR_SCALAR')
     return os.path.exists(flag_path)
 
 
