@@ -55,7 +55,8 @@ queries:
   - id: bracket_notation_with_number_on_string
     status: error
   - id: bracket_notation_with_quoted_escaped_backslash
-    status: error
+    status: open
+    result: "value"
   - id: bracket_notation_with_quoted_escaped_single_quote
     status: open
     result: "value"
@@ -174,7 +175,8 @@ queries:
     status: open
     result: [{"key": 1}, {"key": 3}, {"key": "nice"}, {"key": true}, {"key": null}, {"key": false}, {"key": {}}, {"key": []}, {"key": -1}, {"key": 0}, {"key": ""}]
   - id: filter_expression_with_bracket_notation_with_-1
-    status: error
+    status: open
+    result: [[0, 2], [2]]
   - id: filter_expression_with_bracket_notation_with_number_on_object
     status: open
     result: []
@@ -224,7 +226,8 @@ queries:
     status: open
     result: []
   - id: filter_expression_with_equals_number_for_bracket_notation_with_star
-    status: error
+    status: open
+    result: []
   - id: filter_expression_with_equals_number_for_dot_notation_with_star
     status: error
   - id: filter_expression_with_equals_number_with_fraction
@@ -289,7 +292,8 @@ queries:
     status: open
     result: [{"key": 0}, {"key": -1}, {"key": 1}, {"key": 41}, {"key": 43}, {"key": 42.0001}, {"key": 41.9999}, {"key": 100}, {"key": null}, {"key": 420}, {"key": ""}]
   - id: filter_expression_with_parent_axis_operator
-    status: error
+    status: fail
+    result: [[], [{"page": 45}], [{"page": 45}]]
   - id: filter_expression_with_regular_expression
     status: open
     result: [{"name": "hello world"}, {"name": "yes hello world"}]
@@ -297,13 +301,16 @@ queries:
     status: open
     result: []
   - id: filter_expression_with_set_wise_comparison_to_scalar
-    status: error
+    status: open
+    result: []
   - id: filter_expression_with_set_wise_comparison_to_set
-    status: error
+    status: open
+    result: [[3, 4], [5, 6]]
   - id: filter_expression_with_single_equal
     status: error
   - id: filter_expression_with_subfilter
-    status: error
+    status: open
+    result: [{"a": [{"price": 1}, {"price": 3}]}, {"a": [{"price": 11}]}, {"a": [{"price": 8}, {"price": 12}, {"price": 3}]}, {"a": []}]
   - id: filter_expression_with_subtraction
     status: open
     result: [{"key": -50}]

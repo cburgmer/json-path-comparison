@@ -165,18 +165,6 @@ The following queries provide results that do not match those of other implement
   No JSON output received
   ```
 
-- [ ] `$['\\']`
-  Input:
-  ```
-  {
-    "\\": "value"
-  }
-  ```
-  Error:
-  ```
-  path: unexpected end of path at 7
-  ```
-
 - [ ] `$[':@."$,*\'\\']`
   Input:
   ```
@@ -186,7 +174,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  path: unexpected end of path at 16
+  No JSON output received
   ```
 
 - [ ] `$['single'quote']`
@@ -669,31 +657,6 @@ The following queries provide results that do not match those of other implement
   path: empty
   ```
 
-- [ ] `$[?(@[-1]==2)]`
-  Input:
-  ```
-  [
-    [
-      2,
-      3
-    ],
-    [
-      "a"
-    ],
-    [
-      0,
-      2
-    ],
-    [
-      2
-    ]
-  ]
-  ```
-  Error:
-  ```
-  unknown token at 4: ]==2 at 4
-  ```
-
 - [ ] `$[?(@.a && (@.b || @.c))]`
   Input:
   ```
@@ -934,39 +897,6 @@ The following queries provide results that do not match those of other implement
   unknown token at 5: ['v1','v2'] at 4
   ```
 
-- [ ] `$[?(@[*]==2)]`
-  Input:
-  ```
-  [
-    [
-      1,
-      2
-    ],
-    [
-      2,
-      3
-    ],
-    [
-      1
-    ],
-    [
-      2
-    ],
-    [
-      1,
-      2,
-      3
-    ],
-    1,
-    2,
-    3
-  ]
-  ```
-  Error:
-  ```
-  unknown token at 3: ]==2 at 4
-  ```
-
 - [ ] `$[?(@.*==2)]`
   Input:
   ```
@@ -1202,62 +1132,21 @@ The following queries provide results that do not match those of other implement
   ```
   NOT_SUPPORTED
   ```
-  Error:
-  ```
-  path: invalid character at 29
-  ```
-
-- [ ] `$[?(@[*]>=4)]`
-  Input:
+  Actual output:
   ```
   [
+    [],
     [
-      1,
-      2
+      {
+        "page": 45
+      }
     ],
     [
-      3,
-      4
-    ],
-    [
-      5,
-      6
+      {
+        "page": 45
+      }
     ]
   ]
-  ```
-  Error:
-  ```
-  unknown token at 3: ]>=4 at 4
-  ```
-
-- [ ] `$.x[?(@[*]>=$.y[*])]`
-  Input:
-  ```
-  {
-    "x": [
-      [
-        1,
-        2
-      ],
-      [
-        3,
-        4
-      ],
-      [
-        5,
-        6
-      ]
-    ],
-    "y": [
-      3,
-      4,
-      5
-    ]
-  }
-  ```
-  Error:
-  ```
-  unknown token at 3: ]>=$.y[*] at 6
   ```
 
 - [ ] `$[?(@.key=42)]`
@@ -1339,50 +1228,6 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   unknown token at 5: =42 at 4
-  ```
-
-- [ ] `$[?(@.a[?(@.price>10)])]`
-  Input:
-  ```
-  [
-    {
-      "a": [
-        {
-          "price": 1
-        },
-        {
-          "price": 3
-        }
-      ]
-    },
-    {
-      "a": [
-        {
-          "price": 11
-        }
-      ]
-    },
-    {
-      "a": [
-        {
-          "price": 8
-        },
-        {
-          "price": 12
-        },
-        {
-          "price": 3
-        }
-      ]
-    },
-    {
-      "a": []
-    }
-  ]
-  ```
-  Error:
-  ```
-  unknown token at 17: ] at 4
   ```
 
 - [ ] `$[?@.key==42]`
