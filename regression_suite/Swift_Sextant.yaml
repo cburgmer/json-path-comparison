@@ -33,6 +33,12 @@ queries:
   - id: array_slice_with_step_0
     status: open
     result: ["first", "second", "third"]
+  - id: bracket_notation_with_empty_string
+    status: fail
+    result: []
+  - id: bracket_notation_with_empty_string_doubled_quoted
+    status: fail
+    result: []
   - id: bracket_notation_with_quoted_escaped_backslash
     status: open
     result: ["value"]
@@ -242,7 +248,7 @@ queries:
     result: [[1, 2], [3, 4], [5, 6]]
   - id: filter_expression_with_set_wise_comparison_to_set
     status: open
-    result: [[3, 4], [5, 6]]
+    result: []
   - id: filter_expression_with_subfilter
     status: open
     result: [{"a": [{"price": 1}, {"price": 3}]}, {"a": [{"price": 11}]}, {"a": [{"price": 8}, {"price": 12}, {"price": 3}]}, {"a": []}]
