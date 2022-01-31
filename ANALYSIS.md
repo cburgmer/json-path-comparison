@@ -87,10 +87,12 @@ Similar conclusions apply to implementations that use Python or PhP for evaluati
 
 Following original JavaScript Goessner, some JSONPath implementations made up their own 
 expression languages, and dispensed with JavaScript, Python, PhP et all for that purpose.
-Of these, the most popular and influential is [Java Jayway](https://github.com/json-path/JsonPath/).
+Of these, the most popular and influential was [Java Jayway](https://github.com/json-path/JsonPath/).
 
 In Jayway, expressions like `@['key']` and `@[1]` mean actual JSONPath expressions, 
-JSONPath expressions may interchangeably begin with either `$` or `@`. Also in Jayway,
+evaluated against the "current value". Moreover, Jayway allows JSONPath expressions 
+to start with either '$' or '@' at the beginning of evaluation, where '$' and '@'
+both represent the root value. Also in Jayway,
 by default JSONPath expressions are evaluated according to rules that produce a single value, 
 not a result list. Some description of these rules may be found 
 [here](https://support.smartbear.com/readyapi/docs/testing/jsonpath-reference.html), 
