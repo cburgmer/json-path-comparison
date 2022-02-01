@@ -97,8 +97,8 @@ by default JSONPath expressions are evaluated according to rules that produce a 
 not a result list. Some description of these rules may be found 
 [here](https://support.smartbear.com/readyapi/docs/testing/jsonpath-reference.html), 
 under "Usage notes and considerations". In summary, the slice, union and filter selectors 
-always wrap matches in an array, the wildcard selector wraps  
-matches in an array if there are more than two, the identifier and index selectors 
+always wrap matches in an array, the wildcard selector wraps matches in an array if 
+there are more than two, the identifier and index selectors 
 produce a single value if matched, and if not matched, produce a null.
 
 Jayway has an option to return a result list rather than a single value, but this option
@@ -146,3 +146,30 @@ Here `@`, the current value, is regarded as the same as `$`, the root value,
 at the beginning of evaluation.
 
 
+<div id="A4"/> 
+ 
+## Comparing current value expressions in JSONPath filters with JSON literals 
+
+### Comparisons
+
+[Filter expression with bracket notation with number](https://cburgmer.github.io/json-path-comparison/results/filter_expression_with_bracket_notation_with_number.html)  
+[Filter expression with equals array](https://cburgmer.github.io/json-path-comparison/results/filter_expression_with_equals_array.html)  
+[Filter expression with equals array for array slice with range 1](https://cburgmer.github.io/json-path-comparison/results/filter_expression_with_equals_array_for_array_slice_with_range_1.html)  
+
+### Analysis
+
+For a given JSON document
+```
+[[1, 2, 3], [1], [2, 3], 1, 2]
+```
+the following queries are considered:
+
+```
+$[?(@ == 2)]               (1)
+
+$[?(@ == [1,2,3])]       (2)
+
+$[?(@[0:1]==[1])]        (3)
+```
+
+In each of these queries, the right hand side is a JSON literal. 
