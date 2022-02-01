@@ -11,9 +11,13 @@
 ## Introduction  
 
 There's a great deal of data, an almost overwhelming amount of data, in the 
-[JSONPath comparisons](https://cburgmer.github.io/json-path-comparison/). This document 
-attempts to analyze that data as it pertains to the different implementations. 
-It limits itself to comparing and contrasting the data, it is not prescriptive.
+[JSONPath comparisons](https://cburgmer.github.io/json-path-comparison/). The
+purpose of this document is to analyze that data as it pertains to the different implementations. 
+It limits itself to comparing and contrasting the data, and attempting to understand it
+given some understanding of implementation internals. It is not prescriptive.
+It is intended as a collaborative effort that anyone can contribute to.
+
+There are a great number of issues to cover, this is only the beginning.
 
 <div id="A2"/>  
 
