@@ -127,9 +127,28 @@ and selector
 ```
 $[?(@.a[?(@.price>10)])]
 ```
-15 of 44 implementations produce meaningful results (with some differences.)
+15 of 44 implementations produce meaningful results, but with some differences.
 These include the important [Java Jayway](https://github.com/json-path/JsonPath/) and 
 [Json.NET](https://www.newtonsoft.com/json) implementations.
+
+The majority, 9 of 15, including Json.Net, produce
+```json
+[
+  {
+    "a": [
+      {"price": 11}
+    ]
+  },
+  {
+    "a": [
+      {"price": 8},
+      {"price": 12},
+      {"price": 3}
+    ]
+  }
+]
+```
+The remaining five, including Jayway, return the original document.
 
 About half of the implementations that support subfilters, 8 of 15, 
 allow JSONPath expressions to start with either `$` or `@` at the beginning of evaluation, 
