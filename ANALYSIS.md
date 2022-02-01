@@ -81,7 +81,7 @@ In original JavaScript Goessner, Stefan Goessner uses the JavaScript engine for 
 JSONPath filter expressions. In these scripts, `@` is substituted with the "current value",
 and expressions consisting of the "current value" followed by a dot or a left square bracket
 are evaluated according to JavaScript semantics. These always result in a single value. 
-Similar conclusions apply to implementations that use Python or PhP for evaluating filter expressions. 
+Similar observations apply to implementations that use Python or PhP for evaluating filter expressions. 
 
 Following original JavaScript Goessner, some JSONPath implementations made up their own 
 expression languages, and dispensed with JavaScript, Python, PhP et all for that purpose.
