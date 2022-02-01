@@ -80,7 +80,7 @@ they must evaluate to a single JSON value (null, boolean, number, string, object
 not a result list, for the above comparisons to make sense. 
 
 In original JavaScript Goessner, Stefan Goessner uses the JavaScript engine for evaluating
-JSONPath filter expressions. In these scripts, '@' is substituted with the "current value",
+JSONPath filter expressions. In these scripts, `@` is substituted with the "current value",
 and expressions consisting of the "current value" followed by a dot or a left square bracket
 are evaluated according to JavaScript semantics. These always result in a single value. 
 Similar conclusions apply to implementations that use Python or PhP for evaluating filter expressions. 
@@ -91,15 +91,15 @@ Of these, the most popular and influential was [Java Jayway](https://github.com/
 
 In Jayway, expressions like `@['key']` and `@[1]` mean actual JSONPath expressions, 
 evaluated against the "current value". Moreover, Jayway allows JSONPath expressions 
-to start with either '$' or '@' at the beginning of evaluation, where '$' and '@'
+to start with either `$` or `@` at the beginning of evaluation, where `$` and `@`
 both represent the root value. Also in Jayway,
 by default JSONPath expressions are evaluated according to rules that produce a single value, 
 not a result list. Some description of these rules may be found 
 [here](https://support.smartbear.com/readyapi/docs/testing/jsonpath-reference.html), 
 under "Usage notes and considerations". In summary, the slice, union and filter selectors 
-will always produce results wrapped in an array, the wildcard selector will produce results 
-wrapped in an array if there are more than two items, the identifier and index selectors 
-will produce a single value if matched, and if not matched will produce a null.
+always wrap matches in an array, the wildcard selector wraps  
+matches in an array if there are more than two, the identifier and index selectors 
+produce a single value if matched, and if not matched, produce a null.
 
 Jayway has an option to return a result list rather than a single value, but this option
 does not apply inside filters, inside filters, current value expression are always
@@ -142,7 +142,7 @@ includes the important [Java Jayway](https://github.com/json-path/JsonPath/) and
 Of these, Cpp (jsoncons), Golang (github.com-spyzhov-ajson), Java (com.jayway.jsonpath),
 Objective-C (SMJJSONPath), Ruby (jsonpath), Swift (Sextant), dotNET (JsonCons.JsonPath), 
 and dotNET (JsonPath.Net) allow JSONPath expressions such as '@.a' in place of '$.a'.
-Here '@', the current value, is regarded as the same as '$', the root value,
+Here `@`, the current value, is regarded as the same as `$`, the root value,
 at the beginning of evaluation.
 
 
