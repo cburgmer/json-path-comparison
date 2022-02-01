@@ -128,19 +128,11 @@ and selector
 $[?(@.a[?(@.price>10)])]
 ```
 15 of 44 implementations produce meaningful results (with some differences.)
-
-These include Cpp (jsoncons), Erlang (ejsonpath), Golang (github.com-bhmj-jsonslice),
-Golang (github.com-spyzhov-ajson), Golang (github.com-vmware-labs-yaml-jsonpath),
-Java (com.jayway.jsonpath), Objective-C (SMJJSONPath), PHP (remorhaz-jsonpath),
-Ruby (jsonpath), Rust (jsonpath_lib), Scala (jsonpath), Swift (Sextant),
-dotNET (Json.NET), dotNET (JsonCons.JsonPath), dotNET (JsonPath.Net). The list 
-includes the important [Java Jayway](https://github.com/json-path/JsonPath/) and 
+These include the important [Java Jayway](https://github.com/json-path/JsonPath/) and 
 [Json.NET](https://www.newtonsoft.com/json) implementations.
 
-Of these, Cpp (jsoncons), Golang (github.com-spyzhov-ajson), Java (com.jayway.jsonpath),
-Objective-C (SMJJSONPath), Ruby (jsonpath), Swift (Sextant), dotNET (JsonCons.JsonPath), 
-and dotNET (JsonPath.Net) allow JSONPath expressions such as '@.a' in place of '$.a'.
-Here `@`, the current value, is regarded as the same as `$`, the root value,
-at the beginning of evaluation.
+About half of the implementations that support subfilters, 8 of 15, 
+allow JSONPath expressions to start with either `$` or `@` at the beginning of evaluation, 
+where `$` and `@` both represent the root value.
 
 
