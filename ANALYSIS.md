@@ -57,8 +57,6 @@ Result                                               |Interpretation       |Coun
 [Filter expression with bracket notation with number](https://cburgmer.github.io/json-path-comparison/results/filter_expression_with_bracket_notation_with_number.html)  
 [Filter expression with subfilter](https://cburgmer.github.io/json-path-comparison/results/filter_expression_with_subfilter.html)  
 [Current with dot notation](https://cburgmer.github.io/json-path-comparison/results/current_with_dot_notation.html)  
-[Filter expression with equals array](https://cburgmer.github.io/json-path-comparison/results/filter_expression_with_equals_array.html)  
-[Filter expression with equals array for array slice with range 1](https://cburgmer.github.io/json-path-comparison/results/filter_expression_with_equals_array_for_array_slice_with_range_1.html)  
 
 ### Analysis
 
