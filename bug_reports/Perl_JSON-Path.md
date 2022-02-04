@@ -20,7 +20,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  timeout: sending signal TERM to command ‘perl’
+  Out of memory!
   ```
 
 - [ ] `$[-113667776004:2]`
@@ -40,7 +40,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  timeout: sending signal TERM to command ‘perl’
+  Out of memory!
   ```
 
 - [ ] `$[-4:1]`
