@@ -7,14 +7,15 @@ FROM ubuntu:21.04
 ENV DEBIAN_FRONTEND=noninteractive
 
 RUN apt-get -y upgrade && apt-get -y update && apt-get -y dist-upgrade \
-        && apt-get install -y --no-install-recommends bash ninja-build python3 curl coreutils locales \
+        && apt-get install -y --no-install-recommends bash ninja-build python3 curl coreutils locales ca-certificates \
         && locale-gen en_US.UTF-8
 
 # Golang
 RUN apt-get install -y --no-install-recommends golang-go git
 
 # Rust
-RUN apt-get install -y --no-install-recommends cargo
+RUN curl https://sh.rustup.rs -sSf | sh -s -- --default-toolchain stable -y
+ENV PATH="/root/.cargo/bin:${PATH}"
 
 # PHP
 RUN apt-get install -y --no-install-recommends php php-intl php-tokenizer composer
@@ -82,3 +83,4 @@ RUN apt-get install -y --no-install-recommends ghc xz-utils \
         && tar -xf cabal-install.tar.xz \
         && mv cabal /usr/local/bin/ \
         && rm cabal-install.tar.xz
+
