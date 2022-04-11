@@ -659,7 +659,6 @@ queries:
   - id: empty
     selector: ""
     document: {"a": 42, "": 21}
-    consensus: NOT_SUPPORTED
   - id: filter_expression_after_dot_notation_with_wildcard_after_recursive_descent
     selector: "$..*[?(@.id>2)]"
     document: [{"complext": {"one": [{"name": "first", "id": 1}, {"name": "next", "id": 2}, {"name": "another", "id": 3}, {"name": "more", "id": 4}], "more": {"name": "next to last", "id": 5}}}, {"name": "last", "id": 6}]
@@ -835,11 +834,9 @@ queries:
   - id: filter_expression_with_in_array_of_values
     selector: "$[?(@.d in [2, 3])]"
     document: [{"d": 1}, {"d": 2}, {"d": 1}, {"d": 3}, {"d": 4}]
-    consensus: NOT_SUPPORTED
   - id: filter_expression_with_in_current_object
     selector: "$[?(2 in @.d)]"
     document: [{"d": [1, 2, 3]}, {"d": [2]}, {"d": [1]}, {"d": [3, 4]}, {"d": [4, 2]}]
-    consensus: NOT_SUPPORTED
   - id: filter_expression_with_less_than
     selector: "$[?(@.key<42)]"
     document: [{"key": 0}, {"key": 42}, {"key": -1}, {"key": 41}, {"key": 43}, {"key": 42.0001}, {"key": 41.9999}, {"key": 100}, {"key": "43"}, {"key": "42"}, {"key": "41"}, {"key": "value"}, {"some": "value"}]
@@ -1000,6 +997,7 @@ queries:
     selector: "$..['c','d']"
     document: [{"c": "cc1", "d": "dd1", "e": "ee1"}, {"c": "cc2", "child": {"d": "dd2"}}, {"c": "cc3"}, {"d": "dd4"}, {"child": {"c": "cc5"}}]
     ordered: false
+    consensus: ["cc1", "cc2", "cc3", "cc5", "dd1", "dd2", "dd4"]
   - id: union_with_keys_on_object_without_key
     selector: "$['missing','key']"
     document: {"key": "value", "another": "entry"}

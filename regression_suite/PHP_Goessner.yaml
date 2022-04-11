@@ -157,7 +157,7 @@ queries:
     status: open
     result: ["value"]
   - id: empty
-    status: fail
+    status: open
     result: null
   - id: filter_expression_after_dot_notation_with_wildcard_after_recursive_descent
     status: error
@@ -352,9 +352,6 @@ queries:
     result: NOT_FOUND
   - id: union_with_filter
     status: error
-  - id: union_with_keys_after_recursive_descent
-    status: open
-    result: ["cc1", "cc2", "cc3", "cc5", "dd1", "dd2", "dd4"]
   - id: union_with_repeated_matches_after_dot_notation_with_wildcard
     status: open
     result: ["string", "string", null, true, false, false, "string", 5.4]

@@ -1661,23 +1661,6 @@ The following queries provide results that do not match those of other implement
   1
   ```
 
-- [ ] ``
-  Input:
-  ```
-  {
-    "a": 42,
-    "": 21
-  }
-  ```
-  Expected output:
-  ```
-  NOT_SUPPORTED
-  ```
-  Actual output:
-  ```
-  null
-  ```
-
 - [ ] `$..*[?(@.id>2)]`
   Input:
   ```
@@ -2622,57 +2605,9 @@ The following queries provide results that do not match those of other implement
     }
   ]
   ```
-  Expected output:
-  ```
-  NOT_SUPPORTED
-  ```
   Error:
   ```
   java.lang.Exception object must be an array.
-  ```
-
-- [ ] `$[?(2 in @.d)]`
-  Input:
-  ```
-  [
-    {
-      "d": [
-        1,
-        2,
-        3
-      ]
-    },
-    {
-      "d": [
-        2
-      ]
-    },
-    {
-      "d": [
-        1
-      ]
-    },
-    {
-      "d": [
-        3,
-        4
-      ]
-    },
-    {
-      "d": [
-        4,
-        2
-      ]
-    }
-  ]
-  ```
-  Expected output:
-  ```
-  NOT_SUPPORTED
-  ```
-  Actual output:
-  ```
-  []
   ```
 
 - [ ] `$[?(@.key<42)]`
@@ -3312,6 +3247,10 @@ The following queries provide results that do not match those of other implement
       }
     }
   ]
+  ```
+  Expected output (in any order as no consensus on ordering exists):
+  ```
+  ["cc1", "cc2", "cc3", "cc5", "dd1", "dd2", "dd4"]
   ```
   Error:
   ```

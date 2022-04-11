@@ -247,7 +247,7 @@ queries:
     status: open
     result: [{"key": 42}, {"key": 43}, {"key": 42.0001}, {"key": 100}, {"key": "43"}, {"key": "42"}]
   - id: filter_expression_with_in_array_of_values
-    status: fail
+    status: open
     result: []
   - id: filter_expression_with_in_current_object
     status: error
@@ -349,7 +349,7 @@ queries:
     status: fail
     result: [["cc1", "dd1"], ["cc2", "dd2"]]
   - id: union_with_keys_after_recursive_descent
-    status: open
+    status: fail
     result: ["cc1", "cc2"]
   - id: union_with_numbers_in_decreasing_order
     status: fail

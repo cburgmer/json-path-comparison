@@ -246,10 +246,10 @@ queries:
     status: open
     result: [{"key": 42}, {"key": 43}, {"key": 42.0001}, {"key": 100}]
   - id: filter_expression_with_in_array_of_values
-    status: fail
+    status: open
     result: [{"d": 2}, {"d": 3}]
   - id: filter_expression_with_in_current_object
-    status: fail
+    status: open
     result: [{"d": [1, 2, 3]}, {"d": [2]}, {"d": [4, 2]}]
   - id: filter_expression_with_less_than
     status: open
@@ -351,7 +351,7 @@ queries:
     status: fail
     result: [{"c": "cc1", "d": "dd1"}, {"c": "cc2", "d": "dd2"}]
   - id: union_with_keys_after_recursive_descent
-    status: open
+    status: fail
     result: [{"c": "cc1", "d": "dd1"}]
   - id: union_with_keys_on_object_without_key
     status: fail

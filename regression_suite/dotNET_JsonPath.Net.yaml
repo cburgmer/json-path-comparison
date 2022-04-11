@@ -33,9 +33,6 @@ queries:
   - id: array_slice_with_step_0
     status: open
     result: []
-  - id: bracket_notation_after_recursive_descent
-    status: fail
-    result: ["deepest", "deepest", "deepest", "deepest", "deepest", "deepest", "deepest", "first nested", "first nested", "first nested", "first", "more", "more", "more", "more", "more", "more", {"nested": ["deepest", "second"]}, {"nested": ["deepest", "second"]}, {"nested": ["deepest", "second"]}, {"nested": ["deepest", "second"]}, {"nested": ["deepest", "second"]}]
   - id: bracket_notation_with_quoted_escaped_backslash
     status: open
     result: ["value"]
@@ -45,9 +42,6 @@ queries:
   - id: bracket_notation_with_quoted_special_characters_combined
     status: open
     result: [42]
-  - id: bracket_notation_with_wildcard_after_recursive_descent
-    status: fail
-    result: ["string", "string", "value", 0, 0, 0, 1, 1, 1, [0, 1], [0, 1], {"complex": "string", "primitives": [0, 1]}]
   - id: current_with_dot_notation
     status: open
     result: [1]
@@ -57,9 +51,6 @@ queries:
   - id: dot_bracket_notation_with_double_quotes
     status: open
     result: ["value", [{"key": 42}], 42]
-  - id: dot_notation_after_bracket_notation_after_recursive_descent
-    status: fail
-    result: [200, 200, 200, 42, 42, 500, 500, 500]
   - id: dot_notation_after_recursive_descent_with_extra_dot
     status: open
     result: ["russian dolls", "russian dolls", "russian dolls", "russian dolls", "russian dolls", "something", "something", "something", "something", "top", "value", "value", {"key": "russian dolls"}, {"key": "russian dolls"}, {"key": "russian dolls"}, {"key": "russian dolls"}]
@@ -108,12 +99,15 @@ queries:
   - id: dot_notation_without_root_and_dot
     status: open
     result: NOT_SUPPORTED
+  - id: empty
+    status: open
+    result: NOT_SUPPORTED
   - id: filter_expression_after_dot_notation_with_wildcard_after_recursive_descent
     status: open
     result: [{"id": 3, "name": "another"}, {"id": 4, "name": "more"}, {"id": 5, "name": "next to last"}]
   - id: filter_expression_after_recursive_descent
     status: open
-    result: [{"id": 2}, {"id": 2}, {"id": 2}, {"id": 2}, {"id": 2}, {"id": 2}, {"id": 2}, {"id": 2}, {"id": 2}, {"id": 2}, {"id": 2}]
+    result: [{"id": 2}, {"id": 2}, {"id": 2}, {"id": 2}]
   - id: filter_expression_on_object
     status: open
     result: [{"key": 1}]
@@ -225,6 +219,12 @@ queries:
   - id: filter_expression_with_greater_than_or_equal
     status: open
     result: [{"key": 42}, {"key": 43}, {"key": 42.0001}, {"key": 100}]
+  - id: filter_expression_with_in_array_of_values
+    status: open
+    result: NOT_SUPPORTED
+  - id: filter_expression_with_in_current_object
+    status: open
+    result: NOT_SUPPORTED
   - id: filter_expression_with_less_than
     status: open
     result: [{"key": 0}, {"key": -1}, {"key": 41}, {"key": 41.9999}]
@@ -278,7 +278,7 @@ queries:
     result: []
   - id: filter_expression_with_value_after_recursive_descent
     status: open
-    result: [{"id": 2}, {"id": 2}, {"id": 2}, {"id": 2}, {"id": 2}, {"id": 2}, {"id": 2}, {"id": 2}, {"id": 2}, {"id": 2}, {"id": 2}, {"id": {"id": 2}}, {"id": {"id": 2}}]
+    result: [{"id": 2}, {"id": 2}, {"id": 2}, {"id": 2}, {"id": {"id": 2}}]
   - id: filter_expression_with_value_false
     status: open
     result: [1, 3, "nice", true, null, false, {}, [], -1, 0, ""]
@@ -315,9 +315,6 @@ queries:
   - id: union_with_filter
     status: open
     result: [{"key": 1}, {"key": 2}, {"key": 8}, {"key": 10}, {"key": 7}]
-  - id: union_with_keys_after_recursive_descent
-    status: open
-    result: ["cc1", "cc1", "cc2", "cc2", "cc3", "cc3", "cc5", "cc5", "cc5", "dd1", "dd1", "dd2", "dd2", "dd2", "dd4", "dd4"]
   - id: union_with_repeated_matches_after_dot_notation_with_wildcard
     status: open
     result: ["string", null, true, false, "string", 5.4]

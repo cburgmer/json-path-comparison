@@ -576,10 +576,6 @@ The following queries provide results that do not match those of other implement
     }
   ]
   ```
-  Expected output:
-  ```
-  NOT_SUPPORTED
-  ```
   Error:
   ```
   wrong request: wrong request: ?(@.d in [2, 3])
@@ -619,10 +615,6 @@ The following queries provide results that do not match those of other implement
       ]
     }
   ]
-  ```
-  Expected output:
-  ```
-  NOT_SUPPORTED
   ```
   Error:
   ```
@@ -676,7 +668,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  wrong request: wrong request: ?(!(@.key==42))
+  wrong symbol '!' at 2
   ```
 
 - [ ] `$[?(!(@.key<42))]`
@@ -726,7 +718,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  wrong request: wrong request: ?(!(@.key<42))
+  wrong symbol '!' at 2
   ```
 
 - [ ] `$[?(!@.key)]`
@@ -773,7 +765,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  wrong request: wrong request: ?(!@.key)
+  wrong symbol '!' at 2
   ```
 
 - [ ] `$[?(@.name=~/hello.*/)]`
@@ -939,7 +931,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  wrong request: wrong request: ?(@.key=42)
+  wrong symbol '=' at 7
   ```
 
 - [ ] `$[?(@.key===42)]`
@@ -1016,7 +1008,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  wrong request: wrong request: ?(@.key===42)
+  wrong symbol '=' at 9
   ```
 
 - [ ] `$[?@.key==42]`

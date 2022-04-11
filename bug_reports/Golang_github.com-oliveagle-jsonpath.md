@@ -2155,10 +2155,6 @@ The following queries provide results that do not match those of other implement
     "": 21
   }
   ```
-  Expected output:
-  ```
-  NOT_SUPPORTED
-  ```
   Error:
   ```
   runtime error: index out of range [0] with length 0
@@ -3041,57 +3037,9 @@ The following queries provide results that do not match those of other implement
     }
   ]
   ```
-  Expected output:
-  ```
-  NOT_SUPPORTED
-  ```
   Error:
   ```
   interface conversion: interface {} is nil, not string
-  ```
-
-- [ ] `$[?(2 in @.d)]`
-  Input:
-  ```
-  [
-    {
-      "d": [
-        1,
-        2,
-        3
-      ]
-    },
-    {
-      "d": [
-        2
-      ]
-    },
-    {
-      "d": [
-        1
-      ]
-    },
-    {
-      "d": [
-        3,
-        4
-      ]
-    },
-    {
-      "d": [
-        4,
-        2
-      ]
-    }
-  ]
-  ```
-  Expected output:
-  ```
-  NOT_SUPPORTED
-  ```
-  Actual output:
-  ```
-  []
   ```
 
 - [ ] `$[*].bookmarks[?(@.page == 45)]^^^`
@@ -3623,6 +3571,10 @@ The following queries provide results that do not match those of other implement
       }
     }
   ]
+  ```
+  Expected output (in any order as no consensus on ordering exists):
+  ```
+  ["cc1", "cc2", "cc3", "cc5", "dd1", "dd2", "dd4"]
   ```
   Error:
   ```

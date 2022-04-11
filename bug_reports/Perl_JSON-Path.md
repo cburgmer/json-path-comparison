@@ -952,10 +952,6 @@ The following queries provide results that do not match those of other implement
     "": 21
   }
   ```
-  Expected output:
-  ```
-  NOT_SUPPORTED
-  ```
   Error:
   ```
   Missing required argument 'expression' in constructor at build/lib/perl5/JSON/Path.pm line 107.
@@ -2773,10 +2769,6 @@ The following queries provide results that do not match those of other implement
     }
   ]
   ```
-  Expected output:
-  ```
-  NOT_SUPPORTED
-  ```
   Error:
   ```
   non-safe evaluation, died at main.pl line 11.
@@ -2816,10 +2808,6 @@ The following queries provide results that do not match those of other implement
       ]
     }
   ]
-  ```
-  Expected output:
-  ```
-  NOT_SUPPORTED
   ```
   Error:
   ```
@@ -4190,6 +4178,43 @@ The following queries provide results that do not match those of other implement
   Expected output:
   ```
   ["cc1", "dd1", "cc2", "dd2"]
+  ```
+  Actual output:
+  ```
+  []
+  ```
+
+- [ ] `$..['c','d']`
+  Input:
+  ```
+  [
+    {
+      "c": "cc1",
+      "d": "dd1",
+      "e": "ee1"
+    },
+    {
+      "c": "cc2",
+      "child": {
+        "d": "dd2"
+      }
+    },
+    {
+      "c": "cc3"
+    },
+    {
+      "d": "dd4"
+    },
+    {
+      "child": {
+        "c": "cc5"
+      }
+    }
+  ]
+  ```
+  Expected output (in any order as no consensus on ordering exists):
+  ```
+  ["cc1", "cc2", "cc3", "cc5", "dd1", "dd2", "dd4"]
   ```
   Actual output:
   ```

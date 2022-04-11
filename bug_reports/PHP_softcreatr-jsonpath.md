@@ -354,28 +354,6 @@ The following queries provide results that do not match those of other implement
   ]
   ```
 
-- [ ] ``
-  Input:
-  ```
-  {
-    "a": 42,
-    "": 21
-  }
-  ```
-  Expected output:
-  ```
-  NOT_SUPPORTED
-  ```
-  Actual output:
-  ```
-  [
-    {
-      "": 21,
-      "a": 42
-    }
-  ]
-  ```
-
 - [ ] `$[?(@.key>42 && @.key<44)]`
   Input:
   ```
@@ -652,43 +630,6 @@ The following queries provide results that do not match those of other implement
   ]
   ```
 
-- [ ] `$[?(@.d in [2, 3])]`
-  Input:
-  ```
-  [
-    {
-      "d": 1
-    },
-    {
-      "d": 2
-    },
-    {
-      "d": 1
-    },
-    {
-      "d": 3
-    },
-    {
-      "d": 4
-    }
-  ]
-  ```
-  Expected output:
-  ```
-  NOT_SUPPORTED
-  ```
-  Actual output:
-  ```
-  [
-    {
-      "d": 2
-    },
-    {
-      "d": 3
-    }
-  ]
-  ```
-
 - [ ] `$[?(2 in @.d)]`
   Input:
   ```
@@ -723,10 +664,6 @@ The following queries provide results that do not match those of other implement
       ]
     }
   ]
-  ```
-  Expected output:
-  ```
-  NOT_SUPPORTED
   ```
   Error:
   ```

@@ -286,10 +286,6 @@ The following queries provide results that do not match those of other implement
     "": 21
   }
   ```
-  Expected output:
-  ```
-  NOT_SUPPORTED
-  ```
   Error:
   ```
   Object reference not set to an instance of an object.
@@ -471,6 +467,44 @@ The following queries provide results that do not match those of other implement
   NOT_SUPPORTED
   ```
   Expected close bracket. Path up to error: '$.*'
+  ```
+
+- [ ] `$..['c','d']`
+  Input:
+  ```
+  [
+    {
+      "c": "cc1",
+      "d": "dd1",
+      "e": "ee1"
+    },
+    {
+      "c": "cc2",
+      "child": {
+        "d": "dd2"
+      }
+    },
+    {
+      "c": "cc3"
+    },
+    {
+      "d": "dd4"
+    },
+    {
+      "child": {
+        "c": "cc5"
+      }
+    }
+  ]
+  ```
+  Expected output (in any order as no consensus on ordering exists):
+  ```
+  ["cc1", "cc2", "cc3", "cc5", "dd1", "dd2", "dd4"]
+  ```
+  Actual output:
+  NOT_SUPPORTED
+  ```
+  Expected close bracket. Path up to error: '$..'''
   ```
 
 - [ ] `$['missing','key']`

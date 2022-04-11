@@ -1182,28 +1182,6 @@ The following queries provide results that do not match those of other implement
   ]
   ```
 
-- [ ] ``
-  Input:
-  ```
-  {
-    "a": 42,
-    "": 21
-  }
-  ```
-  Expected output:
-  ```
-  NOT_SUPPORTED
-  ```
-  Actual output:
-  ```
-  [
-    {
-      "": 21,
-      "a": 42
-    }
-  ]
-  ```
-
 - [ ] `$[?(@.key+50==100)]`
   Input:
   ```
@@ -1644,87 +1622,9 @@ The following queries provide results that do not match those of other implement
     }
   ]
   ```
-  Expected output:
-  ```
-  NOT_SUPPORTED
-  ```
   Error:
   ```
   invalid value for Integer(): " 3])"
-  ```
-
-- [ ] `$[?(2 in @.d)]`
-  Input:
-  ```
-  [
-    {
-      "d": [
-        1,
-        2,
-        3
-      ]
-    },
-    {
-      "d": [
-        2
-      ]
-    },
-    {
-      "d": [
-        1
-      ]
-    },
-    {
-      "d": [
-        3,
-        4
-      ]
-    },
-    {
-      "d": [
-        4,
-        2
-      ]
-    }
-  ]
-  ```
-  Expected output:
-  ```
-  NOT_SUPPORTED
-  ```
-  Actual output:
-  ```
-  [
-    {
-      "d": [
-        1,
-        2,
-        3
-      ]
-    },
-    {
-      "d": [
-        2
-      ]
-    },
-    {
-      "d": [
-        1
-      ]
-    },
-    {
-      "d": [
-        3,
-        4
-      ]
-    },
-    {
-      "d": [
-        4,
-        2
-      ]
-    }
-  ]
   ```
 
 - [ ] `$[?(@.key<42)]`

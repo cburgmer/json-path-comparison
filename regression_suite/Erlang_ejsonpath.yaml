@@ -117,6 +117,9 @@ queries:
   - id: dot_notation_without_root_and_dot
     status: open
     result: NOT_SUPPORTED
+  - id: empty
+    status: open
+    result: NOT_SUPPORTED
   - id: filter_expression_after_dot_notation_with_wildcard_after_recursive_descent
     status: open
     result: ["another", "another", "first", "first", "last", "last", "more", "more", "next to last", "next to last", "next", "next", 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, [{"id": 1, "name": "first"}, {"id": 2, "name": "next"}, {"id": 3, "name": "another"}, {"id": 4, "name": "more"}], {"id": 3, "name": "another"}, {"id": 4, "name": "more"}, {"id": 5, "name": "next to last"}, {"more": {"id": 5, "name": "next to last"}, "one": [{"id": 1, "name": "first"}, {"id": 2, "name": "next"}, {"id": 3, "name": "another"}, {"id": 4, "name": "more"}]}]
@@ -235,6 +238,12 @@ queries:
     result: [{"key": 43}, {"key": 42.0001}, {"key": 100}, {"key": "43"}, {"key": "42"}, {"key": "41"}, {"key": "value"}, {"some": "value"}]
   - id: filter_expression_with_greater_than_or_equal
     status: error
+  - id: filter_expression_with_in_array_of_values
+    status: open
+    result: NOT_SUPPORTED
+  - id: filter_expression_with_in_current_object
+    status: open
+    result: NOT_SUPPORTED
   - id: filter_expression_with_less_than
     status: open
     result: [{"key": 0}, {"key": -1}, {"key": 41}, {"key": 41.9999}]
@@ -313,7 +322,7 @@ queries:
     status: open
     result: NOT_SUPPORTED
   - id: union_with_keys_after_recursive_descent
-    status: open
+    status: fail
     result: NOT_SUPPORTED
   - id: union_with_repeated_matches_after_dot_notation_with_wildcard
     status: open

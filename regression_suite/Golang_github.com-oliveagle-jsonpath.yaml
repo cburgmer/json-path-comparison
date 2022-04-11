@@ -396,7 +396,7 @@ queries:
   - id: filter_expression_with_in_array_of_values
     status: error
   - id: filter_expression_with_in_current_object
-    status: fail
+    status: open
     result: []
   - id: filter_expression_with_less_than
     status: open

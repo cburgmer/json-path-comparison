@@ -381,10 +381,6 @@ The following queries provide results that do not match those of other implement
     "": 21
   }
   ```
-  Expected output:
-  ```
-  NOT_SUPPORTED
-  ```
   Error:
   ```
   SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
@@ -394,106 +390,6 @@ The following queries provide results that do not match those of other implement
   	at com.jayway.jsonpath.internal.Utils.notEmpty(Utils.java:401)
   	at com.jayway.jsonpath.internal.JsonContext.read(JsonContext.java:76)
   	at query.App.main(App.java:28)
-  ```
-
-- [ ] `$[?(@.d in [2, 3])]`
-  Input:
-  ```
-  [
-    {
-      "d": 1
-    },
-    {
-      "d": 2
-    },
-    {
-      "d": 1
-    },
-    {
-      "d": 3
-    },
-    {
-      "d": 4
-    }
-  ]
-  ```
-  Expected output:
-  ```
-  NOT_SUPPORTED
-  ```
-  Actual output:
-  ```
-  [
-    {
-      "d": 2
-    },
-    {
-      "d": 3
-    }
-  ]
-  ```
-
-- [ ] `$[?(2 in @.d)]`
-  Input:
-  ```
-  [
-    {
-      "d": [
-        1,
-        2,
-        3
-      ]
-    },
-    {
-      "d": [
-        2
-      ]
-    },
-    {
-      "d": [
-        1
-      ]
-    },
-    {
-      "d": [
-        3,
-        4
-      ]
-    },
-    {
-      "d": [
-        4,
-        2
-      ]
-    }
-  ]
-  ```
-  Expected output:
-  ```
-  NOT_SUPPORTED
-  ```
-  Actual output:
-  ```
-  [
-    {
-      "d": [
-        1,
-        2,
-        3
-      ]
-    },
-    {
-      "d": [
-        2
-      ]
-    },
-    {
-      "d": [
-        4,
-        2
-      ]
-    }
-  ]
   ```
 
 - [ ] `$[*].bookmarks[?(@.page == 45)]^^^`
@@ -666,6 +562,48 @@ The following queries provide results that do not match those of other implement
     {
       "c": "cc2",
       "d": "dd2"
+    }
+  ]
+  ```
+
+- [ ] `$..['c','d']`
+  Input:
+  ```
+  [
+    {
+      "c": "cc1",
+      "d": "dd1",
+      "e": "ee1"
+    },
+    {
+      "c": "cc2",
+      "child": {
+        "d": "dd2"
+      }
+    },
+    {
+      "c": "cc3"
+    },
+    {
+      "d": "dd4"
+    },
+    {
+      "child": {
+        "c": "cc5"
+      }
+    }
+  ]
+  ```
+  Expected output (in any order as no consensus on ordering exists):
+  ```
+  ["cc1", "cc2", "cc3", "cc5", "dd1", "dd2", "dd4"]
+  ```
+  Actual output:
+  ```
+  [
+    {
+      "c": "cc1",
+      "d": "dd1"
     }
   ]
   ```

@@ -18,7 +18,7 @@ The following queries provide results that do not match those of other implement
   Actual output:
   NOT_SUPPORTED
   ```
-  Exception('Parse error at 1:3 near token : (:)')
+  JsonPathParserError('Parse error at 1:3 near token : (:)')
   ```
 
 - [ ] `$[:]`
@@ -61,7 +61,7 @@ The following queries provide results that do not match those of other implement
   Actual output:
   NOT_SUPPORTED
   ```
-  Exception('Parse error at 1:5 near token : (:)')
+  JsonPathParserError('Parse error at 1:5 near token : (:)')
   ```
 
 - [ ] `$[0:3:1]`
@@ -82,7 +82,7 @@ The following queries provide results that do not match those of other implement
   Actual output:
   NOT_SUPPORTED
   ```
-  Exception('Parse error at 1:5 near token : (:)')
+  JsonPathParserError('Parse error at 1:5 near token : (:)')
   ```
 
 - [ ] `$[010:024:010]`
@@ -124,7 +124,7 @@ The following queries provide results that do not match those of other implement
   Actual output:
   NOT_SUPPORTED
   ```
-  Exception('Parse error at 1:9 near token : (:)')
+  JsonPathParserError('Parse error at 1:9 near token : (:)')
   ```
 
 - [ ] `$[0:4:2]`
@@ -145,7 +145,7 @@ The following queries provide results that do not match those of other implement
   Actual output:
   NOT_SUPPORTED
   ```
-  Exception('Parse error at 1:5 near token : (:)')
+  JsonPathParserError('Parse error at 1:5 near token : (:)')
   ```
 
 - [ ] `$[1:3:]`
@@ -166,7 +166,7 @@ The following queries provide results that do not match those of other implement
   Actual output:
   NOT_SUPPORTED
   ```
-  Exception('Parse error at 1:5 near token : (:)')
+  JsonPathParserError('Parse error at 1:5 near token : (:)')
   ```
 
 - [ ] `$[::2]`
@@ -187,7 +187,7 @@ The following queries provide results that do not match those of other implement
   Actual output:
   NOT_SUPPORTED
   ```
-  Exception('Parse error at 1:3 near token : (:)')
+  JsonPathParserError('Parse error at 1:3 near token : (:)')
   ```
 
 - [ ] `$..[0]`
@@ -555,7 +555,7 @@ The following queries provide results that do not match those of other implement
   Actual output:
   NOT_SUPPORTED
   ```
-  Exception('Parse error at 1:3 near token , (,)')
+  JsonPathParserError('Parse error at 1:3 near token , (,)')
   ```
 
 - [ ] `$.屬性`
@@ -593,7 +593,7 @@ The following queries provide results that do not match those of other implement
   Actual output:
   NOT_SUPPORTED
   ```
-  Exception('Parse error at 1:2 near token -1 (NUMBER)')
+  JsonPathParserError('Parse error at 1:2 near token -1 (NUMBER)')
   ```
 
 - [ ] `$.2`
@@ -612,7 +612,7 @@ The following queries provide results that do not match those of other implement
   Actual output:
   NOT_SUPPORTED
   ```
-  Exception('Parse error at 1:2 near token 2 (NUMBER)')
+  JsonPathParserError('Parse error at 1:2 near token 2 (NUMBER)')
   ```
 
 - [ ] `$.*.bar.*`
@@ -1146,7 +1146,7 @@ The following queries provide results that do not match those of other implement
   Actual output:
   NOT_SUPPORTED
   ```
-  Exception('Parse error at 1:3 near token , (,)')
+  JsonPathParserError('Parse error at 1:3 near token , (,)')
   ```
 
 - [ ] `$[0,0]`
@@ -1163,7 +1163,7 @@ The following queries provide results that do not match those of other implement
   Actual output:
   NOT_SUPPORTED
   ```
-  Exception('Parse error at 1:3 near token , (,)')
+  JsonPathParserError('Parse error at 1:3 near token , (,)')
   ```
 
 - [ ] `$.*['c','d']`
@@ -1209,7 +1209,7 @@ The following queries provide results that do not match those of other implement
   Actual output:
   NOT_SUPPORTED
   ```
-  Exception('Parse error at 1:3 near token , (,)')
+  JsonPathParserError('Parse error at 1:3 near token , (,)')
   ```
 
 - [ ] `$[ 0 , 1 ]`
@@ -1228,7 +1228,7 @@ The following queries provide results that do not match those of other implement
   Actual output:
   NOT_SUPPORTED
   ```
-  Exception('Parse error at 1:5 near token , (,)')
+  JsonPathParserError('Parse error at 1:5 near token , (,)')
   ```
 
 

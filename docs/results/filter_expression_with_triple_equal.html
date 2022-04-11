@@ -350,18 +350,6 @@ $[?(@.key===42)]
 
 </code></pre>
 
-<h4 id="Rust_jsonpath_plus">
-Rust (jsonpath_plus)
-</h4>
-
-<p>Not supported</p>
-
-<pre><code>Error Parsing JSON Path:
-$[?(@.key===42)]
-found '=' but one of $, f, !, ', (, t, ", -, @, n was expected
-
-</code></pre>
-
 <h4 id="Scala_jsonpath">
 Scala (jsonpath)
 </h4>
@@ -551,7 +539,7 @@ Erlang (ejsonpath)
 Golang (github.com-spyzhov-ajson)
 </h4>
 
-<pre><code>wrong request: wrong request: ?(@.key===42)
+<pre><code>wrong symbol '=' at 9
 </code></pre>
 
 <h4 id="Java_com.github.jsurfer">
@@ -584,6 +572,15 @@ Ruby (jsonpath)
 <pre><code>undefined method `=' for 0.0:Float
 Did you mean?  =~
                ==
+</code></pre>
+
+<h4 id="Rust_jsonpath_plus">
+Rust (jsonpath_plus)
+</h4>
+
+<pre><code>Error Parsing JSON Path:
+$[?(@.key===42)]
+panic occurred
 </code></pre>
 
 <h2>Footnotes</h2>

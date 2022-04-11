@@ -385,18 +385,6 @@ $[?(@.d=={"k":"v"})]
 
 </code></pre>
 
-<h4 id="Rust_jsonpath_plus">
-Rust (jsonpath_plus)
-</h4>
-
-<p>Not supported</p>
-
-<pre><code>Error Parsing JSON Path:
-$[?(@.d=={"k":"v"})]
-found '{' but one of -, ', !, f, ", $, @, n, t, ( was expected
-
-</code></pre>
-
 <h4 id="Scala_jsonpath">
 Scala (jsonpath)
 </h4>
@@ -615,6 +603,15 @@ Perl (JSON-Path)
 </h4>
 
 <pre><code>non-safe evaluation, died at main.pl line 11.
+</code></pre>
+
+<h4 id="Rust_jsonpath_plus">
+Rust (jsonpath_plus)
+</h4>
+
+<pre><code>Error Parsing JSON Path:
+$[?(@.d=={"k":"v"})]
+panic occurred
 </code></pre>
 
 <h4 id="dotNET_JsonPathLib">

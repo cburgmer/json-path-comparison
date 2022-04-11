@@ -242,10 +242,6 @@ The following queries provide results that do not match those of other implement
     "": 21
   }
   ```
-  Expected output:
-  ```
-  NOT_SUPPORTED
-  ```
   Error:
   ```
   we need a path
@@ -507,80 +503,6 @@ The following queries provide results that do not match those of other implement
       ]
     }
   ]
-  ```
-
-- [ ] `$[?(@.d in [2, 3])]`
-  Input:
-  ```
-  [
-    {
-      "d": 1
-    },
-    {
-      "d": 2
-    },
-    {
-      "d": 1
-    },
-    {
-      "d": 3
-    },
-    {
-      "d": 4
-    }
-  ]
-  ```
-  Expected output:
-  ```
-  NOT_SUPPORTED
-  ```
-  Actual output:
-  ```
-  []
-  ```
-
-- [ ] `$[?(2 in @.d)]`
-  Input:
-  ```
-  [
-    {
-      "d": [
-        1,
-        2,
-        3
-      ]
-    },
-    {
-      "d": [
-        2
-      ]
-    },
-    {
-      "d": [
-        1
-      ]
-    },
-    {
-      "d": [
-        3,
-        4
-      ]
-    },
-    {
-      "d": [
-        4,
-        2
-      ]
-    }
-  ]
-  ```
-  Expected output:
-  ```
-  NOT_SUPPORTED
-  ```
-  Actual output:
-  ```
-  []
   ```
 
 - [ ] `$[?(@[*]>=4)]`

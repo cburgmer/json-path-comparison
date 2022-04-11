@@ -46,21 +46,128 @@ The following queries provide results that do not match those of other implement
   ```
   ```
 
-- [ ] ``
+- [ ] `$[?(@.d==["v1","v2"])]`
   Input:
   ```
-  {
-    "a": 42,
-    "": 21
-  }
+  [
+    {
+      "d": [
+        "v1",
+        "v2"
+      ]
+    },
+    {
+      "d": [
+        "a",
+        "b"
+      ]
+    },
+    {
+      "d": "v1"
+    },
+    {
+      "d": "v2"
+    },
+    {
+      "d": {}
+    },
+    {
+      "d": []
+    },
+    {
+      "d": null
+    },
+    {
+      "d": -1
+    },
+    {
+      "d": 0
+    },
+    {
+      "d": 1
+    },
+    {
+      "d": "['v1','v2']"
+    },
+    {
+      "d": "['v1', 'v2']"
+    },
+    {
+      "d": "v1,v2"
+    },
+    {
+      "d": "[\"v1\", \"v2\"]"
+    },
+    {
+      "d": "[\"v1\",\"v2\"]"
+    }
+  ]
   ```
-  Expected output:
+  Error:
   ```
-  NOT_SUPPORTED
+  Exception: runtime error: comparing uncomparable type []interface {}
   ```
-  Actual output:
+
+- [ ] `$[?(@.d==['v1','v2'])]`
+  Input:
   ```
-  []
+  [
+    {
+      "d": [
+        "v1",
+        "v2"
+      ]
+    },
+    {
+      "d": [
+        "a",
+        "b"
+      ]
+    },
+    {
+      "d": "v1"
+    },
+    {
+      "d": "v2"
+    },
+    {
+      "d": {}
+    },
+    {
+      "d": []
+    },
+    {
+      "d": null
+    },
+    {
+      "d": -1
+    },
+    {
+      "d": 0
+    },
+    {
+      "d": 1
+    },
+    {
+      "d": "['v1','v2']"
+    },
+    {
+      "d": "['v1', 'v2']"
+    },
+    {
+      "d": "v1,v2"
+    },
+    {
+      "d": "[\"v1\", \"v2\"]"
+    },
+    {
+      "d": "[\"v1\",\"v2\"]"
+    }
+  ]
+  ```
+  Error:
+  ```
+  Exception: runtime error: comparing uncomparable type []interface {}
   ```
 
 - [ ] `$[?(@.key1==@.key2)]`

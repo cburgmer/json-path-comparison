@@ -150,14 +150,6 @@ Golang (github.com-PaesslerAG-jsonpath)
 <pre><code>parsing error: $[?(@.d==["v1","v2"])]	:1:10 - 1:11 unexpected "[" while scanning extensions
 </code></pre>
 
-<h4 id="Golang_github.com-ohler55-ojg">
-Golang (github.com-ohler55-ojg)
-</h4>
-
-<p>Not supported</p>
-
-<pre><code></code></pre>
-
 <h4 id="Golang_github.com-vmware-labs-yaml-jsonpath">
 Golang (github.com-vmware-labs-yaml-jsonpath)
 </h4>
@@ -389,18 +381,6 @@ $[?(@.d==["v1","v2"])]
 
 </code></pre>
 
-<h4 id="Rust_jsonpath_plus">
-Rust (jsonpath_plus)
-</h4>
-
-<p>Not supported</p>
-
-<pre><code>Error Parsing JSON Path:
-$[?(@.d==["v1","v2"])]
-found '[' but one of t, -, ', (, @, f, $, ", n, ! was expected
-
-</code></pre>
-
 <h4 id="Scala_jsonpath">
 Scala (jsonpath)
 </h4>
@@ -596,6 +576,13 @@ Golang (github.com-bhmj-jsonslice)
 <pre><code>unknown token at 5: ["v1","v2"] at 4
 </code></pre>
 
+<h4 id="Golang_github.com-ohler55-ojg">
+Golang (github.com-ohler55-ojg)
+</h4>
+
+<pre><code>Exception: runtime error: comparing uncomparable type []interface {}
+</code></pre>
+
 <h4 id="Golang_github.com-oliveagle-jsonpath">
 Golang (github.com-oliveagle-jsonpath)
 ¹
@@ -624,6 +611,15 @@ Perl (JSON-Path)
 </h4>
 
 <pre><code>non-safe evaluation, died at main.pl line 11.
+</code></pre>
+
+<h4 id="Rust_jsonpath_plus">
+Rust (jsonpath_plus)
+</h4>
+
+<pre><code>Error Parsing JSON Path:
+$[?(@.d==["v1","v2"])]
+panic occurred
 </code></pre>
 
 <h4 id="dotNET_JsonPathLib">

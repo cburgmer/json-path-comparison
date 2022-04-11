@@ -215,7 +215,7 @@ Python (jsonpath-ng)
 
 <p>Not supported</p>
 
-<pre><code>Exception('Parse error at 1:5 near token : (:)')
+<pre><code>JsonPathParserError('Parse error at 1:5 near token : (:)')
 </code></pre>
 
 <h4 id="Python_jsonpath-rw">
@@ -243,18 +243,6 @@ Rust (jsonpath)
 <p>Not supported</p>
 
 <pre><code>parsing error
-</code></pre>
-
-<h4 id="Rust_jsonpath_plus">
-Rust (jsonpath_plus)
-</h4>
-
-<p>Not supported</p>
-
-<pre><code>Error Parsing JSON Path:
-$[0:3:0]
-found end of input
-
 </code></pre>
 
 <h4 id="Swift_Sextant">
@@ -430,6 +418,15 @@ Rust (jsonpath_lib)
 </h4>
 
 <pre><code>panic occurred
+</code></pre>
+
+<h4 id="Rust_jsonpath_plus">
+Rust (jsonpath_plus)
+</h4>
+
+<pre><code>Error Parsing JSON Path:
+$[0:3:0]
+panic occurred
 </code></pre>
 
 <h4 id="Scala_jsonpath">

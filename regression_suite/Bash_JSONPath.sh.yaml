@@ -217,7 +217,7 @@ queries:
     status: open
     result: ["value"]
   - id: empty
-    status: fail
+    status: open
     result: [42, 21]
   - id: filter_expression_after_dot_notation_with_wildcard_after_recursive_descent
     status: open
@@ -373,10 +373,10 @@ queries:
     status: open
     result: [42, 43, 42.0001, 100]
   - id: filter_expression_with_in_array_of_values
-    status: fail
+    status: open
     result: []
   - id: filter_expression_with_in_current_object
-    status: fail
+    status: open
     result: []
   - id: filter_expression_with_less_than
     status: open
@@ -486,9 +486,6 @@ queries:
   - id: union_with_filter
     status: open
     result: []
-  - id: union_with_keys_after_recursive_descent
-    status: open
-    result: ["cc1", "cc2", "cc3", "cc5", "dd1", "dd2", "dd4"]
   - id: union_with_numbers_in_decreasing_order
     status: fail
     result: [2, 5]

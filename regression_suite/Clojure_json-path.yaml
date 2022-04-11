@@ -269,7 +269,7 @@ queries:
     status: open
     result: null
   - id: empty
-    status: fail
+    status: open
     result: null
   - id: filter_expression_after_dot_notation_with_wildcard_after_recursive_descent
     status: error
@@ -412,7 +412,7 @@ queries:
   - id: filter_expression_with_in_array_of_values
     status: error
   - id: filter_expression_with_in_current_object
-    status: fail
+    status: open
     result: []
   - id: filter_expression_with_less_than
     status: error

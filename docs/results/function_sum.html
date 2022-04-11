@@ -253,7 +253,7 @@ Python (jsonpath-ng)
 
 <p>Not supported</p>
 
-<pre><code>Exception('Parse error at 1:10 near token ( (()')
+<pre><code>JsonPathParserError('Parse error at 1:10 near token ( (()')
 </code></pre>
 
 <h4 id="Python_jsonpath-rw">
@@ -304,18 +304,6 @@ Rust (jsonpath_lib)
 </h4>
 
 <pre><code>[]
-</code></pre>
-
-<h4 id="Rust_jsonpath_plus">
-Rust (jsonpath_plus)
-</h4>
-
-<p>Not supported</p>
-
-<pre><code>Error Parsing JSON Path:
-$.data.sum()
-found '(' but one of end of input, ., ~, [ was expected
-
 </code></pre>
 
 <h4 id="Scala_jsonpath">
@@ -452,6 +440,15 @@ $var2 = $matcherFactory-&gt;matchPropertyStrictly('data');
 $var3 = $valueListFetcher-&gt;fetchChildren($input, $var2);
 $var4 = $evaluator-&gt;aggregate('sum', $var3);
 return $var4;'
+</code></pre>
+
+<h4 id="Rust_jsonpath_plus">
+Rust (jsonpath_plus)
+</h4>
+
+<pre><code>Error Parsing JSON Path:
+$.data.sum()
+panic occurred
 </code></pre>
 
 <h2>Footnotes</h2>

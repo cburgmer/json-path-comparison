@@ -100,9 +100,8 @@ Golang (github.com-PaesslerAG-jsonpath)
 Golang (github.com-ohler55-ojg)
 </h4>
 
-<p>Not supported</p>
-
-<pre><code></code></pre>
+<pre><code>[]
+</code></pre>
 
 <h4 id="Golang_github.com-vmware-labs-yaml-jsonpath">
 Golang (github.com-vmware-labs-yaml-jsonpath)
@@ -271,18 +270,6 @@ Rust (jsonpath_lib)
 <pre><code>path error: 
 $[?(@.*==[1,2])]
 ^^^^^^^^^
-
-</code></pre>
-
-<h4 id="Rust_jsonpath_plus">
-Rust (jsonpath_plus)
-</h4>
-
-<p>Not supported</p>
-
-<pre><code>Error Parsing JSON Path:
-$[?(@.*==[1,2])]
-found '[' but one of @, -, (, $, !, n, ', f, ", t was expected
 
 </code></pre>
 
@@ -558,6 +545,15 @@ Ruby (jsonpath)
 </h4>
 
 <pre><code>unmatched parenthesis in expression: (true
+</code></pre>
+
+<h4 id="Rust_jsonpath_plus">
+Rust (jsonpath_plus)
+</h4>
+
+<pre><code>Error Parsing JSON Path:
+$[?(@.*==[1,2])]
+panic occurred
 </code></pre>
 
 <h4 id="dotNET_JsonPathLib">

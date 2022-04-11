@@ -170,6 +170,9 @@ queries:
   - id: dot_notation_without_root_and_dot
     status: open
     result: ["value"]
+  - id: empty
+    status: open
+    result: NOT_SUPPORTED
   - id: filter_expression_after_dot_notation_with_wildcard_after_recursive_descent
     status: open
     result: NOT_SUPPORTED
@@ -323,6 +326,12 @@ queries:
   - id: filter_expression_with_greater_than_or_equal
     status: open
     result: NOT_SUPPORTED
+  - id: filter_expression_with_in_array_of_values
+    status: open
+    result: NOT_SUPPORTED
+  - id: filter_expression_with_in_current_object
+    status: open
+    result: NOT_SUPPORTED
   - id: filter_expression_with_less_than
     status: open
     result: NOT_SUPPORTED
@@ -416,9 +425,6 @@ queries:
   - id: union_with_keys_after_dot_notation_with_wildcard
     status: fail
     result: []
-  - id: union_with_keys_after_recursive_descent
-    status: open
-    result: ["cc1", "cc2", "cc3", "cc5", "dd1", "dd2", "dd4"]
   - id: union_with_numbers_in_decreasing_order
     status: fail
     result: NOT_SUPPORTED

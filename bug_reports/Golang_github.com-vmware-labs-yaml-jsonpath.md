@@ -3,28 +3,6 @@ Results do not match other implementations
 The following queries provide results that do not match those of other implementations of JSONPath
 (compare https://cburgmer.github.io/json-path-comparison/):
 
-- [ ] ``
-  Input:
-  ```
-  {
-    "a": 42,
-    "": 21
-  }
-  ```
-  Expected output:
-  ```
-  NOT_SUPPORTED
-  ```
-  Actual output:
-  ```
-  [
-    {
-      "": 21,
-      "a": 42
-    }
-  ]
-  ```
-
 - [ ] `$[?(@.key1==@.key2)]`
   Input:
   ```
@@ -109,6 +87,44 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   Exception: invalid type of value passed to compareNodeValues
+  ```
+
+- [ ] `$..['c','d']`
+  Input:
+  ```
+  [
+    {
+      "c": "cc1",
+      "d": "dd1",
+      "e": "ee1"
+    },
+    {
+      "c": "cc2",
+      "child": {
+        "d": "dd2"
+      }
+    },
+    {
+      "c": "cc3"
+    },
+    {
+      "d": "dd4"
+    },
+    {
+      "child": {
+        "c": "cc5"
+      }
+    }
+  ]
+  ```
+  Expected output (in any order as no consensus on ordering exists):
+  ```
+  ["cc1", "cc2", "cc3", "cc5", "dd1", "dd2", "dd4"]
+  ```
+  Actual output:
+  NOT_SUPPORTED
+  ```
+  child name or array access or filter missing after recursive descent at position 3, following "$.."
   ```
 
 - [ ] `$[*,1]`

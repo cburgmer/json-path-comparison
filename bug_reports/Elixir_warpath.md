@@ -17,41 +17,42 @@ The following queries provide results that do not match those of other implement
   Warpath.JsonDecodeError
   ```
 
-- [ ] `$[?(@.d in [2, 3])]`
+- [ ] `$..['c','d']`
   Input:
   ```
   [
     {
-      "d": 1
+      "c": "cc1",
+      "d": "dd1",
+      "e": "ee1"
     },
     {
-      "d": 2
+      "c": "cc2",
+      "child": {
+        "d": "dd2"
+      }
     },
     {
-      "d": 1
+      "c": "cc3"
     },
     {
-      "d": 3
+      "d": "dd4"
     },
     {
-      "d": 4
+      "child": {
+        "c": "cc5"
+      }
     }
   ]
   ```
-  Expected output:
+  Expected output (in any order as no consensus on ordering exists):
   ```
-  NOT_SUPPORTED
+  ["cc1", "cc2", "cc3", "cc5", "dd1", "dd2", "dd4"]
   ```
   Actual output:
+  NOT_SUPPORTED
   ```
-  [
-    {
-      "d": 2
-    },
-    {
-      "d": 3
-    }
-  ]
+  Parser error: Invalid token on line 1, syntax error before: <<",">>
   ```
 
 

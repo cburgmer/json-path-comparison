@@ -150,7 +150,7 @@ queries:
     status: open
     result: ["value"]
   - id: empty
-    status: fail
+    status: open
     result: [{"": 21, "a": 42}]
   - id: filter_expression_after_dot_notation_with_wildcard_after_recursive_descent
     status: open
@@ -269,10 +269,10 @@ queries:
     status: open
     result: [{"key": 42}, {"key": 43}, {"key": 42.0001}, {"key": 100}, {"key": "43"}, {"key": "42"}]
   - id: filter_expression_with_in_array_of_values
-    status: fail
+    status: open
     result: [{"d": 1}, {"d": 1}]
   - id: filter_expression_with_in_current_object
-    status: fail
+    status: open
     result: [{"d": [1, 2, 3]}, {"d": [2]}, {"d": [1]}, {"d": [3, 4]}, {"d": [4, 2]}]
   - id: filter_expression_with_less_than
     status: open
@@ -358,9 +358,6 @@ queries:
     result: []
   - id: union_with_filter
     status: error
-  - id: union_with_keys_after_recursive_descent
-    status: open
-    result: ["cc1", "cc2", "cc3", "cc5", "dd1", "dd2", "dd4"]
   - id: union_with_repeated_matches_after_dot_notation_with_wildcard
     status: open
     result: ["string", "string", null, true, false, false, "string", 5.4]

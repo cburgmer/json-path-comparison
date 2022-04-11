@@ -104,9 +104,8 @@ Golang (github.com-PaesslerAG-jsonpath)
 Golang (github.com-ohler55-ojg)
 </h4>
 
-<p>Not supported</p>
-
-<pre><code></code></pre>
+<pre><code>[]
+</code></pre>
 
 <h4 id="Golang_github.com-vmware-labs-yaml-jsonpath">
 Golang (github.com-vmware-labs-yaml-jsonpath)
@@ -311,18 +310,6 @@ Rust (jsonpath_lib)
 <pre><code>path error: 
 $[?(@[0:1]==[1])]
 ^^^^^^^^^^^^
-
-</code></pre>
-
-<h4 id="Rust_jsonpath_plus">
-Rust (jsonpath_plus)
-</h4>
-
-<p>Not supported</p>
-
-<pre><code>Error Parsing JSON Path:
-$[?(@[0:1]==[1])]
-found '[' but one of !, -, ", t, f, @, (, n, $, ' was expected
 
 </code></pre>
 
@@ -596,6 +583,15 @@ Perl (JSON-Path)
 </h4>
 
 <pre><code>non-safe evaluation, died at main.pl line 11.
+</code></pre>
+
+<h4 id="Rust_jsonpath_plus">
+Rust (jsonpath_plus)
+</h4>
+
+<pre><code>Error Parsing JSON Path:
+$[?(@[0:1]==[1])]
+panic occurred
 </code></pre>
 
 <h4 id="dotNET_JsonPathLib">

@@ -402,49 +402,42 @@ The following queries provide results that do not match those of other implement
   jsonpath returned false, this might indicate an error
   ```
 
-- [ ] `$[?(2 in @.d)]`
+- [ ] `$..['c','d']`
   Input:
   ```
   [
     {
-      "d": [
-        1,
-        2,
-        3
-      ]
+      "c": "cc1",
+      "d": "dd1",
+      "e": "ee1"
     },
     {
-      "d": [
-        2
-      ]
+      "c": "cc2",
+      "child": {
+        "d": "dd2"
+      }
     },
     {
-      "d": [
-        1
-      ]
+      "c": "cc3"
     },
     {
-      "d": [
-        3,
-        4
-      ]
+      "d": "dd4"
     },
     {
-      "d": [
-        4,
-        2
-      ]
+      "child": {
+        "c": "cc5"
+      }
     }
   ]
   ```
-  Expected output:
+  Expected output (in any order as no consensus on ordering exists):
   ```
-  NOT_SUPPORTED
+  ["cc1", "cc2", "cc3", "cc5", "dd1", "dd2", "dd4"]
   ```
   Actual output:
-  NOT_FOUND
+  NOT_SUPPORTED
   ```
-  jsonpath returned false, this might indicate an error
+  Invalid JSONPath error: 'Error in JSONPath near '..['c','d']''
   ```
 
 - [ ] `$[ 0 , 1 ]`
