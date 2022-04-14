@@ -39,7 +39,7 @@ RUN curl https://bootstrap.pypa.io/get-pip.py -o /tmp/get-pip.py && python3 /tmp
 # .NET
 ENV PATH="/root/.dotnet:${PATH}"
 ENV DOTNET_ROOT="/root/.dotnet"
-RUN curl -OL https://dotnetwebsite.azurewebsites.net/download/dotnet-core/scripts/v1/dotnet-install.sh \
+RUN curl -OL https://dot.net/v1/dotnet-install.sh \
         && chmod a+x dotnet-install.sh && ./dotnet-install.sh
 
 # Elixir
