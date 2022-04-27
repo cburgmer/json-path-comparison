@@ -49,6 +49,27 @@ C (json-glib)
 <pre><code>Unable to compile selector `$[?(@.key&gt;=42)]': Invalid array index definition “?(@.key&gt;=42)]”
 </code></pre>
 
+<h4 id="Clojure_json-path">
+Clojure (json-path)
+¹
+</h4>
+
+<pre><code>[
+  {
+    "key": 42
+  },
+  {
+    "key": 43
+  },
+  {
+    "key": 42.0001
+  },
+  {
+    "key": 100
+  }
+]
+</code></pre>
+
 <h4 id="Cpp_jsoncons">
 Cpp (jsoncons)
 </h4>
@@ -811,14 +832,6 @@ Proposal (A)
 </code></pre>
 
 <h3>Errors</h3>
-
-<h4 id="Clojure_json-path">
-Clojure (json-path)
-¹
-</h4>
-
-<pre><code>java.lang.ClassCastException class java.lang.String cannot be cast to class java.lang.Number (java.lang.String and java.lang.Number are in module java.base of loader 'bootstrap')
-</code></pre>
 
 <h4 id="Erlang_ejsonpath">
 Erlang (ejsonpath)
