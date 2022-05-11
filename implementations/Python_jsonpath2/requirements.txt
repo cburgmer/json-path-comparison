@@ -1,2 +1,2 @@
-jsonpath2==0.4.4
-pur==6.1.0
+jsonpath2==0.4.5
+pur==7.0.0
