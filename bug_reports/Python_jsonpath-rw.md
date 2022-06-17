@@ -1135,6 +1135,40 @@ The following queries provide results that do not match those of other implement
   JsonPathLexerError('Error on line 1, col 2: Unexpected character: ? ')
   ```
 
+- [ ] `$[?(@.length == 4)]`
+  Input:
+  ```
+  [
+    [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    [
+      1,
+      2,
+      3,
+      4
+    ],
+    [
+      1,
+      2,
+      3
+    ]
+  ]
+  ```
+  Expected output:
+  ```
+  []
+  ```
+  Actual output:
+  NOT_SUPPORTED
+  ```
+  JsonPathLexerError('Error on line 1, col 2: Unexpected character: ? ')
+  ```
+
 - [ ] `$[?(@.address.city=='Berlin')]`
   Input:
   ```

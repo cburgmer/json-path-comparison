@@ -830,6 +830,76 @@ The following queries provide results that do not match those of other implement
       at evalmachine.<anonymous>:1:11
   ```
 
+- [ ] `$[?(@.length() == 4)]`
+  Input:
+  ```
+  [
+    [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    [
+      1,
+      2,
+      3,
+      4
+    ],
+    [
+      1,
+      2,
+      3
+    ]
+  ]
+  ```
+  Error:
+  ```
+  evalmachine.<anonymous>:1
+      at evalmachine.<anonymous>:1:6
+  ```
+
+- [ ] `$[?(@.length == 4)]`
+  Input:
+  ```
+  [
+    [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    [
+      1,
+      2,
+      3,
+      4
+    ],
+    [
+      1,
+      2,
+      3
+    ]
+  ]
+  ```
+  Expected output:
+  ```
+  []
+  ```
+  Actual output:
+  ```
+  [
+    [
+      1,
+      2,
+      3,
+      4
+    ]
+  ]
+  ```
+
 - [ ] `$[*].bookmarks[?(@.page == 45)]^^^`
   Input:
   ```

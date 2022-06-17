@@ -1337,6 +1337,40 @@ The following queries provide results that do not match those of other implement
   Evaluation of embedded Perl 6 code not allowed (construct with :allow-eval)
   ```
 
+- [ ] `$[?(@.length == 4)]`
+  Input:
+  ```
+  [
+    [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    [
+      1,
+      2,
+      3,
+      4
+    ],
+    [
+      1,
+      2,
+      3
+    ]
+  ]
+  ```
+  Expected output:
+  ```
+  []
+  ```
+  Actual output:
+  NOT_SUPPORTED
+  ```
+  Evaluation of embedded Perl 6 code not allowed (construct with :allow-eval)
+  ```
+
 - [ ] `$[?(@.address.city=='Berlin')]`
   Input:
   ```

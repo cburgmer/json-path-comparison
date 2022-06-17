@@ -1794,6 +1794,40 @@ The following queries provide results that do not match those of other implement
   Unable to compile selector `$[?(@.key=='value')]': Invalid array index definition “?(@.key=='value')]”
   ```
 
+- [ ] `$[?(@.length == 4)]`
+  Input:
+  ```
+  [
+    [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    [
+      1,
+      2,
+      3,
+      4
+    ],
+    [
+      1,
+      2,
+      3
+    ]
+  ]
+  ```
+  Expected output:
+  ```
+  []
+  ```
+  Actual output:
+  NOT_SUPPORTED
+  ```
+  Unable to compile selector `$[?(@.length == 4)]': Invalid array index definition “?(@.length == 4)]”
+  ```
+
 - [ ] `$[?(@.address.city=='Berlin')]`
   Input:
   ```
