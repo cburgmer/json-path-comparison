@@ -20,7 +20,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  timeout: sending signal TERM to command ‘perl’
+  Out of memory!
   ```
 
 - [ ] `$[-113667776004:2]`
@@ -40,7 +40,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  timeout: sending signal TERM to command ‘perl’
+  Out of memory!
   ```
 
 - [ ] `$[-4:1]`
@@ -143,10 +143,10 @@ The following queries provide results that do not match those of other implement
   ```
   Assertion (":" is not an operator) failed!
    at build/lib/perl5/Carp/Assert.pm line 282, <STDIN> line 4.
-  	Carp::Assert::assert(...) called at build/lib/perl5/JSON/Path/Evaluator.pm line 217
-  	JSON::Path::Evaluator::_evaluate(...) called at build/lib/perl5/JSON/Path/Evaluator.pm line 122
-  	JSON::Path::Evaluator::evaluate(...) called at build/lib/perl5/JSON/Path/Evaluator.pm line 97
-  	JSON::Path::Evaluator::evaluate_jsonpath(...) called at build/lib/perl5/JSON/Path.pm line 107
+  	Carp::Assert::assert(...) called at build/lib/perl5/JSON/Path/Evaluator.pm line 214
+  	JSON::Path::Evaluator::_evaluate(...) called at build/lib/perl5/JSON/Path/Evaluator.pm line 119
+  	JSON::Path::Evaluator::evaluate(...) called at build/lib/perl5/JSON/Path/Evaluator.pm line 94
+  	JSON::Path::Evaluator::evaluate_jsonpath(...) called at build/lib/perl5/JSON/Path.pm line 104
   	JSON::Path::values(...) called at main.pl line 11
   ```
 
@@ -166,10 +166,10 @@ The following queries provide results that do not match those of other implement
   ```
   Assertion (":" is not an operator) failed!
    at build/lib/perl5/Carp/Assert.pm line 282, <STDIN> line 1.
-  	Carp::Assert::assert(...) called at build/lib/perl5/JSON/Path/Evaluator.pm line 217
-  	JSON::Path::Evaluator::_evaluate(...) called at build/lib/perl5/JSON/Path/Evaluator.pm line 122
-  	JSON::Path::Evaluator::evaluate(...) called at build/lib/perl5/JSON/Path/Evaluator.pm line 97
-  	JSON::Path::Evaluator::evaluate_jsonpath(...) called at build/lib/perl5/JSON/Path.pm line 107
+  	Carp::Assert::assert(...) called at build/lib/perl5/JSON/Path/Evaluator.pm line 214
+  	JSON::Path::Evaluator::_evaluate(...) called at build/lib/perl5/JSON/Path/Evaluator.pm line 119
+  	JSON::Path::Evaluator::evaluate(...) called at build/lib/perl5/JSON/Path/Evaluator.pm line 94
+  	JSON::Path::Evaluator::evaluate_jsonpath(...) called at build/lib/perl5/JSON/Path.pm line 104
   	JSON::Path::values(...) called at main.pl line 11
   ```
 
@@ -256,7 +256,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  Illegal modulus zero at build/lib/perl5/JSON/Path/Evaluator.pm line 414, <STDIN> line 1.
+  Illegal modulus zero at build/lib/perl5/JSON/Path/Evaluator.pm line 411, <STDIN> line 1.
   ```
 
 - [ ] `$..[0]`
@@ -311,10 +311,10 @@ The following queries provide results that do not match those of other implement
   ```
   Assertion ("]" is not an operator) failed!
    at build/lib/perl5/Carp/Assert.pm line 282, <STDIN> line 1.
-  	Carp::Assert::assert(...) called at build/lib/perl5/JSON/Path/Evaluator.pm line 217
-  	JSON::Path::Evaluator::_evaluate(...) called at build/lib/perl5/JSON/Path/Evaluator.pm line 122
-  	JSON::Path::Evaluator::evaluate(...) called at build/lib/perl5/JSON/Path/Evaluator.pm line 97
-  	JSON::Path::Evaluator::evaluate_jsonpath(...) called at build/lib/perl5/JSON/Path.pm line 107
+  	Carp::Assert::assert(...) called at build/lib/perl5/JSON/Path/Evaluator.pm line 214
+  	JSON::Path::Evaluator::_evaluate(...) called at build/lib/perl5/JSON/Path/Evaluator.pm line 119
+  	JSON::Path::Evaluator::evaluate(...) called at build/lib/perl5/JSON/Path/Evaluator.pm line 94
+  	JSON::Path::Evaluator::evaluate_jsonpath(...) called at build/lib/perl5/JSON/Path.pm line 104
   	JSON::Path::values(...) called at main.pl line 11
   ```
 
@@ -347,8 +347,8 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  Unable to decode Hello World as JSON: malformed JSON string, neither array, object, number, string or atom, at character offset 0 (before "Hello World") at build/lib/perl5/JSON/Path/Evaluator.pm line 81.
-   at build/lib/perl5/JSON/Path/Evaluator.pm line 79.
+  Unable to decode Hello World as JSON: malformed JSON string, neither array, object, number, string or atom, at character offset 0 (before "Hello World") at build/lib/perl5/JSON/Path/Evaluator.pm line 78.
+   at build/lib/perl5/JSON/Path/Evaluator.pm line 76.
   ```
 
 - [ ] `$[':']`
@@ -367,10 +367,10 @@ The following queries provide results that do not match those of other implement
   ```
   Assertion (":" is not an operator) failed!
    at build/lib/perl5/Carp/Assert.pm line 282, <STDIN> line 4.
-  	Carp::Assert::assert(...) called at build/lib/perl5/JSON/Path/Evaluator.pm line 217
-  	JSON::Path::Evaluator::_evaluate(...) called at build/lib/perl5/JSON/Path/Evaluator.pm line 122
-  	JSON::Path::Evaluator::evaluate(...) called at build/lib/perl5/JSON/Path/Evaluator.pm line 97
-  	JSON::Path::Evaluator::evaluate_jsonpath(...) called at build/lib/perl5/JSON/Path.pm line 107
+  	Carp::Assert::assert(...) called at build/lib/perl5/JSON/Path/Evaluator.pm line 214
+  	JSON::Path::Evaluator::_evaluate(...) called at build/lib/perl5/JSON/Path/Evaluator.pm line 119
+  	JSON::Path::Evaluator::evaluate(...) called at build/lib/perl5/JSON/Path/Evaluator.pm line 94
+  	JSON::Path::Evaluator::evaluate_jsonpath(...) called at build/lib/perl5/JSON/Path.pm line 104
   	JSON::Path::values(...) called at main.pl line 11
   ```
 
@@ -389,10 +389,10 @@ The following queries provide results that do not match those of other implement
   ```
   Assertion ("]" is not an operator) failed!
    at build/lib/perl5/Carp/Assert.pm line 282, <STDIN> line 1.
-  	Carp::Assert::assert(...) called at build/lib/perl5/JSON/Path/Evaluator.pm line 217
-  	JSON::Path::Evaluator::_evaluate(...) called at build/lib/perl5/JSON/Path/Evaluator.pm line 122
-  	JSON::Path::Evaluator::evaluate(...) called at build/lib/perl5/JSON/Path/Evaluator.pm line 97
-  	JSON::Path::Evaluator::evaluate_jsonpath(...) called at build/lib/perl5/JSON/Path.pm line 107
+  	Carp::Assert::assert(...) called at build/lib/perl5/JSON/Path/Evaluator.pm line 214
+  	JSON::Path::Evaluator::_evaluate(...) called at build/lib/perl5/JSON/Path/Evaluator.pm line 119
+  	JSON::Path::Evaluator::evaluate(...) called at build/lib/perl5/JSON/Path/Evaluator.pm line 94
+  	JSON::Path::Evaluator::evaluate_jsonpath(...) called at build/lib/perl5/JSON/Path.pm line 104
   	JSON::Path::values(...) called at main.pl line 11
   ```
 
@@ -412,10 +412,10 @@ The following queries provide results that do not match those of other implement
   ```
   Assertion ("@" is not an operator) failed!
    at build/lib/perl5/Carp/Assert.pm line 282, <STDIN> line 4.
-  	Carp::Assert::assert(...) called at build/lib/perl5/JSON/Path/Evaluator.pm line 217
-  	JSON::Path::Evaluator::_evaluate(...) called at build/lib/perl5/JSON/Path/Evaluator.pm line 122
-  	JSON::Path::Evaluator::evaluate(...) called at build/lib/perl5/JSON/Path/Evaluator.pm line 97
-  	JSON::Path::Evaluator::evaluate_jsonpath(...) called at build/lib/perl5/JSON/Path.pm line 107
+  	Carp::Assert::assert(...) called at build/lib/perl5/JSON/Path/Evaluator.pm line 214
+  	JSON::Path::Evaluator::_evaluate(...) called at build/lib/perl5/JSON/Path/Evaluator.pm line 119
+  	JSON::Path::Evaluator::evaluate(...) called at build/lib/perl5/JSON/Path/Evaluator.pm line 94
+  	JSON::Path::Evaluator::evaluate_jsonpath(...) called at build/lib/perl5/JSON/Path.pm line 104
   	JSON::Path::values(...) called at main.pl line 11
   ```
 
@@ -435,10 +435,10 @@ The following queries provide results that do not match those of other implement
   ```
   Assertion ("." is not an operator) failed!
    at build/lib/perl5/Carp/Assert.pm line 282, <STDIN> line 4.
-  	Carp::Assert::assert(...) called at build/lib/perl5/JSON/Path/Evaluator.pm line 217
-  	JSON::Path::Evaluator::_evaluate(...) called at build/lib/perl5/JSON/Path/Evaluator.pm line 122
-  	JSON::Path::Evaluator::evaluate(...) called at build/lib/perl5/JSON/Path/Evaluator.pm line 97
-  	JSON::Path::Evaluator::evaluate_jsonpath(...) called at build/lib/perl5/JSON/Path.pm line 107
+  	Carp::Assert::assert(...) called at build/lib/perl5/JSON/Path/Evaluator.pm line 214
+  	JSON::Path::Evaluator::_evaluate(...) called at build/lib/perl5/JSON/Path/Evaluator.pm line 119
+  	JSON::Path::Evaluator::evaluate(...) called at build/lib/perl5/JSON/Path/Evaluator.pm line 94
+  	JSON::Path::Evaluator::evaluate_jsonpath(...) called at build/lib/perl5/JSON/Path.pm line 104
   	JSON::Path::values(...) called at main.pl line 11
   ```
 
@@ -458,10 +458,10 @@ The following queries provide results that do not match those of other implement
   ```
   Assertion ("]" is not an operator) failed!
    at build/lib/perl5/Carp/Assert.pm line 282, <STDIN> line 4.
-  	Carp::Assert::assert(...) called at build/lib/perl5/JSON/Path/Evaluator.pm line 217
-  	JSON::Path::Evaluator::_evaluate(...) called at build/lib/perl5/JSON/Path/Evaluator.pm line 122
-  	JSON::Path::Evaluator::evaluate(...) called at build/lib/perl5/JSON/Path/Evaluator.pm line 97
-  	JSON::Path::Evaluator::evaluate_jsonpath(...) called at build/lib/perl5/JSON/Path.pm line 107
+  	Carp::Assert::assert(...) called at build/lib/perl5/JSON/Path/Evaluator.pm line 214
+  	JSON::Path::Evaluator::_evaluate(...) called at build/lib/perl5/JSON/Path/Evaluator.pm line 119
+  	JSON::Path::Evaluator::evaluate(...) called at build/lib/perl5/JSON/Path/Evaluator.pm line 94
+  	JSON::Path::Evaluator::evaluate_jsonpath(...) called at build/lib/perl5/JSON/Path.pm line 104
   	JSON::Path::values(...) called at main.pl line 11
   ```
 
@@ -481,10 +481,10 @@ The following queries provide results that do not match those of other implement
   ```
   Assertion ("$" is not an operator) failed!
    at build/lib/perl5/Carp/Assert.pm line 282, <STDIN> line 4.
-  	Carp::Assert::assert(...) called at build/lib/perl5/JSON/Path/Evaluator.pm line 217
-  	JSON::Path::Evaluator::_evaluate(...) called at build/lib/perl5/JSON/Path/Evaluator.pm line 122
-  	JSON::Path::Evaluator::evaluate(...) called at build/lib/perl5/JSON/Path/Evaluator.pm line 97
-  	JSON::Path::Evaluator::evaluate_jsonpath(...) called at build/lib/perl5/JSON/Path.pm line 107
+  	Carp::Assert::assert(...) called at build/lib/perl5/JSON/Path/Evaluator.pm line 214
+  	JSON::Path::Evaluator::_evaluate(...) called at build/lib/perl5/JSON/Path/Evaluator.pm line 119
+  	JSON::Path::Evaluator::evaluate(...) called at build/lib/perl5/JSON/Path/Evaluator.pm line 94
+  	JSON::Path::Evaluator::evaluate_jsonpath(...) called at build/lib/perl5/JSON/Path.pm line 104
   	JSON::Path::values(...) called at main.pl line 11
   ```
 
@@ -520,10 +520,10 @@ The following queries provide results that do not match those of other implement
   ```
   Assertion ("," is not an operator) failed!
    at build/lib/perl5/Carp/Assert.pm line 282, <STDIN> line 4.
-  	Carp::Assert::assert(...) called at build/lib/perl5/JSON/Path/Evaluator.pm line 217
-  	JSON::Path::Evaluator::_evaluate(...) called at build/lib/perl5/JSON/Path/Evaluator.pm line 122
-  	JSON::Path::Evaluator::evaluate(...) called at build/lib/perl5/JSON/Path/Evaluator.pm line 97
-  	JSON::Path::Evaluator::evaluate_jsonpath(...) called at build/lib/perl5/JSON/Path.pm line 107
+  	Carp::Assert::assert(...) called at build/lib/perl5/JSON/Path/Evaluator.pm line 214
+  	JSON::Path::Evaluator::_evaluate(...) called at build/lib/perl5/JSON/Path/Evaluator.pm line 119
+  	JSON::Path::Evaluator::evaluate(...) called at build/lib/perl5/JSON/Path/Evaluator.pm line 94
+  	JSON::Path::Evaluator::evaluate_jsonpath(...) called at build/lib/perl5/JSON/Path.pm line 104
   	JSON::Path::values(...) called at main.pl line 11
   ```
 
@@ -800,11 +800,11 @@ The following queries provide results that do not match those of other implement
   ```
   Assertion ("]" is not an operator) failed!
    at build/lib/perl5/Carp/Assert.pm line 282, <STDIN> line 5.
-  	Carp::Assert::assert(...) called at build/lib/perl5/JSON/Path/Evaluator.pm line 217
-  	JSON::Path::Evaluator::_evaluate(...) called at build/lib/perl5/JSON/Path/Evaluator.pm line 225
-  	JSON::Path::Evaluator::_evaluate(...) called at build/lib/perl5/JSON/Path/Evaluator.pm line 122
-  	JSON::Path::Evaluator::evaluate(...) called at build/lib/perl5/JSON/Path/Evaluator.pm line 97
-  	JSON::Path::Evaluator::evaluate_jsonpath(...) called at build/lib/perl5/JSON/Path.pm line 107
+  	Carp::Assert::assert(...) called at build/lib/perl5/JSON/Path/Evaluator.pm line 214
+  	JSON::Path::Evaluator::_evaluate(...) called at build/lib/perl5/JSON/Path/Evaluator.pm line 222
+  	JSON::Path::Evaluator::_evaluate(...) called at build/lib/perl5/JSON/Path/Evaluator.pm line 119
+  	JSON::Path::Evaluator::evaluate(...) called at build/lib/perl5/JSON/Path/Evaluator.pm line 94
+  	JSON::Path::Evaluator::evaluate_jsonpath(...) called at build/lib/perl5/JSON/Path.pm line 104
   	JSON::Path::values(...) called at main.pl line 11
   ```
 
@@ -839,10 +839,10 @@ The following queries provide results that do not match those of other implement
   ```
   Assertion ("$" is not an operator) failed!
    at build/lib/perl5/Carp/Assert.pm line 282, <STDIN> line 3.
-  	Carp::Assert::assert(...) called at build/lib/perl5/JSON/Path/Evaluator.pm line 217
-  	JSON::Path::Evaluator::_evaluate(...) called at build/lib/perl5/JSON/Path/Evaluator.pm line 122
-  	JSON::Path::Evaluator::evaluate(...) called at build/lib/perl5/JSON/Path/Evaluator.pm line 97
-  	JSON::Path::Evaluator::evaluate_jsonpath(...) called at build/lib/perl5/JSON/Path.pm line 107
+  	Carp::Assert::assert(...) called at build/lib/perl5/JSON/Path/Evaluator.pm line 214
+  	JSON::Path::Evaluator::_evaluate(...) called at build/lib/perl5/JSON/Path/Evaluator.pm line 119
+  	JSON::Path::Evaluator::evaluate(...) called at build/lib/perl5/JSON/Path/Evaluator.pm line 94
+  	JSON::Path::Evaluator::evaluate_jsonpath(...) called at build/lib/perl5/JSON/Path.pm line 104
   	JSON::Path::values(...) called at main.pl line 11
   ```
 
@@ -954,7 +954,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  Missing required argument 'expression' in constructor at build/lib/perl5/JSON/Path.pm line 107.
+  Missing required argument 'expression' in constructor at build/lib/perl5/JSON/Path.pm line 104.
   ```
 
 - [ ] `$..*[?(@.id>2)]`
@@ -4085,7 +4085,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  Missing required argument 'root' in constructor at build/lib/perl5/JSON/Path.pm line 107.
+  Missing required argument 'root' in constructor at build/lib/perl5/JSON/Path.pm line 104.
   ```
 
 - [ ] `$`
@@ -4123,10 +4123,10 @@ The following queries provide results that do not match those of other implement
   ```
   Assertion ("[(" is not an operator) failed!
    at build/lib/perl5/Carp/Assert.pm line 282, <STDIN> line 1.
-  	Carp::Assert::assert(...) called at build/lib/perl5/JSON/Path/Evaluator.pm line 217
-  	JSON::Path::Evaluator::_evaluate(...) called at build/lib/perl5/JSON/Path/Evaluator.pm line 122
-  	JSON::Path::Evaluator::evaluate(...) called at build/lib/perl5/JSON/Path/Evaluator.pm line 97
-  	JSON::Path::Evaluator::evaluate_jsonpath(...) called at build/lib/perl5/JSON/Path.pm line 107
+  	Carp::Assert::assert(...) called at build/lib/perl5/JSON/Path/Evaluator.pm line 214
+  	JSON::Path::Evaluator::_evaluate(...) called at build/lib/perl5/JSON/Path/Evaluator.pm line 119
+  	JSON::Path::Evaluator::evaluate(...) called at build/lib/perl5/JSON/Path/Evaluator.pm line 94
+  	JSON::Path::Evaluator::evaluate_jsonpath(...) called at build/lib/perl5/JSON/Path.pm line 104
   	JSON::Path::values(...) called at main.pl line 11
   ```
 
@@ -4222,10 +4222,10 @@ The following queries provide results that do not match those of other implement
   ```
   Assertion (":" is not an operator) failed!
    at build/lib/perl5/Carp/Assert.pm line 282, <STDIN> line 1.
-  	Carp::Assert::assert(...) called at build/lib/perl5/JSON/Path/Evaluator.pm line 217
-  	JSON::Path::Evaluator::_evaluate(...) called at build/lib/perl5/JSON/Path/Evaluator.pm line 122
-  	JSON::Path::Evaluator::evaluate(...) called at build/lib/perl5/JSON/Path/Evaluator.pm line 97
-  	JSON::Path::Evaluator::evaluate_jsonpath(...) called at build/lib/perl5/JSON/Path.pm line 107
+  	Carp::Assert::assert(...) called at build/lib/perl5/JSON/Path/Evaluator.pm line 214
+  	JSON::Path::Evaluator::_evaluate(...) called at build/lib/perl5/JSON/Path/Evaluator.pm line 119
+  	JSON::Path::Evaluator::evaluate(...) called at build/lib/perl5/JSON/Path/Evaluator.pm line 94
+  	JSON::Path::Evaluator::evaluate_jsonpath(...) called at build/lib/perl5/JSON/Path.pm line 104
   	JSON::Path::values(...) called at main.pl line 11
   ```
 

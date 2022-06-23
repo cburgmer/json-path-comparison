@@ -485,7 +485,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  evalmachine.<anonymous>:1
+  jsonPath: Invalid or unexpected token: @
   ```
 
 - [ ] `$[?(@.key-dash == 'value')]`
@@ -499,8 +499,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  evalmachine.<anonymous>:1
-      at evalmachine.<anonymous>:1:10
+  jsonPath: dash is not defined: _$_v.key-dash == 'value'
   ```
 
 - [ ] `$[?(@.2 == 'second')]`
@@ -516,7 +515,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  evalmachine.<anonymous>:1
+  jsonPath: Unexpected number: _$_v.2 == 'second'
   ```
 
 - [ ] `$[?(@.2 == 'third')]`
@@ -534,7 +533,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  evalmachine.<anonymous>:1
+  jsonPath: Unexpected number: _$_v.2 == 'third'
   ```
 
 - [ ] `$[?()]`
@@ -580,7 +579,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  evalmachine.<anonymous>:1
+  jsonPath: Unexpected token ':': _$_v[0:1]==[1]
   ```
 
 - [ ] `$[?(@.*==[1,2])]`
@@ -613,7 +612,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  evalmachine.<anonymous>:1
+  jsonPath: Unexpected token '*=': _$_v.*==[1,2]
   ```
 
 - [ ] `$[?(@[0:1]==1)]`
@@ -638,7 +637,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  evalmachine.<anonymous>:1
+  jsonPath: Unexpected token ':': _$_v[0:1]==1
   ```
 
 - [ ] `$[?(@[*]==2)]`
@@ -671,7 +670,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  evalmachine.<anonymous>:1
+  jsonPath: Unexpected token '*': _$_v[*]==2
   ```
 
 - [ ] `$[?(@.*==2)]`
@@ -704,7 +703,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  evalmachine.<anonymous>:1
+  jsonPath: Unexpected token '*=': _$_v.*==2
   ```
 
 - [ ] `$[?(@==42)]`
@@ -728,7 +727,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  evalmachine.<anonymous>:1
+  jsonPath: Invalid or unexpected token: @==42
   ```
 
 - [ ] `$[?(@.key=="value")]`
@@ -826,8 +825,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  evalmachine.<anonymous>:1
-      at evalmachine.<anonymous>:1:11
+  jsonPath: $ is not defined: _$_v.key==$.value
   ```
 
 - [ ] `$[?(length(@) == 4)]`
@@ -860,8 +858,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  evalmachine.<anonymous>:1
-      at evalmachine.<anonymous>:1:1
+  jsonPath: length is not defined: length(_$_v) == 4
   ```
 
 - [ ] `$[?(@.length() == 4)]`
@@ -890,8 +887,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  evalmachine.<anonymous>:1
-      at evalmachine.<anonymous>:1:6
+  jsonPath: _$_v.length is not a function: _$_v.length() == 4
   ```
 
 - [ ] `$[?(@.length == 4)]`
@@ -1022,7 +1018,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  evalmachine.<anonymous>:1
+  jsonPath: Unexpected token '*': _$_v[*]>=4
   ```
 
 - [ ] `$.x[?(@[*]>=$.y[*])]`
@@ -1052,7 +1048,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  evalmachine.<anonymous>:1
+  jsonPath: Unexpected token '*': _$_v[*]>=$.y[*]
   ```
 
 - [ ] `$[?(@.key=42)]`
@@ -1239,7 +1235,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  evalmachine.<anonymous>:1
+  jsonPath: Unexpected token '?': _$_v.a[?(_$_v.price>10
   ```
 
 - [ ] `$[?(@..child)]`
@@ -1280,7 +1276,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  evalmachine.<anonymous>:1
+  jsonPath: Unexpected token '.': _$_v..child
   ```
 
 - [ ] `$[?@.key==42]`
@@ -1466,7 +1462,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  evalmachine.<anonymous>:1
+  jsonPath: Unexpected token ')': _$_v.key<3),?(_$_v.key>6
   ```
 
 - [ ] `$['key','another']`

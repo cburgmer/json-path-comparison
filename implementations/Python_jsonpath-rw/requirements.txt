@@ -1,2 +1,2 @@
 jsonpath-rw==1.4.0
-pur==6.1.0
+pur==7.0.0

@@ -404,7 +404,7 @@ queries:
     result: []
   - id: union_with_repeated_matches_after_dot_notation_with_wildcard
     status: open
-    result: [false, "string", 5.4, "string", null, true]
+    result: ["string", null, true, false, "string", 5.4]
   - id: union_with_slice_and_number
     status: open
     result: [2, 3]
