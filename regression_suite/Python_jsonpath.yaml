@@ -286,6 +286,9 @@ queries:
   - id: filter_expression_with_in_current_object
     status: open
     result: [{"d": [1, 2, 3]}, {"d": [2]}, {"d": [4, 2]}]
+  - id: filter_expression_with_length_free_function
+    status: fail
+    result: NOT_FOUND
   - id: filter_expression_with_length_function
     status: open
     result: NOT_FOUND

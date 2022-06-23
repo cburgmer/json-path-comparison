@@ -251,6 +251,9 @@ queries:
     result: []
   - id: filter_expression_with_in_current_object
     status: error
+  - id: filter_expression_with_length_free_function
+    status: fail
+    result: []
   - id: filter_expression_with_length_function
     status: open
     result: [[1, 2, 3, 4]]

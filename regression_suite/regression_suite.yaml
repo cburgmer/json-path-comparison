@@ -837,6 +837,10 @@ queries:
   - id: filter_expression_with_in_current_object
     selector: "$[?(2 in @.d)]"
     document: [{"d": [1, 2, 3]}, {"d": [2]}, {"d": [1]}, {"d": [3, 4]}, {"d": [4, 2]}]
+  - id: filter_expression_with_length_free_function
+    selector: "$[?(length(@) == 4)]"
+    document: [[1, 2, 3, 4, 5], [1, 2, 3, 4], [1, 2, 3]]
+    consensus: NOT_SUPPORTED
   - id: filter_expression_with_length_function
     selector: "$[?(@.length() == 4)]"
     document: [[1, 2, 3, 4, 5], [1, 2, 3, 4], [1, 2, 3]]

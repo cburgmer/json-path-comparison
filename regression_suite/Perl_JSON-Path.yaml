@@ -294,6 +294,8 @@ queries:
     status: error
   - id: filter_expression_with_in_current_object
     status: error
+  - id: filter_expression_with_length_free_function
+    status: error
   - id: filter_expression_with_length_function
     status: error
   - id: filter_expression_with_length_property

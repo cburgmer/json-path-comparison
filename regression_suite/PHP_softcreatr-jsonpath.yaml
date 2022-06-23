@@ -253,6 +253,8 @@ queries:
     result: [{"d": 2}, {"d": 3}]
   - id: filter_expression_with_in_current_object
     status: error
+  - id: filter_expression_with_length_free_function
+    status: error
   - id: filter_expression_with_length_function
     status: open
     result: []
