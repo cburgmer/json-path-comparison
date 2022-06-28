@@ -2229,6 +2229,68 @@ The following queries provide results that do not match those of other implement
   []
   ```
 
+- [ ] `$[?(@.key>"VALUE")]`
+  Input:
+  ```
+  [
+    {
+      "key": 0
+    },
+    {
+      "key": 42
+    },
+    {
+      "key": -1
+    },
+    {
+      "key": 41
+    },
+    {
+      "key": 43
+    },
+    {
+      "key": 42.0001
+    },
+    {
+      "key": 41.9999
+    },
+    {
+      "key": 100
+    },
+    {
+      "key": "43"
+    },
+    {
+      "key": "42"
+    },
+    {
+      "key": "41"
+    },
+    {
+      "key": "alpha"
+    },
+    {
+      "key": "ALPHA"
+    },
+    {
+      "key": "value"
+    },
+    {
+      "key": "VALUE"
+    },
+    {
+      "some": "value"
+    },
+    {
+      "some": "VALUE"
+    }
+  ]
+  ```
+  Error:
+  ```
+  java.lang.ClassCastException class java.lang.String cannot be cast to class java.lang.Number (java.lang.String and java.lang.Number are in module java.base of loader 'bootstrap')
+  ```
+
 - [ ] `$[?(@.d in [2, 3])]`
   Input:
   ```

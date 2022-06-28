@@ -1529,6 +1529,69 @@ The following queries provide results that do not match those of other implement
   
   ```
 
+- [ ] `$[?(@.key>"VALUE")]`
+  Input:
+  ```
+  [
+    {
+      "key": 0
+    },
+    {
+      "key": 42
+    },
+    {
+      "key": -1
+    },
+    {
+      "key": 41
+    },
+    {
+      "key": 43
+    },
+    {
+      "key": 42.0001
+    },
+    {
+      "key": 41.9999
+    },
+    {
+      "key": 100
+    },
+    {
+      "key": "43"
+    },
+    {
+      "key": "42"
+    },
+    {
+      "key": "41"
+    },
+    {
+      "key": "alpha"
+    },
+    {
+      "key": "ALPHA"
+    },
+    {
+      "key": "value"
+    },
+    {
+      "key": "VALUE"
+    },
+    {
+      "some": "value"
+    },
+    {
+      "some": "VALUE"
+    }
+  ]
+  ```
+  Error:
+  ```
+  json-path-comparison: src/Data/JSONPath/Execute.hs:(71,1)-(72,60): Non-exhaustive patterns in function executeCondition
+  
+  ```
+
 - [ ] `$[?(@.key<42)]`
   Input:
   ```
