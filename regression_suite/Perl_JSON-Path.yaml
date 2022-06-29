@@ -290,6 +290,8 @@ queries:
     status: error
   - id: filter_expression_with_greater_than_or_equal
     status: error
+  - id: filter_expression_with_greater_than_string
+    status: error
   - id: filter_expression_with_in_array_of_values
     status: error
   - id: filter_expression_with_in_current_object
