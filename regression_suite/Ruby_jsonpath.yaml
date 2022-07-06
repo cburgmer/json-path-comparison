@@ -251,6 +251,9 @@ queries:
     result: [[1, 2, 3], [1], [2, 3], 1, 2]
   - id: filter_expression_with_equals_array_for_dot_notation_with_star
     status: error
+  - id: filter_expression_with_equals_array_or_equals_true
+    status: open
+    result: []
   - id: filter_expression_with_equals_array_with_single_quotes
     status: open
     result: []
@@ -327,11 +330,17 @@ queries:
     result: [{"key": 60}, {"key": 50}, {"key": 10}, {"key": -50}]
   - id: filter_expression_with_negation_and_equals
     status: error
+  - id: filter_expression_with_negation_and_equals_array_or_equals_true
+    status: open
+    result: []
   - id: filter_expression_with_negation_and_less_than
     status: error
   - id: filter_expression_with_negation_and_without_value
     status: error
   - id: filter_expression_with_not_equals
+    status: open
+    result: []
+  - id: filter_expression_with_not_equals_array_or_equals_true
     status: open
     result: []
   - id: filter_expression_with_parent_axis_operator
@@ -399,6 +408,9 @@ queries:
   - id: recursive_descent_after_dot_notation
     status: open
     result: [{"complex": "string", "primitives": [0, 1]}]
+  - id: recursive_descent_on_nested_arrays
+    status: fail
+    result: [[[0], [1]], [0], 0, [1], 1]
   - id: script_expression
     status: fail
     result: ["fifth"]

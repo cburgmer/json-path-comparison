@@ -195,6 +195,9 @@ queries:
   - id: filter_expression_with_equals_array_for_dot_notation_with_star
     status: open
     result: NOT_SUPPORTED
+  - id: filter_expression_with_equals_array_or_equals_true
+    status: open
+    result: NOT_SUPPORTED
   - id: filter_expression_with_equals_array_with_single_quotes
     status: open
     result: NOT_SUPPORTED
@@ -297,6 +300,9 @@ queries:
   - id: filter_expression_with_negation_and_equals
     status: open
     result: NOT_SUPPORTED
+  - id: filter_expression_with_negation_and_equals_array_or_equals_true
+    status: open
+    result: NOT_SUPPORTED
   - id: filter_expression_with_negation_and_less_than
     status: open
     result: NOT_SUPPORTED
@@ -304,6 +310,9 @@ queries:
     status: open
     result: NOT_SUPPORTED
   - id: filter_expression_with_not_equals
+    status: open
+    result: NOT_SUPPORTED
+  - id: filter_expression_with_not_equals_array_or_equals_true
     status: open
     result: NOT_SUPPORTED
   - id: filter_expression_with_regular_expression

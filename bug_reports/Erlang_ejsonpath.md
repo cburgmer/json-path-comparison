@@ -774,6 +774,32 @@ The following queries provide results that do not match those of other implement
   {"init terminating in do_boot",{not_implemented,bin_op,'/'}}
   ```
 
+- [ ] `$[?(@.d==["v1","v2"] || (@.d == true))]`
+  Input:
+  ```
+  [
+    {
+      "d": [
+        "v1",
+        "v2"
+      ]
+    },
+    {
+      "d": [
+        "a",
+        "b"
+      ]
+    },
+    {
+      "d": true
+    }
+  ]
+  ```
+  Error:
+  ```
+  Timeout
+  ```
+
 - [ ] `$[?(@[0:1]==1)]`
   Input:
   ```
@@ -1093,6 +1119,32 @@ The following queries provide results that do not match those of other implement
   Timeout
   ```
 
+- [ ] `$[?(!(@.d==["v1","v2"]) || (@.d == true))]`
+  Input:
+  ```
+  [
+    {
+      "d": [
+        "v1",
+        "v2"
+      ]
+    },
+    {
+      "d": [
+        "a",
+        "b"
+      ]
+    },
+    {
+      "d": true
+    }
+  ]
+  ```
+  Error:
+  ```
+  Timeout
+  ```
+
 - [ ] `$[?(!(@.key<42))]`
   Input:
   ```
@@ -1182,6 +1234,32 @@ The following queries provide results that do not match those of other implement
     },
     {
       "key": []
+    }
+  ]
+  ```
+  Error:
+  ```
+  Timeout
+  ```
+
+- [ ] `$[?((@.d!=["v1","v2"]) || (@.d == true))]`
+  Input:
+  ```
+  [
+    {
+      "d": [
+        "v1",
+        "v2"
+      ]
+    },
+    {
+      "d": [
+        "a",
+        "b"
+      ]
+    },
+    {
+      "d": true
     }
   ]
   ```

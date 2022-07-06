@@ -1992,6 +1992,34 @@ The following queries provide results that do not match those of other implement
   []
   ```
 
+- [ ] `$..*`
+  Input:
+  ```
+  [
+    [
+      0
+    ],
+    [
+      1
+    ]
+  ]
+  ```
+  Expected output:
+  ```
+  [[0], [1], 0, 1]
+  ```
+  Actual output:
+  ```
+  [
+    [
+      0
+    ],
+    [
+      1
+    ]
+  ]
+  ```
+
 - [ ] `$[(@.length-1)]`
   Input:
   ```

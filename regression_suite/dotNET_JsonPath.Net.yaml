@@ -165,6 +165,9 @@ queries:
   - id: filter_expression_with_equals_array_for_dot_notation_with_star
     status: open
     result: []
+  - id: filter_expression_with_equals_array_or_equals_true
+    status: open
+    result: [{"d": true}]
   - id: filter_expression_with_equals_array_with_single_quotes
     status: open
     result: []
@@ -246,6 +249,9 @@ queries:
   - id: filter_expression_with_negation_and_equals
     status: open
     result: NOT_SUPPORTED
+  - id: filter_expression_with_negation_and_equals_array_or_equals_true
+    status: open
+    result: NOT_SUPPORTED
   - id: filter_expression_with_negation_and_less_than
     status: open
     result: NOT_SUPPORTED
@@ -255,6 +261,9 @@ queries:
   - id: filter_expression_with_not_equals
     status: open
     result: [{"key": 0}, {"key": -1}, {"key": 1}, {"key": 41}, {"key": 43}, {"key": 42.0001}, {"key": 41.9999}, {"key": 100}, {"key": "some"}, {"key": "42"}, {"key": null}, {"key": 420}, {"key": ""}, {"key": {}}, {"key": []}, {"key": [42]}, {"key": {"key": 42}}, {"key": {"some": 42}}, {"some": "value"}]
+  - id: filter_expression_with_not_equals_array_or_equals_true
+    status: open
+    result: NOT_SUPPORTED
   - id: filter_expression_with_regular_expression
     status: open
     result: NOT_SUPPORTED

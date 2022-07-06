@@ -991,6 +991,36 @@ The following queries provide results that do not match those of other implement
   java.lang.IllegalStateException: deep-scan shouldn't be the last operator.
   ```
 
+- [ ] `$..*`
+  Input:
+  ```
+  [
+    [
+      0
+    ],
+    [
+      1
+    ]
+  ]
+  ```
+  Expected output:
+  ```
+  [[0], [1], 0, 1]
+  ```
+  Actual output:
+  ```
+  [
+    0,
+    [
+      0
+    ],
+    1,
+    [
+      1
+    ]
+  ]
+  ```
+
 - [ ] `$`
   Input:
   ```

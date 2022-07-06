@@ -642,6 +642,32 @@ The following queries provide results that do not match those of other implement
   unknown token at 5: [1,2] at 4
   ```
 
+- [ ] `$[?(@.d==["v1","v2"] || (@.d == true))]`
+  Input:
+  ```
+  [
+    {
+      "d": [
+        "v1",
+        "v2"
+      ]
+    },
+    {
+      "d": [
+        "a",
+        "b"
+      ]
+    },
+    {
+      "d": true
+    }
+  ]
+  ```
+  Error:
+  ```
+  unknown token at 5: ["v1","v2"]||(@.d==true) at 4
+  ```
+
 - [ ] `$[?(@.d==['v1','v2'])]`
   Input:
   ```
@@ -896,6 +922,58 @@ The following queries provide results that do not match those of other implement
   Actual output:
   ```
   []
+  ```
+
+- [ ] `$[?(!(@.d==["v1","v2"]) || (@.d == true))]`
+  Input:
+  ```
+  [
+    {
+      "d": [
+        "v1",
+        "v2"
+      ]
+    },
+    {
+      "d": [
+        "a",
+        "b"
+      ]
+    },
+    {
+      "d": true
+    }
+  ]
+  ```
+  Error:
+  ```
+  unknown token at 7: ["v1","v2"])||(@.d==true) at 4
+  ```
+
+- [ ] `$[?((@.d!=["v1","v2"]) || (@.d == true))]`
+  Input:
+  ```
+  [
+    {
+      "d": [
+        "v1",
+        "v2"
+      ]
+    },
+    {
+      "d": [
+        "a",
+        "b"
+      ]
+    },
+    {
+      "d": true
+    }
+  ]
+  ```
+  Error:
+  ```
+  unknown token at 6: ["v1","v2"])||(@.d==true) at 4
   ```
 
 - [ ] `$[*].bookmarks[?(@.page == 45)]^^^`
@@ -1189,6 +1267,36 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   path: unexpected end of path at 7
+  ```
+
+- [ ] `$..*`
+  Input:
+  ```
+  [
+    [
+      0
+    ],
+    [
+      1
+    ]
+  ]
+  ```
+  Expected output:
+  ```
+  [[0], [1], 0, 1]
+  ```
+  Actual output:
+  ```
+  [
+    [
+      0
+    ],
+    0,
+    [
+      1
+    ],
+    1
+  ]
   ```
 
 - [ ] `$[(@.length-1)]`

@@ -753,6 +753,32 @@ The following queries provide results that do not match those of other implement
   Error: 'Malformed filter query'
   ```
 
+- [ ] `$[?(!(@.d==["v1","v2"]) || (@.d == true))]`
+  Input:
+  ```
+  [
+    {
+      "d": [
+        "v1",
+        "v2"
+      ]
+    },
+    {
+      "d": [
+        "a",
+        "b"
+      ]
+    },
+    {
+      "d": true
+    }
+  ]
+  ```
+  Error:
+  ```
+  Error: 'Malformed filter query'
+  ```
+
 - [ ] `$[?(!(@.key<42))]`
   Input:
   ```
@@ -842,6 +868,32 @@ The following queries provide results that do not match those of other implement
     },
     {
       "key": []
+    }
+  ]
+  ```
+  Error:
+  ```
+  Error: 'Malformed filter query'
+  ```
+
+- [ ] `$[?((@.d!=["v1","v2"]) || (@.d == true))]`
+  Input:
+  ```
+  [
+    {
+      "d": [
+        "v1",
+        "v2"
+      ]
+    },
+    {
+      "d": [
+        "a",
+        "b"
+      ]
+    },
+    {
+      "d": true
     }
   ]
   ```

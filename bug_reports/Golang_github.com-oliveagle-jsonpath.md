@@ -2654,6 +2654,32 @@ The following queries provide results that do not match those of other implement
   interface conversion: interface {} is nil, not string
   ```
 
+- [ ] `$[?(@.d==["v1","v2"] || (@.d == true))]`
+  Input:
+  ```
+  [
+    {
+      "d": [
+        "v1",
+        "v2"
+      ]
+    },
+    {
+      "d": [
+        "a",
+        "b"
+      ]
+    },
+    {
+      "d": true
+    }
+  ]
+  ```
+  Error:
+  ```
+  interface conversion: interface {} is nil, not string
+  ```
+
 - [ ] `$[?(@.d==['v1','v2'])]`
   Input:
   ```
@@ -3075,6 +3101,58 @@ The following queries provide results that do not match those of other implement
   []
   ```
 
+- [ ] `$[?(!(@.d==["v1","v2"]) || (@.d == true))]`
+  Input:
+  ```
+  [
+    {
+      "d": [
+        "v1",
+        "v2"
+      ]
+    },
+    {
+      "d": [
+        "a",
+        "b"
+      ]
+    },
+    {
+      "d": true
+    }
+  ]
+  ```
+  Error:
+  ```
+  interface conversion: interface {} is nil, not string
+  ```
+
+- [ ] `$[?((@.d!=["v1","v2"]) || (@.d == true))]`
+  Input:
+  ```
+  [
+    {
+      "d": [
+        "v1",
+        "v2"
+      ]
+    },
+    {
+      "d": [
+        "a",
+        "b"
+      ]
+    },
+    {
+      "d": true
+    }
+  ]
+  ```
+  Error:
+  ```
+  interface conversion: interface {} is nil, not string
+  ```
+
 - [ ] `$[*].bookmarks[?(@.page == 45)]^^^`
   Input:
   ```
@@ -3443,6 +3521,27 @@ The following queries provide results that do not match those of other implement
       ]
     }
   }
+  ```
+  Error:
+  ```
+  expression don't support in filter
+  ```
+
+- [ ] `$..*`
+  Input:
+  ```
+  [
+    [
+      0
+    ],
+    [
+      1
+    ]
+  ]
+  ```
+  Expected output:
+  ```
+  [[0], [1], 0, 1]
   ```
   Error:
   ```

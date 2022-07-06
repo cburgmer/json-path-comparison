@@ -240,6 +240,8 @@ queries:
     status: error
   - id: filter_expression_with_equals_array_for_dot_notation_with_star
     status: error
+  - id: filter_expression_with_equals_array_or_equals_true
+    status: error
   - id: filter_expression_with_equals_array_with_single_quotes
     status: error
   - id: filter_expression_with_equals_boolean_expression_value
@@ -310,11 +312,15 @@ queries:
     status: error
   - id: filter_expression_with_negation_and_equals
     status: error
+  - id: filter_expression_with_negation_and_equals_array_or_equals_true
+    status: error
   - id: filter_expression_with_negation_and_less_than
     status: error
   - id: filter_expression_with_negation_and_without_value
     status: error
   - id: filter_expression_with_not_equals
+    status: error
+  - id: filter_expression_with_not_equals_array_or_equals_true
     status: error
   - id: filter_expression_with_parent_axis_operator
     status: error
@@ -368,6 +374,9 @@ queries:
     result: []
   - id: recursive_descent_after_dot_notation
     status: open
+    result: []
+  - id: recursive_descent_on_nested_arrays
+    status: fail
     result: []
   - id: root
     status: fail

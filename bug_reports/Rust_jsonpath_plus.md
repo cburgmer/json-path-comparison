@@ -613,6 +613,34 @@ The following queries provide results that do not match those of other implement
   panic occurred
   ```
 
+- [ ] `$[?(@.d==["v1","v2"] || (@.d == true))]`
+  Input:
+  ```
+  [
+    {
+      "d": [
+        "v1",
+        "v2"
+      ]
+    },
+    {
+      "d": [
+        "a",
+        "b"
+      ]
+    },
+    {
+      "d": true
+    }
+  ]
+  ```
+  Error:
+  ```
+  Error Parsing JSON Path:
+  $[?(@.d==["v1","v2"] || (@.d == true))]
+  panic occurred
+  ```
+
 - [ ] `$[?(@.d==['v1','v2'])]`
   Input:
   ```
@@ -901,6 +929,34 @@ The following queries provide results that do not match those of other implement
   panic occurred
   ```
 
+- [ ] `$[?(!(@.d==["v1","v2"]) || (@.d == true))]`
+  Input:
+  ```
+  [
+    {
+      "d": [
+        "v1",
+        "v2"
+      ]
+    },
+    {
+      "d": [
+        "a",
+        "b"
+      ]
+    },
+    {
+      "d": true
+    }
+  ]
+  ```
+  Error:
+  ```
+  Error Parsing JSON Path:
+  $[?(!(@.d==["v1","v2"]) || (@.d == true))]
+  panic occurred
+  ```
+
 - [ ] `$[?(@.key!=42)]`
   Input:
   ```
@@ -977,6 +1033,34 @@ The following queries provide results that do not match those of other implement
   ```
   Error Parsing JSON Path:
   $[?(@.key!=42)]
+  panic occurred
+  ```
+
+- [ ] `$[?((@.d!=["v1","v2"]) || (@.d == true))]`
+  Input:
+  ```
+  [
+    {
+      "d": [
+        "v1",
+        "v2"
+      ]
+    },
+    {
+      "d": [
+        "a",
+        "b"
+      ]
+    },
+    {
+      "d": true
+    }
+  ]
+  ```
+  Error:
+  ```
+  Error Parsing JSON Path:
+  $[?((@.d!=["v1","v2"]) || (@.d == true))]
   panic occurred
   ```
 

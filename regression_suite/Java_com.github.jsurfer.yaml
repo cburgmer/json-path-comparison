@@ -204,6 +204,9 @@ queries:
   - id: filter_expression_with_equals_array_for_dot_notation_with_star
     status: open
     result: NOT_SUPPORTED
+  - id: filter_expression_with_equals_array_or_equals_true
+    status: open
+    result: NOT_SUPPORTED
   - id: filter_expression_with_equals_array_with_single_quotes
     status: open
     result: NOT_SUPPORTED
@@ -283,6 +286,9 @@ queries:
   - id: filter_expression_with_negation_and_equals
     status: open
     result: [{"key": 0}, {"key": 42}, {"key": -1}, {"key": 41}, {"key": 43}, {"key": 42.0001}, {"key": 41.9999}, {"key": 100}, {"key": "43"}, {"key": "42"}, {"key": "41"}, {"key": "value"}, {"some": "value"}]
+  - id: filter_expression_with_negation_and_equals_array_or_equals_true
+    status: open
+    result: NOT_SUPPORTED
   - id: filter_expression_with_negation_and_less_than
     status: open
     result: [{"key": 0}, {"key": 42}, {"key": -1}, {"key": 41}, {"key": 43}, {"key": 42.0001}, {"key": 41.9999}, {"key": 100}, {"key": "43"}, {"key": "42"}, {"key": "41"}, {"key": "value"}, {"some": "value"}]
@@ -290,6 +296,9 @@ queries:
     status: open
     result: NOT_SUPPORTED
   - id: filter_expression_with_not_equals
+    status: open
+    result: NOT_SUPPORTED
+  - id: filter_expression_with_not_equals_array_or_equals_true
     status: open
     result: NOT_SUPPORTED
   - id: filter_expression_with_regular_expression
@@ -345,6 +354,9 @@ queries:
     status: error
   - id: recursive_descent_after_dot_notation
     status: error
+  - id: recursive_descent_on_nested_arrays
+    status: fail
+    result: [0, [0], 1, [1]]
   - id: root_on_scalar
     status: fail
     result: []

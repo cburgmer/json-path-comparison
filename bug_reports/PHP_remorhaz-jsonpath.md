@@ -179,6 +179,36 @@ The following queries provide results that do not match those of other implement
   return $var4;'
   ```
 
+- [ ] `$..*`
+  Input:
+  ```
+  [
+    [
+      0
+    ],
+    [
+      1
+    ]
+  ]
+  ```
+  Expected output:
+  ```
+  [[0], [1], 0, 1]
+  ```
+  Actual output:
+  ```
+  [
+    [
+      0
+    ],
+    0,
+    [
+      1
+    ],
+    1
+  ]
+  ```
+
 - [ ] `$[0,0]`
   Input:
   ```

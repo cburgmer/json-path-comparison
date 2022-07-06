@@ -1397,6 +1397,30 @@ The following queries provide results that do not match those of other implement
   Evaluation of embedded Perl 6 code not allowed (construct with :allow-eval)
   ```
 
+- [ ] `$..*`
+  Input:
+  ```
+  [
+    [
+      0
+    ],
+    [
+      1
+    ]
+  ]
+  ```
+  Expected output:
+  ```
+  [[0], [1], 0, 1]
+  ```
+  Actual output:
+  ```
+  [
+    0,
+    1
+  ]
+  ```
+
 - [ ] `$['a','a']`
   Input:
   ```

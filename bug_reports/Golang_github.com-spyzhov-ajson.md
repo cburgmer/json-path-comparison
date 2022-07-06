@@ -412,6 +412,32 @@ The following queries provide results that do not match those of other implement
   wrong request: wrong request: ?(@.*==[1,2])
   ```
 
+- [ ] `$[?(@.d==["v1","v2"] || (@.d == true))]`
+  Input:
+  ```
+  [
+    {
+      "d": [
+        "v1",
+        "v2"
+      ]
+    },
+    {
+      "d": [
+        "a",
+        "b"
+      ]
+    },
+    {
+      "d": true
+    }
+  ]
+  ```
+  Error:
+  ```
+  wrong request: wrong request: ?(@.d==["v1","v2"] || (@.d == true))
+  ```
+
 - [ ] `$[?(@.d==['v1','v2'])]`
   Input:
   ```
@@ -751,6 +777,32 @@ The following queries provide results that do not match those of other implement
   wrong symbol '!' at 2
   ```
 
+- [ ] `$[?(!(@.d==["v1","v2"]) || (@.d == true))]`
+  Input:
+  ```
+  [
+    {
+      "d": [
+        "v1",
+        "v2"
+      ]
+    },
+    {
+      "d": [
+        "a",
+        "b"
+      ]
+    },
+    {
+      "d": true
+    }
+  ]
+  ```
+  Error:
+  ```
+  wrong symbol '!' at 2
+  ```
+
 - [ ] `$[?(!(@.key<42))]`
   Input:
   ```
@@ -846,6 +898,32 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   wrong symbol '!' at 2
+  ```
+
+- [ ] `$[?((@.d!=["v1","v2"]) || (@.d == true))]`
+  Input:
+  ```
+  [
+    {
+      "d": [
+        "v1",
+        "v2"
+      ]
+    },
+    {
+      "d": [
+        "a",
+        "b"
+      ]
+    },
+    {
+      "d": true
+    }
+  ]
+  ```
+  Error:
+  ```
+  wrong request: wrong request: ?((@.d!=["v1","v2"]) || (@.d == true))
   ```
 
 - [ ] `$[?(@.name=~/hello.*/)]`

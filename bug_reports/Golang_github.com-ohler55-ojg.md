@@ -108,6 +108,32 @@ The following queries provide results that do not match those of other implement
   Exception: runtime error: comparing uncomparable type []interface {}
   ```
 
+- [ ] `$[?(@.d==["v1","v2"] || (@.d == true))]`
+  Input:
+  ```
+  [
+    {
+      "d": [
+        "v1",
+        "v2"
+      ]
+    },
+    {
+      "d": [
+        "a",
+        "b"
+      ]
+    },
+    {
+      "d": true
+    }
+  ]
+  ```
+  Error:
+  ```
+  Exception: runtime error: comparing uncomparable type []interface {}
+  ```
+
 - [ ] `$[?(@.d==['v1','v2'])]`
   Input:
   ```
@@ -254,6 +280,62 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   Exception: runtime error: comparing uncomparable type []interface {}
+  ```
+
+- [ ] `$[?((@.d!=["v1","v2"]) || (@.d == true))]`
+  Input:
+  ```
+  [
+    {
+      "d": [
+        "v1",
+        "v2"
+      ]
+    },
+    {
+      "d": [
+        "a",
+        "b"
+      ]
+    },
+    {
+      "d": true
+    }
+  ]
+  ```
+  Error:
+  ```
+  Exception: runtime error: comparing uncomparable type []interface {}
+  ```
+
+- [ ] `$..*`
+  Input:
+  ```
+  [
+    [
+      0
+    ],
+    [
+      1
+    ]
+  ]
+  ```
+  Expected output:
+  ```
+  [[0], [1], 0, 1]
+  ```
+  Actual output:
+  ```
+  [
+    0,
+    1,
+    [
+      0
+    ],
+    [
+      1
+    ]
+  ]
   ```
 
 

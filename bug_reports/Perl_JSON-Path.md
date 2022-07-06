@@ -1826,6 +1826,32 @@ The following queries provide results that do not match those of other implement
   non-safe evaluation, died at main.pl line 11.
   ```
 
+- [ ] `$[?(@.d==["v1","v2"] || (@.d == true))]`
+  Input:
+  ```
+  [
+    {
+      "d": [
+        "v1",
+        "v2"
+      ]
+    },
+    {
+      "d": [
+        "a",
+        "b"
+      ]
+    },
+    {
+      "d": true
+    }
+  ]
+  ```
+  Error:
+  ```
+  non-safe evaluation, died at main.pl line 11.
+  ```
+
 - [ ] `$[?(@.d==['v1','v2'])]`
   Input:
   ```
@@ -3147,6 +3173,32 @@ The following queries provide results that do not match those of other implement
   non-safe evaluation, died at main.pl line 11.
   ```
 
+- [ ] `$[?(!(@.d==["v1","v2"]) || (@.d == true))]`
+  Input:
+  ```
+  [
+    {
+      "d": [
+        "v1",
+        "v2"
+      ]
+    },
+    {
+      "d": [
+        "a",
+        "b"
+      ]
+    },
+    {
+      "d": true
+    }
+  ]
+  ```
+  Error:
+  ```
+  non-safe evaluation, died at main.pl line 11.
+  ```
+
 - [ ] `$[?(!(@.key<42))]`
   Input:
   ```
@@ -3313,6 +3365,32 @@ The following queries provide results that do not match those of other implement
     },
     {
       "some": "value"
+    }
+  ]
+  ```
+  Error:
+  ```
+  non-safe evaluation, died at main.pl line 11.
+  ```
+
+- [ ] `$[?((@.d!=["v1","v2"]) || (@.d == true))]`
+  Input:
+  ```
+  [
+    {
+      "d": [
+        "v1",
+        "v2"
+      ]
+    },
+    {
+      "d": [
+        "a",
+        "b"
+      ]
+    },
+    {
+      "d": true
     }
   ]
   ```
@@ -4092,6 +4170,27 @@ The following queries provide results that do not match those of other implement
   Expected output:
   ```
   NOT_SUPPORTED
+  ```
+  Actual output:
+  ```
+  []
+  ```
+
+- [ ] `$..*`
+  Input:
+  ```
+  [
+    [
+      0
+    ],
+    [
+      1
+    ]
+  ]
+  ```
+  Expected output:
+  ```
+  [[0], [1], 0, 1]
   ```
   Actual output:
   ```

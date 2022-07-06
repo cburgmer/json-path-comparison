@@ -1048,6 +1048,44 @@ The following queries provide results that do not match those of other implement
   Input string was not in a correct format.
   ```
 
+- [ ] `$..*`
+  Input:
+  ```
+  [
+    [
+      0
+    ],
+    [
+      1
+    ]
+  ]
+  ```
+  Expected output:
+  ```
+  [[0], [1], 0, 1]
+  ```
+  Actual output:
+  ```
+  [
+    [
+      [
+        0
+      ],
+      [
+        1
+      ]
+    ],
+    [
+      0
+    ],
+    0,
+    [
+      1
+    ],
+    1
+  ]
+  ```
+
 - [ ] `$.*['c','d']`
   Input:
   ```

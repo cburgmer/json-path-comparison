@@ -748,6 +748,9 @@ queries:
   - id: filter_expression_with_equals_array_for_dot_notation_with_star
     selector: "$[?(@.*==[1,2])]"
     document: [[1, 2], [2, 3], [1], [2], [1, 2, 3], 1, 2, 3]
+  - id: filter_expression_with_equals_array_or_equals_true
+    selector: "$[?(@.d==[\"v1\",\"v2\"] || (@.d == true))]"
+    document: [{"d": ["v1", "v2"]}, {"d": ["a", "b"]}, {"d": true}]
   - id: filter_expression_with_equals_array_with_single_quotes
     selector: "$[?(@.d==['v1','v2'])]"
     document: [{"d": ["v1", "v2"]}, {"d": ["a", "b"]}, {"d": "v1"}, {"d": "v2"}, {"d": {}}, {"d": []}, {"d": null}, {"d": -1}, {"d": 0}, {"d": 1}, {"d": "['v1','v2']"}, {"d": "['v1', 'v2']"}, {"d": "v1,v2"}, {"d": "[\"v1\", \"v2\"]"}, {"d": "[\"v1\",\"v2\"]"}]
@@ -863,6 +866,9 @@ queries:
   - id: filter_expression_with_negation_and_equals
     selector: "$[?(!(@.key==42))]"
     document: [{"key": 0}, {"key": 42}, {"key": -1}, {"key": 41}, {"key": 43}, {"key": 42.0001}, {"key": 41.9999}, {"key": 100}, {"key": "43"}, {"key": "42"}, {"key": "41"}, {"key": "value"}, {"some": "value"}]
+  - id: filter_expression_with_negation_and_equals_array_or_equals_true
+    selector: "$[?(!(@.d==[\"v1\",\"v2\"]) || (@.d == true))]"
+    document: [{"d": ["v1", "v2"]}, {"d": ["a", "b"]}, {"d": true}]
   - id: filter_expression_with_negation_and_less_than
     selector: "$[?(!(@.key<42))]"
     document: [{"key": 0}, {"key": 42}, {"key": -1}, {"key": 41}, {"key": 43}, {"key": 42.0001}, {"key": 41.9999}, {"key": 100}, {"key": "43"}, {"key": "42"}, {"key": "41"}, {"key": "value"}, {"some": "value"}]
@@ -872,6 +878,9 @@ queries:
   - id: filter_expression_with_not_equals
     selector: "$[?(@.key!=42)]"
     document: [{"key": 0}, {"key": 42}, {"key": -1}, {"key": 1}, {"key": 41}, {"key": 43}, {"key": 42.0001}, {"key": 41.9999}, {"key": 100}, {"key": "some"}, {"key": "42"}, {"key": null}, {"key": 420}, {"key": ""}, {"key": {}}, {"key": []}, {"key": [42]}, {"key": {"key": 42}}, {"key": {"some": 42}}, {"some": "value"}]
+  - id: filter_expression_with_not_equals_array_or_equals_true
+    selector: "$[?((@.d!=[\"v1\",\"v2\"]) || (@.d == true))]"
+    document: [{"d": ["v1", "v2"]}, {"d": ["a", "b"]}, {"d": true}]
   - id: filter_expression_with_parent_axis_operator
     selector: "$[*].bookmarks[?(@.page == 45)]^^^"
     document: [{"title": "Sayings of the Century", "bookmarks": [{"page": 40}]}, {"title": "Sword of Honour", "bookmarks": [{"page": 35}, {"page": 45}]}, {"title": "Moby Dick", "bookmarks": [{"page": 3035}, {"page": 45}]}]
@@ -952,6 +961,10 @@ queries:
     selector: "$.key.."
     document: {"some key": "value", "key": {"complex": "string", "primitives": [0, 1]}}
     ordered: false
+  - id: recursive_descent_on_nested_arrays
+    selector: "$..*"
+    document: [[0], [1]]
+    consensus: [[0], [1], 0, 1]
   - id: root
     selector: "$"
     document: {"key": "value", "another key": {"complex": ["a", 1]}}
