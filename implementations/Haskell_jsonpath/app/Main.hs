@@ -3,7 +3,7 @@ module Main where
 import System.Environment
 import System.Exit
 import Data.JSONPath
-import Data.Attoparsec.Text
+import Text.Megaparsec
 import qualified Data.Text as T
 import qualified Data.ByteString.Lazy.Char8 as LBS
 import qualified Data.Aeson as A
@@ -13,10 +13,7 @@ main = do
   pathStr <- readPathStr
   jsonpath <- parseJSONPath pathStr
   input <- readInput
-  case executeJSONPath jsonpath input of
-    ResultList xs -> LBS.putStrLn $ A.encode $ A.toJSON xs
-    ResultValue x -> LBS.putStrLn $ A.encode x
-    ResultError e -> error e
+  LBS.putStrLn $ A.encode $ A.toJSON $ executeJSONPath jsonpath input
 
 readPathStr :: IO String
 readPathStr = do
@@ -30,10 +27,10 @@ readPathStr = do
 
 parseJSONPath :: String -> IO [JSONPathElement]
 parseJSONPath pathStr =
-  case parseOnly jsonPath $ T.pack pathStr of
+  case parse (jsonPath eof) "" $ T.pack pathStr of
     Right jsonpath -> return jsonpath
     Left e -> do
-      putStrLn $ "Invalid JSONPath: " ++ pathStr ++ "\n Error: " ++ e
+      putStrLn $ "Invalid JSONPath: " ++ pathStr ++ "\n Error: " ++ errorBundlePretty e
       exitWith (ExitFailure 2)
 
 readInput :: IO A.Value
