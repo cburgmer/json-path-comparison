@@ -2080,6 +2080,24 @@ The following queries provide results that do not match those of other implement
   ]
   ```
 
+- [ ] `$[?(@.id==2)]`
+  Input:
+  ```
+  {
+    "id": 2
+  }
+  ```
+  Expected output:
+  ```
+  []
+  ```
+  Actual output:
+  ```
+  [
+    2
+  ]
+  ```
+
 - [ ] `$[?(@.key=="value")]`
   Input:
   ```

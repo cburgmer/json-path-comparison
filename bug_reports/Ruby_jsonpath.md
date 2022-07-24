@@ -1501,6 +1501,26 @@ The following queries provide results that do not match those of other implement
   comparison of Float with String failed
   ```
 
+- [ ] `$[?(@.id==2)]`
+  Input:
+  ```
+  {
+    "id": 2
+  }
+  ```
+  Expected output:
+  ```
+  []
+  ```
+  Actual output:
+  ```
+  [
+    {
+      "id": 2
+    }
+  ]
+  ```
+
 - [ ] `$[?(@.key>42)]`
   Input:
   ```
@@ -2263,6 +2283,34 @@ The following queries provide results that do not match those of other implement
   undefined method `=' for 0.0:Float
   Did you mean?  =~
                  ==
+  ```
+
+- [ ] `$.*[?(@.key)]`
+  Input:
+  ```
+  [
+    {
+      "some": "some value"
+    },
+    {
+      "key": "value"
+    }
+  ]
+  ```
+  Expected output:
+  ```
+  []
+  ```
+  Actual output:
+  ```
+  [
+    {
+      "key": "value"
+    },
+    {
+      "key": "value"
+    }
+  ]
   ```
 
 - [ ] `$[?@.key==42]`

@@ -225,6 +225,24 @@ The following queries provide results that do not match those of other implement
   []
   ```
 
+- [ ] `$[?(@.id==2)]`
+  Input:
+  ```
+  {
+    "id": 2
+  }
+  ```
+  Expected output:
+  ```
+  []
+  ```
+  Actual output:
+  ```
+  [
+    2
+  ]
+  ```
+
 - [ ] `$[?(length(@) == 4)]`
   Input:
   ```
@@ -324,6 +342,29 @@ The following queries provide results that do not match those of other implement
       3,
       4
     ]
+  ]
+  ```
+
+- [ ] `$.*[?(@.key)]`
+  Input:
+  ```
+  [
+    {
+      "some": "some value"
+    },
+    {
+      "key": "value"
+    }
+  ]
+  ```
+  Expected output:
+  ```
+  []
+  ```
+  Actual output:
+  ```
+  [
+    "value"
   ]
   ```
 

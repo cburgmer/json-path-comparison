@@ -1977,6 +1977,10 @@ The following queries provide results that do not match those of other implement
     "id": 2
   }
   ```
+  Expected output:
+  ```
+  []
+  ```
   Error:
   ```
   ArgumentCountError
@@ -3546,6 +3550,10 @@ The following queries provide results that do not match those of other implement
       "key": "value"
     }
   ]
+  ```
+  Expected output:
+  ```
+  []
   ```
   Error:
   ```

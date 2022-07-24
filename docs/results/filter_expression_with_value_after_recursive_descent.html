@@ -270,13 +270,27 @@ Golang (github.com-vmware-labs-yaml-jsonpath)
 
 <h4 id="Haskell_jsonpath">
 Haskell (jsonpath)
-¹
 </h4>
 
-<p>Not supported</p>
-
-<pre><code>Invalid JSONPath: $..[?(@.id)]
- Error: searchBeginningWithSlice &gt; searchBeginningWithSlice: string
+<pre><code>[
+  {
+    "id": 2
+  },
+  {
+    "id": 2
+  },
+  {
+    "id": 2
+  },
+  {
+    "id": 2
+  },
+  {
+    "id": {
+      "id": 2
+    }
+  }
+]
 </code></pre>
 
 <h4 id="JavaScript_Goessner">

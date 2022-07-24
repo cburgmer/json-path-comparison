@@ -796,6 +796,8 @@ queries:
   - id: filter_expression_with_equals_on_object_with_key_matching_query
     selector: "$[?(@.id==2)]"
     document: {"id": 2}
+    consensus: []
+    not-found-consensus: NOT_FOUND
   - id: filter_expression_with_equals_string
     selector: "$[?(@.key==\"value\")]"
     document: [{"key": "some"}, {"key": "value"}, {"key": null}, {"key": 0}, {"key": 1}, {"key": -1}, {"key": ""}, {"key": {}}, {"key": []}, {"key": "valuemore"}, {"key": "morevalue"}, {"key": ["value"]}, {"key": {"some": "value"}}, {"key": {"key": "value"}}, {"some": "value"}]
@@ -923,6 +925,8 @@ queries:
   - id: filter_expression_with_value_after_dot_notation_with_wildcard_on_array_of_objects
     selector: "$.*[?(@.key)]"
     document: [{"some": "some value"}, {"key": "value"}]
+    consensus: []
+    not-found-consensus: NOT_FOUND
   - id: filter_expression_with_value_after_recursive_descent
     selector: "$..[?(@.id)]"
     document: {"id": 2, "more": [{"id": 2}, {"more": {"id": 2}}, {"id": {"id": 2}}, [{"id": 2}]]}

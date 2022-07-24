@@ -39,6 +39,26 @@ The following queries provide results that do not match those of other implement
   []
   ```
 
+- [ ] `$[?(@.id==2)]`
+  Input:
+  ```
+  {
+    "id": 2
+  }
+  ```
+  Expected output:
+  ```
+  []
+  ```
+  Actual output:
+  ```
+  [
+    {
+      "id": 2
+    }
+  ]
+  ```
+
 - [ ] `$[*].bookmarks[?(@.page == 45)]^^^`
   Input:
   ```
@@ -82,6 +102,31 @@ The following queries provide results that do not match those of other implement
   Actual output:
   ```
   []
+  ```
+
+- [ ] `$.*[?(@.key)]`
+  Input:
+  ```
+  [
+    {
+      "some": "some value"
+    },
+    {
+      "key": "value"
+    }
+  ]
+  ```
+  Expected output:
+  ```
+  []
+  ```
+  Actual output:
+  ```
+  [
+    {
+      "key": "value"
+    }
+  ]
   ```
 
 

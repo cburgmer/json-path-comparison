@@ -308,6 +308,27 @@ The following queries provide results that do not match those of other implement
   Exception: runtime error: comparing uncomparable type []interface {}
   ```
 
+- [ ] `$.*[?(@.key)]`
+  Input:
+  ```
+  [
+    {
+      "some": "some value"
+    },
+    {
+      "key": "value"
+    }
+  ]
+  ```
+  Expected output:
+  ```
+  []
+  ```
+  Actual output:
+  NOT_SUPPORTED
+  ```
+  ```
+
 - [ ] `$..*`
   Input:
   ```

@@ -156,10 +156,18 @@ Golang (github.com-vmware-labs-yaml-jsonpath)
 
 <h4 id="Haskell_jsonpath">
 Haskell (jsonpath)
-¹
 </h4>
 
-<pre><code>[]
+<p>Not supported</p>
+
+<pre><code>Invalid JSONPath: $[?(@.key=="Mot\u00f6rhead")]
+ Error: 1:16:
+  |
+1 | $[?(@.key=="Mot\u00f6rhead")]
+  |                ^
+unexpected '\'
+expecting '!', '"', literal character, or white space
+
 </code></pre>
 
 <h4 id="JavaScript_Goessner">

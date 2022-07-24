@@ -127,6 +127,51 @@ The following queries provide results that do not match those of other implement
   Error: 'Failed to build AST from JSONPath query: $.-1'
   ```
 
+- [ ] `$[?(@.id==2)]`
+  Input:
+  ```
+  {
+    "id": 2
+  }
+  ```
+  Expected output:
+  ```
+  []
+  ```
+  Actual output:
+  ```
+  [
+    {
+      "id": 2
+    }
+  ]
+  ```
+
+- [ ] `$.*[?(@.key)]`
+  Input:
+  ```
+  [
+    {
+      "some": "some value"
+    },
+    {
+      "key": "value"
+    }
+  ]
+  ```
+  Expected output:
+  ```
+  []
+  ```
+  Actual output:
+  ```
+  [
+    {
+      "key": "value"
+    }
+  ]
+  ```
+
 - [ ] `$[?(null)]`
   Input:
   ```

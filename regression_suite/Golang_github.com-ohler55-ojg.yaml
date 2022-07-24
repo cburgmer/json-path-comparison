@@ -189,9 +189,6 @@ queries:
   - id: filter_expression_with_equals_on_object
     status: open
     result: [{"key": 42}]
-  - id: filter_expression_with_equals_on_object_with_key_matching_query
-    status: open
-    result: []
   - id: filter_expression_with_equals_string_with_unicode_character_escape
     status: open
     result: []
@@ -275,7 +272,7 @@ queries:
     status: open
     result: NOT_SUPPORTED
   - id: filter_expression_with_value_after_dot_notation_with_wildcard_on_array_of_objects
-    status: open
+    status: fail
     result: NOT_SUPPORTED
   - id: filter_expression_with_value_after_recursive_descent
     status: open

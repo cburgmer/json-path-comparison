@@ -17,6 +17,51 @@ The following queries provide results that do not match those of other implement
   Warpath.JsonDecodeError
   ```
 
+- [ ] `$[?(@.id==2)]`
+  Input:
+  ```
+  {
+    "id": 2
+  }
+  ```
+  Expected output:
+  ```
+  []
+  ```
+  Actual output:
+  ```
+  [
+    {
+      "id": 2
+    }
+  ]
+  ```
+
+- [ ] `$.*[?(@.key)]`
+  Input:
+  ```
+  [
+    {
+      "some": "some value"
+    },
+    {
+      "key": "value"
+    }
+  ]
+  ```
+  Expected output:
+  ```
+  []
+  ```
+  Actual output:
+  ```
+  [
+    {
+      "key": "value"
+    }
+  ]
+  ```
+
 - [ ] `$..['c','d']`
   Input:
   ```

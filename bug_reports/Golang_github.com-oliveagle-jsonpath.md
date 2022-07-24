@@ -2869,6 +2869,10 @@ The following queries provide results that do not match those of other implement
     "id": 2
   }
   ```
+  Expected output:
+  ```
+  []
+  ```
   Error:
   ```
   key error:  not found in object

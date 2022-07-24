@@ -132,13 +132,18 @@ Golang (github.com-vmware-labs-yaml-jsonpath)
 
 <h4 id="Haskell_jsonpath">
 Haskell (jsonpath)
-¹
 </h4>
 
 <p>Not supported</p>
 
 <pre><code>Invalid JSONPath: $[?(@[*]&gt;=4)]
- Error: searchBeginningWithSlice: string
+ Error: 1:7:
+  |
+1 | $[?(@[*]&gt;=4)]
+  |       ^
+unexpected '*'
+expecting '!', '"', ''', '+', '-', integer, or white space
+
 </code></pre>
 
 <h4 id="JavaScript_brunerd">

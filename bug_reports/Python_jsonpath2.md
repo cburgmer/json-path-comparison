@@ -838,6 +838,24 @@ The following queries provide results that do not match those of other implement
   ValueError("line 1:10 extraneous input '=' expecting {'@', '$', 'true', 'false', 'null', '{', '[', STRING, NUMBER}")
   ```
 
+- [ ] `$[?(@.id==2)]`
+  Input:
+  ```
+  {
+    "id": 2
+  }
+  ```
+  Expected output:
+  ```
+  []
+  ```
+  Actual output:
+  NOT_SUPPORTED
+  ```
+  line 1:9 extraneous input '=' expecting {'@', '$', 'true', 'false', 'null', '{', '[', STRING, NUMBER}
+  ValueError("line 1:9 extraneous input '=' expecting {'@', '$', 'true', 'false', 'null', '{', '[', STRING, NUMBER}")
+  ```
+
 - [ ] `$[?(@.key=="value")]`
   Input:
   ```
@@ -1157,6 +1175,31 @@ The following queries provide results that do not match those of other implement
   ```
   line 1:20 token recognition error at: '''
   ValueError("line 1:20 token recognition error at: '''")
+  ```
+
+- [ ] `$.*[?(@.key)]`
+  Input:
+  ```
+  [
+    {
+      "some": "some value"
+    },
+    {
+      "key": "value"
+    }
+  ]
+  ```
+  Expected output:
+  ```
+  []
+  ```
+  Actual output:
+  ```
+  [
+    {
+      "key": "value"
+    }
+  ]
   ```
 
 - [ ] `$['a','a']`

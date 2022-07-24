@@ -129,23 +129,18 @@ Golang (github.com-vmware-labs-yaml-jsonpath)
 
 <h4 id="Haskell_jsonpath">
 Haskell (jsonpath)
-¹
 </h4>
 
-<pre><code>[
-  [
-    1,
-    2
-  ],
-  [
-    3,
-    4
-  ],
-  [
-    5,
-    6
-  ]
-]
+<p>Not supported</p>
+
+<pre><code>Invalid JSONPath: $.x[?(@[*]&gt;=$.y[*])]
+ Error: 1:9:
+  |
+1 | $.x[?(@[*]&gt;=$.y[*])]
+  |         ^
+unexpected '*'
+expecting '!', '"', ''', '+', '-', integer, or white space
+
 </code></pre>
 
 <h4 id="JavaScript_brunerd">

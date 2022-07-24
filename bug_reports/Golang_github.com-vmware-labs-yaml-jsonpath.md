@@ -3,6 +3,26 @@ Results do not match other implementations
 The following queries provide results that do not match those of other implementations of JSONPath
 (compare https://cburgmer.github.io/json-path-comparison/):
 
+- [ ] `$[?(@.id==2)]`
+  Input:
+  ```
+  {
+    "id": 2
+  }
+  ```
+  Expected output:
+  ```
+  []
+  ```
+  Actual output:
+  ```
+  [
+    {
+      "id": 2
+    }
+  ]
+  ```
+
 - [ ] `$[?(@.key1==@.key2)]`
   Input:
   ```
@@ -87,6 +107,31 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   Exception: invalid type of value passed to compareNodeValues
+  ```
+
+- [ ] `$.*[?(@.key)]`
+  Input:
+  ```
+  [
+    {
+      "some": "some value"
+    },
+    {
+      "key": "value"
+    }
+  ]
+  ```
+  Expected output:
+  ```
+  []
+  ```
+  Actual output:
+  ```
+  [
+    {
+      "key": "value"
+    }
+  ]
   ```
 
 - [ ] `$..['c','d']`

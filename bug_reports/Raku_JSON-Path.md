@@ -1164,6 +1164,23 @@ The following queries provide results that do not match those of other implement
   Evaluation of embedded Perl 6 code not allowed (construct with :allow-eval)
   ```
 
+- [ ] `$[?(@.id==2)]`
+  Input:
+  ```
+  {
+    "id": 2
+  }
+  ```
+  Expected output:
+  ```
+  []
+  ```
+  Actual output:
+  NOT_SUPPORTED
+  ```
+  Evaluation of embedded Perl 6 code not allowed (construct with :allow-eval)
+  ```
+
 - [ ] `$[?(@.key=="value")]`
   Input:
   ```
@@ -1390,6 +1407,28 @@ The following queries provide results that do not match those of other implement
   Expected output:
   ```
   [{"address": {"city": "Berlin"}}]
+  ```
+  Actual output:
+  NOT_SUPPORTED
+  ```
+  Evaluation of embedded Perl 6 code not allowed (construct with :allow-eval)
+  ```
+
+- [ ] `$.*[?(@.key)]`
+  Input:
+  ```
+  [
+    {
+      "some": "some value"
+    },
+    {
+      "key": "value"
+    }
+  ]
+  ```
+  Expected output:
+  ```
+  []
   ```
   Actual output:
   NOT_SUPPORTED

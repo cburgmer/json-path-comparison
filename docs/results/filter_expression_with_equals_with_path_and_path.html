@@ -489,13 +489,39 @@ Golang (github.com-spyzhov-ajson)
 
 <h4 id="Haskell_jsonpath">
 Haskell (jsonpath)
-¹
 </h4>
 
-<p>Not supported</p>
-
-<pre><code>Invalid JSONPath: $[?(@.key1==@.key2)]
- Error: searchBeginningWithSlice: string
+<pre><code>[
+  {
+    "key1": 10,
+    "key2": 10
+  },
+  {},
+  {
+    "key1": null,
+    "key2": null
+  },
+  {
+    "key1": 0,
+    "key2": 0
+  },
+  {
+    "key1": -1,
+    "key2": -1
+  },
+  {
+    "key1": "",
+    "key2": ""
+  },
+  {
+    "key1": false,
+    "key2": false
+  },
+  {
+    "key1": true,
+    "key2": true
+  }
+]
 </code></pre>
 
 <h4 id="JavaScript_Goessner">

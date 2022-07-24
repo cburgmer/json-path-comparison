@@ -687,6 +687,24 @@ The following queries provide results that do not match those of other implement
   jsonPath: Unexpected token *=: _v.*==2
   ```
 
+- [ ] `$[?(@.id==2)]`
+  Input:
+  ```
+  {
+    "id": 2
+  }
+  ```
+  Expected output:
+  ```
+  []
+  ```
+  Actual output:
+  ```
+  [
+    2
+  ]
+  ```
+
 - [ ] `$[?(@.key=="value")]`
   Input:
   ```
@@ -1173,6 +1191,29 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   jsonPath: Unexpected token ?: _v.a[?(_v.price>10)
+  ```
+
+- [ ] `$.*[?(@.key)]`
+  Input:
+  ```
+  [
+    {
+      "some": "some value"
+    },
+    {
+      "key": "value"
+    }
+  ]
+  ```
+  Expected output:
+  ```
+  []
+  ```
+  Actual output:
+  ```
+  [
+    "value"
+  ]
   ```
 
 - [ ] `$[?(@..child)]`

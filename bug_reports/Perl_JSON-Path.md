@@ -2316,6 +2316,10 @@ The following queries provide results that do not match those of other implement
     "id": 2
   }
   ```
+  Expected output:
+  ```
+  []
+  ```
   Error:
   ```
   non-safe evaluation, died at main.pl line 11.
@@ -3885,6 +3889,10 @@ The following queries provide results that do not match those of other implement
       "key": "value"
     }
   ]
+  ```
+  Expected output:
+  ```
+  []
   ```
   Error:
   ```
