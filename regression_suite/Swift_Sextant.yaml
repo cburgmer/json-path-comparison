@@ -33,12 +33,6 @@ queries:
   - id: array_slice_with_step_0
     status: open
     result: ["first", "second", "third"]
-  - id: bracket_notation_with_empty_string
-    status: fail
-    result: []
-  - id: bracket_notation_with_empty_string_doubled_quoted
-    status: fail
-    result: []
   - id: bracket_notation_with_quoted_escaped_backslash
     status: open
     result: ["value"]
@@ -65,7 +59,7 @@ queries:
     result: [42]
   - id: dot_notation_with_double_quotes_after_recursive_descent
     status: open
-    result: [0, 100, 42, 99]
+    result: [0, 100, 42, 99, {"\"key\"": 99}]
   - id: dot_notation_with_key_root_literal
     status: open
     result: ["value"]
@@ -214,7 +208,7 @@ queries:
     status: open
     result: [{"key": 42}, {"key": 43}, {"key": 42.0001}, {"key": 100}, {"key": "43"}, {"key": "42"}, {"key": "value"}]
   - id: filter_expression_with_greater_than_string
-    status: open
+    status: fail
     result: [{"key": 42.0001}, {"key": 41.9999}, {"key": "alpha"}, {"key": "value"}]
   - id: filter_expression_with_in_array_of_values
     status: open

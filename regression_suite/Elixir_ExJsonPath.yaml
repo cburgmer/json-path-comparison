@@ -15,15 +15,6 @@ queries:
     result: []
   - id: array_slice_with_large_number_for_start_end_negative_step
     status: error
-  - id: array_slice_with_negative_start_and_positive_end_and_range_of_-1
-    status: fail
-    result: [4, 5, 100, "nice"]
-  - id: array_slice_with_negative_start_and_positive_end_and_range_of_0
-    status: fail
-    result: [4, 5, 100, "nice"]
-  - id: array_slice_with_negative_start_and_positive_end_and_range_of_1
-    status: fail
-    result: [4, 5, 100, "nice"]
   - id: array_slice_with_negative_step
     status: error
   - id: array_slice_with_negative_step_and_start_greater_than_end
@@ -111,9 +102,11 @@ queries:
     status: fail
     result: NOT_SUPPORTED
   - id: dot_notation_with_double_quotes
-    status: error
+    status: open
+    result: NOT_SUPPORTED
   - id: dot_notation_with_double_quotes_after_recursive_descent
-    status: error
+    status: open
+    result: NOT_SUPPORTED
   - id: dot_notation_with_key_root_literal
     status: open
     result: NOT_SUPPORTED
@@ -130,11 +123,14 @@ queries:
     status: fail
     result: []
   - id: dot_notation_with_single_quotes
-    status: error
+    status: open
+    result: NOT_SUPPORTED
   - id: dot_notation_with_single_quotes_after_recursive_descent
-    status: error
+    status: open
+    result: NOT_SUPPORTED
   - id: dot_notation_with_single_quotes_and_dot
-    status: error
+    status: open
+    result: NOT_SUPPORTED
   - id: dot_notation_with_space_padded_key
     status: open
     result: [2]
@@ -283,9 +279,6 @@ queries:
   - id: filter_expression_with_greater_than_or_equal
     status: open
     result: [{"key": 42}, {"key": 43}, {"key": 42.0001}, {"key": 100}, {"key": "43"}, {"key": "42"}, {"key": "41"}, {"key": "value"}]
-  - id: filter_expression_with_greater_than_string
-    status: open
-    result: [{"key": "alpha"}, {"key": "value"}]
   - id: filter_expression_with_in_array_of_values
     status: open
     result: NOT_SUPPORTED

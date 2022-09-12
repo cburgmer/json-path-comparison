@@ -7,7 +7,7 @@ cd /tmp/objectiveC
 
 export CC=clang
 
-curl -LO http://ftpmain.gnustep.org/pub/gnustep/core/gnustep-make-2.8.0.tar.gz
+curl -LO http://ftpmain.gnustep.org/pub/gnustep/core/gnustep-make-2.9.0.tar.gz
 tar -xzf gnustep-make-*.tar.gz
 rm gnustep-make-*.tar.gz
 pushd gnustep-make-*
@@ -34,7 +34,7 @@ make clean && ./configure --disable-importing-config-file --enable-native-objc-e
 popd
 
 
-curl -LO http://ftpmain.gnustep.org/pub/gnustep/core/gnustep-base-1.27.0.tar.gz
+curl -LO http://ftpmain.gnustep.org/pub/gnustep/core/gnustep-base-1.28.0.tar.gz
 tar -xzf gnustep-base-*.tar.gz
 rm gnustep-base-*.tar.gz
 pushd gnustep-base-*

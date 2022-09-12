@@ -1,4 +1,4 @@
-FROM ubuntu:21.04
+FROM ubuntu:22.04
 
 # Hint: Put versioned dependencies (those that change ever so often) towards the
 #       bottom, so that we can make use of Docker's layer cache (and we don't
@@ -12,6 +12,8 @@ RUN apt-get -y upgrade && apt-get -y update && apt-get -y dist-upgrade \
 
 # Golang
 RUN apt-get install -y --no-install-recommends golang-go git
+# Work around what's possibly tracked under https://github.com/golang/go/issues/49004
+ENV GOFLAGS="-buildvcs=false"
 
 # Rust
 RUN curl https://sh.rustup.rs -sSf | sh -s -- --default-toolchain stable -y
@@ -40,7 +42,7 @@ RUN curl https://bootstrap.pypa.io/get-pip.py -o /tmp/get-pip.py && python3 /tmp
 ENV PATH="/root/.dotnet:${PATH}"
 ENV DOTNET_ROOT="/root/.dotnet"
 RUN curl -OL https://dot.net/v1/dotnet-install.sh \
-        && chmod a+x dotnet-install.sh && ./dotnet-install.sh
+    && chmod a+x dotnet-install.sh && ./dotnet-install.sh && rm dotnet-install.sh
 
 # Elixir
 RUN apt-get install -y --no-install-recommends elixir && mix local.hex --force
@@ -55,7 +57,14 @@ RUN chmod a+x /tmp/installObjectiveC.sh
 RUN /tmp/installObjectiveC.sh
 
 # Raku
-RUN apt-get install -y --no-install-recommends rakudo perl6-zef
+RUN apt-get install -y --no-install-recommends rakudo
+# Work around zef being dropped? in Ubuntu 22.04 (was perl6-zef, might become raku-zef in newer versions)
+RUN curl -LO https://github.com/ugexe/zef/archive/refs/tags/v0.11.7.tar.gz \
+    && tar -xzf v*.tar.gz \
+    && rm v*.tar.gz \
+    && cd zef-* \
+    && raku -I. bin/zef install .
+ENV PATH="/usr/lib/perl6/site/bin:${PATH}"
 
 # Ruby
 RUN apt-get install -y --no-install-recommends ruby
@@ -71,9 +80,10 @@ RUN apt-get install -y --no-install-recommends openjdk-17-jdk maven
 
 # Swift
 RUN apt-get install -y --no-install-recommends clang libicu-dev libtinfo5 libncurses5 \
-        && curl -LO https://download.swift.org/swift-5.5.2-release/ubuntu2004/swift-5.5.2-RELEASE/swift-5.5.2-RELEASE-ubuntu20.04.tar.gz \
-        && tar -xzf swift-5.5.2-RELEASE-ubuntu20.04.tar.gz \
-        && mv swift-5.5.2-RELEASE-ubuntu20.04 /swift
+    && curl -LO https://download.swift.org/swift-5.6.3-release/ubuntu2004/swift-5.6.3-RELEASE/swift-5.6.3-RELEASE-ubuntu20.04.tar.gz \
+    && tar -xzf swift-*.tar.gz \
+    && rm swift-*.tar.gz \
+    && mv swift-* /swift
 ENV PATH="/swift/usr/bin:${PATH}"
 
 # Haskell
@@ -84,3 +94,6 @@ RUN apt-get install -y --no-install-recommends ghc xz-utils \
         && mv cabal /usr/local/bin/ \
         && rm cabal-install.tar.xz
 
+# Work around https://akashmittal.com/code-example-fatal-detected-dubious-ownership-in-repository-at/
+# There seems to be no easy way in docker to make the current user the owner of mounted volumnes, e.g. https://github.com/moby/moby/issues/2259
+RUN git config --global --add safe.directory '*'

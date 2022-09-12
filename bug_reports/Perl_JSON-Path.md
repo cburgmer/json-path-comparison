@@ -2835,6 +2835,10 @@ The following queries provide results that do not match those of other implement
     }
   ]
   ```
+  Expected output:
+  ```
+  [{"key": "alpha"}, {"key": "value"}]
+  ```
   Error:
   ```
   non-safe evaluation, died at main.pl line 11.

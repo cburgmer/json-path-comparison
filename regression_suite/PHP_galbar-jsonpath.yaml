@@ -150,10 +150,10 @@ queries:
     result: NOT_FOUND
   - id: filter_expression_with_boolean_and_operator_and_value_true
     status: open
-    result: [{"key": 1}, {"key": 3}, {"key": true}, {"key": []}, {"key": []}]
+    result: [{"key": 1}, {"key": 3}, {"key": "nice"}, {"key": true}, {"key": []}, {"key": []}]
   - id: filter_expression_with_boolean_or_operator_and_value_false
     status: open
-    result: [{"key": 1}, {"key": 3}, {"key": true}, {"key": []}, {"key": []}]
+    result: [{"key": 1}, {"key": 3}, {"key": "nice"}, {"key": true}, {"key": []}, {"key": []}]
   - id: filter_expression_with_boolean_or_operator_and_value_true
     status: open
     result: [{"key": 1}, {"key": 3}, {"key": "nice"}, {"key": true}, {"key": null}, {"key": false}, {"key": []}, {"key": []}, {"key": -1}, {"key": 0}, {"key": ""}]
@@ -249,13 +249,10 @@ queries:
     result: [{"key": 42}]
   - id: filter_expression_with_greater_than
     status: open
-    result: [{"key": 43}, {"key": 42.0001}, {"key": 100}, {"key": "43"}]
+    result: [{"key": 43}, {"key": 42.0001}, {"key": 100}, {"key": "43"}, {"key": "value"}]
   - id: filter_expression_with_greater_than_or_equal
     status: open
-    result: [{"key": 42}, {"key": 43}, {"key": 42.0001}, {"key": 100}, {"key": "43"}, {"key": "42"}]
-  - id: filter_expression_with_greater_than_string
-    status: open
-    result: [{"key": 42}, {"key": 41}, {"key": 43}, {"key": 42.0001}, {"key": 41.9999}, {"key": 100}, {"key": "alpha"}, {"key": "value"}]
+    result: [{"key": 42}, {"key": 43}, {"key": 42.0001}, {"key": 100}, {"key": "43"}, {"key": "42"}, {"key": "value"}]
   - id: filter_expression_with_in_array_of_values
     status: open
     result: NOT_SUPPORTED
@@ -273,10 +270,10 @@ queries:
     result: [[1, 2, 3, 4]]
   - id: filter_expression_with_less_than
     status: open
-    result: [{"key": 0}, {"key": -1}, {"key": 41}, {"key": 41.9999}, {"key": "41"}, {"key": "value"}, {"some": "value"}]
+    result: [{"key": 0}, {"key": -1}, {"key": 41}, {"key": 41.9999}, {"key": "41"}, {"some": "value"}]
   - id: filter_expression_with_less_than_or_equal
     status: open
-    result: [{"key": 0}, {"key": 42}, {"key": -1}, {"key": 41}, {"key": 41.9999}, {"key": "42"}, {"key": "41"}, {"key": "value"}, {"some": "value"}]
+    result: [{"key": 0}, {"key": 42}, {"key": -1}, {"key": 41}, {"key": 41.9999}, {"key": "42"}, {"key": "41"}, {"some": "value"}]
   - id: filter_expression_with_multiplication
     status: open
     result: NOT_SUPPORTED

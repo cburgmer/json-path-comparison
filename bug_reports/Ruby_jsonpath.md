@@ -1678,6 +1678,10 @@ The following queries provide results that do not match those of other implement
     }
   ]
   ```
+  Expected output:
+  ```
+  [{"key": "alpha"}, {"key": "value"}]
+  ```
   Error:
   ```
   comparison of Float with String failed

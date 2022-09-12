@@ -2496,6 +2496,10 @@ The following queries provide results that do not match those of other implement
     }
   ]
   ```
+  Expected output:
+  ```
+  [{"key": "alpha"}, {"key": "value"}]
+  ```
   Error:
   ```
   ArgumentCountError
@@ -3924,10 +3928,10 @@ The following queries provide results that do not match those of other implement
   ```
   NOT_SUPPORTED
   ```
-  Actual output:
-  NOT_FOUND
+  Error:
   ```
-  jsonpath returned false, this might indicate an error```
+  Error: 'Undefined constant "length"'
+  ```
 
 - [ ] `$[?(@.key<3),?(@.key>6)]`
   Input:

@@ -2330,6 +2330,10 @@ The following queries provide results that do not match those of other implement
     }
   ]
   ```
+  Expected output:
+  ```
+  [{"key": "alpha"}, {"key": "value"}]
+  ```
   Error:
   ```
   java.lang.ClassCastException class java.lang.String cannot be cast to class java.lang.Number (java.lang.String and java.lang.Number are in module java.base of loader 'bootstrap')

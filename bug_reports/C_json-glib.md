@@ -1811,6 +1811,73 @@ The following queries provide results that do not match those of other implement
   Unable to compile selector `$[?(@.key=='value')]': Invalid array index definition “?(@.key=='value')]”
   ```
 
+- [ ] `$[?(@.key>"VALUE")]`
+  Input:
+  ```
+  [
+    {
+      "key": 0
+    },
+    {
+      "key": 42
+    },
+    {
+      "key": -1
+    },
+    {
+      "key": 41
+    },
+    {
+      "key": 43
+    },
+    {
+      "key": 42.0001
+    },
+    {
+      "key": 41.9999
+    },
+    {
+      "key": 100
+    },
+    {
+      "key": "43"
+    },
+    {
+      "key": "42"
+    },
+    {
+      "key": "41"
+    },
+    {
+      "key": "alpha"
+    },
+    {
+      "key": "ALPHA"
+    },
+    {
+      "key": "value"
+    },
+    {
+      "key": "VALUE"
+    },
+    {
+      "some": "value"
+    },
+    {
+      "some": "VALUE"
+    }
+  ]
+  ```
+  Expected output:
+  ```
+  [{"key": "alpha"}, {"key": "value"}]
+  ```
+  Actual output:
+  NOT_SUPPORTED
+  ```
+  Unable to compile selector `$[?(@.key>"VALUE")]': Invalid array index definition “?(@.key>"VALUE")]”
+  ```
+
 - [ ] `$[?(@.length == 4)]`
   Input:
   ```

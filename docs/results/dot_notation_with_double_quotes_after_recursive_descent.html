@@ -83,6 +83,15 @@ Dart (json_path)
 <pre><code>FormatException: end of input expected at 1:2. Expression: $.."key"
 </code></pre>
 
+<h4 id="Elixir_ExJsonPath">
+Elixir (ExJsonPath)
+</h4>
+
+<p>Not supported</p>
+
+<pre><code>syntax error before: {string,1,&lt;&lt;"key"&gt;&gt;}
+</code></pre>
+
 <h4 id="Elixir_jaxon">
 Elixir (jaxon)
 </h4>
@@ -326,21 +335,6 @@ PHP (remorhaz-jsonpath)
 ]
 </code></pre>
 
-<h4 id="PHP_softcreatr-jsonpath">
-PHP (softcreatr-jsonpath)
-</h4>
-
-<pre><code>[
-  "russian dolls",
-  "something",
-  "top",
-  "value",
-  {
-    "key": "russian dolls"
-  }
-]
-</code></pre>
-
 <h4 id="Perl_JSON-Path">
 Perl (JSON-Path)
 </h4>
@@ -425,9 +419,7 @@ Raku (JSON-Path)
 Ruby (jsonpath)
 </h4>
 
-<p>Not supported</p>
-
-<pre><code>character '"' not supported in query
+<pre><code>[]
 </code></pre>
 
 <h4 id="Rust_jsonpath">
@@ -473,7 +465,10 @@ Swift (Sextant)
   0,
   100,
   42,
-  99
+  99,
+  {
+    "\"key\"": 99
+  }
 ]
 </code></pre>
 
@@ -588,13 +583,6 @@ o 1:1-1:2 Start
 
 <h3>Errors</h3>
 
-<h4 id="Elixir_ExJsonPath">
-Elixir (ExJsonPath)
-</h4>
-
-<pre><code>FunctionClauseError
-</code></pre>
-
 <h4 id="Erlang_ejsonpath">
 Erlang (ejsonpath)
 </h4>
@@ -611,6 +599,13 @@ Golang (github.com-oliveagle-jsonpath)
 </h4>
 
 <pre><code>expression don't support in filter
+</code></pre>
+
+<h4 id="PHP_softcreatr-jsonpath">
+PHP (softcreatr-jsonpath)
+</h4>
+
+<pre><code>TypeError
 </code></pre>
 
 <h4 id="Rust_jsonpath_plus">
