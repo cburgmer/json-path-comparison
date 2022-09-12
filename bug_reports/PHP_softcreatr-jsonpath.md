@@ -3,6 +3,27 @@ Results do not match other implementations
 The following queries provide results that do not match those of other implementations of JSONPath
 (compare https://cburgmer.github.io/json-path-comparison/):
 
+- [ ] `$[1:3]`
+  Input:
+  ```
+  {
+    ":": 42,
+    "more": "string",
+    "a": 1,
+    "b": 2,
+    "c": 3,
+    "1:3": "nice"
+  }
+  ```
+  Expected output:
+  ```
+  []
+  ```
+  Error:
+  ```
+  TypeError
+  ```
+
 - [ ] `$[2:113667776004]`
   Input:
   ```
@@ -71,6 +92,23 @@ The following queries provide results that do not match those of other implement
   timeout: sending signal TERM to command ‘php’
   ```
 
+- [ ] `$[:]`
+  Input:
+  ```
+  {
+    ":": 42,
+    "more": "string"
+  }
+  ```
+  Expected output:
+  ```
+  []
+  ```
+  Error:
+  ```
+  TypeError
+  ```
+
 - [ ] `$[:2:-1]`
   Input:
   ```
@@ -85,6 +123,41 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   timeout: sending signal TERM to command ‘php’
+  ```
+
+- [ ] `$..[0]`
+  Input:
+  ```
+  [
+    "first",
+    {
+      "key": [
+        "first nested",
+        {
+          "more": [
+            {
+              "nested": [
+                "deepest",
+                "second"
+              ]
+            },
+            [
+              "more",
+              "values"
+            ]
+          ]
+        }
+      ]
+    }
+  ]
+  ```
+  Expected output (in any order as no consensus on ordering exists):
+  ```
+  ["deepest", "first nested", "first", "more", {"nested": ["deepest", "second"]}]
+  ```
+  Error:
+  ```
+  TypeError
   ```
 
 - [ ] `$[]`
@@ -193,11 +266,9 @@ The following queries provide results that do not match those of other implement
   ```
   []
   ```
-  Actual output:
+  Error:
   ```
-  [
-    "entry"
-  ]
+  TypeError
   ```
 
 - [ ] `$['two'.'some']`
@@ -224,6 +295,67 @@ The following queries provide results that do not match those of other implement
   [
     "43"
   ]
+  ```
+
+- [ ] `$..[*]`
+  Input:
+  ```
+  {
+    "key": "value",
+    "another key": {
+      "complex": "string",
+      "primitives": [
+        0,
+        1
+      ]
+    }
+  }
+  ```
+  Expected output (in any order as no consensus on ordering exists):
+  ```
+  ["string", "value", 0, 1, [0, 1], {"complex": "string", "primitives": [0, 1]}]
+  ```
+  Error:
+  ```
+  TypeError
+  ```
+
+- [ ] `$[*]`
+  Input:
+  ```
+  {}
+  ```
+  Expected output:
+  ```
+  []
+  ```
+  Error:
+  ```
+  TypeError
+  ```
+
+- [ ] `$[*]`
+  Input:
+  ```
+  {
+    "some": "string",
+    "int": 42,
+    "object": {
+      "key": "value"
+    },
+    "array": [
+      0,
+      1
+    ]
+  }
+  ```
+  Expected output (in any order as no consensus on ordering exists):
+  ```
+  ["string", 42, [0, 1], {"key": "value"}]
+  ```
+  Error:
+  ```
+  TypeError
   ```
 
 - [ ] `$[key]`
@@ -267,6 +399,191 @@ The following queries provide results that do not match those of other implement
   [
     "value"
   ]
+  ```
+
+- [ ] `$..[1].key`
+  Input:
+  ```
+  {
+    "k": [
+      {
+        "key": "some value"
+      },
+      {
+        "key": 42
+      }
+    ],
+    "kk": [
+      [
+        {
+          "key": 100
+        },
+        {
+          "key": 200
+        },
+        {
+          "key": 300
+        }
+      ],
+      [
+        {
+          "key": 400
+        },
+        {
+          "key": 500
+        },
+        {
+          "key": 600
+        }
+      ]
+    ],
+    "key": [
+      0,
+      1
+    ]
+  }
+  ```
+  Expected output (in any order as no consensus on ordering exists):
+  ```
+  [200, 42, 500]
+  ```
+  Error:
+  ```
+  TypeError
+  ```
+
+- [ ] `$..key`
+  Input:
+  ```
+  {
+    "object": {
+      "key": "value",
+      "array": [
+        {
+          "key": "something"
+        },
+        {
+          "key": {
+            "key": "russian dolls"
+          }
+        }
+      ]
+    },
+    "key": "top"
+  }
+  ```
+  Expected output (in any order as no consensus on ordering exists):
+  ```
+  ["russian dolls", "something", "top", "value", {"key": "russian dolls"}]
+  ```
+  Error:
+  ```
+  TypeError
+  ```
+
+- [ ] `$.store..price`
+  Input:
+  ```
+  {
+    "store": {
+      "book": [
+        {
+          "category": "reference",
+          "author": "Nigel Rees",
+          "title": "Sayings of the Century",
+          "price": 8.95
+        },
+        {
+          "category": "fiction",
+          "author": "Evelyn Waugh",
+          "title": "Sword of Honour",
+          "price": 12.99
+        },
+        {
+          "category": "fiction",
+          "author": "Herman Melville",
+          "title": "Moby Dick",
+          "isbn": "0-553-21311-3",
+          "price": 8.99
+        },
+        {
+          "category": "fiction",
+          "author": "J. R. R. Tolkien",
+          "title": "The Lord of the Rings",
+          "isbn": "0-395-19395-8",
+          "price": 22.99
+        }
+      ],
+      "bicycle": {
+        "color": "red",
+        "price": 19.95
+      }
+    }
+  }
+  ```
+  Expected output (in any order as no consensus on ordering exists):
+  ```
+  [12.99, 19.95, 22.99, 8.95, 8.99]
+  ```
+  Error:
+  ```
+  TypeError
+  ```
+
+- [ ] `$...key`
+  Input:
+  ```
+  {
+    "object": {
+      "key": "value",
+      "array": [
+        {
+          "key": "something"
+        },
+        {
+          "key": {
+            "key": "russian dolls"
+          }
+        }
+      ]
+    },
+    "key": "top"
+  }
+  ```
+  Error:
+  ```
+  TypeError
+  ```
+
+- [ ] `$.."key"`
+  Input:
+  ```
+  {
+    "object": {
+      "key": "value",
+      "\"key\"": 100,
+      "array": [
+        {
+          "key": "something",
+          "\"key\"": 0
+        },
+        {
+          "key": {
+            "key": "russian dolls"
+          },
+          "\"key\"": {
+            "\"key\"": 99
+          }
+        }
+      ]
+    },
+    "key": "top",
+    "\"key\"": 42
+  }
+  ```
+  Error:
+  ```
+  TypeError
   ```
 
 - [ ] `$.`
@@ -335,6 +652,98 @@ The following queries provide results that do not match those of other implement
   ]
   ```
 
+- [ ] `$..'key'`
+  Input:
+  ```
+  {
+    "object": {
+      "key": "value",
+      "'key'": 100,
+      "array": [
+        {
+          "key": "something",
+          "'key'": 0
+        },
+        {
+          "key": {
+            "key": "russian dolls"
+          },
+          "'key'": {
+            "'key'": 99
+          }
+        }
+      ]
+    },
+    "key": "top",
+    "'key'": 42
+  }
+  ```
+  Error:
+  ```
+  TypeError
+  ```
+
+- [ ] `$..*`
+  Input:
+  ```
+  {
+    "key": "value",
+    "another key": {
+      "complex": "string",
+      "primitives": [
+        0,
+        1
+      ]
+    }
+  }
+  ```
+  Expected output (in any order as no consensus on ordering exists):
+  ```
+  ["string", "value", 0, 1, [0, 1], {"complex": "string", "primitives": [0, 1]}]
+  ```
+  Error:
+  ```
+  TypeError
+  ```
+
+- [ ] `$.*`
+  Input:
+  ```
+  {}
+  ```
+  Expected output:
+  ```
+  []
+  ```
+  Error:
+  ```
+  TypeError
+  ```
+
+- [ ] `$.*`
+  Input:
+  ```
+  {
+    "some": "string",
+    "int": 42,
+    "object": {
+      "key": "value"
+    },
+    "array": [
+      0,
+      1
+    ]
+  }
+  ```
+  Expected output (in any order as no consensus on ordering exists):
+  ```
+  ["string", 42, [0, 1], {"key": "value"}]
+  ```
+  Error:
+  ```
+  TypeError
+  ```
+
 - [ ] `$a`
   Input:
   ```
@@ -352,6 +761,79 @@ The following queries provide results that do not match those of other implement
   [
     1
   ]
+  ```
+
+- [ ] `$..*[?(@.id>2)]`
+  Input:
+  ```
+  [
+    {
+      "complext": {
+        "one": [
+          {
+            "name": "first",
+            "id": 1
+          },
+          {
+            "name": "next",
+            "id": 2
+          },
+          {
+            "name": "another",
+            "id": 3
+          },
+          {
+            "name": "more",
+            "id": 4
+          }
+        ],
+        "more": {
+          "name": "next to last",
+          "id": 5
+        }
+      }
+    },
+    {
+      "name": "last",
+      "id": 6
+    }
+  ]
+  ```
+  Error:
+  ```
+  TypeError
+  ```
+
+- [ ] `$..[?(@.id==2)]`
+  Input:
+  ```
+  {
+    "id": 2,
+    "more": [
+      {
+        "id": 2
+      },
+      {
+        "more": {
+          "id": 2
+        }
+      },
+      {
+        "id": {
+          "id": 2
+        }
+      },
+      [
+        {
+          "id": 2
+        }
+      ]
+    ]
+  }
+  ```
+  Error:
+  ```
+  TypeError
   ```
 
 - [ ] `$[?(@.key>42 && @.key<44)]`
@@ -555,79 +1037,6 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   Error: 'Malformed filter query'
-  ```
-
-- [ ] `$[?(@.key=="value")]`
-  Input:
-  ```
-  [
-    {
-      "key": "some"
-    },
-    {
-      "key": "value"
-    },
-    {
-      "key": null
-    },
-    {
-      "key": 0
-    },
-    {
-      "key": 1
-    },
-    {
-      "key": -1
-    },
-    {
-      "key": ""
-    },
-    {
-      "key": {}
-    },
-    {
-      "key": []
-    },
-    {
-      "key": "valuemore"
-    },
-    {
-      "key": "morevalue"
-    },
-    {
-      "key": [
-        "value"
-      ]
-    },
-    {
-      "key": {
-        "some": "value"
-      }
-    },
-    {
-      "key": {
-        "key": "value"
-      }
-    },
-    {
-      "some": "value"
-    }
-  ]
-  ```
-  Expected output:
-  ```
-  [{"key": "value"}]
-  ```
-  Actual output:
-  ```
-  [
-    {
-      "key": "value"
-    },
-    {
-      "key": 0
-    }
-  ]
   ```
 
 - [ ] `$[?(2 in @.d)]`
@@ -1037,6 +1446,38 @@ The following queries provide results that do not match those of other implement
   Error: 'Malformed filter query'
   ```
 
+- [ ] `$..[?(@.id)]`
+  Input:
+  ```
+  {
+    "id": 2,
+    "more": [
+      {
+        "id": 2
+      },
+      {
+        "more": {
+          "id": 2
+        }
+      },
+      {
+        "id": {
+          "id": 2
+        }
+      },
+      [
+        {
+          "id": 2
+        }
+      ]
+    ]
+  }
+  ```
+  Error:
+  ```
+  TypeError
+  ```
+
 - [ ] `$[?(false)]`
   Input:
   ```
@@ -1121,6 +1562,45 @@ The following queries provide results that do not match those of other implement
   []
   ```
 
+- [ ] `$..`
+  Input:
+  ```
+  [
+    {
+      "a": {
+        "b": "c"
+      }
+    },
+    [
+      0,
+      1
+    ]
+  ]
+  ```
+  Error:
+  ```
+  TypeError
+  ```
+
+- [ ] `$.key..`
+  Input:
+  ```
+  {
+    "some key": "value",
+    "key": {
+      "complex": "string",
+      "primitives": [
+        0,
+        1
+      ]
+    }
+  }
+  ```
+  Error:
+  ```
+  TypeError
+  ```
+
 - [ ] `$[(@.length-1)]`
   Input:
   ```
@@ -1141,6 +1621,64 @@ The following queries provide results that do not match those of other implement
   [
     "fifth"
   ]
+  ```
+
+- [ ] `$..['c','d']`
+  Input:
+  ```
+  [
+    {
+      "c": "cc1",
+      "d": "dd1",
+      "e": "ee1"
+    },
+    {
+      "c": "cc2",
+      "child": {
+        "d": "dd2"
+      }
+    },
+    {
+      "c": "cc3"
+    },
+    {
+      "d": "dd4"
+    },
+    {
+      "child": {
+        "c": "cc5"
+      }
+    }
+  ]
+  ```
+  Expected output (in any order as no consensus on ordering exists):
+  ```
+  ["cc1", "cc2", "cc3", "cc5", "dd1", "dd2", "dd4"]
+  ```
+  Error:
+  ```
+  TypeError
+  ```
+
+- [ ] `$.*[0,:5]`
+  Input:
+  ```
+  {
+    "a": [
+      "string",
+      null,
+      true
+    ],
+    "b": [
+      false,
+      "string",
+      5.4
+    ]
+  }
+  ```
+  Error:
+  ```
+  TypeError
   ```
 
 

@@ -18,6 +18,9 @@ try {
 } catch (Exception $e) {
     print "Error: '" . $e->getMessage() . "'\r\n";
     die(1);
+} catch (TypeError $e) {
+    print "TypeError\r\n";
+    die(1);
 }
 
 print json_encode($r);

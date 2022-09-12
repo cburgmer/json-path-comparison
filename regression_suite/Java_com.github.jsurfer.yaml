@@ -262,7 +262,7 @@ queries:
   - id: filter_expression_with_greater_than_or_equal
     status: error
   - id: filter_expression_with_greater_than_string
-    status: open
+    status: fail
     result: NOT_SUPPORTED
   - id: filter_expression_with_in_array_of_values
     status: open

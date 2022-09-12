@@ -362,8 +362,7 @@ queries:
     status: fail
     result: NOT_FOUND
   - id: script_expression
-    status: fail
-    result: NOT_FOUND
+    status: error
   - id: union_with_filter
     status: error
   - id: union_with_repeated_matches_after_dot_notation_with_wildcard

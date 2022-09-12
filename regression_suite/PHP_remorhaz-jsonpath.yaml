@@ -223,7 +223,7 @@ queries:
     status: open
     result: [{"key": 42}, {"key": 43}, {"key": 42.0001}, {"key": 100}, {"key": "43"}, {"key": "42"}, {"key": "41"}, {"key": "value"}]
   - id: filter_expression_with_greater_than_string
-    status: open
+    status: fail
     result: []
   - id: filter_expression_with_in_array_of_values
     status: open

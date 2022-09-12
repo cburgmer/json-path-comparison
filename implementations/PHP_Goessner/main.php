@@ -11,6 +11,9 @@ try {
 } catch (ArgumentCountError $e) {
     print "ArgumentCountError" . "\n";
     die(1);
+} catch (Error $e) {
+    print "Error: '" . $e->getMessage() . "'\r\n";
+    die(1);
 }
 
 if ($result === false) {
