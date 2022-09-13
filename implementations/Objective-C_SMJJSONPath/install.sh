@@ -18,7 +18,7 @@ curl --fail -L "$source_url" -o "$tmp_download"
 
 tar -xzf "$tmp_download" --directory "$tmp_dir"
 
-mv "${tmp_dir}/SMJJSONPath-${tag}"/SMJJSONPath/ "$target_dir"
+cp -R "${tmp_dir}/SMJJSONPath-${tag}"/SMJJSONPath "$target_dir"
 
 rm -r "${tmp_dir}/SMJJSONPath-${tag}"
 rm "$tmp_download"
