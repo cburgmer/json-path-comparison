@@ -17,7 +17,7 @@ popd
 curl -LO https://github.com/gnustep/libobjc2/archive/v2.1.tar.gz
 tar -xzf v*.tar.gz
 rm v*.tar.gz
-curl -L https://github.com/Tessil/robin-map/archive/757de82.tar.gz -o robin-map.tar.gz
+curl -L https://github.com/Tessil/robin-map/archive/refs/tags/v1.0.1.tar.gz -o robin-map.tar.gz
 tar -xzf robin-map.tar.gz
 rm robin-map.tar.gz
 mv robin-map-*/* libobjc2-*/third_party/robin-map

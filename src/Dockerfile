@@ -50,12 +50,6 @@ RUN apt-get install -y --no-install-recommends elixir && mix local.hex --force
 # Bash
 RUN apt-get install -y --no-install-recommends sed grep gawk
 
-# Objective-C
-RUN apt-get install -y --no-install-recommends build-essential cmake clang libblocksruntime-dev libicu-dev libdispatch-dev
-ADD installObjectiveC.sh /tmp/installObjectiveC.sh
-RUN chmod a+x /tmp/installObjectiveC.sh
-RUN /tmp/installObjectiveC.sh
-
 # Raku
 RUN apt-get install -y --no-install-recommends rakudo
 # Work around zef being dropped? in Ubuntu 22.04 (was perl6-zef, might become raku-zef in newer versions)
@@ -75,8 +69,14 @@ RUN sh -c 'wget -qO- https://dl-ssl.google.com/linux/linux_signing_key.pub | apt
 RUN sh -c 'wget -qO- https://storage.googleapis.com/download.dartlang.org/linux/debian/dart_stable.list > /etc/apt/sources.list.d/dart_stable.list'
 RUN apt-get update && apt-get install dart
 
+# Objective-C
+RUN apt-get install -y --no-install-recommends build-essential cmake clang libblocksruntime-dev libicu-dev libdispatch-dev
+ADD installObjectiveC.sh /tmp/installObjectiveC.sh
+RUN chmod a+x /tmp/installObjectiveC.sh
+RUN /tmp/installObjectiveC.sh
+
 # Java + Clojure + Kotlin + Scala
-RUN apt-get install -y --no-install-recommends openjdk-17-jdk maven
+RUN apt-get install -y --no-install-recommends openjdk-18-jdk maven
 
 # Swift
 RUN apt-get install -y --no-install-recommends clang libicu-dev libtinfo5 libncurses5 \
@@ -89,10 +89,10 @@ ENV PATH="/swift/usr/bin:${PATH}"
 # Haskell
 # Get newest cabal outside of Ubuntu channel
 RUN apt-get install -y --no-install-recommends ghc xz-utils \
-        && curl -L https://downloads.haskell.org/~cabal/cabal-install-3.6.2.0/cabal-install-3.6.2.0-x86_64-linux-deb10.tar.xz -o cabal-install.tar.xz \
-        && tar -xf cabal-install.tar.xz \
-        && mv cabal /usr/local/bin/ \
-        && rm cabal-install.tar.xz
+    && curl -L https://downloads.haskell.org/~cabal/cabal-install-3.8.1.0/cabal-install-3.8.1.0-x86_64-linux-deb10.tar.xz -o cabal-install.tar.xz \
+    && tar -xf cabal-install.tar.xz \
+    && mv cabal /usr/local/bin/ \
+    && rm cabal-install.tar.xz
 
 # Work around https://akashmittal.com/code-example-fatal-detected-dubious-ownership-in-repository-at/
 # There seems to be no easy way in docker to make the current user the owner of mounted volumnes, e.g. https://github.com/moby/moby/issues/2259
