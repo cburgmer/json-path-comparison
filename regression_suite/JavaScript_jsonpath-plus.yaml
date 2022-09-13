@@ -308,7 +308,7 @@ queries:
     result: [{"d": ["v1", "v2"]}, {"d": ["a", "b"]}, {"d": true}]
   - id: filter_expression_with_parent_axis_operator
     status: fail
-    result: [{"bookmarks": [{"page": 35}, {"page": 45}], "title": "Sword of Honour"}, {"bookmarks": [{"page": 3035}, {"page": 45}], "title": "Moby Dick"}]
+    result: [[{"bookmarks": [{"page": 40}], "title": "Sayings of the Century"}, {"bookmarks": [{"page": 35}, {"page": 45}], "title": "Sword of Honour"}, {"bookmarks": [{"page": 3035}, {"page": 45}], "title": "Moby Dick"}], [{"bookmarks": [{"page": 40}], "title": "Sayings of the Century"}, {"bookmarks": [{"page": 35}, {"page": 45}], "title": "Sword of Honour"}, {"bookmarks": [{"page": 3035}, {"page": 45}], "title": "Moby Dick"}]]
   - id: filter_expression_with_regular_expression
     status: open
     result: [{"name": -1}, {"name": -1}, {"name": -1}, {"name": -1}, {"name": -1}]

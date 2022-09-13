@@ -464,43 +464,6 @@ The following queries provide results that do not match those of other implement
   path: empty
   ```
 
-- [ ] `$[?(@.a && (@.b || @.c))]`
-  Input:
-  ```
-  [
-    {
-      "a": true
-    },
-    {
-      "a": true,
-      "b": true
-    },
-    {
-      "a": true,
-      "b": true,
-      "c": true
-    },
-    {
-      "b": true,
-      "c": true
-    },
-    {
-      "a": true,
-      "c": true
-    },
-    {
-      "c": true
-    },
-    {
-      "b": true
-    }
-  ]
-  ```
-  Error:
-  ```
-  mismatched parentheses at 4
-  ```
-
 - [ ] `$[?()]`
   Input:
   ```

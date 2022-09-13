@@ -3,56 +3,6 @@ Results do not match other implementations
 The following queries provide results that do not match those of other implementations of JSONPath
 (compare https://cburgmer.github.io/json-path-comparison/):
 
-- [ ] `$[?(@.key>42 && @.key<44)]`
-  Input:
-  ```
-  [
-    {
-      "key": 42
-    },
-    {
-      "key": 43
-    },
-    {
-      "key": 44
-    }
-  ]
-  ```
-  Expected output:
-  ```
-  [{"key": 43}]
-  ```
-  Actual output:
-  NOT_SUPPORTED
-  ```
-  FormatException: end of input expected at 1:2. Expression: $[?(@.key>42 && @.key<44)]
-  ```
-
-- [ ] `$[?(@.key>43 || @.key<43)]`
-  Input:
-  ```
-  [
-    {
-      "key": 42
-    },
-    {
-      "key": 43
-    },
-    {
-      "key": 44
-    }
-  ]
-  ```
-  Expected output:
-  ```
-  [{"key": 42}, {"key": 44}]
-  ```
-  Actual output:
-  NOT_SUPPORTED
-  ```
-  FormatException: end of input expected at 1:2. Expression: $[?(@.key>43 || @.key<43)]
-  ```
-
 - [ ] `$[*,1]`
   Input:
   ```

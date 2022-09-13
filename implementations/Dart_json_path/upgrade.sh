@@ -3,4 +3,5 @@ set -euo pipefail
 
 cd "$(dirname "$BASH_SOURCE[0]")"
 dart pub upgrade --major-versions
-rm -r build/
+dart pub upgrade
+rm -rf build/

@@ -485,7 +485,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  jsonPath: Invalid or unexpected token: @
+  Invalid or unexpected token
   ```
 
 - [ ] `$[?(@.key-dash == 'value')]`
@@ -499,7 +499,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  jsonPath: dash is not defined: _$_v.key-dash == 'value'
+  jsonPath: dash is not defined: @.key-dash == 'value'
   ```
 
 - [ ] `$[?(@.2 == 'second')]`
@@ -515,7 +515,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  jsonPath: Unexpected number: _$_v.2 == 'second'
+  Unexpected number
   ```
 
 - [ ] `$[?(@.2 == 'third')]`
@@ -533,7 +533,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  jsonPath: Unexpected number: _$_v.2 == 'third'
+  Unexpected number
   ```
 
 - [ ] `$[?()]`
@@ -579,7 +579,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  jsonPath: Unexpected token ':': _$_v[0:1]==[1]
+  Unexpected token ':'
   ```
 
 - [ ] `$[?(@.*==[1,2])]`
@@ -612,7 +612,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  jsonPath: Unexpected token '*=': _$_v.*==[1,2]
+  Unexpected token '*='
   ```
 
 - [ ] `$[?(@[0:1]==1)]`
@@ -637,7 +637,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  jsonPath: Unexpected token ':': _$_v[0:1]==1
+  Unexpected token ':'
   ```
 
 - [ ] `$[?(@[*]==2)]`
@@ -670,7 +670,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  jsonPath: Unexpected token '*': _$_v[*]==2
+  Unexpected token '*'
   ```
 
 - [ ] `$[?(@.*==2)]`
@@ -703,7 +703,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  jsonPath: Unexpected token '*=': _$_v.*==2
+  Unexpected token '*='
   ```
 
 - [ ] `$[?(@==42)]`
@@ -727,7 +727,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  jsonPath: Invalid or unexpected token: @==42
+  Invalid or unexpected token
   ```
 
 - [ ] `$[?(@.key=="value")]`
@@ -825,7 +825,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  jsonPath: $ is not defined: _$_v.key==$.value
+  jsonPath: $ is not defined: @.key==$.value
   ```
 
 - [ ] `$[?(length(@) == 4)]`
@@ -858,7 +858,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  jsonPath: length is not defined: length(_$_v) == 4
+  jsonPath: length is not defined: length(@) == 4
   ```
 
 - [ ] `$[?(@.length() == 4)]`
@@ -887,7 +887,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  jsonPath: _$_v.length is not a function: _$_v.length() == 4
+  jsonPath: _$_v.length is not a function: @.length() == 4
   ```
 
 - [ ] `$[?(@.length == 4)]`
@@ -973,28 +973,70 @@ The following queries provide results that do not match those of other implement
   Actual output:
   ```
   [
-    {
-      "bookmarks": [
-        {
-          "page": 35
-        },
-        {
-          "page": 45
-        }
-      ],
-      "title": "Sword of Honour"
-    },
-    {
-      "bookmarks": [
-        {
-          "page": 3035
-        },
-        {
-          "page": 45
-        }
-      ],
-      "title": "Moby Dick"
-    }
+    [
+      {
+        "bookmarks": [
+          {
+            "page": 40
+          }
+        ],
+        "title": "Sayings of the Century"
+      },
+      {
+        "bookmarks": [
+          {
+            "page": 35
+          },
+          {
+            "page": 45
+          }
+        ],
+        "title": "Sword of Honour"
+      },
+      {
+        "bookmarks": [
+          {
+            "page": 3035
+          },
+          {
+            "page": 45
+          }
+        ],
+        "title": "Moby Dick"
+      }
+    ],
+    [
+      {
+        "bookmarks": [
+          {
+            "page": 40
+          }
+        ],
+        "title": "Sayings of the Century"
+      },
+      {
+        "bookmarks": [
+          {
+            "page": 35
+          },
+          {
+            "page": 45
+          }
+        ],
+        "title": "Sword of Honour"
+      },
+      {
+        "bookmarks": [
+          {
+            "page": 3035
+          },
+          {
+            "page": 45
+          }
+        ],
+        "title": "Moby Dick"
+      }
+    ]
   ]
   ```
 
@@ -1018,7 +1060,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  jsonPath: Unexpected token '*': _$_v[*]>=4
+  Unexpected token '*'
   ```
 
 - [ ] `$.x[?(@[*]>=$.y[*])]`
@@ -1048,7 +1090,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  jsonPath: Unexpected token '*': _$_v[*]>=$.y[*]
+  Unexpected token '*'
   ```
 
 - [ ] `$[?(@.key=42)]`
@@ -1235,7 +1277,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  jsonPath: Unexpected token '?': _$_v.a[?(_$_v.price>10
+  Unexpected token '?'
   ```
 
 - [ ] `$[?(@..child)]`
@@ -1276,7 +1318,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  jsonPath: Unexpected token '.': _$_v..child
+  Unexpected token '.'
   ```
 
 - [ ] `$[?@.key==42]`
@@ -1462,7 +1504,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  jsonPath: Unexpected token ')': _$_v.key<3),?(_$_v.key>6
+  Unexpected token ')'
   ```
 
 - [ ] `$['key','another']`

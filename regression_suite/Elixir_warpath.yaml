@@ -8,31 +8,31 @@ implementation: Elixir_warpath
 queries:
   - id: array_slice_with_large_number_for_end_and_negative_step
     status: open
-    result: NOT_SUPPORTED
+    result: ["second", "first"]
   - id: array_slice_with_large_number_for_start_end_negative_step
     status: open
-    result: NOT_SUPPORTED
+    result: ["fifth", "forth", "third"]
   - id: array_slice_with_negative_step
     status: open
-    result: NOT_SUPPORTED
+    result: ["third", "first"]
   - id: array_slice_with_negative_step_and_start_greater_than_end
     status: open
-    result: NOT_SUPPORTED
+    result: []
   - id: array_slice_with_negative_step_on_partially_overlapping_array
     status: open
-    result: NOT_SUPPORTED
+    result: ["fifth", "forth"]
   - id: array_slice_with_negative_step_only
     status: open
-    result: NOT_SUPPORTED
+    result: ["fifth", "third", "first"]
   - id: array_slice_with_open_end_and_negative_step
     status: open
-    result: NOT_SUPPORTED
+    result: ["third", "second", "first"]
   - id: array_slice_with_open_start_and_negative_step
     status: open
-    result: NOT_SUPPORTED
+    result: ["fifth", "forth", "third"]
   - id: array_slice_with_step_0
     status: open
-    result: NOT_SUPPORTED
+    result: []
   - id: bracket_notation_with_number_on_string
     status: error
   - id: bracket_notation_with_quoted_escaped_backslash

@@ -73,20 +73,6 @@ The following queries provide results that do not match those of other implement
   ]
   ```
 
-- [ ] `$[-1]`
-  Input:
-  ```
-  []
-  ```
-  Expected output:
-  ```
-  []
-  ```
-  Error:
-  ```
-  Error: 'Modulo by zero'
-  ```
-
 - [ ] `$[0]`
   Input:
   ```

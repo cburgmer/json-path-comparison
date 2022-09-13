@@ -38,8 +38,6 @@ queries:
   - id: bracket_notation_with_negative_number_on_short_array
     status: fail
     result: ["one element"]
-  - id: bracket_notation_with_number_-1_on_empty_array
-    status: error
   - id: bracket_notation_with_number_on_object
     status: fail
     result: ["value"]
