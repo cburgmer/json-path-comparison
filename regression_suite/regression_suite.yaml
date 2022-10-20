@@ -878,6 +878,9 @@ queries:
   - id: filter_expression_with_negation_and_without_value
     selector: "$[?(!@.key)]"
     document: [{"some": "some value"}, {"key": true}, {"key": false}, {"key": null}, {"key": "value"}, {"key": ""}, {"key": 0}, {"key": 1}, {"key": -1}, {"key": 42}, {"key": {}}, {"key": []}]
+  - id: filter_expression_with_non_singular_existence_test
+    selector: "$[?(@.a.*)]"
+    document: [{"a": 0}, {"a": "x"}, {"a": false}, {"a": true}, {"a": null}, {"a": []}, {"a": [1]}, {"a": [1, 2]}, {"a": {}}, {"a": {"x": "y"}}, {"a": {"x": "y", "w": "z"}}]
   - id: filter_expression_with_not_equals
     selector: "$[?(@.key!=42)]"
     document: [{"key": 0}, {"key": 42}, {"key": -1}, {"key": 1}, {"key": 41}, {"key": 43}, {"key": 42.0001}, {"key": 41.9999}, {"key": 100}, {"key": "some"}, {"key": "42"}, {"key": null}, {"key": 420}, {"key": ""}, {"key": {}}, {"key": []}, {"key": [42]}, {"key": {"key": 42}}, {"key": {"some": 42}}, {"some": "value"}]

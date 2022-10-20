@@ -8,16 +8,16 @@
     "packages": [
         {
             "name": "softcreatr/jsonpath",
-            "version": "0.8.0",
+            "version": "0.8.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/SoftCreatR/JSONPath.git",
-                "reference": "c2f4a164c2d9be754e2d47811157a31fe93067d0"
+                "reference": "2de6614d7a9aa5e1f988c5dbc0744fa602847180"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/SoftCreatR/JSONPath/zipball/c2f4a164c2d9be754e2d47811157a31fe93067d0",
-                "reference": "c2f4a164c2d9be754e2d47811157a31fe93067d0",
+                "url": "https://api.github.com/repos/SoftCreatR/JSONPath/zipball/2de6614d7a9aa5e1f988c5dbc0744fa602847180",
+                "reference": "2de6614d7a9aa5e1f988c5dbc0744fa602847180",
                 "shasum": ""
             },
             "require": {
@@ -30,7 +30,7 @@
             "require-dev": {
                 "phpunit/phpunit": "^9.5",
                 "roave/security-advisories": "dev-latest",
-                "squizlabs/php_codesniffer": "^3.6"
+                "squizlabs/php_codesniffer": "^3.7"
             },
             "type": "library",
             "autoload": {
@@ -73,7 +73,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2022-01-31T14:22:15+00:00"
+            "time": "2022-09-27T09:53:33+00:00"
         }
     ],
     "packages-dev": [],

@@ -913,6 +913,60 @@ The following queries provide results that do not match those of other implement
   unknown token at 7: ["v1","v2"])||(@.d==true) at 4
   ```
 
+- [ ] `$[?(@.a.*)]`
+  Input:
+  ```
+  [
+    {
+      "a": 0
+    },
+    {
+      "a": "x"
+    },
+    {
+      "a": false
+    },
+    {
+      "a": true
+    },
+    {
+      "a": null
+    },
+    {
+      "a": []
+    },
+    {
+      "a": [
+        1
+      ]
+    },
+    {
+      "a": [
+        1,
+        2
+      ]
+    },
+    {
+      "a": {}
+    },
+    {
+      "a": {
+        "x": "y"
+      }
+    },
+    {
+      "a": {
+        "x": "y",
+        "w": "z"
+      }
+    }
+  ]
+  ```
+  Error:
+  ```
+  path: unexpected end of path at 4
+  ```
+
 - [ ] `$[?((@.d!=["v1","v2"]) || (@.d == true))]`
   Input:
   ```

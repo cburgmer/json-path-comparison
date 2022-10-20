@@ -230,6 +230,9 @@ queries:
   - id: filter_expression_with_negation_and_without_value
     status: open
     result: [{"key": false}]
+  - id: filter_expression_with_non_singular_existence_test
+    status: open
+    result: []
   - id: filter_expression_with_not_equals
     status: error
   - id: filter_expression_with_not_equals_array_or_equals_true

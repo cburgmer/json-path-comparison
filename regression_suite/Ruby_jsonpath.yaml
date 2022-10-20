@@ -337,6 +337,9 @@ queries:
     status: error
   - id: filter_expression_with_negation_and_without_value
     status: error
+  - id: filter_expression_with_non_singular_existence_test
+    status: open
+    result: [{"a": 0}, {"a": "x"}, {"a": true}, {"a": []}, {"a": [1]}, {"a": [1, 2]}, {"a": {}}, {"a": {"x": "y"}}, {"a": {"w": "z", "x": "y"}}]
   - id: filter_expression_with_not_equals
     status: open
     result: []

@@ -456,6 +456,9 @@ queries:
   - id: filter_expression_with_negation_and_without_value
     status: open
     result: []
+  - id: filter_expression_with_non_singular_existence_test
+    status: open
+    result: []
   - id: filter_expression_with_not_equals
     status: open
     result: []

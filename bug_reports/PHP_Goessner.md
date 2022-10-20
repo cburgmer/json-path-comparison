@@ -2965,6 +2965,60 @@ The following queries provide results that do not match those of other implement
   ArgumentCountError
   ```
 
+- [ ] `$[?(@.a.*)]`
+  Input:
+  ```
+  [
+    {
+      "a": 0
+    },
+    {
+      "a": "x"
+    },
+    {
+      "a": false
+    },
+    {
+      "a": true
+    },
+    {
+      "a": null
+    },
+    {
+      "a": []
+    },
+    {
+      "a": [
+        1
+      ]
+    },
+    {
+      "a": [
+        1,
+        2
+      ]
+    },
+    {
+      "a": {}
+    },
+    {
+      "a": {
+        "x": "y"
+      }
+    },
+    {
+      "a": {
+        "x": "y",
+        "w": "z"
+      }
+    }
+  ]
+  ```
+  Error:
+  ```
+  ArgumentCountError
+  ```
+
 - [ ] `$[?(@.key!=42)]`
   Input:
   ```

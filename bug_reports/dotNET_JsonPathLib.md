@@ -1126,6 +1126,60 @@ The following queries provide results that do not match those of other implement
   Object reference not set to an instance of an object.
   ```
 
+- [ ] `$[?(@.a.*)]`
+  Input:
+  ```
+  [
+    {
+      "a": 0
+    },
+    {
+      "a": "x"
+    },
+    {
+      "a": false
+    },
+    {
+      "a": true
+    },
+    {
+      "a": null
+    },
+    {
+      "a": []
+    },
+    {
+      "a": [
+        1
+      ]
+    },
+    {
+      "a": [
+        1,
+        2
+      ]
+    },
+    {
+      "a": {}
+    },
+    {
+      "a": {
+        "x": "y"
+      }
+    },
+    {
+      "a": {
+        "x": "y",
+        "w": "z"
+      }
+    }
+  ]
+  ```
+  Error:
+  ```
+  Line 1: Unexpected token *
+  ```
+
 - [ ] `$[?((@.d!=["v1","v2"]) || (@.d == true))]`
   Input:
   ```
