@@ -78,22 +78,6 @@ The following queries provide results that do not match those of other implement
   ]
   ```
 
-- [ ] `$[0]`
-  Input:
-  ```
-  "Hello World"
-  ```
-  Expected output:
-  ```
-  []
-  ```
-  Actual output:
-  ```
-  [
-    "H"
-  ]
-  ```
-
 - [ ] `$.key-dash`
   Input:
   ```
@@ -204,27 +188,6 @@ The following queries provide results that do not match those of other implement
   undefined
   ```
 
-- [ ] `$[?()]`
-  Input:
-  ```
-  [
-    1,
-    {
-      "key": 42
-    },
-    "value",
-    null
-  ]
-  ```
-  Expected output:
-  ```
-  NOT_SUPPORTED
-  ```
-  Actual output:
-  ```
-  []
-  ```
-
 - [ ] `$[?(@.id==2)]`
   Input:
   ```
@@ -273,7 +236,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  Invocation violation: length(@)
+  Invocation violation: (length(@)
   ```
 
 - [ ] `$[?(@.length() == 4)]`
@@ -385,9 +348,7 @@ The following queries provide results that do not match those of other implement
   ```
   Actual output:
   ```
-  [
-    "fifth"
-  ]
+  []
   ```
 
 - [ ] `$[*,1]`
