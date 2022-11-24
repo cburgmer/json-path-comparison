@@ -1,0 +1,7 @@
+[
+    {"key": 0},
+    {"key": "value"},
+    null,
+    {"key": 42},
+    {"some": "value"}
+]
