@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Linq;
-using System.Text.Json;
+using System.Text.Json.Nodes;
 using Json.More;
 using Json.Path;
 
 
-namespace Dotnet_Manatee.Json
+namespace Dotnet_JsonPathNet
 {
     class Program
     {
@@ -18,7 +18,7 @@ namespace Dotnet_Manatee.Json
                 jsonString += s;
             }
             
-            var o = JsonDocument.Parse(jsonString).RootElement;
+            var o = JsonNode.Parse(jsonString);
             var selector = args[0];
             JsonPath path = null;
             try
@@ -33,7 +33,7 @@ namespace Dotnet_Manatee.Json
             try
             {
                 var results = path.Evaluate(o);
-                Console.WriteLine(results.Matches.Select(m => m.Value).AsJsonElement().ToJsonString());
+                Console.WriteLine(results.Matches.Select(m => m.Value).ToJsonArray().AsJsonString());
             }
             catch (Exception e)
             {
