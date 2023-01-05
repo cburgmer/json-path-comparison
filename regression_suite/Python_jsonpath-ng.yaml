@@ -330,12 +330,15 @@ queries:
     status: open
     result: NOT_SUPPORTED
   - id: filter_expression_with_greater_than_string
-    status: fail
+    status: open
     result: NOT_SUPPORTED
   - id: filter_expression_with_in_array_of_values
     status: open
     result: NOT_SUPPORTED
   - id: filter_expression_with_in_current_object
+    status: open
+    result: NOT_SUPPORTED
+  - id: filter_expression_with_length_free_function
     status: open
     result: NOT_SUPPORTED
   - id: filter_expression_with_length_function

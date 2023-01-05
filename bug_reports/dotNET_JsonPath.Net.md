@@ -24,65 +24,7 @@ The following queries provide results that do not match those of other implement
   Actual output:
   NOT_SUPPORTED
   ```
-  Could not identify selector
-  ```
-
-- [ ] `$.`
-  Input:
-  ```
-  {
-    "key": 42,
-    "": 9001,
-    "''": "nice"
-  }
-  ```
-  Expected output:
-  ```
-  NOT_SUPPORTED
-  ```
-  Actual output:
-  ```
-  [
-    9001
-  ]
-  ```
-
-- [ ] `$.length`
-  Input:
-  ```
-  {
-    "length": "value"
-  }
-  ```
-  Expected output:
-  ```
-  ["value"]
-  ```
-  Actual output:
-  ```
-  [
-    1
-  ]
-  ```
-
-- [ ] `$.length`
-  Input:
-  ```
-  [
-    4,
-    5,
-    6
-  ]
-  ```
-  Expected output:
-  ```
-  []
-  ```
-  Actual output:
-  ```
-  [
-    3
-  ]
+  Could not find any valid selectors.
   ```
 
 - [ ] `$.-1`
@@ -103,50 +45,114 @@ The following queries provide results that do not match those of other implement
   Actual output:
   NOT_SUPPORTED
   ```
-  Could not identify selector
+  Could not find any valid selectors.
   ```
 
-- [ ] `$[?(@.length == 4)]`
+- [ ] `$.2`
+  Input:
+  ```
+  {
+    "a": "first",
+    "2": "second",
+    "b": "third"
+  }
+  ```
+  Expected output:
+  ```
+  ["second"]
+  ```
+  Actual output:
+  NOT_SUPPORTED
+  ```
+  Could not find any valid selectors.
+  ```
+
+- [ ] `$[?@.key==42]`
   Input:
   ```
   [
-    [
-      1,
-      2,
-      3,
-      4,
-      5
-    ],
-    [
-      1,
-      2,
-      3,
-      4
-    ],
-    [
-      1,
-      2,
-      3
-    ]
+    {
+      "key": 0
+    },
+    {
+      "key": 42
+    },
+    {
+      "key": -1
+    },
+    {
+      "key": 1
+    },
+    {
+      "key": 41
+    },
+    {
+      "key": 43
+    },
+    {
+      "key": 42.0001
+    },
+    {
+      "key": 41.9999
+    },
+    {
+      "key": 100
+    },
+    {
+      "key": "some"
+    },
+    {
+      "key": "42"
+    },
+    {
+      "key": null
+    },
+    {
+      "key": 420
+    },
+    {
+      "key": ""
+    },
+    {
+      "key": {}
+    },
+    {
+      "key": []
+    },
+    {
+      "key": [
+        42
+      ]
+    },
+    {
+      "key": {
+        "key": 42
+      }
+    },
+    {
+      "key": {
+        "some": 42
+      }
+    },
+    {
+      "some": "value"
+    }
   ]
   ```
   Expected output:
   ```
-  []
+  NOT_SUPPORTED
   ```
   Actual output:
   ```
   [
-    [
-      1,
-      2,
-      3,
-      4
-    ]
+    {
+      "key": 42
+    }
   ]
   ```
 
-- [ ] `$[(@.length-1)]`
+- [ ] `$[*,1]`
   Input:
   ```
   [
@@ -164,43 +170,12 @@ The following queries provide results that do not match those of other implement
   Actual output:
   ```
   [
-    "fifth"
-  ]
-  ```
-
-- [ ] `$[0,0]`
-  Input:
-  ```
-  [
-    "a"
-  ]
-  ```
-  Expected output:
-  ```
-  ["a", "a"]
-  ```
-  Actual output:
-  ```
-  [
-    "a"
-  ]
-  ```
-
-- [ ] `$['a','a']`
-  Input:
-  ```
-  {
-    "a": 1
-  }
-  ```
-  Expected output:
-  ```
-  [1, 1]
-  ```
-  Actual output:
-  ```
-  [
-    1
+    "first",
+    "second",
+    "third",
+    "forth",
+    "fifth",
+    "second"
   ]
   ```
 

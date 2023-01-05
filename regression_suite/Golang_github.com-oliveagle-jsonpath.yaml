@@ -396,7 +396,7 @@ queries:
     status: open
     result: []
   - id: filter_expression_with_greater_than_string
-    status: fail
+    status: open
     result: []
   - id: filter_expression_with_in_array_of_values
     status: error
@@ -404,7 +404,7 @@ queries:
     status: open
     result: []
   - id: filter_expression_with_length_free_function
-    status: fail
+    status: open
     result: []
   - id: filter_expression_with_length_function
     status: open

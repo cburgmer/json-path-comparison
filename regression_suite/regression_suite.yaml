@@ -839,7 +839,6 @@ queries:
   - id: filter_expression_with_greater_than_string
     selector: "$[?(@.key>\"VALUE\")]"
     document: [{"key": 0}, {"key": 42}, {"key": -1}, {"key": 41}, {"key": 43}, {"key": 42.0001}, {"key": 41.9999}, {"key": 100}, {"key": "43"}, {"key": "42"}, {"key": "41"}, {"key": "alpha"}, {"key": "ALPHA"}, {"key": "value"}, {"key": "VALUE"}, {"some": "value"}, {"some": "VALUE"}]
-    consensus: [{"key": "alpha"}, {"key": "value"}]
   - id: filter_expression_with_in_array_of_values
     selector: "$[?(@.d in [2, 3])]"
     document: [{"d": 1}, {"d": 2}, {"d": 1}, {"d": 3}, {"d": 4}]
@@ -849,7 +848,6 @@ queries:
   - id: filter_expression_with_length_free_function
     selector: "$[?(length(@) == 4)]"
     document: [[1, 2, 3, 4, 5], [1, 2, 3, 4], [1, 2, 3]]
-    consensus: NOT_SUPPORTED
   - id: filter_expression_with_length_function
     selector: "$[?(@.length() == 4)]"
     document: [[1, 2, 3, 4, 5], [1, 2, 3, 4], [1, 2, 3]]

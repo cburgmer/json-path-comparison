@@ -2330,10 +2330,6 @@ The following queries provide results that do not match those of other implement
     }
   ]
   ```
-  Expected output:
-  ```
-  [{"key": "alpha"}, {"key": "value"}]
-  ```
   Error:
   ```
   java.lang.ClassCastException class java.lang.String cannot be cast to class java.lang.Number (java.lang.String and java.lang.Number are in module java.base of loader 'bootstrap')
@@ -2363,39 +2359,6 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   java.lang.Exception object must be an array.
-  ```
-
-- [ ] `$[?(length(@) == 4)]`
-  Input:
-  ```
-  [
-    [
-      1,
-      2,
-      3,
-      4,
-      5
-    ],
-    [
-      1,
-      2,
-      3,
-      4
-    ],
-    [
-      1,
-      2,
-      3
-    ]
-  ]
-  ```
-  Expected output:
-  ```
-  NOT_SUPPORTED
-  ```
-  Actual output:
-  ```
-  []
   ```
 
 - [ ] `$[?(@.length == 4)]`

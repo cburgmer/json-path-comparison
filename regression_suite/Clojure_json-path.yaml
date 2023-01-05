@@ -420,7 +420,7 @@ queries:
     status: open
     result: []
   - id: filter_expression_with_length_free_function
-    status: fail
+    status: open
     result: []
   - id: filter_expression_with_length_function
     status: open

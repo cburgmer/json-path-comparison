@@ -1766,43 +1766,6 @@ The following queries provide results that do not match those of other implement
     }
   ]
   ```
-  Expected output:
-  ```
-  [{"key": "alpha"}, {"key": "value"}]
-  ```
-  Actual output:
-  ```
-  []
-  ```
-
-- [ ] `$[?(length(@) == 4)]`
-  Input:
-  ```
-  [
-    [
-      1,
-      2,
-      3,
-      4,
-      5
-    ],
-    [
-      1,
-      2,
-      3,
-      4
-    ],
-    [
-      1,
-      2,
-      3
-    ]
-  ]
-  ```
-  Expected output:
-  ```
-  NOT_SUPPORTED
-  ```
   Actual output:
   ```
   []

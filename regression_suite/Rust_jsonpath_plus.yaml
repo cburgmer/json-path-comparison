@@ -200,7 +200,7 @@ queries:
     status: open
     result: [{"key": 42}, {"key": 43}, {"key": 42.0001}, {"key": 100}]
   - id: filter_expression_with_greater_than_string
-    status: fail
+    status: open
     result: []
   - id: filter_expression_with_in_array_of_values
     status: error

@@ -208,7 +208,7 @@ queries:
     status: open
     result: [{"key": 42}, {"key": 43}, {"key": 42.0001}, {"key": 100}, {"key": "43"}, {"key": "42"}, {"key": "value"}]
   - id: filter_expression_with_greater_than_string
-    status: fail
+    status: open
     result: [{"key": 42.0001}, {"key": 41.9999}, {"key": "alpha"}, {"key": "value"}]
   - id: filter_expression_with_in_array_of_values
     status: open
@@ -216,6 +216,9 @@ queries:
   - id: filter_expression_with_in_current_object
     status: open
     result: [{"d": [1, 2, 3]}, {"d": [2]}, {"d": [4, 2]}]
+  - id: filter_expression_with_length_free_function
+    status: open
+    result: NOT_SUPPORTED
   - id: filter_expression_with_length_function
     status: open
     result: [[1, 2, 3, 4]]

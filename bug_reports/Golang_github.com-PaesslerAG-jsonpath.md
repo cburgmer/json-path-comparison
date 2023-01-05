@@ -659,47 +659,10 @@ The following queries provide results that do not match those of other implement
     }
   ]
   ```
-  Expected output:
-  ```
-  [{"key": "alpha"}, {"key": "value"}]
-  ```
   Actual output:
   NOT_SUPPORTED
   ```
   parsing error: $[?(@.key>"VALUE")]	:1:10 - 1:11 unexpected ">" while scanning parentheses expected ")"
-  ```
-
-- [ ] `$[?(length(@) == 4)]`
-  Input:
-  ```
-  [
-    [
-      1,
-      2,
-      3,
-      4,
-      5
-    ],
-    [
-      1,
-      2,
-      3,
-      4
-    ],
-    [
-      1,
-      2,
-      3
-    ]
-  ]
-  ```
-  Expected output:
-  ```
-  NOT_SUPPORTED
-  ```
-  Actual output:
-  ```
-  []
   ```
 
 - [ ] `$[?(@.address.city=='Berlin')]`
