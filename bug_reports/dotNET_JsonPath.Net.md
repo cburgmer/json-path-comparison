@@ -3,6 +3,33 @@ Results do not match other implementations
 The following queries provide results that do not match those of other implementations of JSONPath
 (compare https://cburgmer.github.io/json-path-comparison/):
 
+- [ ] `$[0:2][*]`
+  Input:
+  ```
+  [
+    [
+      1,
+      2
+    ],
+    [
+      "a",
+      "b"
+    ],
+    [
+      0,
+      0
+    ]
+  ]
+  ```
+  Expected output:
+  ```
+  [1, 2, "a", "b"]
+  ```
+  Error:
+  ```
+  timeout: sending signal TERM to command ‘build/Dotnet_JsonPath.Net’
+  ```
+
 - [ ] `$.key-dash`
   Input:
   ```

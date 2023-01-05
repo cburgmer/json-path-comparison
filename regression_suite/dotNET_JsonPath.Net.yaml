@@ -42,6 +42,8 @@ queries:
   - id: bracket_notation_with_quoted_special_characters_combined
     status: open
     result: [42]
+  - id: bracket_notation_with_wildcard_after_array_slice
+    status: error
   - id: current_with_dot_notation
     status: open
     result: NOT_SUPPORTED
