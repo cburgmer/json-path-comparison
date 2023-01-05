@@ -393,6 +393,9 @@ queries:
   - id: filter_expression_with_less_than_or_equal
     status: open
     result: [0, 42, -1, 41, 41.9999, "43", "42", "41", "value"]
+  - id: filter_expression_with_local_dot_key_and_null_in_data
+    status: fail
+    result: []
   - id: filter_expression_with_multiplication
     status: open
     result: []

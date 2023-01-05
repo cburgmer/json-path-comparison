@@ -863,6 +863,10 @@ queries:
   - id: filter_expression_with_less_than_or_equal
     selector: "$[?(@.key<=42)]"
     document: [{"key": 0}, {"key": 42}, {"key": -1}, {"key": 41}, {"key": 43}, {"key": 42.0001}, {"key": 41.9999}, {"key": 100}, {"key": "43"}, {"key": "42"}, {"key": "41"}, {"key": "value"}, {"some": "value"}]
+  - id: filter_expression_with_local_dot_key_and_null_in_data
+    selector: "$[?(@.key='value')]"
+    document: [{"key": 0}, {"key": "value"}, null, {"key": 42}, {"some": "value"}]
+    consensus: NOT_SUPPORTED
   - id: filter_expression_with_multiplication
     selector: "$[?(@.key*2==100)]"
     document: [{"key": 60}, {"key": 50}, {"key": 10}, {"key": -50}, {"key*2": 100}]

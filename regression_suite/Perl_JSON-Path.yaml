@@ -308,6 +308,8 @@ queries:
     status: error
   - id: filter_expression_with_less_than_or_equal
     status: error
+  - id: filter_expression_with_local_dot_key_and_null_in_data
+    status: error
   - id: filter_expression_with_multiplication
     status: error
   - id: filter_expression_with_negation_and_equals

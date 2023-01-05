@@ -3105,6 +3105,34 @@ The following queries provide results that do not match those of other implement
   non-safe evaluation, died at main.pl line 11.
   ```
 
+- [ ] `$[?(@.key='value')]`
+  Input:
+  ```
+  [
+    {
+      "key": 0
+    },
+    {
+      "key": "value"
+    },
+    null,
+    {
+      "key": 42
+    },
+    {
+      "some": "value"
+    }
+  ]
+  ```
+  Expected output:
+  ```
+  NOT_SUPPORTED
+  ```
+  Error:
+  ```
+  non-safe evaluation, died at main.pl line 11.
+  ```
+
 - [ ] `$[?(@.key*2==100)]`
   Input:
   ```

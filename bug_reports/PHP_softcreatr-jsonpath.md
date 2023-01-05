@@ -1112,6 +1112,38 @@ The following queries provide results that do not match those of other implement
   Error: 'Malformed filter query'
   ```
 
+- [ ] `$[?(@.key='value')]`
+  Input:
+  ```
+  [
+    {
+      "key": 0
+    },
+    {
+      "key": "value"
+    },
+    null,
+    {
+      "key": 42
+    },
+    {
+      "some": "value"
+    }
+  ]
+  ```
+  Expected output:
+  ```
+  NOT_SUPPORTED
+  ```
+  Actual output:
+  ```
+  [
+    {
+      "key": "value"
+    }
+  ]
+  ```
+
 - [ ] `$[?(!(@.key==42))]`
   Input:
   ```

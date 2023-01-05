@@ -3171,6 +3171,34 @@ The following queries provide results that do not match those of other implement
   []
   ```
 
+- [ ] `$[?(@.key='value')]`
+  Input:
+  ```
+  [
+    {
+      "key": 0
+    },
+    {
+      "key": "value"
+    },
+    null,
+    {
+      "key": 42
+    },
+    {
+      "some": "value"
+    }
+  ]
+  ```
+  Expected output:
+  ```
+  NOT_SUPPORTED
+  ```
+  Actual output:
+  ```
+  []
+  ```
+
 - [ ] `$[?(!(@.d==["v1","v2"]) || (@.d == true))]`
   Input:
   ```

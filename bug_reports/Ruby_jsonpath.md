@@ -1905,6 +1905,36 @@ The following queries provide results that do not match those of other implement
   comparison of String with 42.0 failed
   ```
 
+- [ ] `$[?(@.key='value')]`
+  Input:
+  ```
+  [
+    {
+      "key": 0
+    },
+    {
+      "key": "value"
+    },
+    null,
+    {
+      "key": 42
+    },
+    {
+      "some": "value"
+    }
+  ]
+  ```
+  Expected output:
+  ```
+  NOT_SUPPORTED
+  ```
+  Error:
+  ```
+  undefined method `=' for 0.0:Float
+  Did you mean?  =~
+                 ==
+  ```
+
 - [ ] `$[?(!(@.key==42))]`
   Input:
   ```

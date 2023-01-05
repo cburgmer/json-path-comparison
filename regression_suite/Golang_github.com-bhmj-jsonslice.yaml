@@ -263,6 +263,8 @@ queries:
   - id: filter_expression_with_less_than_or_equal
     status: open
     result: [{"key": 0}, {"key": 42}, {"key": -1}, {"key": 41}, {"key": 41.9999}, {"key": "42"}, {"key": "41"}]
+  - id: filter_expression_with_local_dot_key_and_null_in_data
+    status: error
   - id: filter_expression_with_multiplication
     status: open
     result: [{"key": 50}]

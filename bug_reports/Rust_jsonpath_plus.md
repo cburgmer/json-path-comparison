@@ -995,6 +995,36 @@ The following queries provide results that do not match those of other implement
   panic occurred
   ```
 
+- [ ] `$[?(@.key='value')]`
+  Input:
+  ```
+  [
+    {
+      "key": 0
+    },
+    {
+      "key": "value"
+    },
+    null,
+    {
+      "key": 42
+    },
+    {
+      "some": "value"
+    }
+  ]
+  ```
+  Expected output:
+  ```
+  NOT_SUPPORTED
+  ```
+  Error:
+  ```
+  Error Parsing JSON Path:
+  $[?(@.key='value')]
+  panic occurred
+  ```
+
 - [ ] `$[?(!(@.d==["v1","v2"]) || (@.d == true))]`
   Input:
   ```

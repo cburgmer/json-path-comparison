@@ -1100,6 +1100,34 @@ The following queries provide results that do not match those of other implement
   Object has no method 'length'
   ```
 
+- [ ] `$[?(@.key='value')]`
+  Input:
+  ```
+  [
+    {
+      "key": 0
+    },
+    {
+      "key": "value"
+    },
+    null,
+    {
+      "key": 42
+    },
+    {
+      "some": "value"
+    }
+  ]
+  ```
+  Expected output:
+  ```
+  NOT_SUPPORTED
+  ```
+  Error:
+  ```
+  Object of type 'System.String' cannot be converted to type 'Newtonsoft.Json.Linq.JToken'.
+  ```
+
 - [ ] `$[?(!(@.d==["v1","v2"]) || (@.d == true))]`
   Input:
   ```
