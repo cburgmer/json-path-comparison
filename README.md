@@ -70,3 +70,12 @@ Some of the complexity sadly brings its own set of errors
   scratch.
 - Out of memory on Docker: Some compile steps (looking at you, Haskell) seem to
   need a lot of memory. Increasing the available memory for Docker should help.
+- In some regions, the download speeds for build requirements on the official
+  site can sometimes have unbearably slow.
+  However, certain implementations may be able to utilize the nearest mirror
+  site by utilizing environment variables.
+  - For `./src/with_docker.sh`:  
+    Write to `./src/docker_env_file.txt` in accordance with the `--env-file`
+    option specified in the `docker run` command.
+  - For `./src/with_native.sh`:  
+    Directly export environment variables.
