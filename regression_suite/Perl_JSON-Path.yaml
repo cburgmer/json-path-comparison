@@ -342,6 +342,8 @@ queries:
     status: error
   - id: filter_expression_with_subpaths
     status: error
+  - id: filter_expression_with_subpaths_deeply_nested
+    status: error
   - id: filter_expression_with_subtraction
     status: error
   - id: filter_expression_with_tautological_comparison

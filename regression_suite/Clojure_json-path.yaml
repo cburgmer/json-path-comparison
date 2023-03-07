@@ -484,6 +484,9 @@ queries:
   - id: filter_expression_with_subpaths
     status: fail
     result: []
+  - id: filter_expression_with_subpaths_deeply_nested
+    status: fail
+    result: [{"a": 3}, {"c": 3}]
   - id: filter_expression_with_subtraction
     status: open
     result: [{"key": 60}, {"key": 50}, {"key": 10}, {"key": -50}]

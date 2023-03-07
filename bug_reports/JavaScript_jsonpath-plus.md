@@ -1358,6 +1358,41 @@ The following queries provide results that do not match those of other implement
   Unexpected token '?'
   ```
 
+- [ ] `$[?(@.a.b.c==3)]`
+  Input:
+  ```
+  [
+    {
+      "a": {
+        "b": {
+          "c": 3
+        }
+      }
+    },
+    {
+      "a": 3
+    },
+    {
+      "c": 3
+    },
+    {
+      "a": {
+        "b": {
+          "c": 2
+        }
+      }
+    }
+  ]
+  ```
+  Expected output:
+  ```
+  [{"a": {"b": {"c": 3}}}]
+  ```
+  Error:
+  ```
+  jsonPath: Cannot read property 'c' of undefined: @.a.b.c==3
+  ```
+
 - [ ] `$[?(@..child)]`
   Input:
   ```

@@ -1508,6 +1508,41 @@ The following queries provide results that do not match those of other implement
   Line 1: Unexpected token ?
   ```
 
+- [ ] `$[?(@.a.b.c==3)]`
+  Input:
+  ```
+  [
+    {
+      "a": {
+        "b": {
+          "c": 3
+        }
+      }
+    },
+    {
+      "a": 3
+    },
+    {
+      "c": 3
+    },
+    {
+      "a": {
+        "b": {
+          "c": 2
+        }
+      }
+    }
+  ]
+  ```
+  Expected output:
+  ```
+  [{"a": {"b": {"c": 3}}}]
+  ```
+  Error:
+  ```
+  a is null
+  ```
+
 - [ ] `$[?(@.key)]`
   Input:
   ```

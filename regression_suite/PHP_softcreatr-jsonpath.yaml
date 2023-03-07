@@ -311,6 +311,9 @@ queries:
   - id: filter_expression_with_subpaths
     status: fail
     result: []
+  - id: filter_expression_with_subpaths_deeply_nested
+    status: fail
+    result: []
   - id: filter_expression_with_subtraction
     status: open
     result: [{"key-50": -100}]
