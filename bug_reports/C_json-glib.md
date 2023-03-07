@@ -1845,30 +1845,66 @@ The following queries provide results that do not match those of other implement
   Unable to compile selector `$[?(@.length == 4)]': Invalid array index definition “?(@.length == 4)]”
   ```
 
-- [ ] `$[?(@.address.city=='Berlin')]`
+- [ ] `$[?(@.a.b==3)]`
   Input:
   ```
   [
     {
-      "address": {
-        "city": "Berlin"
+      "a": {
+        "b": 3
       }
     },
     {
-      "address": {
-        "city": "London"
+      "a": {
+        "b": 2
       }
     }
   ]
   ```
   Expected output:
   ```
-  [{"address": {"city": "Berlin"}}]
+  [{"a": {"b": 3}}]
   ```
   Actual output:
   NOT_SUPPORTED
   ```
-  Unable to compile selector `$[?(@.address.city=='Berlin')]': Invalid array index definition “?(@.address.city=='Berlin')]”
+  Unable to compile selector `$[?(@.a.b==3)]': Invalid array index definition “?(@.a.b==3)]”
+  ```
+
+- [ ] `$[?(@.a.b.c==3)]`
+  Input:
+  ```
+  [
+    {
+      "a": {
+        "b": {
+          "c": 3
+        }
+      }
+    },
+    {
+      "a": 3
+    },
+    {
+      "c": 3
+    },
+    {
+      "a": {
+        "b": {
+          "c": 2
+        }
+      }
+    }
+  ]
+  ```
+  Expected output:
+  ```
+  [{"a": {"b": {"c": 3}}}]
+  ```
+  Actual output:
+  NOT_SUPPORTED
+  ```
+  Unable to compile selector `$[?(@.a.b.c==3)]': Invalid array index definition “?(@.a.b.c==3)]”
   ```
 
 - [ ] `$.*[?(@.key)]`

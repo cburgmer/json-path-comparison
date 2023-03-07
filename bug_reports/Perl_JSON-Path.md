@@ -3759,25 +3759,60 @@ The following queries provide results that do not match those of other implement
   non-safe evaluation, died at main.pl line 11.
   ```
 
-- [ ] `$[?(@.address.city=='Berlin')]`
+- [ ] `$[?(@.a.b==3)]`
   Input:
   ```
   [
     {
-      "address": {
-        "city": "Berlin"
+      "a": {
+        "b": 3
       }
     },
     {
-      "address": {
-        "city": "London"
+      "a": {
+        "b": 2
       }
     }
   ]
   ```
   Expected output:
   ```
-  [{"address": {"city": "Berlin"}}]
+  [{"a": {"b": 3}}]
+  ```
+  Error:
+  ```
+  non-safe evaluation, died at main.pl line 11.
+  ```
+
+- [ ] `$[?(@.a.b.c==3)]`
+  Input:
+  ```
+  [
+    {
+      "a": {
+        "b": {
+          "c": 3
+        }
+      }
+    },
+    {
+      "a": 3
+    },
+    {
+      "c": 3
+    },
+    {
+      "a": {
+        "b": {
+          "c": 2
+        }
+      }
+    }
+  ]
+  ```
+  Expected output:
+  ```
+  [{"a": {"b": {"c": 3}}}]
   ```
   Error:
   ```

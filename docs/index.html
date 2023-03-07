@@ -33209,7 +33209,7 @@ Proposal A
 <a href="results/filter_expression_with_subpaths.html">Filter expression with subpaths</a>
 </td>
 <td>
-<code>$[?(@.address.city=='Berlin')]</code>
+<code>$[?(@.a.b==3)]</code>
 </td>
 <td>
 <a href="results/filter_expression_with_subpaths.html#Bash_JSONPath.sh">✗</a>
@@ -33239,7 +33239,7 @@ Proposal A
 <a href="results/filter_expression_with_subpaths.html#consensus">✓</a>
 </td>
 <td>
-<a href="results/filter_expression_with_subpaths.html#Golang_github.com-PaesslerAG-jsonpath">✗</a>
+<a href="results/filter_expression_with_subpaths.html#consensus">✓</a>
 </td>
 <td>
 <a href="results/filter_expression_with_subpaths.html#consensus">✓</a>
@@ -33351,6 +33351,156 @@ Proposal A
 </td>
 <td class="proposal">
 <a href="results/filter_expression_with_subpaths.html#consensus">✓</a>
+</td>
+</tr>
+<tr id="filter_expression_with_subpaths_deeply_nested" class="consensus">
+<td>
+<a href="#filter_expression_with_subpaths_deeply_nested" style="color: lightgrey;">#</a>
+<a href="results/filter_expression_with_subpaths_deeply_nested.html">Filter expression with subpaths deeply nested</a>
+</td>
+<td>
+<code>$[?(@.a.b.c==3)]</code>
+</td>
+<td>
+<a href="results/filter_expression_with_subpaths_deeply_nested.html#Bash_JSONPath.sh">✗</a>
+</td>
+<td>
+<a href="results/filter_expression_with_subpaths_deeply_nested.html#C_json-glib">✗</a>
+</td>
+<td>
+<a href="results/filter_expression_with_subpaths_deeply_nested.html#Clojure_json-path">✗</a>
+</td>
+<td>
+<a href="results/filter_expression_with_subpaths_deeply_nested.html#consensus">✓</a>
+</td>
+<td>
+<a href="results/filter_expression_with_subpaths_deeply_nested.html#consensus">✓</a>
+</td>
+<td>
+<a href="results/filter_expression_with_subpaths_deeply_nested.html#consensus">✓</a>
+</td>
+<td>
+<a href="results/filter_expression_with_subpaths_deeply_nested.html#Elixir_jaxon">✗</a>
+</td>
+<td>
+<a href="results/filter_expression_with_subpaths_deeply_nested.html#consensus">✓</a>
+</td>
+<td>
+<a href="results/filter_expression_with_subpaths_deeply_nested.html#consensus">✓</a>
+</td>
+<td>
+<a href="results/filter_expression_with_subpaths_deeply_nested.html#consensus">✓</a>
+</td>
+<td>
+<a href="results/filter_expression_with_subpaths_deeply_nested.html#consensus">✓</a>
+</td>
+<td>
+<a href="results/filter_expression_with_subpaths_deeply_nested.html#consensus">✓</a>
+</td>
+<td>
+<a href="results/filter_expression_with_subpaths_deeply_nested.html#Golang_github.com-oliveagle-jsonpath">✗</a>
+</td>
+<td>
+<a href="results/filter_expression_with_subpaths_deeply_nested.html#consensus">✓</a>
+</td>
+<td>
+<a href="results/filter_expression_with_subpaths_deeply_nested.html#consensus">✓</a>
+</td>
+<td>
+<a href="results/filter_expression_with_subpaths_deeply_nested.html#consensus">✓</a>
+</td>
+<td>
+<a href="results/filter_expression_with_subpaths_deeply_nested.html#JavaScript_Goessner">e</a>
+</td>
+<td>
+<a href="results/filter_expression_with_subpaths_deeply_nested.html#JavaScript_brunerd">✗</a>
+</td>
+<td>
+<a href="results/filter_expression_with_subpaths_deeply_nested.html#consensus">✓</a>
+</td>
+<td>
+<a href="results/filter_expression_with_subpaths_deeply_nested.html#JavaScript_jsonpath-plus">e</a>
+</td>
+<td>
+<a href="results/filter_expression_with_subpaths_deeply_nested.html#consensus">✓</a>
+</td>
+<td>
+<a href="results/filter_expression_with_subpaths_deeply_nested.html#consensus">✓</a>
+</td>
+<td>
+<a href="results/filter_expression_with_subpaths_deeply_nested.html#Kotlin_com.nfeld.jsonpathkt">✗</a>
+</td>
+<td>
+<a href="results/filter_expression_with_subpaths_deeply_nested.html#consensus">✓</a>
+</td>
+<td>
+<a href="results/filter_expression_with_subpaths_deeply_nested.html#PHP_Goessner">e</a>
+</td>
+<td>
+<a href="results/filter_expression_with_subpaths_deeply_nested.html#consensus">✓</a>
+</td>
+<td>
+<a href="results/filter_expression_with_subpaths_deeply_nested.html#consensus">✓</a>
+</td>
+<td>
+<a href="results/filter_expression_with_subpaths_deeply_nested.html#PHP_softcreatr-jsonpath">✗</a>
+</td>
+<td>
+<a href="results/filter_expression_with_subpaths_deeply_nested.html#Perl_JSON-Path">e</a>
+</td>
+<td>
+<a href="results/filter_expression_with_subpaths_deeply_nested.html#consensus">✓</a>
+</td>
+<td>
+<a href="results/filter_expression_with_subpaths_deeply_nested.html#Python_jsonpath-ng">✗</a>
+</td>
+<td>
+<a href="results/filter_expression_with_subpaths_deeply_nested.html#Python_jsonpath-rw">✗</a>
+</td>
+<td>
+<a href="results/filter_expression_with_subpaths_deeply_nested.html#Python_jsonpath2">✗</a>
+</td>
+<td>
+<a href="results/filter_expression_with_subpaths_deeply_nested.html#Raku_JSON-Path">✗</a>
+</td>
+<td>
+<a href="results/filter_expression_with_subpaths_deeply_nested.html#consensus">✓</a>
+</td>
+<td>
+<a href="results/filter_expression_with_subpaths_deeply_nested.html#Rust_jsonpath">✗</a>
+</td>
+<td>
+<a href="results/filter_expression_with_subpaths_deeply_nested.html#Rust_jsonpath_lib">✗</a>
+</td>
+<td>
+<a href="results/filter_expression_with_subpaths_deeply_nested.html#consensus">✓</a>
+</td>
+<td>
+<a href="results/filter_expression_with_subpaths_deeply_nested.html#consensus">✓</a>
+</td>
+<td>
+<a href="results/filter_expression_with_subpaths_deeply_nested.html#consensus">✓</a>
+</td>
+<td>
+<a href="results/filter_expression_with_subpaths_deeply_nested.html#consensus">✓</a>
+</td>
+<td>
+<a href="results/filter_expression_with_subpaths_deeply_nested.html#consensus">✓</a>
+</td>
+<td>
+<a href="results/filter_expression_with_subpaths_deeply_nested.html#consensus">✓</a>
+</td>
+<td>
+<a href="results/filter_expression_with_subpaths_deeply_nested.html#dotNET_JsonPathLib">e</a>
+</td>
+<td>
+<a href="results/filter_expression_with_subpaths_deeply_nested.html#consensus">✓</a>
+</td>
+<td class="proposal">
+<a href="results/filter_expression_with_subpaths_deeply_nested.html#JSON_Path_Reference_Implementation">✗</a>
+</td>
+<td class="proposal">
+<a href="results/filter_expression_with_subpaths_deeply_nested.html#consensus">✓</a>
 </td>
 </tr>
 <tr id="filter_expression_with_subtraction" class="no_consensus">

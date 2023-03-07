@@ -1285,6 +1285,41 @@ The following queries provide results that do not match those of other implement
   jsonPath: Unexpected token ?: _v.a[?(_v.price>10)
   ```
 
+- [ ] `$[?(@.a.b.c==3)]`
+  Input:
+  ```
+  [
+    {
+      "a": {
+        "b": {
+          "c": 3
+        }
+      }
+    },
+    {
+      "a": 3
+    },
+    {
+      "c": 3
+    },
+    {
+      "a": {
+        "b": {
+          "c": 2
+        }
+      }
+    }
+  ]
+  ```
+  Expected output:
+  ```
+  [{"a": {"b": {"c": 3}}}]
+  ```
+  Error:
+  ```
+  jsonPath: Cannot read property 'c' of undefined: _v.a.b.c==3
+  ```
+
 - [ ] `$.*[?(@.key)]`
   Input:
   ```

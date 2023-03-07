@@ -286,6 +286,9 @@ queries:
   - id: filter_expression_with_subfilter
     status: open
     result: NOT_SUPPORTED
+  - id: filter_expression_with_subpaths_deeply_nested
+    status: fail
+    result: NOT_SUPPORTED
   - id: filter_expression_with_subtraction
     status: open
     result: [{"key": -50}]

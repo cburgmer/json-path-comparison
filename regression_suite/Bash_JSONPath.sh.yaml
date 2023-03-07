@@ -443,7 +443,10 @@ queries:
     result: []
   - id: filter_expression_with_subpaths
     status: fail
-    result: []
+    result: [3]
+  - id: filter_expression_with_subpaths_deeply_nested
+    status: fail
+    result: [3]
   - id: filter_expression_with_subtraction
     status: open
     result: [-100]

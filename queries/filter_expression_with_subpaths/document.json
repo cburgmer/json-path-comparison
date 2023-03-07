@@ -1,12 +1,12 @@
 [
   {
-    "address": {
-      "city": "Berlin"
+    "a": {
+      "b": 3
     }
   },
   {
-    "address": {
-      "city": "London"
+    "a": {
+      "b": 2
     }
   }
 ]

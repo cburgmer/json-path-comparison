@@ -304,6 +304,41 @@ The following queries provide results that do not match those of other implement
   ]
   ```
 
+- [ ] `$[?(@.a.b.c==3)]`
+  Input:
+  ```
+  [
+    {
+      "a": {
+        "b": {
+          "c": 3
+        }
+      }
+    },
+    {
+      "a": 3
+    },
+    {
+      "c": 3
+    },
+    {
+      "a": {
+        "b": {
+          "c": 2
+        }
+      }
+    }
+  ]
+  ```
+  Expected output:
+  ```
+  [{"a": {"b": {"c": 3}}}]
+  ```
+  Actual output:
+  NOT_SUPPORTED
+  ```
+  ```
+
 - [ ] `$.*[?(@.key)]`
   Input:
   ```
