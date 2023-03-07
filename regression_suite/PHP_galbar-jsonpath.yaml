@@ -17,7 +17,7 @@ queries:
     result: ["forth", "second"]
   - id: array_slice_with_negative_step_and_start_greater_than_end
     status: open
-    result: NOT_FOUND
+    result: []
   - id: array_slice_with_negative_step_on_partially_overlapping_array
     status: open
     result: ["fifth"]
@@ -32,12 +32,6 @@ queries:
     result: ["fifth", "forth"]
   - id: array_slice_with_step_0
     status: error
-  - id: bracket_notation_after_recursive_descent
-    status: fail
-    result: NOT_SUPPORTED
-  - id: bracket_notation_with_negative_number_on_short_array
-    status: fail
-    result: ["one element"]
   - id: bracket_notation_with_number_on_object
     status: fail
     result: ["value"]
@@ -46,31 +40,28 @@ queries:
     result: NOT_SUPPORTED
   - id: bracket_notation_with_quoted_double_quote_literal
     status: fail
-    result: NOT_FOUND
+    result: []
   - id: bracket_notation_with_quoted_escaped_backslash
     status: open
-    result: NOT_FOUND
+    result: []
   - id: bracket_notation_with_quoted_escaped_single_quote
     status: open
-    result: NOT_FOUND
+    result: []
   - id: bracket_notation_with_quoted_special_characters_combined
     status: open
-    result: NOT_FOUND
+    result: []
   - id: bracket_notation_with_quoted_string_and_unescaped_single_quote
     status: fail
     result: ["value"]
   - id: bracket_notation_with_quoted_union_literal
     status: fail
-    result: NOT_FOUND
+    result: []
   - id: bracket_notation_with_spaces
     status: fail
     result: NOT_SUPPORTED
   - id: bracket_notation_with_two_literals_separated_by_dot
     status: fail
     result: ["43"]
-  - id: bracket_notation_with_wildcard_after_recursive_descent
-    status: fail
-    result: NOT_SUPPORTED
   - id: bracket_notation_without_quotes
     status: fail
     result: ["value"]
@@ -83,12 +74,9 @@ queries:
   - id: dot_bracket_notation_with_double_quotes
     status: open
     result: NOT_SUPPORTED
-  - id: dot_notation_after_bracket_notation_after_recursive_descent
-    status: fail
-    result: NOT_SUPPORTED
   - id: dot_notation_after_recursive_descent_with_extra_dot
     status: open
-    result: NOT_SUPPORTED
+    result: ["russian dolls", "russian dolls", "russian dolls", "russian dolls", "russian dolls", "something", "something", "something", "something", "top", "value", "value", {"key": "russian dolls"}, {"key": "russian dolls"}, {"key": "russian dolls"}, {"key": "russian dolls"}]
   - id: dot_notation_on_empty_object_value
     status: fail
     result: [[]]
@@ -136,7 +124,7 @@ queries:
     result: [{"id": 3, "name": "another"}, {"id": 4, "name": "more"}, {"id": 5, "name": "next to last"}]
   - id: filter_expression_after_recursive_descent
     status: open
-    result: NOT_SUPPORTED
+    result: [{"id": 2}, {"id": 2}, {"id": 2}, {"id": 2}]
   - id: filter_expression_on_object
     status: open
     result: [{"key": 1}]
@@ -145,13 +133,13 @@ queries:
     result: NOT_SUPPORTED
   - id: filter_expression_with_boolean_and_operator_and_value_false
     status: open
-    result: NOT_FOUND
+    result: []
   - id: filter_expression_with_boolean_and_operator_and_value_true
     status: open
-    result: [{"key": 1}, {"key": 3}, {"key": "nice"}, {"key": true}, {"key": []}, {"key": []}]
+    result: [{"key": 1}, {"key": 3}, {"key": "nice"}, {"key": []}, {"key": []}]
   - id: filter_expression_with_boolean_or_operator_and_value_false
     status: open
-    result: [{"key": 1}, {"key": 3}, {"key": "nice"}, {"key": true}, {"key": []}, {"key": []}]
+    result: [{"key": 1}, {"key": 3}, {"key": "nice"}, {"key": []}, {"key": []}]
   - id: filter_expression_with_boolean_or_operator_and_value_true
     status: open
     result: [{"key": 1}, {"key": 3}, {"key": "nice"}, {"key": true}, {"key": null}, {"key": false}, {"key": []}, {"key": []}, {"key": -1}, {"key": 0}, {"key": ""}]
@@ -184,13 +172,13 @@ queries:
     result: [["first", "second", "third", "forth", "fifth"]]
   - id: filter_expression_with_empty_expression
     status: fail
-    result: NOT_FOUND
+    result: []
   - id: filter_expression_with_equals
     status: open
     result: [{"key": 42}]
   - id: filter_expression_with_equals_array
     status: open
-    result: NOT_FOUND
+    result: []
   - id: filter_expression_with_equals_array_for_array_slice_with_range_1
     status: open
     result: [1, 2]
@@ -202,7 +190,7 @@ queries:
     result: [{"d": ["v1", "v2"]}, {"d": ["a", "b"]}, {"d": true}]
   - id: filter_expression_with_equals_array_with_single_quotes
     status: open
-    result: NOT_FOUND
+    result: []
   - id: filter_expression_with_equals_boolean_expression_value
     status: open
     result: [{"key": 42}, {"key": 43}, {"key": 44}]
@@ -235,7 +223,7 @@ queries:
     result: [{"key": 42}]
   - id: filter_expression_with_equals_string_with_unicode_character_escape
     status: open
-    result: NOT_FOUND
+    result: []
   - id: filter_expression_with_equals_true
     status: open
     result: [{"key": true}]
@@ -256,13 +244,13 @@ queries:
     result: [{"key": "alpha"}, {"key": "value"}]
   - id: filter_expression_with_in_array_of_values
     status: open
-    result: NOT_SUPPORTED
+    result: [{"d": 2}, {"d": 3}]
   - id: filter_expression_with_in_current_object
     status: open
-    result: NOT_FOUND
+    result: []
   - id: filter_expression_with_length_free_function
     status: open
-    result: NOT_FOUND
+    result: []
   - id: filter_expression_with_length_function
     status: open
     result: NOT_SUPPORTED
@@ -271,10 +259,10 @@ queries:
     result: [[1, 2, 3, 4]]
   - id: filter_expression_with_less_than
     status: open
-    result: [{"key": 0}, {"key": -1}, {"key": 41}, {"key": 41.9999}, {"key": "41"}, {"some": "value"}]
+    result: [{"key": 0}, {"key": -1}, {"key": 41}, {"key": 41.9999}, {"key": "41"}]
   - id: filter_expression_with_less_than_or_equal
     status: open
-    result: [{"key": 0}, {"key": 42}, {"key": -1}, {"key": 41}, {"key": 41.9999}, {"key": "42"}, {"key": "41"}, {"some": "value"}]
+    result: [{"key": 0}, {"key": 42}, {"key": -1}, {"key": 41}, {"key": 41.9999}, {"key": "42"}, {"key": "41"}]
   - id: filter_expression_with_multiplication
     status: open
     result: NOT_SUPPORTED
@@ -286,16 +274,16 @@ queries:
     result: [{"d": ["v1", "v2"]}, {"d": ["a", "b"]}, {"d": true}]
   - id: filter_expression_with_negation_and_less_than
     status: open
-    result: NOT_FOUND
+    result: []
   - id: filter_expression_with_negation_and_without_value
     status: open
-    result: NOT_FOUND
+    result: []
   - id: filter_expression_with_non_singular_existence_test
     status: open
     result: [{"a": [1]}, {"a": [1, 2]}, {"a": {"x": "y"}}, {"a": {"w": "z", "x": "y"}}]
   - id: filter_expression_with_not_equals
     status: open
-    result: [{"key": 0}, {"key": -1}, {"key": 1}, {"key": 41}, {"key": 43}, {"key": 42.0001}, {"key": 41.9999}, {"key": 100}, {"key": "some"}, {"key": "42"}, {"key": null}, {"key": 420}, {"key": ""}, {"key": []}, {"key": []}, {"key": [42]}, {"key": {"key": 42}}, {"key": {"some": 42}}, {"some": "value"}]
+    result: [{"key": 0}, {"key": -1}, {"key": 1}, {"key": 41}, {"key": 43}, {"key": 42.0001}, {"key": 41.9999}, {"key": 100}, {"key": "some"}, {"key": "42"}, {"key": null}, {"key": 420}, {"key": ""}, {"key": []}, {"key": []}, {"key": [42]}, {"key": {"key": 42}}, {"key": {"some": 42}}]
   - id: filter_expression_with_not_equals_array_or_equals_true
     status: open
     result: [{"d": ["v1", "v2"]}, {"d": ["a", "b"]}, {"d": true}]
@@ -304,7 +292,7 @@ queries:
     result: [{"name": "hello world"}, {"name": "yes hello world"}]
   - id: filter_expression_with_regular_expression_from_member
     status: open
-    result: NOT_FOUND
+    result: []
   - id: filter_expression_with_set_wise_comparison_to_scalar
     status: open
     result: [[5, 6]]
@@ -328,10 +316,10 @@ queries:
     result: [{"key": true}, {"key": null}, {"key": "value"}, {"key": ""}, {"key": 0}, {"key": 1}, {"key": -1}, {"key": 42}, {"key": []}, {"key": []}]
   - id: filter_expression_with_value_after_recursive_descent
     status: open
-    result: NOT_SUPPORTED
+    result: [{"id": 2}, {"id": 2}, {"id": 2}, {"id": 2}, {"id": {"id": 2}}]
   - id: filter_expression_with_value_false
     status: open
-    result: NOT_FOUND
+    result: []
   - id: filter_expression_with_value_from_recursive_descent
     status: open
     result: [{"key": [{"child": 1}, {"child": 2}]}, {"key": [{"child": 2}]}]
@@ -346,7 +334,7 @@ queries:
     result: [{"key": true}, {"key": null}, {"key": "value"}, {"key": ""}, {"key": 0}, {"key": 1}, {"key": -1}, {"key": 42}, {"key": []}, {"key": []}]
   - id: function_sum
     status: open
-    result: NOT_FOUND
+    result: []
   - id: recursive_descent
     status: open
     result: NOT_SUPPORTED
@@ -355,9 +343,6 @@ queries:
     result: NOT_SUPPORTED
   - id: union_with_filter
     status: open
-    result: NOT_SUPPORTED
-  - id: union_with_keys_after_recursive_descent
-    status: fail
     result: NOT_SUPPORTED
   - id: union_with_repeated_matches_after_dot_notation_with_wildcard
     status: open

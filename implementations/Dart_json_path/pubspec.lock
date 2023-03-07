@@ -5,29 +5,33 @@ packages:
     dependency: "direct main"
     description:
       name: json_path
-      url: "https://pub.dartlang.org"
+      sha256: "75244c46c757efbefc4eb3a20baac22c4e0a27c9c1fcca240e0dce0dbcbe1ae3"
+      url: "https://pub.dev"
     source: hosted
     version: "0.4.2"
   meta:
     dependency: transitive
     description:
       name: meta
-      url: "https://pub.dartlang.org"
+      sha256: "12307e7f0605ce3da64cf0db90e5fcab0869f3ca03f76be6bb2991ce0a55e82b"
+      url: "https://pub.dev"
     source: hosted
-    version: "1.8.0"
+    version: "1.9.0"
   petitparser:
     dependency: transitive
     description:
       name: petitparser
-      url: "https://pub.dartlang.org"
+      sha256: a9346a3fbba7546a28374bdbcd7f54ea48bb47772bf3a7ab4bfaadc40bc8b8c6
+      url: "https://pub.dev"
     source: hosted
-    version: "5.1.0"
+    version: "5.3.0"
   rfc_6901:
     dependency: transitive
     description:
       name: rfc_6901
-      url: "https://pub.dartlang.org"
+      sha256: "8d97680dada633146cf75ab9382f2ce2b7e4bd63ceecd867416cf43b5832b988"
+      url: "https://pub.dev"
     source: hosted
     version: "0.1.1"
 sdks:
-  dart: ">=2.18.0 <3.0.0"
+  dart: ">=2.19.0 <3.0.0"

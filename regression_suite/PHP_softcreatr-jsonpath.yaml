@@ -35,8 +35,6 @@ queries:
   - id: array_slice_with_step_0
     status: open
     result: ["first", "second", "third"]
-  - id: bracket_notation_after_recursive_descent
-    status: error
   - id: bracket_notation_with_empty_path
     status: fail
     result: [{"": 42, "\"\"": 222, "''": 123}]
@@ -62,16 +60,11 @@ queries:
     status: fail
     result: ["value"]
   - id: bracket_notation_with_quoted_wildcard_literal_on_object_without_key
-    status: error
+    status: fail
+    result: ["entry"]
   - id: bracket_notation_with_two_literals_separated_by_dot
     status: fail
     result: ["43"]
-  - id: bracket_notation_with_wildcard_after_recursive_descent
-    status: error
-  - id: bracket_notation_with_wildcard_on_empty_object
-    status: error
-  - id: bracket_notation_with_wildcard_on_object
-    status: error
   - id: bracket_notation_without_quotes
     status: fail
     result: ["value"]
@@ -87,19 +80,15 @@ queries:
   - id: dot_bracket_notation_without_quotes
     status: fail
     result: ["value"]
-  - id: dot_notation_after_bracket_notation_after_recursive_descent
-    status: error
-  - id: dot_notation_after_recursive_descent
-    status: error
-  - id: dot_notation_after_recursive_descent_after_dot_notation
-    status: error
   - id: dot_notation_after_recursive_descent_with_extra_dot
-    status: error
+    status: open
+    result: ["russian dolls", "russian dolls", "russian dolls", "russian dolls", "russian dolls", "something", "something", "something", "something", "top", "value", "value", {"key": "russian dolls"}, {"key": "russian dolls"}, {"key": "russian dolls"}, {"key": "russian dolls"}]
   - id: dot_notation_with_double_quotes
     status: open
     result: ["value"]
   - id: dot_notation_with_double_quotes_after_recursive_descent
-    status: error
+    status: open
+    result: ["russian dolls", "something", "top", "value", {"key": "russian dolls"}]
   - id: dot_notation_with_empty_path
     status: fail
     result: [{"": 9001, "''": "nice", "key": 42}]
@@ -119,19 +108,14 @@ queries:
     status: open
     result: ["value"]
   - id: dot_notation_with_single_quotes_after_recursive_descent
-    status: error
+    status: open
+    result: ["russian dolls", "something", "top", "value", {"key": "russian dolls"}]
   - id: dot_notation_with_single_quotes_and_dot
     status: open
     result: NOT_SUPPORTED
   - id: dot_notation_with_space_padded_key
     status: open
     result: NOT_SUPPORTED
-  - id: dot_notation_with_wildcard_after_recursive_descent
-    status: error
-  - id: dot_notation_with_wildcard_on_empty_object
-    status: error
-  - id: dot_notation_with_wildcard_on_object
-    status: error
   - id: dot_notation_without_dot
     status: fail
     result: [1]
@@ -145,9 +129,11 @@ queries:
     status: open
     result: [{"": 21, "a": 42}]
   - id: filter_expression_after_dot_notation_with_wildcard_after_recursive_descent
-    status: error
+    status: open
+    result: [{"id": 3, "name": "another"}, {"id": 4, "name": "more"}, {"id": 5, "name": "next to last"}]
   - id: filter_expression_after_recursive_descent
-    status: error
+    status: open
+    result: [{"id": 2}, {"id": 2}, {"id": 2}, {"id": 2}]
   - id: filter_expression_on_object
     status: open
     result: [{"key": 1}]
@@ -337,7 +323,8 @@ queries:
     status: open
     result: [{"key": true}, {"key": "value"}, {"key": 1}, {"key": -1}, {"key": 42}, {"key": {}}]
   - id: filter_expression_with_value_after_recursive_descent
-    status: error
+    status: open
+    result: [{"id": 2}, {"id": 2}, {"id": 2}, {"id": 2}, {"id": {"id": 2}}]
   - id: filter_expression_with_value_false
     status: error
   - id: filter_expression_with_value_from_recursive_descent
@@ -357,19 +344,20 @@ queries:
     status: fail
     result: []
   - id: recursive_descent
-    status: error
+    status: open
+    result: [[0, 1], [{"a": {"b": "c"}}, [0, 1]], {"a": {"b": "c"}}, {"b": "c"}]
   - id: recursive_descent_after_dot_notation
-    status: error
+    status: open
+    result: [[0, 1], {"complex": "string", "primitives": [0, 1]}]
   - id: script_expression
     status: fail
     result: ["fifth"]
   - id: union_with_filter
     status: open
     result: [{"key": 1}, {"key": 3}, {"key": 10}, {"key": 2}]
-  - id: union_with_keys_after_recursive_descent
-    status: error
   - id: union_with_repeated_matches_after_dot_notation_with_wildcard
-    status: error
+    status: open
+    result: ["string", null, true, false, "string", 5.4]
   - id: union_with_slice_and_number
     status: open
     result: [2, 3]

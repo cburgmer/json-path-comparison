@@ -279,7 +279,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  Exception: runtime error: comparing uncomparable type []interface {}
+  Exception: runtime error: comparing uncomparable type map[string]interface {}
   ```
 
 - [ ] `$[?((@.d!=["v1","v2"]) || (@.d == true))]`

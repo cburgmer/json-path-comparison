@@ -22,9 +22,4 @@ try {
     die(1);
 }
 
-if ($r === false) {
-    print 'jsonpath returned false, this might indicate an error' . "\r\n";
-    die(3);
-} else {
-    print json_encode($r);
-}
+print json_encode($r);

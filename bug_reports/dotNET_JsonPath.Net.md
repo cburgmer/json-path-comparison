@@ -3,31 +3,46 @@ Results do not match other implementations
 The following queries provide results that do not match those of other implementations of JSONPath
 (compare https://cburgmer.github.io/json-path-comparison/):
 
-- [ ] `$[0:2][*]`
+- [ ] `$[010:024:010]`
   Input:
   ```
   [
-    [
-      1,
-      2
-    ],
-    [
-      "a",
-      "b"
-    ],
-    [
-      0,
-      0
-    ]
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25
   ]
   ```
   Expected output:
   ```
-  [1, 2, "a", "b"]
+  [10, 20]
   ```
-  Error:
+  Actual output:
+  NOT_SUPPORTED
   ```
-  timeout: sending signal TERM to command ‘build/Dotnet_JsonPath.Net’
+  Pattern '010:024:01...' not recognized.
   ```
 
 - [ ] `$.key-dash`

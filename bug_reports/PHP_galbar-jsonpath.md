@@ -19,60 +19,6 @@ The following queries provide results that do not match those of other implement
   Error: 'Step cannot be 0'
   ```
 
-- [ ] `$..[0]`
-  Input:
-  ```
-  [
-    "first",
-    {
-      "key": [
-        "first nested",
-        {
-          "more": [
-            {
-              "nested": [
-                "deepest",
-                "second"
-              ]
-            },
-            [
-              "more",
-              "values"
-            ]
-          ]
-        }
-      ]
-    }
-  ]
-  ```
-  Expected output (in any order as no consensus on ordering exists):
-  ```
-  ["deepest", "first nested", "first", "more", {"nested": ["deepest", "second"]}]
-  ```
-  Actual output:
-  NOT_SUPPORTED
-  ```
-  Invalid JSONPath error: 'Error in JSONPath near '..[0]''
-  ```
-
-- [ ] `$[-2]`
-  Input:
-  ```
-  [
-    "one element"
-  ]
-  ```
-  Expected output:
-  ```
-  []
-  ```
-  Actual output:
-  ```
-  [
-    "one element"
-  ]
-  ```
-
 - [ ] `$[0]`
   Input:
   ```
@@ -121,9 +67,8 @@ The following queries provide results that do not match those of other implement
   ["value"]
   ```
   Actual output:
-  NOT_FOUND
   ```
-  jsonpath returned false, this might indicate an error
+  []
   ```
 
 - [ ] `$['single'quote']`
@@ -157,9 +102,8 @@ The following queries provide results that do not match those of other implement
   ["value"]
   ```
   Actual output:
-  NOT_FOUND
   ```
-  jsonpath returned false, this might indicate an error
+  []
   ```
 
 - [ ] `$[ 'a' ]`
@@ -213,30 +157,6 @@ The following queries provide results that do not match those of other implement
   ]
   ```
 
-- [ ] `$..[*]`
-  Input:
-  ```
-  {
-    "key": "value",
-    "another key": {
-      "complex": "string",
-      "primitives": [
-        0,
-        1
-      ]
-    }
-  }
-  ```
-  Expected output (in any order as no consensus on ordering exists):
-  ```
-  ["string", "value", 0, 1, [0, 1], {"complex": "string", "primitives": [0, 1]}]
-  ```
-  Actual output:
-  NOT_SUPPORTED
-  ```
-  Invalid JSONPath error: 'Error in JSONPath near '..[*]''
-  ```
-
 - [ ] `$[key]`
   Input:
   ```
@@ -253,58 +173,6 @@ The following queries provide results that do not match those of other implement
   [
     "value"
   ]
-  ```
-
-- [ ] `$..[1].key`
-  Input:
-  ```
-  {
-    "k": [
-      {
-        "key": "some value"
-      },
-      {
-        "key": 42
-      }
-    ],
-    "kk": [
-      [
-        {
-          "key": 100
-        },
-        {
-          "key": 200
-        },
-        {
-          "key": 300
-        }
-      ],
-      [
-        {
-          "key": 400
-        },
-        {
-          "key": 500
-        },
-        {
-          "key": 600
-        }
-      ]
-    ],
-    "key": [
-      0,
-      1
-    ]
-  }
-  ```
-  Expected output (in any order as no consensus on ordering exists):
-  ```
-  [200, 42, 500]
-  ```
-  Actual output:
-  NOT_SUPPORTED
-  ```
-  Invalid JSONPath error: 'Error in JSONPath near '..[1].key''
   ```
 
 - [ ] `$.key`
@@ -383,9 +251,8 @@ The following queries provide results that do not match those of other implement
   NOT_SUPPORTED
   ```
   Actual output:
-  NOT_FOUND
   ```
-  jsonpath returned false, this might indicate an error
+  []
   ```
 
 - [ ] `$[?(@.length == 4)]`
@@ -426,44 +293,6 @@ The following queries provide results that do not match those of other implement
       4
     ]
   ]
-  ```
-
-- [ ] `$..['c','d']`
-  Input:
-  ```
-  [
-    {
-      "c": "cc1",
-      "d": "dd1",
-      "e": "ee1"
-    },
-    {
-      "c": "cc2",
-      "child": {
-        "d": "dd2"
-      }
-    },
-    {
-      "c": "cc3"
-    },
-    {
-      "d": "dd4"
-    },
-    {
-      "child": {
-        "c": "cc5"
-      }
-    }
-  ]
-  ```
-  Expected output (in any order as no consensus on ordering exists):
-  ```
-  ["cc1", "cc2", "cc3", "cc5", "dd1", "dd2", "dd4"]
-  ```
-  Actual output:
-  NOT_SUPPORTED
-  ```
-  Invalid JSONPath error: 'Error in JSONPath near '..['c','d']''
   ```
 
 - [ ] `$[ 0 , 1 ]`
