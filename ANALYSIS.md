@@ -47,7 +47,7 @@ Result                                               |Interpretation       |Coun
 -----------------------------------------------------|-----------------|------|------------------
 [], "syntax error", "not supported", or runtime error|Unsupported      |17    |[Json.NET](https://www.newtonsoft.com/json), [PHP Goessner](https://code.google.com/archive/p/jsonpath/)
 [ { "key": 1}]                                       |Applied to members only       |15    |[Python jsonpath](http://www.ultimate.com/phil/python/#jsonpath)
-[ { "another": { "key":1}, "key": 42 }]              |Applied to members only |10     |[Java Jayway](https://github.com/json-path/JsonPath/)
+[ { "another": { "key":1}, "key": 42 }]              |Applied to the object, returns object if any object key matches |10     |[Java Jayway](https://github.com/json-path/JsonPath/)
 [ 42, { "key": 1 }]                                  |Applied to object and members|2| [JavaScript Goessner](https://code.google.com/archive/p/jsonpath/)
 
 
