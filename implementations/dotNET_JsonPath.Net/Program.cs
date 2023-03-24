@@ -11,6 +11,15 @@ namespace Dotnet_JsonPathNet
     {
         static void Main(string[] args)
         {
+            var options = new PathParsingOptions
+            {
+                AllowMathOperations = true,
+                AllowRelativePathStart = true,
+                AllowJsonConstructs = true,
+                TolerateSurroundingWhitespace = true,
+                AllowInOperator = true
+            };
+
             string jsonString = "";
             string s;
             while ((s = Console.ReadLine()) != null)
@@ -23,7 +32,7 @@ namespace Dotnet_JsonPathNet
             JsonPath path = null;
             try
             {
-                path = JsonPath.Parse(selector);
+                path = JsonPath.Parse(selector, options);
             }
             catch (Exception e)
             {
