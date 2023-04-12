@@ -5,10 +5,18 @@ packages:
     dependency: "direct main"
     description:
       name: json_path
-      sha256: "75244c46c757efbefc4eb3a20baac22c4e0a27c9c1fcca240e0dce0dbcbe1ae3"
+      sha256: "60d462805f467e658bced4008bfe0c57f83b277ce781c0fc6e5717546b045819"
       url: "https://pub.dev"
     source: hosted
-    version: "0.4.2"
+    version: "0.5.2"
+  maybe_just_nothing:
+    dependency: transitive
+    description:
+      name: maybe_just_nothing
+      sha256: "0c06326e26d08f6ed43247404376366dc4d756cef23a4f1db765f546224c35e0"
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.5.3"
   meta:
     dependency: transitive
     description:
