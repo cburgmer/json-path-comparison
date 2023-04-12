@@ -1472,6 +1472,37 @@ The following queries provide results that do not match those of other implement
   Evaluation of embedded Perl 6 code not allowed (construct with :allow-eval)
   ```
 
+- [ ] `$.key..`
+  Input:
+  ```
+  {
+    "some key": "value",
+    "key": {
+      "complex": "string",
+      "primitives": [
+        0,
+        1
+      ]
+    }
+  }
+  ```
+  Expected output (in any order as no consensus on ordering exists):
+  ```
+  NOT_SUPPORTED
+  ```
+  Actual output:
+  ```
+  [
+    "string",
+    0,
+    1,
+    [
+      0,
+      1
+    ]
+  ]
+  ```
+
 - [ ] `$..*`
   Input:
   ```

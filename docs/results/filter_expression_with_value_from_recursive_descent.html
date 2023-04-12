@@ -67,9 +67,25 @@ Cpp (jsoncons)
 Dart (json_path)
 </h4>
 
-<p>Not supported</p>
-
-<pre><code>FormatException: end of input expected at 1:2. Expression: $[?(@..child)]
+<pre><code>[
+  {
+    "key": [
+      {
+        "child": 1
+      },
+      {
+        "child": 2
+      }
+    ]
+  },
+  {
+    "key": [
+      {
+        "child": 2
+      }
+    ]
+  }
+]
 </code></pre>
 
 <h4 id="Elixir_ExJsonPath">

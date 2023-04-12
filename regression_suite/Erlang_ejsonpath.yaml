@@ -327,9 +327,6 @@ queries:
   - id: recursive_descent
     status: open
     result: ["c", 0, 1, [0, 1], [{"a": {"b": "c"}}, [0, 1]], {"a": {"b": "c"}}, {"b": "c"}]
-  - id: recursive_descent_after_dot_notation
-    status: open
-    result: NOT_SUPPORTED
   - id: script_expression
     status: error
   - id: union_with_filter

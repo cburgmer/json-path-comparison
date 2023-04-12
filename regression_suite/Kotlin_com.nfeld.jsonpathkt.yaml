@@ -385,7 +385,7 @@ queries:
     status: open
     result: [[0, 1], {"a": {"b": "c"}}]
   - id: recursive_descent_after_dot_notation
-    status: open
+    status: fail
     result: {"complex": "string", "primitives": [0, 1]}
   - id: union_with_filter
     status: open

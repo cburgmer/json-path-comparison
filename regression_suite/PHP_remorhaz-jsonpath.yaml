@@ -319,9 +319,6 @@ queries:
   - id: recursive_descent
     status: open
     result: NOT_SUPPORTED
-  - id: recursive_descent_after_dot_notation
-    status: open
-    result: NOT_SUPPORTED
   - id: recursive_descent_on_nested_arrays
     status: fail
     result: [[0], 0, [1], 1]

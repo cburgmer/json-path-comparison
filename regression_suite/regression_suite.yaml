@@ -973,6 +973,7 @@ queries:
     selector: "$.key.."
     document: {"some key": "value", "key": {"complex": "string", "primitives": [0, 1]}}
     ordered: false
+    consensus: NOT_SUPPORTED
   - id: recursive_descent_on_nested_arrays
     selector: "$..*"
     document: [[0], [1]]

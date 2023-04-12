@@ -83,9 +83,28 @@ Cpp (jsoncons)
 Dart (json_path)
 </h4>
 
-<p>Not supported</p>
-
-<pre><code>FormatException: end of input expected at 1:2. Expression: $[?(@.a[?(@.price&gt;10)])]
+<pre><code>[
+  {
+    "a": [
+      {
+        "price": 11
+      }
+    ]
+  },
+  {
+    "a": [
+      {
+        "price": 8
+      },
+      {
+        "price": 12
+      },
+      {
+        "price": 3
+      }
+    ]
+  }
+]
 </code></pre>
 
 <h4 id="Elixir_ExJsonPath">

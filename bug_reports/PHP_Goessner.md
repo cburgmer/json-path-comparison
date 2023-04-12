@@ -3958,6 +3958,41 @@ The following queries provide results that do not match those of other implement
   ```
   jsonpath returned false, this might indicate an error```
 
+- [ ] `$.key..`
+  Input:
+  ```
+  {
+    "some key": "value",
+    "key": {
+      "complex": "string",
+      "primitives": [
+        0,
+        1
+      ]
+    }
+  }
+  ```
+  Expected output (in any order as no consensus on ordering exists):
+  ```
+  NOT_SUPPORTED
+  ```
+  Actual output:
+  ```
+  [
+    [
+      0,
+      1
+    ],
+    {
+      "complex": "string",
+      "primitives": [
+        0,
+        1
+      ]
+    }
+  ]
+  ```
+
 - [ ] `$`
   Input:
   ```

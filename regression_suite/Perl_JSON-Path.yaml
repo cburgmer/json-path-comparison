@@ -379,7 +379,7 @@ queries:
     status: open
     result: []
   - id: recursive_descent_after_dot_notation
-    status: open
+    status: fail
     result: []
   - id: recursive_descent_on_nested_arrays
     status: fail
