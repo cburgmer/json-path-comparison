@@ -1,0 +1,2 @@
+python-jsonpath==0.8.0
+pur==7.0.0
