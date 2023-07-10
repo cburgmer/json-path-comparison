@@ -11,10 +11,12 @@ def main():
         print(repr(e))
         sys.exit(2)
 
-    j = json.loads(sys.stdin.read())
     try:
-        results = path.findall(j)
-    except (IndexError, KeyError) as e:
+        results = path.findall(sys.stdin.read())
+    except json.JSONDecodeError as e:
+        print("Invalid JSON document -", e)
+        sys.exit(1)
+    except Exception as e:
         print(repr(e))
         sys.exit(1)
 
