@@ -257,6 +257,58 @@ The following queries provide results that do not match those of other implement
   unexpected end of file
   ```
 
+- [ ] `$[?(@.key+50==100)]`
+  Input:
+  ```
+  [
+    {
+      "key": 60
+    },
+    {
+      "key": 50
+    },
+    {
+      "key": 10
+    },
+    {
+      "key": -50
+    },
+    {
+      "key+50": 100
+    }
+  ]
+  ```
+  Error:
+  ```
+  wrong request: wrong request: ?(@.key+50==100)
+  ```
+
+- [ ] `$[?(@.key/10==5)]`
+  Input:
+  ```
+  [
+    {
+      "key": 60
+    },
+    {
+      "key": 50
+    },
+    {
+      "key": 10
+    },
+    {
+      "key": -50
+    },
+    {
+      "key/10": 5
+    }
+  ]
+  ```
+  Error:
+  ```
+  wrong request: wrong request: ?(@.key/10==5)
+  ```
+
 - [ ] `$[?(@.key-dash == 'value')]`
   Input:
   ```
@@ -1111,6 +1163,32 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   wrong symbol '=' at 7
+  ```
+
+- [ ] `$[?(@.key-50==-100)]`
+  Input:
+  ```
+  [
+    {
+      "key": 60
+    },
+    {
+      "key": 50
+    },
+    {
+      "key": 10
+    },
+    {
+      "key": -50
+    },
+    {
+      "key-50": -100
+    }
+  ]
+  ```
+  Error:
+  ```
+  wrong request: wrong request: ?(@.key-50==-100)
   ```
 
 - [ ] `$[?(@.key===42)]`

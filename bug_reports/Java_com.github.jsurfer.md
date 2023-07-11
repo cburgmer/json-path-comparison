@@ -574,6 +574,35 @@ The following queries provide results that do not match those of other implement
   org.antlr.v4.runtime.misc.ParseCancellationException
   ```
 
+- [ ] `$.items[?(@.key==$.value)]`
+  Input:
+  ```
+  {
+    "value": 42,
+    "items": [
+      {
+        "key": 10
+      },
+      {
+        "key": 42
+      },
+      {
+        "key": 50
+      }
+    ]
+  }
+  ```
+  Expected output:
+  ```
+  [{"key": 42}]
+  ```
+  Actual output:
+  NOT_SUPPORTED
+  ```
+  line 1:17 no viable alternative at input '@.key==$'
+  org.antlr.v4.runtime.misc.ParseCancellationException
+  ```
+
 - [ ] `$[?(@.key>42)]`
   Input:
   ```

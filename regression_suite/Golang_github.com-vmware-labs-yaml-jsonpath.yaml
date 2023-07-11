@@ -194,9 +194,6 @@ queries:
     result: [{"key": true}]
   - id: filter_expression_with_equals_with_path_and_path
     status: error
-  - id: filter_expression_with_equals_with_root_reference
-    status: open
-    result: [{"key": 42}]
   - id: filter_expression_with_greater_than
     status: open
     result: [{"key": 43}, {"key": 42.0001}, {"key": 100}]

@@ -37,6 +37,34 @@ The following queries provide results that do not match those of other implement
   ]
   ```
 
+- [ ] `$.items[?(@.key==$.value)]`
+  Input:
+  ```
+  {
+    "value": 42,
+    "items": [
+      {
+        "key": 10
+      },
+      {
+        "key": 42
+      },
+      {
+        "key": 50
+      }
+    ]
+  }
+  ```
+  Expected output:
+  ```
+  [{"key": 42}]
+  ```
+  Actual output:
+  NOT_SUPPORTED
+  ```
+  Parser error: Invalid token on line 1, syntax error before: <<"$">>
+  ```
+
 - [ ] `$.*[?(@.key)]`
   Input:
   ```

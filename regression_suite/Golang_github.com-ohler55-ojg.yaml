@@ -32,13 +32,13 @@ queries:
     result: []
   - id: bracket_notation_with_quoted_escaped_backslash
     status: open
-    result: []
+    result: ["value"]
   - id: bracket_notation_with_quoted_escaped_single_quote
     status: open
-    result: []
+    result: ["value"]
   - id: bracket_notation_with_quoted_special_characters_combined
     status: open
-    result: []
+    result: [42]
   - id: current_with_dot_notation
     status: open
     result: [1]
@@ -164,7 +164,7 @@ queries:
     result: [{"key": false}]
   - id: filter_expression_with_equals_null
     status: open
-    result: [{"some": "some value"}, {"key": null}]
+    result: [{"key": null}]
   - id: filter_expression_with_equals_number_for_array_slice_with_range_1
     status: open
     result: [[1, 2, 3], [1]]
@@ -188,15 +188,12 @@ queries:
     result: [{"key": 42}]
   - id: filter_expression_with_equals_string_with_unicode_character_escape
     status: open
-    result: []
+    result: [{"key": "Mot\u00f6rhead"}]
   - id: filter_expression_with_equals_true
     status: open
     result: [{"key": true}]
   - id: filter_expression_with_equals_with_path_and_path
     status: error
-  - id: filter_expression_with_equals_with_root_reference
-    status: open
-    result: []
   - id: filter_expression_with_greater_than
     status: open
     result: [{"key": 43}, {"key": 42.0001}, {"key": 100}]
@@ -211,7 +208,7 @@ queries:
     result: [{"d": [1, 2, 3]}, {"d": [2]}, {"d": [4, 2]}]
   - id: filter_expression_with_length_free_function
     status: open
-    result: NOT_SUPPORTED
+    result: [[1, 2, 3, 4]]
   - id: filter_expression_with_less_than
     status: open
     result: [{"key": 0}, {"key": -1}, {"key": 41}, {"key": 41.9999}]
@@ -252,7 +249,7 @@ queries:
     result: [[5, 6]]
   - id: filter_expression_with_set_wise_comparison_to_set
     status: open
-    result: []
+    result: [[3, 4], [5, 6]]
   - id: filter_expression_with_subfilter
     status: open
     result: NOT_SUPPORTED
@@ -283,6 +280,9 @@ queries:
   - id: filter_expression_with_value_true
     status: open
     result: NOT_SUPPORTED
+  - id: filter_expression_without_parens
+    status: fail
+    result: [{"key": 42}]
   - id: filter_expression_without_value
     status: open
     result: NOT_SUPPORTED

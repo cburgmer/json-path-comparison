@@ -241,7 +241,7 @@ queries:
     status: open
     result: [{"key1": true, "key2": true}]
   - id: filter_expression_with_equals_with_root_reference
-    status: open
+    status: fail
     result: []
   - id: filter_expression_with_greater_than
     status: open

@@ -71,7 +71,7 @@ Dart (json_path)
 
 <p>Not supported</p>
 
-<pre><code>end of input expected at 1:2
+<pre><code>Instance of 'ParserException': end of input expected (at 1:2)
 </code></pre>
 
 <h4 id="Elixir_ExJsonPath">
@@ -142,17 +142,6 @@ Golang (github.com-oliveagle-jsonpath)
 </h4>
 
 <pre><code>[]
-</code></pre>
-
-<h4 id="Golang_github.com-spyzhov-ajson">
-Golang (github.com-spyzhov-ajson)
-</h4>
-
-<pre><code>[
-  {
-    "key": 50
-  }
-]
 </code></pre>
 
 <h4 id="Golang_github.com-vmware-labs-yaml-jsonpath">
@@ -606,6 +595,13 @@ Erlang (ejsonpath)
 
 Crash dump is being written to: /dev/null...done
 {"init terminating in do_boot",{not_implemented,bin_op,'+'}}
+</code></pre>
+
+<h4 id="Golang_github.com-spyzhov-ajson">
+Golang (github.com-spyzhov-ajson)
+</h4>
+
+<pre><code>wrong request: wrong request: ?(@.key+50==100)
 </code></pre>
 
 <h4 id="PHP_Goessner">

@@ -655,6 +655,34 @@ The following queries provide results that do not match those of other implement
   Unexpected char, char=?, index=2
   ```
 
+- [ ] `$.items[?(@.key==$.value)]`
+  Input:
+  ```
+  {
+    "value": 42,
+    "items": [
+      {
+        "key": 10
+      },
+      {
+        "key": 42
+      },
+      {
+        "key": 50
+      }
+    ]
+  }
+  ```
+  Expected output:
+  ```
+  [{"key": 42}]
+  ```
+  Actual output:
+  NOT_SUPPORTED
+  ```
+  Unexpected char, char=?, index=8
+  ```
+
 - [ ] `$[?(@.key>"VALUE")]`
   Input:
   ```

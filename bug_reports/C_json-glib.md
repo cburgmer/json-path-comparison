@@ -1815,6 +1815,34 @@ The following queries provide results that do not match those of other implement
   Unable to compile selector `$[?(@.key=='value')]': Invalid array index definition “?(@.key=='value')]”
   ```
 
+- [ ] `$.items[?(@.key==$.value)]`
+  Input:
+  ```
+  {
+    "value": 42,
+    "items": [
+      {
+        "key": 10
+      },
+      {
+        "key": 42
+      },
+      {
+        "key": 50
+      }
+    ]
+  }
+  ```
+  Expected output:
+  ```
+  [{"key": 42}]
+  ```
+  Actual output:
+  NOT_SUPPORTED
+  ```
+  Unable to compile selector `$.items[?(@.key==$.value)]': Invalid array index definition “?(@.key==$.value)]”
+  ```
+
 - [ ] `$[?(@.key>"VALUE")]`
   Input:
   ```

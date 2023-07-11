@@ -1709,6 +1709,33 @@ The following queries provide results that do not match those of other implement
   []
   ```
 
+- [ ] `$.items[?(@.key==$.value)]`
+  Input:
+  ```
+  {
+    "value": 42,
+    "items": [
+      {
+        "key": 10
+      },
+      {
+        "key": 42
+      },
+      {
+        "key": 50
+      }
+    ]
+  }
+  ```
+  Expected output:
+  ```
+  [{"key": 42}]
+  ```
+  Actual output:
+  ```
+  []
+  ```
+
 - [ ] `$[?(@.key>"VALUE")]`
   Input:
   ```

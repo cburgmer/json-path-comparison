@@ -42,7 +42,7 @@ The following queries provide results that do not match those of other implement
   Actual output:
   NOT_SUPPORTED
   ```
-  end of input expected at 1:2
+  Instance of 'ParserException': end of input expected (at 1:2)
   ```
 
 - [ ] `$.key-dash`
@@ -66,7 +66,7 @@ The following queries provide results that do not match those of other implement
   Actual output:
   NOT_SUPPORTED
   ```
-  end of input expected at 1:6
+  Instance of 'ParserException': end of input expected (at 1:6)
   ```
 
 - [ ] `$.-1`
@@ -87,7 +87,7 @@ The following queries provide results that do not match those of other implement
   Actual output:
   NOT_SUPPORTED
   ```
-  end of input expected at 1:2
+  Instance of 'ParserException': end of input expected (at 1:2)
   ```
 
 - [ ] `$.2`
@@ -106,7 +106,7 @@ The following queries provide results that do not match those of other implement
   Actual output:
   NOT_SUPPORTED
   ```
-  end of input expected at 1:2
+  Instance of 'ParserException': end of input expected (at 1:2)
   ```
 
 - [ ] `$[?@.key==42]`

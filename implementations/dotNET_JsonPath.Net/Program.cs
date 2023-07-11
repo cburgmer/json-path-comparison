@@ -16,7 +16,7 @@ namespace Dotnet_JsonPathNet
                 AllowMathOperations = true,
                 AllowRelativePathStart = true,
                 AllowJsonConstructs = true,
-                TolerateSurroundingWhitespace = true,
+                TolerateExtraWhitespace = true,
                 AllowInOperator = true
             };
 

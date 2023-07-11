@@ -321,7 +321,7 @@ queries:
     status: open
     result: NOT_SUPPORTED
   - id: filter_expression_with_equals_with_root_reference
-    status: open
+    status: fail
     result: NOT_SUPPORTED
   - id: filter_expression_with_greater_than
     status: open

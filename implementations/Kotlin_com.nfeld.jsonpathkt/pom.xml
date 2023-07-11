@@ -20,7 +20,7 @@
     <dependency>
       <groupId>org.jetbrains.kotlin</groupId>
       <artifactId>kotlin-stdlib</artifactId>
-      <version>1.8.20-Beta</version>
+      <version>1.8.22</version>
     </dependency>
     <dependency>
       <groupId>com.nfeld.jsonpathkt</groupId>
@@ -30,7 +30,7 @@
     <dependency>
       <groupId>org.json</groupId>
       <artifactId>json</artifactId>
-      <version>20230227</version>
+      <version>20230618</version>
     </dependency>
     <dependency>
       <groupId>com.google.code.gson</groupId>
