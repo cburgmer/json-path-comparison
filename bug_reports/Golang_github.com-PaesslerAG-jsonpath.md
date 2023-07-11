@@ -3,6 +3,29 @@ Results do not match other implementations
 The following queries provide results that do not match those of other implementations of JSONPath
 (compare https://cburgmer.github.io/json-path-comparison/):
 
+- [ ] `$[0:3:-2]`
+  Input:
+  ```
+  [
+    "first",
+    "second",
+    "third",
+    "forth",
+    "fifth"
+  ]
+  ```
+  Expected output:
+  ```
+  []
+  ```
+  Actual output:
+  ```
+  [
+    "third",
+    "first"
+  ]
+  ```
+
 - [ ] `$[3:-2]`
   Input:
   ```
@@ -600,6 +623,73 @@ The following queries provide results that do not match those of other implement
   NOT_SUPPORTED
   ```
   parsing error: $[?(@.key=='value')]	:1:12 - 1:19 could not parse string: invalid syntax
+  ```
+
+- [ ] `$[?(@.key>"VALUE")]`
+  Input:
+  ```
+  [
+    {
+      "key": 0
+    },
+    {
+      "key": 42
+    },
+    {
+      "key": -1
+    },
+    {
+      "key": 41
+    },
+    {
+      "key": 43
+    },
+    {
+      "key": 42.0001
+    },
+    {
+      "key": 41.9999
+    },
+    {
+      "key": 100
+    },
+    {
+      "key": "43"
+    },
+    {
+      "key": "42"
+    },
+    {
+      "key": "41"
+    },
+    {
+      "key": "alpha"
+    },
+    {
+      "key": "ALPHA"
+    },
+    {
+      "key": "value"
+    },
+    {
+      "key": "VALUE"
+    },
+    {
+      "some": "value"
+    },
+    {
+      "some": "VALUE"
+    }
+  ]
+  ```
+  Expected output:
+  ```
+  [{"key": "alpha"}, {"key": "value"}]
+  ```
+  Actual output:
+  NOT_SUPPORTED
+  ```
+  parsing error: $[?(@.key>"VALUE")]	:1:10 - 1:11 unexpected ">" while scanning parentheses expected ")"
   ```
 
 - [ ] `$[?@.key==42]`

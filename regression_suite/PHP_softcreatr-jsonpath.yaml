@@ -249,9 +249,6 @@ queries:
   - id: filter_expression_with_greater_than_or_equal
     status: open
     result: [{"key": 42}, {"key": 43}, {"key": 42.0001}, {"key": 100}, {"key": "43"}, {"key": "42"}, {"key": "value"}]
-  - id: filter_expression_with_greater_than_string
-    status: open
-    result: [{"key": "alpha"}, {"key": "value"}]
   - id: filter_expression_with_in_array_of_values
     status: open
     result: [{"d": 2}, {"d": 3}]
@@ -260,7 +257,7 @@ queries:
   - id: filter_expression_with_length_free_function
     status: error
   - id: filter_expression_with_length_function
-    status: open
+    status: fail
     result: []
   - id: filter_expression_with_less_than
     status: open
@@ -340,9 +337,6 @@ queries:
   - id: filter_expression_without_value
     status: open
     result: [{"key": true}, {"key": "value"}, {"key": 1}, {"key": -1}, {"key": 42}, {"key": {}}]
-  - id: function_sum
-    status: open
-    result: NOT_SUPPORTED
   - id: parens_notation
     status: fail
     result: []

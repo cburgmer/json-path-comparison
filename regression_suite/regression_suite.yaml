@@ -91,6 +91,8 @@ queries:
   - id: array_slice_with_negative_step_and_start_greater_than_end
     selector: "$[0:3:-2]"
     document: ["first", "second", "third", "forth", "fifth"]
+    consensus: []
+    not-found-consensus: NOT_FOUND
   - id: array_slice_with_negative_step_on_partially_overlapping_array
     selector: "$[7:3:-1]"
     document: ["first", "second", "third", "forth", "fifth"]
@@ -837,6 +839,7 @@ queries:
   - id: filter_expression_with_greater_than_string
     selector: "$[?(@.key>\"VALUE\")]"
     document: [{"key": 0}, {"key": 42}, {"key": -1}, {"key": 41}, {"key": 43}, {"key": 42.0001}, {"key": 41.9999}, {"key": 100}, {"key": "43"}, {"key": "42"}, {"key": "41"}, {"key": "alpha"}, {"key": "ALPHA"}, {"key": "value"}, {"key": "VALUE"}, {"some": "value"}, {"some": "VALUE"}]
+    consensus: [{"key": "alpha"}, {"key": "value"}]
   - id: filter_expression_with_in_array_of_values
     selector: "$[?(@.d in [2, 3])]"
     document: [{"d": 1}, {"d": 2}, {"d": 1}, {"d": 3}, {"d": 4}]
@@ -849,6 +852,7 @@ queries:
   - id: filter_expression_with_length_function
     selector: "$[?(@.length() == 4)]"
     document: [[1, 2, 3, 4, 5], [1, 2, 3, 4], [1, 2, 3]]
+    consensus: NOT_SUPPORTED
   - id: filter_expression_with_length_property
     selector: "$[?(@.length == 4)]"
     document: [[1, 2, 3, 4, 5], [1, 2, 3, 4], [1, 2, 3]]
@@ -924,6 +928,7 @@ queries:
   - id: filter_expression_with_tautological_comparison
     selector: "$[?(1==1)]"
     document: [1, 3, "nice", true, null, false, {}, [], -1, 0, ""]
+    consensus: [1, 3, "nice", true, null, false, {}, [], -1, 0, ""]
   - id: filter_expression_with_triple_equal
     selector: "$[?(@.key===42)]"
     document: [{"key": 0}, {"key": 42}, {"key": -1}, {"key": 1}, {"key": 41}, {"key": 43}, {"key": 42.0001}, {"key": 41.9999}, {"key": 100}, {"key": "some"}, {"key": "42"}, {"key": null}, {"key": 420}, {"key": ""}, {"key": {}}, {"key": []}, {"key": [42]}, {"key": {"key": 42}}, {"key": {"some": 42}}, {"some": "value"}]
@@ -961,6 +966,7 @@ queries:
   - id: function_sum
     selector: "$.data.sum()"
     document: {"data": [1, 2, 3, 4]}
+    consensus: NOT_SUPPORTED
   - id: parens_notation
     selector: "$(key,more)"
     document: {"key": 1, "some": 2, "more": 3}

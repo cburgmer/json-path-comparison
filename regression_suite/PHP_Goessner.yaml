@@ -344,7 +344,7 @@ queries:
   - id: filter_expression_without_value
     status: error
   - id: function_sum
-    status: open
+    status: fail
     result: NOT_FOUND
   - id: parens_notation
     status: fail

@@ -51,7 +51,7 @@ queries:
     status: open
     result: "forth"
   - id: array_slice_with_negative_step_and_start_greater_than_end
-    status: open
+    status: fail
     result: "first"
   - id: array_slice_with_negative_step_on_partially_overlapping_array
     status: error
@@ -423,7 +423,7 @@ queries:
     status: open
     result: []
   - id: filter_expression_with_length_function
-    status: open
+    status: fail
     result: []
   - id: filter_expression_with_length_property
     status: fail
@@ -491,7 +491,7 @@ queries:
     status: open
     result: [{"key": 60}, {"key": 50}, {"key": 10}, {"key": -50}]
   - id: filter_expression_with_tautological_comparison
-    status: open
+    status: fail
     result: []
   - id: filter_expression_with_triple_equal
     status: open
@@ -520,7 +520,7 @@ queries:
     status: open
     result: [{"key": true}, {"key": false}, {"key": "value"}, {"key": ""}, {"key": 0}, {"key": 1}, {"key": -1}, {"key": 42}, {"key": {}}, {"key": []}]
   - id: function_sum
-    status: open
+    status: fail
     result: null
   - id: parens_notation
     status: fail

@@ -53,6 +53,10 @@ The following queries provide results that do not match those of other implement
     "fifth"
   ]
   ```
+  Expected output:
+  ```
+  []
+  ```
   Error:
   ```
   timeout: sending signal TERM to command ‘implementations/PHP_Goessner/run.sh’
@@ -2496,6 +2500,10 @@ The following queries provide results that do not match those of other implement
     }
   ]
   ```
+  Expected output:
+  ```
+  [{"key": "alpha"}, {"key": "value"}]
+  ```
   Error:
   ```
   ArgumentCountError
@@ -2619,6 +2627,10 @@ The following queries provide results that do not match those of other implement
       3
     ]
   ]
+  ```
+  Expected output:
+  ```
+  NOT_SUPPORTED
   ```
   Error:
   ```
@@ -3523,6 +3535,10 @@ The following queries provide results that do not match those of other implement
     ""
   ]
   ```
+  Expected output:
+  ```
+  [1, 3, "nice", true, null, false, {}, [], -1, 0, ""]
+  ```
   Error:
   ```
   ArgumentCountError
@@ -3939,6 +3955,27 @@ The following queries provide results that do not match those of other implement
   ```
   ArgumentCountError
   ```
+
+- [ ] `$.data.sum()`
+  Input:
+  ```
+  {
+    "data": [
+      1,
+      2,
+      3,
+      4
+    ]
+  }
+  ```
+  Expected output:
+  ```
+  NOT_SUPPORTED
+  ```
+  Actual output:
+  NOT_FOUND
+  ```
+  jsonpath returned false, this might indicate an error```
 
 - [ ] `$(key,more)`
   Input:

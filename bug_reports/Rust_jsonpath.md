@@ -180,6 +180,27 @@ The following queries provide results that do not match those of other implement
   parsing error
   ```
 
+- [ ] `$[0:3:-2]`
+  Input:
+  ```
+  [
+    "first",
+    "second",
+    "third",
+    "forth",
+    "fifth"
+  ]
+  ```
+  Expected output:
+  ```
+  []
+  ```
+  Actual output:
+  NOT_SUPPORTED
+  ```
+  parsing error
+  ```
+
 - [ ] `$[:]`
   Input:
   ```
@@ -1866,6 +1887,73 @@ The following queries provide results that do not match those of other implement
   parsing error
   ```
 
+- [ ] `$[?(@.key>"VALUE")]`
+  Input:
+  ```
+  [
+    {
+      "key": 0
+    },
+    {
+      "key": 42
+    },
+    {
+      "key": -1
+    },
+    {
+      "key": 41
+    },
+    {
+      "key": 43
+    },
+    {
+      "key": 42.0001
+    },
+    {
+      "key": 41.9999
+    },
+    {
+      "key": 100
+    },
+    {
+      "key": "43"
+    },
+    {
+      "key": "42"
+    },
+    {
+      "key": "41"
+    },
+    {
+      "key": "alpha"
+    },
+    {
+      "key": "ALPHA"
+    },
+    {
+      "key": "value"
+    },
+    {
+      "key": "VALUE"
+    },
+    {
+      "some": "value"
+    },
+    {
+      "some": "VALUE"
+    }
+  ]
+  ```
+  Expected output:
+  ```
+  [{"key": "alpha"}, {"key": "value"}]
+  ```
+  Actual output:
+  NOT_SUPPORTED
+  ```
+  parsing error
+  ```
+
 - [ ] `$[?(@.a.b==3)]`
   Input:
   ```
@@ -1924,6 +2012,33 @@ The following queries provide results that do not match those of other implement
   Actual output:
   ```
   []
+  ```
+
+- [ ] `$[?(1==1)]`
+  Input:
+  ```
+  [
+    1,
+    3,
+    "nice",
+    true,
+    null,
+    false,
+    {},
+    [],
+    -1,
+    0,
+    ""
+  ]
+  ```
+  Expected output:
+  ```
+  [1, 3, "nice", true, null, false, {}, [], -1, 0, ""]
+  ```
+  Actual output:
+  NOT_SUPPORTED
+  ```
+  parsing error
   ```
 
 - [ ] `$.*[?(@.key)]`

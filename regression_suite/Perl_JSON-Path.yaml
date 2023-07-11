@@ -29,7 +29,7 @@ queries:
     status: open
     result: []
   - id: array_slice_with_negative_step_and_start_greater_than_end
-    status: open
+    status: fail
     result: ["third", "second", "first"]
   - id: array_slice_with_negative_step_on_partially_overlapping_array
     status: open
@@ -370,7 +370,7 @@ queries:
   - id: filter_expression_without_value
     status: error
   - id: function_sum
-    status: open
+    status: fail
     result: []
   - id: parens_notation
     status: fail

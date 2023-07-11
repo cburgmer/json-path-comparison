@@ -858,6 +858,10 @@ The following queries provide results that do not match those of other implement
     ]
   ]
   ```
+  Expected output:
+  ```
+  NOT_SUPPORTED
+  ```
   Error:
   ```
   jsonPath: _v.length is not a function: _v.length() == 4
@@ -1320,6 +1324,40 @@ The following queries provide results that do not match those of other implement
   jsonPath: Cannot read property 'c' of undefined: _v.a.b.c==3
   ```
 
+- [ ] `$[?(1==1)]`
+  Input:
+  ```
+  [
+    1,
+    3,
+    "nice",
+    true,
+    null,
+    false,
+    {},
+    [],
+    -1,
+    0,
+    ""
+  ]
+  ```
+  Expected output:
+  ```
+  [1, 3, "nice", true, null, false, {}, [], -1, 0, ""]
+  ```
+  Actual output:
+  ```
+  [
+    1,
+    3,
+    "nice",
+    true,
+    {},
+    [],
+    -1
+  ]
+  ```
+
 - [ ] `$.*[?(@.key)]`
   Input:
   ```
@@ -1455,6 +1493,28 @@ The following queries provide results that do not match those of other implement
       "some": "value"
     }
   ]
+  ```
+  Expected output:
+  ```
+  NOT_SUPPORTED
+  ```
+  Actual output:
+  NOT_FOUND
+  ```
+  jsonpath returned false, this might indicate an error
+  ```
+
+- [ ] `$.data.sum()`
+  Input:
+  ```
+  {
+    "data": [
+      1,
+      2,
+      3,
+      4
+    ]
+  }
   ```
   Expected output:
   ```

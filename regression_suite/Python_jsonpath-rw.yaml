@@ -16,7 +16,7 @@ queries:
     status: open
     result: NOT_SUPPORTED
   - id: array_slice_with_negative_step_and_start_greater_than_end
-    status: open
+    status: fail
     result: NOT_SUPPORTED
   - id: array_slice_with_negative_step_on_partially_overlapping_array
     status: open
@@ -335,7 +335,7 @@ queries:
     status: open
     result: NOT_SUPPORTED
   - id: filter_expression_with_greater_than_string
-    status: open
+    status: fail
     result: NOT_SUPPORTED
   - id: filter_expression_with_in_array_of_values
     status: open
@@ -344,9 +344,6 @@ queries:
     status: open
     result: NOT_SUPPORTED
   - id: filter_expression_with_length_free_function
-    status: open
-    result: NOT_SUPPORTED
-  - id: filter_expression_with_length_function
     status: open
     result: NOT_SUPPORTED
   - id: filter_expression_with_length_property
@@ -407,7 +404,7 @@ queries:
     status: open
     result: NOT_SUPPORTED
   - id: filter_expression_with_tautological_comparison
-    status: open
+    status: fail
     result: NOT_SUPPORTED
   - id: filter_expression_with_triple_equal
     status: open
@@ -434,9 +431,6 @@ queries:
     status: open
     result: NOT_SUPPORTED
   - id: filter_expression_without_value
-    status: open
-    result: NOT_SUPPORTED
-  - id: function_sum
     status: open
     result: NOT_SUPPORTED
   - id: recursive_descent

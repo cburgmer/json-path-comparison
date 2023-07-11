@@ -103,6 +103,10 @@ The following queries provide results that do not match those of other implement
     "fifth"
   ]
   ```
+  Expected output:
+  ```
+  []
+  ```
   Error:
   ```
   FunctionClauseError
@@ -853,6 +857,33 @@ The following queries provide results that do not match those of other implement
   Actual output:
   ```
   []
+  ```
+
+- [ ] `$[?(1==1)]`
+  Input:
+  ```
+  [
+    1,
+    3,
+    "nice",
+    true,
+    null,
+    false,
+    {},
+    [],
+    -1,
+    0,
+    ""
+  ]
+  ```
+  Expected output:
+  ```
+  [1, 3, "nice", true, null, false, {}, [], -1, 0, ""]
+  ```
+  Actual output:
+  NOT_SUPPORTED
+  ```
+  syntax error before: 1
   ```
 
 - [ ] `$.*[?(@.key)]`

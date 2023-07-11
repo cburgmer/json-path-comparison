@@ -881,6 +881,10 @@ The following queries provide results that do not match those of other implement
     ]
   ]
   ```
+  Expected output:
+  ```
+  NOT_SUPPORTED
+  ```
   Error:
   ```
   jsonPath: _$_v.length is not a function: @.length() == 4
@@ -1505,6 +1509,27 @@ The following queries provide results that do not match those of other implement
       "some": "value"
     }
   ]
+  ```
+  Expected output:
+  ```
+  NOT_SUPPORTED
+  ```
+  Actual output:
+  ```
+  []
+  ```
+
+- [ ] `$.data.sum()`
+  Input:
+  ```
+  {
+    "data": [
+      1,
+      2,
+      3,
+      4
+    ]
+  }
   ```
   Expected output:
   ```

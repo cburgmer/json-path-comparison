@@ -542,6 +542,33 @@ The following queries provide results that do not match those of other implement
   ]
   ```
 
+- [ ] `$[?(1==1)]`
+  Input:
+  ```
+  [
+    1,
+    3,
+    "nice",
+    true,
+    null,
+    false,
+    {},
+    [],
+    -1,
+    0,
+    ""
+  ]
+  ```
+  Expected output:
+  ```
+  [1, 3, "nice", true, null, false, {}, [], -1, 0, ""]
+  ```
+  Actual output:
+  NOT_SUPPORTED
+  ```
+  JPError(end of input expected)
+  ```
+
 - [ ] `$..*`
   Input:
   ```

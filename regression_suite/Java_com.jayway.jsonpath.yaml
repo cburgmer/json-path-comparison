@@ -34,7 +34,7 @@ queries:
     status: open
     result: []
   - id: array_slice_with_negative_step_and_start_greater_than_end
-    status: open
+    status: fail
     result: ["first", "second", "third"]
   - id: array_slice_with_negative_step_on_partially_overlapping_array
     status: open
@@ -248,9 +248,6 @@ queries:
   - id: filter_expression_with_greater_than_or_equal
     status: open
     result: [{"key": 42}, {"key": 43}, {"key": 42.0001}, {"key": 100}]
-  - id: filter_expression_with_greater_than_string
-    status: open
-    result: [{"key": "alpha"}, {"key": "value"}]
   - id: filter_expression_with_in_array_of_values
     status: open
     result: [{"d": 2}, {"d": 3}]
@@ -261,7 +258,7 @@ queries:
     status: open
     result: NOT_SUPPORTED
   - id: filter_expression_with_length_function
-    status: open
+    status: fail
     result: [[1, 2, 3, 4]]
   - id: filter_expression_with_less_than
     status: open
@@ -314,9 +311,6 @@ queries:
   - id: filter_expression_with_subtraction
     status: open
     result: [{"key-50": -100}]
-  - id: filter_expression_with_tautological_comparison
-    status: open
-    result: [1, 3, "nice", true, null, false, {}, [], -1, 0, ""]
   - id: filter_expression_with_triple_equal
     status: open
     result: [{"key": 42}]
@@ -345,7 +339,7 @@ queries:
     status: open
     result: [{"key": true}, {"key": false}, {"key": null}, {"key": "value"}, {"key": ""}, {"key": 0}, {"key": 1}, {"key": -1}, {"key": 42}, {"key": {}}, {"key": []}]
   - id: function_sum
-    status: open
+    status: fail
     result: 10.0
   - id: recursive_descent
     status: open

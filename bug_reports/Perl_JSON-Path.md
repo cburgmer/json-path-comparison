@@ -127,6 +127,30 @@ The following queries provide results that do not match those of other implement
   ]
   ```
 
+- [ ] `$[0:3:-2]`
+  Input:
+  ```
+  [
+    "first",
+    "second",
+    "third",
+    "forth",
+    "fifth"
+  ]
+  ```
+  Expected output:
+  ```
+  []
+  ```
+  Actual output:
+  ```
+  [
+    "third",
+    "second",
+    "first"
+  ]
+  ```
+
 - [ ] `$[:]`
   Input:
   ```
@@ -2835,6 +2859,10 @@ The following queries provide results that do not match those of other implement
     }
   ]
   ```
+  Expected output:
+  ```
+  [{"key": "alpha"}, {"key": "value"}]
+  ```
   Error:
   ```
   non-safe evaluation, died at main.pl line 11.
@@ -2958,6 +2986,10 @@ The following queries provide results that do not match those of other implement
       3
     ]
   ]
+  ```
+  Expected output:
+  ```
+  NOT_SUPPORTED
   ```
   Error:
   ```
@@ -3862,6 +3894,10 @@ The following queries provide results that do not match those of other implement
     ""
   ]
   ```
+  Expected output:
+  ```
+  [1, 3, "nice", true, null, false, {}, [], -1, 0, ""]
+  ```
   Error:
   ```
   non-safe evaluation, died at main.pl line 11.
@@ -4277,6 +4313,27 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   non-safe evaluation, died at main.pl line 11.
+  ```
+
+- [ ] `$.data.sum()`
+  Input:
+  ```
+  {
+    "data": [
+      1,
+      2,
+      3,
+      4
+    ]
+  }
+  ```
+  Expected output:
+  ```
+  NOT_SUPPORTED
+  ```
+  Actual output:
+  ```
+  []
   ```
 
 - [ ] `$(key,more)`

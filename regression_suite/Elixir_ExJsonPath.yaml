@@ -279,9 +279,6 @@ queries:
   - id: filter_expression_with_greater_than_or_equal
     status: open
     result: [{"key": 42}, {"key": 43}, {"key": 42.0001}, {"key": 100}, {"key": "43"}, {"key": "42"}, {"key": "41"}, {"key": "value"}]
-  - id: filter_expression_with_greater_than_string
-    status: open
-    result: [{"key": "alpha"}, {"key": "value"}]
   - id: filter_expression_with_in_array_of_values
     status: open
     result: NOT_SUPPORTED
@@ -289,9 +286,6 @@ queries:
     status: open
     result: NOT_SUPPORTED
   - id: filter_expression_with_length_free_function
-    status: open
-    result: NOT_SUPPORTED
-  - id: filter_expression_with_length_function
     status: open
     result: NOT_SUPPORTED
   - id: filter_expression_with_less_than
@@ -343,7 +337,7 @@ queries:
     status: open
     result: NOT_SUPPORTED
   - id: filter_expression_with_tautological_comparison
-    status: open
+    status: fail
     result: NOT_SUPPORTED
   - id: filter_expression_with_triple_equal
     status: open
@@ -370,9 +364,6 @@ queries:
     status: open
     result: NOT_SUPPORTED
   - id: filter_expression_without_value
-    status: open
-    result: NOT_SUPPORTED
-  - id: function_sum
     status: open
     result: NOT_SUPPORTED
   - id: recursive_descent

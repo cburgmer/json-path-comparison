@@ -196,6 +196,10 @@ The following queries provide results that do not match those of other implement
     "fifth"
   ]
   ```
+  Expected output:
+  ```
+  []
+  ```
   Error:
   ```
   step can't be negative
@@ -1678,6 +1682,10 @@ The following queries provide results that do not match those of other implement
     }
   ]
   ```
+  Expected output:
+  ```
+  [{"key": "alpha"}, {"key": "value"}]
+  ```
   Error:
   ```
   comparison of Float with String failed
@@ -1707,6 +1715,58 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   invalid value for Integer(): " 3])"
+  ```
+
+- [ ] `$[?(@.length() == 4)]`
+  Input:
+  ```
+  [
+    [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    [
+      1,
+      2,
+      3,
+      4
+    ],
+    [
+      1,
+      2,
+      3
+    ]
+  ]
+  ```
+  Expected output:
+  ```
+  NOT_SUPPORTED
+  ```
+  Actual output:
+  ```
+  [
+    [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    [
+      1,
+      2,
+      3,
+      4
+    ],
+    [
+      1,
+      2,
+      3
+    ]
+  ]
   ```
 
 - [ ] `$[?(@.length == 4)]`
@@ -2184,6 +2244,42 @@ The following queries provide results that do not match those of other implement
   String can't be coerced into Float
   ```
 
+- [ ] `$[?(1==1)]`
+  Input:
+  ```
+  [
+    1,
+    3,
+    "nice",
+    true,
+    null,
+    false,
+    {},
+    [],
+    -1,
+    0,
+    ""
+  ]
+  ```
+  Expected output:
+  ```
+  [1, 3, "nice", true, null, false, {}, [], -1, 0, ""]
+  ```
+  Actual output:
+  ```
+  [
+    1,
+    3,
+    "nice",
+    true,
+    {},
+    [],
+    -1,
+    0,
+    ""
+  ]
+  ```
+
 - [ ] `$[?(@.key===42)]`
   Input:
   ```
@@ -2370,6 +2466,27 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   invalid value for Integer(): "@.key==42"
+  ```
+
+- [ ] `$.data.sum()`
+  Input:
+  ```
+  {
+    "data": [
+      1,
+      2,
+      3,
+      4
+    ]
+  }
+  ```
+  Expected output:
+  ```
+  NOT_SUPPORTED
+  ```
+  Actual output:
+  ```
+  []
   ```
 
 - [ ] `$(key,more)`

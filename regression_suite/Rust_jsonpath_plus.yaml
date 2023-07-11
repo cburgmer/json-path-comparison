@@ -16,7 +16,7 @@ queries:
     status: open
     result: []
   - id: array_slice_with_negative_step_and_start_greater_than_end
-    status: open
+    status: fail
     result: ["third", "first"]
   - id: array_slice_with_negative_step_on_partially_overlapping_array
     status: open
@@ -200,7 +200,7 @@ queries:
     status: open
     result: [{"key": 42}, {"key": 43}, {"key": 42.0001}, {"key": 100}]
   - id: filter_expression_with_greater_than_string
-    status: open
+    status: fail
     result: []
   - id: filter_expression_with_in_array_of_values
     status: error
@@ -259,9 +259,6 @@ queries:
   - id: filter_expression_with_subtraction
     status: open
     result: [{"key-50": -100}]
-  - id: filter_expression_with_tautological_comparison
-    status: open
-    result: [1, 3, "nice", true, null, false, {}, [], -1, 0, ""]
   - id: filter_expression_with_triple_equal
     status: error
   - id: filter_expression_with_value

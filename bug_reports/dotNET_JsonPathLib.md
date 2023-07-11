@@ -1091,6 +1091,10 @@ The following queries provide results that do not match those of other implement
     ]
   ]
   ```
+  Expected output:
+  ```
+  NOT_SUPPORTED
+  ```
   Error:
   ```
   Object has no method 'length'
@@ -1789,6 +1793,27 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   Unable to cast object of type 'Newtonsoft.Json.Linq.JArray' to type 'System.IConvertible'.
+  ```
+
+- [ ] `$.data.sum()`
+  Input:
+  ```
+  {
+    "data": [
+      1,
+      2,
+      3,
+      4
+    ]
+  }
+  ```
+  Expected output:
+  ```
+  NOT_SUPPORTED
+  ```
+  Actual output:
+  ```
+  []
   ```
 
 - [ ] `$(key,more)`

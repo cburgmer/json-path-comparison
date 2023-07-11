@@ -28,7 +28,7 @@ queries:
     status: open
     result: []
   - id: array_slice_with_negative_step_and_start_greater_than_end
-    status: open
+    status: fail
     result: ["first", "second", "third"]
   - id: array_slice_with_negative_step_on_partially_overlapping_array
     status: open
@@ -373,7 +373,7 @@ queries:
     status: open
     result: [42, 43, 42.0001, 100]
   - id: filter_expression_with_greater_than_string
-    status: open
+    status: fail
     result: []
   - id: filter_expression_with_in_array_of_values
     status: open
@@ -385,7 +385,7 @@ queries:
     status: open
     result: []
   - id: filter_expression_with_length_function
-    status: open
+    status: fail
     result: []
   - id: filter_expression_with_less_than
     status: open
@@ -451,7 +451,7 @@ queries:
     status: open
     result: [-100]
   - id: filter_expression_with_tautological_comparison
-    status: open
+    status: fail
     result: []
   - id: filter_expression_with_triple_equal
     status: open
@@ -481,7 +481,7 @@ queries:
     status: open
     result: []
   - id: function_sum
-    status: open
+    status: fail
     result: []
   - id: parens_notation
     status: fail

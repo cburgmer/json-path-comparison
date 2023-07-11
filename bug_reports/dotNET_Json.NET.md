@@ -948,6 +948,73 @@ The following queries provide results that do not match those of other implement
   Input string was not in a correct format.
   ```
 
+- [ ] `$[?(@.key>"VALUE")]`
+  Input:
+  ```
+  [
+    {
+      "key": 0
+    },
+    {
+      "key": 42
+    },
+    {
+      "key": -1
+    },
+    {
+      "key": 41
+    },
+    {
+      "key": 43
+    },
+    {
+      "key": 42.0001
+    },
+    {
+      "key": 41.9999
+    },
+    {
+      "key": 100
+    },
+    {
+      "key": "43"
+    },
+    {
+      "key": "42"
+    },
+    {
+      "key": "41"
+    },
+    {
+      "key": "alpha"
+    },
+    {
+      "key": "ALPHA"
+    },
+    {
+      "key": "value"
+    },
+    {
+      "key": "VALUE"
+    },
+    {
+      "some": "value"
+    },
+    {
+      "some": "VALUE"
+    }
+  ]
+  ```
+  Expected output:
+  ```
+  [{"key": "alpha"}, {"key": "value"}]
+  ```
+  Actual output:
+  NOT_SUPPORTED
+  ```
+  Unexpected character while parsing path query: "
+  ```
+
 - [ ] `$[?(@.key<42)]`
   Input:
   ```
@@ -1046,6 +1113,33 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   Input string was not in a correct format.
+  ```
+
+- [ ] `$[?(1==1)]`
+  Input:
+  ```
+  [
+    1,
+    3,
+    "nice",
+    true,
+    null,
+    false,
+    {},
+    [],
+    -1,
+    0,
+    ""
+  ]
+  ```
+  Expected output:
+  ```
+  [1, 3, "nice", true, null, false, {}, [], -1, 0, ""]
+  ```
+  Actual output:
+  NOT_SUPPORTED
+  ```
+  Unexpected character while parsing path query: )
   ```
 
 - [ ] `$..*`

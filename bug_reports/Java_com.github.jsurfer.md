@@ -136,6 +136,27 @@ The following queries provide results that do not match those of other implement
   ]
   ```
 
+- [ ] `$[0:3:-2]`
+  Input:
+  ```
+  [
+    "first",
+    "second",
+    "third",
+    "forth",
+    "fifth"
+  ]
+  ```
+  Expected output:
+  ```
+  []
+  ```
+  Actual output:
+  NOT_SUPPORTED
+  ```
+  org.antlr.v4.runtime.misc.ParseCancellationException
+  ```
+
 - [ ] `$[::]`
   Input:
   ```
@@ -654,6 +675,73 @@ The following queries provide results that do not match those of other implement
   java.lang.NumberFormatException: Character " is neither a decimal digit number, decimal point, nor "e" notation exponential mark.
   ```
 
+- [ ] `$[?(@.key>"VALUE")]`
+  Input:
+  ```
+  [
+    {
+      "key": 0
+    },
+    {
+      "key": 42
+    },
+    {
+      "key": -1
+    },
+    {
+      "key": 41
+    },
+    {
+      "key": 43
+    },
+    {
+      "key": 42.0001
+    },
+    {
+      "key": 41.9999
+    },
+    {
+      "key": 100
+    },
+    {
+      "key": "43"
+    },
+    {
+      "key": "42"
+    },
+    {
+      "key": "41"
+    },
+    {
+      "key": "alpha"
+    },
+    {
+      "key": "ALPHA"
+    },
+    {
+      "key": "value"
+    },
+    {
+      "key": "VALUE"
+    },
+    {
+      "some": "value"
+    },
+    {
+      "some": "VALUE"
+    }
+  ]
+  ```
+  Expected output:
+  ```
+  [{"key": "alpha"}, {"key": "value"}]
+  ```
+  Actual output:
+  NOT_SUPPORTED
+  ```
+  org.antlr.v4.runtime.misc.ParseCancellationException
+  ```
+
 - [ ] `$[?(@.key<42)]`
   Input:
   ```
@@ -797,6 +885,34 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   java.lang.NullPointerException: Cannot invoke "org.jsfr.json.path.JsonPath$Builder.build()" because "this.filterPathBuilder" is null
+  ```
+
+- [ ] `$[?(1==1)]`
+  Input:
+  ```
+  [
+    1,
+    3,
+    "nice",
+    true,
+    null,
+    false,
+    {},
+    [],
+    -1,
+    0,
+    ""
+  ]
+  ```
+  Expected output:
+  ```
+  [1, 3, "nice", true, null, false, {}, [], -1, 0, ""]
+  ```
+  Actual output:
+  NOT_SUPPORTED
+  ```
+  line 1:4 no viable alternative at input '1'
+  org.antlr.v4.runtime.misc.ParseCancellationException
   ```
 
 - [ ] `$[?(@.key===42)]`
