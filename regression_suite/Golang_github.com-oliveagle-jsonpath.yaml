@@ -219,7 +219,7 @@ queries:
     status: open
     result: []
   - id: dot_notation_with_number_-1
-    status: fail
+    status: open
     result: []
   - id: dot_notation_with_single_quotes
     status: open
@@ -407,7 +407,7 @@ queries:
     status: open
     result: []
   - id: filter_expression_with_length_function
-    status: fail
+    status: open
     result: []
   - id: filter_expression_with_less_than
     status: open
@@ -497,7 +497,7 @@ queries:
     status: open
     result: []
   - id: function_sum
-    status: fail
+    status: open
     result: []
   - id: parens_notation
     status: error

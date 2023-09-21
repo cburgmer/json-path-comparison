@@ -297,10 +297,6 @@ The following queries provide results that do not match those of other implement
     "fifth"
   ]
   ```
-  Expected output:
-  ```
-  []
-  ```
   Error:
   ```
   only support one range(from, to): [0 3 -2]
@@ -1867,26 +1863,6 @@ The following queries provide results that do not match those of other implement
   expression don't support in filter
   ```
 
-- [ ] `$.-1`
-  Input:
-  ```
-  [
-    "first",
-    "second",
-    "third",
-    "forth",
-    "fifth"
-  ]
-  ```
-  Expected output:
-  ```
-  null
-  ```
-  Actual output:
-  ```
-  []
-  ```
-
 - [ ] `$..'key'`
   Input:
   ```
@@ -3169,39 +3145,6 @@ The following queries provide results that do not match those of other implement
   interface conversion: interface {} is nil, not string
   ```
 
-- [ ] `$[?(@.length() == 4)]`
-  Input:
-  ```
-  [
-    [
-      1,
-      2,
-      3,
-      4,
-      5
-    ],
-    [
-      1,
-      2,
-      3,
-      4
-    ],
-    [
-      1,
-      2,
-      3
-    ]
-  ]
-  ```
-  Expected output:
-  ```
-  NOT_SUPPORTED
-  ```
-  Actual output:
-  ```
-  []
-  ```
-
 - [ ] `$[?(@.key='value')]`
   Input:
   ```
@@ -3653,34 +3596,9 @@ The following queries provide results that do not match those of other implement
     }
   ]
   ```
-  Expected output:
-  ```
-  NOT_SUPPORTED
-  ```
   Error:
   ```
   interface conversion: interface {} is nil, not string
-  ```
-
-- [ ] `$.data.sum()`
-  Input:
-  ```
-  {
-    "data": [
-      1,
-      2,
-      3,
-      4
-    ]
-  }
-  ```
-  Expected output:
-  ```
-  NOT_SUPPORTED
-  ```
-  Actual output:
-  ```
-  []
   ```
 
 - [ ] `$(key,more)`
@@ -3734,10 +3652,6 @@ The following queries provide results that do not match those of other implement
       ]
     }
   }
-  ```
-  Expected output (in any order as no consensus on ordering exists):
-  ```
-  NOT_SUPPORTED
   ```
   Error:
   ```
@@ -3994,10 +3908,6 @@ The following queries provide results that do not match those of other implement
     "forth",
     "fifth"
   ]
-  ```
-  Expected output:
-  ```
-  NOT_SUPPORTED
   ```
   Error:
   ```

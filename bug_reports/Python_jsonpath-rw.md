@@ -3,27 +3,6 @@ Results do not match other implementations
 The following queries provide results that do not match those of other implementations of JSONPath
 (compare https://cburgmer.github.io/json-path-comparison/):
 
-- [ ] `$[0:3:-2]`
-  Input:
-  ```
-  [
-    "first",
-    "second",
-    "third",
-    "forth",
-    "fifth"
-  ]
-  ```
-  Expected output:
-  ```
-  []
-  ```
-  Actual output:
-  NOT_SUPPORTED
-  ```
-  Exception('Parse error at 1:5 near token : (:)')
-  ```
-
 - [ ] `$[::]`
   Input:
   ```
@@ -625,27 +604,6 @@ The following queries provide results that do not match those of other implement
   NOT_SUPPORTED
   ```
   JsonPathLexerError('Error on line 1, col 2: Unexpected character: 屬 ')
-  ```
-
-- [ ] `$.-1`
-  Input:
-  ```
-  [
-    "first",
-    "second",
-    "third",
-    "forth",
-    "fifth"
-  ]
-  ```
-  Expected output:
-  ```
-  []
-  ```
-  Actual output:
-  NOT_SUPPORTED
-  ```
-  Exception('Parse error at 1:2 near token -1 (NUMBER)')
   ```
 
 - [ ] `$.2`

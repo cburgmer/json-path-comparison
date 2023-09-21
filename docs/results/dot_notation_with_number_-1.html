@@ -12,39 +12,29 @@
 
 <h2>Results</h2>
 
-<h3 id="consensus">Consensus</h3>
+<h3>Other responses</h3>
+
+<h4 id="Bash_JSONPath.sh">
+Bash (JSONPath.sh)
+</h4>
 
 <pre><code>[]
 </code></pre>
 
-<h4>
-Scalar consensus
+<h4 id="C_json-glib">
+C (json-glib)
 </h4>
 
-<p>The scalar consensus applies for implementations which return a single value where only one match is possible (instead of an array of a single value).</p>
+<pre><code>[]
+</code></pre>
+
+<h4 id="Clojure_json-path">
+Clojure (json-path)
+¹
+</h4>
 
 <pre><code>null
 </code></pre>
-
-<h4>
-Not found consensus
-</h4>
-
-<p>This consensus applies for implementations which return a specific <em>not found</em> value if no match exists.</p>
-
-<pre><code>NOT_FOUND
-</code></pre>
-
-<h4>
-Scalar not found consensus
-</h4>
-
-<p>This consensus applies for implementations which returns a specific <em>not found</em> value when a query that would regularly return a single match results in no match.</p>
-
-<pre><code>NOT_FOUND
-</code></pre>
-
-<h3>Other responses</h3>
 
 <h4 id="Cpp_jsoncons">
 Cpp (jsoncons)
@@ -71,6 +61,21 @@ Elixir (ExJsonPath)
 <pre><code>[
   "fifth"
 ]
+</code></pre>
+
+<h4 id="Elixir_jaxon">
+Elixir (jaxon)
+</h4>
+
+<pre><code>[]
+</code></pre>
+
+<h4 id="Elixir_warpath">
+Elixir (warpath)
+¹
+</h4>
+
+<pre><code>null
 </code></pre>
 
 <h4 id="Erlang_ejsonpath">
@@ -126,6 +131,30 @@ Golang (github.com-spyzhov-ajson)
 ]
 </code></pre>
 
+<h4 id="Golang_github.com-vmware-labs-yaml-jsonpath">
+Golang (github.com-vmware-labs-yaml-jsonpath)
+</h4>
+
+<pre><code>[]
+</code></pre>
+
+<h4 id="Haskell_jsonpath">
+Haskell (jsonpath)
+</h4>
+
+<pre><code>[]
+</code></pre>
+
+<h4 id="JavaScript_Goessner">
+JavaScript (Goessner)
+²
+</h4>
+
+<p>Not found</p>
+
+<pre><code>jsonpath returned false, this might indicate an error
+</code></pre>
+
 <h4 id="JavaScript_brunerd">
 JavaScript (brunerd)
 </h4>
@@ -133,6 +162,78 @@ JavaScript (brunerd)
 <p>Not supported</p>
 
 <pre><code></code></pre>
+
+<h4 id="JavaScript_jsonpath">
+JavaScript (jsonpath)
+</h4>
+
+<pre><code>[]
+</code></pre>
+
+<h4 id="JavaScript_jsonpath-plus">
+JavaScript (jsonpath-plus)
+</h4>
+
+<pre><code>[]
+</code></pre>
+
+<h4 id="JavaScript_jsonpathly">
+JavaScript (jsonpathly)
+</h4>
+
+<pre><code>[
+  "fifth"
+]
+</code></pre>
+
+<h4 id="Java_com.github.jsurfer">
+Java (com.github.jsurfer)
+</h4>
+
+<pre><code>[]
+</code></pre>
+
+<h4 id="Java_com.jayway.jsonpath">
+Java (com.jayway.jsonpath)
+¹
+³
+</h4>
+
+<p>Not found</p>
+
+<pre><code>SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+com.jayway.jsonpath.PathNotFoundException: Expected to find an object with property ['-1'] in path $ but found 'net.minidev.json.JSONArray'. This is not a json object according to the JsonProvider: 'com.jayway.jsonpath.spi.json.JsonSmartJsonProvider'.
+</code></pre>
+
+<h4 id="Kotlin_com.nfeld.jsonpathkt">
+Kotlin (com.nfeld.jsonpathkt)
+¹
+</h4>
+
+<pre><code>null
+</code></pre>
+
+<h4 id="Objective-C_SMJJSONPath">
+Objective-C (SMJJSONPath)
+¹
+³
+</h4>
+
+<p>Not found</p>
+
+<pre><code>Expected to find an object with property ['-1'] in path $ but found 'GSArray'. This is not a json object.
+</code></pre>
+
+<h4 id="PHP_Goessner">
+PHP (Goessner)
+²
+</h4>
+
+<p>Not found</p>
+
+<pre><code>jsonpath returned false, this might indicate an error</code></pre>
 
 <h4 id="PHP_galbar-jsonpath">
 PHP (galbar-jsonpath)
@@ -168,6 +269,16 @@ Perl (JSON-Path)
 <pre><code>[
   "fifth"
 ]
+</code></pre>
+
+<h4 id="Python_jsonpath">
+Python (jsonpath)
+²
+</h4>
+
+<p>Not found</p>
+
+<pre><code>jsonpath returned false, this might indicate an error
 </code></pre>
 
 <h4 id="Python_jsonpath-ng">
@@ -216,6 +327,55 @@ Raku (JSON-Path)
 <pre><code>JSON path parse error at position 1
 </code></pre>
 
+<h4 id="Ruby_jsonpath">
+Ruby (jsonpath)
+</h4>
+
+<pre><code>[]
+</code></pre>
+
+<h4 id="Rust_jsonpath">
+Rust (jsonpath)
+</h4>
+
+<pre><code>[]
+</code></pre>
+
+<h4 id="Rust_jsonpath_lib">
+Rust (jsonpath_lib)
+</h4>
+
+<pre><code>[]
+</code></pre>
+
+<h4 id="Rust_jsonpath_plus">
+Rust (jsonpath_plus)
+</h4>
+
+<pre><code>[]
+</code></pre>
+
+<h4 id="Scala_jsonpath">
+Scala (jsonpath)
+</h4>
+
+<pre><code>[]
+</code></pre>
+
+<h4 id="Swift_Sextant">
+Swift (Sextant)
+</h4>
+
+<pre><code>[]
+</code></pre>
+
+<h4 id="dotNET_Json.NET">
+dotNET (Json.NET)
+</h4>
+
+<pre><code>[]
+</code></pre>
+
 <h4 id="dotNET_JsonCons.JsonPath">
 dotNET (JsonCons.JsonPath)
 </h4>
@@ -234,6 +394,13 @@ dotNET (JsonPath.Net)
 <pre><code>Could not find any valid selectors.
 </code></pre>
 
+<h4 id="dotNET_JsonPathLib">
+dotNET (JsonPathLib)
+</h4>
+
+<pre><code>[]
+</code></pre>
+
 <h4 id="dotNET_Manatee.Json">
 dotNET (Manatee.Json)
 </h4>
@@ -241,6 +408,20 @@ dotNET (Manatee.Json)
 <p>Not supported</p>
 
 <pre><code>Unrecognized JSON Path element. Path up to error: '$'
+</code></pre>
+
+<h4 id="JSON_Path_Reference_Implementation">
+JSON (Path_Reference_Implementation)
+</h4>
+
+<pre><code>[]
+</code></pre>
+
+<h4 id="Proposal_A">
+Proposal (A)
+</h4>
+
+<pre><code>[]
 </code></pre>
 
 <h2>Footnotes</h2>

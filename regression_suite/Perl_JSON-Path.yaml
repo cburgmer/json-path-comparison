@@ -29,7 +29,7 @@ queries:
     status: open
     result: []
   - id: array_slice_with_negative_step_and_start_greater_than_end
-    status: fail
+    status: open
     result: ["third", "second", "first"]
   - id: array_slice_with_negative_step_on_partially_overlapping_array
     status: open
@@ -155,7 +155,7 @@ queries:
     status: open
     result: ["third"]
   - id: dot_notation_with_number_-1
-    status: fail
+    status: open
     result: ["fifth"]
   - id: dot_notation_with_single_quotes
     status: open
@@ -365,12 +365,12 @@ queries:
   - id: filter_expression_with_value_true
     status: error
   - id: filter_expression_without_parens
-    status: fail
+    status: open
     result: []
   - id: filter_expression_without_value
     status: error
   - id: function_sum
-    status: fail
+    status: open
     result: []
   - id: parens_notation
     status: fail
@@ -379,7 +379,7 @@ queries:
     status: open
     result: []
   - id: recursive_descent_after_dot_notation
-    status: fail
+    status: open
     result: []
   - id: recursive_descent_on_nested_arrays
     status: fail
@@ -421,10 +421,10 @@ queries:
     result: []
   - id: union_with_repeated_matches_after_dot_notation_with_wildcard
     status: open
-    result: ["string", null, true, false, "string", 5.4]
+    result: [false, "string", 5.4, "string", null, true]
   - id: union_with_slice_and_number
     status: open
     result: [2, 3]
   - id: union_with_wildcard_and_number
-    status: fail
+    status: open
     result: ["second"]

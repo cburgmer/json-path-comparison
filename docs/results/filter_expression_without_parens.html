@@ -33,10 +33,6 @@
 
 <h2>Results</h2>
 
-<h3 id="consensus">Consensus</h3>
-
-<p>Not supported</p>
-
 <h3>Other responses</h3>
 
 <h4 id="Bash_JSONPath.sh">
@@ -44,6 +40,15 @@ Bash (JSONPath.sh)
 </h4>
 
 <pre><code>[]
+</code></pre>
+
+<h4 id="C_json-glib">
+C (json-glib)
+</h4>
+
+<p>Not supported</p>
+
+<pre><code>Unable to compile selector `$[?@.key==42]': Invalid array index definition “?@.key==42]”
 </code></pre>
 
 <h4 id="Cpp_jsoncons">
@@ -68,11 +73,39 @@ Dart (json_path)
 ]
 </code></pre>
 
+<h4 id="Elixir_ExJsonPath">
+Elixir (ExJsonPath)
+</h4>
+
+<p>Not supported</p>
+
+<pre><code>syntax error before: '@'
+</code></pre>
+
 <h4 id="Elixir_jaxon">
 Elixir (jaxon)
 </h4>
 
 <pre><code>[]
+</code></pre>
+
+<h4 id="Elixir_warpath">
+Elixir (warpath)
+¹
+</h4>
+
+<p>Not supported</p>
+
+<pre><code>Parser error: Invalid token on line 1, syntax error before: &lt;&lt;"@"&gt;&gt;
+</code></pre>
+
+<h4 id="Erlang_ejsonpath">
+Erlang (ejsonpath)
+</h4>
+
+<p>Not supported</p>
+
+<pre><code>syntax error before: '@'
 </code></pre>
 
 <h4 id="Golang_github.com-PaesslerAG-jsonpath">
@@ -105,6 +138,15 @@ Golang (github.com-spyzhov-ajson)
 <pre><code>[]
 </code></pre>
 
+<h4 id="Golang_github.com-vmware-labs-yaml-jsonpath">
+Golang (github.com-vmware-labs-yaml-jsonpath)
+</h4>
+
+<p>Not supported</p>
+
+<pre><code>invalid array index [?@.key==42] before position 13: non-integer array index
+</code></pre>
+
 <h4 id="Haskell_jsonpath">
 Haskell (jsonpath)
 </h4>
@@ -126,11 +168,76 @@ JavaScript (Goessner)
 <pre><code>jsonpath returned false, this might indicate an error
 </code></pre>
 
+<h4 id="JavaScript_brunerd">
+JavaScript (brunerd)
+</h4>
+
+<p>Not supported</p>
+
+<pre><code></code></pre>
+
+<h4 id="JavaScript_jsonpath">
+JavaScript (jsonpath)
+</h4>
+
+<p>Not supported</p>
+
+<pre><code>Lexical error on line 1. Unrecognized text.
+$[?@.key==42]
+--^
+</code></pre>
+
 <h4 id="JavaScript_jsonpath-plus">
 JavaScript (jsonpath-plus)
 </h4>
 
 <pre><code>[]
+</code></pre>
+
+<h4 id="Java_com.github.jsurfer">
+Java (com.github.jsurfer)
+</h4>
+
+<p>Not supported</p>
+
+<pre><code>line 1:2 token recognition error at: '?'
+line 1:3 no viable alternative at input '[@'
+org.antlr.v4.runtime.misc.ParseCancellationException
+</code></pre>
+
+<h4 id="Java_com.jayway.jsonpath">
+Java (com.jayway.jsonpath)
+¹
+³
+</h4>
+
+<p>Not supported</p>
+
+<pre><code>SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+com.jayway.jsonpath.InvalidPathException: Could not parse token starting at position 1. Expected ?, ', 0-9, * 
+</code></pre>
+
+<h4 id="Kotlin_com.nfeld.jsonpathkt">
+Kotlin (com.nfeld.jsonpathkt)
+¹
+</h4>
+
+<p>Not supported</p>
+
+<pre><code>Unexpected char, char=?, index=2
+</code></pre>
+
+<h4 id="Objective-C_SMJJSONPath">
+Objective-C (SMJJSONPath)
+¹
+³
+</h4>
+
+<p>Not supported</p>
+
+<pre><code>Could not parse token starting at position 1 . Expected ?, ', 0-9, * 
 </code></pre>
 
 <h4 id="PHP_Goessner">
@@ -141,6 +248,33 @@ PHP (Goessner)
 <p>Not found</p>
 
 <pre><code>jsonpath returned false, this might indicate an error</code></pre>
+
+<h4 id="PHP_galbar-jsonpath">
+PHP (galbar-jsonpath)
+</h4>
+
+<p>Not supported</p>
+
+<pre><code>Invalid JSONPath error: 'Error in JSONPath near '?@.key==42''
+</code></pre>
+
+<h4 id="PHP_remorhaz-jsonpath">
+PHP (remorhaz-jsonpath)
+</h4>
+
+<p>Not supported</p>
+
+<pre><code>Error: 'Failed to build AST from JSONPath query: $[?@.key==42]'
+</code></pre>
+
+<h4 id="PHP_softcreatr-jsonpath">
+PHP (softcreatr-jsonpath)
+</h4>
+
+<p>Not supported</p>
+
+<pre><code>Error: 'Unable to parse token ?@.key==42 in expression: [?@.key==42]'
+</code></pre>
 
 <h4 id="Perl_JSON-Path">
 Perl (JSON-Path)
@@ -159,6 +293,34 @@ Python (jsonpath)
 <pre><code>jsonpath returned false, this might indicate an error
 </code></pre>
 
+<h4 id="Python_jsonpath-ng">
+Python (jsonpath-ng)
+</h4>
+
+<p>Not supported</p>
+
+<pre><code>JsonPathLexerError('Error on line 1, col 2: Unexpected character: ? ')
+</code></pre>
+
+<h4 id="Python_jsonpath-rw">
+Python (jsonpath-rw)
+</h4>
+
+<p>Not supported</p>
+
+<pre><code>JsonPathLexerError('Error on line 1, col 2: Unexpected character: ? ')
+</code></pre>
+
+<h4 id="Python_jsonpath2">
+Python (jsonpath2)
+</h4>
+
+<p>Not supported</p>
+
+<pre><code>line 1:3 missing '(' at '@'
+ValueError("line 1:3 missing '(' at '@'")
+</code></pre>
+
 <h4 id="Python_python-jsonpath">
 Python (python-jsonpath)
 </h4>
@@ -168,6 +330,63 @@ Python (python-jsonpath)
     "key": 42
   }
 ]
+</code></pre>
+
+<h4 id="Raku_JSON-Path">
+Raku (JSON-Path)
+</h4>
+
+<p>Not supported</p>
+
+<pre><code>JSON path parse error at position 1
+</code></pre>
+
+<h4 id="Rust_jsonpath">
+Rust (jsonpath)
+</h4>
+
+<p>Not supported</p>
+
+<pre><code>parsing error
+</code></pre>
+
+<h4 id="Rust_jsonpath_lib">
+Rust (jsonpath_lib)
+</h4>
+
+<p>Not supported</p>
+
+<pre><code>path error: 
+$[?@.key==42]
+^^^^
+
+</code></pre>
+
+<h4 id="Scala_jsonpath">
+Scala (jsonpath)
+</h4>
+
+<p>Not supported</p>
+
+<pre><code>JPError(end of input expected)
+</code></pre>
+
+<h4 id="Swift_Sextant">
+Swift (Sextant)
+</h4>
+
+<p>Not supported</p>
+
+<pre><code>NOT_SUPPORTED
+</code></pre>
+
+<h4 id="dotNET_Json.NET">
+dotNET (Json.NET)
+</h4>
+
+<p>Not supported</p>
+
+<pre><code>Unexpected character while parsing path indexer: @
 </code></pre>
 
 <h4 id="dotNET_JsonCons.JsonPath">
@@ -199,6 +418,64 @@ dotNET (JsonPathLib)
 <pre><code>[]
 </code></pre>
 
+<h4 id="dotNET_Manatee.Json">
+dotNET (Manatee.Json)
+</h4>
+
+<p>Not supported</p>
+
+<pre><code>Unrecognized JSON Path element. Path up to error: '$'
+</code></pre>
+
+<h4 id="JSON_Path_Reference_Implementation">
+JSON (Path_Reference_Implementation)
+</h4>
+
+<p>Not supported</p>
+
+<pre><code> --&gt; 1:3
+  |
+1 | $[?@.key==42]
+  |   ^---
+  |
+  = expected unionChild, unionArrayIndex, or sliceStart
+</code></pre>
+
+<h4 id="Proposal_A">
+Proposal (A)
+</h4>
+
+<p>Not supported</p>
+
+<pre><code>
+x 1:3-1:3 Integer
+| $[?@.key==42]
+|   ^
+x 1:3-1:3 BracketChild
+| $[?@.key==42]
+|   ^
+| x 1:3-1:3 Integer
+| | $[?@.key==42]
+| |   ^
+| | 
+|/  
+x 1:3-1:3 BracketElement
+| $[?@.key==42]
+|   ^
+x 1:3-1:3 BracketElements
+| $[?@.key==42]
+|   ^
+x 1:2-1:2 BracketChildren
+| $[?@.key==42]
+|  ^
+x 1:2-1:2 Operator
+| $[?@.key==42]
+|  ^
+o 1:1-1:2 Start
+  $[?@.key==42]
+  ^
+</code></pre>
+
 <h3>Errors</h3>
 
 <h4 id="Clojure_json-path">
@@ -224,6 +501,13 @@ Golang (github.com-oliveagle-jsonpath)
 </h4>
 
 <pre><code>interface conversion: interface {} is nil, not string
+</code></pre>
+
+<h4 id="JavaScript_jsonpathly">
+JavaScript (jsonpathly)
+</h4>
+
+<pre><code>missing '(' at '@'
 </code></pre>
 
 <h4 id="Ruby_jsonpath">

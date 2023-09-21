@@ -145,27 +145,6 @@ The following queries provide results that do not match those of other implement
   ]
   ```
 
-- [ ] `$[0:3:-2]`
-  Input:
-  ```
-  [
-    "first",
-    "second",
-    "third",
-    "forth",
-    "fifth"
-  ]
-  ```
-  Expected output:
-  ```
-  []
-  ```
-  Actual output:
-  NOT_SUPPORTED
-  ```
-  JSON path parse error at position 1
-  ```
-
 - [ ] `$[:2]`
   Input:
   ```
@@ -885,27 +864,6 @@ The following queries provide results that do not match those of other implement
   JSON path parse error at position 5
   ```
 
-- [ ] `$.-1`
-  Input:
-  ```
-  [
-    "first",
-    "second",
-    "third",
-    "forth",
-    "fifth"
-  ]
-  ```
-  Expected output:
-  ```
-  []
-  ```
-  Actual output:
-  NOT_SUPPORTED
-  ```
-  JSON path parse error at position 1
-  ```
-
 - [ ] `$.2`
   Input:
   ```
@@ -1613,37 +1571,6 @@ The following queries provide results that do not match those of other implement
   NOT_SUPPORTED
   ```
   Evaluation of embedded Perl 6 code not allowed (construct with :allow-eval)
-  ```
-
-- [ ] `$.key..`
-  Input:
-  ```
-  {
-    "some key": "value",
-    "key": {
-      "complex": "string",
-      "primitives": [
-        0,
-        1
-      ]
-    }
-  }
-  ```
-  Expected output (in any order as no consensus on ordering exists):
-  ```
-  NOT_SUPPORTED
-  ```
-  Actual output:
-  ```
-  [
-    "string",
-    0,
-    1,
-    [
-      0,
-      1
-    ]
-  ]
   ```
 
 - [ ] `$..*`

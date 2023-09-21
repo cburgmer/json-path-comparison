@@ -282,26 +282,6 @@ The following queries provide results that do not match those of other implement
   4
   ```
 
-- [ ] `$[0:3:-2]`
-  Input:
-  ```
-  [
-    "first",
-    "second",
-    "third",
-    "forth",
-    "fifth"
-  ]
-  ```
-  Expected output:
-  ```
-  []
-  ```
-  Actual output:
-  ```
-  "first"
-  ```
-
 - [ ] `$[7:3:-1]`
   Input:
   ```
@@ -2385,39 +2365,6 @@ The following queries provide results that do not match those of other implement
   java.lang.Exception object must be an array.
   ```
 
-- [ ] `$[?(@.length() == 4)]`
-  Input:
-  ```
-  [
-    [
-      1,
-      2,
-      3,
-      4,
-      5
-    ],
-    [
-      1,
-      2,
-      3,
-      4
-    ],
-    [
-      1,
-      2,
-      3
-    ]
-  ]
-  ```
-  Expected output:
-  ```
-  NOT_SUPPORTED
-  ```
-  Actual output:
-  ```
-  []
-  ```
-
 - [ ] `$[?(@.length == 4)]`
   Input:
   ```
@@ -2824,34 +2771,9 @@ The following queries provide results that do not match those of other implement
     }
   ]
   ```
-  Expected output:
-  ```
-  NOT_SUPPORTED
-  ```
   Error:
   ```
   java.lang.NumberFormatException For input string: "@"
-  ```
-
-- [ ] `$.data.sum()`
-  Input:
-  ```
-  {
-    "data": [
-      1,
-      2,
-      3,
-      4
-    ]
-  }
-  ```
-  Expected output:
-  ```
-  NOT_SUPPORTED
-  ```
-  Actual output:
-  ```
-  null
   ```
 
 - [ ] `$(key,more)`
@@ -2870,43 +2792,6 @@ The following queries provide results that do not match those of other implement
   Actual output:
   ```
   null
-  ```
-
-- [ ] `$.key..`
-  Input:
-  ```
-  {
-    "some key": "value",
-    "key": {
-      "complex": "string",
-      "primitives": [
-        0,
-        1
-      ]
-    }
-  }
-  ```
-  Expected output (in any order as no consensus on ordering exists):
-  ```
-  NOT_SUPPORTED
-  ```
-  Actual output:
-  ```
-  [
-    0,
-    1,
-    [
-      0,
-      1
-    ],
-    {
-      "complex": "string",
-      "primitives": [
-        0,
-        1
-      ]
-    }
-  ]
   ```
 
 - [ ] `$[(@.length-1)]`
@@ -3161,32 +3046,6 @@ The following queries provide results that do not match those of other implement
   Actual output:
   ```
   "first"
-  ```
-
-- [ ] `$[*,1]`
-  Input:
-  ```
-  [
-    "first",
-    "second",
-    "third",
-    "forth",
-    "fifth"
-  ]
-  ```
-  Expected output:
-  ```
-  NOT_SUPPORTED
-  ```
-  Actual output:
-  ```
-  [
-    "first",
-    "second",
-    "third",
-    "forth",
-    "fifth"
-  ]
   ```
 
 

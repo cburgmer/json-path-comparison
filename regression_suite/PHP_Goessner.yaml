@@ -129,6 +129,9 @@ queries:
   - id: dot_notation_with_number
     status: open
     result: ["third"]
+  - id: dot_notation_with_number_-1
+    status: open
+    result: NOT_FOUND
   - id: dot_notation_with_single_quotes
     status: open
     result: ["value"]
@@ -339,12 +342,12 @@ queries:
   - id: filter_expression_with_value_true
     status: error
   - id: filter_expression_without_parens
-    status: fail
+    status: open
     result: NOT_FOUND
   - id: filter_expression_without_value
     status: error
   - id: function_sum
-    status: fail
+    status: open
     result: NOT_FOUND
   - id: parens_notation
     status: fail
@@ -353,7 +356,7 @@ queries:
     status: open
     result: [[0, 1], [{"a": {"b": "c"}}, [0, 1]], {"a": {"b": "c"}}, {"b": "c"}]
   - id: recursive_descent_after_dot_notation
-    status: fail
+    status: open
     result: [[0, 1], {"complex": "string", "primitives": [0, 1]}]
   - id: root
     status: fail
@@ -381,5 +384,5 @@ queries:
     status: fail
     result: NOT_FOUND
   - id: union_with_wildcard_and_number
-    status: fail
+    status: open
     result: ["first", "second", "third", "forth", "fifth", "second"]

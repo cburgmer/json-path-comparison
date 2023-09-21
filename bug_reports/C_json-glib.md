@@ -430,10 +430,6 @@ The following queries provide results that do not match those of other implement
     "fifth"
   ]
   ```
-  Expected output:
-  ```
-  []
-  ```
   Error:
   ```
   timeout: sending signal TERM to command ‘build/main’
@@ -2053,27 +2049,6 @@ The following queries provide results that do not match those of other implement
   NOT_SUPPORTED
   ```
   Unable to compile selector `$.*[?(@.key)]': Invalid array index definition “?(@.key)]”
-  ```
-
-- [ ] `$.data.sum()`
-  Input:
-  ```
-  {
-    "data": [
-      1,
-      2,
-      3,
-      4
-    ]
-  }
-  ```
-  Expected output:
-  ```
-  NOT_SUPPORTED
-  ```
-  Actual output:
-  ```
-  []
   ```
 
 - [ ] `$..*`

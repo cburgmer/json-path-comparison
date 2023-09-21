@@ -213,27 +213,6 @@ The following queries provide results that do not match those of other implement
   ]
   ```
 
-- [ ] `$.-1`
-  Input:
-  ```
-  [
-    "first",
-    "second",
-    "third",
-    "forth",
-    "fifth"
-  ]
-  ```
-  Expected output:
-  ```
-  []
-  ```
-  Actual output:
-  NOT_SUPPORTED
-  ```
-  Invalid JSONPath error: 'Error in JSONPath near '.-1''
-  ```
-
 - [ ] `$[?()]`
   Input:
   ```
@@ -331,27 +310,6 @@ The following queries provide results that do not match those of other implement
     0,
     ""
   ]
-  ```
-
-- [ ] `$.data.sum()`
-  Input:
-  ```
-  {
-    "data": [
-      1,
-      2,
-      3,
-      4
-    ]
-  }
-  ```
-  Expected output:
-  ```
-  NOT_SUPPORTED
-  ```
-  Actual output:
-  ```
-  []
   ```
 
 - [ ] `$[ 0 , 1 ]`

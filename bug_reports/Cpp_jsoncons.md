@@ -91,27 +91,6 @@ The following queries provide results that do not match those of other implement
   ]
   ```
 
-- [ ] `$.-1`
-  Input:
-  ```
-  [
-    "first",
-    "second",
-    "third",
-    "forth",
-    "fifth"
-  ]
-  ```
-  Expected output:
-  ```
-  []
-  ```
-  Actual output:
-  NOT_SUPPORTED
-  ```
-  Expected '$' or function expression at line 1 and column 3
-  ```
-
 - [ ] `$[?(@.length == 4)]`
   Input:
   ```
@@ -262,126 +241,6 @@ The following queries provide results that do not match those of other implement
   ]
   ```
 
-- [ ] `$[?@.key==42]`
-  Input:
-  ```
-  [
-    {
-      "key": 0
-    },
-    {
-      "key": 42
-    },
-    {
-      "key": -1
-    },
-    {
-      "key": 1
-    },
-    {
-      "key": 41
-    },
-    {
-      "key": 43
-    },
-    {
-      "key": 42.0001
-    },
-    {
-      "key": 41.9999
-    },
-    {
-      "key": 100
-    },
-    {
-      "key": "some"
-    },
-    {
-      "key": "42"
-    },
-    {
-      "key": null
-    },
-    {
-      "key": 420
-    },
-    {
-      "key": ""
-    },
-    {
-      "key": {}
-    },
-    {
-      "key": []
-    },
-    {
-      "key": [
-        42
-      ]
-    },
-    {
-      "key": {
-        "key": 42
-      }
-    },
-    {
-      "key": {
-        "some": 42
-      }
-    },
-    {
-      "some": "value"
-    }
-  ]
-  ```
-  Expected output:
-  ```
-  NOT_SUPPORTED
-  ```
-  Actual output:
-  ```
-  [
-    {
-      "key": 42
-    }
-  ]
-  ```
-
-- [ ] `$.key..`
-  Input:
-  ```
-  {
-    "some key": "value",
-    "key": {
-      "complex": "string",
-      "primitives": [
-        0,
-        1
-      ]
-    }
-  }
-  ```
-  Expected output (in any order as no consensus on ordering exists):
-  ```
-  NOT_SUPPORTED
-  ```
-  Actual output:
-  ```
-  [
-    [
-      0,
-      1
-    ],
-    {
-      "complex": "string",
-      "primitives": [
-        0,
-        1
-      ]
-    }
-  ]
-  ```
-
 - [ ] `$[(@.length-1)]`
   Input:
   ```
@@ -401,33 +260,6 @@ The following queries provide results that do not match those of other implement
   ```
   [
     "fifth"
-  ]
-  ```
-
-- [ ] `$[*,1]`
-  Input:
-  ```
-  [
-    "first",
-    "second",
-    "third",
-    "forth",
-    "fifth"
-  ]
-  ```
-  Expected output:
-  ```
-  NOT_SUPPORTED
-  ```
-  Actual output:
-  ```
-  [
-    "first",
-    "second",
-    "third",
-    "forth",
-    "fifth",
-    "second"
   ]
   ```
 

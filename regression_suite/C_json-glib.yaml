@@ -154,6 +154,9 @@ queries:
   - id: dot_notation_with_number
     status: open
     result: []
+  - id: dot_notation_with_number_-1
+    status: open
+    result: []
   - id: dot_notation_with_single_quotes
     status: open
     result: [42]
@@ -360,6 +363,9 @@ queries:
   - id: filter_expression_with_length_free_function
     status: open
     result: NOT_SUPPORTED
+  - id: filter_expression_with_length_function
+    status: open
+    result: NOT_SUPPORTED
   - id: filter_expression_with_length_property
     status: fail
     result: NOT_SUPPORTED
@@ -444,13 +450,19 @@ queries:
   - id: filter_expression_with_value_true
     status: open
     result: NOT_SUPPORTED
+  - id: filter_expression_without_parens
+    status: open
+    result: NOT_SUPPORTED
   - id: filter_expression_without_value
     status: open
     result: NOT_SUPPORTED
   - id: function_sum
-    status: fail
+    status: open
     result: []
   - id: recursive_descent
+    status: open
+    result: NOT_SUPPORTED
+  - id: recursive_descent_after_dot_notation
     status: open
     result: NOT_SUPPORTED
   - id: recursive_descent_on_nested_arrays
@@ -488,4 +500,7 @@ queries:
     result: NOT_SUPPORTED
   - id: union_with_spaces
     status: fail
+    result: NOT_SUPPORTED
+  - id: union_with_wildcard_and_number
+    status: open
     result: NOT_SUPPORTED

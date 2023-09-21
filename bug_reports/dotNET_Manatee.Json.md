@@ -257,27 +257,6 @@ The following queries provide results that do not match those of other implement
   ]
   ```
 
-- [ ] `$.-1`
-  Input:
-  ```
-  [
-    "first",
-    "second",
-    "third",
-    "forth",
-    "fifth"
-  ]
-  ```
-  Expected output:
-  ```
-  []
-  ```
-  Actual output:
-  NOT_SUPPORTED
-  ```
-  Unrecognized JSON Path element. Path up to error: '$'
-  ```
-
 - [ ] ``
   Input:
   ```
@@ -314,46 +293,6 @@ The following queries provide results that do not match those of other implement
   NOT_SUPPORTED
   ```
   Sequence contains no elements
-  ```
-
-- [ ] `$[?(@.length() == 4)]`
-  Input:
-  ```
-  [
-    [
-      1,
-      2,
-      3,
-      4,
-      5
-    ],
-    [
-      1,
-      2,
-      3,
-      4
-    ],
-    [
-      1,
-      2,
-      3
-    ]
-  ]
-  ```
-  Expected output:
-  ```
-  NOT_SUPPORTED
-  ```
-  Actual output:
-  ```
-  [
-    [
-      1,
-      2,
-      3,
-      4
-    ]
-  ]
   ```
 
 - [ ] `$[?(@.length == 4)]`

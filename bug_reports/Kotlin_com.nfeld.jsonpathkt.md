@@ -45,30 +45,6 @@ The following queries provide results that do not match those of other implement
   For input string: "-113667776004"
   ```
 
-- [ ] `$[0:3:-2]`
-  Input:
-  ```
-  [
-    "first",
-    "second",
-    "third",
-    "forth",
-    "fifth"
-  ]
-  ```
-  Expected output:
-  ```
-  []
-  ```
-  Actual output:
-  ```
-  [
-    "first",
-    "second",
-    "third"
-  ]
-  ```
-
 - [ ] `$[0:3:2]`
   Input:
   ```
@@ -895,27 +871,6 @@ The following queries provide results that do not match those of other implement
   Unexpected char, char=?, index=4
   ```
 
-- [ ] `$.data.sum()`
-  Input:
-  ```
-  {
-    "data": [
-      1,
-      2,
-      3,
-      4
-    ]
-  }
-  ```
-  Expected output:
-  ```
-  NOT_SUPPORTED
-  ```
-  Actual output:
-  ```
-  null
-  ```
-
 - [ ] `$(key,more)`
   Input:
   ```
@@ -932,35 +887,6 @@ The following queries provide results that do not match those of other implement
   Actual output:
   ```
   null
-  ```
-
-- [ ] `$.key..`
-  Input:
-  ```
-  {
-    "some key": "value",
-    "key": {
-      "complex": "string",
-      "primitives": [
-        0,
-        1
-      ]
-    }
-  }
-  ```
-  Expected output (in any order as no consensus on ordering exists):
-  ```
-  NOT_SUPPORTED
-  ```
-  Actual output:
-  ```
-  {
-    "complex": "string",
-    "primitives": [
-      0,
-      1
-    ]
-  }
   ```
 
 

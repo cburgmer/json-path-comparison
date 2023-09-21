@@ -15,6 +15,9 @@ queries:
   - id: array_slice_with_negative_step
     status: open
     result: ["forth", "second"]
+  - id: array_slice_with_negative_step_and_start_greater_than_end
+    status: open
+    result: []
   - id: array_slice_with_negative_step_on_partially_overlapping_array
     status: open
     result: ["fifth"]
@@ -103,7 +106,7 @@ queries:
     status: open
     result: "third"
   - id: dot_notation_with_number_-1
-    status: fail
+    status: open
     result: "fifth"
   - id: dot_notation_with_single_quotes
     status: open
@@ -249,7 +252,7 @@ queries:
     status: open
     result: []
   - id: filter_expression_with_length_function
-    status: fail
+    status: open
     result: [[1, 2, 3, 4]]
   - id: filter_expression_with_less_than
     status: open
@@ -364,5 +367,5 @@ queries:
   - id: union_with_slice_and_number
     status: error
   - id: union_with_wildcard_and_number
-    status: fail
+    status: open
     result: ["second"]

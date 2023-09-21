@@ -129,30 +129,6 @@ The following queries provide results that do not match those of other implement
   ]
   ```
 
-- [ ] `$[0:3:-2]`
-  Input:
-  ```
-  [
-    "first",
-    "second",
-    "third",
-    "forth",
-    "fifth"
-  ]
-  ```
-  Expected output:
-  ```
-  []
-  ```
-  Actual output:
-  ```
-  [
-    "first",
-    "second",
-    "third"
-  ]
-  ```
-
 - [ ] `$[:]`
   Input:
   ```
@@ -452,46 +428,6 @@ The following queries provide results that do not match those of other implement
   ]
   ```
 
-- [ ] `$[?(@.length() == 4)]`
-  Input:
-  ```
-  [
-    [
-      1,
-      2,
-      3,
-      4,
-      5
-    ],
-    [
-      1,
-      2,
-      3,
-      4
-    ],
-    [
-      1,
-      2,
-      3
-    ]
-  ]
-  ```
-  Expected output:
-  ```
-  NOT_SUPPORTED
-  ```
-  Actual output:
-  ```
-  [
-    [
-      1,
-      2,
-      3,
-      4
-    ]
-  ]
-  ```
-
 - [ ] `$[*].bookmarks[?(@.page == 45)]^^^`
   Input:
   ```
@@ -560,27 +496,6 @@ The following queries provide results that do not match those of other implement
       "key": "value"
     }
   ]
-  ```
-
-- [ ] `$.data.sum()`
-  Input:
-  ```
-  {
-    "data": [
-      1,
-      2,
-      3,
-      4
-    ]
-  }
-  ```
-  Expected output:
-  ```
-  NOT_SUPPORTED
-  ```
-  Actual output:
-  ```
-  10
   ```
 
 - [ ] `$['a','a']`

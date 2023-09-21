@@ -3,29 +3,6 @@ Results do not match other implementations
 The following queries provide results that do not match those of other implementations of JSONPath
 (compare https://cburgmer.github.io/json-path-comparison/):
 
-- [ ] `$[0:3:-2]`
-  Input:
-  ```
-  [
-    "first",
-    "second",
-    "third",
-    "forth",
-    "fifth"
-  ]
-  ```
-  Expected output:
-  ```
-  []
-  ```
-  Actual output:
-  ```
-  [
-    "third",
-    "first"
-  ]
-  ```
-
 - [ ] `$[0:3:0]`
   Input:
   ```
@@ -1007,10 +984,6 @@ The following queries provide results that do not match those of other implement
     ]
   ]
   ```
-  Expected output:
-  ```
-  NOT_SUPPORTED
-  ```
   Error:
   ```
   Error Parsing JSON Path:
@@ -1523,10 +1496,6 @@ The following queries provide results that do not match those of other implement
     }
   ]
   ```
-  Expected output:
-  ```
-  NOT_SUPPORTED
-  ```
   Error:
   ```
   Error Parsing JSON Path:
@@ -1545,10 +1514,6 @@ The following queries provide results that do not match those of other implement
       4
     ]
   }
-  ```
-  Expected output:
-  ```
-  NOT_SUPPORTED
   ```
   Error:
   ```
@@ -1575,44 +1540,6 @@ The following queries provide results that do not match those of other implement
   Error Parsing JSON Path:
   $(key,more)
   panic occurred
-  ```
-
-- [ ] `$.key..`
-  Input:
-  ```
-  {
-    "some key": "value",
-    "key": {
-      "complex": "string",
-      "primitives": [
-        0,
-        1
-      ]
-    }
-  }
-  ```
-  Expected output (in any order as no consensus on ordering exists):
-  ```
-  NOT_SUPPORTED
-  ```
-  Actual output:
-  ```
-  [
-    "string",
-    0,
-    1,
-    [
-      0,
-      1
-    ],
-    {
-      "complex": "string",
-      "primitives": [
-        0,
-        1
-      ]
-    }
-  ]
   ```
 
 - [ ] `$[(@.length-1)]`
@@ -1707,10 +1634,6 @@ The following queries provide results that do not match those of other implement
     "forth",
     "fifth"
   ]
-  ```
-  Expected output:
-  ```
-  NOT_SUPPORTED
   ```
   Error:
   ```

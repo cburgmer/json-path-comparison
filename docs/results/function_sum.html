@@ -12,10 +12,6 @@
 
 <h2>Results</h2>
 
-<h3 id="consensus">Consensus</h3>
-
-<p>Not supported</p>
-
 <h3>Other responses</h3>
 
 <h4 id="Bash_JSONPath.sh">
@@ -40,12 +36,76 @@ Clojure (json-path)
 <pre><code>null
 </code></pre>
 
+<h4 id="Cpp_jsoncons">
+Cpp (jsoncons)
+</h4>
+
+<p>Not supported</p>
+
+<pre><code>Incorrect number of arguments at line 1 and column 12
+</code></pre>
+
+<h4 id="Dart_json_path">
+Dart (json_path)
+</h4>
+
+<p>Not supported</p>
+
+<pre><code>Instance of 'ParserException': end of input expected (at 1:11)
+</code></pre>
+
+<h4 id="Elixir_ExJsonPath">
+Elixir (ExJsonPath)
+</h4>
+
+<p>Not supported</p>
+
+<pre><code>syntax error before: '('
+</code></pre>
+
 <h4 id="Elixir_jaxon">
 Elixir (jaxon)
 </h4>
 
 <pre><code>[]
 </code></pre>
+
+<h4 id="Elixir_warpath">
+Elixir (warpath)
+¹
+</h4>
+
+<p>Not supported</p>
+
+<pre><code>Parser error: Invalid token on line 1, syntax error before: &lt;&lt;"("&gt;&gt;
+</code></pre>
+
+<h4 id="Erlang_ejsonpath">
+Erlang (ejsonpath)
+</h4>
+
+<p>Not supported</p>
+
+<pre><code>syntax error before: '('
+</code></pre>
+
+<h4 id="Golang_github.com-PaesslerAG-jsonpath">
+Golang (github.com-PaesslerAG-jsonpath)
+¹
+</h4>
+
+<p>Not supported</p>
+
+<pre><code>parsing error: $.data.sum()	:1:12 - 1:13 unexpected ")" while scanning extensions
+</code></pre>
+
+<h4 id="Golang_github.com-ohler55-ojg">
+Golang (github.com-ohler55-ojg)
+</h4>
+
+<p>Not supported</p>
+
+<pre><code></code></pre>
 
 <h4 id="Golang_github.com-oliveagle-jsonpath">
 Golang (github.com-oliveagle-jsonpath)
@@ -62,6 +122,31 @@ Golang (github.com-spyzhov-ajson)
 <pre><code>[]
 </code></pre>
 
+<h4 id="Golang_github.com-vmware-labs-yaml-jsonpath">
+Golang (github.com-vmware-labs-yaml-jsonpath)
+</h4>
+
+<p>Not supported</p>
+
+<pre><code>syntax error at position 11, following ".sum("
+</code></pre>
+
+<h4 id="Haskell_jsonpath">
+Haskell (jsonpath)
+</h4>
+
+<p>Not supported</p>
+
+<pre><code>Invalid JSONPath: $.data.sum()
+ Error: 1:11:
+  |
+1 | $.data.sum()
+  |           ^^
+unexpected "()"
+expecting ".*", "..", '.', '[', or white space
+
+</code></pre>
+
 <h4 id="JavaScript_Goessner">
 JavaScript (Goessner)
 ²
@@ -72,11 +157,39 @@ JavaScript (Goessner)
 <pre><code>jsonpath returned false, this might indicate an error
 </code></pre>
 
+<h4 id="JavaScript_brunerd">
+JavaScript (brunerd)
+</h4>
+
+<p>Not supported</p>
+
+<pre><code></code></pre>
+
+<h4 id="JavaScript_jsonpath">
+JavaScript (jsonpath)
+</h4>
+
+<p>Not supported</p>
+
+<pre><code>Lexical error on line 1. Unrecognized text.
+$.data.sum()
+----------^
+</code></pre>
+
 <h4 id="JavaScript_jsonpath-plus">
 JavaScript (jsonpath-plus)
 </h4>
 
 <pre><code>[]
+</code></pre>
+
+<h4 id="Java_com.github.jsurfer">
+Java (com.github.jsurfer)
+</h4>
+
+<p>Not supported</p>
+
+<pre><code>org.antlr.v4.runtime.misc.ParseCancellationException
 </code></pre>
 
 <h4 id="Java_com.jayway.jsonpath">
@@ -121,6 +234,15 @@ PHP (galbar-jsonpath)
 <pre><code>[]
 </code></pre>
 
+<h4 id="PHP_softcreatr-jsonpath">
+PHP (softcreatr-jsonpath)
+</h4>
+
+<p>Not supported</p>
+
+<pre><code>Error: 'Unable to parse token sum() in expression: .data.sum()'
+</code></pre>
+
 <h4 id="Perl_JSON-Path">
 Perl (JSON-Path)
 </h4>
@@ -138,6 +260,51 @@ Python (jsonpath)
 <pre><code>jsonpath returned false, this might indicate an error
 </code></pre>
 
+<h4 id="Python_jsonpath-ng">
+Python (jsonpath-ng)
+</h4>
+
+<p>Not supported</p>
+
+<pre><code>JsonPathParserError('Parse error at 1:10 near token ( (()')
+</code></pre>
+
+<h4 id="Python_jsonpath-rw">
+Python (jsonpath-rw)
+</h4>
+
+<p>Not supported</p>
+
+<pre><code>Exception('Parse error at 1:10 near token ( (()')
+</code></pre>
+
+<h4 id="Python_jsonpath2">
+Python (jsonpath2)
+</h4>
+
+<p>Not supported</p>
+
+<pre><code>CallableSubscriptNotFoundError()
+</code></pre>
+
+<h4 id="Python_python-jsonpath">
+Python (python-jsonpath)
+</h4>
+
+<p>Not supported</p>
+
+<pre><code>JSONPathSyntaxError("unexpected token '('")
+</code></pre>
+
+<h4 id="Raku_JSON-Path">
+Raku (JSON-Path)
+</h4>
+
+<p>Not supported</p>
+
+<pre><code>JSON path parse error at position 10
+</code></pre>
+
 <h4 id="Ruby_jsonpath">
 Ruby (jsonpath)
 </h4>
@@ -145,11 +312,29 @@ Ruby (jsonpath)
 <pre><code>[]
 </code></pre>
 
+<h4 id="Rust_jsonpath">
+Rust (jsonpath)
+</h4>
+
+<p>Not supported</p>
+
+<pre><code>parsing error
+</code></pre>
+
 <h4 id="Rust_jsonpath_lib">
 Rust (jsonpath_lib)
 </h4>
 
 <pre><code>[]
+</code></pre>
+
+<h4 id="Scala_jsonpath">
+Scala (jsonpath)
+</h4>
+
+<p>Not supported</p>
+
+<pre><code>JPError(end of input expected)
 </code></pre>
 
 <h4 id="Swift_Sextant">
@@ -161,11 +346,89 @@ Swift (Sextant)
 ]
 </code></pre>
 
+<h4 id="dotNET_Json.NET">
+dotNET (Json.NET)
+</h4>
+
+<p>Not supported</p>
+
+<pre><code>Array index expected.
+</code></pre>
+
+<h4 id="dotNET_JsonCons.JsonPath">
+dotNET (JsonCons.JsonPath)
+</h4>
+
+<p>Not supported</p>
+
+<pre><code>Invalid arity calling function 'sum', expected 1, found 0
+</code></pre>
+
+<h4 id="dotNET_JsonPath.Net">
+dotNET (JsonPath.Net)
+</h4>
+
+<p>Not supported</p>
+
+<pre><code>Could not find any valid selectors.
+</code></pre>
+
 <h4 id="dotNET_JsonPathLib">
 dotNET (JsonPathLib)
 </h4>
 
 <pre><code>[]
+</code></pre>
+
+<h4 id="dotNET_Manatee.Json">
+dotNET (Manatee.Json)
+</h4>
+
+<p>Not supported</p>
+
+<pre><code>Unrecognized JSON Path element. Path up to error: '$.data.sum'
+</code></pre>
+
+<h4 id="JSON_Path_Reference_Implementation">
+JSON (Path_Reference_Implementation)
+</h4>
+
+<p>Not supported</p>
+
+<pre><code> --&gt; 1:11
+  |
+1 | $.data.sum()
+  |           ^---
+  |
+  = expected EOI or matcher
+</code></pre>
+
+<h4 id="Proposal_A">
+Proposal (A)
+</h4>
+
+<p>Not supported</p>
+
+<pre><code>
+x 1:11-1:11 RecursiveDescentChildren
+| $.data.sum()
+|           ^
+| x 1:11-1:11 BracketChildren
+| | $.data.sum()
+| |           ^
+| | x 1:11-1:11 DotChild
+| | | $.data.sum()
+| | |           ^
+| | | 
+|/ /  
+| | 
+|/  
+x 1:11-1:11 Operator
+| $.data.sum()
+|           ^
+o 1:1-1:11 Start
+  $.data.sum()
+  ^^^^^^^^^^
 </code></pre>
 
 <h3>Errors</h3>
@@ -177,6 +440,13 @@ Golang (github.com-bhmj-jsonslice)
 </h4>
 
 <pre><code>path: unknown function at 10
+</code></pre>
+
+<h4 id="JavaScript_jsonpathly">
+JavaScript (jsonpathly)
+</h4>
+
+<pre><code>mismatched input 'sum' expecting {'*', IDENTIFIER, NUMBER}
 </code></pre>
 
 <h4 id="PHP_remorhaz-jsonpath">

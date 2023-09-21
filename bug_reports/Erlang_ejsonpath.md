@@ -27,27 +27,6 @@ The following queries provide results that do not match those of other implement
   {"init terminating in do_boot",not_implemented}
   ```
 
-- [ ] `$[0:3:-2]`
-  Input:
-  ```
-  [
-    "first",
-    "second",
-    "third",
-    "forth",
-    "fifth"
-  ]
-  ```
-  Expected output:
-  ```
-  []
-  ```
-  Actual output:
-  NOT_SUPPORTED
-  ```
-  syntax error before: '-'
-  ```
-
 - [ ] `$[::]`
   Input:
   ```
@@ -409,27 +388,6 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   Timeout
-  ```
-
-- [ ] `$.-1`
-  Input:
-  ```
-  [
-    "first",
-    "second",
-    "third",
-    "forth",
-    "fifth"
-  ]
-  ```
-  Expected output:
-  ```
-  []
-  ```
-  Actual output:
-  NOT_SUPPORTED
-  ```
-  syntax error before: '-'
   ```
 
 - [ ] `$.2`

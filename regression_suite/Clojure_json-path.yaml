@@ -51,7 +51,7 @@ queries:
     status: open
     result: "forth"
   - id: array_slice_with_negative_step_and_start_greater_than_end
-    status: fail
+    status: open
     result: "first"
   - id: array_slice_with_negative_step_on_partially_overlapping_array
     status: error
@@ -244,6 +244,9 @@ queries:
   - id: dot_notation_with_number
     status: open
     result: null
+  - id: dot_notation_with_number_-1
+    status: open
+    result: null
   - id: dot_notation_with_single_quotes
     status: open
     result: "value"
@@ -420,7 +423,7 @@ queries:
     status: open
     result: []
   - id: filter_expression_with_length_function
-    status: fail
+    status: open
     result: []
   - id: filter_expression_with_length_property
     status: fail
@@ -517,7 +520,7 @@ queries:
     status: open
     result: [{"key": true}, {"key": false}, {"key": "value"}, {"key": ""}, {"key": 0}, {"key": 1}, {"key": -1}, {"key": 42}, {"key": {}}, {"key": []}]
   - id: function_sum
-    status: fail
+    status: open
     result: null
   - id: parens_notation
     status: fail
@@ -526,7 +529,7 @@ queries:
     status: open
     result: [0, 1, [0, 1], [{"a": {"b": "c"}}, [0, 1]], {"a": {"b": "c"}}, {"b": "c"}]
   - id: recursive_descent_after_dot_notation
-    status: fail
+    status: open
     result: [0, 1, [0, 1], {"complex": "string", "primitives": [0, 1]}]
   - id: script_expression
     status: error
@@ -566,5 +569,5 @@ queries:
     status: fail
     result: "first"
   - id: union_with_wildcard_and_number
-    status: fail
+    status: open
     result: ["first", "second", "third", "forth", "fifth"]

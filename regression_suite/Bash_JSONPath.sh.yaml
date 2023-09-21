@@ -28,7 +28,7 @@ queries:
     status: open
     result: []
   - id: array_slice_with_negative_step_and_start_greater_than_end
-    status: fail
+    status: open
     result: ["first", "second", "third"]
   - id: array_slice_with_negative_step_on_partially_overlapping_array
     status: open
@@ -184,6 +184,9 @@ queries:
     status: fail
     result: []
   - id: dot_notation_with_number
+    status: open
+    result: []
+  - id: dot_notation_with_number_-1
     status: open
     result: []
   - id: dot_notation_with_single_quotes
@@ -385,7 +388,7 @@ queries:
     status: open
     result: []
   - id: filter_expression_with_length_function
-    status: fail
+    status: open
     result: []
   - id: filter_expression_with_less_than
     status: open
@@ -475,13 +478,13 @@ queries:
     status: open
     result: []
   - id: filter_expression_without_parens
-    status: fail
+    status: open
     result: []
   - id: filter_expression_without_value
     status: open
     result: []
   - id: function_sum
-    status: fail
+    status: open
     result: []
   - id: parens_notation
     status: fail
@@ -490,7 +493,7 @@ queries:
     status: open
     result: ["c", 0, 1]
   - id: recursive_descent_after_dot_notation
-    status: fail
+    status: open
     result: ["string", 0, 1]
   - id: recursive_descent_on_nested_arrays
     status: fail
@@ -523,5 +526,5 @@ queries:
     status: fail
     result: []
   - id: union_with_wildcard_and_number
-    status: fail
+    status: open
     result: []

@@ -91,8 +91,6 @@ queries:
   - id: array_slice_with_negative_step_and_start_greater_than_end
     selector: "$[0:3:-2]"
     document: ["first", "second", "third", "forth", "fifth"]
-    consensus: []
-    not-found-consensus: NOT_FOUND
   - id: array_slice_with_negative_step_on_partially_overlapping_array
     selector: "$[7:3:-1]"
     document: ["first", "second", "third", "forth", "fifth"]
@@ -581,10 +579,6 @@ queries:
   - id: dot_notation_with_number_-1
     selector: "$.-1"
     document: ["first", "second", "third", "forth", "fifth"]
-    consensus: []
-    scalar-consensus: null
-    not-found-consensus: NOT_FOUND
-    scalar-not-found-consensus: NOT_FOUND
   - id: dot_notation_with_number_on_object
     selector: "$.2"
     document: {"a": "first", "2": "second", "b": "third"}
@@ -853,7 +847,6 @@ queries:
   - id: filter_expression_with_length_function
     selector: "$[?(@.length() == 4)]"
     document: [[1, 2, 3, 4, 5], [1, 2, 3, 4], [1, 2, 3]]
-    consensus: NOT_SUPPORTED
   - id: filter_expression_with_length_property
     selector: "$[?(@.length == 4)]"
     document: [[1, 2, 3, 4, 5], [1, 2, 3, 4], [1, 2, 3]]
@@ -960,14 +953,12 @@ queries:
   - id: filter_expression_without_parens
     selector: "$[?@.key==42]"
     document: [{"key": 0}, {"key": 42}, {"key": -1}, {"key": 1}, {"key": 41}, {"key": 43}, {"key": 42.0001}, {"key": 41.9999}, {"key": 100}, {"key": "some"}, {"key": "42"}, {"key": null}, {"key": 420}, {"key": ""}, {"key": {}}, {"key": []}, {"key": [42]}, {"key": {"key": 42}}, {"key": {"some": 42}}, {"some": "value"}]
-    consensus: NOT_SUPPORTED
   - id: filter_expression_without_value
     selector: "$[?(@.key)]"
     document: [{"some": "some value"}, {"key": true}, {"key": false}, {"key": null}, {"key": "value"}, {"key": ""}, {"key": 0}, {"key": 1}, {"key": -1}, {"key": 42}, {"key": {}}, {"key": []}]
   - id: function_sum
     selector: "$.data.sum()"
     document: {"data": [1, 2, 3, 4]}
-    consensus: NOT_SUPPORTED
   - id: parens_notation
     selector: "$(key,more)"
     document: {"key": 1, "some": 2, "more": 3}
@@ -980,7 +971,6 @@ queries:
     selector: "$.key.."
     document: {"some key": "value", "key": {"complex": "string", "primitives": [0, 1]}}
     ordered: false
-    consensus: NOT_SUPPORTED
   - id: recursive_descent_on_nested_arrays
     selector: "$..*"
     document: [[0], [1]]
@@ -1066,4 +1056,3 @@ queries:
   - id: union_with_wildcard_and_number
     selector: "$[*,1]"
     document: ["first", "second", "third", "forth", "fifth"]
-    consensus: NOT_SUPPORTED

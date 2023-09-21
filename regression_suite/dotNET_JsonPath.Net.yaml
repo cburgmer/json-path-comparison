@@ -15,6 +15,9 @@ queries:
   - id: array_slice_with_negative_step
     status: open
     result: ["forth", "second"]
+  - id: array_slice_with_negative_step_and_start_greater_than_end
+    status: open
+    result: []
   - id: array_slice_with_negative_step_on_partially_overlapping_array
     status: open
     result: ["fifth"]
@@ -70,7 +73,7 @@ queries:
     status: open
     result: NOT_SUPPORTED
   - id: dot_notation_with_number_-1
-    status: fail
+    status: open
     result: NOT_SUPPORTED
   - id: dot_notation_with_number_on_object
     status: fail
@@ -219,6 +222,9 @@ queries:
   - id: filter_expression_with_length_free_function
     status: open
     result: [[1, 2, 3, 4]]
+  - id: filter_expression_with_length_function
+    status: open
+    result: NOT_SUPPORTED
   - id: filter_expression_with_less_than
     status: open
     result: [{"key": 0}, {"key": -1}, {"key": 41}, {"key": 41.9999}]
@@ -289,12 +295,18 @@ queries:
     status: open
     result: NOT_SUPPORTED
   - id: filter_expression_without_parens
-    status: fail
+    status: open
     result: [{"key": 42}]
   - id: filter_expression_without_value
     status: open
     result: [{"key": true}, {"key": false}, {"key": null}, {"key": "value"}, {"key": ""}, {"key": 0}, {"key": 1}, {"key": -1}, {"key": 42}, {"key": {}}, {"key": []}]
+  - id: function_sum
+    status: open
+    result: NOT_SUPPORTED
   - id: recursive_descent
+    status: open
+    result: NOT_SUPPORTED
+  - id: recursive_descent_after_dot_notation
     status: open
     result: NOT_SUPPORTED
   - id: union_with_filter
@@ -307,5 +319,5 @@ queries:
     status: open
     result: [2, 3, 5]
   - id: union_with_wildcard_and_number
-    status: fail
+    status: open
     result: ["first", "second", "third", "forth", "fifth", "second"]

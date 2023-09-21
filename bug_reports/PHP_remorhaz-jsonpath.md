@@ -106,27 +106,6 @@ The following queries provide results that do not match those of other implement
   ]
   ```
 
-- [ ] `$.-1`
-  Input:
-  ```
-  [
-    "first",
-    "second",
-    "third",
-    "forth",
-    "fifth"
-  ]
-  ```
-  Expected output:
-  ```
-  []
-  ```
-  Actual output:
-  NOT_SUPPORTED
-  ```
-  Error: 'Failed to build AST from JSONPath query: $.-1'
-  ```
-
 - [ ] `$[?(@.id==2)]`
   Input:
   ```
@@ -240,46 +219,6 @@ The following queries provide results that do not match those of other implement
   []
   ```
 
-- [ ] `$[?(@.length() == 4)]`
-  Input:
-  ```
-  [
-    [
-      1,
-      2,
-      3,
-      4,
-      5
-    ],
-    [
-      1,
-      2,
-      3,
-      4
-    ],
-    [
-      1,
-      2,
-      3
-    ]
-  ]
-  ```
-  Expected output:
-  ```
-  NOT_SUPPORTED
-  ```
-  Actual output:
-  ```
-  [
-    [
-      1,
-      2,
-      3,
-      4
-    ]
-  ]
-  ```
-
 - [ ] `$.*[?(@.key)]`
   Input:
   ```
@@ -346,10 +285,6 @@ The following queries provide results that do not match those of other implement
       4
     ]
   }
-  ```
-  Expected output:
-  ```
-  NOT_SUPPORTED
   ```
   Error:
   ```

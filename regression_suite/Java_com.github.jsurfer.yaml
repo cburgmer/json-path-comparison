@@ -32,7 +32,7 @@ queries:
     status: open
     result: NOT_SUPPORTED
   - id: array_slice_with_negative_step_and_start_greater_than_end
-    status: fail
+    status: open
     result: NOT_SUPPORTED
   - id: array_slice_with_negative_step_on_partially_overlapping_array
     status: open
@@ -118,6 +118,9 @@ queries:
   - id: dot_notation_with_number
     status: open
     result: ["third"]
+  - id: dot_notation_with_number_-1
+    status: open
+    result: []
   - id: dot_notation_with_number_on_object
     status: fail
     result: []
@@ -270,6 +273,9 @@ queries:
   - id: filter_expression_with_length_free_function
     status: open
     result: NOT_SUPPORTED
+  - id: filter_expression_with_length_function
+    status: open
+    result: NOT_SUPPORTED
   - id: filter_expression_with_less_than
     status: error
   - id: filter_expression_with_less_than_or_equal
@@ -338,9 +344,15 @@ queries:
   - id: filter_expression_with_value_true
     status: open
     result: NOT_SUPPORTED
+  - id: filter_expression_without_parens
+    status: open
+    result: NOT_SUPPORTED
   - id: filter_expression_without_value
     status: open
     result: [{"key": true}, {"key": false}, {"key": null}, {"key": "value"}, {"key": ""}, {"key": 0}, {"key": 1}, {"key": -1}, {"key": 42}, {"key": {}}, {"key": []}]
+  - id: function_sum
+    status: open
+    result: NOT_SUPPORTED
   - id: recursive_descent
     status: error
   - id: recursive_descent_after_dot_notation
@@ -373,5 +385,8 @@ queries:
     status: open
     result: NOT_SUPPORTED
   - id: union_with_slice_and_number
+    status: open
+    result: NOT_SUPPORTED
+  - id: union_with_wildcard_and_number
     status: open
     result: NOT_SUPPORTED
