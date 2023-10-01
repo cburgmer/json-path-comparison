@@ -366,26 +366,6 @@ The following queries provide results that do not match those of other implement
   path: unexpected end of path at 2
   ```
 
-- [ ] `$.-1`
-  Input:
-  ```
-  [
-    "first",
-    "second",
-    "third",
-    "forth",
-    "fifth"
-  ]
-  ```
-  Expected output:
-  ```
-  null
-  ```
-  Actual output:
-  ```
-  "fifth"
-  ```
-
 - [ ] `$.*.bar.*`
   Input:
   ```

@@ -143,7 +143,9 @@ process_implementation() {
     header
 
     while IFS= read -r query; do
-        failing_query "$implementation" "$query"
+	if [ -n "${query}" ]; then
+            failing_query "$implementation" "$query"
+	fi
     done <<< "$(all_incorrect_queries "$implementation")"
 
     footer "$implementation"

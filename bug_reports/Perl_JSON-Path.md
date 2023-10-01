@@ -127,30 +127,6 @@ The following queries provide results that do not match those of other implement
   ]
   ```
 
-- [ ] `$[0:3:-2]`
-  Input:
-  ```
-  [
-    "first",
-    "second",
-    "third",
-    "forth",
-    "fifth"
-  ]
-  ```
-  Expected output:
-  ```
-  []
-  ```
-  Actual output:
-  ```
-  [
-    "third",
-    "second",
-    "first"
-  ]
-  ```
-
 - [ ] `$[:]`
   Input:
   ```
@@ -884,28 +860,6 @@ The following queries provide results that do not match those of other implement
   Actual output:
   ```
   []
-  ```
-
-- [ ] `$.-1`
-  Input:
-  ```
-  [
-    "first",
-    "second",
-    "third",
-    "forth",
-    "fifth"
-  ]
-  ```
-  Expected output:
-  ```
-  []
-  ```
-  Actual output:
-  ```
-  [
-    "fifth"
-  ]
   ```
 
 - [ ] `$..*`

@@ -53,10 +53,6 @@ The following queries provide results that do not match those of other implement
     "fifth"
   ]
   ```
-  Expected output:
-  ```
-  []
-  ```
   Error:
   ```
   timeout: sending signal TERM to command ‘implementations/PHP_Goessner/run.sh’

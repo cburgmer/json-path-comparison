@@ -3,29 +3,6 @@ Results do not match other implementations
 The following queries provide results that do not match those of other implementations of JSONPath
 (compare https://cburgmer.github.io/json-path-comparison/):
 
-- [ ] `$[0:3:-2]`
-  Input:
-  ```
-  [
-    "first",
-    "second",
-    "third",
-    "forth",
-    "fifth"
-  ]
-  ```
-  Expected output:
-  ```
-  []
-  ```
-  Actual output:
-  ```
-  [
-    "third",
-    "first"
-  ]
-  ```
-
 - [ ] `$[3:-2]`
   Input:
   ```
@@ -437,27 +414,6 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   could not select value, invalid key: expected number but got length (string)
-  ```
-
-- [ ] `$.-1`
-  Input:
-  ```
-  [
-    "first",
-    "second",
-    "third",
-    "forth",
-    "fifth"
-  ]
-  ```
-  Expected output:
-  ```
-  null
-  ```
-  Actual output:
-  NOT_SUPPORTED
-  ```
-  parsing error: $.-1	:1:3 - 1:4 unexpected "-" while scanning JSON select expected Ident, "." or "*"
   ```
 
 - [ ] `$.2`

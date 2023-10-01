@@ -27,27 +27,6 @@ The following queries provide results that do not match those of other implement
   Expected '.' or '[' or '^'
   ```
 
-- [ ] `$.-1`
-  Input:
-  ```
-  [
-    "first",
-    "second",
-    "third",
-    "forth",
-    "fifth"
-  ]
-  ```
-  Expected output:
-  ```
-  []
-  ```
-  Actual output:
-  NOT_SUPPORTED
-  ```
-  Expected unquoted string, or single or double quoted string, or index or '*'
-  ```
-
 - [ ] `$[?(@.length == 4)]`
   Input:
   ```

@@ -282,26 +282,6 @@ The following queries provide results that do not match those of other implement
   4
   ```
 
-- [ ] `$[0:3:-2]`
-  Input:
-  ```
-  [
-    "first",
-    "second",
-    "third",
-    "forth",
-    "fifth"
-  ]
-  ```
-  Expected output:
-  ```
-  []
-  ```
-  Actual output:
-  ```
-  "first"
-  ```
-
 - [ ] `$[7:3:-1]`
   Input:
   ```

@@ -136,27 +136,6 @@ The following queries provide results that do not match those of other implement
   ]
   ```
 
-- [ ] `$[0:3:-2]`
-  Input:
-  ```
-  [
-    "first",
-    "second",
-    "third",
-    "forth",
-    "fifth"
-  ]
-  ```
-  Expected output:
-  ```
-  []
-  ```
-  Actual output:
-  NOT_SUPPORTED
-  ```
-  org.antlr.v4.runtime.misc.ParseCancellationException
-  ```
-
 - [ ] `$[::]`
   Input:
   ```

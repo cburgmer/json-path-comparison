@@ -91,8 +91,6 @@ queries:
   - id: array_slice_with_negative_step_and_start_greater_than_end
     selector: "$[0:3:-2]"
     document: ["first", "second", "third", "forth", "fifth"]
-    consensus: []
-    not-found-consensus: NOT_FOUND
   - id: array_slice_with_negative_step_on_partially_overlapping_array
     selector: "$[7:3:-1]"
     document: ["first", "second", "third", "forth", "fifth"]
@@ -581,10 +579,6 @@ queries:
   - id: dot_notation_with_number_-1
     selector: "$.-1"
     document: ["first", "second", "third", "forth", "fifth"]
-    consensus: []
-    scalar-consensus: null
-    not-found-consensus: NOT_FOUND
-    scalar-not-found-consensus: NOT_FOUND
   - id: dot_notation_with_number_on_object
     selector: "$.2"
     document: {"a": "first", "2": "second", "b": "third"}

@@ -15,6 +15,9 @@ queries:
   - id: array_slice_with_negative_step
     status: open
     result: ["forth", "second"]
+  - id: array_slice_with_negative_step_and_start_greater_than_end
+    status: open
+    result: []
   - id: array_slice_with_negative_step_on_partially_overlapping_array
     status: open
     result: ["fifth"]
@@ -77,7 +80,7 @@ queries:
     status: open
     result: NOT_SUPPORTED
   - id: dot_notation_with_number_-1
-    status: fail
+    status: open
     result: NOT_SUPPORTED
   - id: dot_notation_with_number_on_object
     status: fail

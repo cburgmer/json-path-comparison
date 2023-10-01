@@ -29,7 +29,7 @@ queries:
     status: open
     result: []
   - id: array_slice_with_negative_step_and_start_greater_than_end
-    status: fail
+    status: open
     result: ["third", "second", "first"]
   - id: array_slice_with_negative_step_on_partially_overlapping_array
     status: open
@@ -155,7 +155,7 @@ queries:
     status: open
     result: ["third"]
   - id: dot_notation_with_number_-1
-    status: fail
+    status: open
     result: ["fifth"]
   - id: dot_notation_with_single_quotes
     status: open
@@ -421,7 +421,7 @@ queries:
     result: []
   - id: union_with_repeated_matches_after_dot_notation_with_wildcard
     status: open
-    result: ["string", null, true, false, "string", 5.4]
+    result: [false, "string", 5.4, "string", null, true]
   - id: union_with_slice_and_number
     status: open
     result: [2, 3]

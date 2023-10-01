@@ -117,7 +117,7 @@ queries:
     status: open
     result: ["third"]
   - id: dot_notation_with_number_-1
-    status: fail
+    status: open
     result: ["fifth"]
   - id: dot_notation_with_number_on_object
     status: fail

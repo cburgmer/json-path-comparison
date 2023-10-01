@@ -22,7 +22,7 @@ queries:
     status: open
     result: []
   - id: array_slice_with_negative_step_and_start_greater_than_end
-    status: fail
+    status: open
     result: ["first", "second", "third"]
   - id: array_slice_with_negative_step_on_partially_overlapping_array
     status: open
@@ -88,6 +88,9 @@ queries:
     status: open
     result: "value"
   - id: dot_notation_with_number
+    status: open
+    result: null
+  - id: dot_notation_with_number_-1
     status: open
     result: null
   - id: dot_notation_with_single_quotes

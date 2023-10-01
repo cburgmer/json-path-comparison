@@ -297,10 +297,6 @@ The following queries provide results that do not match those of other implement
     "fifth"
   ]
   ```
-  Expected output:
-  ```
-  []
-  ```
   Error:
   ```
   only support one range(from, to): [0 3 -2]
@@ -1865,26 +1861,6 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   expression don't support in filter
-  ```
-
-- [ ] `$.-1`
-  Input:
-  ```
-  [
-    "first",
-    "second",
-    "third",
-    "forth",
-    "fifth"
-  ]
-  ```
-  Expected output:
-  ```
-  null
-  ```
-  Actual output:
-  ```
-  []
   ```
 
 - [ ] `$..'key'`

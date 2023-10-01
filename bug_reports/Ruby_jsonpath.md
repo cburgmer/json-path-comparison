@@ -196,10 +196,6 @@ The following queries provide results that do not match those of other implement
     "fifth"
   ]
   ```
-  Expected output:
-  ```
-  []
-  ```
   Error:
   ```
   step can't be negative

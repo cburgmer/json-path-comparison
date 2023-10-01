@@ -55,10 +55,6 @@ The following queries provide results that do not match those of other implement
     "fifth"
   ]
   ```
-  Expected output:
-  ```
-  []
-  ```
   Error:
   ```
   timeout: sending signal TERM to command ‘php’
@@ -352,28 +348,6 @@ The following queries provide results that do not match those of other implement
   ```
   [
     3
-  ]
-  ```
-
-- [ ] `$.-1`
-  Input:
-  ```
-  [
-    "first",
-    "second",
-    "third",
-    "forth",
-    "fifth"
-  ]
-  ```
-  Expected output:
-  ```
-  []
-  ```
-  Actual output:
-  ```
-  [
-    "fifth"
   ]
   ```
 

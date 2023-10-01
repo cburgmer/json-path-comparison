@@ -17,6 +17,9 @@ queries:
   - id: array_slice_with_negative_step
     status: open
     result: ["forth", "second"]
+  - id: array_slice_with_negative_step_and_start_greater_than_end
+    status: open
+    result: []
   - id: array_slice_with_negative_step_on_partially_overlapping_array
     status: open
     result: ["fifth"]
@@ -92,6 +95,9 @@ queries:
     status: open
     result: ["value"]
   - id: dot_notation_with_number
+    status: open
+    result: []
+  - id: dot_notation_with_number_-1
     status: open
     result: []
   - id: dot_notation_with_single_quotes

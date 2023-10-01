@@ -69,27 +69,6 @@ The following queries provide results that do not match those of other implement
   Instance of 'ParserException': end of input expected (at 1:6)
   ```
 
-- [ ] `$.-1`
-  Input:
-  ```
-  [
-    "first",
-    "second",
-    "third",
-    "forth",
-    "fifth"
-  ]
-  ```
-  Expected output:
-  ```
-  []
-  ```
-  Actual output:
-  NOT_SUPPORTED
-  ```
-  Instance of 'ParserException': end of input expected (at 1:2)
-  ```
-
 - [ ] `$.2`
   Input:
   ```
