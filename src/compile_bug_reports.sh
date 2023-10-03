@@ -143,9 +143,11 @@ process_implementation() {
     header
 
     while IFS= read -r query; do
-	if [ -n "${query}" ]; then
-            failing_query "$implementation" "$query"
-	fi
+        # Skip loop for empty results
+        if [[ -z "$query" ]]; then
+            return
+        fi
+        failing_query "$implementation" "$query"
     done <<< "$(all_incorrect_queries "$implementation")"
 
     footer "$implementation"
