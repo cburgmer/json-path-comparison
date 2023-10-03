@@ -885,10 +885,6 @@ The following queries provide results that do not match those of other implement
     ]
   ]
   ```
-  Expected output:
-  ```
-  NOT_SUPPORTED
-  ```
   Error:
   ```
   jsonPath: _$_v.length is not a function: @.length() == 4

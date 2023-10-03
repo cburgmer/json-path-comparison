@@ -229,7 +229,7 @@ queries:
     status: open
     result: [[1, 2, 3, 4]]
   - id: filter_expression_with_length_function
-    status: fail
+    status: open
     result: []
   - id: filter_expression_with_length_property
     status: fail

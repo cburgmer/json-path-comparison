@@ -59,6 +59,35 @@ The following queries provide results that do not match those of other implement
   ]
   ```
 
+- [ ] `$[?(@.length() == 4)]`
+  Input:
+  ```
+  [
+    [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    [
+      1,
+      2,
+      3,
+      4
+    ],
+    [
+      1,
+      2,
+      3
+    ]
+  ]
+  ```
+  Error:
+  ```
+  no viable alternative at input '@.length()'
+  ```
+
 - [ ] `$.*[?(@.key)]`
   Input:
   ```
@@ -82,6 +111,28 @@ The following queries provide results that do not match those of other implement
       "key": "value"
     }
   ]
+  ```
+
+- [ ] `$[?(null)]`
+  Input:
+  ```
+  [
+    1,
+    3,
+    "nice",
+    true,
+    null,
+    false,
+    {},
+    [],
+    -1,
+    0,
+    ""
+  ]
+  ```
+  Error:
+  ```
+  no viable alternative at input 'null)'
   ```
 
 

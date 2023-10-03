@@ -319,7 +319,7 @@ queries:
     status: open
     result: [[1, 2, 3, 4, 5], [1, 2, 3, 4], [1, 2, 3]]
   - id: filter_expression_with_length_function
-    status: fail
+    status: open
     result: [[1, 2, 3, 4, 5], [1, 2, 3, 4], [1, 2, 3]]
   - id: filter_expression_with_length_property
     status: fail

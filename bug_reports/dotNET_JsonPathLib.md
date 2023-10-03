@@ -1095,10 +1095,6 @@ The following queries provide results that do not match those of other implement
     ]
   ]
   ```
-  Expected output:
-  ```
-  NOT_SUPPORTED
-  ```
   Error:
   ```
   Object has no method 'length'

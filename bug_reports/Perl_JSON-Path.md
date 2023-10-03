@@ -2945,10 +2945,6 @@ The following queries provide results that do not match those of other implement
     ]
   ]
   ```
-  Expected output:
-  ```
-  NOT_SUPPORTED
-  ```
   Error:
   ```
   non-safe evaluation, died at main.pl line 11.

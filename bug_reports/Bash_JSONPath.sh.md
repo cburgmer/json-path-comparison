@@ -1473,10 +1473,6 @@ The following queries provide results that do not match those of other implement
     ]
   ]
   ```
-  Expected output:
-  ```
-  NOT_SUPPORTED
-  ```
   Actual output:
   ```
   []

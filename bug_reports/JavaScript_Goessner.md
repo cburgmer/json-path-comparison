@@ -858,10 +858,6 @@ The following queries provide results that do not match those of other implement
     ]
   ]
   ```
-  Expected output:
-  ```
-  NOT_SUPPORTED
-  ```
   Error:
   ```
   jsonPath: _v.length is not a function: _v.length() == 4
