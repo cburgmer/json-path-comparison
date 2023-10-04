@@ -185,10 +185,10 @@ queries:
     result: NOT_SUPPORTED
   - id: filter_expression_with_equals_number_for_dot_notation_with_star
     status: open
-    result: [[2]]
+    result: NOT_SUPPORTED
   - id: filter_expression_with_equals_number_with_fraction
     status: open
-    result: NOT_SUPPORTED
+    result: [{"key": -12.3}]
   - id: filter_expression_with_equals_number_with_leading_zeros
     status: open
     result: NOT_SUPPORTED
