@@ -7,7 +7,7 @@ cd /tmp/objectiveC
 
 export CC=clang
 
-curl -LO https://github.com/gnustep/tools-make/releases/download/make-2_9_0/gnustep-make-2.9.0.tar.gz
+curl -LO https://github.com/gnustep/tools-make/releases/download/make-2_9_1/gnustep-make-2.9.1.tar.gz
 tar -xzf gnustep-make-*.tar.gz
 rm gnustep-make-*.tar.gz
 pushd gnustep-make-*
@@ -34,7 +34,7 @@ make clean && ./configure --disable-importing-config-file --enable-native-objc-e
 popd
 
 
-curl -LO https://github.com/gnustep/libs-base/releases/download/base-1_28_0/gnustep-base-1.28.0.tar.gz
+curl -LO https://github.com/gnustep/libs-base/releases/download/base-1_29_0/gnustep-base-1.29.0.tar.gz
 tar -xzf gnustep-base-*.tar.gz
 rm gnustep-base-*.tar.gz
 pushd gnustep-base-*
@@ -43,7 +43,7 @@ make install
 popd
 
 # Need something newer than 0.1.1 because of https://github.com/gnustep/libs-corebase/issues/14
-curl -L https://github.com/gnustep/libs-corebase/archive/a4091d3fdc49af1014759e5e565f6fe8b1d9e335.tar.gz -o corebase-a4091d3fdc49af1014759e5e565f6fe8b1d9e335.tar.gz
+curl -L https://github.com/gnustep/libs-corebase/archive/e5983493d5ddf9c5b7e562f166855d9517a3f179.tar.gz -o corebase-e5983493d5ddf9c5b7e562f166855d9517a3f179.tar.gz
 tar -xzf corebase-*.tar.gz
 rm corebase-*.tar.gz
 pushd libs-corebase-*

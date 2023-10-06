@@ -50,16 +50,6 @@ RUN apt-get install -y --no-install-recommends elixir && mix local.hex --force
 # Bash
 RUN apt-get install -y --no-install-recommends sed grep gawk
 
-# Raku
-RUN apt-get install -y --no-install-recommends rakudo
-# Work around zef being dropped? in Ubuntu 22.04 (was perl6-zef, might become raku-zef in newer versions)
-RUN curl -LO https://github.com/ugexe/zef/archive/refs/tags/v0.11.7.tar.gz \
-    && tar -xzf v*.tar.gz \
-    && rm v*.tar.gz \
-    && cd zef-* \
-    && raku -I. bin/zef install .
-ENV PATH="/usr/lib/perl6/site/bin:${PATH}"
-
 # Ruby
 RUN apt-get install -y --no-install-recommends ruby
 
@@ -82,7 +72,7 @@ RUN apt-get install -y --no-install-recommends openjdk-18-jdk maven
 
 # Swift
 RUN apt-get install -y --no-install-recommends clang libicu-dev libtinfo5 libncurses5 \
-    && curl -LO https://download.swift.org/swift-5.6.3-release/ubuntu2004/swift-5.6.3-RELEASE/swift-5.6.3-RELEASE-ubuntu20.04.tar.gz \
+    && curl -LO https://download.swift.org/swift-5.9-release/ubuntu2204/swift-5.9-RELEASE/swift-5.9-RELEASE-ubuntu22.04.tar.gz \
     && tar -xzf swift-*.tar.gz \
     && rm swift-*.tar.gz \
     && mv swift-* /swift
@@ -91,10 +81,21 @@ ENV PATH="/swift/usr/bin:${PATH}"
 # Haskell
 # Get newest cabal outside of Ubuntu channel
 RUN apt-get install -y --no-install-recommends ghc xz-utils \
-    && curl -L https://downloads.haskell.org/~cabal/cabal-install-3.8.1.0/cabal-install-3.8.1.0-x86_64-linux-deb10.tar.xz -o cabal-install.tar.xz \
+    && curl -L https://downloads.haskell.org/~cabal/cabal-install-3.10.2.0/cabal-install-3.10.2.0-x86_64-linux-ubuntu20_04.tar.xz -o cabal-install.tar.xz \
     && tar -xf cabal-install.tar.xz \
     && mv cabal /usr/local/bin/ \
     && rm cabal-install.tar.xz
+
+# Raku
+RUN apt-get install -y --no-install-recommends rakudo
+# Work around zef being dropped? in Ubuntu 22.04 (was perl6-zef, might become raku-zef in newer versions)
+# Pin Zef to 0.12.0 because of https://github.com/jnthn/json-path/issues/18
+RUN curl -LO https://github.com/ugexe/zef/archive/refs/tags/v0.12.0.tar.gz \
+    && tar -xzf v*.tar.gz \
+    && rm v*.tar.gz \
+    && cd zef-* \
+    && raku -I. bin/zef install .
+ENV PATH="/usr/lib/perl6/site/bin:${PATH}"
 
 # Work around https://akashmittal.com/code-example-fatal-detected-dubious-ownership-in-repository-at/
 # There seems to be no easy way in docker to make the current user the owner of mounted volumnes, e.g. https://github.com/moby/moby/issues/2259
