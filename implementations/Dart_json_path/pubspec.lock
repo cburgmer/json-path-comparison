@@ -13,10 +13,10 @@ packages:
     dependency: "direct main"
     description:
       name: json_path
-      sha256: "93f2cb012eb37112e62d3b5e5eb535431beb4c2566a9c1987b079b13b308763b"
+      sha256: b1a3e5e34c862a6ca598e226e725647e462bde9fd98dbfa21bb53e105efeb177
       url: "https://pub.dev"
     source: hosted
-    version: "0.6.6"
+    version: "0.7.0"
   maybe_just_nothing:
     dependency: transitive
     description:
@@ -29,18 +29,18 @@ packages:
     dependency: transitive
     description:
       name: meta
-      sha256: a6e590c838b18133bb482a2745ad77c5bb7715fb0451209e1a7567d416678b8e
+      sha256: d584fa6707a52763a52446f02cc621b077888fb63b93bbcb1143a7be5a0c0c04
       url: "https://pub.dev"
     source: hosted
-    version: "1.10.0"
+    version: "1.11.0"
   petitparser:
     dependency: transitive
     description:
       name: petitparser
-      sha256: eeb2d1428ee7f4170e2bd498827296a18d4e7fc462b71727d111c0ac7707cfa6
+      sha256: c15605cd28af66339f8eb6fbe0e541bfe2d1b72d5825efc6598f3e0a31b9ad27
       url: "https://pub.dev"
     source: hosted
-    version: "6.0.1"
+    version: "6.0.2"
   rfc_6901:
     dependency: transitive
     description:
@@ -50,4 +50,4 @@ packages:
     source: hosted
     version: "0.2.0"
 sdks:
-  dart: ">=3.0.0 <4.0.0"
+  dart: ">=3.2.0 <4.0.0"

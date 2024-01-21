@@ -1318,50 +1318,6 @@ The following queries provide results that do not match those of other implement
   ]
   ```
 
-- [ ] `$[?(@.a[?(@.price>10)])]`
-  Input:
-  ```
-  [
-    {
-      "a": [
-        {
-          "price": 1
-        },
-        {
-          "price": 3
-        }
-      ]
-    },
-    {
-      "a": [
-        {
-          "price": 11
-        }
-      ]
-    },
-    {
-      "a": [
-        {
-          "price": 8
-        },
-        {
-          "price": 12
-        },
-        {
-          "price": 3
-        }
-      ]
-    },
-    {
-      "a": []
-    }
-  ]
-  ```
-  Error:
-  ```
-  Unexpected token '?'
-  ```
-
 - [ ] `$[?(@.a.b.c==3)]`
   Input:
   ```

@@ -330,7 +330,8 @@ queries:
     status: fail
     result: [{"key": 42}, {"key": 42}, {"key": 42}, {"key": 42}, {"key": 42}, {"key": 42}, {"key": 42}, {"key": 42}, {"key": 42}, {"key": 42}, {"key": 42}, {"key": 42}, {"key": 42}, {"key": 42}, {"key": 42}, {"key": 42}, {"key": 42}, {"key": 42}, {"key": 42}, {"key": 42, "some": "value"}]
   - id: filter_expression_with_subfilter
-    status: error
+    status: open
+    result: [{"a": [{"price": 11}]}, {"a": [{"price": 8}, {"price": 12}, {"price": 3}]}]
   - id: filter_expression_with_subpaths_deeply_nested
     status: error
   - id: filter_expression_with_subtraction

@@ -22,9 +22,9 @@ The following queries provide results that do not match those of other implement
   Actual output:
   NOT_FOUND
   ```
-  SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
-  SLF4J: Defaulting to no-operation (NOP) logger implementation
-  SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+  SLF4J(W): No SLF4J providers were found.
+  SLF4J(W): Defaulting to no-operation (NOP) logger implementation
+  SLF4J(W): See https://www.slf4j.org/codes.html#noProviders for further details.
   com.jayway.jsonpath.PathNotFoundException: Filter: [1:3] can only be applied to arrays. Current context is: {:=42, more=string, a=1, b=2, c=3, 1:3=nice}
   ```
 
@@ -46,9 +46,9 @@ The following queries provide results that do not match those of other implement
   Actual output:
   NOT_SUPPORTED
   ```
-  SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
-  SLF4J: Defaulting to no-operation (NOP) logger implementation
-  SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+  SLF4J(W): No SLF4J providers were found.
+  SLF4J(W): Defaulting to no-operation (NOP) logger implementation
+  SLF4J(W): See https://www.slf4j.org/codes.html#noProviders for further details.
   com.jayway.jsonpath.InvalidPathException: java.lang.NumberFormatException: For input string: "113667776004"
   ```
 
@@ -70,9 +70,9 @@ The following queries provide results that do not match those of other implement
   Actual output:
   NOT_SUPPORTED
   ```
-  SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
-  SLF4J: Defaulting to no-operation (NOP) logger implementation
-  SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+  SLF4J(W): No SLF4J providers were found.
+  SLF4J(W): Defaulting to no-operation (NOP) logger implementation
+  SLF4J(W): See https://www.slf4j.org/codes.html#noProviders for further details.
   com.jayway.jsonpath.InvalidPathException: java.lang.NumberFormatException: For input string: "-113667776004"
   ```
 
@@ -175,9 +175,9 @@ The following queries provide results that do not match those of other implement
   Actual output:
   NOT_SUPPORTED
   ```
-  SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
-  SLF4J: Defaulting to no-operation (NOP) logger implementation
-  SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+  SLF4J(W): No SLF4J providers were found.
+  SLF4J(W): Defaulting to no-operation (NOP) logger implementation
+  SLF4J(W): See https://www.slf4j.org/codes.html#noProviders for further details.
   com.jayway.jsonpath.InvalidPathException: Failed to parse SliceOperation: :
   ```
 
@@ -196,9 +196,9 @@ The following queries provide results that do not match those of other implement
   Actual output:
   NOT_SUPPORTED
   ```
-  SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
-  SLF4J: Defaulting to no-operation (NOP) logger implementation
-  SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+  SLF4J(W): No SLF4J providers were found.
+  SLF4J(W): Defaulting to no-operation (NOP) logger implementation
+  SLF4J(W): See https://www.slf4j.org/codes.html#noProviders for further details.
   com.jayway.jsonpath.InvalidPathException: Failed to parse SliceOperation: ::
   ```
 
@@ -217,9 +217,9 @@ The following queries provide results that do not match those of other implement
   Actual output:
   NOT_SUPPORTED
   ```
-  SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
-  SLF4J: Defaulting to no-operation (NOP) logger implementation
-  SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+  SLF4J(W): No SLF4J providers were found.
+  SLF4J(W): Defaulting to no-operation (NOP) logger implementation
+  SLF4J(W): See https://www.slf4j.org/codes.html#noProviders for further details.
   com.jayway.jsonpath.InvalidPathException: Failed to parse SliceOperation: :
   ```
 
@@ -367,9 +367,9 @@ The following queries provide results that do not match those of other implement
   Actual output:
   NOT_SUPPORTED
   ```
-  SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
-  SLF4J: Defaulting to no-operation (NOP) logger implementation
-  SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+  SLF4J(W): No SLF4J providers were found.
+  SLF4J(W): Defaulting to no-operation (NOP) logger implementation
+  SLF4J(W): See https://www.slf4j.org/codes.html#noProviders for further details.
   com.jayway.jsonpath.InvalidPathException: Failed to parse SliceOperation: ::2
   ```
 
@@ -383,9 +383,9 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
-  SLF4J: Defaulting to no-operation (NOP) logger implementation
-  SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+  SLF4J(W): No SLF4J providers were found.
+  SLF4J(W): Defaulting to no-operation (NOP) logger implementation
+  SLF4J(W): See https://www.slf4j.org/codes.html#noProviders for further details.
   Exception in thread "main" java.lang.IllegalArgumentException: path can not be null or empty
   	at com.jayway.jsonpath.internal.Utils.notEmpty(Utils.java:401)
   	at com.jayway.jsonpath.internal.JsonContext.read(JsonContext.java:76)
@@ -564,9 +564,9 @@ The following queries provide results that do not match those of other implement
   Actual output:
   NOT_SUPPORTED
   ```
-  SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
-  SLF4J: Defaulting to no-operation (NOP) logger implementation
-  SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+  SLF4J(W): No SLF4J providers were found.
+  SLF4J(W): Defaulting to no-operation (NOP) logger implementation
+  SLF4J(W): See https://www.slf4j.org/codes.html#noProviders for further details.
   com.jayway.jsonpath.InvalidPathException: Failed to parse SliceOperation: :
   ```
 
