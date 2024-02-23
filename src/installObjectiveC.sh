@@ -7,6 +7,16 @@ cd /tmp/objectiveC
 
 export CC=clang
 
+curl -LO https://github.com/apple/swift-corelibs-libdispatch/archive/refs/tags/swift-5.5-RELEASE.tar.gz
+tar -xzf swift-*.tar.gz
+rm swift-*.tar.gz
+pushd swift-*
+mkdir Build
+cd Build/
+cmake -DCMAKE_C_COMPILER=clang -DCMAKE_CXX_COMPILER=clang++ -DCMAKE_C_FLAGS="-Wno-error=unused-but-set-variable" ..
+make install
+popd
+
 curl -LO https://github.com/gnustep/tools-make/releases/download/make-2_9_1/gnustep-make-2.9.1.tar.gz
 tar -xzf gnustep-make-*.tar.gz
 rm gnustep-make-*.tar.gz

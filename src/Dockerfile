@@ -54,15 +54,19 @@ RUN apt-get install -y --no-install-recommends sed grep gawk
 RUN apt-get install -y --no-install-recommends ruby
 
 # Dart
+ARG DART_VERSION="3.3.0"
+# Following https://medium.com/flutter-community/running-dart-on-arm-servers-7fd5f5eb99d
 RUN apt-get install -y --no-install-recommends apt-transport-https gnupg2
-RUN sh -c 'wget -qO- https://dl-ssl.google.com/linux/linux_signing_key.pub | gpg --dearmor -o /usr/share/keyrings/dart.gpg'
-RUN sh -c "echo 'deb [signed-by=/usr/share/keyrings/dart.gpg arch=amd64] https://storage.googleapis.com/download.dartlang.org/linux/debian stable main' | tee /etc/apt/sources.list.d/dart_stable.list"
-RUN apt-get update && apt-get install dart
-ENV PATH="${PATH}:/usr/lib/dart/bin"
-
+RUN case "$(uname -m)" in armv7l | armv7) ARCH="arm";; aarch64) ARCH="arm64";; *) ARCH="x64";; esac \
+    && curl -O https://storage.googleapis.com/dart-archive/channels/stable/release/$DART_VERSION/sdk/dartsdk-linux-$ARCH-release.zip \
+    && unzip dartsdk-linux-$ARCH-release.zip -d /usr/lib/ \
+    && rm dartsdk-linux-$ARCH-release.zip \
+    && mv /usr/lib/dart-sdk /usr/lib/dart
+ENV DART_SDK="/usr/lib/dart"
+ENV PATH="${PATH}:${DART_SDK}/bin"
 
 # Objective-C
-RUN apt-get install -y --no-install-recommends build-essential cmake clang libblocksruntime-dev libicu-dev libdispatch-dev
+RUN apt-get install -y --no-install-recommends build-essential cmake clang libblocksruntime-dev libicu-dev
 ADD installObjectiveC.sh /tmp/installObjectiveC.sh
 RUN chmod a+x /tmp/installObjectiveC.sh
 RUN /tmp/installObjectiveC.sh
@@ -72,16 +76,18 @@ RUN apt-get install -y --no-install-recommends openjdk-18-jdk maven
 
 # Swift
 RUN apt-get install -y --no-install-recommends clang libicu-dev libtinfo5 libncurses5 \
-    && curl -LO https://download.swift.org/swift-5.9-release/ubuntu2204/swift-5.9-RELEASE/swift-5.9-RELEASE-ubuntu22.04.tar.gz \
+    && case "$(uname -m)" in aarch64) URL="https://download.swift.org/swift-5.9.2-release/ubuntu2204-aarch64/swift-5.9.2-RELEASE/swift-5.9.2-RELEASE-ubuntu22.04-aarch64.tar.gz";; *) URL="https://download.swift.org/swift-5.9.2-release/ubuntu2204/swift-5.9.2-RELEASE/swift-5.9.2-RELEASE-ubuntu22.04.tar.gz";; esac \
+    && curl -LO "$URL" \
     && tar -xzf swift-*.tar.gz \
     && rm swift-*.tar.gz \
     && mv swift-* /swift
-ENV PATH="/swift/usr/bin:${PATH}"
+ENV PATH="${PATH}:/swift/usr/bin"
 
 # Haskell
 # Get newest cabal outside of Ubuntu channel
 RUN apt-get install -y --no-install-recommends ghc xz-utils \
-    && curl -L https://downloads.haskell.org/~cabal/cabal-install-3.10.2.0/cabal-install-3.10.2.0-x86_64-linux-ubuntu20_04.tar.xz -o cabal-install.tar.xz \
+    && case "$(uname -m)" in aarch64) URL="https://downloads.haskell.org/~cabal/cabal-install-3.10.2.0/cabal-install-3.10.2.0-aarch64-linux-deb11.tar.xz";; *) URL="https://downloads.haskell.org/~cabal/cabal-install-3.10.2.0/cabal-install-3.10.2.0-x86_64-linux-ubuntu20_04.tar.xz";; esac \
+    && curl -L "$URL" -o cabal-install.tar.xz \
     && tar -xf cabal-install.tar.xz \
     && mv cabal /usr/local/bin/ \
     && rm cabal-install.tar.xz

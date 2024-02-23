@@ -74,8 +74,10 @@ Some of the complexity sadly brings its own set of errors
   site can sometimes have unbearably slow.
   However, certain implementations may be able to utilize the nearest mirror
   site by utilizing environment variables.
-  - For `./src/with_docker.sh`:  
+  - For `./src/with_docker.sh`:
     Write to `./src/docker_env_file.txt` in accordance with the `--env-file`
     option specified in the `docker run` command.
-  - For `./src/with_native.sh`:  
+  - For `./src/with_native.sh`:
     Directly export environment variables.
+- If docker build fails on M1 with Colima, maybe
+  https://www.tyler-wright.com/using-colima-on-an-m1-m2-mac/ helps.
