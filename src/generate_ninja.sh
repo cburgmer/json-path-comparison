@@ -14,10 +14,6 @@ all_implementations() {
     find ./implementations -name run.sh -maxdepth 2 -print0 | xargs -0 -n1 dirname | xargs -n1 basename | sort
 }
 
-all_proposals() {
-    find ./proposals -name run.sh -maxdepth 2 -print0 | xargs -0 -n1 dirname | xargs -n1 basename | sort
-}
-
 all_queries() {
     if [[ -n "${ONLY_QUERIES:-}" ]]; then
         echo "$ONLY_QUERIES" | tr ' ' '\n'
@@ -32,7 +28,7 @@ ninja_rules() {
 rule configure
   command = LANG=en_US.UTF-8 LC_ALL= LC_COLLATE=C ./src/generate_ninja.sh
   generator = 1
-build build.ninja: configure | ./src/generate_ninja.sh queries/ implementations/ proposals/
+build build.ninja: configure | ./src/generate_ninja.sh queries/ implementations/
 
 EOF
 }
@@ -54,20 +50,10 @@ EOF
     done <<< "$(all_implementations)"
     echo
 
-    while IFS= read -r proposal; do
-        echo "subninja proposals/${proposal}/build.ninja"
-        echo "build ${test_compilation_dir}/${proposal}: test_compilation proposals/${proposal} | proposals/${proposal}/install"
-        echo
-    done <<< "$(all_proposals)"
-    echo
-
     echo -n "build ${test_compilation_dir}: phony"
     while IFS= read -r implementation; do
         echo -n " ${test_compilation_dir}/${implementation}"
     done <<< "$(all_implementations)"
-    while IFS= read -r proposal; do
-        echo -n " ${test_compilation_dir}/${proposal}"
-    done <<< "$(all_proposals)"
     echo
     echo
 }
@@ -90,22 +76,11 @@ EOF
         done <<< "$(all_implementations)"
         echo
 
-        while IFS= read -r proposal; do
-            echo -n "build ${results_dir}/${query}/${proposal}: run queries/${query} proposals/${proposal}"
-            # implicit deps
-            echo -n " | src/query_implementation.sh src/canonical_json.py src/sort_json_array.py queries/${query}/selector queries/${query}/document.json ${test_compilation_dir}/${proposal}"
-            echo
-        done <<< "$(all_proposals)"
-        echo
-
         # aggregate query build
         echo -n "build ${results_dir}/${query}: phony"
         while IFS= read -r implementation; do
             echo -n " ${results_dir}/${query}/${implementation}"
         done <<< "$(all_implementations)"
-        while IFS= read -r proposal; do
-            echo -n " ${results_dir}/${query}/${proposal}"
-        done <<< "$(all_proposals)"
         echo
         echo
     done <<< "$(all_queries)"
@@ -191,7 +166,7 @@ rule compile_table
   command = LANG=en_US.UTF-8 LC_ALL= LC_COLLATE=C ./src/compile_table.sh \$in > \$out
 EOF
     echo
-    echo "build ${docs_dir}/index.html: compile_table ${results_dir} ${consensus_dir} ${implementations_matching_majority_dir} | src/compile_table.sh src/shared.sh src/sort_queries.py queries/ implementations/ proposals/"
+    echo "build ${docs_dir}/index.html: compile_table ${results_dir} ${consensus_dir} ${implementations_matching_majority_dir} | src/compile_table.sh src/shared.sh src/sort_queries.py queries/ implementations/"
     echo
 
     cat <<EOF

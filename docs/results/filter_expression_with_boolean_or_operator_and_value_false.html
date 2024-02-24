@@ -597,67 +597,6 @@ dotNET (Manatee.Json)
 ]
 </code></pre>
 
-<h4 id="JSON_Path_Reference_Implementation">
-JSON (Path_Reference_Implementation)
-</h4>
-
-<p>Not supported</p>
-
-<pre><code> --&gt; 1:3
-  |
-1 | $[?(@.key&gt;0 || false)]
-  |   ^---
-  |
-  = expected unionChild, unionArrayIndex, or sliceStart
-</code></pre>
-
-<h4 id="Proposal_A">
-Proposal (A)
-</h4>
-
-<p>Not supported</p>
-
-<pre><code>
-x 1:21-1:21 ComparisonOperator
-| $[?(@.key&gt;0 || false)]
-|                     ^
-x 1:16-1:16 HigherPrecedenceFilterExpression
-| $[?(@.key&gt;0 || false)]
-|                ^
-| x 1:21-1:21 ComparisonOperator
-| | $[?(@.key&gt;0 || false)]
-| |                     ^
-| x 1:16-1:16 HigherPrecedenceFilterExpression
-| | $[?(@.key&gt;0 || false)]
-| |                ^
-| x 1:16-1:16 LogicalOr
-| | $[?(@.key&gt;0 || false)]
-| |                ^
-| | 
-|/  
-x 1:5-1:5 LogicalOr
-| $[?(@.key&gt;0 || false)]
-|     ^
-o 1:5-1:12 FilterExpression
-| $[?(@.key&gt;0 || false)]
-|     ^^^^^^^
-x 1:3-1:3 BracketElement
-| $[?(@.key&gt;0 || false)]
-|   ^
-x 1:3-1:3 BracketElements
-| $[?(@.key&gt;0 || false)]
-|   ^
-x 1:2-1:2 BracketChildren
-| $[?(@.key&gt;0 || false)]
-|  ^
-x 1:2-1:2 Operator
-| $[?(@.key&gt;0 || false)]
-|  ^
-o 1:1-1:2 Start
-  $[?(@.key&gt;0 || false)]
-  ^
-</code></pre>
-
 <h3>Errors</h3>
 
 <h4 id="Erlang_ejsonpath">

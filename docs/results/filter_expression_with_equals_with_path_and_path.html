@@ -1680,65 +1680,6 @@ dotNET (Manatee.Json)
 ]
 </code></pre>
 
-<h4 id="JSON_Path_Reference_Implementation">
-JSON (Path_Reference_Implementation)
-</h4>
-
-<p>Not supported</p>
-
-<pre><code> --&gt; 1:3
-  |
-1 | $[?(@.key1==@.key2)]
-  |   ^---
-  |
-  = expected unionChild, unionArrayIndex, or sliceStart
-</code></pre>
-
-<h4 id="Proposal_A">
-Proposal (A)
-</h4>
-
-<pre><code>[
-  {
-    "key1": 10,
-    "key2": 10
-  },
-  {},
-  {
-    "key1": null,
-    "key2": null
-  },
-  {
-    "key1": 0,
-    "key2": 0
-  },
-  {
-    "key1": -1,
-    "key2": -1
-  },
-  {
-    "key1": "",
-    "key2": ""
-  },
-  {
-    "key1": false,
-    "key2": false
-  },
-  {
-    "key1": true,
-    "key2": true
-  },
-  {
-    "key1": [],
-    "key2": []
-  },
-  {
-    "key1": {},
-    "key2": {}
-  }
-]
-</code></pre>
-
 <h3>Errors</h3>
 
 <h4 id="Golang_github.com-ohler55-ojg">

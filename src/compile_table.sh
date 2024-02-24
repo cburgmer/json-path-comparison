@@ -11,10 +11,6 @@ all_implementations() {
     find ./implementations -name run.sh -maxdepth 2 -print0 | xargs -0 -n1 dirname | xargs -n1 basename | sort
 }
 
-all_proposals() {
-    find ./proposals -name run.sh -maxdepth 2 -print0 | xargs -0 -n1 dirname | xargs -n1 basename | sort
-}
-
 all_queries() {
     find ./queries -type d -maxdepth 1 -mindepth 1 -print0 | xargs -0 -n1 basename | ./src/sort_queries.py
 }
@@ -67,7 +63,6 @@ compile_row() {
     local selector
     local query_name
     local implementation
-    local proposal
     local status
     selector="$(cat "${selector_file}")"
     query_name="$(pretty_query_name "$query")"
@@ -102,12 +97,6 @@ compile_row() {
         echo "</td>"
     done <<< "$(all_implementations)"
 
-    while IFS= read -r proposal; do
-        echo "<td class=\"proposal\">"
-        give_mark "$query" "$proposal"
-        echo "</td>"
-    done <<< "$(all_proposals)"
-
     echo "</tr>"
 }
 
@@ -126,9 +115,6 @@ implementation_language_header() {
         echo "</span>"
         echo "</th>"
     done <<< "$(all_implementations | sed "s/\([^_]*\)_.*/\1/" | uniq -c)"
-
-    count="$(all_proposals | wc -l | tr -d ' ')"
-    echo "<th style=\"position: sticky; top: 0; background: #ffffffaa;\" colspan=\"${count}\"></th>"
 }
 
 wrap_with_link() {
@@ -144,7 +130,6 @@ wrap_with_link() {
 
 header_row() {
     local implementation
-    local proposal
 
     echo "<tr style=\"background: none\">"
     echo "<th style=\"background: #ffffffaa;\"></th>"
@@ -171,14 +156,6 @@ header_row() {
         echo "</div>"
         echo "</th>"
     done <<< "$(all_implementations)"
-
-    while IFS= read -r proposal; do
-        echo "<th style=\"background: #fbfdffaa;\">"
-        echo "<div style=\"writing-mode: vertical-rl; white-space: nowrap;\">"
-        tr '_' ' ' <<< "$proposal" | wrap_with_link "./proposals/${proposal}"
-        echo "</div>"
-        echo "</th>"
-    done <<< "$(all_proposals)"
 
     echo "</tr>"
 }
@@ -265,19 +242,8 @@ tbody tr:hover {
 EOF
 }
 
-proposal() {
-    cat
-    cat <<EOF
-<style>
-.markdown-body tbody .proposal {
-  background-color: #fff8;
-}
-</style>
-EOF
-}
-
 main() {
-    table | beautiful_html | adjust_css | table_consensus_colouring | highlight_effect | proposal
+    table | beautiful_html | adjust_css | table_consensus_colouring | highlight_effect
 }
 
 main

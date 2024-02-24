@@ -21,9 +21,8 @@ clean_verbatim_response() {
     tr -d '\r'
 }
 
-all_implementations_and_proposals() {
+all_implementations() {
     find ./implementations -name run.sh -maxdepth 2 -print0 | xargs -0 -n1 dirname | xargs -n1 basename | sort
-    find ./proposals -name run.sh -maxdepth 2 -print0 | xargs -0 -n1 dirname | xargs -n1 basename | sort
 }
 
 is_in_majority() {
@@ -46,7 +45,7 @@ implementation_outliers() {
         if is_outlier "$implementation"; then
             echo "$implementation"
         fi
-    done <<< "$(all_implementations_and_proposals)"
+    done <<< "$(all_implementations)"
 }
 
 implementation_errors() {
@@ -55,7 +54,7 @@ implementation_errors() {
         if is_query_error "${results_dir}/${query}/${implementation}"; then
             echo "$implementation"
         fi
-    done <<< "$(all_implementations_and_proposals)"
+    done <<< "$(all_implementations)"
 }
 
 fix_line_break_on_osx() {

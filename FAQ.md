@@ -156,7 +156,3 @@ https://github.com/ietf-wg-jsonpath/draft-ietf-jsonpath-jsonpath .
 
 Outcomes here help to inform the draft process with insights into what is
 being currently used and accepted as "correct" in the wild.
-
-## Do the proposals' outcome contribute to the consensus?
-
-No, they don't.

@@ -970,67 +970,6 @@ dotNET (Manatee.Json)
 ]
 </code></pre>
 
-<h4 id="JSON_Path_Reference_Implementation">
-JSON (Path_Reference_Implementation)
-</h4>
-
-<p>Not supported</p>
-
-<pre><code> --&gt; 1:3
-  |
-1 | $[?(@.a &amp;&amp; @.b || @.c)]
-  |   ^---
-  |
-  = expected unionChild, unionArrayIndex, or sliceStart
-</code></pre>
-
-<h4 id="Proposal_A">
-Proposal (A)
-</h4>
-
-<p>Not supported</p>
-
-<pre><code>
-x 1:16-1:16 ComparisonOperator
-| $[?(@.a &amp;&amp; @.b || @.c)]
-|                ^
-o 1:12-1:15 HigherPrecedenceFilterExpression
-| $[?(@.a &amp;&amp; @.b || @.c)]
-|            ^^^
-x 1:12-1:12 LogicalAnd
-| $[?(@.a &amp;&amp; @.b || @.c)]
-|            ^
-| x 1:16-1:16 ComparisonOperator
-| | $[?(@.a &amp;&amp; @.b || @.c)]
-| |                ^
-| o 1:12-1:15 HigherPrecedenceFilterExpression
-| | $[?(@.a &amp;&amp; @.b || @.c)]
-| |            ^^^
-| | 
-|/  
-o 1:5-1:15 LogicalAnd
-| $[?(@.a &amp;&amp; @.b || @.c)]
-|     ^^^^^^^^^^
-o 1:5-1:15 FilterExpression
-| $[?(@.a &amp;&amp; @.b || @.c)]
-|     ^^^^^^^^^^
-x 1:3-1:3 BracketElement
-| $[?(@.a &amp;&amp; @.b || @.c)]
-|   ^
-x 1:3-1:3 BracketElements
-| $[?(@.a &amp;&amp; @.b || @.c)]
-|   ^
-x 1:2-1:2 BracketChildren
-| $[?(@.a &amp;&amp; @.b || @.c)]
-|  ^
-x 1:2-1:2 Operator
-| $[?(@.a &amp;&amp; @.b || @.c)]
-|  ^
-o 1:1-1:2 Start
-  $[?(@.a &amp;&amp; @.b || @.c)]
-  ^
-</code></pre>
-
 <h3>Errors</h3>
 
 <h4 id="Erlang_ejsonpath">
