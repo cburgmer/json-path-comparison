@@ -9,14 +9,17 @@ being able to query it is valuable.
 Let's just make sure it's implemented consistently so we can avoid surprises.
 
 This comparison is meant to create visibility, help implementers find issues
-by sharing test cases, and finally give guidance on interpretation of the
-[initial posts by Goessner](https://goessner.net/articles/JsonPath/).
+by sharing test cases.
 
 
 ## Where are the expected results coming from?
 
-Given there is no extensive test suite and implementations in the wild disagree
-widely, we take the rather unorthodox approach and just look for a consensus.
+Given that the
+[initial posts by Goessner](https://goessner.net/articles/JsonPath/) left room
+for interpretation, and
+[a clear standard](https://www.rfc-editor.org/rfc/rfc9535) only emerged much
+later (with a definitive reference implementation yet to be completed) we
+took the rather unorthodox approach and just built on top of a consensus.
 
 The consensus is based on the majority across all supported implementations.
 This is achieved by executing a query against all implementations and finally
@@ -24,21 +27,8 @@ comparing the results. If a majority of half of all implementations (rounded up)
 plus one agree on an outcome we speak of a consensus. This guarantees difference
 of at least 2 votes even in critical cases.
 
-While this makes no statement of the correctness, we trust that if a majority
-of authors agree on the same outcome they are very likely to have reached a
-consistent interpretation useful for the user.
-
-
-## If there's no correct implementation, isn't it incorrect to speak of a 'wrong' result?
-
-This project has an ultimate goal: to help developers find a good implementation
-that is also consistent in its interpretation, across all languages. Otherwise,
-what's the point of learning it if the knowledge turns out wrong when jumping to
-the next programming language.
-
-In this context we assume that given a consensus, all other answers are plain
-wrong, so long as the consensus cannot be tipped towards a different
-implementation.
+The consensus however makes no statement of the correctness. One should rather
+carefully read the [the RFC](https://www.rfc-editor.org/rfc/rfc9535).
 
 
 ## Shouldn't Goessner's implementation be considered correct?
@@ -59,14 +49,6 @@ was to be judged against the consensus.
 
 The consensus gives the community an opportunity to move away in cases that are
 doubtful or considered inconsistent and incorrect.
-
-
-## Should I be forced to implement a certain interpretation if I don't agree with it?
-
-We think not. The point of the consensus is to create room for alignment. If a
-different solution exists, we would hope for a lively discussion and, given it
-is deemed better, that eventually the majority of implementations will move
-towards the better solution.
 
 
 ## How do you handle differences in implementations when calculating the consensus?
@@ -147,12 +129,3 @@ Here's a few good indicators that the query you are looking at should be added:
   should probably be broken down to narrow the area of test. Obviously a long
   query is good if a shorter version does not expose the same deviation in
   implementations' responses.
-
-
-## How will a standard emerge from the query examples?
-
-There is now an undertaking to develop an Internet Draft for JSONPath:
-https://github.com/ietf-wg-jsonpath/draft-ietf-jsonpath-jsonpath .
-
-Outcomes here help to inform the draft process with insights into what is
-being currently used and accepted as "correct" in the wild.
