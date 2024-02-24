@@ -493,6 +493,255 @@ The following queries provide results that do not match those of other implement
   ]
   ```
 
+- [ ] `$..*[?(@.id>2)]`
+  Input:
+  ```
+  [
+    {
+      "complext": {
+        "one": [
+          {
+            "name": "first",
+            "id": 1
+          },
+          {
+            "name": "next",
+            "id": 2
+          },
+          {
+            "name": "another",
+            "id": 3
+          },
+          {
+            "name": "more",
+            "id": 4
+          }
+        ],
+        "more": {
+          "name": "next to last",
+          "id": 5
+        }
+      }
+    },
+    {
+      "name": "last",
+      "id": 6
+    }
+  ]
+  ```
+  Error:
+  ```
+  Accessed JArray values with invalid key value: "id". Int32 array index expected.
+  ```
+
+- [ ] `$..[?(@.id==2)]`
+  Input:
+  ```
+  {
+    "id": 2,
+    "more": [
+      {
+        "id": 2
+      },
+      {
+        "more": {
+          "id": 2
+        }
+      },
+      {
+        "id": {
+          "id": 2
+        }
+      },
+      [
+        {
+          "id": 2
+        }
+      ]
+    ]
+  }
+  ```
+  Error:
+  ```
+  Accessed JArray values with invalid key value: "id". Int32 array index expected.
+  ```
+
+- [ ] `$[?(@.key>0 && false)]`
+  Input:
+  ```
+  [
+    {
+      "key": 1
+    },
+    {
+      "key": 3
+    },
+    {
+      "key": "nice"
+    },
+    {
+      "key": true
+    },
+    {
+      "key": null
+    },
+    {
+      "key": false
+    },
+    {
+      "key": {}
+    },
+    {
+      "key": []
+    },
+    {
+      "key": -1
+    },
+    {
+      "key": 0
+    },
+    {
+      "key": ""
+    }
+  ]
+  ```
+  Error:
+  ```
+  Accessed JArray values with invalid key value: "valueOf". Int32 array index expected.
+  ```
+
+- [ ] `$[?(@.key>0 && true)]`
+  Input:
+  ```
+  [
+    {
+      "key": 1
+    },
+    {
+      "key": 3
+    },
+    {
+      "key": "nice"
+    },
+    {
+      "key": true
+    },
+    {
+      "key": null
+    },
+    {
+      "key": false
+    },
+    {
+      "key": {}
+    },
+    {
+      "key": []
+    },
+    {
+      "key": -1
+    },
+    {
+      "key": 0
+    },
+    {
+      "key": ""
+    }
+  ]
+  ```
+  Error:
+  ```
+  Accessed JArray values with invalid key value: "valueOf". Int32 array index expected.
+  ```
+
+- [ ] `$[?(@.key>0 || false)]`
+  Input:
+  ```
+  [
+    {
+      "key": 1
+    },
+    {
+      "key": 3
+    },
+    {
+      "key": "nice"
+    },
+    {
+      "key": true
+    },
+    {
+      "key": null
+    },
+    {
+      "key": false
+    },
+    {
+      "key": {}
+    },
+    {
+      "key": []
+    },
+    {
+      "key": -1
+    },
+    {
+      "key": 0
+    },
+    {
+      "key": ""
+    }
+  ]
+  ```
+  Error:
+  ```
+  Accessed JArray values with invalid key value: "valueOf". Int32 array index expected.
+  ```
+
+- [ ] `$[?(@.key>0 || true)]`
+  Input:
+  ```
+  [
+    {
+      "key": 1
+    },
+    {
+      "key": 3
+    },
+    {
+      "key": "nice"
+    },
+    {
+      "key": true
+    },
+    {
+      "key": null
+    },
+    {
+      "key": false
+    },
+    {
+      "key": {}
+    },
+    {
+      "key": []
+    },
+    {
+      "key": -1
+    },
+    {
+      "key": 0
+    },
+    {
+      "key": ""
+    }
+  ]
+  ```
+  Error:
+  ```
+  Accessed JArray values with invalid key value: "valueOf". Int32 array index expected.
+  ```
+
 - [ ] `$[?(@['@key']==42)]`
   Input:
   ```
@@ -517,29 +766,6 @@ The following queries provide results that do not match those of other implement
   Expected output:
   ```
   [{"@key": 42}]
-  ```
-  Actual output:
-  ```
-  []
-  ```
-
-- [ ] `$[?(@[1]=='b')]`
-  Input:
-  ```
-  [
-    [
-      "a",
-      "b"
-    ],
-    [
-      "x",
-      "y"
-    ]
-  ]
-  ```
-  Expected output:
-  ```
-  [["a", "b"]]
   ```
   Actual output:
   ```
@@ -637,66 +863,81 @@ The following queries provide results that do not match those of other implement
   []
   ```
 
-- [ ] `$[?(@.d==["v1","v2"])]`
+- [ ] `$[?(@.key==42)]`
   Input:
   ```
   [
     {
-      "d": [
-        "v1",
-        "v2"
+      "key": 0
+    },
+    {
+      "key": 42
+    },
+    {
+      "key": -1
+    },
+    {
+      "key": 1
+    },
+    {
+      "key": 41
+    },
+    {
+      "key": 43
+    },
+    {
+      "key": 42.0001
+    },
+    {
+      "key": 41.9999
+    },
+    {
+      "key": 100
+    },
+    {
+      "key": "some"
+    },
+    {
+      "key": "42"
+    },
+    {
+      "key": null
+    },
+    {
+      "key": 420
+    },
+    {
+      "key": ""
+    },
+    {
+      "key": {}
+    },
+    {
+      "key": []
+    },
+    {
+      "key": [
+        42
       ]
     },
     {
-      "d": [
-        "a",
-        "b"
-      ]
+      "key": {
+        "key": 42
+      }
     },
     {
-      "d": "v1"
+      "key": {
+        "some": 42
+      }
     },
     {
-      "d": "v2"
-    },
-    {
-      "d": {}
-    },
-    {
-      "d": []
-    },
-    {
-      "d": null
-    },
-    {
-      "d": -1
-    },
-    {
-      "d": 0
-    },
-    {
-      "d": 1
-    },
-    {
-      "d": "['v1','v2']"
-    },
-    {
-      "d": "['v1', 'v2']"
-    },
-    {
-      "d": "v1,v2"
-    },
-    {
-      "d": "[\"v1\", \"v2\"]"
-    },
-    {
-      "d": "[\"v1\",\"v2\"]"
+      "some": "value"
     }
   ]
   ```
   Error:
   ```
-  Object reference not set to an instance of an object.
+  Accessed JArray values with invalid key value: "valueOf". Int32 array index expected.
   ```
 
 - [ ] `$[?(@[0:1]==[1])]`
@@ -780,69 +1021,54 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  Object reference not set to an instance of an object.
+  Accessed JArray values with invalid key value: "valueOf". Int32 array index expected.
   ```
 
-- [ ] `$[?(@.d==['v1','v2'])]`
+- [ ] `$[?(@.key==false)]`
   Input:
   ```
   [
     {
-      "d": [
-        "v1",
-        "v2"
-      ]
+      "some": "some value"
     },
     {
-      "d": [
-        "a",
-        "b"
-      ]
+      "key": true
     },
     {
-      "d": "v1"
+      "key": false
     },
     {
-      "d": "v2"
+      "key": null
     },
     {
-      "d": {}
+      "key": "value"
     },
     {
-      "d": []
+      "key": ""
     },
     {
-      "d": null
+      "key": 0
     },
     {
-      "d": -1
+      "key": 1
     },
     {
-      "d": 0
+      "key": -1
     },
     {
-      "d": 1
+      "key": 42
     },
     {
-      "d": "['v1','v2']"
+      "key": {}
     },
     {
-      "d": "['v1', 'v2']"
-    },
-    {
-      "d": "v1,v2"
-    },
-    {
-      "d": "[\"v1\", \"v2\"]"
-    },
-    {
-      "d": "[\"v1\",\"v2\"]"
+      "key": []
     }
   ]
   ```
   Error:
   ```
-  Object reference not set to an instance of an object.
+  Accessed JArray values with invalid key value: "valueOf". Int32 array index expected.
   ```
 
 - [ ] `$[?(@[0:1]==1)]`
@@ -936,59 +1162,70 @@ The following queries provide results that do not match those of other implement
   Line 1: Unexpected token *=
   ```
 
-- [ ] `$[?(@.d=={"k":"v"})]`
+- [ ] `$[?(@.key=="value")]`
   Input:
   ```
   [
     {
-      "d": {
-        "k": "v"
+      "key": "some"
+    },
+    {
+      "key": "value"
+    },
+    {
+      "key": null
+    },
+    {
+      "key": 0
+    },
+    {
+      "key": 1
+    },
+    {
+      "key": -1
+    },
+    {
+      "key": ""
+    },
+    {
+      "key": {}
+    },
+    {
+      "key": []
+    },
+    {
+      "key": "valuemore"
+    },
+    {
+      "key": "morevalue"
+    },
+    {
+      "key": [
+        "value"
+      ]
+    },
+    {
+      "key": {
+        "some": "value"
       }
     },
     {
-      "d": {
-        "a": "b"
+      "key": {
+        "key": "value"
       }
     },
     {
-      "d": "k"
-    },
-    {
-      "d": "v"
-    },
-    {
-      "d": {}
-    },
-    {
-      "d": []
-    },
-    {
-      "d": null
-    },
-    {
-      "d": -1
-    },
-    {
-      "d": 0
-    },
-    {
-      "d": 1
-    },
-    {
-      "d": "[object Object]"
-    },
-    {
-      "d": "{\"k\": \"v\"}"
-    },
-    {
-      "d": "{\"k\":\"v\"}"
-    },
-    "v"
+      "some": "value"
+    }
   ]
+  ```
+  Expected output:
+  ```
+  [{"key": "value"}]
   ```
   Error:
   ```
-  Object reference not set to an instance of an object.
+  Accessed JArray values with invalid key value: "valueOf". Int32 array index expected.
   ```
 
 - [ ] `$[?(@.key=="hi@example.com")]`
@@ -1013,6 +1250,53 @@ The following queries provide results that do not match those of other implement
   Actual output:
   ```
   []
+  ```
+
+- [ ] `$[?(@.key==true)]`
+  Input:
+  ```
+  [
+    {
+      "some": "some value"
+    },
+    {
+      "key": true
+    },
+    {
+      "key": false
+    },
+    {
+      "key": null
+    },
+    {
+      "key": "value"
+    },
+    {
+      "key": ""
+    },
+    {
+      "key": 0
+    },
+    {
+      "key": 1
+    },
+    {
+      "key": -1
+    },
+    {
+      "key": 42
+    },
+    {
+      "key": {}
+    },
+    {
+      "key": []
+    }
+  ]
+  ```
+  Error:
+  ```
+  Accessed JArray values with invalid key value: "valueOf". Int32 array index expected.
   ```
 
 - [ ] `$.items[?(@.key==$.value)]`
@@ -1097,7 +1381,47 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  Object has no method 'length'
+  Property 'length' of object is not a function
+  ```
+
+- [ ] `$[?(@.length == 4)]`
+  Input:
+  ```
+  [
+    [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    [
+      1,
+      2,
+      3,
+      4
+    ],
+    [
+      1,
+      2,
+      3
+    ]
+  ]
+  ```
+  Expected output:
+  ```
+  []
+  ```
+  Actual output:
+  ```
+  [
+    [
+      1,
+      2,
+      3,
+      4
+    ]
+  ]
   ```
 
 - [ ] `$[?(@.key='value')]`
@@ -1125,33 +1449,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  Object of type 'System.String' cannot be converted to type 'Newtonsoft.Json.Linq.JToken'.
-  ```
-
-- [ ] `$[?(!(@.d==["v1","v2"]) || (@.d == true))]`
-  Input:
-  ```
-  [
-    {
-      "d": [
-        "v1",
-        "v2"
-      ]
-    },
-    {
-      "d": [
-        "a",
-        "b"
-      ]
-    },
-    {
-      "d": true
-    }
-  ]
-  ```
-  Error:
-  ```
-  Object reference not set to an instance of an object.
+  String 'value' was not recognized as a valid Boolean.
   ```
 
 - [ ] `$[?(@.a.*)]`
@@ -1208,30 +1506,81 @@ The following queries provide results that do not match those of other implement
   Line 1: Unexpected token *
   ```
 
-- [ ] `$[?((@.d!=["v1","v2"]) || (@.d == true))]`
+- [ ] `$[?(@.key!=42)]`
   Input:
   ```
   [
     {
-      "d": [
-        "v1",
-        "v2"
+      "key": 0
+    },
+    {
+      "key": 42
+    },
+    {
+      "key": -1
+    },
+    {
+      "key": 1
+    },
+    {
+      "key": 41
+    },
+    {
+      "key": 43
+    },
+    {
+      "key": 42.0001
+    },
+    {
+      "key": 41.9999
+    },
+    {
+      "key": 100
+    },
+    {
+      "key": "some"
+    },
+    {
+      "key": "42"
+    },
+    {
+      "key": null
+    },
+    {
+      "key": 420
+    },
+    {
+      "key": ""
+    },
+    {
+      "key": {}
+    },
+    {
+      "key": []
+    },
+    {
+      "key": [
+        42
       ]
     },
     {
-      "d": [
-        "a",
-        "b"
-      ]
+      "key": {
+        "key": 42
+      }
     },
     {
-      "d": true
+      "key": {
+        "some": 42
+      }
+    },
+    {
+      "some": "value"
     }
   ]
   ```
   Error:
   ```
-  Object reference not set to an instance of an object.
+  Accessed JArray values with invalid key value: "valueOf". Int32 array index expected.
   ```
 
 - [ ] `$[*].bookmarks[?(@.page == 45)]^^^`
@@ -1277,61 +1626,6 @@ The following queries provide results that do not match those of other implement
   Actual output:
   ```
   []
-  ```
-
-- [ ] `$[?(@.name=~/hello.*/)]`
-  Input:
-  ```
-  [
-    {
-      "name": "hullo world"
-    },
-    {
-      "name": "hello world"
-    },
-    {
-      "name": "yes hello world"
-    },
-    {
-      "name": "HELLO WORLD"
-    },
-    {
-      "name": "good bye"
-    }
-  ]
-  ```
-  Error:
-  ```
-  Object of type 'System.Double' cannot be converted to type 'Newtonsoft.Json.Linq.JToken'.
-  ```
-
-- [ ] `$[?(@.name=~/@.pattern/)]`
-  Input:
-  ```
-  [
-    {
-      "name": "hullo world"
-    },
-    {
-      "name": "hello world"
-    },
-    {
-      "name": "yes hello world"
-    },
-    {
-      "name": "HELLO WORLD"
-    },
-    {
-      "name": "good bye"
-    },
-    {
-      "pattern": "hello.*"
-    }
-  ]
-  ```
-  Error:
-  ```
-  Object of type 'System.Double' cannot be converted to type 'Newtonsoft.Json.Linq.JToken'.
   ```
 
 - [ ] `$[?(@[*]>=4)]`
@@ -1463,9 +1757,71 @@ The following queries provide results that do not match those of other implement
   ```
   NOT_SUPPORTED
   ```
-  Error:
+  Actual output:
   ```
-  Object of type 'System.Double' cannot be converted to type 'Newtonsoft.Json.Linq.JToken'.
+  [
+    {
+      "key": 42.0
+    },
+    {
+      "key": 42.0
+    },
+    {
+      "key": 42.0
+    },
+    {
+      "key": 42.0
+    },
+    {
+      "key": 42.0
+    },
+    {
+      "key": 42.0
+    },
+    {
+      "key": 42.0
+    },
+    {
+      "key": 42.0
+    },
+    {
+      "key": 42.0
+    },
+    {
+      "key": 42.0
+    },
+    {
+      "key": 42.0
+    },
+    {
+      "key": 42.0
+    },
+    {
+      "key": 42.0
+    },
+    {
+      "key": 42.0
+    },
+    {
+      "key": 42.0
+    },
+    {
+      "key": 42.0
+    },
+    {
+      "key": 42.0
+    },
+    {
+      "key": 42.0
+    },
+    {
+      "key": 42.0
+    },
+    {
+      "key": 42.0,
+      "some": "value"
+    }
+  ]
   ```
 
 - [ ] `$[?(@.a[?(@.price>10)])]`
@@ -1544,7 +1900,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  a is null
+  Cannot read property 'b' of undefined
   ```
 
 - [ ] `$[?(@.key)]`
@@ -1623,7 +1979,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  Unable to cast object of type 'Newtonsoft.Json.Linq.JObject' to type 'System.IConvertible'.
+  Accessed JArray values with invalid key value: "id". Int32 array index expected.
   ```
 
 - [ ] `$[?(@..child)]`
@@ -1886,7 +2242,9 @@ The following queries provide results that do not match those of other implement
   ```
   Actual output:
   ```
-  []
+  [
+    "fifth"
+  ]
   ```
 
 - [ ] `$[?(@.key<3),?(@.key>6)]`

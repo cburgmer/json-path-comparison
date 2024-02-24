@@ -8,16 +8,16 @@
     "packages": [
         {
             "name": "doctrine/deprecations",
-            "version": "1.1.2",
+            "version": "1.1.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/deprecations.git",
-                "reference": "4f2d4f2836e7ec4e7a8625e75c6aa916004db931"
+                "reference": "dfbaa3c2d2e9a9df1118213f3b8b0c597bb99fab"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/deprecations/zipball/4f2d4f2836e7ec4e7a8625e75c6aa916004db931",
-                "reference": "4f2d4f2836e7ec4e7a8625e75c6aa916004db931",
+                "url": "https://api.github.com/repos/doctrine/deprecations/zipball/dfbaa3c2d2e9a9df1118213f3b8b0c597bb99fab",
+                "reference": "dfbaa3c2d2e9a9df1118213f3b8b0c597bb99fab",
                 "shasum": ""
             },
             "require": {
@@ -49,31 +49,33 @@
             "homepage": "https://www.doctrine-project.org/",
             "support": {
                 "issues": "https://github.com/doctrine/deprecations/issues",
-                "source": "https://github.com/doctrine/deprecations/tree/1.1.2"
+                "source": "https://github.com/doctrine/deprecations/tree/1.1.3"
             },
-            "time": "2023-09-27T20:04:15+00:00"
+            "time": "2024-01-30T19:34:25+00:00"
         },
         {
             "name": "nikic/php-parser",
-            "version": "v4.18.0",
+            "version": "v5.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nikic/PHP-Parser.git",
-                "reference": "1bcbb2179f97633e98bbbc87044ee2611c7d7999"
+                "reference": "2218c2252c874a4624ab2f613d86ac32d227bc69"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/1bcbb2179f97633e98bbbc87044ee2611c7d7999",
-                "reference": "1bcbb2179f97633e98bbbc87044ee2611c7d7999",
+                "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/2218c2252c874a4624ab2f613d86ac32d227bc69",
+                "reference": "2218c2252c874a4624ab2f613d86ac32d227bc69",
                 "shasum": ""
             },
             "require": {
+                "ext-ctype": "*",
+                "ext-json": "*",
                 "ext-tokenizer": "*",
-                "php": ">=7.0"
+                "php": ">=7.4"
             },
             "require-dev": {
                 "ircmaxell/php-yacc": "^0.0.7",
-                "phpunit/phpunit": "^6.5 || ^7.0 || ^8.0 || ^9.0"
+                "phpunit/phpunit": "^7.0 || ^8.0 || ^9.0"
             },
             "bin": [
                 "bin/php-parse"
@@ -81,7 +83,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "4.9-dev"
+                    "dev-master": "5.0-dev"
                 }
             },
             "autoload": {
@@ -105,9 +107,9 @@
             ],
             "support": {
                 "issues": "https://github.com/nikic/PHP-Parser/issues",
-                "source": "https://github.com/nikic/PHP-Parser/tree/v4.18.0"
+                "source": "https://github.com/nikic/PHP-Parser/tree/v5.0.1"
             },
-            "time": "2023-12-10T21:03:43+00:00"
+            "time": "2024-02-21T19:24:10+00:00"
         },
         {
             "name": "phpdocumentor/reflection-common",
@@ -221,21 +223,21 @@
         },
         {
             "name": "phpdocumentor/type-resolver",
-            "version": "1.8.0",
+            "version": "1.8.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpDocumentor/TypeResolver.git",
-                "reference": "fad452781b3d774e3337b0c0b245dd8e5a4455fc"
+                "reference": "153ae662783729388a584b4361f2545e4d841e3c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpDocumentor/TypeResolver/zipball/fad452781b3d774e3337b0c0b245dd8e5a4455fc",
-                "reference": "fad452781b3d774e3337b0c0b245dd8e5a4455fc",
+                "url": "https://api.github.com/repos/phpDocumentor/TypeResolver/zipball/153ae662783729388a584b4361f2545e4d841e3c",
+                "reference": "153ae662783729388a584b4361f2545e4d841e3c",
                 "shasum": ""
             },
             "require": {
                 "doctrine/deprecations": "^1.0",
-                "php": "^7.4 || ^8.0",
+                "php": "^7.3 || ^8.0",
                 "phpdocumentor/reflection-common": "^2.0",
                 "phpstan/phpdoc-parser": "^1.13"
             },
@@ -273,22 +275,22 @@
             "description": "A PSR-5 based resolver of Class names, Types and Structural Element Names",
             "support": {
                 "issues": "https://github.com/phpDocumentor/TypeResolver/issues",
-                "source": "https://github.com/phpDocumentor/TypeResolver/tree/1.8.0"
+                "source": "https://github.com/phpDocumentor/TypeResolver/tree/1.8.2"
             },
-            "time": "2024-01-11T11:49:22+00:00"
+            "time": "2024-02-23T11:10:43+00:00"
         },
         {
             "name": "phpstan/phpdoc-parser",
-            "version": "1.25.0",
+            "version": "1.26.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpstan/phpdoc-parser.git",
-                "reference": "bd84b629c8de41aa2ae82c067c955e06f1b00240"
+                "reference": "231e3186624c03d7e7c890ec662b81e6b0405227"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpstan/phpdoc-parser/zipball/bd84b629c8de41aa2ae82c067c955e06f1b00240",
-                "reference": "bd84b629c8de41aa2ae82c067c955e06f1b00240",
+                "url": "https://api.github.com/repos/phpstan/phpdoc-parser/zipball/231e3186624c03d7e7c890ec662b81e6b0405227",
+                "reference": "231e3186624c03d7e7c890ec662b81e6b0405227",
                 "shasum": ""
             },
             "require": {
@@ -320,9 +322,9 @@
             "description": "PHPDoc parser with support for nullable, intersection and generic types",
             "support": {
                 "issues": "https://github.com/phpstan/phpdoc-parser/issues",
-                "source": "https://github.com/phpstan/phpdoc-parser/tree/1.25.0"
+                "source": "https://github.com/phpstan/phpdoc-parser/tree/1.26.0"
             },
-            "time": "2024-01-04T17:06:16+00:00"
+            "time": "2024-02-23T16:05:55+00:00"
         },
         {
             "name": "psr/container",
@@ -379,29 +381,32 @@
         },
         {
             "name": "remorhaz/int-rangesets",
-            "version": "v0.2.1",
+            "version": "v0.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/remorhaz/php-int-rangesets.git",
-                "reference": "73dfb86ed168c1858e96d8e3be2c2be524cbe6e6"
+                "reference": "98221078f0161048d4e876f39ac27e726ab9388a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/remorhaz/php-int-rangesets/zipball/73dfb86ed168c1858e96d8e3be2c2be524cbe6e6",
-                "reference": "73dfb86ed168c1858e96d8e3be2c2be524cbe6e6",
+                "url": "https://api.github.com/repos/remorhaz/php-int-rangesets/zipball/98221078f0161048d4e876f39ac27e726ab9388a",
+                "reference": "98221078f0161048d4e876f39ac27e726ab9388a",
                 "shasum": ""
             },
             "require": {
-                "php": "~8.0 || ~8.1 || ~8.2"
+                "php": "~8.1.0 || ~8.2.0 || ~8.3.0"
             },
             "require-dev": {
-                "infection/infection": "^0.26 || ^0.27",
-                "phpunit/phpunit": "^9.5 || ^10",
-                "psalm/plugin-phpunit": "^0.18.4",
-                "squizlabs/php_codesniffer": "^3.7.2",
-                "vimeo/psalm": "^5.12"
+                "bamarni/composer-bin-plugin": "^1.8",
+                "phpunit/phpunit": "^10.1 || ^11"
             },
             "type": "library",
+            "extra": {
+                "bamarni-bin": {
+                    "bin-links": false,
+                    "forward-command": true
+                }
+            },
             "autoload": {
                 "psr-4": {
                     "Remorhaz\\IntRangeSets\\": "src/"
@@ -422,37 +427,40 @@
             "homepage": "https://github.com/remorhaz/php-int-rangesets",
             "support": {
                 "issues": "https://github.com/remorhaz/php-int-rangesets/issues",
-                "source": "https://github.com/remorhaz/php-int-rangesets/tree/v0.2.1"
+                "source": "https://github.com/remorhaz/php-int-rangesets/tree/v0.3.0"
             },
-            "time": "2023-06-14T14:02:44+00:00"
+            "time": "2024-02-11T17:48:03+00:00"
         },
         {
             "name": "remorhaz/php-json-data",
-            "version": "v0.6.0",
+            "version": "v0.7.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/remorhaz/php-json-data.git",
-                "reference": "2bf978a245de9d00cd1026deeb45a697ad91ca5c"
+                "reference": "22dec196c4336fb45e752521f57aab61151187ac"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/remorhaz/php-json-data/zipball/2bf978a245de9d00cd1026deeb45a697ad91ca5c",
-                "reference": "2bf978a245de9d00cd1026deeb45a697ad91ca5c",
+                "url": "https://api.github.com/repos/remorhaz/php-json-data/zipball/22dec196c4336fb45e752521f57aab61151187ac",
+                "reference": "22dec196c4336fb45e752521f57aab61151187ac",
                 "shasum": ""
             },
             "require": {
                 "ext-intl": "*",
                 "ext-json": "*",
-                "php": "~8.0.0 || ~8.1.0 || ~8.2.0"
+                "php": "~8.1.0 || ~8.2.0 || ~8.3.0"
             },
             "require-dev": {
-                "infection/infection": "^0.26 || ^0.27",
-                "phpunit/phpunit": "^9.5 || ^10",
-                "psalm/plugin-phpunit": "^0.18.1",
-                "squizlabs/php_codesniffer": "^3.7.2",
-                "vimeo/psalm": "^5.12"
+                "bamarni/composer-bin-plugin": "^1.8",
+                "phpunit/phpunit": "^10.1 || ^11"
             },
             "type": "library",
+            "extra": {
+                "bamarni-bin": {
+                    "bin-links": false,
+                    "forward-command": true
+                }
+            },
             "autoload": {
                 "psr-4": {
                     "Remorhaz\\JSON\\Data\\": "src/"
@@ -476,38 +484,43 @@
             ],
             "support": {
                 "issues": "https://github.com/remorhaz/php-json-data/issues",
-                "source": "https://github.com/remorhaz/php-json-data/tree/v0.6.0"
+                "source": "https://github.com/remorhaz/php-json-data/tree/v0.7.0"
             },
-            "time": "2023-06-16T13:51:54+00:00"
+            "time": "2024-02-17T12:52:59+00:00"
         },
         {
             "name": "remorhaz/php-json-path",
-            "version": "v0.8.0",
+            "version": "v0.8.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/remorhaz/php-json-path.git",
-                "reference": "88dbcf342564458098b97d7ad1fc47228b9510bc"
+                "reference": "394efdb94b2227a22e00de039b8753a1ba0c20c1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/remorhaz/php-json-path/zipball/88dbcf342564458098b97d7ad1fc47228b9510bc",
-                "reference": "88dbcf342564458098b97d7ad1fc47228b9510bc",
+                "url": "https://api.github.com/repos/remorhaz/php-json-path/zipball/394efdb94b2227a22e00de039b8753a1ba0c20c1",
+                "reference": "394efdb94b2227a22e00de039b8753a1ba0c20c1",
                 "shasum": ""
             },
             "require": {
                 "ext-intl": "*",
                 "ext-json": "*",
-                "nikic/php-parser": "^4.12",
-                "php": "~8.0.0 || ~8.1.0 || ~8.2.0",
-                "remorhaz/php-json-data": "^0.6",
-                "remorhaz/php-unilex": "^0.5.2"
+                "nikic/php-parser": "^4.12 || ^5",
+                "php": "~8.1.0 || ~8.2.0 || ~8.3.0",
+                "remorhaz/php-json-data": "^0.7",
+                "remorhaz/php-unilex": "^0.5.3"
             },
             "require-dev": {
-                "infection/infection": "^0.26 || ^0.27",
-                "phpunit/phpunit": "^9.6 || ^10",
-                "squizlabs/php_codesniffer": "^3.7.2"
+                "bamarni/composer-bin-plugin": "^1.8",
+                "phpunit/phpunit": "^10.1 || ^11"
             },
             "type": "library",
+            "extra": {
+                "bamarni-bin": {
+                    "bin-links": false,
+                    "forward-command": true
+                }
+            },
             "autoload": {
                 "psr-4": {
                     "Remorhaz\\JSON\\Path\\": [
@@ -536,43 +549,47 @@
             ],
             "support": {
                 "issues": "https://github.com/remorhaz/php-json-path/issues",
-                "source": "https://github.com/remorhaz/php-json-path/tree/v0.8.0"
+                "source": "https://github.com/remorhaz/php-json-path/tree/v0.8.1"
             },
-            "time": "2023-06-16T22:04:25+00:00"
+            "time": "2024-02-19T08:20:00+00:00"
         },
         {
             "name": "remorhaz/php-unilex",
-            "version": "v0.5.2",
+            "version": "v0.5.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/remorhaz/php-unilex.git",
-                "reference": "3bb370629dc5c0ebde2a09772698b441f3a6d2f6"
+                "reference": "09f9a1eb7a30172ab0ca6f54455cb51a2bda72dc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/remorhaz/php-unilex/zipball/3bb370629dc5c0ebde2a09772698b441f3a6d2f6",
-                "reference": "3bb370629dc5c0ebde2a09772698b441f3a6d2f6",
+                "url": "https://api.github.com/repos/remorhaz/php-unilex/zipball/09f9a1eb7a30172ab0ca6f54455cb51a2bda72dc",
+                "reference": "09f9a1eb7a30172ab0ca6f54455cb51a2bda72dc",
                 "shasum": ""
             },
             "require": {
-                "nikic/php-parser": "^4.12",
-                "php": "~8.0.0 || ~8.1.0 || ~8.2.0",
+                "nikic/php-parser": "^4.12 || ^5",
+                "php": "~8.1.0 || ~8.2.0 || ~8.3.0",
                 "phpdocumentor/reflection-docblock": "^4.3 || ^5",
-                "remorhaz/int-rangesets": "^0.2.1",
-                "remorhaz/ucd": "^0.2",
-                "symfony/console": "^5 || ^6",
+                "remorhaz/int-rangesets": "^0.3",
+                "remorhaz/ucd": "^0.3",
+                "symfony/console": "^6.1 || ^7",
                 "thecodingmachine/safe": "^1.3.1 || ^2"
             },
             "require-dev": {
-                "infection/infection": "^0.26 || ^0.27",
-                "phpunit/phpunit": "^9.5 || ^10",
-                "squizlabs/php_codesniffer": "^3.7.2",
-                "symplify/coding-standard": "^11"
+                "bamarni/composer-bin-plugin": "^1.8",
+                "phpunit/phpunit": "^10.1 || ^11"
             },
             "bin": [
                 "bin/unilex"
             ],
             "type": "library",
+            "extra": {
+                "bamarni-bin": {
+                    "bin-links": false,
+                    "forward-command": true
+                }
+            },
             "autoload": {
                 "psr-4": {
                     "Remorhaz\\UniLex\\": "src/"
@@ -600,39 +617,42 @@
             ],
             "support": {
                 "issues": "https://github.com/remorhaz/php-unilex/issues",
-                "source": "https://github.com/remorhaz/php-unilex/tree/v0.5.2"
+                "source": "https://github.com/remorhaz/php-unilex/tree/v0.5.3"
             },
-            "time": "2023-06-16T16:53:20+00:00"
+            "time": "2024-02-12T15:01:30+00:00"
         },
         {
             "name": "remorhaz/ucd",
-            "version": "v0.2.0",
+            "version": "v0.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/remorhaz/php-ucd.git",
-                "reference": "f5f211c60c715e89f847b3e7842abab5dcd3cc3c"
+                "reference": "81ed736e36b7f436773f7de370d89b7435add44c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/remorhaz/php-ucd/zipball/f5f211c60c715e89f847b3e7842abab5dcd3cc3c",
-                "reference": "f5f211c60c715e89f847b3e7842abab5dcd3cc3c",
+                "url": "https://api.github.com/repos/remorhaz/php-ucd/zipball/81ed736e36b7f436773f7de370d89b7435add44c",
+                "reference": "81ed736e36b7f436773f7de370d89b7435add44c",
                 "shasum": ""
             },
             "require": {
-                "nikic/php-parser": "^4.10",
-                "php": "~8.0 || ~8.1 || ~8.2",
-                "remorhaz/int-rangesets": "^0.2.1"
+                "nikic/php-parser": "^4.10 || ^5",
+                "php": "~8.1.0 || ~8.2.0 || ~8.3.0",
+                "remorhaz/int-rangesets": "^0.3"
             },
             "require-dev": {
-                "infection/infection": "^0.26 || ^0.27",
-                "phpunit/phpunit": "^9.5 || ^10",
-                "psalm/plugin-phpunit": "^0.18.1",
-                "squizlabs/php_codesniffer": "^3.7.2",
-                "symfony/console": "^5 || ^6",
-                "thecodingmachine/safe": "^2.5",
-                "vimeo/psalm": "^5.12"
+                "bamarni/composer-bin-plugin": "^1.8",
+                "phpunit/phpunit": "^10.1 || ^11",
+                "symfony/console": "^6.1 || ^7",
+                "thecodingmachine/safe": "^2.5"
             },
             "type": "library",
+            "extra": {
+                "bamarni-bin": {
+                    "bin-links": false,
+                    "forward-command": true
+                }
+            },
             "autoload": {
                 "psr-4": {
                     "Remorhaz\\UCD\\": "src/"
@@ -653,22 +673,22 @@
             "homepage": "https://github.com/remorhaz/php-ucd",
             "support": {
                 "issues": "https://github.com/remorhaz/php-ucd/issues",
-                "source": "https://github.com/remorhaz/php-ucd/tree/v0.2.0"
+                "source": "https://github.com/remorhaz/php-ucd/tree/v0.3.0"
             },
-            "time": "2023-06-15T12:22:12+00:00"
+            "time": "2024-02-11T20:48:14+00:00"
         },
         {
             "name": "symfony/console",
-            "version": "v6.4.2",
+            "version": "v6.4.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/console.git",
-                "reference": "0254811a143e6bc6c8deea08b589a7e68a37f625"
+                "reference": "2aaf83b4de5b9d43b93e4aec6f2f8b676f7c567e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/console/zipball/0254811a143e6bc6c8deea08b589a7e68a37f625",
-                "reference": "0254811a143e6bc6c8deea08b589a7e68a37f625",
+                "url": "https://api.github.com/repos/symfony/console/zipball/2aaf83b4de5b9d43b93e4aec6f2f8b676f7c567e",
+                "reference": "2aaf83b4de5b9d43b93e4aec6f2f8b676f7c567e",
                 "shasum": ""
             },
             "require": {
@@ -733,7 +753,7 @@
                 "terminal"
             ],
             "support": {
-                "source": "https://github.com/symfony/console/tree/v6.4.2"
+                "source": "https://github.com/symfony/console/tree/v6.4.3"
             },
             "funding": [
                 {
@@ -749,7 +769,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2023-12-10T16:15:48+00:00"
+            "time": "2024-01-23T14:51:35+00:00"
         },
         {
             "name": "symfony/deprecation-contracts",
@@ -820,16 +840,16 @@
         },
         {
             "name": "symfony/polyfill-ctype",
-            "version": "v1.28.0",
+            "version": "v1.29.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-ctype.git",
-                "reference": "ea208ce43cbb04af6867b4fdddb1bdbf84cc28cb"
+                "reference": "ef4d7e442ca910c4764bce785146269b30cb5fc4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-ctype/zipball/ea208ce43cbb04af6867b4fdddb1bdbf84cc28cb",
-                "reference": "ea208ce43cbb04af6867b4fdddb1bdbf84cc28cb",
+                "url": "https://api.github.com/repos/symfony/polyfill-ctype/zipball/ef4d7e442ca910c4764bce785146269b30cb5fc4",
+                "reference": "ef4d7e442ca910c4764bce785146269b30cb5fc4",
                 "shasum": ""
             },
             "require": {
@@ -843,9 +863,6 @@
             },
             "type": "library",
             "extra": {
-                "branch-alias": {
-                    "dev-main": "1.28-dev"
-                },
                 "thanks": {
                     "name": "symfony/polyfill",
                     "url": "https://github.com/symfony/polyfill"
@@ -882,7 +899,7 @@
                 "portable"
             ],
             "support": {
-                "source": "https://github.com/symfony/polyfill-ctype/tree/v1.28.0"
+                "source": "https://github.com/symfony/polyfill-ctype/tree/v1.29.0"
             },
             "funding": [
                 {
@@ -898,20 +915,20 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2023-01-26T09:26:14+00:00"
+            "time": "2024-01-29T20:11:03+00:00"
         },
         {
             "name": "symfony/polyfill-intl-grapheme",
-            "version": "v1.28.0",
+            "version": "v1.29.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-intl-grapheme.git",
-                "reference": "875e90aeea2777b6f135677f618529449334a612"
+                "reference": "32a9da87d7b3245e09ac426c83d334ae9f06f80f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-intl-grapheme/zipball/875e90aeea2777b6f135677f618529449334a612",
-                "reference": "875e90aeea2777b6f135677f618529449334a612",
+                "url": "https://api.github.com/repos/symfony/polyfill-intl-grapheme/zipball/32a9da87d7b3245e09ac426c83d334ae9f06f80f",
+                "reference": "32a9da87d7b3245e09ac426c83d334ae9f06f80f",
                 "shasum": ""
             },
             "require": {
@@ -922,9 +939,6 @@
             },
             "type": "library",
             "extra": {
-                "branch-alias": {
-                    "dev-main": "1.28-dev"
-                },
                 "thanks": {
                     "name": "symfony/polyfill",
                     "url": "https://github.com/symfony/polyfill"
@@ -963,7 +977,7 @@
                 "shim"
             ],
             "support": {
-                "source": "https://github.com/symfony/polyfill-intl-grapheme/tree/v1.28.0"
+                "source": "https://github.com/symfony/polyfill-intl-grapheme/tree/v1.29.0"
             },
             "funding": [
                 {
@@ -979,20 +993,20 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2023-01-26T09:26:14+00:00"
+            "time": "2024-01-29T20:11:03+00:00"
         },
         {
             "name": "symfony/polyfill-intl-normalizer",
-            "version": "v1.28.0",
+            "version": "v1.29.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-intl-normalizer.git",
-                "reference": "8c4ad05dd0120b6a53c1ca374dca2ad0a1c4ed92"
+                "reference": "bc45c394692b948b4d383a08d7753968bed9a83d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-intl-normalizer/zipball/8c4ad05dd0120b6a53c1ca374dca2ad0a1c4ed92",
-                "reference": "8c4ad05dd0120b6a53c1ca374dca2ad0a1c4ed92",
+                "url": "https://api.github.com/repos/symfony/polyfill-intl-normalizer/zipball/bc45c394692b948b4d383a08d7753968bed9a83d",
+                "reference": "bc45c394692b948b4d383a08d7753968bed9a83d",
                 "shasum": ""
             },
             "require": {
@@ -1003,9 +1017,6 @@
             },
             "type": "library",
             "extra": {
-                "branch-alias": {
-                    "dev-main": "1.28-dev"
-                },
                 "thanks": {
                     "name": "symfony/polyfill",
                     "url": "https://github.com/symfony/polyfill"
@@ -1047,7 +1058,7 @@
                 "shim"
             ],
             "support": {
-                "source": "https://github.com/symfony/polyfill-intl-normalizer/tree/v1.28.0"
+                "source": "https://github.com/symfony/polyfill-intl-normalizer/tree/v1.29.0"
             },
             "funding": [
                 {
@@ -1063,20 +1074,20 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2023-01-26T09:26:14+00:00"
+            "time": "2024-01-29T20:11:03+00:00"
         },
         {
             "name": "symfony/polyfill-mbstring",
-            "version": "v1.28.0",
+            "version": "v1.29.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-mbstring.git",
-                "reference": "42292d99c55abe617799667f454222c54c60e229"
+                "reference": "9773676c8a1bb1f8d4340a62efe641cf76eda7ec"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-mbstring/zipball/42292d99c55abe617799667f454222c54c60e229",
-                "reference": "42292d99c55abe617799667f454222c54c60e229",
+                "url": "https://api.github.com/repos/symfony/polyfill-mbstring/zipball/9773676c8a1bb1f8d4340a62efe641cf76eda7ec",
+                "reference": "9773676c8a1bb1f8d4340a62efe641cf76eda7ec",
                 "shasum": ""
             },
             "require": {
@@ -1090,9 +1101,6 @@
             },
             "type": "library",
             "extra": {
-                "branch-alias": {
-                    "dev-main": "1.28-dev"
-                },
                 "thanks": {
                     "name": "symfony/polyfill",
                     "url": "https://github.com/symfony/polyfill"
@@ -1130,7 +1138,7 @@
                 "shim"
             ],
             "support": {
-                "source": "https://github.com/symfony/polyfill-mbstring/tree/v1.28.0"
+                "source": "https://github.com/symfony/polyfill-mbstring/tree/v1.29.0"
             },
             "funding": [
                 {
@@ -1146,7 +1154,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2023-07-28T09:04:16+00:00"
+            "time": "2024-01-29T20:11:03+00:00"
         },
         {
             "name": "symfony/service-contracts",
@@ -1232,16 +1240,16 @@
         },
         {
             "name": "symfony/string",
-            "version": "v6.4.2",
+            "version": "v6.4.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/string.git",
-                "reference": "7cb80bc10bfcdf6b5492741c0b9357dac66940bc"
+                "reference": "7a14736fb179876575464e4658fce0c304e8c15b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/string/zipball/7cb80bc10bfcdf6b5492741c0b9357dac66940bc",
-                "reference": "7cb80bc10bfcdf6b5492741c0b9357dac66940bc",
+                "url": "https://api.github.com/repos/symfony/string/zipball/7a14736fb179876575464e4658fce0c304e8c15b",
+                "reference": "7a14736fb179876575464e4658fce0c304e8c15b",
                 "shasum": ""
             },
             "require": {
@@ -1298,7 +1306,7 @@
                 "utf8"
             ],
             "support": {
-                "source": "https://github.com/symfony/string/tree/v6.4.2"
+                "source": "https://github.com/symfony/string/tree/v6.4.3"
             },
             "funding": [
                 {
@@ -1314,7 +1322,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2023-12-10T16:15:48+00:00"
+            "time": "2024-01-25T09:26:29+00:00"
         },
         {
             "name": "thecodingmachine/safe",

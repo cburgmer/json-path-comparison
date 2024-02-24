@@ -402,6 +402,33 @@ dotNET (JsonPath.Net)
 <pre><code>Pattern '(@.name=~/...' not recognized.
 </code></pre>
 
+<h4 id="dotNET_JsonPathLib">
+dotNET (JsonPathLib)
+</h4>
+
+<pre><code>[
+  {
+    "name": -1.0
+  },
+  {
+    "name": -1.0
+  },
+  {
+    "name": -1.0
+  },
+  {
+    "name": -1.0
+  },
+  {
+    "name": -1.0
+  },
+  {
+    "name": -1.0,
+    "pattern": "hello.*"
+  }
+]
+</code></pre>
+
 <h4 id="dotNET_Manatee.Json">
 dotNET (Manatee.Json)
 </h4>
@@ -449,13 +476,6 @@ Rust (jsonpath_plus)
 <pre><code>Error Parsing JSON Path:
 $[?(@.name=~/@.pattern/)]
 panic occurred
-</code></pre>
-
-<h4 id="dotNET_JsonPathLib">
-dotNET (JsonPathLib)
-</h4>
-
-<pre><code>Object of type 'System.Double' cannot be converted to type 'Newtonsoft.Json.Linq.JToken'.
 </code></pre>
 
 <h2>Footnotes</h2>

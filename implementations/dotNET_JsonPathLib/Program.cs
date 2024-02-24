@@ -25,7 +25,7 @@ namespace Dotnet_JsonPathLib
             {
                 jsonString += s;
             }
-            
+
             JToken o = JToken.Parse(jsonString);
             var selector = args[0];
 
@@ -33,8 +33,7 @@ namespace Dotnet_JsonPathLib
 
             object Eval(string script, object value) =>
                 engine.SetValue("$$", value)
-                      .Execute(script.Replace("@", "$$"))
-                      .GetCompletionValue()
+                      .Evaluate(script.Replace("@", "$$"))
                       .ToObject();
 
             var context = new JsonPathContext
