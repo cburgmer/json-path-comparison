@@ -33,6 +33,12 @@ queries:
   - id: array_slice_with_step_0
     status: open
     result: ["first", "second", "third"]
+  - id: bracket_notation_with_empty_string
+    status: fail
+    result: []
+  - id: bracket_notation_with_empty_string_doubled_quoted
+    status: fail
+    result: []
   - id: bracket_notation_with_quoted_escaped_backslash
     status: open
     result: ["value"]
