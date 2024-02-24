@@ -10,11 +10,6 @@ RUN apt-get -y upgrade && apt-get -y update && apt-get -y dist-upgrade \
         && apt-get install -y --no-install-recommends bash ninja-build python3 curl coreutils locales ca-certificates \
         && locale-gen en_US.UTF-8
 
-# Golang
-RUN apt-get install -y --no-install-recommends golang-go git
-# Work around what's possibly tracked under https://github.com/golang/go/issues/49004
-ENV GOFLAGS="-buildvcs=false"
-
 # Rust
 RUN curl https://sh.rustup.rs -sSf | sh -s -- --default-toolchain stable -y
 ENV PATH="/root/.cargo/bin:${PATH}"
@@ -102,6 +97,18 @@ RUN curl -LO https://github.com/ugexe/zef/archive/refs/tags/v0.12.0.tar.gz \
     && cd zef-* \
     && raku -I. bin/zef install .
 ENV PATH="/usr/lib/perl6/site/bin:${PATH}"
+
+# Golang
+RUN apt-get install -y --no-install-recommends git
+RUN case "$(uname -m)" in aarch64) ARCH="arm64";; *) ARCH="amd64";; esac \
+    && cd /tmp \
+    && curl -OL https://go.dev/dl/go1.22.0.linux-$ARCH.tar.gz \
+    && tar -zxf go*.tar.gz \
+    && rm go*.tar.gz \
+    && mv go /go
+ENV PATH="${PATH}:/go/bin"
+# Work around what's possibly tracked under https://github.com/golang/go/issues/49004
+ENV GOFLAGS="-buildvcs=false"
 
 # Work around https://akashmittal.com/code-example-fatal-detected-dubious-ownership-in-repository-at/
 # There seems to be no easy way in docker to make the current user the owner of mounted volumnes, e.g. https://github.com/moby/moby/issues/2259

@@ -262,7 +262,7 @@ The following queries provide results that do not match those of other implement
   Exception: runtime error: comparing uncomparable type map[string]interface {}
   ```
 
-- [ ] `$[?((@.d!=["v1","v2"]) || (@.d == true))]`
+- [ ] `$[?(!(@.d==["v1","v2"]) || (@.d == true))]`
   Input:
   ```
   [
@@ -288,25 +288,30 @@ The following queries provide results that do not match those of other implement
   Exception: runtime error: comparing uncomparable type []interface {}
   ```
 
-- [ ] `$.*[?(@.key)]`
+- [ ] `$[?((@.d!=["v1","v2"]) || (@.d == true))]`
   Input:
   ```
   [
     {
-      "some": "some value"
+      "d": [
+        "v1",
+        "v2"
+      ]
     },
     {
-      "key": "value"
+      "d": [
+        "a",
+        "b"
+      ]
+    },
+    {
+      "d": true
     }
   ]
   ```
-  Expected output:
+  Error:
   ```
-  []
-  ```
-  Actual output:
-  NOT_SUPPORTED
-  ```
+  Exception: runtime error: comparing uncomparable type []interface {}
   ```
 
 - [ ] `$[?@.key==42]`
