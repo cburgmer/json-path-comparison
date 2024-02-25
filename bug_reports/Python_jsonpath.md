@@ -541,6 +541,57 @@ The following queries provide results that do not match those of other implement
   jsonpath returned false, this might indicate an error
   ```
 
+- [ ] `$[?(@.a && (@.b || @.c))]`
+  Input:
+  ```
+  [
+    {
+      "a": true
+    },
+    {
+      "a": true,
+      "b": true
+    },
+    {
+      "a": true,
+      "b": true,
+      "c": true
+    },
+    {
+      "b": true,
+      "c": true
+    },
+    {
+      "a": true,
+      "c": true
+    },
+    {
+      "c": true
+    },
+    {
+      "b": true
+    }
+  ]
+  ```
+  Expected output:
+  ```
+  [{"a": true, "b": true}, {"a": true, "b": true, "c": true}, {"a": true, "c": true}]
+  ```
+  Actual output:
+  ```
+  [
+    {
+      "a": true,
+      "b": true
+    },
+    {
+      "a": true,
+      "b": true,
+      "c": true
+    }
+  ]
+  ```
+
 - [ ] `$[?()]`
   Input:
   ```
@@ -609,6 +660,40 @@ The following queries provide results that do not match those of other implement
   Expected output:
   ```
   [{"key": 42}]
+  ```
+  Actual output:
+  NOT_FOUND
+  ```
+  jsonpath returned false, this might indicate an error
+  ```
+
+- [ ] `$[?(@.length() == 4)]`
+  Input:
+  ```
+  [
+    [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    [
+      1,
+      2,
+      3,
+      4
+    ],
+    [
+      1,
+      2,
+      3
+    ]
+  ]
+  ```
+  Expected output:
+  ```
+  NOT_SUPPORTED
   ```
   Actual output:
   NOT_FOUND
@@ -934,6 +1019,57 @@ The following queries provide results that do not match those of other implement
   NOT_FOUND
   ```
   jsonpath returned false, this might indicate an error
+  ```
+
+- [ ] `$..`
+  Input:
+  ```
+  [
+    {
+      "a": {
+        "b": "c"
+      }
+    },
+    [
+      0,
+      1
+    ]
+  ]
+  ```
+  Expected output (in any order as no consensus on ordering exists):
+  ```
+  NOT_SUPPORTED
+  ```
+  Actual output:
+  ```
+  [
+    "c",
+    0,
+    1,
+    [
+      0,
+      1
+    ],
+    [
+      {
+        "a": {
+          "b": "c"
+        }
+      },
+      [
+        0,
+        1
+      ]
+    ],
+    {
+      "a": {
+        "b": "c"
+      }
+    },
+    {
+      "b": "c"
+    }
+  ]
   ```
 
 - [ ] `$.key..`

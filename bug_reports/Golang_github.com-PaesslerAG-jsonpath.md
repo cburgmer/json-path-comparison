@@ -3,6 +3,29 @@ Results do not match other implementations
 The following queries provide results that do not match those of other implementations of JSONPath
 (compare https://cburgmer.github.io/json-path-comparison/):
 
+- [ ] `$[0:3:-2]`
+  Input:
+  ```
+  [
+    "first",
+    "second",
+    "third",
+    "forth",
+    "fifth"
+  ]
+  ```
+  Expected output:
+  ```
+  []
+  ```
+  Actual output:
+  ```
+  [
+    "third",
+    "first"
+  ]
+  ```
+
 - [ ] `$[3:-2]`
   Input:
   ```
@@ -557,6 +580,48 @@ The following queries provide results that do not match those of other implement
   NOT_SUPPORTED
   ```
   parsing error: $[?(@['@key']==42)]	:1:7 - 1:13 could not parse string: invalid syntax
+  ```
+
+- [ ] `$[?(@.a && (@.b || @.c))]`
+  Input:
+  ```
+  [
+    {
+      "a": true
+    },
+    {
+      "a": true,
+      "b": true
+    },
+    {
+      "a": true,
+      "b": true,
+      "c": true
+    },
+    {
+      "b": true,
+      "c": true
+    },
+    {
+      "a": true,
+      "c": true
+    },
+    {
+      "c": true
+    },
+    {
+      "b": true
+    }
+  ]
+  ```
+  Expected output:
+  ```
+  [{"a": true, "b": true}, {"a": true, "b": true, "c": true}, {"a": true, "c": true}]
+  ```
+  Actual output:
+  NOT_SUPPORTED
+  ```
+  parsing error: $[?(@.a && (@.b || @.c))]	 - 1:11 unknown operator &&
   ```
 
 - [ ] `$[?(@.key=='value')]`

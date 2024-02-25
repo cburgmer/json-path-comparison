@@ -39,9 +39,6 @@ queries:
   - id: array_slice_with_negative_step
     status: open
     result: []
-  - id: array_slice_with_negative_step_and_start_greater_than_end
-    status: open
-    result: []
   - id: array_slice_with_negative_step_on_partially_overlapping_array
     status: open
     result: []
@@ -319,7 +316,7 @@ queries:
     status: open
     result: []
   - id: filter_expression_with_different_grouped_operators
-    status: open
+    status: fail
     result: []
   - id: filter_expression_with_different_ungrouped_operators
     status: open
@@ -436,7 +433,7 @@ queries:
     status: open
     result: []
   - id: filter_expression_with_length_function
-    status: open
+    status: fail
     result: []
   - id: filter_expression_with_less_than
     status: open
@@ -538,7 +535,7 @@ queries:
     status: fail
     result: []
   - id: recursive_descent
-    status: open
+    status: fail
     result: [[{"a": {"b": "c"}}, [0, 1]]]
   - id: recursive_descent_after_dot_notation
     status: fail

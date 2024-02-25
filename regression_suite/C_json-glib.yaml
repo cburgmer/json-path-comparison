@@ -244,7 +244,7 @@ queries:
     status: open
     result: NOT_SUPPORTED
   - id: filter_expression_with_different_grouped_operators
-    status: open
+    status: fail
     result: NOT_SUPPORTED
   - id: filter_expression_with_different_ungrouped_operators
     status: open
@@ -363,9 +363,6 @@ queries:
   - id: filter_expression_with_length_free_function
     status: open
     result: NOT_SUPPORTED
-  - id: filter_expression_with_length_function
-    status: open
-    result: NOT_SUPPORTED
   - id: filter_expression_with_length_property
     status: fail
     result: NOT_SUPPORTED
@@ -456,9 +453,6 @@ queries:
   - id: function_sum
     status: fail
     result: []
-  - id: recursive_descent
-    status: open
-    result: NOT_SUPPORTED
   - id: recursive_descent_on_nested_arrays
     status: fail
     result: []

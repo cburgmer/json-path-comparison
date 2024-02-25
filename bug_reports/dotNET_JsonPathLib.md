@@ -1379,6 +1379,10 @@ The following queries provide results that do not match those of other implement
     ]
   ]
   ```
+  Expected output:
+  ```
+  NOT_SUPPORTED
+  ```
   Error:
   ```
   Property 'length' of object is not a function
@@ -2188,6 +2192,54 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   key is not defined
+  ```
+
+- [ ] `$..`
+  Input:
+  ```
+  [
+    {
+      "a": {
+        "b": "c"
+      }
+    },
+    [
+      0,
+      1
+    ]
+  ]
+  ```
+  Expected output (in any order as no consensus on ordering exists):
+  ```
+  NOT_SUPPORTED
+  ```
+  Actual output:
+  ```
+  [
+    [
+      0,
+      1
+    ],
+    [
+      {
+        "a": {
+          "b": "c"
+        }
+      },
+      [
+        0,
+        1
+      ]
+    ],
+    {
+      "a": {
+        "b": "c"
+      }
+    },
+    {
+      "b": "c"
+    }
+  ]
   ```
 
 - [ ] `$.key..`

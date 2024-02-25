@@ -297,6 +297,10 @@ The following queries provide results that do not match those of other implement
     "fifth"
   ]
   ```
+  Expected output:
+  ```
+  []
+  ```
   Error:
   ```
   only support one range(from, to): [0 3 -2]
@@ -2447,6 +2451,10 @@ The following queries provide results that do not match those of other implement
     }
   ]
   ```
+  Expected output:
+  ```
+  [{"a": true, "b": true}, {"a": true, "b": true, "c": true}, {"a": true, "c": true}]
+  ```
   Error:
   ```
   invalid char at 11: ` `
@@ -3145,6 +3153,39 @@ The following queries provide results that do not match those of other implement
   interface conversion: interface {} is nil, not string
   ```
 
+- [ ] `$[?(@.length() == 4)]`
+  Input:
+  ```
+  [
+    [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    [
+      1,
+      2,
+      3,
+      4
+    ],
+    [
+      1,
+      2,
+      3
+    ]
+  ]
+  ```
+  Expected output:
+  ```
+  NOT_SUPPORTED
+  ```
+  Actual output:
+  ```
+  []
+  ```
+
 - [ ] `$[?(@.key='value')]`
   Input:
   ```
@@ -3658,6 +3699,10 @@ The following queries provide results that do not match those of other implement
       1
     ]
   ]
+  ```
+  Expected output (in any order as no consensus on ordering exists):
+  ```
+  NOT_SUPPORTED
   ```
   Error:
   ```

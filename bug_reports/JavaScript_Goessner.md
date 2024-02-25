@@ -858,6 +858,10 @@ The following queries provide results that do not match those of other implement
     ]
   ]
   ```
+  Expected output:
+  ```
+  NOT_SUPPORTED
+  ```
   Error:
   ```
   jsonPath: _v.length is not a function: _v.length() == 4
@@ -1538,6 +1542,54 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   jsonPath: key is not defined: (key,more)
+  ```
+
+- [ ] `$..`
+  Input:
+  ```
+  [
+    {
+      "a": {
+        "b": "c"
+      }
+    },
+    [
+      0,
+      1
+    ]
+  ]
+  ```
+  Expected output (in any order as no consensus on ordering exists):
+  ```
+  NOT_SUPPORTED
+  ```
+  Actual output:
+  ```
+  [
+    [
+      0,
+      1
+    ],
+    [
+      {
+        "a": {
+          "b": "c"
+        }
+      },
+      [
+        0,
+        1
+      ]
+    ],
+    {
+      "a": {
+        "b": "c"
+      }
+    },
+    {
+      "b": "c"
+    }
+  ]
   ```
 
 - [ ] `$.key..`

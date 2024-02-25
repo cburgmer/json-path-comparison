@@ -27,6 +27,27 @@ The following queries provide results that do not match those of other implement
   {"init terminating in do_boot",not_implemented}
   ```
 
+- [ ] `$[0:3:-2]`
+  Input:
+  ```
+  [
+    "first",
+    "second",
+    "third",
+    "forth",
+    "fifth"
+  ]
+  ```
+  Expected output:
+  ```
+  []
+  ```
+  Actual output:
+  NOT_SUPPORTED
+  ```
+  syntax error before: '-'
+  ```
+
 - [ ] `$[::]`
   Input:
   ```
@@ -677,6 +698,10 @@ The following queries provide results that do not match those of other implement
       "b": true
     }
   ]
+  ```
+  Expected output:
+  ```
+  [{"a": true, "b": true}, {"a": true, "b": true, "c": true}, {"a": true, "c": true}]
   ```
   Error:
   ```
@@ -1584,6 +1609,57 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   Timeout
+  ```
+
+- [ ] `$..`
+  Input:
+  ```
+  [
+    {
+      "a": {
+        "b": "c"
+      }
+    },
+    [
+      0,
+      1
+    ]
+  ]
+  ```
+  Expected output (in any order as no consensus on ordering exists):
+  ```
+  NOT_SUPPORTED
+  ```
+  Actual output:
+  ```
+  [
+    "c",
+    0,
+    1,
+    [
+      0,
+      1
+    ],
+    [
+      {
+        "a": {
+          "b": "c"
+        }
+      },
+      [
+        0,
+        1
+      ]
+    ],
+    {
+      "a": {
+        "b": "c"
+      }
+    },
+    {
+      "b": "c"
+    }
+  ]
   ```
 
 - [ ] `$[(@.length-1)]`

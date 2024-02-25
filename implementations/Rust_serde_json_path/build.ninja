@@ -1,0 +1,9 @@
+root = implementations/Rust_serde_json_path
+builddir = $root/build
+
+rule compile
+  command = (cd $root && cargo build) && mv $root/target/debug/rust_serde_json_path $out && rm -r $root/target
+
+build $builddir/rust_serde_json_path: compile | $root/src/main.rs $root/Cargo.lock $root/Cargo.toml
+
+build $root/install: phony $builddir/rust_serde_json_path

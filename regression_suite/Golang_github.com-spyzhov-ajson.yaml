@@ -15,9 +15,6 @@ queries:
   - id: array_slice_with_negative_step
     status: open
     result: ["forth", "second"]
-  - id: array_slice_with_negative_step_and_start_greater_than_end
-    status: open
-    result: []
   - id: array_slice_with_negative_step_on_partially_overlapping_array
     status: open
     result: ["fifth"]
@@ -147,9 +144,6 @@ queries:
   - id: filter_expression_with_current_object
     status: open
     result: ["some value", "value", 1, -1, true]
-  - id: filter_expression_with_different_grouped_operators
-    status: open
-    result: [{"a": true, "b": true}, {"a": true, "b": true, "c": true}, {"a": true, "c": true}]
   - id: filter_expression_with_different_ungrouped_operators
     status: open
     result: [{"a": true, "b": true}, {"a": true, "b": true, "c": true}, {"b": true, "c": true}, {"a": true, "c": true}, {"c": true}]
@@ -229,7 +223,7 @@ queries:
     status: open
     result: [[1, 2, 3, 4]]
   - id: filter_expression_with_length_function
-    status: open
+    status: fail
     result: []
   - id: filter_expression_with_length_property
     status: fail
@@ -307,7 +301,7 @@ queries:
     status: fail
     result: []
   - id: recursive_descent
-    status: open
+    status: fail
     result: [[0, 1], [{"a": {"b": "c"}}, [0, 1]], {"a": {"b": "c"}}, {"b": "c"}]
   - id: recursive_descent_after_dot_notation
     status: fail

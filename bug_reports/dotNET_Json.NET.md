@@ -697,6 +697,48 @@ The following queries provide results that do not match those of other implement
   Index was out of range. Must be non-negative and less than the size of the collection. (Parameter 'index')
   ```
 
+- [ ] `$[?(@.a && (@.b || @.c))]`
+  Input:
+  ```
+  [
+    {
+      "a": true
+    },
+    {
+      "a": true,
+      "b": true
+    },
+    {
+      "a": true,
+      "b": true,
+      "c": true
+    },
+    {
+      "b": true,
+      "c": true
+    },
+    {
+      "a": true,
+      "c": true
+    },
+    {
+      "c": true
+    },
+    {
+      "b": true
+    }
+  ]
+  ```
+  Expected output:
+  ```
+  [{"a": true, "b": true}, {"a": true, "b": true, "c": true}, {"a": true, "c": true}]
+  ```
+  Actual output:
+  NOT_SUPPORTED
+  ```
+  Unexpected character while parsing path query: (
+  ```
+
 - [ ] `$[?(@.key=="value")]`
   Input:
   ```

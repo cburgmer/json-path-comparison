@@ -180,6 +180,27 @@ The following queries provide results that do not match those of other implement
   parsing error
   ```
 
+- [ ] `$[0:3:-2]`
+  Input:
+  ```
+  [
+    "first",
+    "second",
+    "third",
+    "forth",
+    "fifth"
+  ]
+  ```
+  Expected output:
+  ```
+  []
+  ```
+  Actual output:
+  NOT_SUPPORTED
+  ```
+  parsing error
+  ```
+
 - [ ] `$[:]`
   Input:
   ```
@@ -1689,6 +1710,48 @@ The following queries provide results that do not match those of other implement
   Actual output:
   ```
   []
+  ```
+
+- [ ] `$[?(@.a && (@.b || @.c))]`
+  Input:
+  ```
+  [
+    {
+      "a": true
+    },
+    {
+      "a": true,
+      "b": true
+    },
+    {
+      "a": true,
+      "b": true,
+      "c": true
+    },
+    {
+      "b": true,
+      "c": true
+    },
+    {
+      "a": true,
+      "c": true
+    },
+    {
+      "c": true
+    },
+    {
+      "b": true
+    }
+  ]
+  ```
+  Expected output:
+  ```
+  [{"a": true, "b": true}, {"a": true, "b": true, "c": true}, {"a": true, "c": true}]
+  ```
+  Actual output:
+  NOT_SUPPORTED
+  ```
+  parsing error
   ```
 
 - [ ] `$[?(@==42)]`

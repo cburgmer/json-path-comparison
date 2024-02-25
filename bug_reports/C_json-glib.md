@@ -430,6 +430,10 @@ The following queries provide results that do not match those of other implement
     "fifth"
   ]
   ```
+  Expected output:
+  ```
+  []
+  ```
   Error:
   ```
   timeout: sending signal TERM to command ‘build/main’
@@ -1575,6 +1579,48 @@ The following queries provide results that do not match those of other implement
   NOT_SUPPORTED
   ```
   Unable to compile selector `$[?(@[1]=='b')]': Invalid array index definition “?(@[1]=='b')]”
+  ```
+
+- [ ] `$[?(@.a && (@.b || @.c))]`
+  Input:
+  ```
+  [
+    {
+      "a": true
+    },
+    {
+      "a": true,
+      "b": true
+    },
+    {
+      "a": true,
+      "b": true,
+      "c": true
+    },
+    {
+      "b": true,
+      "c": true
+    },
+    {
+      "a": true,
+      "c": true
+    },
+    {
+      "c": true
+    },
+    {
+      "b": true
+    }
+  ]
+  ```
+  Expected output:
+  ```
+  [{"a": true, "b": true}, {"a": true, "b": true, "c": true}, {"a": true, "c": true}]
+  ```
+  Actual output:
+  NOT_SUPPORTED
+  ```
+  Unable to compile selector `$[?(@.a && (@.b || @.c))]': Invalid array index definition “?(@.a && (@.b || @.c))]”
   ```
 
 - [ ] `$[?(@==42)]`

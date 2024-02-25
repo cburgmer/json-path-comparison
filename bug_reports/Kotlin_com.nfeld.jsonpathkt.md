@@ -45,6 +45,30 @@ The following queries provide results that do not match those of other implement
   For input string: "-113667776004"
   ```
 
+- [ ] `$[0:3:-2]`
+  Input:
+  ```
+  [
+    "first",
+    "second",
+    "third",
+    "forth",
+    "fifth"
+  ]
+  ```
+  Expected output:
+  ```
+  []
+  ```
+  Actual output:
+  ```
+  [
+    "first",
+    "second",
+    "third"
+  ]
+  ```
+
 - [ ] `$[0:3:2]`
   Input:
   ```
@@ -390,6 +414,48 @@ The following queries provide results that do not match those of other implement
   Expected output:
   ```
   [["a", "b"]]
+  ```
+  Actual output:
+  NOT_SUPPORTED
+  ```
+  Unexpected char, char=?, index=2
+  ```
+
+- [ ] `$[?(@.a && (@.b || @.c))]`
+  Input:
+  ```
+  [
+    {
+      "a": true
+    },
+    {
+      "a": true,
+      "b": true
+    },
+    {
+      "a": true,
+      "b": true,
+      "c": true
+    },
+    {
+      "b": true,
+      "c": true
+    },
+    {
+      "a": true,
+      "c": true
+    },
+    {
+      "c": true
+    },
+    {
+      "b": true
+    }
+  ]
+  ```
+  Expected output:
+  ```
+  [{"a": true, "b": true}, {"a": true, "b": true, "c": true}, {"a": true, "c": true}]
   ```
   Actual output:
   NOT_SUPPORTED
@@ -908,6 +974,40 @@ The following queries provide results that do not match those of other implement
   Actual output:
   ```
   null
+  ```
+
+- [ ] `$..`
+  Input:
+  ```
+  [
+    {
+      "a": {
+        "b": "c"
+      }
+    },
+    [
+      0,
+      1
+    ]
+  ]
+  ```
+  Expected output (in any order as no consensus on ordering exists):
+  ```
+  NOT_SUPPORTED
+  ```
+  Actual output:
+  ```
+  [
+    [
+      0,
+      1
+    ],
+    {
+      "a": {
+        "b": "c"
+      }
+    }
+  ]
   ```
 
 - [ ] `$.key..`

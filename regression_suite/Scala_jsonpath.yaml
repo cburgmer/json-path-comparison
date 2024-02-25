@@ -17,9 +17,6 @@ queries:
   - id: array_slice_with_negative_step
     status: open
     result: ["forth", "second"]
-  - id: array_slice_with_negative_step_and_start_greater_than_end
-    status: open
-    result: []
   - id: array_slice_with_negative_step_on_partially_overlapping_array
     status: open
     result: ["fifth"]
@@ -173,7 +170,7 @@ queries:
     status: open
     result: ["some value", null, "value", 0, 1, -1, "", [], {}, false, true]
   - id: filter_expression_with_different_grouped_operators
-    status: open
+    status: fail
     result: NOT_SUPPORTED
   - id: filter_expression_with_different_ungrouped_operators
     status: open
@@ -265,9 +262,6 @@ queries:
   - id: filter_expression_with_length_free_function
     status: open
     result: NOT_SUPPORTED
-  - id: filter_expression_with_length_function
-    status: open
-    result: NOT_SUPPORTED
   - id: filter_expression_with_less_than
     status: open
     result: [{"key": 0}, {"key": -1}, {"key": 41}, {"key": 41.9999}]
@@ -343,9 +337,6 @@ queries:
   - id: filter_expression_without_value
     status: open
     result: [{"key": true}, {"key": false}, {"key": null}, {"key": "value"}, {"key": ""}, {"key": 0}, {"key": 1}, {"key": -1}, {"key": 42}, {"key": {}}, {"key": []}]
-  - id: recursive_descent
-    status: open
-    result: NOT_SUPPORTED
   - id: recursive_descent_on_nested_arrays
     status: fail
     result: [[[0], [1]], [0], 0, [1], 1]

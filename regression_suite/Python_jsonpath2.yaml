@@ -15,9 +15,6 @@ queries:
   - id: array_slice_with_negative_step
     status: open
     result: ["forth", "second"]
-  - id: array_slice_with_negative_step_and_start_greater_than_end
-    status: open
-    result: []
   - id: array_slice_with_negative_step_on_partially_overlapping_array
     status: open
     result: ["fifth"]
@@ -216,7 +213,7 @@ queries:
     status: open
     result: [["some value", null, "value", 0, 1, -1, "", [], {}, false, true]]
   - id: filter_expression_with_different_grouped_operators
-    status: open
+    status: fail
     result: NOT_SUPPORTED
   - id: filter_expression_with_different_ungrouped_operators
     status: open
@@ -335,9 +332,6 @@ queries:
   - id: filter_expression_with_length_free_function
     status: open
     result: NOT_SUPPORTED
-  - id: filter_expression_with_length_function
-    status: open
-    result: NOT_SUPPORTED
   - id: filter_expression_with_length_property
     status: fail
     result: NOT_SUPPORTED
@@ -428,9 +422,6 @@ queries:
   - id: filter_expression_without_value
     status: open
     result: []
-  - id: recursive_descent
-    status: open
-    result: NOT_SUPPORTED
   - id: union_with_duplication_from_object
     status: fail
     result: NOT_SUPPORTED
