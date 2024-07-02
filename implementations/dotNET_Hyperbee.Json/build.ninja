@@ -1,0 +1,9 @@
+root = implementations/dotNET_Hyperbee.Json
+builddir = $root/build
+
+rule build
+  command = $root/install.sh $$(basename $$(dirname $out))
+
+build $builddir/Dotnet_Hyperbee.Json: build | $root/Dotnet_Hyperbee.Json.csproj $root/Program.cs
+
+build $root/install: phony $builddir/Dotnet_Hyperbee.Json
