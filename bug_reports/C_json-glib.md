@@ -1623,6 +1623,52 @@ The following queries provide results that do not match those of other implement
   Unable to compile selector `$[?(@.a && (@.b || @.c))]': Invalid array index definition “?(@.a && (@.b || @.c))]”
   ```
 
+- [ ] `$[?(@.a && @.b || @.c)]`
+  Input:
+  ```
+  [
+    {
+      "a": true,
+      "b": true
+    },
+    {
+      "a": true,
+      "b": true,
+      "c": true
+    },
+    {
+      "b": true,
+      "c": true
+    },
+    {
+      "a": true,
+      "c": true
+    },
+    {
+      "a": true
+    },
+    {
+      "b": true
+    },
+    {
+      "c": true
+    },
+    {
+      "d": true
+    },
+    {}
+  ]
+  ```
+  Expected output:
+  ```
+  [{"a": true, "b": true}, {"a": true, "b": true, "c": true}, {"b": true, "c": true}, {"a": true, "c": true}, {"c": true}]
+  ```
+  Actual output:
+  NOT_SUPPORTED
+  ```
+  Unable to compile selector `$[?(@.a && @.b || @.c)]': Invalid array index definition “?(@.a && @.b || @.c)]”
+  ```
+
 - [ ] `$[?(@==42)]`
   Input:
   ```

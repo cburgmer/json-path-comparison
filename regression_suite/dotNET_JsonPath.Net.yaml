@@ -129,9 +129,6 @@ queries:
   - id: filter_expression_with_current_object
     status: open
     result: ["some value", null, "value", 0, 1, -1, "", [], {}, false, true]
-  - id: filter_expression_with_different_ungrouped_operators
-    status: open
-    result: [{"a": true, "b": true}, {"a": true, "b": true, "c": true}, {"a": true, "c": true}]
   - id: filter_expression_with_division
     status: open
     result: [{"key": 50}]
@@ -200,7 +197,7 @@ queries:
     result: [{"key": true}]
   - id: filter_expression_with_equals_with_path_and_path
     status: open
-    result: [{"key1": 10, "key2": 10}, {"key1": null, "key2": null}, {"key1": 0, "key2": 0}, {"key1": -1, "key2": -1}, {"key1": "", "key2": ""}, {"key1": false, "key2": false}, {"key1": true, "key2": true}, {"key1": [], "key2": []}, {"key1": {}, "key2": {}}, {"key1": {"a": 1, "b": 2}, "key2": {"a": 1, "b": 2}}]
+    result: [{"key1": 10, "key2": 10}, {}, {"key1": null, "key2": null}, {"key1": 0, "key2": 0}, {"key1": -1, "key2": -1}, {"key1": "", "key2": ""}, {"key1": false, "key2": false}, {"key1": true, "key2": true}, {"key1": [], "key2": []}, {"key1": {}, "key2": {}}, {"key1": {"a": 1, "b": 2}, "key2": {"a": 1, "b": 2}}]
   - id: filter_expression_with_greater_than
     status: open
     result: [{"key": 43}, {"key": 42.0001}, {"key": 100}]

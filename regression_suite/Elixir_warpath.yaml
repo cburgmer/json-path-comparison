@@ -122,9 +122,6 @@ queries:
   - id: filter_expression_with_current_object
     status: open
     result: NOT_SUPPORTED
-  - id: filter_expression_with_different_ungrouped_operators
-    status: open
-    result: [{"a": true, "b": true}, {"a": true, "b": true, "c": true}, {"b": true, "c": true}, {"a": true, "c": true}, {"c": true}]
   - id: filter_expression_with_division
     status: open
     result: [{"key/10": 5}]

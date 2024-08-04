@@ -145,19 +145,19 @@ queries:
     result: [{"key": 43}, {"key": 44}]
   - id: filter_expression_with_boolean_and_operator_and_value_false
     status: open
-    result: [{"key": 1}, {"key": 3}, {"key": "nice"}, {"key": {}}, {"key": []}]
+    result: [{"key": 1}, {"key": 3}, {"key": "nice"}, {"key": {}}]
   - id: filter_expression_with_boolean_and_operator_and_value_true
     status: open
-    result: [{"key": 1}, {"key": 3}, {"key": "nice"}, {"key": {}}, {"key": []}]
+    result: [{"key": 1}, {"key": 3}, {"key": "nice"}, {"key": {}}]
   - id: filter_expression_with_boolean_or_operator
     status: fail
     result: [{"key": 44}]
   - id: filter_expression_with_boolean_or_operator_and_value_false
     status: open
-    result: [{"key": 1}, {"key": 3}, {"key": "nice"}, {"key": {}}, {"key": []}]
+    result: [{"key": 1}, {"key": 3}, {"key": "nice"}, {"key": {}}]
   - id: filter_expression_with_boolean_or_operator_and_value_true
     status: open
-    result: [{"key": 1}, {"key": 3}, {"key": "nice"}, {"key": {}}, {"key": []}]
+    result: [{"key": 1}, {"key": 3}, {"key": "nice"}, {"key": {}}]
   - id: filter_expression_with_bracket_notation_with_-1
     status: open
     result: []
@@ -204,10 +204,10 @@ queries:
     status: error
   - id: filter_expression_with_equals_false
     status: open
-    result: [{"key": false}, {"key": null}, {"key": ""}, {"key": 0}, {"key": []}]
+    result: []
   - id: filter_expression_with_equals_null
     status: open
-    result: [{"key": false}, {"key": null}, {"key": ""}, {"key": 0}, {"key": []}]
+    result: []
   - id: filter_expression_with_equals_number_for_array_slice_with_range_1
     status: open
     result: []
@@ -261,10 +261,10 @@ queries:
     result: []
   - id: filter_expression_with_less_than
     status: open
-    result: [{"key": 0}, {"key": -1}, {"key": 41}, {"key": 41.9999}, {"key": "41"}]
+    result: [{"key": -1}, {"key": 41}, {"key": 41.9999}, {"key": "41"}]
   - id: filter_expression_with_less_than_or_equal
     status: open
-    result: [{"key": 0}, {"key": 42}, {"key": -1}, {"key": 41}, {"key": 41.9999}, {"key": "42"}, {"key": "41"}]
+    result: [{"key": 42}, {"key": -1}, {"key": 41}, {"key": 41.9999}, {"key": "42"}, {"key": "41"}]
   - id: filter_expression_with_local_dot_key_and_null_in_data
     status: fail
     result: [{"key": "value"}]
@@ -281,10 +281,10 @@ queries:
     status: error
   - id: filter_expression_with_non_singular_existence_test
     status: open
-    result: []
+    result: [{"a": [1]}, {"a": [1, 2]}, {"a": {"x": "y"}}, {"a": {"w": "z", "x": "y"}}]
   - id: filter_expression_with_not_equals
     status: open
-    result: [{"key": 0}, {"key": -1}, {"key": 1}, {"key": 41}, {"key": 43}, {"key": 42.0001}, {"key": 41.9999}, {"key": 100}, {"key": "some"}, {"key": null}, {"key": 420}, {"key": ""}, {"key": {}}, {"key": []}, {"key": [42]}, {"key": {"key": 42}}, {"key": {"some": 42}}]
+    result: [{"key": -1}, {"key": 1}, {"key": 41}, {"key": 43}, {"key": 42.0001}, {"key": 41.9999}, {"key": 100}, {"key": "some"}, {"key": 420}, {"key": {}}, {"key": [42]}, {"key": {"key": 42}}, {"key": {"some": 42}}]
   - id: filter_expression_with_not_equals_array_or_equals_true
     status: error
   - id: filter_expression_with_regular_expression
@@ -304,13 +304,7 @@ queries:
     result: [{"key": 42}, {"key": "42"}]
   - id: filter_expression_with_subfilter
     status: open
-    result: []
-  - id: filter_expression_with_subpaths
-    status: fail
-    result: []
-  - id: filter_expression_with_subpaths_deeply_nested
-    status: fail
-    result: []
+    result: NOT_SUPPORTED
   - id: filter_expression_with_subtraction
     status: open
     result: [{"key-50": -100}]

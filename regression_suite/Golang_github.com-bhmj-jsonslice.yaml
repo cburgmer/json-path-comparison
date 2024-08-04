@@ -62,9 +62,6 @@ queries:
   - id: bracket_notation_with_wildcard_after_dot_notation_after_bracket_notation_with_wildcard
     status: fail
     result: [[42]]
-  - id: bracket_notation_with_wildcard_after_recursive_descent
-    status: fail
-    result: ["value"]
   - id: bracket_notation_without_quotes
     status: fail
     result: "value"
@@ -79,9 +76,6 @@ queries:
   - id: dot_bracket_notation_without_quotes
     status: fail
     result: "value"
-  - id: dot_notation_after_bracket_notation_after_recursive_descent
-    status: fail
-    result: [42]
   - id: dot_notation_after_recursive_descent_with_extra_dot
     status: open
     result: []
@@ -161,9 +155,6 @@ queries:
   - id: filter_expression_with_current_object
     status: open
     result: ["some value", "value", 1, -1, [], {}, true]
-  - id: filter_expression_with_different_ungrouped_operators
-    status: open
-    result: [{"a": true, "b": true}, {"a": true, "b": true, "c": true}, {"b": true, "c": true}, {"a": true, "c": true}, {"c": true}]
   - id: filter_expression_with_division
     status: open
     result: [{"key": 50}]
@@ -352,7 +343,7 @@ queries:
     result: [["cc1", "dd1"], ["cc2", "dd2"]]
   - id: union_with_keys_after_recursive_descent
     status: fail
-    result: ["cc1", "cc2"]
+    result: []
   - id: union_with_numbers_in_decreasing_order
     status: fail
     result: [2, 5]

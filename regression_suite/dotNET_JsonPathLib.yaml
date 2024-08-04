@@ -153,9 +153,11 @@ queries:
     status: open
     result: [{"": 21, "a": 42}]
   - id: filter_expression_after_dot_notation_with_wildcard_after_recursive_descent
-    status: error
+    status: open
+    result: [{"id": 3, "name": "another"}, {"id": 4, "name": "more"}, {"id": 5, "name": "next to last"}]
   - id: filter_expression_after_recursive_descent
-    status: error
+    status: open
+    result: [{"id": 2}, {"id": 2}, {"id": 2}, {"id": 2}]
   - id: filter_expression_on_object
     status: open
     result: [{"key": 1}]
@@ -163,13 +165,17 @@ queries:
     status: open
     result: [{"key": 50}]
   - id: filter_expression_with_boolean_and_operator_and_value_false
-    status: error
+    status: open
+    result: []
   - id: filter_expression_with_boolean_and_operator_and_value_true
-    status: error
+    status: open
+    result: [{"key": 1}, {"key": 3}, {"key": true}]
   - id: filter_expression_with_boolean_or_operator_and_value_false
-    status: error
+    status: open
+    result: [{"key": 1}, {"key": 3}, {"key": true}]
   - id: filter_expression_with_boolean_or_operator_and_value_true
-    status: error
+    status: open
+    result: [{"key": 1}, {"key": 3}, {"key": "nice"}, {"key": true}, {"key": null}, {"key": false}, {"key": {}}, {"key": []}, {"key": -1}, {"key": 0}, {"key": ""}]
   - id: filter_expression_with_bracket_notation_and_current_object_literal
     status: fail
     result: []
@@ -181,9 +187,6 @@ queries:
     result: [["a", "b"]]
   - id: filter_expression_with_current_object
     status: error
-  - id: filter_expression_with_different_ungrouped_operators
-    status: open
-    result: [{"a": true, "b": true}, {"a": true, "b": true, "c": true}, {"b": true, "c": true}, {"a": true, "c": true}, {"c": true}]
   - id: filter_expression_with_division
     status: open
     result: [{"key": 50}]
@@ -197,7 +200,8 @@ queries:
     status: fail
     result: []
   - id: filter_expression_with_equals
-    status: error
+    status: open
+    result: [{"key": 42}, {"key": "42"}]
   - id: filter_expression_with_equals_array
     status: open
     result: [{"d": "v1,v2"}]
@@ -206,7 +210,8 @@ queries:
   - id: filter_expression_with_equals_array_for_dot_notation_with_star
     status: error
   - id: filter_expression_with_equals_array_or_equals_true
-    status: error
+    status: open
+    result: [{"d": true}]
   - id: filter_expression_with_equals_array_with_single_quotes
     status: open
     result: [{"d": "v1,v2"}]
@@ -214,7 +219,8 @@ queries:
     status: open
     result: [{"key": 44}]
   - id: filter_expression_with_equals_false
-    status: error
+    status: open
+    result: [{"key": false}, {"key": ""}, {"key": 0}]
   - id: filter_expression_with_equals_null
     status: open
     result: [{"some": "some value"}, {"key": null}]
@@ -236,8 +242,6 @@ queries:
   - id: filter_expression_with_equals_on_object
     status: open
     result: [{"key": 42}]
-  - id: filter_expression_with_equals_string
-    status: error
   - id: filter_expression_with_equals_string_with_current_object_literal
     status: fail
     result: []
@@ -245,7 +249,8 @@ queries:
     status: open
     result: [{"key": "Mot\u00f6rhead"}]
   - id: filter_expression_with_equals_true
-    status: error
+    status: open
+    result: [{"key": true}, {"key": 1}]
   - id: filter_expression_with_equals_with_path_and_path
     status: open
     result: [{"key1": 10, "key2": 10}, {}, {"key1": null, "key2": null}, {"key1": null}, {"key2": null}, {"key1": 0, "key2": 0}, {"key1": -1, "key2": -1}, {"key1": "", "key2": ""}, {"key1": false, "key2": false}, {"key1": true, "key2": true}]
@@ -296,7 +301,8 @@ queries:
   - id: filter_expression_with_non_singular_existence_test
     status: error
   - id: filter_expression_with_not_equals
-    status: error
+    status: open
+    result: [{"key": 0}, {"key": -1}, {"key": 1}, {"key": 41}, {"key": 43}, {"key": 42.0001}, {"key": 41.9999}, {"key": 100}, {"key": "some"}, {"key": null}, {"key": 420}, {"key": ""}, {"key": {}}, {"key": []}, {"key": [42]}, {"key": {"key": 42}}, {"key": {"some": 42}}, {"some": "value"}]
   - id: filter_expression_with_not_equals_array_or_equals_true
     status: open
     result: [{"d": ["v1", "v2"]}, {"d": ["a", "b"]}, {"d": true}]

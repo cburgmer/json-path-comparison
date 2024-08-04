@@ -463,6 +463,52 @@ The following queries provide results that do not match those of other implement
   Unexpected char, char=?, index=2
   ```
 
+- [ ] `$[?(@.a && @.b || @.c)]`
+  Input:
+  ```
+  [
+    {
+      "a": true,
+      "b": true
+    },
+    {
+      "a": true,
+      "b": true,
+      "c": true
+    },
+    {
+      "b": true,
+      "c": true
+    },
+    {
+      "a": true,
+      "c": true
+    },
+    {
+      "a": true
+    },
+    {
+      "b": true
+    },
+    {
+      "c": true
+    },
+    {
+      "d": true
+    },
+    {}
+  ]
+  ```
+  Expected output:
+  ```
+  [{"a": true, "b": true}, {"a": true, "b": true, "c": true}, {"b": true, "c": true}, {"a": true, "c": true}, {"c": true}]
+  ```
+  Actual output:
+  NOT_SUPPORTED
+  ```
+  Unexpected char, char=?, index=2
+  ```
+
 - [ ] `$[?(@==42)]`
   Input:
   ```

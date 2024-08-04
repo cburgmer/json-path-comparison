@@ -960,6 +960,52 @@ The following queries provide results that do not match those of other implement
   JsonPathLexerError('Error on line 1, col 2: Unexpected character: ? ')
   ```
 
+- [ ] `$[?(@.a && @.b || @.c)]`
+  Input:
+  ```
+  [
+    {
+      "a": true,
+      "b": true
+    },
+    {
+      "a": true,
+      "b": true,
+      "c": true
+    },
+    {
+      "b": true,
+      "c": true
+    },
+    {
+      "a": true,
+      "c": true
+    },
+    {
+      "a": true
+    },
+    {
+      "b": true
+    },
+    {
+      "c": true
+    },
+    {
+      "d": true
+    },
+    {}
+  ]
+  ```
+  Expected output:
+  ```
+  [{"a": true, "b": true}, {"a": true, "b": true, "c": true}, {"b": true, "c": true}, {"a": true, "c": true}, {"c": true}]
+  ```
+  Actual output:
+  NOT_SUPPORTED
+  ```
+  JsonPathLexerError('Error on line 1, col 2: Unexpected character: ? ')
+  ```
+
 - [ ] `$[?(@==42)]`
   Input:
   ```

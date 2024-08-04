@@ -493,255 +493,6 @@ The following queries provide results that do not match those of other implement
   ]
   ```
 
-- [ ] `$..*[?(@.id>2)]`
-  Input:
-  ```
-  [
-    {
-      "complext": {
-        "one": [
-          {
-            "name": "first",
-            "id": 1
-          },
-          {
-            "name": "next",
-            "id": 2
-          },
-          {
-            "name": "another",
-            "id": 3
-          },
-          {
-            "name": "more",
-            "id": 4
-          }
-        ],
-        "more": {
-          "name": "next to last",
-          "id": 5
-        }
-      }
-    },
-    {
-      "name": "last",
-      "id": 6
-    }
-  ]
-  ```
-  Error:
-  ```
-  Accessed JArray values with invalid key value: "id". Int32 array index expected.
-  ```
-
-- [ ] `$..[?(@.id==2)]`
-  Input:
-  ```
-  {
-    "id": 2,
-    "more": [
-      {
-        "id": 2
-      },
-      {
-        "more": {
-          "id": 2
-        }
-      },
-      {
-        "id": {
-          "id": 2
-        }
-      },
-      [
-        {
-          "id": 2
-        }
-      ]
-    ]
-  }
-  ```
-  Error:
-  ```
-  Accessed JArray values with invalid key value: "id". Int32 array index expected.
-  ```
-
-- [ ] `$[?(@.key>0 && false)]`
-  Input:
-  ```
-  [
-    {
-      "key": 1
-    },
-    {
-      "key": 3
-    },
-    {
-      "key": "nice"
-    },
-    {
-      "key": true
-    },
-    {
-      "key": null
-    },
-    {
-      "key": false
-    },
-    {
-      "key": {}
-    },
-    {
-      "key": []
-    },
-    {
-      "key": -1
-    },
-    {
-      "key": 0
-    },
-    {
-      "key": ""
-    }
-  ]
-  ```
-  Error:
-  ```
-  Accessed JArray values with invalid key value: "valueOf". Int32 array index expected.
-  ```
-
-- [ ] `$[?(@.key>0 && true)]`
-  Input:
-  ```
-  [
-    {
-      "key": 1
-    },
-    {
-      "key": 3
-    },
-    {
-      "key": "nice"
-    },
-    {
-      "key": true
-    },
-    {
-      "key": null
-    },
-    {
-      "key": false
-    },
-    {
-      "key": {}
-    },
-    {
-      "key": []
-    },
-    {
-      "key": -1
-    },
-    {
-      "key": 0
-    },
-    {
-      "key": ""
-    }
-  ]
-  ```
-  Error:
-  ```
-  Accessed JArray values with invalid key value: "valueOf". Int32 array index expected.
-  ```
-
-- [ ] `$[?(@.key>0 || false)]`
-  Input:
-  ```
-  [
-    {
-      "key": 1
-    },
-    {
-      "key": 3
-    },
-    {
-      "key": "nice"
-    },
-    {
-      "key": true
-    },
-    {
-      "key": null
-    },
-    {
-      "key": false
-    },
-    {
-      "key": {}
-    },
-    {
-      "key": []
-    },
-    {
-      "key": -1
-    },
-    {
-      "key": 0
-    },
-    {
-      "key": ""
-    }
-  ]
-  ```
-  Error:
-  ```
-  Accessed JArray values with invalid key value: "valueOf". Int32 array index expected.
-  ```
-
-- [ ] `$[?(@.key>0 || true)]`
-  Input:
-  ```
-  [
-    {
-      "key": 1
-    },
-    {
-      "key": 3
-    },
-    {
-      "key": "nice"
-    },
-    {
-      "key": true
-    },
-    {
-      "key": null
-    },
-    {
-      "key": false
-    },
-    {
-      "key": {}
-    },
-    {
-      "key": []
-    },
-    {
-      "key": -1
-    },
-    {
-      "key": 0
-    },
-    {
-      "key": ""
-    }
-  ]
-  ```
-  Error:
-  ```
-  Accessed JArray values with invalid key value: "valueOf". Int32 array index expected.
-  ```
-
 - [ ] `$[?(@['@key']==42)]`
   Input:
   ```
@@ -821,7 +572,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  Line 1: Unexpected number
+  Unexpected number (<anonymous>:1:3)
   ```
 
 - [ ] `$[?(@.2 == 'third')]`
@@ -839,7 +590,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  Line 1: Unexpected number
+  Unexpected number (<anonymous>:1:3)
   ```
 
 - [ ] `$[?()]`
@@ -861,83 +612,6 @@ The following queries provide results that do not match those of other implement
   Actual output:
   ```
   []
-  ```
-
-- [ ] `$[?(@.key==42)]`
-  Input:
-  ```
-  [
-    {
-      "key": 0
-    },
-    {
-      "key": 42
-    },
-    {
-      "key": -1
-    },
-    {
-      "key": 1
-    },
-    {
-      "key": 41
-    },
-    {
-      "key": 43
-    },
-    {
-      "key": 42.0001
-    },
-    {
-      "key": 41.9999
-    },
-    {
-      "key": 100
-    },
-    {
-      "key": "some"
-    },
-    {
-      "key": "42"
-    },
-    {
-      "key": null
-    },
-    {
-      "key": 420
-    },
-    {
-      "key": ""
-    },
-    {
-      "key": {}
-    },
-    {
-      "key": []
-    },
-    {
-      "key": [
-        42
-      ]
-    },
-    {
-      "key": {
-        "key": 42
-      }
-    },
-    {
-      "key": {
-        "some": 42
-      }
-    },
-    {
-      "some": "value"
-    }
-  ]
-  ```
-  Error:
-  ```
-  Accessed JArray values with invalid key value: "valueOf". Int32 array index expected.
   ```
 
 - [ ] `$[?(@[0:1]==[1])]`
@@ -962,7 +636,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  Line 1: Unexpected token :
+  Unexpected token ':' (<anonymous>:1:5)
   ```
 
 - [ ] `$[?(@.*==[1,2])]`
@@ -995,80 +669,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  Line 1: Unexpected token *=
-  ```
-
-- [ ] `$[?(@.d==["v1","v2"] || (@.d == true))]`
-  Input:
-  ```
-  [
-    {
-      "d": [
-        "v1",
-        "v2"
-      ]
-    },
-    {
-      "d": [
-        "a",
-        "b"
-      ]
-    },
-    {
-      "d": true
-    }
-  ]
-  ```
-  Error:
-  ```
-  Accessed JArray values with invalid key value: "valueOf". Int32 array index expected.
-  ```
-
-- [ ] `$[?(@.key==false)]`
-  Input:
-  ```
-  [
-    {
-      "some": "some value"
-    },
-    {
-      "key": true
-    },
-    {
-      "key": false
-    },
-    {
-      "key": null
-    },
-    {
-      "key": "value"
-    },
-    {
-      "key": ""
-    },
-    {
-      "key": 0
-    },
-    {
-      "key": 1
-    },
-    {
-      "key": -1
-    },
-    {
-      "key": 42
-    },
-    {
-      "key": {}
-    },
-    {
-      "key": []
-    }
-  ]
-  ```
-  Error:
-  ```
-  Accessed JArray values with invalid key value: "valueOf". Int32 array index expected.
+  Unexpected token '*=' (<anonymous>:1:4)
   ```
 
 - [ ] `$[?(@[0:1]==1)]`
@@ -1093,7 +694,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  Line 1: Unexpected token :
+  Unexpected token ':' (<anonymous>:1:5)
   ```
 
 - [ ] `$[?(@[*]==2)]`
@@ -1126,7 +727,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  Line 1: Unexpected token *
+  Unexpected token '*' (<anonymous>:1:4)
   ```
 
 - [ ] `$[?(@.*==2)]`
@@ -1159,73 +760,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  Line 1: Unexpected token *=
-  ```
-
-- [ ] `$[?(@.key=="value")]`
-  Input:
-  ```
-  [
-    {
-      "key": "some"
-    },
-    {
-      "key": "value"
-    },
-    {
-      "key": null
-    },
-    {
-      "key": 0
-    },
-    {
-      "key": 1
-    },
-    {
-      "key": -1
-    },
-    {
-      "key": ""
-    },
-    {
-      "key": {}
-    },
-    {
-      "key": []
-    },
-    {
-      "key": "valuemore"
-    },
-    {
-      "key": "morevalue"
-    },
-    {
-      "key": [
-        "value"
-      ]
-    },
-    {
-      "key": {
-        "some": "value"
-      }
-    },
-    {
-      "key": {
-        "key": "value"
-      }
-    },
-    {
-      "some": "value"
-    }
-  ]
-  ```
-  Expected output:
-  ```
-  [{"key": "value"}]
-  ```
-  Error:
-  ```
-  Accessed JArray values with invalid key value: "valueOf". Int32 array index expected.
+  Unexpected token '*=' (<anonymous>:1:4)
   ```
 
 - [ ] `$[?(@.key=="hi@example.com")]`
@@ -1250,53 +785,6 @@ The following queries provide results that do not match those of other implement
   Actual output:
   ```
   []
-  ```
-
-- [ ] `$[?(@.key==true)]`
-  Input:
-  ```
-  [
-    {
-      "some": "some value"
-    },
-    {
-      "key": true
-    },
-    {
-      "key": false
-    },
-    {
-      "key": null
-    },
-    {
-      "key": "value"
-    },
-    {
-      "key": ""
-    },
-    {
-      "key": 0
-    },
-    {
-      "key": 1
-    },
-    {
-      "key": -1
-    },
-    {
-      "key": 42
-    },
-    {
-      "key": {}
-    },
-    {
-      "key": []
-    }
-  ]
-  ```
-  Error:
-  ```
-  Accessed JArray values with invalid key value: "valueOf". Int32 array index expected.
   ```
 
 - [ ] `$.items[?(@.key==$.value)]`
@@ -1507,84 +995,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  Line 1: Unexpected token *
-  ```
-
-- [ ] `$[?(@.key!=42)]`
-  Input:
-  ```
-  [
-    {
-      "key": 0
-    },
-    {
-      "key": 42
-    },
-    {
-      "key": -1
-    },
-    {
-      "key": 1
-    },
-    {
-      "key": 41
-    },
-    {
-      "key": 43
-    },
-    {
-      "key": 42.0001
-    },
-    {
-      "key": 41.9999
-    },
-    {
-      "key": 100
-    },
-    {
-      "key": "some"
-    },
-    {
-      "key": "42"
-    },
-    {
-      "key": null
-    },
-    {
-      "key": 420
-    },
-    {
-      "key": ""
-    },
-    {
-      "key": {}
-    },
-    {
-      "key": []
-    },
-    {
-      "key": [
-        42
-      ]
-    },
-    {
-      "key": {
-        "key": 42
-      }
-    },
-    {
-      "key": {
-        "some": 42
-      }
-    },
-    {
-      "some": "value"
-    }
-  ]
-  ```
-  Error:
-  ```
-  Accessed JArray values with invalid key value: "valueOf". Int32 array index expected.
+  Unexpected token '*' (<anonymous>:1:6)
   ```
 
 - [ ] `$[*].bookmarks[?(@.page == 45)]^^^`
@@ -1652,7 +1063,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  Line 1: Unexpected token *
+  Unexpected token '*' (<anonymous>:1:4)
   ```
 
 - [ ] `$.x[?(@[*]>=$.y[*])]`
@@ -1682,7 +1093,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  Line 1: Unexpected token *
+  Unexpected token '*' (<anonymous>:1:4)
   ```
 
 - [ ] `$[?(@.key=42)]`
@@ -1869,7 +1280,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  Line 1: Unexpected token ?
+  Unexpected token '?' (<anonymous>:1:6)
   ```
 
 - [ ] `$[?(@.a.b.c==3)]`
@@ -1983,7 +1394,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  Accessed JArray values with invalid key value: "id". Int32 array index expected.
+  Unable to cast object of type 'Newtonsoft.Json.Linq.JObject' to type 'System.IConvertible'.
   ```
 
 - [ ] `$[?(@..child)]`
@@ -2024,7 +1435,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  Line 1: Unexpected token .
+  Unexpected token '.' (<anonymous>:1:4)
   ```
 
 - [ ] `$[?@.key==42]`
@@ -2331,7 +1742,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  Line 1: Unexpected token )
+  Unexpected token ')' (<anonymous>:1:9)
   ```
 
 - [ ] `$[*,1]`

@@ -319,7 +319,7 @@ queries:
     status: fail
     result: []
   - id: filter_expression_with_different_ungrouped_operators
-    status: open
+    status: fail
     result: []
   - id: filter_expression_with_division
     status: open

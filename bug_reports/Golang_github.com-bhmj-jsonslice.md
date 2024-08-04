@@ -196,31 +196,6 @@ The following queries provide results that do not match those of other implement
   ]
   ```
 
-- [ ] `$..[*]`
-  Input:
-  ```
-  {
-    "key": "value",
-    "another key": {
-      "complex": "string",
-      "primitives": [
-        0,
-        1
-      ]
-    }
-  }
-  ```
-  Expected output (in any order as no consensus on ordering exists):
-  ```
-  ["string", "value", 0, 1, [0, 1], {"complex": "string", "primitives": [0, 1]}]
-  ```
-  Actual output:
-  ```
-  [
-    "value"
-  ]
-  ```
-
 - [ ] `$[key]`
   Input:
   ```
@@ -270,59 +245,6 @@ The following queries provide results that do not match those of other implement
   Actual output:
   ```
   "value"
-  ```
-
-- [ ] `$..[1].key`
-  Input:
-  ```
-  {
-    "k": [
-      {
-        "key": "some value"
-      },
-      {
-        "key": 42
-      }
-    ],
-    "kk": [
-      [
-        {
-          "key": 100
-        },
-        {
-          "key": 200
-        },
-        {
-          "key": 300
-        }
-      ],
-      [
-        {
-          "key": 400
-        },
-        {
-          "key": 500
-        },
-        {
-          "key": 600
-        }
-      ]
-    ],
-    "key": [
-      0,
-      1
-    ]
-  }
-  ```
-  Expected output (in any order as no consensus on ordering exists):
-  ```
-  [200, 42, 500]
-  ```
-  Actual output:
-  ```
-  [
-    42
-  ]
   ```
 
 - [ ] `$.key-dash`
@@ -1502,10 +1424,7 @@ The following queries provide results that do not match those of other implement
   ```
   Actual output:
   ```
-  [
-    "cc1",
-    "cc2"
-  ]
+  []
   ```
 
 - [ ] `$[4,1]`

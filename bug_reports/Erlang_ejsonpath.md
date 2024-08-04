@@ -744,6 +744,10 @@ The following queries provide results that do not match those of other implement
     {}
   ]
   ```
+  Expected output:
+  ```
+  [{"a": true, "b": true}, {"a": true, "b": true, "c": true}, {"b": true, "c": true}, {"a": true, "c": true}, {"c": true}]
+  ```
   Error:
   ```
   Timeout
