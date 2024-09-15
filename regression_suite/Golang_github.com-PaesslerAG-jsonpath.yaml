@@ -194,7 +194,7 @@ queries:
     status: fail
     result: NOT_SUPPORTED
   - id: filter_expression_with_different_ungrouped_operators
-    status: fail
+    status: open
     result: NOT_SUPPORTED
   - id: filter_expression_with_division
     status: open
@@ -286,6 +286,9 @@ queries:
   - id: filter_expression_with_length_free_function
     status: open
     result: []
+  - id: filter_expression_with_length_function
+    status: open
+    result: NOT_SUPPORTED
   - id: filter_expression_with_less_than
     status: open
     result: NOT_SUPPORTED
@@ -356,11 +359,14 @@ queries:
     status: open
     result: [1, 3, "nice", true, null, false, {}, [], -1, 0, ""]
   - id: filter_expression_without_parens
-    status: fail
+    status: open
     result: [{"key": 42}]
   - id: filter_expression_without_value
     status: open
     result: [{"key": true}, {"key": 1}, {"key": -1}, {"key": 42}]
+  - id: recursive_descent
+    status: open
+    result: NOT_SUPPORTED
   - id: union_with_filter
     status: open
     result: NOT_SUPPORTED
@@ -374,5 +380,8 @@ queries:
     status: open
     result: NOT_SUPPORTED
   - id: union_with_slice_and_number
+    status: open
+    result: NOT_SUPPORTED
+  - id: union_with_wildcard_and_number
     status: open
     result: NOT_SUPPORTED

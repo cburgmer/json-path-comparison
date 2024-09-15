@@ -1407,68 +1407,6 @@ The following queries provide results that do not match those of other implement
   Node does not appear to be an array.
   ```
 
-- [ ] `$[?(@.a && @.b || @.c)]`
-  Input:
-  ```
-  [
-    {
-      "a": true,
-      "b": true
-    },
-    {
-      "a": true,
-      "b": true,
-      "c": true
-    },
-    {
-      "b": true,
-      "c": true
-    },
-    {
-      "a": true,
-      "c": true
-    },
-    {
-      "a": true
-    },
-    {
-      "b": true
-    },
-    {
-      "c": true
-    },
-    {
-      "d": true
-    },
-    {}
-  ]
-  ```
-  Expected output:
-  ```
-  [{"a": true, "b": true}, {"a": true, "b": true, "c": true}, {"b": true, "c": true}, {"a": true, "c": true}, {"c": true}]
-  ```
-  Actual output:
-  ```
-  [
-    {
-      "a": true,
-      "b": true
-    },
-    {
-      "a": true,
-      "b": true,
-      "c": true
-    },
-    {
-      "b": true,
-      "c": true
-    },
-    {
-      "c": true
-    }
-  ]
-  ```
-
 - [ ] `$[?(@.2 == 'third')]`
   Input:
   ```
@@ -1804,58 +1742,6 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   invalid value for Integer(): " 3])"
-  ```
-
-- [ ] `$[?(@.length() == 4)]`
-  Input:
-  ```
-  [
-    [
-      1,
-      2,
-      3,
-      4,
-      5
-    ],
-    [
-      1,
-      2,
-      3,
-      4
-    ],
-    [
-      1,
-      2,
-      3
-    ]
-  ]
-  ```
-  Expected output:
-  ```
-  NOT_SUPPORTED
-  ```
-  Actual output:
-  ```
-  [
-    [
-      1,
-      2,
-      3,
-      4,
-      5
-    ],
-    [
-      1,
-      2,
-      3,
-      4
-    ],
-    [
-      1,
-      2,
-      3
-    ]
-  ]
   ```
 
 - [ ] `$[?(@.length == 4)]`
@@ -2542,10 +2428,6 @@ The following queries provide results that do not match those of other implement
     }
   ]
   ```
-  Expected output:
-  ```
-  NOT_SUPPORTED
-  ```
   Error:
   ```
   invalid value for Integer(): "@.key==42"
@@ -2592,42 +2474,6 @@ The following queries provide results that do not match those of other implement
       "key": 1,
       "more": 3
     }
-  ]
-  ```
-
-- [ ] `$..`
-  Input:
-  ```
-  [
-    {
-      "a": {
-        "b": "c"
-      }
-    },
-    [
-      0,
-      1
-    ]
-  ]
-  ```
-  Expected output (in any order as no consensus on ordering exists):
-  ```
-  NOT_SUPPORTED
-  ```
-  Actual output:
-  ```
-  [
-    [
-      {
-        "a": {
-          "b": "c"
-        }
-      },
-      [
-        0,
-        1
-      ]
-    ]
   ]
   ```
 
@@ -2741,33 +2587,6 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   0 is not a symbol nor a string
-  ```
-
-- [ ] `$[*,1]`
-  Input:
-  ```
-  [
-    "first",
-    "second",
-    "third",
-    "forth",
-    "fifth"
-  ]
-  ```
-  Expected output:
-  ```
-  NOT_SUPPORTED
-  ```
-  Actual output:
-  ```
-  [
-    "first",
-    "second",
-    "third",
-    "forth",
-    "fifth",
-    "second"
-  ]
   ```
 
 

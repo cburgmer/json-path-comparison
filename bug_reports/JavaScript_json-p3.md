@@ -3,15 +3,13 @@ Results do not match other implementations
 The following queries provide results that do not match those of other implementations of JSONPath
 (compare https://cburgmer.github.io/json-path-comparison/):
 
-- [ ] `$[0:3:-2]`
+- [ ] `$[7:10]`
   Input:
   ```
   [
     "first",
     "second",
-    "third",
-    "forth",
-    "fifth"
+    "third"
   ]
   ```
   Expected output:
@@ -21,27 +19,49 @@ The following queries provide results that do not match those of other implement
   Actual output:
   ```
   [
-    "third",
-    "first"
+    "third"
   ]
   ```
 
-- [ ] `$[0:3:0]`
+- [ ] `$[010:024:010]`
   Input:
   ```
   [
-    "first",
-    "second",
-    "third",
-    "forth",
-    "fifth"
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25
   ]
+  ```
+  Expected output:
+  ```
+  [10, 20]
   ```
   Error:
   ```
-  Error Parsing JSON Path:
-  $[0:3:0]
-  panic occurred
+  leading zero in index selector ('$[010:024':2)
   ```
 
 - [ ] `$[]`
@@ -59,37 +79,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  Error Parsing JSON Path:
-  $[]
-  panic occurred
-  ```
-
-- [ ] `$['\'']`
-  Input:
-  ```
-  {
-    "'": "value"
-  }
-  ```
-  Error:
-  ```
-  Error Parsing JSON Path:
-  $['\'']
-  panic occurred
-  ```
-
-- [ ] `$[':@."$,*\'\\']`
-  Input:
-  ```
-  {
-    ":@.\"$,*'\\": 42
-  }
-  ```
-  Error:
-  ```
-  Error Parsing JSON Path:
-  $[':@."$,*\'\\']
-  panic occurred
+  empty bracketed segment ('$[]':1)
   ```
 
 - [ ] `$['single'quote']`
@@ -105,9 +95,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  Error Parsing JSON Path:
-  $['single'quote']
-  panic occurred
+  unexpected token 'q' in bracketed selection ('gle'quote':10)
   ```
 
 - [ ] `$['two'.'some']`
@@ -131,9 +119,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  Error Parsing JSON Path:
-  $['two'.'some']
-  panic occurred
+  unexpected token '.' in bracketed selection ('two'.'som':7)
   ```
 
 - [ ] `$[two.some]`
@@ -156,9 +142,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  Error Parsing JSON Path:
-  $[two.some]
-  panic occurred
+  unexpected token 't' in bracketed selection ('$[two.som':2)
   ```
 
 - [ ] `$[key]`
@@ -174,9 +158,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  Error Parsing JSON Path:
-  $[key]
-  panic occurred
+  unexpected token 'k' in bracketed selection ('$[key]':2)
   ```
 
 - [ ] `@.a`
@@ -188,9 +170,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  Error Parsing JSON Path:
-  @.a
-  panic occurred
+  expected '$', found '@' ('@.a':0)
   ```
 
 - [ ] `$.['key']`
@@ -209,9 +189,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  Error Parsing JSON Path:
-  $.['key']
-  panic occurred
+  unexpected shorthand selector '[' ('$.['key']':2)
   ```
 
 - [ ] `$.["key"]`
@@ -230,9 +208,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  Error Parsing JSON Path:
-  $.["key"]
-  panic occurred
+  unexpected shorthand selector '[' ('$.["key"]':2)
   ```
 
 - [ ] `$.[key]`
@@ -255,9 +231,32 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  Error Parsing JSON Path:
-  $.[key]
-  panic occurred
+  unexpected shorthand selector '[' ('$.[key]':2)
+  ```
+
+- [ ] `$...key`
+  Input:
+  ```
+  {
+    "object": {
+      "key": "value",
+      "array": [
+        {
+          "key": "something"
+        },
+        {
+          "key": {
+            "key": "russian dolls"
+          }
+        }
+      ]
+    },
+    "key": "top"
+  }
+  ```
+  Error:
+  ```
+  unexpected descendent selection token '.' ('$...key':3)
   ```
 
 - [ ] `$."key"`
@@ -270,9 +269,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  Error Parsing JSON Path:
-  $."key"
-  panic occurred
+  unexpected shorthand selector '"' ('$."key"':2)
   ```
 
 - [ ] `$.."key"`
@@ -303,9 +300,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  Error Parsing JSON Path:
-  $.."key"
-  panic occurred
+  unexpected descendent selection token '"' ('$.."key"':3)
   ```
 
 - [ ] `$.`
@@ -323,9 +318,27 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  Error Parsing JSON Path:
-  $.
-  panic occurred
+  can't backup beyond start ('$.':2)
+  ```
+
+- [ ] `$.length`
+  Input:
+  ```
+  [
+    4,
+    5,
+    6
+  ]
+  ```
+  Expected output:
+  ```
+  []
+  ```
+  Actual output:
+  ```
+  [
+    3
+  ]
   ```
 
 - [ ] `$.$`
@@ -337,9 +350,57 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  Error Parsing JSON Path:
-  $.$
-  panic occurred
+  unexpected shorthand selector '$' ('$.$':2)
+  ```
+
+- [ ] `$.2`
+  Input:
+  ```
+  [
+    "first",
+    "second",
+    "third",
+    "forth",
+    "fifth"
+  ]
+  ```
+  Error:
+  ```
+  unexpected shorthand selector '2' ('$.2':2)
+  ```
+
+- [ ] `$.-1`
+  Input:
+  ```
+  [
+    "first",
+    "second",
+    "third",
+    "forth",
+    "fifth"
+  ]
+  ```
+  Error:
+  ```
+  unexpected shorthand selector '-' ('$.-1':2)
+  ```
+
+- [ ] `$.2`
+  Input:
+  ```
+  {
+    "a": "first",
+    "2": "second",
+    "b": "third"
+  }
+  ```
+  Expected output:
+  ```
+  ["second"]
+  ```
+  Error:
+  ```
+  unexpected shorthand selector '2' ('$.2':2)
   ```
 
 - [ ] `$.'key'`
@@ -352,9 +413,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  Error Parsing JSON Path:
-  $.'key'
-  panic occurred
+  unexpected shorthand selector ''' ('$.'key'':2)
   ```
 
 - [ ] `$..'key'`
@@ -385,9 +444,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  Error Parsing JSON Path:
-  $..'key'
-  panic occurred
+  unexpected descendent selection token ''' ('$..'key'':3)
   ```
 
 - [ ] `$.'some.key'`
@@ -403,9 +460,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  Error Parsing JSON Path:
-  $.'some.key'
-  panic occurred
+  unexpected shorthand selector ''' ('$.'some.k':2)
   ```
 
 - [ ] `$. a `
@@ -420,9 +475,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  Error Parsing JSON Path:
-  $. a 
-  panic occurred
+  unexpected whitespace after dot ('$. a ':3)
   ```
 
 - [ ] `$a`
@@ -439,9 +492,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  Error Parsing JSON Path:
-  $a
-  panic occurred
+  expected '.', '..' or a bracketed selection, found 'a' ('$a':1)
   ```
 
 - [ ] `.key`
@@ -453,9 +504,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  Error Parsing JSON Path:
-  .key
-  panic occurred
+  expected '$', found '.' ('.key':0)
   ```
 
 - [ ] `key`
@@ -467,9 +516,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  Error Parsing JSON Path:
-  key
-  panic occurred
+  expected '$', found 'k' ('key':0)
   ```
 
 - [ ] ``
@@ -482,56 +529,93 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  Error Parsing JSON Path:
-  
-  panic occurred
+  can't backup beyond start ('':0)
   ```
 
-- [ ] `$[?(@.a && (@.b || @.c))]`
+- [ ] `$[?(@.key+50==100)]`
   Input:
   ```
   [
     {
-      "a": true
+      "key": 60
     },
     {
-      "a": true,
-      "b": true
+      "key": 50
     },
     {
-      "a": true,
-      "b": true,
-      "c": true
+      "key": 10
     },
     {
-      "b": true,
-      "c": true
+      "key": -50
     },
     {
-      "a": true,
-      "c": true
-    },
-    {
-      "c": true
-    },
-    {
-      "b": true
+      "key+50": 100
     }
   ]
   ```
-  Expected output:
+  Error:
   ```
-  [{"a": true, "b": true}, {"a": true, "b": true, "c": true}, {"a": true, "c": true}]
+  unexpected filter selector token '+' ('.key+50==':9)
   ```
-  Actual output:
+
+- [ ] `$[?(@.key/10==5)]`
+  Input:
   ```
   [
     {
-      "a": true,
-      "b": true,
-      "c": true
+      "key": 60
+    },
+    {
+      "key": 50
+    },
+    {
+      "key": 10
+    },
+    {
+      "key": -50
+    },
+    {
+      "key/10": 5
     }
   ]
+  ```
+  Error:
+  ```
+  unexpected filter selector token '/' ('.key/10==':9)
+  ```
+
+- [ ] `$[?(@.2 == 'second')]`
+  Input:
+  ```
+  [
+    {
+      "a": "first",
+      "2": "second",
+      "b": "third"
+    }
+  ]
+  ```
+  Error:
+  ```
+  unexpected shorthand selector '2' ('?(@.2 == ':6)
+  ```
+
+- [ ] `$[?(@.2 == 'third')]`
+  Input:
+  ```
+  [
+    [
+      "first",
+      "second",
+      "third",
+      "forth",
+      "fifth"
+    ]
+  ]
+  ```
+  Error:
+  ```
+  unexpected shorthand selector '2' ('?(@.2 == ':6)
   ```
 
 - [ ] `$[?()]`
@@ -552,9 +636,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  Error Parsing JSON Path:
-  $[?()]
-  panic occurred
+  unexpected ') ('$[?()]':4)
   ```
 
 - [ ] `$[?(@.d==["v1","v2"])]`
@@ -616,9 +698,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  Error Parsing JSON Path:
-  $[?(@.d==["v1","v2"])]
-  panic occurred
+  unexpected filter selector token '[' ('.d==["v1"':9)
   ```
 
 - [ ] `$[?(@[0:1]==[1])]`
@@ -643,9 +723,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  Error Parsing JSON Path:
-  $[?(@[0:1]==[1])]
-  panic occurred
+  unexpected filter selector token '[' ('1]==[1])]':12)
   ```
 
 - [ ] `$[?(@.*==[1,2])]`
@@ -678,9 +756,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  Error Parsing JSON Path:
-  $[?(@.*==[1,2])]
-  panic occurred
+  unexpected filter selector token '[' ('.*==[1,2]':9)
   ```
 
 - [ ] `$[?(@.d==["v1","v2"] || (@.d == true))]`
@@ -706,9 +782,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  Error Parsing JSON Path:
-  $[?(@.d==["v1","v2"] || (@.d == true))]
-  panic occurred
+  unexpected filter selector token '[' ('.d==["v1"':9)
   ```
 
 - [ ] `$[?(@.d==['v1','v2'])]`
@@ -770,40 +844,98 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  Error Parsing JSON Path:
-  $[?(@.d==['v1','v2'])]
-  panic occurred
+  unexpected filter selector token '[' ('.d==['v1'':9)
   ```
 
-- [ ] `$[?(@.key==-0.123e2)]`
+- [ ] `$[?(@[0:1]==1)]`
   Input:
   ```
   [
-    {
-      "key": -12.3
-    },
-    {
-      "key": -0.123
-    },
-    {
-      "key": -12
-    },
-    {
-      "key": 12.3
-    },
-    {
-      "key": 2
-    },
-    {
-      "key": "-0.123e2"
-    }
+    [
+      1,
+      2,
+      3
+    ],
+    [
+      1
+    ],
+    [
+      2,
+      3
+    ],
+    1,
+    2
   ]
   ```
   Error:
   ```
-  Error Parsing JSON Path:
-  $[?(@.key==-0.123e2)]
-  panic occurred
+  non-singular query is not comparable ('$[?(@[0:1':4)
+  ```
+
+- [ ] `$[?(@[*]==2)]`
+  Input:
+  ```
+  [
+    [
+      1,
+      2
+    ],
+    [
+      2,
+      3
+    ],
+    [
+      1
+    ],
+    [
+      2
+    ],
+    [
+      1,
+      2,
+      3
+    ],
+    1,
+    2,
+    3
+  ]
+  ```
+  Error:
+  ```
+  non-singular query is not comparable ('$[?(@[*]=':4)
+  ```
+
+- [ ] `$[?(@.*==2)]`
+  Input:
+  ```
+  [
+    [
+      1,
+      2
+    ],
+    [
+      2,
+      3
+    ],
+    [
+      1
+    ],
+    [
+      2
+    ],
+    [
+      1,
+      2,
+      3
+    ],
+    1,
+    2,
+    3
+  ]
+  ```
+  Error:
+  ```
+  non-singular query is not comparable ('$[?(@.*==':4)
   ```
 
 - [ ] `$[?(@.d=={"k":"v"})]`
@@ -858,75 +990,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  Error Parsing JSON Path:
-  $[?(@.d=={"k":"v"})]
-  panic occurred
-  ```
-
-- [ ] `$[?(@.key>"VALUE")]`
-  Input:
-  ```
-  [
-    {
-      "key": 0
-    },
-    {
-      "key": 42
-    },
-    {
-      "key": -1
-    },
-    {
-      "key": 41
-    },
-    {
-      "key": 43
-    },
-    {
-      "key": 42.0001
-    },
-    {
-      "key": 41.9999
-    },
-    {
-      "key": 100
-    },
-    {
-      "key": "43"
-    },
-    {
-      "key": "42"
-    },
-    {
-      "key": "41"
-    },
-    {
-      "key": "alpha"
-    },
-    {
-      "key": "ALPHA"
-    },
-    {
-      "key": "value"
-    },
-    {
-      "key": "VALUE"
-    },
-    {
-      "some": "value"
-    },
-    {
-      "some": "VALUE"
-    }
-  ]
-  ```
-  Expected output:
-  ```
-  [{"key": "alpha"}, {"key": "value"}]
-  ```
-  Actual output:
-  ```
-  []
+  unexpected filter selector token '{' ('.d=={"k":':9)
   ```
 
 - [ ] `$[?(@.d in [2, 3])]`
@@ -952,9 +1016,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  Error Parsing JSON Path:
-  $[?(@.d in [2, 3])]
-  panic occurred
+  unexpected filter selector token 'i' ('d in [2, ':10)
   ```
 
 - [ ] `$[?(2 in @.d)]`
@@ -994,40 +1056,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  Error Parsing JSON Path:
-  $[?(2 in @.d)]
-  panic occurred
-  ```
-
-- [ ] `$[?(length(@) == 4)]`
-  Input:
-  ```
-  [
-    [
-      1,
-      2,
-      3,
-      4,
-      5
-    ],
-    [
-      1,
-      2,
-      3,
-      4
-    ],
-    [
-      1,
-      2,
-      3
-    ]
-  ]
-  ```
-  Error:
-  ```
-  Error Parsing JSON Path:
-  $[?(length(@) == 4)]
-  panic occurred
+  unexpected filter selector token 'i' ('2 in @.d)':8)
   ```
 
 - [ ] `$[?(@.length() == 4)]`
@@ -1056,9 +1085,47 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  Error Parsing JSON Path:
-  $[?(@.length() == 4)]
-  panic occurred
+  unexpected ') ('gth() == ':13)
+  ```
+
+- [ ] `$[?(@.length == 4)]`
+  Input:
+  ```
+  [
+    [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    [
+      1,
+      2,
+      3,
+      4
+    ],
+    [
+      1,
+      2,
+      3
+    ]
+  ]
+  ```
+  Expected output:
+  ```
+  []
+  ```
+  Actual output:
+  ```
+  [
+    [
+      1,
+      2,
+      3,
+      4
+    ]
+  ]
   ```
 
 - [ ] `$[?(@.key='value')]`
@@ -1086,9 +1153,33 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  Error Parsing JSON Path:
-  $[?(@.key='value')]
-  panic occurred
+  unexpected filter selector token '=' ('.key='val':9)
+  ```
+
+- [ ] `$[?(@.key*2==100)]`
+  Input:
+  ```
+  [
+    {
+      "key": 60
+    },
+    {
+      "key": 50
+    },
+    {
+      "key": 10
+    },
+    {
+      "key": -50
+    },
+    {
+      "key*2": 100
+    }
+  ]
+  ```
+  Error:
+  ```
+  unexpected filter selector token '*' ('.key*2==1':9)
   ```
 
 - [ ] `$[?(!(@.d==["v1","v2"]) || (@.d == true))]`
@@ -1114,88 +1205,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  Error Parsing JSON Path:
-  $[?(!(@.d==["v1","v2"]) || (@.d == true))]
-  panic occurred
-  ```
-
-- [ ] `$[?(@.key!=42)]`
-  Input:
-  ```
-  [
-    {
-      "key": 0
-    },
-    {
-      "key": 42
-    },
-    {
-      "key": -1
-    },
-    {
-      "key": 1
-    },
-    {
-      "key": 41
-    },
-    {
-      "key": 43
-    },
-    {
-      "key": 42.0001
-    },
-    {
-      "key": 41.9999
-    },
-    {
-      "key": 100
-    },
-    {
-      "key": "some"
-    },
-    {
-      "key": "42"
-    },
-    {
-      "key": null
-    },
-    {
-      "key": 420
-    },
-    {
-      "key": ""
-    },
-    {
-      "key": {}
-    },
-    {
-      "key": []
-    },
-    {
-      "key": [
-        42
-      ]
-    },
-    {
-      "key": {
-        "key": 42
-      }
-    },
-    {
-      "key": {
-        "some": 42
-      }
-    },
-    {
-      "some": "value"
-    }
-  ]
-  ```
-  Error:
-  ```
-  Error Parsing JSON Path:
-  $[?(@.key!=42)]
-  panic occurred
+  unexpected filter selector token '[' ('.d==["v1"':11)
   ```
 
 - [ ] `$[?((@.d!=["v1","v2"]) || (@.d == true))]`
@@ -1221,9 +1231,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  Error Parsing JSON Path:
-  $[?((@.d!=["v1","v2"]) || (@.d == true))]
-  panic occurred
+  unexpected filter selector token '[' ('.d!=["v1"':10)
   ```
 
 - [ ] `$[*].bookmarks[?(@.page == 45)]^^^`
@@ -1268,9 +1276,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  Error Parsing JSON Path:
-  $[*].bookmarks[?(@.page == 45)]^^^
-  panic occurred
+  expected '.', '..' or a bracketed selection, found '^' ('= 45)]^^^':31)
   ```
 
 - [ ] `$[?(@.name=~/hello.*/)]`
@@ -1296,9 +1302,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  Error Parsing JSON Path:
-  $[?(@.name=~/hello.*/)]
-  panic occurred
+  unexpected filter selector token '=' ('name=~/he':10)
   ```
 
 - [ ] `$[?(@.name=~/@.pattern/)]`
@@ -1327,9 +1331,60 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  Error Parsing JSON Path:
-  $[?(@.name=~/@.pattern/)]
-  panic occurred
+  unexpected filter selector token '=' ('name=~/@.':10)
+  ```
+
+- [ ] `$[?(@[*]>=4)]`
+  Input:
+  ```
+  [
+    [
+      1,
+      2
+    ],
+    [
+      3,
+      4
+    ],
+    [
+      5,
+      6
+    ]
+  ]
+  ```
+  Error:
+  ```
+  non-singular query is not comparable ('$[?(@[*]>':4)
+  ```
+
+- [ ] `$.x[?(@[*]>=$.y[*])]`
+  Input:
+  ```
+  {
+    "x": [
+      [
+        1,
+        2
+      ],
+      [
+        3,
+        4
+      ],
+      [
+        5,
+        6
+      ]
+    ],
+    "y": [
+      3,
+      4,
+      5
+    ]
+  }
+  ```
+  Error:
+  ```
+  non-singular query is not comparable ('x[?(@[*]>':6)
   ```
 
 - [ ] `$[?(@.key=42)]`
@@ -1410,9 +1465,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  Error Parsing JSON Path:
-  $[?(@.key=42)]
-  panic occurred
+  unexpected filter selector token '=' ('.key=42)]':9)
   ```
 
 - [ ] `$[?(@.key===42)]`
@@ -1489,88 +1542,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  Error Parsing JSON Path:
-  $[?(@.key===42)]
-  panic occurred
-  ```
-
-- [ ] `$[?@.key==42]`
-  Input:
-  ```
-  [
-    {
-      "key": 0
-    },
-    {
-      "key": 42
-    },
-    {
-      "key": -1
-    },
-    {
-      "key": 1
-    },
-    {
-      "key": 41
-    },
-    {
-      "key": 43
-    },
-    {
-      "key": 42.0001
-    },
-    {
-      "key": 41.9999
-    },
-    {
-      "key": 100
-    },
-    {
-      "key": "some"
-    },
-    {
-      "key": "42"
-    },
-    {
-      "key": null
-    },
-    {
-      "key": 420
-    },
-    {
-      "key": ""
-    },
-    {
-      "key": {}
-    },
-    {
-      "key": []
-    },
-    {
-      "key": [
-        42
-      ]
-    },
-    {
-      "key": {
-        "key": 42
-      }
-    },
-    {
-      "key": {
-        "some": 42
-      }
-    },
-    {
-      "some": "value"
-    }
-  ]
-  ```
-  Error:
-  ```
-  Error Parsing JSON Path:
-  $[?@.key==42]
-  panic occurred
+  unexpected filter selector token '=' ('ey===42)]':11)
   ```
 
 - [ ] `$.data.sum()`
@@ -1591,9 +1563,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  Error Parsing JSON Path:
-  $.data.sum()
-  panic occurred
+  expected '.', '..' or a bracketed selection, found '(' ('ata.sum()':10)
   ```
 
 - [ ] `$(key,more)`
@@ -1611,9 +1581,27 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  Error Parsing JSON Path:
-  $(key,more)
-  panic occurred
+  expected '.', '..' or a bracketed selection, found '(' ('$(key,mor':1)
+  ```
+
+- [ ] `$..`
+  Input:
+  ```
+  [
+    {
+      "a": {
+        "b": "c"
+      }
+    },
+    [
+      0,
+      1
+    ]
+  ]
+  ```
+  Error:
+  ```
+  bald descendant segment ('$..':3)
   ```
 
 - [ ] `$.key..`
@@ -1634,24 +1622,9 @@ The following queries provide results that do not match those of other implement
   ```
   NOT_SUPPORTED
   ```
-  Actual output:
+  Error:
   ```
-  [
-    "string",
-    0,
-    1,
-    [
-      0,
-      1
-    ],
-    {
-      "complex": "string",
-      "primitives": [
-        0,
-        1
-      ]
-    }
-  ]
+  bald descendant segment ('$.key..':7)
   ```
 
 - [ ] `$[(@.length-1)]`
@@ -1671,88 +1644,8 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  Error Parsing JSON Path:
-  $[(@.length-1)]
-  panic occurred
-  ```
-
-- [ ] `$[:]['c','d']`
-  Input:
-  ```
-  [
-    {
-      "c": "cc1",
-      "d": "dd1",
-      "e": "ee1"
-    },
-    {
-      "c": "cc2",
-      "d": "dd2",
-      "e": "ee2"
-    }
-  ]
-  ```
-  Expected output:
-  ```
-  ["cc1", "dd1", "cc2", "dd2"]
-  ```
-  Actual output:
-  ```
-  [
-    "cc1",
-    "cc2",
-    "dd1",
-    "dd2"
-  ]
-  ```
-
-- [ ] `$.*['c','d']`
-  Input:
-  ```
-  [
-    {
-      "c": "cc1",
-      "d": "dd1",
-      "e": "ee1"
-    },
-    {
-      "c": "cc2",
-      "d": "dd2",
-      "e": "ee2"
-    }
-  ]
-  ```
-  Expected output:
-  ```
-  ["cc1", "dd1", "cc2", "dd2"]
-  ```
-  Actual output:
-  ```
-  [
-    "cc1",
-    "cc2",
-    "dd1",
-    "dd2"
-  ]
-  ```
-
-- [ ] `$[*,1]`
-  Input:
-  ```
-  [
-    "first",
-    "second",
-    "third",
-    "forth",
-    "fifth"
-  ]
-  ```
-  Error:
-  ```
-  Error Parsing JSON Path:
-  $[*,1]
-  panic occurred
+  unexpected token '(' in bracketed selection ('$[(@.leng':2)
   ```
 
 
-For reference, the output was generated by the program in https://github.com/cburgmer/json-path-comparison/tree/master/implementations/Rust_jsonpath_plus.
+For reference, the output was generated by the program in https://github.com/cburgmer/json-path-comparison/tree/master/implementations/JavaScript_json-p3.

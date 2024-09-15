@@ -592,61 +592,6 @@ The following queries provide results that do not match those of other implement
   ]
   ```
 
-- [ ] `$[?(@.a && @.b || @.c)]`
-  Input:
-  ```
-  [
-    {
-      "a": true,
-      "b": true
-    },
-    {
-      "a": true,
-      "b": true,
-      "c": true
-    },
-    {
-      "b": true,
-      "c": true
-    },
-    {
-      "a": true,
-      "c": true
-    },
-    {
-      "a": true
-    },
-    {
-      "b": true
-    },
-    {
-      "c": true
-    },
-    {
-      "d": true
-    },
-    {}
-  ]
-  ```
-  Expected output:
-  ```
-  [{"a": true, "b": true}, {"a": true, "b": true, "c": true}, {"b": true, "c": true}, {"a": true, "c": true}, {"c": true}]
-  ```
-  Actual output:
-  ```
-  [
-    {
-      "a": true,
-      "b": true
-    },
-    {
-      "a": true,
-      "b": true,
-      "c": true
-    }
-  ]
-  ```
-
 - [ ] `$[?()]`
   Input:
   ```
@@ -715,40 +660,6 @@ The following queries provide results that do not match those of other implement
   Expected output:
   ```
   [{"key": 42}]
-  ```
-  Actual output:
-  NOT_FOUND
-  ```
-  jsonpath returned false, this might indicate an error
-  ```
-
-- [ ] `$[?(@.length() == 4)]`
-  Input:
-  ```
-  [
-    [
-      1,
-      2,
-      3,
-      4,
-      5
-    ],
-    [
-      1,
-      2,
-      3,
-      4
-    ],
-    [
-      1,
-      2,
-      3
-    ]
-  ]
-  ```
-  Expected output:
-  ```
-  NOT_SUPPORTED
   ```
   Actual output:
   NOT_FOUND
@@ -953,88 +864,6 @@ The following queries provide results that do not match those of other implement
   jsonpath returned false, this might indicate an error
   ```
 
-- [ ] `$[?@.key==42]`
-  Input:
-  ```
-  [
-    {
-      "key": 0
-    },
-    {
-      "key": 42
-    },
-    {
-      "key": -1
-    },
-    {
-      "key": 1
-    },
-    {
-      "key": 41
-    },
-    {
-      "key": 43
-    },
-    {
-      "key": 42.0001
-    },
-    {
-      "key": 41.9999
-    },
-    {
-      "key": 100
-    },
-    {
-      "key": "some"
-    },
-    {
-      "key": "42"
-    },
-    {
-      "key": null
-    },
-    {
-      "key": 420
-    },
-    {
-      "key": ""
-    },
-    {
-      "key": {}
-    },
-    {
-      "key": []
-    },
-    {
-      "key": [
-        42
-      ]
-    },
-    {
-      "key": {
-        "key": 42
-      }
-    },
-    {
-      "key": {
-        "some": 42
-      }
-    },
-    {
-      "some": "value"
-    }
-  ]
-  ```
-  Expected output:
-  ```
-  NOT_SUPPORTED
-  ```
-  Actual output:
-  NOT_FOUND
-  ```
-  jsonpath returned false, this might indicate an error
-  ```
-
 - [ ] `$.data.sum()`
   Input:
   ```
@@ -1074,57 +903,6 @@ The following queries provide results that do not match those of other implement
   NOT_FOUND
   ```
   jsonpath returned false, this might indicate an error
-  ```
-
-- [ ] `$..`
-  Input:
-  ```
-  [
-    {
-      "a": {
-        "b": "c"
-      }
-    },
-    [
-      0,
-      1
-    ]
-  ]
-  ```
-  Expected output (in any order as no consensus on ordering exists):
-  ```
-  NOT_SUPPORTED
-  ```
-  Actual output:
-  ```
-  [
-    "c",
-    0,
-    1,
-    [
-      0,
-      1
-    ],
-    [
-      {
-        "a": {
-          "b": "c"
-        }
-      },
-      [
-        0,
-        1
-      ]
-    ],
-    {
-      "a": {
-        "b": "c"
-      }
-    },
-    {
-      "b": "c"
-    }
-  ]
   ```
 
 - [ ] `$.key..`
@@ -1272,33 +1050,6 @@ The following queries provide results that do not match those of other implement
   NOT_FOUND
   ```
   jsonpath returned false, this might indicate an error
-  ```
-
-- [ ] `$[*,1]`
-  Input:
-  ```
-  [
-    "first",
-    "second",
-    "third",
-    "forth",
-    "fifth"
-  ]
-  ```
-  Expected output:
-  ```
-  NOT_SUPPORTED
-  ```
-  Actual output:
-  ```
-  [
-    "first",
-    "second",
-    "third",
-    "forth",
-    "fifth",
-    "second"
-  ]
   ```
 
 

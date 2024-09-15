@@ -317,7 +317,7 @@ queries:
     status: fail
     result: [{"a": true, "b": true, "c": true}, {"a": true, "c": true}]
   - id: filter_expression_with_different_ungrouped_operators
-    status: fail
+    status: open
     result: [{"a": true, "b": true}, {"a": true, "b": true, "c": true}, {"a": true, "c": true}]
   - id: filter_expression_with_division
     status: open
@@ -423,7 +423,7 @@ queries:
     status: open
     result: []
   - id: filter_expression_with_length_function
-    status: fail
+    status: open
     result: []
   - id: filter_expression_with_length_property
     status: fail
@@ -526,7 +526,7 @@ queries:
     status: fail
     result: null
   - id: recursive_descent
-    status: fail
+    status: open
     result: [0, 1, [0, 1], [{"a": {"b": "c"}}, [0, 1]], {"a": {"b": "c"}}, {"b": "c"}]
   - id: recursive_descent_after_dot_notation
     status: fail
@@ -569,5 +569,5 @@ queries:
     status: fail
     result: "first"
   - id: union_with_wildcard_and_number
-    status: fail
+    status: open
     result: ["first", "second", "third", "forth", "fifth"]

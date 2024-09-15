@@ -1535,10 +1535,6 @@ The following queries provide results that do not match those of other implement
     {}
   ]
   ```
-  Expected output:
-  ```
-  [{"a": true, "b": true}, {"a": true, "b": true, "c": true}, {"b": true, "c": true}, {"a": true, "c": true}, {"c": true}]
-  ```
   Error:
   ```
   non-safe evaluation, died at main.pl line 11.
@@ -2977,10 +2973,6 @@ The following queries provide results that do not match those of other implement
     ]
   ]
   ```
-  Expected output:
-  ```
-  NOT_SUPPORTED
-  ```
   Error:
   ```
   non-safe evaluation, died at main.pl line 11.
@@ -4177,87 +4169,6 @@ The following queries provide results that do not match those of other implement
   non-safe evaluation, died at main.pl line 11.
   ```
 
-- [ ] `$[?@.key==42]`
-  Input:
-  ```
-  [
-    {
-      "key": 0
-    },
-    {
-      "key": 42
-    },
-    {
-      "key": -1
-    },
-    {
-      "key": 1
-    },
-    {
-      "key": 41
-    },
-    {
-      "key": 43
-    },
-    {
-      "key": 42.0001
-    },
-    {
-      "key": 41.9999
-    },
-    {
-      "key": 100
-    },
-    {
-      "key": "some"
-    },
-    {
-      "key": "42"
-    },
-    {
-      "key": null
-    },
-    {
-      "key": 420
-    },
-    {
-      "key": ""
-    },
-    {
-      "key": {}
-    },
-    {
-      "key": []
-    },
-    {
-      "key": [
-        42
-      ]
-    },
-    {
-      "key": {
-        "key": 42
-      }
-    },
-    {
-      "key": {
-        "some": 42
-      }
-    },
-    {
-      "some": "value"
-    }
-  ]
-  ```
-  Expected output:
-  ```
-  NOT_SUPPORTED
-  ```
-  Actual output:
-  ```
-  []
-  ```
-
 - [ ] `$[?(@.key)]`
   Input:
   ```
@@ -4336,30 +4247,6 @@ The following queries provide results that do not match those of other implement
   }
   ```
   Expected output:
-  ```
-  NOT_SUPPORTED
-  ```
-  Actual output:
-  ```
-  []
-  ```
-
-- [ ] `$..`
-  Input:
-  ```
-  [
-    {
-      "a": {
-        "b": "c"
-      }
-    },
-    [
-      0,
-      1
-    ]
-  ]
-  ```
-  Expected output (in any order as no consensus on ordering exists):
   ```
   NOT_SUPPORTED
   ```
@@ -4707,28 +4594,6 @@ The following queries provide results that do not match those of other implement
   Actual output:
   ```
   []
-  ```
-
-- [ ] `$[*,1]`
-  Input:
-  ```
-  [
-    "first",
-    "second",
-    "third",
-    "forth",
-    "fifth"
-  ]
-  ```
-  Expected output:
-  ```
-  NOT_SUPPORTED
-  ```
-  Actual output:
-  ```
-  [
-    "second"
-  ]
   ```
 
 

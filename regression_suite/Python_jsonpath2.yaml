@@ -216,7 +216,7 @@ queries:
     status: fail
     result: NOT_SUPPORTED
   - id: filter_expression_with_different_ungrouped_operators
-    status: fail
+    status: open
     result: NOT_SUPPORTED
   - id: filter_expression_with_division
     status: open
@@ -332,6 +332,9 @@ queries:
   - id: filter_expression_with_length_free_function
     status: open
     result: NOT_SUPPORTED
+  - id: filter_expression_with_length_function
+    status: open
+    result: NOT_SUPPORTED
   - id: filter_expression_with_length_property
     status: fail
     result: NOT_SUPPORTED
@@ -419,9 +422,15 @@ queries:
   - id: filter_expression_with_value_true
     status: open
     result: [[1, 3, "nice", true, null, false, {}, [], -1, 0, ""]]
+  - id: filter_expression_without_parens
+    status: open
+    result: NOT_SUPPORTED
   - id: filter_expression_without_value
     status: open
     result: []
+  - id: recursive_descent
+    status: open
+    result: NOT_SUPPORTED
   - id: union_with_duplication_from_object
     status: fail
     result: NOT_SUPPORTED
@@ -453,5 +462,5 @@ queries:
     status: open
     result: [2, 3, 5]
   - id: union_with_wildcard_and_number
-    status: fail
+    status: open
     result: ["first", "second", "third", "forth", "fifth", "second"]

@@ -16,10 +16,6 @@
 
 <h2>Results</h2>
 
-<h3 id="consensus">Consensus</h3>
-
-<p>Not supported</p>
-
 <h3>Other responses</h3>
 
 <h4 id="Bash_JSONPath.sh">
@@ -27,6 +23,15 @@ Bash (JSONPath.sh)
 </h4>
 
 <pre><code>[]
+</code></pre>
+
+<h4 id="C_json-glib">
+C (json-glib)
+</h4>
+
+<p>Not supported</p>
+
+<pre><code>Unable to compile selector `$[?(@.length() == 4)]': Invalid array index definition “?(@.length() == 4)]”
 </code></pre>
 
 <h4 id="Clojure_json-path">
@@ -37,11 +42,67 @@ Clojure (json-path)
 <pre><code>[]
 </code></pre>
 
+<h4 id="Cpp_jsoncons">
+Cpp (jsoncons)
+</h4>
+
+<p>Not supported</p>
+
+<pre><code>Incorrect number of arguments at line 1 and column 14
+</code></pre>
+
+<h4 id="Dart_json_path">
+Dart (json_path)
+</h4>
+
+<p>Not supported</p>
+
+<pre><code>Instance of 'ParserException': end of input expected (at 1:2)
+</code></pre>
+
+<h4 id="Elixir_ExJsonPath">
+Elixir (ExJsonPath)
+</h4>
+
+<p>Not supported</p>
+
+<pre><code>syntax error before: '('
+</code></pre>
+
 <h4 id="Elixir_jaxon">
 Elixir (jaxon)
 </h4>
 
 <pre><code>[]
+</code></pre>
+
+<h4 id="Elixir_warpath">
+Elixir (warpath)
+¹
+</h4>
+
+<p>Not supported</p>
+
+<pre><code>Parser error: Invalid token on line 1, syntax error before: &lt;&lt;"("&gt;&gt;
+</code></pre>
+
+<h4 id="Erlang_ejsonpath">
+Erlang (ejsonpath)
+</h4>
+
+<p>Not supported</p>
+
+<pre><code>syntax error before: '('
+</code></pre>
+
+<h4 id="Golang_github.com-PaesslerAG-jsonpath">
+Golang (github.com-PaesslerAG-jsonpath)
+¹
+</h4>
+
+<p>Not supported</p>
+
+<pre><code>parsing error: $[?(@.length() == 4)]	:1:14 - 1:15 unexpected ")" while scanning extensions
 </code></pre>
 
 <h4 id="Golang_github.com-bhmj-jsonslice">
@@ -60,6 +121,14 @@ Golang (github.com-bhmj-jsonslice)
 ]
 </code></pre>
 
+<h4 id="Golang_github.com-ohler55-ojg">
+Golang (github.com-ohler55-ojg)
+</h4>
+
+<p>Not supported</p>
+
+<pre><code></code></pre>
+
 <h4 id="Golang_github.com-oliveagle-jsonpath">
 Golang (github.com-oliveagle-jsonpath)
 ¹
@@ -75,11 +144,45 @@ Golang (github.com-spyzhov-ajson)
 <pre><code>[]
 </code></pre>
 
+<h4 id="Golang_github.com-vmware-labs-yaml-jsonpath">
+Golang (github.com-vmware-labs-yaml-jsonpath)
+</h4>
+
+<p>Not supported</p>
+
+<pre><code>invalid filter syntax at position 14, following ")"
+</code></pre>
+
+<h4 id="Haskell_jsonpath">
+Haskell (jsonpath)
+</h4>
+
+<p>Not supported</p>
+
+<pre><code>Invalid JSONPath: $[?(@.length() == 4)]
+ Error: 1:13:
+  |
+1 | $[?(@.length() == 4)]
+  |             ^
+unexpected '('
+expecting "!=", "&amp;&amp;", "&lt;=", "==", "&gt;=", "||", '!', ')', '.', '&lt;', '&gt;', '[', or white space
+
+</code></pre>
+
 <h4 id="JavaScript_jsonpath">
 JavaScript (jsonpath)
 </h4>
 
 <pre><code>[]
+</code></pre>
+
+<h4 id="Java_com.github.jsurfer">
+Java (com.github.jsurfer)
+</h4>
+
+<p>Not supported</p>
+
+<pre><code>org.antlr.v4.runtime.misc.ParseCancellationException
 </code></pre>
 
 <h4 id="Java_com.jayway.jsonpath">
@@ -98,6 +201,16 @@ Java (com.jayway.jsonpath)
 ]
 </code></pre>
 
+<h4 id="Kotlin_com.nfeld.jsonpathkt">
+Kotlin (com.nfeld.jsonpathkt)
+¹
+</h4>
+
+<p>Not supported</p>
+
+<pre><code>Unexpected char, char=?, index=2
+</code></pre>
+
 <h4 id="Objective-C_SMJJSONPath">
 Objective-C (SMJJSONPath)
 ¹
@@ -112,6 +225,15 @@ Objective-C (SMJJSONPath)
     4
   ]
 ]
+</code></pre>
+
+<h4 id="PHP_galbar-jsonpath">
+PHP (galbar-jsonpath)
+</h4>
+
+<p>Not supported</p>
+
+<pre><code>Invalid JSONPath error: 'Error in JSONPath near '()''
 </code></pre>
 
 <h4 id="PHP_remorhaz-jsonpath">
@@ -145,6 +267,52 @@ Python (jsonpath)
 <pre><code>jsonpath returned false, this might indicate an error
 </code></pre>
 
+<h4 id="Python_jsonpath-ng">
+Python (jsonpath-ng)
+</h4>
+
+<p>Not supported</p>
+
+<pre><code>JsonPathLexerError('Error on line 1, col 2: Unexpected character: ? ')
+</code></pre>
+
+<h4 id="Python_jsonpath-rw">
+Python (jsonpath-rw)
+</h4>
+
+<p>Not supported</p>
+
+<pre><code>JsonPathLexerError('Error on line 1, col 2: Unexpected character: ? ')
+</code></pre>
+
+<h4 id="Python_jsonpath2">
+Python (jsonpath2)
+</h4>
+
+<p>Not supported</p>
+
+<pre><code>line 1:16 extraneous input '=' expecting {'@', '$', 'true', 'false', 'null', '{', '[', STRING, NUMBER}
+ValueError("line 1:16 extraneous input '=' expecting {'@', '$', 'true', 'false', 'null', '{', '[', STRING, NUMBER}")
+</code></pre>
+
+<h4 id="Python_python-jsonpath">
+Python (python-jsonpath)
+</h4>
+
+<p>Not supported</p>
+
+<pre><code>JSONPathSyntaxError("expected ('FILTER_END', 'RBRACKET'), found 'LPAREN'")
+</code></pre>
+
+<h4 id="Raku_JSON-Path">
+Raku (JSON-Path)
+</h4>
+
+<p>Not supported</p>
+
+<pre><code>Evaluation of embedded Perl 6 code not allowed (construct with :allow-eval)
+</code></pre>
+
 <h4 id="Ruby_jsonpath">
 Ruby (jsonpath)
 </h4>
@@ -171,6 +339,45 @@ Ruby (jsonpath)
 ]
 </code></pre>
 
+<h4 id="Rust_jsonpath">
+Rust (jsonpath)
+</h4>
+
+<p>Not supported</p>
+
+<pre><code>parsing error
+</code></pre>
+
+<h4 id="Rust_jsonpath_lib">
+Rust (jsonpath_lib)
+</h4>
+
+<p>Not supported</p>
+
+<pre><code>path error: 
+$[?(@.length() == 4)]
+^^^^^^^^^^^^^
+
+</code></pre>
+
+<h4 id="Rust_serde_json_path">
+Rust (serde_json_path)
+</h4>
+
+<p>Not supported</p>
+
+<pre><code>at position 3, in long-hand segment, parser error
+</code></pre>
+
+<h4 id="Scala_jsonpath">
+Scala (jsonpath)
+</h4>
+
+<p>Not supported</p>
+
+<pre><code>JPError(end of input expected)
+</code></pre>
+
 <h4 id="Swift_Sextant">
 Swift (Sextant)
 </h4>
@@ -183,6 +390,33 @@ Swift (Sextant)
     4
   ]
 ]
+</code></pre>
+
+<h4 id="dotNET_Json.NET">
+dotNET (Json.NET)
+</h4>
+
+<p>Not supported</p>
+
+<pre><code>Array index expected.
+</code></pre>
+
+<h4 id="dotNET_JsonCons.JsonPath">
+dotNET (JsonCons.JsonPath)
+</h4>
+
+<p>Not supported</p>
+
+<pre><code>Invalid arity calling function 'length', expected 1, found 0
+</code></pre>
+
+<h4 id="dotNET_JsonPath.Net">
+dotNET (JsonPath.Net)
+</h4>
+
+<p>Not supported</p>
+
+<pre><code>Pattern '?(@.length...' not recognized.
 </code></pre>
 
 <h4 id="dotNET_Manatee.Json">
@@ -214,6 +448,13 @@ JavaScript (brunerd)
 </h4>
 
 <pre><code>Invocation violation: length()
+</code></pre>
+
+<h4 id="JavaScript_json-p3">
+JavaScript (json-p3)
+</h4>
+
+<pre><code>unexpected ') ('gth() == ':13)
 </code></pre>
 
 <h4 id="JavaScript_jsonpath-plus">

@@ -129,6 +129,9 @@ queries:
   - id: filter_expression_with_current_object
     status: open
     result: ["some value", null, "value", 0, 1, -1, "", [], {}, false, true]
+  - id: filter_expression_with_different_ungrouped_operators
+    status: open
+    result: [{"a": true, "b": true}, {"a": true, "b": true, "c": true}, {"b": true, "c": true}, {"a": true, "c": true}, {"c": true}]
   - id: filter_expression_with_division
     status: open
     result: [{"key": 50}]
@@ -289,9 +292,15 @@ queries:
   - id: filter_expression_with_value_true
     status: open
     result: [1, 3, "nice", true, null, false, {}, [], -1, 0, ""]
+  - id: filter_expression_without_parens
+    status: open
+    result: NOT_SUPPORTED
   - id: filter_expression_without_value
     status: open
     result: [{"key": true}, {"key": false}, {"key": null}, {"key": "value"}, {"key": ""}, {"key": 0}, {"key": 1}, {"key": -1}, {"key": 42}, {"key": {}}, {"key": []}]
+  - id: recursive_descent
+    status: open
+    result: NOT_SUPPORTED
   - id: union_with_filter
     status: open
     result: NOT_SUPPORTED
@@ -299,5 +308,8 @@ queries:
     status: open
     result: NOT_SUPPORTED
   - id: union_with_slice_and_number
+    status: open
+    result: NOT_SUPPORTED
+  - id: union_with_wildcard_and_number
     status: open
     result: NOT_SUPPORTED

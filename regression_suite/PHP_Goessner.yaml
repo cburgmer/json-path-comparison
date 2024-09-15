@@ -342,7 +342,7 @@ queries:
   - id: filter_expression_with_value_true
     status: error
   - id: filter_expression_without_parens
-    status: fail
+    status: open
     result: NOT_FOUND
   - id: filter_expression_without_value
     status: error
@@ -353,7 +353,7 @@ queries:
     status: fail
     result: NOT_FOUND
   - id: recursive_descent
-    status: fail
+    status: open
     result: [[0, 1], [{"a": {"b": "c"}}, [0, 1]], {"a": {"b": "c"}}, {"b": "c"}]
   - id: recursive_descent_after_dot_notation
     status: fail
@@ -384,5 +384,5 @@ queries:
     status: fail
     result: NOT_FOUND
   - id: union_with_wildcard_and_number
-    status: fail
+    status: open
     result: ["first", "second", "third", "forth", "fifth", "second"]

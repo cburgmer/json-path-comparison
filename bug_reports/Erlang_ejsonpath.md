@@ -744,10 +744,6 @@ The following queries provide results that do not match those of other implement
     {}
   ]
   ```
-  Expected output:
-  ```
-  [{"a": true, "b": true}, {"a": true, "b": true, "c": true}, {"b": true, "c": true}, {"a": true, "c": true}, {"c": true}]
-  ```
   Error:
   ```
   Timeout
@@ -1613,57 +1609,6 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   Timeout
-  ```
-
-- [ ] `$..`
-  Input:
-  ```
-  [
-    {
-      "a": {
-        "b": "c"
-      }
-    },
-    [
-      0,
-      1
-    ]
-  ]
-  ```
-  Expected output (in any order as no consensus on ordering exists):
-  ```
-  NOT_SUPPORTED
-  ```
-  Actual output:
-  ```
-  [
-    "c",
-    0,
-    1,
-    [
-      0,
-      1
-    ],
-    [
-      {
-        "a": {
-          "b": "c"
-        }
-      },
-      [
-        0,
-        1
-      ]
-    ],
-    {
-      "a": {
-        "b": "c"
-      }
-    },
-    {
-      "b": "c"
-    }
-  ]
   ```
 
 - [ ] `$[(@.length-1)]`

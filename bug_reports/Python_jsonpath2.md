@@ -813,53 +813,6 @@ The following queries provide results that do not match those of other implement
   ValueError("line 1:8 token recognition error at: '&'")
   ```
 
-- [ ] `$[?(@.a && @.b || @.c)]`
-  Input:
-  ```
-  [
-    {
-      "a": true,
-      "b": true
-    },
-    {
-      "a": true,
-      "b": true,
-      "c": true
-    },
-    {
-      "b": true,
-      "c": true
-    },
-    {
-      "a": true,
-      "c": true
-    },
-    {
-      "a": true
-    },
-    {
-      "b": true
-    },
-    {
-      "c": true
-    },
-    {
-      "d": true
-    },
-    {}
-  ]
-  ```
-  Expected output:
-  ```
-  [{"a": true, "b": true}, {"a": true, "b": true, "c": true}, {"b": true, "c": true}, {"a": true, "c": true}, {"c": true}]
-  ```
-  Actual output:
-  NOT_SUPPORTED
-  ```
-  line 1:8 token recognition error at: '&'
-  ValueError("line 1:8 token recognition error at: '&'")
-  ```
-
 - [ ] `$[?(@==42)]`
   Input:
   ```
@@ -1604,33 +1557,6 @@ The following queries provide results that do not match those of other implement
   ```
   line 1:2 token recognition error at: '''
   ValueError("line 1:2 token recognition error at: '''")
-  ```
-
-- [ ] `$[*,1]`
-  Input:
-  ```
-  [
-    "first",
-    "second",
-    "third",
-    "forth",
-    "fifth"
-  ]
-  ```
-  Expected output:
-  ```
-  NOT_SUPPORTED
-  ```
-  Actual output:
-  ```
-  [
-    "first",
-    "second",
-    "third",
-    "forth",
-    "fifth",
-    "second"
-  ]
   ```
 
 

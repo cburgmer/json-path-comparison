@@ -274,7 +274,7 @@ queries:
     status: fail
     result: []
   - id: filter_expression_with_different_ungrouped_operators
-    status: fail
+    status: open
     result: [true, true, true, true, true, true, true, true, true, true, true, true, true]
   - id: filter_expression_with_division
     status: open
@@ -388,7 +388,7 @@ queries:
     status: open
     result: []
   - id: filter_expression_with_length_function
-    status: fail
+    status: open
     result: []
   - id: filter_expression_with_less_than
     status: open
@@ -478,7 +478,7 @@ queries:
     status: open
     result: []
   - id: filter_expression_without_parens
-    status: fail
+    status: open
     result: []
   - id: filter_expression_without_value
     status: open
@@ -490,7 +490,7 @@ queries:
     status: fail
     result: []
   - id: recursive_descent
-    status: fail
+    status: open
     result: ["c", 0, 1]
   - id: recursive_descent_after_dot_notation
     status: fail
@@ -526,5 +526,5 @@ queries:
     status: fail
     result: []
   - id: union_with_wildcard_and_number
-    status: fail
+    status: open
     result: []

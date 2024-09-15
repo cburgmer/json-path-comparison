@@ -756,46 +756,6 @@ The following queries provide results that do not match those of other implement
   not enough arguments
   ```
 
-- [ ] `$[?(@.length() == 4)]`
-  Input:
-  ```
-  [
-    [
-      1,
-      2,
-      3,
-      4,
-      5
-    ],
-    [
-      1,
-      2,
-      3,
-      4
-    ],
-    [
-      1,
-      2,
-      3
-    ]
-  ]
-  ```
-  Expected output:
-  ```
-  NOT_SUPPORTED
-  ```
-  Actual output:
-  ```
-  [
-    [
-      1,
-      2,
-      3,
-      4
-    ]
-  ]
-  ```
-
 - [ ] `$[?(@.key='value')]`
   Input:
   ```
@@ -1140,10 +1100,6 @@ The following queries provide results that do not match those of other implement
     }
   ]
   ```
-  Expected output:
-  ```
-  NOT_SUPPORTED
-  ```
   Error:
   ```
   path: invalid character at 4
@@ -1202,10 +1158,6 @@ The following queries provide results that do not match those of other implement
       1
     ]
   ]
-  ```
-  Expected output (in any order as no consensus on ordering exists):
-  ```
-  NOT_SUPPORTED
   ```
   Error:
   ```
@@ -1485,28 +1437,6 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   path: invalid character at 5
-  ```
-
-- [ ] `$[*,1]`
-  Input:
-  ```
-  [
-    "first",
-    "second",
-    "third",
-    "forth",
-    "fifth"
-  ]
-  ```
-  Expected output:
-  ```
-  NOT_SUPPORTED
-  ```
-  Actual output:
-  ```
-  [
-    "second"
-  ]
   ```
 
 

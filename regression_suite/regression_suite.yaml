@@ -717,7 +717,6 @@ queries:
   - id: filter_expression_with_different_ungrouped_operators
     selector: "$[?(@.a && @.b || @.c)]"
     document: [{"a": true, "b": true}, {"a": true, "b": true, "c": true}, {"b": true, "c": true}, {"a": true, "c": true}, {"a": true}, {"b": true}, {"c": true}, {"d": true}, {}]
-    consensus: [{"a": true, "b": true}, {"a": true, "b": true, "c": true}, {"b": true, "c": true}, {"a": true, "c": true}, {"c": true}]
   - id: filter_expression_with_division
     selector: "$[?(@.key/10==5)]"
     document: [{"key": 60}, {"key": 50}, {"key": 10}, {"key": -50}, {"key/10": 5}]
@@ -851,7 +850,6 @@ queries:
   - id: filter_expression_with_length_function
     selector: "$[?(@.length() == 4)]"
     document: [[1, 2, 3, 4, 5], [1, 2, 3, 4], [1, 2, 3]]
-    consensus: NOT_SUPPORTED
   - id: filter_expression_with_length_property
     selector: "$[?(@.length == 4)]"
     document: [[1, 2, 3, 4, 5], [1, 2, 3, 4], [1, 2, 3]]
@@ -958,7 +956,6 @@ queries:
   - id: filter_expression_without_parens
     selector: "$[?@.key==42]"
     document: [{"key": 0}, {"key": 42}, {"key": -1}, {"key": 1}, {"key": 41}, {"key": 43}, {"key": 42.0001}, {"key": 41.9999}, {"key": 100}, {"key": "some"}, {"key": "42"}, {"key": null}, {"key": 420}, {"key": ""}, {"key": {}}, {"key": []}, {"key": [42]}, {"key": {"key": 42}}, {"key": {"some": 42}}, {"some": "value"}]
-    consensus: NOT_SUPPORTED
   - id: filter_expression_without_value
     selector: "$[?(@.key)]"
     document: [{"some": "some value"}, {"key": true}, {"key": false}, {"key": null}, {"key": "value"}, {"key": ""}, {"key": 0}, {"key": 1}, {"key": -1}, {"key": 42}, {"key": {}}, {"key": []}]
@@ -974,7 +971,6 @@ queries:
     selector: "$.."
     document: [{"a": {"b": "c"}}, [0, 1]]
     ordered: false
-    consensus: NOT_SUPPORTED
   - id: recursive_descent_after_dot_notation
     selector: "$.key.."
     document: {"some key": "value", "key": {"complex": "string", "primitives": [0, 1]}}
@@ -1065,4 +1061,3 @@ queries:
   - id: union_with_wildcard_and_number
     selector: "$[*,1]"
     document: ["first", "second", "third", "forth", "fifth"]
-    consensus: NOT_SUPPORTED

@@ -532,10 +532,6 @@ The following queries provide results that do not match those of other implement
     {}
   ]
   ```
-  Expected output:
-  ```
-  [{"a": true, "b": true}, {"a": true, "b": true, "c": true}, {"b": true, "c": true}, {"a": true, "c": true}, {"c": true}]
-  ```
   Error:
   ```
   Error: 'Malformed filter query'
@@ -679,39 +675,6 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   Error: 'Malformed filter query'
-  ```
-
-- [ ] `$[?(@.length() == 4)]`
-  Input:
-  ```
-  [
-    [
-      1,
-      2,
-      3,
-      4,
-      5
-    ],
-    [
-      1,
-      2,
-      3,
-      4
-    ],
-    [
-      1,
-      2,
-      3
-    ]
-  ]
-  ```
-  Expected output:
-  ```
-  NOT_SUPPORTED
-  ```
-  Actual output:
-  ```
-  []
   ```
 
 - [ ] `$[?(@.key='value')]`
@@ -1141,54 +1104,6 @@ The following queries provide results that do not match those of other implement
   Actual output:
   ```
   []
-  ```
-
-- [ ] `$..`
-  Input:
-  ```
-  [
-    {
-      "a": {
-        "b": "c"
-      }
-    },
-    [
-      0,
-      1
-    ]
-  ]
-  ```
-  Expected output (in any order as no consensus on ordering exists):
-  ```
-  NOT_SUPPORTED
-  ```
-  Actual output:
-  ```
-  [
-    [
-      0,
-      1
-    ],
-    [
-      {
-        "a": {
-          "b": "c"
-        }
-      },
-      [
-        0,
-        1
-      ]
-    ],
-    {
-      "a": {
-        "b": "c"
-      }
-    },
-    {
-      "b": "c"
-    }
-  ]
   ```
 
 - [ ] `$.key..`
