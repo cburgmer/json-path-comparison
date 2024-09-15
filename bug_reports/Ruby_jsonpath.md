@@ -2024,8 +2024,6 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   undefined method `=' for 0.0:Float
-  Did you mean?  =~
-                 ==
   ```
 
 - [ ] `$[?(!(@.key==42))]`
@@ -2303,8 +2301,6 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   undefined method `=' for 0.0:Float
-  Did you mean?  =~
-                 ==
   ```
 
 - [ ] `$[?(@.key-50==-100)]`
@@ -2444,8 +2440,6 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   undefined method `=' for 0.0:Float
-  Did you mean?  =~
-                 ==
   ```
 
 - [ ] `$.*[?(@.key)]`

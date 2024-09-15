@@ -7,7 +7,7 @@ cd /tmp/objectiveC
 
 export CC=clang
 
-curl -LO https://github.com/apple/swift-corelibs-libdispatch/archive/refs/tags/swift-5.5-RELEASE.tar.gz
+curl -LO https://github.com/apple/swift-corelibs-libdispatch/archive/refs/tags/swift-5.10.1-RELEASE.tar.gz
 tar -xzf swift-*.tar.gz
 rm swift-*.tar.gz
 pushd swift-*
@@ -17,24 +17,21 @@ cmake -DCMAKE_C_COMPILER=clang -DCMAKE_CXX_COMPILER=clang++ -DCMAKE_C_FLAGS="-Wn
 make install
 popd
 
-curl -LO https://github.com/gnustep/tools-make/releases/download/make-2_9_1/gnustep-make-2.9.1.tar.gz
+curl -LO https://github.com/gnustep/tools-make/releases/download/make-2_9_2/gnustep-make-2.9.2.tar.gz
 tar -xzf gnustep-make-*.tar.gz
 rm gnustep-make-*.tar.gz
 pushd gnustep-make-*
 ./configure --disable-importing-config-file --enable-native-objc-exceptions --enable-objc-arc --enable-install-ld-so-conf --with-library-combo=ng-gnu-gnu && make install
 popd
 
-curl -LO https://github.com/gnustep/libobjc2/archive/v2.1.tar.gz
+curl -LO https://github.com/gnustep/libobjc2/archive/v2.2.1.tar.gz
 tar -xzf v*.tar.gz
 rm v*.tar.gz
-curl -L https://github.com/Tessil/robin-map/archive/refs/tags/v1.0.1.tar.gz -o robin-map.tar.gz
-tar -xzf robin-map.tar.gz
-rm robin-map.tar.gz
-mv robin-map-*/* libobjc2-*/third_party/robin-map
 pushd libobjc2-*
 mkdir Build
 cd Build/
 cmake -DCMAKE_C_COMPILER=clang -DCMAKE_CXX_COMPILER=clang++ ..
+make -j8
 make install
 popd
 
@@ -44,7 +41,7 @@ make clean && ./configure --disable-importing-config-file --enable-native-objc-e
 popd
 
 
-curl -LO https://github.com/gnustep/libs-base/releases/download/base-1_29_0/gnustep-base-1.29.0.tar.gz
+curl -LO https://github.com/gnustep/libs-base/releases/download/base-1_30_0/gnustep-base-1.30.0.tar.gz
 tar -xzf gnustep-base-*.tar.gz
 rm gnustep-base-*.tar.gz
 pushd gnustep-base-*

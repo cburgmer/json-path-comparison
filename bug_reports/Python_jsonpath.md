@@ -306,7 +306,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  RecursionError('maximum recursion depth exceeded while calling a Python object')
+  RecursionError('maximum recursion depth exceeded')
   ```
 
 - [ ] `$['*']`

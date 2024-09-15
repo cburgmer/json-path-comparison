@@ -16,7 +16,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  Cannot read property 'value' of undefined
+  Cannot read properties of undefined (reading 'value')
   ```
 
 - [ ] `$[7:3:-1]`
@@ -32,7 +32,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  Cannot read property 'value' of undefined
+  Cannot read properties of undefined (reading 'value')
   ```
 
 - [ ] `$[0:3:0]`

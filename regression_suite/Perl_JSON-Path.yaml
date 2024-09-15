@@ -145,7 +145,7 @@ queries:
     result: ["russian dolls", "something", "top", "value", {"key": "russian dolls"}]
   - id: dot_notation_with_empty_path
     status: fail
-    result: [""]
+    result: [false]
   - id: dot_notation_with_key_root_literal
     status: error
   - id: dot_notation_with_non_ASCII_key
@@ -386,7 +386,7 @@ queries:
     result: []
   - id: root
     status: fail
-    result: [""]
+    result: [false]
   - id: root_on_scalar
     status: fail
     result: []
@@ -394,7 +394,7 @@ queries:
     status: error
   - id: root_on_scalar_true
     status: fail
-    result: [""]
+    result: [false]
   - id: script_expression
     status: error
   - id: union_with_duplication_from_object

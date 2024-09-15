@@ -40,26 +40,6 @@ The following queries provide results that do not match those of other implement
   FunctionClauseError
   ```
 
-- [ ] `$[-113667776004:2]`
-  Input:
-  ```
-  [
-    "first",
-    "second",
-    "third",
-    "forth",
-    "fifth"
-  ]
-  ```
-  Expected output:
-  ```
-  ["first", "second"]
-  ```
-  Actual output:
-  ```
-  []
-  ```
-
 - [ ] `$[113667776004:2:-1]`
   Input:
   ```
@@ -211,24 +191,6 @@ The following queries provide results that do not match those of other implement
     "first",
     "second"
   ]
-  ```
-
-- [ ] `$[-4:]`
-  Input:
-  ```
-  [
-    "first",
-    "second",
-    "third"
-  ]
-  ```
-  Expected output:
-  ```
-  ["first", "second", "third"]
-  ```
-  Actual output:
-  ```
-  []
   ```
 
 - [ ] `$..[0]`

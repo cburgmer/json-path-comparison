@@ -959,7 +959,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  jsonPath: Cannot set property 'key' of null: @.key='value'
+  jsonPath: Cannot set properties of null (setting 'key'): @.key='value'
   ```
 
 - [ ] `$[?(@.a.*)]`
@@ -1354,7 +1354,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  jsonPath: Cannot read property 'c' of undefined: @.a.b.c==3
+  jsonPath: Cannot read properties of undefined (reading 'c'): @.a.b.c==3
   ```
 
 - [ ] `$[?(@..child)]`
