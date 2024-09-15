@@ -30,4 +30,4 @@ output_and_cleanup() {
 trap output_and_cleanup EXIT
 
 cd "$script_dir"
-./ensure_deps.sh ./node_modules/jsonpath.sh/JSONPath.sh "$@" | cut -f2 | lines_to_json_array > "$tmp_stdout" 2> "$tmp_stderr"
+./ensure_deps.sh ./build/JSONPath.sh "$@" | cut -f2 | lines_to_json_array > "$tmp_stdout" 2> "$tmp_stderr"

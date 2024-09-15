@@ -221,7 +221,7 @@ queries:
     result: ["value"]
   - id: empty
     status: open
-    result: [42, 21]
+    result: []
   - id: filter_expression_after_dot_notation_with_wildcard_after_recursive_descent
     status: open
     result: ["another", "more", 3, 4]
@@ -296,7 +296,7 @@ queries:
     result: [42, "42"]
   - id: filter_expression_with_equals_array
     status: open
-    result: []
+    result: [1]
   - id: filter_expression_with_equals_array_for_array_slice_with_range_1
     status: open
     result: []
@@ -308,7 +308,7 @@ queries:
     result: []
   - id: filter_expression_with_equals_array_with_single_quotes
     status: open
-    result: []
+    result: [1]
   - id: filter_expression_with_equals_boolean_expression_value
     status: open
     result: []

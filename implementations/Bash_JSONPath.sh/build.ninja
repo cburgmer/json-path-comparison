@@ -2,8 +2,8 @@ root = implementations/Bash_JSONPath.sh
 builddir = $root/build
 
 rule install
-  command = (cd $root && npm install) && echo > $out
+  command = rm -rf $out && $root/install.sh $out
 
-build $builddir/node_modules_installed: install | $root/package.json $root/package-lock.json
+build $builddir/JSONPath.sh: install | $root/install.sh $root/tag
 
-build $root/install: phony $builddir/node_modules_installed
+build $root/install: phony $builddir/JSONPath.sh
