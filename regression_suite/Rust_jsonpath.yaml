@@ -355,7 +355,7 @@ queries:
     status: fail
     result: NOT_SUPPORTED
   - id: filter_expression_with_different_ungrouped_operators
-    status: open
+    status: fail
     result: NOT_SUPPORTED
   - id: filter_expression_with_division
     status: open

@@ -717,6 +717,7 @@ queries:
   - id: filter_expression_with_different_ungrouped_operators
     selector: "$[?(@.a && @.b || @.c)]"
     document: [{"a": true, "b": true}, {"a": true, "b": true, "c": true}, {"b": true, "c": true}, {"a": true, "c": true}, {"a": true}, {"b": true}, {"c": true}, {"d": true}, {}]
+    consensus: [{"a": true, "b": true}, {"a": true, "b": true, "c": true}, {"b": true, "c": true}, {"a": true, "c": true}, {"c": true}]
   - id: filter_expression_with_division
     selector: "$[?(@.key/10==5)]"
     document: [{"key": 60}, {"key": 50}, {"key": 10}, {"key": -50}, {"key/10": 5}]

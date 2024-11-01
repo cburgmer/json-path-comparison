@@ -183,9 +183,6 @@ queries:
     result: [["a", "b"]]
   - id: filter_expression_with_current_object
     status: error
-  - id: filter_expression_with_different_ungrouped_operators
-    status: open
-    result: [{"a": true, "b": true}, {"a": true, "b": true, "c": true}, {"b": true, "c": true}, {"a": true, "c": true}, {"c": true}]
   - id: filter_expression_with_division
     status: open
     result: [{"key": 50}]
@@ -234,10 +231,9 @@ queries:
     result: [{"key": -12.3}, {"key": "-0.123e2"}]
   - id: filter_expression_with_equals_number_with_leading_zeros
     status: open
-    result: [{"key": 8}]
+    result: [{"key": "010"}, {"key": "10"}, {"key": 10}]
   - id: filter_expression_with_equals_object
-    status: open
-    result: [{"d": "[object Object]"}]
+    status: error
   - id: filter_expression_with_equals_on_array_of_numbers
     status: error
   - id: filter_expression_with_equals_on_object
@@ -248,7 +244,7 @@ queries:
     result: [{"key": "value"}, {"key": ["value"]}]
   - id: filter_expression_with_equals_string_with_unicode_character_escape
     status: open
-    result: [{"key": "Mot\u00f6rhead"}]
+    result: []
   - id: filter_expression_with_equals_true
     status: open
     result: [{"key": true}, {"key": 1}]
@@ -264,11 +260,9 @@ queries:
     status: open
     result: [{"key": 42}, {"key": 43}, {"key": 42.0001}, {"key": 100}, {"key": "43"}, {"key": "42"}]
   - id: filter_expression_with_in_array_of_values
-    status: open
-    result: [{"d": 1}, {"d": 1}]
+    status: error
   - id: filter_expression_with_in_current_object
-    status: open
-    result: [{"d": [1, 2, 3]}]
+    status: error
   - id: filter_expression_with_length_free_function
     status: error
   - id: filter_expression_with_length_function
@@ -311,18 +305,15 @@ queries:
     status: fail
     result: [[{"bookmarks": [{"page": 40}], "title": "Sayings of the Century"}, {"bookmarks": [{"page": 35}, {"page": 45}], "title": "Sword of Honour"}, {"bookmarks": [{"page": 3035}, {"page": 45}], "title": "Moby Dick"}], [{"bookmarks": [{"page": 40}], "title": "Sayings of the Century"}, {"bookmarks": [{"page": 35}, {"page": 45}], "title": "Sword of Honour"}, {"bookmarks": [{"page": 3035}, {"page": 45}], "title": "Moby Dick"}]]
   - id: filter_expression_with_regular_expression
-    status: open
-    result: [{"name": -1}, {"name": -1}, {"name": -1}, {"name": -1}, {"name": -1}]
+    status: error
   - id: filter_expression_with_regular_expression_from_member
-    status: open
-    result: [{"name": -1}, {"name": -1}, {"name": -1}, {"name": -1}, {"name": -1}, {"name": -1, "pattern": "hello.*"}]
+    status: error
   - id: filter_expression_with_set_wise_comparison_to_scalar
     status: error
   - id: filter_expression_with_set_wise_comparison_to_set
     status: error
   - id: filter_expression_with_single_equal
-    status: fail
-    result: [{"key": 42}, {"key": 42}, {"key": 42}, {"key": 42}, {"key": 42}, {"key": 42}, {"key": 42}, {"key": 42}, {"key": 42}, {"key": 42}, {"key": 42}, {"key": 42}, {"key": 42}, {"key": 42}, {"key": 42}, {"key": 42}, {"key": 42}, {"key": 42}, {"key": 42}, {"key": 42, "some": "value"}]
+    status: error
   - id: filter_expression_with_subfilter
     status: open
     result: [{"a": [{"price": 11}]}, {"a": [{"price": 8}, {"price": 12}, {"price": 3}]}]

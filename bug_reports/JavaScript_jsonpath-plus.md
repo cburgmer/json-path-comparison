@@ -485,7 +485,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  Invalid or unexpected token
+  Unexpected "@" at character 0
   ```
 
 - [ ] `$[?(@.key-dash == 'value')]`
@@ -515,7 +515,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  Unexpected number
+  Unexpected 2 at character 5
   ```
 
 - [ ] `$[?(@.2 == 'third')]`
@@ -533,7 +533,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  Unexpected number
+  Unexpected 2 at character 5
   ```
 
 - [ ] `$[?()]`
@@ -579,7 +579,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  Unexpected token ':'
+  Unclosed [ at character 6
   ```
 
 - [ ] `$[?(@.*==[1,2])]`
@@ -612,7 +612,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  Unexpected token '*='
+  Unexpected * at character 5
   ```
 
 - [ ] `$[?(@[0:1]==1)]`
@@ -637,7 +637,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  Unexpected token ':'
+  Unclosed [ at character 6
   ```
 
 - [ ] `$[?(@[*]==2)]`
@@ -670,7 +670,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  Unexpected token '*'
+  Unexpected "*" at character 5
   ```
 
 - [ ] `$[?(@.*==2)]`
@@ -703,7 +703,62 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  Unexpected token '*='
+  Unexpected * at character 5
+  ```
+
+- [ ] `$[?(@.d=={"k":"v"})]`
+  Input:
+  ```
+  [
+    {
+      "d": {
+        "k": "v"
+      }
+    },
+    {
+      "d": {
+        "a": "b"
+      }
+    },
+    {
+      "d": "k"
+    },
+    {
+      "d": "v"
+    },
+    {
+      "d": {}
+    },
+    {
+      "d": []
+    },
+    {
+      "d": null
+    },
+    {
+      "d": -1
+    },
+    {
+      "d": 0
+    },
+    {
+      "d": 1
+    },
+    {
+      "d": "[object Object]"
+    },
+    {
+      "d": "{\"k\": \"v\"}"
+    },
+    {
+      "d": "{\"k\":\"v\"}"
+    },
+    "v"
+  ]
+  ```
+  Error:
+  ```
+  Expected expression after == at character 8
   ```
 
 - [ ] `$[?(@==42)]`
@@ -727,7 +782,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  Invalid or unexpected token
+  Unexpected "@" at character 0
   ```
 
 - [ ] `$[?(@.key=="value")]`
@@ -832,6 +887,72 @@ The following queries provide results that do not match those of other implement
   jsonPath: $ is not defined: @.key==$.value
   ```
 
+- [ ] `$[?(@.d in [2, 3])]`
+  Input:
+  ```
+  [
+    {
+      "d": 1
+    },
+    {
+      "d": 2
+    },
+    {
+      "d": 1
+    },
+    {
+      "d": 3
+    },
+    {
+      "d": 4
+    }
+  ]
+  ```
+  Error:
+  ```
+  Unclosed [ at character 12
+  ```
+
+- [ ] `$[?(2 in @.d)]`
+  Input:
+  ```
+  [
+    {
+      "d": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "d": [
+        2
+      ]
+    },
+    {
+      "d": [
+        1
+      ]
+    },
+    {
+      "d": [
+        3,
+        4
+      ]
+    },
+    {
+      "d": [
+        4,
+        2
+      ]
+    }
+  ]
+  ```
+  Error:
+  ```
+  jsonPath: in is not defined: 2 in @.d
+  ```
+
 - [ ] `$[?(length(@) == 4)]`
   Input:
   ```
@@ -887,7 +1008,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  jsonPath: _$_v.length is not a function: @.length() == 4
+  jsonPath: func is not a function: @.length() == 4
   ```
 
 - [ ] `$[?(@.length == 4)]`
@@ -955,7 +1076,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  jsonPath: Cannot set properties of null (setting 'key'): @.key='value'
+  jsonPath: Invalid left-hand side in assignment: @.key='value'
   ```
 
 - [ ] `$[?(@.a.*)]`
@@ -1009,7 +1130,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  Unexpected token '*'
+  Unexpected * at character 7
   ```
 
 - [ ] `$[*].bookmarks[?(@.page == 45)]^^^`
@@ -1122,6 +1243,61 @@ The following queries provide results that do not match those of other implement
   ]
   ```
 
+- [ ] `$[?(@.name=~/hello.*/)]`
+  Input:
+  ```
+  [
+    {
+      "name": "hullo world"
+    },
+    {
+      "name": "hello world"
+    },
+    {
+      "name": "yes hello world"
+    },
+    {
+      "name": "HELLO WORLD"
+    },
+    {
+      "name": "good bye"
+    }
+  ]
+  ```
+  Error:
+  ```
+  jsonPath: Invalid left-hand side in assignment: @.name=~/hello.*/
+  ```
+
+- [ ] `$[?(@.name=~/@.pattern/)]`
+  Input:
+  ```
+  [
+    {
+      "name": "hullo world"
+    },
+    {
+      "name": "hello world"
+    },
+    {
+      "name": "yes hello world"
+    },
+    {
+      "name": "HELLO WORLD"
+    },
+    {
+      "name": "good bye"
+    },
+    {
+      "pattern": "hello.*"
+    }
+  ]
+  ```
+  Error:
+  ```
+  jsonPath: Invalid left-hand side in assignment: @.name=~/@.pattern/
+  ```
+
 - [ ] `$[?(@[*]>=4)]`
   Input:
   ```
@@ -1142,7 +1318,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  Unexpected token '*'
+  Unexpected "*" at character 5
   ```
 
 - [ ] `$.x[?(@[*]>=$.y[*])]`
@@ -1172,7 +1348,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  Unexpected token '*'
+  Unexpected "*" at character 5
   ```
 
 - [ ] `$[?(@.key=42)]`
@@ -1251,71 +1427,9 @@ The following queries provide results that do not match those of other implement
   ```
   NOT_SUPPORTED
   ```
-  Actual output:
+  Error:
   ```
-  [
-    {
-      "key": 42
-    },
-    {
-      "key": 42
-    },
-    {
-      "key": 42
-    },
-    {
-      "key": 42
-    },
-    {
-      "key": 42
-    },
-    {
-      "key": 42
-    },
-    {
-      "key": 42
-    },
-    {
-      "key": 42
-    },
-    {
-      "key": 42
-    },
-    {
-      "key": 42
-    },
-    {
-      "key": 42
-    },
-    {
-      "key": 42
-    },
-    {
-      "key": 42
-    },
-    {
-      "key": 42
-    },
-    {
-      "key": 42
-    },
-    {
-      "key": 42
-    },
-    {
-      "key": 42
-    },
-    {
-      "key": 42
-    },
-    {
-      "key": 42
-    },
-    {
-      "key": 42,
-      "some": "value"
-    }
-  ]
+  jsonPath: Invalid left-hand side in assignment: @.key=42
   ```
 
 - [ ] `$[?(@.a.b.c==3)]`
@@ -1391,7 +1505,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  Unexpected token '.'
+  Unexpected . at character 5
   ```
 
 - [ ] `$.data.sum()`
@@ -1552,7 +1666,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  Unexpected token ')'
+  Unexpected ")" at character 10
   ```
 
 - [ ] `$['key','another']`

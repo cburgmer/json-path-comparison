@@ -9,6 +9,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "json-p3": "^1.0.0"
+    "json-p3": "^1.3.4"
   }
 }

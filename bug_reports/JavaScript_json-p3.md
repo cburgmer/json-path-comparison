@@ -321,26 +321,6 @@ The following queries provide results that do not match those of other implement
   can't backup beyond start ('$.':2)
   ```
 
-- [ ] `$.length`
-  Input:
-  ```
-  [
-    4,
-    5,
-    6
-  ]
-  ```
-  Expected output:
-  ```
-  []
-  ```
-  Actual output:
-  ```
-  [
-    3
-  ]
-  ```
-
 - [ ] `$.$`
   Input:
   ```
@@ -558,6 +538,182 @@ The following queries provide results that do not match those of other implement
   unexpected filter selector token '+' ('.key+50==':9)
   ```
 
+- [ ] `$[?(@.key>0 && false)]`
+  Input:
+  ```
+  [
+    {
+      "key": 1
+    },
+    {
+      "key": 3
+    },
+    {
+      "key": "nice"
+    },
+    {
+      "key": true
+    },
+    {
+      "key": null
+    },
+    {
+      "key": false
+    },
+    {
+      "key": {}
+    },
+    {
+      "key": []
+    },
+    {
+      "key": -1
+    },
+    {
+      "key": 0
+    },
+    {
+      "key": ""
+    }
+  ]
+  ```
+  Error:
+  ```
+  filter expression literals (false) must be compared (' && false':15)
+  ```
+
+- [ ] `$[?(@.key>0 && true)]`
+  Input:
+  ```
+  [
+    {
+      "key": 1
+    },
+    {
+      "key": 3
+    },
+    {
+      "key": "nice"
+    },
+    {
+      "key": true
+    },
+    {
+      "key": null
+    },
+    {
+      "key": false
+    },
+    {
+      "key": {}
+    },
+    {
+      "key": []
+    },
+    {
+      "key": -1
+    },
+    {
+      "key": 0
+    },
+    {
+      "key": ""
+    }
+  ]
+  ```
+  Error:
+  ```
+  filter expression literals (true) must be compared (' && true)':15)
+  ```
+
+- [ ] `$[?(@.key>0 || false)]`
+  Input:
+  ```
+  [
+    {
+      "key": 1
+    },
+    {
+      "key": 3
+    },
+    {
+      "key": "nice"
+    },
+    {
+      "key": true
+    },
+    {
+      "key": null
+    },
+    {
+      "key": false
+    },
+    {
+      "key": {}
+    },
+    {
+      "key": []
+    },
+    {
+      "key": -1
+    },
+    {
+      "key": 0
+    },
+    {
+      "key": ""
+    }
+  ]
+  ```
+  Error:
+  ```
+  filter expression literals (false) must be compared (' || false':15)
+  ```
+
+- [ ] `$[?(@.key>0 || true)]`
+  Input:
+  ```
+  [
+    {
+      "key": 1
+    },
+    {
+      "key": 3
+    },
+    {
+      "key": "nice"
+    },
+    {
+      "key": true
+    },
+    {
+      "key": null
+    },
+    {
+      "key": false
+    },
+    {
+      "key": {}
+    },
+    {
+      "key": []
+    },
+    {
+      "key": -1
+    },
+    {
+      "key": 0
+    },
+    {
+      "key": ""
+    }
+  ]
+  ```
+  Error:
+  ```
+  filter expression literals (true) must be compared (' || true)':15)
+  ```
+
 - [ ] `$[?(@.key/10==5)]`
   Input:
   ```
@@ -636,7 +792,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  unexpected ') ('$[?()]':4)
+  empty paren expression ('$[?()]':3)
   ```
 
 - [ ] `$[?(@.d==["v1","v2"])]`
@@ -938,6 +1094,32 @@ The following queries provide results that do not match those of other implement
   non-singular query is not comparable ('$[?(@.*==':4)
   ```
 
+- [ ] `$[?(@.key==010)]`
+  Input:
+  ```
+  [
+    {
+      "key": "010"
+    },
+    {
+      "key": "10"
+    },
+    {
+      "key": 10
+    },
+    {
+      "key": 0
+    },
+    {
+      "key": 8
+    }
+  ]
+  ```
+  Error:
+  ```
+  invalid number literal '010' ('ey==010)]':11)
+  ```
+
 - [ ] `$[?(@.d=={"k":"v"})]`
   Input:
   ```
@@ -1085,47 +1267,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  unexpected ') ('gth() == ':13)
-  ```
-
-- [ ] `$[?(@.length == 4)]`
-  Input:
-  ```
-  [
-    [
-      1,
-      2,
-      3,
-      4,
-      5
-    ],
-    [
-      1,
-      2,
-      3,
-      4
-    ],
-    [
-      1,
-      2,
-      3
-    ]
-  ]
-  ```
-  Expected output:
-  ```
-  []
-  ```
-  Actual output:
-  ```
-  [
-    [
-      1,
-      2,
-      3,
-      4
-    ]
-  ]
+  expected an expression, found '(' ('ngth() ==':12)
   ```
 
 - [ ] `$[?(@.key='value')]`
@@ -1543,6 +1685,72 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   unexpected filter selector token '=' ('ey===42)]':11)
+  ```
+
+- [ ] `$[?(false)]`
+  Input:
+  ```
+  [
+    1,
+    3,
+    "nice",
+    true,
+    null,
+    false,
+    {},
+    [],
+    -1,
+    0,
+    ""
+  ]
+  ```
+  Error:
+  ```
+  filter expression literals (false) must be compared ('$[?(false':4)
+  ```
+
+- [ ] `$[?(null)]`
+  Input:
+  ```
+  [
+    1,
+    3,
+    "nice",
+    true,
+    null,
+    false,
+    {},
+    [],
+    -1,
+    0,
+    ""
+  ]
+  ```
+  Error:
+  ```
+  filter expression literals (null) must be compared ('$[?(null)':4)
+  ```
+
+- [ ] `$[?(true)]`
+  Input:
+  ```
+  [
+    1,
+    3,
+    "nice",
+    true,
+    null,
+    false,
+    {},
+    [],
+    -1,
+    0,
+    ""
+  ]
+  ```
+  Error:
+  ```
+  filter expression literals (true) must be compared ('$[?(true)':4)
   ```
 
 - [ ] `$.data.sum()`
