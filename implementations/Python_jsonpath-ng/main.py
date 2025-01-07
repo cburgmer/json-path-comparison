@@ -14,7 +14,7 @@ def main():
     j = json.loads(sys.stdin.read())
     try:
         results = [match.value for match in jsonpath_expr.find(j)]
-    except (IndexError, KeyError) as e:
+    except (IndexError, KeyError, ValueError) as e:
         print(repr(e))
         sys.exit(1)
 

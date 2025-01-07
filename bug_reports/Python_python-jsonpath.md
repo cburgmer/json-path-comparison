@@ -21,20 +21,6 @@ The following queries provide results that do not match those of other implement
   ]
   ```
 
-- [ ] `$[0]`
-  Input:
-  ```
-  "Hello World"
-  ```
-  Expected output:
-  ```
-  []
-  ```
-  Error:
-  ```
-  Invalid JSON document - Expecting value: line 1 column 1 (char 0)
-  ```
-
 - [ ] `$[key]`
   Input:
   ```
@@ -140,65 +126,6 @@ The following queries provide results that do not match those of other implement
   ]
   ```
 
-- [ ] `$[?(@.a && @.b || @.c)]`
-  Input:
-  ```
-  [
-    {
-      "a": true,
-      "b": true
-    },
-    {
-      "a": true,
-      "b": true,
-      "c": true
-    },
-    {
-      "b": true,
-      "c": true
-    },
-    {
-      "a": true,
-      "c": true
-    },
-    {
-      "a": true
-    },
-    {
-      "b": true
-    },
-    {
-      "c": true
-    },
-    {
-      "d": true
-    },
-    {}
-  ]
-  ```
-  Expected output:
-  ```
-  [{"a": true, "b": true}, {"a": true, "b": true, "c": true}, {"b": true, "c": true}, {"a": true, "c": true}, {"c": true}]
-  ```
-  Actual output:
-  ```
-  [
-    {
-      "a": true,
-      "b": true
-    },
-    {
-      "a": true,
-      "b": true,
-      "c": true
-    },
-    {
-      "a": true,
-      "c": true
-    }
-  ]
-  ```
-
 - [ ] `$.key..`
   Input:
   ```
@@ -231,66 +158,6 @@ The following queries provide results that do not match those of other implement
         1
       ]
     }
-  ]
-  ```
-
-- [ ] `$[:]['c','d']`
-  Input:
-  ```
-  [
-    {
-      "c": "cc1",
-      "d": "dd1",
-      "e": "ee1"
-    },
-    {
-      "c": "cc2",
-      "d": "dd2",
-      "e": "ee2"
-    }
-  ]
-  ```
-  Expected output:
-  ```
-  ["cc1", "dd1", "cc2", "dd2"]
-  ```
-  Actual output:
-  ```
-  [
-    "cc1",
-    "cc2",
-    "dd1",
-    "dd2"
-  ]
-  ```
-
-- [ ] `$.*['c','d']`
-  Input:
-  ```
-  [
-    {
-      "c": "cc1",
-      "d": "dd1",
-      "e": "ee1"
-    },
-    {
-      "c": "cc2",
-      "d": "dd2",
-      "e": "ee2"
-    }
-  ]
-  ```
-  Expected output:
-  ```
-  ["cc1", "dd1", "cc2", "dd2"]
-  ```
-  Actual output:
-  ```
-  [
-    "cc1",
-    "cc2",
-    "dd1",
-    "dd2"
   ]
   ```
 

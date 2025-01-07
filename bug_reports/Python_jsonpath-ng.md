@@ -3,45 +3,6 @@ Results do not match other implementations
 The following queries provide results that do not match those of other implementations of JSONPath
 (compare https://cburgmer.github.io/json-path-comparison/):
 
-- [ ] `$[0:3:-2]`
-  Input:
-  ```
-  [
-    "first",
-    "second",
-    "third",
-    "forth",
-    "fifth"
-  ]
-  ```
-  Expected output:
-  ```
-  []
-  ```
-  Actual output:
-  NOT_SUPPORTED
-  ```
-  JsonPathParserError('Parse error at 1:5 near token : (:)')
-  ```
-
-- [ ] `$[::]`
-  Input:
-  ```
-  [
-    "first",
-    "second"
-  ]
-  ```
-  Expected output:
-  ```
-  ["first", "second"]
-  ```
-  Actual output:
-  NOT_SUPPORTED
-  ```
-  JsonPathParserError('Parse error at 1:3 near token : (:)')
-  ```
-
 - [ ] `$[:]`
   Input:
   ```
@@ -64,7 +25,7 @@ The following queries provide results that do not match those of other implement
   ]
   ```
 
-- [ ] `$[0:3:2]`
+- [ ] `$[0:3:0]`
   Input:
   ```
   [
@@ -75,140 +36,9 @@ The following queries provide results that do not match those of other implement
     "fifth"
   ]
   ```
-  Expected output:
+  Error:
   ```
-  ["first", "third"]
-  ```
-  Actual output:
-  NOT_SUPPORTED
-  ```
-  JsonPathParserError('Parse error at 1:5 near token : (:)')
-  ```
-
-- [ ] `$[0:3:1]`
-  Input:
-  ```
-  [
-    "first",
-    "second",
-    "third",
-    "forth",
-    "fifth"
-  ]
-  ```
-  Expected output:
-  ```
-  ["first", "second", "third"]
-  ```
-  Actual output:
-  NOT_SUPPORTED
-  ```
-  JsonPathParserError('Parse error at 1:5 near token : (:)')
-  ```
-
-- [ ] `$[010:024:010]`
-  Input:
-  ```
-  [
-    0,
-    1,
-    2,
-    3,
-    4,
-    5,
-    6,
-    7,
-    8,
-    9,
-    10,
-    11,
-    12,
-    13,
-    14,
-    15,
-    16,
-    17,
-    18,
-    19,
-    20,
-    21,
-    22,
-    23,
-    24,
-    25
-  ]
-  ```
-  Expected output:
-  ```
-  [10, 20]
-  ```
-  Actual output:
-  NOT_SUPPORTED
-  ```
-  JsonPathParserError('Parse error at 1:9 near token : (:)')
-  ```
-
-- [ ] `$[0:4:2]`
-  Input:
-  ```
-  [
-    "first",
-    "second",
-    "third",
-    "forth",
-    "fifth"
-  ]
-  ```
-  Expected output:
-  ```
-  ["first", "third"]
-  ```
-  Actual output:
-  NOT_SUPPORTED
-  ```
-  JsonPathParserError('Parse error at 1:5 near token : (:)')
-  ```
-
-- [ ] `$[1:3:]`
-  Input:
-  ```
-  [
-    "first",
-    "second",
-    "third",
-    "forth",
-    "fifth"
-  ]
-  ```
-  Expected output:
-  ```
-  ["second", "third"]
-  ```
-  Actual output:
-  NOT_SUPPORTED
-  ```
-  JsonPathParserError('Parse error at 1:5 near token : (:)')
-  ```
-
-- [ ] `$[::2]`
-  Input:
-  ```
-  [
-    "first",
-    "second",
-    "third",
-    "forth",
-    "fifth"
-  ]
-  ```
-  Expected output:
-  ```
-  ["first", "third", "fifth"]
-  ```
-  Actual output:
-  NOT_SUPPORTED
-  ```
-  JsonPathParserError('Parse error at 1:3 near token : (:)')
+  ValueError('slice step cannot be zero')
   ```
 
 - [ ] `$..[0]`
@@ -594,25 +424,6 @@ The following queries provide results that do not match those of other implement
   NOT_SUPPORTED
   ```
   JsonPathLexerError('Error on line 1, col 2: Unexpected character: 屬 ')
-  ```
-
-- [ ] `$.2`
-  Input:
-  ```
-  {
-    "a": "first",
-    "2": "second",
-    "b": "third"
-  }
-  ```
-  Expected output:
-  ```
-  ["second"]
-  ```
-  Actual output:
-  NOT_SUPPORTED
-  ```
-  JsonPathParserError('Parse error at 1:2 near token 2 (NUMBER)')
   ```
 
 - [ ] `$.*.bar.*`

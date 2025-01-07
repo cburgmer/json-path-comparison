@@ -8,55 +8,30 @@ implementation: Python_jsonpath-ng
 queries:
   - id: array_slice_with_large_number_for_end_and_negative_step
     status: open
-    result: NOT_SUPPORTED
+    result: ["third", "second", "first"]
   - id: array_slice_with_large_number_for_start_end_negative_step
     status: open
-    result: NOT_SUPPORTED
+    result: ["fifth", "forth"]
   - id: array_slice_with_negative_step
     status: open
-    result: NOT_SUPPORTED
-  - id: array_slice_with_negative_step_and_start_greater_than_end
-    status: fail
-    result: NOT_SUPPORTED
+    result: ["forth", "second"]
   - id: array_slice_with_negative_step_on_partially_overlapping_array
     status: open
-    result: NOT_SUPPORTED
+    result: ["fifth"]
   - id: array_slice_with_negative_step_only
     status: open
-    result: NOT_SUPPORTED
+    result: ["fifth", "third", "first"]
   - id: array_slice_with_open_end_and_negative_step
     status: open
-    result: NOT_SUPPORTED
-  - id: array_slice_with_open_start_and_end_and_step_empty
-    status: fail
-    result: NOT_SUPPORTED
+    result: ["forth", "third", "second", "first"]
   - id: array_slice_with_open_start_and_end_on_object
     status: fail
     result: [{":": 42, "more": "string"}]
   - id: array_slice_with_open_start_and_negative_step
     status: open
-    result: NOT_SUPPORTED
-  - id: array_slice_with_step
-    status: fail
-    result: NOT_SUPPORTED
+    result: ["fifth", "forth"]
   - id: array_slice_with_step_0
-    status: open
-    result: NOT_SUPPORTED
-  - id: array_slice_with_step_1
-    status: fail
-    result: NOT_SUPPORTED
-  - id: array_slice_with_step_and_leading_zeros
-    status: fail
-    result: NOT_SUPPORTED
-  - id: array_slice_with_step_but_end_not_aligned
-    status: fail
-    result: NOT_SUPPORTED
-  - id: array_slice_with_step_empty
-    status: fail
-    result: NOT_SUPPORTED
-  - id: array_slice_with_step_only
-    status: fail
-    result: NOT_SUPPORTED
+    status: error
   - id: bracket_notation_after_recursive_descent
     status: error
   - id: bracket_notation_with_negative_number_on_short_array
@@ -130,13 +105,10 @@ queries:
     result: NOT_SUPPORTED
   - id: dot_notation_with_number
     status: open
-    result: NOT_SUPPORTED
+    result: []
   - id: dot_notation_with_number_-1
     status: open
-    result: NOT_SUPPORTED
-  - id: dot_notation_with_number_on_object
-    status: fail
-    result: NOT_SUPPORTED
+    result: []
   - id: dot_notation_with_single_quotes
     status: open
     result: ["value"]

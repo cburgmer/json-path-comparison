@@ -1,2 +1,2 @@
-jsonpath-ng==1.5.3
-pur==7.0.0
+jsonpath-ng==1.7.0
+pur==7.3.3
