@@ -796,7 +796,7 @@ The following queries provide results that do not match those of other implement
   Actual output:
   NOT_SUPPORTED
   ```
-  Evaluation of embedded Perl 6 code not allowed (construct with :allow-eval)
+  Evaluation of embedded Raku code not allowed (construct with :allow-eval)
   ```
 
 - [ ] `$..key`
@@ -994,7 +994,7 @@ The following queries provide results that do not match those of other implement
   Actual output:
   NOT_SUPPORTED
   ```
-  Evaluation of embedded Perl 6 code not allowed (construct with :allow-eval)
+  Evaluation of embedded Raku code not allowed (construct with :allow-eval)
   ```
 
 - [ ] `$[?(@.key>43 || @.key<43)]`
@@ -1019,7 +1019,7 @@ The following queries provide results that do not match those of other implement
   Actual output:
   NOT_SUPPORTED
   ```
-  Evaluation of embedded Perl 6 code not allowed (construct with :allow-eval)
+  Evaluation of embedded Raku code not allowed (construct with :allow-eval)
   ```
 
 - [ ] `$[?(@['key']==42)]`
@@ -1062,7 +1062,7 @@ The following queries provide results that do not match those of other implement
   Actual output:
   NOT_SUPPORTED
   ```
-  Evaluation of embedded Perl 6 code not allowed (construct with :allow-eval)
+  Evaluation of embedded Raku code not allowed (construct with :allow-eval)
   ```
 
 - [ ] `$[?(@['@key']==42)]`
@@ -1093,7 +1093,7 @@ The following queries provide results that do not match those of other implement
   Actual output:
   NOT_SUPPORTED
   ```
-  Evaluation of embedded Perl 6 code not allowed (construct with :allow-eval)
+  Evaluation of embedded Raku code not allowed (construct with :allow-eval)
   ```
 
 - [ ] `$[?(@[1]=='b')]`
@@ -1117,7 +1117,7 @@ The following queries provide results that do not match those of other implement
   Actual output:
   NOT_SUPPORTED
   ```
-  Evaluation of embedded Perl 6 code not allowed (construct with :allow-eval)
+  Evaluation of embedded Raku code not allowed (construct with :allow-eval)
   ```
 
 - [ ] `$[?(@.a && (@.b || @.c))]`
@@ -1159,7 +1159,7 @@ The following queries provide results that do not match those of other implement
   Actual output:
   NOT_SUPPORTED
   ```
-  Evaluation of embedded Perl 6 code not allowed (construct with :allow-eval)
+  Evaluation of embedded Raku code not allowed (construct with :allow-eval)
   ```
 
 - [ ] `$[?(@.a && @.b || @.c)]`
@@ -1205,7 +1205,7 @@ The following queries provide results that do not match those of other implement
   Actual output:
   NOT_SUPPORTED
   ```
-  Evaluation of embedded Perl 6 code not allowed (construct with :allow-eval)
+  Evaluation of embedded Raku code not allowed (construct with :allow-eval)
   ```
 
 - [ ] `$[?(@==42)]`
@@ -1230,7 +1230,7 @@ The following queries provide results that do not match those of other implement
   Actual output:
   NOT_SUPPORTED
   ```
-  Evaluation of embedded Perl 6 code not allowed (construct with :allow-eval)
+  Evaluation of embedded Raku code not allowed (construct with :allow-eval)
   ```
 
 - [ ] `$[?(@.key==43)]`
@@ -1249,7 +1249,7 @@ The following queries provide results that do not match those of other implement
   Actual output:
   NOT_SUPPORTED
   ```
-  Evaluation of embedded Perl 6 code not allowed (construct with :allow-eval)
+  Evaluation of embedded Raku code not allowed (construct with :allow-eval)
   ```
 
 - [ ] `$[?(@.id==2)]`
@@ -1266,7 +1266,7 @@ The following queries provide results that do not match those of other implement
   Actual output:
   NOT_SUPPORTED
   ```
-  Evaluation of embedded Perl 6 code not allowed (construct with :allow-eval)
+  Evaluation of embedded Raku code not allowed (construct with :allow-eval)
   ```
 
 - [ ] `$[?(@.key=="value")]`
@@ -1333,7 +1333,7 @@ The following queries provide results that do not match those of other implement
   Actual output:
   NOT_SUPPORTED
   ```
-  Evaluation of embedded Perl 6 code not allowed (construct with :allow-eval)
+  Evaluation of embedded Raku code not allowed (construct with :allow-eval)
   ```
 
 - [ ] `$[?(@.key=="Motörhead")]`
@@ -1367,7 +1367,7 @@ The following queries provide results that do not match those of other implement
   Actual output:
   NOT_SUPPORTED
   ```
-  Evaluation of embedded Perl 6 code not allowed (construct with :allow-eval)
+  Evaluation of embedded Raku code not allowed (construct with :allow-eval)
   ```
 
 - [ ] `$[?(@.key=="hi@example.com")]`
@@ -1392,7 +1392,7 @@ The following queries provide results that do not match those of other implement
   Actual output:
   NOT_SUPPORTED
   ```
-  Evaluation of embedded Perl 6 code not allowed (construct with :allow-eval)
+  Evaluation of embedded Raku code not allowed (construct with :allow-eval)
   ```
 
 - [ ] `$[?(@.key=="some.value")]`
@@ -1417,7 +1417,7 @@ The following queries provide results that do not match those of other implement
   Actual output:
   NOT_SUPPORTED
   ```
-  Evaluation of embedded Perl 6 code not allowed (construct with :allow-eval)
+  Evaluation of embedded Raku code not allowed (construct with :allow-eval)
   ```
 
 - [ ] `$[?(@.key=='value')]`
@@ -1439,7 +1439,7 @@ The following queries provide results that do not match those of other implement
   Actual output:
   NOT_SUPPORTED
   ```
-  Evaluation of embedded Perl 6 code not allowed (construct with :allow-eval)
+  Evaluation of embedded Raku code not allowed (construct with :allow-eval)
   ```
 
 - [ ] `$.items[?(@.key==$.value)]`
@@ -1467,7 +1467,7 @@ The following queries provide results that do not match those of other implement
   Actual output:
   NOT_SUPPORTED
   ```
-  Evaluation of embedded Perl 6 code not allowed (construct with :allow-eval)
+  Evaluation of embedded Raku code not allowed (construct with :allow-eval)
   ```
 
 - [ ] `$[?(@.key>"VALUE")]`
@@ -1534,7 +1534,7 @@ The following queries provide results that do not match those of other implement
   Actual output:
   NOT_SUPPORTED
   ```
-  Evaluation of embedded Perl 6 code not allowed (construct with :allow-eval)
+  Evaluation of embedded Raku code not allowed (construct with :allow-eval)
   ```
 
 - [ ] `$[?(@.length == 4)]`
@@ -1568,7 +1568,7 @@ The following queries provide results that do not match those of other implement
   Actual output:
   NOT_SUPPORTED
   ```
-  Evaluation of embedded Perl 6 code not allowed (construct with :allow-eval)
+  Evaluation of embedded Raku code not allowed (construct with :allow-eval)
   ```
 
 - [ ] `$[?(@.a.b==3)]`
@@ -1594,7 +1594,7 @@ The following queries provide results that do not match those of other implement
   Actual output:
   NOT_SUPPORTED
   ```
-  Evaluation of embedded Perl 6 code not allowed (construct with :allow-eval)
+  Evaluation of embedded Raku code not allowed (construct with :allow-eval)
   ```
 
 - [ ] `$[?(@.a.b.c==3)]`
@@ -1630,7 +1630,7 @@ The following queries provide results that do not match those of other implement
   Actual output:
   NOT_SUPPORTED
   ```
-  Evaluation of embedded Perl 6 code not allowed (construct with :allow-eval)
+  Evaluation of embedded Raku code not allowed (construct with :allow-eval)
   ```
 
 - [ ] `$[?(1==1)]`
@@ -1657,7 +1657,7 @@ The following queries provide results that do not match those of other implement
   Actual output:
   NOT_SUPPORTED
   ```
-  Evaluation of embedded Perl 6 code not allowed (construct with :allow-eval)
+  Evaluation of embedded Raku code not allowed (construct with :allow-eval)
   ```
 
 - [ ] `$.*[?(@.key)]`
@@ -1679,7 +1679,7 @@ The following queries provide results that do not match those of other implement
   Actual output:
   NOT_SUPPORTED
   ```
-  Evaluation of embedded Perl 6 code not allowed (construct with :allow-eval)
+  Evaluation of embedded Raku code not allowed (construct with :allow-eval)
   ```
 
 - [ ] `$.key..`
