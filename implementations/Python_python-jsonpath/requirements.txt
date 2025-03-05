@@ -1,2 +1,2 @@
-python-jsonpath==1.2.2
+python-jsonpath==1.3.0
 pur==7.3.3
