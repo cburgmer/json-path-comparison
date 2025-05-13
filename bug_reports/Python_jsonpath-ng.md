@@ -786,6 +786,88 @@ The following queries provide results that do not match those of other implement
   JsonPathLexerError('Error on line 1, col 2: Unexpected character: ? ')
   ```
 
+- [ ] `$[?(@.key==42)]`
+  Input:
+  ```
+  [
+    {
+      "key": 0
+    },
+    {
+      "key": 42
+    },
+    {
+      "key": -1
+    },
+    {
+      "key": 1
+    },
+    {
+      "key": 41
+    },
+    {
+      "key": 43
+    },
+    {
+      "key": 42.0001
+    },
+    {
+      "key": 41.9999
+    },
+    {
+      "key": 100
+    },
+    {
+      "key": "some"
+    },
+    {
+      "key": "42"
+    },
+    {
+      "key": null
+    },
+    {
+      "key": 420
+    },
+    {
+      "key": ""
+    },
+    {
+      "key": {}
+    },
+    {
+      "key": []
+    },
+    {
+      "key": [
+        42
+      ]
+    },
+    {
+      "key": {
+        "key": 42
+      }
+    },
+    {
+      "key": {
+        "some": 42
+      }
+    },
+    {
+      "some": "value"
+    }
+  ]
+  ```
+  Expected output:
+  ```
+  [{"key": 42}]
+  ```
+  Actual output:
+  NOT_SUPPORTED
+  ```
+  JsonPathLexerError('Error on line 1, col 2: Unexpected character: ? ')
+  ```
+
 - [ ] `$[?(@==42)]`
   Input:
   ```

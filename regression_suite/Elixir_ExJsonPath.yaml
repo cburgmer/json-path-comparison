@@ -203,9 +203,6 @@ queries:
   - id: filter_expression_with_dot_notation_with_number_on_array
     status: open
     result: [["first", "second", "third", "forth", "fifth"]]
-  - id: filter_expression_with_equals
-    status: open
-    result: [{"key": 42}]
   - id: filter_expression_with_equals_array
     status: open
     result: NOT_SUPPORTED

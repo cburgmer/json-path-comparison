@@ -9,6 +9,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "json-p3": "^2.2.1"
+    "json-p3": "^2.2.2"
   }
 }

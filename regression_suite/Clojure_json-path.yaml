@@ -335,7 +335,7 @@ queries:
     status: fail
     result: []
   - id: filter_expression_with_equals
-    status: open
+    status: fail
     result: [{"key": null}, {"some": "value"}]
   - id: filter_expression_with_equals_array
     status: error

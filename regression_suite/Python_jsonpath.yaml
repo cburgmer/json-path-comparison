@@ -211,9 +211,6 @@ queries:
   - id: filter_expression_with_empty_expression
     status: fail
     result: NOT_FOUND
-  - id: filter_expression_with_equals
-    status: open
-    result: [{"key": 42}]
   - id: filter_expression_with_equals_array
     status: open
     result: [{"d": ["v1", "v2"]}]

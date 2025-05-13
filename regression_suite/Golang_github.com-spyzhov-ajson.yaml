@@ -156,9 +156,6 @@ queries:
     result: [["first", "second", "third", "forth", "fifth"]]
   - id: filter_expression_with_empty_expression
     status: error
-  - id: filter_expression_with_equals
-    status: open
-    result: [{"key": 42}]
   - id: filter_expression_with_equals_array
     status: error
   - id: filter_expression_with_equals_array_for_array_slice_with_range_1

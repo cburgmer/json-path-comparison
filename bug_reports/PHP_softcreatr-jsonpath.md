@@ -374,185 +374,42 @@ The following queries provide results that do not match those of other implement
   ]
   ```
 
-- [ ] `$[?(@.key>42 && @.key<44)]`
+- [ ] `$[?(@.key>0 && false)]`
   Input:
   ```
   [
     {
-      "key": 42
+      "key": 1
     },
     {
-      "key": 43
+      "key": 3
     },
     {
-      "key": 44
-    }
-  ]
-  ```
-  Expected output:
-  ```
-  [{"key": 43}]
-  ```
-  Actual output:
-  ```
-  [
-    {
-      "key": 43
+      "key": "nice"
     },
     {
-      "key": 44
-    }
-  ]
-  ```
-
-- [ ] `$[?(@.key>43 || @.key<43)]`
-  Input:
-  ```
-  [
-    {
-      "key": 42
+      "key": true
     },
     {
-      "key": 43
+      "key": null
     },
     {
-      "key": 44
-    }
-  ]
-  ```
-  Expected output:
-  ```
-  [{"key": 42}, {"key": 44}]
-  ```
-  Actual output:
-  ```
-  [
-    {
-      "key": 44
-    }
-  ]
-  ```
-
-- [ ] `$[?(@)]`
-  Input:
-  ```
-  [
-    "some value",
-    null,
-    "value",
-    0,
-    1,
-    -1,
-    "",
-    [],
-    {},
-    false,
-    true
-  ]
-  ```
-  Error:
-  ```
-  Error: 'Malformed filter query'
-  ```
-
-- [ ] `$[?(@.a && (@.b || @.c))]`
-  Input:
-  ```
-  [
-    {
-      "a": true
+      "key": false
     },
     {
-      "a": true,
-      "b": true
+      "key": {}
     },
     {
-      "a": true,
-      "b": true,
-      "c": true
+      "key": []
     },
     {
-      "b": true,
-      "c": true
+      "key": -1
     },
     {
-      "a": true,
-      "c": true
+      "key": 0
     },
     {
-      "c": true
-    },
-    {
-      "b": true
-    }
-  ]
-  ```
-  Expected output:
-  ```
-  [{"a": true, "b": true}, {"a": true, "b": true, "c": true}, {"a": true, "c": true}]
-  ```
-  Error:
-  ```
-  Error: 'Malformed filter query'
-  ```
-
-- [ ] `$[?(@.a && @.b || @.c)]`
-  Input:
-  ```
-  [
-    {
-      "a": true,
-      "b": true
-    },
-    {
-      "a": true,
-      "b": true,
-      "c": true
-    },
-    {
-      "b": true,
-      "c": true
-    },
-    {
-      "a": true,
-      "c": true
-    },
-    {
-      "a": true
-    },
-    {
-      "b": true
-    },
-    {
-      "c": true
-    },
-    {
-      "d": true
-    },
-    {}
-  ]
-  ```
-  Expected output:
-  ```
-  [{"a": true, "b": true}, {"a": true, "b": true, "c": true}, {"b": true, "c": true}, {"a": true, "c": true}, {"c": true}]
-  ```
-  Error:
-  ```
-  Error: 'Malformed filter query'
-  ```
-
-- [ ] `$[?((@.key<44)==false)]`
-  Input:
-  ```
-  [
-    {
-      "key": 42
-    },
-    {
-      "key": 43
-    },
-    {
-      "key": 44
+      "key": ""
     }
   ]
   ```
@@ -561,24 +418,132 @@ The following queries provide results that do not match those of other implement
   Error: 'Malformed filter query'
   ```
 
-- [ ] `$[?(@==42)]`
+- [ ] `$[?(@.key>0 && true)]`
   Input:
   ```
   [
-    0,
-    42,
-    -1,
-    41,
-    43,
-    42.0001,
-    41.9999,
-    null,
-    100
+    {
+      "key": 1
+    },
+    {
+      "key": 3
+    },
+    {
+      "key": "nice"
+    },
+    {
+      "key": true
+    },
+    {
+      "key": null
+    },
+    {
+      "key": false
+    },
+    {
+      "key": {}
+    },
+    {
+      "key": []
+    },
+    {
+      "key": -1
+    },
+    {
+      "key": 0
+    },
+    {
+      "key": ""
+    }
   ]
   ```
-  Expected output:
+  Error:
   ```
-  [42]
+  Error: 'Malformed filter query'
+  ```
+
+- [ ] `$[?(@.key>0 || false)]`
+  Input:
+  ```
+  [
+    {
+      "key": 1
+    },
+    {
+      "key": 3
+    },
+    {
+      "key": "nice"
+    },
+    {
+      "key": true
+    },
+    {
+      "key": null
+    },
+    {
+      "key": false
+    },
+    {
+      "key": {}
+    },
+    {
+      "key": []
+    },
+    {
+      "key": -1
+    },
+    {
+      "key": 0
+    },
+    {
+      "key": ""
+    }
+  ]
+  ```
+  Error:
+  ```
+  Error: 'Malformed filter query'
+  ```
+
+- [ ] `$[?(@.key>0 || true)]`
+  Input:
+  ```
+  [
+    {
+      "key": 1
+    },
+    {
+      "key": 3
+    },
+    {
+      "key": "nice"
+    },
+    {
+      "key": true
+    },
+    {
+      "key": null
+    },
+    {
+      "key": false
+    },
+    {
+      "key": {}
+    },
+    {
+      "key": []
+    },
+    {
+      "key": -1
+    },
+    {
+      "key": 0
+    },
+    {
+      "key": ""
+    }
+  ]
   ```
   Error:
   ```
@@ -612,75 +577,6 @@ The following queries provide results that do not match those of other implement
   []
   ```
 
-- [ ] `$[?(2 in @.d)]`
-  Input:
-  ```
-  [
-    {
-      "d": [
-        1,
-        2,
-        3
-      ]
-    },
-    {
-      "d": [
-        2
-      ]
-    },
-    {
-      "d": [
-        1
-      ]
-    },
-    {
-      "d": [
-        3,
-        4
-      ]
-    },
-    {
-      "d": [
-        4,
-        2
-      ]
-    }
-  ]
-  ```
-  Error:
-  ```
-  Error: 'Malformed filter query'
-  ```
-
-- [ ] `$[?(length(@) == 4)]`
-  Input:
-  ```
-  [
-    [
-      1,
-      2,
-      3,
-      4,
-      5
-    ],
-    [
-      1,
-      2,
-      3,
-      4
-    ],
-    [
-      1,
-      2,
-      3
-    ]
-  ]
-  ```
-  Error:
-  ```
-  Error: 'Malformed filter query'
-  ```
-
 - [ ] `$[?(@.key='value')]`
   Input:
   ```
@@ -711,205 +607,6 @@ The following queries provide results that do not match those of other implement
       "key": "value"
     }
   ]
-  ```
-
-- [ ] `$[?(!(@.key==42))]`
-  Input:
-  ```
-  [
-    {
-      "key": 0
-    },
-    {
-      "key": 42
-    },
-    {
-      "key": -1
-    },
-    {
-      "key": 41
-    },
-    {
-      "key": 43
-    },
-    {
-      "key": 42.0001
-    },
-    {
-      "key": 41.9999
-    },
-    {
-      "key": 100
-    },
-    {
-      "key": "43"
-    },
-    {
-      "key": "42"
-    },
-    {
-      "key": "41"
-    },
-    {
-      "key": "value"
-    },
-    {
-      "some": "value"
-    }
-  ]
-  ```
-  Error:
-  ```
-  Error: 'Malformed filter query'
-  ```
-
-- [ ] `$[?(!(@.d==["v1","v2"]) || (@.d == true))]`
-  Input:
-  ```
-  [
-    {
-      "d": [
-        "v1",
-        "v2"
-      ]
-    },
-    {
-      "d": [
-        "a",
-        "b"
-      ]
-    },
-    {
-      "d": true
-    }
-  ]
-  ```
-  Error:
-  ```
-  Error: 'Malformed filter query'
-  ```
-
-- [ ] `$[?(!(@.key<42))]`
-  Input:
-  ```
-  [
-    {
-      "key": 0
-    },
-    {
-      "key": 42
-    },
-    {
-      "key": -1
-    },
-    {
-      "key": 41
-    },
-    {
-      "key": 43
-    },
-    {
-      "key": 42.0001
-    },
-    {
-      "key": 41.9999
-    },
-    {
-      "key": 100
-    },
-    {
-      "key": "43"
-    },
-    {
-      "key": "42"
-    },
-    {
-      "key": "41"
-    },
-    {
-      "key": "value"
-    },
-    {
-      "some": "value"
-    }
-  ]
-  ```
-  Error:
-  ```
-  Error: 'Malformed filter query'
-  ```
-
-- [ ] `$[?(!@.key)]`
-  Input:
-  ```
-  [
-    {
-      "some": "some value"
-    },
-    {
-      "key": true
-    },
-    {
-      "key": false
-    },
-    {
-      "key": null
-    },
-    {
-      "key": "value"
-    },
-    {
-      "key": ""
-    },
-    {
-      "key": 0
-    },
-    {
-      "key": 1
-    },
-    {
-      "key": -1
-    },
-    {
-      "key": 42
-    },
-    {
-      "key": {}
-    },
-    {
-      "key": []
-    }
-  ]
-  ```
-  Error:
-  ```
-  Error: 'Malformed filter query'
-  ```
-
-- [ ] `$[?((@.d!=["v1","v2"]) || (@.d == true))]`
-  Input:
-  ```
-  [
-    {
-      "d": [
-        "v1",
-        "v2"
-      ]
-    },
-    {
-      "d": [
-        "a",
-        "b"
-      ]
-    },
-    {
-      "d": true
-    }
-  ]
-  ```
-  Error:
-  ```
-  Error: 'Malformed filter query'
   ```
 
 - [ ] `$[?(@.key=42)]`
@@ -993,9 +690,6 @@ The following queries provide results that do not match those of other implement
   [
     {
       "key": 42
-    },
-    {
-      "key": "42"
     }
   ]
   ```

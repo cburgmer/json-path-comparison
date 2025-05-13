@@ -292,7 +292,7 @@ queries:
     status: fail
     result: []
   - id: filter_expression_with_equals
-    status: open
+    status: fail
     result: [42, "42"]
   - id: filter_expression_with_equals_array
     status: open

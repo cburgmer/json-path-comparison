@@ -262,7 +262,7 @@ queries:
     status: open
     result: NOT_SUPPORTED
   - id: filter_expression_with_equals
-    status: open
+    status: fail
     result: NOT_SUPPORTED
   - id: filter_expression_with_equals_array
     status: open
