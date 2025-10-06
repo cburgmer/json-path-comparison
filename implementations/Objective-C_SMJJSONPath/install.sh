@@ -5,7 +5,7 @@ readonly script_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 tag="$(cat "${script_dir}/tag")"
 
-readonly source_url="https://github.com/javerous/SMJJSONPath/archive/${tag}.tar.gz"
+readonly source_url="https://codeberg.org/javerous/SMJJSONPath/archive/${tag}.tar.gz"
 readonly target_dir="$1"
 
 readonly tmp_dir="/tmp/install_SMJJSONPath.$$"
@@ -18,8 +18,8 @@ curl --fail -L "$source_url" -o "$tmp_download"
 
 tar -xzf "$tmp_download" --directory "$tmp_dir"
 
-cp -R "${tmp_dir}/SMJJSONPath-${tag}"/SMJJSONPath "$target_dir"
+cp -R "${tmp_dir}/smjjsonpath"/SMJJSONPath "$target_dir"
 
-rm -r "${tmp_dir}/SMJJSONPath-${tag}"
+rm -r "${tmp_dir}/smjjsonpath"
 rm "$tmp_download"
 rmdir "$tmp_dir"
