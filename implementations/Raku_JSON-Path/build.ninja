@@ -2,7 +2,7 @@ root = implementations/Raku_JSON-Path
 builddir = $root/build
 
 rule install_json_path
-  command = mkdir -p $builddir/deps && zef update && zef install --to=$builddir/deps JSON::Fast 'JSON::Path:ver<1.8>' && echo > $out
+  command = mkdir -p $builddir/deps && zef update && zef install --to=$builddir/deps JSON::Fast 'JSON::Path:ver<1.9>' && echo > $out
 
 build $builddir/zef_installed_locally: install_json_path
 
