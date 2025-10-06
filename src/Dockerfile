@@ -89,8 +89,7 @@ RUN apt-get install -y --no-install-recommends ghc xz-utils \
 # Raku
 RUN apt-get install -y --no-install-recommends rakudo
 # Work around zef being dropped? in Ubuntu 22.04 (was perl6-zef, might become raku-zef in newer versions)
-# Pin Zef to 0.12.0 because of https://github.com/jnthn/json-path/issues/18
-RUN curl -LO https://github.com/ugexe/zef/archive/refs/tags/v0.12.0.tar.gz \
+RUN curl -LO https://github.com/ugexe/zef/archive/refs/tags/v1.0.0.tar.gz \
     && tar -xzf v*.tar.gz \
     && rm v*.tar.gz \
     && cd zef-* \
