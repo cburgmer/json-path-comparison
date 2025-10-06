@@ -286,7 +286,7 @@ queries:
   - id: parens_notation
     status: error
   - id: recursive_descent
-    status: open
+    status: fail
     result: ["c", 0, 1, [0, 1], [{"a": {"b": "c"}}, [0, 1]], {"a": {"b": "c"}}, {"b": "c"}]
   - id: recursive_descent_after_dot_notation
     status: fail

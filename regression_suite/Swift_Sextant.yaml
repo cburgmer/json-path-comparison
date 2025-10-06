@@ -306,9 +306,6 @@ queries:
   - id: function_sum
     status: fail
     result: [10]
-  - id: recursive_descent
-    status: open
-    result: NOT_SUPPORTED
   - id: union_with_filter
     status: open
     result: NOT_SUPPORTED

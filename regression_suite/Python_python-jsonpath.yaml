@@ -30,6 +30,9 @@ queries:
   - id: array_slice_with_step_0
     status: open
     result: []
+  - id: array_slice_with_step_and_leading_zeros
+    status: fail
+    result: NOT_SUPPORTED
   - id: bracket_notation_with_number_on_object
     status: fail
     result: ["value"]
@@ -42,33 +45,30 @@ queries:
   - id: bracket_notation_with_quoted_special_characters_combined
     status: open
     result: [42]
+  - id: bracket_notation_with_two_literals_separated_by_dot_without_quotes
+    status: fail
+    result: []
   - id: bracket_notation_without_quotes
     status: fail
-    result: ["value"]
+    result: []
   - id: current_with_dot_notation
     status: open
     result: NOT_SUPPORTED
   - id: dot_bracket_notation
     status: open
-    result: ["value"]
+    result: NOT_SUPPORTED
   - id: dot_bracket_notation_with_double_quotes
     status: open
-    result: ["value"]
-  - id: dot_bracket_notation_without_quotes
-    status: fail
-    result: ["value"]
+    result: NOT_SUPPORTED
   - id: dot_notation_after_recursive_descent_with_extra_dot
     status: open
-    result: ["russian dolls", "something", "top", "value", {"key": "russian dolls"}]
+    result: NOT_SUPPORTED
   - id: dot_notation_with_double_quotes
     status: open
     result: NOT_SUPPORTED
   - id: dot_notation_with_double_quotes_after_recursive_descent
     status: open
     result: NOT_SUPPORTED
-  - id: dot_notation_with_empty_path
-    status: fail
-    result: [{"": 9001, "''": "nice", "key": 42}]
   - id: dot_notation_with_key_root_literal
     status: open
     result: NOT_SUPPORTED
@@ -92,7 +92,7 @@ queries:
     result: NOT_SUPPORTED
   - id: dot_notation_with_space_padded_key
     status: open
-    result: [2]
+    result: NOT_SUPPORTED
   - id: dot_notation_without_dot
     status: fail
     result: [1]
@@ -297,18 +297,12 @@ queries:
   - id: filter_expression_without_value
     status: open
     result: [{"key": true}, {"key": false}, {"key": null}, {"key": "value"}, {"key": ""}, {"key": 0}, {"key": 1}, {"key": -1}, {"key": 42}, {"key": {}}, {"key": []}]
-  - id: recursive_descent
-    status: open
-    result: [[0, 1], [{"a": {"b": "c"}}, [0, 1]], {"a": {"b": "c"}}, {"b": "c"}]
-  - id: recursive_descent_after_dot_notation
-    status: fail
-    result: [[0, 1], {"complex": "string", "primitives": [0, 1]}]
   - id: union_with_filter
     status: open
     result: [{"key": 1}, {"key": 2}, {"key": 8}, {"key": 10}, {"key": 7}]
   - id: union_with_repeated_matches_after_dot_notation_with_wildcard
     status: open
-    result: ["string", "string", null, true, false, false, "string", 5.4]
+    result: NOT_SUPPORTED
   - id: union_with_slice_and_number
     status: open
     result: [2, 3, 5]

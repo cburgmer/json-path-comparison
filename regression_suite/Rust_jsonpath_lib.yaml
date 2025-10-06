@@ -313,9 +313,6 @@ queries:
   - id: parens_notation
     status: fail
     result: [{"key": 1, "more": 3, "some": 2}]
-  - id: recursive_descent
-    status: open
-    result: NOT_SUPPORTED
   - id: union_with_filter
     status: open
     result: NOT_SUPPORTED

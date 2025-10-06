@@ -459,9 +459,6 @@ queries:
   - id: function_sum
     status: fail
     result: []
-  - id: recursive_descent
-    status: open
-    result: NOT_SUPPORTED
   - id: recursive_descent_on_nested_arrays
     status: fail
     result: []

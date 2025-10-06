@@ -3,6 +3,48 @@ Results do not match other implementations
 The following queries provide results that do not match those of other implementations of JSONPath
 (compare https://cburgmer.github.io/json-path-comparison/):
 
+- [ ] `$[010:024:010]`
+  Input:
+  ```
+  [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25
+  ]
+  ```
+  Expected output:
+  ```
+  [10, 20]
+  ```
+  Actual output:
+  NOT_SUPPORTED
+  ```
+  JSONPathSyntaxError("invalid index '010'")
+  ```
+
 - [ ] `$[0]`
   Input:
   ```
@@ -21,6 +63,29 @@ The following queries provide results that do not match those of other implement
   ]
   ```
 
+- [ ] `$[two.some]`
+  Input:
+  ```
+  {
+    "one": {
+      "key": "value"
+    },
+    "two": {
+      "some": "more",
+      "key": "other value"
+    },
+    "two.some": "42"
+  }
+  ```
+  Expected output:
+  ```
+  NOT_SUPPORTED
+  ```
+  Actual output:
+  ```
+  []
+  ```
+
 - [ ] `$[key]`
   Input:
   ```
@@ -34,58 +99,7 @@ The following queries provide results that do not match those of other implement
   ```
   Actual output:
   ```
-  [
-    "value"
-  ]
-  ```
-
-- [ ] `$.[key]`
-  Input:
-  ```
-  {
-    "key": "value",
-    "other": {
-      "key": [
-        {
-          "key": 42
-        }
-      ]
-    }
-  }
-  ```
-  Expected output:
-  ```
-  NOT_SUPPORTED
-  ```
-  Actual output:
-  ```
-  [
-    "value"
-  ]
-  ```
-
-- [ ] `$.`
-  Input:
-  ```
-  {
-    "key": 42,
-    "": 9001,
-    "''": "nice"
-  }
-  ```
-  Expected output:
-  ```
-  NOT_SUPPORTED
-  ```
-  Actual output:
-  ```
-  [
-    {
-      "": 9001,
-      "''": "nice",
-      "key": 42
-    }
-  ]
+  []
   ```
 
 - [ ] `$.2`
@@ -104,7 +118,7 @@ The following queries provide results that do not match those of other implement
   Actual output:
   NOT_SUPPORTED
   ```
-  JSONPathSyntaxError("unexpected token '2'")
+  JSONPathSyntaxError('expected a shorthand selector')
   ```
 
 - [ ] `$a`
@@ -123,41 +137,6 @@ The following queries provide results that do not match those of other implement
   ```
   [
     1
-  ]
-  ```
-
-- [ ] `$.key..`
-  Input:
-  ```
-  {
-    "some key": "value",
-    "key": {
-      "complex": "string",
-      "primitives": [
-        0,
-        1
-      ]
-    }
-  }
-  ```
-  Expected output (in any order as no consensus on ordering exists):
-  ```
-  NOT_SUPPORTED
-  ```
-  Actual output:
-  ```
-  [
-    [
-      0,
-      1
-    ],
-    {
-      "complex": "string",
-      "primitives": [
-        0,
-        1
-      ]
-    }
   ]
   ```
 
