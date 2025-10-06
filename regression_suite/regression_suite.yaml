@@ -330,6 +330,8 @@ queries:
   - id: bracket_notation_with_quoted_escaped_single_quote
     selector: "$['\\'']"
     document: {"'": "value"}
+    consensus: ["value"]
+    scalar-consensus: "value"
   - id: bracket_notation_with_quoted_number_on_object
     selector: "$['0']"
     document: {"0": "value"}
@@ -480,6 +482,7 @@ queries:
     selector: "$...key"
     document: {"object": {"key": "value", "array": [{"key": "something"}, {"key": {"key": "russian dolls"}}]}, "key": "top"}
     ordered: false
+    consensus: NOT_SUPPORTED
   - id: dot_notation_after_union
     selector: "$[0,2].key"
     document: [{"key": "ey"}, {"key": "bee"}, {"key": "see"}]
@@ -823,6 +826,7 @@ queries:
   - id: filter_expression_with_equals_true
     selector: "$[?(@.key==true)]"
     document: [{"some": "some value"}, {"key": true}, {"key": false}, {"key": null}, {"key": "value"}, {"key": ""}, {"key": 0}, {"key": 1}, {"key": -1}, {"key": 42}, {"key": {}}, {"key": []}]
+    consensus: [{"key": true}]
   - id: filter_expression_with_equals_with_path_and_path
     selector: "$[?(@.key1==@.key2)]"
     document: [{"key1": 10, "key2": 10}, {"key1": 42, "key2": 50}, {"key1": 10}, {"key2": 10}, {}, {"key1": null, "key2": null}, {"key1": null}, {"key2": null}, {"key1": 0, "key2": 0}, {"key1": 0}, {"key2": 0}, {"key1": -1, "key2": -1}, {"key1": "", "key2": ""}, {"key1": false, "key2": false}, {"key1": false}, {"key2": false}, {"key1": true, "key2": true}, {"key1": [], "key2": []}, {"key1": {}, "key2": {}}, {"key1": {"a": 1, "b": 2}, "key2": {"b": 2, "a": 1}}]
@@ -852,6 +856,7 @@ queries:
   - id: filter_expression_with_length_function
     selector: "$[?(@.length() == 4)]"
     document: [[1, 2, 3, 4, 5], [1, 2, 3, 4], [1, 2, 3]]
+    consensus: NOT_SUPPORTED
   - id: filter_expression_with_length_property
     selector: "$[?(@.length == 4)]"
     document: [[1, 2, 3, 4, 5], [1, 2, 3, 4], [1, 2, 3]]
@@ -859,6 +864,7 @@ queries:
   - id: filter_expression_with_less_than
     selector: "$[?(@.key<42)]"
     document: [{"key": 0}, {"key": 42}, {"key": -1}, {"key": 41}, {"key": 43}, {"key": 42.0001}, {"key": 41.9999}, {"key": 100}, {"key": "43"}, {"key": "42"}, {"key": "41"}, {"key": "value"}, {"some": "value"}]
+    consensus: [{"key": 0}, {"key": -1}, {"key": 41}, {"key": 41.9999}]
   - id: filter_expression_with_less_than_or_equal
     selector: "$[?(@.key<=42)]"
     document: [{"key": 0}, {"key": 42}, {"key": -1}, {"key": 41}, {"key": 43}, {"key": 42.0001}, {"key": 41.9999}, {"key": 100}, {"key": "43"}, {"key": "42"}, {"key": "41"}, {"key": "value"}, {"some": "value"}]

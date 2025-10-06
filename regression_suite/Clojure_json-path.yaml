@@ -219,7 +219,7 @@ queries:
     status: fail
     result: []
   - id: dot_notation_after_recursive_descent_with_extra_dot
-    status: open
+    status: fail
     result: ["russian dolls", "something", "top", "value", {"key": "russian dolls"}]
   - id: dot_notation_after_union
     status: fail
@@ -401,7 +401,7 @@ queries:
     status: open
     result: []
   - id: filter_expression_with_equals_true
-    status: open
+    status: fail
     result: [{"some": "some value"}, {"key": null}]
   - id: filter_expression_with_equals_with_path_and_path
     status: open
@@ -423,14 +423,11 @@ queries:
     status: open
     result: []
   - id: filter_expression_with_length_function
-    status: open
+    status: fail
     result: []
   - id: filter_expression_with_length_property
     status: fail
     result: [[1, 2, 3, 4, 5], [1, 2, 3, 4], [1, 2, 3]]
-  - id: filter_expression_with_less_than
-    status: open
-    result: [{"key": 0}, {"key": -1}, {"key": 41}, {"key": 41.9999}]
   - id: filter_expression_with_less_than_or_equal
     status: open
     result: [{"key": 0}, {"key": 42}, {"key": -1}, {"key": 41}, {"key": 41.9999}]

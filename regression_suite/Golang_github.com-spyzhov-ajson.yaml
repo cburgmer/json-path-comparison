@@ -38,9 +38,6 @@ queries:
   - id: bracket_notation_with_quoted_escaped_backslash
     status: open
     result: ["value"]
-  - id: bracket_notation_with_quoted_escaped_single_quote
-    status: open
-    result: ["value"]
   - id: bracket_notation_with_quoted_special_characters_combined
     status: open
     result: [42]
@@ -69,7 +66,7 @@ queries:
     status: fail
     result: ["value"]
   - id: dot_notation_after_recursive_descent_with_extra_dot
-    status: open
+    status: fail
     result: ["russian dolls", "russian dolls", "russian dolls", "russian dolls", "russian dolls", "something", "something", "something", "something", "top", "value", "value", {"key": "russian dolls"}, {"key": "russian dolls"}, {"key": "russian dolls"}, {"key": "russian dolls"}]
   - id: dot_notation_with_double_quotes
     status: open
@@ -197,9 +194,6 @@ queries:
   - id: filter_expression_with_equals_string_with_unicode_character_escape
     status: open
     result: [{"key": "Mot\u00f6rhead"}]
-  - id: filter_expression_with_equals_true
-    status: open
-    result: [{"key": true}]
   - id: filter_expression_with_equals_with_path_and_path
     status: open
     result: [{"key1": 10, "key2": 10}, {"key1": null, "key2": null}, {"key1": 0, "key2": 0}, {"key1": -1, "key2": -1}, {"key1": "", "key2": ""}, {"key1": false, "key2": false}, {"key1": true, "key2": true}, {"key1": [], "key2": []}, {"key1": {}, "key2": {}}, {"key1": {"a": 1, "b": 2}, "key2": {"a": 1, "b": 2}}]
@@ -217,14 +211,11 @@ queries:
     status: open
     result: [[1, 2, 3, 4]]
   - id: filter_expression_with_length_function
-    status: open
+    status: fail
     result: []
   - id: filter_expression_with_length_property
     status: fail
     result: [[1, 2, 3, 4]]
-  - id: filter_expression_with_less_than
-    status: open
-    result: [{"key": 0}, {"key": -1}, {"key": 41}, {"key": 41.9999}]
   - id: filter_expression_with_less_than_or_equal
     status: open
     result: [{"key": 0}, {"key": 42}, {"key": -1}, {"key": 41}, {"key": 41.9999}]

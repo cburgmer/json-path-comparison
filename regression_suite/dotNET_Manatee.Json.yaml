@@ -47,9 +47,6 @@ queries:
   - id: bracket_notation_with_quoted_escaped_backslash
     status: open
     result: ["value"]
-  - id: bracket_notation_with_quoted_escaped_single_quote
-    status: open
-    result: ["value"]
   - id: bracket_notation_with_quoted_special_characters_combined
     status: open
     result: [42]
@@ -68,9 +65,6 @@ queries:
   - id: dot_bracket_notation_with_double_quotes
     status: open
     result: ["value"]
-  - id: dot_notation_after_recursive_descent_with_extra_dot
-    status: open
-    result: NOT_SUPPORTED
   - id: dot_notation_after_union_with_keys
     status: fail
     result: NOT_SUPPORTED
@@ -215,7 +209,7 @@ queries:
     status: open
     result: [{"key": "Mot\u00f6rhead"}]
   - id: filter_expression_with_equals_true
-    status: open
+    status: fail
     result: [{"key": true}, {"key": null}, {"key": "value"}, {"key": ""}, {"key": 0}, {"key": 1}, {"key": -1}, {"key": 42}, {"key": {}}, {"key": []}]
   - id: filter_expression_with_equals_with_path_and_path
     status: open
@@ -236,14 +230,11 @@ queries:
     status: open
     result: NOT_SUPPORTED
   - id: filter_expression_with_length_function
-    status: open
+    status: fail
     result: [[1, 2, 3, 4]]
   - id: filter_expression_with_length_property
     status: fail
     result: [[1, 2, 3, 4]]
-  - id: filter_expression_with_less_than
-    status: open
-    result: [{"key": 0}, {"key": -1}, {"key": 41}, {"key": 41.9999}]
   - id: filter_expression_with_less_than_or_equal
     status: open
     result: [{"key": 0}, {"key": 42}, {"key": -1}, {"key": 41}, {"key": 41.9999}]

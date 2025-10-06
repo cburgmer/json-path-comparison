@@ -577,6 +577,22 @@ The following queries provide results that do not match those of other implement
   unmatched closing bracket
   ```
 
+- [ ] `$['\'']`
+  Input:
+  ```
+  {
+    "'": "value"
+  }
+  ```
+  Expected output:
+  ```
+  ["value"]
+  ```
+  Actual output:
+  ```
+  []
+  ```
+
 - [ ] `$[':@."$,*\'\\']`
   Input:
   ```
@@ -851,6 +867,43 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   1 is not a symbol nor a string
+  ```
+
+- [ ] `$...key`
+  Input:
+  ```
+  {
+    "object": {
+      "key": "value",
+      "array": [
+        {
+          "key": "something"
+        },
+        {
+          "key": {
+            "key": "russian dolls"
+          }
+        }
+      ]
+    },
+    "key": "top"
+  }
+  ```
+  Expected output (in any order as no consensus on ordering exists):
+  ```
+  NOT_SUPPORTED
+  ```
+  Actual output:
+  ```
+  [
+    "russian dolls",
+    "something",
+    "top",
+    "value",
+    {
+      "key": "russian dolls"
+    }
+  ]
   ```
 
 - [ ] `$.`
@@ -1894,6 +1947,58 @@ The following queries provide results that do not match those of other implement
   invalid value for Integer(): " 3])"
   ```
 
+- [ ] `$[?(@.length() == 4)]`
+  Input:
+  ```
+  [
+    [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    [
+      1,
+      2,
+      3,
+      4
+    ],
+    [
+      1,
+      2,
+      3
+    ]
+  ]
+  ```
+  Expected output:
+  ```
+  NOT_SUPPORTED
+  ```
+  Actual output:
+  ```
+  [
+    [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    [
+      1,
+      2,
+      3,
+      4
+    ],
+    [
+      1,
+      2,
+      3
+    ]
+  ]
+  ```
+
 - [ ] `$[?(@.length == 4)]`
   Input:
   ```
@@ -1978,6 +2083,10 @@ The following queries provide results that do not match those of other implement
       "some": "value"
     }
   ]
+  ```
+  Expected output:
+  ```
+  [{"key": 0}, {"key": -1}, {"key": 41}, {"key": 41.9999}]
   ```
   Error:
   ```

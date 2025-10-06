@@ -254,6 +254,10 @@ The following queries provide results that do not match those of other implement
     "key": "top"
   }
   ```
+  Expected output (in any order as no consensus on ordering exists):
+  ```
+  NOT_SUPPORTED
+  ```
   Error:
   ```
   unexpected descendent selection token '.' ('$...key':3)
@@ -1264,6 +1268,10 @@ The following queries provide results that do not match those of other implement
       3
     ]
   ]
+  ```
+  Expected output:
+  ```
+  NOT_SUPPORTED
   ```
   Error:
   ```

@@ -175,6 +175,60 @@ The following queries provide results that do not match those of other implement
   ]
   ```
 
+- [ ] `$...key`
+  Input:
+  ```
+  {
+    "object": {
+      "key": "value",
+      "array": [
+        {
+          "key": "something"
+        },
+        {
+          "key": {
+            "key": "russian dolls"
+          }
+        }
+      ]
+    },
+    "key": "top"
+  }
+  ```
+  Expected output (in any order as no consensus on ordering exists):
+  ```
+  NOT_SUPPORTED
+  ```
+  Actual output:
+  ```
+  [
+    "russian dolls",
+    "russian dolls",
+    "russian dolls",
+    "russian dolls",
+    "russian dolls",
+    "something",
+    "something",
+    "something",
+    "something",
+    "top",
+    "value",
+    "value",
+    {
+      "key": "russian dolls"
+    },
+    {
+      "key": "russian dolls"
+    },
+    {
+      "key": "russian dolls"
+    },
+    {
+      "key": "russian dolls"
+    }
+  ]
+  ```
+
 - [ ] `$.`
   Input:
   ```
@@ -675,6 +729,39 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   wrong request: wrong request: ?(2 in @.d)
+  ```
+
+- [ ] `$[?(@.length() == 4)]`
+  Input:
+  ```
+  [
+    [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    [
+      1,
+      2,
+      3,
+      4
+    ],
+    [
+      1,
+      2,
+      3
+    ]
+  ]
+  ```
+  Expected output:
+  ```
+  NOT_SUPPORTED
+  ```
+  Actual output:
+  ```
+  []
   ```
 
 - [ ] `$[?(@.length == 4)]`

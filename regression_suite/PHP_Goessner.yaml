@@ -65,7 +65,7 @@ queries:
     status: open
     result: NOT_FOUND
   - id: bracket_notation_with_quoted_escaped_single_quote
-    status: open
+    status: fail
     result: NOT_FOUND
   - id: bracket_notation_with_quoted_special_characters_combined
     status: open
@@ -109,7 +109,7 @@ queries:
   - id: dot_notation_after_filter_expression
     status: error
   - id: dot_notation_after_recursive_descent_with_extra_dot
-    status: open
+    status: fail
     result: ["russian dolls", "something", "top", "value", {"key": "russian dolls"}]
   - id: dot_notation_on_empty_object_value
     status: fail

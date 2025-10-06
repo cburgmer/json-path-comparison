@@ -46,9 +46,6 @@ queries:
   - id: bracket_notation_with_quoted_escaped_backslash
     status: open
     result: []
-  - id: bracket_notation_with_quoted_escaped_single_quote
-    status: open
-    result: ["value"]
   - id: bracket_notation_with_quoted_special_characters_combined
     status: open
     result: []
@@ -79,9 +76,6 @@ queries:
   - id: dot_notation_after_recursive_descent
     status: fail
     result: ["something", "top", "value", {"key": "russian dolls"}]
-  - id: dot_notation_after_recursive_descent_with_extra_dot
-    status: open
-    result: NOT_SUPPORTED
   - id: dot_notation_with_double_quotes
     status: open
     result: [42]
@@ -235,9 +229,6 @@ queries:
   - id: filter_expression_with_equals_string_with_unicode_character_escape
     status: open
     result: []
-  - id: filter_expression_with_equals_true
-    status: open
-    result: [{"key": true}]
   - id: filter_expression_with_equals_with_path_and_path
     status: open
     result: [{"key1": 10, "key2": 10}, {"key1": null, "key2": null}, {"key1": 0, "key2": 0}, {"key1": -1, "key2": -1}, {"key1": "", "key2": ""}, {"key1": false, "key2": false}, {"key1": true, "key2": true}]
@@ -256,12 +247,6 @@ queries:
   - id: filter_expression_with_length_free_function
     status: open
     result: NOT_SUPPORTED
-  - id: filter_expression_with_length_function
-    status: open
-    result: NOT_SUPPORTED
-  - id: filter_expression_with_less_than
-    status: open
-    result: [{"key": 0}, {"key": -1}, {"key": 41}, {"key": 41.9999}]
   - id: filter_expression_with_less_than_or_equal
     status: open
     result: [{"key": 0}, {"key": 42}, {"key": -1}, {"key": 41}, {"key": 41.9999}]

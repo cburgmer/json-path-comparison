@@ -489,6 +489,22 @@ The following queries provide results that do not match those of other implement
   	JSON::Path::values(...) called at main.pl line 11
   ```
 
+- [ ] `$['\'']`
+  Input:
+  ```
+  {
+    "'": "value"
+  }
+  ```
+  Expected output:
+  ```
+  ["value"]
+  ```
+  Actual output:
+  ```
+  []
+  ```
+
 - [ ] `$['$']`
   Input:
   ```
@@ -798,6 +814,35 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   non-safe evaluation, died at main.pl line 11.
+  ```
+
+- [ ] `$...key`
+  Input:
+  ```
+  {
+    "object": {
+      "key": "value",
+      "array": [
+        {
+          "key": "something"
+        },
+        {
+          "key": {
+            "key": "russian dolls"
+          }
+        }
+      ]
+    },
+    "key": "top"
+  }
+  ```
+  Expected output (in any order as no consensus on ordering exists):
+  ```
+  NOT_SUPPORTED
+  ```
+  Actual output:
+  ```
+  []
   ```
 
 - [ ] `$['one','three'].key`
@@ -2578,6 +2623,10 @@ The following queries provide results that do not match those of other implement
     }
   ]
   ```
+  Expected output:
+  ```
+  [{"key": true}]
+  ```
   Error:
   ```
   non-safe evaluation, died at main.pl line 11.
@@ -2981,6 +3030,10 @@ The following queries provide results that do not match those of other implement
     ]
   ]
   ```
+  Expected output:
+  ```
+  NOT_SUPPORTED
+  ```
   Error:
   ```
   non-safe evaluation, died at main.pl line 11.
@@ -3063,6 +3116,10 @@ The following queries provide results that do not match those of other implement
       "some": "value"
     }
   ]
+  ```
+  Expected output:
+  ```
+  [{"key": 0}, {"key": -1}, {"key": 41}, {"key": 41.9999}]
   ```
   Error:
   ```

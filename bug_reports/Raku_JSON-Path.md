@@ -657,6 +657,23 @@ The following queries provide results that do not match those of other implement
   at 0: expected a json object, but got '"Hello Wo"'
   ```
 
+- [ ] `$['\'']`
+  Input:
+  ```
+  {
+    "'": "value"
+  }
+  ```
+  Expected output:
+  ```
+  ["value"]
+  ```
+  Actual output:
+  NOT_SUPPORTED
+  ```
+  JSON path parse error at position 1
+  ```
+
 - [ ] `$[ 'a' ]`
   Input:
   ```
@@ -822,6 +839,42 @@ The following queries provide results that do not match those of other implement
   Expected output (in any order as no consensus on ordering exists):
   ```
   ["russian dolls", "something", "top", "value", {"key": "russian dolls"}]
+  ```
+  Actual output:
+  ```
+  [
+    "russian dolls",
+    "something",
+    "value",
+    {
+      "key": "russian dolls"
+    }
+  ]
+  ```
+
+- [ ] `$...key`
+  Input:
+  ```
+  {
+    "object": {
+      "key": "value",
+      "array": [
+        {
+          "key": "something"
+        },
+        {
+          "key": {
+            "key": "russian dolls"
+          }
+        }
+      ]
+    },
+    "key": "top"
+  }
+  ```
+  Expected output (in any order as no consensus on ordering exists):
+  ```
+  NOT_SUPPORTED
   ```
   Actual output:
   ```
@@ -1524,6 +1577,58 @@ The following queries provide results that do not match those of other implement
   Evaluation of embedded Raku code not allowed (construct with :allow-eval)
   ```
 
+- [ ] `$[?(@.key==true)]`
+  Input:
+  ```
+  [
+    {
+      "some": "some value"
+    },
+    {
+      "key": true
+    },
+    {
+      "key": false
+    },
+    {
+      "key": null
+    },
+    {
+      "key": "value"
+    },
+    {
+      "key": ""
+    },
+    {
+      "key": 0
+    },
+    {
+      "key": 1
+    },
+    {
+      "key": -1
+    },
+    {
+      "key": 42
+    },
+    {
+      "key": {}
+    },
+    {
+      "key": []
+    }
+  ]
+  ```
+  Expected output:
+  ```
+  [{"key": true}]
+  ```
+  Actual output:
+  NOT_SUPPORTED
+  ```
+  Evaluation of embedded Raku code not allowed (construct with :allow-eval)
+  ```
+
 - [ ] `$.items[?(@.key==$.value)]`
   Input:
   ```
@@ -1646,6 +1751,61 @@ The following queries provide results that do not match those of other implement
   Expected output:
   ```
   []
+  ```
+  Actual output:
+  NOT_SUPPORTED
+  ```
+  Evaluation of embedded Raku code not allowed (construct with :allow-eval)
+  ```
+
+- [ ] `$[?(@.key<42)]`
+  Input:
+  ```
+  [
+    {
+      "key": 0
+    },
+    {
+      "key": 42
+    },
+    {
+      "key": -1
+    },
+    {
+      "key": 41
+    },
+    {
+      "key": 43
+    },
+    {
+      "key": 42.0001
+    },
+    {
+      "key": 41.9999
+    },
+    {
+      "key": 100
+    },
+    {
+      "key": "43"
+    },
+    {
+      "key": "42"
+    },
+    {
+      "key": "41"
+    },
+    {
+      "key": "value"
+    },
+    {
+      "some": "value"
+    }
+  ]
+  ```
+  Expected output:
+  ```
+  [{"key": 0}, {"key": -1}, {"key": 41}, {"key": 41.9999}]
   ```
   Actual output:
   NOT_SUPPORTED

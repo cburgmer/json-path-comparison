@@ -103,7 +103,7 @@ queries:
     status: open
     result: []
   - id: bracket_notation_with_quoted_escaped_single_quote
-    status: open
+    status: fail
     result: []
   - id: bracket_notation_with_quoted_number_on_object
     status: fail
@@ -160,7 +160,7 @@ queries:
     status: fail
     result: ["russian dolls", "something", "top", "value"]
   - id: dot_notation_after_recursive_descent_with_extra_dot
-    status: open
+    status: fail
     result: ["russian dolls", "something", "top", "value"]
   - id: dot_notation_on_array_value
     status: fail
@@ -361,7 +361,7 @@ queries:
     status: open
     result: []
   - id: filter_expression_with_equals_true
-    status: open
+    status: fail
     result: [true]
   - id: filter_expression_with_equals_with_path_and_path
     status: open
@@ -388,10 +388,10 @@ queries:
     status: open
     result: []
   - id: filter_expression_with_length_function
-    status: open
+    status: fail
     result: []
   - id: filter_expression_with_less_than
-    status: open
+    status: fail
     result: [0, -1, 41, 41.9999, "43", "42", "41", "value"]
   - id: filter_expression_with_less_than_or_equal
     status: open

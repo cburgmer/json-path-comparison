@@ -123,7 +123,7 @@ queries:
     status: open
     result: []
   - id: bracket_notation_with_quoted_escaped_single_quote
-    status: open
+    status: fail
     result: NOT_SUPPORTED
   - id: bracket_notation_with_quoted_special_characters_combined
     status: open
@@ -156,7 +156,7 @@ queries:
     status: fail
     result: ["russian dolls", "something", "value", {"key": "russian dolls"}]
   - id: dot_notation_after_recursive_descent_with_extra_dot
-    status: open
+    status: fail
     result: ["russian dolls", "something", "value", {"key": "russian dolls"}]
   - id: dot_notation_after_union_with_keys
     status: fail
@@ -354,7 +354,7 @@ queries:
     status: open
     result: NOT_SUPPORTED
   - id: filter_expression_with_equals_true
-    status: open
+    status: fail
     result: NOT_SUPPORTED
   - id: filter_expression_with_equals_with_path_and_path
     status: open
@@ -380,14 +380,11 @@ queries:
   - id: filter_expression_with_length_free_function
     status: open
     result: NOT_SUPPORTED
-  - id: filter_expression_with_length_function
-    status: open
-    result: NOT_SUPPORTED
   - id: filter_expression_with_length_property
     status: fail
     result: NOT_SUPPORTED
   - id: filter_expression_with_less_than
-    status: open
+    status: fail
     result: NOT_SUPPORTED
   - id: filter_expression_with_less_than_or_equal
     status: open

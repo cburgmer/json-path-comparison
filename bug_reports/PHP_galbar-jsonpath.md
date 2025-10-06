@@ -71,6 +71,22 @@ The following queries provide results that do not match those of other implement
   []
   ```
 
+- [ ] `$['\'']`
+  Input:
+  ```
+  {
+    "'": "value"
+  }
+  ```
+  Expected output:
+  ```
+  ["value"]
+  ```
+  Actual output:
+  ```
+  []
+  ```
+
 - [ ] `$['single'quote']`
   Input:
   ```
@@ -172,6 +188,60 @@ The following queries provide results that do not match those of other implement
   ```
   [
     "value"
+  ]
+  ```
+
+- [ ] `$...key`
+  Input:
+  ```
+  {
+    "object": {
+      "key": "value",
+      "array": [
+        {
+          "key": "something"
+        },
+        {
+          "key": {
+            "key": "russian dolls"
+          }
+        }
+      ]
+    },
+    "key": "top"
+  }
+  ```
+  Expected output (in any order as no consensus on ordering exists):
+  ```
+  NOT_SUPPORTED
+  ```
+  Actual output:
+  ```
+  [
+    "russian dolls",
+    "russian dolls",
+    "russian dolls",
+    "russian dolls",
+    "russian dolls",
+    "something",
+    "something",
+    "something",
+    "something",
+    "top",
+    "value",
+    "value",
+    {
+      "key": "russian dolls"
+    },
+    {
+      "key": "russian dolls"
+    },
+    {
+      "key": "russian dolls"
+    },
+    {
+      "key": "russian dolls"
+    }
   ]
   ```
 
@@ -313,6 +383,76 @@ The following queries provide results that do not match those of other implement
       3,
       4
     ]
+  ]
+  ```
+
+- [ ] `$[?(@.key<42)]`
+  Input:
+  ```
+  [
+    {
+      "key": 0
+    },
+    {
+      "key": 42
+    },
+    {
+      "key": -1
+    },
+    {
+      "key": 41
+    },
+    {
+      "key": 43
+    },
+    {
+      "key": 42.0001
+    },
+    {
+      "key": 41.9999
+    },
+    {
+      "key": 100
+    },
+    {
+      "key": "43"
+    },
+    {
+      "key": "42"
+    },
+    {
+      "key": "41"
+    },
+    {
+      "key": "value"
+    },
+    {
+      "some": "value"
+    }
+  ]
+  ```
+  Expected output:
+  ```
+  [{"key": 0}, {"key": -1}, {"key": 41}, {"key": 41.9999}]
+  ```
+  Actual output:
+  ```
+  [
+    {
+      "key": 0
+    },
+    {
+      "key": -1
+    },
+    {
+      "key": 41
+    },
+    {
+      "key": 41.9999
+    },
+    {
+      "key": "41"
+    }
   ]
   ```
 

@@ -82,7 +82,7 @@ queries:
     status: open
     result: []
   - id: bracket_notation_with_quoted_escaped_single_quote
-    status: open
+    status: fail
     result: []
   - id: bracket_notation_with_quoted_special_characters_combined
     status: error
@@ -122,7 +122,7 @@ queries:
   - id: dot_notation_after_bracket_notation_after_recursive_descent
     status: error
   - id: dot_notation_after_recursive_descent_with_extra_dot
-    status: open
+    status: fail
     result: ["russian dolls", "something", "top", "value", {"key": "russian dolls"}]
   - id: dot_notation_with_double_quotes
     status: open
@@ -292,9 +292,6 @@ queries:
   - id: filter_expression_with_equals_string_with_unicode_character_escape
     status: open
     result: []
-  - id: filter_expression_with_equals_true
-    status: open
-    result: [{"key": true}]
   - id: filter_expression_with_equals_with_path_and_path
     status: open
     result: [{"key1": 10, "key2": 10}, {"key1": 42, "key2": 50}, {"key1": 10}, {"key2": 10}, {}, {"key1": null, "key2": null}, {"key1": null}, {"key2": null}, {"key1": 0, "key2": 0}, {"key1": 0}, {"key2": 0}, {"key1": -1, "key2": -1}, {"key1": "", "key2": ""}, {"key1": false, "key2": false}, {"key1": false}, {"key2": false}, {"key1": true, "key2": true}, {"key1": [], "key2": []}, {"key1": {}, "key2": {}}, {"key1": {"a": 1, "b": 2}, "key2": {"a": 1, "b": 2}}]
@@ -316,7 +313,7 @@ queries:
     status: open
     result: [[1, 2, 3, 4, 5], [1, 2, 3, 4], [1, 2, 3]]
   - id: filter_expression_with_length_function
-    status: open
+    status: fail
     result: [[1, 2, 3, 4, 5], [1, 2, 3, 4], [1, 2, 3]]
   - id: filter_expression_with_length_property
     status: fail

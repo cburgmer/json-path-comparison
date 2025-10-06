@@ -1115,6 +1115,10 @@ The following queries provide results that do not match those of other implement
     "'": "value"
   }
   ```
+  Expected output:
+  ```
+  "value"
+  ```
   Error:
   ```
   java.lang.Exception object must be an array.
@@ -1552,6 +1556,43 @@ The following queries provide results that do not match those of other implement
   Actual output:
   ```
   []
+  ```
+
+- [ ] `$...key`
+  Input:
+  ```
+  {
+    "object": {
+      "key": "value",
+      "array": [
+        {
+          "key": "something"
+        },
+        {
+          "key": {
+            "key": "russian dolls"
+          }
+        }
+      ]
+    },
+    "key": "top"
+  }
+  ```
+  Expected output (in any order as no consensus on ordering exists):
+  ```
+  NOT_SUPPORTED
+  ```
+  Actual output:
+  ```
+  [
+    "russian dolls",
+    "something",
+    "top",
+    "value",
+    {
+      "key": "russian dolls"
+    }
+  ]
   ```
 
 - [ ] `$[0,2].key`
@@ -2491,6 +2532,64 @@ The following queries provide results that do not match those of other implement
   []
   ```
 
+- [ ] `$[?(@.key==true)]`
+  Input:
+  ```
+  [
+    {
+      "some": "some value"
+    },
+    {
+      "key": true
+    },
+    {
+      "key": false
+    },
+    {
+      "key": null
+    },
+    {
+      "key": "value"
+    },
+    {
+      "key": ""
+    },
+    {
+      "key": 0
+    },
+    {
+      "key": 1
+    },
+    {
+      "key": -1
+    },
+    {
+      "key": 42
+    },
+    {
+      "key": {}
+    },
+    {
+      "key": []
+    }
+  ]
+  ```
+  Expected output:
+  ```
+  [{"key": true}]
+  ```
+  Actual output:
+  ```
+  [
+    {
+      "some": "some value"
+    },
+    {
+      "key": null
+    }
+  ]
+  ```
+
 - [ ] `$[?(@.key>"VALUE")]`
   Input:
   ```
@@ -2581,6 +2680,39 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   java.lang.Exception object must be an array.
+  ```
+
+- [ ] `$[?(@.length() == 4)]`
+  Input:
+  ```
+  [
+    [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    [
+      1,
+      2,
+      3,
+      4
+    ],
+    [
+      1,
+      2,
+      3
+    ]
+  ]
+  ```
+  Expected output:
+  ```
+  NOT_SUPPORTED
+  ```
+  Actual output:
+  ```
+  []
   ```
 
 - [ ] `$[?(@.length == 4)]`

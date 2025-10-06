@@ -206,6 +206,22 @@ The following queries provide results that do not match those of other implement
   Error: 'Unable to parse token ' in expression: [']']'
   ```
 
+- [ ] `$['\'']`
+  Input:
+  ```
+  {
+    "'": "value"
+  }
+  ```
+  Expected output:
+  ```
+  ["value"]
+  ```
+  Actual output:
+  ```
+  []
+  ```
+
 - [ ] `$['single'quote']`
   Input:
   ```
@@ -308,6 +324,60 @@ The following queries provide results that do not match those of other implement
   ```
   [
     "value"
+  ]
+  ```
+
+- [ ] `$...key`
+  Input:
+  ```
+  {
+    "object": {
+      "key": "value",
+      "array": [
+        {
+          "key": "something"
+        },
+        {
+          "key": {
+            "key": "russian dolls"
+          }
+        }
+      ]
+    },
+    "key": "top"
+  }
+  ```
+  Expected output (in any order as no consensus on ordering exists):
+  ```
+  NOT_SUPPORTED
+  ```
+  Actual output:
+  ```
+  [
+    "russian dolls",
+    "russian dolls",
+    "russian dolls",
+    "russian dolls",
+    "russian dolls",
+    "something",
+    "something",
+    "something",
+    "something",
+    "top",
+    "value",
+    "value",
+    {
+      "key": "russian dolls"
+    },
+    {
+      "key": "russian dolls"
+    },
+    {
+      "key": "russian dolls"
+    },
+    {
+      "key": "russian dolls"
+    }
   ]
   ```
 
@@ -571,6 +641,39 @@ The following queries provide results that do not match those of other implement
   Expected output:
   ```
   [{"key": 42}]
+  ```
+  Actual output:
+  ```
+  []
+  ```
+
+- [ ] `$[?(@.length() == 4)]`
+  Input:
+  ```
+  [
+    [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    [
+      1,
+      2,
+      3,
+      4
+    ],
+    [
+      1,
+      2,
+      3
+    ]
+  ]
+  ```
+  Expected output:
+  ```
+  NOT_SUPPORTED
   ```
   Actual output:
   ```

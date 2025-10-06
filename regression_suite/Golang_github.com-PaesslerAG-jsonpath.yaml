@@ -66,9 +66,6 @@ queries:
   - id: bracket_notation_with_quoted_escaped_backslash
     status: open
     result: "value"
-  - id: bracket_notation_with_quoted_escaped_single_quote
-    status: open
-    result: "value"
   - id: bracket_notation_with_quoted_special_characters_combined
     status: open
     result: NOT_SUPPORTED
@@ -87,9 +84,6 @@ queries:
     status: open
     result: NOT_SUPPORTED
   - id: dot_bracket_notation_with_double_quotes
-    status: open
-    result: NOT_SUPPORTED
-  - id: dot_notation_after_recursive_descent_with_extra_dot
     status: open
     result: NOT_SUPPORTED
   - id: dot_notation_after_union_with_keys
@@ -259,9 +253,6 @@ queries:
   - id: filter_expression_with_equals_string_with_unicode_character_escape
     status: open
     result: [{"key": "Mot\u00f6rhead"}]
-  - id: filter_expression_with_equals_true
-    status: open
-    result: [{"key": true}]
   - id: filter_expression_with_equals_with_path_and_path
     status: open
     result: [{"key1": 10, "key2": 10}, {"key1": null, "key2": null}, {"key1": 0, "key2": 0}, {"key1": -1, "key2": -1}, {"key1": "", "key2": ""}, {"key1": false, "key2": false}, {"key1": true, "key2": true}, {"key1": [], "key2": []}, {"key1": {}, "key2": {}}, {"key1": {"a": 1, "b": 2}, "key2": {"a": 1, "b": 2}}]
@@ -283,11 +274,8 @@ queries:
   - id: filter_expression_with_length_free_function
     status: open
     result: []
-  - id: filter_expression_with_length_function
-    status: open
-    result: NOT_SUPPORTED
   - id: filter_expression_with_less_than
-    status: open
+    status: fail
     result: NOT_SUPPORTED
   - id: filter_expression_with_less_than_or_equal
     status: open

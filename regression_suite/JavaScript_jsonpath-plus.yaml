@@ -57,7 +57,7 @@ queries:
     status: open
     result: []
   - id: bracket_notation_with_quoted_escaped_single_quote
-    status: open
+    status: fail
     result: []
   - id: bracket_notation_with_quoted_root_literal
     status: fail
@@ -101,7 +101,7 @@ queries:
     status: fail
     result: ["value", [{"key": 42}], 42]
   - id: dot_notation_after_recursive_descent_with_extra_dot
-    status: open
+    status: fail
     result: ["russian dolls", "something", "top", "value", {"key": "russian dolls"}]
   - id: dot_notation_after_union_with_keys
     status: fail
@@ -246,7 +246,7 @@ queries:
     status: open
     result: []
   - id: filter_expression_with_equals_true
-    status: open
+    status: fail
     result: [{"key": true}, {"key": 1}]
   - id: filter_expression_with_equals_with_path_and_path
     status: open
@@ -271,7 +271,7 @@ queries:
     status: fail
     result: [[1, 2, 3, 4]]
   - id: filter_expression_with_less_than
-    status: open
+    status: fail
     result: [{"key": 0}, {"key": -1}, {"key": 41}, {"key": 41.9999}, {"key": "41"}]
   - id: filter_expression_with_less_than_or_equal
     status: open

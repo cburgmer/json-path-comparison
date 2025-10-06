@@ -381,7 +381,7 @@ queries:
     status: open
     result: []
   - id: filter_expression_with_equals_true
-    status: open
+    status: fail
     result: []
   - id: filter_expression_with_equals_with_path_and_path
     status: open
@@ -407,10 +407,10 @@ queries:
     status: open
     result: []
   - id: filter_expression_with_length_function
-    status: open
+    status: fail
     result: []
   - id: filter_expression_with_less_than
-    status: open
+    status: fail
     result: []
   - id: filter_expression_with_less_than_or_equal
     status: open

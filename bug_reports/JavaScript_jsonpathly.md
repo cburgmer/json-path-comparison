@@ -45,6 +45,22 @@ The following queries provide results that do not match those of other implement
   ]
   ```
 
+- [ ] `$['\'']`
+  Input:
+  ```
+  {
+    "'": "value"
+  }
+  ```
+  Expected output:
+  ```
+  ["value"]
+  ```
+  Actual output:
+  ```
+  []
+  ```
+
 - [ ] `$[key]`
   Input:
   ```
@@ -106,6 +122,10 @@ The following queries provide results that do not match those of other implement
       3
     ]
   ]
+  ```
+  Expected output:
+  ```
+  NOT_SUPPORTED
   ```
   Error:
   ```

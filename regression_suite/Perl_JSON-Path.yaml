@@ -82,7 +82,7 @@ queries:
     status: open
     result: []
   - id: bracket_notation_with_quoted_escaped_single_quote
-    status: open
+    status: fail
     result: []
   - id: bracket_notation_with_quoted_root_literal
     status: error
@@ -133,7 +133,7 @@ queries:
   - id: dot_notation_after_filter_expression
     status: error
   - id: dot_notation_after_recursive_descent_with_extra_dot
-    status: open
+    status: fail
     result: []
   - id: dot_notation_after_union_with_keys
     status: error
