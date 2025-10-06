@@ -2,5 +2,5 @@
 set -euo pipefail
 
 cd "$(dirname "$BASH_SOURCE[0]")"
-curl 'https://api.github.com/repos/joshbuddy/jsonpath/releases' | grep '"tag_name":' | head -1 | sed 's/.*"tag_name": "\(.*\)",.*/\1/' > tag
+curl 'https://rubygems.org/api/v1/versions/jsonpath.yaml' | grep number | head -1 | sed 's/.*number: //' > version
 rm -rf build

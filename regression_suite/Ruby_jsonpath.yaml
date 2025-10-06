@@ -101,8 +101,6 @@ queries:
     status: error
   - id: bracket_notation_with_wildcard_after_recursive_descent
     status: error
-  - id: bracket_notation_with_wildcard_on_empty_object
-    status: error
   - id: bracket_notation_with_wildcard_on_object
     status: fail
     result: [null, null, null, null]
@@ -136,9 +134,6 @@ queries:
   - id: dot_notation_with_key_root_literal
     status: open
     result: [{"$": "value"}]
-  - id: dot_notation_with_non_ASCII_key
-    status: fail
-    result: []
   - id: dot_notation_with_number
     status: open
     result: []
@@ -156,7 +151,7 @@ queries:
     result: [42]
   - id: dot_notation_with_space_padded_key
     status: open
-    result: []
+    result: [1]
   - id: dot_notation_with_wildcard_after_dot_notation_after_dot_notation_with_wildcard
     status: fail
     result: [[42]]
@@ -206,15 +201,20 @@ queries:
     status: open
     result: [{"another": {"key": 1}, "key": 42}]
   - id: filter_expression_with_addition
-    status: error
+    status: open
+    result: []
   - id: filter_expression_with_boolean_and_operator_and_value_false
-    status: error
+    status: open
+    result: [{"key": 1}, {"key": 3}]
   - id: filter_expression_with_boolean_and_operator_and_value_true
-    status: error
+    status: open
+    result: [{"key": 1}, {"key": 3}]
   - id: filter_expression_with_boolean_or_operator_and_value_false
-    status: error
+    status: open
+    result: [{"key": 1}, {"key": 3}, {"key": null}, {"key": -1}, {"key": 0}]
   - id: filter_expression_with_boolean_or_operator_and_value_true
-    status: error
+    status: open
+    result: [{"key": 1}, {"key": 3}, {"key": null}, {"key": -1}, {"key": 0}]
   - id: filter_expression_with_bracket_notation_with_-1
     status: open
     result: [[2, 3], ["a"], [0, 2], [2]]
@@ -223,9 +223,6 @@ queries:
   - id: filter_expression_with_current_object
     status: open
     result: ["some value", "value", 0, 1, -1, "", [], {}, true]
-  - id: filter_expression_with_different_ungrouped_operators
-    status: fail
-    result: [{"a": true, "b": true}, {"a": true, "b": true, "c": true}, {"b": true, "c": true}, {"c": true}]
   - id: filter_expression_with_division
     status: open
     result: [{"key": 60}, {"key": 50}, {"key": 10}, {"key": -50}]
@@ -258,7 +255,8 @@ queries:
     status: open
     result: []
   - id: filter_expression_with_equals_boolean_expression_value
-    status: error
+    status: open
+    result: []
   - id: filter_expression_with_equals_false
     status: open
     result: [{"key": false}]
@@ -294,16 +292,16 @@ queries:
     result: []
   - id: filter_expression_with_equals_with_path_and_path
     status: open
-    result: [{"key1": 10, "key2": 10}, {"key1": 42, "key2": 50}, {"key1": 10}, {"key2": 10}, {}, {"key1": null, "key2": null}, {"key1": null}, {"key2": null}, {"key1": 0, "key2": 0}, {"key1": 0}, {"key2": 0}, {"key1": -1, "key2": -1}, {"key1": "", "key2": ""}, {"key1": false, "key2": false}, {"key1": false}, {"key2": false}, {"key1": true, "key2": true}, {"key1": [], "key2": []}, {"key1": {}, "key2": {}}, {"key1": {"a": 1, "b": 2}, "key2": {"a": 1, "b": 2}}]
+    result: []
   - id: filter_expression_with_equals_with_root_reference
     status: fail
     result: []
   - id: filter_expression_with_greater_than
-    status: error
+    status: open
+    result: [{"key": 43}, {"key": 42.0001}, {"key": 100}, {"key": "43"}]
   - id: filter_expression_with_greater_than_or_equal
-    status: error
-  - id: filter_expression_with_greater_than_string
-    status: error
+    status: open
+    result: [{"key": 42}, {"key": 43}, {"key": 42.0001}, {"key": 100}, {"key": "43"}, {"key": "42"}]
   - id: filter_expression_with_in_array_of_values
     status: error
   - id: filter_expression_with_in_current_object
@@ -319,29 +317,35 @@ queries:
     status: fail
     result: [[1, 2, 3, 4]]
   - id: filter_expression_with_less_than
-    status: error
+    status: fail
+    result: [{"key": 0}, {"key": -1}, {"key": 41}, {"key": 41.9999}, {"key": "41"}]
   - id: filter_expression_with_less_than_or_equal
-    status: error
+    status: open
+    result: [{"key": 0}, {"key": 42}, {"key": -1}, {"key": 41}, {"key": 41.9999}, {"key": "42"}, {"key": "41"}]
   - id: filter_expression_with_local_dot_key_and_null_in_data
-    status: error
+    status: fail
+    result: []
   - id: filter_expression_with_multiplication
     status: open
     result: [{"key": 60}, {"key": 50}, {"key": 10}, {"key": -50}]
   - id: filter_expression_with_negation_and_equals
-    status: error
+    status: open
+    result: []
   - id: filter_expression_with_negation_and_equals_array_or_equals_true
     status: open
     result: []
   - id: filter_expression_with_negation_and_less_than
-    status: error
+    status: open
+    result: []
   - id: filter_expression_with_negation_and_without_value
-    status: error
+    status: open
+    result: []
   - id: filter_expression_with_non_singular_existence_test
     status: open
     result: [{"a": 0}, {"a": "x"}, {"a": true}, {"a": []}, {"a": [1]}, {"a": [1, 2]}, {"a": {}}, {"a": {"x": "y"}}, {"a": {"w": "z", "x": "y"}}]
   - id: filter_expression_with_not_equals
     status: open
-    result: []
+    result: [{"key": 0}, {"key": -1}, {"key": 1}, {"key": 41}, {"key": 43}, {"key": 42.0001}, {"key": 41.9999}, {"key": 100}, {"key": "some"}, {"key": 420}, {"key": ""}, {"key": {}}, {"key": []}, {"key": [42]}, {"key": {"key": 42}}, {"key": {"some": 42}}]
   - id: filter_expression_with_not_equals_array_or_equals_true
     status: open
     result: []
@@ -361,17 +365,20 @@ queries:
     status: open
     result: [[1, 2], [3, 4], [5, 6]]
   - id: filter_expression_with_single_equal
-    status: error
+    status: fail
+    result: []
   - id: filter_expression_with_subfilter
     status: open
     result: [{"a": [{"price": 1}, {"price": 3}]}, {"a": [{"price": 11}]}, {"a": [{"price": 8}, {"price": 12}, {"price": 3}]}, {"a": []}]
   - id: filter_expression_with_subtraction
-    status: error
+    status: open
+    result: []
   - id: filter_expression_with_tautological_comparison
     status: fail
     result: [1, 3, "nice", true, {}, [], -1, 0, ""]
   - id: filter_expression_with_triple_equal
-    status: error
+    status: open
+    result: []
   - id: filter_expression_with_value
     status: open
     result: [{"key": true}, {"key": "value"}, {"key": ""}, {"key": 0}, {"key": 1}, {"key": -1}, {"key": 42}, {"key": {}}, {"key": []}]
