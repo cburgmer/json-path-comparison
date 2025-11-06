@@ -57,12 +57,6 @@ queries:
   - id: dot_notation_with_double_quotes_after_recursive_descent
     status: open
     result: NOT_SUPPORTED
-  - id: dot_notation_with_key_named_null
-    status: fail
-    result: NOT_SUPPORTED
-  - id: dot_notation_with_key_named_true
-    status: fail
-    result: NOT_SUPPORTED
   - id: dot_notation_with_key_root_literal
     status: open
     result: NOT_SUPPORTED
@@ -284,7 +278,7 @@ queries:
     result: [{"key": 1}, {"key": 2}, {"key": 8}, {"key": 10}, {"key": 7}]
   - id: union_with_repeated_matches_after_dot_notation_with_wildcard
     status: open
-    result: ["string", "string", null, true, false, false, "string", 5.4]
+    result: [false, false, "string", 5.4, "string", "string", null, true]
   - id: union_with_slice_and_number
     status: open
     result: [2, 3, 5]

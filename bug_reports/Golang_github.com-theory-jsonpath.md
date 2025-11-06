@@ -69,40 +69,6 @@ The following queries provide results that do not match those of other implement
   jsonpath: invalid number literal at position 6
   ```
 
-- [ ] `$.null`
-  Input:
-  ```
-  {
-    "null": "value"
-  }
-  ```
-  Expected output:
-  ```
-  ["value"]
-  ```
-  Actual output:
-  NOT_SUPPORTED
-  ```
-  jsonpath: unexpected '�' at position 3
-  ```
-
-- [ ] `$.true`
-  Input:
-  ```
-  {
-    "true": "value"
-  }
-  ```
-  Expected output:
-  ```
-  ["value"]
-  ```
-  Actual output:
-  NOT_SUPPORTED
-  ```
-  jsonpath: unexpected '�' at position 3
-  ```
-
 - [ ] `$.2`
   Input:
   ```
