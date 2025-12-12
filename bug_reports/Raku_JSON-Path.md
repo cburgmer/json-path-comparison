@@ -369,48 +369,6 @@ The following queries provide results that do not match those of other implement
   JSON path parse error at position 1
   ```
 
-- [ ] `$[010:024:010]`
-  Input:
-  ```
-  [
-    0,
-    1,
-    2,
-    3,
-    4,
-    5,
-    6,
-    7,
-    8,
-    9,
-    10,
-    11,
-    12,
-    13,
-    14,
-    15,
-    16,
-    17,
-    18,
-    19,
-    20,
-    21,
-    22,
-    23,
-    24,
-    25
-  ]
-  ```
-  Expected output:
-  ```
-  [10, 20]
-  ```
-  Actual output:
-  NOT_SUPPORTED
-  ```
-  JSON path parse error at position 1
-  ```
-
 - [ ] `$[0:4:2]`
   Input:
   ```
@@ -1751,61 +1709,6 @@ The following queries provide results that do not match those of other implement
   Expected output:
   ```
   []
-  ```
-  Actual output:
-  NOT_SUPPORTED
-  ```
-  Evaluation of embedded Raku code not allowed (construct with :allow-eval)
-  ```
-
-- [ ] `$[?(@.key<42)]`
-  Input:
-  ```
-  [
-    {
-      "key": 0
-    },
-    {
-      "key": 42
-    },
-    {
-      "key": -1
-    },
-    {
-      "key": 41
-    },
-    {
-      "key": 43
-    },
-    {
-      "key": 42.0001
-    },
-    {
-      "key": 41.9999
-    },
-    {
-      "key": 100
-    },
-    {
-      "key": "43"
-    },
-    {
-      "key": "42"
-    },
-    {
-      "key": "41"
-    },
-    {
-      "key": "value"
-    },
-    {
-      "some": "value"
-    }
-  ]
-  ```
-  Expected output:
-  ```
-  [{"key": 0}, {"key": -1}, {"key": 41}, {"key": 41.9999}]
   ```
   Actual output:
   NOT_SUPPORTED

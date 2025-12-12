@@ -282,49 +282,6 @@ The following queries provide results that do not match those of other implement
   org.antlr.v4.runtime.misc.ParseCancellationException
   ```
 
-- [ ] `$[010:024:010]`
-  Input:
-  ```
-  [
-    0,
-    1,
-    2,
-    3,
-    4,
-    5,
-    6,
-    7,
-    8,
-    9,
-    10,
-    11,
-    12,
-    13,
-    14,
-    15,
-    16,
-    17,
-    18,
-    19,
-    20,
-    21,
-    22,
-    23,
-    24,
-    25
-  ]
-  ```
-  Expected output:
-  ```
-  [10, 20]
-  ```
-  Actual output:
-  NOT_SUPPORTED
-  ```
-  line 1:2 no viable alternative at input '[010'
-  org.antlr.v4.runtime.misc.ParseCancellationException
-  ```
-
 - [ ] `$[0:4:2]`
   Input:
   ```
@@ -915,10 +872,6 @@ The following queries provide results that do not match those of other implement
       "some": "value"
     }
   ]
-  ```
-  Expected output:
-  ```
-  [{"key": 0}, {"key": -1}, {"key": 41}, {"key": 41.9999}]
   ```
   Error:
   ```

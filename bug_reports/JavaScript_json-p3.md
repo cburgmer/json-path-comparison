@@ -55,10 +55,6 @@ The following queries provide results that do not match those of other implement
     25
   ]
   ```
-  Expected output:
-  ```
-  [10, 20]
-  ```
   Error:
   ```
   leading zero in index selector ('$[010:024':2)

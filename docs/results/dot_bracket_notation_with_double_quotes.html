@@ -222,6 +222,20 @@ Java (com.github.jsurfer)
 org.antlr.v4.runtime.misc.ParseCancellationException
 </code></pre>
 
+<h4 id="Java_com.github.xmljacquard.ajp">
+Java (com.github.xmljacquard.ajp)
+</h4>
+
+<p>Not supported</p>
+
+<pre><code>Error at char 18 in expression in xsl:sequence/@select on line 20 column 67 of ajp-runner.xslt:
+   &lt;failed xmlns:ixml="http://invisiblexml.org/NS"
+  ixml:state="failed"&gt;&lt;line&gt;1&lt;/line&gt;&lt;column&gt;3&lt;/column&gt;&lt;pos&gt;3&lt;/pos&gt;&lt;unexpected&gt;[&lt;/unexpected&gt;&lt;permitted&gt;'*', '_', [#80-'퟿[xd7ff]'], ['A'-'Z'; 'a'-'z'], ['𐀀[x10000]'-'􏿯[x10ffef]'], ['[xe000]'-'￯[xffef]']&lt;/permitted&gt;&lt;could-be-next&gt;&lt;in rule="ALPHA"&gt;&lt;tokens&gt;['A'-'Z'; 'a'-'z']&lt;/tokens&gt;&lt;/in&gt;&lt;in rule="wildcard-selector"&gt;&lt;tokens&gt;'*'&lt;/tokens&gt;&lt;/in&gt;&lt;in rule="name-first"&gt;&lt;tokens&gt;'_', [#80-'퟿[xd7ff]'], ['𐀀[x10000]'-'􏿯[x10ffef]'], ['[xe000]'-'￯[xffef]']&lt;/tokens&gt;&lt;/in&gt;&lt;/could-be-next&gt;&lt;unfinished&gt;&lt;open rule="child-segment" start="2" end="2"&gt;&lt;input&gt;.&lt;/input&gt;&lt;/open&gt;&lt;open rule="jsonpath-query" start="1" end="1"&gt;&lt;input&gt;$&lt;/input&gt;&lt;/open&gt;&lt;/unfinished&gt;&lt;/failed&gt;
+During lazy evaluation of tailCallLoop(ajp:getProcessor(...)) on line 20 of jar:file:./implementations/Java_com.github.xmljacquard.ajp/build/deps/org/xmljacquard/ajp/0.0.7/ajp-0.0.7.jar!/xslt/ajp-runner.xslt
+In function ajpr:getProcessor on line 17 column 106 of ajp-runner.xslt:
+net.sf.saxon.s9api.SaxonApiException: &lt;failed xmlns:ixml="http://invisiblexml.org/NS" ixml:state="failed"&gt;&lt;line&gt;1&lt;/line&gt;&lt;column&gt;3&lt;/column&gt;&lt;pos&gt;3&lt;/pos&gt;&lt;unexpected&gt;[&lt;/unexpected&gt;&lt;permitted&gt;'*', '_', [#80-'퟿'], ['A'-'Z'; 'a'-'z'], ['𐀀'-'􏿯'], [''-'￯']&lt;/permitted&gt;&lt;could-be-next&gt;&lt;in rule="ALPHA"&gt;&lt;tokens&gt;['A'-'Z'; 'a'-'z']&lt;/tokens&gt;&lt;/in&gt;&lt;in rule="wildcard-selector"&gt;&lt;tokens&gt;'*'&lt;/tokens&gt;&lt;/in&gt;&lt;in rule="name-first"&gt;&lt;tokens&gt;'_', [#80-'퟿'], ['𐀀'-'􏿯'], [''-'￯']&lt;/tokens&gt;&lt;/in&gt;&lt;/could-be-next&gt;&lt;unfinished&gt;&lt;open rule="child-segment" start="2" end="2"&gt;&lt;input&gt;.&lt;/input&gt;&lt;/open&gt;&lt;open rule="jsonpath-query" start="1" end="1"&gt;&lt;input&gt;$&lt;/input&gt;&lt;/open&gt;&lt;/unfinished&gt;&lt;/failed&gt;
+</code></pre>
+
 <h4 id="Java_com.jayway.jsonpath">
 Java (com.jayway.jsonpath)
 ¹

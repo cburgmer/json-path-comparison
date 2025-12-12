@@ -29,6 +29,9 @@ queries:
     result: ["fifth", "forth"]
   - id: array_slice_with_step_0
     status: error
+  - id: array_slice_with_step_and_leading_zeros
+    status: open
+    result: [10, 20]
   - id: bracket_notation_with_empty_path
     status: fail
     result: [42]
@@ -216,6 +219,9 @@ queries:
   - id: filter_expression_with_length_property
     status: fail
     result: [[1, 2, 3, 4]]
+  - id: filter_expression_with_less_than
+    status: open
+    result: [{"key": 0}, {"key": -1}, {"key": 41}, {"key": 41.9999}]
   - id: filter_expression_with_less_than_or_equal
     status: open
     result: [{"key": 0}, {"key": 42}, {"key": -1}, {"key": 41}, {"key": 41.9999}]

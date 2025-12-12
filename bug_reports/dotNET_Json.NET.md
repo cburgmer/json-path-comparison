@@ -1198,10 +1198,6 @@ The following queries provide results that do not match those of other implement
     }
   ]
   ```
-  Expected output:
-  ```
-  [{"key": 0}, {"key": -1}, {"key": 41}, {"key": 41.9999}]
-  ```
   Error:
   ```
   Input string was not in a correct format.

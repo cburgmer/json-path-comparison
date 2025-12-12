@@ -32,6 +32,9 @@ queries:
   - id: array_slice_with_step_0
     status: open
     result: []
+  - id: array_slice_with_step_and_leading_zeros
+    status: open
+    result: [10, 20]
   - id: bracket_notation_after_recursive_descent
     status: fail
     result: NOT_SUPPORTED
@@ -276,6 +279,9 @@ queries:
   - id: filter_expression_with_length_free_function
     status: open
     result: NOT_SUPPORTED
+  - id: filter_expression_with_less_than
+    status: open
+    result: [{"key": 0}, {"key": -1}, {"key": 41}, {"key": 41.9999}]
   - id: filter_expression_with_less_than_or_equal
     status: open
     result: [{"key": 0}, {"key": 42}, {"key": -1}, {"key": 41}, {"key": 41.9999}]

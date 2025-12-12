@@ -30,7 +30,7 @@ queries:
   - id: array_slice_with_step_0
     status: error
   - id: array_slice_with_step_and_leading_zeros
-    status: fail
+    status: open
     result: NOT_SUPPORTED
   - id: bracket_notation
     status: fail
@@ -333,7 +333,7 @@ queries:
     status: fail
     result: NOT_SUPPORTED
   - id: filter_expression_with_less_than
-    status: fail
+    status: open
     result: []
   - id: filter_expression_with_less_than_or_equal
     status: open

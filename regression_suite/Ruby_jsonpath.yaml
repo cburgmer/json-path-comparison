@@ -58,7 +58,7 @@ queries:
   - id: array_slice_with_step_0
     status: error
   - id: array_slice_with_step_and_leading_zeros
-    status: fail
+    status: open
     result: [8, 16]
   - id: bracket_notation_after_recursive_descent
     status: error
@@ -317,7 +317,7 @@ queries:
     status: fail
     result: [[1, 2, 3, 4]]
   - id: filter_expression_with_less_than
-    status: fail
+    status: open
     result: [{"key": 0}, {"key": -1}, {"key": 41}, {"key": 41.9999}, {"key": "41"}]
   - id: filter_expression_with_less_than_or_equal
     status: open

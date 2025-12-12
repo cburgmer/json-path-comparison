@@ -67,7 +67,7 @@ queries:
     status: open
     result: ["first", "second", "third"]
   - id: array_slice_with_step_and_leading_zeros
-    status: fail
+    status: open
     result: [8, 16]
   - id: bracket_notation_after_recursive_descent
     status: fail
@@ -391,7 +391,7 @@ queries:
     status: fail
     result: []
   - id: filter_expression_with_less_than
-    status: fail
+    status: open
     result: [0, -1, 41, 41.9999, "43", "42", "41", "value"]
   - id: filter_expression_with_less_than_or_equal
     status: open

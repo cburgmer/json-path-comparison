@@ -71,49 +71,6 @@ The following queries provide results that do not match those of other implement
   ValueError('range() arg 3 must not be zero')
   ```
 
-- [ ] `$[010:024:010]`
-  Input:
-  ```
-  [
-    0,
-    1,
-    2,
-    3,
-    4,
-    5,
-    6,
-    7,
-    8,
-    9,
-    10,
-    11,
-    12,
-    13,
-    14,
-    15,
-    16,
-    17,
-    18,
-    19,
-    20,
-    21,
-    22,
-    23,
-    24,
-    25
-  ]
-  ```
-  Expected output:
-  ```
-  [10, 20]
-  ```
-  Actual output:
-  NOT_SUPPORTED
-  ```
-  line 1:3 mismatched input '10' expecting {']', ','}
-  ValueError("line 1:3 mismatched input '10' expecting {']', ','}")
-  ```
-
 - [ ] `$['key']`
   Input:
   ```
@@ -1384,60 +1341,6 @@ The following queries provide results that do not match those of other implement
   ```
   line 1:14 extraneous input '=' expecting {'@', '$', 'true', 'false', 'null', '{', '[', STRING, NUMBER}
   ValueError("line 1:14 extraneous input '=' expecting {'@', '$', 'true', 'false', 'null', '{', '[', STRING, NUMBER}")
-  ```
-
-- [ ] `$[?(@.key<42)]`
-  Input:
-  ```
-  [
-    {
-      "key": 0
-    },
-    {
-      "key": 42
-    },
-    {
-      "key": -1
-    },
-    {
-      "key": 41
-    },
-    {
-      "key": 43
-    },
-    {
-      "key": 42.0001
-    },
-    {
-      "key": 41.9999
-    },
-    {
-      "key": 100
-    },
-    {
-      "key": "43"
-    },
-    {
-      "key": "42"
-    },
-    {
-      "key": "41"
-    },
-    {
-      "key": "value"
-    },
-    {
-      "some": "value"
-    }
-  ]
-  ```
-  Expected output:
-  ```
-  [{"key": 0}, {"key": -1}, {"key": 41}, {"key": 41.9999}]
-  ```
-  Actual output:
-  ```
-  []
   ```
 
 - [ ] `$[?(@.key=42)]`

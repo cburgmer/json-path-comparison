@@ -59,6 +59,9 @@ queries:
     status: error
   - id: array_slice_with_step_1
     status: error
+  - id: array_slice_with_step_and_leading_zeros
+    status: open
+    result: [10, 20]
   - id: array_slice_with_step_but_end_not_aligned
     status: error
   - id: array_slice_with_step_empty
@@ -367,7 +370,7 @@ queries:
     status: fail
     result: NOT_SUPPORTED
   - id: filter_expression_with_less_than
-    status: fail
+    status: open
     result: NOT_SUPPORTED
   - id: filter_expression_with_less_than_or_equal
     status: open

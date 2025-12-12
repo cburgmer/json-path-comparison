@@ -91,7 +91,7 @@ queries:
     status: fail
     result: []
   - id: array_slice_with_step_and_leading_zeros
-    status: fail
+    status: open
     result: []
   - id: array_slice_with_step_but_end_not_aligned
     status: fail
@@ -436,7 +436,7 @@ queries:
     status: fail
     result: []
   - id: filter_expression_with_less_than
-    status: fail
+    status: open
     result: []
   - id: filter_expression_with_less_than_or_equal
     status: open

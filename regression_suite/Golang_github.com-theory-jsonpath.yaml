@@ -31,7 +31,7 @@ queries:
     status: open
     result: []
   - id: array_slice_with_step_and_leading_zeros
-    status: fail
+    status: open
     result: NOT_SUPPORTED
   - id: bracket_notation_with_quoted_escaped_backslash
     status: open
@@ -201,6 +201,9 @@ queries:
   - id: filter_expression_with_length_free_function
     status: open
     result: [[1, 2, 3, 4]]
+  - id: filter_expression_with_less_than
+    status: open
+    result: [{"key": 0}, {"key": -1}, {"key": 41}, {"key": 41.9999}]
   - id: filter_expression_with_less_than_or_equal
     status: open
     result: [{"key": 0}, {"key": 42}, {"key": -1}, {"key": 41}, {"key": 41.9999}]

@@ -410,7 +410,7 @@ queries:
     status: fail
     result: []
   - id: filter_expression_with_less_than
-    status: fail
+    status: open
     result: []
   - id: filter_expression_with_less_than_or_equal
     status: open

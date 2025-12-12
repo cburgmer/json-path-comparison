@@ -38,7 +38,7 @@ queries:
     status: open
     result: ["first", "second", "third"]
   - id: array_slice_with_step_and_leading_zeros
-    status: fail
+    status: open
     result: [20]
   - id: bracket_notation_with_double_quotes
     status: fail

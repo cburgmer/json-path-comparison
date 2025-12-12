@@ -67,7 +67,7 @@ queries:
     status: open
     result: ["first", "second", "third"]
   - id: array_slice_with_step_and_leading_zeros
-    status: fail
+    status: open
     result: [10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23]
   - id: array_slice_with_step_but_end_not_aligned
     status: fail
@@ -245,6 +245,9 @@ queries:
   - id: filter_expression_with_length_function
     status: fail
     result: [[1, 2, 3, 4]]
+  - id: filter_expression_with_less_than
+    status: open
+    result: [{"key": 0}, {"key": -1}, {"key": 41}, {"key": 41.9999}]
   - id: filter_expression_with_less_than_or_equal
     status: open
     result: [{"key": 0}, {"key": 42}, {"key": -1}, {"key": 41}, {"key": 41.9999}]
