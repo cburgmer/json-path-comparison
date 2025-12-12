@@ -232,6 +232,8 @@ queries:
     status: error
   - id: filter_expression_with_equals_number_for_dot_notation_with_star
     status: error
+  - id: filter_expression_with_equals_number_on_various_representations
+    status: error
   - id: filter_expression_with_equals_number_with_fraction
     status: error
   - id: filter_expression_with_equals_number_with_leading_zeros

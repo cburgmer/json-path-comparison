@@ -773,6 +773,9 @@ queries:
   - id: filter_expression_with_equals_number_for_dot_notation_with_star
     selector: "$[?(@.*==2)]"
     document: [[1, 2], [2, 3], [1], [2], [1, 2, 3], 1, 2, 3]
+  - id: filter_expression_with_equals_number_on_various_representations
+    selector: "$[?(@.key==0)]"
+    document: [{"key": 0}, {"key": 0.0}, {"key": -0.0}, {"key": 0.0}]
   - id: filter_expression_with_equals_number_with_fraction
     selector: "$[?(@.key==-0.123e2)]"
     document: [{"key": -12.3}, {"key": -0.123}, {"key": -12}, {"key": 12.3}, {"key": 2}, {"key": "-0.123e2"}]

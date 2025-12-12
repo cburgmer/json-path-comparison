@@ -1806,6 +1806,29 @@ The following queries provide results that do not match those of other implement
   ArgumentCountError
   ```
 
+- [ ] `$[?(@.key==0)]`
+  Input:
+  ```
+  [
+    {
+      "key": 0
+    },
+    {
+      "key": 0.0
+    },
+    {
+      "key": -0.0
+    },
+    {
+      "key": 0.0
+    }
+  ]
+  ```
+  Error:
+  ```
+  ArgumentCountError
+  ```
+
 - [ ] `$[?(@.key==-0.123e2)]`
   Input:
   ```

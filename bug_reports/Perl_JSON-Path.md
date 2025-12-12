@@ -2178,6 +2178,29 @@ The following queries provide results that do not match those of other implement
   non-safe evaluation, died at main.pl line 11.
   ```
 
+- [ ] `$[?(@.key==0)]`
+  Input:
+  ```
+  [
+    {
+      "key": 0
+    },
+    {
+      "key": 0.0
+    },
+    {
+      "key": -0.0
+    },
+    {
+      "key": 0.0
+    }
+  ]
+  ```
+  Error:
+  ```
+  non-safe evaluation, died at main.pl line 11.
+  ```
+
 - [ ] `$[?(@.key==-0.123e2)]`
   Input:
   ```
