@@ -36,17 +36,13 @@ def implementation_returns_not_found_for_non_scalar_as_error(result_path):
     return os.path.exists(flag_path)
 
 
-def is_no_match(result_path):
-    result_type, payload = query_result_payload(result_path)
-
+def is_no_match(result_path, result_type, payload):
     if implementation_returns_not_found_as_error(result_path) and not implementation_returns_not_found_for_non_scalar_as_error(result_path):
         return result_type == "NOT_FOUND"
 
     return result_type == "OK" and payload == []
 
-def is_no_scalar_match(result_path):
-    result_type, payload = query_result_payload(result_path)
-
+def is_no_scalar_match(result_path, result_type, payload):
     if implementation_returns_not_found_as_error(result_path) or implementation_returns_not_found_for_non_scalar_as_error(result_path):
         return result_type == "NOT_FOUND"
 
@@ -63,32 +59,32 @@ def build_histogram(pairs):
     return histogram
 
 
-def not_supported_majority(result_paths):
+def not_supported_majority(query_results):
     result_paths_with_not_supported = []
-    for result_path in result_paths:
-        result_type, _ = query_result_payload(result_path)
+    for result_path, result_type, _ in query_results:
         if result_type != "NOT_SUPPORTED":
             continue
         result_paths_with_not_supported.append(result_path)
 
     return [("not_supported", '', result_paths_with_not_supported)]
 
-def no_match_majority(result_paths):
-    result_paths_with_no_match = [path for path in result_paths if is_no_match(path)]
+def no_match_majority(query_results):
+    result_paths_with_no_match = [path for path, result_type, payload in query_results
+                                  if is_no_match(path, result_type, payload)]
 
     canonical_consensus_candidate = "[]"
     return [("no_match", canonical_consensus_candidate, result_paths_with_no_match)]
 
-def no_scalar_match_majority(result_paths):
-    result_paths_with_no_match = [path for path in result_paths if is_no_scalar_match(path)]
+def no_scalar_match_majority(query_results):
+    result_paths_with_no_match = [path for path, result_type, payload in query_results
+                                  if is_no_scalar_match(path, result_type, payload)]
 
     canonical_consensus_candidate = "[]"
     return [("no_scalar_match", canonical_consensus_candidate, result_paths_with_no_match)]
 
-def single_match_majority(result_paths):
+def single_match_majority(query_results):
     result_payloads = []
-    for result_path in result_paths:
-        result_type, payload = query_result_payload(result_path)
+    for result_path, result_type, payload in query_results:
         if result_type != "OK":
             continue
         canonical_consensus_candidate = ([payload]
@@ -98,23 +94,22 @@ def single_match_majority(result_paths):
 
     return [("single_match", canonical_payload, paths) for canonical_payload, paths in build_histogram(result_payloads).items()]
 
-def multiple_matches_majority(result_paths):
+def multiple_matches_majority(query_results):
     result_payloads = []
-    for result_path in result_paths:
-        result_type, payload = query_result_payload(result_path)
+    for result_path, result_type, payload in query_results:
         if result_type != "OK":
             continue
         result_payloads.append(tuple([result_path, json.dumps(payload)]))
 
     return [("multiple_matches", payload, paths) for payload, paths in build_histogram(result_payloads).items()]
 
-def calculate_majority_candidates(result_paths):
+def calculate_majority_candidates(query_results):
     # ordered from generic to specific, so we prefer the generic ones
-    majority_candidates = (multiple_matches_majority(result_paths) +
-                           single_match_majority(result_paths) +
-                           no_match_majority(result_paths) +
-                           no_scalar_match_majority(result_paths) +
-                           not_supported_majority(result_paths))
+    majority_candidates = (multiple_matches_majority(query_results) +
+                           single_match_majority(query_results) +
+                           no_match_majority(query_results) +
+                           no_scalar_match_majority(query_results) +
+                           not_supported_majority(query_results))
 
     unique_candidates = defaultdict(lambda: None)
     for match_type, canonical_consensus_candidate, paths in majority_candidates:
@@ -193,8 +188,12 @@ def print_dict(d):
 
 def main():
     result_paths = [line.rstrip('\n') for line in sys.stdin]
+    query_results = []
+    for result_path in result_paths:
+        result_type, payload = query_result_payload(result_path)
+        query_results.append((result_path, result_type, payload))
 
-    majority_candidates = calculate_majority_candidates(result_paths)
+    majority_candidates = calculate_majority_candidates(query_results)
 
     majority = find_majority(majority_candidates)
     if majority:
