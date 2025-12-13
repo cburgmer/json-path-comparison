@@ -126,9 +126,18 @@ def calculate_majority_candidates(result_paths):
 
     return unique_candidates.values()
 
-def is_clear_majority(candidate_ranking):
-    return (len(candidate_ranking) < 2 or
-            len(candidate_ranking[-1]["paths"]) != len(candidate_ranking[-2]["paths"]))
+def find_majority(majority_candidates):
+    candidate_ranking = sorted(majority_candidates, key=lambda candidate: len(candidate["paths"]))
+
+    all_results_agree = len(candidate_ranking) == 1
+    if all_results_agree:
+        return candidate_ranking[0]
+
+    best_candidate_has_majority = len(candidate_ranking) > 1 and len(candidate_ranking[-1]["paths"]) > len(candidate_ranking[-2]["paths"])
+    if best_candidate_has_majority:
+        return candidate_ranking[-1]
+
+    return
 
 
 def multiple_matches_majority_result(canonical_consensus):
@@ -182,15 +191,13 @@ def print_dict(d):
     for key, value in d.items():
         print(key + "\t" + value)
 
-
 def main():
     result_paths = [line.rstrip('\n') for line in sys.stdin]
 
     majority_candidates = calculate_majority_candidates(result_paths)
 
-    candidate_ranking = sorted(majority_candidates, key=lambda candidate: len(candidate["paths"]))
-    if is_clear_majority(candidate_ranking):
-        majority = candidate_ranking[-1]
+    majority = find_majority(majority_candidates)
+    if majority:
         print_dict({
             "count": str(len(majority["paths"])),
             "type": majority["type"],
