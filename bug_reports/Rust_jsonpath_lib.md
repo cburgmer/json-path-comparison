@@ -78,7 +78,7 @@ The following queries provide results that do not match those of other implement
   ```
   Expected output:
   ```
-  [{"key": 42}, {"key": 44}]
+  [{"key":42},{"key":44}]
   ```
   Actual output:
   ```
@@ -108,7 +108,7 @@ The following queries provide results that do not match those of other implement
   ```
   Expected output:
   ```
-  [["a", "b"]]
+  [["a","b"]]
   ```
   Actual output:
   ```
@@ -153,7 +153,7 @@ The following queries provide results that do not match those of other implement
   ```
   Expected output:
   ```
-  [{"a": true, "b": true}, {"a": true, "b": true, "c": true}, {"b": true, "c": true}, {"a": true, "c": true}, {"c": true}]
+  [{"a":true,"b":true},{"a":true,"b":true,"c":true},{"b":true,"c":true},{"a":true,"c":true},{"c":true}]
   ```
   Actual output:
   ```
@@ -409,7 +409,7 @@ The following queries provide results that do not match those of other implement
   ```
   Expected output:
   ```
-  [{"a": {"b": {"c": 3}}}]
+  [{"a":{"b":{"c":3}}}]
   ```
   Actual output:
   ```
@@ -435,7 +435,7 @@ The following queries provide results that do not match those of other implement
   ```
   Expected output:
   ```
-  [1, 3, "nice", true, null, false, {}, [], -1, 0, ""]
+  [1,3,"nice",true,null,false,{},[],-1,0,""]
   ```
   Actual output:
   ```
@@ -556,7 +556,7 @@ The following queries provide results that do not match those of other implement
   ```
   Expected output (in any order as no consensus on ordering exists):
   ```
-  ["cc1", "cc2", "cc3", "cc5", "dd1", "dd2", "dd4"]
+  ["cc1","cc2","cc3","cc5","dd1","dd2","dd4"]
   ```
   Actual output:
   ```

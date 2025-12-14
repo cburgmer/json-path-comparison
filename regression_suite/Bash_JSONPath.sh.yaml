@@ -14,13 +14,13 @@ queries:
     result: []
   - id: array_slice_with_negative_start_and_end_and_range_of_-1
     status: fail
-    result: [100, "nice"]
+    result: [100,"nice"]
   - id: array_slice_with_negative_start_and_end_and_range_of_0
     status: fail
-    result: [100, "nice"]
+    result: [100,"nice"]
   - id: array_slice_with_negative_start_and_end_and_range_of_1
     status: fail
-    result: [100, "nice"]
+    result: [100,"nice"]
   - id: array_slice_with_negative_start_and_positive_end_and_range_of_1
     status: fail
     result: []
@@ -29,49 +29,49 @@ queries:
     result: []
   - id: array_slice_with_negative_step_and_start_greater_than_end
     status: fail
-    result: ["first", "second", "third"]
+    result: ["first","second","third"]
   - id: array_slice_with_negative_step_on_partially_overlapping_array
     status: open
     result: []
   - id: array_slice_with_negative_step_only
     status: open
-    result: ["first", "second", "third", "forth", "fifth"]
+    result: ["first","second","third","forth","fifth"]
   - id: array_slice_with_open_end_and_negative_step
     status: open
-    result: ["forth", "fifth"]
+    result: ["forth","fifth"]
   - id: array_slice_with_open_start_and_end_on_object
     status: fail
-    result: [42, "string"]
+    result: [42,"string"]
   - id: array_slice_with_open_start_and_negative_step
     status: open
-    result: ["first", "second"]
+    result: ["first","second"]
   - id: array_slice_with_positive_start_and_negative_end_and_range_of_-1
     status: fail
-    result: [5, 100, "nice"]
+    result: [5,100,"nice"]
   - id: array_slice_with_positive_start_and_negative_end_and_range_of_0
     status: fail
-    result: [5, 100, "nice"]
+    result: [5,100,"nice"]
   - id: array_slice_with_positive_start_and_negative_end_and_range_of_1
     status: fail
-    result: [5, 100, "nice"]
+    result: [5,100,"nice"]
   - id: array_slice_with_range_of_0
     status: fail
-    result: ["first", "second"]
+    result: ["first","second"]
   - id: array_slice_with_start_-1_and_open_end
     status: fail
-    result: ["first", "second", "third"]
+    result: ["first","second","third"]
   - id: array_slice_with_start_-2_and_open_end
     status: fail
-    result: ["first", "second", "third"]
+    result: ["first","second","third"]
   - id: array_slice_with_step_0
     status: open
-    result: ["first", "second", "third"]
+    result: ["first","second","third"]
   - id: array_slice_with_step_and_leading_zeros
     status: open
-    result: [8, 16]
+    result: [8,16]
   - id: bracket_notation_after_recursive_descent
     status: fail
-    result: ["deepest", "first nested", "more", "second"]
+    result: ["deepest","first nested","more","second"]
   - id: bracket_notation_with_empty_path
     status: fail
     result: []
@@ -125,7 +125,7 @@ queries:
     result: []
   - id: bracket_notation_with_string_including_dot_wildcard
     status: fail
-    result: [42, 1]
+    result: [42,1]
   - id: bracket_notation_with_two_literals_separated_by_dot
     status: fail
     result: ["more"]
@@ -134,13 +134,13 @@ queries:
     result: ["more"]
   - id: bracket_notation_with_wildcard_after_recursive_descent
     status: fail
-    result: ["string", "value", 0, 1]
+    result: ["string","value",0,1]
   - id: bracket_notation_with_wildcard_on_array
     status: fail
-    result: ["string", 42, "value", 0, 1]
+    result: ["string",42,"value",0,1]
   - id: bracket_notation_with_wildcard_on_object
     status: fail
-    result: ["string", "value", 0, 1, 42]
+    result: ["string","value",0,1,42]
   - id: bracket_notation_without_quotes
     status: fail
     result: ["value"]
@@ -158,13 +158,13 @@ queries:
     result: ["value"]
   - id: dot_notation_after_recursive_descent
     status: fail
-    result: ["russian dolls", "something", "top", "value"]
+    result: ["russian dolls","something","top","value"]
   - id: dot_notation_after_recursive_descent_with_extra_dot
     status: fail
-    result: ["russian dolls", "something", "top", "value"]
+    result: ["russian dolls","something","top","value"]
   - id: dot_notation_on_array_value
     status: fail
-    result: ["first", "second"]
+    result: ["first","second"]
   - id: dot_notation_on_empty_object_value
     status: fail
     result: []
@@ -173,7 +173,7 @@ queries:
     result: ["value"]
   - id: dot_notation_with_double_quotes_after_recursive_descent
     status: open
-    result: ["russian dolls", "something", "top", "value"]
+    result: ["russian dolls","something","top","value"]
   - id: dot_notation_with_empty_path
     status: fail
     result: []
@@ -194,7 +194,7 @@ queries:
     result: ["value"]
   - id: dot_notation_with_single_quotes_after_recursive_descent
     status: open
-    result: ["russian dolls", "something", "top", "value"]
+    result: ["russian dolls","something","top","value"]
   - id: dot_notation_with_single_quotes_and_dot
     status: open
     result: [42]
@@ -203,13 +203,13 @@ queries:
     result: [3]
   - id: dot_notation_with_wildcard_after_recursive_descent
     status: fail
-    result: ["string", "value", 0, 1]
+    result: ["string","value",0,1]
   - id: dot_notation_with_wildcard_on_array
     status: fail
-    result: ["string", 42, "value", 0, 1]
+    result: ["string",42,"value",0,1]
   - id: dot_notation_with_wildcard_on_object
     status: fail
-    result: ["string", "value", 0, 1, 42]
+    result: ["string","value",0,1,42]
   - id: dot_notation_without_dot
     status: fail
     result: [1]
@@ -221,13 +221,13 @@ queries:
     result: ["value"]
   - id: empty
     status: open
-    result: [42, 21]
+    result: [42,21]
   - id: filter_expression_after_dot_notation_with_wildcard_after_recursive_descent
     status: open
-    result: ["another", "more", 3, 4]
+    result: ["another","more",3,4]
   - id: filter_expression_after_recursive_descent
     status: open
-    result: [2, 2]
+    result: [2,2]
   - id: filter_expression_on_object
     status: open
     result: []
@@ -239,19 +239,19 @@ queries:
     result: []
   - id: filter_expression_with_boolean_and_operator_and_value_false
     status: open
-    result: [1, 3, true, null, false]
+    result: [1,3,true,null,false]
   - id: filter_expression_with_boolean_and_operator_and_value_true
     status: open
-    result: [1, 3, true, null, false]
+    result: [1,3,true,null,false]
   - id: filter_expression_with_boolean_or_operator
     status: fail
     result: []
   - id: filter_expression_with_boolean_or_operator_and_value_false
     status: open
-    result: [1, 3, true, null, false]
+    result: [1,3,true,null,false]
   - id: filter_expression_with_boolean_or_operator_and_value_true
     status: open
-    result: [1, 3, true, null, false]
+    result: [1,3,true,null,false]
   - id: filter_expression_with_bracket_notation
     status: fail
     result: []
@@ -275,7 +275,7 @@ queries:
     result: []
   - id: filter_expression_with_different_ungrouped_operators
     status: fail
-    result: [true, true, true, true, true, true, true, true, true, true, true, true, true]
+    result: [true,true,true,true,true,true,true,true,true,true,true,true,true]
   - id: filter_expression_with_division
     status: open
     result: [5]
@@ -293,7 +293,7 @@ queries:
     result: []
   - id: filter_expression_with_equals
     status: fail
-    result: [42, "42"]
+    result: [42,"42"]
   - id: filter_expression_with_equals_array
     status: open
     result: [1]
@@ -374,10 +374,10 @@ queries:
     result: []
   - id: filter_expression_with_greater_than
     status: open
-    result: [43, 42.0001, 100]
+    result: [43,42.0001,100]
   - id: filter_expression_with_greater_than_or_equal
     status: open
-    result: [42, 43, 42.0001, 100]
+    result: [42,43,42.0001,100]
   - id: filter_expression_with_greater_than_string
     status: fail
     result: []
@@ -395,10 +395,10 @@ queries:
     result: []
   - id: filter_expression_with_less_than
     status: open
-    result: [0, -1, 41, 41.9999, "43", "42", "41", "value"]
+    result: [0,-1,41,41.9999,"43","42","41","value"]
   - id: filter_expression_with_less_than_or_equal
     status: open
-    result: [0, 42, -1, 41, 41.9999, "43", "42", "41", "value"]
+    result: [0,42,-1,41,41.9999,"43","42","41","value"]
   - id: filter_expression_with_local_dot_key_and_null_in_data
     status: fail
     result: []
@@ -443,7 +443,7 @@ queries:
     result: []
   - id: filter_expression_with_single_equal
     status: fail
-    result: [42, "42"]
+    result: [42,"42"]
   - id: filter_expression_with_subfilter
     status: open
     result: []
@@ -494,13 +494,13 @@ queries:
     result: []
   - id: recursive_descent
     status: fail
-    result: ["c", 0, 1]
+    result: ["c",0,1]
   - id: recursive_descent_after_dot_notation
     status: fail
-    result: ["string", 0, 1]
+    result: ["string",0,1]
   - id: recursive_descent_on_nested_arrays
     status: fail
-    result: [0, 1]
+    result: [0,1]
   - id: root
     status: fail
     result: []
@@ -518,7 +518,7 @@ queries:
     result: []
   - id: union_with_numbers_in_decreasing_order
     status: fail
-    result: [2, 5]
+    result: [2,5]
   - id: union_with_repeated_matches_after_dot_notation_with_wildcard
     status: open
     result: []

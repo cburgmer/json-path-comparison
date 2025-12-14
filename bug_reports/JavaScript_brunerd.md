@@ -312,7 +312,7 @@ The following queries provide results that do not match those of other implement
   ```
   Expected output:
   ```
-  [{"a": {"b": {"c": 3}}}]
+  [{"a":{"b":{"c":3}}}]
   ```
   Actual output:
   NOT_SUPPORTED

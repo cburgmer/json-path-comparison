@@ -587,7 +587,7 @@ The following queries provide results that do not match those of other implement
   ```
   Expected output:
   ```
-  [{"@key": 42}]
+  [{"@key":42}]
   ```
   Actual output:
   NOT_FOUND
@@ -629,7 +629,7 @@ The following queries provide results that do not match those of other implement
   ```
   Expected output:
   ```
-  [{"a": true, "b": true}, {"a": true, "b": true, "c": true}, {"a": true, "c": true}]
+  [{"a":true,"b":true},{"a":true,"b":true,"c":true},{"a":true,"c":true}]
   ```
   Actual output:
   ```
@@ -684,7 +684,7 @@ The following queries provide results that do not match those of other implement
   ```
   Expected output:
   ```
-  [{"a": true, "b": true}, {"a": true, "b": true, "c": true}, {"b": true, "c": true}, {"a": true, "c": true}, {"c": true}]
+  [{"a":true,"b":true},{"a":true,"b":true,"c":true},{"b":true,"c":true},{"a":true,"c":true},{"c":true}]
   ```
   Actual output:
   ```
@@ -740,7 +740,7 @@ The following queries provide results that do not match those of other implement
   ```
   Expected output:
   ```
-  [{"key": "hi@example.com"}]
+  [{"key":"hi@example.com"}]
   ```
   Actual output:
   NOT_FOUND
@@ -792,7 +792,7 @@ The following queries provide results that do not match those of other implement
   ```
   Expected output:
   ```
-  [{"key": true}]
+  [{"key":true}]
   ```
   Actual output:
   NOT_FOUND
@@ -820,7 +820,7 @@ The following queries provide results that do not match those of other implement
   ```
   Expected output:
   ```
-  [{"key": 42}]
+  [{"key":42}]
   ```
   Actual output:
   NOT_FOUND
@@ -1204,7 +1204,7 @@ The following queries provide results that do not match those of other implement
   ```
   Expected output:
   ```
-  [{"another key": {"complex": ["a", 1]}, "key": "value"}]
+  [{"another key":{"complex":["a",1]},"key":"value"}]
   ```
   Actual output:
   NOT_FOUND
@@ -1290,7 +1290,7 @@ The following queries provide results that do not match those of other implement
   ```
   Expected output:
   ```
-  ["first", "second"]
+  ["first","second"]
   ```
   Actual output:
   NOT_FOUND

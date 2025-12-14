@@ -181,7 +181,7 @@ queries:
     result: []
   - id: bracket_notation_with_wildcard_after_recursive_descent
     status: fail
-    result: ["value", {"complex": "string", "primitives": [0, 1]}]
+    result: ["value",{"complex":"string","primitives":[0,1]}]
   - id: bracket_notation_without_quotes
     status: fail
     result: ["value"]
@@ -229,7 +229,7 @@ queries:
     result: ["top"]
   - id: dot_notation_with_empty_path
     status: fail
-    result: [{"": 9001, "''": "nice", "key": 42}]
+    result: [{"":9001,"''":"nice","key":42}]
   - id: dot_notation_with_key_root_literal
     status: open
     result: []
@@ -253,7 +253,7 @@ queries:
     result: [3]
   - id: dot_notation_with_wildcard_after_recursive_descent
     status: fail
-    result: ["value", {"complex": "string", "primitives": [0, 1]}]
+    result: ["value",{"complex":"string","primitives":[0,1]}]
   - id: dot_notation_with_wildcard_after_recursive_descent_on_scalar
     status: error
   - id: dot_notation_without_dot
@@ -539,13 +539,13 @@ queries:
     result: []
   - id: recursive_descent
     status: fail
-    result: [[{"a": {"b": "c"}}, [0, 1]]]
+    result: [[{"a":{"b":"c"}},[0,1]]]
   - id: recursive_descent_after_dot_notation
     status: fail
-    result: [{"complex": "string", "primitives": [0, 1]}]
+    result: [{"complex":"string","primitives":[0,1]}]
   - id: recursive_descent_on_nested_arrays
     status: fail
-    result: [[0], [1]]
+    result: [[0],[1]]
   - id: script_expression
     status: fail
     result: []

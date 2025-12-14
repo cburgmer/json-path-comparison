@@ -32,7 +32,7 @@ queries:
     result: NOT_SUPPORTED
   - id: array_slice_with_open_start_and_end_on_object
     status: fail
-    result: [{":": 42, "more": "string"}]
+    result: [{":":42,"more":"string"}]
   - id: array_slice_with_open_start_and_negative_step
     status: open
     result: NOT_SUPPORTED
@@ -79,19 +79,19 @@ queries:
     result: [42]
   - id: bracket_notation_with_quoted_wildcard_literal
     status: fail
-    result: ["entry", "value"]
+    result: ["entry","value"]
   - id: bracket_notation_with_quoted_wildcard_literal_on_object_without_key
     status: fail
     result: ["entry"]
   - id: bracket_notation_with_wildcard_after_recursive_descent
     status: fail
-    result: ["string", "value", 0, 0, 1, 1, {"another key": {"complex": "string", "primitives": [0, 1]}, "key": "value"}, {"complex": "string", "primitives": [0, 1]}]
+    result: ["string","value",0,0,1,1,{"another key":{"complex":"string","primitives":[0,1]},"key":"value"},{"complex":"string","primitives":[0,1]}]
   - id: bracket_notation_with_wildcard_on_empty_object
     status: fail
     result: [{}]
   - id: bracket_notation_with_wildcard_on_object
     status: fail
-    result: [{"array": [0, 1], "int": 42, "object": {"key": "value"}, "some": "string"}]
+    result: [{"array":[0,1],"int":42,"object":{"key":"value"},"some":"string"}]
   - id: bracket_notation_without_quotes
     status: fail
     result: ["value"]
@@ -120,10 +120,10 @@ queries:
     result: ["value"]
   - id: dot_notation_with_double_quotes_after_recursive_descent
     status: open
-    result: ["russian dolls", "something", "top", "value", {"key": "russian dolls"}]
+    result: ["russian dolls","something","top","value",{"key":"russian dolls"}]
   - id: dot_notation_with_key_root_literal
     status: open
-    result: [{"$": "value"}]
+    result: [{"$":"value"}]
   - id: dot_notation_with_non_ASCII_key
     status: fail
     result: NOT_SUPPORTED
@@ -141,7 +141,7 @@ queries:
     result: ["value"]
   - id: dot_notation_with_single_quotes_after_recursive_descent
     status: open
-    result: ["russian dolls", "something", "top", "value", {"key": "russian dolls"}]
+    result: ["russian dolls","something","top","value",{"key":"russian dolls"}]
   - id: dot_notation_with_single_quotes_and_dot
     status: open
     result: [42]
@@ -156,7 +156,7 @@ queries:
     result: []
   - id: dot_notation_with_wildcard_after_recursive_descent
     status: fail
-    result: ["string", "value", [0, 1], {"complex": "string", "primitives": [0, 1]}]
+    result: ["string","value",[0,1],{"complex":"string","primitives":[0,1]}]
   - id: dot_notation_with_wildcard_after_recursive_descent_on_null_value_array
     status: fail
     result: []

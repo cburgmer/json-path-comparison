@@ -20,6 +20,9 @@ def query_result_payload(result_path):
     else:
         return result_type, None
 
+def dumps_canonical(payload):
+    return json.dumps(payload, separators=(',', ':'))
+
 def implementation_returns_single_result_as_scalar(result_path):
     implementation = implementation_name(result_path)
     flag_path = os.path.join('implementations', implementation, 'SINGLE_POSSIBLE_MATCH_RETURNED_AS_SCALAR')
@@ -72,14 +75,14 @@ def no_match_majority(query_results):
     result_paths_with_no_match = [path for path, result_type, payload in query_results
                                   if is_no_match(path, result_type, payload)]
 
-    canonical_consensus_candidate = "[]"
+    canonical_consensus_candidate = dumps_canonical([])
     return [("no_match", canonical_consensus_candidate, result_paths_with_no_match)]
 
 def no_scalar_match_majority(query_results):
     result_paths_with_no_match = [path for path, result_type, payload in query_results
                                   if is_no_scalar_match(path, result_type, payload)]
 
-    canonical_consensus_candidate = "[]"
+    canonical_consensus_candidate = dumps_canonical([])
     return [("no_scalar_match", canonical_consensus_candidate, result_paths_with_no_match)]
 
 def single_match_majority(query_results):
@@ -90,7 +93,7 @@ def single_match_majority(query_results):
         canonical_consensus_candidate = ([payload]
                                          if implementation_returns_single_result_as_scalar(result_path)
                                          else payload)
-        result_payloads.append(tuple([result_path, json.dumps(canonical_consensus_candidate)]))
+        result_payloads.append(tuple([result_path, dumps_canonical(canonical_consensus_candidate)]))
 
     return [("single_match", canonical_payload, paths) for canonical_payload, paths in build_histogram(result_payloads).items()]
 
@@ -99,7 +102,7 @@ def multiple_matches_majority(query_results):
     for result_path, result_type, payload in query_results:
         if result_type != "OK":
             continue
-        result_payloads.append(tuple([result_path, json.dumps(payload)]))
+        result_payloads.append(tuple([result_path, dumps_canonical(payload)]))
 
     return [("multiple_matches", payload, paths) for payload, paths in build_histogram(result_payloads).items()]
 
@@ -148,7 +151,7 @@ def single_match_majority_result(canonical_consensus):
     scalar = j[0]
     return {
         "consensus": canonical_consensus,
-        "scalar-consensus": json.dumps(scalar)
+        "scalar-consensus": dumps_canonical(scalar)
     }
 
 def no_match_majority_result(canonical_consensus):

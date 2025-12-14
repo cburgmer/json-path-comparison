@@ -1479,7 +1479,7 @@ The following queries provide results that do not match those of other implement
   ```
   Expected output:
   ```
-  ["cc1", "dd1", "cc2", "dd2"]
+  ["cc1","dd1","cc2","dd2"]
   ```
   Actual output:
   ```
@@ -1509,7 +1509,7 @@ The following queries provide results that do not match those of other implement
   ```
   Expected output:
   ```
-  ["cc1", "dd1", "cc2", "dd2"]
+  ["cc1","dd1","cc2","dd2"]
   ```
   Actual output:
   ```

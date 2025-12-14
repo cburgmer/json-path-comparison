@@ -19,7 +19,7 @@ The following queries provide results that do not match those of other implement
   ```
   Expected output (in any order as no consensus on ordering exists):
   ```
-  ["string", "value", 0, 1, [0, 1], {"complex": "string", "primitives": [0, 1]}]
+  ["string","value",0,1,[0,1],{"complex":"string","primitives":[0,1]}]
   ```
   Actual output:
   ```
@@ -59,7 +59,7 @@ The following queries provide results that do not match those of other implement
   ```
   Expected output:
   ```
-  ["string", 42, {"key": "value"}, [0, 1]]
+  ["string",42,{"key":"value"},[0,1]]
   ```
   Actual output:
   ```
@@ -93,7 +93,7 @@ The following queries provide results that do not match those of other implement
   ```
   Expected output (in any order as no consensus on ordering exists):
   ```
-  ["string", 42, [0, 1], {"key": "value"}]
+  ["string",42,[0,1],{"key":"value"}]
   ```
   Actual output:
   ```
@@ -179,7 +179,7 @@ The following queries provide results that do not match those of other implement
   ```
   Expected output (in any order as no consensus on ordering exists):
   ```
-  ["string", "value", 0, 1, [0, 1], {"complex": "string", "primitives": [0, 1]}]
+  ["string","value",0,1,[0,1],{"complex":"string","primitives":[0,1]}]
   ```
   Actual output:
   ```
@@ -219,7 +219,7 @@ The following queries provide results that do not match those of other implement
   ```
   Expected output:
   ```
-  ["string", 42, {"key": "value"}, [0, 1]]
+  ["string",42,{"key":"value"},[0,1]]
   ```
   Actual output:
   ```
@@ -253,7 +253,7 @@ The following queries provide results that do not match those of other implement
   ```
   Expected output (in any order as no consensus on ordering exists):
   ```
-  ["string", 42, [0, 1], {"key": "value"}]
+  ["string",42,[0,1],{"key":"value"}]
   ```
   Actual output:
   ```
@@ -289,7 +289,7 @@ The following queries provide results that do not match those of other implement
   ```
   Expected output:
   ```
-  [1, 3, "nice", true, null, false, {}, [], -1, 0, ""]
+  [1,3,"nice",true,null,false,{},[],-1,0,""]
   ```
   Actual output:
   ```
@@ -322,7 +322,7 @@ The following queries provide results that do not match those of other implement
   ```
   Expected output:
   ```
-  [[0], [1], 0, 1]
+  [[0],[1],0,1]
   ```
   Actual output:
   ```

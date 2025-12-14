@@ -8,13 +8,13 @@ implementation: Raku_JSON-Path
 queries:
   - id: array_slice
     status: fail
-    result: ["second", "third", "forth"]
+    result: ["second","third","forth"]
   - id: array_slice_with_large_number_for_end_and_negative_step
     status: open
     result: NOT_SUPPORTED
   - id: array_slice_with_large_number_for_start
     status: fail
-    result: ["first", "second", "third"]
+    result: ["first","second","third"]
   - id: array_slice_with_large_number_for_start_end_negative_step
     status: open
     result: NOT_SUPPORTED
@@ -23,13 +23,13 @@ queries:
     result: [4]
   - id: array_slice_with_negative_start_and_end_and_range_of_1
     status: fail
-    result: [4, 5]
+    result: [4,5]
   - id: array_slice_with_negative_start_and_positive_end_and_range_of_0
     status: fail
     result: [4]
   - id: array_slice_with_negative_start_and_positive_end_and_range_of_1
     status: fail
-    result: [4, 5]
+    result: [4,5]
   - id: array_slice_with_negative_step
     status: open
     result: NOT_SUPPORTED
@@ -65,13 +65,13 @@ queries:
     result: [5]
   - id: array_slice_with_positive_start_and_negative_end_and_range_of_1
     status: fail
-    result: [5, 100]
+    result: [5,100]
   - id: array_slice_with_range_of_0
     status: fail
     result: ["first"]
   - id: array_slice_with_range_of_1
     status: fail
-    result: ["first", "second"]
+    result: ["first","second"]
   - id: array_slice_with_step
     status: fail
     result: NOT_SUPPORTED
@@ -95,7 +95,7 @@ queries:
     result: NOT_SUPPORTED
   - id: bracket_notation_after_recursive_descent
     status: fail
-    result: ["deepest", "first nested", "more", {"nested": ["deepest", "second"]}]
+    result: ["deepest","first nested","more",{"nested":["deepest","second"]}]
   - id: bracket_notation_with_NFC_path_on_NFD_key
     status: fail
     result: [42]
@@ -133,10 +133,10 @@ queries:
     result: NOT_SUPPORTED
   - id: bracket_notation_with_wildcard_after_array_slice
     status: fail
-    result: [1, 2, "a", "b", 0, 0]
+    result: [1,2,"a","b",0,0]
   - id: bracket_notation_with_wildcard_after_recursive_descent
     status: fail
-    result: ["string", 0, 1, [0, 1]]
+    result: ["string",0,1,[0,1]]
   - id: current_with_dot_notation
     status: open
     result: NOT_SUPPORTED
@@ -148,16 +148,16 @@ queries:
     result: NOT_SUPPORTED
   - id: dot_notation_after_array_slice
     status: fail
-    result: ["ey", "bee", "see"]
+    result: ["ey","bee","see"]
   - id: dot_notation_after_filter_expression
     status: fail
     result: NOT_SUPPORTED
   - id: dot_notation_after_recursive_descent
     status: fail
-    result: ["russian dolls", "something", "value", {"key": "russian dolls"}]
+    result: ["russian dolls","something","value",{"key":"russian dolls"}]
   - id: dot_notation_after_recursive_descent_with_extra_dot
     status: fail
-    result: ["russian dolls", "something", "value", {"key": "russian dolls"}]
+    result: ["russian dolls","something","value",{"key":"russian dolls"}]
   - id: dot_notation_after_union_with_keys
     status: fail
     result: NOT_SUPPORTED
@@ -196,7 +196,7 @@ queries:
     result: NOT_SUPPORTED
   - id: dot_notation_with_wildcard_after_recursive_descent
     status: fail
-    result: ["string", 0, 1, [0, 1]]
+    result: ["string",0,1,[0,1]]
   - id: dot_notation_with_wildcard_after_recursive_descent_on_null_value_array
     status: fail
     result: []
@@ -475,13 +475,13 @@ queries:
     result: NOT_SUPPORTED
   - id: recursive_descent
     status: fail
-    result: ["c", 0, 1, [0, 1], {"a": {"b": "c"}}, {"b": "c"}]
+    result: ["c",0,1,[0,1],{"a":{"b":"c"}},{"b":"c"}]
   - id: recursive_descent_after_dot_notation
     status: fail
-    result: ["string", 0, 1, [0, 1]]
+    result: ["string",0,1,[0,1]]
   - id: recursive_descent_on_nested_arrays
     status: fail
-    result: [0, 1]
+    result: [0,1]
   - id: union_with_duplication_from_object
     status: fail
     result: NOT_SUPPORTED

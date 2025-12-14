@@ -137,7 +137,7 @@ The following queries provide results that do not match those of other implement
   ```
   Expected output:
   ```
-  [{"key": 42}]
+  [{"key":42}]
   ```
   Actual output:
   ```
@@ -215,7 +215,7 @@ The following queries provide results that do not match those of other implement
   ```
   Expected output:
   ```
-  [{"key": true}]
+  [{"key":true}]
   ```
   Actual output:
   ```
@@ -288,7 +288,7 @@ The following queries provide results that do not match those of other implement
   ```
   Expected output:
   ```
-  [{"key": "alpha"}, {"key": "value"}]
+  [{"key":"alpha"},{"key":"value"}]
   ```
   Actual output:
   ```

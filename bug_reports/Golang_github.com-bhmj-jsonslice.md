@@ -156,7 +156,7 @@ The following queries provide results that do not match those of other implement
   ```
   Expected output:
   ```
-  [1, 2, "a", "b"]
+  [1,2,"a","b"]
   ```
   Actual output:
   ```
@@ -490,7 +490,7 @@ The following queries provide results that do not match those of other implement
   ```
   Expected output:
   ```
-  [{"key": 42}]
+  [{"key":42}]
   ```
   Actual output:
   ```
@@ -826,7 +826,7 @@ The following queries provide results that do not match those of other implement
   ```
   Expected output:
   ```
-  [{"key": "Mot\u00f6rhead"}]
+  [{"key":"Mot\u00f6rhead"}]
   ```
   Actual output:
   ```
@@ -877,7 +877,7 @@ The following queries provide results that do not match those of other implement
   ```
   Expected output:
   ```
-  [{"key": true}]
+  [{"key":true}]
   ```
   Actual output:
   ```
@@ -1420,7 +1420,7 @@ The following queries provide results that do not match those of other implement
   ```
   Expected output:
   ```
-  [[0], [1], 0, 1]
+  [[0],[1],0,1]
   ```
   Actual output:
   ```
@@ -1465,7 +1465,7 @@ The following queries provide results that do not match those of other implement
   ```
   Expected output:
   ```
-  ["a", "a"]
+  ["a","a"]
   ```
   Actual output:
   ```
@@ -1483,7 +1483,7 @@ The following queries provide results that do not match those of other implement
   ```
   Expected output:
   ```
-  [1, 1]
+  [1,1]
   ```
   Actual output:
   ```
@@ -1545,7 +1545,7 @@ The following queries provide results that do not match those of other implement
   ```
   Expected output:
   ```
-  ["cc1", "dd1", "cc2", "dd2"]
+  ["cc1","dd1","cc2","dd2"]
   ```
   Actual output:
   ```
@@ -1591,7 +1591,7 @@ The following queries provide results that do not match those of other implement
   ```
   Expected output (in any order as no consensus on ordering exists):
   ```
-  ["cc1", "cc2", "cc3", "cc5", "dd1", "dd2", "dd4"]
+  ["cc1","cc2","cc3","cc5","dd1","dd2","dd4"]
   ```
   Actual output:
   ```
@@ -1611,7 +1611,7 @@ The following queries provide results that do not match those of other implement
   ```
   Expected output:
   ```
-  [5, 2]
+  [5,2]
   ```
   Actual output:
   ```

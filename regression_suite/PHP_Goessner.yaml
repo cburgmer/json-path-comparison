@@ -33,10 +33,10 @@ queries:
     status: error
   - id: array_slice_with_range_of_0
     status: fail
-    result: ["first", "second"]
+    result: ["first","second"]
   - id: array_slice_with_step_0
     status: open
-    result: ["first", "second", "third"]
+    result: ["first","second","third"]
   - id: array_slice_with_step_and_leading_zeros
     status: open
     result: [20]
@@ -45,10 +45,10 @@ queries:
     result: NOT_FOUND
   - id: bracket_notation_with_empty_path
     status: fail
-    result: [{"": 42, "\"\"": 222, "''": 123}]
+    result: [{"":42,"\"\"":222,"''":123}]
   - id: bracket_notation_with_empty_string
     status: fail
-    result: [{"": 42, "\"\"": 222, "''": 123}]
+    result: [{"":42,"\"\"":222,"''":123}]
   - id: bracket_notation_with_empty_string_doubled_quoted
     status: fail
     result: [222]
@@ -99,18 +99,18 @@ queries:
     result: NOT_FOUND
   - id: dot_bracket_notation
     status: open
-    result: ["value", [{"key": 42}], 42]
+    result: ["value",[{"key":42}],42]
   - id: dot_bracket_notation_with_double_quotes
     status: open
     result: NOT_FOUND
   - id: dot_bracket_notation_without_quotes
     status: fail
-    result: ["value", [{"key": 42}], 42]
+    result: ["value",[{"key":42}],42]
   - id: dot_notation_after_filter_expression
     status: error
   - id: dot_notation_after_recursive_descent_with_extra_dot
     status: fail
-    result: ["russian dolls", "something", "top", "value", {"key": "russian dolls"}]
+    result: ["russian dolls","something","top","value",{"key":"russian dolls"}]
   - id: dot_notation_on_empty_object_value
     status: fail
     result: [[]]
@@ -119,7 +119,7 @@ queries:
     result: [42]
   - id: dot_notation_with_double_quotes_after_recursive_descent
     status: open
-    result: [0, 100, 42, 99, {"\"key\"": 99}]
+    result: [0,100,42,99,{"\"key\"":99}]
   - id: dot_notation_with_empty_path
     status: fail
     result: NOT_FOUND
@@ -137,7 +137,7 @@ queries:
     result: ["value"]
   - id: dot_notation_with_single_quotes_after_recursive_descent
     status: open
-    result: ["russian dolls", "something", "top", "value", {"key": "russian dolls"}]
+    result: ["russian dolls","something","top","value",{"key":"russian dolls"}]
   - id: dot_notation_with_single_quotes_and_dot
     status: open
     result: ["value"]
@@ -356,10 +356,10 @@ queries:
     result: NOT_FOUND
   - id: recursive_descent
     status: fail
-    result: [[0, 1], [{"a": {"b": "c"}}, [0, 1]], {"a": {"b": "c"}}, {"b": "c"}]
+    result: [[0,1],[{"a":{"b":"c"}},[0,1]],{"a":{"b":"c"}},{"b":"c"}]
   - id: recursive_descent_after_dot_notation
     status: fail
-    result: [[0, 1], {"complex": "string", "primitives": [0, 1]}]
+    result: [[0,1],{"complex":"string","primitives":[0,1]}]
   - id: root
     status: fail
     result: NOT_FOUND
@@ -378,13 +378,13 @@ queries:
     status: error
   - id: union_with_repeated_matches_after_dot_notation_with_wildcard
     status: open
-    result: ["string", "string", null, true, false, false, "string", 5.4]
+    result: ["string","string",null,true,false,false,"string",5.4]
   - id: union_with_slice_and_number
     status: open
-    result: [2, 3, 5]
+    result: [2,3,5]
   - id: union_with_spaces
     status: fail
     result: NOT_FOUND
   - id: union_with_wildcard_and_number
     status: open
-    result: ["first", "second", "third", "forth", "fifth", "second"]
+    result: ["first","second","third","forth","fifth","second"]

@@ -8,7 +8,7 @@ implementation: Golang_github.com-oliveagle-jsonpath
 queries:
   - id: array_slice
     status: fail
-    result: ["second", "third", "forth"]
+    result: ["second","third","forth"]
   - id: array_slice_on_exact_match
     status: error
   - id: array_slice_on_non_overlapping_array
@@ -30,13 +30,13 @@ queries:
     result: [4]
   - id: array_slice_with_negative_start_and_end_and_range_of_1
     status: fail
-    result: [4, 5]
+    result: [4,5]
   - id: array_slice_with_negative_start_and_positive_end_and_range_of_0
     status: fail
     result: [4]
   - id: array_slice_with_negative_start_and_positive_end_and_range_of_1
     status: fail
-    result: [4, 5]
+    result: [4,5]
   - id: array_slice_with_negative_step
     status: error
   - id: array_slice_with_negative_step_and_start_greater_than_end
@@ -49,7 +49,7 @@ queries:
     status: error
   - id: array_slice_with_open_start
     status: fail
-    result: ["first", "second", "third"]
+    result: ["first","second","third"]
   - id: array_slice_with_open_start_and_end_and_step_empty
     status: error
   - id: array_slice_with_open_start_and_end_on_object
@@ -61,13 +61,13 @@ queries:
     result: [5]
   - id: array_slice_with_positive_start_and_negative_end_and_range_of_1
     status: fail
-    result: [5, 100]
+    result: [5,100]
   - id: array_slice_with_range_of_0
     status: fail
     result: ["first"]
   - id: array_slice_with_range_of_1
     status: fail
-    result: ["first", "second"]
+    result: ["first","second"]
   - id: array_slice_with_start_large_negative_number_and_open_end_on_short_array
     status: error
   - id: array_slice_with_step
@@ -155,7 +155,7 @@ queries:
     status: error
   - id: bracket_notation_with_wildcard_after_array_slice
     status: fail
-    result: [[1, 2], ["a", "b"], [0, 0]]
+    result: [[1,2],["a","b"],[0,0]]
   - id: bracket_notation_with_wildcard_after_dot_notation_after_bracket_notation_with_wildcard
     status: fail
     result: [[42]]
@@ -180,7 +180,7 @@ queries:
     status: error
   - id: dot_notation_after_array_slice
     status: fail
-    result: ["ey", "bee", "see"]
+    result: ["ey","bee","see"]
   - id: dot_notation_after_bracket_notation_after_recursive_descent
     status: error
   - id: dot_notation_after_filter_expression
@@ -345,7 +345,7 @@ queries:
     status: error
   - id: filter_expression_with_equals_number_for_dot_notation_with_star
     status: open
-    result: [[], [], [], [], []]
+    result: [[],[],[],[],[]]
   - id: filter_expression_with_equals_number_on_various_representations
     status: open
     result: []

@@ -16,7 +16,7 @@ The following queries provide results that do not match those of other implement
   ```
   Expected output:
   ```
-  ["third", "forth", "fifth"]
+  ["third","forth","fifth"]
   ```
   Actual output:
   NOT_SUPPORTED
@@ -37,7 +37,7 @@ The following queries provide results that do not match those of other implement
   ```
   Expected output:
   ```
-  ["first", "second"]
+  ["first","second"]
   ```
   Actual output:
   NOT_SUPPORTED
@@ -82,7 +82,7 @@ The following queries provide results that do not match those of other implement
   ```
   Expected output:
   ```
-  ["first", "third"]
+  ["first","third"]
   ```
   Actual output:
   ```
@@ -106,7 +106,7 @@ The following queries provide results that do not match those of other implement
   ```
   Expected output:
   ```
-  ["first", "third"]
+  ["first","third"]
   ```
   Actual output:
   ```
@@ -131,7 +131,7 @@ The following queries provide results that do not match those of other implement
   ```
   Expected output:
   ```
-  ["first", "third", "fifth"]
+  ["first","third","fifth"]
   ```
   Actual output:
   ```
@@ -227,7 +227,7 @@ The following queries provide results that do not match those of other implement
   ```
   Expected output (in any order as no consensus on ordering exists):
   ```
-  [40, 42, null]
+  [40,42,null]
   ```
   Actual output:
   ```
@@ -271,7 +271,7 @@ The following queries provide results that do not match those of other implement
   ```
   Expected output:
   ```
-  [{"key": 43}]
+  [{"key":43}]
   ```
   Actual output:
   NOT_SUPPORTED
@@ -296,7 +296,7 @@ The following queries provide results that do not match those of other implement
   ```
   Expected output:
   ```
-  [{"key": 42}, {"key": 44}]
+  [{"key":42},{"key":44}]
   ```
   Actual output:
   NOT_SUPPORTED
@@ -339,7 +339,7 @@ The following queries provide results that do not match those of other implement
   ```
   Expected output:
   ```
-  [{"key": 42}]
+  [{"key":42}]
   ```
   Actual output:
   NOT_SUPPORTED
@@ -370,7 +370,7 @@ The following queries provide results that do not match those of other implement
   ```
   Expected output:
   ```
-  [{"@key": 42}]
+  [{"@key":42}]
   ```
   Actual output:
   NOT_SUPPORTED
@@ -394,7 +394,7 @@ The following queries provide results that do not match those of other implement
   ```
   Expected output:
   ```
-  [["a", "b"]]
+  [["a","b"]]
   ```
   Actual output:
   NOT_SUPPORTED
@@ -436,7 +436,7 @@ The following queries provide results that do not match those of other implement
   ```
   Expected output:
   ```
-  [{"a": true, "b": true}, {"a": true, "b": true, "c": true}, {"a": true, "c": true}]
+  [{"a":true,"b":true},{"a":true,"b":true,"c":true},{"a":true,"c":true}]
   ```
   Actual output:
   NOT_SUPPORTED
@@ -482,7 +482,7 @@ The following queries provide results that do not match those of other implement
   ```
   Expected output:
   ```
-  [{"a": true, "b": true}, {"a": true, "b": true, "c": true}, {"b": true, "c": true}, {"a": true, "c": true}, {"c": true}]
+  [{"a":true,"b":true},{"a":true,"b":true,"c":true},{"b":true,"c":true},{"a":true,"c":true},{"c":true}]
   ```
   Actual output:
   NOT_SUPPORTED
@@ -564,7 +564,7 @@ The following queries provide results that do not match those of other implement
   ```
   Expected output:
   ```
-  [{"key": 42}]
+  [{"key":42}]
   ```
   Actual output:
   NOT_SUPPORTED
@@ -692,7 +692,7 @@ The following queries provide results that do not match those of other implement
   ```
   Expected output:
   ```
-  [{"key": "value"}]
+  [{"key":"value"}]
   ```
   Actual output:
   NOT_SUPPORTED
@@ -726,7 +726,7 @@ The following queries provide results that do not match those of other implement
   ```
   Expected output:
   ```
-  [{"key": "Mot\u00f6rhead"}]
+  [{"key":"Mot\u00f6rhead"}]
   ```
   Actual output:
   NOT_SUPPORTED
@@ -751,7 +751,7 @@ The following queries provide results that do not match those of other implement
   ```
   Expected output:
   ```
-  [{"key": "hi@example.com"}]
+  [{"key":"hi@example.com"}]
   ```
   Actual output:
   NOT_SUPPORTED
@@ -776,7 +776,7 @@ The following queries provide results that do not match those of other implement
   ```
   Expected output:
   ```
-  [{"key": "some.value"}]
+  [{"key":"some.value"}]
   ```
   Actual output:
   NOT_SUPPORTED
@@ -798,7 +798,7 @@ The following queries provide results that do not match those of other implement
   ```
   Expected output:
   ```
-  [{"key": "value"}]
+  [{"key":"value"}]
   ```
   Actual output:
   NOT_SUPPORTED
@@ -850,7 +850,7 @@ The following queries provide results that do not match those of other implement
   ```
   Expected output:
   ```
-  [{"key": true}]
+  [{"key":true}]
   ```
   Actual output:
   NOT_SUPPORTED
@@ -878,7 +878,7 @@ The following queries provide results that do not match those of other implement
   ```
   Expected output:
   ```
-  [{"key": 42}]
+  [{"key":42}]
   ```
   Actual output:
   NOT_SUPPORTED
@@ -945,7 +945,7 @@ The following queries provide results that do not match those of other implement
   ```
   Expected output:
   ```
-  [{"key": "alpha"}, {"key": "value"}]
+  [{"key":"alpha"},{"key":"value"}]
   ```
   Actual output:
   NOT_SUPPORTED
@@ -1005,7 +1005,7 @@ The following queries provide results that do not match those of other implement
   ```
   Expected output:
   ```
-  [{"a": {"b": 3}}]
+  [{"a":{"b":3}}]
   ```
   Actual output:
   NOT_SUPPORTED
@@ -1041,7 +1041,7 @@ The following queries provide results that do not match those of other implement
   ```
   Expected output:
   ```
-  [{"a": {"b": {"c": 3}}}]
+  [{"a":{"b":{"c":3}}}]
   ```
   Actual output:
   NOT_SUPPORTED
@@ -1068,7 +1068,7 @@ The following queries provide results that do not match those of other implement
   ```
   Expected output:
   ```
-  [1, 3, "nice", true, null, false, {}, [], -1, 0, ""]
+  [1,3,"nice",true,null,false,{},[],-1,0,""]
   ```
   Actual output:
   NOT_SUPPORTED

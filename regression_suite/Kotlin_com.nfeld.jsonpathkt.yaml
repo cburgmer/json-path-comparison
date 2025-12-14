@@ -23,34 +23,34 @@ queries:
     result: []
   - id: array_slice_with_negative_step_and_start_greater_than_end
     status: fail
-    result: ["first", "second", "third"]
+    result: ["first","second","third"]
   - id: array_slice_with_negative_step_on_partially_overlapping_array
     status: open
     result: []
   - id: array_slice_with_negative_step_only
     status: open
-    result: ["first", "second", "third"]
+    result: ["first","second","third"]
   - id: array_slice_with_open_end_and_negative_step
     status: open
     result: ["forth"]
   - id: array_slice_with_open_start_and_negative_step
     status: open
-    result: ["third", "forth"]
+    result: ["third","forth"]
   - id: array_slice_with_step
     status: fail
-    result: ["first", "second", "third"]
+    result: ["first","second","third"]
   - id: array_slice_with_step_0
     status: open
-    result: ["first", "second", "third"]
+    result: ["first","second","third"]
   - id: array_slice_with_step_and_leading_zeros
     status: open
-    result: [10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23]
+    result: [10,11,12,13,14,15,16,17,18,19,20,21,22,23]
   - id: array_slice_with_step_but_end_not_aligned
     status: fail
-    result: ["first", "second", "third", "forth"]
+    result: ["first","second","third","forth"]
   - id: array_slice_with_step_only
     status: fail
-    result: ["first", "second"]
+    result: ["first","second"]
   - id: bracket_notation_with_number_on_string
     status: fail
     result: "H"
@@ -74,13 +74,13 @@ queries:
     result: NOT_SUPPORTED
   - id: dot_notation_after_recursive_descent_with_extra_dot
     status: fail
-    result: ["russian dolls", "something", "top", "value", {"key": "russian dolls"}]
+    result: ["russian dolls","something","top","value",{"key":"russian dolls"}]
   - id: dot_notation_with_double_quotes
     status: open
     result: 42
   - id: dot_notation_with_double_quotes_after_recursive_descent
     status: open
-    result: [0, 100, 42, 99, {"\"key\"": 99}]
+    result: [0,100,42,99,{"\"key\"":99}]
   - id: dot_notation_with_key_root_literal
     status: open
     result: "value"
@@ -95,7 +95,7 @@ queries:
     result: 42
   - id: dot_notation_with_single_quotes_after_recursive_descent
     status: open
-    result: [0, 100, 42, 99, {"'key'": 99}]
+    result: [0,100,42,99,{"'key'":99}]
   - id: dot_notation_with_single_quotes_and_dot
     status: open
     result: null
@@ -104,7 +104,7 @@ queries:
     result: 1
   - id: dot_notation_with_wildcard_after_recursive_descent_on_null_value_array
     status: fail
-    result: [40, 42]
+    result: [40,42]
   - id: dot_notation_without_dot
     status: fail
     result: 1
@@ -386,19 +386,19 @@ queries:
     result: null
   - id: recursive_descent
     status: fail
-    result: [[0, 1], {"a": {"b": "c"}}]
+    result: [[0,1],{"a":{"b":"c"}}]
   - id: recursive_descent_after_dot_notation
     status: fail
-    result: {"complex": "string", "primitives": [0, 1]}
+    result: {"complex":"string","primitives":[0,1]}
   - id: union_with_filter
     status: open
     result: NOT_SUPPORTED
   - id: union_with_repeated_matches_after_dot_notation_with_wildcard
     status: open
-    result: ["string", false]
+    result: ["string",false]
   - id: union_with_slice_and_number
     status: open
-    result: [2, 3]
+    result: [2,3]
   - id: union_with_wildcard_and_number
     status: open
     result: NOT_SUPPORTED

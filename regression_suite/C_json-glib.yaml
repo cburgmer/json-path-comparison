@@ -18,13 +18,13 @@ queries:
     result: []
   - id: array_slice_with_negative_start_and_positive_end_and_range_of_-1
     status: fail
-    result: [4, 5, 100, "nice"]
+    result: [4,5,100,"nice"]
   - id: array_slice_with_negative_start_and_positive_end_and_range_of_0
     status: fail
-    result: [4, 5, 100, "nice"]
+    result: [4,5,100,"nice"]
   - id: array_slice_with_negative_start_and_positive_end_and_range_of_1
     status: fail
-    result: [4, 5, 100, "nice"]
+    result: [4,5,100,"nice"]
   - id: array_slice_with_negative_step
     status: open
     result: []
@@ -61,7 +61,7 @@ queries:
     status: error
   - id: array_slice_with_step_and_leading_zeros
     status: open
-    result: [10, 20]
+    result: [10,20]
   - id: array_slice_with_step_but_end_not_aligned
     status: error
   - id: array_slice_with_step_empty
@@ -87,7 +87,7 @@ queries:
     result: []
   - id: bracket_notation_with_number_after_dot_notation_with_wildcard_on_nested_arrays_with_different_length
     status: fail
-    result: [[[1], [2, 3]]]
+    result: [[[1],[2,3]]]
   - id: bracket_notation_with_quoted_escaped_backslash
     status: open
     result: []
@@ -102,7 +102,7 @@ queries:
     result: []
   - id: bracket_notation_with_quoted_wildcard_literal
     status: fail
-    result: ["entry", "value"]
+    result: ["entry","value"]
   - id: bracket_notation_with_quoted_wildcard_literal_on_object_without_key
     status: fail
     result: ["entry"]
@@ -111,7 +111,7 @@ queries:
     result: NOT_SUPPORTED
   - id: bracket_notation_with_two_literals_separated_by_dot
     status: fail
-    result: [{"key": "other value", "some": "more"}]
+    result: [{"key":"other value","some":"more"}]
   - id: bracket_notation_with_wildcard_after_recursive_descent
     status: fail
     result: NOT_SUPPORTED
@@ -120,7 +120,7 @@ queries:
     result: [{}]
   - id: bracket_notation_with_wildcard_on_object
     status: fail
-    result: [{"array": [0, 1], "int": 42, "object": {"key": "value"}, "some": "string"}]
+    result: [{"array":[0,1],"int":42,"object":{"key":"value"},"some":"string"}]
   - id: current_with_dot_notation
     status: open
     result: NOT_SUPPORTED
@@ -138,7 +138,7 @@ queries:
     result: NOT_SUPPORTED
   - id: dot_notation_after_recursive_descent
     status: fail
-    result: ["something", "top", "value", {"key": "russian dolls"}]
+    result: ["something","top","value",{"key":"russian dolls"}]
   - id: dot_notation_after_recursive_descent_with_extra_dot
     status: fail
     result: []
@@ -150,7 +150,7 @@ queries:
     result: [42]
   - id: dot_notation_with_double_quotes_after_recursive_descent
     status: open
-    result: [0, 100, 42, {"\"key\"": 99}]
+    result: [0,100,42,{"\"key\"":99}]
   - id: dot_notation_with_key_root_literal
     status: open
     result: ["value"]
@@ -165,7 +165,7 @@ queries:
     result: [42]
   - id: dot_notation_with_single_quotes_after_recursive_descent
     status: open
-    result: [0, 100, 42, {"'key'": 99}]
+    result: [0,100,42,{"'key'":99}]
   - id: dot_notation_with_single_quotes_and_dot
     status: open
     result: []
@@ -174,10 +174,10 @@ queries:
     result: [3]
   - id: dot_notation_with_wildcard_after_dot_notation_after_dot_notation_with_wildcard
     status: fail
-    result: [[{"bar": [42]}]]
+    result: [[{"bar":[42]}]]
   - id: dot_notation_with_wildcard_after_dot_notation_with_wildcard_on_nested_arrays
     status: fail
-    result: [[[1, 2, 3], [4, 5, 6]]]
+    result: [[[1,2,3],[4,5,6]]]
   - id: dot_notation_with_wildcard_after_recursive_descent
     status: fail
     result: []
@@ -186,7 +186,7 @@ queries:
     result: []
   - id: dot_notation_with_wildcard_on_array
     status: fail
-    result: [["string", 42, {"key": "value"}, [0, 1]]]
+    result: [["string",42,{"key":"value"},[0,1]]]
   - id: dot_notation_with_wildcard_on_empty_array
     status: fail
     result: [[]]
@@ -482,7 +482,7 @@ queries:
     result: ["cc1"]
   - id: union_with_keys_after_dot_notation_with_wildcard
     status: fail
-    result: [[{"c": "cc1", "d": "dd1", "e": "ee1"}, {"c": "cc2", "d": "dd2", "e": "ee2"}]]
+    result: [[{"c":"cc1","d":"dd1","e":"ee1"},{"c":"cc2","d":"dd2","e":"ee2"}]]
   - id: union_with_keys_after_recursive_descent
     status: fail
     result: NOT_SUPPORTED

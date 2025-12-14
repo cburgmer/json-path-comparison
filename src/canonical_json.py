@@ -9,7 +9,7 @@ def main():
         print(e)
         sys.exit(1)
 
-    print(json.dumps(j, sort_keys=True))
+    print(json.dumps(j, sort_keys=True, separators=(',', ':')))
 
 if __name__ == '__main__':
     sys.exit(main())

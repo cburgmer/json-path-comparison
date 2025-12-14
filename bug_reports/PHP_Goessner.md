@@ -763,7 +763,7 @@ The following queries provide results that do not match those of other implement
   ```
   Expected output:
   ```
-  [{"key": 43}]
+  [{"key":43}]
   ```
   Error:
   ```
@@ -875,7 +875,7 @@ The following queries provide results that do not match those of other implement
   ```
   Expected output:
   ```
-  [{"key": 42}, {"key": 44}]
+  [{"key":42},{"key":44}]
   ```
   Error:
   ```
@@ -1005,7 +1005,7 @@ The following queries provide results that do not match those of other implement
   ```
   Expected output:
   ```
-  [{"key": 42}]
+  [{"key":42}]
   ```
   Error:
   ```
@@ -1035,7 +1035,7 @@ The following queries provide results that do not match those of other implement
   ```
   Expected output:
   ```
-  [{"@key": 42}]
+  [{"@key":42}]
   ```
   Error:
   ```
@@ -1083,7 +1083,7 @@ The following queries provide results that do not match those of other implement
   ```
   Expected output:
   ```
-  [["a", "b"]]
+  [["a","b"]]
   ```
   Error:
   ```
@@ -1165,7 +1165,7 @@ The following queries provide results that do not match those of other implement
   ```
   Expected output:
   ```
-  [{"a": true, "b": true}, {"a": true, "b": true, "c": true}, {"a": true, "c": true}]
+  [{"a":true,"b":true},{"a":true,"b":true,"c":true},{"a":true,"c":true}]
   ```
   Error:
   ```
@@ -1210,7 +1210,7 @@ The following queries provide results that do not match those of other implement
   ```
   Expected output:
   ```
-  [{"a": true, "b": true}, {"a": true, "b": true, "c": true}, {"b": true, "c": true}, {"a": true, "c": true}, {"c": true}]
+  [{"a":true,"b":true},{"a":true,"b":true,"c":true},{"b":true,"c":true},{"a":true,"c":true},{"c":true}]
   ```
   Error:
   ```
@@ -1386,7 +1386,7 @@ The following queries provide results that do not match those of other implement
   ```
   Expected output:
   ```
-  [{"key": 42}]
+  [{"key":42}]
   ```
   Error:
   ```
@@ -2094,7 +2094,7 @@ The following queries provide results that do not match those of other implement
   ```
   Expected output:
   ```
-  [{"key": "value"}]
+  [{"key":"value"}]
   ```
   Error:
   ```
@@ -2127,7 +2127,7 @@ The following queries provide results that do not match those of other implement
   ```
   Expected output:
   ```
-  [{"key": "Mot\u00f6rhead"}]
+  [{"key":"Mot\u00f6rhead"}]
   ```
   Error:
   ```
@@ -2151,7 +2151,7 @@ The following queries provide results that do not match those of other implement
   ```
   Expected output:
   ```
-  [{"key": "hi@example.com"}]
+  [{"key":"hi@example.com"}]
   ```
   Error:
   ```
@@ -2175,7 +2175,7 @@ The following queries provide results that do not match those of other implement
   ```
   Expected output:
   ```
-  [{"key": "some.value"}]
+  [{"key":"some.value"}]
   ```
   Error:
   ```
@@ -2196,7 +2196,7 @@ The following queries provide results that do not match those of other implement
   ```
   Expected output:
   ```
-  [{"key": "value"}]
+  [{"key":"value"}]
   ```
   Error:
   ```
@@ -2276,7 +2276,7 @@ The following queries provide results that do not match those of other implement
   ```
   Expected output:
   ```
-  [{"key": true}]
+  [{"key":true}]
   ```
   Error:
   ```
@@ -2389,7 +2389,7 @@ The following queries provide results that do not match those of other implement
   ```
   Expected output:
   ```
-  [{"key": 42}]
+  [{"key":42}]
   ```
   Error:
   ```
@@ -2555,7 +2555,7 @@ The following queries provide results that do not match those of other implement
   ```
   Expected output:
   ```
-  [{"key": "alpha"}, {"key": "value"}]
+  [{"key":"alpha"},{"key":"value"}]
   ```
   Error:
   ```
@@ -3503,7 +3503,7 @@ The following queries provide results that do not match those of other implement
   ```
   Expected output:
   ```
-  [{"a": {"b": 3}}]
+  [{"a":{"b":3}}]
   ```
   Error:
   ```
@@ -3538,7 +3538,7 @@ The following queries provide results that do not match those of other implement
   ```
   Expected output:
   ```
-  [{"a": {"b": {"c": 3}}}]
+  [{"a":{"b":{"c":3}}}]
   ```
   Error:
   ```
@@ -3590,7 +3590,7 @@ The following queries provide results that do not match those of other implement
   ```
   Expected output:
   ```
-  [1, 3, "nice", true, null, false, {}, [], -1, 0, ""]
+  [1,3,"nice",true,null,false,{},[],-1,0,""]
   ```
   Error:
   ```
@@ -4065,7 +4065,7 @@ The following queries provide results that do not match those of other implement
   ```
   Expected output:
   ```
-  [{"another key": {"complex": ["a", 1]}, "key": "value"}]
+  [{"another key":{"complex":["a",1]},"key":"value"}]
   ```
   Actual output:
   NOT_FOUND
@@ -4180,7 +4180,7 @@ The following queries provide results that do not match those of other implement
   ```
   Expected output:
   ```
-  ["first", "second"]
+  ["first","second"]
   ```
   Actual output:
   NOT_FOUND

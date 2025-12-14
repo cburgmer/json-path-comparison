@@ -8,7 +8,7 @@ implementation: Rust_jsonpath
 queries:
   - id: array_slice
     status: fail
-    result: ["second", "third", "forth"]
+    result: ["second","third","forth"]
   - id: array_slice_with_large_number_for_end_and_negative_step
     status: open
     result: NOT_SUPPORTED
@@ -77,7 +77,7 @@ queries:
     result: ["first"]
   - id: array_slice_with_range_of_1
     status: fail
-    result: ["first", "second"]
+    result: ["first","second"]
   - id: array_slice_with_start_-1_and_open_end
     status: fail
     result: NOT_SUPPORTED
@@ -224,7 +224,7 @@ queries:
     result: NOT_SUPPORTED
   - id: dot_notation_after_array_slice
     status: fail
-    result: ["ey", "bee", "see"]
+    result: ["ey","bee","see"]
   - id: dot_notation_after_bracket_notation_after_recursive_descent
     status: fail
     result: NOT_SUPPORTED
@@ -359,10 +359,10 @@ queries:
     result: NOT_SUPPORTED
   - id: filter_expression_with_dot_notation_with_dash
     status: open
-    result: [{"key-dash": "value"}]
+    result: [{"key-dash":"value"}]
   - id: filter_expression_with_dot_notation_with_number
     status: open
-    result: [{"2": "second", "a": "first", "b": "third"}]
+    result: [{"2":"second","a":"first","b":"third"}]
   - id: filter_expression_with_dot_notation_with_number_on_array
     status: open
     result: []
@@ -446,7 +446,7 @@ queries:
     result: NOT_SUPPORTED
   - id: filter_expression_with_greater_than
     status: open
-    result: [{"key": 43}, {"key": 42.0001}, {"key": 100}]
+    result: [{"key":43},{"key":42.0001},{"key":100}]
   - id: filter_expression_with_greater_than_or_equal
     status: open
     result: NOT_SUPPORTED
@@ -464,7 +464,7 @@ queries:
     result: NOT_SUPPORTED
   - id: filter_expression_with_less_than
     status: open
-    result: [{"key": 0}, {"key": -1}, {"key": 41}, {"key": 41.9999}]
+    result: [{"key":0},{"key":-1},{"key":41},{"key":41.9999}]
   - id: filter_expression_with_less_than_or_equal
     status: open
     result: NOT_SUPPORTED

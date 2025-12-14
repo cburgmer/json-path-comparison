@@ -42,7 +42,7 @@ queries:
     result: []
   - id: array_slice_with_step_and_leading_zeros
     status: open
-    result: [10, 20]
+    result: [10,20]
   - id: array_slice_with_step_empty
     status: fail
     result: NOT_SUPPORTED
@@ -87,7 +87,7 @@ queries:
     status: error
   - id: dot_notation_with_empty_path
     status: fail
-    result: [{"": 9001, "''": "nice", "key": 42}]
+    result: [{"":9001,"''":"nice","key":42}]
   - id: dot_notation_with_key_root_literal
     status: open
     result: NOT_SUPPORTED
@@ -122,13 +122,13 @@ queries:
     result: NOT_SUPPORTED
   - id: filter_expression_after_dot_notation_with_wildcard_after_recursive_descent
     status: open
-    result: ["another", "another", "first", "first", "last", "last", "more", "more", "next to last", "next to last", "next", "next", 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, [{"id": 1, "name": "first"}, {"id": 2, "name": "next"}, {"id": 3, "name": "another"}, {"id": 4, "name": "more"}], {"id": 3, "name": "another"}, {"id": 4, "name": "more"}, {"id": 5, "name": "next to last"}, {"more": {"id": 5, "name": "next to last"}, "one": [{"id": 1, "name": "first"}, {"id": 2, "name": "next"}, {"id": 3, "name": "another"}, {"id": 4, "name": "more"}]}]
+    result: ["another","another","first","first","last","last","more","more","next to last","next to last","next","next",1,1,2,2,3,3,4,4,5,5,6,6,[{"id":1,"name":"first"},{"id":2,"name":"next"},{"id":3,"name":"another"},{"id":4,"name":"more"}],{"id":3,"name":"another"},{"id":4,"name":"more"},{"id":5,"name":"next to last"},{"more":{"id":5,"name":"next to last"},"one":[{"id":1,"name":"first"},{"id":2,"name":"next"},{"id":3,"name":"another"},{"id":4,"name":"more"}]}]
   - id: filter_expression_after_recursive_descent
     status: open
     result: NOT_SUPPORTED
   - id: filter_expression_on_object
     status: open
-    result: [{"key": 1}]
+    result: [{"key":1}]
   - id: filter_expression_with_addition
     status: error
   - id: filter_expression_with_boolean_and_operator
@@ -147,13 +147,13 @@ queries:
     status: error
   - id: filter_expression_with_bracket_notation_with_-1
     status: open
-    result: [[0, 2], [2]]
+    result: [[0,2],[2]]
   - id: filter_expression_with_bracket_notation_with_number_on_object
     status: open
-    result: [["a", "b"]]
+    result: [["a","b"]]
   - id: filter_expression_with_current_object
     status: open
-    result: ["some value", null, "value", 0, 1, -1, "", [], {}, false, true]
+    result: ["some value",null,"value",0,1,-1,"",[],{},false,true]
   - id: filter_expression_with_different_grouped_operators
     status: error
   - id: filter_expression_with_different_ungrouped_operators
@@ -202,13 +202,13 @@ queries:
     result: [[2]]
   - id: filter_expression_with_equals_number_on_various_representations
     status: open
-    result: [{"key": 0}, {"key": 0.0}, {"key": 0.0}, {"key": 0.0}]
+    result: [{"key":0},{"key":0.0},{"key":0.0},{"key":0.0}]
   - id: filter_expression_with_equals_number_with_fraction
     status: open
     result: NOT_SUPPORTED
   - id: filter_expression_with_equals_number_with_leading_zeros
     status: open
-    result: [{"key": 10}]
+    result: [{"key":10}]
   - id: filter_expression_with_equals_object
     status: error
   - id: filter_expression_with_equals_on_array_of_numbers
@@ -216,7 +216,7 @@ queries:
     result: []
   - id: filter_expression_with_equals_on_object
     status: open
-    result: [{"key": 42}]
+    result: [{"key":42}]
   - id: filter_expression_with_equals_string_in_NFC
     status: fail
     result: []
@@ -228,10 +228,10 @@ queries:
     result: NOT_SUPPORTED
   - id: filter_expression_with_equals_with_path_and_path
     status: open
-    result: [{"key1": 10, "key2": 10}, {}, {"key1": null, "key2": null}, {"key1": 0, "key2": 0}, {"key1": -1, "key2": -1}, {"key1": "", "key2": ""}, {"key1": false, "key2": false}, {"key1": true, "key2": true}, {"key1": [], "key2": []}, {"key1": {}, "key2": {}}, {"key1": {"a": 1, "b": 2}, "key2": {"a": 1, "b": 2}}]
+    result: [{"key1":10,"key2":10},{},{"key1":null,"key2":null},{"key1":0,"key2":0},{"key1":-1,"key2":-1},{"key1":"","key2":""},{"key1":false,"key2":false},{"key1":true,"key2":true},{"key1":[],"key2":[]},{"key1":{},"key2":{}},{"key1":{"a":1,"b":2},"key2":{"a":1,"b":2}}]
   - id: filter_expression_with_greater_than
     status: open
-    result: [{"key": 43}, {"key": 42.0001}, {"key": 100}, {"key": "43"}, {"key": "42"}, {"key": "41"}, {"key": "value"}, {"some": "value"}]
+    result: [{"key":43},{"key":42.0001},{"key":100},{"key":"43"},{"key":"42"},{"key":"41"},{"key":"value"},{"some":"value"}]
   - id: filter_expression_with_greater_than_or_equal
     status: error
   - id: filter_expression_with_in_array_of_values
@@ -245,7 +245,7 @@ queries:
     result: NOT_SUPPORTED
   - id: filter_expression_with_less_than
     status: open
-    result: [{"key": 0}, {"key": -1}, {"key": 41}, {"key": 41.9999}]
+    result: [{"key":0},{"key":-1},{"key":41},{"key":41.9999}]
   - id: filter_expression_with_less_than_or_equal
     status: error
   - id: filter_expression_with_local_dot_key_and_null_in_data
@@ -262,10 +262,10 @@ queries:
     status: error
   - id: filter_expression_with_non_singular_existence_test
     status: open
-    result: [{"a": [1]}, {"a": [1, 2]}, {"a": {"x": "y"}}, {"a": {"w": "z", "x": "y"}}]
+    result: [{"a":[1]},{"a":[1,2]},{"a":{"x":"y"}},{"a":{"w":"z","x":"y"}}]
   - id: filter_expression_with_not_equals
     status: open
-    result: [{"key": 0}, {"key": -1}, {"key": 1}, {"key": 41}, {"key": 43}, {"key": 42.0001}, {"key": 41.9999}, {"key": 100}, {"key": "some"}, {"key": "42"}, {"key": null}, {"key": 420}, {"key": ""}, {"key": {}}, {"key": []}, {"key": [42]}, {"key": {"key": 42}}, {"key": {"some": 42}}, {"some": "value"}]
+    result: [{"key":0},{"key":-1},{"key":1},{"key":41},{"key":43},{"key":42.0001},{"key":41.9999},{"key":100},{"key":"some"},{"key":"42"},{"key":null},{"key":420},{"key":""},{"key":{}},{"key":[]},{"key":[42]},{"key":{"key":42}},{"key":{"some":42}},{"some":"value"}]
   - id: filter_expression_with_not_equals_array_or_equals_true
     status: error
   - id: filter_expression_with_parent_axis_operator
@@ -282,7 +282,7 @@ queries:
     status: error
   - id: filter_expression_with_subfilter
     status: open
-    result: [{"a": [{"price": 11}]}, {"a": [{"price": 8}, {"price": 12}, {"price": 3}]}]
+    result: [{"a":[{"price":11}]},{"a":[{"price":8},{"price":12},{"price":3}]}]
   - id: filter_expression_with_subtraction
     status: open
     result: NOT_SUPPORTED
@@ -290,7 +290,7 @@ queries:
     status: error
   - id: filter_expression_with_value
     status: open
-    result: [{"key": true}, {"key": false}, {"key": null}, {"key": "value"}, {"key": ""}, {"key": 0}, {"key": 1}, {"key": -1}, {"key": 42}, {"key": {}}, {"key": []}]
+    result: [{"key":true},{"key":false},{"key":null},{"key":"value"},{"key":""},{"key":0},{"key":1},{"key":-1},{"key":42},{"key":{}},{"key":[]}]
   - id: filter_expression_with_value_after_recursive_descent
     status: open
     result: NOT_SUPPORTED
@@ -299,7 +299,7 @@ queries:
     result: NOT_SUPPORTED
   - id: filter_expression_with_value_from_recursive_descent
     status: open
-    result: [{"key": [{"child": 1}, {"child": 2}]}, {"key": [{"child": 2}]}]
+    result: [{"key":[{"child":1},{"child":2}]},{"key":[{"child":2}]}]
   - id: filter_expression_with_value_null
     status: open
     result: NOT_SUPPORTED
@@ -311,10 +311,10 @@ queries:
     result: NOT_SUPPORTED
   - id: filter_expression_without_value
     status: open
-    result: [{"key": true}, {"key": false}, {"key": null}, {"key": "value"}, {"key": ""}, {"key": 0}, {"key": 1}, {"key": -1}, {"key": 42}, {"key": {}}, {"key": []}]
+    result: [{"key":true},{"key":false},{"key":null},{"key":"value"},{"key":""},{"key":0},{"key":1},{"key":-1},{"key":42},{"key":{}},{"key":[]}]
   - id: recursive_descent
     status: fail
-    result: ["c", 0, 1, [0, 1], [{"a": {"b": "c"}}, [0, 1]], {"a": {"b": "c"}}, {"b": "c"}]
+    result: ["c",0,1,[0,1],[{"a":{"b":"c"}},[0,1]],{"a":{"b":"c"}},{"b":"c"}]
   - id: script_expression
     status: error
   - id: union_with_filter

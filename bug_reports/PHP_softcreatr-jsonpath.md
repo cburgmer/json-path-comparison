@@ -37,7 +37,7 @@ The following queries provide results that do not match those of other implement
   ```
   Expected output:
   ```
-  ["third", "forth", "fifth"]
+  ["third","forth","fifth"]
   ```
   Error:
   ```
@@ -640,7 +640,7 @@ The following queries provide results that do not match those of other implement
   ```
   Expected output:
   ```
-  [{"key": 42}]
+  [{"key":42}]
   ```
   Actual output:
   ```
@@ -816,7 +816,7 @@ The following queries provide results that do not match those of other implement
   ```
   Expected output:
   ```
-  [1, 3, "nice", true, null, false, {}, [], -1, 0, ""]
+  [1,3,"nice",true,null,false,{},[],-1,0,""]
   ```
   Error:
   ```
