@@ -897,7 +897,7 @@ The following queries provide results that do not match those of other implement
   ```
   Expected output:
   ```
-  [{"key":"Mot\u00f6rhead"}]
+  [{"key":"Motörhead"}]
   ```
   Actual output:
   ```

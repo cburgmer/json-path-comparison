@@ -1824,6 +1824,10 @@ The following queries provide results that do not match those of other implement
     }
   ]
   ```
+  Expected output:
+  ```
+  [{"key":0},{"key":0},{"key":0},{"key":0}]
+  ```
   Error:
   ```
   ArgumentCountError
@@ -2127,7 +2131,7 @@ The following queries provide results that do not match those of other implement
   ```
   Expected output:
   ```
-  [{"key":"Mot\u00f6rhead"}]
+  [{"key":"Motörhead"}]
   ```
   Error:
   ```
@@ -2767,6 +2771,10 @@ The following queries provide results that do not match those of other implement
       "some": "value"
     }
   ]
+  ```
+  Expected output:
+  ```
+  [{"key":0},{"key":-1},{"key":41},{"key":41.9999}]
   ```
   Error:
   ```

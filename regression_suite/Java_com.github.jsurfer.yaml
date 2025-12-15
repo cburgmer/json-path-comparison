@@ -228,9 +228,6 @@ queries:
   - id: filter_expression_with_equals_number_for_dot_notation_with_star
     status: open
     result: [[1,2],[2,3],[2],[1,2,3]]
-  - id: filter_expression_with_equals_number_on_various_representations
-    status: open
-    result: [{"key":0},{"key":0.0},{"key":-0.0},{"key":0.0}]
   - id: filter_expression_with_equals_number_with_fraction
     status: error
   - id: filter_expression_with_equals_number_with_leading_zeros

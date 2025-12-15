@@ -199,9 +199,6 @@ queries:
     result: []
   - id: filter_expression_with_equals_number_for_dot_notation_with_star
     status: error
-  - id: filter_expression_with_equals_number_on_various_representations
-    status: open
-    result: [{"key":0},{"key":0.0},{"key":-0.0},{"key":0.0}]
   - id: filter_expression_with_equals_number_with_fraction
     status: open
     result: [{"key":-12.3},{"key":"-0.123e2"}]
@@ -218,7 +215,7 @@ queries:
     result: []
   - id: filter_expression_with_equals_string_with_unicode_character_escape
     status: open
-    result: [{"key":"Mot\u00f6rhead"}]
+    result: [{"key":"Motörhead"}]
   - id: filter_expression_with_equals_true
     status: fail
     result: [{"key":true},{"key":1}]
@@ -243,7 +240,7 @@ queries:
     status: fail
     result: [[1,2,3,4]]
   - id: filter_expression_with_less_than
-    status: open
+    status: fail
     result: [{"key":0},{"key":-1},{"key":41},{"key":41.9999},{"key":"41"}]
   - id: filter_expression_with_less_than_or_equal
     status: open

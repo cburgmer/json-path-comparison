@@ -111,3 +111,13 @@ ENV GOFLAGS="-buildvcs=false"
 # Work around https://akashmittal.com/code-example-fatal-detected-dubious-ownership-in-repository-at/
 # There seems to be no easy way in docker to make the current user the owner of mounted volumnes, e.g. https://github.com/moby/moby/issues/2259
 RUN git config --global --add safe.directory '*'
+
+# Dependencies for this project
+#
+# The following is not available yet in 24.04 LTS, hence use the preferred way of a virtual env
+# RUN apt-get install -y --no-install-recommends python3-rfc8785
+RUN apt-get update && apt-get install -y --no-install-recommends python3-venv \
+    && python3 -m venv /venv \
+    && . /venv/bin/activate \
+    && python3 -m pip install rfc8785
+ENV PATH="/venv/bin:$PATH"

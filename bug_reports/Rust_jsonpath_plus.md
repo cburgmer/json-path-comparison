@@ -867,6 +867,37 @@ The following queries provide results that do not match those of other implement
   panic occurred
   ```
 
+- [ ] `$[?(@.key==0)]`
+  Input:
+  ```
+  [
+    {
+      "key": 0
+    },
+    {
+      "key": 0.0
+    },
+    {
+      "key": -0.0
+    },
+    {
+      "key": 0.0
+    }
+  ]
+  ```
+  Expected output:
+  ```
+  [{"key":0},{"key":0},{"key":0},{"key":0}]
+  ```
+  Actual output:
+  ```
+  [
+    {
+      "key": 0
+    }
+  ]
+  ```
+
 - [ ] `$[?(@.key==-0.123e2)]`
   Input:
   ```

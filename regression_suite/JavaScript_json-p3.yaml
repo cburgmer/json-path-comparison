@@ -155,9 +155,6 @@ queries:
     status: error
   - id: filter_expression_with_equals_number_for_dot_notation_with_star
     status: error
-  - id: filter_expression_with_equals_number_on_various_representations
-    status: open
-    result: [{"key":0},{"key":0},{"key":0},{"key":0}]
   - id: filter_expression_with_equals_number_with_fraction
     status: open
     result: [{"key":-12.3}]
@@ -170,7 +167,7 @@ queries:
     result: [{"key":42}]
   - id: filter_expression_with_equals_string_with_unicode_character_escape
     status: open
-    result: [{"key":"Mot\u00f6rhead"}]
+    result: [{"key":"Motörhead"}]
   - id: filter_expression_with_equals_with_path_and_path
     status: open
     result: [{"key1":10,"key2":10},{},{"key1":null,"key2":null},{"key1":0,"key2":0},{"key1":-1,"key2":-1},{"key1":"","key2":""},{"key1":false,"key2":false},{"key1":true,"key2":true},{"key1":[],"key2":[]},{"key1":{},"key2":{}},{"key1":{"a":1,"b":2},"key2":{"a":1,"b":2}}]
@@ -189,9 +186,6 @@ queries:
     result: [[1,2,3,4]]
   - id: filter_expression_with_length_function
     status: error
-  - id: filter_expression_with_less_than
-    status: open
-    result: [{"key":0},{"key":-1},{"key":41},{"key":41.9999}]
   - id: filter_expression_with_less_than_or_equal
     status: open
     result: [{"key":0},{"key":42},{"key":-1},{"key":41},{"key":41.9999}]

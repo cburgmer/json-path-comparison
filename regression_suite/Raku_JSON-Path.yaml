@@ -315,7 +315,7 @@ queries:
     status: open
     result: NOT_SUPPORTED
   - id: filter_expression_with_equals_number_on_various_representations
-    status: open
+    status: fail
     result: NOT_SUPPORTED
   - id: filter_expression_with_equals_number_with_fraction
     status: open
@@ -387,7 +387,7 @@ queries:
     status: fail
     result: NOT_SUPPORTED
   - id: filter_expression_with_less_than
-    status: open
+    status: fail
     result: NOT_SUPPORTED
   - id: filter_expression_with_less_than_or_equal
     status: open

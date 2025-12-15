@@ -1046,6 +1046,34 @@ The following queries provide results that do not match those of other implement
   JsonPathLexerError('Error on line 1, col 2: Unexpected character: ? ')
   ```
 
+- [ ] `$[?(@.key==0)]`
+  Input:
+  ```
+  [
+    {
+      "key": 0
+    },
+    {
+      "key": 0.0
+    },
+    {
+      "key": -0.0
+    },
+    {
+      "key": 0.0
+    }
+  ]
+  ```
+  Expected output:
+  ```
+  [{"key":0},{"key":0},{"key":0},{"key":0}]
+  ```
+  Actual output:
+  NOT_SUPPORTED
+  ```
+  JsonPathLexerError('Error on line 1, col 2: Unexpected character: ? ')
+  ```
+
 - [ ] `$[?(@==42)]`
   Input:
   ```
@@ -1200,7 +1228,7 @@ The following queries provide results that do not match those of other implement
   ```
   Expected output:
   ```
-  [{"key":"Mot\u00f6rhead"}]
+  [{"key":"Motörhead"}]
   ```
   Actual output:
   NOT_SUPPORTED
@@ -1454,6 +1482,61 @@ The following queries provide results that do not match those of other implement
   Expected output:
   ```
   []
+  ```
+  Actual output:
+  NOT_SUPPORTED
+  ```
+  JsonPathLexerError('Error on line 1, col 2: Unexpected character: ? ')
+  ```
+
+- [ ] `$[?(@.key<42)]`
+  Input:
+  ```
+  [
+    {
+      "key": 0
+    },
+    {
+      "key": 42
+    },
+    {
+      "key": -1
+    },
+    {
+      "key": 41
+    },
+    {
+      "key": 43
+    },
+    {
+      "key": 42.0001
+    },
+    {
+      "key": 41.9999
+    },
+    {
+      "key": 100
+    },
+    {
+      "key": "43"
+    },
+    {
+      "key": "42"
+    },
+    {
+      "key": "41"
+    },
+    {
+      "key": "value"
+    },
+    {
+      "some": "value"
+    }
+  ]
+  ```
+  Expected output:
+  ```
+  [{"key":0},{"key":-1},{"key":41},{"key":41.9999}]
   ```
   Actual output:
   NOT_SUPPORTED

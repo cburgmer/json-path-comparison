@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 import sys
 import json
+import rfc8785
 
 def main():
     try:
@@ -9,7 +10,7 @@ def main():
         print(e)
         sys.exit(1)
 
-    print(json.dumps(j, sort_keys=True, separators=(',', ':')))
+    print(rfc8785.dumps(j).decode('utf8'))
 
 if __name__ == '__main__':
     sys.exit(main())

@@ -373,7 +373,7 @@ queries:
     status: open
     result: []
   - id: filter_expression_with_equals_number_on_various_representations
-    status: open
+    status: fail
     result: []
   - id: filter_expression_with_equals_number_with_fraction
     status: open
@@ -439,7 +439,7 @@ queries:
     status: fail
     result: []
   - id: filter_expression_with_less_than
-    status: open
+    status: fail
     result: []
   - id: filter_expression_with_less_than_or_equal
     status: open

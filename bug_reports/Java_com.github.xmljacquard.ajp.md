@@ -3,111 +3,27 @@ Results do not match other implementations
 The following queries provide results that do not match those of other implementations of JSONPath
 (compare https://cburgmer.github.io/json-path-comparison/):
 
-- [ ] `$..[*]`
-  Input:
-  ```
-  {
-    "key": "value",
-    "another key": {
-      "complex": "string",
-      "primitives": [
-        0,
-        1
-      ]
-    }
-  }
-  ```
-  Expected output (in any order as no consensus on ordering exists):
-  ```
-  ["string","value",0,1,[0,1],{"complex":"string","primitives":[0,1]}]
-  ```
-  Actual output:
-  ```
-  [
-    "string",
-    "value",
-    0.0,
-    1,
-    [
-      0.0,
-      1
-    ],
-    {
-      "complex": "string",
-      "primitives": [
-        0.0,
-        1
-      ]
-    }
-  ]
-  ```
-
-- [ ] `$[*]`
+- [ ] `$[3:-4]`
   Input:
   ```
   [
-    "string",
-    42,
-    {
-      "key": "value"
-    },
-    [
-      0,
-      1
-    ]
+    2,
+    "a",
+    4,
+    5,
+    100,
+    "nice"
   ]
   ```
   Expected output:
   ```
-  ["string",42,{"key":"value"},[0,1]]
+  []
   ```
-  Actual output:
+  Error:
   ```
-  [
-    "string",
-    42,
-    {
-      "key": "value"
-    },
-    [
-      0.0,
-      1
-    ]
-  ]
-  ```
-
-- [ ] `$[*]`
-  Input:
-  ```
-  {
-    "some": "string",
-    "int": 42,
-    "object": {
-      "key": "value"
-    },
-    "array": [
-      0,
-      1
-    ]
-  }
-  ```
-  Expected output (in any order as no consensus on ordering exists):
-  ```
-  ["string",42,[0,1],{"key":"value"}]
-  ```
-  Actual output:
-  ```
-  [
-    "string",
-    42,
-    [
-      0.0,
-      1
-    ],
-    {
-      "key": "value"
-    }
-  ]
+  Expecting ',' delimiter: line 1 column 7 (char 6)
+  [0.005s][warning][perf,memops] Cannot use file /tmp/hsperfdata_root/29104 because it is locked by another process (errno = 11)
+  []
   ```
 
 - [ ] `$.key-dash`
@@ -161,181 +77,6 @@ The following queries provide results that do not match those of other implement
   During lazy evaluation of tailCallLoop(ajp:getProcessor(...)) on line 20 of jar:file:./implementations/Java_com.github.xmljacquard.ajp/build/deps/org/xmljacquard/ajp/0.0.7/ajp-0.0.7.jar!/xslt/ajp-runner.xslt
   In function ajpr:getProcessor on line 17 column 106 of ajp-runner.xslt:
   net.sf.saxon.s9api.SaxonApiException: <failed xmlns:ixml="http://invisiblexml.org/NS" ixml:state="failed"><line>1</line><column>2</column><pos>3</pos><unexpected>2</unexpected><permitted>'*', '_', [#80-'퟿'], ['A'-'Z'; 'a'-'z'], ['𐀀'-'􏿯'], [''-'￯']</permitted><could-be-next><in rule="ALPHA"><tokens>['A'-'Z'; 'a'-'z']</tokens></in><in rule="wildcard-selector"><tokens>'*'</tokens></in><in rule="name-first"><tokens>'_', [#80-'퟿'], ['𐀀'-'􏿯'], [''-'￯']</tokens></in></could-be-next><unfinished><open rule="child-segment" start="2" end="2"><input>.</input></open><open rule="jsonpath-query" start="1" end="1"><input>$</input></open></unfinished></failed>
-  ```
-
-- [ ] `$..*`
-  Input:
-  ```
-  {
-    "key": "value",
-    "another key": {
-      "complex": "string",
-      "primitives": [
-        0,
-        1
-      ]
-    }
-  }
-  ```
-  Expected output (in any order as no consensus on ordering exists):
-  ```
-  ["string","value",0,1,[0,1],{"complex":"string","primitives":[0,1]}]
-  ```
-  Actual output:
-  ```
-  [
-    "string",
-    "value",
-    0.0,
-    1,
-    [
-      0.0,
-      1
-    ],
-    {
-      "complex": "string",
-      "primitives": [
-        0.0,
-        1
-      ]
-    }
-  ]
-  ```
-
-- [ ] `$.*`
-  Input:
-  ```
-  [
-    "string",
-    42,
-    {
-      "key": "value"
-    },
-    [
-      0,
-      1
-    ]
-  ]
-  ```
-  Expected output:
-  ```
-  ["string",42,{"key":"value"},[0,1]]
-  ```
-  Actual output:
-  ```
-  [
-    "string",
-    42,
-    {
-      "key": "value"
-    },
-    [
-      0.0,
-      1
-    ]
-  ]
-  ```
-
-- [ ] `$.*`
-  Input:
-  ```
-  {
-    "some": "string",
-    "int": 42,
-    "object": {
-      "key": "value"
-    },
-    "array": [
-      0,
-      1
-    ]
-  }
-  ```
-  Expected output (in any order as no consensus on ordering exists):
-  ```
-  ["string",42,[0,1],{"key":"value"}]
-  ```
-  Actual output:
-  ```
-  [
-    "string",
-    42,
-    [
-      0.0,
-      1
-    ],
-    {
-      "key": "value"
-    }
-  ]
-  ```
-
-- [ ] `$[?(1==1)]`
-  Input:
-  ```
-  [
-    1,
-    3,
-    "nice",
-    true,
-    null,
-    false,
-    {},
-    [],
-    -1,
-    0,
-    ""
-  ]
-  ```
-  Expected output:
-  ```
-  [1,3,"nice",true,null,false,{},[],-1,0,""]
-  ```
-  Actual output:
-  ```
-  [
-    1,
-    3,
-    "nice",
-    true,
-    null,
-    false,
-    {},
-    [],
-    -1,
-    0.0,
-    ""
-  ]
-  ```
-
-- [ ] `$..*`
-  Input:
-  ```
-  [
-    [
-      0
-    ],
-    [
-      1
-    ]
-  ]
-  ```
-  Expected output:
-  ```
-  [[0],[1],0,1]
-  ```
-  Actual output:
-  ```
-  [
-    [
-      0.0
-    ],
-    [
-      1
-    ],
-    0.0,
-    1
-  ]
   ```
 
 

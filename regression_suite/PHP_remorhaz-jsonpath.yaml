@@ -172,7 +172,7 @@ queries:
     status: open
     result: [[2,3],[1]]
   - id: filter_expression_with_equals_number_on_various_representations
-    status: open
+    status: fail
     result: [{"key":0}]
   - id: filter_expression_with_equals_number_with_fraction
     status: open
@@ -219,9 +219,6 @@ queries:
   - id: filter_expression_with_length_function
     status: fail
     result: [[1,2,3,4]]
-  - id: filter_expression_with_less_than
-    status: open
-    result: [{"key":0},{"key":-1},{"key":41},{"key":41.9999}]
   - id: filter_expression_with_less_than_or_equal
     status: open
     result: [{"key":0},{"key":42},{"key":-1},{"key":41},{"key":41.9999},{"key":"43"},{"key":"42"},{"key":"41"},{"key":"value"}]

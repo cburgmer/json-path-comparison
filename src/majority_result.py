@@ -8,6 +8,7 @@ import os
 import json
 from collections import OrderedDict, defaultdict
 from itertools import groupby
+import rfc8785
 
 def implementation_name(result_path):
     return os.path.basename(result_path)
@@ -21,7 +22,7 @@ def query_result_payload(result_path):
         return result_type, None
 
 def dumps_canonical(payload):
-    return json.dumps(payload, separators=(',', ':'))
+    return rfc8785.dumps(payload).decode('utf8')
 
 def implementation_returns_single_result_as_scalar(result_path):
     implementation = implementation_name(result_path)

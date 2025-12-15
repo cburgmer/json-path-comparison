@@ -240,7 +240,7 @@ queries:
     result: {"$":"value"}
   - id: dot_notation_with_non_ASCII_key
     status: fail
-    result: {"\u5c6c\u6027":"value"}
+    result: {"屬性":"value"}
   - id: dot_notation_with_number
     status: open
     result: null
@@ -365,7 +365,7 @@ queries:
     status: open
     result: [[1,2],[2,3],[1],[2],[1,2,3],1,2,3]
   - id: filter_expression_with_equals_number_on_various_representations
-    status: open
+    status: fail
     result: []
   - id: filter_expression_with_equals_number_with_fraction
     status: open
@@ -431,9 +431,6 @@ queries:
   - id: filter_expression_with_length_property
     status: fail
     result: [[1,2,3,4,5],[1,2,3,4],[1,2,3]]
-  - id: filter_expression_with_less_than
-    status: open
-    result: [{"key":0},{"key":-1},{"key":41},{"key":41.9999}]
   - id: filter_expression_with_less_than_or_equal
     status: open
     result: [{"key":0},{"key":42},{"key":-1},{"key":41},{"key":41.9999}]

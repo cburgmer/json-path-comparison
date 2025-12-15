@@ -873,6 +873,10 @@ The following queries provide results that do not match those of other implement
     }
   ]
   ```
+  Expected output:
+  ```
+  [{"key":0},{"key":-1},{"key":41},{"key":41.9999}]
+  ```
   Error:
   ```
   java.lang.NumberFormatException: Character " is neither a decimal digit number, decimal point, nor "e" notation exponential mark.
