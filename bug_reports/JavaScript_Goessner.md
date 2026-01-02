@@ -61,24 +61,27 @@ The following queries provide results that do not match those of other implement
   
   <--- Last few GCs --->
   
-  [41343:0xaaaacc613230]      381 ms: Mark-sweep 24.4 (41.6) -> 8.7 (41.6) MB, 2.9 / 0.0 ms  (average mu = 0.855, current mu = 0.920) allocation failure; scavenge might not succeed
-  [41343:0xaaaacc613230]      433 ms: Mark-sweep 34.4 (51.6) -> 12.0 (44.9) MB, 6.3 / 0.0 ms  (average mu = 0.870, current mu = 0.878) allocation failure; scavenge might not succeed
+  [23951:0xaaaafd90c230]      302 ms: Mark-sweep 14.3 (23.9) -> 6.5 (23.9) MB, 2.9 / 0.0 ms  (average mu = 0.689, current mu = 0.744) allocation failure; scavenge might not succeed
+  [23951:0xaaaafd90c230]      324 ms: Mark-sweep 21.0 (30.5) -> 8.7 (26.1) MB, 10.8 / 0.0 ms  (average mu = 0.571, current mu = 0.500) allocation failure; scavenge might not succeed
   
   
   <--- JS stacktrace --->
   
   FATAL ERROR: Reached heap limit Allocation failed - JavaScript heap out of memory
-   1: 0xffff8f3b2f60 node::Abort() [/lib/aarch64-linux-gnu/libnode.so.109]
-   2: 0xffff8f2be108 void node::FPrintF<>(_IO_FILE*, char const*) [/lib/aarch64-linux-gnu/libnode.so.109]
-   3: 0xffff8f7371dc v8::Utils::ReportOOMFailure(v8::internal::Isolate*, char const*, bool) [/lib/aarch64-linux-gnu/libnode.so.109]
-   4: 0xffff8f7373cc v8::internal::V8::FatalProcessOutOfMemory(v8::internal::Isolate*, char const*, bool) [/lib/aarch64-linux-gnu/libnode.so.109]
-   5: 0xffff8f921fb8  [/lib/aarch64-linux-gnu/libnode.so.109]
-   6: 0xffff8f936ba8 v8::internal::Heap::CollectGarbage(v8::internal::AllocationSpace, v8::internal::GarbageCollectionReason, v8::GCCallbackFlags) [/lib/aarch64-linux-gnu/libnode.so.109]
-   7: 0xffff8f913cc0 v8::internal::HeapAllocator::AllocateRawWithLightRetrySlowPath(int, v8::internal::AllocationType, v8::internal::AllocationOrigin, v8::internal::AllocationAlignment) [/lib/aarch64-linux-gnu/libnode.so.109]
-   8: 0xffff8f914e38 v8::internal::HeapAllocator::AllocateRawWithRetryOrFailSlowPath(int, v8::internal::AllocationType, v8::internal::AllocationOrigin, v8::internal::AllocationAlignment) [/lib/aarch64-linux-gnu/libnode.so.109]
-   9: 0xffff8f8f6bfc v8::internal::Factory::NewFillerObject(int, v8::internal::AllocationAlignment, v8::internal::AllocationType, v8::internal::AllocationOrigin) [/lib/aarch64-linux-gnu/libnode.so.109]
-  10: 0xffff8fcbfd30 v8::internal::Runtime_AllocateInYoungGeneration(int, unsigned long*, v8::internal::Isolate*) [/lib/aarch64-linux-gnu/libnode.so.109]
-  11: 0xffff8f65406c  [/lib/aarch64-linux-gnu/libnode.so.109]
+   1: 0xffffae542f60 node::Abort() [/lib/aarch64-linux-gnu/libnode.so.109]
+   2: 0xffffae44e108 void node::FPrintF<>(_IO_FILE*, char const*) [/lib/aarch64-linux-gnu/libnode.so.109]
+   3: 0xffffae8c71dc v8::Utils::ReportOOMFailure(v8::internal::Isolate*, char const*, bool) [/lib/aarch64-linux-gnu/libnode.so.109]
+   4: 0xffffae8c73cc v8::internal::V8::FatalProcessOutOfMemory(v8::internal::Isolate*, char const*, bool) [/lib/aarch64-linux-gnu/libnode.so.109]
+   5: 0xffffaeab1fb8  [/lib/aarch64-linux-gnu/libnode.so.109]
+   6: 0xffffaeac6ba8 v8::internal::Heap::CollectGarbage(v8::internal::AllocationSpace, v8::internal::GarbageCollectionReason, v8::GCCallbackFlags) [/lib/aarch64-linux-gnu/libnode.so.109]
+   7: 0xffffaeaa3cc0 v8::internal::HeapAllocator::AllocateRawWithLightRetrySlowPath(int, v8::internal::AllocationType, v8::internal::AllocationOrigin, v8::internal::AllocationAlignment) [/lib/aarch64-linux-gnu/libnode.so.109]
+   8: 0xffffaeaa4e38 v8::internal::HeapAllocator::AllocateRawWithRetryOrFailSlowPath(int, v8::internal::AllocationType, v8::internal::AllocationOrigin, v8::internal::AllocationAlignment) [/lib/aarch64-linux-gnu/libnode.so.109]
+   9: 0xffffaea86388 v8::internal::Factory::AllocateRawWithAllocationSite(v8::internal::Handle<v8::internal::Map>, v8::internal::AllocationType, v8::internal::Handle<v8::internal::AllocationSite>) [/lib/aarch64-linux-gnu/libnode.so.109]
+  10: 0xffffaea9127c v8::internal::Factory::NewJSObjectFromMap(v8::internal::Handle<v8::internal::Map>, v8::internal::AllocationType, v8::internal::Handle<v8::internal::AllocationSite>) [/lib/aarch64-linux-gnu/libnode.so.109]
+  11: 0xffffaea91e10 v8::internal::Factory::NewJSArrayWithUnverifiedElements(v8::internal::Handle<v8::internal::FixedArrayBase>, v8::internal::ElementsKind, int, v8::internal::AllocationType) [/lib/aarch64-linux-gnu/libnode.so.109]
+  12: 0xffffaea92010 v8::internal::Factory::NewJSArray(v8::internal::ElementsKind, int, int, v8::internal::ArrayStorageAllocationMode, v8::internal::AllocationType) [/lib/aarch64-linux-gnu/libnode.so.109]
+  13: 0xffffaee65a8c v8::internal::Runtime_StringSplit(int, unsigned long*, v8::internal::Isolate*) [/lib/aarch64-linux-gnu/libnode.so.109]
+  14: 0xffffae7e406c  [/lib/aarch64-linux-gnu/libnode.so.109]
   ```
 
 - [ ] `$["key"]`
