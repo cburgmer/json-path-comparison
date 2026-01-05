@@ -48,7 +48,7 @@ RUN apt-get install -y --no-install-recommends sed grep gawk
 RUN apt-get install -y --no-install-recommends ruby
 
 # Dart
-ARG DART_VERSION="3.4.0"
+ARG DART_VERSION="3.10.7"
 # Following https://medium.com/flutter-community/running-dart-on-arm-servers-7fd5f5eb99d
 RUN apt-get install -y --no-install-recommends apt-transport-https gnupg2
 RUN case "$(uname -m)" in armv7l | armv7) ARCH="arm";; aarch64) ARCH="arm64";; *) ARCH="x64";; esac \
@@ -66,41 +66,32 @@ RUN chmod a+x /tmp/installObjectiveC.sh
 RUN /tmp/installObjectiveC.sh
 
 # Java + Clojure + Kotlin + Scala
-RUN apt-get install -y --no-install-recommends openjdk-21-jdk maven
+RUN apt-get install -y --no-install-recommends openjdk-25-jdk maven
 
 # Swift
-RUN apt-get install -y --no-install-recommends clang libicu-dev libtinfo6 libncurses6 \
-    && case "$(uname -m)" in aarch64) URL="https://download.swift.org/swift-5.10.1-release/ubuntu2404-aarch64/swift-5.10.1-RELEASE/swift-5.10.1-RELEASE-ubuntu24.04-aarch64.tar.gz";; *) URL="https://download.swift.org/swift-5.10.1-release/ubuntu2404/swift-5.10.1-RELEASE/swift-5.10.1-RELEASE-ubuntu24.04.tar.gz";; esac \
-    && curl -LO "$URL" \
-    && tar -xzf swift-*.tar.gz \
-    && rm swift-*.tar.gz \
-    && mv swift-* /swift
-ENV PATH="${PATH}:/swift/usr/bin"
+RUN curl -O https://download.swift.org/swiftly/linux/swiftly-$(uname -m).tar.gz \
+    && tar zxf swiftly-$(uname -m).tar.gz \
+    && ./swiftly init --quiet-shell-followup
+ENV PATH="${PATH}:/root/.local/share/swiftly/bin"
 
 # Haskell
 # Get newest cabal outside of Ubuntu channel
+ARG CABAL_VERSION="3.16.1.0"
 RUN apt-get install -y --no-install-recommends ghc xz-utils \
-    && case "$(uname -m)" in aarch64) URL="https://downloads.haskell.org/~cabal/cabal-install-3.12.1.0/cabal-install-3.12.1.0-aarch64-linux-deb12.tar.xz";; *) URL="https://downloads.haskell.org/~cabal/cabal-install-3.12.1.0/cabal-install-3.12.1.0-x86_64-linux-ubuntu22_04.tar.xz";; esac \
+    && case "$(uname -m)" in aarch64) URL="https://downloads.haskell.org/~cabal/cabal-install-$CABAL_VERSION/cabal-install-$CABAL_VERSION-aarch64-linux-deb12.tar.xz";; *) URL="https://downloads.haskell.org/~cabal/cabal-install-$CABAL_VERSION/cabal-install-$CABAL_VERSION-x86_64-linux-ubuntu22_04.tar.xz";; esac \
     && curl -L "$URL" -o cabal-install.tar.xz \
     && tar -xf cabal-install.tar.xz \
     && mv cabal /usr/local/bin/ \
     && rm cabal-install.tar.xz
 
 # Raku
-RUN apt-get install -y --no-install-recommends rakudo
-# Work around zef being dropped? in Ubuntu 22.04 (was perl6-zef, might become raku-zef in newer versions)
-RUN curl -LO https://github.com/ugexe/zef/archive/refs/tags/v1.0.0.tar.gz \
-    && tar -xzf v*.tar.gz \
-    && rm v*.tar.gz \
-    && cd zef-* \
-    && raku -I. bin/zef install .
-ENV PATH="/usr/lib/perl6/site/bin:${PATH}"
+RUN apt-get install -y --no-install-recommends rakudo raku-zef
 
 # Golang
 RUN apt-get install -y --no-install-recommends git
 RUN case "$(uname -m)" in aarch64) ARCH="arm64";; *) ARCH="amd64";; esac \
     && cd /tmp \
-    && curl -OL https://go.dev/dl/go1.22.5.linux-$ARCH.tar.gz \
+    && curl -OL https://go.dev/dl/go1.25.5.linux-$ARCH.tar.gz \
     && tar -zxf go*.tar.gz \
     && rm go*.tar.gz \
     && mv go /go
