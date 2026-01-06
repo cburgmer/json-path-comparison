@@ -14,9 +14,6 @@ RUN apt-get -y upgrade && apt-get -y update && apt-get -y dist-upgrade \
 RUN curl https://sh.rustup.rs -sSf | sh -s -- --default-toolchain stable -y
 ENV PATH="/root/.cargo/bin:${PATH}"
 
-# PHP
-RUN apt-get install -y --no-install-recommends php php-intl php-tokenizer composer
-
 # JavaScript
 RUN apt-get install -y --no-install-recommends nodejs npm unzip
 
@@ -98,6 +95,26 @@ RUN case "$(uname -m)" in aarch64) ARCH="arm64";; *) ARCH="amd64";; esac \
 ENV PATH="${PATH}:/go/bin"
 # Work around what's possibly tracked under https://github.com/golang/go/issues/49004
 ENV GOFLAGS="-buildvcs=false"
+
+# PHP
+# Use latestest version from upstream not available in LTS, following https://php.watch/articles/compile-php-ubuntu
+# RUN apt-get install -y --no-install-recommends php php-intl php-tokenizer composer
+ARG PHP_VERSION="8.3.29"
+RUN apt-get install -y --no-install-recommends build-essential autoconf bison re2c pkg-config libssl-dev zlib1g-dev \
+    && curl -LO "https://github.com/php/php-src/archive/refs/tags/php-$PHP_VERSION.tar.gz" \
+    && tar -xzf php-*.tar.gz \
+    && rm php-*.tar.gz \
+    && cd php-src-php-*/ \
+    && ./buildconf --force \
+    && ./configure --disable-all --with-openssl --enable-phar --enable-filter --with-iconv --with-zlib --enable-tokenizer --enable-intl \
+    && make -j $(nproc) \
+    && make install \
+    && cd - \
+    && apt-get install -y --no-install-recommends libssl-dev \
+    && php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" \
+    && php composer-setup.php \
+    && rm composer-setup.php \
+    && mv composer.phar /usr/local/bin/composer
 
 # Work around https://akashmittal.com/code-example-fatal-detected-dubious-ownership-in-repository-at/
 # There seems to be no easy way in docker to make the current user the owner of mounted volumnes, e.g. https://github.com/moby/moby/issues/2259
