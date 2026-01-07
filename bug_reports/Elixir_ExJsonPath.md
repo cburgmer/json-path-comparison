@@ -229,6 +229,22 @@ The following queries provide results that do not match those of other implement
   syntax error before: '['
   ```
 
+- [ ] `$['\\']`
+  Input:
+  ```
+  {
+    "\\": "value"
+  }
+  ```
+  Expected output:
+  ```
+  ["value"]
+  ```
+  Actual output:
+  ```
+  []
+  ```
+
 - [ ] `$['\'']`
   Input:
   ```
@@ -786,6 +802,58 @@ The following queries provide results that do not match those of other implement
   NOT_SUPPORTED
   ```
   illegal characters "&"
+  ```
+
+- [ ] `$[?(@.key==false)]`
+  Input:
+  ```
+  [
+    {
+      "some": "some value"
+    },
+    {
+      "key": true
+    },
+    {
+      "key": false
+    },
+    {
+      "key": null
+    },
+    {
+      "key": "value"
+    },
+    {
+      "key": ""
+    },
+    {
+      "key": 0
+    },
+    {
+      "key": 1
+    },
+    {
+      "key": -1
+    },
+    {
+      "key": 42
+    },
+    {
+      "key": {}
+    },
+    {
+      "key": []
+    }
+  ]
+  ```
+  Expected output:
+  ```
+  [{"key":false}]
+  ```
+  Actual output:
+  NOT_SUPPORTED
+  ```
+  syntax error before: <<"false">>
   ```
 
 - [ ] `$[?(@[0:1]==1)]`

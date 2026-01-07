@@ -47,9 +47,6 @@ queries:
   - id: bracket_notation_with_number_on_object
     status: fail
     result: ["value"]
-  - id: bracket_notation_with_quoted_escaped_backslash
-    status: open
-    result: ["value"]
   - id: bracket_notation_with_quoted_special_characters_combined
     status: open
     result: [42]
@@ -140,7 +137,7 @@ queries:
     status: open
     result: [{"key":1},{"key":3},{"key":"nice"},{"key":true},{"key":null},{"key":false},{"key":{}},{"key":[]},{"key":-1},{"key":0},{"key":""}]
   - id: filter_expression_with_bracket_notation_with_-1
-    status: open
+    status: fail
     result: []
   - id: filter_expression_with_bracket_notation_with_number_on_object
     status: open
@@ -179,7 +176,7 @@ queries:
     status: open
     result: [{"key":44}]
   - id: filter_expression_with_equals_false
-    status: open
+    status: fail
     result: [{"some":"some value"},{"key":false}]
   - id: filter_expression_with_equals_null
     status: open
@@ -283,9 +280,6 @@ queries:
   - id: filter_expression_with_subtraction
     status: open
     result: [{"key":-50}]
-  - id: filter_expression_with_triple_equal
-    status: open
-    result: NOT_SUPPORTED
   - id: filter_expression_with_value
     status: open
     result: [{"key":true},{"key":null},{"key":"value"},{"key":""},{"key":0},{"key":1},{"key":-1},{"key":42},{"key":{}},{"key":[]}]

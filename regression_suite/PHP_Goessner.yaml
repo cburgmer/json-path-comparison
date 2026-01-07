@@ -62,7 +62,7 @@ queries:
     status: fail
     result: ["value"]
   - id: bracket_notation_with_quoted_escaped_backslash
-    status: open
+    status: fail
     result: NOT_FOUND
   - id: bracket_notation_with_quoted_escaped_single_quote
     status: fail

@@ -936,6 +936,22 @@ The following queries provide results that do not match those of other implement
   ]
   ```
 
+- [ ] `$['\\']`
+  Input:
+  ```
+  {
+    "\\": "value"
+  }
+  ```
+  Expected output:
+  ```
+  ["value"]
+  ```
+  Actual output:
+  ```
+  []
+  ```
+
 - [ ] `$['\'']`
   Input:
   ```
@@ -1602,6 +1618,36 @@ The following queries provide results that do not match those of other implement
   Unable to compile selector `$[?(@['@key']==42)]': Invalid array index definition “?(@['@key']==42)]”
   ```
 
+- [ ] `$[?(@[-1]==2)]`
+  Input:
+  ```
+  [
+    [
+      2,
+      3
+    ],
+    [
+      "a"
+    ],
+    [
+      0,
+      2
+    ],
+    [
+      2
+    ]
+  ]
+  ```
+  Expected output:
+  ```
+  [[0,2],[2]]
+  ```
+  Actual output:
+  NOT_SUPPORTED
+  ```
+  Unable to compile selector `$[?(@[-1]==2)]': Invalid array index definition “?(@[-1]==2)]”
+  ```
+
 - [ ] `$[?(@[1]=='b')]`
   Input:
   ```
@@ -1794,6 +1840,58 @@ The following queries provide results that do not match those of other implement
   NOT_SUPPORTED
   ```
   Unable to compile selector `$[?(@.key==42)]': Invalid array index definition “?(@.key==42)]”
+  ```
+
+- [ ] `$[?(@.key==false)]`
+  Input:
+  ```
+  [
+    {
+      "some": "some value"
+    },
+    {
+      "key": true
+    },
+    {
+      "key": false
+    },
+    {
+      "key": null
+    },
+    {
+      "key": "value"
+    },
+    {
+      "key": ""
+    },
+    {
+      "key": 0
+    },
+    {
+      "key": 1
+    },
+    {
+      "key": -1
+    },
+    {
+      "key": 42
+    },
+    {
+      "key": {}
+    },
+    {
+      "key": []
+    }
+  ]
+  ```
+  Expected output:
+  ```
+  [{"key":false}]
+  ```
+  Actual output:
+  NOT_SUPPORTED
+  ```
+  Unable to compile selector `$[?(@.key==false)]': Invalid array index definition “?(@.key==false)]”
   ```
 
 - [ ] `$[?(@.key==0)]`

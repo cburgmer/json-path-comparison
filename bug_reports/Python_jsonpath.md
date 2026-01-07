@@ -274,6 +274,23 @@ The following queries provide results that do not match those of other implement
   ]
   ```
 
+- [ ] `$['\\']`
+  Input:
+  ```
+  {
+    "\\": "value"
+  }
+  ```
+  Expected output:
+  ```
+  ["value"]
+  ```
+  Actual output:
+  NOT_FOUND
+  ```
+  jsonpath returned false, this might indicate an error
+  ```
+
 - [ ] `$['\'']`
   Input:
   ```
@@ -723,6 +740,58 @@ The following queries provide results that do not match those of other implement
   jsonpath returned false, this might indicate an error
   ```
 
+- [ ] `$[?(@.key==false)]`
+  Input:
+  ```
+  [
+    {
+      "some": "some value"
+    },
+    {
+      "key": true
+    },
+    {
+      "key": false
+    },
+    {
+      "key": null
+    },
+    {
+      "key": "value"
+    },
+    {
+      "key": ""
+    },
+    {
+      "key": 0
+    },
+    {
+      "key": 1
+    },
+    {
+      "key": -1
+    },
+    {
+      "key": 42
+    },
+    {
+      "key": {}
+    },
+    {
+      "key": []
+    }
+  ]
+  ```
+  Expected output:
+  ```
+  [{"key":false}]
+  ```
+  Actual output:
+  NOT_FOUND
+  ```
+  jsonpath returned false, this might indicate an error
+  ```
+
 - [ ] `$[?(@.key=="hi@example.com")]`
   Input:
   ```
@@ -978,6 +1047,88 @@ The following queries provide results that do not match those of other implement
   ```
 
 - [ ] `$[?(@.key=42)]`
+  Input:
+  ```
+  [
+    {
+      "key": 0
+    },
+    {
+      "key": 42
+    },
+    {
+      "key": -1
+    },
+    {
+      "key": 1
+    },
+    {
+      "key": 41
+    },
+    {
+      "key": 43
+    },
+    {
+      "key": 42.0001
+    },
+    {
+      "key": 41.9999
+    },
+    {
+      "key": 100
+    },
+    {
+      "key": "some"
+    },
+    {
+      "key": "42"
+    },
+    {
+      "key": null
+    },
+    {
+      "key": 420
+    },
+    {
+      "key": ""
+    },
+    {
+      "key": {}
+    },
+    {
+      "key": []
+    },
+    {
+      "key": [
+        42
+      ]
+    },
+    {
+      "key": {
+        "key": 42
+      }
+    },
+    {
+      "key": {
+        "some": 42
+      }
+    },
+    {
+      "some": "value"
+    }
+  ]
+  ```
+  Expected output:
+  ```
+  NOT_SUPPORTED
+  ```
+  Actual output:
+  NOT_FOUND
+  ```
+  jsonpath returned false, this might indicate an error
+  ```
+
+- [ ] `$[?(@.key===42)]`
   Input:
   ```
   [

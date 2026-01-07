@@ -1068,6 +1068,10 @@ The following queries provide results that do not match those of other implement
     "\\": "value"
   }
   ```
+  Expected output:
+  ```
+  "value"
+  ```
   Error:
   ```
   strconv.Atoi: parsing "'\\\\'": invalid syntax
@@ -2376,6 +2380,10 @@ The following queries provide results that do not match those of other implement
     ]
   ]
   ```
+  Expected output:
+  ```
+  [[0,2],[2]]
+  ```
   Error:
   ```
   interface conversion: interface {} is nil, not string
@@ -2817,6 +2825,57 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   interface conversion: interface {} is nil, not string
+  ```
+
+- [ ] `$[?(@.key==false)]`
+  Input:
+  ```
+  [
+    {
+      "some": "some value"
+    },
+    {
+      "key": true
+    },
+    {
+      "key": false
+    },
+    {
+      "key": null
+    },
+    {
+      "key": "value"
+    },
+    {
+      "key": ""
+    },
+    {
+      "key": 0
+    },
+    {
+      "key": 1
+    },
+    {
+      "key": -1
+    },
+    {
+      "key": 42
+    },
+    {
+      "key": {}
+    },
+    {
+      "key": []
+    }
+  ]
+  ```
+  Expected output:
+  ```
+  [{"key":false}]
+  ```
+  Actual output:
+  ```
+  []
   ```
 
 - [ ] `$[?(@[0:1]==1)]`
@@ -3752,6 +3811,87 @@ The following queries provide results that do not match those of other implement
   [
     []
   ]
+  ```
+
+- [ ] `$[?(@.key===42)]`
+  Input:
+  ```
+  [
+    {
+      "key": 0
+    },
+    {
+      "key": 42
+    },
+    {
+      "key": -1
+    },
+    {
+      "key": 1
+    },
+    {
+      "key": 41
+    },
+    {
+      "key": 43
+    },
+    {
+      "key": 42.0001
+    },
+    {
+      "key": 41.9999
+    },
+    {
+      "key": 100
+    },
+    {
+      "key": "some"
+    },
+    {
+      "key": "42"
+    },
+    {
+      "key": null
+    },
+    {
+      "key": 420
+    },
+    {
+      "key": ""
+    },
+    {
+      "key": {}
+    },
+    {
+      "key": []
+    },
+    {
+      "key": [
+        42
+      ]
+    },
+    {
+      "key": {
+        "key": 42
+      }
+    },
+    {
+      "key": {
+        "some": 42
+      }
+    },
+    {
+      "some": "value"
+    }
+  ]
+  ```
+  Expected output:
+  ```
+  NOT_SUPPORTED
+  ```
+  Actual output:
+  ```
+  []
   ```
 
 - [ ] `$..[?(@.id)]`

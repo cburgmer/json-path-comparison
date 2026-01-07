@@ -33,6 +33,10 @@
 
 <h2>Results</h2>
 
+<h3 id="consensus">Consensus</h3>
+
+<p>Not supported</p>
+
 <h3>Other responses</h3>
 
 <h4 id="Bash_JSONPath.sh">
@@ -40,15 +44,6 @@ Bash (JSONPath.sh)
 </h4>
 
 <pre><code>[]
-</code></pre>
-
-<h4 id="C_json-glib">
-C (json-glib)
-</h4>
-
-<p>Not supported</p>
-
-<pre><code>Unable to compile selector `$[?(@.key===42)]': Invalid array index definition “?(@.key===42)]”
 </code></pre>
 
 <h4 id="Clojure_json-path">
@@ -64,33 +59,6 @@ Clojure (json-path)
     "some": "value"
   }
 ]
-</code></pre>
-
-<h4 id="Cpp_jsoncons">
-Cpp (jsoncons)
-</h4>
-
-<p>Not supported</p>
-
-<pre><code>JSON syntax_error at line 1 and column 15
-</code></pre>
-
-<h4 id="Dart_json_path">
-Dart (json_path)
-</h4>
-
-<p>Not supported</p>
-
-<pre><code>Instance of 'ParserException': end of input expected (at 1:2)
-</code></pre>
-
-<h4 id="Elixir_ExJsonPath">
-Elixir (ExJsonPath)
-</h4>
-
-<p>Not supported</p>
-
-<pre><code>illegal characters "=4"
 </code></pre>
 
 <h4 id="Elixir_jaxon">
@@ -112,16 +80,6 @@ Elixir (warpath)
 ]
 </code></pre>
 
-<h4 id="Golang_github.com-PaesslerAG-jsonpath">
-Golang (github.com-PaesslerAG-jsonpath)
-¹
-</h4>
-
-<p>Not supported</p>
-
-<pre><code>parsing error: $[?(@.key===42)]	:1:12 - 1:13 unexpected "=" while scanning extensions
-</code></pre>
-
 <h4 id="Golang_github.com-bhmj-jsonslice">
 Golang (github.com-bhmj-jsonslice)
 ¹
@@ -135,54 +93,12 @@ Golang (github.com-bhmj-jsonslice)
 ]
 </code></pre>
 
-<h4 id="Golang_github.com-ohler55-ojg">
-Golang (github.com-ohler55-ojg)
-</h4>
-
-<p>Not supported</p>
-
-<pre><code></code></pre>
-
 <h4 id="Golang_github.com-oliveagle-jsonpath">
 Golang (github.com-oliveagle-jsonpath)
 ¹
 </h4>
 
 <pre><code>[]
-</code></pre>
-
-<h4 id="Golang_github.com-theory-jsonpath">
-Golang (github.com-theory-jsonpath)
-</h4>
-
-<p>Not supported</p>
-
-<pre><code>jsonpath: unexpected '=' at position 12
-</code></pre>
-
-<h4 id="Golang_github.com-vmware-labs-yaml-jsonpath">
-Golang (github.com-vmware-labs-yaml-jsonpath)
-</h4>
-
-<p>Not supported</p>
-
-<pre><code>invalid filter term at position 11, following "=="
-</code></pre>
-
-<h4 id="Haskell_jsonpath">
-Haskell (jsonpath)
-</h4>
-
-<p>Not supported</p>
-
-<pre><code>Invalid JSONPath: $[?(@.key===42)]
- Error: 1:12:
-  |
-1 | $[?(@.key===42)]
-  |            ^^^^^
-unexpected "=42)]"
-expecting "false", "null", "true", '!', '"', '$', ''', '@', digit, or white space
-
 </code></pre>
 
 <h4 id="JavaScript_Goessner">
@@ -230,29 +146,6 @@ JavaScript (jsonpath-plus)
 ]
 </code></pre>
 
-<h4 id="JavaScript_jsonpathly">
-JavaScript (jsonpathly)
-</h4>
-
-<p>Not supported</p>
-
-<pre><code>mismatched input '' expecting {'@', '$', 'true', 'false', 'null', '{', '[', '(', NUMBER, STRING}
-</code></pre>
-
-<h4 id="Java_com.github.xmljacquard.ajp">
-Java (com.github.xmljacquard.ajp)
-</h4>
-
-<p>Not supported</p>
-
-<pre><code>Error at char 18 in expression in xsl:sequence/@select on line 20 column 67 of ajp-runner.xslt:
-   &lt;failed xmlns:ixml="http://invisiblexml.org/NS"
-  ixml:state="failed"&gt;&lt;line&gt;1&lt;/line&gt;&lt;column&gt;12&lt;/column&gt;&lt;pos&gt;12&lt;/pos&gt;&lt;unexpected&gt;=&lt;/unexpected&gt;&lt;permitted&gt;"'", #9, #A, #D, ' ', '"', '$', '-', '0', '@', 'f', 'n', 't', ['1'-'9'], ['a'-'z']&lt;/permitted&gt;&lt;completions&gt;&lt;completed rule="comparison-op" start="10" end="11"&gt;&lt;input&gt;==&lt;/input&gt;&lt;/completed&gt;&lt;completed rule="member-name-shorthand" start="7" end="9"&gt;&lt;input&gt;key&lt;/input&gt;&lt;/completed&gt;&lt;completed rule="name-segment" start="6" end="9"&gt;&lt;input&gt;.key&lt;/input&gt;&lt;/completed&gt;&lt;completed rule="child-segment" start="6" end="9"&gt;&lt;input&gt;.key&lt;/input&gt;&lt;/completed&gt;&lt;completed rule="segment" start="6" end="9"&gt;&lt;input&gt;.key&lt;/input&gt;&lt;/completed&gt;&lt;completed rule="singular-query-segments" start="6" end="9"&gt;&lt;input&gt;.key&lt;/input&gt;&lt;/completed&gt;&lt;completed rule="rel-singular-query" start="5" end="9"&gt;&lt;input&gt;@.key&lt;/input&gt;&lt;/completed&gt;&lt;completed rule="segments" start="6" end="9"&gt;&lt;input&gt;.key&lt;/input&gt;&lt;/completed&gt;&lt;/completions&gt;&lt;could-be-next&gt;&lt;in rule="DIGIT1"&gt;&lt;tokens&gt;['1'-'9']&lt;/tokens&gt;&lt;/in&gt;&lt;in rule="current-node-identifier"&gt;&lt;tokens&gt;'@'&lt;/tokens&gt;&lt;/in&gt;&lt;in rule="int"&gt;&lt;tokens&gt;'0'&lt;/tokens&gt;&lt;/in&gt;&lt;in rule="root-identifier"&gt;&lt;tokens&gt;'$'&lt;/tokens&gt;&lt;/in&gt;&lt;in rule="false"&gt;&lt;tokens&gt;'f'&lt;/tokens&gt;&lt;/in&gt;&lt;in rule="null"&gt;&lt;tokens&gt;'n'&lt;/tokens&gt;&lt;/in&gt;&lt;in rule="LCALPHA"&gt;&lt;tokens&gt;['a'-'z']&lt;/tokens&gt;&lt;/in&gt;&lt;in rule="string-literal"&gt;&lt;tokens&gt;"'", '"'&lt;/tokens&gt;&lt;/in&gt;&lt;in rule="B"&gt;&lt;tokens&gt;#9, #A, #D, ' '&lt;/tokens&gt;&lt;/in&gt;&lt;in rule="true"&gt;&lt;tokens&gt;'t'&lt;/tokens&gt;&lt;/in&gt;&lt;/could-be-next&gt;&lt;unfinished&gt;&lt;open rule="comparison-expr" start="5" end="11"&gt;&lt;input&gt;@.key==&lt;/input&gt;&lt;/open&gt;&lt;open rule="paren-expr" start="4" end="9"&gt;&lt;input&gt;(@.key&lt;/input&gt;&lt;/open&gt;&lt;open rule="filter-selector" start="3" end="3"&gt;&lt;input&gt;?&lt;/input&gt;&lt;/open&gt;&lt;open rule="bracketed-selection" start="2" end="2"&gt;&lt;input&gt;[&lt;/input&gt;&lt;/open&gt;&lt;open rule="jsonpath-query" start="1" end="1"&gt;&lt;input&gt;$&lt;/input&gt;&lt;/open&gt;&lt;/unfinished&gt;&lt;/failed&gt;
-During lazy evaluation of tailCallLoop(ajp:getProcessor(...)) on line 20 of jar:file:./implementations/Java_com.github.xmljacquard.ajp/build/deps/org/xmljacquard/ajp/0.0.7/ajp-0.0.7.jar!/xslt/ajp-runner.xslt
-In function ajpr:getProcessor on line 17 column 106 of ajp-runner.xslt:
-net.sf.saxon.s9api.SaxonApiException: &lt;failed xmlns:ixml="http://invisiblexml.org/NS" ixml:state="failed"&gt;&lt;line&gt;1&lt;/line&gt;&lt;column&gt;12&lt;/column&gt;&lt;pos&gt;12&lt;/pos&gt;&lt;unexpected&gt;=&lt;/unexpected&gt;&lt;permitted&gt;"'", #9, #A, #D, ' ', '"', '$', '-', '0', '@', 'f', 'n', 't', ['1'-'9'], ['a'-'z']&lt;/permitted&gt;&lt;completions&gt;&lt;completed rule="comparison-op" start="10" end="11"&gt;&lt;input&gt;==&lt;/input&gt;&lt;/completed&gt;&lt;completed rule="member-name-shorthand" start="7" end="9"&gt;&lt;input&gt;key&lt;/input&gt;&lt;/completed&gt;&lt;completed rule="name-segment" start="6" end="9"&gt;&lt;input&gt;.key&lt;/input&gt;&lt;/completed&gt;&lt;completed rule="child-segment" start="6" end="9"&gt;&lt;input&gt;.key&lt;/input&gt;&lt;/completed&gt;&lt;completed rule="segment" start="6" end="9"&gt;&lt;input&gt;.key&lt;/input&gt;&lt;/completed&gt;&lt;completed rule="singular-query-segments" start="6" end="9"&gt;&lt;input&gt;.key&lt;/input&gt;&lt;/completed&gt;&lt;completed rule="rel-singular-query" start="5" end="9"&gt;&lt;input&gt;@.key&lt;/input&gt;&lt;/completed&gt;&lt;completed rule="segments" start="6" end="9"&gt;&lt;input&gt;.key&lt;/input&gt;&lt;/completed&gt;&lt;/completions&gt;&lt;could-be-next&gt;&lt;in rule="DIGIT1"&gt;&lt;tokens&gt;['1'-'9']&lt;/tokens&gt;&lt;/in&gt;&lt;in rule="current-node-identifier"&gt;&lt;tokens&gt;'@'&lt;/tokens&gt;&lt;/in&gt;&lt;in rule="int"&gt;&lt;tokens&gt;'0'&lt;/tokens&gt;&lt;/in&gt;&lt;in rule="root-identifier"&gt;&lt;tokens&gt;'$'&lt;/tokens&gt;&lt;/in&gt;&lt;in rule="false"&gt;&lt;tokens&gt;'f'&lt;/tokens&gt;&lt;/in&gt;&lt;in rule="null"&gt;&lt;tokens&gt;'n'&lt;/tokens&gt;&lt;/in&gt;&lt;in rule="LCALPHA"&gt;&lt;tokens&gt;['a'-'z']&lt;/tokens&gt;&lt;/in&gt;&lt;in rule="string-literal"&gt;&lt;tokens&gt;"'", '"'&lt;/tokens&gt;&lt;/in&gt;&lt;in rule="B"&gt;&lt;tokens&gt;#9, #A, #D, ' '&lt;/tokens&gt;&lt;/in&gt;&lt;in rule="true"&gt;&lt;tokens&gt;'t'&lt;/tokens&gt;&lt;/in&gt;&lt;/could-be-next&gt;&lt;unfinished&gt;&lt;open rule="comparison-expr" start="5" end="11"&gt;&lt;input&gt;@.key==&lt;/input&gt;&lt;/open&gt;&lt;open rule="paren-expr" start="4" end="9"&gt;&lt;input&gt;(@.key&lt;/input&gt;&lt;/open&gt;&lt;open rule="filter-selector" start="3" end="3"&gt;&lt;input&gt;?&lt;/input&gt;&lt;/open&gt;&lt;open rule="bracketed-selection" start="2" end="2"&gt;&lt;input&gt;[&lt;/input&gt;&lt;/open&gt;&lt;open rule="jsonpath-query" start="1" end="1"&gt;&lt;input&gt;$&lt;/input&gt;&lt;/open&gt;&lt;/unfinished&gt;&lt;/failed&gt;
-</code></pre>
-
 <h4 id="Java_com.jayway.jsonpath">
 Java (com.jayway.jsonpath)
 ¹
@@ -266,16 +159,6 @@ Java (com.jayway.jsonpath)
 ]
 </code></pre>
 
-<h4 id="Kotlin_com.nfeld.jsonpathkt">
-Kotlin (com.nfeld.jsonpathkt)
-¹
-</h4>
-
-<p>Not supported</p>
-
-<pre><code>Unexpected char, char=?, index=2
-</code></pre>
-
 <h4 id="Objective-C_SMJJSONPath">
 Objective-C (SMJJSONPath)
 ¹
@@ -287,24 +170,6 @@ Objective-C (SMJJSONPath)
     "key": 42
   }
 ]
-</code></pre>
-
-<h4 id="PHP_galbar-jsonpath">
-PHP (galbar-jsonpath)
-</h4>
-
-<p>Not supported</p>
-
-<pre><code>Invalid JSONPath error: 'Error in JSONPath near '=''
-</code></pre>
-
-<h4 id="PHP_remorhaz-jsonpath">
-PHP (remorhaz-jsonpath)
-</h4>
-
-<p>Not supported</p>
-
-<pre><code>Error: 'Failed to build AST from JSONPath query: $[?(@.key===42)]'
 </code></pre>
 
 <h4 id="PHP_softcreatr-jsonpath">
@@ -324,96 +189,11 @@ Python (jsonpath)
 <pre><code>jsonpath returned false, this might indicate an error
 </code></pre>
 
-<h4 id="Python_jsonpath-ng">
-Python (jsonpath-ng)
-</h4>
-
-<p>Not supported</p>
-
-<pre><code>JsonPathLexerError('Error on line 1, col 2: Unexpected character: ? ')
-</code></pre>
-
-<h4 id="Python_jsonpath-rw">
-Python (jsonpath-rw)
-</h4>
-
-<p>Not supported</p>
-
-<pre><code>JsonPathLexerError('Error on line 1, col 2: Unexpected character: ? ')
-</code></pre>
-
-<h4 id="Python_jsonpath2">
-Python (jsonpath2)
-</h4>
-
-<p>Not supported</p>
-
-<pre><code>line 1:10 mismatched input '=' expecting {'@', '$', 'true', 'false', 'null', '{', '[', STRING, NUMBER}
-ValueError("line 1:10 mismatched input '=' expecting {'@', '$', 'true', 'false', 'null', '{', '[', STRING, NUMBER}")
-</code></pre>
-
-<h4 id="Python_python-jsonpath">
-Python (python-jsonpath)
-</h4>
-
-<p>Not supported</p>
-
-<pre><code>JSONPathSyntaxError("unexpected token '='")
-</code></pre>
-
-<h4 id="Raku_JSON-Path">
-Raku (JSON-Path)
-</h4>
-
-<p>Not supported</p>
-
-<pre><code>Evaluation of embedded Raku code not allowed (construct with :allow-eval)
-</code></pre>
-
 <h4 id="Ruby_jsonpath">
 Ruby (jsonpath)
 </h4>
 
 <pre><code>[]
-</code></pre>
-
-<h4 id="Rust_jsonpath">
-Rust (jsonpath)
-</h4>
-
-<p>Not supported</p>
-
-<pre><code>parsing error
-</code></pre>
-
-<h4 id="Rust_jsonpath_lib">
-Rust (jsonpath_lib)
-</h4>
-
-<p>Not supported</p>
-
-<pre><code>path error: 
-$[?(@.key===42)]
-^^^^^^^^^^^
-
-</code></pre>
-
-<h4 id="Rust_serde_json_path">
-Rust (serde_json_path)
-</h4>
-
-<p>Not supported</p>
-
-<pre><code>at position 3, in long-hand segment, parser error
-</code></pre>
-
-<h4 id="Scala_jsonpath">
-Scala (jsonpath)
-</h4>
-
-<p>Not supported</p>
-
-<pre><code>JPError(end of input expected)
 </code></pre>
 
 <h4 id="Swift_Sextant">
@@ -438,24 +218,6 @@ dotNET (Json.NET)
 ]
 </code></pre>
 
-<h4 id="dotNET_JsonCons.JsonPath">
-dotNET (JsonCons.JsonPath)
-</h4>
-
-<p>Not supported</p>
-
-<pre><code>Expected function
-</code></pre>
-
-<h4 id="dotNET_JsonPath.Net">
-dotNET (JsonPath.Net)
-</h4>
-
-<p>Not supported</p>
-
-<pre><code>Pattern '?(@.key===...' not recognized.
-</code></pre>
-
 <h4 id="dotNET_JsonPathLib">
 dotNET (JsonPathLib)
 </h4>
@@ -465,15 +227,6 @@ dotNET (JsonPathLib)
     "key": 42
   }
 ]
-</code></pre>
-
-<h4 id="dotNET_Manatee.Json">
-dotNET (Manatee.Json)
-</h4>
-
-<p>Not supported</p>
-
-<pre><code>Unrecognized JSON Path Expression element. Path up to error: '$'
 </code></pre>
 
 <h3>Errors</h3>

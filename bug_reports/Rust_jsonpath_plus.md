@@ -64,6 +64,22 @@ The following queries provide results that do not match those of other implement
   panic occurred
   ```
 
+- [ ] `$['\\']`
+  Input:
+  ```
+  {
+    "\\": "value"
+  }
+  ```
+  Expected output:
+  ```
+  ["value"]
+  ```
+  Actual output:
+  ```
+  []
+  ```
+
 - [ ] `$['\'']`
   Input:
   ```
@@ -1613,6 +1629,10 @@ The following queries provide results that do not match those of other implement
       "some": "value"
     }
   ]
+  ```
+  Expected output:
+  ```
+  NOT_SUPPORTED
   ```
   Error:
   ```

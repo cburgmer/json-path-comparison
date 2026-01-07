@@ -847,6 +847,23 @@ The following queries provide results that do not match those of other implement
   parsing error
   ```
 
+- [ ] `$['\\']`
+  Input:
+  ```
+  {
+    "\\": "value"
+  }
+  ```
+  Expected output:
+  ```
+  ["value"]
+  ```
+  Actual output:
+  NOT_SUPPORTED
+  ```
+  parsing error
+  ```
+
 - [ ] `$['\'']`
   Input:
   ```
@@ -1664,6 +1681,36 @@ The following queries provide results that do not match those of other implement
   parsing error
   ```
 
+- [ ] `$[?(@[-1]==2)]`
+  Input:
+  ```
+  [
+    [
+      2,
+      3
+    ],
+    [
+      "a"
+    ],
+    [
+      0,
+      2
+    ],
+    [
+      2
+    ]
+  ]
+  ```
+  Expected output:
+  ```
+  [[0,2],[2]]
+  ```
+  Actual output:
+  NOT_SUPPORTED
+  ```
+  parsing error
+  ```
+
 - [ ] `$[?(@[1]=='b')]`
   Input:
   ```
@@ -1854,6 +1901,58 @@ The following queries provide results that do not match those of other implement
   Actual output:
   ```
   []
+  ```
+
+- [ ] `$[?(@.key==false)]`
+  Input:
+  ```
+  [
+    {
+      "some": "some value"
+    },
+    {
+      "key": true
+    },
+    {
+      "key": false
+    },
+    {
+      "key": null
+    },
+    {
+      "key": "value"
+    },
+    {
+      "key": ""
+    },
+    {
+      "key": 0
+    },
+    {
+      "key": 1
+    },
+    {
+      "key": -1
+    },
+    {
+      "key": 42
+    },
+    {
+      "key": {}
+    },
+    {
+      "key": []
+    }
+  ]
+  ```
+  Expected output:
+  ```
+  [{"key":false}]
+  ```
+  Actual output:
+  NOT_SUPPORTED
+  ```
+  parsing error
   ```
 
 - [ ] `$[?(@.key==0)]`

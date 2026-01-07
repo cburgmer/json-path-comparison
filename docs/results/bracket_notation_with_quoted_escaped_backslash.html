@@ -12,6 +12,22 @@
 
 <h2>Results</h2>
 
+<h3 id="consensus">Consensus</h3>
+
+<pre><code>[
+  "value"
+]
+</code></pre>
+
+<h4>
+Scalar consensus
+</h4>
+
+<p>The scalar consensus applies for implementations which return a single value where only one match is possible (instead of an array of a single value).</p>
+
+<pre><code>"value"
+</code></pre>
+
 <h3>Other responses</h3>
 
 <h4 id="Bash_JSONPath.sh">
@@ -26,24 +42,6 @@ C (json-glib)
 </h4>
 
 <pre><code>[]
-</code></pre>
-
-<h4 id="Cpp_jsoncons">
-Cpp (jsoncons)
-</h4>
-
-<pre><code>[
-  "value"
-]
-</code></pre>
-
-<h4 id="Dart_json_path">
-Dart (json_path)
-</h4>
-
-<pre><code>[
-  "value"
-]
 </code></pre>
 
 <h4 id="Elixir_ExJsonPath">
@@ -75,68 +73,6 @@ Erlang (ejsonpath)
 <pre><code>[]
 </code></pre>
 
-<h4 id="Golang_github.com-PaesslerAG-jsonpath">
-Golang (github.com-PaesslerAG-jsonpath)
-¹
-</h4>
-
-<pre><code>"value"
-</code></pre>
-
-<h4 id="Golang_github.com-bhmj-jsonslice">
-Golang (github.com-bhmj-jsonslice)
-¹
-³
-</h4>
-
-<pre><code>"value"
-</code></pre>
-
-<h4 id="Golang_github.com-ohler55-ojg">
-Golang (github.com-ohler55-ojg)
-</h4>
-
-<pre><code>[
-  "value"
-]
-</code></pre>
-
-<h4 id="Golang_github.com-spyzhov-ajson">
-Golang (github.com-spyzhov-ajson)
-</h4>
-
-<pre><code>[
-  "value"
-]
-</code></pre>
-
-<h4 id="Golang_github.com-theory-jsonpath">
-Golang (github.com-theory-jsonpath)
-</h4>
-
-<pre><code>[
-  "value"
-]
-</code></pre>
-
-<h4 id="Golang_github.com-vmware-labs-yaml-jsonpath">
-Golang (github.com-vmware-labs-yaml-jsonpath)
-</h4>
-
-<pre><code>[
-  "value"
-]
-</code></pre>
-
-<h4 id="Haskell_jsonpath">
-Haskell (jsonpath)
-</h4>
-
-<pre><code>[
-  "value"
-]
-</code></pre>
-
 <h4 id="JavaScript_Goessner">
 JavaScript (Goessner)
 ²
@@ -145,24 +81,6 @@ JavaScript (Goessner)
 <p>Not found</p>
 
 <pre><code>jsonpath returned false, this might indicate an error
-</code></pre>
-
-<h4 id="JavaScript_brunerd">
-JavaScript (brunerd)
-</h4>
-
-<pre><code>[
-  "value"
-]
-</code></pre>
-
-<h4 id="JavaScript_json-p3">
-JavaScript (json-p3)
-</h4>
-
-<pre><code>[
-  "value"
-]
 </code></pre>
 
 <h4 id="JavaScript_jsonpath">
@@ -193,41 +111,6 @@ Java (com.github.jsurfer)
 <pre><code>[]
 </code></pre>
 
-<h4 id="Java_com.github.xmljacquard.ajp">
-Java (com.github.xmljacquard.ajp)
-</h4>
-
-<pre><code>[
-  "value"
-]
-</code></pre>
-
-<h4 id="Java_com.jayway.jsonpath">
-Java (com.jayway.jsonpath)
-¹
-³
-</h4>
-
-<pre><code>"value"
-</code></pre>
-
-<h4 id="Kotlin_com.nfeld.jsonpathkt">
-Kotlin (com.nfeld.jsonpathkt)
-¹
-</h4>
-
-<pre><code>"value"
-</code></pre>
-
-<h4 id="Objective-C_SMJJSONPath">
-Objective-C (SMJJSONPath)
-¹
-³
-</h4>
-
-<pre><code>"value"
-</code></pre>
-
 <h4 id="PHP_Goessner">
 PHP (Goessner)
 ²
@@ -242,24 +125,6 @@ PHP (galbar-jsonpath)
 </h4>
 
 <pre><code>[]
-</code></pre>
-
-<h4 id="PHP_remorhaz-jsonpath">
-PHP (remorhaz-jsonpath)
-</h4>
-
-<pre><code>[
-  "value"
-]
-</code></pre>
-
-<h4 id="PHP_softcreatr-jsonpath">
-PHP (softcreatr-jsonpath)
-</h4>
-
-<pre><code>[
-  "value"
-]
 </code></pre>
 
 <h4 id="Perl_JSON-Path">
@@ -279,24 +144,6 @@ Python (jsonpath)
 <pre><code>jsonpath returned false, this might indicate an error
 </code></pre>
 
-<h4 id="Python_jsonpath-ng">
-Python (jsonpath-ng)
-</h4>
-
-<pre><code>[
-  "value"
-]
-</code></pre>
-
-<h4 id="Python_jsonpath-rw">
-Python (jsonpath-rw)
-</h4>
-
-<pre><code>[
-  "value"
-]
-</code></pre>
-
 <h4 id="Python_jsonpath2">
 Python (jsonpath2)
 </h4>
@@ -305,15 +152,6 @@ Python (jsonpath2)
 
 <pre><code>line 1:2 token recognition error at: '''
 ValueError("line 1:2 token recognition error at: '''")
-</code></pre>
-
-<h4 id="Python_python-jsonpath">
-Python (python-jsonpath)
-</h4>
-
-<pre><code>[
-  "value"
-]
 </code></pre>
 
 <h4 id="Raku_JSON-Path">
@@ -358,15 +196,6 @@ Rust (jsonpath_plus)
 <pre><code>[]
 </code></pre>
 
-<h4 id="Rust_serde_json_path">
-Rust (serde_json_path)
-</h4>
-
-<pre><code>[
-  "value"
-]
-</code></pre>
-
 <h4 id="Scala_jsonpath">
 Scala (jsonpath)
 </h4>
@@ -374,56 +203,11 @@ Scala (jsonpath)
 <pre><code>[]
 </code></pre>
 
-<h4 id="Swift_Sextant">
-Swift (Sextant)
-</h4>
-
-<pre><code>[
-  "value"
-]
-</code></pre>
-
-<h4 id="dotNET_Json.NET">
-dotNET (Json.NET)
-</h4>
-
-<pre><code>[
-  "value"
-]
-</code></pre>
-
-<h4 id="dotNET_JsonCons.JsonPath">
-dotNET (JsonCons.JsonPath)
-</h4>
-
-<pre><code>[
-  "value"
-]
-</code></pre>
-
-<h4 id="dotNET_JsonPath.Net">
-dotNET (JsonPath.Net)
-</h4>
-
-<pre><code>[
-  "value"
-]
-</code></pre>
-
 <h4 id="dotNET_JsonPathLib">
 dotNET (JsonPathLib)
 </h4>
 
 <pre><code>[]
-</code></pre>
-
-<h4 id="dotNET_Manatee.Json">
-dotNET (Manatee.Json)
-</h4>
-
-<pre><code>[
-  "value"
-]
 </code></pre>
 
 <h3>Errors</h3>

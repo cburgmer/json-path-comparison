@@ -100,7 +100,7 @@ queries:
     status: fail
     result: []
   - id: bracket_notation_with_quoted_escaped_backslash
-    status: open
+    status: fail
     result: []
   - id: bracket_notation_with_quoted_escaped_single_quote
     status: fail
@@ -259,7 +259,7 @@ queries:
     status: fail
     result: []
   - id: filter_expression_with_bracket_notation_with_-1
-    status: open
+    status: fail
     result: []
   - id: filter_expression_with_bracket_notation_with_number
     status: fail
@@ -313,7 +313,7 @@ queries:
     status: open
     result: []
   - id: filter_expression_with_equals_false
-    status: open
+    status: fail
     result: [false]
   - id: filter_expression_with_equals_null
     status: open
@@ -460,7 +460,7 @@ queries:
     status: fail
     result: []
   - id: filter_expression_with_triple_equal
-    status: open
+    status: fail
     result: []
   - id: filter_expression_with_value
     status: open

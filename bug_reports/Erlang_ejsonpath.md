@@ -181,6 +181,22 @@ The following queries provide results that do not match those of other implement
   {"init terminating in do_boot",not_implemented}
   ```
 
+- [ ] `$['\\']`
+  Input:
+  ```
+  {
+    "\\": "value"
+  }
+  ```
+  Expected output:
+  ```
+  ["value"]
+  ```
+  Actual output:
+  ```
+  []
+  ```
+
 - [ ] `$['\'']`
   Input:
   ```
@@ -810,6 +826,58 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   Timeout
+  ```
+
+- [ ] `$[?(@.key==false)]`
+  Input:
+  ```
+  [
+    {
+      "some": "some value"
+    },
+    {
+      "key": true
+    },
+    {
+      "key": false
+    },
+    {
+      "key": null
+    },
+    {
+      "key": "value"
+    },
+    {
+      "key": ""
+    },
+    {
+      "key": 0
+    },
+    {
+      "key": 1
+    },
+    {
+      "key": -1
+    },
+    {
+      "key": 42
+    },
+    {
+      "key": {}
+    },
+    {
+      "key": []
+    }
+  ]
+  ```
+  Expected output:
+  ```
+  [{"key":false}]
+  ```
+  Actual output:
+  NOT_SUPPORTED
+  ```
+  syntax error before: ')'
   ```
 
 - [ ] `$[?(@[0:1]==1)]`
@@ -1665,6 +1733,10 @@ The following queries provide results that do not match those of other implement
       "some": "value"
     }
   ]
+  ```
+  Expected output:
+  ```
+  NOT_SUPPORTED
   ```
   Error:
   ```

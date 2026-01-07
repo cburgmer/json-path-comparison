@@ -582,6 +582,35 @@ The following queries provide results that do not match those of other implement
   parsing error: $[?(@['@key']==42)]	:1:7 - 1:13 could not parse string: invalid syntax
   ```
 
+- [ ] `$[?(@[-1]==2)]`
+  Input:
+  ```
+  [
+    [
+      2,
+      3
+    ],
+    [
+      "a"
+    ],
+    [
+      0,
+      2
+    ],
+    [
+      2
+    ]
+  ]
+  ```
+  Expected output:
+  ```
+  [[0,2],[2]]
+  ```
+  Actual output:
+  ```
+  []
+  ```
+
 - [ ] `$[?(@.a && (@.b || @.c))]`
   Input:
   ```
