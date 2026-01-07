@@ -2,7 +2,7 @@ root = implementations/PHP_remorhaz-jsonpath
 builddir = $root/build
 
 rule install
-  command = (cd $root && composer install) && echo > $out
+  command = (cd $root && PATH="/root/php8.3.29/bin:$PATH" composer install) && echo > $out
 
 build $builddir/composer_installed: install | $root/composer.json $root/composer.lock
 

@@ -14,9 +14,6 @@ RUN apt-get -y upgrade && apt-get -y update && apt-get -y dist-upgrade \
 RUN curl https://sh.rustup.rs -sSf | sh -s -- --default-toolchain stable -y
 ENV PATH="/root/.cargo/bin:${PATH}"
 
-# PHP
-RUN apt-get install -y --no-install-recommends php php-intl php-tokenizer composer
-
 # JavaScript
 RUN apt-get install -y --no-install-recommends nodejs npm unzip
 
@@ -98,6 +95,18 @@ RUN case "$(uname -m)" in aarch64) ARCH="arm64";; *) ARCH="amd64";; esac \
 ENV PATH="${PATH}:/go/bin"
 # Work around what's possibly tracked under https://github.com/golang/go/issues/49004
 ENV GOFLAGS="-buildvcs=false"
+
+# PHP
+# Use latestest version from upstream not available in LTS
+# RUN apt-get install -y --no-install-recommends php php-intl php-tokenizer composer
+RUN apt-get install -y --no-install-recommends build-essential autoconf bison re2c pkg-config libssl-dev zlib1g-dev
+ADD installPhp.sh /tmp/installPhp.sh
+RUN chmod a+x /tmp/installPhp.sh
+
+ARG PHP_VERSION_LATEST="8.5.1"
+RUN /tmp/installPhp.sh "8.3.29"
+RUN /tmp/installPhp.sh "$PHP_VERSION_LATEST"
+RUN ln -s /root/php${PHP_VERSION_LATEST}/bin/php /usr/local/bin/php && ln -s /root/php${PHP_VERSION_LATEST}/bin/composer /usr/local/bin/composer
 
 # Work around https://akashmittal.com/code-example-fatal-detected-dubious-ownership-in-repository-at/
 # There seems to be no easy way in docker to make the current user the owner of mounted volumnes, e.g. https://github.com/moby/moby/issues/2259

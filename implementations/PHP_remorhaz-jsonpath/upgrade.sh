@@ -3,4 +3,4 @@ set -euo pipefail
 
 cd "$(dirname "$BASH_SOURCE[0]")"
 rm -rf vendor
-composer update
+PATH="/root/php8.3.29/bin:$PATH" composer update

@@ -24,78 +24,6 @@ The following queries provide results that do not match those of other implement
   TypeError
   ```
 
-- [ ] `$[2:113667776004]`
-  Input:
-  ```
-  [
-    "first",
-    "second",
-    "third",
-    "forth",
-    "fifth"
-  ]
-  ```
-  Expected output:
-  ```
-  ["third","forth","fifth"]
-  ```
-  Error:
-  ```
-  timeout: sending signal TERM to command ‘php’
-  ```
-
-- [ ] `$[0:3:-2]`
-  Input:
-  ```
-  [
-    "first",
-    "second",
-    "third",
-    "forth",
-    "fifth"
-  ]
-  ```
-  Expected output:
-  ```
-  []
-  ```
-  Error:
-  ```
-  timeout: sending signal TERM to command ‘php’
-  ```
-
-- [ ] `$[::-2]`
-  Input:
-  ```
-  [
-    "first",
-    "second",
-    "third",
-    "forth",
-    "fifth"
-  ]
-  ```
-  Error:
-  ```
-  timeout: sending signal TERM to command ‘php’
-  ```
-
-- [ ] `$[3::-1]`
-  Input:
-  ```
-  [
-    "first",
-    "second",
-    "third",
-    "forth",
-    "fifth"
-  ]
-  ```
-  Error:
-  ```
-  timeout: sending signal TERM to command ‘php’
-  ```
-
 - [ ] `$[:]`
   Input:
   ```
@@ -113,64 +41,6 @@ The following queries provide results that do not match those of other implement
   TypeError
   ```
 
-- [ ] `$[:2:-1]`
-  Input:
-  ```
-  [
-    "first",
-    "second",
-    "third",
-    "forth",
-    "fifth"
-  ]
-  ```
-  Error:
-  ```
-  timeout: sending signal TERM to command ‘php’
-  ```
-
-- [ ] `$[]`
-  Input:
-  ```
-  {
-    "": 42,
-    "''": 123,
-    "\"\"": 222
-  }
-  ```
-  Expected output:
-  ```
-  NOT_SUPPORTED
-  ```
-  Actual output:
-  ```
-  [
-    {
-      "": 42,
-      "\"\"": 222,
-      "''": 123
-    }
-  ]
-  ```
-
-- [ ] `$[-2]`
-  Input:
-  ```
-  [
-    "one element"
-  ]
-  ```
-  Expected output:
-  ```
-  []
-  ```
-  Actual output:
-  ```
-  [
-    "one element"
-  ]
-  ```
-
 - [ ] `$[0]`
   Input:
   ```
@@ -186,75 +56,6 @@ The following queries provide results that do not match those of other implement
   ```
   [
     "value"
-  ]
-  ```
-
-- [ ] `$[']']`
-  Input:
-  ```
-  {
-    "]": 42
-  }
-  ```
-  Expected output:
-  ```
-  [42]
-  ```
-  Actual output:
-  NOT_SUPPORTED
-  ```
-  Error: 'Unable to parse token ' in expression: [']']'
-  ```
-
-- [ ] `$['\'']`
-  Input:
-  ```
-  {
-    "'": "value"
-  }
-  ```
-  Expected output:
-  ```
-  ["value"]
-  ```
-  Actual output:
-  ```
-  []
-  ```
-
-- [ ] `$['single'quote']`
-  Input:
-  ```
-  {
-    "single'quote": "value"
-  }
-  ```
-  Expected output:
-  ```
-  NOT_SUPPORTED
-  ```
-  Actual output:
-  ```
-  [
-    "value"
-  ]
-  ```
-
-- [ ] `$['*']`
-  Input:
-  ```
-  {
-    "another": "entry"
-  }
-  ```
-  Expected output:
-  ```
-  []
-  ```
-  Actual output:
-  ```
-  [
-    "entry"
   ]
   ```
 
@@ -620,33 +421,6 @@ The following queries provide results that do not match those of other implement
   Error: 'Malformed filter query'
   ```
 
-- [ ] `$.items[?(@.key==$.value)]`
-  Input:
-  ```
-  {
-    "value": 42,
-    "items": [
-      {
-        "key": 10
-      },
-      {
-        "key": 42
-      },
-      {
-        "key": 50
-      }
-    ]
-  }
-  ```
-  Expected output:
-  ```
-  [{"key":42}]
-  ```
-  Actual output:
-  ```
-  []
-  ```
-
 - [ ] `$[?(@.length() == 4)]`
   Input:
   ```
@@ -797,32 +571,6 @@ The following queries provide results that do not match those of other implement
   ]
   ```
 
-- [ ] `$[?(1==1)]`
-  Input:
-  ```
-  [
-    1,
-    3,
-    "nice",
-    true,
-    null,
-    false,
-    {},
-    [],
-    -1,
-    0,
-    ""
-  ]
-  ```
-  Expected output:
-  ```
-  [1,3,"nice",true,null,false,{},[],-1,0,""]
-  ```
-  Error:
-  ```
-  Error: 'Malformed filter query'
-  ```
-
 - [ ] `$[?(false)]`
   Input:
   ```
@@ -887,24 +635,6 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   Error: 'Malformed filter query'
-  ```
-
-- [ ] `$(key,more)`
-  Input:
-  ```
-  {
-    "key": 1,
-    "some": 2,
-    "more": 3
-  }
-  ```
-  Expected output:
-  ```
-  NOT_SUPPORTED
-  ```
-  Actual output:
-  ```
-  []
   ```
 
 - [ ] `$..`

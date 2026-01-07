@@ -8,29 +8,30 @@
     "packages": [
         {
             "name": "softcreatr/jsonpath",
-            "version": "0.10.0",
+            "version": "1.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/SoftCreatR/JSONPath.git",
-                "reference": "74f0b330a98135160db947ba7bc65216b64a0c86"
+                "reference": "d6ccedfb3ea4a1855eec4005a5e09eee25fb5adb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/SoftCreatR/JSONPath/zipball/74f0b330a98135160db947ba7bc65216b64a0c86",
-                "reference": "74f0b330a98135160db947ba7bc65216b64a0c86",
+                "url": "https://api.github.com/repos/SoftCreatR/JSONPath/zipball/d6ccedfb3ea4a1855eec4005a5e09eee25fb5adb",
+                "reference": "d6ccedfb3ea4a1855eec4005a5e09eee25fb5adb",
                 "shasum": ""
             },
             "require": {
                 "ext-json": "*",
-                "php": "8.1 - 8.4"
+                "php": "^8.5"
             },
             "replace": {
                 "flow/jsonpath": "*"
             },
             "require-dev": {
-                "friendsofphp/php-cs-fixer": "^3.58",
-                "phpunit/phpunit": "10 - 12",
-                "squizlabs/php_codesniffer": "^3.10"
+                "friendsofphp/php-cs-fixer": "^3.92",
+                "phpstan/phpstan": "^2.1",
+                "phpunit/phpunit": "^12",
+                "squizlabs/php_codesniffer": "^4.0"
             },
             "type": "library",
             "autoload": {
@@ -73,16 +74,16 @@
                     "type": "github"
                 }
             ],
-            "time": "2025-03-22T00:28:17+00:00"
+            "time": "2025-12-18T16:23:10+00:00"
         }
     ],
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {},
     "prefer-stable": false,
     "prefer-lowest": false,
-    "platform": [],
-    "platform-dev": [],
-    "plugin-api-version": "2.6.0"
+    "platform": {},
+    "platform-dev": {},
+    "plugin-api-version": "2.9.0"
 }
