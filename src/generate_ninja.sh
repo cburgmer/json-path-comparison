@@ -37,11 +37,11 @@ implementation_rules() {
     local implementation
 
     cat <<EOF
-# Not fully sure why we need to quote this times 3. The outer quote layer at least is for Bash :)
-testquery = '\\\\\$\$''[1]'
+# Apologies, this is a quoting mess. We meed to quote dollars for ninja, and double quotes most of the time as we are executing sub commands wrapped in double quotes.
+testquery = '\\\\\$\$.key'
 
 rule test_compilation
-  command = LANG=en_US.UTF-8 LC_ALL= LC_COLLATE=C bash -c "diff --ignore-space-change <(echo 42) <(\$in/run.sh '\$testquery' <<< '[0, 42]' | tr -d ' \n') || diff --ignore-space-change <(echo '[42]') <(\$in/run.sh '\$testquery' <<< '[0, 42]' | tr -d ' \n')" > \$out
+  command = LANG=en_US.UTF-8 LC_ALL= LC_COLLATE=C bash -c "diff --ignore-space-change <(echo 42) <(\$in/run.sh '\$testquery' <<< '{\\"key\\": 42}' | tr -d ' \n') || diff --ignore-space-change <(echo '[42]') <(\$in/run.sh '\$testquery' <<< '{\\"key\\": 42}' | tr -d ' \n')" > \$out
 EOF
     while IFS= read -r implementation; do
         echo "subninja implementations/${implementation}/build.ninja"
