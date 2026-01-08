@@ -24,7 +24,7 @@ The following queries provide results that do not match those of other implement
   Actual output:
   NOT_SUPPORTED
   ```
-  Instance of 'ParserException': end of input expected (at 1:6)
+  ParserException[1:6]: end of input expected
   ```
 
 - [ ] `$.2`
@@ -43,7 +43,7 @@ The following queries provide results that do not match those of other implement
   Actual output:
   NOT_SUPPORTED
   ```
-  Instance of 'ParserException': end of input expected (at 1:2)
+  ParserException[1:2]: end of input expected
   ```
 
 
