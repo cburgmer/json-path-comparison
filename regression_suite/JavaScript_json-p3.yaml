@@ -37,6 +37,9 @@ queries:
     status: error
   - id: bracket_notation_with_empty_path
     status: error
+  - id: bracket_notation_with_quoted_escaped_backslash
+    status: open
+    result: ["value"]
   - id: bracket_notation_with_quoted_special_characters_combined
     status: open
     result: [42]
@@ -107,6 +110,9 @@ queries:
     status: error
   - id: filter_expression_with_boolean_or_operator_and_value_true
     status: error
+  - id: filter_expression_with_bracket_notation_with_-1
+    status: open
+    result: [[0,2],[2]]
   - id: filter_expression_with_bracket_notation_with_number_on_object
     status: open
     result: [["a","b"]]
@@ -137,6 +143,9 @@ queries:
   - id: filter_expression_with_equals_boolean_expression_value
     status: open
     result: [{"key":44}]
+  - id: filter_expression_with_equals_false
+    status: open
+    result: [{"key":false}]
   - id: filter_expression_with_equals_null
     status: open
     result: [{"key":null}]

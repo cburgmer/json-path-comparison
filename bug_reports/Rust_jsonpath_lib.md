@@ -61,26 +61,6 @@ The following queries provide results that do not match those of other implement
   ]
   ```
 
-- [ ] `$['\\']`
-  Input:
-  ```
-  {
-    "\\": "value"
-  }
-  ```
-  Expected output:
-  ```
-  ["value"]
-  ```
-  Actual output:
-  NOT_SUPPORTED
-  ```
-  path error: 
-  $['\\']
-  ^^
-  
-  ```
-
 - [ ] `$[?(@.key>43 || @.key<43)]`
   Input:
   ```
@@ -110,35 +90,6 @@ The following queries provide results that do not match those of other implement
       "key": 42
     }
   ]
-  ```
-
-- [ ] `$[?(@[-1]==2)]`
-  Input:
-  ```
-  [
-    [
-      2,
-      3
-    ],
-    [
-      "a"
-    ],
-    [
-      0,
-      2
-    ],
-    [
-      2
-    ]
-  ]
-  ```
-  Expected output:
-  ```
-  [[0,2],[2]]
-  ```
-  Actual output:
-  ```
-  []
   ```
 
 - [ ] `$[?(@[1]=='b')]`

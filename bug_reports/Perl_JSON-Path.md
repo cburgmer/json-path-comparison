@@ -489,22 +489,6 @@ The following queries provide results that do not match those of other implement
   	JSON::Path::values(...) called at main.pl line 11
   ```
 
-- [ ] `$['\\']`
-  Input:
-  ```
-  {
-    "\\": "value"
-  }
-  ```
-  Expected output:
-  ```
-  ["value"]
-  ```
-  Actual output:
-  ```
-  []
-  ```
-
 - [ ] `$['\'']`
   Input:
   ```
@@ -1450,10 +1434,6 @@ The following queries provide results that do not match those of other implement
     ]
   ]
   ```
-  Expected output:
-  ```
-  [[0,2],[2]]
-  ```
   Error:
   ```
   non-safe evaluation, died at main.pl line 11.
@@ -2054,10 +2034,6 @@ The following queries provide results that do not match those of other implement
       "key": []
     }
   ]
-  ```
-  Expected output:
-  ```
-  [{"key":false}]
   ```
   Error:
   ```
@@ -4072,10 +4048,6 @@ The following queries provide results that do not match those of other implement
       "some": "value"
     }
   ]
-  ```
-  Expected output:
-  ```
-  NOT_SUPPORTED
   ```
   Error:
   ```

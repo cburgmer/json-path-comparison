@@ -82,7 +82,7 @@ queries:
   - id: bracket_notation_with_quoted_double_quote_literal
     status: error
   - id: bracket_notation_with_quoted_escaped_backslash
-    status: fail
+    status: open
     result: []
   - id: bracket_notation_with_quoted_escaped_single_quote
     status: fail

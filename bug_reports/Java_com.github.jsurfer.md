@@ -363,22 +363,6 @@ The following queries provide results that do not match those of other implement
   []
   ```
 
-- [ ] `$['\\']`
-  Input:
-  ```
-  {
-    "\\": "value"
-  }
-  ```
-  Expected output:
-  ```
-  ["value"]
-  ```
-  Actual output:
-  ```
-  []
-  ```
-
 - [ ] `$['\'']`
   Input:
   ```
@@ -462,35 +446,6 @@ The following queries provide results that do not match those of other implement
   Expected output:
   ```
   ["second"]
-  ```
-  Actual output:
-  ```
-  []
-  ```
-
-- [ ] `$[?(@[-1]==2)]`
-  Input:
-  ```
-  [
-    [
-      2,
-      3
-    ],
-    [
-      "a"
-    ],
-    [
-      0,
-      2
-    ],
-    [
-      2
-    ]
-  ]
-  ```
-  Expected output:
-  ```
-  [[0,2],[2]]
   ```
   Actual output:
   ```
@@ -1121,10 +1076,6 @@ The following queries provide results that do not match those of other implement
       "some": "value"
     }
   ]
-  ```
-  Expected output:
-  ```
-  NOT_SUPPORTED
   ```
   Error:
   ```

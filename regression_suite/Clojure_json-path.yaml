@@ -302,7 +302,7 @@ queries:
   - id: filter_expression_with_bracket_notation_and_current_object_literal
     status: error
   - id: filter_expression_with_bracket_notation_with_-1
-    status: fail
+    status: open
     result: [null,null,null,null]
   - id: filter_expression_with_bracket_notation_with_number
     status: fail
@@ -351,7 +351,7 @@ queries:
     status: open
     result: []
   - id: filter_expression_with_equals_false
-    status: fail
+    status: open
     result: [{"some":"some value"},{"key":null}]
   - id: filter_expression_with_equals_null
     status: open
@@ -494,7 +494,7 @@ queries:
     status: fail
     result: []
   - id: filter_expression_with_triple_equal
-    status: fail
+    status: open
     result: [{"key":null},{"some":"value"}]
   - id: filter_expression_with_value
     status: open

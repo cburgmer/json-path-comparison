@@ -475,22 +475,6 @@ The following queries provide results that do not match those of other implement
   []
   ```
 
-- [ ] `$['\\']`
-  Input:
-  ```
-  {
-    "\\": "value"
-  }
-  ```
-  Expected output:
-  ```
-  ["value"]
-  ```
-  Actual output:
-  ```
-  []
-  ```
-
 - [ ] `$['\'']`
   Input:
   ```
@@ -1160,35 +1144,6 @@ The following queries provide results that do not match those of other implement
   []
   ```
 
-- [ ] `$[?(@[-1]==2)]`
-  Input:
-  ```
-  [
-    [
-      2,
-      3
-    ],
-    [
-      "a"
-    ],
-    [
-      0,
-      2
-    ],
-    [
-      2
-    ]
-  ]
-  ```
-  Expected output:
-  ```
-  [[0,2],[2]]
-  ```
-  Actual output:
-  ```
-  []
-  ```
-
 - [ ] `$[?(@[1]=='b')]`
   Input:
   ```
@@ -1414,59 +1369,6 @@ The following queries provide results that do not match those of other implement
   [
     42,
     "42"
-  ]
-  ```
-
-- [ ] `$[?(@.key==false)]`
-  Input:
-  ```
-  [
-    {
-      "some": "some value"
-    },
-    {
-      "key": true
-    },
-    {
-      "key": false
-    },
-    {
-      "key": null
-    },
-    {
-      "key": "value"
-    },
-    {
-      "key": ""
-    },
-    {
-      "key": 0
-    },
-    {
-      "key": 1
-    },
-    {
-      "key": -1
-    },
-    {
-      "key": 42
-    },
-    {
-      "key": {}
-    },
-    {
-      "key": []
-    }
-  ]
-  ```
-  Expected output:
-  ```
-  [{"key":false}]
-  ```
-  Actual output:
-  ```
-  [
-    false
   ]
   ```
 
@@ -2180,87 +2082,6 @@ The following queries provide results that do not match those of other implement
   Expected output:
   ```
   [1,3,"nice",true,null,false,{},[],-1,0,""]
-  ```
-  Actual output:
-  ```
-  []
-  ```
-
-- [ ] `$[?(@.key===42)]`
-  Input:
-  ```
-  [
-    {
-      "key": 0
-    },
-    {
-      "key": 42
-    },
-    {
-      "key": -1
-    },
-    {
-      "key": 1
-    },
-    {
-      "key": 41
-    },
-    {
-      "key": 43
-    },
-    {
-      "key": 42.0001
-    },
-    {
-      "key": 41.9999
-    },
-    {
-      "key": 100
-    },
-    {
-      "key": "some"
-    },
-    {
-      "key": "42"
-    },
-    {
-      "key": null
-    },
-    {
-      "key": 420
-    },
-    {
-      "key": ""
-    },
-    {
-      "key": {}
-    },
-    {
-      "key": []
-    },
-    {
-      "key": [
-        42
-      ]
-    },
-    {
-      "key": {
-        "key": 42
-      }
-    },
-    {
-      "key": {
-        "some": 42
-      }
-    },
-    {
-      "some": "value"
-    }
-  ]
-  ```
-  Expected output:
-  ```
-  NOT_SUPPORTED
   ```
   Actual output:
   ```

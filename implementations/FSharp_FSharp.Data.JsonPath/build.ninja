@@ -1,0 +1,9 @@
+root = implementations/FSharp_FSharp.Data.JsonPath
+builddir = $root/build
+
+rule build
+  command = $root/install.sh $$(basename $$(dirname $out))
+
+build $builddir/FSharp_FSharp.Data.JsonPath: build | $root/FSharp_FSharp.Data.JsonPath.fsproj $root/Program.fs
+
+build $root/install: phony $builddir/FSharp_FSharp.Data.JsonPath
