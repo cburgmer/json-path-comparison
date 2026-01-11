@@ -8,7 +8,7 @@ use Flow\JSONPath\JSONPathException;
 error_reporting(E_ERROR | E_PARSE);
 
 $json = file_get_contents("php://stdin");
-$o = json_decode($json);
+$o = json_decode($json, true);
 
 try {
     $r = (new JSONPath($o))->find($argv[1])->getData();
