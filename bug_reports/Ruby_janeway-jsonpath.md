@@ -3,24 +3,6 @@ Results do not match other implementations
 The following queries provide results that do not match those of other implementations of JSONPath
 (compare https://cburgmer.github.io/json-path-comparison/):
 
-- [ ] `$[key]`
-  Input:
-  ```
-  {
-    "key": "value"
-  }
-  ```
-  Expected output:
-  ```
-  NOT_SUPPORTED
-  ```
-  Actual output:
-  ```
-  [
-    "value"
-  ]
-  ```
-
 - [ ] `$.key-dash`
   Input:
   ```
@@ -62,82 +44,6 @@ The following queries provide results that do not match those of other implement
   NOT_SUPPORTED
   ```
   Jsonpath query $.2 - Dot "." begins a name selector, and must be followed by an object member name, "2" is invalid here
-  ```
-
-- [ ] `$..*`
-  Input:
-  ```
-  [
-    40,
-    null,
-    42
-  ]
-  ```
-  Expected output (in any order as no consensus on ordering exists):
-  ```
-  [40,42,null]
-  ```
-  Actual output:
-  ```
-  [
-    40,
-    42
-  ]
-  ```
-
-- [ ] ``
-  Input:
-  ```
-  {
-    "a": 42,
-    "": 21
-  }
-  ```
-  Error:
-  ```
-  no implicit conversion of nil into String
-  ```
-
-- [ ] `$`
-  Input:
-  ```
-  42
-  ```
-  Expected output:
-  ```
-  [42]
-  ```
-  Actual output:
-  ```
-  []
-  ```
-
-- [ ] `$`
-  Input:
-  ```
-  false
-  ```
-  Expected output:
-  ```
-  [false]
-  ```
-  Actual output:
-  ```
-  []
-  ```
-
-- [ ] `$`
-  Input:
-  ```
-  true
-  ```
-  Expected output:
-  ```
-  [true]
-  ```
-  Actual output:
-  ```
-  []
   ```
 
 

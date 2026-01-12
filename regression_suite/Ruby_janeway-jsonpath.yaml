@@ -39,9 +39,6 @@ queries:
   - id: bracket_notation_with_quoted_special_characters_combined
     status: open
     result: [42]
-  - id: bracket_notation_without_quotes
-    status: fail
-    result: ["value"]
   - id: current_with_dot_notation
     status: open
     result: NOT_SUPPORTED
@@ -84,9 +81,6 @@ queries:
   - id: dot_notation_with_space_padded_key
     status: open
     result: NOT_SUPPORTED
-  - id: dot_notation_with_wildcard_after_recursive_descent_on_null_value_array
-    status: fail
-    result: [40,42]
   - id: dot_notation_without_root
     status: open
     result: NOT_SUPPORTED
@@ -94,7 +88,8 @@ queries:
     status: open
     result: NOT_SUPPORTED
   - id: empty
-    status: error
+    status: open
+    result: NOT_SUPPORTED
   - id: filter_expression_after_dot_notation_with_wildcard_after_recursive_descent
     status: open
     result: [{"id":3,"name":"another"},{"id":4,"name":"more"},{"id":5,"name":"next to last"}]
@@ -278,15 +273,6 @@ queries:
   - id: filter_expression_without_value
     status: open
     result: [{"key":true},{"key":false},{"key":null},{"key":"value"},{"key":""},{"key":0},{"key":1},{"key":-1},{"key":42},{"key":{}},{"key":[]}]
-  - id: root_on_scalar
-    status: fail
-    result: []
-  - id: root_on_scalar_false
-    status: fail
-    result: []
-  - id: root_on_scalar_true
-    status: fail
-    result: []
   - id: union_with_filter
     status: open
     result: [{"key":1},{"key":2},{"key":8},{"key":10},{"key":7}]
