@@ -9,7 +9,7 @@ from the queries in [./queries](./queries).
 ## Goals
 
 - Show implementation status and help users pick based on coverage.
-- Supplement the [RFC 9525](https://www.rfc-editor.org/rfc/rfc9535) by showing the current state of implementations.
+- Supplement the [RFC 9535](https://www.rfc-editor.org/rfc/rfc9535) by showing the current state of implementations.
 - Support implementers with test cases.
 
 ## How to
