@@ -1,6 +1,6 @@
 # json-path-comparison
 Comparison of the different implementations of
-[JSONPath](https://goessner.net/articles/JsonPath/) and language agnostic test
+[JSONPath](https://www.rfc-editor.org/rfc/rfc9535) and language agnostic test
 suite.
 
 See https://cburgmer.github.io/json-path-comparison/ for the table generated
@@ -8,9 +8,8 @@ from the queries in [./queries](./queries).
 
 ## Goals
 
-- Show implementation status of well established implementations.
-- Inform [emerging specification](https://github.com/ietf-wg-jsonpath/draft-ietf-jsonpath-jsonpath)
-  on existing de facto standard.
+- Show implementation status and help users pick based on coverage.
+- Supplement the [RFC 9525](https://www.rfc-editor.org/rfc/rfc9535) by showing the current state of implementations.
 - Support implementers with test cases.
 
 ## How to
