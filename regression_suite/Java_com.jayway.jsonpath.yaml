@@ -75,9 +75,6 @@ queries:
   - id: array_slice_with_step_only
     status: fail
     result: NOT_SUPPORTED
-  - id: bracket_notation_with_quoted_escaped_backslash
-    status: open
-    result: "value"
   - id: bracket_notation_with_quoted_special_characters_combined
     status: open
     result: 42
@@ -90,6 +87,9 @@ queries:
   - id: dot_bracket_notation_with_double_quotes
     status: open
     result: "value"
+  - id: dot_notation_after_recursive_descent_with_extra_dot
+    status: open
+    result: NOT_SUPPORTED
   - id: dot_notation_with_double_quotes
     status: open
     result: 42

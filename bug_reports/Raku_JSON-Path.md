@@ -615,6 +615,22 @@ The following queries provide results that do not match those of other implement
   at 0: expected a json object, but got '"Hello Wo"'
   ```
 
+- [ ] `$['\\']`
+  Input:
+  ```
+  {
+    "\\": "value"
+  }
+  ```
+  Expected output:
+  ```
+  ["value"]
+  ```
+  Actual output:
+  ```
+  []
+  ```
+
 - [ ] `$['\'']`
   Input:
   ```
@@ -797,42 +813,6 @@ The following queries provide results that do not match those of other implement
   Expected output (in any order as no consensus on ordering exists):
   ```
   ["russian dolls","something","top","value",{"key":"russian dolls"}]
-  ```
-  Actual output:
-  ```
-  [
-    "russian dolls",
-    "something",
-    "value",
-    {
-      "key": "russian dolls"
-    }
-  ]
-  ```
-
-- [ ] `$...key`
-  Input:
-  ```
-  {
-    "object": {
-      "key": "value",
-      "array": [
-        {
-          "key": "something"
-        },
-        {
-          "key": {
-            "key": "russian dolls"
-          }
-        }
-      ]
-    },
-    "key": "top"
-  }
-  ```
-  Expected output (in any order as no consensus on ordering exists):
-  ```
-  NOT_SUPPORTED
   ```
   Actual output:
   ```

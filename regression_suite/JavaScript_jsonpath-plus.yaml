@@ -57,7 +57,7 @@ queries:
   - id: bracket_notation_with_quoted_current_object_literal
     status: error
   - id: bracket_notation_with_quoted_escaped_backslash
-    status: open
+    status: fail
     result: []
   - id: bracket_notation_with_quoted_escaped_single_quote
     status: fail
@@ -104,7 +104,7 @@ queries:
     status: fail
     result: ["value",[{"key":42}],42]
   - id: dot_notation_after_recursive_descent_with_extra_dot
-    status: fail
+    status: open
     result: ["russian dolls","something","top","value",{"key":"russian dolls"}]
   - id: dot_notation_after_union_with_keys
     status: fail

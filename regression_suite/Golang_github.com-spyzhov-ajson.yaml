@@ -38,9 +38,6 @@ queries:
   - id: bracket_notation_with_number_on_object
     status: fail
     result: ["value"]
-  - id: bracket_notation_with_quoted_escaped_backslash
-    status: open
-    result: ["value"]
   - id: bracket_notation_with_quoted_special_characters_combined
     status: open
     result: [42]
@@ -69,7 +66,7 @@ queries:
     status: fail
     result: ["value"]
   - id: dot_notation_after_recursive_descent_with_extra_dot
-    status: fail
+    status: open
     result: ["russian dolls","russian dolls","russian dolls","russian dolls","russian dolls","something","something","something","something","top","value","value",{"key":"russian dolls"},{"key":"russian dolls"},{"key":"russian dolls"},{"key":"russian dolls"}]
   - id: dot_notation_with_double_quotes
     status: open

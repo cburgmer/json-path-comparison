@@ -82,7 +82,7 @@ queries:
   - id: bracket_notation_with_quoted_double_quote_literal
     status: error
   - id: bracket_notation_with_quoted_escaped_backslash
-    status: open
+    status: fail
     result: []
   - id: bracket_notation_with_quoted_escaped_single_quote
     status: fail
@@ -136,7 +136,7 @@ queries:
   - id: dot_notation_after_filter_expression
     status: error
   - id: dot_notation_after_recursive_descent_with_extra_dot
-    status: fail
+    status: open
     result: []
   - id: dot_notation_after_union_with_keys
     status: error
@@ -426,7 +426,7 @@ queries:
     result: []
   - id: union_with_repeated_matches_after_dot_notation_with_wildcard
     status: open
-    result: [false,"string",5.4,"string",null,true]
+    result: ["string",null,true,false,"string",5.4]
   - id: union_with_slice_and_number
     status: open
     result: [2,3]

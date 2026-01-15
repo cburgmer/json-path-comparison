@@ -363,6 +363,22 @@ The following queries provide results that do not match those of other implement
   []
   ```
 
+- [ ] `$['\\']`
+  Input:
+  ```
+  {
+    "\\": "value"
+  }
+  ```
+  Expected output:
+  ```
+  ["value"]
+  ```
+  Actual output:
+  ```
+  []
+  ```
+
 - [ ] `$['\'']`
   Input:
   ```
@@ -377,43 +393,6 @@ The following queries provide results that do not match those of other implement
   Actual output:
   ```
   []
-  ```
-
-- [ ] `$...key`
-  Input:
-  ```
-  {
-    "object": {
-      "key": "value",
-      "array": [
-        {
-          "key": "something"
-        },
-        {
-          "key": {
-            "key": "russian dolls"
-          }
-        }
-      ]
-    },
-    "key": "top"
-  }
-  ```
-  Expected output (in any order as no consensus on ordering exists):
-  ```
-  NOT_SUPPORTED
-  ```
-  Actual output:
-  ```
-  [
-    "russian dolls",
-    "something",
-    "top",
-    "value",
-    {
-      "key": "russian dolls"
-    }
-  ]
   ```
 
 - [ ] `$.true`

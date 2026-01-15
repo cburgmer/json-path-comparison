@@ -6,8 +6,6 @@
 
 implementation: PHP_softcreatr-jsonpath
 queries:
-  - id: array_slice_on_object
-    status: error
   - id: array_slice_with_large_number_for_end_and_negative_step
     status: open
     result: ["third","second","first"]
@@ -26,8 +24,6 @@ queries:
   - id: array_slice_with_open_end_and_negative_step
     status: open
     result: ["forth","third","second","first"]
-  - id: array_slice_with_open_start_and_end_on_object
-    status: error
   - id: array_slice_with_open_start_and_negative_step
     status: open
     result: ["fifth","forth"]
@@ -37,11 +33,11 @@ queries:
   - id: array_slice_with_step_and_leading_zeros
     status: open
     result: [10,20]
+  - id: bracket_notation_with_empty_path
+    status: fail
+    result: []
   - id: bracket_notation_with_number_on_object
     status: fail
-    result: ["value"]
-  - id: bracket_notation_with_quoted_escaped_backslash
-    status: open
     result: ["value"]
   - id: bracket_notation_with_quoted_special_characters_combined
     status: open
@@ -54,7 +50,7 @@ queries:
     result: ["value"]
   - id: current_with_dot_notation
     status: open
-    result: NOT_SUPPORTED
+    result: [1]
   - id: dot_bracket_notation
     status: open
     result: ["value"]
@@ -65,7 +61,7 @@ queries:
     status: fail
     result: ["value"]
   - id: dot_notation_after_recursive_descent_with_extra_dot
-    status: fail
+    status: open
     result: ["russian dolls","russian dolls","russian dolls","russian dolls","russian dolls","something","something","something","something","top","value","value",{"key":"russian dolls"},{"key":"russian dolls"},{"key":"russian dolls"},{"key":"russian dolls"}]
   - id: dot_notation_with_double_quotes
     status: open
@@ -96,10 +92,10 @@ queries:
     result: ["russian dolls","something","top","value",{"key":"russian dolls"}]
   - id: dot_notation_with_single_quotes_and_dot
     status: open
-    result: NOT_SUPPORTED
+    result: [42]
   - id: dot_notation_with_space_padded_key
     status: open
-    result: NOT_SUPPORTED
+    result: [2]
   - id: dot_notation_without_dot
     status: fail
     result: [1]
@@ -125,13 +121,17 @@ queries:
     status: open
     result: [{"key+50":100}]
   - id: filter_expression_with_boolean_and_operator_and_value_false
-    status: error
+    status: open
+    result: []
   - id: filter_expression_with_boolean_and_operator_and_value_true
-    status: error
+    status: open
+    result: [{"key":1},{"key":3}]
   - id: filter_expression_with_boolean_or_operator_and_value_false
-    status: error
+    status: open
+    result: [{"key":1},{"key":3}]
   - id: filter_expression_with_boolean_or_operator_and_value_true
-    status: error
+    status: open
+    result: [{"key":1},{"key":3},{"key":"nice"},{"key":true},{"key":null},{"key":false},{"key":{}},{"key":[]},{"key":-1},{"key":0},{"key":""}]
   - id: filter_expression_with_bracket_notation_with_-1
     status: open
     result: [[0,2],[2]]
@@ -153,6 +153,9 @@ queries:
   - id: filter_expression_with_dot_notation_with_number_on_array
     status: open
     result: [["first","second","third","forth","fifth"]]
+  - id: filter_expression_with_empty_expression
+    status: fail
+    result: []
   - id: filter_expression_with_equals_array
     status: open
     result: [{"d":["v1","v2"]}]
@@ -283,14 +286,17 @@ queries:
     status: open
     result: {"0":{"id":2},"1":{"id":{"id":2}},"2":{"id":2},"id":{"id":2},"more":{"id":2}}
   - id: filter_expression_with_value_false
-    status: error
+    status: open
+    result: []
   - id: filter_expression_with_value_from_recursive_descent
     status: open
     result: []
   - id: filter_expression_with_value_null
-    status: error
+    status: open
+    result: []
   - id: filter_expression_with_value_true
-    status: error
+    status: open
+    result: [1,3,"nice",true,null,false,{},[],-1,0,""]
   - id: filter_expression_without_parens
     status: open
     result: [{"key":42}]

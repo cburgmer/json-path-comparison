@@ -735,6 +735,22 @@ The following queries provide results that do not match those of other implement
   []
   ```
 
+- [ ] `$['\\']`
+  Input:
+  ```
+  {
+    "\\": "value"
+  }
+  ```
+  Expected output:
+  ```
+  ["value"]
+  ```
+  Actual output:
+  ```
+  []
+  ```
+
 - [ ] `$['\'']`
   Input:
   ```
@@ -1356,10 +1372,6 @@ The following queries provide results that do not match those of other implement
     },
     "key": "top"
   }
-  ```
-  Expected output (in any order as no consensus on ordering exists):
-  ```
-  NOT_SUPPORTED
   ```
   Error:
   ```

@@ -9,6 +9,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "jsonpathly": "^2.0.3"
+    "jsonpathly": "^3.0.0"
   }
 }

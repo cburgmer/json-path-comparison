@@ -120,7 +120,7 @@ queries:
   - id: bracket_notation_with_number_on_string
     status: error
   - id: bracket_notation_with_quoted_escaped_backslash
-    status: open
+    status: fail
     result: []
   - id: bracket_notation_with_quoted_escaped_single_quote
     status: fail
@@ -156,7 +156,7 @@ queries:
     status: fail
     result: ["russian dolls","something","value",{"key":"russian dolls"}]
   - id: dot_notation_after_recursive_descent_with_extra_dot
-    status: fail
+    status: open
     result: ["russian dolls","something","value",{"key":"russian dolls"}]
   - id: dot_notation_after_union_with_keys
     status: fail

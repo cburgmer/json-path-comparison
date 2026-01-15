@@ -8,16 +8,16 @@
     "packages": [
         {
             "name": "softcreatr/jsonpath",
-            "version": "1.0.0",
+            "version": "1.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/SoftCreatR/JSONPath.git",
-                "reference": "d6ccedfb3ea4a1855eec4005a5e09eee25fb5adb"
+                "reference": "23d04a306a462f467927853807c314b990e3c5ab"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/SoftCreatR/JSONPath/zipball/d6ccedfb3ea4a1855eec4005a5e09eee25fb5adb",
-                "reference": "d6ccedfb3ea4a1855eec4005a5e09eee25fb5adb",
+                "url": "https://api.github.com/repos/SoftCreatR/JSONPath/zipball/23d04a306a462f467927853807c314b990e3c5ab",
+                "reference": "23d04a306a462f467927853807c314b990e3c5ab",
                 "shasum": ""
             },
             "require": {
@@ -74,7 +74,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2025-12-18T16:23:10+00:00"
+            "time": "2026-01-15T00:02:45+00:00"
         }
     ],
     "packages-dev": [],

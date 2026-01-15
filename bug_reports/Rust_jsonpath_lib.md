@@ -61,6 +61,26 @@ The following queries provide results that do not match those of other implement
   ]
   ```
 
+- [ ] `$['\\']`
+  Input:
+  ```
+  {
+    "\\": "value"
+  }
+  ```
+  Expected output:
+  ```
+  ["value"]
+  ```
+  Actual output:
+  NOT_SUPPORTED
+  ```
+  path error: 
+  $['\\']
+  ^^
+  
+  ```
+
 - [ ] `$[?(@.key>43 || @.key<43)]`
   Input:
   ```

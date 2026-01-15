@@ -44,9 +44,6 @@ queries:
   - id: bracket_notation_with_number_on_object
     status: fail
     result: "value"
-  - id: bracket_notation_with_quoted_escaped_backslash
-    status: open
-    result: "value"
   - id: bracket_notation_with_quoted_special_characters_combined
     status: open
     result: NOT_FOUND
@@ -77,7 +74,7 @@ queries:
     status: fail
     result: "value"
   - id: dot_notation_after_recursive_descent_with_extra_dot
-    status: fail
+    status: open
     result: []
   - id: dot_notation_with_dash
     status: fail

@@ -3,42 +3,22 @@ Results do not match other implementations
 The following queries provide results that do not match those of other implementations of JSONPath
 (compare https://cburgmer.github.io/json-path-comparison/):
 
-- [ ] `$[1:3]`
+- [ ] `$[]`
   Input:
   ```
   {
-    ":": 42,
-    "more": "string",
-    "a": 1,
-    "b": 2,
-    "c": 3,
-    "1:3": "nice"
+    "": 42,
+    "''": 123,
+    "\"\"": 222
   }
   ```
   Expected output:
   ```
-  []
+  NOT_SUPPORTED
   ```
-  Error:
-  ```
-  TypeError
-  ```
-
-- [ ] `$[:]`
-  Input:
-  ```
-  {
-    ":": 42,
-    "more": "string"
-  }
-  ```
-  Expected output:
+  Actual output:
   ```
   []
-  ```
-  Error:
-  ```
-  TypeError
   ```
 
 - [ ] `$[0]`
@@ -128,60 +108,6 @@ The following queries provide results that do not match those of other implement
   ]
   ```
 
-- [ ] `$...key`
-  Input:
-  ```
-  {
-    "object": {
-      "key": "value",
-      "array": [
-        {
-          "key": "something"
-        },
-        {
-          "key": {
-            "key": "russian dolls"
-          }
-        }
-      ]
-    },
-    "key": "top"
-  }
-  ```
-  Expected output (in any order as no consensus on ordering exists):
-  ```
-  NOT_SUPPORTED
-  ```
-  Actual output:
-  ```
-  [
-    "russian dolls",
-    "russian dolls",
-    "russian dolls",
-    "russian dolls",
-    "russian dolls",
-    "something",
-    "something",
-    "something",
-    "something",
-    "top",
-    "value",
-    "value",
-    {
-      "key": "russian dolls"
-    },
-    {
-      "key": "russian dolls"
-    },
-    {
-      "key": "russian dolls"
-    },
-    {
-      "key": "russian dolls"
-    }
-  ]
-  ```
-
 - [ ] `$.`
   Input:
   ```
@@ -245,180 +171,25 @@ The following queries provide results that do not match those of other implement
   ]
   ```
 
-- [ ] `$[?(@.key>0 && false)]`
+- [ ] `$[?()]`
   Input:
   ```
   [
+    1,
     {
-      "key": 1
+      "key": 42
     },
-    {
-      "key": 3
-    },
-    {
-      "key": "nice"
-    },
-    {
-      "key": true
-    },
-    {
-      "key": null
-    },
-    {
-      "key": false
-    },
-    {
-      "key": {}
-    },
-    {
-      "key": []
-    },
-    {
-      "key": -1
-    },
-    {
-      "key": 0
-    },
-    {
-      "key": ""
-    }
+    "value",
+    null
   ]
   ```
-  Error:
+  Expected output:
   ```
-  Error: 'Malformed filter query'
+  NOT_SUPPORTED
   ```
-
-- [ ] `$[?(@.key>0 && true)]`
-  Input:
+  Actual output:
   ```
-  [
-    {
-      "key": 1
-    },
-    {
-      "key": 3
-    },
-    {
-      "key": "nice"
-    },
-    {
-      "key": true
-    },
-    {
-      "key": null
-    },
-    {
-      "key": false
-    },
-    {
-      "key": {}
-    },
-    {
-      "key": []
-    },
-    {
-      "key": -1
-    },
-    {
-      "key": 0
-    },
-    {
-      "key": ""
-    }
-  ]
-  ```
-  Error:
-  ```
-  Error: 'Malformed filter query'
-  ```
-
-- [ ] `$[?(@.key>0 || false)]`
-  Input:
-  ```
-  [
-    {
-      "key": 1
-    },
-    {
-      "key": 3
-    },
-    {
-      "key": "nice"
-    },
-    {
-      "key": true
-    },
-    {
-      "key": null
-    },
-    {
-      "key": false
-    },
-    {
-      "key": {}
-    },
-    {
-      "key": []
-    },
-    {
-      "key": -1
-    },
-    {
-      "key": 0
-    },
-    {
-      "key": ""
-    }
-  ]
-  ```
-  Error:
-  ```
-  Error: 'Malformed filter query'
-  ```
-
-- [ ] `$[?(@.key>0 || true)]`
-  Input:
-  ```
-  [
-    {
-      "key": 1
-    },
-    {
-      "key": 3
-    },
-    {
-      "key": "nice"
-    },
-    {
-      "key": true
-    },
-    {
-      "key": null
-    },
-    {
-      "key": false
-    },
-    {
-      "key": {}
-    },
-    {
-      "key": []
-    },
-    {
-      "key": -1
-    },
-    {
-      "key": 0
-    },
-    {
-      "key": ""
-    }
-  ]
-  ```
-  Error:
-  ```
-  Error: 'Malformed filter query'
+  []
   ```
 
 - [ ] `$[?(@.length() == 4)]`
@@ -569,72 +340,6 @@ The following queries provide results that do not match those of other implement
       "key": 42
     }
   ]
-  ```
-
-- [ ] `$[?(false)]`
-  Input:
-  ```
-  [
-    1,
-    3,
-    "nice",
-    true,
-    null,
-    false,
-    {},
-    [],
-    -1,
-    0,
-    ""
-  ]
-  ```
-  Error:
-  ```
-  Error: 'Malformed filter query'
-  ```
-
-- [ ] `$[?(null)]`
-  Input:
-  ```
-  [
-    1,
-    3,
-    "nice",
-    true,
-    null,
-    false,
-    {},
-    [],
-    -1,
-    0,
-    ""
-  ]
-  ```
-  Error:
-  ```
-  Error: 'Malformed filter query'
-  ```
-
-- [ ] `$[?(true)]`
-  Input:
-  ```
-  [
-    1,
-    3,
-    "nice",
-    true,
-    null,
-    false,
-    {},
-    [],
-    -1,
-    0,
-    ""
-  ]
-  ```
-  Error:
-  ```
-  Error: 'Malformed filter query'
   ```
 
 - [ ] `$..`
