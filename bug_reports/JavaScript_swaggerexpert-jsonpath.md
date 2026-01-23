@@ -24,7 +24,7 @@ The following queries provide results that do not match those of other implement
   Actual output:
   NOT_SUPPORTED
   ```
-  Invalid JSONPath expression: $.key-dash
+  Invalid JSONPath expression: "$.key-dash". Syntax error at position 5, expected "[", "*", "_", ".", ".."
   ```
 
 - [ ] `$.2`
@@ -43,7 +43,7 @@ The following queries provide results that do not match those of other implement
   Actual output:
   NOT_SUPPORTED
   ```
-  Invalid JSONPath expression: $.2
+  Invalid JSONPath expression: "$.2". Syntax error at position 2, expected "[", "*", "_", ".."
   ```
 
 
