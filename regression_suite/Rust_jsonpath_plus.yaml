@@ -61,7 +61,7 @@ queries:
   - id: dot_bracket_notation_without_quotes
     status: error
   - id: dot_notation_after_recursive_descent_with_extra_dot
-    status: open
+    status: fail
     result: ["russian dolls","something","top","value",{"key":"russian dolls"}]
   - id: dot_notation_with_double_quotes
     status: error

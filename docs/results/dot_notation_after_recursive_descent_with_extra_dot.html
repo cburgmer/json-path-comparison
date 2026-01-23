@@ -21,6 +21,10 @@
 
 <h2>Results</h2>
 
+<h3 id="consensus">Consensus</h3>
+
+<p>Not supported</p>
+
 <h3>Other responses</h3>
 
 <h4 id="Bash_JSONPath.sh">
@@ -58,33 +62,6 @@ Clojure (json-path)
 ]
 </code></pre>
 
-<h4 id="Cpp_jsoncons">
-Cpp (jsoncons)
-</h4>
-
-<p>Not supported</p>
-
-<pre><code>Expected unquoted string, or single or double quoted string, or index or '*' at line 1 and column 4
-</code></pre>
-
-<h4 id="Dart_json_path">
-Dart (json_path)
-</h4>
-
-<p>Not supported</p>
-
-<pre><code>ParserException[1:2]: end of input expected
-</code></pre>
-
-<h4 id="Elixir_ExJsonPath">
-Elixir (ExJsonPath)
-</h4>
-
-<p>Not supported</p>
-
-<pre><code>syntax error before: '.'
-</code></pre>
-
 <h4 id="Elixir_jaxon">
 Elixir (jaxon)
 </h4>
@@ -92,37 +69,6 @@ Elixir (jaxon)
 <pre><code>[
   "top"
 ]
-</code></pre>
-
-<h4 id="Elixir_warpath">
-Elixir (warpath)
-¹
-</h4>
-
-<p>Not supported</p>
-
-<pre><code>Parser error: Invalid token on line 1, operator dot ('.') is not allowed after descendant operator ('..'),
-it must be contracted in a operator (..),
-For example: instead of '$...name' you must write '$..name', that is the right syntax!
-</code></pre>
-
-<h4 id="Erlang_ejsonpath">
-Erlang (ejsonpath)
-</h4>
-
-<p>Not supported</p>
-
-<pre><code>syntax error before: '.'
-</code></pre>
-
-<h4 id="Golang_github.com-PaesslerAG-jsonpath">
-Golang (github.com-PaesslerAG-jsonpath)
-¹
-</h4>
-
-<p>Not supported</p>
-
-<pre><code>parsing error: $...key	:1:4 - 1:5 unexpected "." while scanning JSON mapper expected "[", Ident or "*"
 </code></pre>
 
 <h4 id="Golang_github.com-bhmj-jsonslice">
@@ -181,24 +127,6 @@ Golang (github.com-spyzhov-ajson)
 ]
 </code></pre>
 
-<h4 id="Golang_github.com-theory-jsonpath">
-Golang (github.com-theory-jsonpath)
-</h4>
-
-<p>Not supported</p>
-
-<pre><code>jsonpath: unexpected '.' at position 4
-</code></pre>
-
-<h4 id="Golang_github.com-vmware-labs-yaml-jsonpath">
-Golang (github.com-vmware-labs-yaml-jsonpath)
-</h4>
-
-<p>Not supported</p>
-
-<pre><code>child name or array access or filter missing after recursive descent at position 3, following "$.."
-</code></pre>
-
 <h4 id="Haskell_jsonpath">
 Haskell (jsonpath)
 </h4>
@@ -247,26 +175,6 @@ JavaScript (Goessner)
 ]
 </code></pre>
 
-<h4 id="JavaScript_brunerd">
-JavaScript (brunerd)
-</h4>
-
-<p>Not supported</p>
-
-<pre><code></code></pre>
-
-<h4 id="JavaScript_jsonpath">
-JavaScript (jsonpath)
-</h4>
-
-<p>Not supported</p>
-
-<pre><code>Parse error on line 1:
-$...key
----^
-Expecting 'STAR', 'IDENTIFIER', 'SCRIPT_EXPRESSION', 'INTEGER', 'END', '[', got 'DOT'
-</code></pre>
-
 <h4 id="JavaScript_jsonpath-plus">
 JavaScript (jsonpath-plus)
 </h4>
@@ -297,34 +205,6 @@ Java (com.github.jsurfer)
 ]
 </code></pre>
 
-<h4 id="Java_com.github.xmljacquard.ajp">
-Java (com.github.xmljacquard.ajp)
-</h4>
-
-<p>Not supported</p>
-
-<pre><code>Error at char 18 in expression in xsl:sequence/@select on line 20 column 67 of ajp-runner.xslt:
-   &lt;failed xmlns:ixml="http://invisiblexml.org/NS"
-  ixml:state="failed"&gt;&lt;line&gt;1&lt;/line&gt;&lt;column&gt;4&lt;/column&gt;&lt;pos&gt;4&lt;/pos&gt;&lt;unexpected&gt;.&lt;/unexpected&gt;&lt;permitted&gt;'*', '[', '_', [#80-'퟿[xd7ff]'], ['A'-'Z'; 'a'-'z'], ['𐀀[x10000]'-'􏿯[x10ffef]'], ['[xe000]'-'￯[xffef]']&lt;/permitted&gt;&lt;could-be-next&gt;&lt;in rule="bracketed-selection"&gt;&lt;tokens&gt;'['&lt;/tokens&gt;&lt;/in&gt;&lt;in rule="ALPHA"&gt;&lt;tokens&gt;['A'-'Z'; 'a'-'z']&lt;/tokens&gt;&lt;/in&gt;&lt;in rule="wildcard-selector"&gt;&lt;tokens&gt;'*'&lt;/tokens&gt;&lt;/in&gt;&lt;in rule="name-first"&gt;&lt;tokens&gt;'_', [#80-'퟿[xd7ff]'], ['𐀀[x10000]'-'􏿯[x10ffef]'], ['[xe000]'-'￯[xffef]']&lt;/tokens&gt;&lt;/in&gt;&lt;/could-be-next&gt;&lt;unfinished&gt;&lt;open rule="descendant-segment" start="2" end="3"&gt;&lt;input&gt;..&lt;/input&gt;&lt;/open&gt;&lt;open rule="child-segment" start="2" end="2"&gt;&lt;input&gt;.&lt;/input&gt;&lt;/open&gt;&lt;open rule="jsonpath-query" start="1" end="1"&gt;&lt;input&gt;$&lt;/input&gt;&lt;/open&gt;&lt;/unfinished&gt;&lt;/failed&gt;
-During lazy evaluation of tailCallLoop(ajp:getProcessor(...)) on line 20 of jar:file:./implementations/Java_com.github.xmljacquard.ajp/build/deps/org/xmljacquard/ajp/0.0.7/ajp-0.0.7.jar!/xslt/ajp-runner.xslt
-In function ajpr:getProcessor on line 17 column 106 of ajp-runner.xslt:
-net.sf.saxon.s9api.SaxonApiException: &lt;failed xmlns:ixml="http://invisiblexml.org/NS" ixml:state="failed"&gt;&lt;line&gt;1&lt;/line&gt;&lt;column&gt;4&lt;/column&gt;&lt;pos&gt;4&lt;/pos&gt;&lt;unexpected&gt;.&lt;/unexpected&gt;&lt;permitted&gt;'*', '[', '_', [#80-'퟿'], ['A'-'Z'; 'a'-'z'], ['𐀀'-'􏿯'], [''-'￯']&lt;/permitted&gt;&lt;could-be-next&gt;&lt;in rule="bracketed-selection"&gt;&lt;tokens&gt;'['&lt;/tokens&gt;&lt;/in&gt;&lt;in rule="ALPHA"&gt;&lt;tokens&gt;['A'-'Z'; 'a'-'z']&lt;/tokens&gt;&lt;/in&gt;&lt;in rule="wildcard-selector"&gt;&lt;tokens&gt;'*'&lt;/tokens&gt;&lt;/in&gt;&lt;in rule="name-first"&gt;&lt;tokens&gt;'_', [#80-'퟿'], ['𐀀'-'􏿯'], [''-'￯']&lt;/tokens&gt;&lt;/in&gt;&lt;/could-be-next&gt;&lt;unfinished&gt;&lt;open rule="descendant-segment" start="2" end="3"&gt;&lt;input&gt;..&lt;/input&gt;&lt;/open&gt;&lt;open rule="child-segment" start="2" end="2"&gt;&lt;input&gt;.&lt;/input&gt;&lt;/open&gt;&lt;open rule="jsonpath-query" start="1" end="1"&gt;&lt;input&gt;$&lt;/input&gt;&lt;/open&gt;&lt;/unfinished&gt;&lt;/failed&gt;
-</code></pre>
-
-<h4 id="Java_com.jayway.jsonpath">
-Java (com.jayway.jsonpath)
-¹
-³
-</h4>
-
-<p>Not supported</p>
-
-<pre><code>SLF4J(W): No SLF4J providers were found.
-SLF4J(W): Defaulting to no-operation (NOP) logger implementation
-SLF4J(W): See https://www.slf4j.org/codes.html#noProviders for further details.
-com.jayway.jsonpath.InvalidPathException: Character '.' on position 3 is not valid.
-</code></pre>
-
 <h4 id="Kotlin_com.nfeld.jsonpathkt">
 Kotlin (com.nfeld.jsonpathkt)
 ¹
@@ -339,17 +219,6 @@ Kotlin (com.nfeld.jsonpathkt)
     "key": "russian dolls"
   }
 ]
-</code></pre>
-
-<h4 id="Objective-C_SMJJSONPath">
-Objective-C (SMJJSONPath)
-¹
-³
-</h4>
-
-<p>Not supported</p>
-
-<pre><code>Character '.' on position  3 is not valid.
 </code></pre>
 
 <h4 id="PHP_Goessner">
@@ -398,15 +267,6 @@ PHP (galbar-jsonpath)
     "key": "russian dolls"
   }
 ]
-</code></pre>
-
-<h4 id="PHP_remorhaz-jsonpath">
-PHP (remorhaz-jsonpath)
-</h4>
-
-<p>Not supported</p>
-
-<pre><code>Error: 'Failed to build AST from JSONPath query: $...key'
 </code></pre>
 
 <h4 id="PHP_softcreatr-jsonpath">
@@ -464,43 +324,6 @@ Python (jsonpath)
 ]
 </code></pre>
 
-<h4 id="Python_jsonpath-ng">
-Python (jsonpath-ng)
-</h4>
-
-<p>Not supported</p>
-
-<pre><code>JsonPathParserError('Parse error at 1:3 near token . (.)')
-</code></pre>
-
-<h4 id="Python_jsonpath-rw">
-Python (jsonpath-rw)
-</h4>
-
-<p>Not supported</p>
-
-<pre><code>Exception('Parse error at 1:3 near token . (.)')
-</code></pre>
-
-<h4 id="Python_jsonpath2">
-Python (jsonpath2)
-</h4>
-
-<p>Not supported</p>
-
-<pre><code>line 1:3 extraneous input '.' expecting {'*', '[', ID}
-ValueError("line 1:3 extraneous input '.' expecting {'*', '[', ID}")
-</code></pre>
-
-<h4 id="Python_python-jsonpath">
-Python (python-jsonpath)
-</h4>
-
-<p>Not supported</p>
-
-<pre><code>JSONPathSyntaxError('expected a shorthand selector')
-</code></pre>
-
 <h4 id="Raku_JSON-Path">
 Raku (JSON-Path)
 </h4>
@@ -513,15 +336,6 @@ Raku (JSON-Path)
     "key": "russian dolls"
   }
 ]
-</code></pre>
-
-<h4 id="Ruby_janeway-jsonpath">
-Ruby (janeway-jsonpath)
-</h4>
-
-<p>Not supported</p>
-
-<pre><code>Jsonpath query $...key - Descendant segment ".." must be followed by selector, got ..dot
 </code></pre>
 
 <h4 id="Ruby_jsonpath">
@@ -539,27 +353,6 @@ Ruby (jsonpath)
 ]
 </code></pre>
 
-<h4 id="Rust_jsonpath">
-Rust (jsonpath)
-</h4>
-
-<p>Not supported</p>
-
-<pre><code>parsing error
-</code></pre>
-
-<h4 id="Rust_jsonpath_lib">
-Rust (jsonpath_lib)
-</h4>
-
-<p>Not supported</p>
-
-<pre><code>path error: 
-$...key
-^^^^
-
-</code></pre>
-
 <h4 id="Rust_jsonpath_plus">
 Rust (jsonpath_plus)
 </h4>
@@ -573,33 +366,6 @@ Rust (jsonpath_plus)
     "key": "russian dolls"
   }
 ]
-</code></pre>
-
-<h4 id="Rust_serde_json_path">
-Rust (serde_json_path)
-</h4>
-
-<p>Not supported</p>
-
-<pre><code>at position 3, must start with lowercase alpha or '_'
-</code></pre>
-
-<h4 id="Scala_jsonpath">
-Scala (jsonpath)
-</h4>
-
-<p>Not supported</p>
-
-<pre><code>JPError(end of input expected)
-</code></pre>
-
-<h4 id="Swift_Sextant">
-Swift (Sextant)
-</h4>
-
-<p>Not supported</p>
-
-<pre><code>NOT_SUPPORTED
 </code></pre>
 
 <h4 id="dotNET_Json.NET">
@@ -617,24 +383,6 @@ dotNET (Json.NET)
 ]
 </code></pre>
 
-<h4 id="dotNET_JsonCons.JsonPath">
-dotNET (JsonCons.JsonPath)
-</h4>
-
-<p>Not supported</p>
-
-<pre><code>Expected unquoted string, or single or double quoted string, or index or '*'
-</code></pre>
-
-<h4 id="dotNET_JsonPath.Net">
-dotNET (JsonPath.Net)
-</h4>
-
-<p>Not supported</p>
-
-<pre><code>Could not find any valid selectors.
-</code></pre>
-
 <h4 id="dotNET_JsonPathLib">
 dotNET (JsonPathLib)
 </h4>
@@ -648,15 +396,6 @@ dotNET (JsonPathLib)
     "key": "russian dolls"
   }
 ]
-</code></pre>
-
-<h4 id="dotNET_Manatee.Json">
-dotNET (Manatee.Json)
-</h4>
-
-<p>Not supported</p>
-
-<pre><code>Unrecognized JSON Path element. Path up to error: '$'
 </code></pre>
 
 <h3>Errors</h3>
@@ -689,13 +428,6 @@ JavaScript (jsonpathly)
 </h4>
 
 <pre><code>Expected "*", "[", "false", "null", "true", [\x80-\u{FFFF}_], or [a-zA-Z_] but "." found.
-</code></pre>
-
-<h4 id="JavaScript_swaggerexpert-jsonpath">
-JavaScript (swaggerexpert-jsonpath)
-</h4>
-
-<pre><code>Invalid JSONPath expression: $...key
 </code></pre>
 
 <h2>Footnotes</h2>

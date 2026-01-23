@@ -1541,6 +1541,43 @@ The following queries provide results that do not match those of other implement
   []
   ```
 
+- [ ] `$...key`
+  Input:
+  ```
+  {
+    "object": {
+      "key": "value",
+      "array": [
+        {
+          "key": "something"
+        },
+        {
+          "key": {
+            "key": "russian dolls"
+          }
+        }
+      ]
+    },
+    "key": "top"
+  }
+  ```
+  Expected output (in any order as no consensus on ordering exists):
+  ```
+  NOT_SUPPORTED
+  ```
+  Actual output:
+  ```
+  [
+    "russian dolls",
+    "something",
+    "top",
+    "value",
+    {
+      "key": "russian dolls"
+    }
+  ]
+  ```
+
 - [ ] `$[0,2].key`
   Input:
   ```

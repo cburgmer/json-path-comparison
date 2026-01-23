@@ -71,7 +71,7 @@ queries:
     status: fail
     result: "value"
   - id: dot_notation_after_recursive_descent_with_extra_dot
-    status: open
+    status: fail
     result: []
   - id: dot_notation_with_dash
     status: fail

@@ -58,7 +58,7 @@ queries:
     status: fail
     result: ["value"]
   - id: dot_notation_after_recursive_descent_with_extra_dot
-    status: open
+    status: fail
     result: ["russian dolls","russian dolls","russian dolls","russian dolls","russian dolls","something","something","something","something","top","value","value",{"key":"russian dolls"},{"key":"russian dolls"},{"key":"russian dolls"},{"key":"russian dolls"}]
   - id: dot_notation_with_double_quotes
     status: open

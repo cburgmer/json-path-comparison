@@ -1713,6 +1713,10 @@ The following queries provide results that do not match those of other implement
     "key": "top"
   }
   ```
+  Expected output (in any order as no consensus on ordering exists):
+  ```
+  NOT_SUPPORTED
+  ```
   Error:
   ```
   expression don't support in filter

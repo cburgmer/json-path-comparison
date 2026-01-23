@@ -195,6 +195,10 @@ The following queries provide results that do not match those of other implement
     "key": "top"
   }
   ```
+  Expected output (in any order as no consensus on ordering exists):
+  ```
+  NOT_SUPPORTED
+  ```
   Error:
   ```
   Expected "*", "[", "false", "null", "true", [\x80-\u{FFFF}_], or [a-zA-Z_] but "." found.
