@@ -127,6 +127,26 @@ The following queries provide results that do not match those of other implement
   ]
   ```
 
+- [ ] `$[3:0:-2]`
+  Input:
+  ```
+  [
+    "first",
+    "second",
+    "third",
+    "forth",
+    "fifth"
+  ]
+  ```
+  Expected output:
+  ```
+  ["forth","second"]
+  ```
+  Actual output:
+  ```
+  []
+  ```
+
 - [ ] `$[0:3:-2]`
   Input:
   ```
@@ -1421,6 +1441,10 @@ The following queries provide results that do not match those of other implement
     ]
   ]
   ```
+  Expected output:
+  ```
+  [[0,2],[2]]
+  ```
   Error:
   ```
   non-safe evaluation, died at main.pl line 11.
@@ -2021,6 +2045,10 @@ The following queries provide results that do not match those of other implement
       "key": []
     }
   ]
+  ```
+  Expected output:
+  ```
+  [{"key":false}]
   ```
   Error:
   ```

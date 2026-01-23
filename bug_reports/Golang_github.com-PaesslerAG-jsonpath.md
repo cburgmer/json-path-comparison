@@ -3,6 +3,26 @@ Results do not match other implementations
 The following queries provide results that do not match those of other implementations of JSONPath
 (compare https://cburgmer.github.io/json-path-comparison/):
 
+- [ ] `$[3:0:-2]`
+  Input:
+  ```
+  [
+    "first",
+    "second",
+    "third",
+    "forth",
+    "fifth"
+  ]
+  ```
+  Expected output:
+  ```
+  ["forth","second"]
+  ```
+  Actual output:
+  ```
+  []
+  ```
+
 - [ ] `$[0:3:-2]`
   Input:
   ```
@@ -580,6 +600,35 @@ The following queries provide results that do not match those of other implement
   NOT_SUPPORTED
   ```
   parsing error: $[?(@['@key']==42)]	:1:7 - 1:13 could not parse string: invalid syntax
+  ```
+
+- [ ] `$[?(@[-1]==2)]`
+  Input:
+  ```
+  [
+    [
+      2,
+      3
+    ],
+    [
+      "a"
+    ],
+    [
+      0,
+      2
+    ],
+    [
+      2
+    ]
+  ]
+  ```
+  Expected output:
+  ```
+  [[0,2],[2]]
+  ```
+  Actual output:
+  ```
+  []
   ```
 
 - [ ] `$[?(@.a && (@.b || @.c))]`

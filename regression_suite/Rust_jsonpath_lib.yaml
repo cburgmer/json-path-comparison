@@ -13,7 +13,7 @@ queries:
     status: open
     result: NOT_SUPPORTED
   - id: array_slice_with_negative_step
-    status: open
+    status: fail
     result: NOT_SUPPORTED
   - id: array_slice_with_negative_step_and_start_greater_than_end
     status: fail
@@ -120,7 +120,7 @@ queries:
     status: open
     result: NOT_SUPPORTED
   - id: filter_expression_with_bracket_notation_with_-1
-    status: open
+    status: fail
     result: []
   - id: filter_expression_with_bracket_notation_with_number
     status: fail
@@ -164,9 +164,6 @@ queries:
   - id: filter_expression_with_equals_boolean_expression_value
     status: open
     result: NOT_SUPPORTED
-  - id: filter_expression_with_equals_false
-    status: open
-    result: [{"key":false}]
   - id: filter_expression_with_equals_null
     status: open
     result: NOT_SUPPORTED

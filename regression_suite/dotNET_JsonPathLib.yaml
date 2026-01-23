@@ -16,7 +16,7 @@ queries:
     status: open
     result: []
   - id: array_slice_with_negative_step
-    status: open
+    status: fail
     result: []
   - id: array_slice_with_negative_step_on_partially_overlapping_array
     status: open
@@ -183,7 +183,7 @@ queries:
     status: fail
     result: []
   - id: filter_expression_with_bracket_notation_with_-1
-    status: open
+    status: fail
     result: []
   - id: filter_expression_with_bracket_notation_with_number_on_object
     status: open
@@ -222,7 +222,7 @@ queries:
     status: open
     result: [{"key":44}]
   - id: filter_expression_with_equals_false
-    status: open
+    status: fail
     result: [{"key":false},{"key":""},{"key":0}]
   - id: filter_expression_with_equals_null
     status: open

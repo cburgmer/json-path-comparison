@@ -21,9 +21,6 @@ queries:
   - id: array_slice_with_large_number_for_start_end_negative_step
     status: open
     result: NOT_SUPPORTED
-  - id: array_slice_with_negative_step
-    status: open
-    result: ["forth","second"]
   - id: array_slice_with_negative_step_on_partially_overlapping_array
     status: error
   - id: array_slice_with_negative_step_only
@@ -140,7 +137,7 @@ queries:
     status: open
     result: [{"key":1},{"key":3},{"key":"nice"},{"key":true},{"key":null},{"key":false},{"key":{}},{"key":[]},{"key":-1},{"key":0},{"key":""}]
   - id: filter_expression_with_bracket_notation_with_-1
-    status: open
+    status: fail
     result: []
   - id: filter_expression_with_bracket_notation_with_number_on_object
     status: open
@@ -179,7 +176,7 @@ queries:
     status: open
     result: [{"key":44}]
   - id: filter_expression_with_equals_false
-    status: open
+    status: fail
     result: [{"some":"some value"},{"key":false}]
   - id: filter_expression_with_equals_null
     status: open

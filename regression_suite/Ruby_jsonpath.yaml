@@ -216,7 +216,7 @@ queries:
     status: open
     result: [{"key":1},{"key":3},{"key":null},{"key":-1},{"key":0}]
   - id: filter_expression_with_bracket_notation_with_-1
-    status: open
+    status: fail
     result: [[2,3],["a"],[0,2],[2]]
   - id: filter_expression_with_bracket_notation_with_number_on_object
     status: error
@@ -257,9 +257,6 @@ queries:
   - id: filter_expression_with_equals_boolean_expression_value
     status: open
     result: []
-  - id: filter_expression_with_equals_false
-    status: open
-    result: [{"key":false}]
   - id: filter_expression_with_equals_null
     status: open
     result: []

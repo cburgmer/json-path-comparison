@@ -179,9 +179,6 @@ queries:
   - id: filter_expression_with_boolean_or_operator_and_value_true
     status: open
     result: NOT_SUPPORTED
-  - id: filter_expression_with_bracket_notation_with_-1
-    status: open
-    result: [[0,2],[2]]
   - id: filter_expression_with_bracket_notation_with_number_on_object
     status: open
     result: [["a","b"]]
@@ -225,7 +222,7 @@ queries:
     status: open
     result: NOT_SUPPORTED
   - id: filter_expression_with_equals_false
-    status: open
+    status: fail
     result: NOT_SUPPORTED
   - id: filter_expression_with_equals_null
     status: open

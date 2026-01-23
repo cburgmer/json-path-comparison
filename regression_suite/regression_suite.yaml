@@ -88,6 +88,7 @@ queries:
   - id: array_slice_with_negative_step
     selector: "$[3:0:-2]"
     document: ["first", "second", "third", "forth", "fifth"]
+    consensus: ["forth","second"]
   - id: array_slice_with_negative_step_and_start_greater_than_end
     selector: "$[0:3:-2]"
     document: ["first", "second", "third", "forth", "fifth"]
@@ -703,6 +704,7 @@ queries:
   - id: filter_expression_with_bracket_notation_with_-1
     selector: "$[?(@[-1]==2)]"
     document: [[2, 3], ["a"], [0, 2], [2]]
+    consensus: [[0,2],[2]]
   - id: filter_expression_with_bracket_notation_with_number
     selector: "$[?(@[1]=='b')]"
     document: [["a", "b"], ["x", "y"]]
@@ -762,6 +764,7 @@ queries:
   - id: filter_expression_with_equals_false
     selector: "$[?(@.key==false)]"
     document: [{"some": "some value"}, {"key": true}, {"key": false}, {"key": null}, {"key": "value"}, {"key": ""}, {"key": 0}, {"key": 1}, {"key": -1}, {"key": 42}, {"key": {}}, {"key": []}]
+    consensus: [{"key":false}]
   - id: filter_expression_with_equals_null
     selector: "$[?(@.key==null)]"
     document: [{"some": "some value"}, {"key": true}, {"key": false}, {"key": null}, {"key": "value"}, {"key": ""}, {"key": 0}, {"key": 1}, {"key": -1}, {"key": 42}, {"key": {}}, {"key": []}]

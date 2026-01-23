@@ -3,6 +3,26 @@ Results do not match other implementations
 The following queries provide results that do not match those of other implementations of JSONPath
 (compare https://cburgmer.github.io/json-path-comparison/):
 
+- [ ] `$[3:0:-2]`
+  Input:
+  ```
+  [
+    "first",
+    "second",
+    "third",
+    "forth",
+    "fifth"
+  ]
+  ```
+  Expected output:
+  ```
+  ["forth","second"]
+  ```
+  Actual output:
+  ```
+  []
+  ```
+
 - [ ] `$[0:0]`
   Input:
   ```
@@ -498,6 +518,35 @@ The following queries provide results that do not match those of other implement
   ]
   ```
 
+- [ ] `$[?(@[-1]==2)]`
+  Input:
+  ```
+  [
+    [
+      2,
+      3
+    ],
+    [
+      "a"
+    ],
+    [
+      0,
+      2
+    ],
+    [
+      2
+    ]
+  ]
+  ```
+  Expected output:
+  ```
+  [[0,2],[2]]
+  ```
+  Actual output:
+  ```
+  []
+  ```
+
 - [ ] `$[?(@)]`
   Input:
   ```
@@ -738,6 +787,70 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   Unexpected * at character 5
+  ```
+
+- [ ] `$[?(@.key==false)]`
+  Input:
+  ```
+  [
+    {
+      "some": "some value"
+    },
+    {
+      "key": true
+    },
+    {
+      "key": false
+    },
+    {
+      "key": null
+    },
+    {
+      "key": "value"
+    },
+    {
+      "key": ""
+    },
+    {
+      "key": 0
+    },
+    {
+      "key": 1
+    },
+    {
+      "key": -1
+    },
+    {
+      "key": 42
+    },
+    {
+      "key": {}
+    },
+    {
+      "key": []
+    }
+  ]
+  ```
+  Expected output:
+  ```
+  [{"key":false}]
+  ```
+  Actual output:
+  ```
+  [
+    {
+      "key": false
+    },
+    {
+      "key": ""
+    },
+    {
+      "key": 0
+    },
+    {
+      "key": []
+    }
+  ]
   ```
 
 - [ ] `$[?(@[0:1]==1)]`

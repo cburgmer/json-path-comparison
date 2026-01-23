@@ -12,9 +12,6 @@ queries:
   - id: array_slice_with_large_number_for_start_end_negative_step
     status: open
     result: ["fifth","forth"]
-  - id: array_slice_with_negative_step
-    status: open
-    result: ["forth","second"]
   - id: array_slice_with_negative_step_on_partially_overlapping_array
     status: open
     result: ["fifth"]
@@ -111,9 +108,6 @@ queries:
   - id: filter_expression_with_boolean_or_operator_and_value_true
     status: open
     result: [{"key":1},{"key":3},{"key":"nice"},{"key":true},{"key":null},{"key":false},{"key":{}},{"key":[]},{"key":-1},{"key":0},{"key":""}]
-  - id: filter_expression_with_bracket_notation_with_-1
-    status: open
-    result: [[0,2],[2]]
   - id: filter_expression_with_bracket_notation_with_number_on_object
     status: open
     result: [["a","b"]]
@@ -151,9 +145,6 @@ queries:
     result: [{"d":["v1","v2"]}]
   - id: filter_expression_with_equals_boolean_expression_value
     status: error
-  - id: filter_expression_with_equals_false
-    status: open
-    result: [{"key":false}]
   - id: filter_expression_with_equals_null
     status: open
     result: [{"key":null}]

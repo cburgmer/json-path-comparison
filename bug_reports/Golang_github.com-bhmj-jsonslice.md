@@ -683,6 +683,67 @@ The following queries provide results that do not match those of other implement
   unknown token at 5: ['v1','v2'] at 4
   ```
 
+- [ ] `$[?(@.key==false)]`
+  Input:
+  ```
+  [
+    {
+      "some": "some value"
+    },
+    {
+      "key": true
+    },
+    {
+      "key": false
+    },
+    {
+      "key": null
+    },
+    {
+      "key": "value"
+    },
+    {
+      "key": ""
+    },
+    {
+      "key": 0
+    },
+    {
+      "key": 1
+    },
+    {
+      "key": -1
+    },
+    {
+      "key": 42
+    },
+    {
+      "key": {}
+    },
+    {
+      "key": []
+    }
+  ]
+  ```
+  Expected output:
+  ```
+  [{"key":false}]
+  ```
+  Actual output:
+  ```
+  [
+    {
+      "key": false
+    },
+    {
+      "key": ""
+    },
+    {
+      "key": 0
+    }
+  ]
+  ```
+
 - [ ] `$[?(@.*==2)]`
   Input:
   ```

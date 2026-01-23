@@ -37,6 +37,10 @@ The following queries provide results that do not match those of other implement
     "fifth"
   ]
   ```
+  Expected output:
+  ```
+  ["forth","second"]
+  ```
   Error:
   ```
   timeout: sending signal TERM to command ‘implementations/PHP_Goessner/run.sh’
@@ -1041,6 +1045,10 @@ The following queries provide results that do not match those of other implement
     ]
   ]
   ```
+  Expected output:
+  ```
+  [[0,2],[2]]
+  ```
   Error:
   ```
   ArgumentCountError
@@ -1641,6 +1649,10 @@ The following queries provide results that do not match those of other implement
       "key": []
     }
   ]
+  ```
+  Expected output:
+  ```
+  [{"key":false}]
   ```
   Error:
   ```

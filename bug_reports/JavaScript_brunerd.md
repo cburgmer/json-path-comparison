@@ -164,6 +164,35 @@ The following queries provide results that do not match those of other implement
   undefined
   ```
 
+- [ ] `$[?(@[-1]==2)]`
+  Input:
+  ```
+  [
+    [
+      2,
+      3
+    ],
+    [
+      "a"
+    ],
+    [
+      0,
+      2
+    ],
+    [
+      2
+    ]
+  ]
+  ```
+  Expected output:
+  ```
+  [[0,2],[2]]
+  ```
+  Actual output:
+  ```
+  []
+  ```
+
 - [ ] `$[?(@.id==2)]`
   Input:
   ```

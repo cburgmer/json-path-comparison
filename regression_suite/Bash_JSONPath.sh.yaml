@@ -25,7 +25,7 @@ queries:
     status: fail
     result: []
   - id: array_slice_with_negative_step
-    status: open
+    status: fail
     result: []
   - id: array_slice_with_negative_step_and_start_greater_than_end
     status: fail
@@ -259,7 +259,7 @@ queries:
     status: fail
     result: []
   - id: filter_expression_with_bracket_notation_with_-1
-    status: open
+    status: fail
     result: []
   - id: filter_expression_with_bracket_notation_with_number
     status: fail
@@ -313,7 +313,7 @@ queries:
     status: open
     result: []
   - id: filter_expression_with_equals_false
-    status: open
+    status: fail
     result: [false]
   - id: filter_expression_with_equals_null
     status: open

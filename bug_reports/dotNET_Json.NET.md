@@ -692,6 +692,10 @@ The following queries provide results that do not match those of other implement
     ]
   ]
   ```
+  Expected output:
+  ```
+  [[0,2],[2]]
+  ```
   Error:
   ```
   Index was out of range. Must be non-negative and less than the size of the collection. (Parameter 'index')

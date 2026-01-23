@@ -48,7 +48,7 @@ queries:
     status: fail
     result: 4
   - id: array_slice_with_negative_step
-    status: open
+    status: fail
     result: "forth"
   - id: array_slice_with_negative_step_and_start_greater_than_end
     status: fail
@@ -302,7 +302,7 @@ queries:
   - id: filter_expression_with_bracket_notation_and_current_object_literal
     status: error
   - id: filter_expression_with_bracket_notation_with_-1
-    status: open
+    status: fail
     result: [null,null,null,null]
   - id: filter_expression_with_bracket_notation_with_number
     status: fail
@@ -351,7 +351,7 @@ queries:
     status: open
     result: []
   - id: filter_expression_with_equals_false
-    status: open
+    status: fail
     result: [{"some":"some value"},{"key":null}]
   - id: filter_expression_with_equals_null
     status: open
