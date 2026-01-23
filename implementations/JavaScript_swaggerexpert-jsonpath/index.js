@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-import { evaluate } from '@swaggerexpert/jsonpath';
+import { evaluate, JSONPathEvaluateError } from '@swaggerexpert/jsonpath';
 
 const selector = process.argv[2];
 
@@ -21,12 +21,12 @@ stdin.on('end', function () {
 
     try {
         const result = evaluate(json, selector);
-        if (result === undefined) {
-            console.error(result);
-            process.exit(1);
-        }
         stdout.write(JSON.stringify(result));
     } catch (e) {
+        if (e instanceof JSONPathEvaluateError && e.message.includes('Invalid JSONPath expression')) {
+            console.error(e.message);
+            process.exit(2);
+        }
         console.error(e.message);
         process.exit(1);
     }
