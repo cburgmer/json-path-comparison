@@ -10,6 +10,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@swaggerexpert/jsonpath": "^4.0.2"
+    "@swaggerexpert/jsonpath": "^4.0.3"
   }
 }
