@@ -87,7 +87,8 @@ queries:
   - id: bracket_notation
     status: error
   - id: bracket_notation_after_recursive_descent
-    status: error
+    status: fail
+    result: ["first",{"key":["first nested",{"more":[{"nested":["deepest","second"]},["more","values"]]}]}]
   - id: bracket_notation_on_object_without_key
     status: error
   - id: bracket_notation_with_NFC_path_on_NFD_key
@@ -160,7 +161,8 @@ queries:
     status: fail
     result: [[42]]
   - id: bracket_notation_with_wildcard_after_recursive_descent
-    status: error
+    status: fail
+    result: ["string","value",0,1,[0,1],{"another key":{"complex":"string","primitives":[0,1]},"key":"value"},{"complex":"string","primitives":[0,1]}]
   - id: bracket_notation_with_wildcard_on_empty_array
     status: error
   - id: bracket_notation_with_wildcard_on_empty_object
@@ -182,16 +184,14 @@ queries:
     status: fail
     result: ["ey","bee","see"]
   - id: dot_notation_after_bracket_notation_after_recursive_descent
-    status: error
+    status: fail
+    result: ["some value",42]
   - id: dot_notation_after_filter_expression
     status: fail
     result: []
-  - id: dot_notation_after_recursive_descent
-    status: error
-  - id: dot_notation_after_recursive_descent_after_dot_notation
-    status: error
   - id: dot_notation_after_recursive_descent_with_extra_dot
-    status: error
+    status: fail
+    result: ["russian dolls","something","top","value",{"key":"russian dolls"}]
   - id: dot_notation_after_union_with_keys
     status: error
   - id: dot_notation_on_array
@@ -204,9 +204,10 @@ queries:
     status: error
   - id: dot_notation_with_double_quotes
     status: open
-    result: 42
+    result: "value"
   - id: dot_notation_with_double_quotes_after_recursive_descent
-    status: error
+    status: open
+    result: ["russian dolls","something","top","value",{"key":"russian dolls"}]
   - id: dot_notation_with_empty_path
     status: fail
     result: 9001
@@ -225,7 +226,8 @@ queries:
     status: open
     result: 42
   - id: dot_notation_with_single_quotes_after_recursive_descent
-    status: error
+    status: open
+    result: [0,100,42,99,{"'key'":99}]
   - id: dot_notation_with_single_quotes_and_dot
     status: error
   - id: dot_notation_with_space_padded_key
@@ -236,11 +238,14 @@ queries:
   - id: dot_notation_with_wildcard_after_dot_notation_with_wildcard_on_nested_arrays
     status: error
   - id: dot_notation_with_wildcard_after_recursive_descent
-    status: error
+    status: fail
+    result: ["string","value",0,1,[0,1],{"another key":{"complex":"string","primitives":[0,1]},"key":"value"},{"complex":"string","primitives":[0,1]}]
   - id: dot_notation_with_wildcard_after_recursive_descent_on_null_value_array
-    status: error
+    status: fail
+    result: [40,42,[40,null,42],null]
   - id: dot_notation_with_wildcard_after_recursive_descent_on_scalar
-    status: error
+    status: fail
+    result: [42]
   - id: dot_notation_with_wildcard_on_array
     status: error
   - id: dot_notation_with_wildcard_on_empty_array
@@ -259,9 +264,11 @@ queries:
   - id: empty
     status: error
   - id: filter_expression_after_dot_notation_with_wildcard_after_recursive_descent
-    status: error
+    status: open
+    result: [[],[]]
   - id: filter_expression_after_recursive_descent
-    status: error
+    status: open
+    result: [[[]],[]]
   - id: filter_expression_on_object
     status: error
   - id: filter_expression_with_addition
@@ -481,7 +488,8 @@ queries:
     status: open
     result: []
   - id: filter_expression_with_value_after_recursive_descent
-    status: error
+    status: open
+    result: [[[]],[]]
   - id: filter_expression_with_value_false
     status: open
     result: [[]]
@@ -505,11 +513,14 @@ queries:
   - id: parens_notation
     status: error
   - id: recursive_descent
-    status: error
+    status: fail
+    result: []
   - id: recursive_descent_after_dot_notation
-    status: error
+    status: fail
+    result: []
   - id: recursive_descent_on_nested_arrays
-    status: error
+    status: fail
+    result: [[[0],[1]],[0],0,[1],1]
   - id: script_expression
     status: error
   - id: union_with_duplication_from_object

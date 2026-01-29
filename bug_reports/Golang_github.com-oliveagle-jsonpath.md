@@ -735,9 +735,30 @@ The following queries provide results that do not match those of other implement
   ```
   ["deepest","first nested","first","more",{"nested":["deepest","second"]}]
   ```
-  Error:
+  Actual output:
   ```
-  expression don't support in filter
+  [
+    "first",
+    {
+      "key": [
+        "first nested",
+        {
+          "more": [
+            {
+              "nested": [
+                "deepest",
+                "second"
+              ]
+            },
+            [
+              "more",
+              "values"
+            ]
+          ]
+        }
+      ]
+    }
+  ]
   ```
 
 - [ ] `$['missing']`
@@ -808,7 +829,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  strconv.Atoi: parsing "\"key\"": invalid syntax
+  strconv.Atoi: parsing "key": invalid syntax
   ```
 
 - [ ] `$[]`
@@ -862,7 +883,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  strconv.Atoi: parsing "\"\"": invalid syntax
+  len(tail) should >=3, []
   ```
 
 - [ ] `$[-2]`
@@ -1062,7 +1083,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  strconv.Atoi: parsing "'\"'": invalid syntax
+  strconv.Atoi: parsing "''": invalid syntax
   ```
 
 - [ ] `$['\\']`
@@ -1139,7 +1160,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  strconv.Atoi: parsing "@.\"$,*\\'\\\\'": invalid syntax
+  strconv.Atoi: parsing "@.$,*\\'\\\\'": invalid syntax
   ```
 
 - [ ] `$['single'quote']`
@@ -1379,9 +1400,35 @@ The following queries provide results that do not match those of other implement
   ```
   ["string","value",0,1,[0,1],{"complex":"string","primitives":[0,1]}]
   ```
-  Error:
+  Actual output:
   ```
-  expression don't support in filter
+  [
+    "string",
+    "value",
+    0,
+    1,
+    [
+      0,
+      1
+    ],
+    {
+      "another key": {
+        "complex": "string",
+        "primitives": [
+          0,
+          1
+        ]
+      },
+      "key": "value"
+    },
+    {
+      "complex": "string",
+      "primitives": [
+        0,
+        1
+      ]
+    }
+  ]
   ```
 
 - [ ] `$[*]`
@@ -1487,7 +1534,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  strconv.Atoi: parsing "\"key\"": invalid syntax
+  strconv.Atoi: parsing "key": invalid syntax
   ```
 
 - [ ] `$.[key]`
@@ -1587,9 +1634,12 @@ The following queries provide results that do not match those of other implement
   ```
   [200,42,500]
   ```
-  Error:
+  Actual output:
   ```
-  expression don't support in filter
+  [
+    "some value",
+    42
+  ]
   ```
 
 - [ ] `$[?(@.id==42)].name`
@@ -1613,84 +1663,6 @@ The following queries provide results that do not match those of other implement
   Actual output:
   ```
   []
-  ```
-
-- [ ] `$..key`
-  Input:
-  ```
-  {
-    "object": {
-      "key": "value",
-      "array": [
-        {
-          "key": "something"
-        },
-        {
-          "key": {
-            "key": "russian dolls"
-          }
-        }
-      ]
-    },
-    "key": "top"
-  }
-  ```
-  Expected output (in any order as no consensus on ordering exists):
-  ```
-  ["russian dolls","something","top","value",{"key":"russian dolls"}]
-  ```
-  Error:
-  ```
-  expression don't support in filter
-  ```
-
-- [ ] `$.store..price`
-  Input:
-  ```
-  {
-    "store": {
-      "book": [
-        {
-          "category": "reference",
-          "author": "Nigel Rees",
-          "title": "Sayings of the Century",
-          "price": 8.95
-        },
-        {
-          "category": "fiction",
-          "author": "Evelyn Waugh",
-          "title": "Sword of Honour",
-          "price": 12.99
-        },
-        {
-          "category": "fiction",
-          "author": "Herman Melville",
-          "title": "Moby Dick",
-          "isbn": "0-553-21311-3",
-          "price": 8.99
-        },
-        {
-          "category": "fiction",
-          "author": "J. R. R. Tolkien",
-          "title": "The Lord of the Rings",
-          "isbn": "0-395-19395-8",
-          "price": 22.99
-        }
-      ],
-      "bicycle": {
-        "color": "red",
-        "price": 19.95
-      }
-    }
-  }
-  ```
-  Expected output (in any order as no consensus on ordering exists):
-  ```
-  [12.99,19.95,22.99,8.95,8.99]
-  ```
-  Error:
-  ```
-  expression don't support in filter
   ```
 
 - [ ] `$...key`
@@ -1717,9 +1689,17 @@ The following queries provide results that do not match those of other implement
   ```
   NOT_SUPPORTED
   ```
-  Error:
+  Actual output:
   ```
-  expression don't support in filter
+  [
+    "russian dolls",
+    "something",
+    "top",
+    "value",
+    {
+      "key": "russian dolls"
+    }
+  ]
   ```
 
 - [ ] `$['one','three'].key`
@@ -1800,37 +1780,6 @@ The following queries provide results that do not match those of other implement
   key error: missing not found in object
   ```
 
-- [ ] `$.."key"`
-  Input:
-  ```
-  {
-    "object": {
-      "key": "value",
-      "\"key\"": 100,
-      "array": [
-        {
-          "key": "something",
-          "\"key\"": 0
-        },
-        {
-          "key": {
-            "key": "russian dolls"
-          },
-          "\"key\"": {
-            "\"key\"": 99
-          }
-        }
-      ]
-    },
-    "key": "top",
-    "\"key\"": 42
-  }
-  ```
-  Error:
-  ```
-  expression don't support in filter
-  ```
-
 - [ ] `$.`
   Input:
   ```
@@ -1876,38 +1825,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  expression don't support in filter
-  ```
-
-- [ ] `$..'key'`
-  Input:
-  ```
-  {
-    "object": {
-      "key": "value",
-      "'key'": 100,
-      "array": [
-        {
-          "key": "something",
-          "'key'": 0
-        },
-        {
-          "key": {
-            "key": "russian dolls"
-          },
-          "'key'": {
-            "'key'": 99
-          }
-        }
-      ]
-    },
-    "key": "top",
-    "'key'": 42
-  }
-  ```
-  Error:
-  ```
-  expression don't support in filter
+  unsupported jsonpath operation: root
   ```
 
 - [ ] `$.'some.key'`
@@ -1943,7 +1861,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  expression don't support in filter
+  unsupported jsonpath operation: scan
   ```
 
 - [ ] `$.*.*`
@@ -1968,7 +1886,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  expression don't support in filter
+  unsupported jsonpath operation: scan
   ```
 
 - [ ] `$..*`
@@ -1989,9 +1907,35 @@ The following queries provide results that do not match those of other implement
   ```
   ["string","value",0,1,[0,1],{"complex":"string","primitives":[0,1]}]
   ```
-  Error:
+  Actual output:
   ```
-  expression don't support in filter
+  [
+    "string",
+    "value",
+    0,
+    1,
+    [
+      0,
+      1
+    ],
+    {
+      "another key": {
+        "complex": "string",
+        "primitives": [
+          0,
+          1
+        ]
+      },
+      "key": "value"
+    },
+    {
+      "complex": "string",
+      "primitives": [
+        0,
+        1
+      ]
+    }
+  ]
   ```
 
 - [ ] `$..*`
@@ -2007,9 +1951,18 @@ The following queries provide results that do not match those of other implement
   ```
   [40,42,null]
   ```
-  Error:
+  Actual output:
   ```
-  expression don't support in filter
+  [
+    40,
+    42,
+    [
+      40,
+      null,
+      42
+    ],
+    null
+  ]
   ```
 
 - [ ] `$..*`
@@ -2021,9 +1974,11 @@ The following queries provide results that do not match those of other implement
   ```
   []
   ```
-  Error:
+  Actual output:
   ```
-  expression don't support in filter
+  [
+    42
+  ]
   ```
 
 - [ ] `$.*`
@@ -2047,7 +2002,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  expression don't support in filter
+  unsupported jsonpath operation: scan
   ```
 
 - [ ] `$.*`
@@ -2061,7 +2016,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  expression don't support in filter
+  unsupported jsonpath operation: scan
   ```
 
 - [ ] `$.*`
@@ -2075,7 +2030,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  expression don't support in filter
+  unsupported jsonpath operation: scan
   ```
 
 - [ ] `$.*`
@@ -2099,7 +2054,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  expression don't support in filter
+  unsupported jsonpath operation: scan
   ```
 
 - [ ] `$a`
@@ -2153,80 +2108,7 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  runtime error: index out of range [0] with length 0
-  ```
-
-- [ ] `$..*[?(@.id>2)]`
-  Input:
-  ```
-  [
-    {
-      "complext": {
-        "one": [
-          {
-            "name": "first",
-            "id": 1
-          },
-          {
-            "name": "next",
-            "id": 2
-          },
-          {
-            "name": "another",
-            "id": 3
-          },
-          {
-            "name": "more",
-            "id": 4
-          }
-        ],
-        "more": {
-          "name": "next to last",
-          "id": 5
-        }
-      }
-    },
-    {
-      "name": "last",
-      "id": 6
-    }
-  ]
-  ```
-  Error:
-  ```
-  expression don't support in filter
-  ```
-
-- [ ] `$..[?(@.id==2)]`
-  Input:
-  ```
-  {
-    "id": 2,
-    "more": [
-      {
-        "id": 2
-      },
-      {
-        "more": {
-          "id": 2
-        }
-      },
-      {
-        "id": {
-          "id": 2
-        }
-      },
-      [
-        {
-          "id": 2
-        }
-      ]
-    ]
-  }
-  ```
-  Error:
-  ```
-  expression don't support in filter
+  empty path
   ```
 
 - [ ] `$[?(@.key)]`
@@ -3817,38 +3699,6 @@ The following queries provide results that do not match those of other implement
   ]
   ```
 
-- [ ] `$..[?(@.id)]`
-  Input:
-  ```
-  {
-    "id": 2,
-    "more": [
-      {
-        "id": 2
-      },
-      {
-        "more": {
-          "id": 2
-        }
-      },
-      {
-        "id": {
-          "id": 2
-        }
-      },
-      [
-        {
-          "id": 2
-        }
-      ]
-    ]
-  }
-  ```
-  Error:
-  ```
-  expression don't support in filter
-  ```
-
 - [ ] `$[?@.key==42]`
   Input:
   ```
@@ -3984,9 +3834,9 @@ The following queries provide results that do not match those of other implement
   ```
   NOT_SUPPORTED
   ```
-  Error:
+  Actual output:
   ```
-  expression don't support in filter
+  []
   ```
 
 - [ ] `$.key..`
@@ -4007,9 +3857,9 @@ The following queries provide results that do not match those of other implement
   ```
   NOT_SUPPORTED
   ```
-  Error:
+  Actual output:
   ```
-  expression don't support in filter
+  []
   ```
 
 - [ ] `$..*`
@@ -4028,9 +3878,26 @@ The following queries provide results that do not match those of other implement
   ```
   [[0],[1],0,1]
   ```
-  Error:
+  Actual output:
   ```
-  expression don't support in filter
+  [
+    [
+      [
+        0
+      ],
+      [
+        1
+      ]
+    ],
+    [
+      0
+    ],
+    0,
+    [
+      1
+    ],
+    1
+  ]
   ```
 
 - [ ] `$[(@.length-1)]`
