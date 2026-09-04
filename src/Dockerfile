@@ -3,6 +3,7 @@ FROM ubuntu:24.04
 # Hint: Put versioned dependencies (those that change ever so often) towards the
 #       bottom, so that we can make use of Docker's layer cache (and we don't
 #       rebuild the layers that do not change).
+ARG TARGETARCH
 
 ENV DEBIAN_FRONTEND=noninteractive
 
@@ -48,10 +49,9 @@ RUN apt-get install -y --no-install-recommends ruby
 ARG DART_VERSION="3.10.7"
 # Following https://medium.com/flutter-community/running-dart-on-arm-servers-7fd5f5eb99d
 RUN apt-get install -y --no-install-recommends apt-transport-https gnupg2
-RUN case "$(uname -m)" in armv7l | armv7) ARCH="arm";; aarch64) ARCH="arm64";; *) ARCH="x64";; esac \
-    && curl -O https://storage.googleapis.com/dart-archive/channels/stable/release/$DART_VERSION/sdk/dartsdk-linux-$ARCH-release.zip \
-    && unzip dartsdk-linux-$ARCH-release.zip -d /usr/lib/ \
-    && rm dartsdk-linux-$ARCH-release.zip \
+RUN curl -O https://storage.googleapis.com/dart-archive/channels/stable/release/$DART_VERSION/sdk/dartsdk-linux-$TARGETARCH-release.zip \
+    && unzip dartsdk-linux-$TARGETARCH-release.zip -d /usr/lib/ \
+    && rm dartsdk-linux-$TARGETARCH-release.zip \
     && mv /usr/lib/dart-sdk /usr/lib/dart
 ENV DART_SDK="/usr/lib/dart"
 ENV PATH="${PATH}:${DART_SDK}/bin"
@@ -66,17 +66,11 @@ RUN /tmp/installObjectiveC.sh
 # Java + Clojure + Kotlin + Scala
 RUN apt-get install -y --no-install-recommends openjdk-25-jdk maven
 
-# Swift
-RUN curl -O https://download.swift.org/swiftly/linux/swiftly-$(uname -m).tar.gz \
-    && tar zxf swiftly-$(uname -m).tar.gz \
-    && ./swiftly init --quiet-shell-followup
-ENV PATH="${PATH}:/root/.local/share/swiftly/bin"
-
 # Haskell
 # Get newest cabal outside of Ubuntu channel
 ARG CABAL_VERSION="3.16.1.0"
 RUN apt-get install -y --no-install-recommends ghc xz-utils \
-    && case "$(uname -m)" in aarch64) URL="https://downloads.haskell.org/~cabal/cabal-install-$CABAL_VERSION/cabal-install-$CABAL_VERSION-aarch64-linux-deb12.tar.xz";; *) URL="https://downloads.haskell.org/~cabal/cabal-install-$CABAL_VERSION/cabal-install-$CABAL_VERSION-x86_64-linux-ubuntu22_04.tar.xz";; esac \
+    && case "$TARGETARCH" in arm64) URL="https://downloads.haskell.org/~cabal/cabal-install-$CABAL_VERSION/cabal-install-$CABAL_VERSION-aarch64-linux-deb12.tar.xz";; *) URL="https://downloads.haskell.org/~cabal/cabal-install-$CABAL_VERSION/cabal-install-$CABAL_VERSION-x86_64-linux-ubuntu22_04.tar.xz";; esac \
     && curl -L "$URL" -o cabal-install.tar.xz \
     && tar -xf cabal-install.tar.xz \
     && mv cabal /usr/local/bin/ \
@@ -87,9 +81,8 @@ RUN apt-get install -y --no-install-recommends rakudo raku-zef
 
 # Golang
 RUN apt-get install -y --no-install-recommends git
-RUN case "$(uname -m)" in aarch64) ARCH="arm64";; *) ARCH="amd64";; esac \
-    && cd /tmp \
-    && curl -OL https://go.dev/dl/go1.25.5.linux-$ARCH.tar.gz \
+RUN cd /tmp \
+    && curl -OL https://go.dev/dl/go1.25.5.linux-$TARGETARCH.tar.gz \
     && tar -zxf go*.tar.gz \
     && rm go*.tar.gz \
     && mv go /go
@@ -112,6 +105,13 @@ RUN ln -s /root/php${PHP_VERSION_LATEST}/bin/php /usr/local/bin/php && ln -s /ro
 # Work around https://akashmittal.com/code-example-fatal-detected-dubious-ownership-in-repository-at/
 # There seems to be no easy way in docker to make the current user the owner of mounted volumnes, e.g. https://github.com/moby/moby/issues/2259
 RUN git config --global --add safe.directory '*'
+
+# Swift
+RUN case "$TARGETARCH" in arm64) ARCH="aarch64";; *) ARCH="x86_64";; esac \
+    && curl -O https://download.swift.org/swiftly/linux/swiftly-$ARCH.tar.gz \
+    && tar zxf swiftly-$ARCH.tar.gz \
+    && ./swiftly init --quiet-shell-followup
+ENV PATH="${PATH}:/root/.local/share/swiftly/bin"
 
 # Dependencies for this project
 #
