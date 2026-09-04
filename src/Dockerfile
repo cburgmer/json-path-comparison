@@ -68,10 +68,10 @@ RUN apt-get install -y --no-install-recommends openjdk-25-jdk maven
 
 # Haskell
 # Get newest cabal outside of Ubuntu channel
-ARG CABAL_VERSION="3.16.1.0"
+ARG CABAL_VERSION="3.18.1.0"
 RUN apt-get install -y --no-install-recommends ghc xz-utils \
-    && case "$TARGETARCH" in arm64) URL="https://downloads.haskell.org/~cabal/cabal-install-$CABAL_VERSION/cabal-install-$CABAL_VERSION-aarch64-linux-deb12.tar.xz";; *) URL="https://downloads.haskell.org/~cabal/cabal-install-$CABAL_VERSION/cabal-install-$CABAL_VERSION-x86_64-linux-ubuntu22_04.tar.xz";; esac \
-    && curl -L "$URL" -o cabal-install.tar.xz \
+    && case "$TARGETARCH" in arm64) ARCH="aarch64";; *) ARCH="x86_64";; esac \
+    && curl -L "https://downloads.haskell.org/~cabal/cabal-install-${CABAL_VERSION}/cabal-install-${CABAL_VERSION}-${ARCH}-linux-unknown.tar.xz" -o cabal-install.tar.xz \
     && tar -xf cabal-install.tar.xz \
     && mv cabal /usr/local/bin/ \
     && rm cabal-install.tar.xz
