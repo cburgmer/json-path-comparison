@@ -1,0 +1,6 @@
+92c92,94
+< 	return dmn->dmn_events & ~dmn->dmn_disarmed_events;
+---
+>         uint32_t events = dmn->dmn_events;
+>         uint16_t disarmed_events = dmn->dmn_disarmed_events;
+>         return events & ~(uint32_t)disarmed_events;

@@ -57,8 +57,9 @@ ENV DART_SDK="/usr/lib/dart"
 ENV PATH="${PATH}:${DART_SDK}/bin"
 
 # Objective-C
-RUN apt-get install -y --no-install-recommends build-essential git cmake clang libblocksruntime-dev libicu-dev libcurl4-openssl-dev
+RUN apt-get install -y --no-install-recommends build-essential git cmake clang libblocksruntime-dev libicu-dev libcurl4-openssl-dev patch
 ADD installObjectiveC.sh /tmp/installObjectiveC.sh
+ADD swift-corelibs-libdispatch_event_epoll.patch /tmp/swift-corelibs-libdispatch_event_epoll.patch
 RUN chmod a+x /tmp/installObjectiveC.sh
 RUN /tmp/installObjectiveC.sh
 

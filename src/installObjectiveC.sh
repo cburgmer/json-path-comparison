@@ -13,7 +13,9 @@ rm swift-*.tar.gz
 pushd swift-*
 mkdir Build
 cd Build/
-cmake -DCMAKE_C_COMPILER=clang -DCMAKE_CXX_COMPILER=clang++ -DCMAKE_C_FLAGS="-Wno-error=unused-but-set-variable" ..
+# Patch because of https://github.com/swiftlang/swift-corelibs-libdispatch/commit/38872e2d44d66d2fb94186988509defc734888a5
+patch ../src/event/event_epoll.c /tmp/swift-corelibs-libdispatch_event_epoll.patch
+cmake -DCMAKE_C_COMPILER=clang -DCMAKE_CXX_COMPILER=clang++ ..
 make install
 popd
 
