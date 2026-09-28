@@ -82,7 +82,7 @@ RUN apt-get install -y --no-install-recommends rakudo raku-zef
 # Golang
 RUN apt-get install -y --no-install-recommends git
 RUN cd /tmp \
-    && curl -OL https://go.dev/dl/go1.25.5.linux-$TARGETARCH.tar.gz \
+    && curl -OL https://go.dev/dl/go1.27.1.linux-$TARGETARCH.tar.gz \
     && tar -zxf go*.tar.gz \
     && rm go*.tar.gz \
     && mv go /go
@@ -97,8 +97,8 @@ RUN apt-get install -y --no-install-recommends build-essential autoconf bison re
 ADD installPhp.sh /tmp/installPhp.sh
 RUN chmod a+x /tmp/installPhp.sh
 
-ARG PHP_VERSION_LATEST="8.5.1"
-RUN /tmp/installPhp.sh "8.3.29"
+ARG PHP_VERSION_LATEST="8.5.11"
+RUN /tmp/installPhp.sh "8.3.35"
 RUN /tmp/installPhp.sh "$PHP_VERSION_LATEST"
 RUN ln -s /root/php${PHP_VERSION_LATEST}/bin/php /usr/local/bin/php && ln -s /root/php${PHP_VERSION_LATEST}/bin/composer /usr/local/bin/composer
 
