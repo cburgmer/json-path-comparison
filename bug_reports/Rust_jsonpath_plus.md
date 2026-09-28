@@ -769,6 +769,10 @@ The following queries provide results that do not match those of other implement
     2
   ]
   ```
+  Expected output:
+  ```
+  NOT_SUPPORTED
+  ```
   Error:
   ```
   Error Parsing JSON Path:
@@ -803,6 +807,10 @@ The following queries provide results that do not match those of other implement
     2,
     3
   ]
+  ```
+  Expected output:
+  ```
+  NOT_SUPPORTED
   ```
   Error:
   ```
@@ -1649,6 +1657,10 @@ The following queries provide results that do not match those of other implement
       "some": "value"
     }
   ]
+  ```
+  Expected output:
+  ```
+  NOT_SUPPORTED
   ```
   Error:
   ```

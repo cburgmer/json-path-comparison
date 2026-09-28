@@ -6,9 +6,6 @@
 
 implementation: JavaScript_json-p3
 queries:
-  - id: array_slice_on_non_overlapping_array
-    status: fail
-    result: ["third"]
   - id: array_slice_with_large_number_for_end_and_negative_step
     status: open
     result: ["third","second","first"]
@@ -18,9 +15,6 @@ queries:
   - id: array_slice_with_negative_step_on_partially_overlapping_array
     status: open
     result: ["fifth"]
-  - id: array_slice_with_negative_step_only
-    status: open
-    result: ["fifth","third","first"]
   - id: array_slice_with_open_end_and_negative_step
     status: open
     result: ["forth","third","second","first"]

@@ -3,26 +3,6 @@ Results do not match other implementations
 The following queries provide results that do not match those of other implementations of JSONPath
 (compare https://cburgmer.github.io/json-path-comparison/):
 
-- [ ] `$[7:10]`
-  Input:
-  ```
-  [
-    "first",
-    "second",
-    "third"
-  ]
-  ```
-  Expected output:
-  ```
-  []
-  ```
-  Actual output:
-  ```
-  [
-    "third"
-  ]
-  ```
-
 - [ ] `$[010:024:010]`
   Input:
   ```
@@ -877,6 +857,10 @@ The following queries provide results that do not match those of other implement
     2
   ]
   ```
+  Expected output:
+  ```
+  NOT_SUPPORTED
+  ```
   Error:
   ```
   unexpected filter selector token '[' ('1]==[1])]':12)
@@ -909,6 +893,10 @@ The following queries provide results that do not match those of other implement
     2,
     3
   ]
+  ```
+  Expected output:
+  ```
+  NOT_SUPPORTED
   ```
   Error:
   ```
@@ -1685,6 +1673,10 @@ The following queries provide results that do not match those of other implement
       "some": "value"
     }
   ]
+  ```
+  Expected output:
+  ```
+  NOT_SUPPORTED
   ```
   Error:
   ```

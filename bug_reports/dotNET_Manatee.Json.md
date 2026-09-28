@@ -85,6 +85,26 @@ The following queries provide results that do not match those of other implement
   Index was out of range. Must be non-negative and less than the size of the collection. (Parameter 'index')
   ```
 
+- [ ] `$[::-2]`
+  Input:
+  ```
+  [
+    "first",
+    "second",
+    "third",
+    "forth",
+    "fifth"
+  ]
+  ```
+  Expected output:
+  ```
+  ["fifth","third","first"]
+  ```
+  Actual output:
+  ```
+  []
+  ```
+
 - [ ] `$[:]`
   Input:
   ```

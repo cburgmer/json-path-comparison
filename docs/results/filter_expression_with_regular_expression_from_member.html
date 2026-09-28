@@ -200,13 +200,6 @@ JavaScript (brunerd)
 <pre><code>[]
 </code></pre>
 
-<h4 id="JavaScript_jsonpath">
-JavaScript (jsonpath)
-</h4>
-
-<pre><code>[]
-</code></pre>
-
 <h4 id="JavaScript_jsonpathly">
 JavaScript (jsonpathly)
 </h4>
@@ -361,7 +354,7 @@ Ruby (janeway-jsonpath)
 
 <p>Not supported</p>
 
-<pre><code>Jsonpath query $[?(@.name=~/@.pattern/)] - Unknown operator "="
+<pre><code>Jsonpath query $[?(@.name=~/@.pattern/)] (col 10) - Unknown operator "="
 </code></pre>
 
 <h4 id="Ruby_jsonpath">
@@ -497,6 +490,13 @@ JavaScript (json-p3)
 </h4>
 
 <pre><code>unexpected filter selector token '=' ('name=~/@.':10)
+</code></pre>
+
+<h4 id="JavaScript_jsonpath">
+JavaScript (jsonpath)
+</h4>
+
+<pre><code>Unsafe expression: script and filter expressions may only access the current node (@) with safe property names
 </code></pre>
 
 <h4 id="JavaScript_jsonpath-plus">

@@ -77,6 +77,10 @@ The following queries provide results that do not match those of other implement
     "fifth"
   ]
   ```
+  Expected output:
+  ```
+  ["fifth","third","first"]
+  ```
   Error:
   ```
   timeout: sending signal TERM to command ‘implementations/PHP_Goessner/run.sh’
@@ -1499,6 +1503,10 @@ The following queries provide results that do not match those of other implement
     2
   ]
   ```
+  Expected output:
+  ```
+  NOT_SUPPORTED
+  ```
   Error:
   ```
   ArgumentCountError
@@ -1531,6 +1539,10 @@ The following queries provide results that do not match those of other implement
     2,
     3
   ]
+  ```
+  Expected output:
+  ```
+  NOT_SUPPORTED
   ```
   Error:
   ```
@@ -3704,6 +3716,10 @@ The following queries provide results that do not match those of other implement
       "some": "value"
     }
   ]
+  ```
+  Expected output:
+  ```
+  NOT_SUPPORTED
   ```
   Error:
   ```

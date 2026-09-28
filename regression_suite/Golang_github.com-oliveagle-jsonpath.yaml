@@ -482,7 +482,7 @@ queries:
     status: fail
     result: [[]]
   - id: filter_expression_with_triple_equal
-    status: open
+    status: fail
     result: []
   - id: filter_expression_with_value
     status: open

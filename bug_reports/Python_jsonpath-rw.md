@@ -45,6 +45,27 @@ The following queries provide results that do not match those of other implement
   Exception('Parse error at 1:5 near token : (:)')
   ```
 
+- [ ] `$[::-2]`
+  Input:
+  ```
+  [
+    "first",
+    "second",
+    "third",
+    "forth",
+    "fifth"
+  ]
+  ```
+  Expected output:
+  ```
+  ["fifth","third","first"]
+  ```
+  Actual output:
+  NOT_SUPPORTED
+  ```
+  Exception('Parse error at 1:3 near token : (:)')
+  ```
+
 - [ ] `$[::]`
   Input:
   ```
