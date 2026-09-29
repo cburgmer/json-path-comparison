@@ -1,0 +1,34 @@
+{
+    "index": {
+        "one": [
+            {
+                "name": "first",
+                "id": 1
+            },
+            {
+                "name": "next",
+                "id": 2
+            },
+            {
+                "name": "another",
+                "id": 3
+            },
+            {
+                "name": "more",
+                "id": 4
+            }
+        ],
+        "extra": {
+            "name": "extra stuff",
+            "id": 7
+        },
+        "more": {
+            "name": "next to last",
+            "id": 5
+        }
+    },
+    "extra": {
+        "name": "last",
+        "id": 6
+    }
+}
