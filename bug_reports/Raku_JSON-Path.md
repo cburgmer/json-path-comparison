@@ -654,7 +654,8 @@ The following queries provide results that do not match those of other implement
   ```
   Error:
   ```
-  at 0: expected a json object, but got '"Hello Wo"'
+  at 0: expected a json object
+  Context: <BOS>→H←ello (corresponding start 0 characters earlier, at 0)
   ```
 
 - [ ] `$['\\']`

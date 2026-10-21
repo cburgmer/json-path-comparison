@@ -185,7 +185,7 @@ queries:
     result: ["ey","bee","see"]
   - id: dot_notation_after_bracket_notation_after_recursive_descent
     status: fail
-    result: ["some value",42]
+    result: []
   - id: dot_notation_after_filter_expression
     status: fail
     result: []

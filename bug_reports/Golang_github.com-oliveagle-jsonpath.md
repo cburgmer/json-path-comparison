@@ -1640,10 +1640,7 @@ The following queries provide results that do not match those of other implement
   ```
   Actual output:
   ```
-  [
-    "some value",
-    42
-  ]
+  []
   ```
 
 - [ ] `$[?(@.id==42)].name`
