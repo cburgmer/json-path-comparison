@@ -97,8 +97,8 @@ RUN apt-get install -y --no-install-recommends build-essential autoconf bison re
 ADD installPhp.sh /tmp/installPhp.sh
 RUN chmod a+x /tmp/installPhp.sh
 
-ARG PHP_VERSION_LATEST="8.5.11"
-RUN /tmp/installPhp.sh "8.3.35"
+ARG PHP_VERSION_LATEST="8.5.12"
+RUN /tmp/installPhp.sh "8.3.36"
 RUN /tmp/installPhp.sh "$PHP_VERSION_LATEST"
 RUN ln -s /root/php${PHP_VERSION_LATEST}/bin/php /usr/local/bin/php && ln -s /root/php${PHP_VERSION_LATEST}/bin/composer /usr/local/bin/composer
 
