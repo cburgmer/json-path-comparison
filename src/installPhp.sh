@@ -10,7 +10,7 @@ rm php-*.tar.gz
 
 cd php-src-php-*/
 ./buildconf --force
-./configure --prefix="/root/php${PHP_VERSION}" --disable-all --with-openssl --enable-phar --enable-filter --with-iconv --with-zlib --enable-tokenizer --enable-intl
+./configure --prefix="/root/php${PHP_VERSION}" --disable-all --with-openssl --enable-phar --enable-filter --with-iconv --with-zlib --enable-tokenizer --enable-intl --enable-ctype
 make -j "$(nproc)"
 make install
 cd - && rm -r php-src-php-*/
