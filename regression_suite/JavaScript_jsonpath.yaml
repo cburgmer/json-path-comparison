@@ -13,9 +13,6 @@ queries:
     status: error
   - id: array_slice_with_negative_step_on_partially_overlapping_array
     status: error
-  - id: array_slice_with_negative_step_only
-    status: open
-    result: ["fifth","third","first"]
   - id: array_slice_with_open_end_and_negative_step
     status: open
     result: ["forth","third","second","first"]
@@ -136,8 +133,7 @@ queries:
     status: open
     result: [{"key":50}]
   - id: filter_expression_with_dot_notation_with_dash
-    status: open
-    result: []
+    status: error
   - id: filter_expression_with_dot_notation_with_number
     status: error
   - id: filter_expression_with_dot_notation_with_number_on_array
@@ -198,8 +194,7 @@ queries:
     status: open
     result: [{"key1":10,"key2":10},{},{"key1":null,"key2":null},{"key1":null},{"key2":null},{"key1":0,"key2":0},{"key1":-1,"key2":-1},{"key1":"","key2":""},{"key1":false,"key2":false},{"key1":true,"key2":true}]
   - id: filter_expression_with_equals_with_root_reference
-    status: fail
-    result: []
+    status: error
   - id: filter_expression_with_greater_than
     status: open
     result: [{"key":43},{"key":42.0001},{"key":100},{"key":"43"}]
@@ -213,11 +208,9 @@ queries:
     status: open
     result: []
   - id: filter_expression_with_length_free_function
-    status: open
-    result: []
+    status: error
   - id: filter_expression_with_length_function
-    status: fail
-    result: []
+    status: error
   - id: filter_expression_with_length_property
     status: fail
     result: [[1,2,3,4]]
@@ -228,8 +221,7 @@ queries:
     status: open
     result: [{"key":0},{"key":42},{"key":-1},{"key":41},{"key":41.9999},{"key":"42"},{"key":"41"}]
   - id: filter_expression_with_local_dot_key_and_null_in_data
-    status: fail
-    result: []
+    status: error
   - id: filter_expression_with_multiplication
     status: open
     result: [{"key":50}]
@@ -254,18 +246,15 @@ queries:
     status: open
     result: [{"d":["v1","v2"]},{"d":["a","b"]},{"d":true}]
   - id: filter_expression_with_regular_expression
-    status: open
-    result: []
+    status: error
   - id: filter_expression_with_regular_expression_from_member
-    status: open
-    result: []
+    status: error
   - id: filter_expression_with_set_wise_comparison_to_scalar
     status: error
   - id: filter_expression_with_set_wise_comparison_to_set
     status: error
   - id: filter_expression_with_single_equal
-    status: fail
-    result: []
+    status: error
   - id: filter_expression_with_subfilter
     status: open
     result: NOT_SUPPORTED
@@ -273,7 +262,7 @@ queries:
     status: open
     result: [{"key":-50}]
   - id: filter_expression_with_triple_equal
-    status: open
+    status: fail
     result: [{"key":42}]
   - id: filter_expression_with_value
     status: open

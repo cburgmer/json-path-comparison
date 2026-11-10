@@ -69,6 +69,27 @@ The following queries provide results that do not match those of other implement
   syntax error before: '-'
   ```
 
+- [ ] `$[::-2]`
+  Input:
+  ```
+  [
+    "first",
+    "second",
+    "third",
+    "forth",
+    "fifth"
+  ]
+  ```
+  Expected output:
+  ```
+  ["fifth","third","first"]
+  ```
+  Actual output:
+  NOT_SUPPORTED
+  ```
+  syntax error before: ':'
+  ```
+
 - [ ] `$[::]`
   Input:
   ```
@@ -1754,6 +1775,10 @@ The following queries provide results that do not match those of other implement
       "some": "value"
     }
   ]
+  ```
+  Expected output:
+  ```
+  NOT_SUPPORTED
   ```
   Error:
   ```

@@ -6,7 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="JsonPath.Net" Version="2.2.0" />
+    <PackageReference Include="JsonPath.Net" Version="3.0.2" />
   </ItemGroup>
 
 </Project>

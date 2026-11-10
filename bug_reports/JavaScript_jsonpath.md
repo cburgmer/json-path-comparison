@@ -263,6 +263,20 @@ The following queries provide results that do not match those of other implement
   []
   ```
 
+- [ ] `$[?(@.key-dash == 'value')]`
+  Input:
+  ```
+  [
+    {
+      "key-dash": "value"
+    }
+  ]
+  ```
+  Error:
+  ```
+  Unsafe expression: script and filter expressions may only access the current node (@) with safe property names
+  ```
+
 - [ ] `$[?(@.2 == 'second')]`
   Input:
   ```
@@ -410,6 +424,10 @@ The following queries provide results that do not match those of other implement
     2
   ]
   ```
+  Expected output:
+  ```
+  NOT_SUPPORTED
+  ```
   Error:
   ```
   Line 1: Unexpected token :
@@ -442,6 +460,10 @@ The following queries provide results that do not match those of other implement
     2,
     3
   ]
+  ```
+  Expected output:
+  ```
+  NOT_SUPPORTED
   ```
   Error:
   ```
@@ -758,9 +780,38 @@ The following queries provide results that do not match those of other implement
   ```
   [{"key":42}]
   ```
-  Actual output:
+  Error:
   ```
-  []
+  Unsafe expression: script and filter expressions may only access the current node (@) with safe property names
+  ```
+
+- [ ] `$[?(length(@) == 4)]`
+  Input:
+  ```
+  [
+    [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    [
+      1,
+      2,
+      3,
+      4
+    ],
+    [
+      1,
+      2,
+      3
+    ]
+  ]
+  ```
+  Error:
+  ```
+  Unsafe expression: script and filter expressions may only access the current node (@) with safe property names
   ```
 
 - [ ] `$[?(@.length() == 4)]`
@@ -791,9 +842,9 @@ The following queries provide results that do not match those of other implement
   ```
   NOT_SUPPORTED
   ```
-  Actual output:
+  Error:
   ```
-  []
+  Unsafe expression: script and filter expressions may only access the current node (@) with safe property names
   ```
 
 - [ ] `$[?(@.length == 4)]`
@@ -929,9 +980,9 @@ The following queries provide results that do not match those of other implement
   ```
   NOT_SUPPORTED
   ```
-  Actual output:
+  Error:
   ```
-  []
+  Unsafe expression: script and filter expressions may only access the current node (@) with safe property names
   ```
 
 - [ ] `$[?(@.a.*)]`
@@ -986,6 +1037,61 @@ The following queries provide results that do not match those of other implement
   Error:
   ```
   Line 1: Unexpected token *
+  ```
+
+- [ ] `$[?(@.name=~/hello.*/)]`
+  Input:
+  ```
+  [
+    {
+      "name": "hullo world"
+    },
+    {
+      "name": "hello world"
+    },
+    {
+      "name": "yes hello world"
+    },
+    {
+      "name": "HELLO WORLD"
+    },
+    {
+      "name": "good bye"
+    }
+  ]
+  ```
+  Error:
+  ```
+  Unsafe expression: script and filter expressions may only access the current node (@) with safe property names
+  ```
+
+- [ ] `$[?(@.name=~/@.pattern/)]`
+  Input:
+  ```
+  [
+    {
+      "name": "hullo world"
+    },
+    {
+      "name": "hello world"
+    },
+    {
+      "name": "yes hello world"
+    },
+    {
+      "name": "HELLO WORLD"
+    },
+    {
+      "name": "good bye"
+    },
+    {
+      "pattern": "hello.*"
+    }
+  ]
+  ```
+  Error:
+  ```
+  Unsafe expression: script and filter expressions may only access the current node (@) with safe property names
   ```
 
 - [ ] `$[?(@[*]>=4)]`
@@ -1117,9 +1223,94 @@ The following queries provide results that do not match those of other implement
   ```
   NOT_SUPPORTED
   ```
+  Error:
+  ```
+  Unsafe expression: script and filter expressions may only access the current node (@) with safe property names
+  ```
+
+- [ ] `$[?(@.key===42)]`
+  Input:
+  ```
+  [
+    {
+      "key": 0
+    },
+    {
+      "key": 42
+    },
+    {
+      "key": -1
+    },
+    {
+      "key": 1
+    },
+    {
+      "key": 41
+    },
+    {
+      "key": 43
+    },
+    {
+      "key": 42.0001
+    },
+    {
+      "key": 41.9999
+    },
+    {
+      "key": 100
+    },
+    {
+      "key": "some"
+    },
+    {
+      "key": "42"
+    },
+    {
+      "key": null
+    },
+    {
+      "key": 420
+    },
+    {
+      "key": ""
+    },
+    {
+      "key": {}
+    },
+    {
+      "key": []
+    },
+    {
+      "key": [
+        42
+      ]
+    },
+    {
+      "key": {
+        "key": 42
+      }
+    },
+    {
+      "key": {
+        "some": 42
+      }
+    },
+    {
+      "some": "value"
+    }
+  ]
+  ```
+  Expected output:
+  ```
+  NOT_SUPPORTED
+  ```
   Actual output:
   ```
-  []
+  [
+    {
+      "key": 42
+    }
+  ]
   ```
 
 - [ ] `$[?(@..child)]`

@@ -459,6 +459,26 @@ The following queries provide results that do not match those of other implement
   timeout: sending signal TERM to command ‘build/main’
   ```
 
+- [ ] `$[::-2]`
+  Input:
+  ```
+  [
+    "first",
+    "second",
+    "third",
+    "forth",
+    "fifth"
+  ]
+  ```
+  Expected output:
+  ```
+  ["fifth","third","first"]
+  ```
+  Actual output:
+  ```
+  []
+  ```
+
 - [ ] `$[1:]`
   Input:
   ```

@@ -89,6 +89,30 @@ The following queries provide results that do not match those of other implement
   ]
   ```
 
+- [ ] `$[::-2]`
+  Input:
+  ```
+  [
+    "first",
+    "second",
+    "third",
+    "forth",
+    "fifth"
+  ]
+  ```
+  Expected output:
+  ```
+  ["fifth","third","first"]
+  ```
+  Actual output:
+  ```
+  [
+    "first",
+    "second",
+    "third"
+  ]
+  ```
+
 - [ ] `$[0:3:2]`
   Input:
   ```

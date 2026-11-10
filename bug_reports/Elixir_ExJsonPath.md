@@ -123,6 +123,10 @@ The following queries provide results that do not match those of other implement
     "fifth"
   ]
   ```
+  Expected output:
+  ```
+  ["fifth","third","first"]
+  ```
   Error:
   ```
   FunctionClauseError

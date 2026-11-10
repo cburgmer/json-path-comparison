@@ -51,6 +51,30 @@ The following queries provide results that do not match those of other implement
   
   ```
 
+- [ ] `$[::-2]`
+  Input:
+  ```
+  [
+    "first",
+    "second",
+    "third",
+    "forth",
+    "fifth"
+  ]
+  ```
+  Expected output:
+  ```
+  ["fifth","third","first"]
+  ```
+  Actual output:
+  NOT_SUPPORTED
+  ```
+  path error: 
+  $[::-2]
+  ^^^^
+  
+  ```
+
 - [ ] `$[0:3:0]`
   Input:
   ```

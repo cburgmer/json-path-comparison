@@ -47,6 +47,27 @@ The following queries provide results that do not match those of other implement
   jsonpath returned false, this might indicate an error
   ```
 
+- [ ] `$[::-2]`
+  Input:
+  ```
+  [
+    "first",
+    "second",
+    "third",
+    "forth",
+    "fifth"
+  ]
+  ```
+  Expected output:
+  ```
+  ["fifth","third","first"]
+  ```
+  Actual output:
+  NOT_FOUND
+  ```
+  jsonpath returned false, this might indicate an error
+  ```
+
 - [ ] `$[:]`
   Input:
   ```
@@ -82,24 +103,24 @@ The following queries provide results that do not match those of other implement
   
   <--- Last few GCs --->
   
-  [108537:0xaaab14054230]      444 ms: Mark-sweep 24.4 (41.4) -> 8.7 (41.6) MB, 5.6 / 0.0 ms  (average mu = 0.800, current mu = 0.905) allocation failure; scavenge might not succeed
-  [108537:0xaaab14054230]      486 ms: Mark-sweep 34.4 (51.6) -> 12.0 (44.7) MB, 8.3 / 0.0 ms  (average mu = 0.800, current mu = 0.800) allocation failure; scavenge might not succeed
+  [61732:0xc05cde4d6250]      354 ms: Mark-sweep 14.3 (23.9) -> 6.5 (23.9) MB, 3.6 / 0.0 ms  (average mu = 0.701, current mu = 0.779) allocation failure; scavenge might not succeed
+  [61732:0xc05cde4d6250]      373 ms: Mark-sweep 21.0 (30.5) -> 8.7 (26.1) MB, 4.7 / 0.0 ms  (average mu = 0.729, current mu = 0.755) allocation failure; scavenge might not succeed
   
   
   <--- JS stacktrace --->
   
   FATAL ERROR: Reached heap limit Allocation failed - JavaScript heap out of memory
-   1: 0xffff92402f60 node::Abort() [/lib/aarch64-linux-gnu/libnode.so.109]
-   2: 0xffff9230e108 void node::FPrintF<>(_IO_FILE*, char const*) [/lib/aarch64-linux-gnu/libnode.so.109]
-   3: 0xffff927871dc v8::Utils::ReportOOMFailure(v8::internal::Isolate*, char const*, bool) [/lib/aarch64-linux-gnu/libnode.so.109]
-   4: 0xffff927873cc v8::internal::V8::FatalProcessOutOfMemory(v8::internal::Isolate*, char const*, bool) [/lib/aarch64-linux-gnu/libnode.so.109]
-   5: 0xffff92971fb8  [/lib/aarch64-linux-gnu/libnode.so.109]
-   6: 0xffff92986ba8 v8::internal::Heap::CollectGarbage(v8::internal::AllocationSpace, v8::internal::GarbageCollectionReason, v8::GCCallbackFlags) [/lib/aarch64-linux-gnu/libnode.so.109]
-   7: 0xffff92963cc0 v8::internal::HeapAllocator::AllocateRawWithLightRetrySlowPath(int, v8::internal::AllocationType, v8::internal::AllocationOrigin, v8::internal::AllocationAlignment) [/lib/aarch64-linux-gnu/libnode.so.109]
-   8: 0xffff92964e38 v8::internal::HeapAllocator::AllocateRawWithRetryOrFailSlowPath(int, v8::internal::AllocationType, v8::internal::AllocationOrigin, v8::internal::AllocationAlignment) [/lib/aarch64-linux-gnu/libnode.so.109]
-   9: 0xffff92946bfc v8::internal::Factory::NewFillerObject(int, v8::internal::AllocationAlignment, v8::internal::AllocationType, v8::internal::AllocationOrigin) [/lib/aarch64-linux-gnu/libnode.so.109]
-  10: 0xffff92d0fd30 v8::internal::Runtime_AllocateInYoungGeneration(int, unsigned long*, v8::internal::Isolate*) [/lib/aarch64-linux-gnu/libnode.so.109]
-  11: 0xffff926a406c  [/lib/aarch64-linux-gnu/libnode.so.109]
+   1: 0xec5157502f60 node::Abort() [/lib/aarch64-linux-gnu/libnode.so.109]
+   2: 0xec515740e108 void node::FPrintF<>(_IO_FILE*, char const*) [/lib/aarch64-linux-gnu/libnode.so.109]
+   3: 0xec51578871dc v8::Utils::ReportOOMFailure(v8::internal::Isolate*, char const*, bool) [/lib/aarch64-linux-gnu/libnode.so.109]
+   4: 0xec51578873cc v8::internal::V8::FatalProcessOutOfMemory(v8::internal::Isolate*, char const*, bool) [/lib/aarch64-linux-gnu/libnode.so.109]
+   5: 0xec5157a71fb8  [/lib/aarch64-linux-gnu/libnode.so.109]
+   6: 0xec5157a86ba8 v8::internal::Heap::CollectGarbage(v8::internal::AllocationSpace, v8::internal::GarbageCollectionReason, v8::GCCallbackFlags) [/lib/aarch64-linux-gnu/libnode.so.109]
+   7: 0xec5157a63cc0 v8::internal::HeapAllocator::AllocateRawWithLightRetrySlowPath(int, v8::internal::AllocationType, v8::internal::AllocationOrigin, v8::internal::AllocationAlignment) [/lib/aarch64-linux-gnu/libnode.so.109]
+   8: 0xec5157a64e38 v8::internal::HeapAllocator::AllocateRawWithRetryOrFailSlowPath(int, v8::internal::AllocationType, v8::internal::AllocationOrigin, v8::internal::AllocationAlignment) [/lib/aarch64-linux-gnu/libnode.so.109]
+   9: 0xec5157a46bfc v8::internal::Factory::NewFillerObject(int, v8::internal::AllocationAlignment, v8::internal::AllocationType, v8::internal::AllocationOrigin) [/lib/aarch64-linux-gnu/libnode.so.109]
+  10: 0xec5157e0fd30 v8::internal::Runtime_AllocateInYoungGeneration(int, unsigned long*, v8::internal::Isolate*) [/lib/aarch64-linux-gnu/libnode.so.109]
+  11: 0xec51577a406c  [/lib/aarch64-linux-gnu/libnode.so.109]
   ```
 
 - [ ] `$["key"]`
@@ -793,6 +814,10 @@ The following queries provide results that do not match those of other implement
     2
   ]
   ```
+  Expected output:
+  ```
+  NOT_SUPPORTED
+  ```
   Error:
   ```
   jsonPath: Unexpected token :: _v[0:1]==[1]
@@ -825,6 +850,10 @@ The following queries provide results that do not match those of other implement
     2,
     3
   ]
+  ```
+  Expected output:
+  ```
+  NOT_SUPPORTED
   ```
   Error:
   ```
@@ -1782,6 +1811,91 @@ The following queries provide results that do not match those of other implement
     {},
     [],
     -1
+  ]
+  ```
+
+- [ ] `$[?(@.key===42)]`
+  Input:
+  ```
+  [
+    {
+      "key": 0
+    },
+    {
+      "key": 42
+    },
+    {
+      "key": -1
+    },
+    {
+      "key": 1
+    },
+    {
+      "key": 41
+    },
+    {
+      "key": 43
+    },
+    {
+      "key": 42.0001
+    },
+    {
+      "key": 41.9999
+    },
+    {
+      "key": 100
+    },
+    {
+      "key": "some"
+    },
+    {
+      "key": "42"
+    },
+    {
+      "key": null
+    },
+    {
+      "key": 420
+    },
+    {
+      "key": ""
+    },
+    {
+      "key": {}
+    },
+    {
+      "key": []
+    },
+    {
+      "key": [
+        42
+      ]
+    },
+    {
+      "key": {
+        "key": 42
+      }
+    },
+    {
+      "key": {
+        "some": 42
+      }
+    },
+    {
+      "some": "value"
+    }
+  ]
+  ```
+  Expected output:
+  ```
+  NOT_SUPPORTED
+  ```
+  Actual output:
+  ```
+  [
+    {
+      "key": 42
+    }
   ]
   ```
 

@@ -55,6 +55,26 @@ The following queries provide results that do not match those of other implement
   timeout: sending signal TERM to command ‘implementations/Python_jsonpath2/run.sh’
   ```
 
+- [ ] `$[::-2]`
+  Input:
+  ```
+  [
+    "first",
+    "second",
+    "third",
+    "forth",
+    "fifth"
+  ]
+  ```
+  Expected output:
+  ```
+  ["fifth","third","first"]
+  ```
+  Actual output:
+  ```
+  []
+  ```
+
 - [ ] `$[0:3:0]`
   Input:
   ```
