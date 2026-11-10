@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
+import java.util.List;
 
 import org.sjf4j.Sjf4j;
 import org.sjf4j.path.JsonPath;
@@ -22,7 +23,7 @@ public class App {
         try {
             Object node = Sjf4j.global().fromJson(json);
             JsonPath path = JsonPath.parse(args[0]);
-            Object result = path.eval(node);
+            List<Object> result = path.find(node);
 
             System.out.println(Sjf4j.global().toJsonString(result));
         } catch (final Exception e) {

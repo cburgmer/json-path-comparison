@@ -19,8 +19,13 @@
   <dependencies>
     <dependency>
       <groupId>org.sjf4j</groupId>
-      <artifactId>sjf4j</artifactId>
-      <version>1.3.3</version>
+      <artifactId>sjf4j-core</artifactId>
+      <version>1.5.0</version>
+    </dependency>
+    <dependency>
+      <groupId>org.sjf4j</groupId>
+      <artifactId>sjf4j-backend-jackson2</artifactId>
+      <version>1.5.0</version>
     </dependency>
     <dependency>
       <groupId>com.fasterxml.jackson.core</groupId>
